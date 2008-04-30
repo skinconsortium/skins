@@ -1,0 +1,101 @@
+<!-- SC:RGB
+	 SLoB - thanks Quad, leechbite
+	 heavily modified script to cope with all windows RGB
+	 -->
+	 
+<elements>
+	<bitmap id="color.palette" file="colorchanger/colors.png" />
+	<bitmap id="color.map.red" file="colorchanger/mapred.png" />
+	<bitmap id="color.map.green" file="colorchanger/mapgreen.png" />
+	<bitmap id="color.map.blue" file="colorchanger/mapblue.png" />
+	
+	<bitmap id="red" file="colorchanger/red.png" />
+	<bitmap id="green" file="colorchanger/green.png" />
+	<bitmap id="blue" file="colorchanger/blue.png" />
+	
+	<cursor id="cursor.cross" bitmap="colorchanger/cursor_cross.png" hotspot_x="15" hotspot_y="15"/>
+		
+</elements>
+	 
+
+	<groupdef id="color.content.group">
+	
+		<rect filled="1" color="155,155,155"
+			x="8" y="3" w="13" h="13"
+			move="1"/>
+		<Wasabi:Checkbox 
+			id="checkbox.enableRGB" x="7" y="0" text=" Enable RGB"
+		/>
+	
+		<Wasabi:HSlider id="red.slider" x="28" y="28" w="132" h="15" thumb="wasabi.scrollbar.horizontal.button" hoverthumb="wasabi.scrollbar.horizontal.button.hover" downThumb="wasabi.scrollbar.horizontal.button.pressed"/>
+		<Wasabi:HSlider id="green.slider" x="28" y="48" w="132" h="15" thumb="wasabi.scrollbar.horizontal.button" hoverthumb="wasabi.scrollbar.horizontal.button.hover" downThumb="wasabi.scrollbar.horizontal.button.pressed"/>
+		<Wasabi:HSlider id="blue.slider" x="28" y="68" w="132" h="15" thumb="wasabi.scrollbar.horizontal.button" hoverthumb="wasabi.scrollbar.horizontal.button.hover" downThumb="wasabi.scrollbar.horizontal.button.pressed"/>
+		<layer id="barr" image="layout.volumebar" x="28" y="32" w="132" h="6" ghost="1"/>
+		<layer id="barg" image="layout.volumebar" x="28" y="52" w="132" h="6" ghost="1"/>
+		<layer id="barb" image="layout.volumebar" x="28" y="72" w="132" h="6" ghost="1"/>
+
+		<group id="wasabi.objectframe.group" 
+			x="6" y="27" w="19" h="14" />
+		<rect filled="1" color="255,0,0"
+			x="8" y="29" w="15" h="10"
+			move="1"/>
+		<group id="wasabi.objectframe.group" 
+			x="6" y="47" w="19" h="14" />		
+		<rect filled="1" color="0,255,0"
+			x="8" y="49" w="15" h="10"
+			move="1"/>
+		<group id="wasabi.objectframe.group" 
+			x="6" y="67" w="19" h="14" />
+		<rect filled="1" color="0,0,255"
+			x="8" y="69" w="15" h="10"
+			move="1"/>
+			
+		<Wasabi:text 
+			id="text.red" 
+			x="164" y="27" 
+			w="30" h="14" 
+			text="0" 
+			fontsize="14"
+			color="color.window.txt"
+		/>
+
+		<Wasabi:text 
+			id="text.green" 
+			x="164" y="47" 
+			w="30" h="14" 
+			text="0" 
+			fontsize="14"
+			color="color.window.txt"
+		/>
+
+		<Wasabi:text 
+			id="text.blue" 
+			x="164" y="67" 
+			w="30" h="14" 
+			text="0" 
+			fontsize="14"
+			color="color.window.txt"
+		/>		
+
+		<group id="wasabi.objectframe.group" x="7" y="91" w="178" h="178"/>
+		<layer id="color.palette" x="8" y="92" w="176" h="176" cursor="cursor.cross" wantfocus="1" image="color.palette" move="0" alpha="255"/>
+	
+	</groupdef>
+
+	<!-- color Window -->
+<container id="sc.colorchanger" name="RGB Color Changer" default_visible="1" default_x="0" default_y="4">
+
+	<layout id="changer" w="220" h="337">
+	
+		<Wasabi:StandardFrame:Modal
+			x="0" y="0" w="0" h="0" relatw="1" relath="1"
+			content=""
+			padtitleright="15"
+			notify="rgbpicker.content"
+		/>
+		<group id="color.content.group" x="14" y="42" w="200" h="297"/>
+	
+	
+	</layout> 
+
+</container>

@@ -1,0 +1,116 @@
+<groupdef id="SCbutton" xuitag="SCXUIButton:SCButton" embed_xui="normal.button">
+
+	<!-- 
+	bgImage="player.main.button.bg"
+	ShImage="player.main.button.shadow"
+	noImage="player.main.button.normal"
+	hoImage="player.main.button.hover"
+	hoImage="player.main.button.hover"
+	
+	doImage="player.main.button.down"
+	icImage="player.main.button.play"
+	-->
+
+	<layer
+		id="background.button"
+		x="0" y="0"
+		image="imagenotfound"
+		alpha="255"
+		ghost="1"
+	/>
+
+	<layer
+		id="shadow.button"
+		x="0" y="8"
+		image="imagenotfound"
+		alpha="255"
+		ghost="1"
+	/>
+
+	<button
+		id="normal.button"
+		x="6" y="6"
+		image="imagenotfound"
+		alpha="255" 
+		ghost="0"
+		tooltip=""
+	/>
+
+	<layer
+		id="hover.button"
+		x="6" y="6"
+		image="imagenotfound"
+		alpha="0"
+		ghost="1"
+	/>
+	
+	<layer
+		id="hover.button.RGB.Blue"
+		x="6" y="6"
+		image="imagenotfound"
+		alpha="0"
+		ghost="1"
+	/>
+	<layer
+		id="hover.button.RGB.Green"
+		x="6" y="6"
+		image="imagenotfound"
+		alpha="0"
+		ghost="1"
+	/>
+	<layer
+		id="hover.button.RGB.Red"
+		x="6" y="6"
+		image="imagenotfound"
+		alpha="0"
+		ghost="1"
+	/>
+
+	<layer
+		id="down.button"
+		x="6" y="6"
+		image="imagenotfound"
+		alpha="0"
+		ghost="1"
+	/>
+
+	<layer
+		id="icon.button"
+		x="17" y="18"
+		image="imagenotfound"
+		alpha="255"
+		ghost="1"
+	/>
+
+	<script id="sc.button.script" file="XUI/scbutton.maki"/>
+</groupdef>
+
+<groupdef id="SCClock" xuitag="SCXUIText:SCClock">
+
+<text id="timer" display="time" color="0,0,0" x="0" y="0" w="80" h="15" font="m_font" fontsize="24" timecolonwidth="8" 
+antialias="1" align="center" timeroffstyle="2" alpha="255"  fixedwidth="1" tooltip="Right Click: Clock Options"/>
+
+<text id="clock" display="" color="0,0,0" x="0" y="0" w="80" h="15" font="" fontsize="" timecolonwidth="" 
+antialias="1" align="" timeroffstyle="" alpha="0" fixedwidth="1" tooltip="" ghost="1"/>
+
+<script id="sc.clock.script" file="XUI/scclock.maki"/>
+</groupdef>
+
+<groupdef id="SCSlider" xuitag="SCXUISlider:SCSlider" embed_xui="fakeButton">
+
+<layer id="aniSlider" image="x" x="0" y="0" alpha="255"/>
+
+<button id="fakeButton" image="x" x="0" y="0" alpha="1" rectrgn="1"/>
+
+<script id="sc.slider.script" file="XUI/scslider.maki"/>
+</groupdef>
+
+<groupdef id="GlowButton" xuitag="GlowButton" embed_xui="normal.button">
+
+	<button id="normal.button" />
+	<layer id="button.glow" ghost="1" alpha="0"/>
+
+	<script file="XUI/GlowButton.maki" />
+
+</groupdef>
+

@@ -1,0 +1,23 @@
+<container id="MLibrary" name="Media Library" dynamic="0" component="guid:{6B0EDF80-C9A5-11D3-9F26-00C04F39FFC6}" default_x="0" default_y="341" default_visible="@HAVE_LIBRARY@">
+
+<groupdef id="player.content.ml.dummy.group" name="PlaylistDummyGroup" relatw="1" relath="1" w="0" h="0">
+  <component
+    fitparent="1"
+    noshowcmdbar="1"
+    autoopen="1"
+    autoclose="0"
+    param="guid:{6B0EDF80-C9A5-11D3-9F26-00C04F39FFC6}"
+  />
+</groupdef>
+
+<layout id="normal" minimum_w="268" minimum_h="164" h="361" w="756" appbar="left|top|right|bottom">
+  <Wasabi:StandardFrame:NoStatus
+    x="0" y="0" w="0" h="0" relatw="1" relath="1"
+    content="player.content.ml.dummy.group"
+    padtitleleft="10"
+    padtitleright="12"
+  />
+
+</layout>
+
+</container>
