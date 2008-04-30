@@ -1,0 +1,91 @@
+-- Variables Table ---------------------------------------------------
+var# |                Class |                                    What 
+----------------------------------------------------------------------
+0000 |               System |                                   System*
+0001 |                  Int |                                     NULL
+0002 |                  Int |                     __deprecated_runtime
+0003 |               Double |                                        v
+0004 |                  Int |                                        2
+0005 |                  Int |                                    65535
+0006 |                  Int |                                        1
+0007 |               String |                           "runtimecheck"
+0008 |                  Int |                                        0
+0009 |                  Int |                                     last
+000A |                  Int |                                      now
+000B |                  Int |                                     5000
+000C |               String |                  "This script requires "
+000D |               String |         "Winamp 5.03 (skin version 1.2)"
+000E |               String |                                  "Error"
+000F |               String |                                       ""
+0010 |               String |                                        s
+0011 |               String |                                  "DEBUG"
+0012 |                  Int |                                        s
+0013 |                Timer |                                      tmr
+0014 |                Timer |                                     vist
+0015 |                  Int |                                        i
+0016 |                Group |                                        g
+0017 |                Layer |                                     glow
+0018 |                Layer |                                   deimos
+0019 |                Layer |                                     slob
+001A |                Layer |                                    ralph
+001B |                Layer |                                    rohan
+001C |                Layer |                                   hammer
+001D |                Layer |                                    leech
+001E |                Group |                                    Buddy[]
+001F |                Buddy |                                  gdeimos
+0020 |                Buddy |                                   ghelix
+0021 |                Buddy |                                   gleech
+0022 |                Buddy |                                    gslob
+0023 |                Buddy |                                  ghammer
+0024 |                Buddy |                                   grohan
+0025 |                  Int |                                     warp
+0026 |               String |                                   "glow"
+0027 |               String |                               "g.deimos"
+0028 |               String |                            "g.quadhelix"
+0029 |               String |                            "g.leechbite"
+002A |               String |                                 "g.slob"
+002B |               String |                           "g.hammerhead"
+002C |               String |                           "g.rohan2kool"
+002D |               String |                                 "deimos"
+002E |               String |                                   "slob"
+002F |               String |                                  "ralph"
+0030 |               String |                                  "rohan"
+0031 |               String |                                 "hammer"
+0032 |               String |                                  "leech"
+0033 |                  Int |                                       20
+0034 |                  Int |                                     2500
+0035 |                  Int |                                        v
+0036 |                  Int |                                      332
+0037 |                  Int |                                      256
+0038 |                  Int |                                      300
+0039 |                  Int |                                      220
+003A |                  Int |                                       45
+003B |                  Int |                                      400
+003C |               Double |                                      0.5
+003D |                  Int |                                       10
+003E |                  Int |                                        4
+003F |                  Int |                                        6
+0040 |                  Int |                                        8
+0041 |                  Int |                                       12
+0042 |               String |                                      "x"
+0043 |               String |                                    "400"
+-- Events Table ------------------------------------------------------
+var# |         Code Pointer |                                    What 
+----------------------------------------------------------------------
+0000 |                 016B |                    System.onScriptLoaded
+0016 |                 02F8 |                           g.onSetVisible
+0018 |                 05E0 |                   deimos.onTargetReached
+0019 |                 0686 |                     slob.onTargetReached
+001A |                 0720 |                    ralph.onTargetReached
+001B |                 07BA |                    rohan.onTargetReached
+001C |                 0854 |                   hammer.onTargetReached
+001D |                 08EE |                    leech.onTargetReached
+0014 |                 0988 |                             vist.onTimer
+0013 |                 0C7D |                              tmr.onTimer
+001E |                 0F34 |                    Buddy.onTargetReached
+-- User Functions Table ----------------------------------------------
+               Code Pointer |                                    What 
+----------------------------------------------------------------------
+                       0000 |                             versionCheck
+                       00F2 |                                    debug
+                       011D |                                 debugInt

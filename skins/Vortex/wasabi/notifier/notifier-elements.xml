@@ -1,0 +1,15 @@
+<elements>
+
+  <bitmap id="notifier.bg.left" file="wasabi/notifier/notif-bg.png" x="0" y="0" w="13" h="80" gammagroup="Background"/>
+  <bitmap id="notifier.bg.center" file="wasabi/notifier/notif-bg.png" x="13" y="0" w="133" h="80" gammagroup="Background"/>
+  <bitmap id="notifier.bg.right" file="wasabi/notifier/notif-bg.png" x="146" y="0" w="13" h="80" gammagroup="Background"/>
+
+  <bitmap id="notifier.bg.left.da" file="wasabi/notifier/notif-bg-alpha.png" x="0" y="0" w="13" h="80" gammagroup="Background"/>
+  <bitmap id="notifier.bg.center.da" file="wasabi/notifier/notif-bg-alpha.png" x="13" y="0" w="133" h="80" gammagroup="Background"/>
+  <bitmap id="notifier.bg.right.da" file="wasabi/notifier/notif-bg-alpha.png" x="146" y="0" w="13" h="80"  gammagroup="Background"/>
+
+  <color id="notifier.dark" value="white" gammagroup="Glass"/>
+  <color id="notifier.bright" value="black"  gammagroup="Glass"/>
+
+</elements>
+

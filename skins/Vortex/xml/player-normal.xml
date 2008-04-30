@@ -1,0 +1,847 @@
+<groupdef id="xfade.slider">
+ <layer id="bckg" x="0" y="0" image="xfade.slider.bckg"/>
+ <layer id="frame" x="0" y="0" image="xfade.slider.frame"/>
+ <animatedLayer
+  id="slider.layer"
+  x="13" y="4"
+  w="87" h="6"
+  image="xfade.slider.slider.layer"
+ />
+ <Wasabi:HSlider
+  id="xfade.control"
+  x="13" y="4"
+  w="87" h="6"
+  alpha="0"
+  high="20"
+  cfgattrib="{F1239F09-8CC6-4081-8519-C2AE99FCB14C};Crossfade time"
+ />
+ <layer id="xfade.logo" x="2" y="5" image="xfade.slider.logo"/>
+</groupdef>
+
+<groupdef id="player.main.eq" name="EQ">
+
+<button
+ id="animationbutton"
+ x="164" y="69"
+ image="armour"
+ downImage="armourd"
+ activeImage="armourd"
+ hoverImage="armourd"
+ tooltip="EQ and Systems"
+/>
+
+
+
+ <slider
+    id="preamp"
+    action="EQ_PREAMP"
+    x="194" y="60"
+    w="7" h="31"
+    orientation="vertical"
+    thumb="player.main.eqthumb"
+    downThumb="player.main.eqthumb"
+  />
+  <slider
+   id="eq1"
+   action="EQ_BAND" param="1"
+   x="215" y="60"
+   w="7" h="31"
+   orientation="vertical"
+   thumb="player.main.eqthumb"
+   downThumb="player.main.eqthumb"
+  />
+  <slider
+   id="eq2"
+   action="EQ_BAND" param="2"
+   x="223" y="60"
+   w="7" h="31"
+   orientation="vertical"
+   thumb="player.main.eqthumb"
+   downThumb="player.main.eqthumb"
+  />
+  <slider
+   id="eq3"
+   action="EQ_BAND" param="3"
+   x="231" y="60"
+   w="7" h="31"
+   orientation="vertical"
+   thumb="player.main.eqthumb"
+   downThumb="player.main.eqthumb"
+  />
+  <slider
+   id="eq4"
+   action="EQ_BAND" param="4"
+   x="239" y="60"
+   w="7" h="31"
+   orientation="vertical"
+   thumb="player.main.eqthumb"
+   downThumb="player.main.eqthumb"
+  />
+  <slider
+   id="eq5"
+   action="EQ_BAND" param="5"
+   x="247" y="60"
+   w="7" h="31"
+   orientation="vertical"
+   thumb="player.main.eqthumb"
+   downThumb="player.main.eqthumb"
+   />
+  <slider
+   id="eq6"
+   action="EQ_BAND" param="6"
+   x="255" y="60"
+   w="7" h="31"
+   orientation="vertical"
+   thumb="player.main.eqthumb"
+   downThumb="player.main.eqthumb"
+  />
+  <slider
+   id="eq7"
+   action="EQ_BAND" param="7"
+   x="263" y="60"
+   w="7" h="31"
+   orientation="vertical"
+   thumb="player.main.eqthumb"
+   downThumb="player.main.eqthumb"
+  />
+  <slider
+   id="eq8"
+   action="EQ_BAND" param="8"
+   x="271" y="60"
+   w="7" h="31"
+   orientation="vertical"
+   thumb="player.main.eqthumb"
+   downThumb="player.main.eqthumb"
+  />
+  <slider
+   id="eq9"
+   action="EQ_BAND" param="9"
+   x="279" y="60"
+   w="7" h="31"
+   orientation="vertical"
+   thumb="player.main.eqthumb"
+   downThumb="player.main.eqthumb"
+  />
+  <slider
+   id="eq10"
+   action="EQ_BAND" param="10"
+   x="287" y="60"
+   w="7" h="31"
+   orientation="vertical"
+   thumb="player.main.eqthumb"
+   downThumb="player.main.eqthumb"
+  />
+ <button
+  id="Eq_Power"
+  action="EQ_TOGGLE"
+  x="183" y="62"
+  image="player.main.eqbutton"
+  downimage="player.main.eqbuttond"
+  activeImage="player.main.eqbuttond"
+  hoverimage="player.main.eqbuttond"
+  rectrgn="1"
+  tooltip="EQ ON"
+ />
+ <button
+  id="Eq_auto"
+  action="EQ_AUTO"
+  x="302" y="64"
+  image="player.main.eqbutton"
+  downimage="player.main.eqbuttond"
+  activeImage="player.main.eqbuttond"
+  hoverimage="player.main.eqbuttond"
+  rectrgn="1"
+  tooltip="automatic processing"
+ />
+ <button
+  id="Presets"
+  action="MENU" param="presets" 
+  x="302" y="79"
+  image="player.main.eqbutton"
+  downimage="player.main.eqbuttond"
+  activeImage="player.main.eqbuttond"
+  hoverimage="player.main.eqbuttond"
+  rectrgn="1"
+  tooltip="Presets"
+ />
+
+
+<AnimatedLayer
+ x="178" y="38"
+ w="143" h="77"
+ id="animationlayer"
+ image="anivis"
+ move="12"
+ speed="95"
+ autoplay="0"
+ autoreplay="0"
+ sysregion="1"
+/>
+
+
+<layer id="animinfo" x="11" y="0"/>
+
+<script id="animbybutton" file="scripts/Noname2.maki" />
+
+</groupdef>
+
+<groupdef id="player.main.cms" name="Close Min Switch">
+
+<animatedLayer
+	 id="anim.bass.left"
+	 x="96" y="236"
+	 image="left.bass.anim"
+	 w="22" h="32"
+	 ghost="1"
+	/>
+	<animatedLayer
+	 id="anim.treble.left"
+	 x="125" y="256"
+	 image="left.treble.anim"
+	 w="16" h="23"
+	 ghost="1"
+	/>
+	<animatedLayer
+	 id="anim.sub.left"
+	 image="anim.speaker.left"
+	 x="94" y="234"
+	 w="49" h="47"
+	 autoreplay="0"
+	 autoplay="1"
+	/>
+	<animatedLayer
+	 id="anim.treble.right"
+	 x="359" y="256"
+	 image="right.treble.anim"
+	 w="16" h="23"
+	 ghost="1"
+	/>
+	<animatedLayer
+	 id="anim.bass.right"
+	 x="382" y="236"
+	 image="right.bass.anim"
+	 w="22" h="32"
+	 ghost="1"
+	/>
+	<animatedLayer
+	 id="anim.sub.right"
+	 image="anim.speaker.right"
+	 x="357" y="234"
+	 w="49" h="47"
+	 autoreplay="0"
+	 autoplay="1"
+	/>
+	<button
+	 id="speaker.toggle"
+	 x="153" y="246"
+	 image="main.speakerb"
+ downimage="main.speakerb"
+ activeImage="main.speakerbd"
+ hoverimage="main.speakerbd"
+	tooltip="Speaker Covers"
+	/>
+
+
+
+<button 
+ id="Minimize"
+ x="375" y="81"
+ action="MINIMIZE"
+ image="player.main.eqbutton"
+ downimage="player.main.eqbuttond"
+ activeImage="player.main.eqbuttond"
+ hoverimage="player.main.eqbuttond"
+ rectrgn="1"
+ tooltip="Minimize"
+/>
+ <Deimos:WindowModeButton 
+ id="normal"
+ x="386" y="87"
+ image="player.main.eqbutton"
+ downimage="player.main.eqbuttond"
+ activeImage="player.main.eqbuttond"
+ hoverimage="player.main.eqbuttond"
+ switch="this"
+ layouts="4"
+		layoutIDs="Stick;Dashboard;Party!"
+		menuentry="Stick;Dashboard;Party! Mode"
+		rclick="menu"
+		lclick="switchto:Stick"
+ tooltip="Window Modes"
+ />
+<button 
+ id="Close"
+ x="101" y="85"
+ action="CLOSE"
+ image="player.main.close"
+ downimage="player.main.closed"
+ hoverimage="player.main.closed"
+ rectrgn="1"
+ tooltip="Terminate"
+/>
+<button 
+ id="Mem1"
+ x="397" y="109"
+ image="mem"
+ downimage="memd" rectrgn="1"
+ activeImage="memd"
+ hoverImage="memd"
+ tooltip="Hold 2 Sec to save song 1 "
+/>
+<button 
+ id="Mem2"
+ x="402" y="128"
+ image="mem"
+ downimage="memd" rectrgn="1"
+ activeImage="memd"
+ hoverImage="memd"
+ tooltip="Hold 2 Sec to save song 2"
+/>
+<button 
+ id="Mem3"
+ x="403" y="146"
+ image="mem"
+ downimage="memd" rectrgn="1"
+ activeImage="memd"
+ hoverImage="memd"
+ tooltip="Hold 2 Sec to save song 3"
+/>
+<button 
+ id="Mem4"
+ x="403" y="165"
+ image="mem"
+ downimage="memd" rectrgn="1"
+ activeImage="memd"
+ hoverImage="memd"
+ tooltip="Hold 2 Sec to save song 4"
+/>
+<button 
+ id="Mem5"
+ x="400" y="184"
+ image="mem"
+ downimage="memd" rectrgn="1"
+ activeImage="memd"
+ hoverImage="memd"
+ tooltip="Hold 2 sec to save song 5"
+/>
+
+<script id="scripts.quicksongpick" file="scripts/quicksongpick.maki"/>
+<layer id="rev2" image="player.main.rev2"  x="180" y="260" ghost="1" alpha="150" />
+<layer id="play2" image="player.main.play2" x="236" y="259" ghost="1" alpha="150"  />
+<layer id="eject2" image="player.main.eject2" x="206" y="261"  ghost="1" alpha="150"  />
+<layer id="stop2" image="player.main.stop2" x="275" y="261"  ghost="1" alpha="150"  />
+<layer id="fwd2" image="player.main.fwd2" x="305" y="259"  ghost="1" alpha="150"  />
+<button 
+ id="Stop"
+ x="277" y="264"
+ action="STOP"
+ image="player.main.stop"
+ downimage="player.main.stopd"
+ rectrgn="1"
+ activeImage="player.main.stopd"
+ hoverImage="player.main.stopd"
+ tooltip="Stop song"
+/>
+
+<layer
+ id="stop.hover"
+ image="player.main.stopH"
+x="277" y="264"
+ ghost="1"
+ alpha="0"
+/>
+
+<button 
+ id="Next"
+ x="307" y="261"
+ action="NEXT"
+ image="player.main.forward"
+ downimage="player.main.forward"
+ rectrgn="1"
+ activeImage="player.main.forward"
+ hoverImage="player.main.forward"
+ tooltip="Next Song"
+/>
+
+<layer
+ id="next.hover"
+ image="player.main.forwardH"
+ x="308" y="262"
+ ghost="1"
+ alpha="0"
+/>
+
+<button 
+ id="Rev"
+ x="181" y="262"
+ action="PREV"
+ image="player.main.rev"
+ downimage="player.main.rev"
+ rectrgn="1"
+ activeImage="player.main.rev"
+ hoverImage="player.main.rev"
+ tooltip="Previous Song"
+/>
+
+<layer
+ id="prev.hover"
+ image="player.main.prevh"
+ x="182" y="263"
+ ghost="1"
+ alpha="0"
+/>
+
+<button 
+ id="Eject"
+ x="208" y="264"
+ action="EJECT"
+ image="player.main.eject"
+ downimage="player.main.ejectd"
+ rectrgn="1"
+ activeImage="player.main.ejectd"
+ hoverImage="player.main.ejectd"
+ tooltip="Get Song"
+/>
+
+<layer
+ id="eject.hover"
+ image="player.main.ejectH"
+ x="208" y="264"
+ ghost="1"
+ alpha="0"
+/>
+
+<button 
+ id="Play"
+ x="236" y="260" h="25" w="26"
+ action="PLAY" 
+ image="player.main.playd"
+ downimage="player.main.playd"
+ rectrgn="1"
+ activeImage="player.main.play"
+
+ tooltip="Play song" 
+/>
+
+<button 
+ id="Pause"
+ x="236" y="260"
+ h="25" w="26"
+ action="pause" 
+ image="player.main.playdh"
+ downimage="player.main.playdh"
+ rectrgn="1"
+ activeImage="player.main.playdh"
+ tooltip="Pause current song" 
+/>
+
+ <!--hoverImage="player.main.playHp"-->
+
+<layer
+ id="pp.hover"
+ image="player.main.playH"
+ x="244" y="263"
+ ghost="1"
+ alpha="0"
+/>
+
+ <togglebutton
+ id="AVS"  action="TOGGLE" param="guid:avs"
+ x="88" y="162"
+ image="player.main.ML"
+ downimage="player.main.MLd" rectrgn="1"
+ activeImage="player.main.MLd"
+ hoverImage="player.main.MLd"
+ tooltip="AVS"
+/>
+
+<togglebutton
+ id="ML"  action="TOGGLE" param="guid:ml"
+ x="87" y="119"
+ image="player.main.ML"
+ downimage="player.main.MLd" rectrgn="1"
+ activeImage="player.main.MLd"
+ hoverImage="player.main.MLd"
+ tooltip="Media Library"
+/>
+
+<togglebutton
+ id="PL"  action="TOGGLE" param="guid:pl"
+ x="86" y="141"
+ image="player.main.ml"
+ downimage="player.main.mld" rectrgn="1"
+ activeImage="player.main.mLd"
+ hoverImage="player.main.mLd"
+ tooltip="PlayList"
+/>
+
+<togglebutton
+ id="pref" action="TOGGLE" param="config"
+ x="93" y="184"
+ image="player.main.ml"
+ downimage="player.main.mld" rectrgn="1"
+ activeImage="player.main.mLd"
+ hoverImage="player.main.mLd"
+ tooltip="Configuration"
+/>
+<Deimos:HyperLinkButton id="url" x="156" y="204"  w="10" h="10" text="" alpha="1" tooltip="Hey" url="http://www.skinconsortium.com/" />
+<Deimos:HyperLinkButton id="url" x="335" y="201"  w="10" h="10" text="" alpha="1" tooltip="Hey" url="http://www.skinconsortium.com/images/contact/martin.jpg" />
+<togglebutton
+ id="Shuffle"
+ x="206" y="221"
+ image="player.main.s" rectrgn="1"
+ downimage="player.main.sd"
+ activeImage="player.main.sd"
+ hoverimage="player.main.sd"
+ tooltip="Shuffle"
+ cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Shuffle"
+/>
+
+<togglebutton
+ id="Crossfade"
+ x="280" y="222"
+ image="player.main.x" rectrgn="1"
+ downimage="player.main.xds"
+ activeImage="player.main.xds"
+ hoverimage="player.main.xds"
+ tooltip="Crossfade (right click for duration)"
+ cfgattrib="{FC3EAF78-C66E-4ED2-A0AA-1494DFCC13FF};Enable crossfading"
+/>
+
+
+ 
+<togglebutton
+ id="pref" action="TOGGLE" param="guid:{B397A4CE-455A-4D62-8BF6-D0F91ACB70E6}"
+ x="311" y="217"
+ image="player.main.p" rectrgn="1"
+ downimage="player.main.pd"
+ activeImage="player.main.pd"
+ hoverimage="player.main.pd"
+ tooltip="Preferences"
+/>
+
+<togglebutton
+ id="Repeat"
+ x="175" y="216"
+ image="player.main.r" rectrgn="1"
+ downimage="player.main.rd"
+ activeImage="player.main.rd"
+ hoverimage="player.main.rd"
+ tooltip="Repeat"
+ cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Repeat"
+/> 
+ 
+<slider
+ id="seek"
+ action="SEEK"
+ x="180" y="235" w="138" h="15"
+ thumb="player.main.songpos"
+ downThumb="player.main.songposd" 
+/>
+
+<slider
+ id="seekghost"
+ action="SEEK"
+ x="180" y="235" w="138" h="15"
+ thumb="player.main.songpos"
+ downThumb="player.main.songposd" 
+  tooltip="Seek"
+/>
+
+
+<slider
+ id="vol"
+ action="VOLUME"
+ x="221" y="224" w="56" h="10"
+ thumb="player.main.volpos"
+ downThumb="player.main.volposd" 
+/>
+
+<layer id="VolumeAnim" image="dominator.normal.Volume"   x="219" y="223" move="0" rectrgn="0" tooltip="Volume"/>
+
+<script id="VolumeScr" file="scripts/volumebyregion.maki"/>
+
+
+
+</groupdef>
+
+<groupdef id="player.main.lcd" name="lcd">
+	
+  
+
+<!-- this lcd part is now seperate from background -->
+<layer id="playerlcdbackground" image="lcdbackground" x="131" y="96" ghost="1" sysregion="1" />
+<!-- layer fx new layer -->
+
+<Deimos:HyperLinkButton id="url" x="347" y="96"  w="5" h="3" text="" tooltip="UUL" url="http://www.skindustries.net/fotos/29%20april%202006/100_0035.jpg" />
+
+<!-- why 2?-->
+
+<Deimos:TickerText
+ 	id="Songticker" ticker="1"
+ 	display="songname"
+ 	x="141" y="99" 
+ 	w="214" h="25" alpha="200"
+ 	font="player.font.ticker" fontsize="25" align="center" color="font.display"
+	forcefixed="1"
+    antialias="1"
+	rightclickaction="trackmenu"
+    dblclickaction="trackinfo"
+	shadow="1" shadowcolor="0,0,0" shadowx="2" shadowy="2"
+	atf="1"
+/>
+
+<layer id="rating.bg" image="rating.n" x="227" y="97" h="13" w="43" />
+<layer id="rating.hover" image="rating.h" x="227" y="97" h="13" w="43" alpha="0" rectrgn="1" tooltip="Set Rating"/>
+<layer id="rating" image="rating.a" x="227" y="97" h="13" w="43" visible="1" ghost="1" />
+
+<script file="scripts/rating.maki"/>
+
+
+<!-- silly shadow on timer works the other way, hope its fixed in future version, not sure when it was fubard -->
+ <text
+	id="s2timer" 
+	display="time"
+	x="185" y="209" 
+	w="155" h="12"  
+	font="player.font.ticker" fontsize="22" align="left"  
+    	shadow="1" shadowcolor="0,0,0" shadowx="-2" shadowy="-2"
+	color="font.display"
+	timecolonwidth="7"
+/>
+
+
+<layer id="vortexlogo" x="153" y="140" alpha="180" image="main.vortex.logo" ghost="1" />
+
+
+
+
+<!-- thanks benski !!
+  <vis 
+      id="vis" 
+      x="24" y="43"
+      w="72" h="16"
+      bandwidth="thin"      (or "wide")
+      falloff="4"           (0-4)
+      peakfalloff="4"       (0-4)
+      fps="60"              (any number you want)
+      coloring="normal"     (also, ="fire", ="line")
+      peaks="0"             (0=off, 1=on)
+      oscstyle="solid"      (also, ="dots", ="lines")
+      />
+-->
+
+<vis id="vis" x="177" y="142" w="144" h="48" colorallbands="46,189,210" colorosc1="46,189,210" colorosc2="46,189,210" colorosc3="46,189,210" colorosc4="46,189,210" colorosc5="46,189,210" colorbandpeak="46,189,210" alpha="80" gammagroup="glass2"/>
+
+<vis id="vis.mirror" x="177" y="167" w="144" h="24" flipv="2" colorallbands="46,189,210" colorosc1="46,189,210" colorosc2="46,189,210" colorosc3="46,189,210" colorosc4="46,189,210" colorosc5="46,189,210" colorbandpeak="46,189,210" alpha="80" gammagroup="glass2"/>
+
+<vis id="tvis" x="177" y="142" w="144" h="48"  colorosc1="46,189,210" colorosc2="46,189,210" colorosc3="46,189,210" colorosc4="46,189,210" colorosc5="46,189,210" colorbandpeak="46,189,210" alpha="80"  
+		gammagroup="glass2" bandwidth="thin" falloff="1"           
+      peakfalloff="1" />
+
+<vis id="tvis.mirror" x="177" y="167" w="144" h="24" flipv="2"  colorosc1="46,189,210" colorosc2="46,189,210" colorosc3="46,189,210" colorosc4="46,189,210" colorosc5="46,189,210"  colorbandpeak="46,189,210"
+		alpha="80"  gammagroup="glass2" bandwidth="thin" falloff="1"           
+      peakfalloff="1" />
+
+<AnimatedLayer
+ id="vis.anim"
+ x="128" y="123"
+ w="240" h="85"
+ image="animvis1"
+ autoplay="0"
+ autoreplay="0"
+ alpha="120"
+/>
+
+<layer id="vortexlfx" x="130" y="95" alpha="180" image="main.layerFX" ghost="1" />
+
+<layer id="vis.mousetrap"  x="167" y="140" w="200" h="60" recrgn="1" move="0" tooltip="Click to change"/>
+
+<hideobject target="vis.anim;vis.mousetrap;vis.mirror;tvis.mirror;tvis"/>
+
+<script id="vis.script" file="scripts/visualizations.maki" param="Ambience Globe Fill,Globe Fill,Globe Bounce"/>
+<script id="sonique2_timer" file="scripts/sonique2_timer.maki"/>
+
+<!-- slob -->
+<!--layer id="glasslines" image="glasslines" x="130" y="95" move="0" rectrgn="0" ghost="1" alpha="125" /--> 
+
+
+
+<text
+ id="artist.display"
+ text="Linkin Park"
+ fontsize="40"
+ w="200" h="40"
+ x="150" y="140"
+ color="font.display"
+ font="player.font.ticker"
+ alpha="0"
+ ghost="1"
+/>
+
+<text
+ id="song.display"
+ display="songname" ticker="1"
+ fontsize="30"
+ w="180" h="40"
+ x="170" y="146"
+ color="#FFFFFF"
+ font="player.font.ticker"
+ shadowx="1" shadowy="1" alpha="0"
+ ghost="1"
+/>
+
+
+
+
+<!-- slob, lines better off here -->
+<layer id="glasslines" image="glasslines" x="130" y="95" move="0" rectrgn="0" ghost="1" alpha="125" /> 
+
+<layer id="shine" image="player.main.lcdglass" x="" y="" move="0" rectrgn="0" ghost="1" alpha="225"/>
+
+<layer id="letters" image="letters" x="" y="" move="0" rectrgn="0" ghost="1"/> 
+
+</groupdef>
+
+<groupdef id="drawer_left" w="92" h="79" background="player.main.drawer.left">
+
+	<Wasabi:Button id="prog.button.1"
+		x="15" y="10" w="25" h="15"
+		Text="1"/>
+	<script file="scripts/progbutton.maki" param="prog.button.1,prog1,EQ|Flat"/>
+
+	<Wasabi:Button id="prog.button.2"
+		x="40" y="10" w="25" h="15"
+		Text="2"/>
+	<script file="scripts/progbutton.maki" param="prog.button.2,prog2,EQ|Full"/>
+	
+	<Wasabi:Button id="prog.button.3"
+		x="15" y="25" w="25" h="15"
+		Text="3"/>
+	<script file="scripts/progbutton.maki" param="prog.button.3,prog3,EQ|Rock"/>
+
+	<Wasabi:Button id="prog.button.4"
+		x="40" y="25" w="25" h="15"
+		Text="4"/>
+	<script file="scripts/progbutton.maki" param="prog.button.4,prog4,EQ|Soft"/>
+	
+	<Wasabi:Button id="prog.button.5"
+		x="15" y="40" w="25" h="15"
+		Text="5"/>
+	<script file="scripts/progbutton.maki" param="prog.button.5,prog5,EQ|Pop"/>
+	
+	<Wasabi:Button id="prog.button.6"
+		x="40" y="40" w="25" h="15"
+		Text="6"/>
+	<script file="scripts/progbutton.maki" param="prog.button.6,prog6,BROWSE|http://www.skinconsortium.com"/>
+
+	<Wasabi:Button id="prog.button.7"
+		x="15" y="55" w="25" h="15"
+		Text="7"/>
+	<script file="scripts/progbutton.maki" param="prog.button.7,prog7,BROWSE|http://www.winamp.com"/>
+
+	<Wasabi:Button id="prog.button.8"
+		x="40" y="55" w="25" h="15"
+		Text="8"/>
+<Deimos:HyperLinkButton id="url" x="39" y="39"  w="3" h="3" text="" tooltip="Hey" url="http://www.skinconsortium.com/Ralph3.jpg" />
+	<script file="scripts/progbutton.maki" param="prog.button.8,prog8,BROWSE|http://www.quad-helix.com"/>
+
+	<script file="scripts/draw_l.maki"/>
+</groupdef>
+
+
+
+<groupdef id="drawer_right" w="92" h="79" background="player.main.drawer.right">
+	<text
+	 id="header" bold="1"
+	 text="BackLight"
+	 font="verdana"
+	 color="#FFFFFF"
+	 x="24" y="3"
+	 w="70" h="15"
+	 fontsize="12"
+	 ghost="1"
+	/>
+	<text
+	 id="header"
+	 text="Mode: "
+	 font="verdana"
+	 color="#FFFFFF"
+	 x="29" y="15"
+	 w="70" h="15"
+	 fontsize="12"
+	 ghost="1"
+	/>
+
+	<Wasabi:DropDownList
+		x="26" y="30" h="18" w="53"
+		listheight="92"
+		items="Volume;Bass;Treble;Blink;*User;*Off" select="*User"
+		cfgattrib="{E9C2D926-53CA-400f-9A4D-85E31755A4CF};LightMode"
+	/>
+
+	<text
+	 id="header"
+	 text="User Value: "
+	 font="verdana"
+	 color="#FFFFFF"
+	 x="25" y="48"
+	 w="70" h="15"
+	 fontsize="12"
+	 ghost="1"
+	/>
+	<Wasabi:hslider
+	 id="light.intensity"
+	 x="27" y="62"
+	 w="50" h="15"
+	 cfgattrib="{E9C2D926-53CA-400f-9A4D-85E31755A4CF};LightValue"
+	/>
+
+	<script id="draw" file="scripts/draw_r.maki" />
+
+</groupdef>
+
+
+<!-- background="player.main.trans" alphabackground="player.main.trans"-->
+<layout id="normal" background="player.main.background" alphabackground="player.main.background" snapadjusttop="50" snapadjustleft="50" snapadjustright="50" snapadjustbottom="51">
+<layer id="lights" image="light.layer.1" x="14" y="" ghost="1"/>
+ <group id="drawer_left" x="57" y="113" sysregion="1" />
+ <group id="drawer_right" x="350" y="113" sysregion="1" />
+ 
+<!-- main lcd group is now behind main background, need this to cut off the corners on the layer fx layer -->
+ <group id="player.main.lcd" w="500" h="400" /> 
+
+
+
+ <layer id="player.main.background" image="player.main.background" move="1" sysregion="1" alpha="1" />
+ <layer id="player.main.background" image="player.main.background" sysregion="1" ghost="1" />
+ <layer id="shadow" image="player.main.shadow" x="53" y="99" move="0" rectrgn="0" ghost="1"  /> 
+
+
+
+<!-- need to split all this stuff up as below, so we can seperate the lcd from the main background, try and leave as is -->
+ <group id="player.main.eq" w="500" h="400"/> 
+ <group id="player.main.cms" w="500" h="400"/> 
+
+<layer id="glasslines" image="glasslines" x="130" y="95" move="0" rectrgn="0" ghost="1" alpha="125" /> 
+
+<AnimatedLayer
+ x="107" y="88"
+ w="282" h="157"
+ id="opening"
+ image="open"
+ move="10"
+ speed="190"
+ autoplay="1"
+ autoreplay="0"
+ sysregion="1"
+/>
+
+
+
+
+
+ 
+ <group id="xfade.slider" x="286" y="223"/>
+
+</layout>

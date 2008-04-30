@@ -1,0 +1,237 @@
+<include file="notifier-elements.xml"/>
+<container id="notifier" name="Notifier" dynamic="1" default_visible="0"  nomenu="1" nofocusapponclose="1">
+
+	<include file="notifier-normal.xml"/>
+
+</container>
+
+<!-- ****************** ConfigPage: NOTIFICATIONS *********************** -->
+<!-- ********** Token from Winamp Modern (credits to Nullsoft) ********** -->
+
+<groupdef id="optionsgroup.notifications">
+   	<Wasabi:RadioGroup id="notifshowmode" />
+	<Wasabi:CheckBox x="0" y="0" radioid="notifshowmode"
+		cfgattrib="{1AB968B3-8687-4a35-BA70-FCF6D92FB57F};Show always"
+		text="Show always"
+	/>
+	<Wasabi:CheckBox x="0" y="18" radioid="notifshowmode"
+		cfgattrib="{1AB968B3-8687-4a35-BA70-FCF6D92FB57F};Show with windowshade and when minimized"
+		text="Show with windowshade/minimized"
+	/>
+	<Wasabi:CheckBox x="0" y="36" radioid="notifshowmode"
+		cfgattrib="{1AB968B3-8687-4a35-BA70-FCF6D92FB57F};Show only when minimized"
+		text="Show only when minimized"
+	/>
+	<Wasabi:CheckBox x="0" y="54" radioid="notifshowmode"
+		cfgattrib="{1AB968B3-8687-4a35-BA70-FCF6D92FB57F};Never show"
+		text="Never show"
+	/>
+	<Wasabi:CheckBox
+		cfgattrib="{1AB968B3-8687-4a35-BA70-FCF6D92FB57F};Disable in fullscreen"
+		x="0" y="78"
+		text="Disable in fullscreen"
+	/>
+  	<Wasabi:CheckBox
+		cfgattrib="{1AB968B3-8687-4a35-BA70-FCF6D92FB57F};Show on the end of track again"
+		x="0" y="100"
+		text="Show at the end of track agian"
+	/>
+</groupdef>
+
+<groupdef id="optionsgroup.notifications.location">
+   	<Wasabi:RadioGroup id="notiflocation" />
+	<Wasabi:CheckBox x="0" y="0" radioid="notiflocation"
+		cfgattrib="{715B2C0D-1DF0-4bb2-9D74-0FACAE27CE97};Bottom Right"
+		text="Bottom Right"
+	/>
+	<Wasabi:CheckBox x="0" y="20" radioid="notiflocation"
+		cfgattrib="{715B2C0D-1DF0-4bb2-9D74-0FACAE27CE97};Bottom Center"
+		text="Bottom Center"
+	/>
+	<Wasabi:CheckBox x="0" y="40" radioid="notiflocation"
+		cfgattrib="{715B2C0D-1DF0-4bb2-9D74-0FACAE27CE97};Bottom Left"
+		text="Bottom Left"
+	/>
+	<Wasabi:CheckBox x="0" y="60" radioid="notiflocation"
+		cfgattrib="{715B2C0D-1DF0-4bb2-9D74-0FACAE27CE97};Top Right"
+		text="Top Right"
+	/>
+	<Wasabi:CheckBox x="0" y="80" radioid="notiflocation"
+		cfgattrib="{715B2C0D-1DF0-4bb2-9D74-0FACAE27CE97};Top Center"
+		text="Top Center"
+	/>
+	<Wasabi:CheckBox x="0" y="100" radioid="notiflocation"
+		cfgattrib="{715B2C0D-1DF0-4bb2-9D74-0FACAE27CE97};Top Left"
+		text="Top Left"
+	/>
+</groupdef>
+
+<groupdef id="config.Notifications" >
+
+	<Wasabi:Text 
+		id="description"
+		text="A Notification is a window (container) that comes up on on playing a new track\nor un-/pause playback. Use one of the following features to configure:"
+		x="0" y="0"
+  		w="0" h="32"
+		relatw="1"
+	/>
+
+	<Wasabi:TitleBox id="Display" visible="1" x="0" y="30" w="200" h="-103" relath="1" title="Display Modes" content="optionsgroup.notifications" />
+	<Wasabi:TitleBox id="Location" visible="1" x="205" y="30" w="-205" relatw="1" h="-103" relath="1" title="Location" content="optionsgroup.notifications.location" />
+
+	<Wasabi:Text 
+		id="description2"
+		text="Token from Winamp Modern. Credits go to Nullsoft and Sven Kistner!"
+		x="0" y="-69" relaty="1"
+  		w="-0" h="30" relatw="1"
+	/>
+
+	<Wasabi:Button id="show" x="0" y="-50" relaty="1" w="0" relatw="1" h="21" text="Show Notification" tooltip="Show Notification" />
+
+	<Deimos:RestoreButton id="restore"
+		x="0" y="-23" relaty="1" w="0" relatw="1" h="21"
+		text="Restore standard values" tooltip="Restore standard values"		setAttribs="{1AB968B3-8687-4a35-BA70-FCF6D92FB57F};Disable in fullscreen:1|{1AB968B3-8687-4a35-BA70-FCF6D92FB57F};Show always:1|{1AB968B3-8687-4a35-BA70-FCF6D92FB57F};Show on the end of track again:1|{715B2C0D-1DF0-4bb2-9D74-0FACAE27CE97};Bottom Right:1"
+		numAttribs="4"
+	/>
+
+</groupdef>
+
+<!-- ************************ NOTIFICATIONS > Fading ***************************** -->
+
+<groupdef id="optionsgroup.notifications.fade">
+
+  <Wasabi:Text 
+    id="tnotifier_fadeintime"
+    x="0" y="0" w="70" relatx="0"
+    align="left"
+    valign="top"
+    text="Fade in time:"
+  />
+  <Wasabi:Text 
+    id="tnotifier_holdtime"
+    x="0"  y="24" w="70" relatx="0"
+    align="left"
+    valign="top"
+    text="Display time:"
+  />
+  <Wasabi:Text 
+    id="tnotifier_fadeouttime"
+    x="0"  y="48" w="70" relatx="0"
+    align="left"
+    valign="top"
+    text="Fade out time:"
+  />
+
+  <Wasabi:HSlider
+    id="snotifier_fadeintime"
+    cfgattrib="{E9C2D926-53CA-400f-9A4D-85E31755A4CF};Notifications fade in time"
+    high="10000"
+    tooltip="Adjust Fade in time"
+    x="75" y="3"
+    w="-115" h="10" relatw="1"
+  />
+
+  <Wasabi:HSlider
+    id="snotifier_holdtime"
+    cfgattrib="{E9C2D926-53CA-400f-9A4D-85E31755A4CF};Notifications display time"
+    high="10000"
+    tooltip="Adjust Hold time"
+    x="75" y="27"
+    w="-115" h="10" relatw="1"
+  />
+
+  <Wasabi:HSlider
+    id="snotifier_fadeouttime"
+    cfgattrib="{E9C2D926-53CA-400f-9A4D-85E31755A4CF};Notifications fade out time"
+    high="10000"
+    tooltip="Adjust Fade out time"
+    x="75" y="51"
+    w="-115" h="10" relatw="1"
+  />
+
+	<Deimos:SliderText
+		id="fdin"
+		x="-35" y="0" w="35" relatx="1"
+		textbefore=""
+		textafter=" sec"
+		attribguid="{E9C2D926-53CA-400f-9A4D-85E31755A4CF}"
+		attribname="Notifications fade in time"
+		multiplier="1000"
+		ndigits="1"
+		division="1"
+	/>
+
+	<Deimos:SliderText
+		id="hold"
+		x="-35"  y="24" w="35" relatx="1"
+		textbefore=""
+		textafter=" sec"
+		attribguid="{E9C2D926-53CA-400f-9A4D-85E31755A4CF}"
+		attribname="Notifications display time"
+		multiplier="1000"
+		ndigits="1"
+		division="1"
+	/>
+	<Deimos:SliderText
+		id="fdout"
+		x="-35"  y="48" w="35" relatx="1"
+		textbefore=""
+		textafter=" sec"
+		attribguid="{E9C2D926-53CA-400f-9A4D-85E31755A4CF}"
+		attribname="Notifications fade out time"
+		multiplier="1000"
+		ndigits="1"
+		division="1"
+	/>
+
+</groupdef>
+
+<groupdef id="optionsgroup.notifications.fdin">
+   	<Wasabi:RadioGroup id="notiffdin" />
+	<Wasabi:CheckBox x="0" y="0" radioid="notiffdin"
+		cfgattrib="{D9891A39-7A38-45d8-9D51-A08F7270C836};Alpha Fade"
+		text="Alpha Fade"
+	/>
+	<Wasabi:CheckBox x="0" y="22" radioid="notiffdin"
+		cfgattrib="{D9891A39-7A38-45d8-9D51-A08F7270C836};Vertical Slide"
+		text="Vertical Slide"
+	/>
+	<Wasabi:CheckBox x="0" y="44" radioid="notiffdin"
+		cfgattrib="{D9891A39-7A38-45d8-9D51-A08F7270C836};Horizontal Slide"
+		text="Horizontal Slide"
+	/>
+</groupdef>
+
+<groupdef id="optionsgroup.notifications.fdout">
+   	<Wasabi:RadioGroup id="notiffdout" />
+	<Wasabi:CheckBox x="0" y="0" radioid="notiffdout"
+		cfgattrib="{560EAE41-1379-4927-AC55-FB5F4D47C9B8};Alpha Fade "
+		text="Alpha Fade"
+	/>
+	<Wasabi:CheckBox x="0" y="22" radioid="notiffdout"
+		cfgattrib="{560EAE41-1379-4927-AC55-FB5F4D47C9B8};Vertical Slide "
+		text="Vertical Slide"
+	/>
+	<Wasabi:CheckBox x="0" y="44" radioid="notiffdout"
+		cfgattrib="{560EAE41-1379-4927-AC55-FB5F4D47C9B8};Horizontal Slide "
+		text="Horizontal Slide"
+	/>
+</groupdef>
+
+<groupdef id="config.Notifications.fade">
+
+	<Wasabi:TitleBox id="Time" visible="1" x="0" y="0" w="0" h="90" relatw="1" relath="0" title="Time Configuration" content="optionsgroup.notifications.fade" />
+
+	<Wasabi:TitleBox id="fdin" visible="1" x="0" y="95" w="180" h="90" relath="0" title="Fade In Effect" content="optionsgroup.notifications.fdin" />
+
+	<Wasabi:TitleBox id="fdin" visible="1" x="-180" y="95" w="180" h="90" relatx="1" title="Fade Out Effect" content="optionsgroup.notifications.fdout" />
+
+	<Wasabi:Button id="show" x="0" y="-50" relaty="1" w="0" relatw="1" h="21" text="Show Notification" tooltip="Show Notification" />
+
+	<Deimos:RestoreButton id="restore"
+		x="0" y="-23" relaty="1" w="0" relatw="1" h="21"
+		text="Restore standard values" tooltip="Restore standard values"		setAttribs="{E9C2D926-53CA-400f-9A4D-85E31755A4CF};Notifications fade in time:1089|{E9C2D926-53CA-400f-9A4D-85E31755A4CF};Notifications display time:5049|{E9C2D926-53CA-400f-9A4D-85E31755A4CF};Notifications fade out time:2000|{D9891A39-7A38-45d8-9D51-A08F7270C836};Alpha Fade:1|{560EAE41-1379-4927-AC55-FB5F4D47C9B8};Alpha Fade :1"
+		numAttribs="5"
+	/>
+</groupdef>
+

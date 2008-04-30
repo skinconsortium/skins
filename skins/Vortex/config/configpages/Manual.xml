@@ -1,0 +1,14 @@
+<elements>
+	<bitmap id="config.manual" file="config/manual.jpg" />
+</elements>
+
+<!-- ************************ ABOUT ***************************** -->
+
+<groupdef id="config.manual" >
+
+	<group id="wasabi.window.embedded" x="0" y="5" w="372" h="194" />
+	<layer id="avs" image="config.manual" x="1" y="6" />
+
+	<Deimos:HyperLinkButton id="url" x="0" y="-26" relaty="1" w="372" h="21" text="Goto Reference Manual" tooltip="Reference Manual" url="http://www.skinconsortium.com/vortexmanual.htm" />
+
+</groupdef>

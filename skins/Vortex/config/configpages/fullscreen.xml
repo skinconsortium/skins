@@ -1,0 +1,43 @@
+<elements>
+	<bitmap id="config.fsimg" file="config/fs.jpg" gammagroup="Background"/>
+</elements>
+
+<!-- ************************ ABOUT ***************************** -->
+
+<groupdef id="config.fs" >
+
+	<text text="Select where the components are shown in Party! Mode" y="-3" w="0" relatw="1" align="center" color="font.display"/>
+
+	<layer id="avs" image="config.fsimg" x="34" y="13" />
+
+	<text text="Not supportet yet!" y="17" w="0" relatw="1" fontsize="22" bold="1" align="center" color="font.display"/>
+
+	<Wasabi:DropDownList 
+		x="50" y="50" h="20" w="125"
+		listheight="64"
+		items="Media Library;Playlist Editor;Video/AVS;Cover Art/Equalizer"
+		cfgattrib="{E9C2D926-53CA-400f-9A4D-85E31755A4CF};Vortex_fs_frame1"
+	/>
+
+	<Wasabi:DropDownList 
+		x="200" y="50" h="20" w="125"
+		listheight="64"
+		items="Media Library;Playlist Editor;Video/AVS;Cover Art/Equalizer"
+		cfgattrib="{E9C2D926-53CA-400f-9A4D-85E31755A4CF};Vortex_fs_frame2"
+	/>
+
+	<Wasabi:DropDownList 
+		x="50" y="140" h="20" w="125"
+		listheight="64"
+		items="Media Library;Playlist Editor;Video/AVS;Cover Art/Equalizer"
+		cfgattrib="{E9C2D926-53CA-400f-9A4D-85E31755A4CF};Vortex_fs_frame3"
+	/>
+
+	<Wasabi:DropDownList 
+		x="200" y="140" h="20" w="125"
+		listheight="64"
+		items="Media Library;Playlist Editor;Video/AVS;Cover Art/Equalizer"
+		cfgattrib="{E9C2D926-53CA-400f-9A4D-85E31755A4CF};Vortex_fs_frame4"
+	/>
+
+</groupdef>

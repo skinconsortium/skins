@@ -1,0 +1,111 @@
+<!-- Skin Configuration - Window token from Winamp3 Prefs :) -->
+
+<!--Broken since Winamp5.21 include file="configpages/*.xml" /-->
+
+<include file="configpages/about.xml" />
+<include file="configpages/avspreset.xml" />
+<include file="configpages/colorthemes.xml" />
+<include file="configpages/cputweaks.xml" />
+<include file="configpages/general preferences.xml" />
+<include file="configpages/playback.xml" />
+<include file="configpages/skins.xml" />
+<include file="configpages/fullscreen.xml" />
+<include file="configpages/snap.xml" />
+<include file="configpages/visualizer.xml" />
+<include file="configpages/Manual.xml" />
+<include file="configpages/mspp.xml" />
+<include file="configpages/bugreport.xml" />
+
+<container id="config" nomenu="1" name="Preferences" default_x="0" default_y="0" default_h="164" default_visible="1">
+
+<!-- ************************ IMPLEMENTATION ***************************** -->
+
+<groupdef id="config.imp">
+
+	<Deimos:ConfigSheet id="About" visible="1" x="0" y="0" w="0" h="0" relatw="1" relath="1" children="config.About;config.About.Credits;config.About.FAQ;config.About.Keys;config.About.History" createItem="About"/>
+
+	<Deimos:ConfigPage id="General Preferences" visible="0" x="0" y="0" w="0" h="0" relatw="1" relath="1" title="General Preferences" content="config.General" createItem="General Preferences"/>
+
+	<Deimos:ConfigPage id="Color Themes" visible="0" x="0" y="0" w="0" h="0" relatw="1" relath="1" title="Color Themes" createSubItem="General Preferences;Color Themes" content="config.CoTh"/>
+
+	<Deimos:ConfigGroup id="Smooth Skin" visible="0" x="0" y="0" w="0" h="0" relatw="1" relath="1" createSubItem="General Preferences;Smooth Skin"/>
+
+	<!--Deimos:ConfigPage id="Party! Mode" visible="0" x="0" y="0" w="0" h="0" relatw="1" relath="1" title="Party! Mode" content="config.fs" createSubItem="General Preferences;Party! Mode"/-->
+
+	<Deimos:ConfigPage id="Notifications" visible="0" x="0" y="0" w="0" h="0" relatw="1" relath="1" title="Notifications" content="config.Notifications" createSubItem="General Preferences;Notifications"/>
+
+	<Deimos:ConfigPage id="Transition" visible="0" x="0" y="0" w="0" h="0" relatw="1" relath="1" title="Notifier Transition" content="config.Notifications.fade" createSubItem="Notifications;Transition"/>
+
+	<Deimos:ConfigPage id="Album Art" visible="0" x="0" y="0" w="0" h="0" relatw="1" relath="1" title="Notifier Album Art" content="config.Notifications.cover" createSubItem="Notifications;Album Art"/>
+
+
+	<Deimos:ConfigPage id="Cover Search" visible="0" x="0" y="0" w="0" h="0" relatw="1" relath="1" title="Cover Search" content="config.cover.prefs" createSubItem="General Preferences;Cover Search"/>
+
+	<Deimos:ConfigPage id="Configuration" visible="0" x="0" y="0" w="0" h="0" relatw="1" relath="1" title="Cover Search: Configuration" content="config.cover.sizing" createSubItem="Cover Search;Configuration"/>
+
+	<Deimos:ConfigPage id="Search Engine" visible="0" x="0" y="0" w="0" h="0" relatw="1" relath="1" title="Cover Search: Search Engine" content="config.cover.se" createSubItem="Cover Search;Search Engine"/>
+
+	<!--Deimos:ConfigPage id="Amazon.com Config" visible="0" x="0" y="0" w="0" h="0" relatw="1" relath="1" title="Cover Search: Amazon.com Config" content="config.cover.amazon" createSubItem="Cover Search;Amazon.com Config"/-->
+
+	<Deimos:ConfigPage id="SnapAdjust" visible="0" x="0" y="0" w="0" h="0" relatw="1" relath="1" title="SnapAdjust" content="config.snap" createSubItem="General Preferences;SnapAdjust"/>
+
+
+	<Deimos:ConfigPage id="Visualization" visible="0" x="0" y="0" w="0" h="0" relatw="1" relath="1" title="Visualization" content="config.vis" createSubItem="General Preferences;Visualization"/>
+
+	<Deimos:ConfigPage id="Title Formating" visible="0" x="0" y="0" w="0" h="0" relatw="1" relath="1" title="Title Formating" content="config.atf.1" createSubItem="General Preferences;Title Formating"/>
+
+	<Deimos:ConfigPage id="Playback" visible="0" x="0" y="0" w="0" h="0" relatw="1" relath="1" title="Playback" content="config.Playback" createSubItem="General Preferences;Playback"/>
+
+
+	<Deimos:ConfigPage id="Skins" visible="0" x="0" y="0" w="0" h="0" relatw="1" relath="1" title="Skins" content="config.skins" createItem="Skins"/>
+
+	<Deimos:ConfigPage id="Reference Manual" visible="0" x="0" y="0" w="0" h="0" relatw="1" relath="1" title="Reference Manual" content="config.manual" createItem="Reference Manual"/>
+
+	<Deimos:ConfigPage id="Vortex AVS Preset" visible="0" x="0" y="0" w="0" h="0" relatw="1" relath="1" title="Vortex AVS Preset" content="config.avspreset" createItem="Vortex AVS Preset"/>
+
+	<Deimos:ConfigPage id="Bug Report/New skins" visible="0" x="0" y="0" w="0" h="0" relatw="1" relath="1" title="Bug Report/New skins" content="config.bugs" createItem="Bug Report/New skins"/>
+    
+	<Deimos:ConfigPage id="MSPP Info" visible="0" x="0" y="0" w="0" h="0" relatw="1" relath="1" title="MSPP Info" content="config.mspp" createItem="MSPP Info"/>
+
+</groupdef>
+
+<groupdef id="wasabi.preferences.tree.embedded" inherit_group="wasabi.window.embedded">
+	<Deimos:ConfigTree id="mylist"
+		x="1" y="1" w="-2" h="-2" relatw="1" relath="1"
+	/>
+</groupdef>
+
+<!-- Dimensions: default_w="540" default_h="282" -->
+
+<groupdef id="wasabi.preferences.group">
+	<group id="wasabi.preferences.tree.embedded"	
+		x="5" y="5" w="130" h="-10"
+		relath="1" 
+	/>
+	<CustomObject id="wasabi.preferences.configpane"
+		x="143" y="8"
+		w="-152" h="-16"
+		relatw="1" relath="1"
+	/>
+
+	<group id="config.imp" x="143" y="8" w="-152" h="-16" relatw="1" relath="1" />
+
+	<script id="config" param="@SKINPATH@" file="config/ownconfig.maki" />
+</groupdef>
+
+<layout id="normal" desktopalpha="0" default_w="578" maximum_w="578" minimum_w="578" default_h="371" minimum_h="371" maximum_h="371" default_visible="1">
+
+	<Wasabi:StandardFrame:Static
+		id="ConfigGroup"
+		x="0" y="0" w="0" h="0" relatw="1" relath="1"
+		padtitleleft="0"
+		padtitleright="0"
+	/>
+
+	<group id="wasabi.preferences.group" x="19" y="49" w="-38" h="-89" relatw="1" relath="1"/>
+
+	<sendparams target="window.titlebar.title" default="Preferences"/>
+
+</layout>
+
+</container>

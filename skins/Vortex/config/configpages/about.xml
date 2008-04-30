@@ -1,0 +1,383 @@
+<elements>
+	<bitmap id="config.banner" file="config/banner.png" gammagroup="glass"/>
+
+	<bitmap id="buddypic.deimos" file="config/buddypics/deimos.png" />
+	<bitmap id="buddypic.slob" file="config/buddypics/slob.png" />
+	<bitmap id="buddypic.ralph" file="config/buddypics/ralph.png" />
+	<bitmap id="buddypic.rohan" file="config/buddypics/rohan.png" />
+	<bitmap id="buddypic.hammer" file="config/buddypics/hammer.png" />
+	<bitmap id="buddypic.leech" file="config/buddypics/leech.png" />
+	<bitmap id="buddypic.default" file="config/buddypics/default.png" />
+
+  <bitmap id="about.pp.n" file="about/paypal.png" h="31" y="0"/>
+  <bitmap id="about.pp.h" file="about/paypal.png" h="31" y="31"/>
+  <bitmap id="about.pp.d" file="about/paypal.png" h="31" y="62"/>
+</elements>
+
+<!-- ************************ ABOUT ***************************** -->
+
+<groupdef id="config.About" name="About">
+
+	<Text 
+		id="About"
+		text="Copyright (c) 2005 - 2006 Skin Consortium"
+		x="0" y="159" align="center"
+  		w="0" h="32"
+		relatw="1" color="wasabi.text.color"
+	/>
+ 	<Text 
+		id="About"
+		text="Vortex  -  Version 1.02  -  13. Nov. 2006"
+		x="0" y="172" align="center"
+  		w="0" h="32"
+		relatw="1" color="wasabi.text.color"
+	/>
+
+	 <Text 
+		id="About"
+		text="email@skinconsortium.com"
+		x="0" y="188" align="center"
+  		w="0" h="32"
+		relatw="1" color="wasabi.text.color"
+	/>
+
+	<Deimos:HyperLinkButton id="url" x="6" y="-26" relaty="1" w="200" h="21" text="Visit www.skinconsortium.com for news" tooltip="Homepage" url="http://www.Skinconsortium.com" />
+
+	<group id="wasabi.window.embedded" x="6" y="5" w="372" h="162" />
+	<layer id="bannerbg" image="config.banner" x="7" y="6" />
+	<layer id="banner" image="config.banner" x="7" y="6" />
+
+	<script id="dmove" file="config/configpages/about.maki" />
+
+ 	<Text 
+		id="dd"
+		text="Support our work:"
+		x="175" y="-32" relaty="1" align="center"
+  		w="-210" h="32"
+		relatw="1" color="wasabi.text.color"
+	/>
+
+  <button id="donate" x="315" y="203" image="about.pp.n" hoverImage="about.pp.h" downImage="about.pp.d" />
+
+  <script file="about/donate.maki"/>
+
+</groupdef>
+
+<groupdef id="buddy.quadhelix" h="65" >
+	
+	<layer image="buddypic.ralph" x="0" y="0" />
+
+	 <Text 
+		text="QuadHelix"
+		x="40" y="0" align="left" bold="1" valign="top"
+  		w="0" h="32"
+		relatw="1" color="wasabi.text.color"
+	/>
+	 <Text 
+		text="[Ralph Barber]"
+		x="40" y="15" align="left" bold="1" valign="top"
+  		w="0" h="32"
+		relatw="1" color="wasabi.text.color"
+	/>
+	<Text 
+		text="Graphics"
+		x="40" y="35" align="left" bold="0" valign="top"
+  		w="0" h="100"
+		relatw="1" color="wasabi.text.color"
+	/>
+	<Text 
+		text="Layout"
+		x="40" y="50" align="left" bold="0" valign="top"
+  		w="0" h="100"
+		relatw="1" color="wasabi.text.color"
+	/>
+
+</groupdef>
+
+<groupdef id="buddy.deimos" h="65" >
+	
+	<layer image="buddypic.deimos" x="0" y="0" />
+
+	 <Text 
+		text="Deimos"
+		x="40" y="0" align="left" bold="1" valign="top"
+  		w="0" h="32"
+		relatw="1" color="wasabi.text.color"
+	/>
+	 <Text 
+		text="[Martin Poehlmann]"
+		x="40" y="15" align="left" bold="1" valign="top"
+  		w="0" h="32"
+		relatw="1" color="wasabi.text.color"
+	/>
+	<Text 
+		text="DpW Configsystem II"
+		x="40" y="35" align="left" bold="0" valign="top"
+  		w="0" h="100"
+		relatw="1" color="wasabi.text.color"
+	/>
+	<Text 
+		text="CoverSearch"
+		x="40" y="50" align="left" bold="0" valign="top"
+  		w="0" h="100"
+		relatw="1" color="wasabi.text.color"
+	/>
+
+</groupdef>
+
+<groupdef id="buddy.hammerhead" h="65" >
+	
+	<layer image="buddypic.hammer" x="0" y="0" />
+
+	 <Text 
+		text="Hammerhead"
+		x="40" y="0" align="left" bold="1" valign="top"
+  		w="0" h="32"
+		relatw="1" color="wasabi.text.color"
+	/>
+	 <Text 
+		text="[K Chanrai]"
+		x="40" y="15" align="left" bold="1" valign="top"
+  		w="0" h="32"
+		relatw="1" color="wasabi.text.color"
+	/>
+	<Text 
+		text="Animated Drawers"
+		x="40" y="35" align="left" bold="0" valign="top"
+  		w="0" h="100"
+		relatw="1" color="wasabi.text.color"
+	/>
+	<Text 
+		text="Stickmode Stretch"
+		x="40" y="50" align="left" bold="0" valign="top"
+  		w="0" h="100"
+		relatw="1" color="wasabi.text.color"
+	/>
+
+</groupdef>
+
+<groupdef id="buddy.rohan2kool" h="65" >
+	
+	<layer image="buddypic.rohan" x="0" y="0" />
+
+	 <Text 
+		text="rohan2kool"
+		x="40" y="0" align="left" bold="1" valign="top"
+  		w="0" h="32"
+		relatw="1" color="wasabi.text.color"
+	/>
+	 <Text 
+		text="[Rohan Prabhu]"
+		x="40" y="15" align="left" bold="1" valign="top"
+  		w="0" h="32"
+		relatw="1" color="wasabi.text.color"
+	/>
+	<Text 
+		text="Speakers, Backlight"
+		x="40" y="35" align="left" bold="0" valign="top"
+  		w="0" h="100"
+		relatw="1" color="wasabi.text.color"
+	/>
+	<Text 
+		text="Glowbuttons"
+		x="40" y="50" align="left" bold="0" valign="top"
+  		w="0" h="100"
+		relatw="1" color="wasabi.text.color"
+	/>
+
+</groupdef>
+
+<groupdef id="buddy.SLoB" h="65" >
+	
+	<layer image="buddypic.slob" x="0" y="0" />
+
+	 <Text 
+		text="SLoB"
+		x="40" y="0" align="left" bold="1" valign="top"
+  		w="0" h="32"
+		relatw="1" color="wasabi.text.color"
+	/>
+	 <Text 
+		text="[Kev Jaques]"
+		x="40" y="15" align="left" bold="1" valign="top"
+  		w="0" h="32"
+		relatw="1" color="wasabi.text.color"
+	/>
+	<Text 
+		text="LayerFX, ButtonTextHover"
+		x="40" y="35" align="left" bold="0" valign="top"
+  		w="0" h="100"
+		relatw="1" color="wasabi.text.color"
+	/>
+	<Text 
+		text="Tweaks, Gfx changes"
+		x="40" y="50" align="left" bold="0" valign="top"
+  		w="0" h="100"
+		relatw="1" color="wasabi.text.color"
+	/>
+
+</groupdef>
+
+<groupdef id="buddy.leechbite" h="65" >
+	
+	<layer image="buddypic.leech" x="0" y="0" />
+
+	 <Text 
+		text="leechbite"
+		x="40" y="0" align="left" bold="1" valign="top"
+  		w="0" h="32"
+		relatw="1" color="wasabi.text.color"
+	/>
+	 <Text 
+		text="[Jory Compendio]"
+		x="40" y="15" align="left" bold="1" valign="top"
+  		w="0" h="32"
+		relatw="1" color="wasabi.text.color"
+	/>
+	<Text 
+		text="Party! Mode"
+		x="40" y="35" align="left" bold="0" valign="top"
+  		w="0" h="100"
+		relatw="1" color="wasabi.text.color"
+	/>
+	<Text 
+		text="ProgButtons"
+		x="40" y="50" align="left" bold="0" valign="top"
+  		w="0" h="100"
+		relatw="1" color="wasabi.text.color"
+	/>
+
+</groupdef>
+
+<groupdef id="config.About.Credits" name="Development Team">
+
+	<group id="buddy.quadhelix" x="5" y="5" />
+
+	<group id="buddy.deimos" x="185" y="5" />
+
+	<group id="buddy.hammerhead" x="5" y="80" />
+
+	<group id="buddy.rohan2kool" x="185" y="80" />
+
+	<group id="buddy.slob" x="5" y="155" />
+
+	<group id="buddy.leechbite" x="185" y="155" />
+
+
+	<Text 
+		id="About"
+		text="R. Peter Clark"
+		x="0" y="222" align="left" bold="1" valign="top"
+  		w="0" h="100"
+		relatw="1" color="wasabi.text.color"
+	/>
+	<Text 
+		id="About"
+		text="Original CoverSearch via Amazon.com"
+		x="100" y="222" align="left" bold="0" valign="top"
+  		w="0" h="100"
+		relatw="1" color="wasabi.text.color"
+	/>
+
+</groupdef>
+
+<groupdef id="config.About.FAQ" name="Thanks">
+	 <Text 
+		id="About"
+		text="Thanks go to:"
+		x="0" y="8" align="center" bold="1" valign="top"
+  		w="0" h="32"
+		relatw="1" color="wasabi.text.color"
+	/>
+
+	<Text 
+		id="About"
+		text="Billyvnilly, dude883, Mandragora, pEar 242, Phobos,"
+		x="5" y="35" align="left" bold="1" valign="top"
+  		w="0" h="32"
+		relatw="1" color="wasabi.text.color"
+	/>
+	<Text 
+		id="About"
+		text="Pjn123, Rooster128"
+		x="5" y="50" align="left" bold="1" valign="top"
+  		w="0" h="32"
+		relatw="1" color="wasabi.text.color"
+	/>
+	<Text 
+		id="About"
+		text="for beta-testing, bugreports and suggestions"
+		x="5" y="65" align="left" bold="0" valign="top"
+  		w="0" h="32"
+		relatw="1" color="wasabi.text.color"
+	/>
+	<Text 
+		id="About"
+		text="Gaekwad2"
+		x="5" y="100" align="left" bold="1" valign="top"
+  		w="0" h="32"
+		relatw="1" color="wasabi.text.color"
+	/>
+	<Text 
+		id="About"
+		text="for reducing filesizes"
+		x="5" y="115" align="left" bold="0" valign="top"
+  		w="0" h="32"
+		relatw="1" color="wasabi.text.color"
+	/>
+
+<Text 
+		id="About"
+		text="Grandchild and ASD5A"
+		x="5" y="155" align="left" bold="1" valign="top"
+  		w="0" h="32"
+		relatw="1" color="wasabi.text.color"
+	/>
+
+<Text 
+		id="About"
+		text="For the Vortex AVS"
+		x="5" y="170" align="left" bold="0" valign="top"
+  		w="0" h="32"
+		relatw="1" color="wasabi.text.color"
+	/>
+</groupdef>
+
+<groupdef id="config.About.Keys" name="Keyboard Shortcuts">
+
+		<text x="5" y="5" h="20" w="90" bold="1" color="wasabi.text.color" text="Key:"/>
+		<text x="100" y="5" h="20" w="-70" relatw="1" bold="1" color="wasabi.text.color" text="Action:"/>
+
+
+		<text x="5" y="30" h="20" w="90" bold="2" color="wasabi.text.color" text="Alt+P"/>
+		<text x="100" y="30" h="20" w="-70" relatw="1" bold="0" color="wasabi.text.color" text="Toggle Skin Preferences"/>
+
+		<text x="5" y="50" h="20" w="90" bold="2" color="wasabi.text.color" text="Alt+G"/>
+		<text x="100" y="50" h="20" w="-70" relatw="1" bold="0" color="wasabi.text.color" text="Toggle Equalizer"/>
+
+		<text x="5" y="70" h="20" w="90" bold="2" color="wasabi.text.color" text="Alt+C"/>
+		<text x="100" y="70" h="20" w="-70" relatw="1" bold="0" color="wasabi.text.color" text="Toggle Cover Art Window"/>
+
+
+		<text x="5" y="100" h="20" w="90" bold="2" color="wasabi.text.color" text="Ctrl+F"/>
+		<text x="100" y="100" h="20" w="-70" relatw="1" bold="0" color="wasabi.text.color" text="Explore Playitem Folder"/>
+
+
+		<text x="5" y="130" h="20" w="90" bold="2" color="wasabi.text.color" text="Shift+Q"/>
+		<text x="100" y="130" h="20" w="-70" relatw="1" bold="0" color="wasabi.text.color" text="Close Winamp at the end of this Track"/>
+
+		<text x="5" y="150" h="20" w="90" bold="2" color="wasabi.text.color" text="Shift+Alt+Q"/>
+		<text x="100" y="150" h="20" w="-70" relatw="1" bold="0" color="wasabi.text.color" text="Shutdown at the end of this Track"/>
+
+		<text x="5" y="170" h="20" w="90" bold="2" color="wasabi.text.color" text="Ctrl+Q"/>
+		<text x="100" y="170" h="20" w="-70" relatw="1" bold="0" color="wasabi.text.color" text="Close Winamp at the end of the Playlist"/>
+
+		<text x="5" y="190" h="20" w="90" bold="2" color="wasabi.text.color" text="Ctrl+Alt+Q"/>
+		<text x="100" y="190" h="20" w="-70" relatw="1" bold="0" color="wasabi.text.color" text="Shutdown at the end of the Playlist"/>
+
+</groupdef>
+
+<groupdef id="config.About.History" name="Version history">
+	<group id="wasabi.window.embedded" x="4" y="4" h="-8" w="-8"  relatw="1" relath="1" />	
+	<browser id="histbrw" x="5" y="5" h="-10" w="-10"  relatw="1" relath="1" scrollbars="never" url="file:///@SKINPATH@whatsnew.txt" />
+</groupdef>

@@ -1,0 +1,234 @@
+<elements>
+<bitmap id="clear" file="player/clear.png" />
+<bitmapfont id="small.numbers" file="player/tinynum.png" charwidth="6" charheight="5" hspacing="0" vspacing="0"/>
+<truetypefont id="player.font.ticker" file="player/Beware.ttf"/>
+<bitmap id="player.main.background" file="player/background.png" gammagroup="Background" />
+<bitmap id="open" file="player/opening.png" gammagroup="Background"/>
+<bitmap id="player.main.trans" file="player/transbg.png" />
+<bitmap id="player.main.volpos" file="player/volpos.png" gammagroup="Glass2" />
+<bitmap id="player.main.volposd" file="player/volposd.png" gammagroup="Glass2"  />
+<bitmap id="player.main.drawer.left" file="player/draw_left.png" />
+<bitmap id="player.main.drawer.right" file="player/draw_right.png"  />
+<bitmap id="player.main.shadow" file="player/Shadow.png"  />
+<bitmap id="player.main.backgroundover" file="player/backgroundover.png" gammagroup="Backover" />
+<bitmap id="dominator.normal.Volume" file="player/Volume.png" gammagroup="glass2" />
+<bitmap id="dominator.normal.SliderMap" file="player/SliderMap.png"/>
+<bitmap id="dominator.normal.SliderMap2" file="player/SliderMap2.png"/>
+<bitmap id="mem" file="player/mem.png" gammagroup="Glass2"/>
+<bitmap id="memd" file="player/memd.png" gammagroup="Glass2"/>
+<bitmap id="anivis" file="player/anivis.png" gammagroup="background"/>
+<bitmap id="anivis3" file="player/playanim.png" gammagroup="Glass"/>
+<bitmap id="800mode" file="player/800mode.png" gammagroup="Glass"/>
+<bitmap id="lcdbackground" file="player/lcdbackground.png" gammagroup="Glass"/>
+<bitmap id="glasslines" file="player/glasslines.png" gammagroup="Glass"/>
+<bitmap id="player.main.lcdglass" file="player/mainlcdglass.png" />
+<bitmap id="backbase" file="player/backbase.png" gammagroup="Background"/>
+<bitmap id="Vis.Animation" file="player/shadeanim.png" gammagroup="Background"/>
+<bitmap id="letters" file="player/letters.png" gammagroup="glass"/>
+<bitmap id="armour" file="player/armour.png" gammagroup="Background"/>
+<bitmap id="armourd" file="player/armourd.png" gammagroup="Background"/>
+<bitmap id="player.main.PL" file="player/PL.png" gammagroup="Glass2"  />
+<bitmap id="overanim" file="player/overanim.png" gammagroup="Glass"  />
+<bitmap id="player.main.PLd" file="player/PLd.png" gammagroup="Glass"  />
+<bitmap id="player.main.PLds" file="player/PLds.png" gammagroup="Glass"  />
+<bitmap id="player.main.ML" file="player/ML.png" gammagroup="Glass2" />
+<bitmap id="player.main.MLd" file="player/MLd.png" gammagroup="Glass2"/>
+<bitmap id="player.main.MLds" file="player/MLds.png" gammagroup="Glass2"/>
+<bitmap id="player.dash.ML" file="player/oML.png" gammagroup="Glass2" />
+<bitmap id="player.dash.MLd" file="player/oMLd.png" gammagroup="Glass2"/>
+<bitmap id="player.dash.MLds" file="player/oMLds.png" gammagroup="Glass2"/>
+<bitmap id="animvis1" file="player/animvis1.png" gammagroup="Glass2"/>
+<bitmap id="animvis2" file="player/animvis2.png" gammagroup="Glass2"/>
+<bitmap id="animvis3" file="player/animvis3.png" gammagroup="Glass2"/>
+<bitmap id="anivis3" file="player/playanim.png" gammagroup="Glass"/>
+<bitmap id="smallbut" file="player/smallbut.png" gammagroup="Glass2"/>
+<bitmap id="smallbutd" file="player/smallbutd.png" gammagroup="Glass2"/>
+<bitmap id="player.main.MLover" file="player/MLover.png" gammagroup="Glass"/>
+
+<bitmap id="player.main.vbut" file="player/vbutton.png" gammagroup="Glass"/>
+<bitmap id="player.main.vbutd" file="player/vbuttond.png" gammagroup="Glass"/>
+<bitmap id="player.main.video" file="player/video.png" gammagroup="Glass"/>
+<bitmap id="player.main.colortheme" file="player/colotheme.png" gammagroup="Glass"/>
+<bitmap id="player.main.avs" file="player/avs.png" gammagroup="Glass"/>
+<bitmap id="togglebutton" file="player/main.png" gammagroup="Glass"/>
+<bitmap id="TBactive" file="player/mains.png" gammagroup="Glass"/>
+<bitmap id="TBdown" file="player/mains.png" gammagroup="Glass"/>
+
+<bitmap id="rating.h" file="player/rating.png" h="13" gammagroup="Glass"/>
+<bitmap id="rating.n" file="player/rating.png" h="13" y="13" gammagroup="Glass"/>
+<bitmap id="rating.a" file="player/rating.png" h="13" y="26" gammagroup="Glass"/>
+<bitmap id="rating.map" file="player/rating-reg.png" />
+
+<bitmap id="player.over" file="player/over.png" gammagroup="glass"/>
+<bitmap id="player.membutton" file="player/membutton.png" gammagroup="Background"/>
+<bitmap id="player.membuttond" file="player/membuttond.png" gammagroup="Background"/>
+
+<bitmap id="player.map.seek" file="player/mapa.png" />
+<bitmap id="player.map.seek2" file="player/map2a.png" />
+<bitmap id="player.seek" file="player/seek.png" gammagroup="Background"/>
+<bitmap id="eqon" file="player/eqon.png" gammagroup="Glass"/>
+<bitmap id="eqond" file="player/eqond.png" gammagroup="Glass"/>
+<bitmap id="player.main.eqover" file="player/eqover.png" gammagroup="Background"/>
+<bitmap id="player.main.eqbut" file="player/eq.png" gammagroup="Background"/>
+<bitmap id="player.main.eqbutd" file="player/eqd.png" gammagroup="Background"/>
+<bitmap id="player.main.eqbase" file="player/eqbase.png" gammagroup="Background"/>
+<bitmap id="player.main.eqbaseover" file="player/eqbaseover.png" gammagroup="Backover"/>
+<bitmap id="player.main.eqthumb" file="player/eqthumb.png" gammagroup="Background"/>
+<bitmap id="player.main.eqthumbd" file="player/eqthumbd.png" gammagroup="Background"/>
+<bitmap id="player.main.eqbutton" file="player/eqon.png" gammagroup="Glass2"/>
+<bitmap id="player.main.eqbuttond" file="player/eqond.png" gammagroup="Glass2"/>
+<bitmap id="player.main.eqbuttondd" file="player/eqond.png" gammagroup="Glass2"/>
+<bitmap id="player.main.songpos" file="player/songpos.png" gammagroup="Background"/>
+<bitmap id="player.main.songposd" file="player/songposd.png" gammagroup="Background"/>
+<bitmap id="player.main.visanimbigr" file="player/vis.png"  gammagroup="vis"/> 
+<bitmap id="player.main.animbut" file="player/animbut.png" gammagroup="Background" />
+<bitmap id="player.main.animbutd" file="player/animbutd.png" gammagroup="Background" />
+<bitmap id="player.main.vis" file="player/anivis2.png" gammagroup="glass"/>
+<bitmap id="player.map.vol" file="player/map2.png" gammagroup="Background"/> 
+
+<bitmap id="over" file="player/over.png" gammagroup="Background"/>
+<bitmap id="songinfo" file="player/songinfo.png" gammagroup="Glass"/>
+
+<bitmap id="player.main.close" file="player/close.png" gammagroup="Glass2"/>
+<bitmap id="player.main.closed" file="player/closed.png" gammagroup="Glass2"/>
+<bitmap id="player.main.min" file="player/min.png" gammagroup="Glass2"/>
+<bitmap id="player.main.mind" file="player/mind.png" gammagroup="Glass2"/>
+<bitmap id="player.main.shade" file="player/shade.png" gammagroup="Glass2"/>
+<bitmap id="player.main.shaded" file="player/shaded.png" gammagroup="Glass2"/>
+
+<bitmap id="player.main.x" file="player/xfade.png" gammagroup="Glass2"/>
+<bitmap id="player.main.xds" file="player/xfaded.png" gammagroup="Glass2"/>
+<bitmap id="player.main.xd" file="player/xfadeds.png" gammagroup="Glass2"/>
+<bitmap id="player.main.p" file="player/pref.png" gammagroup="Glass2"/>
+<bitmap id="player.main.pd" file="player/prefd.png" gammagroup="Glass2"/>
+<bitmap id="player.main.pds" file="player/prefds.png" gammagroup="Glass2"/>
+<bitmap id="player.main.r" file="player/repeat.png" gammagroup="Glass2"/>
+<bitmap id="player.main.rd" file="player/repeatd.png" gammagroup="Glass2"/>
+<bitmap id="player.main.rds" file="player/repeatds.png" gammagroup="Glass2"/>
+<bitmap id="player.main.s" file="player/shuf.png" gammagroup="Glass2"/>
+
+<bitmap id="player.main.sd" file="player/shufd.png" gammagroup="Glass2"/>
+<bitmap id="player.main.sds" file="player/shufds.png" gammagroup="Glass2"/>
+
+<bitmap id="player.main.play" file="player/play.png" gammagroup="Glass"/>
+<bitmap id="player.main.play2" file="player/play2.png" gammagroup="Glass"/>
+<bitmap id="player.main.play2d" file="player/play2d.png" gammagroup="Glass"/>
+<bitmap id="player.main.playH" file="player/playHover.png" gammagroup="Glass2"/>
+<bitmap id="player.main.playHp" file="player/playHoverpause.png" gammagroup="Glass2"/>
+<bitmap id="player.main.playd" file="player/playd.png" gammagroup="Glass"/>
+<bitmap id="player.main.playdh" file="player/playpause.png" gammagroup="Glass"/>
+
+<bitmap id="player.main.playds" file="player/playds.png" gammagroup="Glass"/>
+<bitmap id="player.main.Pause" file="player/pause.png" gammagroup="Glass"/>
+<bitmap id="player.main.Paused" file="player/paused.png" gammagroup="Glass"/>
+<bitmap id="player.main.stop" file="player/stop.png" gammagroup="Glass"/>
+<bitmap id="player.main.stop2" file="player/stop2.png" gammagroup="Glass"/>
+<bitmap id="player.main.stopd" file="player/stopd.png" gammagroup="Glass"/>
+<bitmap id="player.main.stopH" file="player/stopHover.png" gammagroup="Glass2"/>
+<bitmap id="player.main.rev" file="player/rev.png" gammagroup="Glass"/>
+<bitmap id="player.main.rev2" file="player/rev2.png" gammagroup="Glass"/>
+<bitmap id="player.main.revd" file="player/revd.png" gammagroup="Glass"/>
+<bitmap id="player.main.forward" file="player/forward.png" gammagroup="Glass"/>
+<bitmap id="player.main.fwd2" file="player/fwd2.png" gammagroup="Glass"/>
+<bitmap id="player.main.forwardd" file="player/forwardd.png" gammagroup="Glass"/>
+<bitmap id="player.main.forwardH" file="player/forwardHover.png" gammagroup="Glass2"/>
+<bitmap id="player.main.prev" file="player/rev.png" gammagroup="Glass"/>
+<bitmap id="player.main.prevd" file="player/revd.png" gammagroup="Glass"/>
+<bitmap id="player.main.prevh" file="player/revh.png" gammagroup="Glass2"/>
+<bitmap id="player.main.eject" file="player/eject.png" gammagroup="Glass"/>
+<bitmap id="player.main.eject2" file="player/eject2.png" gammagroup="Glass"/>
+<bitmap id="player.main.ejectd" file="player/ejectd.png" gammagroup="Glass"/>
+<bitmap id="player.main.ejectH" file="player/ejectHover.png" gammagroup="Glass2"/>
+
+<bitmap id="shadeover" file="player/shadeover.png" gammagroup="Glass"/>
+<bitmap id="player.main.shadebackground" file="player/shadebackground.png" gammagroup="Background" />
+<bitmap id="player.main.shadeinsets" file="player/shadebackground.png" x="400" w="200" y="0" h="31" gammagroup="Background" />
+<bitmap id="player.main.shadebackground.left" file="player/shadebackground.png" x="0" y="0" w="20" h="31" gammagroup="Background" />
+<bitmap id="player.main.shadebackground.middle" file="player/shadebackground.png" x="20" y="0" w="1" h="31" gammagroup="Background" />
+<bitmap id="player.main.shadebackground.right" file="player/shadebackground.png" x="580" y="0" w="20" h="31" gammagroup="Background" />
+<bitmap id="player.main.shadebackgroundover" file="player/shadebackgroundover.png" gammagroup="Backover" />
+<bitmap id="shadeplay" file="player/shadeplay.png" gammagroup="Glass2"/>
+<bitmap id="shadeplayd" file="player/shadeplayd.png" gammagroup="Glass2"/>
+<bitmap id="shadesong" file="player/shadesong.png" gammagroup="Glass2"/>
+<bitmap id="shadesongd" file="player/shadesongd.png" gammagroup="Glass2"/>
+<bitmap id="shademl" file="player/shademl.png" gammagroup="Glass2"/>
+<bitmap id="sfplaybut" file="player/sfplaybut.png" gammagroup="Background"/>
+
+<bitmap id="shademld" file="player/shademld.png" gammagroup="Glass2"/>
+<bitmap id="shadeon" file="player/shadeon.png" gammagroup="Glass2"/>
+<bitmap id="shadeond" file="player/shadeond.png" gammagroup="Glass2"/>
+<bitmap id="shadecover" file="player/shadecover.png" gammagroup="Glass2"/>
+<bitmap id="shadevol" file="player/shadevol.png" gammagroup="Glass2"/>
+ <bitmap id="shadevold" file="player/shadevold.png" gammagroup="Glass2"/>
+<bitmap id="shadevol2" file="player/shadevol2.png" gammagroup="Glass2"/>
+<bitmap id="shadevol2d" file="player/shadevol2d.png" gammagroup="Glass2"/>
+<bitmap id="shadevolover" file="player/shadevolover.png" gammagroup="Glass2"/>
+<bitmap id="shadeglass.l" file="player/shadeglass.png" x="0" w="100" y="0" h="22" gammagroup="Glass2"/>
+<bitmap id="shadeglass.m" file="player/shadeglass.png" x="100" w="1" y="0" h="22" gammagroup="Glass2"/>
+<bitmap id="shadeglass.r" file="player/shadeglass.png" x="100" w="238" y="0" h="22" gammagroup="Glass2"/>
+<bitmap id="shadeclose" file="player/shadeclose.png" gammagroup="Glass2"/>
+<bitmap id="shadeclosed" file="player/shadeclosed.png" gammagroup="Glass2"/>
+
+<bitmap id="anim.speaker.left" file="player/subopen.png" gammagroup="Background"/>
+<bitmap id="anim.speaker.right" file="player/subopen2.png" gammagroup="Background"/>
+<bitmap id="anim.speakers.toggle" file="player/speakTog.png" gammagroup="Background"/>
+
+<bitmap id="left.bass.anim" file="player/bass-l.png"/>
+<bitmap id="right.bass.anim" file="player/bass-r.png"/>
+<bitmap id="left.treble.anim" file="player/treble-l.png"/>
+<bitmap id="right.treble.anim" file="player/treble-r.png"/>
+
+<bitmap id="light.layer.1" file="player/lightlayer.png" gammagroup="Glass"/>
+
+<bitmap id="xfade.slider.bckg" file="player/xslider-background.png" gammagroup="Glass2"/>
+<bitmap id="xfade.slider.frame" file="player/xfade-frame.png" gammagroup="Glass2"/>
+<bitmap id="xfade.slider.slider.layer" file="player/x-slider.layer.png" gammagroup="Glass2"/>
+<bitmap id="xfade.slider.logo" file="player/xfade.logo.png" gammagroup="Glass"/>
+<bitmap id="stick.hoverx" file="player/shadeHoverx.png" gammagroup="Glass2"/>
+<bitmap id="stick.hoverml" file="player/shadeHoverml.png" gammagroup="Glass2"/>
+<bitmap id="stick.hoverpl" file="player/shadeHoverpl.png" gammagroup="Glass2"/>
+<bitmap id="stick.hoveravs" file="player/shadeHoveravs.png" gammagroup="Glass2"/>
+<bitmap id="stick.hoverv" file="player/shadeHoverv.png" gammagroup="Glass2"/>
+<bitmap id="stick.hoverEQ" file="player/shadeHoverEQ.png" gammagroup="Glass2"/>
+<bitmap id="stick.hovers" file="player/shadeHoverS.png" gammagroup="Glass2"/>
+<bitmap id="stick.hoverr" file="player/shadeHoverR.png" gammagroup="Glass2"/>
+<bitmap id="stick.hoverf" file="player/shadeHoverF.png" gammagroup="Glass2"/>
+<bitmap id="stick.hovere" file="player/shadeHoverE.png" gammagroup="Glass2"/>
+<bitmap id="stick.hoverp" file="player/shadeHoverP.png" gammagroup="Glass2"/>
+<bitmap id="stick.hoverp1" file="player/shadeHoverP1.png" gammagroup="Glass2"/>
+<bitmap id="stick.hoverx" file="player/shadeHoverx1.png" gammagroup="Glass2"/>
+<bitmap id="stick.hovers1" file="player/shadeHoverS1.png" gammagroup="Glass2"/>
+<bitmap id="stick.hoverr1" file="player/shadeHoverR1.png" gammagroup="Glass2"/>
+<bitmap id="stick.hoverf1" file="player/shadeHoverF1.png" gammagroup="Glass2"/>
+<bitmap id="stick.hovere1" file="player/shadeHoverE1.png" gammagroup="Glass2"/>
+<bitmap id="stick.hoverp1" file="player/shadeHoverP1.png" gammagroup="Glass2"/>
+<bitmap id="shademlover" file="player/shademlover.png" gammagroup="Background"/>
+
+<bitmap id="sframe.prev.image" file="player/sfPrev.png" gammagroup="Glass2"/>
+<bitmap id="sframe.eject.image" file="player/sfEject.png" gammagroup="Glass2"/>
+<bitmap id="sframe.play.image" file="player/sfPlay.png" gammagroup="Glass2"/>
+<bitmap id="sframe.stop.image" file="player/sfStop.png" gammagroup="Glass2"/>
+<bitmap id="sframe.next.image" file="player/sfNext.png" gammagroup="Glass2"/>
+<bitmap id="sframe.close.image" file="player/sfClose.png" gammagroup="Glass2"/>
+<bitmap id="main.speakerb" file="player/speakerb.png" gammagroup="Glass2"/>
+<bitmap id="main.speakerbd" file="player/speakerbd.png" gammagroup="Glass2"/>
+<bitmap id="main.lPanel.glow" file="player/leftPanelGlow.png"/>
+<bitmap id="main.rPanel.glow" file="player/rightPanelGlow.png"/>
+<bitmap id="main.close.glow" file="player/closePanel.png"/>
+<bitmap id="main.min.glow" file="player/minGlow.png"/>
+<bitmap id="main.shade.glow" file="player/shadeGlow.png"/>
+
+<bitmap id="main.layerFX" file="player/layerfx_ball.png" gammagroup="Glass2"/>
+<bitmap id="main.vortex.logo" file="player/vortextextlogo.png" gammagroup="Glass2"/>
+<bitmap id="main.media.www" file="player/mediatype.png" x="0" y="0" w="12" h="8" gammagroup="Glass2"/>
+<bitmap id="main.media.cd" file="player/mediatype.png" x="0" y="9" w="12" h="8" gammagroup="Glass2"/>
+<bitmap id="main.media.file" file="player/mediatype.png" x="0" y="18" w="12" h="8" gammagroup="Glass2"/>
+
+<bitmap id="player.main.eqbase2" file="player/eqbase.png" gammagroup="Background"/>
+<bitmap id="player.main.eqon2" file="player/eq2on.png" gammagroup="glass2"/>
+<bitmap id="player.main.eqon2d" file="player/eq2ond.png" gammagroup="glass2"/>
+<bitmap id="player.main.eqauto" file="player/eqauto.png" gammagroup="glass2"/>
+<bitmap id="player.main.eqautod" file="player/eqautod.png" gammagroup="glass2"/>
+<bitmap id="player.main.eqthumb2" file="player/eqthumb2.png" gammagroup="glass2"/>
+<bitmap id="player.main.eqthumb2d" file="player/eqthumb2d.png" gammagroup="glass2"/>
+</elements>

@@ -1,0 +1,479 @@
+<groupdef id="dashboard.player" >
+	<button id="button.min"
+		x="-30" y="2" relatx="1" action="MINIMIZE"
+		image="shadeclose"
+ downimage="shadeclosed"
+activeimage="shadeclosed"
+ hoverimage="shadeclosed"
+		tooltip="Minimize"/>
+		
+	<Deimos:WindowModeButton id="button.switch"
+		x="-20" y="2" relatx="1"
+		image="shadeclose"
+ downimage="shadeclosed"
+activeimage="shadeclosed"
+ hoverimage="shadeclosed"
+		switch="this"
+		layouts="4"
+		layoutIDs="Normal;Stick;Party!"
+		menuentry="Normal;Stick;Party! Mode"
+		rclick="menu"
+		lclick="switchto:Party!"
+		tooltip="Window Modes"
+	/>
+		
+	<button id="button.close"
+		x="-10" y="2" relatx="1" action="CLOSE"
+		image="shadeclose"
+ downimage="shadeclosed"
+activeimage="shadeclosed"
+ hoverimage="shadeclosed"
+		tooltip="Terminate"
+	/>
+
+	<text id="Songticker" display="songname" x="0" y="0" h="10" w="10" visible="0" alpha="0" ghost="0" />
+<Deimos:HyperLinkButton id="url" x="1" y="50"  w="10" h="10" text="" tooltip="Vortex" url="http://www.skinconsortium.com/vortex2.wav" alpha="5"/>
+<layer id="rating.bg" image="rating.n" x="69" y="22" h="13" w="43" />
+<layer id="rating.hover" image="rating.h" x="69" y="22" h="13" w="43" alpha="0" rectrgn="1"/>
+<layer id="rating" image="rating.a" x="69" y="22" h="13" w="43" visible="1" ghost="1" />
+
+<script file="scripts/rating.maki"/>
+
+<Deimos:TickerText
+ 	id="Songticker1" ticker="1"
+ 	display="songname"
+ 	x="15" y="35"  atf="1"
+ 	w="147" h="25" alpha="200"
+ 	font="player.font.ticker" fontsize="22" align="center" color="font.display"
+	forcefixed="1" forceupcase="0" valign="top"
+    	antialias="1"
+	rightclickaction="trackmenu"
+    	dblclickaction="trackinfo" 
+	shadow="1" shadowcolor="0,0,0" shadowx="2" shadowy="2"
+/>
+
+
+<vis id="vis" x="17" y="69" w="147" h="50" bandwidth="thin"  colorosc1="46,189,210" colorosc2="46,189,210" colorosc3="46,189,210" colorosc4="46,189,210" colorosc5="46,189,210" colorbandpeak="46,189,210"  alpha="60" coloring="fire"  falloff="1"           
+      peakfalloff="1"  gammagroup="glass"/>
+<vis id="vis" x="22" y="69" w="142" h="50" bandwidth="thin"  colorosc1="46,189,210" colorosc2="46,189,210" colorosc3="46,189,210" colorosc4="46,189,210" colorosc5="46,189,210" colorbandpeak="46,189,210"  alpha="60" coloring="fire"  falloff="1"           
+      peakfalloff="1"  gammagroup="glass" />
+<layer id="visover2" image="visover2"  x="15" y="63" move="0" rectrgn="0" ghost="1" />
+ <text
+	id="s2tim" 
+	display="time"
+	x="58" y="130" 
+	w="155" h="16"  
+	font="player.font.ticker" fontsize="28" align="left"  
+    	shadow="1" shadowcolor="0,0,0" shadowx="-2" shadowy="-2"
+	color="font.display"
+	timecolonwidth="7"
+/>
+<slider
+ id="vol"
+ action="VOLUME"
+x="64" y="148" w="56" h="10"
+ thumb="player.main.volpos"
+ downThumb="player.main.volposd" 
+/>
+
+
+<layer id="VolumeAnim" image="dominator.normal.Volume"   x="63" y="146" move="0" rectrgn="0" tooltip="Volume"/>
+
+<script id="VolumeScr" file="scripts/volumebyregion.maki"/>
+
+
+
+<layer id="seek.layer" image="shadesong" x="45" y="164" h="4" w="90" alpha="255"/>
+
+<Slider id="seek" action="SEEK" x="45" y="164" h="4" w="90"	thumb="shadesong" alpha="0" tooltip="Seek"/>
+
+<layer id="rev2" image="player.main.rev2"   x="19" y="171" ghost="1" alpha="250" />
+<layer id="play2" image="player.main.play2"  x="75" y="171" ghost="1" alpha="250"  />
+<layer id="eject2" image="player.main.eject2"   x="45" y="172" ghost="1" alpha="250"  />
+<layer id="stop2" image="player.main.stop2"  x="114" y="172"  ghost="1" alpha="250"  />
+<layer id="fwd2" image="player.main.fwd2" x="144" y="170"  ghost="1" alpha="250"  />
+
+<button 
+ id="Stop"
+ x="116" y="175"
+ action="STOP"
+ image="player.main.stop"
+ downimage="player.main.stopd"
+ rectrgn="1"
+ activeImage="player.main.stopd"
+ hoverImage="player.main.stopd"
+ tooltip="Stop song"
+/>
+
+<layer
+ id="stop.hover"
+ image="player.main.stopH"
+x="116" y="175"
+ ghost="1"
+ alpha="0"
+/>
+
+<button 
+ id="Next"
+ x="146" y="172"
+ action="NEXT"
+ image="player.main.forward"
+ downimage="player.main.forward"
+ rectrgn="1"
+ activeImage="player.main.forward"
+ hoverImage="player.main.forward"
+ tooltip="Next Song"
+/>
+
+<layer
+ id="next.hover"
+ image="player.main.forwardH"
+ x="147" y="172"
+ ghost="1"
+ alpha="0"
+/>
+
+<button 
+ id="Rev"
+ x="20" y="173"
+ action="PREV"
+ image="player.main.rev"
+ downimage="player.main.rev"
+ rectrgn="1"
+ activeImage="player.main.rev"
+ hoverImage="player.main.rev"
+ tooltip="Previous Song"
+/>
+
+<layer
+ id="prev.hover"
+ image="player.main.prevh"
+ x="21" y="174"
+ ghost="1"
+ alpha="0"
+/>
+
+<button 
+ id="Eject"
+ x="47" y="175"
+ action="EJECT"
+ image="player.main.eject"
+ downimage="player.main.ejectd"
+ rectrgn="1"
+ activeImage="player.main.ejectd"
+ hoverImage="player.main.ejectd"
+ tooltip="Get Song"
+/>
+
+<layer
+ id="eject.hover"
+ image="player.main.ejectH"
+ x="47" y="175"
+ ghost="1"
+ alpha="0"
+/>
+
+<button 
+ id="Play"
+ x="75" y="171"
+ action="PLAY" 
+ image="player.main.playd"
+ downimage="player.main.playd"
+ rectrgn="1"
+ activeImage="player.main.play"
+
+ tooltip="Play song"  
+/>
+
+<button 
+ id="Pause"
+   x="75" y="171"
+ h="25" w="26"
+ action="pause" 
+ image="player.main.playdh"
+ downimage="player.main.playdh"
+ rectrgn="1"
+ activeImage="player.main.playdh"
+ tooltip="Pause current song" 
+/>
+
+<layer
+ id="pp.hover"
+ image="player.main.playH"
+ x="83" y="174"
+ ghost="1"
+ alpha="0"
+/>
+
+
+<togglebutton
+ id="Shuffle"
+ x="36" y="140"
+ image="player.main.s" rectrgn="1"
+ downimage="player.main.sd"
+ activeImage="player.main.sd"
+ hoverimage="player.main.sd"
+ tooltip="Shuffle"
+ cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Shuffle"
+/>
+
+<togglebutton
+ id="Crossfade"
+ x="137" y="141"
+ image="player.main.x" rectrgn="1"
+ downimage="player.main.xd"
+ activeImage="player.main.xd"
+ hoverimage="player.main.xd"
+ tooltip="Crossfade"
+ cfgattrib="{FC3EAF78-C66E-4ED2-A0AA-1494DFCC13FF};Enable crossfading"
+/>
+
+<togglebutton
+ id="pref" action="TOGGLE" param="guid:ml"
+ x="148" y="127"
+ image="player.main.p" rectrgn="1"
+ downimage="player.main.pd"
+ activeImage="player.main.pd"
+ hoverimage="player.main.pd"
+ tooltip="Media Library"
+/>
+ 
+
+<togglebutton
+ id="Repeat"
+ x="23" y="128"
+ image="player.main.r" rectrgn="1"
+ downimage="player.main.rd"
+ activeImage="player.main.rd"
+ hoverimage="player.main.rd"
+ tooltip="Repeat"
+ cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Repeat"
+/> 
+ 
+</groupdef>
+
+<groupdef id="player.dashboard.playlist" >
+
+	<windowholder id="dplaylist" x="1" y="22" h="-61" w="-2" relath="1" relatw="1" autoclose="0" autoopen="1" autoavailable="0" visible="1" hold="guid:pl"/>
+	<Wasabi:Button id="pl" text="Click to open Playlist" x="1" y="22" h="-61" w="-2" relath="1" relatw="1" action="TOGGLE" param="guid:pl"/>
+	<grid
+		id="menubutton.file.normal"
+		x="1" y="1"
+		w="40" h="20"
+		topleft="wasabi.button.top.left"
+		top="wasabi.button.top"
+		topright="wasabi.button.top.right"
+		left="wasabi.button.left"
+		middle="wasabi.button.center"
+		right="wasabi.button.right"
+		bottomleft="wasabi.button.bottom.left"
+		bottom="wasabi.button.bottom"
+		bottomright="wasabi.button.bottom.right"
+		visible="1"
+	/> <grid
+		id="menubutton.file.pressed"
+		x="1" y="1"
+		w="40" h="20"
+		topleft="wasabi.button.pressed.top.left"
+		top="wasabi.button.pressed.top"
+		topright="wasabi.button.pressed.top.right"
+		left="wasabi.button.pressed.left"
+		middle="wasabi.button.pressed.center"
+		right="wasabi.button.pressed.right"
+		bottomleft="wasabi.button.pressed.bottom.left"
+		bottom="wasabi.button.pressed.bottom"
+		bottomright="wasabi.button.pressed.bottom.right"
+		visible="0"
+	/> <text	
+		id="button.text"
+		x="0" y="4"
+		w="40"
+		default="File"
+		align="center" ghost="1"
+		color="wasabi.button.text"
+	/>
+
+	<grid
+		id="menubutton.sort.normal"
+		x="41" y="1"
+		w="40" h="20"
+		topleft="wasabi.button.top.left"
+		top="wasabi.button.top"
+		topright="wasabi.button.top.right"
+		left="wasabi.button.left"
+		middle="wasabi.button.center"
+		right="wasabi.button.right"
+		bottomleft="wasabi.button.bottom.left"
+		bottom="wasabi.button.bottom"
+		bottomright="wasabi.button.bottom.right"
+		visible="1"
+	/> <grid
+		id="menubutton.sort.pressed"
+		x="41" y="1"
+		w="40" h="20"
+		topleft="wasabi.button.pressed.top.left"
+		top="wasabi.button.pressed.top"
+		topright="wasabi.button.pressed.top.right"
+		left="wasabi.button.pressed.left"
+		middle="wasabi.button.pressed.center"
+		right="wasabi.button.pressed.right"
+		bottomleft="wasabi.button.pressed.bottom.left"
+		bottom="wasabi.button.pressed.bottom"
+		bottomright="wasabi.button.pressed.bottom.right"
+		visible="0"
+	/> <text	
+		id="button.text"
+		x="40" y="4"
+		w="40"
+		default="Sort"
+		align="center" ghost="1"
+		color="wasabi.button.text"
+	/>
+
+	<grid
+		id="menubutton.pl.normal"
+		x="81" y="1"
+		w="40" h="20"
+		topleft="wasabi.button.top.left"
+		top="wasabi.button.top"
+		topright="wasabi.button.top.right"
+		left="wasabi.button.left"
+		middle="wasabi.button.center"
+		right="wasabi.button.right"
+		bottomleft="wasabi.button.bottom.left"
+		bottom="wasabi.button.bottom"
+		bottomright="wasabi.button.bottom.right"
+		visible="1"
+	/> <grid
+		id="menubutton.pl.pressed"
+		x="81" y="1"
+		w="40" h="20"
+		topleft="wasabi.button.pressed.top.left"
+		top="wasabi.button.pressed.top"
+		topright="wasabi.button.pressed.top.right"
+		left="wasabi.button.pressed.left"
+		middle="wasabi.button.pressed.center"
+		right="wasabi.button.pressed.right"
+		bottomleft="wasabi.button.pressed.bottom.left"
+		bottom="wasabi.button.pressed.bottom"
+		bottomright="wasabi.button.pressed.bottom.right"
+		visible="0"
+	/> <text	
+		id="button.text"
+		x="80" y="4"
+		w="40"
+		default="List"
+		align="center" ghost="1"
+		color="wasabi.button.text"
+	/>
+
+	<Menu id="File.menu" menugroup="pl" next="Playlist.menu" prev="Sort.menu" x="1" y="1" w="40" h="20" menu="WA5:PE_File" normal="menubutton.file.normal" down="menubutton.file.pressed" />
+	<Menu id="Playlist.menu" menugroup="pl" next="Sort.menu" prev="File.menu" x="41" y="1" w="40" h="20" menu="WA5:PE_Playlist" normal="menubutton.sort.normal" down="menubutton.sort.pressed" />
+	<Menu id="Sort.menu" menugroup="pl" next="File.menu" prev="Playlist.menu" x="81" y="1" w="40" h="20" menu="WA5:PE_Sort" normal="menubutton.pl.normal" down="menubutton.pl.pressed" />
+	<Wasabi:Button id="pl.add" action="PE_Add" x="1" y="-21" w="40" relaty="1" h="20" text="Add" tooltip="Add Files to Playlist" />
+	<Wasabi:Button id="pl.rem" action="PE_Rem" x="41" y="-21" w="40" relaty="1" h="20" text="Rem" tooltip="Remove Files from Playlist" />
+	<Wasabi:Button id="pl.sel" action="PE_Sel" x="81" y="-21" w="40" relaty="1" h="20" text="Select" tooltip="Select" />
+	<Wasabi:Button id="pl.misc" action="PE_Misc" x="121" y="-21" w="40" relaty="1" h="20" text="Misc" tooltip="Misc" />
+	<Wasabi:Button id="pl.list" action="PE_List" x="121" y="1" w="40" h="20" text="Cope" tooltip="Manage Playlist" />
+
+	<layer x="1" y="-38" w="-2" relatw="1" relaty="1" h="16" image="wasabi.window.center" />
+
+	<text	
+		id="button.text"
+		x="1" y="-38" h="14"
+		w="-2" relatw="1" relaty="1"
+		display="PE_Info"
+		align="center" ghost="0" ticker="1"
+		color="wasabi.button.text"
+	/>
+
+</groupdef>
+
+<groupdef id="dbc/time" h="30">
+	<button id="drag.dbc/time" image="dash.comp.line" x="0" y="0" h="13" w="180" rectrgn="1" move="0" sysregion="1"/>
+	 <Text 
+		id="date" ghost="1"
+		text="loading"
+		x="13" y="4" align="center"
+  		w="150" size="10" font="Tahoma" bold="1" color="font.clock"
+	/>
+	 <Text 
+		id="time" ghost="1"
+		text="daytime..."
+		x="63" y="16" align="left"
+  		w="180" size="10" font="Tahoma" bold="1" color="font.clock"
+	/>
+</groupdef>
+
+<groupdef id="dbc/cover" h="177">
+	<layer image="dash.comp.cover.text" ghost="1" />
+	<button id="drag.dbc/cover" image="dash.comp.cover.line" x="0" y="0" h="13" w="180" cursor="cursor.move" rectrgn="1" move="0" sysregion="1" tooltip="Move Component"/>
+	<button id="menu" x="5" y="4" h="8" w="9" rectrgn="1" move="0" tooltip="Component Menu"/>
+	<togglebutton image="dash.comp.close.text" x="160" y="0" h="13" w="12" rectrgn="1" move="0" tooltip="Close Component" cfgattrib="{DA3A4594-88EA-4dfe-AD39-42D3DF04BDC0};Show Cover"/>
+	<grid
+		id="grid"
+		x="8" y="14" h="-14" relath="1" w="164"
+		topleft="dash.comp.grid.topleft"
+		top="dash.comp.grid.top"
+		topright="dash.comp.grid.topright"
+		left="dash.comp.grid.left"
+		right="dash.comp.grid.right"
+		bottomleft="dash.comp.grid.bottomleft"
+		bottom="dash.comp.grid.bottom"
+		bottomright="dash.comp.grid.bottomright"
+	/>  
+		<Deimos:Cover id="holder.tcover" x="10" y="15" w="160" h="160" />
+<Deimos:HyperLinkButton id="url" x="1" y="50"  w="10" h="10" text="" tooltip="Vortex" url="http://www.skinconsortium.com/vortex3.wav" alpha="3"/>
+</groupdef>
+
+<groupdef id="dbc/vis" h="177">
+	<layer image="dash.comp.vis.text" ghost="1" />
+	<button id="drag.dbc/vis" image="dash.comp.vis.line" x="0" y="0" h="13" w="180" cursor="cursor.move" rectrgn="1" move="0" sysregion="1" tooltip="Move Component"/>
+	<button id="menu" x="5" y="4" h="8" w="9" rectrgn="1" move="0" tooltip="Component Menu"/>
+	<togglebutton image="dash.comp.close.text" x="160" y="0" h="13" w="12" rectrgn="1" move="0" tooltip="Close Component" cfgattrib="{DA3A4594-88EA-4dfe-AD39-42D3DF04BDC0};Show Visualization"/>
+	<grid
+		id="grid"
+		x="8" y="14" h="-14" relath="1" w="164"
+		topleft="dash.comp.grid.topleft"
+		top="dash.comp.grid.top"
+		topright="dash.comp.grid.topright"
+		left="dash.comp.grid.left"
+		right="dash.comp.grid.right"
+		bottomleft="dash.comp.grid.bottomleft"
+		bottom="dash.comp.grid.bottom"
+		bottomright="dash.comp.grid.bottomright"
+	/> 
+	<windowholder id="davs" x="10" y="15" w="160" h="160" autoclose="0" autoopen="1" autoavailable="0" visible="1" hold="guid:avs"/>
+
+	<Button id="vis" text="Start Visualization" x="11" y="16" w="158" h="158" action="TOGGLE" param="guid:avs" borders="1"/>
+
+</groupdef>
+
+<groupdef id="dbc/playlist" >
+	<layer image="dash.comp.playlist.text" ghost="1" />
+	<button id="drag.dbc/playlist" image="dash.comp.playlist.line" x="0" y="0" h="13" w="180" cursor="cursor.move" rectrgn="1" move="0" sysregion="1"/>
+	<button id="menu" x="5" y="4" h="8" w="9" rectrgn="1" move="0" tooltip="Component Menu"/>
+	<grid
+		id="grid"
+		x="8" y="14" h="-14" relath="1" w="164"
+		topleft="dash.comp.grid.topleft"
+		top="dash.comp.grid.top"
+		topright="dash.comp.grid.topright"
+		left="dash.comp.grid.left"
+		right="dash.comp.grid.right"
+		bottomleft="dash.comp.grid.bottomleft"
+		bottom="dash.comp.grid.bottom"
+		bottomright="dash.comp.grid.bottomright"
+	/>  
+	<group id="player.dashboard.playlist" x="9" y="15" h="-15" relath="1" w="162" sysregion="1"/>
+</groupdef>
+
+<groupdef id="dbc/google" h="33">
+	<layer image="dash.comp.google.text" ghost="1" />
+	<button id="drag.dbc/google" image="dash.comp.google.line" x="0" y="0" h="13" w="180" cursor="cursor.move" rectrgn="1" move="0" sysregion="1"/>
+	<button id="menu" x="5" y="4" h="8" w="9" rectrgn="1" move="0" tooltip="Component Menu"/>
+	<togglebutton image="dash.comp.close.text" x="160" y="0" h="13" w="12" rectrgn="1" move="0" tooltip="Close Component" cfgattrib="{DA3A4594-88EA-4dfe-AD39-42D3DF04BDC0};Show Google Search"/>
+	<Wasabi:EditBox id="search" x="9" y="15" relatw="0" w="139" h="18" />
+	<Wasabi:Button id="go" x="151" y="15" w="20" h="18" text="Go" tooltip="Start Google Search" />
+</groupdef>
+

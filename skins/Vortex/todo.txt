@@ -1,0 +1,7 @@
+copy vortex.wal out of your skin dir
+rename vortex.wal in vortex.zip
+extract all files
+replace scripts/rating.maki with new file
+repack to vortex.zip
+rename to vortex.wal
+install skin

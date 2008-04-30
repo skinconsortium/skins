@@ -1,0 +1,40 @@
+<WinampAbstractionLayer version="1.2">
+
+<skininfo>
+    <version>1.03 prerelease</version>
+    <name></name>
+    <comment>Skin Consortium - Community for Interface Design and Coding</comment>
+    <author>Quadhelix + hammerhead + rohan2kool + deimos + SLoB + Leechbite</author>
+    <email>email@skinconsortium.com</email>
+    <homepage></homepage>
+    <screenshot>skinshot.png</screenshot>
+ </skininfo>
+
+	<scripts>
+		<script id="loadattribs" file="scripts/loadattribs.maki"/>
+	</scripts>
+
+  <include file="xml/xui-hoverbutton.xml"/>
+
+  <include file="xml/system-colors.xml"/>
+  <include file="xml/standardframe.xml"/>
+  <include file="wasabi/wasabi.xml"/>
+  <include file="xml/player.xml"/>
+  <include file="xml/eq.xml"/> 
+  <include file="xml/system-elements.xml"/>
+  <include file="xml/xuiobjects.xml"/>
+  <include file="xml/coverwnd.xml"/>
+  <include file="config/config.xml"/>
+  <include file="about/about.xml"/>
+  <include file="xml/pledit.xml"/>
+  <include file="xml/video.xml"/>
+  <!--include file="console.xml"/-->
+  <include file="xml/gamma-presets.xml"/>
+  
+  <script id="scripts.quicksongpick" file="scripts/quicksongpick.maki"/>
+  <script id="effectCore" file="scripts/effectcore.maki"/>
+  <script id="effectCoreDashboard" file="scripts/effectcoreDashboard.maki"/>
+  <script file="wasabi/notifier/notifier.maki"/>
+
+
+ </WinampAbstractionLayer>

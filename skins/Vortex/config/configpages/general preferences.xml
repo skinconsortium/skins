@@ -1,0 +1,116 @@
+<!--elements>
+	<bitmap id="config.banner" file="config/titanbanner.png" />
+
+	<bitmap id="config.desktopalpha.enabled" file="config/desktopalpha.png" x="0" y="0" w="100" h="100" gammagroup="WASABI-Text"/> 
+	<bitmap id="config.desktopalpha.disabled" file="config/desktopalpha.png" x="100" y="0" w="100" h="100" gammagroup="WASABI-Text"/> 
+
+	<bitmap id="config.display.bg" file="config/display.png" x="0" y="0" w="302" h="83" gammagroup="WASABI-Text"/> 
+	<bitmap id="config.display.t1" file="config/display.png" x="123" y="104" w="161" h="17" gammagroup="WASABI-Text"/> 
+	<bitmap id="config.display.t2" file="config/display.png" x="123" y="124" w="161" h="17" gammagroup="WASABI-Text"/> 
+	<bitmap id="config.display.tl" file="config/display.png" x="8" y="143" w="284" h="16" gammagroup="WASABI-Text"/> 
+
+	<bitmap id="config.folder" file="gfx/folder.png" gammagroup="WASABI-Text"/>
+	
+	<bitmap id="config.prev.mainnormal.bg" file="config/mainnormal-bg.png" />
+	<bitmap id="config.prev.mainnormal.txt" file="config/mainnormal.png" gammagroup="WASABI-Text"/>
+</elements-->
+
+
+<!-- ************************ General Preferences ***************************** -->
+
+<groupdef id="config.gb" autoheightsource="last">
+
+	<Wasabi:RadioGroup id="gbut" />
+
+   <Wasabi:CheckBox x="0" y="0" text="No Effect" w="346" radioid="gbut"
+    cfgattrib="{149AEF68-5313-4ae9-9E9E-46CD0D9C818B};No Effect" ghost="1"
+  /> 
+  <Wasabi:CheckBox x="70" y="0" text="Blink fade" w="346"  radioid="gbut"
+    cfgattrib="{149AEF68-5313-4ae9-9E9E-46CD0D9C818B};Blink fade" ghost="1"
+  />
+   <Wasabi:CheckBox x="70" y="20" text="Fade in/out" w="346"  radioid="gbut"
+    cfgattrib="{149AEF68-5313-4ae9-9E9E-46CD0D9C818B};Fade in/out" ghost="1"
+  /> 
+  <Wasabi:CheckBox id="last" x="70" y="40" text="Fade blink" w="346"  radioid="gbut"
+    cfgattrib="{149AEF68-5313-4ae9-9E9E-46CD0D9C818B};Fade blink" ghost="1"
+  />
+
+
+</groupdef>
+
+<groupdef id="DisplayOptions.titlebox.content" autoheightsource="lastitem">
+  <Wasabi:CheckBox x="0" y="0" w="195" text="Always on top"
+    cfgattrib="{280876CF-48C0-40BC-8E86-73CE6BB462E5};Always on top"
+  />
+  <Wasabi:CheckBox x="0" y="20" w="195" text="Enable tooltips"
+    cfgattrib="{9149C445-3C30-4E04-8433-5A518ED0FDDE};Enable tooltips"
+  />
+  <Wasabi:CheckBox id="lastitem" x="0" y="40" w="195" text="Automatically dock windows"
+    cfgattrib="{280876CF-48C0-40BC-8E86-73CE6BB462E5};Enable docking"
+  />
+
+</groupdef>
+
+<groupdef id="light.titlebox.content" autoheightsource="lastitem">
+
+  <Wasabi:Text x="0" y="2" text="Mode:" />
+	<Wasabi:DropDownList
+		x="35" y="0" h="18" w="60"
+		listheight="92" id="lastitem"
+		items="Volume;Bass;Treble;Blink;*User;*Off" select="*User"
+		cfgattrib="{E9C2D926-53CA-400f-9A4D-85E31755A4CF};LightMode"
+	/>
+
+  <Wasabi:Text x="107" y="2" text="UserVal:   0%" />
+
+  <Wasabi:HSlider id="slider"
+    x="175" y="3"
+    w="-205" h="15"
+    relatw="1" 
+    cfgattrib="{E9C2D926-53CA-400f-9A4D-85E31755A4CF};LightValue"
+  />
+
+  <Wasabi:Text x="-30" y="2" relatx="1" text="100%" />
+
+
+</groupdef>
+
+
+
+<groupdef id="visualisation.refreshrate.content" autoheightsource="txt">
+  <Wasabi:HSlider id="refreshrate.slider"
+    x="0" y="0"
+    w="0" h="15"
+    relatw="1"
+    high="100"
+    cfgattrib="{9149C445-3C30-4e04-8433-5A518ED0FDDE};Timer refresh rate"
+  />
+  <Wasabi:Text  y="11" x="3" text="|"/>
+  <Wasabi:Text  y="11" x="173" text="|"/>
+  <Wasabi:Text  y="11" x="346" text="|"/>
+  <Wasabi:Text  y="22" x="3" text="slow"/>
+  <Wasabi:Text  y="22" x="153" w="60"  text="moderate"/>
+  <Wasabi:Text id="txt" y="22" x="333" w="40" text="fast"/>
+</groupdef>
+
+<groupdef id="config.general">
+
+	<Wasabi:TitleBox id="Menus" x="-200" y="0" w="200" relatx="1" title="Glowbuttons" content="config.gb" />
+
+	<Wasabi:CheckBox x="0" relatx="0" y="134" cfgattrib="{02CDB0CB-3998-4606-94A7-DF90E7366439};Check for Skinupdates at Startup" text="Check for new Skinversion at Startup"
+	/>
+
+  <Wasabi:TitleBox x="0" y="0" w="-210" relatw="1" title="Display Options" content="DisplayOptions.titlebox.content" /> 
+
+  <Wasabi:TitleBox x="0" y="85" w="0" relatw="1" title="Player Light" content="light.titlebox.content" /> 
+
+   <Wasabi:TitleBox x="0" y="-85" relaty="1" w="0" relatw="1" id="refreshrate" title="Timer Refresh Rate" content="visualisation.refreshrate.content" />
+  <script file="scripts/titleboxslidercb.maki" param="refreshrate;refreshrate.slider; : ;fps;fps;{9149C445-3C30-4e04-8433-5A518ED0FDDE}|Timer refresh rate" />
+
+	<Deimos:RestoreButton id="restore"
+		x="0" y="-23" relaty="1" w="0" relatw="1" h="21"
+		text="Restore standard values" tooltip="Restore standard values"		setAttribs="{149AEF68-5313-4ae9-9E9E-46CD0D9C818B};Fade in/out:1|{02CDB0CB-3998-4606-94A7-DF90E7366439};Player Light:1|{E9C2D926-53CA-400f-9A4D-85E31755A4CF};LightValue:255|{9149C445-3C30-4E04-8433-5A518ED0FDDE};Enable tooltips:1|{280876CF-48C0-40BC-8E86-73CE6BB462E5};Enable docking:1|{9149C445-3C30-4e04-8433-5A518ED0FDDE};Timer refresh rate:30|{02CDB0CB-3998-4606-94A7-DF90E7366439};Check for Skinupdates at Startup:1|{280876CF-48C0-40BC-8E86-73CE6BB462E5};Always on top:0"
+		numAttribs="8"
+	/>
+
+</groupdef>

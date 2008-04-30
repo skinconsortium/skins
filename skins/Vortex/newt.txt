@@ -1,0 +1,7 @@
+Vortex 1.03 prerelease (26. Feb. 2007):
+[Deimos]
+* New: PE_TIME in Dashboard
+* Improved: Fullscreen resolution detect
+* Fixed: Bugs on unpause in sonique2.m
+* Fixed: Potential bug in rating.maki
+* Fixed: Potential bug in cover.maki

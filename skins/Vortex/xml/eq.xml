@@ -1,0 +1,217 @@
+
+
+
+
+
+
+
+
+<groupdef id="eq.content.group">
+	
+ <eqvis 
+		id="spline"
+		x="27" y="9"
+		w="180" h="18"
+     
+		colortop= "23,173,196"
+		colormiddle= "23,173,196"
+		colorbottom= "23,173,196"
+		colorpreamp= "23,173,196"
+		gamma="150" 
+		gammagroup="glass"
+	/>	
+ <slider
+    id="preamp"
+    action="EQ_PREAMP"
+    x="110" y="33"
+   w="11" h="82"
+    orientation="vertical"
+    thumb="player.main.eqthumb2"
+    downThumb="player.main.eqthumb2d"
+    
+  />
+  
+  
+  
+<slider
+    id="eq1"
+    action="EQ_BAND" param="1"
+     x="21" y="33"
+    w="11" h="82"
+    orientation="vertical"
+    thumb="player.main.eqthumb2"
+    downThumb="player.main.eqthumb2d"
+    
+  />
+  
+    
+ <slider
+    id="eq2"
+    action="EQ_BAND" param="2"
+      x="35" y="33"
+   w="11" h="82"
+    orientation="vertical"
+    thumb="player.main.eqthumb2"
+    downThumb="player.main.eqthumb2d"
+    
+  />
+  
+     
+   <slider
+    id="eq3"
+    action="EQ_BAND" param="3"
+      x="49" y="33"
+    w="11" h="82"
+    orientation="vertical"
+    thumb="player.main.eqthumb2"
+    downThumb="player.main.eqthumb2"
+    
+  />
+   
+  <slider
+    id="eq4"
+    action="EQ_BAND" param="4"
+      x="63" y="33"
+    w="11" h="82"
+    orientation="vertical"
+    thumb="player.main.eqthumb2"
+    downThumb="player.main.eqthumb2"
+    
+  />
+   
+  <slider
+    id="eq5"
+    action="EQ_BAND" param="5"
+       x="77" y="33"
+   w="11" h="82"
+    orientation="vertical"
+    thumb="player.main.eqthumb2"
+    downThumb="player.main.eqthumb2"
+    
+  />
+  
+  <slider
+    id="eq6"
+    action="EQ_BAND" param="6"
+      x="144" y="33"
+    w="11" h="82"
+    orientation="vertical"
+    thumb="player.main.eqthumb2"
+    downThumb="player.main.eqthumb2"
+    
+  />
+  
+  
+  <slider
+    id="eq7"
+    action="EQ_BAND" param="7"
+      x="158" y="33"
+   w="11" h="82"
+    orientation="vertical"
+    thumb="player.main.eqthumb2"
+    downThumb="player.main.eqthumb2"
+    
+  />
+ 
+<slider
+    id="eq8"
+    action="EQ_BAND" param="8"
+       x="172" y="33"
+    w="11" h="82"
+    orientation="vertical"
+    thumb="player.main.eqthumb2"
+    downThumb="player.main.eqthumb2"
+    
+  />
+  
+ 
+<slider
+    id="eq9"
+    action="EQ_BAND" param="9"
+     x="186" y="33"
+    w="11" h="82"
+    orientation="vertical"
+    thumb="player.main.eqthumb2"
+    downThumb="player.main.eqthumb2"
+    
+  />
+  
+  
+<slider
+    id="eq10"
+    action="EQ_BAND" param="10"
+      x="200" y="33"
+   w="11" h="82"
+    orientation="vertical"
+    thumb="player.main.eqthumb2"
+    downThumb="player.main.eqthumb2"
+    
+  />
+
+  
+   <button
+      id="Eq_Power"
+      action="EQ_TOGGLE"
+      x="31" y="137"
+       image="player.main.eqon2"
+ downimage="player.main.eqon2d"
+ activeImage="player.main.eqon2d"
+ hoverimage="player.main.eqon2d"
+ rectrgn="1"
+      tooltip="EQ ON"
+    />
+    
+<button
+      id="Eq_auto"
+      action="EQ_AUTO"
+      x="90" y="140"
+      image="player.main.eqauto"
+ downimage="player.main.eqautod"
+ hoverimage="player.main.eqautod"
+activeImage="player.main.eqautod"
+ rectrgn="1"
+      tooltip="automatic processing"
+    />
+    
+<button
+      id="Presets"
+      action="MENU" param="presets" 
+      x="148" y="140"
+      image="player.main.eqauto"
+ downimage="player.main.eqautod"
+ hoverimage="player.main.eqautod"
+activeImage="player.main.eqautod"
+ rectrgn="1"
+      tooltip="Presets"
+    />
+
+</groupdef>
+
+<container id="eq" name="Equalizer" nomenu="1" >
+  <layout id="normal" background="player.main.eqbase2" alphabackground="player.main.eqbase2" droptarget="pldr" >
+   
+	<group id="eq.content.group" />
+	
+
+	
+	
+
+<button 
+ id="Close"
+ x="217" y="6"
+ 
+ action="CLOSE"
+image="player.main.eqbutton" rectrgn="1"
+  downimage="player.main.eqbuttond"
+  activeImage="player.main.eqbuttond"
+  hoverimage="player.main.eqbuttond"
+
+/>
+	
+	
+	
+
+
+</layout> 
+
+</container>

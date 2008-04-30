@@ -1,0 +1,89 @@
+<!-- ***************************
+
+player-fs-elements.xml
+
+fullscreen mode element defination.
+
+****************************** -->
+
+<elements>
+
+	<bitmap id="player.fs.base.top.left" file="player-fs/base.png" 
+		x="0" y="0" w="50" h="50" gammagroup="Background" />
+	<bitmap id="player.fs.base.top" file="player-fs/base.png" 
+		x="50" y="0" w="1000" h="50" gammagroup="Background" />
+	<bitmap id="player.fs.base.top.right" file="player-fs/base.png" 
+		x="1050" y="0" w="50" h="50" gammagroup="Background" />
+	<bitmap id="player.fs.base.left" file="player-fs/base.png" 
+		x="0" y="50" w="50" h="548" gammagroup="Background" />
+	<bitmap id="player.fs.base.middle" file="player-fs/base.png" 
+		x="50" y="50" w="1000" h="548" gammagroup="Background" />
+	<bitmap id="player.fs.base.right" file="player-fs/base.png" 
+		x="1050" y="50" w="50" h="548" gammagroup="Background" />
+	<bitmap id="player.fs.base.bottom.left" file="player-fs/base.png" 
+		x="0" y="598" w="50" h="200" gammagroup="Background" />
+	<bitmap id="player.fs.base.bottom" file="player-fs/base.png" 
+		x="50" y="598" w="1000" h="200" gammagroup="Background" />
+	<bitmap id="player.fs.base.bottom.right" file="player-fs/base.png" 
+		x="1050" y="598" w="50" h="200" gammagroup="Background" />
+		
+		<bitmap id="player.fsscroll" file="player-fs/fsscroll.png" gammagroup="Glass2"/>
+        <bitmap id="player.fsscrolld" file="player-fs/fsscrolld.png" gammagroup="Glass2"/>
+	<bitmap id="player.fs.button.prevnext" file="player-fs/button-prevnext.png" gammagroup="Glass2"/>
+	<bitmap id="player.fs.button.prevnext.down" file="player-fs/button-prevnext-down.png" gammagroup="Glass2"/>
+<bitmap id="player.fs.button.next" file="player-fs/button-next.png" gammagroup="Glass2"/>
+<bitmap id="player.fs.button.next.down" file="player-fs/button-next.png" gammagroup="Glass2"/>
+	<bitmap id="player.fs.button.eject" file="player-fs/button-eject.png" gammagroup="Glass2"/>
+	<bitmap id="player.fs.button.songposfs" file="player-fs/songposfs.png" gammagroup="Glass2"/>
+<bitmap id="player.fs.button.songposfsd" file="player-fs/songposfsd.png" gammagroup="Glass2"/>
+	<bitmap id="player.fs.button.eject.down" file="player-fs/button-eject-down.png" gammagroup="Glass2"/>
+	<bitmap id="player.fs.button.play" file="player-fs/button-play.png" gammagroup="Glass2"/>
+	<bitmap id="player.fs.button.play.down" file="player-fs/button-play-down.png" gammagroup="Glass2"/>
+	<bitmap id="player.fs.button.pause" file="player-fs/button-pause.png" gammagroup="Glass2"/>
+	<bitmap id="player.fs.button.pause.down" file="player-fs/button-pause-down.png" gammagroup="Glass2"/>
+	<bitmap id="player.fs.button.stop" file="player-fs/button-stop.png" gammagroup="Glass2"/>
+	<bitmap id="player.fs.button.stop.down" file="player-fs/button-stop-down.png" gammagroup="Glass2"/>
+
+	<bitmap id="player.fs.button.power" file="player-fs/button-power.png" gammagroup="Glass2"/>
+	<bitmap id="player.fs.button.power.down" file="player-fs/button-power-down.png" gammagroup="Glass2"/>
+	<bitmap id="player.fs.button.power.hover" file="player-fs/button-power-hover.png" gammagroup="Glass2"/>
+		
+	<bitmap id="player.fs.button.glow.big" file="player-fs/button-glow-big.png" gammagroup="Glass2"/>
+<bitmap id="player.fs.button.glow.big.pause" file="player-fs/button-glow-big-pause.png" gammagroup="Glass2"/>
+	<bitmap id="player.fs.button.glow.med" file="player-fs/button-glow-med.png" gammagroup="Glass2"/>
+    <bitmap id="player.fs.button.glow.medstop" file="player-fs/button-glow-medstop.png" gammagroup="Glass2"/>
+	<bitmap id="player.fs.button.glow.small" file="player-fs/button-glow-small.png" gammagroup="Glass2"/>
+    <bitmap id="player.fs.button.glow.smallprev" file="player-fs/button-glow-smallprev.png" gammagroup="Glass2"/>
+	
+	<bitmap id="player.fs.sep.vertical.top" file="player-fs/sep-vertical.png" 
+		x="0" y="0" w="33" h="15" gammagroup="Background"/>
+	<bitmap id="player.fs.sep.vertical.middle" file="player-fs/sep-vertical.png" 
+		x="0" y="15" w="33" h="565" gammagroup="Background"/>
+	<bitmap id="player.fs.sep.vertical.bottom" file="player-fs/sep-vertical.png" 
+		x="0" y="580" w="33" h="15" gammagroup="Background"/>
+		
+	<bitmap id="player.fs.sep.horizontal.left" file="player-fs/sep-horizontal.png" 
+		x="0" y="0" w="30" h="33" gammagroup="Background"/>
+	<bitmap id="player.fs.sep.horizontal.middle" file="player-fs/sep-horizontal.png" 
+		x="30" y="0" w="990" h="33" gammagroup="Background"/>
+	<bitmap id="player.fs.sep.horizontal.right" file="player-fs/sep-horizontal.png" 
+		x="1020" y="0" w="31" h="33" gammagroup="Background"/>
+
+	<bitmap id="player.fs.bar.left" file="player-fs/songbar.png" 
+		x="0" w="30" gammagroup="Background"/>
+	<bitmap id="player.fs.bar.middle" file="player-fs/songbar.png" 
+		x="30" w="1" gammagroup="Background"/>
+	<bitmap id="player.fs.bar.right" file="player-fs/songbar.png" 
+		x="360" w="30" gammagroup="Background"/>
+		
+	<bitmap id="player.fs.resizer" file="player-fs/resizer.png" gammagroup="Glass"/>
+
+	<bitmap id="player.fs.visoverlay" file="player-fs/visoverlay.png" gammagroup="Background" />
+	<bitmap id="player.fs.visoverlay2" file="player-fs/visoverlay2.png" gammagroup="Background" />
+
+	<bitmap id="player.fs.arrow" file="player-fs/arrow.png" gammagroup="Glass"/>
+	<bitmap id="player.fs.eqslider" file="player-fs/eqslider.png" />
+
+	<bitmap id="player.fs.eqover1" file="player-fs/eqover1.png" gammagroup="Glass"/>
+
+</elements>
