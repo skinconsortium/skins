@@ -1,0 +1,28 @@
+<include file="tooltips-elements.xml"/>
+
+<groupdef id="wasabi.tooltip.group" h="20" noactivation="1">
+   <grid
+     id="tooltip.grid"
+     x="0" y="0"
+     w="-16" h="17"
+     sysregion="1"
+     relatw="1"
+     left="wasabi.tooltip.left"
+     middle="wasabi.tooltip.center"
+     right="wasabi.tooltip.right"
+     
+   />
+   <text
+     id="tooltip.text"
+     x="6" y="1"
+     w="0" h="-2"
+     relatw="1" relath="1"
+     default="Tooltip Sample"
+     font="Arial" fontsize="14" color="wasabi.list.text.selected.background"
+     bold="0" align="left"
+     
+   />
+  <script id="tip" file="tooltips/tooltips.maki"/> 
+<!-- shadow="1" shadowcolor="55,55,55" shadowx="1" shadowy="1" -->
+</groupdef>
+

@@ -1,0 +1,6 @@
+<elements>
+   <bitmap id="wasabi.tooltip.left" file="tooltips/tooltips-elements.png" x="0" y="0" h="17" w="10" 		gammagroup="body"/>
+   <bitmap id="wasabi.tooltip.center" file="tooltips/tooltips-elements.png" x="10" y="0" h="17" w="2" 		gammagroup="body"/>
+   <bitmap id="wasabi.tooltip.right" file="tooltips/tooltips-elements.png" x="24" y="0" h="17" w="10" 		gammagroup="body"/>
+   <color id="wasabi.tooltips.textcolor" value="175,175,175" gammagroup="Font" />
+</elements>
