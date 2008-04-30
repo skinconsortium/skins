@@ -1,0 +1,112 @@
+<html>
+	<head>
+		<!-- 
+			Client-side CD Cover Script
+			by R. Peter Clark
+			http://www.rpeterclark.com
+			mail@rpeterclark
+			
+			Feel free to use this in your own skins, just give me a bit of credit
+		 -->
+		<meta http-equiv="Page-Enter" content="blendTrans(Duration=0.5)" />
+		<meta http-equiv="Page-Exit" content="blendTrans(Duration=0.5)" />
+		<style type="text/css">
+			BODY {
+				margin: 0px;
+				overflow: hidden;
+			}
+			
+			P {
+				font-family: Arial, sans-serif;
+				font-size: 8pt;
+			}
+		</style>
+		<script language="JavaScript">
+			var objXMLHTTP = null;
+			var strQueryURL = "";
+			
+			function init() {
+				var strQuery = unescape(document.location.search.substr(1));
+				strQuery = strQuery.replace(/[`~\!@#\$%\^&\*\(\)\-_\=\+\[\{\]\}\\\|;\:'\",<\.>\/\?]/gi, " ");
+				strQueryURL = "http://xml.amazon.com/onca/xml3?t=webservices-20&dev-t=D2SXSR4IGNEP44&KeywordSearch=" + escape(strQuery) + "&mode=music&type=lite&page=1&f=xml";
+				
+				try {
+					objXMLHTTP = new ActiveXObject("Microsoft.XMLHTTP");
+					objXMLHTTP.open("GET", strQueryURL, true)
+					objXMLHTTP.onReadyStateChange = xmlhttpOnReadyStateChange;
+					objXMLHTTP.send();
+				} catch(objError) {
+					if (objError.number = -2146827859) {
+						document.all.divLoading.style.display = "none";
+						document.all.divMissingComponent.style.display = "block";
+					} else {
+						alert("CDCover script failed: " + objError.description);
+					}
+				}
+			}
+			
+			function xmlhttpOnReadyStateChange() {
+				if (objXMLHTTP.readyState == 4) {
+					if (objXMLHTTP.statusText == "OK") {
+						if (objXMLHTTP.responseXML.selectSingleNode("//ImageUrlMedium")) {
+							var strImageURL = objXMLHTTP.responseXML.selectSingleNode("//ImageUrlMedium").text;
+							document.all.imgCover.src = strImageURL;
+							document.all.aImageCover.href = strQueryURL;
+
+						} else {
+							document.all.aNoMatches.href = strQueryURL;
+							document.all.divNoMatches.style.display = "block";
+							document.all.divLoading.style.display = "none";
+						}
+					} else {
+						document.all.divNotConnected.style.display = "block";
+						document.all.divLoading.style.display = "none";
+					}
+				}
+			}
+			
+			function imgCoverOnReadyStateChange() {
+				if (document.all.imgCover.readyState == "complete") {
+					document.all.divAlbumImage.style.display = "block";
+					document.all.divLoading.style.display = "none";
+				}
+			}
+		</script>
+	</head>
+	<body bgcolor="#B4B8CA" onload="init();">
+		<div id="divNoImage" style="position: absolute; top: 0px; left: 0px; width: 65px; height: 65px;">
+			<img src="noimage.jpg" width="65" height="65" />
+		</div>
+		
+		<div id="divLoading" style="position: absolute; top: 0px; left: 0px; width: 65px; height: 65px;">
+			<img src="connecting.jpg" width="65" height="65" />
+		</div>
+		
+		<div id="divNotConnected" style="position: absolute; top: 0px; left: 0px; width: 65px; height: 65px; display: none;">
+			<img src="noconnection.jpg" width="65" height="65" />
+		</div>
+		
+		<div id="divMissingComponent" style="position: absolute; top: 0px; left: 0px; width: 65px; height: 65px; display: none;">
+			<table border="0" width="100%" height="100%">
+				<tr>
+					<td align="center" valign="middle">
+						<p>
+							You do not have the necessary components needed to run this script. Download and install the <a href="http://download.microsoft.com/download/9/6/5/9657c01e-107f-409c-baac-7d249561629c/msxml.msi" target="_blank">Microsoft XML Core Services</a>.
+							<br />
+							<br />
+							Report problems <a href="http://forums.winamp.com/showthread.php?s=&threadid=182288" target="_blank">here</a>.
+						</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<div id="divNoMatches" style="position: absolute; top: 0px; left: 0px; width: 65px; height: 65px; display: none;">
+			<a id="aNoMatches" href=""><img src="nomatches.jpg" width="65" height="65" border="0" /></a>
+		</div>
+		
+		<div id="divAlbumImage" style="position: absolute; top: 0px; left: 0px; width: 65px; height: 65px; display: none;">
+			<a id="aImageCover" href="" target="_blank"><img id="imgCover" name="imgCover" style="width: 100%; height: 100%;" border="0" onreadystatechange="imgCoverOnReadyStateChange()" /></a>
+		</div>
+	</body>
+</html>

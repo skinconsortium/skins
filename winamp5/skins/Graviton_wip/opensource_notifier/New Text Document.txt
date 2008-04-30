@@ -1,0 +1,25 @@
+<container id="opensource_notifier" x="0" y="0" w="245" h="115" name="Notifier" dynamic="0" default_visible="0"  nomenu="1" nofocusapponclose="1">
+
+<layout id="normal" noparent="1" ontop="1" desktopalpha="1" forcealpha="1" noactivation="1" nodock="1" move="0">
+
+  <browser id="browser.cdcover" x="10" y="7" w="65" h="65" scrollbars="never" url="file:///@SKINPATH@opensource_notifier\html\cdcover.html" />
+
+  	<layer id="bg.shadow" image="notifier.shadow" fitparent="1" sysregion="0" ghost="1" rectrgn="0" move="0" x="0" y="0"/>
+    	
+	<layer id="bg" image="notifier.bg" fitparent="1" sysregion="0" ghost="1" rectrgn="0" move="0" x="0" y="0"/>
+
+  	<layer id="bg.inner" image="notifier.inner" rectrgn="0" move="0" sysregion="0" x="10" y="10" w="-20" relatw="1" h="-18" relath="1" ghost="1" />
+
+	<layer id="bg.backlight" image="notifier.backlight" rectrgn="0" move="0" sysregion="0" x="10" y="10" alpha="150" w="-20" relatw="1" h="-18" relath="1" ghost="1" />
+
+  	<group id="notifier.text" x="16" y="12" w="-5" fitparent="1" relatw="1" h="-5" relath="1" move="0"/>
+
+	<layer id="bg.lines" image="notifier.lines" rectrgn="0" move="0" sysregion="0" fitparent="1" x="17" y="13" w="-34" relatw="1" h="-24" relath="1" ghost="1" />
+
+	<layer id="bg.glass" image="notifier.glass" rectrgn="0" move="0" sysregion="0" fitparent="1" x="17" y="13" w="-34" relatw="1" h="-24" relath="1" ghost="1" />
+
+  <script file="opensource_notifier/cover.maki"/>
+
+</layout>
+
+</container>

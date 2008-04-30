@@ -1,0 +1,55 @@
+<html>
+	<head>
+		<meta http-equiv="Page-Enter" content="blendTrans(Duration=0.5)" />
+		<meta http-equiv="Page-Exit" content="blendTrans(Duration=0.5)" />
+		<style type="text/css">
+			BODY {
+				margin: 0px;
+				overflow: hidden;
+			}
+			
+			P {
+				font-family: Arial, sans-serif;
+				font-size: 8pt;
+			}
+		</style>
+
+
+
+		<script type="text/vbscript" language="VBScript">
+			
+			Function init()
+				Dim obShell
+				Dim sString
+				'Set obShell = WScript.CreateObject ("WSCript.shell")
+				'obShell.run "cmd /K SRVINFO -ns | FIND /I """System Up Time:"""" + " & Pause "
+				'sString = obShell.run "cmd /K SRVINFO -ns"
+				'document.write sString
+	
+				'obShell.execute "cmd /K SRVINFO -ns"
+				'Set obShell = nothing
+			end Function
+		
+		</script>
+	</head>
+	<body bgcolor="#B4B8CA" onload="">
+
+
+<FORM NAME="Form1">
+
+   <INPUT TYPE="Button" NAME="Button1" VALUE="Click">
+
+   <SCRIPT FOR="Button1" EVENT="onClick" LANGUAGE="VBScript">
+
+      MsgBox "Button Pressed!"
+	
+	WScript.Echo "cmd /K SRVINFO -ns"
+
+   </SCRIPT>
+
+</FORM>
+
+
+
+	</body>
+</html>
