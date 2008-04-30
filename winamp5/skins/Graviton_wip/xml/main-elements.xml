@@ -1,0 +1,277 @@
+
+
+<!-- Start Fonts -->
+
+<bitmap id="main.font.timer.normal.bitmap" file="fonts/font-timer-normal.png" gammagroup="GlassLabels" /> 
+<bitmap id="main.font.timer.shadow.bitmap" file="fonts/font-timer-shadow.png" gammagroup="GlassLabels" /> 
+
+<bitmapfont id="main.font.timer.normal" file="main.font.timer.normal.bitmap" charwidth="24" charheight="24" hspacing="-8" vspacing="0"/>
+<bitmapfont id="main.font.timer.shadow" file="main.font.timer.shadow.bitmap" charwidth="14" charheight="18" hspacing="0" vspacing="0" /> 
+
+<truetypefont id="main.font.arial.narrow" file="fonts/font-arial-narrow.ttf" />
+<truetypefont id="main.font.silkscreen" file="fonts/font-silkscreen.ttf" />
+
+<bitmap id="main.text.mask" file="images/main/text-mask.png" gammagroup="DarkGlass" />
+
+<color id="main.color.font.normal" value="255,255,255" gammagroup="GlassLabels" />
+<color id="main.color.font.shadow" value="87,86,100" gammagroup="GlassLabels" />
+
+<color id="winshade.color.font.normal" value="220,220,227" gammagroup="GlassLabels" />
+<color id="winshade.color.font.shadow" value="39,68,114" gammagroup="GlassLabels" />
+
+<!-- Start Background Images -->
+<bitmap id="main.background.shadow" file="images/main/background-shadow.png" />
+<bitmap id="main.background.lights" file="images/main/background-lights.png" gammagroup="Lights" />
+<bitmap id="main.background.base.outer" file="images/main/background-base-outer.png" gammagroup="BackgroundsOuter" />
+<bitmap id="main.background.base.outer.mask" file="images/main/background-base-outer-mask.png" gammagroup="BackgroundsOuter" />
+<bitmap id="main.background.base.outer.mask.dta" file="images/main/dtabackground-base-outer-mask.png" gammagroup="BackgroundsOuter" />
+<bitmap id="main.background.base.inner" file="images/main/background-base-inner.png" gammagroup="BackgroundsInner" />
+<bitmap id="main.background.base.inner.mask" file="images/main/background-base-inner-mask.png" gammagroup="BackgroundsInner" />
+<bitmap id="main.outer.rings" file="images/main/outer-rings.png" gammagroup="Rings" />
+<bitmap id="main.glass" file="images/main/glass.png" gammagroup="Glass" />
+<bitmap id="main.glass.reflection1" file="images/main/glass-reflection1.png" />
+
+
+
+<bitmap id="main.mousetrap" file="images/main/mousetrap.png" gammagroup="Glass" />
+<bitmap id="close" file="images/main/close.png" gammagroup="Glass" />
+<bitmap id="closed" file="images/main/closed.png" gammagroup="Glass" />
+<bitmap id="main.mousetrap2" file="images/main/mousetrap2.png" gammagroup="Glass" />
+<bitmap id="main.mousetrap.map" file="images/main/mousetrap-map.png"/>
+<bitmap id="main.button.change.ani" file="images/main/button-change-ani.png" gammagroup="MainAnim" />
+
+<!-- Start Main Window Controls -->
+<bitmap id="main.button.close" file="images/main/button-close.png" x="0" y="0" w="63" h="48" gammagroup="Buttons" />
+<bitmap id="main.button.close.hover" file="images/main/button-close.png" x="63" y="0" w="63" h="48" gammagroup="Buttons" />
+<bitmap id="main.button.close.down" file="images/main/button-close.png" x="126" y="0" w="63" h="48" gammagroup="Buttons" />
+<bitmap id="main.button.shade" file="images/main/button-shade.png" x="0" y="0" w="63" h="48" gammagroup="Buttons" />
+<bitmap id="main.button.shade.hover" file="images/main/button-shade.png" x="63" y="0" w="63" h="48" gammagroup="Buttons" />
+<bitmap id="main.button.shade.down" file="images/main/button-shade.png" x="126" y="0" w="63" h="48" gammagroup="Buttons" />
+<bitmap id="main.button.minimize" file="images/main/button-minimize.png" x="0" y="0" w="66" h="25" gammagroup="Buttons" />
+<bitmap id="main.button.minimize.hover" file="images/main/button-minimize.png" x="66" y="0" w="66" h="25" gammagroup="Buttons" />
+<bitmap id="main.button.minimize.down" file="images/main/button-minimize.png" x="132" y="0" w="66" h="25" gammagroup="Buttons" />
+<bitmap id="player.main.close" file="images/main/replay.png"   gammagroup="Buttons" />
+<bitmap id="player.main.closed" file="images/main/replayd.png"  gammagroup="Buttons" />
+<bitmap id="DTA" file="images/main/DTA.png" gammagroup="Buttons"/>
+<bitmap id="DTAD" file="images/main/DTAD.png" gammagroup="Buttons"/>
+
+<!-- Start Playback Control Button Images -->
+<bitmap id="main.button.previous" file="images/main/button-previous.png" x="0" y="0" w="41" h="42" gammagroup="PlaybackButtons" />
+<bitmap id="main.button.previous.hover" file="images/main/button-previous.png" x="41" y="0" w="41" h="42" gammagroup="PlaybackButtons" />
+<bitmap id="main.button.previous.down" file="images/main/button-previous.png" x="82" y="0" w="41" h="42" gammagroup="PlaybackButtons" />
+
+<bitmap id="main.button.next" file="images/main/button-next.png" x="0" y="0" w="42" h="44" gammagroup="PlaybackButtons" />
+<bitmap id="main.button.next.hover" file="images/main/button-next.png" x="42" y="0" w="42" h="44" gammagroup="PlaybackButtons" />
+<bitmap id="main.button.next.down" file="images/main/button-next.png" x="84" y="0" w="42" h="44" gammagroup="PlaybackButtons" />
+
+<bitmap id="main.button.play" file="images/main/button-play.png" x="0" y="0" w="72" h="92" gammagroup="PlaybackButtons" />
+<bitmap id="main.button.play.hover" file="images/main/button-play.png" x="72" y="0" w="72" h="92" gammagroup="PlaybackButtons" />
+<bitmap id="main.button.play.down" file="images/main/button-play.png" x="144" y="0" w="72" h="92" gammagroup="PlaybackButtons" />
+
+<bitmap id="main.button.pause" file="images/main/button-pause.png" x="0" y="0" w="68" h="74" gammagroup="PlaybackButtons" />
+<bitmap id="main.button.pause.hover" file="images/main/button-pause.png" x="68" y="0" w="68" h="74" gammagroup="PlaybackButtons" />
+<bitmap id="main.button.pause.down" file="images/main/button-pause.png" x="136" y="0" w="68" h="74" gammagroup="PlaybackButtons" />
+
+<bitmap id="main.button.stop" file="images/main/button-stop.png" x="0" y="0" w="44" h="44" gammagroup="PlaybackButtons" />
+<bitmap id="main.button.stop.hover" file="images/main/button-stop.png" x="44" y="0" w="44" h="44" gammagroup="PlaybackButtons" />
+<bitmap id="main.button.stop.down" file="images/main/button-stop.png" x="88" y="0" w="44" h="44" gammagroup="PlaybackButtons" />
+
+<bitmap id="main.button.load" file="images/main/button-load.png" x="0" y="0" w="52" h="38" gammagroup="PlaybackButtons" />
+<bitmap id="main.button.load.hover" file="images/main/button-load.png" x="52" y="0" w="52" h="38" gammagroup="PlaybackButtons" />
+<bitmap id="main.button.load.down" file="images/main/button-load.png" x="104" y="0" w="52" h="38" gammagroup="PlaybackButtons" />
+
+<!-- Start Slider Images -->
+<bitmap id="main.slider.progress.base" file="images/main/slider-progress-base.png" gammagroup="BackgroundsInner" />
+<bitmap id="main.slider.progress.ani" file="images/main/slider-progress-ani.png" gammagroup="VolumeandSeeker" />
+<bitmap id="main.slider.progress.key.ani" file="images/main/slider-progress-key-ani.png" gammagroup="VolumeandSeeker" />
+<bitmap id="main.slider.progress.map" file="images/main/slider-progress-map.png" />
+
+<bitmap id="main.slider.volume.base" file="images/main/slider-volume-base.png" gammagroup="BackgroundsInner" />
+<bitmap id="main.slider.volume.ani" file="images/main/slider-volume-ani.png" gammagroup="VolumeandSeeker" />
+<bitmap id="main.slider.volume.key.ani" file="images/main/slider-volume-key-ani.png" gammagroup="VolumeandSeeker" />
+<bitmap id="main.slider.volume.map" file="images/main/slider-volume-map.png" />
+
+<!-- Start Visuals -->
+ <!-- Anim 1 -->
+<bitmap id="main.anim1.treble" file="images/main/anim1/treble.png" gammagroup="Anim1Treble" />
+<bitmap id="main.anim1.bass" file="images/main/anim1/bass.png" gammagroup="Anim1Bass" />
+<bitmap id="main.anim1.mid" file="images/main/anim1/mid.png" gammagroup="Anim1Mid" />
+
+ <!-- Anim 2 -->
+<bitmap id="main.anim2" file="images/main/anim2.png" gammagroup="Anim2" />
+
+ <!-- Anim 3 -->
+<bitmap id="main.anim3" file="images/main/anim3.png" gammagroup="Anim3" />
+
+ <!-- Anim 4 -->
+<bitmap id="main.anim4" file="images/main/anim4.png" gammagroup="Glass" />
+
+<!-- Start Labels -->
+<bitmap id="main.label.volprog" file="images/main/label-volprog.png" gammagroup="GlassLabels" />
+
+<!-- Start Custom Button Images -->
+ <!-- Button 1 -->
+<bitmap id="custom.button.1.library" file="images/main/button-1.png" x="0" y="0" w="42" h="65" gammagroup="Buttons" />
+<bitmap id="custom.button.1.library.hover" file="images/main/button-1.png" x="42" y="0" w="42" h="65" gammagroup="Buttons" />
+<bitmap id="custom.button.1.library.down" file="images/main/button-1.png" x="84" y="0" w="42" h="65" gammagroup="Buttons" />
+
+<bitmap id="custom.button.1.visuals" file="images/main/button-1.png" x="0" y="65" w="42" h="65" gammagroup="Buttons" />
+<bitmap id="custom.button.1.visuals.hover" file="images/main/button-1.png" x="42" y="65" w="42" h="65" gammagroup="Buttons" />
+<bitmap id="custom.button.1.visuals.down" file="images/main/button-1.png" x="84" y="65" w="42" h="65" gammagroup="Buttons" />
+
+<bitmap id="custom.button.1.video" file="images/main/button-1.png" x="0" y="130" w="42" h="65" gammagroup="Buttons" />
+<bitmap id="custom.button.1.video.hover" file="images/main/button-1.png" x="42" y="130" w="42" h="65" gammagroup="Buttons" />
+<bitmap id="custom.button.1.video.down" file="images/main/button-1.png" x="84" y="130" w="42" h="65" gammagroup="Buttons" />
+
+<bitmap id="custom.button.1.playlist" file="images/main/button-1.png" x="0" y="195" w="42" h="65" gammagroup="Buttons" />
+<bitmap id="custom.button.1.playlist.hover" file="images/main/button-1.png" x="42" y="195" w="42" h="65" gammagroup="Buttons" />
+<bitmap id="custom.button.1.playlist.down" file="images/main/button-1.png" x="84" y="195" w="42" h="65" gammagroup="Buttons" />
+
+<bitmap id="custom.button.1.config" file="images/main/button-1.png" x="0" y="260" w="42" h="65" gammagroup="Buttons" />
+<bitmap id="custom.button.1.config.hover" file="images/main/button-1.png" x="42" y="260" w="42" h="65" gammagroup="Buttons" />
+<bitmap id="custom.button.1.config.down" file="images/main/button-1.png" x="84" y="260" w="42" h="65" gammagroup="Buttons" />
+
+<bitmap id="custom.button.1.equalizer" file="images/main/button-1.png" x="0" y="325" w="42" h="65" gammagroup="Buttons" />
+<bitmap id="custom.button.1.equalizer.hover" file="images/main/button-1.png" x="42" y="325" w="42" h="65" gammagroup="Buttons" />
+<bitmap id="custom.button.1.equalizer.down" file="images/main/button-1.png" x="84" y="325" w="42" h="65" gammagroup="Buttons" />
+
+ <!-- Button 2 -->
+<bitmap id="custom.button.2.library" file="images/main/button-2.png" x="0" y="0" w="61" h="54" gammagroup="Buttons" />
+<bitmap id="custom.button.2.library.hover" file="images/main/button-2.png" x="61" y="0" w="61" h="54" gammagroup="Buttons" />
+<bitmap id="custom.button.2.library.down" file="images/main/button-2.png" x="122" y="0" w="61" h="54" gammagroup="Buttons" />
+
+<bitmap id="custom.button.2.visuals" file="images/main/button-2.png" x="0" y="54" w="61" h="54" gammagroup="Buttons" />
+<bitmap id="custom.button.2.visuals.hover" file="images/main/button-2.png" x="61" y="54" w="61" h="54" gammagroup="Buttons" />
+<bitmap id="custom.button.2.visuals.down" file="images/main/button-2.png" x="122" y="54" w="61" h="54" gammagroup="Buttons" />
+
+<bitmap id="custom.button.2.video" file="images/main/button-2.png" x="0" y="108" w="61" h="54" gammagroup="Buttons" />
+<bitmap id="custom.button.2.video.hover" file="images/main/button-2.png" x="61" y="108" w="61" h="54" gammagroup="Buttons" />
+<bitmap id="custom.button.2.video.down" file="images/main/button-2.png" x="122" y="108" w="61" h="54" gammagroup="Buttons" />
+
+<bitmap id="custom.button.2.playlist" file="images/main/button-2.png" x="0" y="162" w="61" h="54" gammagroup="Buttons" />
+<bitmap id="custom.button.2.playlist.hover" file="images/main/button-2.png" x="61" y="162" w="61" h="54" gammagroup="Buttons" />
+<bitmap id="custom.button.2.playlist.down" file="images/main/button-2.png" x="122" y="162" w="61" h="54" gammagroup="Buttons" />
+
+<bitmap id="custom.button.2.config" file="images/main/button-2.png" x="0" y="216" w="61" h="54" gammagroup="Buttons" />
+<bitmap id="custom.button.2.config.hover" file="images/main/button-2.png" x="61" y="216" w="61" h="54" gammagroup="Buttons" />
+<bitmap id="custom.button.2.config.down" file="images/main/button-2.png" x="122" y="216" w="61" h="54" gammagroup="Buttons" />
+
+<bitmap id="custom.button.2.equalizer" file="images/main/button-2.png" x="0" y="270" w="61" h="54" gammagroup="Buttons" />
+<bitmap id="custom.button.2.equalizer.hover" file="images/main/button-2.png" x="61" y="270" w="61" h="54" gammagroup="Buttons" />
+<bitmap id="custom.button.2.equalizer.down" file="images/main/button-2.png" x="122" y="270" w="61" h="54" gammagroup="Buttons" />
+
+ <!-- Button 3 -->
+<bitmap id="custom.button.3.library" file="images/main/button-3.png" x="0" y="0" w="61" h="54" gammagroup="Buttons" />
+<bitmap id="custom.button.3.library.hover" file="images/main/button-3.png" x="61" y="0" w="61" h="54" gammagroup="Buttons" />
+<bitmap id="custom.button.3.library.down" file="images/main/button-3.png" x="122" y="0" w="61" h="54" gammagroup="Buttons" />
+
+<bitmap id="custom.button.3.visuals" file="images/main/button-3.png" x="0" y="54" w="61" h="54" gammagroup="Buttons" />
+<bitmap id="custom.button.3.visuals.hover" file="images/main/button-3.png" x="61" y="54" w="61" h="54" gammagroup="Buttons" />
+<bitmap id="custom.button.3.visuals.down" file="images/main/button-3.png" x="122" y="54" w="61" h="54" gammagroup="Buttons" />
+
+<bitmap id="custom.button.3.video" file="images/main/button-3.png" x="0" y="108" w="61" h="54" gammagroup="Buttons" />
+<bitmap id="custom.button.3.video.hover" file="images/main/button-3.png" x="61" y="108" w="61" h="54" gammagroup="Buttons" />
+<bitmap id="custom.button.3.video.down" file="images/main/button-3.png" x="122" y="108" w="61" h="54" gammagroup="Buttons" />
+
+<bitmap id="custom.button.3.playlist" file="images/main/button-3.png" x="0" y="162" w="61" h="54" gammagroup="Buttons" />
+<bitmap id="custom.button.3.playlist.hover" file="images/main/button-3.png" x="61" y="162" w="61" h="54" gammagroup="Buttons" />
+<bitmap id="custom.button.3.playlist.down" file="images/main/button-3.png" x="122" y="162" w="61" h="54" gammagroup="Buttons" />
+
+<bitmap id="custom.button.3.config" file="images/main/button-3.png" x="0" y="216" w="61" h="54" gammagroup="Buttons" />
+<bitmap id="custom.button.3.config.hover" file="images/main/button-3.png" x="61" y="216" w="61" h="54" gammagroup="Buttons" />
+<bitmap id="custom.button.3.config.down" file="images/main/button-3.png" x="122" y="216" w="61" h="54" gammagroup="Buttons" />
+
+<bitmap id="custom.button.3.equalizer" file="images/main/button-3.png" x="0" y="270" w="61" h="54" gammagroup="Buttons" />
+<bitmap id="custom.button.3.equalizer.hover" file="images/main/button-3.png" x="61" y="270" w="61" h="54" gammagroup="Buttons" />
+<bitmap id="custom.button.3.equalizer.down" file="images/main/button-3.png" x="122" y="270" w="61" h="54" gammagroup="Buttons" />
+
+ <!-- Button 4 -->
+<bitmap id="custom.button.4.library" file="images/main/button-4.png" x="0" y="0" w="42" h="65" gammagroup="Buttons" />
+<bitmap id="custom.button.4.library.hover" file="images/main/button-4.png" x="42" y="0" w="42" h="65" gammagroup="Buttons" />
+<bitmap id="custom.button.4.library.down" file="images/main/button-4.png" x="84" y="0" w="42" h="65" gammagroup="Buttons" />
+
+<bitmap id="custom.button.4.visuals" file="images/main/button-4.png" x="0" y="65" w="42" h="65" gammagroup="Buttons" />
+<bitmap id="custom.button.4.visuals.hover" file="images/main/button-4.png" x="42" y="65" w="42" h="65" gammagroup="Buttons" />
+<bitmap id="custom.button.4.visuals.down" file="images/main/button-4.png" x="84" y="65" w="42" h="65" gammagroup="Buttons" />
+
+<bitmap id="custom.button.4.video" file="images/main/button-4.png" x="0" y="130" w="42" h="65" gammagroup="Buttons" />
+<bitmap id="custom.button.4.video.hover" file="images/main/button-4.png" x="42" y="130" w="42" h="65" gammagroup="Buttons" />
+<bitmap id="custom.button.4.video.down" file="images/main/button-4.png" x="84" y="130" w="42" h="65" gammagroup="Buttons" />
+
+<bitmap id="custom.button.4.playlist" file="images/main/button-4.png" x="0" y="195" w="42" h="65" gammagroup="Buttons" />
+<bitmap id="custom.button.4.playlist.hover" file="images/main/button-4.png" x="42" y="195" w="42" h="65" gammagroup="Buttons" />
+<bitmap id="custom.button.4.playlist.down" file="images/main/button-4.png" x="84" y="195" w="42" h="65" gammagroup="Buttons" />
+
+<bitmap id="custom.button.4.config" file="images/main/button-4.png" x="0" y="260" w="42" h="65" gammagroup="Buttons" />
+<bitmap id="custom.button.4.config.hover" file="images/main/button-4.png" x="42" y="260" w="42" h="65" gammagroup="Buttons" />
+<bitmap id="custom.button.4.config.down" file="images/main/button-4.png" x="84" y="260" w="42" h="65" gammagroup="Buttons" />
+
+<bitmap id="custom.button.4.equalizer" file="images/main/button-4.png" x="0" y="325" w="42" h="65" gammagroup="Buttons" />
+<bitmap id="custom.button.4.equalizer.hover" file="images/main/button-4.png" x="42" y="325" w="42" h="65" gammagroup="Buttons" />
+<bitmap id="custom.button.4.equalizer.down" file="images/main/button-4.png" x="84" y="325" w="42" h="65" gammagroup="Buttons" />
+
+<!-- Start Shade Mode -->
+<!-- Start Background Images -->
+<bitmap id="winshade.background.shadow.left" x="0" w="195" h="25" file="images/winshade/background-shadow.png" />
+<bitmap id="winshade.background.shadow" x="200" w="15" h="25" file="images/winshade/background-shadow.png" />
+<bitmap id="winshade.background.shadow.right" x="277" w="195" h="25" file="images/winshade/background-shadow.png" />
+<bitmap id="winshade.background.base.left" file="images/winshade/background-base.png" x="0" w="195" h="27" gammagroup="Backgrounds" />
+<bitmap id="winshade.background.base" file="images/winshade/background-base.png" x="200" w="15" h="27" gammagroup="Backgrounds" />
+<bitmap id="winshade.background.base.right" file="images/winshade/background-base.png" x="273" w="195" h="27" gammagroup="Backgrounds" />
+<bitmap id="winshade.glass.left" x="0" w="195" h="15" file="images/winshade/glass.png" gammagroup="Glass" />
+<bitmap id="winshade.glass" x="200" w="15" h="15" file="images/winshade/glass.png" gammagroup="Glass" />
+<bitmap id="winshade.glass.right" x="261" w="195" h="15" file="images/winshade/glass.png" gammagroup="Glass" />
+
+<!-- Start ShadeButtons -->
+<bitmap id="winshade.button.close" file="images/winshade/button-close.png" x="0" y="0" w="20" h="8" gammagroup="ShadeButtons" />
+<bitmap id="winshade.button.close.hover" file="images/winshade/button-close.png" x="20" y="0" w="20" h="8" gammagroup="ShadeButtons" />
+<bitmap id="winshade.button.close.down" file="images/winshade/button-close.png" x="40" y="0" w="20" h="8" gammagroup="ShadeButtons" />
+
+<bitmap id="winshade.button.shade" file="images/winshade/button-main.png" x="0" y="0" w="28" h="17" gammagroup="ShadeButtons" />
+<bitmap id="winshade.button.shade.hover" file="images/winshade/button-main.png" x="28" y="0" w="28" h="17" gammagroup="ShadeButtons" />
+<bitmap id="winshade.button.shade.down" file="images/winshade/button-main.png" x="56" y="0" w="28" h="17" gammagroup="ShadeButtons" />
+
+<bitmap id="winshade.button.minimize" file="images/winshade/button-minimize.png" x="0" y="0" w="15" h="8" gammagroup="ShadeButtons" />
+<bitmap id="winshade.button.minimize.hover" file="images/winshade/button-minimize.png" x="15" y="0" w="15" h="8" gammagroup="ShadeButtons" />
+<bitmap id="winshade.button.minimize.down" file="images/winshade/button-minimize.png" x="30" y="0" w="15" h="8" gammagroup="ShadeButtons" />
+
+<bitmap id="winshade.button.playlist" file="images/winshade/button-pl.png" x="0" y="0" w="28" h="17" gammagroup="ShadeButtons" />
+<bitmap id="winshade.button.playlist.hover" file="images/winshade/button-pl.png" x="28" y="0" w="28" h="17" gammagroup="ShadeButtons" />
+<bitmap id="winshade.button.playlist.down" file="images/winshade/button-pl.png" x="56" y="0" w="28" h="17" gammagroup="ShadeButtons" />
+
+<bitmap id="winshade.button.library" file="images/winshade/button-ml.png" x="0" y="0" w="29" h="17" gammagroup="ShadeButtons" />
+<bitmap id="winshade.button.library.hover" file="images/winshade/button-ml.png" x="29" y="0" w="29" h="17" gammagroup="ShadeButtons" />
+<bitmap id="winshade.button.library.down" file="images/winshade/button-ml.png" x="58" y="0" w="29" h="17" gammagroup="ShadeButtons" />
+
+<!-- Start Playback Control Button Images -->
+<bitmap id="winshade.button.previous" file="images/winshade/button-previous.png" x="0" y="0" w="9" h="11" gammagroup="PlaybackButtons" />
+<bitmap id="winshade.button.previous.hover" file="images/winshade/button-previous.png" x="9" y="0" w="9" h="11" gammagroup="PlaybackButtons" />
+<bitmap id="winshade.button.previous.down" file="images/winshade/button-previous.png" x="18" y="0" w="9" h="11" gammagroup="PlaybackButtons" />
+
+<bitmap id="winshade.button.next" file="images/winshade/button-next.png" x="0" y="0" w="9" h="11" gammagroup="PlaybackButtons" />
+<bitmap id="winshade.button.next.hover" file="images/winshade/button-next.png" x="9" y="0" w="9" h="11" gammagroup="PlaybackButtons" />
+<bitmap id="winshade.button.next.down" file="images/winshade/button-next.png" x="18" y="0" w="9" h="11" gammagroup="PlaybackButtons" />
+
+<bitmap id="winshade.button.play" file="images/winshade/button-play.png" x="0" y="0" w="9" h="14" gammagroup="PlaybackButtons" />
+<bitmap id="winshade.button.play.hover" file="images/winshade/button-play.png" x="9" y="0" w="9" h="14" gammagroup="PlaybackButtons" />
+<bitmap id="winshade.button.play.down" file="images/winshade/button-play.png" x="18" y="0" w="9" h="14" gammagroup="PlaybackButtons" />
+
+<bitmap id="winshade.button.pause" file="images/winshade/button-pause.png" x="0" y="0" w="10" h="11" gammagroup="PlaybackButtons" />
+<bitmap id="winshade.button.pause.hover" file="images/winshade/button-pause.png" x="10" y="0" w="10" h="11" gammagroup="PlaybackButtons" />
+<bitmap id="winshade.button.pause.down" file="images/winshade/button-pause.png" x="20" y="0" w="10" h="11" gammagroup="PlaybackButtons" />
+
+<bitmap id="winshade.button.stop" file="images/winshade/button-stop.png" x="0" y="0" w="10" h="10" gammagroup="PlaybackButtons" />
+<bitmap id="winshade.button.stop.hover" file="images/winshade/button-stop.png" x="10" y="0" w="10" h="10" gammagroup="PlaybackButtons" />
+<bitmap id="winshade.button.stop.down" file="images/winshade/button-stop.png" x="20" y="0" w="10" h="10" gammagroup="PlaybackButtons" />
+
+<bitmap id="winshade.button.load" file="images/winshade/button-load.png" x="0" y="0" w="11" h="7" gammagroup="PlaybackButtons" />
+<bitmap id="winshade.button.load.hover" file="images/winshade/button-load.png" x="11" y="0" w="11" h="7" gammagroup="PlaybackButtons" />
+<bitmap id="winshade.button.load.down" file="images/winshade/button-load.png" x="22" y="0" w="11" h="7" gammagroup="PlaybackButtons" />
+
+<!-- Start Slider Images -->
+<bitmap id="winshade.slider.volume.base" file="images/winshade/slider-volume-base.png" gammagroup="Volume" />
+<bitmap id="winshade.slider.volume.on" file="images/winshade/slider-volume-on.png" gammagroup="Volume" />
+<bitmap id="winshade.slider.volume.map" file="images/winshade/slider-volume-map.png" />
+
+<bitmap id="winshade.slider.seeker.thumb" file="images/winshade/slider-seeker-thumb.png" x="0" y="0" w="21" h="9" gammagroup="Seeker" />
+<bitmap id="winshade.slider.seeker.thumb.hover" file="images/winshade/slider-seeker-thumb.png" x="21" y="0" w="21" h="9" gammagroup="Seeker" />

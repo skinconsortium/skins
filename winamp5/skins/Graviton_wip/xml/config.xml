@@ -1,0 +1,81 @@
+<elements>
+<!-- Start Visuals -->
+  <bitmap id="vis.preview.vis1" file="images\config\vis-preview-vis1.png" gammagroup="Vis Preview" />
+  <bitmap id="vis.preview.vis2" file="images\config\vis-preview-vis2.png" gammagroup="Vis Preview" />
+  <bitmap id="vis.preview.vis3" file="images\config\vis-preview-vis3.png" gammagroup="Vis Preview" />
+  <bitmap id="vis.preview.vis4" file="images\config\vis-preview-vis4.png" gammagroup="Vis Preview" />
+</elements>
+
+<groupdef id="config.button.option">
+ <Wasabi:RadioGroup id="buttonsel" />
+ <Wasabi:CheckBox id="library" x="0" y="0" text="Media Library" radioid="buttonsel" />
+ <Wasabi:CheckBox id="visuals" x="0" y="15" text="Visuals" radioid="buttonsel" />
+ <Wasabi:CheckBox id="video" x="0" y="30" text="Video" radioid="buttonsel" />
+ <Wasabi:CheckBox id="playlist" x="0" y="45" text="Playlist Editor" radioid="buttonsel" />
+ <Wasabi:CheckBox id="config" x="0" y="60" text="Configuration" radioid="buttonsel" />
+ <Wasabi:CheckBox id="equalizer" x="0" y="75" text="Equalizer" radioid="buttonsel" />
+ <Wasabi:Button id="apply" x="-50" y="-30" w="48" h="21" relatx="1" relaty="1" text="Apply" />
+ <Wasabi:Button id="reset" x="-100" y="-30" w="48" h="21" relatx="1" relaty="1" text="Reset" />
+ <!-- script include -->
+</groupdef>
+
+<groupdef id="config.button.1" name="Button 1">
+ <group id="config.button.option" but_id="1" fitparent="1" />
+ <script id="butconfig" file="scripts/buttonconfig.maki" param="1" />
+</groupdef>
+
+<groupdef id="config.button.2" name="Button 2">
+ <group id="config.button.option" but_id="2" fitparent="1" />
+ <script id="butconfig" file="scripts/buttonconfig.maki" param="2" />
+</groupdef>
+
+<groupdef id="config.button.3" name="Button 3">
+ <group id="config.button.option" but_id="3" fitparent="1" />
+ <script id="butconfig" file="scripts/buttonconfig.maki" param="3" />
+</groupdef>
+
+<groupdef id="config.button.4" name="Button 4">
+ <group id="config.button.option" but_id="4" fitparent="1" />
+ <script id="butconfig" file="scripts/buttonconfig.maki" param="4" />
+</groupdef>
+
+<groupdef id="config.button.sel" name="Buttons">
+ <Wasabi:TitleBox title="Configurable Button Selection" x="3" y="0" w="-6" h="-4" relatw="1" relath="1" />
+ <Wasabi:Text x="8" y="15" w="-16" h="32" relatw="1" text="Select Button:" />
+ <Wasabi:TabSheet x="8" y="32" w="-16" h="-32" relatw="1" relath="1" type="2" children="config.button.1;config.button.2;config.button.3;config.button.4" />
+</groupdef>
+
+<groupdef id="config.colorthemes" name="Themes">
+ <Wasabi:TitleBox title="Color Theme Selection" x="3" y="0" w="-6" h="-4" relatw="1" relath="1" />
+ <Wasabi:Text id="description" x="8" y="15" w="0" h="32" relatw="1" text="Select an alternate color theme for this skin:"/>
+ <ColorThemes:List id="picker" x="8" y="32" w="-16" h="-68" relatw="1" relath="1" />
+ <Wasabi:Button id="Switch" x="-60" y="-30"  w="48" h="21" relatx="1" relaty="1" action="colorthemes_switch" action_target="picker" text="Switch" />
+</groupdef>
+
+<groupdef id="config.vis" name="Vis">
+ <Wasabi:TitleBox title="Vis Selection" x="3" y="0" w="-6" h="-4" relatw="1" relath="1" />
+ <Wasabi:Text id="description" x="8" y="15" w="0" h="32" relatw="1" text="Select a vis mode:"/>
+
+ <Button id="visbut1" x="10" y="32" image="vis.preview.vis1" tooltip="Left Click Activate Vis|Right Click Stop Vis"/>
+ <Button id="visbut2" x="138" y="32" image="vis.preview.vis2" tooltip="Left Click Activate Vis|Right Click Stop Vis"/>
+ <Button id="visbut3" x="10" y="156" image="vis.preview.vis3" tooltip="Left Click Activate Vis|Right Click Stop Vis"/>
+ <Button id="visbut4" x="138" y="156" image="vis.preview.vis4" tooltip="Left Click Activate Vis|Right Click Stop Vis"/>
+</groupdef>
+
+<groupdef id="config.more" name="More">
+ <Wasabi:TitleBox title="More Options" x="3" y="0" w="-6" h="-4" relatw="1" relath="1" />
+ <Wasabi:Text id="description" x="8" y="15" w="0" h="32" relatw="1" text="Cbuttons hold length:"/>
+
+ <Wasabi:Text id="stay.text" x="223" y="32" text="2 sec"/>	
+ <Wasabi:HSlider id="stay.slider" x="18" y="34" w="200" h="10" relatw="0" high="20"/>	
+</groupdef>
+
+<container id="win.config" name="Configuration">
+ <layout id="normal" desktopalpha="0" w="300" h="350" max_w="300" max_h="350" min_w="300" min_h="350" >
+  <Wasabi:StandardFrame:NoStatus fitparent="1" />
+  <sendparams target="component.top.left;component.top.right;component.left;component.right;component.bottom.right;component.bottom.left;frame.bottom.middle" resize="0"/>
+  
+  <Wasabi:TabSheet x="15" y="20" w="-30" h="-40" relatw="1" relath="1" children="config.button.sel;config.colorthemes;config.vis;config.more" />
+  
+ </layout>
+</container>

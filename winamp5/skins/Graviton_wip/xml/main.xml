@@ -1,0 +1,59 @@
+<elements>
+ <include file="main-elements.xml" />
+</elements>
+
+<container id="main" name="Main window">
+ <include file="main-groups.xml" />
+ 
+ <layout id="normal" desktopalpha="1" w="300" h="300" droptarget="pldr" >
+  
+ 
+  <group id="main.window.background" x="0" y="0" w="300" h="300" />
+  <group id="main.window.background.inner" x="0" y="0" w="300" h="300" />
+
+  <group id="main.display.content" x="0" y="0" w="300" h="300" alpha="0" />
+
+  <group id="main.display.anim" x="0" y="0" w="300" h="300" alpha="0" />
+
+  <group id="main.component.buttons" x="0" y="0" w="300" h="300" />
+  <group id="main.window.controls" x="0" y="0" w="300" h="300" />
+
+  <layer x="0" y="0" image="main.background.base.inner.mask" regionop="1" rectrgn="0" />
+
+  <!--group id="main.control.buttons" x="0" y="0" w="300" h="300" alpha="0" /
+  moved to be on top of the outer rings for dta toggle changes
+  -->
+
+  <layer id="main.mousetrap" x="63" y="61" image="main.mousetrap" rectrgn="0" alpha="0" ghost="1" />
+
+  <layer id="main.mousetrap2" x="0" y="0" image="main.mousetrap2" rectrgn="0" alpha="0" ghost="1" />
+
+  <layer x="68" y="88" image="main.text.mask" regionop="1" ghost="1" />
+
+  <layer id="main.outer.mask" x="0" y="0" image="main.background.base.outer.mask" regionop="1" rectrgn="1" />
+  <layer id="main.inner.mask" x="0" y="0" image="main.background.base.inner" regionop="1" rectrgn="1" />
+
+  <animatedlayer id="button.ani" x="25" y="25" w="250" h="250" image="main.button.change.ani" frameheight="250" speed="75" autoplay="0" autoreplay="0" ghost="1" />
+  
+  <layer id="main.outer.rings" x="0" y="0" image="main.outer.rings" regionop="1" ghost="1" />
+  
+  <group id="main.control.buttons" x="0" y="0" w="300" h="300" alpha="0" />
+
+  <layer id="glass.reflection" x="68" y="66" image="main.glass.reflection1" regionop="1" rectrgn="0" ghost="1"/>
+  <hideobject target="main.mousetrap2" />
+  <script id="startupanim" file="scripts/startupanim.maki" />
+ </layout>
+
+ <layout id="winshade" desktopalpha="1" maximum_h="32" minimum_w="420" minimum_h="32" default_w="472" default_h="32" droptarget="pldr" >
+  <group id="winshade.window.background" x="0" y="0" w="0" h="32" relatw="1" />
+  <group id="winshade.window.background" x="0" y="0" w="0" h="32" regionop="1" relatw="1" />
+  <group id="winshade.display.content" x="0" y="0" w="0" h="32" relatw="1" />
+  <group id="winshade.window.controls" x="0" y="0" w="0" h="32" relatw="1" />
+  <group id="winshade.control.buttons" x="0" y="0" w="0" h="32" relatw="1" />
+  
+ </layout>
+
+</container>
+
+ <script id="displaycontent" file="scripts/displaycontent.maki" />
+ <script id="dta" file="scripts/dta.maki" />
