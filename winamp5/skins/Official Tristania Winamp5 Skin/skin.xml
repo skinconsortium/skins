@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<WinampAbstractionLayer version="1.2">
+<!--WasabiXML version="1.2"-->
+
+	<skininfo>
+		<version>1.0</version>
+		<name>Official Tristania Winamp5 Skin</name>
+		<comment>Designed and coded for one of the best Symphonic Gothic Metal bands in the world</comment>
+		<author gaybag="Deimos">Martin P. alias Deimos</author>
+		<email>martin.deimos@gmx.de</email>
+		<homepage>www.martin.deimos.de.vu</homepage>
+		<screenshot></screenshot>
+	</skininfo>
+
+	<scripts>
+		<script id="loadattribs" file="scripts/loadattribs.maki"/>
+	</scripts>
+
+	<include file="xml/skin-elements.xml"/>
+	<include file="wasabi/wasabi.xml" />
+	<!--include file="xml/video.xml"/-->
+	<include file="xml/player.xml"/>
+	<include file="xml/eq.xml"/>
+	<include file="xml/coverwnd.xml"/>
+	<include file="xml/pledit.xml"/>
+	<!--include file="xml/ml.xml"/>
+	<include file="xml/vis.xml"/-->
+	<include file="about/about.xml"/>
+	<include file="config/config.xml"/>
+
+	<scripts>
+		<script id="own.killersystem" file="scripts/ownkillersystem.maki" />
+		<script file="wasabi/notifier/notifier.maki"/>
+	</scripts>
+
+
+
+<!--/WasabiXML-->
+</WinampAbstractionLayer>

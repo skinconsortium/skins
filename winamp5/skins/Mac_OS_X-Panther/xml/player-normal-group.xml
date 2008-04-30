@@ -1,0 +1,544 @@
+<groupdef id="player.componentbuttons">
+
+	<layer id="componentbutton.seperator" x="-1" y="0" h="40" tile="1" ghost="1" image="player.seperator"/>
+
+  <Deimos:NStatesButton
+    id="eq"
+    action="TOGGLE" param="EQ"
+    x="6" y="1" h="40" w="58" rectrgn="1"
+	image="blank"
+    downImage="player.toolbar.d"
+    hoverImage="player.toolbar.h"
+    activeImage="player.toolbar.a"
+    extendedSongtickerMessage="Show Equalizer;Hide Equalizer"
+	tooltip="Toggle Equalizer" nstates="2"
+	borders="0"
+  />
+	<layer id="componentbutton.eq.layer" x="19" y="5" ghost="1" image="player.componentbutton.eq"/>
+
+  <Deimos:NStatesButton
+    id="pl"
+    action="TOGGLE" param="guid:pl"
+    x="65" y="1" h="40" w="58" rectrgn="1"
+	image="blank"
+    downImage="player.toolbar.d"
+    hoverImage="player.toolbar.h"
+    activeImage="player.toolbar.a"
+	extendedSongtickerMessage="Show Playlist Editor;Hide Playlist Editor"
+	tooltip="Playlist Editor" nstates="2"
+	borders="0"
+  />
+	<layer id="componentbutton.pl.layer" x="78" y="5" ghost="1" image="player.componentbutton.pl"/>
+
+  <Deimos:NStatesButton
+    id="ml"
+    action="TOGGLE" param="guid:ml"
+    x="124" y="1" h="40" w="58" rectrgn="1"
+	image="blank"
+    downImage="player.toolbar.d"
+    hoverImage="player.toolbar.h"
+    activeImage="player.toolbar.a"
+	extendedSongtickerMessage="Show Media Library;Hide Media Library"
+    tooltip="Media Library" nstates="2"
+	borders="0"
+  />
+	<layer id="componentbutton.ml.layer" x="137" y="5" ghost="1" image="player.componentbutton.ml"/>
+
+  <Deimos:NStatesButton
+    id="video"
+    action="TOGGLE" param="guid:{F0816D7B-FFFC-4343-80F2-E8199AA15CC3}"
+    x="183" y="1" h="40" w="58" rectrgn="1"
+	image="blank"
+    downImage="player.toolbar.d"
+    hoverImage="player.toolbar.h"
+    activeImage="player.toolbar.a"
+    extendedSongtickerMessage="Show Video Window;Hide Video Window"
+	tooltip="Video Window" nstates="2"
+	borders="0"
+  />
+	<layer id="componentbutton.video.layer" x="196" y="5" ghost="1" image="player.componentbutton.video"/>
+
+  <Deimos:NStatesButton
+    id="cfg"
+    action="TOGGLE" param="config"
+    x="242" y="1" h="40" w="58" rectrgn="1"
+	image="blank"
+    downImage="player.toolbar.d"
+    hoverImage="player.toolbar.h"
+    activeImage="player.toolbar.a"
+    extendedSongtickerMessage="Show Skin Configuration;Hide Skin Configuration"
+    tooltip="Skin Configuration" nstates="2"
+	borders="0"
+  />
+	<layer id="componentbutton.cfg.layer" x="255" y="5" ghost="1" image="player.componentbutton.cfg"/>
+</groupdef>
+
+
+<groupdef id="player.componentbuttons.small">
+
+	<layer id="componentbutton.seperator" x="-1" y="0" h="24" tile="1" ghost="1" image="player.seperator"/>
+
+  <Deimos:NStatesButton
+    id="eq"
+    action="TOGGLE" param="EQ"
+    x="6" y="1" h="24" w="58" rectrgn="1"
+	image="blank"
+    downImage="player.toolbarsmall.d"
+    hoverImage="player.toolbarsmall.h"
+    activeImage="player.toolbarsmall.a"
+    extendedSongtickerMessage="Show Equalizer;Hide Equalizer"
+	tooltip="Toggle Equalizer" nstates="2"
+	borders="0"
+  />
+	<layer id="componentbutton.eq.layer" x="27" y="5" ghost="1" image="player.componentbuttonsmall.eq"/>
+
+  <Deimos:NStatesButton
+    id="pl"
+    action="TOGGLE" param="guid:pl"
+    x="65" y="1" h="24" w="58" rectrgn="1"
+	image="blank"
+    downImage="player.toolbarsmall.d"
+    hoverImage="player.toolbarsmall.h"
+    activeImage="player.toolbarsmall.a"
+	extendedSongtickerMessage="Show Playlist Editor;Hide Playlist Editor"
+	tooltip="Playlist Editor" nstates="2"
+	borders="0"
+  />
+	<layer id="componentbutton.pl.layer" x="86" y="5" ghost="1" image="player.componentbuttonsmall.pl"/>
+
+  <Deimos:NStatesButton
+    id="ml"
+    action="TOGGLE" param="guid:ml"
+    x="124" y="1" h="24" w="58" rectrgn="1"
+	image="blank"
+    downImage="player.toolbarsmall.d"
+    hoverImage="player.toolbarsmall.h"
+    activeImage="player.toolbarsmall.a"
+	extendedSongtickerMessage="Show Media Library;Hide Media Library"
+    tooltip="Media Library" nstates="2"
+	borders="0"
+  />
+	<layer id="componentbutton.ml.layer" x="145" y="5" ghost="1" image="player.componentbuttonsmall.ml"/>
+
+  <Deimos:NStatesButton
+    id="video"
+    action="TOGGLE" param="guid:{F0816D7B-FFFC-4343-80F2-E8199AA15CC3}"
+    x="183" y="1" h="24" w="58" rectrgn="1"
+	image="blank"
+    downImage="player.toolbarsmall.d"
+    hoverImage="player.toolbarsmall.h"
+    activeImage="player.toolbarsmall.a"
+    extendedSongtickerMessage="Show Video Window;Hide Video Window"
+	tooltip="Video Window" nstates="2"
+	borders="0"
+  />
+	<layer id="componentbutton.video.layer" x="204" y="5" ghost="1" image="player.componentbuttonsmall.video"/>
+
+  <Deimos:NStatesButton
+    id="cfg"
+    action="TOGGLE" param="config"
+    x="242" y="1" h="24" w="58" rectrgn="1"
+	image="blank"
+    downImage="player.toolbarsmall.d"
+    hoverImage="player.toolbarsmall.h"
+    activeImage="player.toolbarsmall.a"
+    extendedSongtickerMessage="Show Skin Configuration;Hide Skin Configuration"
+    tooltip="Skin Configuration" nstates="2"
+	borders="0"
+  />
+	<layer id="componentbutton.cfg.layer" x="263" y="5" ghost="1" image="player.componentbuttonsmall.cfg"/>
+</groupdef>
+
+<groupdef id="player.vis">
+  <text
+    id="timer"
+    display="time"
+    x="23" y="68" relatx="0"
+    w="64" h="18"
+    font="ttf"
+    align="left"
+    valign="top"
+    timecolonwidth="5"
+    timeroffstyle="1"
+    fontsize="12" bold="2"
+    color="color.Text"
+  />
+
+	<Deimos:NStatesButton
+		id="repeat"
+		x="90" y="69" relatx="0"
+		w="12" h="10"
+		image="player.button.repeat"
+		hoverimage="player.button.repeat"
+		downimage="player.button.repeat"
+		extendedSongtickerMessage="Repeat: Playlist;Repeat: Track;Repeat: Off"
+		rectrgn="0" nstates="3"
+		tooltip="Toggle Playlist/Song Repeating"
+		cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Repeat"
+		cfgvals="0;1;-1"
+	/>
+
+	<Deimos:NStatesButton
+		id="shuffle"
+		x="105" y="69" relatx="0"
+		w="12" h="10"
+		image="player.button.shuffle"
+		hoverimage="player.button.shuffle"
+		downimage="player.button.shuffle"
+		extendedSongtickerMessage="Shuffle: On; Shuffle: Off"
+		rectrgn="0" nstates="2"
+		tooltip="Toggle Playlist Shuffling"
+		cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Shuffle"
+	/>
+
+	<Deimos:NStatesButton
+		id="Crossfader"
+		x="120" y="69" relatx="0"
+		w="12" h="10"
+		image="player.button.Xfade"
+		hoverimage="player.button.Xfade"
+		downimage="player.button.Xfade"
+		extendedSongtickerMessage="Crossfader: On; Crossfader: Off"
+		rectrgn="0" nstates="2"
+		tooltip="Toggle Crossfader"
+		cfgattrib="{FC3EAF78-C66E-4ED2-A0AA-1494DFCC13FF};Enable crossfading"
+	/>
+
+	<Deimos:Visualizer id="player.normal.display.vis" x="25" y="17" />
+
+</groupdef>
+
+<groupdef id="player.eq">
+
+	<layer id="eqbg" image="player.normal.display.eq.bg" x="0" y="0" />
+
+	<slider
+		id="preamp" action="EQ_BAND" param="preamp"
+		x="3" y="2" w="7" h="47"
+		orientation="vertical"
+		thumb="player.normal.display.eq.slider"
+		hoverthumb="player.normal.display.eq.slider"
+		downthumb="player.normal.display.eq.slider"
+	/>
+
+	<slider
+		id="preamp" action="EQ_BAND" param="1"
+		x="17" y="2" w="7" h="47"
+		orientation="vertical"
+		thumb="player.normal.display.eq.slider"
+		hoverthumb="player.normal.display.eq.slider"
+		downthumb="player.normal.display.eq.slider"
+	/>
+	<slider
+		id="preamp" action="EQ_BAND" param="2"
+		x="26" y="2" w="7" h="47"
+		orientation="vertical"
+		thumb="player.normal.display.eq.slider"
+		hoverthumb="player.normal.display.eq.slider"
+		downthumb="player.normal.display.eq.slider"
+	/>
+	<slider
+		id="preamp" action="EQ_BAND" param="3"
+		x="35" y="2" w="7" h="47"
+		orientation="vertical"
+		thumb="player.normal.display.eq.slider"
+		hoverthumb="player.normal.display.eq.slider"
+		downthumb="player.normal.display.eq.slider"
+	/>
+	<slider
+		id="preamp" action="EQ_BAND" param="4"
+		x="44" y="2" w="7" h="47"
+		orientation="vertical"
+		thumb="player.normal.display.eq.slider"
+		hoverthumb="player.normal.display.eq.slider"
+		downthumb="player.normal.display.eq.slider"
+	/>
+	<slider
+		id="preamp" action="EQ_BAND" param="5"
+		x="53" y="2" w="7" h="47"
+		orientation="vertical"
+		thumb="player.normal.display.eq.slider"
+		hoverthumb="player.normal.display.eq.slider"
+		downthumb="player.normal.display.eq.slider"
+	/>
+	<slider
+		id="preamp" action="EQ_BAND" param="6"
+		x="62" y="2" w="7" h="47"
+		orientation="vertical"
+		thumb="player.normal.display.eq.slider"
+		hoverthumb="player.normal.display.eq.slider"
+		downthumb="player.normal.display.eq.slider"
+	/>
+	<slider
+		id="preamp" action="EQ_BAND" param="7"
+		x="71" y="2" w="7" h="47"
+		orientation="vertical"
+		thumb="player.normal.display.eq.slider"
+		hoverthumb="player.normal.display.eq.slider"
+		downthumb="player.normal.display.eq.slider"
+	/>
+	<slider
+		id="preamp" action="EQ_BAND" param="8"
+		x="80" y="2" w="7" h="47"
+		orientation="vertical"
+		thumb="player.normal.display.eq.slider"
+		hoverthumb="player.normal.display.eq.slider"
+		downthumb="player.normal.display.eq.slider"
+	/>
+	<slider
+		id="preamp" action="EQ_BAND" param="9"
+		x="89" y="2" w="7" h="47"
+		orientation="vertical"
+		thumb="player.normal.display.eq.slider"
+		hoverthumb="player.normal.display.eq.slider"
+		downthumb="player.normal.display.eq.slider"
+	/>
+	<slider
+		id="preamp" action="EQ_BAND" param="10"
+		x="98" y="2" w="7" h="47"
+		orientation="vertical"
+		thumb="player.normal.display.eq.slider"
+		hoverthumb="player.normal.display.eq.slider"
+		downthumb="player.normal.display.eq.slider"
+	/>
+
+	<slider
+		id="Balance"
+		action="PAN"
+		x="15" y="63"
+		w="46" h="5"
+		thumb="player.normal.display.pan.slider"
+		downThumb="player.normal.display.pan.slider"
+		hoverThumb="player.normal.display.pan.slider"
+		tooltip="Balance"
+	/>
+
+
+	<button
+		id="eqpresets"
+		Image="player.normal.display.empty"
+		downImage="player.normal.display.empty"
+		hoverImage="player.normal.display.sel"
+		action="MENU"
+		param="presets"
+		x="7" y="51" w="22" h="9" rectrgn="1"
+		tooltip="Open presets"
+	/>
+
+	<button
+		id="eqonoff"
+		Image="player.normal.display.btn.on.0"
+		activeImage="player.normal.display.btn.on.1"
+		hoverImage="player.normal.display.btn.on.h"
+		action="EQ_TOGGLE"
+		x="30" y="51" w="13" h="9" rectrgn="1"
+		tooltip="EQ on/off"
+	/>
+
+	<button
+		id="eqauto"
+		Image="player.normal.display.btn.auto.0"
+		activeImage="player.normal.display.btn.auto.1"
+		hoverImage="player.normal.display.btn.auto.h"
+		action="EQ_AUTO"
+		x="44" y="51" w="26" h="9" rectrgn="1"
+		tooltip="EQ auto"
+	/>
+
+	<togglebutton
+		id="Crossfade"
+		x="71" y="51" w="30" h="9" rectrgn="1"
+		Image="player.normal.display.btn.xf.0"
+		activeImage="player.normal.display.btn.xf.1"
+		hoverImage="player.normal.display.btn.xf.h"
+		tooltip="Toggle Crossfading Between Tracks"
+		cfgattrib="{FC3EAF78-C66E-4ED2-A0AA-1494DFCC13FF};Enable crossfading"
+	/>
+
+	<text
+		id="CFDisplay"
+		x="78" y="61" w="14" h="9"
+		font="player.numfont"
+		align="center"
+		valign="top" color="color.Text"
+	/>
+
+	<button
+		id="CrossfadeDecrease"
+		Image="player.normal.display.empty"
+		downImage="player.normal.display.empty"
+		hoverImage="player.normal.display.sel"
+		x="71" y="61" w="9" h="9" rectrgn="1"
+		tooltip="Decrease Crossfade Time"
+  />
+  <button
+		id="CrossfadeIncrease"
+		Image="player.normal.display.empty"
+		downImage="player.normal.display.empty"
+		hoverImage="player.normal.display.sel"
+		x="92" y="61" w="9" h="9" rectrgn="1"
+		tooltip="Increase Crossfade Time"
+  />
+
+  <slider
+    id="sCrossfade"
+    cfgattrib="{F1239F09-8CC6-4081-8519-C2AE99FCB14C};Crossfade time"
+    high="20" ghost="1" visible="0"
+    x="14" y="30"
+    w="2" h="2"
+  />
+
+</groupdef>
+
+<groupdef id="player.display">
+	<layer id="display.bg" x="0" y="0" ghost="1" image="player.display.bg"/>
+
+  <status
+    id="status"
+    x="3" y="5"
+    w="7" h="7"
+    stopBitmap="player.status.stop"
+    playBitmap="player.status.play"
+    pauseBitmap="player.status.pause"
+  />
+
+  <text
+    id="Songticker" ticker="1"
+    display="songname" showlen="1"
+    x="13" y="2"
+    relatw="1"
+    w="-15" h="18"
+    font="ttf"
+    align="left"
+    valign="top"
+    rightclickaction="trackmenu"
+    dblclickaction="trackinfo"
+    fontsize="12" bold="2"
+    color="color.Text"
+   />
+
+	<group id="player.eq" x="25" y="5"/>
+	<group id="player.vis" x="0" y="0"/>
+
+	<Wasabi:Button id="ctNext.dummy" action="colorthemes_next" action_target="main.colorthemes.list" x="0" y="0" w="1" h="1" ghost="1" visible="0"/>
+
+	<script id="eq" file="scripts/eq.maki"/>
+
+</groupdef>
+
+<groupdef id="player...">
+  <layer
+    id="volumebar"
+    x="2" y="83"
+    image="player.volslider.bg"
+  />
+
+  <slider
+    id="Volume"
+    action="VOLUME"
+    x="1" y="83"
+    w="11" h="60" orientation="vertical"
+    thumb="player.volslider.n"
+    downThumb="player.volslider.d"
+    hoverThumb="player.volslider.h"
+    tooltip="Volume"
+  />
+
+  <layer
+    id="seekbar"
+    x="141" y="88"
+    image="player.seekslider.bg"
+  />
+
+  <slider
+    id="Seek"
+    action="SEEK"
+    x="141" y="85"
+    w="156" h="11"
+    thumb="player.seekslider.n"
+    downThumb="player.seekslider.d"
+    hoverThumb="player.seekslider.h"
+    tooltip="Seek"
+  />
+  <Wasabi:Button id="Previous" action="PREV" x="141" y="105" h="31" w="30"
+		overlay="player.button.Prev"
+		songtickerMessage="Previous Track"
+		tooltip="Previous"
+	/>
+  <Wasabi:Button id="Pause" action="PAUSE" x="173" y="105" h="31" w="30"
+		overlay="player.button.Pause"
+  		showOnStatus="Play"
+		songtickerMessage="Pause Playback"
+		tooltip="Pause"
+	/>
+  <Wasabi:Button id="Play" action="PLAY" x="173" y="105" h="31" w="30"
+		overlay="player.button.Play"
+		showOnStatus="Hold"
+		songtickerMessage="Start Playback"
+		tooltip="Play"
+	/>
+  <Wasabi:Button id="Stop" action="STOP" x="205" y="105" h="31" w="30"
+		overlay="player.button.Stop"
+  		songtickerMessage="Stop Playback"
+		tooltip="Stop"
+	/>
+  <Wasabi:Button id="Next" action="NEXT" x="237" y="105" h="31" w="30" 
+		overlay="player.button.Next"
+  		songtickerMessage="Next Track"
+		tooltip="Next"
+	/>
+  <Wasabi:Button id="Open" action="EJECT" x="269" y="105" h="31" w="30" 
+		overlay="player.button.Open"
+		songtickerMessage="Open File(s)"
+		tooltip="Open File(s)"
+	/>
+</groupdef>
+
+<groupdef id="player.status">
+
+	<layer x="0" w="0" relatw="1" y="0" image="player.statusbg"/>
+
+	<text
+		id="type" ticker="1"
+		x="-62" y="1" relatx="1"
+		w="60" h="20" relatw="1"
+		align="left" valign="top"
+		fontsize="12" bold="0" shadowx="1" shadowy="1" shadowcolor="255,255,255"
+		color="color.Text" font="ttf"
+	/>
+
+	<layer x="-66" relatx="1" w="2" y="2" h="-2" relath="1" image="player.statusdiv"/>
+ <text
+  id="infoline.dummy"
+  display="songinfo" default=""
+  x="0" y="0"
+  w="1" h="1"
+  ghost="1" visible="0"
+/>
+	<text
+		id="infoline" ticker="1"
+		default=""
+		x="2" y="1"
+		w="-72" h="20" relatw="1"
+		align="right" valign="top"
+		fontsize="12" bold="0"
+		color="color.Text" font="ttf" shadowx="1" shadowy="1" shadowcolor="255,255,255"
+	/>
+
+	<script id="status" param="normal" file="scripts/status.maki"/>
+
+</groupdef>
+
+<groupdef id="player.group">
+	<group id="player.display" x="0" y="63" w="300" sysregion="1"/>
+	<group id="player..." x="0" y="0" w="0" relatw="1" sysregion="1" visible="1"/>
+	<group id="player.status" x="0" y="147" w="0" relatw="1" sysregion="1" visible="1"/>
+</groupdef>
+
+<groupdef id="player.content">
+	<group id="wasabi.menubar" x="0" y="0" w="0" relatw="1" sysregion="1" visible="1"/>
+	<group id="player.componentbuttons" x="0" y="20" h="42" w="0" relatw="1" sysregion="1"/>
+	<group id="player.componentbuttons.small" x="0" y="20" h="30" w="0" relatw="1" sysregion="1" visible="0" alpha="0"/>
+	<group id="player.group" x="0" y="0" w="0" relatw="1" sysregion="1" visible="1"/>
+	<script id="menu" file="scripts/mainmenu.maki"/>
+</groupdef>

@@ -1,0 +1,79 @@
+-- Variables Table ---------------------------------------------------
+var# |                Class |                                    What 
+----------------------------------------------------------------------
+0000 |               System |                                   System*
+0001 |                  Int |                                     NULL
+0002 |                  Int |                     __deprecated_runtime
+0003 |               Double |                                        v
+0004 |                  Int |                                        2
+0005 |                  Int |                                    65535
+0006 |                  Int |                                        1
+0007 |               String |                           "runtimecheck"
+0008 |                  Int |                                        0
+0009 |                  Int |                                     last
+000A |                  Int |                                      now
+000B |                  Int |                                     5000
+000C |               String |                  "This script requires "
+000D |               String |         "Winamp 5.03 (skin version 1.2)"
+000E |               String |                                  "Error"
+000F |               String |                                       ""
+0010 |                Layer |                                       fx
+0011 |                Group |                                    thisl
+0012 |               Double |                                       rp
+0013 |               Double |                                       dp
+0014 |               Double |                                       tp
+0015 |               Double |                                       ap
+0016 |                  Int |                                       ef
+0017 |                Layer |                                     Next
+0018 |                Timer |                                      tmr
+0019 |               Double |                                        r
+001A |               Double |                                        d
+001B |               Double |                                        x
+001C |               Double |                                        y
+001D |               Double |                                      1.0
+001E |               Double |                                        r
+001F |               Double |                                        d
+0020 |               Double |                                        x
+0021 |               Double |                                        y
+0022 |                  Int |                                        3
+0023 |               Double |                                        r
+0024 |               Double |                                        d
+0025 |               Double |                                        x
+0026 |               Double |                                        y
+0027 |               Double |                                      1.3
+0028 |               Double |                                      0.2
+0029 |               Double |                                     1.01
+002A |               Double |                                    0.325
+002B |               Double |                                        r
+002C |               Double |                                        d
+002D |               Double |                                        x
+002E |               Double |                                        y
+002F |                  Int |                                        4
+0030 |               Double |                                      0.1
+0031 |               Double |                                      0.3
+0032 |               Double |                                     0.05
+0033 |                  Int |                                        x
+0034 |                  Int |                                        y
+0035 |                  Int |                                        5
+0036 |                  Int |                                        6
+0037 |                  Int |                                        v
+0038 |               String |                                 "banner"
+0039 |                  Int |                                     3000
+003A |                  Int |                                       30
+003B |                  Int |                                     2000
+-- Events Table ------------------------------------------------------
+var# |         Code Pointer |                                    What 
+----------------------------------------------------------------------
+0010 |                 00F2 |                        fx.fx_onGetPixelA
+0010 |                 0122 |                        fx.fx_onGetPixelR
+0010 |                 019F |                        fx.fx_onGetPixelD
+0010 |                 0256 |                        fx.fx_onGetPixelY
+0010 |                 02B6 |                            fx.fx_onFrame
+0017 |                 0314 |                    Next.onLeftButtonDown
+0011 |                 0487 |                       thisl.onSetVisible
+0000 |                 04E3 |                    System.onScriptLoaded
+0018 |                 0654 |                              tmr.onTimer
+-- User Functions Table ----------------------------------------------
+               Code Pointer |                                    What 
+----------------------------------------------------------------------
+                       0000 |                             versionCheck

@@ -1,0 +1,6 @@
+<container id="main" name="Player Window" default_x="0" default_y="0" default_h="200" default_visible="1">
+
+  <include file="player-normal.xml"/>
+
+</container>
+

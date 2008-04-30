@@ -1,0 +1,22 @@
+<!-- Gammagroups: Background-brown, Background-red, Background-black, Background-display, Display-Elements, Text, List-Background, List-Selected, List-SelectedText, List-Text, WASABI-Buttons, WASABI-B-Text -->
+
+<gammaset id="Ashes">
+  <gammagroup id="Background-brown" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Background-brownII" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Background-red" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Background-black" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Background-display" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Display-Glas" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Display-Elements" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Text" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="List-Background" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="List-Selected" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="List-SelectedText" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="List-Text" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="WASABI-Buttons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="WASABI-B-Text" value="0,0,0" gray="0" boost="0" />
+
+
+</gammaset>
+
+<include file="cthemes.xml" />

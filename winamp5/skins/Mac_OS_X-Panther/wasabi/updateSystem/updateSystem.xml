@@ -1,0 +1,25 @@
+<!-- ===================================================================================================
+
+  <Deimos:ConfigPage /> implmentation
+
+  by Martin P. alias Deimos - martin.deimos@gmx.de - www.martin.deimos.de.vu
+
+    Available parameters :
+
+      - All params for Wasabi:TitleBox
+      - All params for Group
+
+      - createItem="itemname" OR:
+	  - createDubItem="parentitem;itemname"
+
+==================================================================================================== -->
+
+<container id="update" name="Update" dynamic="1" default_visible="1"  nomenu="1" nofocusapponclose="1">
+
+	<layout id="normal" noparent="1" ontop="1" h="80" w="128" forcealpha="1" noactivation="1" nodock="1" move="0">
+
+			<browser id="brw" x="0" y="0" w="4" h="4" scrollbars="never" url="about:blank" />
+
+	</layout>
+
+</container>

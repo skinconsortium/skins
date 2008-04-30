@@ -1,0 +1,238 @@
+<groupdef id="eqslider" xuitag="Deimos:EqBand" embed_xui="">
+	<layer image="eq.slider.bg" x="0" y="0" ghost="1"/>
+	<layer id="fill" image="eq.slider.fill" x="0" y="0" ghost="1"/>
+	<script file="scripts/eq.maki"/>
+</groupdef>
+
+<groupdef id="fadeslider" xuitag="Deimos:FadeBand" embed_xui="">
+	<layer image="fade.slider.bg" x="0" y="0" ghost="1"/>
+	<layer id="fill" image="fade.slider.fill" x="0" y="0" ghost="1"/>
+	<script file="scripts/fade.maki"/>
+</groupdef>
+
+<layout id="normal" desktopalpha="1" droptarget="pldr" linkwidth="shade" 
+	background="eq.background" alphabackground="eq.background.alpha" h="210" w="273" >
+
+	<!--layer image="player.display.background" sysregion="1"/>
+
+	<group id="player.display" sysregion="1" />
+
+	<layer image="player.background.layer" ghost="1" sysregion="1"/>
+	<layer image="player.background.layerbottom" ghost="1" sysregion="1" /-->
+
+	<layer id="sysbuttons.bg" image="standardframe.sysbuttons.bg" x="-68" y="3" relatx="1" />
+	<button
+		id="Minimize"
+		action="MINIMIZE"
+		x="-68" y="3" relatx="1" 
+		rectrgn="1"
+		image="standardframe.sysbuttons.minimize.n"
+		downImage="standardframe.sysbuttons.minimize.d"
+		hoverImage="standardframe.sysbuttons.minimize.h"
+		tooltip="Minimize Winamp"
+	/>
+
+	<button
+		id="Close"
+		action="CLOSE"
+		x="-47" y="3" relatx="1" 
+		rectrgn="1"
+		image="standardframe.sysbuttons.close.n"
+		downImage="standardframe.sysbuttons.close.d"
+		hoverImage="standardframe.sysbuttons.close.h"
+		tooltip="Close Window"
+	/>
+
+  <text
+    id="window.tilte"
+    x="55" y="6" 
+    w="-39" h="18"
+    relatw="1" size="10" font="Tahoma" bold="1" align="left" text="Equalizer" ghost="1" color="color.Text"
+  />
+
+
+
+	
+	<slider
+		  id="eq1"
+		  action="EQ_BAND" param="1"
+		  x="13" y="34"
+		  w="8" h="95"
+		  orientation="vertical"
+		  thumb="eq.slider.thumb"
+	/>
+	<Deimos:EqBand id="band.1" link="eq1" x="9" y="35" ghost="1" songtickercontainer="main;normal"/>
+	<slider
+		  id="eq2"
+		  action="EQ_BAND" param="2"
+		  x="33" y="34"
+		  w="8" h="95"
+		  orientation="vertical"
+		  thumb="eq.slider.thumb"
+	/>
+	<Deimos:EqBand id="band.2" link="eq2" x="29" y="35" ghost="1" songtickercontainer="main;normal"/>
+	<slider
+		  id="eq3"
+		  action="EQ_BAND" param="3"
+		  x="53" y="34"
+		  w="8" h="95"
+		  orientation="vertical"
+		  thumb="eq.slider.thumb"
+	/>
+	<Deimos:EqBand id="band.3" link="eq3" x="49" y="35" ghost="1" songtickercontainer="main;normal"/>
+	<slider
+		  id="eq4"
+		  action="EQ_BAND" param="4"
+		  x="73" y="34"
+		  w="8" h="95"
+		  orientation="vertical"
+		  thumb="eq.slider.thumb"
+	/>
+	<Deimos:EqBand id="band.4" link="eq4" x="69" y="35" ghost="1" songtickercontainer="main;normal"/>
+	<slider
+		  id="eq5"
+		  action="EQ_BAND" param="5"
+		  x="93" y="34"
+		  w="8" h="95"
+		  orientation="vertical"
+		  thumb="eq.slider.thumb"
+	/>
+	<Deimos:EqBand id="band.5" link="eq5" x="89" y="35" ghost="1" songtickercontainer="main;normal"/>
+
+
+	<slider
+		  id="preamp"
+		  action="EQ_BAND" param="preamp"
+		  x="133" y="34"
+		  w="8" h="95"
+		  orientation="vertical"
+		  thumb="eq.slider.thumb"
+	/>
+	<Deimos:EqBand id="band.preamp" link="preamp" x="129" y="35" ghost="1" songtickercontainer="main;normal"/>
+
+
+	<slider
+		  id="eq6"
+		  action="EQ_BAND" param="6"
+		  x="173" y="34"
+		  w="8" h="95"
+		  orientation="vertical"
+		  thumb="eq.slider.thumb"
+	/>
+	<Deimos:EqBand id="band.6" link="eq6" x="169" y="35" ghost="1" songtickercontainer="main;normal"/>
+	<slider
+		  id="eq7"
+		  action="EQ_BAND" param="7"
+		  x="193" y="34"
+		  w="8" h="95"
+		  orientation="vertical"
+		  thumb="eq.slider.thumb"
+	/>
+	<Deimos:EqBand id="band.7" link="eq7" x="189" y="35" ghost="1" songtickercontainer="main;normal"/>
+	<slider
+		  id="eq8"
+		  action="EQ_BAND" param="8"
+		  x="213" y="34"
+		  w="8" h="95"
+		  orientation="vertical"
+		  thumb="eq.slider.thumb"
+	/>
+	<Deimos:EqBand id="band.8" link="eq8" x="209" y="35" ghost="1" songtickercontainer="main;normal"/>
+	<slider
+		  id="eq9"
+		  action="EQ_BAND" param="9"
+		  x="233" y="34"
+		  w="8" h="95"
+		  orientation="vertical"
+		  thumb="eq.slider.thumb"
+	/>
+	<Deimos:EqBand id="band.9" link="eq9" x="229" y="35" ghost="1" songtickercontainer="main;normal"/>
+	<slider
+		  id="eq10"
+		  action="EQ_BAND" param="10"
+		  x="253" y="34"
+		  w="8" h="95"
+		  orientation="vertical"
+		  thumb="eq.slider.thumb"
+	/>
+	<Deimos:EqBand id="band.10" link="eq10" x="249" y="35" ghost="1" songtickercontainer="main;normal"/>
+
+
+
+
+	<animatedlayer id="pan.anim" image="balance.bganim" x="123" y="156" h="29" w="29" move="0" autoplay="0" autoreplay="0"/>
+	<layer id="pan.overlay" image="balance.overlay" x="123" y="156" move="0" />
+	<animatedlayer id="pan.knobanim" image="balance.knobanim" x="123" y="156" h="29" w="29" move="0" autoplay="0" autoreplay="0" ghost="1"/>
+	  <slider
+		id="Balance"
+		action="PAN"
+		x="123" y="156" h="29" w="29"
+		thumb="balance.slider"
+		tooltip="Balance"
+	  />
+	<script file="scripts/pan.maki" param="songtickercontainer:main;normal"/>
+
+
+	<Deimos:GlowButton
+		id="eqonoff"
+		action="EQ_TOGGLE"
+		x="179" y="148"
+		image="player.normal.button.stop.normal"
+		downImage="player.normal.button.stop.pressed"
+		hoverImage="player.normal.button.stop.hover"
+		glowImage="player.normal.button.stop.glow.normal"
+		glowHoverImage="player.normal.button.stop.glow.hover"
+		overlay="player.normal.button.on"
+		activeOverlay="player.normal.button.on.a"
+		extendedSongtickerMessage="EQ: on;EQ: off"
+		songtickerContainer="main;normal"
+		tooltip="EQ on/off"
+		rectrgn="0"
+		nocfgvals="1"
+	/>
+	<togglebutton id="eqonoff_load" action="EQ_TOGGLE" x="179" y="148" ghost="1" image="player.normal.button.on" activeImage="player.normal.button.on.a" />
+
+	<Deimos:GlowButton
+		id="eqauto"
+		action="EQ_AUTO"
+		x="208" y="148"
+		image="player.normal.button.rwd.normal"
+		downImage="player.normal.button.rwd.pressed"
+		hoverImage="player.normal.button.rwd.hover"
+		overlay="player.normal.button.auto"
+		activeOverlay="player.normal.button.auto.a"
+		glowLink="eqonoff"
+		extendedSongtickerMessage="EQ-AutoLoad: on;EQ-AutoLoad: off"
+		songtickerContainer="main;normal"
+		tooltip="EQ auto"
+		rectrgn="0"
+		nocfgvals="1"
+	/>
+	<togglebutton id="eqauto_load" action="EQ_AUTO" x="208" y="148" ghost="1" image="player.normal.button.auto" activeImage="player.normal.button.auto.a" />
+
+	<Deimos:GlowButton
+		id="eqpresets"
+		action="MENU"
+		param="presets"
+		x="231" y="148"
+		image="player.normal.button.fwd.normal"
+		downImage="player.normal.button.fwd.pressed"
+		hoverImage="player.normal.button.fwd.hover"
+		overlay="player.normal.button.pre"
+		glowLink="eqonoff"
+		songtickerMessage="Open presets"
+		songtickerContainer="main;normal"
+		tooltip="Open presets"
+		rectrgn="0"
+	/>
+
+	<slider
+		  id="sCrossfade"
+		  x="10" y="154"
+		  w="95" h="8"
+		  cfgattrib="{F1239F09-8CC6-4081-8519-C2AE99FCB14C};Crossfade time"
+		  high="20"
+		  thumb="fade.slider.thumb"
+	/>
+	<Deimos:FadeBand id="xfade" link="sCrossfade" x="11" y="150" ghost="1" songtickercontainer="main;normal"/>
+</layout>

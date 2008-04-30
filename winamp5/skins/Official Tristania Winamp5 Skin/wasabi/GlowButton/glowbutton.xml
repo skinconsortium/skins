@@ -1,0 +1,62 @@
+<!-- ===================================================================================================
+
+  <Deimos:GlowButton /> implmentation
+  <Deimos:NStatesGlowButton /> implmentation
+
+  by Martin P. alias Deimos - martin.deimos@gmx.de - www.martin.deimos.de.vu
+
+    Available parameters :
+
+      - All params for ToggleButton
+      - All params for Group
+
+      - glowImage="imageid"
+      - glowHoverImage="imageId"
+      - glowLink="otherGlowButtonId"
+	  - overlay="overlayImageId"
+	  - avtiveOverlay="activeOverlayImageId"
+      - showOnStatus="Play||Hold"
+      - songtickerMessage="message"
+	  - songtickerContainer="this" or "container_id;layout_id" //no param = "this"
+	  - ExtendedSongtickerMessage="msg1;msg2;msg3;..." (for NStateButtons)
+	  - nocfgvals="1|0"
+
+    studio.xnf items:
+
+	PrivateInt("deimos", "GlowButtons.fadein", sec*10); //fadeIn speed
+	PrivateInt("deimos", "GlowButtons.fadeout", sec*10); //fadeOut speed
+        PrivateInt("deimos", "GlowButtons.mode", 0||1||2) //style of glow (none||hover||glow)
+
+    configAtrribs:
+
+    cfgattrib="{A8EFDFF8-9667-4a38-AA38-A449A85EDCC0};Glow Effect" //0|1
+	cfgattrib="{A8EFDFF8-9667-4a38-AA38-A449A85EDCC0};Hover Effect" //0|1
+	cfgattrib="{A8EFDFF8-9667-4a38-AA38-A449A85EDCC0};No Effect" //0|1
+
+==================================================================================================== -->
+
+<groupdef id="titan.glowbutton" xuitag="Deimos:GlowButton" embed_xui="glowbutton.button">
+
+	<layer id="glowbutton.glow.normal" ghost="1" x="0" y="0" />
+	<layer id="glowbutton.glow.hover" ghost="1" alpha="0" x="0" y="0" />
+
+	<ToggleButton id="glowbutton.button" x="0" y="0" rectrgn="1"/>
+
+	<layer id="glowbutton.overlay" ghost="1" x="0" y="0" />
+
+	<script id="glowbutton.script" file="wasabi/GlowButton/glowbutton.maki" />
+
+</groupdef>
+
+<groupdef id="titan.nstatesglowbutton" xuitag="Deimos:NStatesGlowButton" embed_xui="glowbutton.button">
+
+	<layer id="glowbutton.glow.normal" ghost="1" x="0" y="0" />
+	<layer id="glowbutton.glow.hover" ghost="1" alpha="0" x="0" y="0" />
+
+	<NStatesButton id="glowbutton.button" x="0" y="0" h="0" w="0" relath="1" relatw="1" rectrgn="1"/>
+
+	<layer id="glowbutton.overlay" ghost="1" x="0" y="0" />
+
+	<script id="glowbutton.script" file="wasabi/GlowButton/glowbutton.maki" />
+
+</groupdef>

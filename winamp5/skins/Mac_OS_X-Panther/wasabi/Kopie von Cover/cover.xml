@@ -1,0 +1,299 @@
+<!-- ===================================================================================================
+
+  <Deimos:Cover /> implmentation
+
+  by Martin P. alias Deimos - martin.deimos@gmx.de - www.martin.deimos.de.vu
+
+    Available parameters :
+
+      - All params for Button
+      - All params for Group
+
+      - image="id" //cover not found image
+	  - notifier="1|0"
+
+    studio.xnf items:
+
+      PrivateString("deimos", "CoverSearch.additionalPath", PATH); //CoverDirectory
+
+==================================================================================================== -->
+
+<groupdef id="titan.cover" xuitag="Deimos:Cover" embed_xui="cover.notfound">
+
+	<windowholder id="holder.avs" x="0" y="0" h="0" w="0" relath="1" relatw="1" autoclose="1" autoopen="1" autoavailable="0" visible="0" hold="guid:avs"/>
+	<windowholder id="holder.cover" x="0" y="0" h="0" w="0" relath="1" relatw="1" autoclose="1" autoopen="1" autoavailable="0" visible="0" hold="guid:{F0816D7B-FFFC-4343-80F2-E8199AA15CC3}"/>
+	<AnimatedLayer id="cover.dummy" visible="0" x="0" y="0" h="1" w="1" image="dummys" autoplay="0" move="0" />
+	<layer id="cover.notfound" visible="1" x="0" y="0" h="0" w="0" relath="1" relatw="1" />
+	<browser id="browser.cdcover" visible="0" x="0" y="0" h="0" w="0" relath="1" relatw="1" scrollbars="never" 
+url="file:///@SKINPATH@Wasabi\Cover\html\cdcover.maki" />
+	<layer id="cover.layer2" renderbasetexture="1" visible="1" x="0" y="0" h="0" w="0" relath="1" relatw="1" image="" />
+	<layer id="cover.layer" renderbasetexture="1" visible="1" x="0" y="0" h="0" w="0" relath="1" relatw="1" image="" />
+
+	<script id="cover.script" file="Wasabi/Cover/cover.maki"/>
+
+</groupdef>
+
+<!--groupdef id="titan.cover.nowebsearch" xuitag="Deimos:Cover:NoWeb" embed_xui="cover.notfound">
+	<windowholder id="holder.avs" x="0" y="0" h="0" w="0" relath="1" relatw="1" autoclose="1" autoopen="1" autoavailable="0" visible="0" hold="guid:avs"/>
+	<windowholder id="holder.cover" x="0" y="0" h="0" w="0" relath="1" relatw="1" autoclose="1" autoopen="1" autoavailable="0" visible="0" hold="guid:{F0816D7B-FFFC-4343-80F2-E8199AA15CC3}"/>
+	<AnimatedLayer id="cover.dummy" visible="0" x="0" y="0" h="1" w="1" image="dummys" autoplay="0" move="0" />
+	<layer id="cover.notfound" visible="1" x="0" y="0" h="0" w="0" relath="1" relatw="1" />
+	<layer id="cover.layer2" renderbasetexture="1" visible="1" x="0" y="0" h="0" w="0" relath="1" relatw="1" image="" />
+	<layer id="cover.layer" renderbasetexture="1" visible="1" x="0" y="0" h="0" w="0" relath="1" relatw="1" image="" />
+
+	<script id="cover.script" file="Wasabi/Cover/cover-noweb.maki"/>
+
+</groupdef-->
+
+
+<!-- ************************ ConfigPage: COVER SEARCH ***************************** -->
+
+<elements>
+	<bitmap id="config.folder" file="gfx/folder.png" gammagroup="WASABI-B-Text"/>
+	<bitmap id="cover.notfound" file="gfx/covernotfound.png" gammagroup="Background-black"/>
+</elements>
+
+<groupdef id="config.cover.replace" >
+	<Wasabi:Text 
+		id="description"
+		text="The Windows Filesystem doesn't use symbols like '\', '/', ':', '*', '?', '>', '|'\nHere you can replace these strings. (eg AC/DC -> ACDC)"
+		x="0" y="-3"
+  		w="0" h="0"
+		relatw="1" relath="1"
+	/>
+	<group id="wasabi.window.embedded" x="0" y="28" w="-100" h="112" relatw="1" />
+	<List id="rep" x="1" y="29" w="-102" h="110" relatw="1" />
+
+	<Wasabi:Text 
+		id="description"
+		text="String:"
+		x="-95" y="25"
+  		w="95" h="30"
+		relatx="1"
+	/>
+	<Wasabi:EditBox id="str" x="-95" y="41" relatx="1" w="95" h="18" />
+
+	<Wasabi:Text 
+		id="description"
+		text="...is replaced by:"
+		x="-95" y="61"
+  		w="95" h="30"
+		relatx="1"
+	/>
+	<Wasabi:EditBox id="rstr" x="-95" y="77" relatx="1" w="95" h="18" />
+
+	<Wasabi:Button id="add" x="-95" y="100" relatx="1" w="95" h="18"
+		text="ADD"
+	/>
+
+	<Wasabi:Button id="rem" x="-95" y="122" relatx="1" w="95" h="18"
+		text="REMOVE"
+	/>
+</groupdef>
+
+<groupdef id="config.cover.se" name="Search Engine">
+	<Wasabi:Button id="pid" x="0" y="0" w="0" relatw="1" h="21" text="Click to see the search order of the playitem directory"/>
+
+	<Wasabi:Button id="acd" x="0" y="25" w="0" relatw="1" h="21" text="Click to see the search order of the additional cover directory"/>
+
+	<Wasabi:TitleBox id="des" x="0" y="50" w="0" h="-78" relath="1" relatw="1" title="Replace Strings" content="config.cover.replace" />
+
+	<Wasabi:Button id="notes" x="0" y="-23" relaty="1" w="0" relatw="1" h="21" text="Important Notes" tooltip="Important Notes" />
+
+	<script id="script2" param="2" file="wasabi/Cover/configpage.maki"/>
+</groupdef>
+
+<!--************************-->
+
+<groupdef id="config.cover.prefs" name="Configuration">
+	<Wasabi:Text 
+		id="description"
+		text="This skin uses an CoverSearch engine that allows you to show the Album Art of any\nmedia. The Album Art can be shown in the Notifier and the Album Art Window."
+		x="0" y="-3"
+  		w="0" h="0"
+		relatw="1" relath="1"
+	/>
+
+	<Wasabi:CheckBox x="5" y="22" cfgattrib="{F1036C9C-3919-47ac-8494-366778CF10F9};Search in playitem directory"
+		text="Enable CoverSearch in the playitem directory"
+	/>
+
+	<Wasabi:CheckBox x="5" y="38" cfgattrib="{F1036C9C-3919-47ac-8494-366778CF10F9};Search in additional cover directory"
+		text="Enable CoverSearch in an additional cover directory"
+	/>
+
+	<Wasabi:CheckBox x="5" y="54" cfgattrib="{F1036C9C-3919-47ac-8494-366778CF10F9};Search the Web"
+		text="Enable CoverSearch via Amazon.com (Internet connection required!)"
+	/>
+
+	<Wasabi:Text 
+		id="description"
+		text="Set path for your additional Cover Directory (e.g. C:\Covers):"
+		x="5" y="72"
+  		w="0" h="30"
+		relatw="1"
+	/>
+
+	<Wasabi:EditBox id="coverpath" x="25" y="90" relatw="1" w="-60" h="18" />
+
+	<Wasabi:Button id="opendir" x="-30" y="90" w="30" relatx="1" h="18" text="" tooltip="Important Notes" />
+
+	<!--layer x="-20" y="95" w="20" relatx="1" h="13" image="wasabi.button.center" ghost="1"/-->
+	<layer x="-22" y="94" relatx="1" image="config.folder" ghost="1"/>
+
+
+	<Wasabi:Text 
+		id="description"
+		text="If no cover was found..."
+		x="5" y="110"
+  		w="-35" h="50"
+		relatw="1"
+	/>
+	
+	<!--Deimos:DropDownList id="show" items="Video with Cover Plugin;Visualization Plugin;Titan CoverSearch"  x="-140" relatx="1" y="128" h="20" w="140" cfgattrib="{E9C2D926-53CA-400f-9A4D-85E31755A4CF};zndDrawer holds" lh="54"
+	/-->
+	<Wasabi:RadioGroup id="cover" />
+	<Wasabi:CheckBox x="25" y="125" cfgattrib="{956A3C18-9F41-4605-8FBF-D06D41222A95};Show 'Cover not found' image"
+		text="...show 'Cover not found' image" radioid="cover" cfgval="1"
+	/>
+
+	<Wasabi:CheckBox x="25" y="145" cfgattrib="{956A3C18-9F41-4605-8FBF-D06D41222A95};Show Visualization Plugin"
+		text="...show Visualization Plugin" radioid="cover" cfgval="1"
+	/>
+
+	<Wasabi:CheckBox x="25" y="165" cfgattrib="{956A3C18-9F41-4605-8FBF-D06D41222A95};Try to find one with a Cover Plugin"
+		text="...try to find one with J.Richter's Cover and Tag Plugin (if installed)" radioid="cover" cfgval="1"
+	/>
+
+	<Wasabi:CheckBox x="25" y="185" cfgattrib="{956A3C18-9F41-4605-8FBF-D06D41222A95};Show own bitmap"
+		text="...show own bitmap (shold be png/jpg at 160x160 px):" radioid="cover" cfgval="1"
+	/>
+	<Wasabi:EditBox id="pixpath" x="25" y="207" relatw="1" w="-30" h="18" />
+
+	<Wasabi:CheckBox x="5" y="228" cfgattrib="{F1036C9C-3919-47ac-8494-366778CF10F9};Smooth Album Art "
+		text="Smooth the Album Art of the Cover Art Window if it's too large."
+	/>
+
+	<script id="script1" param="1" file="wasabi/Cover/configpage.maki"/>
+</groupdef>
+
+<groupdef id="config.cover.amazon.status">
+	<Wasabi:Text 
+		id="statustxt"
+		text=""
+		x="0" y="1"
+  		w="0" h="0"
+		relatw="1" relath="1"
+	/>
+</groupdef>
+
+<groupdef id="config.cover.amazon" name="Amazon.com Config">
+	<Wasabi:Text 
+		id="description"
+		text="According to the latest Security Bug Fixes of Winamp it isn't possible\nto have the CoverSearch HTMLs included in the skin!\nTo solve this problem please download the CoverSearch HTMLs from my website!"
+		x="0" y="-3"
+  		w="0" h="0"
+		relatw="1" relath="1"
+	/>
+
+	<Wasabi:Button id="download" x="0" y="40" relaty="0" w="0" relatw="1" h="21" text="Download CoverSearch" tooltip="Start Download"/>
+
+	<Wasabi:Text 
+		id="description"
+		text="Install the files in a directory on your HD\nand type the path where you have installed them in this edit:"
+		x="0" y="65"
+  		w="0" h="0"
+		relatw="1" relath="1"
+	/>
+
+	<Wasabi:EditBox id="path" x="3" y="96" relatw="1" w="-6" h="18" />
+
+	<Wasabi:Text 
+		id="description"
+		text="Example: C:\DpW-Addons\Mac_OS_X-Panther\CoverSearch"
+		x="0" y="116"
+  		w="0" h="0"
+		relatw="1" relath="1"
+	/>
+
+	<Wasabi:Text 
+		id="description"
+		text="Click on 'Apply Changes'"
+		x="0" y="135"
+  		w="0" h="0"
+		relatw="1" relath="1"
+	/>
+
+	<Wasabi:Button id="apply" x="0" y="152" relaty="0" w="0" relatw="1" h="21" text="Apply Changes" tooltip="Apply Changes"/>
+
+	<Wasabi:CheckBox x="5" y="178" cfgattrib="{F1036C9C-3919-47ac-8494-366778CF10F9};Search the Web"
+		text="Enable CoverSearch via Amazon.com (Internet connection required!)"
+	/>
+
+	 <Wasabi:TitleBox id="status" x="3" y="200" w="-6" relatw="1" h="-200" relath="1" title="Status" content="config.cover.amazon.status" visible="1"/>
+
+	 <AnimatedLayer id="cover.dummy" visible="0" x="0" y="0" h="1" w="1" image="dummys" autoplay="0" move="0" />
+
+	<script id="script4" param="4" file="wasabi/Cover/configpage.maki"/>
+</groupdef>
+
+<!-- ************************ NOTIFICATIONS > Cover Search ***************************** -->
+
+<groupdef id="config.Notifications.cover">
+	<Wasabi:Text 
+		id="description"
+		text="Like in the Drawer you can show show the Album Art of any media in the Notifier.\nIf no Album Art was found the normal Notifier is shown.\nFor information about the Search Engine goto 'Cover Search' > 'Search Engine'!"
+		x="0" y="0"
+  		w="-10" h="0"
+		relatw="1" relath="1"
+	/>
+
+	<Wasabi:CheckBox x="5" y="40" cfgattrib="{7BF45B05-2B98-4de8-8778-E5CCC9639ED1};Display Album Art"
+		text="Display Album Art in the Notifier Window"
+	/>
+
+	<Wasabi:RadioGroup id="where" />
+	<Wasabi:CheckBox x="25" y="60" radioid="where"
+		cfgattrib="{7BF45B05-2B98-4de8-8778-E5CCC9639ED1};Show on the right side"
+		text="Show on the right side"
+	/>
+	<Wasabi:CheckBox x="25" y="80" radioid="where"
+		cfgattrib="{7BF45B05-2B98-4de8-8778-E5CCC9639ED1};Show on the left side"
+		text="Show on the left side"
+	/>
+
+	<Wasabi:CheckBox x="5" y="100" cfgattrib="{F1036C9C-3919-47ac-8494-366778CF10F9};Search in playitem directory"
+		text="Enable CoverSearch in the playitem directory"
+	/>
+
+	<Wasabi:CheckBox x="5" y="118" cfgattrib="{F1036C9C-3919-47ac-8494-366778CF10F9};Search in additional cover directory"
+		text="Enable CoverSearch in an additional cover directory"
+	/>
+
+	<Wasabi:CheckBox x="5" y="136" cfgattrib="{F1036C9C-3919-47ac-8494-366778CF10F9};Search the Web"
+		text="Enable CoverSearch via Amazon.com (Internet connection required!)"
+	/>
+
+	<Wasabi:Text 
+		id="description"
+		text="Set path for your additional Cover Directory (e.g. C:\Covers):"
+		x="5" y="155"
+  		w="0" h="30"
+		relatw="1"
+	/>
+
+	<Wasabi:EditBox id="coverpath" x="25" y="175" relatw="1" w="-60" h="20" />
+
+	<Wasabi:Button id="opendir" x="-30" y="175" w="30" relatx="1" h="18" text="" tooltip="Important Notes" />
+
+	<layer x="-22" y="179" relatx="1" image="config.folder" ghost="1"/>
+
+	<Wasabi:CheckBox x="5" y="199" cfgattrib="{7BF45B05-2B98-4de8-8778-E5CCC9639ED1};Smooth Album Art"
+		text="Smooth Notifier's Album Art if it's too large / small"
+	/>
+		<Wasabi:Button id="show" x="0" y="-23" relaty="1" w="0" relatw="1" h="21" text="Show Notification" tooltip="Show Notification" />
+
+	<script id="script3" param="3" file="wasabi/Cover/configpage.maki"/>
+
+</groupdef>
+

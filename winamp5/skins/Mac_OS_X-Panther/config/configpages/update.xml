@@ -1,0 +1,19 @@
+<!-- ************************ Skin Update ***************************** -->
+
+<groupdef id="config.update">
+
+	<Wasabi:Text 
+		id="description"
+		text="Current Version: Mac OS X Panther - v1.4  -  18. Feb. 2006"
+		x="0" y="0"
+  		w="0" h="45"
+		relatw="1"
+	/>
+
+	<group id="wasabi.window.embedded" x="0" y="17" h="-45" w="0"  relatw="1" relath="1" />
+	<browser id="browser" x="1" y="18" h="-47" w="-2"  relatw="1" relath="1" scrollbars="never" url="http://home.arcor.de/martin.deimos/updates/panther.htm?Panther,1.4" />
+
+	<Wasabi:Button id="update"
+		x="0" y="-23" relaty="1" w="0" relatw="1" h="21"
+		text="Install this Version" tooltip="Update Skin" />
+</groupdef>

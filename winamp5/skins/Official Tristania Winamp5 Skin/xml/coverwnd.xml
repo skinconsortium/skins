@@ -1,0 +1,21 @@
+<!-- Cover Window -->
+
+<container id="cover" nomenu="0" name="Cover Art" default_x="0" default_y="0" default_visible="1">
+
+<!-- ************************ IMPLEMENTATION ***************************** -->
+
+<layout id="normal" desktopalpha="0" default_w="195" minimum_w="100" default_h="210" minimum_h="100" default_visible="1">
+
+	<Wasabi:StandardFrame:Modal
+		x="0" y="0" w="0" h="0" relatw="1" relath="1"
+		padtitleleft="0"
+		padtitleright="0"
+	/>
+
+	<Deimos:Cover id="holder.tcover" resizewindow="1;35;50" x="17" y="33" w="-35" h="-50" relatw="1" relath="1" />
+
+	<sendparams target="window.titlebar.title" default="Cover Art"/>
+
+</layout>
+
+</container>

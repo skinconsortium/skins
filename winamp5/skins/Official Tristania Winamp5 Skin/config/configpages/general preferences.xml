@@ -1,0 +1,66 @@
+<!--elements>
+	<bitmap id="config.banner" file="config/titanbanner.png" />
+
+	<bitmap id="config.desktopalpha.enabled" file="config/desktopalpha.png" x="0" y="0" w="100" h="100" gammagroup="WASABI-Text"/> 
+	<bitmap id="config.desktopalpha.disabled" file="config/desktopalpha.png" x="100" y="0" w="100" h="100" gammagroup="WASABI-Text"/> 
+
+	<bitmap id="config.display.bg" file="config/display.png" x="0" y="0" w="302" h="83" gammagroup="WASABI-Text"/> 
+	<bitmap id="config.display.t1" file="config/display.png" x="123" y="104" w="161" h="17" gammagroup="WASABI-Text"/> 
+	<bitmap id="config.display.t2" file="config/display.png" x="123" y="124" w="161" h="17" gammagroup="WASABI-Text"/> 
+	<bitmap id="config.display.tl" file="config/display.png" x="8" y="143" w="284" h="16" gammagroup="WASABI-Text"/> 
+
+	<bitmap id="config.folder" file="gfx/folder.png" gammagroup="WASABI-Text"/>
+	
+	<bitmap id="config.prev.mainnormal.bg" file="config/mainnormal-bg.png" />
+	<bitmap id="config.prev.mainnormal.txt" file="config/mainnormal.png" gammagroup="WASABI-Text"/>
+</elements-->
+
+
+<!-- ************************ General Preferences ***************************** -->
+
+<groupdef id="DisplayOptions.titlebox.content" autoheightsource="lastitem">
+  <Wasabi:CheckBox x="0" y="0" w="195" text="Always on top"
+    cfgattrib="{280876CF-48C0-40BC-8E86-73CE6BB462E5};Always on top"
+  />
+  <Wasabi:CheckBox x="0" y="20" w="195" text="Enable tooltips"
+    cfgattrib="{9149C445-3C30-4E04-8433-5A518ED0FDDE};Enable tooltips"
+  />
+  <Wasabi:CheckBox id="lastitem" x="0" y="40" w="195" text="Automatically dock windows"
+    cfgattrib="{280876CF-48C0-40BC-8E86-73CE6BB462E5};Enable docking"
+  />
+
+</groupdef>
+
+<groupdef id="visualisation.refreshrate.content" autoheightsource="txt">
+  <Wasabi:HSlider id="refreshrate.slider"
+    x="0" y="0"
+    w="0" h="15"
+    relatw="1"
+    high="100"
+    cfgattrib="{9149C445-3C30-4e04-8433-5A518ED0FDDE};Timer refresh rate"
+  />
+  <Wasabi:Text  y="11" x="3" text="|"/>
+  <Wasabi:Text  y="11" x="173" text="|"/>
+  <Wasabi:Text  y="11" x="346" text="|"/>
+  <Wasabi:Text  y="22" x="3" text="slow"/>
+  <Wasabi:Text  y="22" x="153" w="60"  text="moderate"/>
+  <Wasabi:Text id="txt" y="22" x="333" w="40" text="fast"/>
+</groupdef>
+
+<groupdef id="config.general">
+
+	<Wasabi:CheckBox x="0" y="90" cfgattrib="{26E26319-AECA-4433-B8F1-F4A5BF2A9ED5};Check for Skinupdates at Startup" text="Check for new Skinversion at startup"
+	/>
+
+  <Wasabi:TitleBox x="0" y="0" w="0" relatw="1" title="Display Options" content="DisplayOptions.titlebox.content" /> 
+
+   <Wasabi:TitleBox x="0" y="-85" relaty="1" w="0" relatw="1" id="refreshrate" title="Timer Refresh Rate" content="visualisation.refreshrate.content" />
+  <script file="scripts/titleboxslidercb.maki" param="refreshrate;refreshrate.slider; : ;fps;fps;{9149C445-3C30-4e04-8433-5A518ED0FDDE}|Timer refresh rate" />
+
+	<Deimos:RestoreButton id="restore"
+		x="0" y="-23" relaty="1" w="0" relatw="1" h="21"
+		text="Restore standard values" tooltip="Restore standard values"		setAttribs="{280876CF-48C0-40BC-8E86-73CE6BB462E5};Always on top:0|{9149C445-3C30-4E04-8433-5A518ED0FDDE};Enable tooltips:1|{280876CF-48C0-40BC-8E86-73CE6BB462E5};Enable docking:1|{9149C445-3C30-4e04-8433-5A518ED0FDDE};Timer refresh rate:30|{26E26319-AECA-4433-B8F1-F4A5BF2A9ED5};Check for Skinupdates at Startup:1"
+		numAttribs="5"
+	/>
+
+</groupdef>

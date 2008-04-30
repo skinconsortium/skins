@@ -1,0 +1,220 @@
+<!-- player-normal-group.xml defines the layout of the Winamp Player Window. -->
+
+<!-- Display -->
+
+<groupdef id="player.display">
+
+	<Deimos:TickerText
+		id="Songticker" ticker="1"
+		showlen="0" display="songname"
+		x="12" y="36"
+		w="222" h="30"
+		adjustSongticker=" ;  "
+		font="ttf"
+		align="center"
+		valign="top"
+		rightclickaction="trackmenu"
+		dblclickaction="trackinfo"
+		fontsize="20" bold="0"
+		color="color.Display"
+	/>
+
+	<text
+		id="timer"
+		display="time"
+		x="155" y="50"
+		w="70" h="20"
+		font="ttf"
+		align="left"
+		timecolonwidth="5"
+		timeroffstyle="1"
+		timerhours="0"  bold="0"
+		fontsize="18" valign="top"
+		color="color.Display"
+	/>
+
+	<Deimos:Visualizer id="player.normal.display.vis" x="21" y="50" />
+
+	<layer id="seek.pause" x="135" y="63" image="blank"  visible="0" move="0"/>
+	<layer id="seek" x="135" y="63" image="player.display.seek" move="0"/>
+	<!--layer id="seekover"  x="135" y="63" image="player.display.seekover"/-->
+
+	<Deimos:GlowButton
+		id="eqtoggle"
+		x="131" y="50" h="8" w="17"
+		image="player.display.eq0"
+		activeimage="player.display.eq1"
+		songtickerMessage="Show EQ"
+		tooltip="Show Equalizer"
+		extendedSongtickerMessage="Show Equalizer;Hide Equalizer"
+		rectrgn="1"
+		action="TOGGLE" param="eq"
+		nocfgvals="1"
+
+	/>
+
+	<Deimos:GlowButton
+		id="pl"
+		x="131" y="58" h="8" w="17"
+		image="player.display.pl0"
+		activeimage="player.display.pl1"
+		songtickerMessage="Show PL"
+		tooltip="Show Playlist Editor"
+		extendedSongtickerMessage="Show Playlist Editor;Hide Playlist Editor"
+		action="TOGGLE" param="guid:pl"
+		rectrgn="1"
+		nocfgvals="1"
+	/>
+
+	<Deimos:GlowButton
+		id="ml"
+		x="131" y="66" h="8" w="17"
+		image="player.display.ml0"
+		activeimage="player.display.ml1"
+		songtickerMessage="Show ML"
+		tooltip="Show Media Library"
+		extendedSongtickerMessage="Show Media Library;Hide Media Library"
+		action="TOGGLE" param="guid:ml"
+		rectrgn="1"
+		nocfgvals="1"
+	/>
+
+	<Deimos:GlowButton
+		id="cfg"
+		x="131" y="74" h="8" w="17"
+		image="player.display.cfg0"
+		activeimage="player.display.cfg1"
+		songtickerMessage="Show Preferences"
+		tooltip="Show Preferences"
+		extendedSongtickerMessage="Show Preferences;Hide Preferences"
+		action="TOGGLE" param="config"
+		rectrgn="1"
+		nocfgvals="1"
+	/>
+
+
+	<Deimos:NStatesGlowButton
+		id="repeat"
+		x="215" y="53" relatx="0"
+		w="12" h="10"
+		image="player.button.repeat"
+		hoverimage="player.button.repeat"
+		downimage="player.button.repeat"
+		extendedSongtickerMessage="Repeat: Playlist;Repeat: Track;Repeat: Off"
+		rectrgn="1" nstates="3"
+		tooltip="Toggle Playlist/Song Repeating"
+		cfgattrib="{E9C2D926-53CA-400f-9A4D-85E31755A4CF};Repeat"
+		cfgvals="0;1;-1"
+	/>
+
+	<Deimos:NStatesGlowButton
+		id="shuffle"
+		x="220" y="63" relatx="0"
+		w="12" h="10"
+		image="player.button.shuffle"
+		hoverimage="player.button.shuffle"
+		downimage="player.button.shuffle"
+		extendedSongtickerMessage="Shuffle: On; Shuffle: Off"
+		rectrgn="1" nstates="2"
+		tooltip="Toggle Playlist Shuffling"
+		cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Shuffle"
+	/>
+
+	<Deimos:NStatesGlowButton
+		id="Crossfader"
+		x="225" y="73" relatx="0"
+		w="12" h="10"
+		image="player.button.Xfade"
+		hoverimage="player.button.Xfade"
+		downimage="player.button.Xfade"
+		extendedSongtickerMessage="Crossfader: On; Crossfader: Off"
+		rectrgn="1" nstates="2"
+		tooltip="Toggle Crossfader"
+		cfgattrib="{FC3EAF78-C66E-4ED2-A0AA-1494DFCC13FF};Enable crossfading"
+	/>
+
+</groupdef>
+
+<groupdef id="player.buttons">
+
+	<Deimos:GlowButton
+		id="Pause"
+		action="PAUSE"
+		x="14" y="115"
+		image="player.normal.button.play.normal"
+		downImage="player.normal.button.play.pressed"
+		hoverImage="player.normal.button.play.hover"
+		glowImage="player.normal.button.play.glow.normal"
+		glowHoverImage="player.normal.button.play.glow.hover"
+		overlay="player.normal.button.pause"
+		showOnStatus="Play"
+		songtickerMessage="Pause"
+		tooltip="Pause"
+		rectrgn="0"
+	/>
+
+	<Deimos:GlowButton
+		id="Play"
+		action="PLAY"
+		x="14" y="115"
+		image="player.normal.button.play.normal"
+		downImage="player.normal.button.play.pressed"
+		hoverImage="player.normal.button.play.hover"
+		overlay="player.normal.button.play"
+		showOnStatus="Hold"
+		glowLink="Pause"
+		songtickerMessage="Play"
+		tooltip="Play"
+		rectrgn="0"
+	/>
+
+	<Deimos:GlowButton
+		id="Stop"
+		action="STOP"
+		x="75" y="116"
+		image="player.normal.button.stop.normal"
+		downImage="player.normal.button.stop.pressed"
+		hoverImage="player.normal.button.stop.hover"
+		glowImage="player.normal.button.stop.glow.normal"
+		glowHoverImage="player.normal.button.stop.glow.hover"
+		overlay="player.normal.button.stop"
+		songtickerMessage="Stop"
+		tooltip="stop"
+		rectrgn="0"
+	/>
+
+	<Deimos:GlowButton
+		id="RWD"
+		action="PREV"
+		x="104" y="116"
+		image="player.normal.button.rwd.normal"
+		downImage="player.normal.button.rwd.pressed"
+		hoverImage="player.normal.button.rwd.hover"
+		overlay="player.normal.button.rwd"
+		glowLink="Stop"
+		songtickerMessage="Previous"
+		tooltip="Previous"
+		rectrgn="0"
+	/>
+
+	<Deimos:GlowButton
+		id="FWD"
+		action="NEXT"
+		x="127" y="116"
+		image="player.normal.button.fwd.normal"
+		downImage="player.normal.button.fwd.pressed"
+		hoverImage="player.normal.button.fwd.hover"
+		overlay="player.normal.button.fwd"
+		glowLink="Stop"
+		songtickerMessage="Next"
+		tooltip="Next"
+		rectrgn="0"
+	/>
+
+	<!--layer id="volume.bg" image="player.normal.volume.bg" x="57" y="-16" move="0" ghost="1"/-->
+	<animatedlayer id="volume.anim" image="player.normal.volume.bganim" x="157" y="84" h="48" w="48" move="0" autoplay="0" autoreplay="0"/>
+	<layer id="volume.overlay" image="player.normal.volume.overlay" x="157" y="84" move="0" />
+	<!--layer id="volume.knob" image="player.normal.volume.knob" x="57" y="-16" move="0" ghost="1"/-->
+	<animatedlayer id="volume.knobanim" image="player.normal.volume.knobanim" x="157" y="84" h="48" w="48" move="0" autoplay="0" autoreplay="0" ghost="1"/>
+
+</groupdef>

@@ -1,0 +1,151 @@
+<!-- =======================================================================================================
+
+  <Wasabi:Button /> implementation
+
+    Available parameters : 
+
+      - Everything from Group class
+      - Everything from Button class
+
+    Required objects :
+
+      - Button id="wasabi.button"
+
+======================================================================================================== -->
+<groupdef id="wasabi.button.group" xuitag="Wasabi:Button" embed_xui="wasabi.button" h="21" autowidthsource="wasabi.button">
+  <grid
+    id="button.pressed.grid"
+    x="0" y="0"
+    w="0" h="0"
+    relatw="1" relath="1"
+    topleft="deimos.button.pressed.top.left"
+    top="deimos.button.pressed.top"
+    topright="deimos.button.pressed.top.right"
+    left="deimos.button.pressed.left"
+    middle="deimos.button.pressed.center"
+    right="deimos.button.pressed.right"
+    bottomleft="deimos.button.pressed.bottom.left"
+    bottom="deimos.button.pressed.bottom"
+    bottomright="deimos.button.pressed.bottom.right"
+  />
+  <grid
+    id="button.hover.grid"
+    x="0" y="0"
+    w="0" h="0"
+    relatw="1" relath="1"
+    topleft="deimos.button.hover.top.left"
+    top="deimos.button.hover.top"
+    topright="deimos.button.hover.top.right"
+    left="deimos.button.hover.left"
+    middle="deimos.button.hover.center"
+    right="deimos.button.hover.right"
+    bottomleft="deimos.button.hover.bottom.left"
+    bottom="deimos.button.hover.bottom"
+    bottomright="deimos.button.hover.bottom.right"
+  />
+  <grid
+    id="button.normal.grid"
+    x="0" y="0"
+    w="0" h="0"
+    relatw="1" relath="1"
+    topleft="deimos.button.top.left"
+    top="deimos.button.top"
+    topright="deimos.button.top.right"
+    left="deimos.button.left"
+    middle="deimos.button.center"
+    right="deimos.button.right"
+    bottomleft="deimos.button.bottom.left"
+    bottom="deimos.button.bottom"
+    bottomright="deimos.button.bottom.right"
+  />
+
+
+  <button
+    id="wasabi.button" 
+    x="0" y="0"
+    w="0" h="0"
+    relatw="1" relath="1"
+	rectrgn="1"
+    wantfocus="1"
+  />
+
+  	<layer id="button.overlay" ghost="1" x="0" y="0" />
+
+	<script id="script" file="wasabi/button/button.maki" />
+</groupdef>
+
+<groupdef id="wasabi.togglebutton.group" xuitag="Wasabi:ToggleButton" embed_xui="wasabi.button" h="21" autowidthsource="wasabi.button">
+  <grid
+    id="button.pressed.grid"
+    x="0" y="0"
+    w="0" h="0"
+    relatw="1" relath="1"
+    topleft="deimos.button.pressed.top.left"
+    top="deimos.button.pressed.top"
+    topright="deimos.button.pressed.top.right"
+    left="deimos.button.pressed.left"
+    middle="deimos.button.pressed.center"
+    right="deimos.button.pressed.right"
+    bottomleft="deimos.button.pressed.bottom.left"
+    bottom="deimos.button.pressed.bottom"
+    bottomright="deimos.button.pressed.bottom.right"
+  />
+  <grid
+    id="button.hover.grid"
+    x="0" y="0"
+    w="0" h="0"
+    relatw="1" relath="1"
+    topleft="deimos.button.hover.top.left"
+    top="deimos.button.hover.top"
+    topright="deimos.button.hover.top.right"
+    left="deimos.button.hover.left"
+    middle="deimos.button.hover.center"
+    right="deimos.button.hover.right"
+    bottomleft="deimos.button.hover.bottom.left"
+    bottom="deimos.button.hover.bottom"
+    bottomright="deimos.button.hover.bottom.right"
+  />
+  <grid
+    id="button.normal.grid"
+    x="0" y="0"
+    w="0" h="0"
+    relatw="1" relath="1"
+    topleft="deimos.button.top.left"
+    top="deimos.button.top"
+    topright="deimos.button.top.right"
+    left="deimos.button.left"
+    middle="deimos.button.center"
+    right="deimos.button.right"
+    bottomleft="deimos.button.bottom.left"
+    bottom="deimos.button.bottom"
+    bottomright="deimos.button.bottom.right"
+  />
+
+  <ToggleButton
+    id="wasabi.button" 
+    x="0" y="0"
+    w="0" h="0"
+    relatw="1" relath="1"
+	rectrgn="1"
+    wantfocus="1"
+  />
+
+  	<layer id="button.overlay" ghost="1" x="0" y="0" />
+	<script id="script" file="wasabi/button/button.maki" />
+
+</groupdef>
+
+<groupdef id="nstates.group" xuitag="Deimos:NStatesButton" embed_xui="button" h="21" autowidthsource="button">
+
+  <NStatesButton
+    id="button" 
+    x="0" y="0"
+    w="0" h="0"
+    relatw="1" relath="1"
+	rectrgn="1"
+  />
+
+  	<layer id="button.overlay" ghost="1" x="0" y="0" />
+	<script id="script" file="wasabi/button/button2.maki" />
+
+</groupdef>

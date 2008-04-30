@@ -1,0 +1,16 @@
+<groupdef id="config.bugs" >
+
+	<wasabi:text x="0" y="0" h="20" text="Here is a list of known bugs:"/>
+	<wasabi:text x="0" y="50" h="20" w="0" relatw="1" text="+ some checkboxes show no state"/>
+	<wasabi:text x="0" y="65" h="20" w="0" relatw="1" text="  Caused by Winamp v5.22! Perhaps this will work in newer Winamp versions"/>
+	<wasabi:text x="0" y="80" h="20" w="0" relatw="1" text="+ cannot load covers with h=64 px"/>
+	<wasabi:text x="0" y="95" h="20" w="0" relatw="1" text="  Caused by Winamp v5.22! Returns h=64 if no cover is found!"/>
+	<wasabi:text x="0" y="110" h="20" w="0" relatw="1" text="  Perhaps this will work in newer Winamp versions"/>
+	<wasabi:text x="0" y="125" h="20" w="0" relatw="1" text="+ Cannot unload while in script..."/>
+	<wasabi:text x="0" y="140" h="20" w="0" relatw="1" text="  TODO: Click cancel and reload skin with hitting F5!"/>
+
+	<wasabi:text x="0" y="-45" h="20" relaty="1" text="Found a new bug? Click below and post it in our forums!"/>
+
+	<Deimos:HyperLinkButton id="url" x="0" y="-26" relaty="1" w="372" h="21" text="Online bug report for this skin" tooltip="Homepage" url="http://forums.skinconsortium.com/viewtopic.php?t=195" />
+
+</groupdef>

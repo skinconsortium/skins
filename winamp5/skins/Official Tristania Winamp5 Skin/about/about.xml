@@ -1,0 +1,117 @@
+<elements>
+
+  <bitmap id="about.fg" file="about/about_fg.png"/>
+  <bitmapfont id="about.font" file="about/aboutfont.png" charwidth="10" charheight="21" hspacing="-1" vspacing="0"/>
+
+  <color id="font.about.color1" value="0,0,0" gammagroup=""/>
+  <color id="font.about.color2" value="255,255,255" gammagroup=""/>
+
+</elements>
+
+<groupdef id="txt">
+  <text
+    id="text1"
+    color="font.about.color1"
+    x="0" y="0"
+    w="351"
+    h="20"
+    align="left"
+	fontsize="24"
+    font="ttf"
+    bold="0"
+    default="Script and Design:"
+  />
+  <text
+    id="text2"
+    color="font.about.color1"
+    x="15" y="14"
+    w="351"
+    h="30"
+    align="left"
+    fontsize="17"
+    font="ttf" bold="0"
+    default="Martin Poehlmann aka Deimos"
+
+  />
+  <text
+    id="text3"
+    color="font.about.color1"
+    x="15" y="30"
+    w="351"
+    h="30"
+    align="left"
+    fontsize="17"
+    font="ttf" bold="0"
+    default="martin@skinconsortium.com"
+  />
+  <text
+    id="text4"
+    color="font.about.color1"
+    x="15" y="46"
+    w="351"
+    h="30"
+    align="left"
+    fontsize="17"
+    font="ttf" bold="0"
+    default="www.skinconsortium.com"
+
+  />
+  <text
+    id="text4"
+    color="font.about.color1"
+    x="15" y="62"
+    w="351"
+    h="30"
+    align="left"
+    fontsize="17"
+    font="ttf" bold="0"
+    default="www.martin.deimos.de.vu"
+
+  />
+  <text
+    id="text5"
+    color="font.about.color1"
+    x="0" y="84"
+    w="351"
+    h="30"
+    align="left"
+    fontsize="24"
+    font="ttf" bold="0"
+    default="www.tristania.com"
+
+  />
+  <Deimos:HyperLinkButton2 x="15" y="40" h="14" w="195" rectrgn="1" url="mailto:martin@skinconsortium.com" />
+  <Deimos:HyperLinkButton2 x="15" y="56" h="14" w="170" rectrgn="1" url="www.skinconsortium.com" />
+  <Deimos:HyperLinkButton2 x="15" y="72" h="14" w="170" rectrgn="1" url="www.martin.deimos.de.vu" />
+  <Deimos:HyperLinkButton2 x="0" y="90" h="20" w="193" rectrgn="1" url="www.tristania.com" />
+</groupdef>
+
+<groupdef id="skin.about.group" w="0" h="0" relatw="1" relath="1" rectrgn="1">
+  <rect fitparent="1" color="110,119,134" filled="1" />
+
+  <layer
+    x="0" y="0"
+    w="371"
+    h="321"
+    image="about.fg"
+  />
+
+
+ <text
+    id="ver"
+    color="font.about.color2"
+    x="0" y="308" 
+    w="371"
+    h="35"
+    valign="top"
+	align="right"
+    fontsize="14" bold="2"
+    font="Tahoma"
+    default=" Version: 1.01   -   13. Mar. 2006 "
+
+  />
+
+  <group id="txt" x="10" y="125" w="371" h="321" />
+
+
+</groupdef>

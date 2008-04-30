@@ -1,0 +1,21 @@
+<!-- ===================================================================================================
+
+  <Deimos:TickerText /> implmentation
+
+  by Martin P. alias Deimos - martin.deimos@gmx.de - www.martin.deimos.de.vu
+
+    Available parameters :
+
+      - All params for Text
+      - All params for Group
+
+==================================================================================================== -->
+
+<groupdef id="titan.tickertext" xuitag="Deimos:TickerText" embed_xui="tickertext">
+
+	<text id="tickertext" fitparent="1" ticker="1" />
+	<text id="songticker.txt" fitparent="1" ticker="1" display="songname" visible="0"/>
+
+	<script id="ticker.script" file="wasabi/TickerText/TickerText.maki" />
+
+</groupdef>

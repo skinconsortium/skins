@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<WinampAbstractionLayer version="1.2">
+	<skininfo>
+		<version>1.0</version>
+		<name>Snoe Globe X-Mas Skin</name>
+		<author>Martin Poehlmann, Michael Winston, Ralph Barber</author>
+		<email>martin@skinconsortium.com</email>
+		<homepage>http://www.skinconsortium.com/</homepage>
+		<comment>Tip: Drag the Globe around your Desktop and the reflection will move along with it!</comment>
+	</skininfo>
+
+	<include file="xml/interface.xml"/>
+	<include file="xml/eq.xml"/>
+    <include file="xml/system-colors.xml"/>
+    <include file="xml/system-elements.xml"/>
+    <include file="xml/standardframe.xml"/>
+    <include file="xml/message.xml" />
+</WinampAbstractionLayer>

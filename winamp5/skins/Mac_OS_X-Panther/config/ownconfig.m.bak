@@ -1,0 +1,656 @@
+/*---------------------------------------------------
+-----------------------------------------------------
+Filename:	own-config.m
+
+Type:		maki/header
+Version:	skin version 1.1
+Date:		10.July.2004 - 23:19
+Author:		Martin P. alias Deimos
+E-Mail:		martin.deimos@arcor.de
+Internet:	www.martin.deimos.de.vu
+		home.arcor.de\martin.deimos
+-----------------------------------------------------
+--------------------INCLUDES-------------------------
+-Configuration Tree like Winamp3 Preferences YEH
+-Notifier
+-Glowbutton Configuration
+-Powerline Configuration
+-----------------------------------------------------
+----------------------NOTE---------------------------
+I've written all the scripts on my own. I was only
+inspired by other ones, but I never copied a whole
+script or parts of it! 'Cause everyone has to learn
+or inspire I implement the source files too.
+But if you use parts or the entire script, mail me:
+Give me your name, write a little text about your
+skin and a skinshot! Then leave my header in the .m
+file and implement it in your skin and leave credit
+to my name, email and homepage where credit is done!
+THX! Deimos
+-----------------------------------------------------
+---------------------------------------------------*/
+
+#define MAIN_ATTRIBS_MGR
+
+#include "../../../lib/std.mi"
+#include "../scripts/attribs.m"
+
+#define FILENAME "ownkilersystem.m"
+#include "../../../lib/ripprotection.mi"
+
+Function updateMenus(Boolean b_startup);
+Function writeInfoLineRegistry(GuiList which, String private);
+Function int checkForSkin();
+Function fillSkinList(int i_skinnum);
+
+Class GuiObject TitleBox;
+Class CheckBox cbx_glbtn_mode;
+Class CheckBox cbx_il_fd;
+Class Slider TimeSlider;
+Class Text TickerText;
+
+Global Group _ConfigGroup, _TreeGroup, _impGroup;
+Global GuiTree _Tree;
+Global TreeItem ti_Root, ti_About, ti_Display, ti_DispStyle, ti_Vis, ti_Clock, ti_Disc, ti_Buttons,
+	ti_ARB,	ti_CoTh, ti_CPU, ti_Notif, ti_GlBtn, ti_Menus, ti_RDrawer, ti_Infolines, ti_il_t1,
+	ti_il_t2, ti_il_tl, ti_Cover, ti_Skins;
+Global TitleBox tb_About, tb_CPU, tb_CPU2, tb_CoTh, tb_Notif, tb_GlBtn, tb_Menus, tb_RDrawer,
+	tb_Infolines, tb_il_t2, tb_Cover, tb_Skins;
+
+Global GuiList List_t2, List_skins;
+Global GuiObject List_ct;
+Global Button btn_ctNext;
+
+Global Layout _main_normal;
+Global Group PlayerContent;
+Global Group PlayerDisplay;
+
+Global Int i_trigger;
+Global Button nav_hp, no_menus, all_menus, rest_not, rest_glbtns, rest_menus, rest_RD, rest_t2;
+Global TickerText t_artist, t_songticker, t_album;
+Global TimeSlider  ts_glbtn_fdin, ts_glbtn_fdout, ts_il_swt, ts_il_vu;
+Global Slider sl_RD_w;
+Global Text t_glbtn_fdin_txt, t_glbtn_fdout_txt, t_RD_w, t_il_swt, t_il_vu;
+Global cbx_glbtn_mode cbx_gm1, cbx_gm2, cbx_gm0;
+Global cbx_il_fd cif_2;
+
+Global Int i_glbtn_mode;
+Global GuiObject gui_Mainframe;
+
+Global Button sw_d_t1, sw_d_t2, sw_d_tl;
+Global String str_givsel_t2;
+Global Edit e_cover, e_cGuid;
+
+
+System.onScriptUnloading() {
+/*--------------------Very Heavy Bug (by Nullsoft):
+	if there is a SubMenuItem and the script is
+	unloading, Winamp crashes.
+	It took me real two hours to find out how
+	to handle this bloody fucking bug!!!!
+	Bug removed here:------------------------*/
+
+	_Tree.moveTreeItem(ti_Clock, ti_Root);
+	_Tree.moveTreeItem(ti_Disc, ti_Root);
+	_Tree.moveTreeItem(ti_Vis, ti_Root);
+	_Tree.moveTreeItem(ti_GlBtn, ti_Root);
+	_Tree.moveTreeItem(ti_ARB, ti_Root);
+	_Tree.moveTreeItem(ti_DispStyle, ti_Root);
+	_Tree.moveTreeItem(ti_il_t1, ti_Root);
+	_Tree.moveTreeItem(ti_il_t2, ti_Root);
+	_Tree.moveTreeItem(ti_il_tl, ti_Root);
+	_Tree.moveTreeItem(ti_Infolines, ti_Root);
+
+	writeInfoLineRegistry(List_t2, "Infolines.t2.selected");
+	System.setPrivateInt("deimos", "GlowButtons.mode", i_glbtn_mode);
+
+}
+System.onScriptLoaded() {
+	initAttribs();
+	_main_normal = System.getContainer("main").getLayout("normal");
+	PlayerContent = _main_normal.findObject("player.content.group");
+	PlayerDisplay = PlayerContent.findObject("player.normal.display");
+	gui_MainFrame = _main_normal.findObject("mainframe");
+
+	t_songticker = PlayerDisplay.findObject("Songticker");
+	t_artist = PlayerDisplay.findObject("powerline.artist");
+	t_album = PlayerDisplay.findObject("powerline.album");
+
+	_ConfigGroup = getScriptGroup();
+	_TreeGroup = _ConfigGroup.findObject("wasabi.preferences.tree.embedded");
+	_impGroup = _ConfigGroup.findObject("config.imp");
+	_Tree = _TreeGroup.findObject("mylist");
+	tb_About = _impGroup.findObject("About");
+	tb_CPU = _impGroup.findObject("CPU Tweaks");
+	tb_CPU2 = _impGroup.findObject("CPU Tweaks2");
+	tb_CoTh = _impGroup.findObject("ColorThemes");
+	tb_Notif = _impGroup.findObject("Notifications");
+	tb_GlBtn = _impGroup.findObject("GlowButtons");
+	tb_Menus = _impGroup.findObject("Menus");
+	tb_RDrawer = _impGroup.findObject("RDrawer");
+	tb_Infolines = _impGroup.findObject("Infolines");
+	tb_il_t2 = _impGroup.findObject("il.t2");
+	tb_Cover = _impGroup.findObject("Cover");
+	tb_Skins = _impGroup.findObject("Skins");	
+
+	e_cover = tb_Cover.findObject("coverpath");
+	e_cover.setAutoEnter(1);
+	e_cover.setText(getPrivateString("deimos", "CoverSearch.additionalPath", ""));
+
+	e_cGuid = tb_RDrawer.findObject("cGuid");
+	e_cGuid.setAutoEnter(1);
+	e_cGuid.setText(getPrivateString("deimos", "Titan.Drawers.right.customGuid", "{F0816D7B-FFFC-4343-80F2-E8199AA15CC3}"));
+
+	sl_RD_w = tb_RDrawer.findObject("drawer.w");
+	t_RD_w = tb_RDrawer.findObject("drawer.w.txt");
+
+	sl_RD_w.setPosition(getPrivateInt("deimos", "Titan.Drawers.right.w", 300) - 180);
+	t_RD_w.setText(integerToString(getPrivateInt("deimos", "Titan.Drawers.right.w", 300)) + " px");
+
+	nav_hp = tb_About.findObject("config.About").findObject("url");
+	rest_not = tb_Notif.findObject("restore");
+	rest_glbtns = tb_GlBtn.findObject("restore");
+	rest_menus = tb_Menus.findObject("restore");
+	rest_RD = tb_RDrawer.findObject("restore");
+	rest_t2 = tb_il_t2.findObject("restore");
+	all_menus = tb_Menus.findObject("all");
+	no_menus = tb_Menus.findObject("no");
+	List_ct = tb_CoTh.findObject("main.colorthemes.list");
+	btn_ctNext = tb_CoTh.findObject("ctNext");
+
+	ti_Root = new TreeItem;
+	ti_Root = _Tree.enumRootItem(0);
+
+	ti_About = new TreeItem;
+	ti_About.setLabel("About Titan");
+	ti_Display = new TreeItem;
+	ti_Display.setLabel("Display");
+	ti_DispStyle = new TreeItem;
+	ti_DispStyle.setLabel("Style");
+	ti_Vis = new TreeItem;
+	ti_Vis.setLabel("Visualization");
+	ti_Clock = new TreeItem;
+	ti_Clock.setLabel("Clock");
+	ti_Disc = new TreeItem;
+	ti_Disc.setLabel("Status Disc");
+	ti_CoTh = new TreeItem;
+	ti_CoTh.setLabel("Color Themes");
+	ti_CPU = new TreeItem;
+	ti_CPU.setLabel("CPU Tweaks");
+	ti_Notif = new TreeItem;
+	ti_Notif.setLabel("Notifications");
+	ti_Buttons = new TreeItem;
+	ti_Buttons.setLabel("Buttons");
+	ti_ARB = new TreeItem;
+	ti_ARB.setLabel("AutoRepeat Buttons");
+	ti_GlBtn = new TreeItem;
+	ti_GlBtn.setLabel("Glow Buttons");
+	ti_Menus = new TreeItem;
+	ti_Menus.setLabel("Window Menus");
+	ti_RDrawer = new TreeItem;
+	ti_RDrawer.setLabel("Drawer");
+	ti_Infolines = new TreeItem;
+	ti_Infolines.setLabel("Infolines");
+	ti_il_t1 = new TreeItem;
+	ti_il_t1.setLabel("Infoline1");
+	ti_il_t2 = new TreeItem;
+	ti_il_t2.setLabel("Infoline2");
+	ti_il_tl = new TreeItem;
+	ti_il_tl.setLabel("Tickerline");
+	ti_Cover = new TreeItem;
+	ti_Cover.setLabel("Cover Search");
+	ti_Skins = new TreeItem;
+	ti_Skins.setLabel("Deimos' Skins");
+
+	_Tree.addTreeItem(ti_Display, ti_Root, 0, 1);
+	_Tree.addTreeItem(ti_DispStyle, ti_Display, 0, 1);
+	_Tree.addTreeItem(ti_Vis, ti_Display, 0, 1);
+	_Tree.addTreeItem(ti_Clock, ti_Display, 0, 1);
+	_Tree.addTreeItem(ti_Infolines, ti_Display, 0, 0);
+	_Tree.addTreeItem(ti_Disc, ti_Display, 0, 1);
+	ti_Display.collapse();
+	ti_Display.expand();
+
+	_Tree.addTreeItem(ti_il_t1, ti_Infolines, 0, 1);
+	_Tree.addTreeItem(ti_il_t2, ti_Infolines, 0, 1);
+	_Tree.addTreeItem(ti_il_tl, ti_Infolines, 0, 1);
+	ti_Infolines.expand();
+
+	_Tree.addTreeItem(ti_Buttons, ti_Root, 0, 1);
+	_Tree.addTreeItem(ti_GlBtn, ti_Buttons, 0, 1);
+	_Tree.addTreeItem(ti_ARB, ti_Buttons, 0, 1);
+	ti_Buttons.expand();
+
+	_Tree.addTreeItem(ti_About, ti_Root, 0, 1);
+	_Tree.addTreeItem(ti_CPU, ti_Root, 0, 1);
+	_Tree.addTreeItem(ti_CoTh, ti_Root, 0, 1);
+	_Tree.addTreeItem(ti_Notif, ti_Root, 0, 1);
+	_Tree.addTreeItem(ti_RDrawer, ti_Root, 0, 1);
+	_Tree.addTreeItem(ti_Menus, ti_Root, 0, 1);
+	_Tree.addTreeItem(ti_Cover, ti_Root, 0, 1);
+	_Tree.addTreeItem(ti_Skins, ti_Root, 0, 1);
+
+	_Tree.selectItem(ti_about);
+//	_Tree.setFontSize(16);
+
+	t_songticker.setXmlParam("ticker", songticker_scrolling_enabled_attrib.getData());
+	t_artist.setXmlParam("ticker", songticker_scrolling_enabled_attrib.getData());
+	t_album.setXmlParam("ticker", songticker_scrolling_enabled_attrib.getData());
+
+	sw_d_t1 = tb_Infolines.findObject("switch_t1");
+	sw_d_t2 = tb_Infolines.findObject("switch_t2");
+	sw_d_tl = tb_Infolines.findObject("switch_tl");
+
+	TitleBox tb_glbtn_style = tb_GlBtn.findObject("Style");
+	TitleBox tb_glbtn_time = tb_GlBtn.findObject("Time");
+
+	ts_glbtn_fdin = tb_glbtn_time.findObject("glbtns.fadein");
+	ts_glbtn_fdout = tb_glbtn_time.findObject("glbtns.fadeout");
+
+	t_glbtn_fdin_txt = tb_glbtn_time.findObject("glbtns.fadein.txt");
+	t_glbtn_fdout_txt = tb_glbtn_time.findObject("glbtns.fadeout.txt");
+
+	ts_glbtn_fdin.setPosition(getPrivateInt("deimos", "GlowButtons.fadein", 5));
+	ts_glbtn_fdout.setPosition(getPrivateInt("deimos", "GlowButtons.fadeout", 15));
+
+	t_glbtn_fdin_txt.setText(floatToString(getPrivateInt("deimos", "GlowButtons.fadein", 5)/10, 1)+" sec");
+	t_glbtn_fdout_txt.setText(floatToString(getPrivateInt("deimos", "GlowButtons.fadeout", 15)/10, 1)+" sec");
+
+	cbx_gm2 = tb_glbtn_style.findObject("2");
+	cbx_gm1 = tb_glbtn_style.findObject("1");
+	cbx_gm0 = tb_glbtn_style.findObject("0");
+
+	i_glbtn_mode = getPrivateInt("deimos", "GlowButtons.mode", 2);
+
+	if (i_glbtn_mode == 2 ) {
+		cbx_gm1.setChecked(0);
+		cbx_gm0.setChecked(0);
+		cbx_gm2.setChecked(1);
+	} if (i_glbtn_mode == 1 ) {
+		cbx_gm2.setChecked(0);
+		cbx_gm0.setChecked(0);
+		cbx_gm1.setChecked(1);
+	} if (i_glbtn_mode == 0 ) {
+		cbx_gm2.setChecked(0);
+		cbx_gm1.setChecked(0);
+		cbx_gm0.setChecked(1);
+	}
+
+	updateMenus(1);
+
+	str_givsel_t2 = "Album,Year,Genre,Track #,Bitrate,Frequency,";
+
+	string str_sel_t2 = getPrivateString("deimos", "Infolines.t2.selected", str_givsel_t2);
+
+	List_t2 = tb_il_t2.findObject("list.t2");
+
+	ts_il_swt = tb_il_t2.findObject("switchtime");
+	t_il_swt = tb_il_t2.findObject("switchtime.txt");
+	ts_il_vu = tb_il_t2.findObject("vutime");
+	t_il_vu = tb_il_t2.findObject("vutime.txt");
+	cif_2 = tb_il_t2.findObject("cbx.fd");
+
+	ts_il_swt.setPosition(getPrivateInt("deimos", "Infolines.switchtime", 50));
+	t_il_swt.setText("If multiple Items are selected switch all " + floatToString(getPrivateInt("deimos", "Infolines.switchtime", 50) / 10, 1) + " seconds.");
+	ts_il_vu.setPosition(getPrivateInt("deimos", "Infolines.vutime", 6));
+	t_il_vu.setText("Refresh VuMeters all " + integerToString(getPrivateInt("deimos", "Infolines.vutime", 6)*5) + " msc.");
+	cif_2.setChecked(getPrivateInt("deimos", "Infolines.fade", 0));
+
+	List_t2.setAutoSort(0);
+	List_t2.setPreventMultipleSelection(0);
+	List_t2.setColumnLabel(0, "");
+	List_t2.setColumnWidth(0, 70);
+	List_t2.addColumn("", 85, 1);
+	List_t2.addColumn("", 45, 2);
+	int i_n = 0;
+	List_t2.insertItem(i_n, "Metadata");
+	List_t2.setSubItem(i_n, 1, "Title");//0
+	if (strsearch(str_sel_t2, List_t2.getItemLabel(i_n, 1)) != -1) List_t2.setSelected(i_n, 1);
+	i_n++;
+	List_t2.insertItem(i_n, "Metadata");
+	List_t2.setSubItem(i_n, 1, "Artist");
+	if (strsearch(str_sel_t2, List_t2.getItemLabel(i_n, 1)) != -1) List_t2.setSelected(i_n, 1);
+	i_n++;
+	List_t2.insertItem(i_n, "Metadata");
+	List_t2.setSubItem(i_n, 1, "Album");
+	if (strsearch(str_sel_t2, List_t2.getItemLabel(i_n, 1)) != -1) List_t2.setSelected(i_n, 1);
+	i_n++;
+	List_t2.insertItem(i_n, "Metadata");
+	List_t2.setSubItem(i_n, 1, "Year");
+	if (strsearch(str_sel_t2, List_t2.getItemLabel(i_n, 1)) != -1) List_t2.setSelected(i_n, 1);
+	i_n++;
+	List_t2.insertItem(i_n, "Metadata");
+	List_t2.setSubItem(i_n, 1, "Genre");
+	if (strsearch(str_sel_t2, List_t2.getItemLabel(i_n, 1)) != -1) List_t2.setSelected(i_n, 1);
+	i_n++;
+	List_t2.insertItem(i_n, "Metadata");
+	List_t2.setSubItem(i_n, 1, "Track #");//5
+	if (strsearch(str_sel_t2, List_t2.getItemLabel(i_n, 1)) != -1) List_t2.setSelected(i_n, 1);
+	i_n++;
+	List_t2.insertItem(i_n, "Metadata");
+	List_t2.setSubItem(i_n, 1, "Comment");
+	if (strsearch(str_sel_t2, List_t2.getItemLabel(i_n, 1)) != -1) List_t2.setSelected(i_n, 1);
+	i_n++;
+	List_t2.insertItem(i_n, "Fileinfo");
+	List_t2.setSubItem(i_n, 1, "Bitrate");
+	if (strsearch(str_sel_t2, List_t2.getItemLabel(i_n, 1)) != -1) List_t2.setSelected(i_n, 1);
+	i_n++;
+	List_t2.insertItem(i_n, "Fileinfo");
+	List_t2.setSubItem(i_n, 1, "Frequency");
+	if (strsearch(str_sel_t2, List_t2.getItemLabel(i_n, 1)) != -1) List_t2.setSelected(i_n, 1);
+	i_n++;
+	List_t2.insertItem(i_n, "Fileinfo");
+	List_t2.setSubItem(i_n, 1, "Channels");
+	if (strsearch(str_sel_t2, List_t2.getItemLabel(i_n, 1)) != -1) List_t2.setSelected(i_n, 1);
+	i_n++;
+	List_t2.insertItem(i_n, "Fileinfo");
+	List_t2.setSubItem(i_n, 1, "Filetype");//10
+	if (strsearch(str_sel_t2, List_t2.getItemLabel(i_n, 1)) != -1) List_t2.setSelected(i_n, 1);
+	i_n++;
+	List_t2.insertItem(i_n, "Fileinfo");
+	List_t2.setSubItem(i_n, 1, "Path");
+	if (strsearch(str_sel_t2, List_t2.getItemLabel(i_n, 1)) != -1) List_t2.setSelected(i_n, 1);
+	i_n++;
+	List_t2.insertItem(i_n, "Fileinfo");
+	List_t2.setSubItem(i_n, 1, "Filename");
+	if (strsearch(str_sel_t2, List_t2.getItemLabel(i_n, 1)) != -1) List_t2.setSelected(i_n, 1);
+	i_n++;
+	List_t2.insertItem(i_n, "Playlist");
+	List_t2.setSubItem(i_n, 1, "Info");
+	if (strsearch(str_sel_t2, List_t2.getItemLabel(i_n, 1)) != -1) List_t2.setSelected(i_n, 1);
+	i_n++;
+	List_t2.insertItem(i_n, "Winamp3");
+	List_t2.setSubItem(i_n, 1, "Songticker");
+	if (strsearch(str_sel_t2, List_t2.getItemLabel(i_n, 1)) != -1) List_t2.setSelected(i_n, 1);
+	i_n++;
+	List_t2.insertItem(i_n, "Winamp3");
+	List_t2.setSubItem(i_n, 1, "Songinfo");//15
+	if (strsearch(str_sel_t2, List_t2.getItemLabel(i_n, 1)) != -1) List_t2.setSelected(i_n, 1);
+	i_n++;
+	List_t2.insertItem(i_n, "VuMeter");
+	List_t2.setSubItem(i_n, 1, "Left");
+	List_t2.setSubItem(i_n, 2, "CPU+");
+	if (strsearch(str_sel_t2, List_t2.getItemLabel(i_n, 1)) != -1) List_t2.setSelected(i_n, 1);
+	i_n++;
+	List_t2.insertItem(i_n, "VuMeter");
+	List_t2.setSubItem(i_n, 1, "Center");
+	List_t2.setSubItem(i_n, 2, "CPU+");
+	if (strsearch(str_sel_t2, List_t2.getItemLabel(i_n, 1)) != -1) List_t2.setSelected(i_n, 1);
+	i_n++;
+	List_t2.insertItem(i_n, "VuMeter");
+	List_t2.setSubItem(i_n, 1, "Right");
+	List_t2.setSubItem(i_n, 2, "CPU+");
+	if (strsearch(str_sel_t2, List_t2.getItemLabel(i_n, 1)) != -1) List_t2.setSelected(i_n, 1);
+	i_n++;
+	List_t2.insertItem(i_n, "System");
+	List_t2.setSubItem(i_n, 1, "Daytime");
+	List_t2.setSubItem(i_n, 2, "CPU+");
+	if (strsearch(str_sel_t2, List_t2.getItemLabel(i_n, 1)) != -1) List_t2.setSelected(i_n, 1);
+	i_n++;
+	List_t2.insertItem(i_n, "System");
+	List_t2.setSubItem(i_n, 1, "Date");//20
+	if (strsearch(str_sel_t2, List_t2.getItemLabel(i_n, 1)) != -1) List_t2.setSelected(i_n, 1);
+
+	List_skins = tb_Skins.findObject("list.skins");
+
+	List_skins.setAutoSort(0);
+	List_skins.setPreventMultipleSelection(0);
+
+	List_skins.insertItem(0, "Winamp Modern");
+	List_skins.insertItem(1, "Winamp Classic");
+
+	int i_sktn = checkForSkin();
+	fillSkinList(i_sktn);
+
+	ripProtection("titan");
+}
+
+//---MAINTREE---
+
+_Tree.onItemSelected(TreeItem _item) {
+	tb_About.hide();
+	tb_CPU.hide();
+	tb_CPU2.hide();
+	tb_CoTh.hide();
+	tb_Notif.hide();
+	tb_GlBtn.hide();
+	tb_menus.hide();
+	tb_RDrawer.hide();
+	tb_Infolines.hide();
+	tb_il_t2.hide();
+	tb_Cover.hide();
+	tb_Skins.hide();
+	if ( _item == ti_About ) tb_About.show();
+	if ( _item == ti_CPU ) {
+		tb_CPU.show();
+		tb_CPU2.show();
+	}
+	if ( _item == ti_CoTh ) tb_CoTh.show();
+	if ( _item == ti_Notif ) tb_Notif.show();
+	if ( _item == ti_GlBtn ) tb_GlBtn.show();
+	if ( _item == ti_Menus ) tb_Menus.show();
+	if ( _item == ti_RDrawer ) tb_RDrawer.show();
+	if ( _item == ti_Infolines ) tb_Infolines.show();
+	if ( _item == ti_il_t2 ) tb_il_t2.show();
+	if ( _item == ti_Cover ) tb_Cover.show();
+	if ( _item == ti_Skins ) tb_Skins.show();
+
+	if ( _item == ti_Buttons ) _Tree.selectItem(ti_GlBtn);
+	if ( _item == ti_Display ) _Tree.selectItem(ti_Dispstyle);
+}
+
+//---InfoLines---
+
+sw_d_t1.onLeftClick() { _Tree.selectItem(ti_il_t1); }
+sw_d_t2.onLeftClick() { _Tree.selectItem(ti_il_t2); }
+sw_d_tl.onLeftClick() { _Tree.selectItem(ti_il_tl); }
+
+List_t2.onItemSelection(Int itemnum, Int selected) {
+	writeInfoLineRegistry(List_t2, "Infolines.t2.selected");
+}
+
+writeInfoLineRegistry(GuiList which, String private) {
+	int i_items = which.getNumItems() - 1;
+	int i_numsel = 0;
+	setPrivateString("deimos", "Infolines.t2.selected", "");
+	for ( int i = 0; i <= i_items; i++ ) {
+		if (which.getItemSelected(i)) {
+			i_numsel++;
+			string str_label = which.getItemLabel(i, 1);
+			setPrivateString("deimos", "Infolines.t2.selected", getPrivateString("deimos", "Infolines.t2.selected", "") + str_label + ",");
+			setPrivateInt("deimos", "Infolines.t2.numsel", i_numsel);
+		}
+	}
+}
+
+ts_il_swt.onSetPosition(int newpos) {
+	setPrivateInt("deimos", "Infolines.switchtime", newpos);
+	t_il_swt.setText("If multiple Items are selected switch all " + floatToString(newpos / 10, 1) + " seconds.");
+}
+
+ts_il_vu.onSetPosition(int newpos) {
+	setPrivateInt("deimos", "Infolines.vutime", newpos);
+	t_il_vu.setText("Refresh VuMeters all " + integerToString(newpos*5) + " msc.");
+}
+
+cbx_il_fd.onToggle(int newstate) {
+	setPrivateInt("deimos", "Infolines.fade", newstate);
+}
+
+rest_t2.onLeftClick() {
+	int i_answer = messageBox("Do you wish to set the values for this page back to the original skin values?" , "Restore standard values", 12, "");
+
+	if (i_answer == 4 ) {
+		setPrivateString("deimos", "Infolines.t2.selected", str_givsel_t2);
+		ts_il_swt.setPosition(50);
+		ts_il_vu.setPosition(6);
+		cif_2.setChecked(0);
+		setPrivateInt("deimos", "Infolines.fade", 0);
+		int i_items = List_t2.getNumItems() - 1;
+		for ( int i = 0; i <= i_items; i++ ) if (strsearch(str_givsel_t2, List_t2.getItemLabel(i, 1)) != -1) List_t2.setSelected(i, 1);
+	}
+}
+
+nav_hp.onLeftClick() { System.navigateUrl("http://www.martin.deimos.de.vu"); }
+
+//---NOTIFICATIONS---
+
+rest_not.onLeftClick() {
+	int i_answer = messageBox("Do you wish to set the values for this page back to the original skin values?" , "Restore standard values", 12, "");
+
+	if (i_answer == 4 ) {
+		notifier_always_attrib.setData("1");
+		notifier_disablefullscreen_attrib.setData("1");
+		notifier_fadeintime_attrib.setData("1089");
+		notifier_fadeouttime_attrib.setData("2000");
+		notifier_holdtime_attrib.setData("5049");
+	}
+}
+
+cbx_glbtn_mode.onToggle(int newstate) {
+	if (newstate = 1) {
+		string str_id = cbx_glbtn_mode.getID();
+		i_glbtn_mode = stringToInteger(str_id);
+		setPrivateInt("deimos", "GlowButtons.mode", stringToInteger(str_id));
+	}
+}
+
+ts_glbtn_fdin.onSetPosition(int newpos) {
+	setPrivateInt("deimos", "GlowButtons.fadein", newpos);
+	t_glbtn_fdin_txt.setText(floatToString(newpos/10, 1)+" sec");
+}
+
+ts_glbtn_fdout.onSetPosition(int newpos) {
+	setPrivateInt("deimos", "GlowButtons.fadeout", newpos);
+	t_glbtn_fdout_txt.setText(floatToString(newpos/10, 1)+" sec");
+}
+
+rest_glbtns.onLeftClick() {
+	int i_answer = messageBox("Do you wish to set the values for this page back to the original skin values?" , "Restore standard values", 12, "");
+
+	if (i_answer == 4 ) {
+		ts_glbtn_fdin.setPosition(5);
+		ts_glbtn_fdout.setPosition(15);
+		setPrivateInt("deimos", "GlowButtons.mode", 2);
+		cbx_gm2.setChecked(1);
+		cbx_gm1.setChecked(0);
+		cbx_gm0.setChecked(0);
+	}
+}
+
+//---MENUS---
+
+menubar_main_attrib.onDataChanged() {
+	updateMenus(0);
+
+}
+updateMenus(Boolean b_startup) {
+	group dummy = gui_Mainframe.findObject("Main Window.mainmenu");
+	if (b_startup) dummy.setxmlparam("visible", menubar_main_attrib.getData());
+	else {
+		if (menubar_main_attrib.getData() == "1") {
+			dummy.setTargetA(255);
+			dummy.setTargetSpeed(0.5);
+			dummy.gotoTarget();
+		}
+		if (menubar_main_attrib.getData() == "0") {
+			dummy.setTargetA(0);
+			dummy.setTargetSpeed(0.5);
+			dummy.gotoTarget();
+		}
+
+	}
+}
+rest_menus.onLeftClick() {
+	int i_answer = messageBox("Do you wish to set the values for this page back to the original skin values?" , "Restore standard values", 12, "");
+
+	if (i_answer == 4 ) {
+		menubar_main_attrib.setData("1");
+		menubar_pe_attrib.setData("1");
+		menubar_ml_attrib.setData("1");
+	}
+}
+all_menus.onLeftClick() {
+	menubar_main_attrib.setData("1");
+	menubar_pe_attrib.setData("1");
+	menubar_ml_attrib.setData("1");
+}
+no_menus.onLeftClick() {
+	menubar_main_attrib.setData("0");
+	menubar_pe_attrib.setData("0");
+	menubar_ml_attrib.setData("0");
+}
+
+//---DRAWER---
+
+sl_RD_w.onSetPosition(int newpos) {
+	setPrivateInt("deimos", "Titan.Drawers.right.w", (newpos + 180));
+	t_RD_w.setText(integerToString(getPrivateInt("deimos", "Titan.Drawers.right.w", 300)) + " px");
+
+}
+
+rest_RD.onLeftClick() {
+	int i_answer = messageBox("Do you wish to set the values for this page back to the original skin values?" , "Restore standard values", 12, "");
+
+	if (i_answer == 4 ) {
+		e_cGuid.setText("{F0816D7B-FFFC-4343-80F2-E8199AA15CC3}");
+		setPrivateString("deimos", "Titan.Drawers.right.customGuid", "{F0816D7B-FFFC-4343-80F2-E8199AA15CC3}");
+		sl_RD_w.setPosition(120);
+	}
+}
+
+e_cGuid.onEditUpdate() {
+	setPrivateString("deimos", "Titan.Drawers.right.customGuid", e_cGuid.getText());
+}
+
+//---COVER---
+
+e_cover.onEditUpdate() {
+	setPrivateString("deimos", "CoverSearch.additionalPath", e_cover.getText());
+}
+
+//---ColorThemes---
+
+System.onTitleChange(String newtitle) {
+	if(colorthemes_random_attrib.getData() == "1") {
+		int i_rnd = random(5);
+		for ( int i = 0; i <= i_rnd; i++ ) {
+			btn_ctNext.leftClick();
+		}
+	}
+}
+
+//---Skins---
+
+int checkForSkin() {
+	int i_sktn;
+	string str_skdd = getPrivateString("deimos", "InstalledSkins", "");
+	if (str_skdd != "") {
+		i_sktn = stringToInteger(strleft(str_skdd, strsearch(str_skdd, "|")-1));
+		if (strsearch(str_skdd, "|" + getSkinName() + "|") == -1) {
+			string str_skdd = strright(str_skdd, strsearch(str_skdd, "|")+1);
+			i_sktn++;
+			setPrivateString("deimos", "InstalledSkins", integerToString(i_sktn) + str_skdd + getSkinName() + "|");
+		}
+	} else {
+		setPrivateString("deimos", "InstalledSkins", "1" + "|" + getSkinName() +"|");
+		i_sktn = 1;
+	}
+	return i_sktn;
+}
+
+fillSkinList(Int i_skinnum) {
+	string str_skdd = getPrivateString("deimos", "InstalledSkins", "");
+	if (str_skdd != "") {
+		for ( int i = 1; i <= i_skinnum; i++ ) {
+			string str_label = getToken(str_skdd, "|", i);
+			List_skins.insertItem(i+1, str_label);
+		}
+	}
+}
+
+List_skins.onDoubleClick(int itemnum) {
+	string str_skin = getItemLabel(itemnum, NULL);
+messageBox(str_skin , "Restore standard values", 12, "");
+	switchSkin(str_skin);
+}

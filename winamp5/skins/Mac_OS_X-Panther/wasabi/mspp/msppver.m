@@ -1,0 +1,1 @@
+#define MSPP_VERSION "0.14"

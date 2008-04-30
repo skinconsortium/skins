@@ -1,0 +1,37 @@
+<!-- ************************ SKINS ***************************** -->
+
+<groupdef id="config.Skins.info">
+	<Text 
+		id="description"
+		text="Select a skin to get its info!"
+		x="0" y="0"
+  		w="0" h="0"
+		relatw="1" relath="1" valign="center" align="center"
+	/>
+
+	<AnimatedLayer id="info.dummy" visible="0" x="0" y="0" h="5" w="5" image="dummys" autoplay="0" move="0" />
+	<layer id="info" x="0" y="0" h="162" w="231" image="" />
+</groupdef>
+
+<groupdef id="config.skins">
+	<Wasabi:Text 
+		id="description"
+		text="Here you can switch to the Winamp Standard Skins or to each skin supporting\nthe DpW-Platform (=all skins by me, check: www.martin.deimos.de.vu)"
+		x="0" y="0"
+  		w="0" h="32"
+		relatw="1"
+	/>
+
+	<group id="wasabi.window.embedded" x="0" y="30" h="185" w="120" />
+	<List id="list.skins.d" y="31" x="1" w="118" h="183" visible="0"/>
+	<List id="list.skins" y="31" x="1" w="118" h="183" />
+
+	<Wasabi:TitleBox id="Infobox" visible="1" x="125" y="30" w="-125" h="185" relatw="1" relath="0" title="Skin Info" content="config.Skins.info" />
+
+	<Wasabi:Button id="switch" x="125" y="-23" relaty="1" w="-125" relatw="1" h="21" text="Switch to skin" tooltip="Switch To Skin" />
+
+	<Wasabi:Button id="skindel" x="0" y="-23" relaty="1" w="118" relatw="0" h="21" text="Clear Skinlist" tooltip="Clear Skinlist" />
+
+	<script id="skins" param="@SKINPATH@" file="config/configpages/skins.maki" />
+
+</groupdef>

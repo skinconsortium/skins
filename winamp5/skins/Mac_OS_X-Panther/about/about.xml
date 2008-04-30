@@ -1,0 +1,96 @@
+<elements>
+
+  <bitmap id="about.fg" file="about/about_fg.jpg"/>
+  <bitmapfont id="about.font" file="about/aboutfont.png" charwidth="10" charheight="21" hspacing="-1" vspacing="0"/>
+
+  <color id="font.about.color1" value="0,0,0" gammagroup=""/>
+  <color id="font.about.color2" value="255,255,255" gammagroup=""/>
+
+</elements>
+
+<groupdef id="txt">
+  <text
+    id="text1"
+    color="font.about.color1"
+    x="10" y="205"
+    w="351"
+    h="20"
+    valign="top"
+    align="center"
+    font="about.font"
+    bold="1"
+    default="Copyright:"
+  />
+  <text
+    id="text2"
+    color="font.about.color2"
+    x="10" y="225"
+    w="351"
+    h="30"
+    valign="top"
+    align="center"
+    fontsize="17"
+    font="ttf"
+    default="2005 - 2006 by Martin Poehlmann aka Deimos"
+
+  />
+  <text
+    id="text3"
+    color="font.about.color2"
+    x="10" y="245"
+    w="351"
+    h="30"
+    valign="top"
+    align="center"
+    fontsize="17"
+    font="ttf"
+    default=""
+
+  />
+  <text
+    id="text4"
+    color="font.about.color2"
+    x="10" y="265"
+    w="351"
+    h="30"
+    valign="top"
+    align="center"
+    fontsize="17"
+    font="ttf"
+    default=""
+
+  />
+</groupdef>
+
+<groupdef id="skin.about.group" w="0" h="0" relatw="1" relath="1" rectrgn="1">
+  <rect fitparent="1" color="110,119,134" filled="1" />
+
+  <layer
+    x="0" y="0"
+    w="371"
+    h="321"
+    image="about.fg"
+  />
+
+
+ <text
+    id="ver"
+    color="font.about.color2"
+    x="10" y="-25" relaty="1"
+    w="351"
+    h="35"
+    valign="top"
+    align="center"
+    fontsize="17"
+    font="Arial"
+    default="Version: 1.5   -   24. Jul. 2006"
+
+  />
+
+  <group id="txt" w="371" h="321" />
+
+  <script file="about/about.maki"/>
+
+ <guiobject fitparent="1" />
+
+</groupdef>

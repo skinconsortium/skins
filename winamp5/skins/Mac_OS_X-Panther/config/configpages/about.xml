@@ -1,0 +1,220 @@
+<elements>
+	<bitmap id="config.banner" file="gfx/banner.png" />
+</elements>
+
+<!-- ************************ ABOUT ***************************** -->
+
+<groupdef id="config.About" name="About">
+
+	<Text 
+		id="About"
+		text="Copyright (c) 2005 - 2006 Martin Poehlmann aka Deimos"
+		x="0" y="159" align="center"
+  		w="0" h="32"
+		relatw="1" color="color.Text"
+	/>
+ 	<Text 
+		id="About"
+		text="Mac OS X - Panther  -  Version 1.5  -  24.Jul.2006"
+		x="0" y="172" align="center"
+  		w="0" h="32"
+		relatw="1" color="color.Text"
+	/>
+
+	 <Text 
+		id="About"
+		text="Email: martin@skinconsortium.com"
+		x="0" y="188" align="center"
+  		w="0" h="32"
+		relatw="1" color="color.Text"
+	/>
+
+	<Wasabi:Button id="url" x="6" y="-26" relaty="1" w="372" h="21" text="Visit http://www.skinconsortium.com for updates and news" tooltip="My Homepage" />
+
+	<group id="wasabi.window.embedded" x="6" y="5" w="372" h="162" />
+	<layer id="bannerbg" image="config.banner" x="7" y="6" />
+	<layer id="banner" image="config.banner" x="7" y="6" />
+	<script id="dmove" file="config/configpages/about.maki" />
+
+</groupdef>
+
+<groupdef id="config.About.Credits" name="Credits">
+
+	 <Text 
+		id="About"
+		text="Credits go to:"
+		x="0" y="8" align="center" bold="1" valign="top"
+  		w="0" h="32"
+		relatw="1" color="color.Text"
+	/>
+
+	<Text 
+		id="About"
+		text="Nullsoft - I took this Preferences window from Winamp3"
+		x="0" y="30" align="center" bold="0" valign="top"
+  		w="0" h="100"
+		relatw="1" color="color.Text"
+	/>
+	<Text 
+		id="About"
+		text="Mike - for the DMove script used in About"
+		x="0" y="60" align="center" bold="0" valign="top"
+  		w="0" h="100"
+		relatw="1" color="color.Text"
+	/>
+	<Text 
+		id="About"
+		text="R. Peter Clark - for the CoverSearch via Amazon.com"
+		x="0" y="75" align="center" bold="0" valign="top"
+  		w="0" h="100"
+		relatw="1" color="color.Text"
+	/>
+	<Text 
+		id="About"
+		text="Nullsoft - for the Winamp Modern Script Sources"
+		x="0" y="90" align="center" bold="0" valign="top"
+  		w="0" h="100"
+		relatw="1" color="color.Text"
+	/>
+	<Text 
+		id="About"
+		text="KoL @ www.studiotwentyeight.com - Original Windows Theme"
+		x="0" y="105" align="center" bold="0" valign="top"
+  		w="0" h="100"
+		relatw="1" color="color.Text"
+	/>
+
+	<Wasabi:Button id="url" x="6" y="125" relaty="0" w="372" h="21" text="Visit http://www.studiotwentyeight.com" tooltip="KoL's Homepage" />
+	<script file="config/configpages/about2.maki" />
+
+</groupdef>
+
+<groupdef id="config.About.Thanks" name="Thanks">
+	 <Text 
+		id="About"
+		text="Thanks go to:"
+		x="0" y="8" align="center" bold="1" valign="top"
+  		w="0" h="108"
+		relatw="1" color="color.Text"
+	/>
+
+	<Text 
+		id="About"
+		text="Francis Gastellu - for Winamp5 Color Editor"
+		x="0" y="30" align="center" bold="0" valign="top"
+  		w="0" h="100"
+		relatw="1" color="color.Text"
+	/>
+	<Text 
+		id="About"
+		text="Nullsoft - for creating this great player"
+		x="0" y="52" align="center" bold="0" valign="top"
+  		w="0" h="100"
+		relatw="1" color="color.Text"
+	/>
+	<Text 
+		id="About"
+		text="Mike Mimic, Phobos and BillyVNilly - for bugreports"
+		x="0" y="74" align="center" bold="0" valign="top"
+  		w="0" h="100"
+		relatw="1" color="color.Text"
+	/>
+	<Text 
+		id="About"
+		text="you - for using my skin"
+		x="0" y="96" align="center" bold="0" valign="top"
+  		w="0" h="100"
+		relatw="1" color="color.Text"
+	/>
+</groupdef>
+<groupdef id="config.About.FAQ" name="F.A.Q.">
+	 <Text 
+		id="About"
+		text="Frequently Asked Questions:"
+		x="0" y="8" align="center" bold="1" valign="top"
+  		w="0" h="32"
+		relatw="1" color="color.Text"
+	/>
+
+	<Text 
+		id="About"
+		text="Q: DpW-Platform - what's that?"
+		x="5" y="60" align="left" bold="1" valign="top"
+  		w="0" h="32"
+		relatw="1" color="color.Text"
+	/>
+	<Text 
+		id="About"
+		text="A: The DpW-Platform (Deimos powered Wasabi) uses a complex configsystem"
+		x="5" y="75" align="left" bold="0" valign="top"
+  		w="0" h="32"
+		relatw="1" color="color.Text"
+	/>
+	<Text 
+		id="About"
+		text="for comfortable user-configuration and a portable XUIsystem to create new"
+		x="5" y="85" align="left" bold="0" valign="top"
+  		w="0" h="32"
+		relatw="1" color="color.Text"
+	/>
+	<Text 
+		id="About"
+		text="skins much faster!"
+		x="5" y="95" align="left" bold="0" valign="top"
+  		w="0" h="32"
+		relatw="1" color="color.Text"
+	/>
+
+
+	<Text 
+		id="About"
+		text="Q: I've tried to use a script of this skin, but an error occurs!"
+		x="5" y="115" align="left" bold="1" valign="top"
+  		w="0" h="32"
+		relatw="1" color="color.Text"
+	/>
+	<Text 
+		id="About"
+		text="A: The scripts are ripprotected, if you havn't my sourcefile"
+		x="5" y="130" align="left" bold="0" valign="top"
+  		w="0" h="32"
+		relatw="1" color="color.Text"
+	/>
+	<Text 
+		id="About"
+		text="you won't be able to use any script in your project!"
+		x="5" y="140" align="left" bold="0" valign="top"
+  		w="0" h="32"
+		relatw="1" color="color.Text"
+	/>
+
+
+	<Text 
+		id="About"
+		text="Q: How can I get the *.m files of this skin?"
+		x="5" y="160" align="left" bold="1" valign="top"
+  		w="0" h="32"
+		relatw="1" color="color.Text"
+	/>
+	<Text 
+		id="About"
+		text="A: Write me an email, say what you want to do with it and I will think"
+		x="5" y="175" align="left" bold="0" valign="top"
+  		w="0" h="32"
+		relatw="1" color="color.Text"
+	/>
+	<Text 
+		id="About"
+		text="about your request!"
+		x="5" y="185" align="left" bold="0" valign="top"
+  		w="0" h="32"
+		relatw="1" color="color.Text"
+	/>
+
+</groupdef>
+
+<groupdef id="config.About.History" name="Version history">
+	<group id="wasabi.window.embedded" x="4" y="4" h="-8" w="-8"  relatw="1" relath="1" />	
+	<browser id="histbrw" x="5" y="5" h="-10" w="-10"  relatw="1" relath="1" scrollbars="never" url="file:///@SKINPATH@whatsnew.txt" />
+
+</groupdef>

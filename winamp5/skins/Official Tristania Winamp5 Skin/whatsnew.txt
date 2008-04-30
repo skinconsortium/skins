@@ -1,0 +1,36 @@
+Version 1.01 (13.Mar.2005):
+* Fixed: ConfigPages with Winamp5.21
+* New: Dynamic Skinupdatesystem 1.3
+* New: Coversearch 1.41
+
+Version 1.0 (17.Feb.2005):
+* Fixed: VolumeAnim
+* Added: Equalizer
+* Added: Shuffle,... Buttons
+* Added: Final Display Design
+* Added: Dynamic Skinupdatesystem
+* Added: ColorThemes
+* Updated: CoverSearch 1.4
+* Updated: Playback functions
+* New: About Box
+
+Version 0.2 Beta (01.Jun.2005):
+* New: Volume Knob
+* New: Seek
+* New: Playbackbuttons
+* New: "About Tristania" SlideShow
+* Added: Deimos' Skins
+* Fixed: Songticker bug
+* Fixed: design improvements
+* Fixed: CoverSearch ReplaceStrings
+* Updated: WASABI Graphics
+
+Version 0.1 Beta (28.May 2005):
+* New: Graphics
+* New: Standardframe
+* New: DpW Configsystem II
+* Added: CoverSearch Window
+* Added: Notifications with Cover Display
+* Added: Visualizer
+* Added: Glowbuttons
+* Updated: TickerText to version 1.1

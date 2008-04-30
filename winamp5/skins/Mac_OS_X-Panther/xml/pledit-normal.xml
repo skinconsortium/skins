@@ -1,0 +1,37 @@
+<groupdef id="player.content.pl.dummy.group" name="PlaylistDummyGroup" relatw="1" relath="1" w="0" h="0">
+  <!--group id="pl.frame.layout" x="0" y="1"/-->
+  <component
+    x="0"
+    y="0"
+    w="0"
+    relatw="1"
+    h="0"
+    relath="1"
+    noshowcmdbar="1"
+    autoopen="1"
+    autoclose="0"
+    param="guid:{45F3F7C1-A6F3-4ee6-A15E-125E92FC3F8D}"
+  />
+</groupdef>
+
+<groupdef id="pledit.content.group" name="PlaylistContent">
+  <group id="wasabi.menubar.pl" x="0" y="0" w="0" relatw="1" sysregion="1" visible="1"/>
+  <group id="player.content.pl.dummy.group" x="0" y="20" h="-20" w="0" relatw="1" relath="1" sysregion="1"/>
+  <script id="plmenu.script" param="player.content.pl.dummy.group|{12ED320E-6813-45ac-9F8E-78EE5B2B5F6D};Show Menus in Playlist Editor" file="scripts/menu.maki" />
+  <!--script id="pltime.script" file="scripts/pltime.maki" /-->
+</groupdef>
+
+<layout id="normal" minimum_w="310" minimum_h="128" h="188" w="354" default_x="310" default_y="0" linkwidth="shade" appbar="left|top|right|bottom">
+  <Wasabi:StandardFrame:Status
+    x="0" y="0" w="0" h="0" relatw="1" relath="1"
+    content="pledit.content.group"
+  />
+
+</layout>
+
+
+
+
+
+
+

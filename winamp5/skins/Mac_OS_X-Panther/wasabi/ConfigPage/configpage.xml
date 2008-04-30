@@ -1,0 +1,94 @@
+<!-- ===================================================================================================
+
+  <Deimos:ConfigPage /> implmentation
+
+  by Martin P. alias Deimos - martin.deimos@gmx.de - www.martin.deimos.de.vu
+
+    Available parameters :
+
+      - All params for Wasabi:TitleBox
+      - All params for Group
+
+      - createItem="itemname" OR:
+	  - createDubItem="parentitem;itemname"
+
+==================================================================================================== -->
+
+<groupdef id="cfgpage" xuitag="Deimos:ConfigPage" embed_xui="cfgbox">
+
+	<Wasabi:TitleBox id="cfgbox" visible="1" x="0" y="0" w="0" h="0" relatw="1" relath="1"/>
+
+	<script id="script" file="Wasabi/ConfigPage/configpage.maki"/>
+
+</groupdef>
+
+<!-- ===================================================================================================
+
+  <Deimos:ConfigSheet /> implmentation
+
+  by Martin P. alias Deimos - martin.deimos@gmx.de - www.martin.deimos.de.vu
+
+    Available parameters :
+
+      - All params for Wasabi:TabSheet
+      - All params for Group
+
+      - createItem="itemname" OR:
+	  - createSubItem="parentitem;itemname"
+
+==================================================================================================== -->
+
+<groupdef id="cfgsheet" xuitag="Deimos:ConfigSheet" embed_xui="cfgsh">
+
+	<Wasabi:TabSheet id="cfgsh" visible="1" x="0" y="0" w="0" h="0" relatw="1" relath="1"/>
+
+	<script id="script" file="Wasabi/ConfigPage/configpage.maki"/>
+
+</groupdef>
+
+
+<!-- ===================================================================================================
+
+  <Deimos:ConfigGroup /> implmentation
+
+  by Martin P. alias Deimos - martin.deimos@gmx.de - www.martin.deimos.de.vu
+
+    Available parameters :
+
+      - All params for Group
+
+      - createItem="itemname" OR:
+	  - createSubItem="parentitem;itemname"
+
+==================================================================================================== -->
+
+<groupdef id="cfggroup" xuitag="Deimos:ConfigGroup" embed_xui="CPU Tweaks">
+
+	<Group id="CPU Tweaks" visible="1" x="0" y="0" w="0" h="0" relatw="1" relath="1"/>
+
+	<script id="script" file="Wasabi/ConfigPage/configpage.maki"/>
+
+</groupdef>
+
+
+
+<!-- ===================================================================================================
+
+  <Deimos:ConfigTree /> implmentation
+
+  by Martin P. alias Deimos - martin.deimos@gmx.de - www.martin.deimos.de.vu
+
+    Available parameters :
+
+      - All params for Tree
+      - All params for Group
+
+==================================================================================================== -->
+
+<groupdef id="cfgtree" xuitag="Deimos:ConfigTree" embed_xui="tree">
+
+	<Tree id="tree" visible="1" x="0" y="0" w="0" h="0" relatw="1" relath="1"/>
+
+	<script id="script" file="Wasabi/ConfigPage/configtree.maki"/>
+
+</groupdef>

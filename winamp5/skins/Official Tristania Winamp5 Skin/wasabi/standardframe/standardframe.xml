@@ -1,0 +1,445 @@
+<!-- =======================================================================================================
+
+  This file implements the following objects :
+
+  - Wasabi:MainFrame:NoStatus
+  - Wasabi:PlaylistFrame:NoStatus
+  - Wasabi:MediaLibraryFrame:NoStatus
+  Available parameters :
+
+    padtitleleft  : resizes the title from the left by the specified amount of pixels
+    padtitleright : resizes the title from the right by the specified amount of pixels
+    content     : tells the object which group to instantiate in its client area
+
+======================================================================================================== -->
+
+
+<!-- =======================================================================================================
+
+  This group serves as a template for all the Wasabi:StandardFrame objects
+
+======================================================================================================== -->
+
+
+<groupdef id="wasabi.frame.layout" >
+
+	<layer id="window.topleft" x="0" y="0" h="45" w="70" image="standardframe.frame.top.left" resize="topleft" sysregion="1" />
+	<layer id="window.top" x="70" y="0" h="45" w="-140" relatw="1" image="standardframe.frame.top.tile" resize="0" sysregion="1" />
+	<layer id="window.topright" x="-70" y="0" h="45" relatx="1" image="standardframe.frame.top.right" resize="topright" sysregion="1" />
+
+	<layer id="region.topleft" x="0" y="0" h="45" w="70" image="standardframe.region.top.left" sysregion="-2" />
+	<layer id="region.topright" x="-70" y="0" h="45" relatx="1" image="standardframe.region.top.right" sysregion="-2" />
+
+	<layer id="window.left" x="0" y="45" h="-70" relath="1" w="25" image="standardframe.frame.left" resize="left" sysregion="1" />
+	<layer id="window.bg" x="25" y="45" h="-70" relath="1" w="-50" relatw="1" image="standardframe.frame.center" resize="0" sysregion="1" />
+	<layer id="window.right" x="-25" y="45" h="-70" relath="1" w="25" relatx="1" image="standardframe.frame.right" resize="right" sysregion="1" />
+
+	<layer id="window.bottomleft" x="0" y="-25" h="25" w="25" relaty="1" image="standardframe.frame.bottom.left" resize="bottomleft" sysregion="1" />
+	<layer id="window.bottom" x="25" y="-25" h="25" w="-50" relatw="1" relaty="1" image="standardframe.frame.bottom.tile" resize="bottom" sysregion="1" />
+	<layer id="window.bottomright" x="-25" y="-25" h="25" relatx="1" relaty="1" image="standardframe.frame.bottom.right" resize="bottomright" sysregion="1" />
+
+	<layer id="region.bottomleft" x="0" y="-25" h="25" w="25" relaty="1" image="standardframe.region.bottom.left" sysregion="-2" />
+
+   <LayoutStatus id="sysmenu.status" bg="0" x="5" y="3" w="14" h="9" includeonly="{system}" />
+   <hideobject target="sysmenu.status"/>
+
+  <Wasabi:TitleBar
+    id="wasabi.titlebar"
+    x="20" y="0" 
+    w="-39" h="18"
+    relatw="1" size="10" font="Tahoma" bold="1" align="left"
+  />
+  <text
+    id="window.tilte"
+    x="55" y="6" 
+    w="-39" h="18"
+    relatw="1" size="10" font="Tahoma" bold="1" align="left" text=":componentname" ghost="1" color="color.Text"
+  />
+<hideobject target="wasabi.titlebar" />
+
+	<layer id="sysbuttons.bg" image="standardframe.sysbuttons.bg" x="-68" y="3" relatx="1" />
+	<button
+		id="Minimize"
+		action="MINIMIZE"
+		x="-68" y="3" relatx="1" 
+		rectrgn="1"
+		image="standardframe.sysbuttons.minimize.n"
+		downImage="standardframe.sysbuttons.minimize.d"
+		hoverImage="standardframe.sysbuttons.minimize.h"
+		tooltip="Minimize Winamp"
+	/>
+
+	<button
+		id="Close"
+		action="CLOSE"
+		x="-47" y="3" relatx="1" 
+		rectrgn="1"
+		image="standardframe.sysbuttons.close.n"
+		downImage="standardframe.sysbuttons.close.d"
+		hoverImage="standardframe.sysbuttons.close.h"
+		tooltip="Close Window"
+	/>
+
+ </groupdef>
+
+
+
+
+<!-- =======================================================================================================
+
+  <Wasabi:StandardFrame:Status /> implementation
+
+======================================================================================================== -->
+
+ <groupdef id="wasabi.standardframe.statusbar" sysregion="1" xuitag="Wasabi:StandardFrame:Status">
+
+	<group id="wasabi.frame.layout" x="0" y="0" w="0" h="0" relatw="1" relath="1"/>
+
+  <LayoutStatus id="standardframe.layoutstatus" x="19" y="-37" relaty="1" w="-39" relatw="1" h="18" exclude="{system}" />
+
+	<script id="standardframe.script" file="wasabi/standardframe/standardframe.maki" param="19,35,-39,-72,0,0,1,1" />
+
+</groupdef>
+
+
+
+
+<!-- =======================================================================================================
+
+  <Wasabi:StandardFrame:NoStatus /> implementation
+
+======================================================================================================== -->
+
+<groupdef id="wasabi.standardframe.nostatusbar" desktopalpha="1" sysregion="1" xuitag="Wasabi:StandardFrame:NoStatus">
+
+	<group id="wasabi.frame.layout" x="0" y="0" w="0" h="0" relatw="1" relath="1"/>
+
+	<script id="standardframe.script" file="wasabi/standardframe/standardframe.maki" param="19,35,-39,-54,0,0,1,1" />
+
+</groupdef>
+
+
+
+
+
+<!-- =======================================================================================================
+
+  <Wasabi:StandardFrame:Modal /> implementation
+
+======================================================================================================== -->
+
+<groupdef id="wasabi.standardframe.modal" inherit_group="wasabi.standardframe.nostatusbar" sysregion="1" xuitag="Wasabi:StandardFrame:Modal">
+  <sendparams target="window.metal.topleft;window.metal.top;window.metal.topright;window.metal.left;window.metal.right;window.metal.bottomleft;window.metal.bottom;window.metal.bottomright" resize="1" />
+</groupdef>
+
+
+<!-- =======================================================================================================
+
+  <Wasabi:StandardFrame:Static /> implementation
+
+======================================================================================================== -->
+
+<groupdef id="wasabi.standardframe.static" inherit_group="wasabi.standardframe.nostatusbar" sysregion="1" xuitag="Wasabi:StandardFrame:Static">
+  <sendparams target="window.metal.topleft;window.metal.top;window.metal.topright;window.metal.left;window.metal.right;window.metal.bottomleft;window.metal.bottom;window.metal.bottomright" resize="0" />
+</groupdef>
+
+
+<!-- =======================================================================================================
+
+  <Wasabi:SpecialFrames/> implementation
+
+======================================================================================================== -->
+
+<!-- <Wasabi:PlaylistFrame:NoStatus /> implementation -->
+<!--groupdef id="pledit.buttons.group" relatw="1" w="0" h="21">
+  <layer
+    x="0" y="0"
+    image="player.pl.button.add.bg"
+  />
+  <button
+    id="pl.add"
+    action="PE_Add"
+    x="3" y="4"
+    image="player.pl.button.add"
+    downImage="player.pl.button.add.pressed"
+    hoverImage="player.pl.button.add.hover"
+    tooltip="Add Files to Playlist"
+  />
+
+  <layer
+    x="42" y="0"
+    image="player.pl.button.rem.bg"
+  />
+  <button
+    id="pl.rem"
+    action="PE_Rem"
+    x="46" y="4"
+    image="player.pl.button.rem"
+    downImage="player.pl.button.rem.pressed"
+    hoverImage="player.pl.button.rem.hover"
+    tooltip="Remove Files from Playlist"
+  />
+
+  <layer
+    x="86" y="0"
+    image="player.pl.button.sel.bg"
+  />
+  <button
+    id="pl.sel"
+    action="PE_Sel"
+    x="90" y="4"
+    image="player.pl.button.sel"
+    downImage="player.pl.button.sel.pressed"
+    hoverImage="player.pl.button.sel.hover"
+    tooltip="Select"
+  />
+
+  <layer
+    x="123" y="0"
+    image="player.pl.button.misc.bg"
+  />
+  <button
+    id="pl.misc"
+    action="PE_Misc"
+    x="127" y="4"
+    image="player.pl.button.misc"
+    downImage="player.pl.button.misc.pressed"
+    hoverImage="player.pl.button.misc.hover"
+    tooltip="Misc"
+  />
+
+  <layer
+    x="-119" y="0"
+    relatx="1"
+    image="player.pl.button.list.bg"
+  />
+  <button
+    id="pl.list"
+    action="PE_List"
+    x="-115" y="4"
+    relatx="1"
+    image="player.pl.button.list"
+    downImage="player.pl.button.list.pressed"
+    hoverImage="player.pl.button.list.hover"
+    tooltip="Manage Playlist"
+  />
+
+  <layer
+    x="-187" y="1"
+    relatx="1"
+    image="player.pl.time"
+  />
+  <layer
+    x="-182" y="5"
+    relatx="1"
+    image="player.pl.time.display"
+  />
+  <layer
+    id="player.pl.time.left"
+    x="-227" y="1"
+    relatx="1"
+    image="player.pl.time.left"
+    visible="0"
+  />
+  <layer
+    id="player.pl.time.display.left"
+    x="-222" y="5"
+    relatx="1"
+    image="player.pl.time.display.left"
+    visible="0"
+  />
+  <text
+    id="PLTime"
+    ticker="1"
+    display="PE_Info"
+    x="-180" y="7" w="55" h="8"
+    relatx="1"
+    font="player.pe.time.font"
+    align="left"
+    valign="top"
+    fontsize="8"
+    color="font.display"
+  />
+
+  <layer
+    x="-24" y="4"
+    relatx="1"
+    image="player.pl.resizer"
+    resize="bottomright"
+  />
+</groupdef>
+
+<groupdef id="Playlist Editor.mainmenu" rectregn="1" >
+
+	<text
+		id="menu.tilte"
+		x="0" y="1" 
+		w="-39" h="18"
+		relatw="1" size="10" font="Tahoma" bold="0" align="left" text="File     Playist     Sort     Help" ghost="1"
+	/>
+
+	<Menu id="File.menu" menugroup="pl" next="Playlist.menu" prev="Help.menu" x="0" y="0" h="16" w="31" menu="WA5:PE_File" />
+  	<Menu id="Playlist.menu" menugroup="pl" next="Sort.menu" prev="File.menu" x="31" y="0" h="16" w="47" menu="WA5:PE_Playlist" />
+  	<Menu id="Sort.menu" menugroup="pl" next="Help.menu" prev="Playlist.menu" x="78" y="0" h="16" w="34" menu="WA5:PE_Sort" />
+  	<Menu id="Help.menu" menugroup="pl" next="File.menu" prev="Sort.menu" x="112" y="0" h="16" w="37" menu="WA5:PE_Help" />
+
+</groupdef> 
+<groupdef id="manage" embed_xui="rightbg">
+	<layer id="rightbg" image="pl.metal.add.right" ghost="1"/>
+
+	<Deimos:GlowButton
+		id="pl.manage"
+		action="PE_List"
+		x="5" y="6" 
+		image="pl.button.manage.normal"
+		downImage="pl.button.manage.down"
+		hoverImage="pl.button.manage.hover"
+		tooltip="Manage Playlist"
+		glowImage="pl.button.manage.glow.normal"
+		glowHoverImage="pl.button.manage.glow.hover"
+		rectrgn="0"
+	/>
+</groupdef> 
+
+<groupdef id="petime" >
+	<layer id="timebg" image="pl.metal.add.time.dbg" ghost="1"/>
+	<layer id="timebg" image="pl.metal.add.time" ghost="1"/>
+	<text
+		id="PLTime"
+		ticker="1"
+		display="PE_Info"
+		x="10" y="12" w="95" h="8"
+		font="player.pe.time.font"
+		align="center"
+		valign="top"
+		fontsize="8"
+		color="color.Display"
+	/>
+	<layer id="timebg" image="pl.metal.add.time.glas" ghost="1"/>
+</groupdef>
+
+<groupdef id="arsm" >
+	<layer id="leftbg" image="pl.metal.add.left" ghost="1"/>
+
+	<Deimos:GlowButton
+		id="pl.add"
+		action="PE_Add"
+		x="25" y="6" 
+		image="pl.button.add.normal"
+		downImage="pl.button.add.down"
+		hoverImage="pl.button.add.hover"
+		tooltip="Add Files to Playlist"
+		glowImage="pl.button.add.glow.normal"
+		glowHoverImage="pl.button.add.glow.hover"
+		rectrgn="0"
+	/>
+
+	<Deimos:GlowButton
+		id="pl.rem"
+		action="PE_Rem"
+		x="25" y="6" 
+		image="pl.button.rem.normal"
+		downImage="pl.button.rem.down"
+		hoverImage="pl.button.rem.hover"
+		tooltip="Remove Files from Playlist"
+		glowLink="pl.add"
+		rectrgn="0"
+	/>
+
+	<Deimos:GlowButton
+		id="pl.sel"
+		action="PE_Sel"
+		x="25" y="6" 
+		image="pl.button.sel.normal"
+		downImage="pl.button.sel.down"
+		hoverImage="pl.button.sel.hover"
+		tooltip="Select"
+		glowLink="pl.add"
+		rectrgn="0"
+	/>
+
+	<Deimos:GlowButton
+		id="pl.misc"
+		action="PE_Misc"
+		x="25" y="6" 
+		image="pl.button.misc.normal"
+		downImage="pl.button.misc.down"
+		hoverImage="pl.button.misc.hover"
+		tooltip="Misc"
+		glowLink="pl.add"
+		rectrgn="0"
+	/>
+
+</groupdef>
+
+<groupdef id="wasabi.playlistframe.nostatusbar" sysregion="1" xuitag="Wasabi:PlaylistFrame:NoStatus">
+	<group id="wasabi.frame.layout" x="0" y="0" w="0" h="-15" relatw="1" relath="1"/>
+
+	<layer id="window.grabb.bottomleft" x="0" y="-38" h="38" relaty="1" w="20" image="wasabi.frame.grabb.bottom.left" resize="0" sysregion="1" />
+	<layer id="window.grabb.bottom" x="20" y="-38" h="38" relaty="1" w="-80" relatw="1" image="wasabi.frame.grabb.bottom" resize="0" sysregion="1" />
+	<layer id="window.grabb.bottomright" x="-99" y="-38" relaty="1" h="38" relatx="1" image="wasabi.frame.grabb.bottom.right" resize="0" sysregion="1" />
+
+	<layer id="window.metal.bottomleft" x="0" y="-38" h="38" relaty="1" w="20" image="wasabi.frame.metal.bottom.left" resize="bottomleft" sysregion="1" />
+	<layer id="window.metal.bottom" x="20" y="-38" h="38" relaty="1" w="-80" relatw="1" image="wasabi.frame.metal.bottom" resize="bottom" sysregion="1" />
+	<layer id="window.metal.bottomright" x="-177" y="-38" relaty="1" h="38" relatx="1" image="wasabi.frame.metal.bottom.right" resize="bottomright" sysregion="1" />
+	<group id="Playlist Editor.mainmenu" x="-205" relatx="1"/>
+	<group x="-246" relatx="1" y="-32" relaty="1" id="manage"/>
+	<group x="-357" relatx="1" y="-32" relaty="1" id="petime"/>
+	<group x="-526" relatx="1" y="-32" relaty="1" id="arsm"/>
+	<group id="standardframe.playbuttons" x="-144" y="-26" relaty="1" relatx="1"/>
+
+	<script id="standardframe.script" file="wasabi/standardframe/standardframe.maki" param="15,32,-30,-64,0,0,1,1" />
+	<script id="titan.menu.script" file="wasabi/standardframe/ownmenus.maki" param="Playlist Editor" />
+</groupdef-->
+
+<!-- <Wasabi:MediaLibraryFrame:NoStatus /> implementation -->
+<!--groupdef id="Media Library.mainmenu" rectregn="1" >
+
+	<text
+		id="menu.tilte"
+		x="0" y="1" 
+		w="-39" h="18"
+		relatw="1" size="10" font="Tahoma" bold="0" align="left" text="File     View     Help" ghost="1"
+	/>
+
+	<Menu id="mlFile.menu" menugroup="ml" prev="mlHelp.menu" next="mlView.menu" x="0" y="0" h="16" w="31" menu="WA5:ML_File" />
+	<Menu id="mlView.menu" menugroup="ml" prev="mlFile.menu" next="mlHelp.menu" x="31" y="0" h="16" w="38" menu="WA5:ML_View" />
+	<Menu id="mlHelp.menu" menugroup="ml" prev="mlView.menu" next="mlFile.menu" x="69" y="0" h="16" w="37" menu="WA5:ML_Help" />
+</groupdef>
+<groupdef id="wasabi.medialibraryframe.nostatusbar" sysregion="1" xuitag="Wasabi:MediaLibraryFrame:NoStatus">
+	<group id="wasabi.frame.layout" x="0" y="0" w="0" h="-15" relatw="1" relath="1"/>
+
+	<layer id="window.grabb.bottomleft" x="0" y="-38" h="38" relaty="1" w="20" image="wasabi.frame.grabb.bottom.left" resize="0" sysregion="1" />
+	<layer id="window.grabb.bottom" x="20" y="-38" h="38" relaty="1" w="-80" relatw="1" image="wasabi.frame.grabb.bottom" resize="0" sysregion="1" />
+	<layer id="window.grabb.bottomright" x="-99" y="-38" relaty="1" h="38" relatx="1" image="wasabi.frame.grabb.bottom.right" resize="0" sysregion="1" />
+
+	<layer id="window.metal.bottomleft" x="0" y="-38" h="38" relaty="1" w="20" image="wasabi.frame.metal.bottom.left" resize="bottomleft" sysregion="1" />
+	<layer id="window.metal.bottom" x="20" y="-38" h="38" relaty="1" w="-80" relatw="1" image="wasabi.frame.metal.bottom" resize="bottom" sysregion="1" />
+	<layer id="window.metal.bottomright" x="-177" y="-38" relaty="1" h="38" relatx="1" image="wasabi.frame.metal.bottom.right" resize="bottomright" sysregion="1" />
+	<group id="Media Library.mainmenu" x="-166" relatx="1"/>
+	<group id="standardframe.playbuttons" x="-144" y="-26" relaty="1" relatx="1"/>
+
+	<script id="standardframe.script" file="wasabi/standardframe/standardframe.maki" param="15,32,-30,-64,0,0,1,1" />
+	<script id="titan.menu.script" file="wasabi/standardframe/ownmenus.maki" param="Media Library" />
+</groupdef-->
+
+<!-- <Wasabi:VISFrame:NoStatus /> implementation -->
+<!--groupdef id="wasabi.visframe.nostatusbar" sysregion="1" xuitag="Wasabi:VISFrame:NoStatus">
+	<group id="wasabi.frame.layout" x="0" y="0" w="0" h="-15" relatw="1" relath="1"/>
+
+	<layer id="window.grabb.bottomleft" x="0" y="-38" h="38" relaty="1" w="20" image="wasabi.frame.grabb.bottom.left" resize="0" sysregion="1" />
+	<layer id="window.grabb.bottom" x="20" y="-38" h="38" relaty="1" w="-80" relatw="1" image="wasabi.frame.grabb.bottom" resize="0" sysregion="1" />
+	<layer id="window.grabb.bottomright" x="-99" y="-38" relaty="1" h="38" relatx="1" image="wasabi.frame.grabb.bottom.right" resize="0" sysregion="1" />
+
+	<layer id="window.metal.bottomleft" x="0" y="-38" h="38" relaty="1" w="20" image="wasabi.frame.metal.bottom.left" resize="bottomleft" sysregion="1" />
+	<layer id="window.metal.bottom" x="20" y="-38" h="38" relaty="1" w="-80" relatw="1" image="wasabi.frame.metal.bottom" resize="bottom" sysregion="1" />
+	<layer id="window.metal.bottomright" x="-177" y="-38" relaty="1" h="38" relatx="1" image="wasabi.frame.metal.bottom.right" resize="bottomright" sysregion="1" />
+	<script id="standardframe.script" file="wasabi/standardframe/standardframe.maki" param="15,32,-30,-64,0,0,1,1" />
+	<layer x="-322" relatx="1" y="-32" relaty="1" ghost="1" image="video.metal.add" />
+	<group id="standardframe.playbuttons" x="-144" y="-26" relaty="1" relatx="1"/>
+
+
+</groupdef-->
+
+
+

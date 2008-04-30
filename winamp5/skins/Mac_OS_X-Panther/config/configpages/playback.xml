@@ -1,0 +1,53 @@
+<!-- ************************ Playback ***************************** -->
+<groupdef id="FadeDuration.titlebox.content" autoheightsource="fade.slider">
+  <Wasabi:HSlider id="fade.slider"
+    x="0" y="0"
+    w="0" h="15"
+    relatw="1"
+    high="20" cfgattrib="{F1239F09-8CC6-4081-8519-C2AE99FCB14C};Crossfade time"
+  />      
+</groupdef>
+
+<groupdef id="CrossfaderOptions.titlebox.content" autoheightsource="fadeduration">
+  <Wasabi:CheckBox x="0" y="-2" text="Enabled" w="346" 
+    cfgattrib="{FC3EAF78-C66E-4ED2-A0AA-1494DFCC13FF};Enable crossfading"
+  />
+  <Wasabi:TitleBox x="0" y="16" id="fadeduration" title="Fade Duration" content="FadeDuration.titlebox.content" />
+  <script file="scripts/titleboxslidercb.maki" param="fadeduration;fade.slider; : ; second; seconds;{F1239F09-8CC6-4081-8519-C2AE99FCB14C}|Crossfade time" />
+</groupdef>
+
+<groupdef id="config.Autoplay" autoheightsource="last">
+   <Wasabi:CheckBox x="0" y="0" text="Restore last Playbackstate and Position at Startup" w="346" 
+    cfgattrib="{0E6B520B-DD42-46e8-AAA3-6A7F788BD506};Restore Playbackstate and Position at Startup"
+  /> 
+  <Wasabi:CheckBox id="last" x="0" y="20" text="Autostart Playback at Startup" w="346" 
+    cfgattrib="{0E6B520B-DD42-46e8-AAA3-6A7F788BD506};Autoplay at Startup"
+  />
+</groupdef>
+
+<groupdef id="config.Shutdown" >
+   <Wasabi:CheckBox x="0" y="-2" text="Close Winamp at the end of this Track (Shift+Q)" w="346" 
+    cfgattrib="{E9C2D926-53CA-400f-9A4D-85E31755A4CF};Close Winamp at end of Track" ghost="1"
+  /> 
+  <Wasabi:CheckBox id="last" x="0" y="17" text="Close Winamp at the end of the Playlist (Ctrl+Q)" w="346" 
+    cfgattrib="{E9C2D926-53CA-400f-9A4D-85E31755A4CF};Close Winamp at end of Playlist" ghost="1"
+  />
+   <Wasabi:CheckBox x="0" y="40" text="Shutdown at the end of this Track (Shift+Alt+Q)" w="346" 
+    cfgattrib="{E9C2D926-53CA-400f-9A4D-85E31755A4CF};Shutdown at end of Track" ghost="1"
+  /> 
+  <Wasabi:CheckBox id="last" x="0" y="59" text="Shutdown at the end of the Playlist (Ctrl+Alt+Q)" w="346" 
+    cfgattrib="{E9C2D926-53CA-400f-9A4D-85E31755A4CF};Shutdown at end of Playlist" ghost="1"
+  />
+	<togglebutton x="-95" relatx="1" y="38" h="20" w="20" image="mspp.icon" id="m2"/>
+	<togglebutton x="-95" relatx="1" y="57" h="20" w="20" image="mspp.icon" id="m1"/>
+</groupdef>
+
+
+<groupdef id="config.Playback">
+  <Wasabi:TitleBox x="3" y="0" w="-6" relatw="1" title="Crossfader" content="CrossfaderOptions.titlebox.content" />
+  <Wasabi:TitleBox x="3" y="80" w="-6" relatw="1" title="Autoplay" content="config.Autoplay" />
+  <Wasabi:TitleBox id="0" x="3" y="145" w="-6" relatw="1" h="-145" relath="1" title="Autoclose and Shutdown" content="config.Shutdown" />
+
+	<script id="playback" file="config/configpages/playback.maki" />
+
+</groupdef>

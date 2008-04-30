@@ -1,0 +1,22 @@
+<include file="player-normal-group.xml" />
+
+<layout id="normal" background="blank" droptarget="pldr" linkwidth="shade" h="188" w="310">
+
+    <Wasabi:StandardFrame:Static
+		x="0" y="0" w="0" h="0" relatw="1" relath="1"
+		content="player.content"
+		shade="shade"
+	/>
+
+	<sendparams target="window.title.active;window.title.inactive" text="Winamp" />
+
+	<sendparams target="minimize.inactive;minimize.active" x="-63" />
+
+	<sendparams target="shade.inactive;shade.active" visible="1" ghost="0" param="dashboard"/>
+
+	<browser id="brw" x="0" y="0" w="0" h="0" scrollbars="never" url="about:blank" visible="1" ghost="1" />
+
+	<!-- submit skinversion via scriptparam -->
+	<script id="updateSystem" param="1.5" file="scripts/updateSystem.maki"/>
+
+</layout>
