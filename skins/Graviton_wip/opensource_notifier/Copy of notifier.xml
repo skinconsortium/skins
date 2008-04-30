@@ -1,0 +1,105 @@
+<elements>
+	<bitmap id="notifier.bg" file="opensource_notifier/notif-bg.png" gammagroup="BackgroundsOuter"/>
+	<!--bitmap id="notifier.bg.region" file="opensource_notifier/notif-bg-region.png" gammagroup="BackgroundsOuter"/-->
+	<bitmap id="notifier.inner" file="opensource_notifier/notif-inner.png" gammagroup="BackgroundsInner"/>
+	<bitmap id="notifier.glass" file="opensource_notifier/notif-glass.png" gammagroup="Glass"/>
+	<bitmap id="cdcover.noimage" file="opensource_notifier/noimage.png" gammagroup="BackgroundsInner"/>
+
+	<color id="notifier.dark" value="122,122,122" gammagroup="Font"/>
+	<color id="notifier.bright" value="255,255,255" gammagroup="Font"/>
+</elements>
+
+<groupdef id="notifier.text" sysregion="1" ghost="1">
+	<text id="plentry" x="45" y="12" default="2/15" w="100" h="20" color="notifier.bright" font="main.font.arial.narrow" fontsize="20" ghost="1" />
+	<text id="nexttrack" x="-160" y="15" w="102" h="14" relatw="1" align="right" default="Now Playing" color="notifier.bright" font="main.font.arial.narrow" fontsize="14" ghost="1" />
+	<text id="title" x="45" y="34" w="-32" h="16" relatw="1" default="" color="notifier.bright" font="main.font.arial.narrow" fontsize="16" ghost="1" />
+	<text id="artist" x="45" y="50" w="-32" h="14" relatw="1" default="" color="notifier.bright" font="main.font.arial.narrow" fontsize="14" ghost="1" />
+	<text id="album" x="45" y="65" w="-32" h="14" relatw="1" default="" color="notifier.bright" font="main.font.arial.narrow" fontsize="14" ghost="1" />
+</groupdef>
+
+<groupdef id="notifier.background" w="253" h="97" sysregion="1" ghost="1">
+	<layer id="bg.alpha" image="notifier.bg" ghost="1" sysregion="1" rectrgn="0" move="0" x="0" y="0" />
+	<layer id="bg.inner" image="notifier.inner" ghost="1" rectrgn="0" move="0" sysregion="0" x="0" y="0" />
+</groupdef>
+
+<container id="opensource_notifier" x="0" y="0" w="335" h="105" name="Notifier" dynamic="0" default_visible="0"  nomenu="1" nofocusapponclose="1">
+
+<layout id="normal" w="335" h="105" noparent="1" ontop="1" desktopalpha="1" forcealpha="1" noactivation="1" nodock="1" move="0">
+	<group id="notifier.background" fitparent="1" rectrgn="0" move="0" x="0" y="0" sysregion="1" tooltip="Click for options | Right click to hide" />
+	
+	<!--layer id="bg.region" image="notifier.bg.region" ghost="1" regionop="-2" rectrgn="0" move="0" x="0" y="0" /-->
+	<layer id="bg.inner" image="notifier.inner" ghost="1" rectrgn="0" move="0" sysregion="0" x="0" y="0" />
+	<group id="notifier.background" fitparent="1" rectrgn="0" move="0" x="0" y="0" sysregion="1" tooltip="Click for options | Right click to hide" />
+  	<group id="notifier.text" fitparent="1" rectrgn="0" move="0" x="0" y="0" ghost="1"/>
+	<browser id="browser.cdcover" rectrgn="0" x="44" y="16" w="65" h="65" scrollbars="never" url="file:///@SKINPATH@opensource_notifier\html\cdcover.maki" />
+	<layer id="local.cdcover" image="" rectrgn="0" x="44" y="16" w="65" h="65" ghost="1" />
+	<layer id="bg.glass" image="notifier.glass" rectrgn="0" move="0" x="0" y="0" ghost="1"	/>
+
+	<script file="opensource_notifier/cover.maki"/>
+</layout>
+
+</container>
+
+<groupdef id="customdropdownlist" xuitag="Wasabi:CustomDropDownList" embed_xui="dropdownlist.text">
+	<Wasabi:Dropdownlist id="dropdownlist" x="0" y="0" w="0" h="20" relatw="1" />
+	<script id="customdropdownlistscript" file="opensource_notifier/customdropdownlist.maki"></script>
+</groupdef>
+
+<groupdef id="durations">
+	<Wasabi:Text id="fadein.text" x="0" y="0" text="Fade-in Time ():"/>
+	<Wasabi:HSlider id="fadein.slider" x="105" y="3" w="145" h="10" relatw="0" high="40"/>	
+	<Wasabi:Text id="stay.text" x="0" y="16" text="Hold Time ():"/>	
+	<Wasabi:HSlider id="stay.slider" x="105" y="19" w="145" h="10" relatw="0" high="40"/>	
+	<Wasabi:Text id="fadeout.text" x="0" y="31" text="Fade-out Time ():"/>	
+	<Wasabi:HSlider id="fadeout.slider" x="105" y="34" w="145" h="10" relatw="0" high="40"/>
+</groupdef>
+
+<groupdef id="frequency">
+	<Wasabi:CustomDropDownList id="freq" items="Always Show Notifications;Show Notifications When Minimized;Never Show Notifications" defaultlistitem="Always Show Notifications" PrivateIntSection="OpenNote" PrivateIntItem="Freq" x="0" y="0" h="20" w="251" />
+	<Wasabi:CheckBox id="fullscreen" x="7" y="22" text="Disable in Video Fullscreen" rectrgn="1"/>
+</groupdef>
+
+<groupdef id="shadow">
+	<Wasabi:Text id="shadow.opacity.zero" x="0" y="0" text="0%"/>
+	<Wasabi:Text id="shadow.opacity.100" x="-30" y="0" relatx="1" text="100%"/>
+	<Wasabi:HSlider id="notishadow.slider" x="24" y="2" w="-58" h="10" relatw="1" />
+</groupdef>
+
+<groupdef id="album">
+	<Wasabi:CheckBox id="cover" x="0" y="0" text="Show Album Cover (Local or Internet)" rectrgn="1"/>
+	<Wasabi:RadioGroup id="covertype" />
+	<Wasabi:CheckBox id="covertype.net" x="100" y="16" w="90" text="Internet" radioid="covertype" radioval="0" rectrgn="1"/>
+	<Wasabi:CheckBox id="covertype.local" x="0" y="16" w="90" text="Local" radioid="covertype" radioval="1" rectrgn="1"/>
+	<Wasabi:Text id="covertext" x="0" y="33" h="14" text="image size: pref(65 * 65px) (auto resized)"/>
+	<Wasabi:Text id="covertext" x="0" y="45" h="14" text="name: cover.jpg, coverart.jpg, folder.jpg, front.jpg"/>
+</groupdef>
+
+<groupdef id="radio">
+	<Wasabi:RadioGroup id="fadeorslide" />
+	<Wasabi:CheckBox id="radio.fade" x="0" y="0" w="90" text="Fading Effect" radioid="fadeorslide" radioval="1" rectrgn="1" />
+	<Wasabi:CheckBox id="radio.slide" x="100" y="0" w="90"text="Sliding Effect" radioid="fadeorslide" radioval="0" rectrgn="1"/>
+</groupdef> 
+
+<groupdef id="place">
+	<Wasabi:CustomDropDownList id="notifierposition" items="1. Bottom Right;2. Bottom Left;3. Top Right;4. Top Left" defaultlistitem="1. Bottom Right" PrivateIntSection="Walpha_OpenNote" PrivateIntItem="NotifierPosition" x="0" y="0" h="20" w="251" />
+</groupdef>
+
+<groupdef id="config.stuff">
+	<Wasabi:TitleBox id="container" x="1" y="0" w="269" h="40" relatw="0" relath="0" title="Effects" content="radio" />
+	<Wasabi:TitleBox id="container" x="1" y="45" w="269" h="69" relatw="0" relath="0" title="Durations" content="durations" />
+	<Wasabi:TitleBox id="container" x="1" y="119" w="269" h="60" relatw="0" relath="0" title="Frequency" content="frequency" />
+	<!--Wasabi:TitleBox id="container" x="1" y="184" w="269" h="38" relatw="0" relath="0" title="Shadow Opacity" content="shadow" /-->
+	<Wasabi:TitleBox id="container" x="1" y="185" w="269" h="81" relatw="0" relath="0" title="Album Cover" content="album" />
+	<!--Wasabi:TitleBox id="container" x="1" y="184" w="269" h="41" relatw="0" relath="0" title="Album Cover" content="album" /-->
+	<Wasabi:TitleBox id="container" x="1" y="274" w="269" h="45" relatw="0" relath="0" title="Position" content="place" />
+</groupdef>
+
+
+<container id="opensource_notifier_prefs" name="Notifier Preferences" dynamic="0" default_visible="0" nomenu="0" nofocusapponclose="1">
+	<layout id="normal" background="component.basetexture" minimum_w="350" minimum_h="428" maximum_w="350" maximum_h="428" default_w="350" default_h="428">
+		<group id="wasabi.standardframe.nostatusbar" x="0" y="0" w="0" h="0" relatw="1" relath="1" />
+		<group id="config.stuff" x="40" y="48" w="0" h="0" relatw="1" relath="1" />
+	</layout>
+</container>
+
+<script file="opensource_notifier/opensource_notifier.maki"/>
