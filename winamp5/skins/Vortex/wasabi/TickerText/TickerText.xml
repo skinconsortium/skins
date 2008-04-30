@@ -1,0 +1,89 @@
+<!-- ===================================================================================================
+
+  <Deimos:TickerText /> implmentation
+
+  by Martin P. alias Deimos - martin.deimos@gmx.de - www.martin.deimos.de.vu
+
+    Available parameters :
+
+      - All params for Text
+      - All params for Group
+
+==================================================================================================== -->
+
+<groupdef id="titan.tickertext" xuitag="Deimos:TickerText" embed_xui="tickertext">
+
+	<text id="tickertext" fitparent="1" ticker="1" />
+
+	<script id="ticker.script" file="wasabi/TickerText/TickerText.maki" />
+
+</groupdef>
+
+<groupdef id="atf.cyc" autoheightsource="sslider" >
+  <Wasabi:HSlider
+    id="sslider"
+    x="2" y="0" 
+    w="-4" h="10"
+    relatw="1" high="19"
+cfgattrib="{E9C2D926-53CA-400f-9A4D-85E31755A4CF};Deimos_atf_time"
+   />
+</groupdef>
+
+<!-- Configpage -->
+
+<groupdef id="atf.cyc" autoheightsource="sslider" >
+  <Wasabi:HSlider
+    id="sslider"
+    x="2" y="0" 
+    w="-4" h="10"
+    relatw="1" high="19"
+cfgattrib="{E9C2D926-53CA-400f-9A4D-85E31755A4CF};Deimos_atf_time"
+   />
+</groupdef>
+
+<groupdef id="atf.sets" >
+	<group id="wasabi.window.embedded" fitparent="1" />
+
+	<List id="presetlist" fitparent="-1" multiselect="0" autodeselect="0" nodblclick="1"/>
+</groupdef>
+
+<groupdef id="atf.edit" >
+   <wasabi:Editbox id="editbox" y="0" h="20" w="0" relatw="1" x="0"/>
+
+  	<wasabi:button x="0" y="24" w="0" relatw="1" id="save" text="Save" />
+  	<wasabi:button x="0" y="24" w="0" relatw="1" id="add" text="Add" />
+
+  	<wasabi:button x="0" y="54" w="49" relatw="%" id="cancel" text="Cancel edit" />
+  	<wasabi:button x="0" y="54" w="49" relatw="%" id="edit" text="Edit current" />
+
+  	<wasabi:button x="51" relatx="%" y="54" w="49" relatw="%" id="del" text="Delete current" />
+
+  	<wasabi:button x="0" y="79" w="49" relatw="%" id="up" text="Move up" />
+  	<wasabi:button x="51" relatx="%" y="79" w="49" relatw="%" id="down" text="Move down" />
+</groupdef>
+
+
+<groupdef id="config.atf.1">
+
+	<wasabi:text text="Configure the title formating of the Songticker" h="70" w="0" y="-2" relatw="1"/>
+
+	<wasabi:button x="0" y="20" w="0" relatw="1" id="btn" text="Syntax reference" />
+
+	<!--wasabi:text text="Available Params: %artist%, %album%, %title%, %year%, %genre%,\n%tracknumber%, %bitrate%, %frequency%, %channels%, %extension%\n%path%, %songticker%, %songinfo%, %length%, %comment%" y="14" h="70" w="0" relatw="1"/-->
+
+
+    <Wasabi:TitleBox x="0" y="50" relath="1" h="-120" w="49" relatw="%" id="sets" title="Cycling formatting presets" content="atf.sets" />
+
+    <Wasabi:TitleBox x="51" relatx="%" y="50" relath="1" h="-120" w="49" relatw="%" id="sets" title="Add/Edit formatting presets" content="atf.edit" />
+
+    <Wasabi:TitleBox x="0" y="-64" relaty="1" w="0" relatw="1" id="cyc" title="Set cycling duration" content="atf.cyc" />
+  <script file="scripts/titleboxslidercb.maki" param="cyc;sslider;: ; sec; sec;{E9C2D926-53CA-400f-9A4D-85E31755A4CF}|Deimos_atf_time;1" />
+
+	<Deimos:RestoreButton id="restore"
+		x="0" y="-23" relaty="1" w="0" relatw="1" h="21"
+		text="Restore standard values" tooltip="Restore standard values"		setAttribs="{E9C2D926-53CA-400f-9A4D-85E31755A4CF};Deimos_atf_time:2|{E9C2D926-53CA-400f-9A4D-85E31755A4CF};Deimos_atf_toggle:-1"
+		numAttribs="2"
+	/>
+
+  <script file="wasabi/tickertext/cfg.maki"/>
+</groupdef>

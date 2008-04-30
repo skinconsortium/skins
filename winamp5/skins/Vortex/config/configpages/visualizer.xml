@@ -1,0 +1,51 @@
+<!-- ************************ ConfigPage: Visualization ***************************** -->
+
+<groupdef id="peaks.falloff.titlebox.content" autoheightsource="peaks.falloff.slider" >
+  <Wasabi:HSlider
+    id="peaks.falloff.slider"
+    x="2" y="0" 
+    w="-4" h="10"
+    relatw="1" high="4"
+	cfgattrib="{E9C2D926-53CA-400f-9A4D-85E31755A4CF};peaksfalloff"
+   />
+</groupdef>
+
+<groupdef id="analyzer.falloff.titlebox.content" autoheightsource="analyzer.falloff.slider" >
+  <Wasabi:HSlider
+    id="analyzer.falloff.slider"
+    x="2" y="0" 
+    w="-4" h="10"
+    relatw="1" high="4"
+	cfgattrib="{E9C2D926-53CA-400f-9A4D-85E31755A4CF};analyzerfalloff"
+   />
+</groupdef>
+
+<groupdef id="analyzer.style.titlebox.content" >
+	<Wasabi:RadioGroup id="analyzerstyle"/>
+  <Wasabi:CheckBox x="0" relatx="0" y="0" text="Full" cfgattrib="{E9C2D926-53CA-400f-9A4D-85E31755A4CF};analyzerstyle" radioid="analyzerstyle" radioval="0" />
+  <Wasabi:CheckBox x="0" relatx="0" y="20" text="Gradient" cfgattrib="{E9C2D926-53CA-400f-9A4D-85E31755A4CF};analyzerstyle" radioid="analyzerstyle" radioval="1" />
+  <Wasabi:CheckBox x="0" relatx="0" y="40" text="Fire" cfgattrib="{E9C2D926-53CA-400f-9A4D-85E31755A4CF};analyzerstyle" radioid="analyzerstyle" radioval="2" />
+  <Wasabi:CheckBox x="0" relatx="0" y="60" text="Line" cfgattrib="{E9C2D926-53CA-400f-9A4D-85E31755A4CF};analyzerstyle" radioid="analyzerstyle" radioval="3" />
+</groupdef>
+
+<groupdef id="config.vis">
+	<group id="wasabi.window.embedded" x="0" y="0" h="-13" w="-136" relatw="1" relath="1" />
+	<List id="list.vis" x="1" y="1" h="-15" w="-140" relatw="1" relath="1" numcolumns="2" columnwidths="105;150" multiselect="0" autodeselect="0" sort="0"
+	items="No Visualization;Spectrum Analyzer,Thick Bands;Spectrum Analyzer,Thin Bands *;Osciloscope,Solid;Oscilloscope,Dots *;Oscilloscope,Lines *;Mirrored,Thick Spectrum Analyzer;Mirrored,Thin Spectrum Analyzer *;Mirrored,Oscilloscope;Animation,Ambience Globe Fill;Animation,Globe Fill;Animation,Globe Rebound;Layer FX,Globe Rebound;Layer FX,Globe Let Me Out;Layer FX,Globe Floater;Layer FX,Globe Vortex"
+	/>
+
+  <Wasabi:CheckBox x="-130" relatx="1" y="0" text="Show Peaks" cfgattrib="{81FA8907-0BE6-4731-881B-3FA3C06CFBC9};Show Peaks" />
+
+  <Wasabi:TitleBox x="-130" y="20" relatx="1" w="130" title="Peaks Falloff Speed" content="peaks.falloff.titlebox.content" id="pks" />
+  <script file="scripts/titleboxslidercb.maki" param="pks;slider.button;: ;" />
+
+  <Wasabi:TitleBox x="-130" y="60" relatx="1" w="130" title="Analyzer Falloff Speed" content="analyzer.falloff.titlebox.content" id="analyzer" />
+  <script file="scripts/titleboxslidercb.maki" param="analyzer;slider.button;: ;" />
+
+  <Wasabi:TitleBox x="-130" y="100" relatx="1" w="130" h="105" title="Analyzer Style" content="analyzer.style.titlebox.content" id="style" />
+
+	<text x="0" y="-14" relaty="1" text="*) Requres Winamp 5.2+" color="wasabi.text.color"/>
+
+	<script id="script" file="config/configpages/visualizer.maki"/>
+
+</groupdef>

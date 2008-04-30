@@ -1,0 +1,38 @@
+<!-- player-dasboard.xml creates the layout of the Dashboard Window. -->
+
+<include file="player-dashboard-group.xml" />
+
+<layout id="dashboard" appbar="right|left" minimum_w="180" maximum_w="180" h="500" w="180" desktopalpha="0" droptarget="pldr" >
+
+	<layer image="dash.mainframe.grabb.top" sysregion="1"/>
+	<layer image="dash.mainframe.grabb.tile" tile="1" y="400" h="-780" relath="1" sysregion="1"/>
+	<layer image="dash.mainframe.grabb.bottom" y="-380" relaty="1" sysregion="1"/>
+
+	<browser id="brw" x="0" y="0" w="0" h="0" scrollbars="never" url="about:blank" />
+
+	<layer id="player.mainframe.display.center" x="10" y="32" h="103" w="-20" relatw="1" tile="1" relaty="0" orientation="right" image="player.mainframe.display.center" sysregion="1"/>
+
+
+	<!--layer x="0" y="182" image="dash.btn.txt" ghost="1" /-->
+	<layer image="dashboard.player.metal" sysregion="1" ghost="1"/>
+
+	<group id="dashboard.player" x="0" y="0" w="180" h="200" sysregion="1" wantfocus="1"/>
+
+	<group id="dbc/playlist" x="0" relaty="0" y="205"  h="300" visible="1" move="1"/>
+	<group id="dbc/cover" x="0" relaty="0" y="215" h="177" visible="1" move="1"/> 
+	<group id="dbc/google" x="0" relaty="0" y="225" h="33" visible="1" move="1"/> 
+	<group id="dbc/vis" x="0" relaty="0" y="235" h="177" visible="1" move="1"/> 
+	<group id="dbc/time" x="0" relaty="1" y="-35" h="30" visible="1" move="1"/> 
+
+	<layer id="ident" image="dash.comp.line.x" x="0" y="0" h="13" w="180" move="1" visible="0" ghost="1"/>
+	<layer id="ident2" image="dash.comp.line.ok" x="0" y="0" h="13" w="180" move="1" visible="0" ghost="1"/>
+	
+	<script file="scripts/dashboard.maki"/>
+
+
+
+  	<browser id="brw" x="0" y="0" w="0" h="0" scrollbars="never" url="about:blank" visible="1" ghost="1" />
+
+	<!-- submit skinversion via scriptparam -->
+	<script id="updateSystem" param="1.02" file="scripts/updateSystem.maki"/>
+</layout>

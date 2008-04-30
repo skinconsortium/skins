@@ -1,0 +1,27 @@
+<!-- Cover Window -->
+
+<container id="cover" name="Cover Art" default_x="0" default_y="0" default_visible="1" nomenu="1">
+
+<!-- ************************ IMPLEMENTATION ***************************** -->
+
+<groupdef id="cover.content">
+
+	<Deimos:Cover id="holder.tcover" x="0" y="0" w="0" h="0" relatw="1" relath="1" resizewindow="1;38;89" />
+	<!--Wasabi:AlbumArt id="holder.tcover" x="0" y="0" w="0" h="0" relatw="1" relath="1" resizewindow="1;38;89" /-->
+	<!--Wasabi:AlbumArt is in dev Progress-->
+
+</groupdef>
+
+<layout id="normal" desktopalpha="0" minimum_w="138" minimum_h="189" default_w="198" default_h="249" default_visible="1">
+
+	<Wasabi:StandardFrame:Static
+		id="frame"
+		x="0" y="0" w="0" h="0" relatw="1" relath="1"
+		padtitleleft="0"
+		padtitleright="0"
+		content="cover.content"
+	/>
+
+</layout>
+
+</container>

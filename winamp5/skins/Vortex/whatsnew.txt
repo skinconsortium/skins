@@ -1,0 +1,303 @@
+Vortex 1.03 prerelease (26. Feb. 2007):
+[Deimos]
+* New: PE_TIME in Dashboard
+* Improved: Fullscreen resolution detect
+* Fixed: Bugs on unpause in sonique2.m
+* Fixed: Potential bug in rating.maki
+* Fixed: Potential bug in cover.maki
+
+Vortex 1.02 (13. Nov. 2006):
+[Deimos]
+* New: Donation Button, if you wanna support us
+* Fixed: Play / Pause in Standardframe
+* Updated: Dashboard script to get less gurus
+* Updated: Rating script to get less gurus
+* Updated: Reduced pngs again
+
+Vortex 1.01 (04. Aug. 2006):
+[Deimos]
+* New: ATF 2.0
+* Fixed: Cannot play videos
+
+Vortex 1.00 (06. 06. 2006):
+[Deimos]
+* New: Rate Tracks via GUI <+>
+* New: Configurable Snapadjust
+* New: Timer Presets (Sonique2, Normal, Large)
+* New: Blink Timer on pause
+* New: MSPP Info Page
+* New: Volume/Seek Songticker messages
+* New: ATF for dashboard
+* New: Bugreport config page
+* New: Statustext in video window
+* New: Party! - Switch component button
+* Fixed: Volume State in Songticker
+* Fixed: Shade Toolbar 
+* Fixed: Winamp5.22 image errors
+* Fixed: Winamp5.22 text errors
+* Fixed: Winamp5.22 errors in CoverSearch
+* Fixed: Winamp5.22 errors in Notifier
+* Fixed: CoverSearch cfg-attributes
+* Fixed: video doesn't stop if the videownd
+    is closed, thanks Benski :)
+* Fixed: Play/Pause scripts
+* Fixed: missing graphics in Stick, Dashboard
+* Fixed!: Video window is closing on next
+* Fixed: Party! Component Switching
+* Fixed: Errors in loadmspp.maki
+* Fixed: Skins in Preferences
+[QuadHeliX]
+* Graphic Updates
+
+Vortex 0.99 (01. May 2006):
+[Deimos]
+* New: MSPP <+> Support
+  + Removed: CoverSearch installing
+  + Removed: Playbackfunctions wizard
+* New: CoverSearch 1.5:
+  + *.jpg Playitem Cover-Slide-Show <+>
+  + New searchorder
+  + Open file dialog boxes <+>
+  + Double Click Actions
+  + Removed Cover in Video Plugin Support (buggy)
+  + Fixed: amazon status messages
+  + Cover caching
+* New: Advanced Title Formatting 1.1:
+  + Improved: SetCycling till 20 sec
+  + Improved: caps are allowed for syntax
+  + Added: ATF for Stickmode
+  + New: $lower(x)$ and $upper(x)$ syntax functions
+* New: Thanks in About Section
+* Fixed: Mousewheel for Party and Dashboard
+* Fixed: high CPU on resizing windows in party mode
+[rohan2kool]
+* PulsePack for Backlight
+
+Vortex 0.98 (15. March 2006):
+[QuadHelix]
+* Added: Start animation
+* Added: Pause grfx
+[Gaekwad]
+* Added: Gaekwads reduced Grfx sizes
+
+Vortex 0.979 (13. March 2006):
+[Deimos]
+* Fixed: ConfigPages with Winamp5.21
+* Fixed: Cannot watch videos
+* Fixed: Cannot turn off Amazon-search
+* New: Advanced Title Formating
+* New: Dynamic Skinupdatesystem 1.3
+
+Vortex 0.978 (07. March 2006):
+[Deimos]
+* Added: ConfigPage for Tagformatting
+* Added: Missing Userpics
+* Reduced gammapresets filesize 50%
+* 'nicer' Colorthemes naming
+* New: ColorThemes
+* Fixed: Dasboard is seted to y=0
+* Fixed: Some Fullscreen Graphics
+
+Vortex 0.977 (06. March 2006):
+[QuadHelix]
+* Grfx reworks
+* Added Logos
+* reduced file sizes
+
+Vortex 0.976 (03. March 2006):
+[Deimos]
+* Fixed: Windows Disappearing
+* Fixed: Dashboard fits to scaling
+* Fixed: Dashboard remembers scaling
+* Fixed: Video in Cover Art
+* Fixed: Snapadjust in Stickmode
+* Fixed: Can't use remote cover if path
+   isn't correct
+* Fixed: 'politer' cover popup box
+* Fixed: Wasabi/ml/pl coloring
+* Fixed: sizing of manual/avs jpgs
+* New: ConfigPage for FullScreen Layout
+* New: VisAnalyzer Styles
+* New: DpW-addon CoverSearch path is given
+* Deleted: XUI Deimos:DropDownList
+
+Vortex 0.975 (28. February 2006):
+[Quadhelix]
+* Added Reference manual link and jpg to config panel
+* new window elements 
+* cleaned edges of skin 
+* changed some of the vises to fire.
+* reworked stick grfx
+* reworked fullscreen mode grfx
+* redid center on some items on fullscreen
+* new volume slider with and over old one
+* now buttons glow better when changing Color themes on all
+* got rid of some gamma presets
+* moved dashboard slider redid vis
+* redid Avs jpg
+
+Vortex 0.973 (27. February 2006):
+[Deimos]
+* Fixed: ProgButton3
+* Fixed: Uncheck windowmenuentries
+   after closing Cover Window / Eq
+* Fixed: Cover1/2 switching
+* Fixed: Covermenu (now rClick)
+* Fixed: VisSetting remembering
+* New: Equalizer/Cover Art in Party mode
+* New Vis Options:
+  + Show Peaks
+  + Analyzer falloff
+  + Peaks falloff
+* Removed: current layout from rClick menu
+
+Vortex 0.972 (25. February 2006):
+[Deimos]
+* Fixed: Link to the Vortex-AVS-Preset
+* Fixed: Cover Background disappearing
+* Fixed: Heavy bug on entering "\null"
+   in the custom background edit
+* Fixed: Left Drawer works again
+* Fixed: Little vis bug
+* New: Tooltip for Filetype Display
+* New: CoverSizing options:
+  + Keep ratio
+  + Don't shrink
+  + Don't enlarge
+
+Vortex 0.971 (23. February 2006):
+[Deimos]
+* Fixed: Little bug on stretch cover_bg
+* New: Winamp 5.2 Visualization Presets
+
+Vortex 0.96 (22. February 2006):
+[Deimos]
+* Fixed: Custom Image for CoverSearch
+* Fixed: GURU on restoreButton click
+* Fixed: Playback Keyboard Shortcuts
+* Fixed: Tooltips on CButtons
+* Fixed: AttribSystem
+* Fixed: Sonique2 Timer for Party! Mode
+* New: ConfigPage for Keyboard Shortcuts
+* New: Video-/AVS-Buttons in Party! Mode
+* New: using new vis-functions
+   (configurable in next release)
+* Deleted: not used XUI-Objects
+* Deleted: draw_l scripts
+
+Vortex 0.95 (15. February 2006):
+[Deimos]
+* Fixed: Some Gammagroups
+* Fixed: Party! VisModes
+* Fixed: Volume can be set to 100% again
+* Fixed: rClick bug on progButtons
+* Fixed: EQ appears again
+* Fixed: Alt+G opens EQ
+* Added: PlaylistButtons & Time to
+  Playlisteditor and Party! Mode
+* Added: Seek to Dashboard
+* Added: Seek & Volume to Party! Mode
+* Added: ML ToggleButton to Dashboard
+   instead of Winamp Preferences
+* Added: DownloadButton for AVS preset
+* New: Leechbite's ProgButtons
+* New: Docked Toolbar for Stick Mode
+* New: Alt+C opens CoverWindow
+* Deleted: maximum_w for Stick Mode
+* Deleted: Skin Update ConfigPage
+
+Vortex 0.94 (13. February 2006):
+[Deimos]
+* merged code of version 0.93, 0.92, 0.91
+* Improved: dashboard time & date
+* Added: playbackbuttons to dashboard
+* Fixed: message box for small resolutions
+* Party! Mode:
+  + Play/Pause Button
+  + Centered Songticker/Timer
+  + Added Visualizations
+
+Vortex 0.93 (21. January 2006):
+[QuadHeliX]
+* Dashboard-redone
+* Stick-redone
+* FS- fixed buttons
+
+Vortex 0.92 (03. January 2006):
+[Deimos]
+* Bug Fixes:
+  +CoverSearch: fixed guru on start and
+   the message comes 3sec after skinloading
+  +WindowModeMenus: new technique
+  +Party! Mode: Vis is now placed properly
+  +RClick on Vis: ensure an item is clicked
+* New: added new functions to WndModeBtns 
+
+Vortex 0.91 (20. December 2005):
+[Deimos]
+* Dashboard Improvements:
+  + added Visualization Component
+  + added gammagroups
+  + added component menu
+  + fixed long timetext
+  + created own studio.xnf entries
+* Updated about sections
+* Configattributes:
+  + Fixed Vis bug
+  + Fixed SongtickerScrolling bug
+  + deleted Menus entry
+
+Vortex BETA8 (09. December 2005):
+[Deimos]
+* New: AboutBox for Winamp Preferences
+* New: Dashboard Layout:
+  + Made first graphics
+  + Fixed: fillStringBefore() in exd.mi
+  + Fixed: Date in Dashboard
+* Recompiled cover.m with new exd.mi
+* Added: ConfigPage for AVS-Preset
+
+Vortex BETA7 (07. December 2005):
+[Deimos]
+* Moved: Glowbuttons-Prefs to General
+* New: Menu for WindowModes
+* New: CoverSearch 1.4:
+  + HTML Version-check
+  + Full skinable stausmessages
+  + Resizeable HTML images
+  + Default CoverWindow Size: 160x160px
+  + HTML ImageQuality: Large, Medium, Small
+  + Fixed: GURU on first start
+  + Fixed: CoverSearch via Amazon.com
+* Added: Dynamic Skinupdatesystem
+* Added: Hyperlink Buttons
+* Fixed: Show Notification Buttons
+* Merged all code
+[leechbite]
+* New: Party! Mode
+
+Vortex BETA6 (14. November 2005):
+[SLoB]
+* Changed: vis width (on both main mode and stick) to full integer value(i.e. 18*8), all bars now same width and vis seems to run faster(as its not calculating odd size)
+* Changed: left draw, media type didnt really belong there, media type now in lcd, need new options to go in draw
+* Added: seeker ghost
+* Added: integrated more layer fx visualisations, regrouped cbuttons, eq & cms buttons necessary to add in new layer
+* Fixed: Background Light, corrected position
+* New: Vortex text logo when no visualisation
+* Changed: Glass layer idea to be more inkeeping with overall design
+* Added: X New Colour themes, quickly created by RTG as paired complement, remove as many as necessary or create new ones, also need names for kept ones
+* can add some more to stuff stick mode at a later date if need be, not got time atm
+
+Vortex BETA5 (02. November 2005):
+[Deimos]
+* New: Configattribs for Light
+* New: 30 Colorthemes
+* New: Skin Config Menus
+* New: resize coverwindow 1:1
+* New: Configpage for Visualization
+* New: Configpage for Glowbuttons
+* Fixed: Color and Gamma IDs
+* Added: TickerText & CPU Tweak Page
+* Added: DpW Configsystem II
+* Added: Coversearch 1.3
+* Added: Playback Functions

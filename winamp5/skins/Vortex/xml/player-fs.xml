@@ -1,0 +1,574 @@
+<!-- *******************************
+
+	Vortex - player-fs.xml
+
+	Party! mode layout.
+	by leechbite, www.leechbite.com
+
+************************************ -->
+
+<groupdef id="player.fs.cbuttons" w="352" h="75">
+	<Vortex:GlowButton id="button.prev"
+		x="0" y="16" action="PREV"
+		bImage="player.fs.button.prevnext"
+		bImageD="player.fs.button.prevnext.down"
+		hImage="player.fs.button.glow.smallprev"
+		tooltip="Previous Song"/>
+	<Vortex:GlowButton id="button.eject"
+		x="65" y="9" action="EJECT"
+		bImage="player.fs.button.eject"
+		bImageD="player.fs.button.eject.down"
+		hImage="player.fs.button.glow.med"
+		tooltip="Get Song"/>
+	<Vortex:GlowButton id="button.play"
+		x="140" y="0" action="PLAY"
+		bImage="player.fs.button.play"
+		bImageD="player.fs.button.play"
+		hImage="player.fs.button.glow.big"
+		tooltip="Play song"/>
+	<Vortex:GlowButton id="button.pause"
+		x="140" y="0" action="PAUSE"
+		bImage="player.fs.button.play.down"
+		bImageD="player.fs.button.play.down"
+		hImage="player.fs.button.glow.big.pause"
+		tooltip="Pause current song"/>
+
+	<Vortex:GlowButton id="button.stop"
+		x="232" y="9" action="STOP"
+		bImage="player.fs.button.stop"
+		bImageD="player.fs.button.stop.down"
+		hImage="player.fs.button.glow.medstop"
+		tooltip="Stop song"/>
+	<Vortex:GlowButton id="button.next"
+		x="311" y="16" action="NEXT"
+		bImage="player.fs.button.next"
+		bImageD="player.fs.button.next.down"
+		hImage="player.fs.button.glow.small"
+		tooltip="Next Song"/>
+</groupdef>
+
+<groupdef id="player.fs.power" w="100" h="20">
+	<button id="button.res"
+		x="0" y="0"
+		 image="player.main.eqauto"
+ downimage="player.main.eqautod"
+ hoverimage="player.main.eqautod"
+activeImage="player.main.eqautod"
+		tooltip="Screen Resolution"/>
+
+	<button id="button.min"
+		x="-70" y="0" relatx="1" action="MINIMIZE"
+		 image="player.main.eqauto"
+ downimage="player.main.eqautod"
+ hoverimage="player.main.eqautod"
+activeImage="player.main.eqautod"
+		tooltip="Minimize"/>
+		
+	<Deimos:WindowModeButton id="button.switch"
+		x="-50" y="0" relatx="1"
+		 image="player.main.eqauto"
+ downimage="player.main.eqautod"
+ hoverimage="player.main.eqautod"
+activeImage="player.main.eqautod"
+		switch="this"
+		layouts="4"
+		layoutIDs="Normal;Stick;Dashboard"
+		menuentry="Normal;Stick;Dashboard"
+		rclick="menu"
+		lclick="switchto:Normal"
+		tooltip="Window Modes"
+	/>
+		
+	<button id="button.close"
+		x="-30" y="0" relatx="1" action="CLOSE"
+		 image="player.main.eqauto"
+ downimage="player.main.eqautod"
+ hoverimage="player.main.eqautod"
+activeImage="player.main.eqautod"
+		tooltip="Terminate"/>
+</groupdef>
+
+<groupdef id="fs.customres" w="280" h="60">
+	<rect x="2" y="2" w="-2" h="-2" relatw="1" relath="1" color="0,0,0" filled="1" alpha="127"/>
+	<rect x="0" y="0" w="-2" h="-2" relatw="1" relath="1" color="wasabi.window.background" filled="1"/>
+	<group id="wasabi.objectframe.group" x="0" y="0" w="-2" h="-2" relatw="1" relath="1"/>
+	<rect x="1" y="1" w="-4" h="-4" relatw="1" relath="1" color="wasabi.window.background" filled="1"/>
+
+	<text
+		text="ENTER CUSTOM RESOLUTION"
+		antialias="1" bold="1"
+		x="5" y="3" w="200" h="40"
+		font="player.font.ticker" fontsize="20" align="left" valign="top" alpha="255"
+ 		color="wasabi.text.color"
+	/>
+	<text
+		text="X : "
+		antialias="1" bold="1"
+		x="5" y="26" w="200" h="40"
+		font="player.font.ticker" fontsize="27" align="left" valign="top" alpha="255"
+ 		color="wasabi.text.color"
+	/>
+	<wasabi:editbox id="edit.customx" x="25" y="28" w="30" h="20"/>
+	<text
+		text="Y : "
+		antialias="1" bold="1"
+		x="60" y="26" w="200" h="40"
+		font="player.font.ticker" fontsize="27" align="left" valign="top" alpha="255"
+ 		color="wasabi.text.color"
+	/>
+	<wasabi:editbox id="edit.customy" x="80" y="28" w="30" h="20"/>
+	<text
+		text="W : "
+		antialias="1" bold="1"
+		x="113" y="26" w="200" h="40"
+		font="player.font.ticker" fontsize="27" align="left" valign="top" alpha="255"
+ 		color="wasabi.text.color" 
+	/>
+	<wasabi:editbox id="edit.customw" x="135" y="28" w="30" h="20"/>
+	<text
+		text="H : "
+		antialias="1" bold="1"
+		x="174" y="26" w="200" h="40"
+		font="player.font.ticker" fontsize="27" align="left" valign="top" alpha="255"
+ 		color="wasabi.text.color"
+	/>
+	<wasabi:editbox id="edit.customh" x="195" y="28" w="30" h="20"/>
+
+	<wasabi:button id="customres.ok" text="OK" x="230" y="5" w="45" h="20"/>
+	<wasabi:button id="customres.cancel" text="Cancel" x="230" y="30" w="45" h="20"/>
+</groupdef>
+
+<groupdef id="player.fs.rating" w="43" h="13" >
+
+	<layer id="rating.bg" image="rating.n" x="0" y="0" h="13" w="43" />
+	<layer id="rating.hover" image="rating.h" x="0" y="0" h="13" w="43" alpha="0" rectrgn="1" tooltip="Set Rating"/>
+	<layer id="rating" image="rating.a" x="0" y="0" h="13" w="43" visible="1" ghost="1" />
+
+	<script file="scripts/rating.maki"/>
+</groupdef>
+<groupdef id="player.fs.songticker" w="0" h="60" relatw="1">
+	<vis id="fs.vis.right" x="-170" y="12" w="180" h="40" relatx="1"
+		gammagroup="glass"
+		colorallbands="46,189,210"
+		colorosc1="46,189,210"
+		colorosc2="46,189,210"
+		colorosc3="46,189,210"
+		colorosc4="46,189,210"
+		colorosc5="46,189,210"
+move="0"
+		colorbandpeak="46,189,210" mode="1"/>
+
+	<layer image="player.fs.visoverlay" x="-170" y="12" relatx="1" move="0"/>
+
+	<vis id="fs.vis.left" x="-11" y="12" w="180" h="40"
+		gammagroup="glass"
+		colorallbands="46,189,210"
+		colorosc1="46,189,210"
+		colorosc2="46,189,210"
+		colorosc3="46,189,210"
+		colorosc4="46,189,210"
+		colorosc5="46,189,210"
+		fliph="1"
+move="0"
+		colorbandpeak="46,189,210" mode="1"/>
+
+	<layer image="player.fs.visoverlay"  x="2" y="12" move="0"/>
+
+
+	<vis id="fs.vis.osc" x="180" y="12" w="-360" relatw="1" h="40"
+		gammagroup="glass"
+		colorallbands="46,189,210"
+		colorosc1="46,189,210"
+		colorosc2="46,189,210"
+		colorosc3="46,189,210"
+		colorosc4="46,189,210"
+		colorosc5="46,189,210"
+		ghost="1" alpha="120"
+move="0"
+		colorbandpeak="46,189,210" mode="2" />
+
+	<layer image="player.fs.visoverlay2" tile="1" x="180" y="12" w="-360" relatw="1" h="40" move="0"/>
+		
+
+
+	<Deimos:TickerText
+		id="Songticker" ticker="0"
+		display="songname"
+		x="180" y="15" atf="1"
+		w="-360" h="60" relatw="1" alpha="200"
+		font="player.font.ticker" fontsize="45" bold="1" valign="middle" align="center" color="font.display" rightclickaction="trackmenu"
+    	dblclickaction="trackinfo"/> 
+
+	<text
+		id="s2timer" 
+		display="time"
+		x="180" y="37" 
+		w="310" h="60"
+		font="player.font.ticker" fontsize="60" bold="0" valign="middle" align="left"  
+		color="font.display"
+		timecolonwidth="12" alpha="200"/>
+	<script id="sonique2_timer" file="scripts/sonique2_timer.maki"/> 
+	<!-- not working ?! no source to check... -->
+	<!-- hehe works again!! -->
+
+
+	<group id="player.fs.rating" x="180" y="3" />
+	<!-- *** implement back these 2 scripts for centered vis -->
+	<script file="scripts/centerobject.maki" param="s2timer,1,0"/>
+	<script file="scripts/centerobject.maki" param="player.fs.rating,1,0"/>
+	<!--script file="scripts/fs-songticker.maki"/-->
+</groupdef>
+
+<groupdef id="player.fs.components.title" w="0" h="30" relatw="1">
+	<layer id="sf.header"
+		x="0" y="0" h="24"
+		w="0" relatw="1"
+		image="frame.header" 
+		tile="1"/>
+	<layer id="sf.nostretch"
+		x="-82" y="0"
+		relatx="1" w="65" h="24"
+		relatw="0" relath="0"
+		image="frame.header.corner"	/>
+	<rect id="border.keep"
+		x="0" y="0"
+		w="0" h="24" relatw="1"
+		color="wasabi.text.color"/>
+	<text id="text.window" 
+		x="16" y="0" shadowx="1" shadowy="1" font="player.font.ticker" 
+		text="Name" color="wasabi.text.color" fontsize="25" w="-30" h="30" relatw="1" ghost="1"/>
+</groupdef>
+
+<groupdef id="player.fs.components.ml" w="200" h="200">
+	<group id="player.fs.components.title" x="0" y="3" w="0" h="30" relatw="1"/>
+	<sendparams target="text.window" text="Media Library"/>
+	
+	<windowholder id="fs.wh.ml" x="11" y="30" w="-21" relatw="1" h="-45" relath="1" autofocus="0"
+		autoclose="0" autoopen="1" autoavailable="0" visible="0" hold="guid:{6B0EDF80-C9A5-11D3-9F26-00C04F39FFC6}"/>
+</groupdef>
+
+<groupdef id="player.fs.components.pl" w="0" h="200" relatw="1">
+	<group id="player.fs.components.title" x="0" y="3" w="0" h="30" relatw="1"/>
+	<sendparams target="text.window" text="Playlist Editor"/>
+	
+	<windowholder id="fs.wh.pl" x="15" y="30" w="-30" h="-60" relatw="1" relath="1" autofocus="1"
+		autoclose="0" autoopen="1" autoavailable="0" visible="0" hold="guid:{45F3F7C1-A6F3-4ee6-A15E-125E92FC3F8D}"/>
+
+	<Wasabi:Button id="pl.add" action="PE_Add" x="15" y="-30" w="32" relaty="1" h="15" text="Add" tooltip="Add Files to Playlist" />
+	<Wasabi:Button id="pl.rem" action="PE_Rem" x="47" y="-30" w="32" relaty="1" h="15" text="Rem" tooltip="Remove Files from Playlist" />
+	<Wasabi:Button id="pl.sel" action="PE_Sel" x="79" y="-30" w="32" relaty="1" h="15" text="Select" tooltip="Select" />
+	<Wasabi:Button id="pl.misc" action="PE_Misc" x="111" borders="1" y="-30" w="32" relaty="1" h="15" text="Misc" tooltip="Misc" />
+  <text
+    id="PLTime"
+    ticker="1"
+    display="PE_Info"
+    x="143" y="-30" w="-190" h="15"
+    relatw="1" relaty="1"
+    align="center"
+    valign="bottom"
+    color="font.display"
+  />
+	<Wasabi:Button id="pl.list" action="PE_List" x="-47" y="-30" relatx="1" relaty="1" w="32" h="15" text="Cope" tooltip="Manage Playlist" />
+
+	
+</groupdef>
+
+<groupdef id="fs.vid.buttons">
+
+	<Wasabi:Button action="VID_FS" x="0" y="0" w="55" h="15" text="Fullscreen" tooltip="Fullscreen" />
+	<Wasabi:Button action="VID_1X" x="55" y="0" w="30" h="15" text="1X" tooltip="Normal Size" />
+	<Wasabi:Button action="VID_2X" x="85" y="0" w="30" h="15" text="2X" tooltip="Double Size" />
+	<Wasabi:Button action="VID_TV" x="115" y="0" w="40" h="15" text="web TV" tooltip="Internet TV" />
+
+  <text
+    id="PLTime"
+    ticker="1"
+    display="VID_Info"
+    x="155" y="0" w="-205" h="15"
+    relatw="1" 
+    align="center"
+    valign="bottom"
+    color="font.display"
+  />
+	<Wasabi:Button id="pl.list" action="VID_Misc" x="-50" y="0" relatx="1" w="50" h="15" text="Options" tooltip="Options" />
+
+</groupdef>
+
+
+<groupdef id="fs.avs.buttons">
+
+	<Wasabi:Button action="VIS_FS" x="0" y="0" w="55" h="15" text="Fullscreen" tooltip="Fullscreen" />
+	<Wasabi:Button action="VIS_Prev" x="55" y="0" w="35" h="15" text="Prev" tooltip="Previous Visualization" />
+	<Wasabi:Button action="VIS_Next" x="90" y="0" w="35" h="15" text="Next" tooltip="Next Visualization" />
+	<toggleButton cfgattrib="{0000000A-000C-0010-FF7B-01014263450C};Random" x="125" y="0" w="55" h="15" text="Random" tooltip="Toggle Random Visualization" borders="1"/>
+
+  <text
+    id="avstxt"
+    ticker="1" text="Random:"
+    x="185" y="1" w="-240" h="15"
+    relatw="1" 
+    align="left"
+    valign="bottom"
+    color="font.display"
+  />
+
+	<Wasabi:Button id="pl.list" action="Vis_Menu" x="-50" y="0" relatx="1" w="50" h="15" text="Options" tooltip="Options" />
+
+
+</groupdef>
+
+<groupdef id="player.fs.components.vid" w="200" h="0" relath="1">
+	<group id="player.fs.components.title" x="0" y="10" w="0" h="30" relatw="1"/>
+	<sendparams target="text.window" text="Video"/>
+
+	<windowholder id="fs.wh.avs" x="10" y="37" w="-20" h="-62" relatw="1" relath="1"
+		autoclose="1" autoopen="0" autoavailable="0" visible="0" hold="guid:avs"/>
+
+	<windowholder id="fs.wh.vid" x="10" y="37" w="-20" h="-62" relatw="1" relath="1"
+		autoclose="1" autoopen="1" autoavailable="0" visible="1" hold="guid:{F0816D7B-FFFC-4343-80F2-E8199AA15CC3}"/>
+
+	<group id="fs.vid.buttons" x="10" y="-25" w="-20" h="15" relatw="1" relaty="1" />
+	<group id="fs.avs.buttons" x="10" y="-25" w="-20" h="15" relatw="1" relaty="1" />
+
+	<wasabi:button id="c.switch" x="-90" y="13" relatx="1" h="18" w="80" text="Switch to Video"/>
+	<!--wasabi:text id="swtxt" text="Switch to Video" color="font.display" x="-98" y="15" relatx="1" h="18" w="100" gost="1"/-->
+
+</groupdef>
+
+<groupdef id="cover.fs.g">
+
+	<Deimos:Cover novid="1" id="holder.tcover" x="0" y="0" h="0" w="0" relath="1" relatw="1" move="0"/>
+
+</groupdef>
+
+<groupdef id="eqgroup">
+
+<eqvis
+  id="spline" gamma="120"
+  fitparent="1"
+  colortop="46,189,210"
+  colormiddle="46,189,210"
+  colorbottom="46,189,210"
+  colorpreamp="46,189,210"
+  gammagroup="Glass"
+/>
+
+<layer image="player.fs.eqover1" tile="0" gamma="0" />
+
+	<slider
+		  id="eq1"
+		  action="EQ_BAND" param="1"
+		  x="0" y="0" w="10" h="0" relatx="%" relatw="%" relath="1"
+		  orientation="vertical"
+		  thumb="player.fs.eqslider"
+	/>
+	<slider
+		  id="eq2"
+		  action="EQ_BAND" param="2"
+		  x="10" y="0" w="10" h="0" relatx="%" relatw="%" relath="1"
+		  orientation="vertical"
+		  thumb="player.fs.eqslider"
+	/>
+	<slider
+		  id="eq3"
+		  action="EQ_BAND" param="3"
+		  x="20" y="0" w="10" h="0" relatx="%" relatw="%" relath="1"
+		  orientation="vertical"
+		  thumb="player.fs.eqslider"
+	/>
+	<slider
+		  id="eq4"
+		  action="EQ_BAND" param="4"
+		  x="30" y="0" w="10" h="0" relatx="%" relatw="%" relath="1"
+		  orientation="vertical"
+		  thumb="player.fs.eqslider"
+	/>
+	<slider
+		  id="eq5"
+		  action="EQ_BAND" param="5"
+		  x="40" y="0" w="10" h="0" relatx="%" relatw="%" relath="1"
+		  orientation="vertical"
+		  thumb="player.fs.eqslider"
+	/>
+	<slider
+		  id="eq6"
+		  action="EQ_BAND" param="6"
+		  x="50" y="0" w="10" h="0" relatx="%" relatw="%" relath="1"
+		  orientation="vertical"
+		  thumb="player.fs.eqslider"
+	/>
+	<slider
+		  id="eq7"
+		  action="EQ_BAND" param="7"
+		  x="60" y="0" w="10" h="0" relatx="%" relatw="%" relath="1"
+		  orientation="vertical"
+		  thumb="player.fs.eqslider"
+	/>
+	<slider
+		  id="eq8"
+		  action="EQ_BAND" param="8"
+		  x="70" y="0" w="10" h="0" relatx="%" relatw="%" relath="1"
+		  orientation="vertical"
+		  thumb="player.fs.eqslider"
+	/>
+	<slider
+		  id="eq9"
+		  action="EQ_BAND" param="9"
+		  x="80" y="0" w="10" h="0" relatx="%" relatw="%" relath="1"
+		  orientation="vertical"
+		  thumb="player.fs.eqslider"
+	/>
+	<slider
+		  id="eq10"
+		  action="EQ_BAND" param="10"
+		  x="90" y="0" w="10" h="0" relatx="%" relatw="%" relath="1"
+		  orientation="vertical"
+		  thumb="player.fs.eqslider"
+	/>
+
+</groupdef>
+
+<groupdef id="eq.fs.g">
+
+
+	<group id="eqgroup" x="10" h="100" relath="%" w="-20" relatw="1" y="0"/>
+
+	<slider
+		  id="preamp"
+		  action="EQ_BAND" param="preamp"
+		  x="5" y="0"
+		  w="4" h="-4" relath="1"
+		  orientation="vertical"
+		  thumb="player.fs.arrow"
+	/>
+
+</groupdef>
+
+<groupdef id="fs.eq.buttons">
+
+  <text
+    id="eqtxt"
+    ticker="1" text=""
+    x="0" y="1" w="-120" h="15"
+    relatw="1" 
+    align="left"
+    valign="bottom"
+    color="font.display"
+  />
+
+	<!--wasabi:button id="c.switch" x="-90" y="13" relatx="1" h="18" w="80" text="Switch to Video"/-->
+
+	<toggleButton borders="1" action="EQ_TOGGLE" id="on" x="-115" relatx="1" y="0" w="25" h="15" text="On" tooltip="EQ on/off" />
+	<toggleButton borders="1" action="EQ_AUTO" id="auto" x="-90" relatx="1" y="0" w="40" h="15" text="Auto" tooltip="EQ Auto on/off" />
+	<Wasabi:Button id="pres" action="MENU" param="presets" x="-50" relatx="1" y="0" w="50" h="15" text="Prestets" tooltip="Open presets" />
+
+</groupdef>
+
+<groupdef id="player.fs.components.pref" w="0" h="0" relatw="1" relath="1">
+	<group id="player.fs.components.title" x="0" y="10" w="0" h="30" relatw="1"/>
+	<sendparams target="text.window" text="Cover Art"/>
+
+	<Wasabi:Button id="cover" x="-90" y="13" relatx="1" h="18" w="80" text="Show Cover Art" tooltip="Show Cover Art" />
+
+	<group id="cover.fs.g" x="10" y="37" w="-20" h="-42" relatw="1" relath="1" move="0"/>
+	<group id="eq.fs.g" x="10" y="37" w="-20" h="-62" relatw="1" relath="1" move="0"/>
+
+	<Wasabi:Button id="eq" x="-90" y="13" relatx="1" h="18" w="80" text="Show Equalizer" tooltip="Show Equalizer" />
+	<group id="fs.eq.buttons" x="10" y="-25" w="-20" h="15" relatw="1" relaty="1" />
+
+</groupdef>
+
+<groupdef id="player.fs.components" w="0" h="0" relatw="1" relath="1">
+	<layer id="bkground.base" image="frame.bckg" ghost="1" fitparent="1"/>
+
+	<group id="player.fs.components.ml" x="0" y="0" w="200" h="200"/>
+	<group id="player.fs.components.pl" x="200" y="0" w="-200" h="200" relatw="1"/>
+	<group id="player.fs.components.vid" x="0" y="200" w="200" h="-200" relath="1"/>
+	<group id="player.fs.components.pref" x="200" y="200" w="-200" h="-200" relatw="1" relath="1"/>
+	
+	<grid id="sep.vertical"
+		x="185" y="0" w="33" h="0" relath="1"
+		top="player.fs.sep.vertical.top"
+		middle="player.fs.sep.vertical.middle"
+		bottom="player.fs.sep.vertical.bottom"
+		ghost="1"/>
+		
+	<grid id="sep.horizontal"
+		x="0" y="185" w="0" h="33" relatw="1"
+		left="player.fs.sep.horizontal.left"
+		middle="player.fs.sep.horizontal.middle"
+		right="player.fs.sep.horizontal.right"
+		ghost="1"/>
+		
+	<layer id="fs.resizer" x="182" y="182" image="player.fs.resizer" ghost="0" move="0"/>
+</groupdef>
+
+<layout id="Party!" desktopalpha="0" minimum_w="800" minimum_h="600" w="800" h="600" >
+
+	<rect id="base.black" filled="1" color="0,0,0" fitparent="1" sysregion="1"/>
+	
+	<layer id="mousetrap.layer"
+		fitparent="1"
+		rectrgn="1" ghost="0" move="0"
+		dblClickAction="SWITCH;normal"
+		tooltip="double click to return to normal mode."/>
+
+	<group id="player.fs.components" x="23" y="24" w="-47" h="-203" relatw="1" relath="1"/>	
+	
+	<grid id="base" fitparent="1"
+		topleft = "player.fs.base.top.left"
+		top = "player.fs.base.top"
+		topright = "player.fs.base.top.right"
+		left = "player.fs.base.left"
+		middle = "player.fs.base.middle"
+		right = "player.fs.base.right"
+		bottomleft = "player.fs.base.bottom.left"
+		bottom = "player.fs.base.bottom"
+		bottomright = "player.fs.base.bottom.right"
+		sysregion="1" ghost="1"/>
+		
+	<group wantfocus="1" id="player.fs.cbuttons" x="0" y="-81" w="352" h="75" relaty="1"/>
+	<script file="scripts/centerobject.maki" param="player.fs.cbuttons,1,0"/>
+<Deimos:HyperLinkButton id="url" x="100" y="-50" w="43" h="20" relaty="1" text="" alpha="1" tooltip="Hey" url="http://www.leechbite.com/" />
+	<grid x="35" w="230" y="-83" h="14" relaty="1" left="player.fs.bar.left" middle="player.fs.bar.middle" right="player.fs.bar.right" />
+
+	<text x="35" w="230" y="-83" h="20" relaty="1"
+	 	font="player.font.ticker" fontsize="20" align="center" color="font.display"
+	forcefixed="1" forceupcase="1" valign="top" text="position"
+    	antialias="1" alpha="180"
+	 />
+
+	<slider id="seek" action="SEEK" thumb="player.fs.button.songposfs" downthumb="player.fs.button.songposfsd" x="35" w="230" y="-83" h="13" relaty="1"/>
+
+
+	<grid x="-270" relatx="1" w="230" y="-83" h="14" relaty="1" left="player.fs.bar.left" middle="player.fs.bar.middle" right="player.fs.bar.right" />
+
+	<text x="-270" relatx="1" w="230" y="-83" h="20" relaty="1"
+	 	font="player.font.ticker" fontsize="20" align="center" color="font.display"
+	forcefixed="1" forceupcase="1" valign="top" text="volume"
+    	antialias="1" alpha="180"
+	/>
+
+	<slider id="vol" action="VOLUME" thumb="player.fs.button.songposfs" downthumb="player.fs.button.songposfsd" x="-270" relatx="1" w="230" y="-83" h="13" relaty="1"/>
+
+	
+	<group id="player.fs.power" x="10" y="3" w="-20" h="20" relatw="1"/>
+	
+	<group id="player.fs.songticker" x="35" y="-152" w="-70" h="60" relaty="1" relatw="1"/>
+
+	<group id="fs.customres" x="0" y="0" visible="0"/>
+	
+	<!-- removed... implement back for testing... -->
+	<!--layer id="temp.layer.delete.later"
+		x="-20" y="-20" w="20" h="20" relatx="1" relaty="1"
+		rectrgn="1" resize="bottomright"/-->
+
+
+  	<browser id="brw" x="0" y="0" w="0" h="0" scrollbars="never" url="about:blank" visible="1" ghost="1" />
+
+
+	<!-- submit skinversion via scriptparam -->
+	<script id="updateSystem" param="1.02" file="scripts/updateSystem.maki"/>
+</layout>
+
+<script file="scripts/fs.maki"/>

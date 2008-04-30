@@ -1,0 +1,87 @@
+-- Variables Table ---------------------------------------------------
+var# |                Class |                                    What 
+----------------------------------------------------------------------
+0000 |               System |                                   System*
+0001 |                  Int |                                     NULL
+0002 |                  Int |                     __deprecated_runtime
+0003 |               Double |                                        v
+0004 |                  Int |                                        2
+0005 |                  Int |                                    65535
+0006 |                  Int |                                        1
+0007 |               String |                           "runtimecheck"
+0008 |                  Int |                                        0
+0009 |                  Int |                                     last
+000A |                  Int |                                      now
+000B |                  Int |                                     5000
+000C |               String |                  "This script requires "
+000D |               String |         "Winamp 5.03 (skin version 1.2)"
+000E |               String |                                  "Error"
+000F |               String |                                       ""
+0010 |               String |                                        s
+0011 |               String |                                  "DEBUG"
+0012 |                  Int |                                        s
+0013 |               String |                                   "0.14"
+0014 |                Layer |                                       t1
+0015 |                Layer |                                       t2
+0016 |                Timer |                                     wait
+0017 |                Timer |                                    wait2
+0018 |                  Int |                                    enter
+0019 |                  Map |                                     rmap
+001A |                Group |                                 XUIGroup
+001B |               String |                           "rating.hover"
+001C |               String |                                 "rating"
+001D |               String |                             "rating.map"
+001E |                  Int |                                      200
+001F |                  Int |                                        v
+0020 |               String |                                 newtitle
+0021 |               String |                          "msppVersion: "
+0022 |               String |                                   "mspp"
+0023 |               String |                                   "Path"
+0024 |               String |         "\\rating\\getCurrentRating.exe"
+0025 |                  Map |                                        m
+0026 |               String |            "\\rating\\currentrating.jpg"
+0027 |                  Int |                                       10
+0028 |                  Int |                                        v
+0029 |               Region |                                      reg
+002A |               String |                          "ratingDebug: "
+002B |                  Int |                                      120
+002C |                  Int |                                        x
+002D |                  Int |                                        y
+002E |                  Int |                                        v
+002F |               Region |                                      reg
+0030 |                  Int |                                   rating
+0031 |                  Int |                                        x
+0032 |                  Int |                                        y
+0033 |                  Int |                                        v
+0034 |               Region |                                      reg
+0035 |                  Int |                                   rating
+0036 |               String |               "ratingDebug(setRating): "
+0037 |               String |       "\\sendMessage\\sendMessage_40401"
+0038 |               String |       "\\sendMessage\\sendMessage_40400"
+0039 |               String |       "\\sendMessage\\sendMessage_40399"
+003A |                  Int |                                        3
+003B |               String |       "\\sendMessage\\sendMessage_40398"
+003C |                  Int |                                        4
+003D |               String |       "\\sendMessage\\sendMessage_40397"
+003E |                  Int |                                        5
+003F |               String |       "\\sendMessage\\sendMessage_40396"
+-- Events Table ------------------------------------------------------
+var# |         Code Pointer |                                    What 
+----------------------------------------------------------------------
+0000 |                 016B |                    System.onScriptLoaded
+001A |                 0218 |                    XUIGroup.onsetVisible
+0000 |                 0255 |                 System.onScriptUnloading
+0000 |                 026B |                     System.onTitleChange
+0017 |                 029E |                            wait2.onTimer
+0016 |                 036E |                             wait.onTimer
+0014 |                 048F |                           t1.onEnterArea
+0014 |                 04C2 |                           t1.onLeaveArea
+0014 |                 04F5 |                           t1.onMouseMove
+0014 |                 05C9 |                      t1.onLeftButtonDown
+-- User Functions Table ----------------------------------------------
+               Code Pointer |                                    What 
+----------------------------------------------------------------------
+                       0000 |                             versionCheck
+                       00F2 |                                    debug
+                       011D |                                 debugInt
+                       0153 |                       neededMSPP_Version

@@ -1,0 +1,35 @@
+<elements>
+
+	<bitmap id="dash.mainframe.grabb.top" file="gfx/dash-bg.png" x="0" y="0" w="180" h="400" gammagroup="Background"/>
+	<bitmap id="dash.mainframe.grabb.tile" file="gfx/dash-bg.png" x="0" y="400" w="180" h="20" gammagroup="Background"/>
+	<bitmap id="dash.mainframe.grabb.bottom" file="gfx/dash-bg.png" x="0" y="420" w="180" h="380" gammagroup="Background"/>
+	<bitmap id="dashboard.player.metal" file="gfx/dash-player-metal.png" gammagroup="Background"/>
+
+     <bitmap id="visover2" file="gfx/visover2.png"  gammagroup="Background"/>
+	<bitmap id="dash.comp.line" file="gfx/dash-title-line.png" gammagroup="Background"/>
+	<bitmap id="dash.comp.line.x" file="gfx/dash-title-line-x.png" />
+	<bitmap id="dash.comp.line.ok" file="gfx/dash-title-line-ok.png" gammagroup="Background"/>
+
+	<bitmap id="dash.comp.close.text" file="gfx/dash-title-cover-text.png" x="160" w="12" gammagroup="Background"/>
+	<bitmap id="dash.comp.cover.line" file="gfx/dash-title-cover-line.png" gammagroup="Background"/>
+	<bitmap id="dash.comp.cover.text" file="gfx/dash-title-cover-text.png" gammagroup="Background"/>
+	<bitmap id="dash.comp.google.line" file="gfx/dash-title-google-line.png" gammagroup="Background"/>
+	<bitmap id="dash.comp.google.text" file="gfx/dash-title-google-text.png" gammagroup="Background"/>
+	<bitmap id="dash.comp.playlist.line" file="gfx/dash-title-playlist-line.png" gammagroup="Background"/>
+	<bitmap id="dash.comp.playlist.text" file="gfx/dash-title-playlist-text.png" gammagroup="Background"/>
+	<bitmap id="dash.comp.vis.line" file="gfx/dash-title-vis-line.png" gammagroup="Background"/>
+	<bitmap id="dash.comp.vis.text" file="gfx/dash-title-vis-text.png" gammagroup="Background"/>
+
+
+	<bitmap id="dash.comp.grid.topleft" file="gfx/dash-comp-grid.png" x="0" y="0" w="5" h="5" gammagroup="Background"/>
+	<bitmap id="dash.comp.grid.topright" file="gfx/dash-comp-grid.png" x="5" y="0" w="5" h="5" gammagroup="Background"/>
+	<bitmap id="dash.comp.grid.bottomleft" file="gfx/dash-comp-grid.png" x="0" y="5" w="5" h="5" gammagroup="Background"/>
+	<bitmap id="dash.comp.grid.bottomright" file="gfx/dash-comp-grid.png" x="5" y="5" w="5" h="5" gammagroup="Background"/>
+	<bitmap id="dash.comp.grid.top" file="gfx/dash-comp-grid.png" x="4" y="0" w="2" h="5" gammagroup="Background"/>
+	<bitmap id="dash.comp.grid.bottom" file="gfx/dash-comp-grid.png" x="4" y="5" w="2" h="5" gammagroup="Background"/>
+	<bitmap id="dash.comp.grid.left" file="gfx/dash-comp-grid.png" x="0" y="4" w="5" h="2" gammagroup="Background"/>
+	<bitmap id="dash.comp.grid.right" file="gfx/dash-comp-grid.png" x="5" y="4" w="5" h="2" gammagroup="Background"/>
+
+	<cursor id="cursor.move" bitmap="gfx/cur-move.png" hotspot_x="0" hotspot_y="0" />
+
+</elements>

@@ -1,0 +1,15 @@
+  <include file="player-elements.xml"/>
+  <include file="player-fs-elements.xml"/>
+  <include file="player-dashboard-elements.xml"/>
+
+<!--this defines the container-->
+
+<container id="main" name="Main window">
+
+<!-- layouts to go in the container go here-->
+  <include file="player-normal.xml"/> <!-- Normal -->
+  <include file="player-normalc.xml"/> <!-- Stick -->
+  <include file="player-fs.xml"/> <!-- Party! -->
+  <include file="player-dashboard.xml"/> <!-- Dashboard -->
+
+</container>

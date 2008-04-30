@@ -1,0 +1,248 @@
+<elements>
+
+  <bitmap id="about.fg" file="about/about_fg.png" gammagroup="glass"/>
+  <bitmap id="about.glow" file="about/about_glow.png" gammagroup="glass"/>
+  <bitmap id="about.label" file="about/about_label.png" gammagroup="glass"/>
+
+  <color id="about.color" value="#CC6633" gammagroup="glass"/>
+  <color id="shadow.color" value="0,0,0" />
+
+</elements>
+
+<groupdef id="g.quadhelix" h="65" w="400">
+	
+	<layer image="buddypic.ralph" x="0" y="0" />
+
+	 <Text 
+		text="QuadHelix [Ralph Barber]"
+		x="40" y="5" align="left" bold="1" valign="top"
+  		w="500" h="32" fontsize="14" color="about.color" shadow="1" shadowcolor="shadow.color" shadowx="2" shadowy="2"
+		font="Tahoma"
+	/>
+	 <Wasabi:Text 
+		text="www.quad-helix.com  |  j106_vulcan@hotmail.com"
+		x="40" y="23" align="left" bold="1" valign="top"
+  		h="32" fontsize="14" color="about.color" shadow="1" shadowcolor="shadow.color" shadowx="2" shadowy="2"
+		font="Tahoma"
+	/>
+	<Text 
+		text="Idea: Graphics and First Code"
+		x="40" y="47" align="left" bold="1" valign="top"
+  		h="32" fontsize="14" color="about.color" shadow="1" shadowcolor="shadow.color" shadowx="2" shadowy="2"
+		font="Tahoma"
+	/>
+
+</groupdef>
+
+<groupdef id="g.deimos" h="65" w="400">
+	
+	<layer image="buddypic.deimos" x="0" y="0" />
+
+	 <Text 
+		text="Deimos [Martin Poehlmann]"
+		x="40" y="5" align="left" bold="1" valign="top"
+  		w="500" h="32" fontsize="14" color="about.color" shadow="1" shadowcolor="shadow.color" shadowx="2" shadowy="2"
+		font="Tahoma"
+	/>
+	 <Wasabi:Text 
+		text="www.martin.deimos.de.vu  |  martin.deimos@gmx.de"
+		x="40" y="23" align="left" bold="1" valign="top"
+  		h="32" fontsize="14" color="about.color" shadow="1" shadowcolor="shadow.color" shadowx="2" shadowy="2"
+		font="Tahoma"
+	/>
+	<Text 
+		text="Main Coder: DpW Configsystem II, CoverSearch, Effects"
+		x="40" y="47" align="left" bold="1" valign="top"
+  		h="32" fontsize="14" color="about.color" shadow="1" shadowcolor="shadow.color" shadowx="2" shadowy="2"
+		font="Tahoma"
+	/>
+
+</groupdef>
+
+<groupdef id="g.slob" h="65" w="400">
+	
+	<layer image="buddypic.slob" x="0" y="0" />
+
+	 <Text 
+		text="SLoB [Kev Jaques]"
+		x="40" y="5" align="left" bold="1" valign="top"
+  		w="500" h="32" fontsize="14" color="about.color" shadow="1" shadowcolor="shadow.color" shadowx="2" shadowy="2"
+		font="Tahoma"
+	/>
+	 <Wasabi:Text 
+		text="slob.org.uk  |  slob@uk2.net"
+		x="40" y="23" align="left" bold="1" valign="top"
+  		h="32" fontsize="14" color="about.color" shadow="1" shadowcolor="shadow.color" shadowx="2" shadowy="2"
+		font="Tahoma"
+	/>
+	<Text 
+		text="Coder: LayerFX, ButtonTextHover, Tweaks, Gfx changes"
+		x="40" y="47" align="left" bold="1" valign="top"
+  		h="32" fontsize="14" color="about.color" shadow="1" shadowcolor="shadow.color" shadowx="2" shadowy="2"
+		font="Tahoma"
+	/>
+
+</groupdef>
+
+<groupdef id="g.rohan2kool" h="65" w="400">
+	
+	<layer image="buddypic.rohan" x="0" y="0" />
+
+	 <Text 
+		text="rohan2kool [Rohan Prabhu]"
+		x="40" y="5" align="left" bold="1" valign="top"
+  		w="500" h="32" fontsize="14" color="about.color" shadow="1" shadowcolor="shadow.color" shadowx="2" shadowy="2"
+		font="Tahoma"
+	/>
+	 <Wasabi:Text 
+		text="rohan2kool@gmail.com"
+		x="40" y="23" align="left" bold="1" valign="top"
+  		h="32" fontsize="14" color="about.color" shadow="1" shadowcolor="shadow.color" shadowx="2" shadowy="2"
+		font="Tahoma"
+	/>
+	<Text 
+		text="Coder: Speakers, Backlight, Glowbuttons"
+		x="40" y="47" align="left" bold="1" valign="top"
+  		h="32" fontsize="14" color="about.color" shadow="1" shadowcolor="shadow.color" shadowx="2" shadowy="2"
+		font="Tahoma"
+	/>
+
+</groupdef>
+
+<groupdef id="g.hammerhead" h="65" w="400">
+	
+	<layer image="buddypic.hammer" x="0" y="0" />
+
+	 <Text 
+		text="hammerhead [K Chanrai]"
+		x="40" y="5" align="left" bold="1" valign="top"
+  		w="500" h="32" fontsize="14" color="about.color" shadow="1" shadowcolor="shadow.color" shadowx="2" shadowy="2"
+		font="Tahoma"
+	/>
+	 <Wasabi:Text 
+		text=""
+		x="40" y="23" align="left" bold="1" valign="top"
+  		h="32" fontsize="14" color="about.color" shadow="1" shadowcolor="shadow.color" shadowx="2" shadowy="2"
+		font="Tahoma"
+	/>
+	<Text 
+		text="Coder: Stickmode Stretch, Drawers"
+		x="40" y="47" align="left" bold="1" valign="top"
+  		h="32" fontsize="14" color="about.color" shadow="1" shadowcolor="shadow.color" shadowx="2" shadowy="2"
+		font="Tahoma"
+	/>
+
+</groupdef>
+
+<groupdef id="g.leechbite" h="65" w="400">
+	
+	<layer image="buddypic.leech" x="0" y="0" />
+
+	 <Text 
+		text="leechbite [Jory Compendio]"
+		x="40" y="5" align="left" bold="1" valign="top"
+  		w="500" h="32" fontsize="14" color="about.color" shadow="1" shadowcolor="shadow.color" shadowx="2" shadowy="2"
+		font="Tahoma"
+	/>
+	 <Wasabi:Text 
+		text=""
+		x="40" y="23" align="left" bold="1" valign="top"
+  		h="32" fontsize="14" color="about.color" shadow="1" shadowcolor="shadow.color" shadowx="2" shadowy="2"
+		font="Tahoma"
+	/>
+	<Text 
+		text="Coder: Party! Mode, ProgButtons"
+		x="40" y="47" align="left" bold="1" valign="top"
+  		h="32" fontsize="14" color="about.color" shadow="1" shadowcolor="shadow.color" shadowx="2" shadowy="2"
+		font="Tahoma"
+	/>
+
+</groupdef>
+
+<groupdef id="skin.about.group" w="0" h="0" relatw="1" relath="1" rectrgn="1">
+  <rect fitparent="1" color="110,119,134" filled="1" />
+
+
+
+  <layer id="fg"
+    x="0" y="0"
+    w="371"
+    h="321"
+    image="about.fg"
+  />
+
+
+	<layer id="ralph" image="buddypic.ralph" x="165" y="120" />
+	<layer id="slob" image="buddypic.slob" x="165" y="120" />
+	<layer id="rohan" image="buddypic.rohan" x="165" y="120" />
+	<layer id="leech" image="buddypic.leech" x="165" y="120" />
+	<layer id="hammer" image="buddypic.hammer" x="165" y="120" />
+	<layer id="deimos" image="buddypic.deimos" x="165" y="120" />
+
+  <layer
+    x="0" y="0"
+    w="371"
+    h="321"
+    image="about.label"
+  />
+  <layer id="glow"
+    x="0" y="0"
+    w="371"
+    h="321" alpha="0"
+    image="about.glow"
+  />
+
+
+
+    <text
+    id="ver"
+    x="230" y="108" 
+    w="300"
+    h="30" bold="1"
+	text="version 1.02"
+    valign="top"
+    align="left"
+	fontsize="14" color="about.color" shadow="1" shadowcolor="shadow.color" shadowx="2" shadowy="2"
+	font="Tahoma"
+	/>
+
+    <text
+    id="www..."
+    x="" y="15" 
+    w="0" relatw="1"
+    h="30" bold="1"
+	text="Skin Consortium presents:"
+    valign="top"
+    align="center"
+	fontsize="14" color="about.color" shadow="1" shadowcolor="shadow.color" shadowx="2" shadowy="2"
+	font="Tahoma"
+	/>
+
+  <group id="g.quadhelix" y="-75" relaty="1" x="10" />
+  <group id="g.deimos" y="-75" relaty="1" x="400" />
+  <group id="g.slob" y="-75" relaty="1" x="400" />
+  <group id="g.rohan2kool" y="-75" relaty="1" x="400" />
+  <group id="g.leechbite" y="-75" relaty="1" x="400" />
+  <group id="g.hammerhead" y="-75" relaty="1" x="400" />
+
+  <script file="about/about.maki"/>
+
+    <text
+    id="dd"
+    x="10" y="227" 
+    w="0" relatw="1"
+    h="30" bold="1"
+	text="Support our work - Make a donation"
+    valign="top"
+    align="left"
+	fontsize="14" color="about.color" shadow="1" shadowcolor="shadow.color" shadowx="2" shadowy="2"
+	font="Tahoma"
+	/>
+
+  <button id="donate" x="10" y="195" image="about.pp.n" hoverImage="about.pp.h" downImage="about.pp.d" />
+
+  <script file="about/donate.maki"/>
+
+ <!--guiobject fitparent="1" /-->
+
+</groupdef>

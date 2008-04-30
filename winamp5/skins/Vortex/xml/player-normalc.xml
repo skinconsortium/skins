@@ -1,0 +1,290 @@
+<groupdef id="player.main.cms" name="Close Min Switch">
+
+<layer id="shadeglass" image="shadeglass.l" x="110" y="7" ghost="1" />
+<layer id="shadeglass" image="shadeglass.m" x="210" y="7" w="-600" relatw="1" ghost="1" />
+<layer id="shadeglass" image="shadeglass.r" x="-390" y="7" relatx="1" ghost="1" /><!-- 
+<grid left="shadeglass.l" middle="shadeglass.m" right="shadeglass.r" x="110" y="7" w="-262" relatw="1" /> -->
+<!--layer id="player.main.shadebackgroundover" image="player.main.shadebackgroundover" x="0" y="0" ghost="1" /-->
+<button 
+ id="Minimize"
+ x="-21" relatx="1" y="6"
+ action="MINIMIZE"
+ image="shadeclose"
+ downimage="shadeclosed"
+activeimage="shadeclosed"
+ hoverimage="shadeclosed"
+ rectrgn="1"
+ tooltip="Minimize"
+/>
+<Deimos:HyperLinkButton id="url" x="9" y="19"  w="10" h="10" text="" tooltip="Vortex" url="http://www.skinconsortium.com/vortex.wav" alpha="10"/>
+ <Deimos:WindowModeButton 
+ id="normal"
+ x="-12" relatx="1" y="6"
+  image="shadeclose"
+ downimage="shadeclosed"
+activeimage="shadeclosed"
+ hoverimage="shadeclosed"
+ rectrgn="1"
+ switch="this"
+ layouts="4"
+		layoutIDs="Normal;Dashboard;Party!"
+		menuentry="Normal;Dashboard;Party! Mode"
+		rclick="menu"
+		lclick="switchto:Dashboard"
+ tooltip="Window Modes"
+ />
+<button 
+ id="Close"
+ x="8" y="6"
+ action="CLOSE"
+  image="shadeclose"
+ downimage="shadeclosed"
+activeimage="shadeclosed"
+ hoverimage="shadeclosed"
+rectrgn="1"
+ tooltip="Terminate"
+/>
+
+ 
+<Vortex:Glowbutton 
+ id="Rev"
+ x="-142" relatx="1" y="13" h="10" w="10"
+ action="PREV"
+ bImage="stick.hoverr1"
+ bImageD="stick.hoverr1"
+ rectrgn="1"
+ bImageA="stick.hoverr1"
+ bImageH="stick.hoverr1"
+ hImage="stick.hoverr"
+ tooltip="Previous Song"
+/>
+
+
+<Vortex:Glowbutton 
+ id="Eject"
+ x="-120" relatx="1" y="12" h="10" w="10"
+ action="EJECT"
+bImage="stick.hovere1"
+ bImageD="stick.hovere1"
+ rectrgn="1"
+ bImageA="stick.hovere1"
+ bImageH="stick.hovere1"
+ hImage="stick.hovere"
+ tooltip="Get Song"
+/>
+
+
+<Vortex:Glowbutton 
+ id="Play"
+ x="-98" relatx="1" y="10" h="12" w="10"
+ action="PLAY" 
+bImage="stick.hoverp1"
+ bImageD="stick.hoverp1"
+ rectrgn="1"
+ bImageA="stick.hoverp1"
+ bImageH="stick.hoverp1"
+ hImage="stick.hoverp1"
+ tooltip="Play song"
+/>
+
+<Vortex:Glowbutton 
+ id="Pause"
+  x="-98" relatx="1" y="10" h="10" w="10"
+ action="pause" 
+ bImage="stick.hoverp1"
+ bImageD="stick.hoverp1"
+ rectrgn="1"
+ bImageA="stick.hoverp1"
+ bImageH="stick.hoverp1"
+ hImage="stick.hoverp1"
+ tooltip="Pause current song"
+/>
+
+
+ <Vortex:Glowbutton 
+ id="Stop" h="10" w="10"
+ x="-78" relatx="1" y="12"
+ action="STOP"
+ bImage="stick.hovers1"
+ bImageD="stick.hovers1"
+ rectrgn="1"
+ bImageA="stick.hovers1"
+ bImageH="stick.hovers1"
+ tooltip="Stop song"
+ hImage="stick.hovers"
+ 
+/>
+
+<Vortex:Glowbutton 
+ id="Next"
+x="-56" relatx="1" y="12" h="10" w="10"
+action="NEXT"
+bImage="stick.hoverf1"
+ bImageD="stick.hoverf1"
+ rectrgn="1"
+ bImageA="stick.hoverf1"
+ bImageH="stick.hoverf1"
+ hImage="stick.hoverf"
+ tooltip="Next Song"
+/>
+
+<togglebutton
+      id="Shuffle"
+      x="-167" relatx="1" y="16"
+  image="player.main.s" rectrgn="1"
+      downimage="player.main.sd"
+      activeImage="player.main.sd"
+    hoverimage="player.main.sd"
+      tooltip="Shuffle"
+      cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Shuffle"
+       
+    />
+<togglebutton
+      id="Repeat"
+     
+      x="-248" relatx="1" y="14"
+    image="player.main.r" rectrgn="1"
+      downimage="player.main.rd"
+      activeImage="player.main.rd"
+    hoverimage="player.main.rd"
+      tooltip="Repeat"
+      cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Repeat"
+    /> 
+<Deimos:HyperLinkButton id="url" x="111" y="10"  w="3" h="3" text="" tooltip="Hey" url="http://www.skinconsortium.com/hd" />
+<layer id="shadeins" x="20" y="9" image="shademlover" />
+<Vortex:Glowbutton
+ id="pref" action="TOGGLE" param="guid:{F0816D7B-FFFC-4343-80F2-E8199AA15CC3}"
+ x="74" y="11"
+ bImage="shademl"
+ bImageD="shademld"
+ bImageA="shademld"
+ bImageH="shademld"
+ tooltip="Video"
+ hImage="stick.hoverv" adjustx="-1" adjusty="-1"
+/>
+
+<Vortex:GlowTbutton
+ id="AVS"
+ action="TOGGLE" param="guid:avs"
+ x="57" y="11"
+ bImage="shademl"
+ bImageD="shademld"
+ bImageA="shademld"
+ bImageH="shademld"
+ tooltip="AVS"
+ hImage="stick.hoveravs" adjustx="-2" adjusty="1"
+/>
+
+<Vortex:GlowTbutton
+ id="ML"  action="TOGGLE" param="guid:ml"
+ x="23" y="11"
+bImage="shademl"
+ bImageD="shademld"
+ bImageA="shademld"
+ bImageH="shademld"
+ tooltip="Media Library"
+ hImage="stick.hoverml" adjustx="-2"
+/>
+
+<Vortex:GlowTbutton
+ id="PL"  action="TOGGLE" param="guid:pl"
+ x="40" y="11"
+bImage="shademl"
+ bImageD="shademld"
+ bImageA="shademld"
+ bImageH="shademld"
+ tooltip="PlayList"
+ hImage="stick.hoverpl" adjustx="-2"
+/>
+
+<Vortex:GlowTbutton
+ id="egt" action="TOGGLE" param="eq"
+ x="91" y="11"
+bImage="shademl"
+ bImageD="shademld"
+ bImageA="shademld"
+ bImageH="shademld"
+ tooltip="EQ"
+ hImage="stick.hoverEQ" adjustx="-1" adjusty="-1"
+/>
+
+	<Deimos:TickerText
+		id="Songticker" ticker="1"
+		display="songname"
+	x="196" y="9" 
+	w="-508" h="20" alpha="200"
+	relatw="1" font="player.font.ticker" fontsize="22" align="center" color="font.display" rightclickaction="trackmenu"
+    	dblclickaction="trackinfo" atf="1"
+/> 
+  
+  
+  
+<text
+	id="Timer" 
+	display="time"
+	x="-307" relatx="1" y="9"
+	w="50" h="19" alpha="200"
+	font="player.font.ticker" fontsize="19" align="center"  
+    shadow="2"
+	color="font.display"
+  
+	timecolonwidth="9"
+  />
+
+<vis
+		id="vis"
+		x="116" y="14"
+		w="75" h="12"  alpha="200"
+        	gammagroup="glass"
+		bandwidth="thin"
+        fps="100"
+      falloff="1"           
+      peakfalloff="1"   
+	  coloring="fire"    
+      peaks="1"            
+		
+		colorosc1="46,189,210"
+		colorosc2="46,189,210"
+		colorosc3="46,189,210"
+		colorosc4="46,189,210"
+		colorosc5="46,189,210"
+	 
+	/>
+
+<layer id="seek.layer" image="shadesong" x="-248" relatx="1" y="10" h="4" w="90" alpha="255"/>
+
+<Slider id="seek" action="SEEK" x="-248" relatx="1" y="10" w="90" h="4"	thumb="shadesong" alpha="0" tooltip="Seek"/>
+<slider
+ id="vol"
+ action="VOLUME"
+x="-231" relatx="1" y="18" move="0" rectrgn="0" w="56" h="10"
+ thumb="player.main.volpos"
+ downThumb="player.main.volposd" 
+/>
+
+<layer id="VolumeAnim" image="dominator.normal.Volume"   x="-232" relatx="1" y="17" move="0" rectrgn="0" tooltip="Volume"/>
+
+
+<!--script id="VolumeScr" file="scripts/volumebyregion.maki"/>
+<script id="effectCore.stick" file="scripts/effectCoreS.maki"/-->
+ 
+
+
+</groupdef>
+
+
+<!-- layout goes here -->
+
+<layout id="stick"  appbar="top|bottom" minimum_w="600" default_w="600" maximum_h="28" snapadjusttop="0" snapadjustleft="4" snapadjustright="1" >
+
+<!-- used layer instead of the grid -> transparent background -->
+<layer x="0" y="0" image="player.main.shadebackground.left" sysregion="1"/>
+<layer x="20" y="0" w="-40" relatw="1" image="player.main.shadebackground.middle" tile="1" sysregion="1"/>
+<layer x="-20" y="0" relatx="1" image="player.main.shadebackground.right" sysregion="1"/>
+
+<layer id="shadeinsets" x="-200"  y="0" relatx="1"  image="player.main.shadeinsets" />
+<group id="player.main.cms" w="0" y="-3" relatw="1" h="50" />
+<layer id="shadeinsets" x="-20" y="20" relatx="1" image="player.main.shadeinsets" alpha="0" resize="right" />
+
+
+</layout>

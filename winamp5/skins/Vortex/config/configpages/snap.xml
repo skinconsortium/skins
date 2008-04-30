@@ -1,0 +1,35 @@
+<elements>
+	<bitmap id="config.main" file="config/main.png" gammagroup="Background"/>
+	<bitmap id="config.hor" file="config/hor.png" gammagroup="Glass"/>
+	<bitmap id="config.vert" file="config/vert.png" gammagroup="Glass"/>
+</elements>
+
+<!-- ************************ ABOUT ***************************** -->
+
+<groupdef id="config.snap" >
+
+	<!--text text="Adjust where the Mainwindow docks to other windows" y="-3" w="0" relatw="1" align="center" color="font.display"/-->
+
+	<layer id="" image="config.main" x="50" y="50" />
+
+	<Slider id="ls" x="0" h="240" w="50" y="0" thumb="config.vert" high="50" />
+	<Slider id="rs" x="269" h="240" w="50" y="0" thumb="config.vert" high="50" />
+
+	<Slider id="ts" x="0" h="50" w="319" y="0" orientation="vertical" thumb="config.hor" high="50"/>
+	<Slider id="bs" x="0" h="50" w="319" y="190" orientation="vertical" thumb="config.hor" high="50" />
+
+	<text text="top:" y="0" x="325" bold="1" w="0" relatw="1" color="font.display"/>
+	<text id="tt" text="__px" y="15" x="325" bold="0" w="0" relatw="1" color="font.display"/>
+
+	<text text="left:" y="45" x="325" bold="1" w="0" relatw="1" color="font.display"/>
+	<text id="lt" text="__px" y="60" x="325" bold="0" w="0" relatw="1" color="font.display"/>
+
+	<text text="right:" y="90" x="325" bold="1" w="0" relatw="1" color="font.display"/>
+	<text id="rt" text="__px" y="105" x="325" bold="0" w="0" relatw="1" color="font.display"/>
+
+	<text text="bottom:" y="135" x="325" bold="1" w="0" relatw="1" color="font.display"/>
+	<text id="bt" text="__px" y="150" x="325" bold="0" w="0" relatw="1" color="font.display"/>
+
+	<script file="config/configpages/snap.maki"/>
+
+</groupdef>

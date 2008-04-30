@@ -1,0 +1,14 @@
+<elements>
+	<bitmap id="config.avs" file="config/avs.jpg" />
+</elements>
+
+<!-- ************************ ABOUT ***************************** -->
+
+<groupdef id="config.avspreset" >
+
+	<group id="wasabi.window.embedded" x="0" y="5" w="372" h="194" />
+	<layer id="avs" image="config.avs" x="1" y="6" />
+
+	<Deimos:HyperLinkButton id="url" x="0" y="-26" relaty="1" w="372" h="21" text="Download the Vortex - AVS Preset" tooltip="Homepage" url="http://www.skinconsortium.com/vortex.exe" />
+
+</groupdef>

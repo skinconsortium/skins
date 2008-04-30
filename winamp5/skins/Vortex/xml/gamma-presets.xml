@@ -1,0 +1,1205 @@
+<gammaset id=".default">
+
+</gammaset>
+
+<gammaset id=".defaultbase2">
+<gammagroup id="glass2"  value="704, 704, 3424" gray="2" boost="0" />
+</gammaset>
+<gammaset id=".defaultbase3">
+<gammagroup id="glass2" value="1344, -2944, 608" gray="2" boost="0" />
+</gammaset>
+<gammaset id=".defaultbase4">
+ <gammagroup id="glass2" value="1568, 2784, -4096" gray="2" boost="0" />
+</gammaset>
+<gammaset id=".defaultbase5">
+ <gammagroup id="glass2" value="1568, -3168, -2688" gray="2" boost="0" />
+</gammaset>
+<gammaset id=".defaultbase6">
+<gammagroup id="glass2" value="-4096, 2592, 2784" gray="2" boost="0" />
+</gammaset>
+<gammaset id=".defaultbase7">
+ <gammagroup id="glass2" value="3424, 704, 2752" gray="2" boost="0" />
+</gammaset>
+<gammaset id=".defaultbase8">
+<gammagroup id="glass2"   value="128, 2720, 1344" gray="2" boost="0" />
+</gammaset>
+<gammaset id=".defaultbase9">
+<gammagroup id="glass2" value="2784, -160, -4096" gray="2" boost="0" />
+</gammaset><gammaset id=".defaultbase91">
+<gammagroup id="glass2" value="448, 256, 288" gray="2"  boost="0" />
+</gammaset>
+
+
+
+
+
+
+<gammaset id=".default | blueeyes">
+  <gammagroup id="backgrounds" value="-3168, -3168, -3104" gray="2" boost="0" />
+  <gammagroup id="glass"  value="704, 704, 3424" gray="2" boost="0" />
+  <gammagroup id="glass2"  value="704, 704, 3424" gray="2" boost="0" />
+
+   
+	
+ 
+	</gammaset>
+
+<gammaset id=".default | Prphaze">
+  <gammagroup id="backgrounds" value="-3168, -3168, -3104" gray="2" boost="0" />
+  <gammagroup id="glass" value="1344, -2944, 608" gray="2" boost="0" />
+  <gammagroup id="glass2" value="1344, -2944, 608" gray="2" boost="0" />
+   
+	
+
+	</gammaset>
+<gammaset id=".default | Matrix">
+  <gammagroup id="glass" value="1568, 2784, -4096" gray="2" boost="0" />
+  <gammagroup id="glass2" value="1568, 2784, -4096" gray="2" boost="0" />
+   
+	
+
+	</gammaset>
+<gammaset id=".default | Matrix2">
+  <gammagroup id="glass" value="1568, 2784, -4096" gray="2" boost="0" />
+  <gammagroup id="glass2" value="1568, -3168, -2688" gray="2" boost="0" />
+   
+	
+
+	</gammaset>
+<gammaset id=".default | UmRed">
+   <gammagroup id="glass"  value="1568, -3168, -2688" gray="2" boost="0" />
+   <gammagroup id="glass2"  value="1568, -3168, -2688" gray="2" boost="0" />
+   
+	
+ 
+	</gammaset>
+<gammaset id=".default | Magentadream">
+  <gammagroup id="glass" value="928, -2400, 256" gray="2" boost="0" />
+  <gammagroup id="glass2" value="928, -2400, 256" gray="2" boost="0" />
+   
+	
+
+	</gammaset>
+<gammaset id=".default | Lagoon">
+  <gammagroup id="glass" value="-4096, 352, 2784" gray="2" boost="0" />
+  <gammagroup id="glass2" value="-4096, 352, 2784" gray="2" boost="0" />
+   
+	
+	</gammaset>
+<gammaset id=".default | Tealxs">
+  <gammagroup id="glass" value="-4096, 2592, 2784" gray="2" boost="0" />
+  <gammagroup id="glass2" value="-4096, 2592, 2784" gray="2" boost="0" />
+   
+	
+
+	</gammaset>
+<gammaset id=".default | pink">
+  <gammagroup id="glass" value="3424, 704, 2752" gray="2" boost="0" />
+  <gammagroup id="glass2" value="3424, 704, 2752" gray="2" boost="0" />
+   
+	
+
+	</gammaset>
+<gammaset id=".default | Burnt">
+  <gammagroup id="glass" value="2784, -160, -4096" gray="2" boost="0" />
+  <gammagroup id="glass2" value="2784, -160, -4096" gray="2" boost="0" />
+   
+	
+
+	</gammaset>
+
+<gammaset id=".default | Burnt2">
+  <gammagroup id="glass" value="2784, -160, -4096" gray="2" boost="0" />
+  <gammagroup id="glass2" value="928, -2400, 256" gray="2" boost="0" />
+   
+	
+
+	</gammaset>
+
+<gammaset id=".default | LostColor">
+  <gammagroup id="glass" value="448, 256, 288" gray="2"  boost="0" />
+  <gammagroup id="glass2" value="448, 256, 288" gray="2"  boost="0" />
+   
+	
+
+	</gammaset>
+<gammaset id=".default | NightVision">
+  <gammagroup id="glass"   value="-800, 1344, -2944" gray="2" boost="0" />
+  <gammagroup id="glass2"   value="-800, 1344, -2944" gray="2" boost="0" />
+   
+	
+
+	</gammaset>
+<gammaset id=".default | Gonna-be-a-great-Night">
+  <gammagroup id="glass"   value="-2112, -2080, -2144" gray="2" boost="0" />
+  <gammagroup id="glass2"   value="-2112, -2080, -2144" gray="2" boost="0" />
+   
+	
+ </gammaset>
+	
+<gammaset id="Silver | Electristorm">
+	<gammagroup id="background"  value="-320, -160, -64" gray="1" boost="0" />
+  <gammagroup id="glass"  value="-2944, 1344, 1344" gray="2" boost="0" />
+  <gammagroup id="glass2"  value="-2944, 1344, 1344" gray="2" boost="0" />
+   
+	
+ 
+	</gammaset>
+<gammaset id="Silver | Prphaze">
+	<gammagroup id="background"  value="-320, -160, -64" gray="1" boost="0" />
+  <gammagroup id="glass" value="1344, -2944, 608" gray="2" boost="0" />
+  <gammagroup id="glass2" value="1344, -2944, 608" gray="2" boost="0" />
+   
+	
+
+	</gammaset>
+<gammaset id="Silver | blueeyes">
+	<gammagroup id="background"  value="-320, -160, -64" gray="1" boost="0" />
+  <gammagroup id="glass" value="704, 704, 3424" gray="2" boost="0" />
+  <gammagroup id="glass2" value="704, 704, 3424" gray="2" boost="0" />
+   
+	
+
+	</gammaset>
+<gammaset id="Silver | Matrix">
+	<gammagroup id="background"  value="-320, -160, -64" gray="1" boost="0" />
+  <gammagroup id="glass" value="1568, 2784, -4096" gray="2" boost="0" />
+  <gammagroup id="glass2" value="1568, 2784, -4096" gray="2" boost="0" />
+   
+	
+
+	</gammaset>
+<gammaset id="Silver | UmRed">
+	<gammagroup id="background"  value="-320, -160, -64" gray="1" boost="0" />
+   <gammagroup id="glass"  value="1568, -3168, -2688" gray="2"  boost="0" />
+   <gammagroup id="glass2"  value="1568, -3168, -2688" gray="2"  boost="0" />
+   
+	
+ 
+	</gammaset>
+<gammaset id="Silver | Magentadream">
+	<gammagroup id="background"  value="-320, -160, -64" gray="1" boost="0" />
+  <gammagroup id="glass" value="928, -2400, 256" gray="2" boost="0" />
+  <gammagroup id="glass2" value="928, -2400, 256" gray="2" boost="0" />
+   
+	
+
+	</gammaset>
+<gammaset id="Silver | Lagoon">
+	<gammagroup id="background"  value="-320, -160, -64" gray="1" boost="0" />
+  <gammagroup id="glass" value="-4096, 352, 2784" gray="2" boost="0" />
+  <gammagroup id="glass2" value="-4096, 352, 2784" gray="2" boost="0" />
+   
+	
+	</gammaset>
+<gammaset id="Silver | Tealxs">
+	<gammagroup id="background"  value="-320, -160, -64" gray="1" boost="0" />
+  <gammagroup id="glass" value="-4096, 2592, 2784" gray="2" boost="0" />
+  <gammagroup id="glass2" value="-4096, 2592, 2784" gray="2" boost="0" />
+   
+	
+
+	</gammaset>
+<gammaset id="Silver | Burnt">
+	<gammagroup id="background"  value="-320, -160, -64" gray="1" boost="0" />
+  <gammagroup id="glass" value="2784, -160, -4096" gray="2" boost="0" />
+  <gammagroup id="glass2" value="2784, -160, -4096" gray="2" boost="0" />
+   
+	
+
+	</gammaset>
+
+
+<gammaset id="Silver | LostColor">
+	<gammagroup id="background"  value="-320, -160, -64" gray="1" boost="0" />
+  <gammagroup id="glass" value="448, 256, 288" gray="2"  boost="0" />
+  <gammagroup id="glass2" value="448, 256, 288" gray="2"  boost="0" />
+   
+	
+
+	</gammaset>
+<gammaset id="Silver | NightVision">
+	<gammagroup id="background"  value="-320, -160, -64" gray="1" boost="0" />
+  <gammagroup id="glass"   value="128, 2720, 1344" gray="2" boost="0" />
+  <gammagroup id="glass2"   value="128, 2720, 1344" gray="2" boost="0" />
+   
+	
+
+	</gammaset>
+<gammaset id="Silver | pink">
+	<gammagroup id="background"  value="-320, -160, -64" gray="1"  boost="0" />
+  <gammagroup id="glass" value="3424, 704, 2752" gray="2" boost="0" />
+  <gammagroup id="glass2" value="3424, 704, 2752" gray="2" boost="0" />
+   
+	
+
+	</gammaset>
+<gammaset id="Silver | Gonna-be-a-great-Night">
+	<gammagroup id="background"  value="-320, -160, -64" gray="1" boost="0" />
+  <gammagroup id="glass"   value="-2112, -2080, -2144" gray="2" boost="0" />
+  <gammagroup id="glass2"   value="-2112, -2080, -2144" gray="2" boost="0" />
+   
+	
+ 
+	</gammaset>
+
+
+
+ 
+
+<gammaset id="Darkgrey | default">
+<gammagroup id="background" value="-2688, -2624, -2624" gray="1" boost="0" />
+  <gammagroup id="backover"   value="-992, -480, -1856" gray="0" boost="0" />
+</gammaset>
+
+<gammaset id="Darkgrey | Prphaze">
+	<gammagroup id="background" value="-2688, -2624, -2624" gray="1" boost="0" />
+  <gammagroup id="backover"   value="-992, -480, -1856" gray="0" boost="0" />
+<gammagroup id="backover"   value="224, 2368, 3296" gray="0" boost="0" />
+  <gammagroup id="glass" value="1344, -2944, 608" gray="2"  boost="0" />
+  <gammagroup id="glass2" value="1344, -2944, 608" gray="2"  boost="0" />
+   
+	
+ 
+	</gammaset>
+
+	<gammaset id="Darkgrey | Matrix">
+	<gammagroup id="background" value="-2688, -2624, -2624" gray="1" boost="0" />
+  <gammagroup id="backover"   value="-992, -480, -1856" gray="0" boost="0" />
+<gammagroup id="backover"   value="224, 2368, 3296" gray="0" boost="0" />
+  <gammagroup id="glass" value="1568, 2784, -4096" gray="2" boost="0" />
+  <gammagroup id="glass2" value="1568, 2784, -4096" gray="2" boost="0" />
+   
+	
+ 
+	</gammaset>
+<gammaset id="Darkgrey | Tealxs">
+	<gammagroup id="background" value="-2688, -2624, -2624" gray="1" boost="0" />
+  <gammagroup id="backover"   value="-992, -480, -1856" gray="0" boost="0" />
+<gammagroup id="backover"   value="224, 2368, 3296" gray="0" boost="0" />
+  <gammagroup id="glass" value="-4096, 2592, 2784" gray="2" boost="0" />
+  <gammagroup id="glass2" value="-4096, 2592, 2784" gray="2" boost="0" />
+   
+	
+
+
+	</gammaset>
+<gammaset id="Darkgrey | Burnt">
+	<gammagroup id="background"  value="-2688, -2624, -2624" gray="1" boost="0" />
+  <gammagroup id="backover"   value="-992, -480, -1856" gray="0" boost="0" />
+<gammagroup id="backover"   value="224, 2368, 3296" gray="0" boost="0" />
+  <gammagroup id="glass" value="2784, -160, -4096" gray="2" boost="0" />
+  <gammagroup id="glass2" value="2784, -160, -4096" gray="2" boost="0" />
+   
+	
+ 
+
+	</gammaset>
+
+
+<gammaset id="Darkgrey | LostColor">
+	<gammagroup id="background"  value="-2688, -2624, -2624" gray="1" boost="0" />
+  <gammagroup id="backover"   value="-992, -480, -1856" gray="0" boost="0" />
+<gammagroup id="backover"   value="224, 2368, 3296" gray="0" boost="0" />
+  <gammagroup id="glass" value="448, 256, 288" gray="2"  boost="0" />
+  <gammagroup id="glass2" value="448, 256, 288" gray="2"  boost="0" /></gammaset>
+
+   <gammaset id="Darkgrey | LostColor2">
+	<gammagroup id="background"  value="-2688, -2624, -2624" gray="1" boost="0" />
+  <gammagroup id="backover"   value="-992, -480, -1856" gray="0" boost="0" />
+<gammagroup id="backover"   value="224, 2368, 3296" gray="0" boost="0" />
+  <gammagroup id="glass" value="448, 256, 288" gray="2"  boost="0" />
+  <gammagroup id="glass2"  value="704, 704, 3424" gray="2" boost="0" /></gammaset>
+	<gammaset id="Darkgrey | LostColor3">
+	<gammagroup id="background"  value="-2688, -2624, -2624" gray="1" boost="0" />
+  <gammagroup id="backover"   value="-992, -480, -1856" gray="0" boost="0" />
+<gammagroup id="backover"   value="224, 2368, 3296" gray="0" boost="0" />
+  <gammagroup id="glass" value="448, 256, 288" gray="2"  boost="0" />
+  <gammagroup id="glass2" value="1344, -2944, 608" gray="2" boost="0" /></gammaset>
+<gammaset id="Darkgrey | LostColor4">
+	<gammagroup id="background"  value="-2688, -2624, -2624" gray="1" boost="0" />
+  <gammagroup id="backover"   value="-992, -480, -1856" gray="0" boost="0" />
+<gammagroup id="backover"   value="224, 2368, 3296" gray="0" boost="0" />
+  <gammagroup id="glass" value="448, 256, 288" gray="2"  boost="0" />
+   <gammagroup id="glass2" value="1568, 2784, -4096" gray="2" boost="0" />
+</gammaset>
+<gammaset id="Darkgrey | LostColor5">
+	<gammagroup id="background"  value="-2688, -2624, -2624" gray="1" boost="0" />
+  <gammagroup id="backover"   value="-992, -480, -1856" gray="0" boost="0" />
+<gammagroup id="backover"   value="224, 2368, 3296" gray="0" boost="0" />
+  <gammagroup id="glass" value="448, 256, 288" gray="2"  boost="0" />
+ <gammagroup id="glass2" value="1568, -3168, -2688" gray="2" boost="0" /></gammaset>
+<gammaset id="Darkgrey | LostColor6">
+
+	<gammagroup id="background"  value="-2688, -2624, -2624" gray="1" boost="0" />
+  <gammagroup id="backover"   value="-992, -480, -1856" gray="0" boost="0" />
+<gammagroup id="backover"   value="224, 2368, 3296" gray="0" boost="0" />
+  <gammagroup id="glass" value="448, 256, 288" gray="2"  boost="0" />
+ <gammagroup id="glass2" value="-4096, 2592, 2784" gray="2" boost="0" /></gammaset>
+<gammaset id="Darkgrey | LostColor7">
+
+	<gammagroup id="background"  value="-2688, -2624, -2624" gray="1" boost="0" />
+  <gammagroup id="backover"   value="-992, -480, -1856" gray="0" boost="0" />
+<gammagroup id="backover"   value="224, 2368, 3296" gray="0" boost="0" />
+  <gammagroup id="glass" value="448, 256, 288" gray="2"  boost="0" />
+  <gammagroup id="glass2" value="3424, 704, 2752" gray="2" boost="0" />
+
+	</gammaset>
+<gammaset id="Darkgrey | NightVision">
+	<gammagroup id="background"  value="-2688, -2624, -2624" gray="1" boost="0" />
+  <gammagroup id="backover"   value="-992, -480, -1856" gray="0" boost="0" />
+<gammagroup id="backover"   value="224, 2368, 3296" gray="0" boost="0" />
+  <gammagroup id="glass"   value="-800, 1344, -2944" gray="2" boost="0" />
+  <gammagroup id="glass2"   value="-800, 1344, -2944" gray="2" boost="0" />
+   
+	
+ 
+	</gammaset>
+
+	<gammaset id="Darkgrey | Electristorm">
+	<gammagroup id="background" value="-2688, -2624, -2624" gray="1"  boost="0" />
+  <gammagroup id="backgrounds" value="-2688, -2624, -2624" gray="1" boost="0" />
+<gammagroup id="backover"  value="-2240, -2336, -2784" gray="0" boost="0" />
+  <gammagroup id="glass"  value="-2944, 1344, 1344" gray="2" boost="0" />
+  
+   
+	
+ 
+
+	</gammaset>
+
+<gammaset id="Darkgrey | Electristorm2">
+	<gammagroup id="background" value="-2688, -2624, -2624" gray="1"  boost="0" />
+  <gammagroup id="backgrounds" value="-2688, -2624, -2624" gray="1" boost="0" />
+<gammagroup id="backover"  value="-2240, -2336, -2784" gray="0" boost="0" />
+  <gammagroup id="glass"  value="-2944, 1344, 1344" gray="2" boost="0" />
+  <gammagroup id="glass2" value="2784, -160, -4096" gray="2" boost="0" />
+   
+  
+   
+	
+ 
+
+	</gammaset>
+
+	
+ 
+
+	
+
+<gammaset id="Darkgrey | blueeyes">
+	<gammagroup id="background"   value="-2688, -2624, -2624" gray="1"  boost="0" />
+  <gammagroup id="glass" value="704, 704, 3424" gray="2" boost="0" />
+  <gammagroup id="glass2" value="704, 704, 3424" gray="2" boost="0" />
+   
+	
+
+	</gammaset>
+<gammaset id="Darkgrey | pink">
+	<gammagroup id="background"   value="-2688, -2624, -2624" gray="1"  boost="0" />
+  <gammagroup id="glass" value="3424, 704, 2752" gray="2" boost="0" />
+  <gammagroup id="glass2" value="3424, 704, 2752" gray="2" boost="0" />
+   
+	
+
+	</gammaset>
+<gammaset id="Soldier | blueeyes">
+	<gammagroup id="background"    value="-960, -960, -2592" gray="2" boost="0" />
+  <gammagroup id="glass"  value="704, 704, 3424" gray="2" boost="0" />
+  <gammagroup id="glass2"  value="704, 704, 3424" gray="2" boost="0" />
+   
+	
+ 
+	</gammaset>
+
+<gammaset id="Soldier | Prphaze">
+	<gammagroup id="background"  value="-960, -960, -2592" gray="2"  boost="0" />
+  <gammagroup id="glass" value="1344, -2944, 608" gray="2" boost="0" />
+  <gammagroup id="glass2" value="1344, -2944, 608" gray="2" boost="0" />
+   
+	
+
+	</gammaset>
+<gammaset id="Soldier | Matrix">
+	<gammagroup id="background"  value="-960, -960, -2592" gray="2"  boost="0" />
+  <gammagroup id="glass" value="1568, 2784, -4096" gray="2" boost="0" />
+  <gammagroup id="glass2" value="1568, 2784, -4096" gray="2" boost="0" />
+   
+	
+
+	</gammaset>
+<gammaset id="Soldier | UmRed">
+	<gammagroup id="background"  value="-960, -960, -2592" gray="2"  boost="0" />
+   <gammagroup id="glass"  value="1568, -3168, -2688" gray="2" boost="0" />
+   <gammagroup id="glass2"  value="1568, -3168, -2688" gray="2" boost="0" />
+   
+	
+ 
+	</gammaset>
+<gammaset id="Soldier | Magentadream">
+	<gammagroup id="background"  value="-960, -960, -2592" gray="2"  boost="0" />
+  <gammagroup id="glass" value="928, -2400, 256" gray="2" boost="0" />
+  <gammagroup id="glass2" value="928, -2400, 256" gray="2" boost="0" />
+   
+	
+
+	</gammaset>
+
+
+
+<gammaset id="Soldier | Burnt">
+	<gammagroup id="background"  value="-960, -960, -2592" gray="2"  boost="0" />
+  <gammagroup id="glass" value="2784, -160, -4096" gray="2" boost="0" />
+  <gammagroup id="glass2" value="2784, -160, -4096" gray="2" boost="0" />
+   
+	
+
+	</gammaset>
+
+
+<gammaset id="Soldier | LostColor">
+	<gammagroup id="background"  value="-960, -960, -2592" gray="2"  boost="0" />
+  <gammagroup id="glass" value="448, 256, 288" gray="2"  boost="0" />
+  <gammagroup id="glass2" value="448, 256, 288" gray="2"  boost="0" />
+   
+	
+
+	</gammaset>
+<gammaset id="Soldier | NightVision">
+	<gammagroup id="background"  value="-960, -960, -2592" gray="2"  boost="0" />
+  <gammagroup id="glass"   value="-800, 1344, -2944" gray="2" boost="0" />
+  <gammagroup id="glass2"   value="-800, 1344, -2944" gray="2" boost="0" />
+   
+	
+
+	</gammaset>
+<gammaset id="Soldier | Gonna-be-a-great-Night">
+	<gammagroup id="background"  value="-960, -960, -2592" gray="2"  boost="0" />
+  <gammagroup id="glass"   value="-2112, -2080, -2144" gray="2" boost="0" />
+  <gammagroup id="glass2"   value="-2112, -2080, -2144" gray="2" boost="0" />
+   
+	
+ </gammaset>
+<gammaset id="Night | blueeyes">
+	<gammagroup id="background"   value="-3168, -3168, -3104" gray="2"  boost="0" />
+  <gammagroup id="glass"  value="704, 704, 3424" gray="2" boost="0" />
+  <gammagroup id="glass2"  value="704, 704, 3424" gray="2" boost="0" />
+   
+	
+ 
+	</gammaset>
+
+<gammaset id="Night | Prphaze">
+	<gammagroup id="background" value="-3168, -3168, -3104" gray="2" boost="0" />
+  <gammagroup id="glass" value="1344, -2944, 608" gray="2" boost="0" />
+  <gammagroup id="glass2" value="1344, -2944, 608" gray="2" boost="0" />
+   
+	
+
+	</gammaset>
+<gammaset id="Night | Matrix">
+	<gammagroup id="background" value="-3168, -3168, -3104" gray="2" boost="0" />
+  <gammagroup id="glass" value="1568, 2784, -4096" gray="2" boost="0" />
+  <gammagroup id="glass2" value="1568, 2784, -4096" gray="2" boost="0" />
+   
+	
+
+	</gammaset>
+<gammaset id="Night | UmRed">
+	<gammagroup id="background" value="-3168, -3168, -3104" gray="2" boost="0" />
+   <gammagroup id="glass"  value="1568, -3168, -2688" gray="2" boost="0" />
+   <gammagroup id="glass2"  value="1568, -3168, -2688" gray="2" boost="0" />
+   
+	
+ 
+	</gammaset>
+<gammaset id="Night | Magentadream">
+	<gammagroup id="background"  value="-3168, -3168, -3104" gray="2" boost="0" />
+  <gammagroup id="glass" value="928, -2400, 256" gray="2" boost="0" />
+  <gammagroup id="glass2" value="928, -2400, 256" gray="2" boost="0" />
+   
+	
+
+	</gammaset>
+<gammaset id="Night | Lagoon">
+	<gammagroup id="background" value="-3168, -3168, -3104" gray="2" boost="0" />
+  <gammagroup id="glass" value="-4096, 352, 2784" gray="2" boost="0" />
+  <gammagroup id="glass2" value="-4096, 352, 2784" gray="2" boost="0" />
+   
+	
+	</gammaset>
+<gammaset id="Night | Tealxs">
+	<gammagroup id="background" value="-3168, -3168, -3104" gray="2" boost="0" />
+  <gammagroup id="glass" value="-4096, 2592, 2784" gray="2" boost="0" />
+  <gammagroup id="glass2" value="-4096, 2592, 2784" gray="2" boost="0" />
+   
+	
+
+	</gammaset>
+<gammaset id="Night | pink">
+	<gammagroup id="background" value="-3168, -3168, -3104" gray="2" boost="0" />
+  <gammagroup id="backgrounds" value="-3168, -3168, -3104" gray="2" boost="0" />
+  <gammagroup id="glass" value="3424, 704, 2752" gray="2" boost="0" />
+  <gammagroup id="glass2" value="3424, 704, 2752" gray="2" boost="0" />
+   
+	
+
+	</gammaset>
+<gammaset id="Night | Burnt">
+	<gammagroup id="background" value="-3168, -3168, -3104" gray="2" boost="0" />
+  <gammagroup id="glass" value="2784, -160, -4096" gray="2" boost="0" />
+  <gammagroup id="glass2" value="2784, -160, -4096" gray="2" boost="0" />
+   
+	
+
+	</gammaset>
+
+
+<gammaset id="Night | LostColor">
+	<gammagroup id="background" value="-3168, -3168, -3104" gray="2" boost="0" />
+  <gammagroup id="glass" value="448, 256, 288" gray="2"  boost="0" />
+  <gammagroup id="glass2" value="448, 256, 288" gray="2"  boost="0" />
+   
+	
+
+	</gammaset>
+<gammaset id="Night | NightVision">
+	<gammagroup id="background" value="-3168, -3168, -3104" gray="2" boost="0" />
+  <gammagroup id="glass"   value="-800, 1344, -2944" gray="2" boost="0" />
+  <gammagroup id="glass2"   value="-800, 1344, -2944" gray="2" boost="0" />
+   
+	
+
+	</gammaset>
+<gammaset id="Night | Gonna-be-a-great-Night">
+	<gammagroup id="background" value="-3168, -3168, -3104" gray="2" boost="0" />
+  <gammagroup id="glass"   value="-2112, -2080, -2144" gray="2" boost="0" />
+  <gammagroup id="glass2"   value="-2112, -2080, -2144" gray="2" boost="0" />
+   
+	
+ </gammaset>
+
+
+<!-- Steel -->
+
+
+ <gammaset id="Steel | Electristorm">
+	<gammagroup id="background"  value="-1560,-715,0" gray="2" boost="0" />
+  <gammagroup id="glass"  value="-2944, 1344, 1344" gray="2" boost="0" />
+  <gammagroup id="glass2"  value="-2944, 1344, 1344" gray="2" boost="0" />
+   
+	
+ 
+	</gammaset>
+<gammaset id="Steel | Prphaze">
+	<gammagroup id="background"  value="-1560,-715,0" gray="2" boost="0" />
+  <gammagroup id="glass" value="1344, -2944, 608" gray="2" boost="0" />
+  <gammagroup id="glass2" value="1344, -2944, 608" gray="2" boost="0" />
+   
+	
+
+	</gammaset>
+<gammaset id="Steel | blueeyes">
+	<gammagroup id="background"  value="-1560,-715,0" gray="2" boost="0" />
+  <gammagroup id="glass" value="704, 704, 3424" gray="2" boost="0" />
+  <gammagroup id="glass2" value="704, 704, 3424" gray="2" boost="0" />
+   
+	
+
+	</gammaset>
+<gammaset id="Steel | Matrix">
+	<gammagroup id="background"  value="-1560,-715,0" gray="2" boost="0" />
+  <gammagroup id="glass" value="1568, 2784, -4096" gray="2" boost="0" />
+  <gammagroup id="glass2" value="1568, 2784, -4096" gray="2" boost="0" />
+   
+	
+
+	</gammaset>
+<gammaset id="Steel | UmRed">
+	<gammagroup id="background"  value="-1560,-715,0" gray="2" boost="0" />
+   <gammagroup id="glass"  value="1568, -3168, -2688" gray="2"  boost="0" />
+   <gammagroup id="glass2"  value="1568, -3168, -2688" gray="2"  boost="0" />
+   
+	
+ 
+	</gammaset>
+<gammaset id="Steel | Magentadream">
+	<gammagroup id="background"  value="-1560,-715,0" gray="2" boost="0" />
+  <gammagroup id="glass" value="928, -2400, 256" gray="2" boost="0" />
+  <gammagroup id="glass2" value="928, -2400, 256" gray="2" boost="0" />
+   
+	
+
+	</gammaset>
+<gammaset id="Steel | Lagoon">
+	<gammagroup id="background"  value="-1560,-715,0" gray="2" boost="0" />
+  <gammagroup id="glass" value="-4096, 352, 2784" gray="2" boost="0" />
+  <gammagroup id="glass2" value="-4096, 352, 2784" gray="2" boost="0" />
+   
+	
+	</gammaset>
+<gammaset id="Steel | Tealxs">
+	<gammagroup id="background"  value="-1560,-715,0" gray="2" boost="0" />
+  <gammagroup id="glass" value="-4096, 2592, 2784" gray="2" boost="0" />
+  <gammagroup id="glass2" value="-4096, 2592, 2784" gray="2" boost="0" />
+   
+	
+
+	</gammaset>
+<gammaset id="Steel | Burnt">
+	<gammagroup id="background"  value="-1560,-715,0" gray="2" boost="0" />
+  <gammagroup id="glass" value="2784, -160, -4096" gray="2" boost="0" />
+  <gammagroup id="glass2" value="2784, -160, -4096" gray="2" boost="0" />
+   
+	
+
+	</gammaset>
+
+
+<gammaset id="Steel | LostColor">
+	<gammagroup id="background"  value="-1560,-715,0" gray="2" boost="0" />
+  <gammagroup id="glass" value="448, 256, 288" gray="2"  boost="0" />
+  <gammagroup id="glass2" value="448, 256, 288" gray="2"  boost="0" />
+   
+	
+
+	</gammaset>
+<gammaset id="Steel | NightVision">
+	<gammagroup id="background"  value="-1560,-715,0" gray="2" boost="0" />
+  <gammagroup id="glass"   value="128, 2720, 1344" gray="2" boost="0" />
+  <gammagroup id="glass2"   value="128, 2720, 1344" gray="2" boost="0" />
+   
+	
+
+	</gammaset>
+<gammaset id="Steel | pink">
+	<gammagroup id="background"  value="-1560,-715,0" gray="2"  boost="0" />
+  <gammagroup id="glass" value="3424, 704, 2752" gray="2" boost="0" />
+  <gammagroup id="glass2" value="3424, 704, 2752" gray="2" boost="0" />
+   
+	
+
+	</gammaset>
+<gammaset id="Steel | Gonna-be-a-great-Night">
+	<gammagroup id="background"  value="-1560,-715,0" gray="2" boost="0" />
+  <gammagroup id="glass"   value="-2112, -2080, -2144" gray="2" boost="0" />
+  <gammagroup id="glass2"   value="-2112, -2080, -2144" gray="2" boost="0" />
+   
+	
+ 
+	</gammaset>
+
+
+<!-- Rust -->
+
+
+ <gammaset id="Rust | Electristorm">
+	<gammagroup id="background"  value="-1852,-2872,-3455" gray="1" boost="0" />
+  <gammagroup id="glass"  value="-2944, 1344, 1344" gray="2" boost="0" />
+  <gammagroup id="glass2"  value="-2944, 1344, 1344" gray="2" boost="0" />
+   
+	
+ 
+	</gammaset>
+<gammaset id="Rust | Prphaze">
+	<gammagroup id="background"  value="-1852,-2872,-3455" gray="1" boost="0" />
+  <gammagroup id="glass" value="1344, -2944, 608" gray="2" boost="0" />
+  <gammagroup id="glass2" value="1344, -2944, 608" gray="2" boost="0" />
+   
+	
+
+	</gammaset>
+<gammaset id="Rust | blueeyes">
+	<gammagroup id="background"  value="-1852,-2872,-3455" gray="1" boost="0" />
+  <gammagroup id="glass" value="704, 704, 3424" gray="2" boost="0" />
+  <gammagroup id="glass2" value="704, 704, 3424" gray="2" boost="0" />
+   
+	
+
+	</gammaset>
+<gammaset id="Rust | Matrix">
+	<gammagroup id="background"  value="-1852,-2872,-3455" gray="1" boost="0" />
+  <gammagroup id="glass" value="1568, 2784, -4096" gray="2" boost="0" />
+  <gammagroup id="glass2" value="1568, 2784, -4096" gray="2" boost="0" />
+   
+	
+
+	</gammaset>
+<gammaset id="Rust | UmRed">
+	<gammagroup id="background"  value="-1852,-2872,-3455" gray="1" boost="0" />
+   <gammagroup id="glass"  value="1568, -3168, -2688" gray="2"  boost="0" />
+   <gammagroup id="glass2"  value="1568, -3168, -2688" gray="2"  boost="0" />
+   
+	
+ 
+	</gammaset>
+<gammaset id="Rust | Magentadream">
+	<gammagroup id="background"  value="-1852,-2872,-3455" gray="1" boost="0" />
+  <gammagroup id="glass" value="928, -2400, 256" gray="2" boost="0" />
+  <gammagroup id="glass2" value="928, -2400, 256" gray="2" boost="0" />
+   
+	
+
+	</gammaset>
+<gammaset id="Rust | Lagoon">
+	<gammagroup id="background"  value="-1852,-2872,-3455" gray="1" boost="0" />
+  <gammagroup id="glass" value="-4096, 352, 2784" gray="2" boost="0" />
+  <gammagroup id="glass2" value="-4096, 352, 2784" gray="2" boost="0" />
+   
+	
+	</gammaset>
+<gammaset id="Rust | Tealxs">
+	<gammagroup id="background"  value="-1852,-2872,-3455" gray="1" boost="0" />
+  <gammagroup id="glass" value="-4096, 2592, 2784" gray="2" boost="0" />
+  <gammagroup id="glass2" value="-4096, 2592, 2784" gray="2" boost="0" />
+   
+	
+
+	</gammaset>
+<gammaset id="Rust | Burnt">
+	<gammagroup id="background"  value="-1852,-2872,-3455" gray="1" boost="0" />
+  <gammagroup id="glass" value="2784, -160, -4096" gray="2" boost="0" />
+  <gammagroup id="glass2" value="2784, -160, -4096" gray="2" boost="0" />
+   
+	
+
+	</gammaset>
+
+
+<gammaset id="Rust | LostColor">
+	<gammagroup id="background"  value="-1852,-2872,-3455" gray="1" boost="0" />
+  <gammagroup id="glass" value="448, 256, 288" gray="2"  boost="0" />
+  <gammagroup id="glass2" value="448, 256, 288" gray="2"  boost="0" />
+   
+	
+
+	</gammaset>
+<gammaset id="Rust | NightVision">
+	<gammagroup id="background"  value="-1852,-2872,-3455" gray="1" boost="0" />
+  <gammagroup id="glass"   value="128, 2720, 1344" gray="2" boost="0" />
+  <gammagroup id="glass2"   value="128, 2720, 1344" gray="2" boost="0" />
+   
+	
+
+	</gammaset>
+<gammaset id="Rust | pink">
+	<gammagroup id="background"  value="-1852,-2872,-3455" gray="1"  boost="0" />
+  <gammagroup id="glass" value="3424, 704, 2752" gray="2" boost="0" />
+  <gammagroup id="glass2" value="3424, 704, 2752" gray="2" boost="0" />
+   
+	
+
+	</gammaset>
+<gammaset id="Rust | Gonna-be-a-great-Night">
+	<gammagroup id="background"  value="-1852,-2872,-3455" gray="1" boost="0" />
+  <gammagroup id="glass"   value="-2112, -2080, -2144" gray="2" boost="0" />
+  <gammagroup id="glass2"   value="-2112, -2080, -2144" gray="2" boost="0" />
+   
+	
+ 
+	</gammaset>
+
+
+
+<!-- Grey -->
+
+
+ <gammaset id="Grey | Electristorm">
+	<gammagroup id="background"  value="-1385,-1065,-744" gray="2" boost="0" />
+  <gammagroup id="glass"  value="-2944, 1344, 1344" gray="2" boost="0" />
+  <gammagroup id="glass2"  value="-2944, 1344, 1344" gray="2" boost="0" />
+   
+	
+ 
+	</gammaset>
+<gammaset id="Grey | Prphaze">
+	<gammagroup id="background"  value="-1385,-1065,-744" gray="2" boost="0" />
+  <gammagroup id="glass" value="1344, -2944, 608" gray="2" boost="0" />
+  <gammagroup id="glass2" value="1344, -2944, 608" gray="2" boost="0" />
+   
+	
+
+	</gammaset>
+<gammaset id="Grey | blueeyes">
+	<gammagroup id="background"  value="-1385,-1065,-744" gray="2" boost="0" />
+  <gammagroup id="glass" value="704, 704, 3424" gray="2" boost="0" />
+  <gammagroup id="glass2" value="704, 704, 3424" gray="2" boost="0" />
+   
+	
+
+	</gammaset>
+<gammaset id="Grey | Matrix">
+	<gammagroup id="background"  value="-1385,-1065,-744" gray="2" boost="0" />
+  <gammagroup id="glass" value="1568, 2784, -4096" gray="2" boost="0" />
+  <gammagroup id="glass2" value="1568, 2784, -4096" gray="2" boost="0" />
+   
+	
+
+	</gammaset>
+<gammaset id="Grey | UmRed">
+	<gammagroup id="background"  value="-1385,-1065,-744" gray="2" boost="0" />
+   <gammagroup id="glass"  value="1568, -3168, -2688" gray="2"  boost="0" />
+   <gammagroup id="glass2"  value="1568, -3168, -2688" gray="2"  boost="0" />
+   
+	
+ 
+	</gammaset>
+<gammaset id="Grey | Magentadream">
+	<gammagroup id="background"  value="-1385,-1065,-744" gray="2" boost="0" />
+  <gammagroup id="glass" value="928, -2400, 256" gray="2" boost="0" />
+  <gammagroup id="glass2" value="928, -2400, 256" gray="2" boost="0" />
+   
+	
+
+	</gammaset>
+<gammaset id="Grey | Lagoon">
+	<gammagroup id="background"  value="-1385,-1065,-744" gray="2" boost="0" />
+  <gammagroup id="glass" value="-4096, 352, 2784" gray="2" boost="0" />
+  <gammagroup id="glass2" value="-4096, 352, 2784" gray="2" boost="0" />
+   
+	
+	</gammaset>
+<gammaset id="Grey | Tealxs">
+	<gammagroup id="background"  value="-1385,-1065,-744" gray="2" boost="0" />
+  <gammagroup id="glass" value="-4096, 2592, 2784" gray="2" boost="0" />
+  <gammagroup id="glass2" value="-4096, 2592, 2784" gray="2" boost="0" />
+   
+	
+
+	</gammaset>
+<gammaset id="Grey | Burnt">
+	<gammagroup id="background"  value="-1385,-1065,-744" gray="2" boost="0" />
+  <gammagroup id="glass" value="2784, -160, -4096" gray="2" boost="0" />
+  <gammagroup id="glass2" value="2784, -160, -4096" gray="2" boost="0" />
+   
+	
+
+	</gammaset>
+
+
+<gammaset id="Grey | LostColor">
+	<gammagroup id="background"  value="-1385,-1065,-744" gray="2" boost="0" />
+  <gammagroup id="glass" value="448, 256, 288" gray="2"  boost="0" />
+  <gammagroup id="glass2" value="448, 256, 288" gray="2"  boost="0" />
+   
+	
+
+	</gammaset>
+<gammaset id="Grey | NightVision">
+	<gammagroup id="background"  value="-1385,-1065,-744" gray="2" boost="0" />
+  <gammagroup id="glass"   value="128, 2720, 1344" gray="2" boost="0" />
+  <gammagroup id="glass2"   value="128, 2720, 1344" gray="2" boost="0" />
+   
+	
+
+	</gammaset>
+<gammaset id="Grey | pink">
+	<gammagroup id="background"  value="-1385,-1065,-744" gray="2"  boost="0" />
+  <gammagroup id="glass" value="3424, 704, 2752" gray="2" boost="0" />
+  <gammagroup id="glass2" value="3424, 704, 2752" gray="2" boost="0" />
+   
+	
+
+	</gammaset>
+<gammaset id="Grey | Gonna-be-a-great-Night">
+	<gammagroup id="background"  value="-1385,-1065,-744" gray="2" boost="0" />
+  <gammagroup id="glass"   value="-2112, -2080, -2144" gray="2" boost="0" />
+  <gammagroup id="glass2"   value="-2112, -2080, -2144" gray="2" boost="0" />
+   
+	
+ 
+	</gammaset>
+
+
+<!-- music | themes by deimos -->
+
+<gammaset id="music | Children Of Bodom - Follow The Reaper">
+  <gammagroup id="glass" value="481,1967,4096" gray="2" boost="0" />
+  <gammagroup id="glass2" value="481,1967,4096" gray="2" boost="0" />
+  <gammagroup id="background" value="-2668,-1035,1297" gray="2" boost="0" />
+</gammaset>
+
+<gammaset id="music | Children Of Bodom - Hate Crew Deathroll">
+  <gammagroup id="glass" value="4096,-744,-1444" gray="1" boost="0" />
+  <gammagroup id="glass2" value="4096,-744,-1444" gray="1" boost="0" />
+  <gammagroup id="background" value="1647,-2231,-4096" gray="2" boost="0" />
+</gammaset>
+
+<gammaset id="music | Children Of Bodom - Something Wild">
+  <gammagroup id="glass" value="1909,-2027,-2755" gray="1" boost="0" />
+  <gammagroup id="glass2" value="1909,-2027,-2755" gray="1" boost="0" />
+  <gammagroup id="background" value="1909,-2930,-3601" gray="2" boost="0" />
+</gammaset>
+
+<gammaset id="music | Children Of Bodom - Hatebreeder">
+  <gammagroup id="glass" value="0,1967,-1444" gray="1" boost="0" />
+  <gammagroup id="glass2" value="0,1967,-1444" gray="1" boost="0" />
+  <gammagroup id="background" value="-1735,451,-2755" gray="2" boost="0" />
+</gammaset>
+
+<gammaset id="music | Theatre of Tragedy - Aegis">
+  <gammagroup id="glass" value="2725,-802,-2930" gray="1" boost="0" />
+  <gammagroup id="glass2" value="2725,-802,-2930" gray="1" boost="0" />
+  <gammagroup id="background" value="-2668,-1531,-277" gray="2" boost="0" />
+</gammaset>
+
+<gammaset id="music | Lake of Tears - Forever Autumn">
+  <gammagroup id="glass" value="1093,1093,1093" gray="1" boost="0" />
+  <gammagroup id="glass2" value="1093,1093,1093" gray="1" boost="0" />
+  <gammagroup id="background" value="714,-861,-1881" gray="2" boost="0" />
+</gammaset>
+
+<gammaset id="music | Lake of Tears - A Crimson Cosmos">
+  <gammagroup id="glass" value="-2231,-1006,1763" gray="1" boost="0" />
+  <gammagroup id="glass2" value="-2231,-1006,1763" gray="1" boost="0" />
+  <gammagroup id="background" value="1909,-1648,-890" gray="2" boost="0" />
+</gammaset>
+
+<gammaset id="music | Lake of Tears - Greater Art">
+  <gammagroup id="glass" value="2609,-890,-2610" gray="1" boost="0" />
+  <gammagroup id="glass2" value="2609,-890,-2610" gray="1" boost="0" />
+  <gammagroup id="background" value="-2814,-2814,-2785" gray="2" boost="0" />
+</gammaset>
+
+<gammaset id="music | Lake of Tears - Headstones">
+  <gammagroup id="glass" value="-277,568,1967" gray="1" boost="0" />
+  <gammagroup id="glass2" value="-277,568,1967" gray="1" boost="0" />
+  <gammagroup id="background" value="-1735,-1706,-1473" gray="2" boost="0" />
+</gammaset>
+
+<gammaset id="music | Visions of Atlantis - Eternal Endless Infinity">
+  <gammagroup id="glass" value="1822,-773,-1589" gray="1" boost="0" />
+  <gammagroup id="glass2" value="1822,-773,-1589" gray="1" boost="0" />
+  <gammagroup id="background" value="-890,-1706,597" gray="2" boost="0" />
+</gammaset>
+
+<gammaset id="music | Tristania - World of Glass">
+  <gammagroup id="glass" value="-1706,-1035,685" gray="1" boost="0" />
+  <gammagroup id="glass2" value="-1706,-1035,685" gray="1" boost="0" />
+  <gammagroup id="background" value="-540,335,1705" gray="2" boost="0" />
+</gammaset>
+
+<gammaset id="music | Stratovarius - Dreamspace">
+  <gammagroup id="glass" value="1909,860,-540" gray="2" boost="0" />
+  <gammagroup id="glass2" value="1909,860,-540" gray="2" boost="0" />
+  <gammagroup id="background" value="-2318,-2318,-2318" gray="2" boost="0" />
+</gammaset>
+
+<gammaset id="music | Sonata Arctica - Reckoning Night">
+  <gammagroup id="glass" value="1617,-1735,-3455" gray="2" boost="0" />
+  <gammagroup id="glass2" value="1617,-1735,-3455" gray="2" boost="0" />
+  <gammagroup id="background" value="0,-1531,-2522" gray="2" boost="0" />
+</gammaset>
+
+<gammaset id="music | Sonata Arctica - Songs Of Silence">
+  <gammagroup id="glass" value="0,1617,3163" gray="2" boost="0" />
+  <gammagroup id="glass2" value="0,1617,3163" gray="2" boost="0" />
+  <gammagroup id="background" value="-1764,-2639,-3601" gray="2" boost="0" />
+</gammaset>
+
+<gammaset id="music | Scott Stapp - The Great Divide">
+  <gammagroup id="glass" value="422,-2318,-3076" gray="2" boost="0" />
+  <gammagroup id="glass2" value="422,-2318,-3076" gray="2" boost="0" />
+  <gammagroup id="background" value="1792,1297,335" gray="2" boost="0" />
+</gammaset>
+
+<gammaset id="music | The Rasmus - Hide From The Sun">
+  <gammagroup id="glass" value="3687,2754,539" gray="1" boost="0" />
+  <gammagroup id="glass2" value="3687,2754,539" gray="1" boost="0" />
+  <gammagroup id="background" value="976,1297,335" gray="2" boost="0" />
+</gammaset>
+
+<gammaset id="music | Rammstein - Reise Reise">
+  <gammagroup id="glass" value="2667,2638,2667" gray="1" boost="0" />
+  <gammagroup id="glass2" value="2667,2638,2667" gray="1" boost="0" />
+  <gammagroup id="background" value="2725,-1385,-2930" gray="2" boost="0" />
+</gammaset>
+
+<gammaset id="music | Nightwish - Once">
+  <gammagroup id="glass" value="-948,247,0" gray="1" boost="0" />
+  <gammagroup id="glass2" value="-948,247,0" gray="1" boost="0" />
+  <gammagroup id="background" value="2638,2026,2521" gray="2" boost="0" />
+</gammaset>
+
+<gammaset id="music | Nickelback - All The Right Reasons">
+  <gammagroup id="glass" value="2463,1093,-627" gray="1" boost="0" />
+  <gammagroup id="glass2" value="2463,1093,-627" gray="1" boost="0" />
+  <gammagroup id="background" value="-627,-540,772" gray="2" boost="0" />
+</gammaset>
+
+<gammaset id="music | Midnattsol - Where Twilight Dwells">
+  <gammagroup id="glass" value="-1968,-336,1064" gray="1" boost="0" />
+  <gammagroup id="glass2" value="-1968,-336,1064" gray="1" boost="0" />
+  <gammagroup id="background" value="-2376,-1473,-831" gray="2" boost="0" />
+</gammaset>
+
+<gammaset id="music | Creed - My Own Prison">
+  <gammagroup id="glass" value="1297,451,160" gray="1" boost="0" />
+  <gammagroup id="glass2" value="1297,451,160" gray="1" boost="0" />
+  <gammagroup id="background" value="-1531,-2376,-2668" gray="2" boost="0" />
+</gammaset>
+
+<gammaset id="music | In Extremo - Mein Rasend Herz">
+  <gammagroup id="glass" value="-1444,-627,131" gray="1" boost="0" />
+  <gammagroup id="glass2" value="-1444,-627,131" gray="1" boost="0" />
+  <gammagroup id="background" value="1355,1268,772" gray="2" boost="0" />
+</gammaset>
+
+<gammaset id="music | End of Green - Believe my Friend">
+  <gammagroup id="glass" value="4096,4096,-4096" gray="2" boost="0" />
+  <gammagroup id="glass2" value="4096,4096,-4096" gray="2" boost="0" />
+  <gammagroup id="background" value="-2551,-861,-3309" gray="2" boost="0" />
+</gammaset>
+
+<gammaset id="music | End of Green - Last Night On Earth ">
+  <gammagroup id="glass" value="-482,306,-365" gray="2" boost="0" />
+  <gammagroup id="glass2" value="-482,306,-365" gray="2" boost="0" />
+  <gammagroup id="background" value="-2551,-2581,-3309" gray="2" boost="0" />
+</gammaset>
+
+<gammaset id="music | Darkseed - Ultimate Darkness">
+  <gammagroup id="glass" value="-2056,-773,-1910" gray="2" boost="0" />
+  <gammagroup id="glass2" value="-2056,-773,-1910" gray="2" boost="0" />
+  <gammagroup id="background" value="-3222,-2960,-3164" gray="2" boost="0" />
+</gammaset>
+
+<gammaset id="music | In Extremo - 7">
+  <gammagroup id="glass" value="-1035,451,189" gray="1" boost="0" />
+  <gammagroup id="glass2" value="-1035,451,189" gray="1" boost="0" />
+  <gammagroup id="background" value="2375,1909,1938" gray="2" boost="0" />
+</gammaset>
+
+<gammaset id="music | Creed - Human Clay">
+  <gammagroup id="glass" value="830,2550,160" gray="1" boost="0" />
+  <gammagroup id="glass2" value="830,2550,160" gray="1" boost="0" />
+  <gammagroup id="background" value="2201,976,-1152" gray="2" boost="0" />
+</gammaset>
+
+<gammaset id="music | Creed - Weathered">
+  <gammagroup id="glass" value="2754,714,-1414" gray="2" boost="0" />
+  <gammagroup id="glass2" value="2754,714,-1414" gray="2" boost="0" />
+  <gammagroup id="background" value="-1356,-773,-1240" gray="2" boost="0" />
+</gammaset>
+
+<gammaset id="music | Alter Bridge - One Day Remains">
+  <gammagroup id="glass" value="3192,2375,-1414" gray="2" boost="0" />
+  <gammagroup id="glass2" value="3192,2375,-1414" gray="2" boost="0" />
+  <gammagroup id="background" value="-1531,-394,-2551" gray="2" boost="0" />
+
+</gammaset>
+
+<gammaset id="music | Aina - Days of Rising Doom">
+  <gammagroup id="glass" value="2784,1967,-1414" gray="2" boost="0" />
+  <gammagroup id="glass2" value="2784,1967,-1414" gray="2" boost="0" />
+  <gammagroup id="background" value="-1589,-2318,-2872" gray="2" boost="0" />
+</gammaset>
+
+
+<!-- Created by Random Colour Themes Generator - (c) SLoB 2004, thnx to Anemovatis for the gui design and to RPC for the single gammagroup hta converter! -->
+
+
+
+  <gammaset id="x_001 Vortex_RTG_">
+	<gammagroup id="background" 		value="-3104,-992,1248"			gray="2" 	boost="0" />
+	<gammagroup id="glass" 		value="1344,-3200,-128"			gray="2" 	boost="0" />
+	<gammagroup id="listText" 		value="0,500,0"			gray="2" 	boost="0" />
+  </gammaset>
+
+  <gammaset id="x_002 Vortex_RTG_">
+	<gammagroup id="background" 		value="1312,672,-3200"			gray="2" 	boost="0" />
+	<gammagroup id="glass" 		value="-32,1376,-3264"			gray="2" 	boost="0" />
+	<gammagroup id="listText" 		value="0,500,0"			gray="2" 	boost="0" />
+  </gammaset>
+
+
+
+  <gammaset id="x_004 Vortex_RTG_">
+	<gammagroup id="background" 		value="-3232,256,1376"			gray="2" 	boost="0" />
+	<gammagroup id="glass" 		value="896,-3264,1376"			gray="2" 	boost="0" />	<gammagroup id="listText" 		value="0,500,0"			gray="2" 	boost="0" />
+  </gammaset>
+
+  
+
+  <gammaset id="x_006 Vortex_RTG_">
+	<gammagroup id="background" 		value="1440,-2720,-3328"			gray="2" 	boost="0" />
+	<gammagroup id="glass" 		value="1216,-2240,-3104"			gray="2" 	boost="0" />	<gammagroup id="listText" 		value="0,500,0"			gray="2" 	boost="0" />
+  </gammaset>
+
+ 
+
+<gammaset id="x_013 Vortex_RTG_">
+	<gammagroup id="background" 		value="1376,-1152,-3264"			gray="2" 	boost="0" />
+	<gammagroup id="glass" 		value="1280,-32,-3168"			gray="2" 	boost="0" />	<gammagroup id="listText" 		value="0,500,0"			gray="2" 	boost="0" />
+  </gammaset>
+
+ 
+
+ 
+
+  <gammaset id="x_016 Vortex_RTG_">
+	<gammagroup id="background" 		value="960,1312,-3168"			gray="2" 	boost="0" />
+	<gammagroup id="glass" 		value="-1632,1216,-3104"			gray="2" 	boost="0" />	<gammagroup id="listText" 		value="0,500,0"			gray="2" 	boost="0" />
+  </gammaset>
+
+  <gammaset id="x_027 Vortex_RTG_">
+	<gammagroup id="background" 		value="-3136,-224,1248"			gray="2" 	boost="0" />
+	<gammagroup id="glass" 		value="1280,-3168,1088"			gray="2" 	boost="0" />	<gammagroup id="listText" 		value="0,500,0"			gray="2" 	boost="0" />
+  </gammaset>
+  <gammaset id="x_038 Vortex_RTG_">
+	<gammagroup id="background" 		value="1344,-1376,-3232"			gray="2" 	boost="0" />
+	<gammagroup id="glass" 		value="1344,-352,-3200"			gray="2" 	boost="0" />	<gammagroup id="listText" 		value="0,500,0"			gray="2" 	boost="0" />
+  </gammaset>
+
+  
+
+  <gammaset id="x_040 Vortex_RTG_">
+	<gammagroup id="background" 		value="1216,-1888,-3072"			gray="2" 	boost="0" />
+	<gammagroup id="glass" 		value="1216,-1248,-3104"			gray="2" 	boost="0" />	<gammagroup id="listText" 		value="0,500,0"			gray="2" 	boost="0" />
+  </gammaset>
+
+  <gammaset id="x_046 Vortex_RTG_">
+	<gammagroup id="background" 		value="288,1344,-3200"			gray="2" 	boost="0" />
+	<gammagroup id="glass" 		value="-2752,1440,-3328"			gray="2" 	boost="0" />	<gammagroup id="listText" 		value="0,500,0"			gray="2" 	boost="0" />
+  </gammaset>
+
+ 
+
+  <gammaset id="x_048 Vortex_RTG_">
+	<gammagroup id="background" 		value="1120,1376,-3264"			gray="2" 	boost="0" />
+	<gammagroup id="glass" 		value="-1440,1376,-3264"			gray="2" 	boost="0" />	<gammagroup id="listText" 		value="0,500,0"			gray="2" 	boost="0" />
+  </gammaset>
+
+ 
+
+  <gammaset id="x_050 Vortex_RTG_">
+	<gammagroup id="background" 		value="1344,-2880,-3232"			gray="2" 	boost="0" />
+	<gammagroup id="glass" 		value="1312,-2528,-3200"			gray="2" 	boost="0" />	<gammagroup id="listText" 		value="0,500,0"			gray="2" 	boost="0" />
+  </gammaset>
+
+ 
+
+  
+
+  <gammaset id="x_057 Vortex_RTG_">
+	<gammagroup id="background" 		value="1216,-1792,-3072"			gray="2" 	boost="0" />
+	<gammagroup id="glass" 		value="1408,-1056,-3264"			gray="2" 	boost="0" />	<gammagroup id="listText" 		value="0,500,0"			gray="2" 	boost="0" />
+  </gammaset>
+
+ 
+  <gammaset id="x_062 Vortex_RTG_">
+	<gammagroup id="background" 		value="-3232,960,1376"			gray="2" 	boost="0" />
+	<gammagroup id="glass" 		value="-160,-3264,1376"			gray="2" 	boost="0" />	<gammagroup id="listText" 		value="0,500,0"			gray="2" 	boost="0" />
+  </gammaset>
+
+ 
+
+ 
+
+ 
+
+  <gammaset id="x_095 Vortex_RTG_">
+	<gammagroup id="background" 		value="1216,-2848,-3072"			gray="2" 	boost="0" />
+	<gammagroup id="glass" 		value="1248,-2688,-3104"			gray="2" 	boost="0" />	<gammagroup id="listText" 		value="0,500,0"			gray="2" 	boost="0" />
+  </gammaset>
+
+  

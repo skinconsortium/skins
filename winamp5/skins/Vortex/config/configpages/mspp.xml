@@ -1,0 +1,20 @@
+<groupdef id="config.mspp" >
+
+	<!--text text="Adjust where the Mainwindow docks to other windows" y="-3" w="0" relatw="1" align="center" color="font.display"/-->
+
+	<layer image="mspp.logo" x="105" y="5" />
+
+	<wasabi:text wrap="1" h="100" w="0" relatw="1"  y="100"
+		text="Vortex has additional features like Amazon.com CoverSearch,"/>
+	<wasabi:text wrap="1" h="100" w="0" relatw="1"  y="112"
+		text="Cover-Slide-Show, set/read Ratings and Playbackfunctions!"/>
+	<wasabi:text wrap="1" h="100" w="0" relatw="1"  y="126"
+		text="To use this features you must have MSPP installed,because they need files"/>
+	<wasabi:text wrap="1" h="100" w="0" relatw="1"  y="138"
+		text="that cannot be packed with a skin (html, bat, exe files)!"/>
+	<wasabi:text wrap="1" h="100" w="0" relatw="1"  y="150"
+		text="It's recommended to download and install MSPP!"/>
+
+	<wasabi:button x="0" y="-21" relaty="1" w="0" relatw="1" h="21" action="TOGGLE" param="mspp" text="Open MSPP Installation Wizard"/>
+
+</groupdef>

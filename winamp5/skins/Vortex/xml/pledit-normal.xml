@@ -1,0 +1,48 @@
+<groupdef id="player.content.pl.dummy.group" name="PlaylistDummyGroup" relatw="1" relath="1" w="0" h="0">
+  <component
+    x="0"
+    y="0"
+    w="0"
+    relatw="1"
+    h="0"
+    relath="1"
+    noshowcmdbar="1"
+    autoopen="1"
+    autoclose="0"
+    param="guid:{45F3F7C1-A6F3-4ee6-A15E-125E92FC3F8D}"
+  />
+</groupdef>
+
+<groupdef id="pledit.content.group" name="PlaylistContent">
+  <group id="player.content.pl.dummy.group" x="0" y="0" h="0" w="0" relatw="1" relath="1" sysregion="1"/>
+
+</groupdef>
+
+<layout id="normal" minimum_w="354" minimum_h="164" h="164" w="354" linkwidth="shade" appbar="left|top|right|bottom">
+  <Wasabi:StandardFrame:Status
+    x="0" y="0" w="0" h="0" relatw="1" relath="1"
+    content="pledit.content.group"
+  />
+    <text
+    id="PLTime"
+    ticker="1"
+    display="PE_Info"
+    x="129" y="-58" w="-178" h="15"
+    relatw="1" relaty="1"
+    align="center"
+    valign="bottom"
+    color="font.display"
+  />
+  	<browser id="brw" x="0" y="0" w="0" h="0" scrollbars="never" url="about:blank" visible="1" ghost="1" />
+
+	<!-- submit skinversion via scriptparam -->
+	<script id="updateSystem" param="1.02" file="scripts/updateSystem.maki"/>
+
+</layout>
+
+
+
+
+
+
+
