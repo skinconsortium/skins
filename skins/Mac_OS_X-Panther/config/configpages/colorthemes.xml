@@ -1,0 +1,26 @@
+<groupdef id="config.CoTh">
+	<Wasabi:Text 
+		id="description"
+		text="Select an alternate color theme for this skin. (Generated with Color Editor)"
+		x="0" y="0"
+  		w="0" h="32"
+		relatw="1"
+	/>
+
+	<group id="wasabi.window.embedded" x="0" y="17" w="0" relatw="1" h="-45" relath="1" />
+	<ColorThemes:List id="main.colorthemes.list" x="1" y="18" w="-2" relatw="1" h="-47" relath="1" />
+
+	<Wasabi:Button id="Switch" action="colorthemes_switch" action_target="main.colorthemes.list" x="0" y="-23" relaty="1" w="65" h="21" text="Switch" tooltip="Switch to selected ColorTheme" />
+
+	<Wasabi:Button id="ctPrev" action="colorthemes_previous" action_target="main.colorthemes.list" x="72" y="-23" relaty="1" w="65" h="21" text="Previous" tooltip="Previous ColorTheme" />
+
+	<Wasabi:Button id="ctNext" action="colorthemes_next" action_target="main.colorthemes.list" x="144" y="-23" relaty="1" w="65" h="21" text="Next" tooltip="Next ColorTheme" />
+
+	<Wasabi:CheckBox x="215" y="-21" relaty="1"
+  		w="0"
+		relatw="1"
+		cfgattrib="{02CDB0CB-3998-4606-94A7-DF90E7366439};Random ColorThemes on play"
+		text="Random ColorThemes on play"
+	/>
+
+</groupdef>

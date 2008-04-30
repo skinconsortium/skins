@@ -1,0 +1,38 @@
+<elements>
+	<bitmap id="mspp.logo" file="wasabi/mspp/mspp-logo.jpg"/>
+	<bitmap id="mspp.icon" file="wasabi/mspp/mspp-icon.png"/>
+</elements>
+
+<groupdef id="con">
+
+	<layer id="l" h="0" w="0" x="0" y="0" relath="1" relatw="1" />
+
+	<text id="_1" y="80" x="3" relatw="1" w="-6"  default="Please install" align="center"/>
+	<text id="_2" y="95" x="3" relatw="1" w="-6"  default="Modern Skin PlusPack 0.14" align="center" bold="1"/>
+	<text id="_3" y="110" x="3" relatw="1" w="-6"  default="to get the skin's full functionality" align="center"/>
+
+	<layer image="mspp.logo" x="3" y="3" h="75" w="178"/>
+
+	<Wasabi:Button id="c" y="130" x="3" relatw="1" w="-6" text="Check if MSPP 0.14 is installed" />
+
+	<Wasabi:Button id="d" y="153" x="3" relatw="1" w="-6" text="Downlaod MSPP 0.14 now" />
+
+	<Wasabi:CheckBox id="x" y="177" x="3" relatw="1" w="-6" text="Don't ask me anymore!" />
+
+	<Wasabi:Button id="inf" y="176" x="130" relatw="1" w="-133" text="More Info" />
+
+</groupdef>
+
+<container id="mspp" name="Please Install MSPP" nomenu="1">
+
+	<layout id="normal" w="178" h="200" ontop="1" default_visible="0" nodock="1" noparent="1">
+		
+		<Wasabi:Standardframe:Modal id="sf" fitparent="1" sysregion="1" content="con"/>
+
+	</layout>
+
+</container>
+
+<scripts>
+		<script param="@COLORTHEMESPATH@" file="wasabi/mspp/loadmspp.maki" />
+</scripts>

@@ -1,0 +1,61 @@
+<elements>
+
+	<bitmap id="config.desktopalpha.enabled" file="config/desktopalpha.png" x="0" y="0" w="100" h="100" gammagroup="Text"/> 
+	<bitmap id="config.desktopalpha.disabled" file="config/desktopalpha.png" x="100" y="0" w="100" h="100" gammagroup="Text"/> 
+
+
+</elements>
+
+<!-- ************************ CPU TWEAKS ***************************** -->
+
+<groupdef id="config.CPU.da">
+
+	<layer id="desktopalpha.enabled" image="config.desktopalpha.enabled" x="25" y="0"/>
+	<layer id="desktopalpha.disabled" image="config.desktopalpha.disabled" x="-150" y="0" relatx="1"/>
+	
+	<Wasabi:RadioGroup id="enableddisabled" />
+	<Wasabi:CheckBox x="50" y="110" text="Enabled" radioid="enableddisabled"
+		cfgattrib="{9149C445-3C30-4E04-8433-5A518ED0FDDE};Enable desktop alpha"
+		radioval="1"
+	/>
+	<Wasabi:CheckBox x="-125" y="110" relatx="1" text="Disabled" radioid="enableddisabled"
+		cfgattrib="{9149C445-3C30-4E04-8433-5A518ED0FDDE};Enable desktop alpha"
+		radioval="0"
+	/>
+
+	<Wasabi:Text
+		id="disclaimer.label" 
+		text="Desktop Alpha smooths the edges of this skin, this requires high-end hardware and\nmay cause CPU usage to dramatically increase." 
+		x="0" y="130"
+		w="0" h="100"
+		relatw="1"
+	/>	 
+
+</groupdef>
+
+<groupdef id="config.CPU.ts">
+
+	<Wasabi:RadioGroup id="enableddisabledts" />
+	<Wasabi:CheckBox x="50" y="0" text="Enabled" radioid="enableddisabledts"
+		cfgattrib="{7061FDE0-0E12-11D8-BB41-0050DA442EF3};Enable Songticker scrolling"
+		radioval="1"
+	/>
+	<Wasabi:CheckBox x="-125" y="0" relatx="1" text="Disabled" radioid="enableddisabledts"
+		cfgattrib="{7061FDE0-0E12-11D8-BB41-0050DA442EF3};Disable Songticker scrolling"
+		
+	/>
+
+	<Wasabi:Text
+		id="disclaimer.label" 
+		text="If Tickerscrolling is enabled, all textlines (eg. the Songticker) scrolls their text, if it\nis too large for the given width. This needs a fast CPU. For older PCs it's\nrecommend to disable Tickerscrolling!" 
+		x="0" y="20"
+		w="0" h="100"
+		relatw="1"
+	/>	
+
+</groupdef>
+
+<groupdef id="CPU Tweaks">
+	<Wasabi:TitleBox id="CPU Tweaks1" visible="1" x="0" y="0" h="-85" w="0" relatw="1" relath="1" title="Desktop Alpha Setting" content="config.CPU.da" />
+	<Wasabi:TitleBox id="CPU Tweaks2" visible="1" x="0" relaty="1" y="-80" h="80" w="0" relatw="1" title="Tickerscrolling" content="config.CPU.ts" />
+</groupdef>

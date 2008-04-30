@@ -1,0 +1,41 @@
+<include file="player-normal-group.xml" />
+
+<layout id="normal" appbar="top|bottom|right|left" desktopalpha="1" droptarget="pldr" linkwidth="shade" 
+	background="player.background" alphabackground="player.background.alpha" h="210" w="310" >
+
+	<layer image="player.display.background" sysregion="1"/>
+
+	<group id="player.display" sysregion="1" />
+
+	<layer image="player.background.layer" ghost="1" sysregion="1"/>
+	<layer image="player.background.layerbottom" ghost="1" sysregion="1" />
+
+	<button
+		id="Minimize"
+		action="MINIMIZE"
+		x="169" y="8" relatx="0" 
+		rectrgn="1"
+		image="standardframe.sysbuttons.minimize.n"
+		downImage="standardframe.sysbuttons.minimize.d"
+		hoverImage="standardframe.sysbuttons.minimize.h"
+		tooltip="Minimize Winamp" sysregion="1"
+	/>
+
+	<button
+		id="Close"
+		action="CLOSE"
+		x="190" y="8" relatx="0" 
+		rectrgn="1"
+		image="standardframe.sysbuttons.close.n"
+		downImage="standardframe.sysbuttons.close.d"
+		hoverImage="standardframe.sysbuttons.close.h"
+		tooltip="Exit Winamp" sysregion="1"
+	/>
+
+	<group id="player.buttons" sysregion="1" />
+
+	<layer image="player.glas" ghost="1" sysregion="1"/>
+	<layer image="player.background.black" ghost="1" />
+	<layer image="player.background.red" ghost="1" sysregion="1"/>
+
+</layout>

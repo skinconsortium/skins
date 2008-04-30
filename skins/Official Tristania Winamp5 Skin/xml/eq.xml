@@ -1,0 +1,6 @@
+<container id="eq" name="Equalizer" default_x="0" default_y="0" default_h="200" default_visible="0" nomenu="1">
+
+  <include file="eq-normal.xml"/>
+
+</container>
+

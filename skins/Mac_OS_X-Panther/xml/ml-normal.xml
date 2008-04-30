@@ -1,0 +1,35 @@
+<groupdef id="player.content.ml.dummy.group" name="MediaLibraryDummyGroup" relatw="1" relath="1" w="0" h="0">
+  <component
+    x="0"
+    y="0"
+    w="0"
+    relatw="1"
+    h="0"
+    relath="1"
+    noshowcmdbar="1"
+    autoopen="1"
+    autoclose="0"
+    param="guid:{6B0EDF80-C9A5-11D3-9F26-00C04F39FFC6}"
+  />
+</groupdef>
+
+<groupdef id="mledit.content.group" name="MediaLibraryContent">
+  <group id="wasabi.menubar.ml" x="0" y="0" w="0" relatw="1" sysregion="1" visible="1"/>
+  <group id="player.content.ml.dummy.group" x="0" y="20" h="-20" w="0" relatw="1" relath="1" sysregion="1"/>
+  <script id="plmenu.script" param="player.content.ml.dummy.group|{12ED320E-6813-45ac-9F8E-78EE5B2B5F6D};Show Menus in Media Library" file="scripts/menu.maki" />
+</groupdef>
+
+
+<layout id="normal" minimum_w="354" minimum_h="164" h="349" w="834">
+  <Wasabi:StandardFrame:NoStatus
+    x="0" y="0" w="0" h="0" relatw="1" relath="1"
+    content="mledit.content.group"
+  />
+</layout>
+
+
+
+
+
+
+

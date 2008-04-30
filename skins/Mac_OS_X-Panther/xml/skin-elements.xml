@@ -1,0 +1,457 @@
+<!--Gammagroups: Grey, Red, Yellow, Green, Text, Text.grey -->
+
+<elements>
+	<TrueTypeFont id="ttf" file="LucidaGrande.ttf" gammagroup="Text"/>
+
+<!-- Componentbuttons -->
+
+	<bitmap id="cover.apple" file="gfx/covernotfound.png" gammagroup="Blue"/>
+
+	<bitmap id="player.seperator" file="gfx/player/seperator.png"
+		x="0" y="0" w="5" h="6" gammagroup="Text"/>
+
+	<bitmap id="player.statusbg" file="gfx/player/statusbg.png"
+		x="0" y="0" w="5" h="6" gammagroup="Grey"/>
+	<bitmap id="player.statusdiv" file="gfx/player/statusdiv.png"
+		x="0" y="0" w="5" h="6" gammagroup="Grey"/>
+
+	<bitmap id="player.display.bg" file="gfx/player/display.png"/>
+
+	<bitmap id="player.componentbutton.eq" file="gfx/player/component-icons.png"
+		x="0" y="0" w="32" h="32"/>
+	<bitmap id="player.componentbutton.pl" file="gfx/player/component-icons.png"
+		x="32" y="0" w="32" h="32"/>
+	<bitmap id="player.componentbutton.ml" file="gfx/player/component-icons.png"
+		x="64" y="0" w="32" h="32"/>
+	<bitmap id="player.componentbutton.video" file="gfx/player/component-icons.png"
+		x="96" y="0" w="32" h="32"/>
+	<bitmap id="player.componentbutton.cfg" file="gfx/player/component-icons.png"
+		x="128" y="0" w="32" h="32"/>
+
+	<bitmap id="player.componentbuttonsmall.eq" file="gfx/player/component-icons-small.png"
+		x="0" y="0" w="16" h="16"/>
+	<bitmap id="player.componentbuttonsmall.pl" file="gfx/player/component-icons-small.png"
+		x="16" y="0" w="16" h="16"/>
+	<bitmap id="player.componentbuttonsmall.ml" file="gfx/player/component-icons-small.png"
+		x="32" y="0" w="16" h="16"/>
+	<bitmap id="player.componentbuttonsmall.video" file="gfx/player/component-icons-small.png"
+		x="48" y="0" w="16" h="16"/>
+	<bitmap id="player.componentbuttonsmall.cfg" file="gfx/player/component-icons-small.png"
+		x="64" y="0" w="16" h="16"/>
+
+	<bitmap id="player.toolbar.h" file="gfx/player/toolbarbuttons.png"
+		x="0" y="0" w="58" h="40"/>
+	<bitmap id="player.toolbar.d" file="gfx/player/toolbarbuttons.png"
+		x="0" y="40" w="58" h="40"/>
+	<bitmap id="player.toolbar.a" file="gfx/player/toolbarbuttons.png"
+		x="0" y="80" w="58" h="40"/>
+
+	<bitmap id="player.toolbar.h0" file="gfx/player/toolbarbuttons.png"
+		x="0" y="0" w="58" h="40"/>
+	<bitmap id="player.toolbar.d0" file="gfx/player/toolbarbuttons.png"
+		x="0" y="40" w="58" h="40"/>
+	<bitmap id="player.toolbar.a0" file="gfx/player/toolbarbuttons.png"
+		x="0" y="80" w="58" h="40"/>
+	<bitmap id="player.toolbar.h1" file="gfx/player/toolbarbuttons.png"
+		x="0" y="0" w="58" h="40"/>
+	<bitmap id="player.toolbar.d1" file="gfx/player/toolbarbuttons.png"
+		x="0" y="40" w="58" h="40"/>
+	<bitmap id="player.toolbar.a1" file="gfx/player/toolbarbuttons.png"
+		x="0" y="80" w="58" h="40"/>
+
+	<bitmap id="player.toolbarsmall.h" file="gfx/player/toolbarbuttons-small.png"
+		x="0" y="0" w="58" h="24"/>
+	<bitmap id="player.toolbarsmall.d" file="gfx/player/toolbarbuttons-small.png"
+		x="0" y="24" w="58" h="24"/>
+	<bitmap id="player.toolbarsmall.a" file="gfx/player/toolbarbuttons-small.png"
+		x="0" y="48" w="58" h="24"/>
+
+	<bitmap id="player.toolbarsmall.h0" file="gfx/player/toolbarbuttons-small.png"
+		x="0" y="0" w="58" h="24"/>
+	<bitmap id="player.toolbarsmall.d0" file="gfx/player/toolbarbuttons-small.png"
+		x="0" y="24" w="58" h="24"/>
+	<bitmap id="player.toolbarsmall.a0" file="gfx/player/toolbarbuttons-small.png"
+		x="0" y="48" w="58" h="24"/>
+	<bitmap id="player.toolbarsmall.h1" file="gfx/player/toolbarbuttons-small.png"
+		x="0" y="0" w="58" h="24"/>
+	<bitmap id="player.toolbarsmall.d1" file="gfx/player/toolbarbuttons-small.png"
+		x="0" y="24" w="58" h="24"/>
+	<bitmap id="player.toolbarsmall.a1" file="gfx/player/toolbarbuttons-small.png"
+		x="0" y="48" w="58" h="24"/>
+
+	<bitmap id="player.button.play" file="gfx/player/playbuttons.png"
+		x="0" y="0" w="30" h="31" gammagroup="Text"/>
+	<bitmap id="player.button.pause" file="gfx/player/playbuttons.png"
+		y="0" x="30" w="30" h="31" gammagroup="Text"/>
+	<bitmap id="player.button.stop" file="gfx/player/playbuttons.png"
+		y="0" x="60" w="30" h="31" gammagroup="Text"/>
+	<bitmap id="player.button.prev" file="gfx/player/playbuttons.png"
+		y="0" x="90" w="30" h="31" gammagroup="Text"/>
+	<bitmap id="player.button.next" file="gfx/player/playbuttons.png"
+		y="0" x="120" w="30" h="31" gammagroup="Text"/>
+	<bitmap id="player.button.open" file="gfx/player/playbuttons.png"
+		y="0" x="150" w="30" h="31" gammagroup="Text"/>
+
+	<bitmap id="player.button.repeat1" file="gfx/player/songinfo.png"
+		x="0" y="0" w="12" h="10" gammagroup="Text"/>
+	<bitmap id="player.button.repeat2" file="gfx/player/songinfo.png"
+		x="0" y="10" w="12" h="10" gammagroup="Text"/>
+	<bitmap id="player.button.repeat0" file="gfx/player/songinfo.png"
+		x="0" y="20" w="12" h="10" gammagroup="Text"/>
+
+	<bitmap id="player.button.shuffle1" file="gfx/player/songinfo.png"
+		x="15" y="0" w="12" h="10" gammagroup="Text"/>
+	<bitmap id="player.button.shuffle0" file="gfx/player/songinfo.png"
+		x="15" y="20" w="12" h="10" gammagroup="Text"/>
+
+	<bitmap id="player.button.Xfade1" file="gfx/player/songinfo.png"
+		x="30" y="0" w="12" h="10" gammagroup="Text"/>
+	<bitmap id="player.button.Xfade0" file="gfx/player/songinfo.png"
+		x="30" y="20" w="12" h="10" gammagroup="Text"/>
+
+<!-- Vis -->
+
+	<bitmap id="player.normal.display.vis.overlay.lcd" file="gfx/vis/player-display-vis-overlay-lcd.png" gammagroup="Background-Display"/>
+	<bitmap id="player.normal.display.vis.overlay.lin" file="gfx/vis/player-display-vis-overlay-lin.png" gammagroup="Background-Display"/>
+
+	<bitmap id="player.normal.display.vis.circle" file="gfx/vis/anim-vis-circle.png" gammagroup="Text"/>
+	<bitmap id="player.normal.display.vis.semiorbit" file="gfx/vis/anim-vis-semiorbit.png" gammagroup="Text"/>
+	<bitmap id="player.normal.display.vis.dots" file="gfx/vis/anim-vis-dots.png" gammagroup="Text"/>
+	<bitmap id="player.normal.display.vis.bolt" file="gfx/vis/anim-vis-bolt.png" gammagroup="Text"/>
+	<bitmap id="player.normal.display.vis.llama" file="gfx/vis/anim-vis-llama.png" gammagroup="Text"/>
+
+	<bitmap id="vis.novis" file="gfx/vis/novis.png" gammagroup="Text"/>
+
+  <bitmap id="player.status.stop" file="gfx/player/playbackstatus.png" x="0" y="0" h="7" w="7" gammagroup="Text"/>
+  <bitmap id="player.status.play" file="gfx/player/playbackstatus.png" x="0" y="7" h="7" w="7" gammagroup="Text"/>
+  <bitmap id="player.status.pause" file="gfx/player/playbackstatus.png" x="0" y="14" h="7" w="7" gammagroup="Text"/>
+
+	<bitmap id="player.volslider.n" file="gfx/player/volslider.png"
+		x="0" y="0" w="11" h="11" gammagroup="Blue"/>
+	<bitmap id="player.volslider.h" file="gfx/player/volslider.png"
+		x="0" y="11" w="11" h="11" gammagroup="Blue"/>
+	<bitmap id="player.volslider.d" file="gfx/player/volslider.png"
+		x="0" y="22" w="11" h="11" gammagroup="Blue"/>
+	<bitmap id="player.volslider.bg" file="gfx/player/volsliderbg.png" gammagroup="Text"/>
+
+	<bitmap id="player.seekslider.n" file="gfx/player/seekslider.png"
+		x="0" y="0" w="11" h="11" gammagroup="Blue"/>
+	<bitmap id="player.seekslider.h" file="gfx/player/seekslider.png"
+		x="0" y="11" w="11" h="11" gammagroup="Blue"/>
+	<bitmap id="player.seekslider.d" file="gfx/player/seekslider.png"
+		x="0" y="22" w="11" h="11" gammagroup="Blue"/>
+	<bitmap id="player.seekslider.bg" file="gfx/player/seekbg.png" gammagroup="Text"/>
+
+<!-- eq -->
+
+
+	<bitmap id="player.normal.display.empty" file="gfx/player-display-eq.png" x="108" y="6" w="1" h="1" gammagroup="Text"/>
+
+	<bitmap id="player.normal.display.eq.bg" file="gfx/player-display-eq.png" x="0" y="0" w="108" h="71" gammagroup="Text"/>
+	<bitmap id="player.normal.display.eq.slider" file="gfx/player-display-eq.png" x="108" y="0" w="7" h="1" gammagroup="Text"/>
+
+	<bitmap id="player.normal.display.pan.slider" file="gfx/player-display-eq.png" x="108" y="1" w="1" h="5" gammagroup="Text"/>
+
+	<bitmap id="player.normal.display.sel" file="gfx/player-display-eq.png" x="109" y="1" w="1" h="1" gammagroup="Text"/>
+
+	<bitmap id="player.normal.display.btn.on.1" file="gfx/player-display-eq.png" x="30" y="71" w="13" h="9" gammagroup="Text"/>
+	<bitmap id="player.normal.display.btn.auto.1" file="gfx/player-display-eq.png" x="44" y="71" w="26" h="9" gammagroup="Text"/>
+	<bitmap id="player.normal.display.btn.xf.1" file="gfx/player-display-eq.png" x="71" y="71" w="30" h="9" gammagroup="Text"/>
+
+	<bitmap id="player.normal.display.btn.on.0" file="gfx/player-display-eq.png" x="30" y="80" w="13" h="9" gammagroup="Text"/>
+	<bitmap id="player.normal.display.btn.auto.0" file="gfx/player-display-eq.png" x="44" y="80" w="26" h="9" gammagroup="Text"/>
+	<bitmap id="player.normal.display.btn.xf.0" file="gfx/player-display-eq.png" x="71" y="80" w="30" h="9" gammagroup="Text"/>
+
+	<bitmap id="player.normal.display.btn.on.h" file="gfx/player-display-eq.png" x="30" y="89" w="13" h="9" gammagroup="Text"/>
+	<bitmap id="player.normal.display.btn.auto.h" file="gfx/player-display-eq.png" x="44" y="89" w="26" h="9" gammagroup="Text"/>
+	<bitmap id="player.normal.display.btn.xf.h" file="gfx/player-display-eq.png" x="71" y="89" w="30" h="9" gammagroup="Text"/>
+
+	<bitmap id="bitmapfont.player.nums" file="gfx/player-display-eq.png" x="30" y="89" h="18" w="60" charwidth="6" charheight="9" hspacing="0" vspacing="0" />
+	<bitmapfont id="player.numfont" file="bitmapfont.player.nums" charwidth="6" charheight="9" hspacing="0" vspacing="0"/>
+	
+<!-- Dasborad -->
+
+	<bitmap id="player.dashboard.bg" file="gfx/dashboard/display-bg.png"/>
+
+	<bitmap id="player.bucket.a" file="gfx/dashboard/bucket-a.png"/>
+	<bitmap id="player.bucket.h" file="gfx/dashboard/bucket-h.png"/>
+	<bitmap id="player.bucket.d" file="gfx/dashboard/bucket-d.png"/>
+
+	<bitmap id="player.bucket.scrolldown" file="gfx/dashboard/bucket-scrolldown.png"/>
+	<bitmap id="player.bucket.scrollup" file="gfx/dashboard/bucket-scrollup.png"/>
+
+	<bitmap id="dash.comp.line" file="gfx/dashboard/dash-title-line.png" />
+	<bitmap id="dash.comp.line.x" file="gfx/dashboard/dash-title-line-x.png"/>
+	<bitmap id="dash.comp.line.ok" file="gfx/dashboard/dash-title-line-ok.png" />
+
+	<bitmap id="dash.comp.close.text" file="gfx/dashboard/dash-title-cover-text.png" x="160" w="12" />
+	<bitmap id="dash.comp.cover.line" file="gfx/dashboard/dash-title-cover-line.png" />
+	<bitmap id="dash.comp.cover.text" file="gfx/dashboard/dash-title-cover-text.png" />
+	<bitmap id="dash.comp.google.line" file="gfx/dashboard/dash-title-google-line.png" />
+	<bitmap id="dash.comp.google.text" file="gfx/dashboard/dash-title-google-text.png" />
+	<bitmap id="dash.comp.playlist.line" file="gfx/dashboard/dash-title-playlist-line.png" />
+	<bitmap id="dash.comp.playlist.text" file="gfx/dashboard/dash-title-playlist-text.png" />
+
+	<cursor id="cursor.move" bitmap="gfx/dashboard/cur-move.png" hotspot_x="0" hotspot_y="0" />
+<!-- Standardframe -->
+
+	<bitmap id="standardframe.topleft.active" file="gfx/standardframe/top.png"
+		x="0" y="0" w="24" h="23" gammagroup="Grey"/>
+	<bitmap id="standardframe.top.active" file="gfx/standardframe/top.png"
+		x="24" y="0" w="50" h="23" gammagroup="Grey"/>
+	<bitmap id="standardframe.topright.active" file="gfx/standardframe/top.png"
+		x="84" y="0" w="8" h="23" gammagroup="Grey"/>
+	<bitmap id="standardframe.topleft.inactive" file="gfx/standardframe/top.png"
+		x="0" y="23" w="24" h="23" gammagroup="Grey"/>
+	<bitmap id="standardframe.top.inactive" file="gfx/standardframe/top.png"
+		x="24" y="23" w="50" h="23" gammagroup="Grey"/>
+	<bitmap id="standardframe.topright.inactive" file="gfx/standardframe/top.png"
+		x="84" y="23" w="8" h="23" gammagroup="Grey"/>
+	<bitmap id="standardframe.topleft.region" file="gfx/standardframe/region.png"
+		x="0" y="0" w="8" h="23"/>
+	<bitmap id="standardframe.topright.region" file="gfx/standardframe/region.png"
+		x="84" y="0" w="8" h="23"/>
+
+	<bitmap id="standardframe.topleft.active.noicon" file="gfx/standardframe/top.png"
+		x="0" y="46" w="24" h="23" gammagroup="Grey"/>
+
+	<bitmap id="standardframe.left" file="gfx/standardframe/left.png" gammagroup="Grey"/>
+	<bitmap id="standardframe.right" file="gfx/standardframe/right.png" gammagroup="Grey"/>
+
+	<bitmap id="standardframe.bottomleft" file="gfx/standardframe/bottom.png"
+		x="0" y="0" w="5" h="5" gammagroup="Grey"/>
+	<bitmap id="standardframe.bottom" file="gfx/standardframe/bottom.png"
+		x="5" y="0" w="10" h="5" gammagroup="Grey"/>
+	<bitmap id="standardframe.bottomright" file="gfx/standardframe/bottom.png"
+		x="15" y="0" w="5" h="5" gammagroup="Grey"/>
+
+	<bitmap id="standardframe.botton.close.n" file="gfx/standardframe/close.png"
+		x="0" y="0" w="16" h="16" gammagroup="Red"/>
+	<bitmap id="standardframe.botton.close.n.ia" file="gfx/standardframe/close.png"
+		x="0" y="51" w="16" h="16" gammagroup="Grey"/>
+	<bitmap id="standardframe.botton.close.h" file="gfx/standardframe/close.png"
+		x="0" y="17" w="16" h="16" gammagroup="Red"/>
+	<bitmap id="standardframe.botton.close.d" file="gfx/standardframe/close.png"
+		x="0" y="34" w="16" h="16" gammagroup="Red"/>
+
+	<bitmap id="standardframe.botton.minimize.n" file="gfx/standardframe/minimize.png"
+		x="0" y="0" w="16" h="16" gammagroup="Yellow"/>
+	<bitmap id="standardframe.botton.minimize.n.ia" file="gfx/standardframe/minimize.png"
+		x="0" y="51" w="16" h="16" gammagroup="Grey"/>
+	<bitmap id="standardframe.botton.minimize.h" file="gfx/standardframe/minimize.png"
+		x="0" y="17" w="16" h="16" gammagroup="Yellow"/>
+	<bitmap id="standardframe.botton.minimize.d" file="gfx/standardframe/minimize.png"
+		x="0" y="34" w="16" h="16" gammagroup="Yellow"/>
+
+	<bitmap id="standardframe.botton.shade.n" file="gfx/standardframe/shade.png"
+		x="0" y="0" w="16" h="16" gammagroup="Green"/>
+	<bitmap id="standardframe.botton.shade.n.ia" file="gfx/standardframe/shade.png"
+		x="0" y="51" w="16" h="16" gammagroup="Grey"/>
+	<bitmap id="standardframe.botton.shade.h" file="gfx/standardframe/shade.png"
+		x="0" y="17" w="16" h="16" gammagroup="Green"/>
+	<bitmap id="standardframe.botton.shade.d" file="gfx/standardframe/shade.png"
+		x="0" y="34" w="16" h="16" gammagroup="Green"/>
+
+
+
+	<bitmap id="standardframe.botton.close.n.blue" file="gfx/standardframe/close.png"
+		x="16" y="0" w="16" h="16" gammagroup="Blue"/>
+	<bitmap id="standardframe.botton.close.n.ia" file="gfx/standardframe/close.png"
+		x="16" y="51" w="16" h="16" gammagroup="Grey"/>
+	<bitmap id="standardframe.botton.close.h.blue" file="gfx/standardframe/close.png"
+		x="16" y="17" w="16" h="16" gammagroup="Blue"/>
+	<bitmap id="standardframe.botton.close.d.blue" file="gfx/standardframe/close.png"
+		x="16" y="34" w="16" h="16" gammagroup="Blue"/>
+
+	<bitmap id="standardframe.botton.minimize.n.blue" file="gfx/standardframe/minimize.png"
+		x="16" y="0" w="16" h="16" gammagroup="Blue"/>
+	<bitmap id="standardframe.botton.minimize.n.ia" file="gfx/standardframe/minimize.png"
+		x="16" y="51" w="16" h="16" gammagroup="Grey"/>
+	<bitmap id="standardframe.botton.minimize.h.blue" file="gfx/standardframe/minimize.png"
+		x="16" y="17" w="16" h="16" gammagroup="Blue"/>
+	<bitmap id="standardframe.botton.minimize.d.blue" file="gfx/standardframe/minimize.png"
+		x="16" y="34" w="16" h="16" gammagroup="Blue"/>
+
+	<bitmap id="standardframe.botton.shade.n.blue" file="gfx/standardframe/shade.png"
+		x="16" y="0" w="16" h="16" gammagroup="Blue"/>
+	<bitmap id="standardframe.botton.shade.n.ia" file="gfx/standardframe/shade.png"
+		x="16" y="51" w="16" h="16" gammagroup="Grey"/>
+	<bitmap id="standardframe.botton.shade.h.blue" file="gfx/standardframe/shade.png"
+		x="16" y="17" w="16" h="16" gammagroup="Green"/>
+	<bitmap id="standardframe.botton.shade.d.blue" file="gfx/standardframe/shade.png"
+		x="16" y="34" w="16" h="16" gammagroup="Blue"/>
+
+<!-- WASABI -->
+
+  <bitmap id="blank" file="gfx/blank.png"/>
+  <bitmap id="blank0" file="gfx/blank.png"/>
+  <bitmap id="clear" file="gfx/blank.png"/>
+  <bitmap id="blank1" file="gfx/blank.png"/>
+  <bitmap id="wasabi.basetexture" file="blank"/>
+  <bitmap id="wasabi.frame.basetexture" x="0" y="0" h="40" w="4" file="gfx/standardframe/right.png"/>
+  <bitmap id="wasabi.background" x="0" y="0" h="40" w="4" file="gfx/standardframe/right.png"/>
+
+<!-- Tree -->
+	<bitmap id="wasabi.tree.background" file="gfx/standardframe/treebg.png" gammagroup="List-Background"/><!-- Tree background bitmap (tile) -->
+	<bitmap id="wasabi.list.background" file="gfx/standardframe/treebg.png" gammagroup="List-Background"/><!-- Tree background bitmap (tile) -->
+
+	<bitmap id="wasabi.tree.tab.closed" file="gfx/standardframe/window-elements.png" x="149" y="0" h="14" w="14" gammagroup="Text"/> 
+	<bitmap id="wasabi.tree.tab.open" file="gfx/standardframe/window-elements.png" x="135" y="0" h="14" w="14" gammagroup="Text"/> 
+	<bitmap id="wasabi.tree.link.top.bottom" file="gfx/standardframe/window-elements.png" x="135" y="14" h="14" w="14" gammagroup="Text"/> 
+	<bitmap id="wasabi.tree.link.top.right" file="gfx/standardframe/window-elements.png" x="135" y="42" h="14" w="14" gammagroup="Text"/> 
+	<bitmap id="wasabi.tree.link.top.rightBottom" file="gfx/standardframe/window-elements.png" x="135" y="28" h="14" w="14" gammagroup="Text"/> 
+	<bitmap id="wasabi.tree.link.tab.top.bottom" file="gfx/standardframe/window-elements.png" x="149" y="14" h="14" w="14" gammagroup="Text"/> 
+	<bitmap id="wasabi.tree.link.tab.top.right" file="gfx/standardframe/window-elements.png" x="149" y="42" h="14" w="14" gammagroup="Text"/> 
+	<bitmap id="wasabi.tree.link.tab.top.rightBottom" file="gfx/standardframe/window-elements.png" x="149" y="28" h="14" w="14" gammagroup="Text"/> 
+
+<!-- Generic Button -->
+
+  <bitmap id="wasabi.button.label.arrow.up" file="gfx/standardframe/window-elements.png" x="137" y="75" h="4" w="7" gammagroup="WASABI-B-Text"/>
+  <bitmap id="wasabi.button.label.arrow.down" file="gfx/standardframe/window-elements.png" x="137" y="86" h="4" w="7" gammagroup="WASABI-B-Text"/>
+  <bitmap id="wasabi.button.label.arrow.left" file="gfx/standardframe/window-elements.png" x="133" y="79" h="7" w="4" gammagroup="WASABI-B-Text"/>
+  <bitmap id="wasabi.button.label.arrow.right" file="gfx/standardframe/window-elements.png" x="144" y="79" h="7" w="4" gammagroup="WASABI-B-Text"/>
+  <bitmap id="wasabi.button.label.ellipses" file="gfx/standardframe/window-elements.png" x="138" y="92" h="1" w="5" gammagroup="WASABI-B-Text"/>
+
+  <bitmap id="wasabi.button.top.left" file="gfx/standardframe/window-elements.png" x="0" y="134" h="4" w="4" gammagroup="Grey"/>
+  <bitmap id="wasabi.button.top" file="gfx/standardframe/window-elements.png" x="4" y="134" h="4" w="25" gammagroup="Grey"/>
+  <bitmap id="wasabi.button.top.right" file="gfx/standardframe/window-elements.png" x="29" y="134" h="4" w="4" gammagroup="Grey"/>
+  <bitmap id="wasabi.button.left" file="gfx/standardframe/window-elements.png" x="0" y="138" h="25" w="4" gammagroup="Grey"/>
+  <bitmap id="wasabi.button.center" file="gfx/standardframe/window-elements.png" x="4" y="138" h="25" w="25" gammagroup="Grey"/>
+  <bitmap id="wasabi.button.right" file="gfx/standardframe/window-elements.png" x="29" y="138" h="25" w="4" gammagroup="Grey"/>
+  <bitmap id="wasabi.button.bottom.left" file="gfx/standardframe/window-elements.png" x="0" y="163" h="4" w="4" gammagroup="Grey"/>
+  <bitmap id="wasabi.button.bottom" file="gfx/standardframe/window-elements.png" x="4" y="163" h="4" w="25" gammagroup="Grey"/>
+  <bitmap id="wasabi.button.bottom.right" file="gfx/standardframe/window-elements.png" x="29" y="163" h="4" w="4" gammagroup="Grey"/>
+
+  <bitmap id="wasabi.button.hover.top.left" file="gfx/standardframe/window-elements.png" x="33" y="134" h="4" w="4" gammagroup="Grey"/>
+  <bitmap id="wasabi.button.hover.top" file="gfx/standardframe/window-elements.png" x="37" y="134" h="4" w="25" gammagroup="Grey"/>
+  <bitmap id="wasabi.button.hover.top.right" file="gfx/standardframe/window-elements.png" x="62" y="134" h="4" w="4" gammagroup="Grey"/>
+  <bitmap id="wasabi.button.hover.left" file="gfx/standardframe/window-elements.png" x="33" y="138" h="25" w="4" gammagroup="Grey"/>
+  <bitmap id="wasabi.button.hover.center" file="gfx/standardframe/window-elements.png" x="37" y="138" h="25" w="25" gammagroup="Grey"/>
+  <bitmap id="wasabi.button.hover.right" file="gfx/standardframe/window-elements.png" x="62" y="138" h="25" w="4" gammagroup="Grey"/>
+  <bitmap id="wasabi.button.hover.bottom.left" file="gfx/standardframe/window-elements.png" x="33" y="163" h="4" w="4" gammagroup="Grey"/>
+  <bitmap id="wasabi.button.hover.bottom" file="gfx/standardframe/window-elements.png" x="37" y="163" h="4" w="25" gammagroup="Grey"/>
+  <bitmap id="wasabi.button.hover.bottom.right" file="gfx/standardframe/window-elements.png" x="62" y="163" h="4" w="4" gammagroup="Grey"/>
+
+  <bitmap id="wasabi.button.pressed.top.left" file="gfx/standardframe/window-elements.png" x="66" y="134" h="4" w="4" gammagroup="Grey"/>
+  <bitmap id="wasabi.button.pressed.top" file="gfx/standardframe/window-elements.png" x="70" y="134" h="4" w="25" gammagroup="Grey"/>
+  <bitmap id="wasabi.button.pressed.top.right" file="gfx/standardframe/window-elements.png" x="95" y="134" h="4" w="4" gammagroup="Grey"/>
+  <bitmap id="wasabi.button.pressed.left" file="gfx/standardframe/window-elements.png" x="66" y="138" h="25" w="4" gammagroup="Grey"/>
+  <bitmap id="wasabi.button.pressed.center" file="gfx/standardframe/window-elements.png" x="70" y="138" h="25" w="25" gammagroup="Grey"/>
+  <bitmap id="wasabi.button.pressed.right" file="gfx/standardframe/window-elements.png" x="95" y="138" h="25" w="4" gammagroup="Grey"/>
+  <bitmap id="wasabi.button.pressed.bottom.left" file="gfx/standardframe/window-elements.png" x="66" y="163" h="4" w="4" gammagroup="Grey"/>
+  <bitmap id="wasabi.button.pressed.bottom" file="gfx/standardframe/window-elements.png" x="70" y="163" h="4" w="25" gammagroup="Grey"/>
+  <bitmap id="wasabi.button.pressed.bottom.right" file="gfx/standardframe/window-elements.png" x="95" y="163" h="4" w="4" gammagroup="Grey"/>
+
+  <bitmap id="wasabi.button.middle" file="gfx/standardframe/window-elements.png" x="4" y="138" h="25" w="25" gammagroup="WASABI-Buttons"/>
+  <bitmap id="wasabi.button.hover.middle" file="gfx/standardframe/window-elements.png" x="37" y="138" h="25" w="25" gammagroup="Blue"/>
+  <bitmap id="wasabi.button.pressed.middle" file="gfx/standardframe/window-elements.png" x="70" y="138" h="25" w="25" gammagroup="Blue"/>
+
+  <bitmap id="deimos.button.top.left" file="gfx/standardframe/button.png" x="0" y="0" h="11" w="13" gammagroup="Grey"/>
+  <bitmap id="deimos.button.top" file="gfx/standardframe/button.png" x="13" y="0" h="11" w="9" gammagroup="Grey"/>
+  <bitmap id="deimos.button.top.right" file="gfx/standardframe/button.png" x="22" y="0" h="11" w="12" gammagroup="Grey"/>
+  <bitmap id="deimos.button.left" file="gfx/standardframe/button.png" x="0" y="11" h="1" w="13" gammagroup="Grey"/>
+  <bitmap id="deimos.button.center" file="gfx/standardframe/button.png" x="13" y="11" h="1" w="9" gammagroup="Grey"/>
+  <bitmap id="deimos.button.right" file="gfx/standardframe/button.png" x="22" y="11" h="1" w="12" gammagroup="Grey"/>
+  <bitmap id="deimos.button.bottom.left" file="gfx/standardframe/button.png" x="0" y="12" h="11" w="13" gammagroup="Grey"/>
+  <bitmap id="deimos.button.bottom" file="gfx/standardframe/button.png" x="13" y="12" h="11" w="9" gammagroup="Grey"/>
+  <bitmap id="deimos.button.bottom.right" file="gfx/standardframe/button.png" x="22" y="12" h="11" w="12" gammagroup="Grey"/>
+
+  <bitmap id="deimos.button.hover.top.left" file="gfx/standardframe/button.png" x="0" y="23" h="11" w="13" gammagroup="Blue"/>
+  <bitmap id="deimos.button.hover.top" file="gfx/standardframe/button.png" x="13" y="23" h="11" w="9" gammagroup="Blue"/>
+  <bitmap id="deimos.button.hover.top.right" file="gfx/standardframe/button.png" x="22" y="23" h="11" w="12" gammagroup="Blue"/>
+  <bitmap id="deimos.button.hover.left" file="gfx/standardframe/button.png" x="0" y="34" h="1" w="13" gammagroup="Blue"/>
+  <bitmap id="deimos.button.hover.center" file="gfx/standardframe/button.png" x="13" y="34" h="1" w="9" gammagroup="Blue"/>
+  <bitmap id="deimos.button.hover.right" file="gfx/standardframe/button.png" x="22" y="34" h="1" w="12" gammagroup="Blue"/>
+  <bitmap id="deimos.button.hover.bottom.left" file="gfx/standardframe/button.png" x="0" y="35" h="11" w="13" gammagroup="Blue"/>
+  <bitmap id="deimos.button.hover.bottom" file="gfx/standardframe/button.png" x="13" y="35" h="11" w="9" gammagroup="Blue"/>
+  <bitmap id="deimos.button.hover.bottom.right" file="gfx/standardframe/button.png" x="22" y="35" h="11" w="12" gammagroup="Blue"/>
+  
+  <bitmap id="deimos.button.pressed.top.left" file="gfx/standardframe/button.png" x="0" y="46" h="11" w="13" gammagroup="Blue"/>
+  <bitmap id="deimos.button.pressed.top" file="gfx/standardframe/button.png" x="13" y="46" h="11" w="9" gammagroup="Blue"/>
+  <bitmap id="deimos.button.pressed.top.right" file="gfx/standardframe/button.png" x="22" y="46" h="11" w="12" gammagroup="Blue"/>
+  <bitmap id="deimos.button.pressed.left" file="gfx/standardframe/button.png" x="0" y="57" h="1" w="13" gammagroup="Blue"/>
+  <bitmap id="deimos.button.pressed.center" file="gfx/standardframe/button.png" x="13" y="57" h="1" w="9" gammagroup="Blue"/>
+  <bitmap id="deimos.button.pressed.right" file="gfx/standardframe/button.png" x="22" y="57" h="1" w="12" gammagroup="Blue"/>
+  <bitmap id="deimos.button.pressed.bottom.left" file="gfx/standardframe/button.png" x="0" y="58" h="11" w="13" gammagroup="Blue"/>
+  <bitmap id="deimos.button.pressed.bottom" file="gfx/standardframe/button.png" x="13" y="58" h="11" w="9" gammagroup="Blue"/>
+  <bitmap id="deimos.button.pressed.bottom.right" file="gfx/standardframe/button.png" x="22" y="58" h="11" w="12" gammagroup="Blue"/>
+
+<!-- Object Frame-->
+  <bitmap id="wasabi.objectframe.top.left" file="gfx/standardframe/window-elements.png" x="0" y="114" h="1" w="1" gammagroup="Grey"/>
+  <bitmap id="wasabi.objectframe.top" file="gfx/standardframe/window-elements.png" x="1" y="114" h="1" w="17" gammagroup="Grey"/>
+  <bitmap id="wasabi.objectframe.top.right" file="gfx/standardframe/window-elements.png" x="18" y="114" h="1" w="1" gammagroup="Grey"/>
+  <bitmap id="wasabi.objectframe.left" file="gfx/standardframe/window-elements.png" x="0" y="115" h="17" w="1" gammagroup="Grey"/>
+  <bitmap id="wasabi.objectframe.center" file="gfx/standardframe/window-elements.png" x="1" y="115" h="17" w="17" gammagroup="Grey"/>
+  <bitmap id="wasabi.objectframe.right" file="gfx/standardframe/window-elements.png" x="18" y="115" h="17" w="1" gammagroup="Grey"/>
+  <bitmap id="wasabi.objectframe.bottom.left" file="gfx/standardframe/window-elements.png" x="0" y="132" h="1" w="1" gammagroup="Grey"/>
+  <bitmap id="wasabi.objectframe.bottom" file="gfx/standardframe/window-elements.png" x="1" y="132" h="1" w="17" gammagroup="Grey"/>
+  <bitmap id="wasabi.objectframe.bottom.right" file="gfx/standardframe/window-elements.png" x="18" y="132" h="1" w="1" gammagroup="Grey"/>
+
+<!-- Menus -->
+
+  <bitmap id="button.menu.file" file="gfx/standardframe/menu.png" x="0" y="0" h="20" w="31" gammagroup="Text"/>
+  <bitmap id="button.menu.play" file="gfx/standardframe/menu.png" x="157" y="0" h="20" w="35" gammagroup="Text"/>
+  <bitmap id="button.menu.options" file="gfx/standardframe/menu.png" x="31" y="0" h="20" w="51" gammagroup="Text"/>
+  <bitmap id="button.menu.view" file="gfx/standardframe/menu.png" x="82" y="0" h="20" w="38" gammagroup="Text"/>
+  <bitmap id="button.menu.help" file="gfx/standardframe/menu.png" x="120" y="0" h="20" w="37" gammagroup="Text"/>
+  <bitmap id="button.menu.file.hover" file="gfx/standardframe/menu.png" x="0" y="20" h="20" w="31" gammagroup="Blue"/>
+  <bitmap id="button.menu.play.hover" file="gfx/standardframe/menu.png" x="157" y="20" h="20" w="35" gammagroup="Blue"/>
+  <bitmap id="button.menu.options.hover" file="gfx/standardframe/menu.png" x="31" y="20" h="20" w="51" gammagroup="Blue"/>
+  <bitmap id="button.menu.view.hover" file="gfx/standardframe/menu.png" x="82" y="20" h="20" w="38" gammagroup="Blue"/>
+  <bitmap id="button.menu.help.hover" file="gfx/standardframe/menu.png" x="120" y="20" h="20" w="37" gammagroup="Blue"/>
+  <bitmap id="button.menu.file.pressed" file="gfx/standardframe/menu.png" x="0" y="40" h="20" w="31" gammagroup="Blue"/>
+  <bitmap id="button.menu.play.pressed" file="gfx/standardframe/menu.png" x="157" y="40" h="20" w="35" gammagroup="Blue"/>
+  <bitmap id="button.menu.options.pressed" file="gfx/standardframe/menu.png" x="31" y="40" h="20" w="51" gammagroup="Blue"/>
+  <bitmap id="button.menu.view.pressed" file="gfx/standardframe/menu.png" x="82" y="40" h="20" w="38" gammagroup="Blue"/>
+  <bitmap id="button.menu.help.pressed" file="gfx/standardframe/menu.png" x="120" y="40" h="20" w="37" gammagroup="Blue"/>
+
+  <bitmap id="button.menu.file.bg" file="gfx/standardframe/menu.png" x="0" y="60" h="20" w="31" gammagroup="TextWhite"/>
+  <bitmap id="button.menu.play.bg" file="gfx/standardframe/menu.png" x="157" y="60" h="20" w="35" gammagroup="TextWhite"/>
+  <bitmap id="button.menu.options.bg" file="gfx/standardframe/menu.png" x="31" y="60" h="20" w="51" gammagroup="TextWhite"/>
+  <bitmap id="button.menu.view.bg" file="gfx/standardframe/menu.png" x="82" y="60" h="20" w="38" gammagroup="TextWhite"/>
+  <bitmap id="button.menu.help.bg" file="gfx/standardframe/menu.png" x="120" y="60" h="20" w="37" gammagroup="TextWhite"/>
+
+  <bitmap id="button.menu.playlist" file="gfx/standardframe/menu.png" x="192" y="0" h="20" w="47" gammagroup="Text"/>
+  <bitmap id="button.menu.playlist.hover" file="gfx/standardframe/menu.png" x="192" y="20" h="20" w="47" gammagroup="Blue"/>
+  <bitmap id="button.menu.playlist.pressed" file="gfx/standardframe/menu.png" x="192" y="40" h="20" w="47" gammagroup="Blue"/>
+  <bitmap id="button.menu.playlist.bg" file="gfx/standardframe/menu.png" x="192" y="60" h="20" w="47" gammagroup="TextWhite"/>
+
+  <bitmap id="button.menu.sort" file="gfx/standardframe/menu.png" x="239" y="0" h="20" w="34" gammagroup="Text"/>
+  <bitmap id="button.menu.sort.hover" file="gfx/standardframe/menu.png" x="239" y="20" h="20" w="34" gammagroup="Blue"/>
+  <bitmap id="button.menu.sort.pressed" file="gfx/standardframe/menu.png" x="239" y="40" h="20" w="34" gammagroup="Blue"/>
+  <bitmap id="button.menu.sort.bg" file="gfx/standardframe/menu.png" x="239" y="60" h="20" w="34" gammagroup="TextWhite"/>
+
+  <bitmap id="button.menu.help2" file="gfx/standardframe/menu.png" x="273" y="0" h="20" w="19" gammagroup="Text"/>
+  <bitmap id="button.menu.help2.hover" file="gfx/standardframe/menu.png" x="273" y="20" h="20" w="19" gammagroup="Blue"/>
+  <bitmap id="button.menu.help2.pressed" file="gfx/standardframe/menu.png" x="273" y="40" h="20" w="19" gammagroup="Blue"/>
+  <bitmap id="button.menu.help2.bg" file="gfx/standardframe/menu.png" x="273" y="60" h="20" w="19" gammagroup="TextWhite"/>
+
+<!-- Generic Sliders -->
+  <bitmap id="wasabi.slider.horizontal.left" file="gfx/standardframe/window-elements.png" x="106" y="149" h="8" w="8" gammagroup="Text"/>
+  <bitmap id="wasabi.slider.horizontal.middle" file="gfx/standardframe/window-elements.png" x="115" y="149" h="8" w="10" gammagroup="Text"/>
+  <bitmap id="wasabi.slider.horizontal.right" file="gfx/standardframe/window-elements.png" x="126" y="149" h="8" w="8" gammagroup="Text"/>
+
+  <bitmap id="wasabi.slider.vertical.top" file="gfx/standardframe/window-elements.png" x="138" y="136" h="8" w="8" gammagroup="Text"/>
+  <bitmap id="wasabi.slider.vertical.middle" file="gfx/standardframe/window-elements.png" x="138" y="145" h="10" w="8" gammagroup="Text"/>
+  <bitmap id="wasabi.slider.vertical.bottom" file="gfx/standardframe/window-elements.png" x="138" y="156" h="8" w="8" gammagroup="Text"/>
+
+  <bitmap id="wasabi.slider.horizontal.button" file="gfx/standardframe/window-elements.png" x="106" y="136" h="13" w="15" gammagroup="Blue"/>
+  <bitmap id="wasabi.slider.horizontal.button.pressed" file="gfx/standardframe/window-elements.png" x="121" y="136" h="13" w="15" gammagroup="Blue"/>
+
+  <bitmap id="wasabi.slider.vertical.button" file="gfx/standardframe/window-elements.png" x="106" y="157" h="12" w="16" gammagroup="Blue"/>
+  <bitmap id="wasabi.slider.vertical.button.pressed" file="gfx/standardframe/window-elements.png" x="122" y="157" h="12" w="16" gammagroup="Blue"/>
+
+ <!-- Checkboxes and Radiobuttons -->
+  <bitmap id="wasabi.button.checkbox" file="gfx/standardframe/checkbox.png" x="0" y="13" h="15" w="14" gammagroup="Grey"/>
+  <bitmap id="wasabi.button.checkbox.pressed" file="gfx/standardframe/checkbox.png" x="28" y="13" h="15" w="14" gammagroup="Blue"/>
+  <bitmap id="wasabi.button.checkbox.active" file="gfx/standardframe/checkbox.png" x="14" y="13" h="15" w="14" gammagroup="Blue"/>
+
+  <bitmap id="wasabi.button.radio.background" file="blank" />
+  <bitmap id="wasabi.button.radio.background.display" file="blank" />
+  <bitmap id="wasabi.button.radio" file="gfx/standardframe/checkbox.png" x="0" y="0" h="13" w="13" gammagroup="Grey"/>
+  <bitmap id="wasabi.button.radio.pressed" file="gfx/standardframe/checkbox.png" x="26" y="0" h="13" w="13" gammagroup="Blue"/>
+  <bitmap id="wasabi.button.radio.active" file="gfx/standardframe/checkbox.png" x="13" y="0" h="13" w="13" gammagroup="Blue"/>
+
+
+</elements>
+

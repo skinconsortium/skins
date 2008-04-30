@@ -1,0 +1,30 @@
+<!-- ===================================================================================================
+
+  <Deimos:SliderText /> implmentation
+
+  by Martin P. alias Deimos - martin.deimos@gmx.de - www.martin.deimos.de.vu
+
+    Available parameters :
+
+      - All params for Text
+      - All params for Group
+
+      - textbefore="..."
+	  - textafter="..."
+	  - attribguid="..."
+	  - attribname="..."
+	  - multiplier="..."
+	  - ndigits="..."
+	  - division="1|0"
+	  - inverte="1|0"
+	  - add="n"
+
+==================================================================================================== -->
+
+<groupdef id="titan.slidertext" xuitag="Deimos:SliderText" embed_xui="txt">
+
+	<Wasabi:Text id="txt" visible="1" x="0" y="0" h="0" w="0" relath="1" relatw="1" />
+
+	<script id="cover.script" file="wasabi/SliderText/slidertext.maki" />
+
+</groupdef>

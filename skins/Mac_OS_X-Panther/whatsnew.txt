@@ -1,0 +1,81 @@
+Version 1.50 (24. July 2006):
+* New: CoverSearch 1.5
+* New: UpdateSystem 1.4
+* New: using MSPP v0.14+
+* Fixed: Bugs related to Winamp5.23+
+* Added: Vortex Core
+
+Version 1.41 (13. March 2006):
+* Fixed: ConfigPages with Winamp5.21
+* New: Dynamic Skinupdatesystem 1.3
+* New: Coversearch 1.41
+
+Version 1.4 (18. February 2006):
+* Fixed: Dashboard Message for small res
+* Fixed: Player Position Bug
+* Fixed: Toolbar/Menu Sliding
+* Fixed: Panther is the Dafault ColorTheme
+* Fixed: kbps text for VBR
+* Fixed: Amazon.com config
+* Nex: Alt+C opens Cover Window
+* New: PlayerRedocking on h_set
+
+Version 1.3 (17. December 2005):
+* Improved: Status Text for Audio CDs
+	and Internet Streams
+* Playlis: new minimal width & height
+* Added: Dashboard Layout:
+  + Player
+  + Cover Display
+  + Playlist
+  + Google Search
+  + Visualization
+  + Daytime & Date
+* New: CoverSearch 1.4:
+  + HTML Version-check
+  + Full skinable stausmessages
+  + Resizeable HTML images
+  + Default CoverWindow Size: 160x160px
+  + resize coverwindow 1:1 option
+  + HTML ImageQuality: Large, Medium, Small
+  + Fixed: GURU on first start
+  + Fixed: CoverSearch via Amazon.com
+* Fixed: First load positions
+* Fixed: Main Window not resizeable
+* Fixed: CPU usage > 30% with VBR-music
+* Updated: Automatic Update System
+
+
+Version 1.2 (21. October 2005):
+---Security Changes----------------------
+Amazon.com Cover Search can be
+   downloaded additional from
+   www.martin.deimos.de.vu, because
+   otherwise it won't work in Winamp5.12+
+-----------------------------------------
+* New: Wizard to implement the Amazon.com
+       CoverSearch
+* Fixed: Colorthemes for every skinname
+* Fixed: Automatic Update
+* Fixed: TimeRestore/Autoplay
+* Fixed: Notifier CoverArt bug
+
+Version 1.1 (30. September 2005):
+* New: Playback Wizard
+* New: Large/Small Toolbar Size (->Sam T)
+* New: Hide Menus/Toolbar
+* New: ColorThemes
+* New: More Panther graphics
+* New: About Skin
+* Fixed: Visualization
+* Fixed: Playback-Shutdown
+* Updated: Playbackbuttongraphics
+* Updated: PlaybackStatus
+
+Version 1.0 (28. August 2005):
+* New: Standardframe
+* Imported: Graphics
+* Added: DpW Configsystem II
+* Added: CoverSearch Window
+* Added: Notifications with Cover Display
+* Added: Visualizer

@@ -1,0 +1,86 @@
+-- Variables Table ---------------------------------------------------
+var# |                Class |                                    What 
+----------------------------------------------------------------------
+0000 |               System |                                   System*
+0001 |                  Int |                                     NULL
+0002 |                  Int |                     __deprecated_runtime
+0003 |               Double |                                        v
+0004 |                  Int |                                        2
+0005 |                  Int |                                    65535
+0006 |                  Int |                                        1
+0007 |               String |                           "runtimecheck"
+0008 |                  Int |                                        0
+0009 |                  Int |                                     last
+000A |                  Int |                                      now
+000B |                  Int |                                     5000
+000C |               String |                  "This script requires "
+000D |               String |        "Winamp 5.51 (skin version 1.31)"
+000E |               String |                                  "Error"
+000F |               String |                                       ""
+0010 |               String |                                        s
+0011 |               String |                                  "DEBUG"
+0012 |                  Int |                                        s
+0013 |               Button |                         AutoRepeatButton[]
+0014 |                Timer |                         _autorepeatTimer
+0015 |                  Int |                            _InitialDelay
+0016 |                  Int |                             _RepeatDelay
+0017 |                  Int |                     AutoRepeat_ClickType
+0018 |               Button |                                 _Latched
+0019 |                  Int |                                        x
+001A |                  Int |                                        y
+001B |                  Int |                                        x
+001C |                  Int |                                        y
+001D |                  Int |                                      800
+001E |                  Int |                                       80
+001F |                  Int |                                   millis
+0020 |                  Int |                                   millis
+0021 |     AutoRepeatButton |                                 VolumeUp
+0022 |     AutoRepeatButton |                               VolumeDown
+0023 |                 Text |                               SongTicker
+0024 |                Timer |                          SongTickerTimer
+0025 |            GuiObject |                              SongTicker2
+0026 |                Float |                            CurrentVolume
+0027 |               Slider |                                   seeker
+0028 |                Group |                               ContentGrp
+0029 |               String |                                  "VolUp"
+002A |               String |                                "VolDown"
+002B |               String |                               "InfoText"
+002C |               String |                             "SongTicker"
+002D |               String |                                   "seek"
+002E |                  Int |                                      750
+002F |                  Int |                                      333
+0030 |                  Int |                                   newvol
+0031 |               Double |                                     2.55
+0032 |               String |                               "Volume: "
+0033 |               String |                                      "%"
+0034 |                  Int |                                   newpos
+0035 |               String |                                 "Seek: "
+0036 |                  Int |                                      255
+0037 |               String |                                      "/"
+-- Events Table ------------------------------------------------------
+var# |         Code Pointer |                                    What 
+----------------------------------------------------------------------
+0013 |                 0153 |        AutoRepeatButton.onLeftButtonDown
+0013 |                 01C0 |          AutoRepeatButton.onLeftButtonUp
+0014 |                 01F8 |                 _autorepeatTimer.onTimer
+0000 |                 030C |                    System.onScriptLoaded
+0000 |                 03E7 |                 System.onScriptUnLoading
+0024 |                 0403 |                  SongTickerTimer.onTimer
+0000 |                 044E |                   System.onVolumeChanged
+0021 |                 0490 |                     VolumeUp.onLeftClick
+0022 |                 0542 |                   VolumeDown.onLeftClick
+0027 |                 05F4 |                     seeker.onSetPosition
+-- User Functions Table ----------------------------------------------
+               Code Pointer |                                    What 
+----------------------------------------------------------------------
+                       0000 |                             versionCheck
+                       00F2 |                                    debug
+                       011D |                                 debugInt
+                       0259 |                          AutoRepeat_Load
+                       028F |                        AutoRepeat_Unload
+                       02E2 |                          AutoRepeat_Stop
+                       0300 |              AutoRepeat_GetCurrentButton
+                       029C |                AutoRepeat_SetInitalDelay
+                       02B3 |                AutoRepeat_SetRepeatDelay
+                       02CA |                AutoRepeat_GetInitalDelay
+                       02D6 |                AutoRepeat_GetRepeatDelay

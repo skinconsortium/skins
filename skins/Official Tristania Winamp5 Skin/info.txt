@@ -1,0 +1,12 @@
+Features:
+
+> Coversearch 1.4
+> DpW-ConfigSystem
+> Playbackfunctions
+> Advanced Vis
+> Notifier
+
+updates Version 1.01:
+* Fixed: ConfigPages with Winamp5.21
+* New: Dynamic Skinupdatesystem 1.3
+* New: Coversearch 1.41

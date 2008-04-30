@@ -1,0 +1,17 @@
+<!-- Gammagroups: Background-brown, Background-red, Background-black, Background-display, Display-Elements, Text, List-Background, List-Selected, List-SelectedText, List-Text, WASABI-Buttons, WASABI-B-Text -->
+
+<gammaset id="*Panther (Defualt)">
+  <gammagroup id="Blue" value="0,0,0" gray="0" boost="0" />
+</gammaset>
+
+<gammaset id="Blue">
+  <gammagroup id="Blue" value="0,0,0" gray="0" boost="0" />
+</gammaset>
+
+<gammaset id="Graphit">
+  <gammagroup id="Blue" value="0,189,422" gray="2" boost="0" />
+  <gammagroup id="List-SelectedText" value="0,189,422" gray="2" boost="0" />
+  <gammagroup id="List-Selected" value="0,189,422" gray="2" boost="0" />
+</gammaset>
+
+<include file="cthemes.xml" />

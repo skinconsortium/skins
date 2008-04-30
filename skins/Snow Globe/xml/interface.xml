@@ -1,0 +1,299 @@
+<elements>
+	<bitmap id="globe.anim"		file="gfx/globeanim.png" />
+	<bitmap id="base.anim"		file="gfx/baseanim.png" gammagroup="Base" />
+	<bitmap id="snowmen"		file="gfx/snowmen.png" />
+	<bitmap id="flakes"			file="gfx/flakes.png" />
+	<bitmap id="mytoggle"		file="gfx/toggle.png" />
+    <bitmap id="mouse"		file="gfx/mouse.png"  />
+    <bitmap id="play"		file="gfx/play.png"  />
+    <bitmap id="player.IncVolUp"		file="gfx/voll.png"  />
+    <bitmap id="player.IncVolDown"		file="gfx/voll.png"  />
+    <bitmap id="player.DecVolUp"		file="gfx/volr.png"  />
+    <bitmap id="player.DecVolDown"		file="gfx/volr.png"  />
+	<bitmap id="fwd"		file="gfx/fwd.png"   />
+	<bitmap id="rev"		file="gfx/rev.png"  />
+	<bitmap id="stop"			file="gfx/stop.png"  />
+	<bitmap id="ejct"		file="gfx/ejct.png" />
+    <bitmap id="playd"		file="gfx/playd.png"  />
+	<bitmap id="fwdd"		file="gfx/fwdd.png"   />
+	<bitmap id="revd"		file="gfx/revd.png" />
+	<bitmap id="stopd"			file="gfx/stopd.png" />
+	<bitmap id="ejctd"		file="gfx/ejctd.png"/>
+    <bitmap id="hat"			file="gfx/hat.png" />
+     <bitmap id="hatd"			file="gfx/hatd.png" />
+	<bitmap id="flock"			file="$gradient" color="255,255,255"
+		w="3" h="3" gammagroup="Backgrounds" gradient_x1="0.5" gradient_y1="0.5"
+		mode="circular" points="0=#FFFFFF;1=200,200,200,10"
+		gradient_x2="1.0" gradient_y2="0.5"
+	/>
+</elements>
+
+<gammaset id=".default">
+
+	<gammagroup id="base"  value="-2944, -800, -3168" gray="0"  boost="0" />
+    <gammagroup id="background"  value="-2944, -800, -3168" gray="0"  boost="0" />
+    <gammagroup id="buttons"  value="-2944, -800, -3168" gray="0"  boost="0" />
+    <gammagroup id="glass"  value="-2944, -800, -3168" gray="0"  boost="0" />
+  
+ 
+</gammaset>
+<gammaset id="Red">
+
+	<gammagroup id="base"  value="1632, -2400, -2400" gray="2"  boost="0" />
+  <gammagroup id="base"  value="1632, -2400, -2400" gray="0"  boost="0" />
+    <gammagroup id="background"  value="1632, -2400, -2400" gray="0"  boost="0" />
+    <gammagroup id="buttons"  value="1632, -2400, -2400" gray="0"  boost="0" />
+    <gammagroup id="glass"  value="1632, -2400, -2400" gray="0"  boost="0" />
+ 
+</gammaset>
+<gammaset id="grey">
+
+	<gammagroup id="base"  value="" gray="0"  boost="0" />
+    <gammagroup id="background"  value="" gray="0"  boost="0" />
+    <gammagroup id="buttons"  value="" gray="0"  boost="0" />
+    <gammagroup id="glass"  value="" gray="0"  boost="0" />
+  
+ 
+</gammaset>
+<gammaset id="gold">
+
+	<gammagroup id="base"  value="1632, 800, -2400" gray="2"  boost="0" />
+    <gammagroup id="background"  value="1632, 800, -2400" gray="0"  boost="0" />
+    <gammagroup id="buttons"  value="1632, 800, -2400" gray="0"  boost="0" />
+    <gammagroup id="glass"  value="1632, 800, -2400" gray="0"  boost="0" />
+  
+ 
+</gammaset>
+<container id="main">
+
+	<groupdef id="snow.flocks">
+		<layer id="flock1" image="flock" sysregion="1"/>
+		<layer id="flock2" image="flock" sysregion="1"/>
+		<layer id="flock3" image="flock" sysregion="1"/>
+		<layer id="flock4" image="flock" sysregion="1"/>
+		<layer id="flock5" image="flock" sysregion="1"/>
+		<layer id="flock6" image="flock" sysregion="1"/>
+		<layer id="flock7" image="flock" sysregion="1"/>
+		<layer id="flock8" image="flock" sysregion="1"/>
+		<layer id="flock9" image="flock" sysregion="1"/>
+		<layer id="flock10" image="flock" sysregion="1"/>
+		<layer id="flock11" image="flock" sysregion="1"/>
+		<layer id="flock12" image="flock" sysregion="1"/>
+		<layer id="flock13" image="flock" sysregion="1"/>
+		<layer id="flock14" image="flock" sysregion="1"/>
+		<layer id="flock15" image="flock" sysregion="1"/>
+		<layer id="flock16" image="flock" sysregion="1"/>
+		<layer id="flock17" image="flock" sysregion="1"/>
+		<layer id="flock18" image="flock" sysregion="1"/>
+		<layer id="flock19" image="flock" sysregion="1"/>
+		<layer id="flock20" image="flock" sysregion="1"/>
+		<script file="scripts/snow.maki" />
+	</groupdef>
+
+	<layout id="normalglobe" h="334" w="256" desktopalpha="1" snapleft="30">
+    
+		<!-- Base anim -->
+		<animatedlayer id="base.xoff" regionop="1" image="base.anim" x="0" y="0" h="334" w="256" autoplay="0" autoreplay="0" move="1"/>
+
+
+		<layer id="snow" image="snowmen" x="45" y="30" sysregion="1" />
+     <slider id="seek.ghost"
+		action="SEEK"
+		x="100" y="181" w="80" h="15"
+		thumb="mouse"
+		downThumb="mouse" 
+	/>
+		<!--AlbumArt
+			x="185" y="165" w="20" h="20" notFoundImage=""
+		/-->
+
+		<AnimatedLayer
+			id="animatedlayer"
+			x="22" y="10"
+			w="210" h="196"
+			image="flakes"
+			move="0"
+			start="1"
+			speed="150"
+			autoplay="0"
+			autoreplay="1"
+		/>  
+
+		<Button id="mytoggle"
+			x="55" y="118"
+			image="mytoggle"
+			downimage="mytoggle" 
+			sysregion="1"
+			alpha="1"
+			tooltip="SNOW!"
+		/>
+<slider id="seek"
+		action="SEEK"
+		x="100" y="181" w="80" h="15"
+		thumb="mouse"
+		downThumb="mouse" alpha="180"
+	/>
+ <button id="radio_rock"
+        	 x="67" y="31" tooltip="XMAS (winamp radio)"
+          	 image="hatd"
+          	 downImage="hat"
+			 hoverimage="hat"
+          	 activeImage="hat"
+         	/>
+<script id="radio" file="scripts/radio.maki"/>
+<button 
+ id="Stop"
+ x="50" y="245"
+ action="STOP"
+ image="stop"
+ downimage="stop"
+    rectrgn="1"
+ activeImage="stopd"
+ hoverImage="stopd"
+ tooltip="Stop" alpha="150"
+ 
+/>
+
+<button 
+ id="Next"
+ x="154" y="253"
+action="NEXT"
+image="fwd"
+ downimage="fwdd"
+    rectrgn="1"
+ activeImage="fwdd"
+ hoverImage="fwdd"
+ tooltip="Next Song" alpha="150"
+ 
+/>
+
+<button 
+ id="Rev"
+x="80" y="254"
+ action="PREV"
+image="rev"
+ downimage="revd"
+    rectrgn="1"
+ activeImage="revd"
+ hoverImage="revd"
+ tooltip="Previous Song" alpha="150"
+ 
+/>
+
+<button 
+ id="Eject"
+ x="190" y="246"
+ action="EJECT"
+ image="ejct"
+ downimage="ejctd"
+    rectrgn="1"
+ activeImage="ejctd"
+ hoverImage="ejctd"
+ tooltip="Open Files" alpha="150"
+ 
+/>
+<button 
+ id="Play"
+ x="120" y="257"
+ action="PLAY" 
+ image="play"
+ downimage="playd"
+    rectrgn="1"
+ activeImage="playd"
+ hoverImage="playd"
+ tooltip="Play" alpha="150" visible="0"
+ 
+/>
+
+<button 
+ id="Pause"
+ x="120" y="257"
+ action="PAUSE" 
+ image="playd"
+ downimage="play"
+    rectrgn="1"
+ activeImage="play"
+ hoverImage="play"
+ tooltip="Pause" alpha="150"
+ 
+/>
+
+<script file="scripts/play2pause.maki" />
+<Text
+	id="InfoText"
+    default=""
+	x="70" y="193" 
+	w="115" h="15" 
+	font="arial" fontsize="15" align="center" color="33,94,26" visible="0"
+		
+  />
+<SongTicker
+	id="SongTicker"
+     display="songname" default=""
+	x="70" y="193" 
+	w="115" h="15" 
+	font="arial" fontsize="15" align="center" color="33,94,26"
+   ticker="scroll"
+   rightclickaction="trackmenu" dblclickaction="trackinfo"
+		
+  />
+<button
+      id="VolUp"
+      x="104" y="80" w="13" h="15" rectrgn="1"
+     hoverimage="player.IncVolUp"
+      downImage="player.IncVolDown"
+      tooltip="Volume Up"
+   />
+    <button
+      id="VolDown"
+      x="167" y="125" w="11" h="10" rectrgn="1"
+       hoverimage="player.DecVolUp"
+      downImage="player.DecVolDown"
+      tooltip="Volume Down"
+    />
+  <script file="scripts/autorepeatvolumebuttons.maki"/> <!-- Holds now also the seek display -->
+<text
+	id="Timer" 
+	display="time"
+	x="145" y="163"
+	w="40" h="15"
+	font="arial" fontsize="13" align="left"  
+     
+		bold="1" 
+    color="33,94,26"
+	timecolonwidth="3"
+  />
+ <button 
+  id="Minimize"
+ x="360" y="108"
+ action="MINIMIZE" 
+ image="player.main.min"
+ downimage="player.main.mind"
+ hoverimage="player.main.mind"
+ rectrgn="1"
+ regionop="1"
+ tooltip="Minimize"
+/>
+
+<button 
+ id="Close"
+ x="379" y="106"
+ action="CLOSE" 
+  image="player.main.close"
+ downimage="player.main.closed"
+ hoverimage="player.main.closed"
+rectrgn="1"
+regionop="1"
+ tooltip="Terminate"
+/>
+
+		<group id="snow.flocks" x="50" y="33" h="156" w="156" regionop="1" visible="0"/>
+
+		<!-- Globe anim -->
+		<animatedlayer id="globe.xoff" regionop="1" image="globe.anim" x="0" y="0" h="334" w="256" autoplay="0" autoreplay="0" move="1" ghost="1"/>
+
+		<script file="scripts/3Dscreen.maki"/>
+
+	</layout>
+
+</container>

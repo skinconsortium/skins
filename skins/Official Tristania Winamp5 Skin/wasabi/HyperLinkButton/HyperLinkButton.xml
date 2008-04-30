@@ -1,0 +1,32 @@
+<!-- ===================================================================================================
+
+  <Deimos:HyperLinkButton /> implmentation
+
+  by Martin P. alias Deimos - martin.deimos@gmx.de - www.martin.deimos.de.vu
+
+    Available parameters :
+
+      - All params for Button
+      - All params for Group
+
+      - url="http://..."
+
+==================================================================================================== -->
+
+<groupdef id="HyperLinkButton" xuitag="Deimos:HyperLinkButton" embed_xui="btn">
+
+	<Wasabi:Button id="btn" visible="1" x="0" y="0" h="0" w="0" relath="1" relatw="1"/>
+	<rect id="rect" x="0" y="0" h="0" w="0" edge="bottom" color="0,0,0" visible="0" alpha="0"/>
+
+	<script id="HyperLinkButton.script" file="wasabi/HyperLinkButton/HyperLinkButton.maki" />
+
+</groupdef>
+
+<groupdef id="HyperLinkButton2" xuitag="Deimos:HyperLinkButton2" embed_xui="btn">
+
+	<rect id="rect" x="0" y="0" h="0" w="0" relath="1" relatw="1" filled="0" edges="bottom" color="0,0,0" visible="0"/>
+	<Button id="btn" visible="1" x="0" y="0" h="0" w="0" relath="1" relatw="1" rectrgn="1" cursor="cursor.hand"/>
+
+	<script id="HyperLinkButton.script" file="wasabi/HyperLinkButton/HyperLinkButton.maki" />
+
+</groupdef>

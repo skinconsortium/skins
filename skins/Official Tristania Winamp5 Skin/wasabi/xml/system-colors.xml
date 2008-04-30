@@ -1,0 +1,58 @@
+<!--
+
+  system-colors.xml
+
+  this file contains all the static color definitions for Wasabi. An objects that does not rely on a group will use
+  one of these elements to decide what color to use.
+
+-->
+
+
+<elements>
+
+  <!-- Winamp Modern Skin custom colors - use your own instead -->
+
+  <!--v--><color id="color.Display" value="0,0,0" gammagroup="Display-Elements"/>
+  <!--v--><color id="color.Text" value="131,69,58" gammagroup="Background-red"/>
+
+<!-- Generic Trees -->
+  <!--v--><color id="wasabi.tree.text" value="255,255,255" gammagroup="List-Text"/> <!-- Item text color -->
+  <!--v--><color id="wasabi.tree.selected" value="222,211,196" gammagroup="List-Selected"/> <!-- Select item text background color -->
+  <!--v--><color id="wasabi.tree.hiliteddrop" value="222,211,196" gammagroup="List-Selected"/> <!-- Drop marker color -->
+
+
+  <!-- Generic Lists -->
+  <!--v--><color id="wasabi.list.text" value="255,255,255" gammagroup="List-Text"/> <!--lists/trees item foreground (also edit text) -->
+  <!--v--><color id="wasabi.list.background" value="191,165,119" gammagroup="List-Background"/> <!--lists/trees item background (also bg for edit) -->
+
+  <!--v--><color id="wasabi.list.text.selected" value="131,69,58" gammagroup="List-SelectedText"/> <!--listview/treeview selection bar text color -->
+  <!--v--><color id="wasabi.list.text.selected.background" value="212,201,186" gammagroup="List-Selected"/> <!--listview/treeview selection bar backcolor -->
+  <!--v--><color id="studio.list.item.selected" value="212,201,186" gammagroup="List-Selected"/> 
+  <!--v--><color id="studio.list.item.focused" value="212,201,186" gammagroup="List-Selected"/> 
+
+
+  <!--v--><color id="wasabi.list.text.current" value="131,69,58" gammagroup="List-SelectedText"/> <!-- listview/treeview selection bar textcolor (inactive) -->
+  <!--v--><color id="wasabi.list.text.selected.background.inactive" value="191,165,119" gammagroup="List-Background"/> <!-- listview/treeview selectionbar back color (inactive) -->
+
+  <!--v--><color id="wasabi.list.column.background" value="191,165,119" gammagroup="List-Background"/> <!-- listview header background color -->
+  <!--v--><color id="wasabi.list.column.text" value="255,255,255" gammagroup="List-Text"/> <!-- listview header text color -->
+  <!--v--><color id="wasabi.list.column.frame.top" value="211,185,139" gammagroup="List-Background"/> // listview header frame top color
+  <!--v--><color id="wasabi.list.column.frame.middle" value="181,155,109" gammagroup="List-Background"/> // listview header frame middle color
+  <!--v--><color id="wasabi.list.column.frame.bottom" value="171,145,99" gammagroup="List-Background"/> // listview header frame bottom color
+  <!--v--><color id="wasabi.list.column.empty" value="201,175,129" gammagroup="Background-brownII"/> // listview header empty color (beyond the columns
+
+  <!-- edit wnds -->
+  <!--v--><color id="wasabi.window.background" value="201,175,129" gammagroup="Background-brownII"/> <!--window background. -  If this color is not defined, a whole container is created in memory to extract a pixel, so specifying it makes skin loading faster -->
+  <!--v--><color id="wasabi.window.text" value="255,255,255" gammagroup="List-Text"/> <!--text color within windows -->
+  <!--v--><color id="wasabi.border.sunken" value="221,195,149" gammagroup="List-Background"/> // color of dividers and sunken borders
+
+  <!--v--><color id="wasabi.scrollbar.foreground" value="211,185,139" gammagroup="Background-brownII"/> <!-- scrollbar foreground color -->
+  <!--v--><color id="wasabi.scrollbar.background" value="191,165,119" gammagroup="Background-brownII"/> <!-- scrollbar background color -->
+  <!--v--><color id="wasabi.scrollbar.foreground.inverted" value="211,185,139" gammagroup="Background-brownII"/><!-- inverse scrollbar foreground color -->
+  <!--v--><color id="wasabi.scrollbar.background.inverted" value="171,145,99" gammagroup="Background-brownII"/> <!-- inverse scrollbar background color -->
+
+  <!--v--><color id="wasabi.button.text" value="255,255,255" gammagroup="WASABI-B-Text"/> <!-- Buttons text color -->
+  <!--v--><color id="wasabi.button.hiliteText" value="0,0,0" gammagroup="WASABI-B-Text"/> <!-- Buttons hilite text color, used by tab windows-->
+  <!--v--><color id="wasabi.button.dimmedText" value="149,156,169" gammagroup="WASABI-B-Text"/> <!-- Buttons dimmed text color, when disabled -->
+
+</elements>

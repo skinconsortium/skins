@@ -1,0 +1,752 @@
+<!-- Skin Configuration - Window token from Winamp3 Prefs :) -->
+
+<elements>
+	<bitmap id="config.desktopalpha.enabled" file="config/desktopalpha.png" x="0" y="0" w="100" h="100" gammagroup="WASABI-Text"/> 
+	<bitmap id="config.desktopalpha.disabled" file="config/desktopalpha.png" x="100" y="0" w="100" h="100" gammagroup="WASABI-Text"/> 
+
+	<bitmap id="config.display.bg" file="config/display.png" x="0" y="0" w="302" h="83" gammagroup="WASABI-Text"/> 
+	<bitmap id="config.display.t1" file="config/display.png" x="123" y="104" w="161" h="17" gammagroup="WASABI-Text"/> 
+	<bitmap id="config.display.t2" file="config/display.png" x="123" y="124" w="161" h="17" gammagroup="WASABI-Text"/> 
+	<bitmap id="config.display.tl" file="config/display.png" x="8" y="143" w="284" h="16" gammagroup="WASABI-Text"/> 
+
+  <bitmap id="drawer.options.checkbox.w181.off" file="player/options_buttons2.png" x="0" y="80" h="13" w="181" gammagroup="WASABI-Text"/> 
+  <bitmap id="drawer.options.checkbox.w181.on" file="player/options_buttons2.png" x="0" y="100" h="13" w="181" gammagroup="WASABI-Text"/> 
+  <bitmap id="drawer.options.checkbox.w181.hover" file="player/options_buttons2.png" x="0" y="0" h="13" w="181" gammagroup="WASABI-Text"/> 
+  <bitmap id="drawer.options.checkbox.w181.down" file="player/options_buttons2.png" x="0" y="20" h="13" w="181" gammagroup="WASABI-Text"/> 
+
+  <bitmap id="drawer.options.checkbox.w131.off" file="player/options_buttons2.png" x="0" y="80" h="13" w="131" gammagroup="WASABI-Text"/> 
+  <bitmap id="drawer.options.checkbox.w131.on" file="player/options_buttons2.png" x="0" y="100" h="13" w="131" gammagroup="WASABI-Text"/> 
+  <bitmap id="drawer.options.checkbox.w131.hover" file="player/options_buttons2.png" x="0" y="0" h="13" w="131" gammagroup="WASABI-Text"/> 
+  <bitmap id="drawer.options.checkbox.w131.down" file="player/options_buttons2.png" x="0" y="20" h="13" w="131" gammagroup="WASABI-Text"/> 
+
+  <bitmap id="drawer.options.radio.w181.off" file="player/options_buttons2.png" x="0" y="120" h="13" w="181" gammagroup="WASABI-Text"/> 
+  <bitmap id="drawer.options.radio.w181.on" file="player/options_buttons2.png" x="0" y="140" h="13" w="181" gammagroup="WASABI-Text"/> 
+  <bitmap id="drawer.options.radio.w181.hover" file="player/options_buttons2.png" x="0" y="40" h="13" w="181" gammagroup="WASABI-Text"/> 
+  <bitmap id="drawer.options.radio.w181.down" file="player/options_buttons2.png" x="0" y="60" h="13" w="181" gammagroup="WASABI-Text"/> 
+
+  <bitmap id="drawer.options.radio.w140.off" file="player/options_buttons2.png" x="0" y="120" h="13" w="140" gammagroup="WASABI-Text"/> 
+  <bitmap id="drawer.options.radio.w140.on" file="player/options_buttons2.png" x="0" y="140" h="13" w="140" gammagroup="WASABI-Text"/> 
+  <bitmap id="drawer.options.radio.w140.hover" file="player/options_buttons2.png" x="0" y="40" h="13" w="140" gammagroup="WASABI-Text"/> 
+  <bitmap id="drawer.options.radio.w140.down" file="player/options_buttons2.png" x="0" y="60" h="13" w="140" gammagroup="WASABI-Text"/> 
+
+  <bitmap id="drawer.options.notifications.shadow" file="player/options_elements.png" x="797" y="292" h="72" w="198" gammagroup="WASABI-Text"/> 
+  <bitmap id="drawer.options.notifications.text" file="player/options_elements.png" x="247" y="292" h="72" w="198" gammagroup="WASABI-Text"/> 
+
+  <bitmap id="drawer.options.notifications2.fadein.shadow" file="player/options_elements.png" x="797" y="382" h="25" w="198" gammagroup="WASABI-Text"/> 
+  <bitmap id="drawer.options.notifications2.fadein.text" file="player/options_elements.png" x="247" y="382" h="25" w="198" gammagroup="WASABI-Text"/> 
+  <bitmap id="drawer.options.notifications2.hold.shadow" file="player/options_elements.png" x="797" y="408" h="25" w="198" gammagroup="WASABI-Text"/> 
+  <bitmap id="drawer.options.notifications2.hold.text" file="player/options_elements.png" x="247" y="408" h="25" w="198" gammagroup="WASABI-Text"/> 
+  <bitmap id="drawer.options.notifications2.fadeout.shadow" file="player/options_elements.png" x="797" y="432" h="24" w="198" gammagroup="WASABI-Text"/> 
+  <bitmap id="drawer.options.notifications2.fadeout.text" file="player/options_elements.png" x="247" y="432" h="24" w="198" gammagroup="WASABI-Text"/> 
+
+  <bitmap id="drawer.options.slider" file="player/options_slider.png" x="0" y="0" h="10" w="14" gammagroup="WASABI-Text"/> 
+  <bitmap id="drawer.options.slider.hover" file="player/options_slider.png" x="0" y="10" h="10" w="14" gammagroup="WASABI-Text"/> 
+  <bitmap id="drawer.options.slider.down" file="player/options_slider.png" x="0" y="0" h="10" w="14" gammagroup="WASABI-Text"/> 
+
+</elements>
+
+<container id="config" name="Preferences" default_x="0" default_y="0" default_h="164" default_visible="1">
+
+<groupdef id="wasabi.preferences.tree.embedded" inherit_group="wasabi.window.embedded">
+	<Tree id="mylist"
+		x="1" y="1" w="-2" h="-2" relatw="1" relath="1"
+	/>
+</groupdef>
+<!-- newline="\n" -->
+
+<!-- ************************ ABOUT ***************************** -->
+
+<groupdef id="config.About" >
+ 	<Wasabi:Text 
+		id="About"
+		text="Titan beta4 (25.08.2004)"
+		x="0" y="0"
+  		w="0" h="32"
+		relatw="1"
+	/>
+	<WASABI:Text 
+		id="About" 
+		text="This is the best skin I've ever made and you're welcome to\nuse it! I tried to\n combine graphical expirience with high performance and functionality. Check out\nthe best configuration for your machine or enable great graphic effects.\nFeel free in using other colorthemes or\ntake a seat and listen to the great music on your PC!"
+		x="0" y="20"
+  		w="0" h="75"
+		relatw="1"
+	/>
+	<Wasabi:Text 
+		id="About"
+		text="You might propably ask yourself if this skin is a rip of Windows Media Player 9?\nNo, it isn't! I was only inspired by it, but all graphics are drawed by me!"
+		x="0" y="100"
+  		w="0" h="50"
+		relatw="1"
+	/>
+
+	<Wasabi:Text 
+		id="About"
+		text="Credits go to Nullsoft and Sven Kistner:\nI took this Preferences window from Winamp3 (in memoriam ;-( )\nThe Songtickerfonts and the Notifications are from Winamp Modern.\nBig thanks go to the Nullsoft-Team for creating this great player!"
+		x="0" y="130"
+  		w="0" h="50"
+		relatw="1"
+	/>
+
+
+	<Wasabi:Text 
+		id="About"
+		text="Thank you for using my skin."
+		x="0" y="180"
+  		w="0" h="50"
+		relatw="1"
+	/>
+
+	<Wasabi:Text 
+		id="About"
+		text="Martin P. alias Deimos (martin.deimos@gmx.de)"
+		x="0" y="200"
+  		w="0" h="50"
+		relatw="1"
+	/>
+	<Wasabi:Button id="url" x="0" y="-23" relaty="1" w="0" relatw="1" h="21" text="Check out my homepage: www.martin.deimos.de.vu" tooltip="My Homepage" />
+
+</groupdef>
+
+<!-- ************************ CPU TWEAKS ***************************** -->
+
+<groupdef id="config.CPU.da">
+
+	<layer id="desktopalpha.enabled" image="config.desktopalpha.enabled" x="25" y="0"/>
+	<layer id="desktopalpha.disabled" image="config.desktopalpha.disabled" x="-150" y="0" relatx="1"/>
+	
+	<Wasabi:RadioGroup id="enableddisabled" />
+	<Wasabi:CheckBox x="50" y="110" text="Enabled" radioid="enableddisabled"
+		cfgattrib="{9149C445-3C30-4E04-8433-5A518ED0FDDE};Enable desktop alpha"
+		radioval="1"
+	/>
+	<Wasabi:CheckBox x="-125" y="110" relatx="1" text="Disabled" radioid="enableddisabled"
+		cfgattrib="{9149C445-3C30-4E04-8433-5A518ED0FDDE};Enable desktop alpha"
+		radioval="0"
+	/>
+
+	<Wasabi:Text
+		id="disclaimer.label" 
+		text="Desktop Alpha smooths the edges of this skin, this requires high-end hardware and\nmay cause CPU usage to dramatically increase." 
+		x="0" y="130"
+		w="0" h="100"
+		relatw="1"
+	/>	 
+
+</groupdef>
+
+<groupdef id="config.CPU.ts">
+
+	<Wasabi:RadioGroup id="enableddisabledts" />
+	<Wasabi:CheckBox x="50" y="0" text="Enabled" radioid="enableddisabledts"
+		cfgattrib="{7061FDE0-0E12-11D8-BB41-0050DA442EF3};Enable Songticker scrolling"
+		radioval="1"
+	/>
+	<Wasabi:CheckBox x="-125" y="0" relatx="1" text="Disabled" radioid="enableddisabledts"
+		cfgattrib="{7061FDE0-0E12-11D8-BB41-0050DA442EF3};Disable Songticker scrolling"
+		
+	/>
+
+	<Wasabi:Text
+		id="disclaimer.label" 
+		text="If Tickerscrolling is enabled, all textlines (eg. the Songticker) scrolls their text, if it\nis too large for the given width. This needs a fast CPU. For older PCs it's\nrecommend to disable Tickerscrolling!" 
+		x="0" y="20"
+		w="0" h="100"
+		relatw="1"
+	/>	
+
+</groupdef>
+
+<!-- ************************ COLORTHEMES ***************************** -->
+
+<groupdef id="config.CoTh">
+	<Wasabi:Text 
+		id="description"
+		text="Select an alternate color theme for this skin. (Generated with Color Editor)"
+		x="0" y="0"
+  		w="0" h="32"
+		relatw="1"
+	/>
+
+	<group id="wasabi.window.embedded" x="0" y="17" w="0" relatw="1" h="-45" relath="1" />
+	<ColorThemes:List id="main.colorthemes.list" x="1" y="18" w="-2" relatw="1" h="-47" relath="1" />
+
+	<Wasabi:Button id="Switch" action="colorthemes_switch" action_target="main.colorthemes.list" x="0" y="-23" relaty="1" w="65" h="21" text="Switch" tooltip="Switch to selected ColorTheme" />
+
+	<Wasabi:Button id="ctPrev" action="colorthemes_previous" action_target="main.colorthemes.list" x="72" y="-23" relaty="1" w="65" h="21" text="Previous" tooltip="Previous ColorTheme" />
+
+	<Wasabi:Button id="ctNext" action="colorthemes_next" action_target="main.colorthemes.list" x="144" y="-23" relaty="1" w="65" h="21" text="Next" tooltip="Next ColorTheme" />
+
+	<Wasabi:CheckBox x="215" y="-21" relaty="1"
+  		w="0"
+		relatw="1"
+		cfgattrib="{26E26319-AECA-4433-B8F1-F4A5BF2A9ED5};Random ColorThemes on play"
+		text="Random ColorThemes on play"
+	/>
+
+</groupdef>
+
+<!-- ************************ NOTIFICATIONS ***************************** -->
+<!-- ********** Token from Winamp Modern (credits to Nullsoft) ********** -->
+
+<groupdef id="optionsgroup.notifications">
+   <layer
+     x="0" y="0"
+     image="drawer.options.notifications.shadow"
+   />
+   <layer
+     x="0" y="0"
+     image="drawer.options.notifications.text"
+   />
+  <togglebutton
+	id="alw"
+    cfgattrib="{1AB968B3-8687-4a35-BA70-FCF6D92FB57F};Show always"
+    x="10" y="1"
+    image="drawer.options.radio.w181.off"
+    hoverImage="drawer.options.radio.w181.hover"
+    downImage="drawer.options.radio.w181.down"
+    activeImage="drawer.options.radio.w181.on"
+    rectrgn="1" 
+  />
+  <togglebutton
+	id="wins"
+    cfgattrib="{1AB968B3-8687-4a35-BA70-FCF6D92FB57F};Show with windowshade and when minimized"
+    x="10" y="13"
+    image="drawer.options.radio.w181.off"
+    hoverImage="drawer.options.radio.w181.hover"
+    downImage="drawer.options.radio.w181.down"
+    activeImage="drawer.options.radio.w181.on"
+    rectrgn="1" 
+  />
+  <togglebutton
+	id="min"
+    cfgattrib="{1AB968B3-8687-4a35-BA70-FCF6D92FB57F};Show only when minimized"
+    x="10" y="25"
+    image="drawer.options.radio.w181.off"
+    hoverImage="drawer.options.radio.w181.hover"
+    downImage="drawer.options.radio.w181.down"
+    activeImage="drawer.options.radio.w181.on"
+    rectrgn="1" 
+  />
+  <togglebutton
+	id="nev"
+    cfgattrib="{1AB968B3-8687-4a35-BA70-FCF6D92FB57F};Never show"
+    x="10" y="37"
+    image="drawer.options.radio.w181.off"
+    hoverImage="drawer.options.radio.w181.hover"
+    downImage="drawer.options.radio.w181.down"
+    activeImage="drawer.options.radio.w181.on"
+    rectrgn="1" 
+  />
+  <togglebutton
+    cfgattrib="{1AB968B3-8687-4a35-BA70-FCF6D92FB57F};Disable in fullscreen"
+    x="10" y="54"
+    image="drawer.options.checkbox.w131.off"
+    hoverImage="drawer.options.checkbox.w131.hover"
+    downImage="drawer.options.checkbox.w131.down"
+    activeImage="drawer.options.checkbox.w131.on"
+    rectrgn="1"
+  />
+
+</groupdef>
+
+<groupdef id="optionsgroup.notifications.2">
+   <layer
+     id="snotifier_fadein_shadow"
+     x="0" y="0"
+     image="drawer.options.notifications2.fadein.shadow"
+   />
+   <layer
+     id="snotifier_hold_shadow"
+     x="0" y="25"
+     image="drawer.options.notifications2.hold.shadow"
+   />
+   <layer
+     id="snotifier_fadeout_shadow"
+     x="0" y="50"
+     image="drawer.options.notifications2.fadeout.shadow"
+   />
+   <layer
+     id="snotifier_fadein_text"
+     x="0" y="0"
+     image="drawer.options.notifications2.fadein.text"
+   />
+   <layer
+     id="snotifier_hold_text"
+     x="0" y="25"
+     image="drawer.options.notifications2.hold.text"
+   />
+   <layer
+     id="snotifier_fadeout_text"
+     x="0" y="50"
+     image="drawer.options.notifications2.fadeout.text"
+   />
+
+  <slider
+    id="snotifier_fadeintime"
+    cfgattrib="{E9C2D926-53CA-400f-9A4D-85E31755A4CF};Notifications fade in time"
+    high="10000"
+    thumb="drawer.options.slider"
+    downThumb="drawer.options.slider.down"
+    hoverThumb="drawer.options.slider.hover"
+    tooltip="Adjust Fade in time"
+    x="9" y="11"
+    w="115" h="10"
+  />
+
+  <slider
+    id="snotifier_holdtime"
+    cfgattrib="{E9C2D926-53CA-400f-9A4D-85E31755A4CF};Notifications display time"
+    high="10000"
+    thumb="drawer.options.slider"
+    downThumb="drawer.options.slider.down"
+    hoverThumb="drawer.options.slider.hover"
+    tooltip="Adjust Hold time"
+    x="9" y="35"
+    w="115" h="10"
+  />
+
+  <slider
+    id="snotifier_fadeouttime"
+    cfgattrib="{E9C2D926-53CA-400f-9A4D-85E31755A4CF};Notifications fade out time"
+    high="10000"
+    thumb="drawer.options.slider"
+    downThumb="drawer.options.slider.down"
+    hoverThumb="drawer.options.slider.hover"
+    tooltip="Adjust Fade out time"
+    x="9" y="61"
+    w="115" h="10"
+  />
+
+  <Wasabi:Text 
+    id="tnotifier_fadeintime"
+    x="127" y="8" w="25"
+    align="left"
+    valign="top"
+    
+    default="10.2s"
+  />
+  <Wasabi:Text 
+    id="tnotifier_holdtime"
+    x="127"  y="33" w="25" 
+    align="left"
+    valign="top"
+    
+    default="10.2s"
+  />
+  <Wasabi:Text 
+    id="tnotifier_fadeouttime"
+    x="127"  y="58" w="25" 
+    align="left"
+    valign="top"
+    
+    default="10.2s"
+  />
+
+  <!--script id="notifications_fade_times.script" file="wasabi/notifier/notifications_fade_times.maki" /-->
+
+</groupdef>
+
+
+<groupdef id="config.Notifications" >
+
+	<Wasabi:Text 
+		id="description"
+		text="A Notification is a window (container) that comes up on on playing a new track\nor un-/pause playback. Use one of the following features to configure:"
+		x="0" y="0"
+  		w="0" h="32"
+		relatw="1"
+	/>
+
+	<Wasabi:TitleBox id="Display" visible="1" x="0" y="30" w="0" h="90" relatw="1" relath="0" title="Display Modes" content="optionsgroup.notifications" />
+	<Wasabi:TitleBox id="Time" visible="1" x="0" y="125" w="-200" h="95" relatw="1" relath="0" title="Time Configuration" content="optionsgroup.notifications.2" />
+
+	<Wasabi:Button id="restore" x="-190" relatx="1" y="130" w="190" relatw="0" h="21" text="Restore standard values" tooltip="Restore standard values" />
+	<Wasabi:Button id="show" x="-190" relatx="1" y="160" w="190" relatw="0" h="21" text="Show Notification" tooltip="Show Notification" />
+
+	<Wasabi:Text 
+		id="description2"
+		text="Token from Winamp Modern. Credits go to Nullsoft and Sven Kistner!"
+		x="0" y="-15" relaty="1"
+  		w="0" h="32"
+		relatw="1"
+	/>
+
+</groupdef>
+
+<!-- ************************ GlowButtons ***************************** -->
+
+<groupdef id="glbtn.style" >
+
+	<Wasabi:RadioGroup id="glbtn"/>
+
+	<Wasabi:CheckBox id="2" x="0" y="0" text="Glow Effect: A smooth fade on mouseover (high CPU)" radioid="glbtn"
+		cfgattrib="{A8EFDFF8-9667-4a38-AA38-A449A85EDCC0};Glow Effect" radioval="1" />
+	<Wasabi:CheckBox id="1" x="0" y="20" text="Hover Effect: Simple lightning on mouseover (normal CPU)" radioid="glbtn"
+		cfgattrib="{A8EFDFF8-9667-4a38-AA38-A449A85EDCC0};Hover Effect" radioval="1" />
+	<Wasabi:CheckBox id="0" x="0" y="40" text="No Effect (old CPU)" radioid="glbtn"
+		cfgattrib="{A8EFDFF8-9667-4a38-AA38-A449A85EDCC0};No Effect" radioval="1" />
+
+</groupdef>
+
+<groupdef id="glbtn.time" >
+
+	<Wasabi:Text 
+		id="description"
+		text="Fade in:"
+		x="0" y="0"
+  		w="0" h="32"
+		relatw="1"
+	/>
+
+	<Wasabi:HSlider
+		id="glbtns.fadein"
+		x="2" y="20" 
+		w="-50" h="10"
+		relatw="1"
+		high="100"
+	/>
+
+	<Wasabi:Text 
+		id="glbtns.fadein.txt"
+		text="0,0 sec"
+		x="-40" y="17" relatx="1"
+  		w="0" h="32"
+		relatw="1"
+	/>
+
+	<Wasabi:Text 
+		id="description"
+		text="Fade out:"
+		x="0" y="40"
+  		w="0" h="32"
+		relatw="1"
+		align="right"
+	/>
+
+	<Wasabi:HSlider
+		id="glbtns.fadeout"
+		x="2" y="60" 
+		w="-50" h="10"
+		relatw="1"
+		high="100"
+	/>
+
+	<Wasabi:Text 
+		id="glbtns.fadeout.txt"
+		text="0,0 sec"
+		x="-40" y="57" relatx="1"
+  		w="0" h="32"
+		relatw="1"
+	/>
+
+</groupdef>
+
+<groupdef id="config.GlBtn">
+
+	<Wasabi:Text 
+		id="description"
+		text="This skin uses Glow Buttons. You can configure them to your CPU here:"
+		x="0" y="0"
+  		w="0" h="32"
+		relatw="1"
+	/>
+
+	<Wasabi:TitleBox id="Style" visible="1" x="0" y="20" w="0" h="83" relatw="1" relath="0" title="Glow Style" content="glbtn.style" />
+	<Wasabi:TitleBox id="Time" visible="1" x="0" y="110" w="0" h="100" relatw="1" relath="0" title="Time Configuration (only for Glow Effect)" content="glbtn.time" />
+
+	<Wasabi:Button id="restore" x="0" y="-23" relaty="1" w="0" relatw="1" h="21" text="Restore standard values" tooltip="Restore standard values" />
+
+</groupdef>
+
+<!-- ************************ WINDOW MENUS ***************************** -->
+
+<groupdef id="config.menus">
+	<Wasabi:Text 
+		id="description"
+		text="Show or hide the following Window Menus:"
+		x="0" y="0"
+  		w="0" h="32"
+		relatw="1"
+	/>
+
+	<Wasabi:CheckBox x="30" y="25" cfgattrib="{12ED320E-6813-45ac-9F8E-78EE5B2B5F6D};Show Menus in Main Window"
+		text="Show Window Menus in Main Window"
+	/>
+
+	<Wasabi:CheckBox x="30" y="50" cfgattrib="{12ED320E-6813-45ac-9F8E-78EE5B2B5F6D};Show Menus in Playlist Editor"
+    		text="Show Window Menus in Playlist Editor"
+	/>
+
+	<Wasabi:CheckBox x="30" y="75" cfgattrib="{12ED320E-6813-45ac-9F8E-78EE5B2B5F6D};Show Menus in Media Library"
+		text="Show Window Menus in Media Library" id="cbx"
+	/>
+
+	<Wasabi:Button id="all" x="30" y="105" w="200" h="21" text="Show all" tooltip="Show all Window Menus" />
+	<Wasabi:Button id="no" x="30" y="135" w="200" h="21" text="Hide all" tooltip="Show no Window Menus" />
+
+	<Wasabi:Button id="restore" x="0" y="-23" relaty="1" w="0" relatw="1" h="21" text="Restore standard values" tooltip="Restore standard values" />
+
+</groupdef>
+
+<!-- ************************ RIGHT DRAWER ***************************** -->
+
+<groupdef id="config.rdrawer">
+	<Wasabi:Text 
+		id="description"
+		text="This skin uses a Drawer, which can display one or two components. You can show\nthe first component by clicking on the arrow at the right of the MainWindow.\nThis component contains the Playlist Editor."
+		x="0" y="0"
+  		w="0" h="50"
+		relatw="1"
+	/>
+	<Wasabi:Text 
+		id="description"
+		text="By clicking on the next right arrow the second component is shown. It contains\neither a Video Window or the AVS. The Video Window is ment for use with\nthe Cover and Tag Plugin by J.Richter! For real VideoPlayback hide the Drawer!"
+		x="0" y="40"
+  		w="0" h="50"
+		relatw="1"
+	/>
+
+	<Wasabi:Text 
+		id="description"
+		text="Adjust the width of the first drawer in pixels:"
+		x="0" y="85"
+  		w="0" h="50"
+		relatw="1"
+	/>
+
+	<Wasabi:HSlider
+		id="drawer.w"
+		x="2" y="105" 
+		w="-50" h="10"
+		relatw="1"
+		high="320"
+	/>
+
+	<Wasabi:Text 
+		id="drawer.w.txt"
+		text="300 px"
+		x="-40" y="102" relatx="1"
+  		w="0" h="50"
+		relatw="1"
+	/>
+
+	<Wasabi:Text 
+		id="drawer.w.txt"
+		text="The second drawer holds the following component:"
+		x="0" y="130"
+  		w="0" h="50"
+		relatw="1"
+	/>
+
+	<Wasabi:CustomDropDownList id="show" items="Custom Component...;AVS;Titan CoverSearch" defaultlistitem="Titan CoverSearch" PrivateIntSection="deimos" PrivateIntItem="Titan.Drawers.right.show2" x="-140" relatx="1" y="128" h="20" w="140" />
+
+	<Wasabi:Text id="guid" text="Custom Component Guid:" x="0" y="158" w="-170" h="50" relatw="1"/>
+	<Wasabi:EditBox id="cGuid" text="{F0816D7B-FFFC-4343-80F2-E8199AA15CC3}" x="120" y="155" w="-120" relatw="1"/>
+	<Wasabi:Text id="guid2" text="Changing this guid needs a Winamp restart!" x="0" y="177" h="50" w="0" relatw="1"/>
+
+	<Wasabi:Button id="restore" x="0" y="-23" relaty="1" w="0" relatw="1" h="21" text="Restore standard values" tooltip="Restore standard values" />
+
+</groupdef>
+
+
+<!-- ************************ INFOLINES ***************************** -->
+
+<groupdef id="config.infolines">
+	<Wasabi:Text 
+		id="description"
+		text="Configure the content of the three Infolines included in the PlayerDisplay. Click at\none of the Infolines shown in the folowing picture or load a given preset."
+		x="0" y="0"
+  		w="0" h="32"
+		relatw="1"
+	/>
+
+	<layer id="display.bg" image="config.display.bg" y="40" x="37" />
+
+	<button id="switch_t1" hoverimage="config.display.t1" rectrgn="1" x="160" y="61" h="17" w="161" />
+
+	<button id="switch_t2" hoverimage="config.display.t2" rectrgn="1" x="160" y="81" h="17" w="161" />
+
+	<button id="switch_tl" hoverimage="config.display.tl" rectrgn="1" x="45" y="100" h="16" w="284" />
+
+	<Wasabi:Button id="restore" x="0" y="-23" relaty="1" w="0" relatw="1" h="21" text="Restore standard values" tooltip="Restore standard values" />
+
+</groupdef>
+
+<!-- ************************ INFOLINES - Line2 ***************************** -->
+
+<groupdef id="config.il.t2">
+	<Wasabi:Text 
+		id="description"
+		text="Select from the folowing list what content Infoline2 shows\n(for multiple selection hold [CTRL] or [SHIFT] while clicking)."
+		x="0" y="0"
+  		w="0" h="32"
+		relatw="1"
+	/>
+	<group id="wasabi.window.embedded" x="0" y="30" h="185" w="200" />
+	<List id="list.t2" y="31" x="1" w="198" h="183"/>
+
+	<Wasabi:Text 
+		id="switchtime.txt"
+		text="If multiple Items are selected switch all _._ seconds."
+		x="205" y="30"
+  		w="-205" h="32"
+		relatw="1"
+	/>
+
+	<Wasabi:HSlider
+		id="switchtime"
+		x="205" y="60" 
+		w="-205" h="10"
+		relatw="1"
+		high="100"
+	/>
+
+	<Wasabi:CheckBox x="205" y="80" id="cbx.fd"
+    		text="Enable Textfade-Effect (buggy!)"
+	/>
+
+	<Wasabi:Text 
+		id="vutime.txt"
+		text="Refresh VuMeters all ____ msc."
+		x="205" y="105"
+  		w="-205" h="32"
+		relatw="1"
+	/>
+
+	<Wasabi:HSlider
+		id="vutime"
+		x="205" y="122" 
+		w="-205" h="10"
+		relatw="1"
+		high="200"
+	/>
+
+	<Wasabi:Button id="restore" x="0" y="-23" relaty="1" w="0" relatw="1" h="21" text="Restore standard values" tooltip="Restore standard values" />
+
+</groupdef>
+
+<!-- ************************ COVER SEARCH ***************************** -->
+
+<groupdef id="config.cover.note">
+	<Wasabi:Text 
+		id="description"
+		text="The SearchEngine CANNOT view CoverArts stored in the ID3v2 Tag of mp3s yet.\nTo show a CoverArt you MUST have a jpg-file that agrees with one of the\ngiven filenames! For advanced Cover please install:\nJ.Richter's Cover and Tag Plugin (http://fire.prohosting.com/richter)"
+		x="0" y="0"
+  		w="0" h="0"
+		relatw="1" relath="1"
+	/>
+</groupdef>
+
+<groupdef id="config.cover">
+	<Wasabi:Text 
+		id="description"
+		text="Titan uses an CoverSearch engine allowing you to show the CoverArt of any media.\nThe CoverArt can either be shown in the Right Drawer or in an own window!\nSearch order of the engine (provides only JPG's in the playitem directory):\n1. cover.jpg,    2. cdcover.jpg,    3. coverart.jpg,    4. folder.jpg,    5. front.jpg,\n6. |album|.jpg,    7. |artist| - |album|.jpg    8. |artist| - |title|.jpg\n9. |filename|.jpg    10. |title|.jpg"
+		x="0" y="0"
+  		w="0" h="0"
+		relatw="1" relath="1"
+	/>
+
+	<Wasabi:Text 
+		id="description"
+		text="You can also search for an CoverArt in your Cover Directory (e.g. C:\Covers):"
+		x="0" y="80"
+  		w="0" h="30"
+		relatw="1"
+	/>
+
+	<Wasabi:EditBox id="coverpath" x="0" y="100" relatw="1" w="0" h="20"/>
+
+	<Wasabi:Text 
+		id="description"
+		text="Search order for the additional Cover Directory:\n1. |album|.jpg,    2. |artist| - |album|.jpg    3. |artist| - |title|.jpg\n4. |filename|.jpg    5. |title|.jpg"
+		x="0" y="125"
+  		w="0" h="50"
+		relatw="1"
+	/>
+
+	<Wasabi:TitleBox id="des" x="0" y="170" w="0" h="-170" relatw="1" relath="1" title="Important Note" content="config.cover.note" />
+
+</groupdef>
+
+
+<!-- ************************ SKINS ***************************** -->
+
+<groupdef id="config.skins">
+	<Wasabi:Text 
+		id="description"
+		text="Here you can switch to the Winamp Standard Skins or to each skin supporting\nthe DpW-Platform (=all skins by me, check: www.martin.deimos.de.vu)"
+		x="0" y="0"
+  		w="0" h="32"
+		relatw="1"
+	/>
+
+	<group id="wasabi.window.embedded" x="0" y="30" h="185" w="200" />
+	<List id="list.skins" y="31" x="1" w="198" h="183" />
+
+	<Wasabi:Button id="switch" x="0" y="-23" relaty="1" w="200" h="21" text="Switch to skin" tooltip="Switch To Skin" />
+
+</groupdef>
+
+
+<!-- ************************ IMPLEMENTATION ***************************** -->
+
+<groupdef id="config.imp">
+
+	<Wasabi:TitleBox id="About" visible="0" x="0" y="0" w="0" h="0" relatw="1" relath="1" title="About Titan" content="config.About" />
+
+	<Wasabi:TitleBox id="CPU Tweaks" visible="0" x="0" y="0" h="-85" w="0" relatw="1" relath="1" title="Desktop Alpha Setting" content="config.CPU.da" />
+	<Wasabi:TitleBox id="CPU Tweaks2" visible="0" x="0" relaty="1" y="-80" h="80" w="0" relatw="1" title="Tickerscrolling" content="config.CPU.ts" />
+
+	<Wasabi:TitleBox id="ColorThemes" x="0" y="0" w="0" h="0" relatw="1" relath="1" title="Color Themes" content="config.CoTh" />
+
+	<Wasabi:TitleBox id="Notifications" visible="0" x="0" y="0" w="0" h="0" relatw="1" relath="1" title="Notifications" content="config.Notifications" />
+
+	<Wasabi:TitleBox id="GlowButtons" visible="0" x="0" y="0" w="0" h="0" relatw="1" relath="1" title="Glow Buttons" content="config.GlBtn" />
+
+	<Wasabi:TitleBox id="Menus" visible="0" x="0" y="0" w="0" h="0" relatw="1" relath="1" title="Window Menus" content="config.menus" />
+
+	<Wasabi:TitleBox id="RDrawer" visible="0" x="0" y="0" w="0" h="0" relatw="1" relath="1" title="Right Drawer" content="config.rdrawer" />
+
+	<Wasabi:TitleBox id="Infolines" visible="0" x="0" y="0" w="0" h="0" relatw="1" relath="1" title="Infolines" content="config.infolines" />
+
+	<Wasabi:TitleBox id="il.t2" visible="0" x="0" y="0" w="0" h="0" relatw="1" relath="1" title="Infoline2" content="config.il.t2" />
+
+	<Wasabi:TitleBox id="Cover" visible="0" x="0" y="0" w="0" h="0" relatw="1" relath="1" title="Cover Search" content="config.cover" />
+
+	<Wasabi:TitleBox id="Skins" visible="0" x="0" y="0" w="0" h="0" relatw="1" relath="1" title="Deimos' Skins" content="config.skins" />
+
+</groupdef>
+<!-- inherit_group="wasabi.panel"	 -->
+<groupdef id="wasabi.preferences.group" name="Preferences" default_w="540" maximum_w="540" minimum_w="540" default_h="282" minimum_h="282" maximum_h="282">
+	<group id="wasabi.preferences.tree.embedded"	
+		x="5" y="5" w="130" h="-10"
+		relath="1" 
+	/>
+	<CustomObject id="wasabi.preferences.configpane"
+		x="143" y="8"
+		w="-152" h="-16"
+		relatw="1" relath="1"
+	/>
+
+	<group id="config.imp" x="143" y="8" w="-152" h="-16" relatw="1" relath="1" />
+
+	<script id="config" file="config/ownconfig.maki" />
+</groupdef>
+
+<layout id="normal" desktopalpha="0" default_w="570" maximum_w="570" minimum_w="570" default_h="346" minimum_h="346" maximum_h="346" default_visible="1">
+
+	<Wasabi:StandardFrame:Static
+		id="ConfigGroup"
+		x="0" y="0" w="0" h="0" relatw="1" relath="1"
+		padtitleleft="0"
+		padtitleright="0"
+	/>
+
+	<group id="wasabi.preferences.group" x="15" y="32" w="-30" h="-64" relatw="1" relath="1" />
+
+	<sendparams target="window.titlebar.title" default="Preferences"/>
+	<sendparams target="window.top.left;window.top;window.top.right;window.left;window.right;window.bottom.left.top;window.bottom.left;window.bottom.left.bottom;window.bottom.top;window.bottom;window.bottom.bottom;window.bottom.right.top;window.bottom.right;window.bottom.right.bottom;" resize="0"/>
+
+</layout>
+
+</container>
