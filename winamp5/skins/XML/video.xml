@@ -1,0 +1,125 @@
+
+
+<groupdef id="video.buttons" relatw="1" w="0" h="21">
+
+	<grid 
+		x="0" y="0" h="35" w="0" relatw="1" regionop="1" move="1"
+		left="wasabi.frame2.bottom.left"
+		middle="wasabi.frame2.bottom"
+		right="wasabi.frame2.bottom.right"
+	/>
+
+  <button
+    id="pl.add"
+    action="VID_FS"
+    x="10" y="8"
+    image="pledit.button.normal"
+    downImage="pledit.button.down"
+    hoverImage="pledit.button.hover"
+    tooltip="Fullscreen"
+  />
+
+  <button
+    id="pl.rem"
+    action="VID_1X"
+    x="46" y="8"
+    image="pledit.button.normal"
+    downImage="pledit.button.down"
+    hoverImage="pledit.button.hover"
+    tooltip="Normal Size"
+  />
+
+  <button
+    id="pl.sel"
+    action="VID_2X"
+    x="82" y="8"
+    image="pledit.button.normal"
+    downImage="pledit.button.down"
+    hoverImage="pledit.button.hover"
+    tooltip="Double Size"
+  />
+
+  <button
+    id="pl.misc"
+    action="VID_TV"
+    x="118" y="8"
+    image="pledit.button.normal"
+    downImage="pledit.button.down"
+    hoverImage="pledit.button.hover"
+    tooltip="Internet TV"
+  />
+
+  <grid
+	x="154" y="8" h="17" w="-200" relatw="1"
+	left="pledit.display.left"
+	middle="pledit.display.middle"
+	right="pledit.display.right"
+  />
+
+  <Text x="156" y="8" h="17" w="-204" relatw="1"
+	fontsize="14" antialias="1" bold="1" font="m_font" align="center"
+	color="color.display" ticker="1"
+	display="VID_Info"
+  />
+
+  <button
+    id="pl.list"
+    action="VID_Misc"
+    x="-44" y="8"
+    relatx="1"
+    image="pledit.button.normal"
+    downImage="pledit.button.down"
+    hoverImage="pledit.button.hover"
+    tooltip="Options"
+  />
+
+  <!-- SLoB RGB -->
+  <layer id="vidleft.RGB.Base" x="10" y="8" image="video.button.text.left.RGB.Base" ghost="1" alpha="255"/>
+  <layer id="vidleft" x="10" y="8" image="video.button.text.left" ghost="1" alpha="255"/>
+  <layer id="vidleft.RGB.Blue" x="10" y="8" image="video.button.text.left.RGB.Blue" ghost="1" alpha="0"/>
+  <layer id="vidleft.RGB.Green" x="10" y="8" image="video.button.text.left.RGB.Green" ghost="1" alpha="0"/>
+  <layer id="vidleft.RGB.Red" x="10" y="8" image="video.button.text.left.RGB.Red" ghost="1" alpha="0"/>
+  
+  
+  <layer id="vidright.RGB.Base" x="-44" relatx="1" y="8" image="video.button.text.right.RGB.Base" ghost="1" alpha="255" />
+  <layer id="vidright" x="-44" relatx="1" y="8" image="video.button.text.right" ghost="1" alpha="255"/>
+  <layer id="vidright.RGB.Blue" x="-44" relatx="1" y="8" image="video.button.text.right.RGB.Blue" ghost="1" alpha="0"/>
+  <layer id="vidright.RGB.Green" x="-44" relatx="1" y="8" image="video.button.text.right.RGB.Green" ghost="1" alpha="0"/>
+  <layer id="vidright.RGB.Red" x="-44" relatx="1" y="8" image="video.button.text.right.RGB.Red" ghost="1" alpha="0"/>
+  
+
+</groupdef>
+
+<groupdef id="player.content.video.dummy.group" name="VideoDummyGroup" relatw="1" relath="1" w="0" h="0">
+  <component
+    fitparent="1"
+	h="-20" relath="1"
+    noshowcmdbar="1"
+    autoopen="1"
+    autoclose="1"
+    param="{F0816D7B-FFFC-4343-80F2-E8199AA15CC3}"
+  />
+</groupdef>
+
+<container id="Video" name="Video" dynamic="0" component="guid:{F0816D7B-FFFC-4343-80F2-E8199AA15CC3}" default_visible="0" default_x="0" default_y="0" default_w="354">
+
+<layout id="normal" minimum_w="268" minimum_h="164" h="164" w="436" appbar="left|top|right|bottom">
+  <Wasabi:StandardFrame:NoStatus
+    x="0" y="0" w="0" h="0" relatw="1" relath="1"
+    content="player.content.video.dummy.group"
+    padtitleleft="10"
+    padtitleright="12"
+  />
+
+	<group id="video.buttons" x="0" y="-35" h="35" w="0" relaty="1" relatw="1" regionop="1"/>
+
+	<layer x="0" y="8" w="8" h="-16" relath="1" rectrgn="1" resize="left" />
+	<layer x="-8" relatx="1" y="8" w="8" h="-16" relath="1" rectrgn="1" resize="right" />
+
+	<layer x="0" y="-8" relaty="1" w="8" h="8" rectrgn="1" resize="bottomleft" />
+	<layer x="8" y="-8" relaty="1" w="-16" relatw="1" h="8" rectrgn="1" resize="bottom" />
+	<layer x="-8" relatx="1" y="-8" relaty="1" w="8" h="8" rectrgn="1" resize="bottomright" />
+
+</layout>
+
+</container>
