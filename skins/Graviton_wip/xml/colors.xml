@@ -1,0 +1,871 @@
+<gammaset id=".Default">
+  <gammagroup id="GlassLabels" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Lights" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="BackgroundsOuter" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="BackgroundsInner" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="MainAnim" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Treble" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Bass" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Mid" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim2" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim3" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Rings" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Glass" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="DarkGlass" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Buttons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="PlaybackButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="VolumeandSeeker" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Backgrounds" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="ShadeButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Volume" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Seeker" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="WindowButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="EqualizerSliders" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="VisPreview" value="0,0,0" gray="0" boost="0" />
+</gammaset>
+<gammaset id=".Default-redblue">
+  <gammagroup id="GlassLabels" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Lights" value="1344, -96, 128" gray="0" boost="0" />
+  <gammagroup id="BackgroundsOuter" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="BackgroundsInner" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="MainAnim" value="-256, -2304, -2080" gray="0" boost="0" />
+  <gammagroup id="Anim1Treble" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Bass" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Mid" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim2" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim3" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Rings" value="1344, -96, 128" gray="0" boost="0" />
+  <gammagroup id="Glass" value="1344, -96, 128" gray="0" boost="0" />
+  <gammagroup id="DarkGlass" value="1344, -96, 128" gray="0" boost="0" />
+  <gammagroup id="Buttons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="PlaybackButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="VolumeandSeeker" value="1344, -96, 128" gray="0" boost="0" />
+  <gammagroup id="Backgrounds" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="ShadeButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Volume" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Seeker" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="WindowButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="EqualizerSliders" value="1344, -96, 128" gray="0" boost="0" />
+  <gammagroup id="Equalizer Buttons" value="1344, -96, 128" gray="0" boost="0" />
+  <gammagroup id="VisPreview" value="1344, -96, 128" gray="0" boost="0" />
+</gammaset>
+<gammaset id=".Default-purpleblue">
+  <gammagroup id="GlassLabels" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Lights" value="1344, -96, 1216" gray="0" boost="0" />
+  <gammagroup id="BackgroundsOuter" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="BackgroundsInner" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="MainAnim" value="1344, -96, 1216" gray="0" boost="0" />
+  <gammagroup id="Anim1Treble" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Bass" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Mid" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim2" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim3" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Rings" value="1344, -96, 1216" gray="0" boost="0" />
+  <gammagroup id="Glass" value="1344, -96, 1216" gray="0" boost="0" />
+  <gammagroup id="DarkGlass" value="1344, -96, 1216" gray="0" boost="0" />
+  <gammagroup id="Buttons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="PlaybackButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="VolumeandSeeker" value="1344, -96, 1216" gray="0" boost="0" />
+  <gammagroup id="Backgrounds" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="ShadeButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Volume" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Seeker" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="WindowButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="EqualizerSliders" value="1344, -96, 1216" gray="0" boost="0" />
+  <gammagroup id="Equalizer Buttons" value="1344, -96, 1216" gray="0" boost="0" />
+  <gammagroup id="VisPreview" value="1344, -96, 1216" gray="0" boost="0" />
+</gammaset>
+<gammaset id=".Default-Blue">
+  <gammagroup id="GlassLabels" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Lights" value="64, -96, 1344" gray="0" boost="0" />
+  <gammagroup id="BackgroundsOuter" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="BackgroundsInner" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="MainAnim" value="64, -96, 1344" gray="0" boost="0" />
+  <gammagroup id="Anim1Treble" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Bass" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Mid" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim2" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim3" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Rings" value="64, -96, 1344" gray="0" boost="0" />
+  <gammagroup id="Glass" value="64, -96, 1344" gray="0" boost="0" />
+  <gammagroup id="DarkGlass" value="64, -96, 1344" gray="0" boost="0" />
+  <gammagroup id="Buttons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="PlaybackButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="VolumeandSeeker" value="64, -96, 1344" gray="0" boost="0" />
+  <gammagroup id="Backgrounds" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="ShadeButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Volume" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Seeker" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="WindowButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="EqualizerSliders" value="64, -96, 1344" gray="0" boost="0" />
+  <gammagroup id="Equalizer Buttons" value="64, -96, 1344" gray="0" boost="0" />
+  <gammagroup id="VisPreview" value="64, -96, 1344" gray="0" boost="0" />
+</gammaset>
+<gammaset id=".Default-teal">
+  <gammagroup id="GlassLabels" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Lights" value="-768, 864, 448" gray="0" boost="0" />
+  <gammagroup id="BackgroundsOuter" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="BackgroundsInner" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="MainAnim" value="-768, 864, 448" gray="0" boost="0" />
+  <gammagroup id="Anim1Treble" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Bass" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Mid" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim2" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim3" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Rings" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Glass" value="-768, 864, 448" gray="0" boost="0" />
+  <gammagroup id="DarkGlass" value="-768, 864, 448" gray="0" boost="0" />
+  <gammagroup id="Buttons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="PlaybackButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="VolumeandSeeker" value="-768, 864, 448" gray="0" boost="0" />
+  <gammagroup id="Backgrounds" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="ShadeButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Volume" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Seeker" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="WindowButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="EqualizerSliders" value="-768, 864, 448" gray="0" boost="0" />
+  <gammagroup id="Equalizer Buttons" value="-768, 864, 448" gray="0" boost="0" />
+  <gammagroup id="VisPreview" value="-768, 864, 448" gray="0" boost="0" />
+</gammaset>
+<gammaset id=".Default-ltgreen">
+  <gammagroup id="GlassLabels" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Lights" value="-384, 864, -768" gray="0" boost="0" />
+  <gammagroup id="BackgroundsOuter" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="BackgroundsInner" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="MainAnim" value="-384, 864, -768" gray="0" boost="0" />
+  <gammagroup id="Anim1Treble" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Bass" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Mid" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim2" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim3" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Rings" value="-384, 864, -768" gray="0" boost="0" />
+  <gammagroup id="Glass" value="-384, 864, -768" gray="0" boost="0" />
+  <gammagroup id="DarkGlass" value="-384, 864, -768" gray="0" boost="0" />
+  <gammagroup id="Buttons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="PlaybackButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="VolumeandSeeker" value="-384, 864, -768" gray="0" boost="0" />
+  <gammagroup id="Backgrounds" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="ShadeButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Volume" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Seeker" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="WindowButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="EqualizerSliders" value="-384, 864, -768" gray="0" boost="0" />
+  <gammagroup id="Equalizer Buttons" value="-384, 864, -768" gray="0" boost="0" />
+  <gammagroup id="VisPreview" value="-384, 864, -768" gray="0" boost="0" />
+</gammaset>
+
+<gammaset id="Titanium">
+  <gammagroup id="GlassLabels" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Lights" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="BackgroundsOuter" value="1664, 2240, 2400" gray="0" boost="0" />
+  <gammagroup id="BackgroundsInner" value="1664, 2240, 2400" gray="0" boost="0" />
+  <gammagroup id="MainAnim" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Treble" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Bass" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Mid" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim2" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim3" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Rings" value="1664, 2240, 2400" gray="0" boost="0" />
+  <gammagroup id="Glass" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="DarkGlass" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Buttons" value="1664, 2240, 2400" gray="0" boost="0" />
+  <gammagroup id="PlaybackButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="VolumeandSeeker" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Backgrounds" value="1664, 2240, 2400" gray="0" boost="0" />
+  <gammagroup id="ShadeButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Volume" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Seeker" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="WindowButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="EqualizerSliders" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Equalizer Buttons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="VisPreview" value="0,0,0" gray="0" boost="0" />
+</gammaset>
+<gammaset id="Titanium-pinkblue">
+  <gammagroup id="GlassLabels" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Lights" value="1344, -96, 128" gray="0" boost="0" />
+  <gammagroup id="BackgroundsOuter" value="1664, 2240, 2400" gray="0" boost="0" />
+  <gammagroup id="BackgroundsInner" value="1664, 2240, 2400" gray="0" boost="0" />
+  <gammagroup id="MainAnim" value="1344, -96, 128" gray="0" boost="0" />
+  <gammagroup id="Anim1Treble" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Bass" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Mid" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim2" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim3" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Rings" value="1664, 2240, 2400" gray="0" boost="0" />
+  <gammagroup id="Glass" value="1344, -96, 128" gray="0" boost="0" />
+  <gammagroup id="DarkGlass" value="1344, -96, 128" gray="0" boost="0" />
+  <gammagroup id="Buttons" value="1664, 2240, 2400" gray="0" boost="0" />
+  <gammagroup id="PlaybackButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="VolumeandSeeker" value="1344, -96, 128" gray="0" boost="0" />
+  <gammagroup id="Backgrounds" value="1664, 2240, 2400" gray="0" boost="0" />
+  <gammagroup id="ShadeButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Volume" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Seeker" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="WindowButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="EqualizerSliders" value="1344, -96, 128" gray="0" boost="0" />
+  <gammagroup id="Equalizer Buttons" value="1344, -96, 128" gray="0" boost="0" />
+  <gammagroup id="VisPreview" value="1344, -96, 128" gray="0" boost="0" />
+</gammaset>
+<gammaset id="Titanium-purpleblue">
+  <gammagroup id="GlassLabels" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Lights" value="1344, -96, 1216" gray="0" boost="0" />
+  <gammagroup id="BackgroundsOuter" value="1664, 2240, 2400" gray="0" boost="0" />
+  <gammagroup id="BackgroundsInner" value="1664, 2240, 2400" gray="0" boost="0" />
+  <gammagroup id="MainAnim" value="1344, -96, 1216" gray="0" boost="0" />
+  <gammagroup id="Anim1Treble" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Bass" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Mid" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim2" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim3" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Rings" value="1344, -96, 1216" gray="0" boost="0" />
+  <gammagroup id="Glass" value="1344, -96, 1216" gray="0" boost="0" />
+  <gammagroup id="DarkGlass" value="1344, -96, 1216" gray="0" boost="0" />
+  <gammagroup id="Buttons" value="1664, 2240, 2400" gray="0" boost="0" />
+  <gammagroup id="PlaybackButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="VolumeandSeeker" value="1344, -96, 1216" gray="0" boost="0" />
+  <gammagroup id="Backgrounds" value="1664, 2240, 2400" gray="0" boost="0" />
+  <gammagroup id="ShadeButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Volume" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Seeker" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="WindowButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="EqualizerSliders" value="1344, -96, 1216" gray="0" boost="0" />
+  <gammagroup id="Equalizer Buttons" value="1344, -96, 1216" gray="0" boost="0" />
+  <gammagroup id="VisPreview" value="1344, -96, 1216" gray="0" boost="0" />
+</gammaset>
+<gammaset id="Titanium-Blue">
+  <gammagroup id="GlassLabels" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Lights" value="64, -96, 1344" gray="0" boost="0" />
+  <gammagroup id="BackgroundsOuter" value="1664, 2240, 2400" gray="0" boost="0" />
+  <gammagroup id="BackgroundsInner" value="1664, 2240, 2400" gray="0" boost="0" />
+  <gammagroup id="MainAnim" value="64, -96, 1344" gray="0" boost="0" />
+  <gammagroup id="Anim1Treble" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Bass" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Mid" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim2" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim3" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Rings" value="64, -96, 1344" gray="0" boost="0" />
+  <gammagroup id="Glass" value="64, -96, 1344" gray="0" boost="0" />
+  <gammagroup id="DarkGlass" value="64, -96, 1344" gray="0" boost="0" />
+  <gammagroup id="Buttons" value="1664, 2240, 2400" gray="0" boost="0" />
+  <gammagroup id="PlaybackButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="VolumeandSeeker" value="64, -96, 1344" gray="0" boost="0" />
+  <gammagroup id="Backgrounds" value="1664, 2240, 2400" gray="0" boost="0" />
+  <gammagroup id="ShadeButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Volume" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Seeker" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="WindowButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="EqualizerSliders" value="64, -96, 1344" gray="0" boost="0" />
+ <gammagroup id="Equalizer Buttons" value="64, -96, 1344" gray="0" boost="0" />
+  <gammagroup id="VisPreview" value="64, -96, 1344" gray="0" boost="0" />
+</gammaset>
+<gammaset id="Titanium-teal">
+  <gammagroup id="GlassLabels" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Lights" value="-768, 864, 448" gray="0" boost="0" />
+  <gammagroup id="BackgroundsOuter" value="1664, 2240, 2400" gray="0" boost="0" />
+  <gammagroup id="BackgroundsInner" value="1664, 2240, 2400" gray="0" boost="0" />
+  <gammagroup id="MainAnim" value="-768, 864, 448" gray="0" boost="0" />
+  <gammagroup id="Anim1Treble" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Bass" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Mid" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim2" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim3" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Rings" value="-768, 864, 448" gray="0" boost="0" />
+  <gammagroup id="Glass" value="-768, 864, 448" gray="0" boost="0" />
+  <gammagroup id="DarkGlass" value="-768, 864, 448" gray="0" boost="0" />
+  <gammagroup id="Buttons" value="1664, 2240, 2400" gray="0" boost="0" />
+  <gammagroup id="PlaybackButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="VolumeandSeeker" value="-768, 864, 448" gray="0" boost="0" />
+  <gammagroup id="Backgrounds" value="1664, 2240, 2400" gray="0" boost="0" />
+  <gammagroup id="ShadeButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Volume" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Seeker" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="WindowButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="EqualizerSliders" value="-768, 864, 448" gray="0" boost="0" />
+  <gammagroup id="Equalizer Buttons" value="-768, 864, 448" gray="0" boost="0" />
+  <gammagroup id="VisPreview" value="-768, 864, 448" gray="0" boost="0" />
+</gammaset>
+<gammaset id="Titanium-ltgreen">
+  <gammagroup id="GlassLabels" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Lights" value="-384, 864, -768" gray="0" boost="0" />
+  <gammagroup id="BackgroundsOuter" value="1664, 2240, 2400" gray="0" boost="0" />
+  <gammagroup id="BackgroundsInner" value="1664, 2240, 2400" gray="0" boost="0" />
+  <gammagroup id="MainAnim" value="-384, 864, -768" gray="0" boost="0" />
+  <gammagroup id="Anim1Treble" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Bass" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Mid" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim2" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim3" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Rings" value="-384, 864, -768" gray="0" boost="0" />
+  <gammagroup id="Glass" value="-384, 864, -768" gray="0" boost="0" />
+  <gammagroup id="DarkGlass" value="-384, 864, -768" gray="0" boost="0" />
+  <gammagroup id="Buttons" value="1664, 2240, 2400" gray="0" boost="0" />
+  <gammagroup id="PlaybackButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="VolumeandSeeker" value="-384, 864, -768" gray="0" boost="0" />
+  <gammagroup id="Backgrounds" value="1664, 2240, 2400" gray="0" boost="0" />
+  <gammagroup id="ShadeButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Volume" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Seeker" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="WindowButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="EqualizerSliders" value="-384, 864, -768" gray="0" boost="0" />
+  <gammagroup id="Equalizer Buttons" value="-384, 864, -768" gray="0" boost="0" />
+  <gammagroup id="VisPreview" value="-384, 864, -768" gray="0" boost="0" />
+</gammaset>
+
+<gammaset id="Ventian-night">
+  <gammagroup id="GlassLabels" value="1984, -64, -64" gray="0" boost="0" />
+  <gammagroup id="Lights" value="" gray="0" boost="0" />
+  <gammagroup id="BackgroundsOuter" value="864, 1312, 2432" gray="0" boost="0" />
+  <gammagroup id="BackgroundsInner" value="864, 1312, 2432" gray="0" boost="0" />
+  <gammagroup id="MainAnim" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Treble" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Bass" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Mid" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim2" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim3" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Rings" value="1984, -64, -64" gray="0" boost="0" />
+  <gammagroup id="Glass" value="1984, -64, -64" gray="0" boost="0" />
+  <gammagroup id="DarkGlass" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Buttons" value="864, 1312, 2432" gray="0" boost="0" />
+  <gammagroup id="PlaybackButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="VolumeandSeeker" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Backgrounds" value="864, 1312, 2432" gray="0" boost="0" />
+  <gammagroup id="ShadeButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Volume" value="1984, -64, -64" gray="0" boost="0" />
+  <gammagroup id="Seeker" value="1984, -64, -64" gray="0" boost="0" />
+  <gammagroup id="WindowButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="EqualizerSliders" value="1984, -64, -64" gray="0" boost="0" />
+  <gammagroup id="Equalizer Buttons" value="1984, -64, -64" gray="0" boost="0" />
+   <gammagroup id="VisPreview" value="0,0,0" gray="0" boost="0" />
+</gammaset>
+
+<gammaset id="Goblin">
+  <gammagroup id="GlassLabels" value="-1440, -640, -2272" gray="0" boost="0" />
+  <gammagroup id="Lights" value="-1440, -640, -2272" gray="0" boost="0" />
+  <gammagroup id="BackgroundsOuter" value="-320, -320, -3040" gray="0" boost="0" />
+  <gammagroup id="BackgroundsInner" value="-320, -320, -3040" gray="0" boost="0" />
+  <gammagroup id="MainAnim" value="-320, -320, -3040" gray="0" boost="0" />
+  <gammagroup id="Anim1Treble" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Bass" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Mid" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim2" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim3" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Rings" value="-1440, -640, -2272" gray="0" boost="0" />
+  <gammagroup id="Glass" value="-1440, -640, -2272" gray="0" boost="0" />
+  <gammagroup id="DarkGlass" value="-1440, -640, -2272" gray="0" boost="0" />
+  <gammagroup id="Buttons" value="-320, -320, -3040" gray="0" boost="0" />
+  <gammagroup id="PlaybackButtons" value="-320, -320, -3040" gray="0" boost="0" />
+  <gammagroup id="VolumeandSeeker" value="-1440, -640, -2272" gray="0" boost="0" />
+  <gammagroup id="Backgrounds" value="-320, -320, -3040" gray="0" boost="0" />
+  <gammagroup id="ShadeButtons" value="-320, -320, -3040" gray="0" boost="0" />
+  <gammagroup id="Volume" value="-320, -320, -3040" gray="0" boost="0" />
+  <gammagroup id="Seeker" value="-320, -320, -3040" gray="0" boost="0" />
+ 
+  <gammagroup id="EqualizerSliders" value="-1440, -640, -2272" gray="0" boost="0" />
+  <gammagroup id="Equalizer Buttons" value="-1440, -640, -2272" gray="0" boost="0" />
+  <gammagroup id="VisPreview" value="-1440, -640, -2272" gray="0" boost="0" />
+</gammaset>
+
+<gammaset id="Zinc">
+  <gammagroup id="GlassLabels" value="-1088, 32, 1408" gray="0" boost="0" />
+  <gammagroup id="Lights" value="288, 96, -1408" gray="0" boost="0" />
+  <gammagroup id="BackgroundsOuter" value="-1088, 32, 1408" gray="0" boost="0" />
+  <gammagroup id="BackgroundsInner" value="-1088, 32, 1408" gray="0" boost="0" />
+  <gammagroup id="MainAnim" value="-1088, 32, 1408" gray="0" boost="0" />
+  <gammagroup id="Anim1Treble" value="-1088, 32, 1408" gray="0" boost="0" />
+  <gammagroup id="Anim1Bass" value="-1088, 32, 1408" gray="0" boost="0" />
+  <gammagroup id="Anim1Mid" value="-1088, 32, 1408" gray="0" boost="0" />
+  <gammagroup id="Anim2" value="-1088, 32, 1408" gray="0" boost="0" />
+  <gammagroup id="Anim3" value="-1088, 32, 1408" gray="0" boost="0" />
+  <gammagroup id="Rings" value="288, 96, -1408" gray="0" boost="0" />
+  <gammagroup id="Glass" value="288, 96, -1408" gray="0" boost="0" />
+  <gammagroup id="DarkGlass" value="-1440, -640, -2272" gray="0" boost="0" />
+  <gammagroup id="Buttons" value="-1088, 32, 1408" gray="0" boost="0" />
+  <gammagroup id="PlaybackButtons" value="288, 96, -1408" gray="0" boost="0" />
+  <gammagroup id="VolumeandSeeker" value="288, 96, -1408" gray="0" boost="0" />
+  <gammagroup id="Backgrounds" value="-1088, 32, 1408" gray="0" boost="0" />
+  <gammagroup id="ShadeButtons" value="288, 96, -1408" gray="0" boost="0" />
+  <gammagroup id="Volume" value="288, 96, -1408" gray="0" boost="0" />
+  <gammagroup id="Seeker" value="288, 96, -1408" gray="0" boost="0" />
+ 
+  <gammagroup id="EqualizerSliders" value="288, 96, -1408" gray="0" boost="0" />
+  <gammagroup id="Equalizer Buttons" value="288, 96, -1408" gray="0" boost="0" />
+  <gammagroup id="VisPreview" value="288, 96, -1408" gray="0" boost="0" />
+</gammaset>
+<gammaset id="Avenger">
+  <gammagroup id="GlassLabels" value="-1280, -832, -512" gray="0" boost="0" />
+  <gammagroup id="Lights" value="-1280, -832, -512" gray="0" boost="0" />
+  <gammagroup id="BackgroundsOuter" value="-1280, -832, -512" gray="0" boost="0" />
+  <gammagroup id="BackgroundsInner" value="-1280, -832, -512" gray="0" boost="0" />
+  <gammagroup id="MainAnim" value="-1280, -832, -512" gray="0" boost="0" />
+  <gammagroup id="Anim1Treble" value="-1280, -832, -512" gray="0" boost="0" />
+  <gammagroup id="Anim1Bass" value="-1280, -832, -512" gray="0" boost="0" />
+  <gammagroup id="Anim1Mid" value="-1280, -832, -512" gray="0" boost="0" />
+  <gammagroup id="Anim2" value="-1280, -832, -512" gray="0" boost="0" />
+  <gammagroup id="Anim3" value="-1280, -832, -512" gray="0" boost="0" />
+  <gammagroup id="Rings" value="-2432, -2176, -2016" gray="0" boost="0" />
+  <gammagroup id="Glass" value="-2432, -2176, -2016" gray="0" boost="0" />
+  <gammagroup id="DarkGlass" value="-2432, -2176, -2016" gray="0" boost="0" />
+  <gammagroup id="Buttons" value="-1280, -832, -512" gray="0" boost="0" />
+  <gammagroup id="PlaybackButtons" value="-1280, -832, -512" gray="0" boost="0" />
+  <gammagroup id="VolumeandSeeker" value="-1280, -832, -512" gray="0" boost="0" />
+  <gammagroup id="Backgrounds" value="-1280, -832, -512" gray="0" boost="0" />
+  <gammagroup id="ShadeButtons" value="-1280, -832, -512" gray="0" boost="0" />
+  <gammagroup id="Volume" value="-1280, -832, -512" gray="0" boost="0" />
+  <gammagroup id="Seeker" value="-1280, -832, -512" gray="0" boost="1" />
+ 
+  <gammagroup id="EqualizerSliders" value="-2432, -2176, -2016" gray="0" boost="0" />
+  <gammagroup id="Equalizer Buttons" value="-2432, -2176, -2016" gray="0" boost="0" />
+  <gammagroup id="VisPreview" value="-1280, -832, -512" gray="0" boost="0" />
+</gammaset>
+<gammaset id="GOLD">
+  <gammagroup id="GlassLabels" value="672, 672, -352" gray="1" boost="0" />
+  <gammagroup id="Lights" value="672, 672, -352" gray="1" boost="0" />
+  <gammagroup id="BackgroundsOuter" value="3424, 3488, 1792" gray="1" boost="0" />
+  <gammagroup id="BackgroundsInner" value="3424, 3488, 1792" gray="1" boost="0" />
+  <gammagroup id="MainAnim" value="672, 672, -352" gray="1" boost="0" />
+  <gammagroup id="Anim1Treble" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Bass" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Mid" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim2" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim3" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Rings" value="672, 672, -352" gray="1" boost="0" />
+  <gammagroup id="Glass" value="672, 672, -352" gray="1" boost="0" />
+  <gammagroup id="DarkGlass" value="672, 672, -352" gray="1" boost="0" />
+  <gammagroup id="Buttons" value="3424, 3488, 1792" gray="1" boost="0" />
+  <gammagroup id="PlaybackButtons" value="672, 672, -352" gray="1" boost="0" />
+  <gammagroup id="VolumeandSeeker" value="672, 672, -352" gray="1" boost="0" />
+  <gammagroup id="Backgrounds" value="3424, 3488, 1792" gray="1" boost="0" />
+  <gammagroup id="ShadeButtons" value="672, 672, -352" gray="1" boost="0" />
+  <gammagroup id="Volume" value="672, 672, -352" gray="1" boost="0" />
+  <gammagroup id="Seeker" value="672, 672, -352" gray="1" boost="0" />
+ 
+  <gammagroup id="EqualizerSliders" value="672, 672, -352" gray="1" boost="0" />
+  <gammagroup id="Equalizer Buttons" value="672, 672, -352" gray="1" boost="0" />
+  <gammagroup id="VisPreview" value="672, 672, -352" gray="1" boost="0" />
+</gammaset>
+<gammaset id="Grey">
+  <gammagroup id="GlassLabels" value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="Lights" value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="BackgroundsOuter" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="BackgroundsInner" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="MainAnim"  value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="Anim1Treble" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Bass" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Mid" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim2" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim3" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Rings" value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="Glass" value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="DarkGlass" value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="Buttons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="PlaybackButtons" value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="VolumeandSeeker" value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="Backgrounds" value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="ShadeButtons" value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="Volume" value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="Seeker" value="-928, -928, -1216" gray="1" boost="0" />
+ 
+  <gammagroup id="EqualizerSliders" value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="Equalizer Buttons" value="-928, -928, -1216" gray="1"  boost="0" />
+  <gammagroup id="VisPreview" value="-928, -928, -1216" gray="1" boost="0" />
+</gammaset>
+<gammaset id="GreyKhaki">
+  <gammagroup id="GlassLabels" value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="Lights" value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="BackgroundsOuter" value="416, 384, -448" gray="1" boost="0" />
+  <gammagroup id="BackgroundsInner" value="416, 384, -448" gray="1" boost="0" />
+  <gammagroup id="MainAnim"  value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="Anim1Treble" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Bass" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Mid" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim2" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim3" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Rings" value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="Glass" value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="DarkGlass" value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="Buttons" value="416, 384, -448" gray="1" boost="0" />
+  <gammagroup id="PlaybackButtons" value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="VolumeandSeeker" value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="Backgrounds" value="416, 384, -448" gray="1" boost="0" />
+  <gammagroup id="ShadeButtons" value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="Volume" value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="Seeker" value="-928, -928, -1216" gray="1" boost="0" />
+ 
+  <gammagroup id="EqualizerSliders" value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="Equalizer Buttons" value="-928, -928, -1216" gray="1"  boost="0" />
+  <gammagroup id="VisPreview" value="-928, -928, -1216" gray="1" boost="0" />
+</gammaset>
+<gammaset id="Greyblue">
+  <gammagroup id="GlassLabels" value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="Lights" value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="BackgroundsOuter" value="-448, 32, 416" gray="1" boost="0" />
+  <gammagroup id="BackgroundsInner"  value="-448, 32, 416" gray="1" boost="0" />
+  <gammagroup id="MainAnim"  value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="Anim1Treble" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Bass" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Mid" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim2" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim3" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Rings" value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="Glass" value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="DarkGlass" value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="Buttons" value="-448, 32, 416" gray="1" boost="0" />
+  <gammagroup id="PlaybackButtons" value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="VolumeandSeeker" value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="Backgrounds" value="-448, 32, 416" gray="1"  boost="0" />
+  <gammagroup id="ShadeButtons" value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="Volume" value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="Seeker" value="-928, -928, -1216" gray="1" boost="0" />
+ 
+  <gammagroup id="EqualizerSliders" value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="Equalizer Buttons" value="-928, -928, -1216" gray="1"  boost="0" />
+  <gammagroup id="VisPreview" value="-928, -928, -1216" gray="1" boost="0" />
+</gammaset>
+<gammaset id="GreySilver">
+  <gammagroup id="GlassLabels"  value="3392, 3456, 3456" gray="1" boost="0" />
+  <gammagroup id="Lights" value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="BackgroundsOuter"  value="3392, 3456, 3456" gray="1" boost="0" />
+  <gammagroup id="BackgroundsInner"  value="3392, 3456, 3456" gray="1" boost="0" />
+  <gammagroup id="MainAnim"  value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="Anim1Treble" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Bass" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Mid" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim2" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim3" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Rings" value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="Glass" value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="DarkGlass" value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="Buttons"  value="3392, 3456, 3456" gray="1" boost="0" />
+  <gammagroup id="PlaybackButtons" value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="VolumeandSeeker" value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="Backgrounds" value="3392, 3456, 3456" gray="1" boost="0" />
+  <gammagroup id="ShadeButtons" value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="Volume" value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="Seeker" value="-928, -928, -1216" gray="1" boost="0" />
+  
+  <gammagroup id="EqualizerSliders" value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="Equalizer Buttons" value="-928, -928, -1216" gray="1"  boost="0" />
+  <gammagroup id="VisPreview" value="-928, -928, -1216" gray="1" boost="0" />
+</gammaset>
+
+<gammaset id="Dark-Blue">
+  <gammagroup id="GlassLabels" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Lights" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="BackgroundsOuter" value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="BackgroundsInner" value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="MainAnim" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Treble" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Bass" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Mid" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim2" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim3" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Rings" value="1664, 2240, 2400" gray="0" boost="0" />
+  <gammagroup id="Glass" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="DarkGlass" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Buttons" value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="PlaybackButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="VolumeandSeeker" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Backgrounds" value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="ShadeButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Volume" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Seeker" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="WindowButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="EqualizerSliders" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Equalizer Buttons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="VisPreview" value="0,0,0" gray="0" boost="0" />
+</gammaset>
+<gammaset id="Dark-pinkblue">
+  <gammagroup id="GlassLabels" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Lights" value="1344, -96, 128" gray="0" boost="0" />
+  <gammagroup id="BackgroundsOuter" value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="BackgroundsInner" value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="MainAnim" value="1344, -96, 128" gray="0" boost="0" />
+  <gammagroup id="Anim1Treble" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Bass" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Mid" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim2" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim3" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Rings" value="1664, 2240, 2400" gray="0" boost="0" />
+  <gammagroup id="Glass" value="1344, -96, 128" gray="0" boost="0" />
+  <gammagroup id="DarkGlass" value="1344, -96, 128" gray="0" boost="0" />
+  <gammagroup id="Buttons" value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="PlaybackButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="VolumeandSeeker" value="1344, -96, 128" gray="0" boost="0" />
+  <gammagroup id="Backgrounds" value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="ShadeButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Volume" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Seeker" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="WindowButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="EqualizerSliders" value="1344, -96, 128" gray="0" boost="0" />
+  <gammagroup id="Equalizer Buttons" value="1344, -96, 128" gray="0" boost="0" />
+  <gammagroup id="VisPreview" value="1344, -96, 128" gray="0" boost="0" />
+</gammaset>
+<gammaset id="Dark-purpleblue">
+  <gammagroup id="GlassLabels" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Lights" value="1344, -96, 1216" gray="0" boost="0" />
+  <gammagroup id="BackgroundsOuter" value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="BackgroundsInner" value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="MainAnim" value="1344, -96, 1216" gray="0" boost="0" />
+  <gammagroup id="Anim1Treble" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Bass" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Mid" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim2" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim3" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Rings" value="1344, -96, 1216" gray="0" boost="0" />
+  <gammagroup id="Glass" value="1344, -96, 1216" gray="0" boost="0" />
+  <gammagroup id="DarkGlass" value="1344, -96, 1216" gray="0" boost="0" />
+  <gammagroup id="Buttons" value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="PlaybackButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="VolumeandSeeker" value="1344, -96, 1216" gray="0" boost="0" />
+  <gammagroup id="Backgrounds" value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="ShadeButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Volume" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Seeker" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="WindowButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="EqualizerSliders" value="1344, -96, 1216" gray="0" boost="0" />
+  <gammagroup id="Equalizer Buttons" value="1344, -96, 1216" gray="0" boost="0" />
+  <gammagroup id="VisPreview" value="1344, -96, 1216" gray="0" boost="0" />
+</gammaset>
+<gammaset id="Dark-Blue2">
+  <gammagroup id="GlassLabels" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Lights" value="64, -96, 1344" gray="0" boost="0" />
+  <gammagroup id="BackgroundsOuter" value="-928, -928, -1216" gray="1"  boost="0" />
+  <gammagroup id="BackgroundsInner" value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="MainAnim" value="64, -96, 1344" gray="0" boost="0" />
+  <gammagroup id="Anim1Treble" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Bass" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Mid" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim2" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim3" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Rings" value="64, -96, 1344" gray="0" boost="0" />
+  <gammagroup id="Glass" value="64, -96, 1344" gray="0" boost="0" />
+  <gammagroup id="DarkGlass" value="64, -96, 1344" gray="0" boost="0" />
+  <gammagroup id="Buttons" value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="PlaybackButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="VolumeandSeeker" value="64, -96, 1344" gray="0" boost="0" />
+  <gammagroup id="Backgrounds" value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="ShadeButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Volume" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Seeker" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="WindowButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="EqualizerSliders" value="64, -96, 1344" gray="0" boost="0" />
+ <gammagroup id="Equalizer Buttons" value="64, -96, 1344" gray="0" boost="0" />
+  <gammagroup id="VisPreview" value="64, -96, 1344" gray="0" boost="0" />
+</gammaset>
+<gammaset id="Dark-teal">
+  <gammagroup id="GlassLabels" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Lights" value="-768, 864, 448" gray="0" boost="0" />
+  <gammagroup id="BackgroundsOuter" value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="BackgroundsInner" value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="MainAnim" value="-768, 864, 448" gray="0" boost="0" />
+  <gammagroup id="Anim1Treble" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Bass" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Mid" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim2" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim3" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Rings" value="-768, 864, 448" gray="0" boost="0" />
+  <gammagroup id="Glass" value="-768, 864, 448" gray="0" boost="0" />
+  <gammagroup id="DarkGlass" value="-768, 864, 448" gray="0" boost="0" />
+  <gammagroup id="Buttons" value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="PlaybackButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="VolumeandSeeker" value="-768, 864, 448" gray="0" boost="0" />
+  <gammagroup id="Backgrounds" value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="ShadeButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Volume" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Seeker" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="WindowButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="EqualizerSliders" value="-768, 864, 448" gray="0" boost="0" />
+  <gammagroup id="Equalizer Buttons" value="-768, 864, 448" gray="0" boost="0" />
+  <gammagroup id="VisPreview" value="-768, 864, 448" gray="0" boost="0" />
+</gammaset>
+<gammaset id="Dark-ltgreen">
+  <gammagroup id="GlassLabels" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Lights" value="-384, 864, -768" gray="0" boost="0" />
+  <gammagroup id="BackgroundsOuter" value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="BackgroundsInner" value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="MainAnim" value="-384, 864, -768" gray="0" boost="0" />
+  <gammagroup id="Anim1Treble" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Bass" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Mid" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim2" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim3" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Rings" value="-384, 864, -768" gray="0" boost="0" />
+  <gammagroup id="Glass" value="-384, 864, -768" gray="0" boost="0" />
+  <gammagroup id="DarkGlass" value="-384, 864, -768" gray="0" boost="0" />
+  <gammagroup id="Buttons" value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="PlaybackButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="VolumeandSeeker" value="-384, 864, -768" gray="0" boost="0" />
+  <gammagroup id="Backgrounds" value="-928, -928, -1216" gray="1" boost="0" />
+  <gammagroup id="ShadeButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Volume" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Seeker" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="WindowButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="EqualizerSliders" value="-384, 864, -768" gray="0" boost="0" />
+  <gammagroup id="Equalizer Buttons" value="-384, 864, -768" gray="0" boost="0" />
+  <gammagroup id="VisPreview" value="-384, 864, -768" gray="0" boost="0" />
+</gammaset>
+<gammaset id="Silver-Blue">
+  <gammagroup id="GlassLabels" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Lights" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="MainAnim" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Treble" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Bass" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Mid" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim2" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim3" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Rings" value="1664, 2240, 2400" gray="0" boost="0" />
+  <gammagroup id="Glass" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="DarkGlass" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="PlaybackButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="VolumeandSeeker" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="ShadeButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Volume" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Seeker" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="WindowButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="EqualizerSliders" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Equalizer Buttons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="VisPreview" value="0,0,0" gray="0" boost="0" />
+   <gammagroup id="BackgroundsOuter"  value="3392, 3456, 3456" gray="1" boost="0" />
+  <gammagroup id="BackgroundsInner"  value="3392, 3456, 3456" gray="1" boost="0" />
+  <gammagroup id="Backgrounds" value="3392, 3456, 3456" gray="1" boost="0" />
+  <gammagroup id="Buttons"  value="3392, 3456, 3456" gray="1" boost="0" />
+</gammaset>
+<gammaset id="Silver-pinkblue">
+  <gammagroup id="GlassLabels" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Lights" value="1344, -96, 128" gray="0" boost="0" />
+  
+  <gammagroup id="MainAnim" value="1344, -96, 128" gray="0" boost="0" />
+  <gammagroup id="Anim1Treble" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Bass" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Mid" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim2" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim3" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Rings" value="1664, 2240, 2400" gray="0" boost="0" />
+  <gammagroup id="Glass" value="1344, -96, 128" gray="0" boost="0" />
+  <gammagroup id="DarkGlass" value="1344, -96, 128" gray="0" boost="0" />
+  <gammagroup id="PlaybackButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="VolumeandSeeker" value="1344, -96, 128" gray="0" boost="0" />
+<gammagroup id="ShadeButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Volume" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Seeker" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="WindowButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="EqualizerSliders" value="1344, -96, 128" gray="0" boost="0" />
+  <gammagroup id="Equalizer Buttons" value="1344, -96, 128" gray="0" boost="0" />
+  <gammagroup id="VisPreview" value="1344, -96, 128" gray="0" boost="0" />
+   <gammagroup id="BackgroundsOuter"  value="3392, 3456, 3456" gray="1" boost="0" />
+  <gammagroup id="BackgroundsInner"  value="3392, 3456, 3456" gray="1" boost="0" />
+  <gammagroup id="Backgrounds" value="3392, 3456, 3456" gray="1" boost="0" />
+  <gammagroup id="Buttons"  value="3392, 3456, 3456" gray="1" boost="0" />
+</gammaset>
+<gammaset id="Silver-purpleblue">
+  <gammagroup id="GlassLabels" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Lights" value="1344, -96, 1216" gray="0" boost="0" />
+  <gammagroup id="MainAnim" value="1344, -96, 1216" gray="0" boost="0" />
+  <gammagroup id="Anim1Treble" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Bass" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Mid" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim2" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim3" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Rings" value="1344, -96, 1216" gray="0" boost="0" />
+  <gammagroup id="Glass" value="1344, -96, 1216" gray="0" boost="0" />
+  <gammagroup id="DarkGlass" value="1344, -96, 1216" gray="0" boost="0" />
+  <gammagroup id="PlaybackButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="VolumeandSeeker" value="1344, -96, 1216" gray="0" boost="0" />
+  <gammagroup id="ShadeButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Volume" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Seeker" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="WindowButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="EqualizerSliders" value="1344, -96, 1216" gray="0" boost="0" />
+  <gammagroup id="Equalizer Buttons" value="1344, -96, 1216" gray="0" boost="0" />
+  <gammagroup id="VisPreview" value="1344, -96, 1216" gray="0" boost="0" />
+   <gammagroup id="BackgroundsOuter"  value="3392, 3456, 3456" gray="1" boost="0" />
+  <gammagroup id="BackgroundsInner"  value="3392, 3456, 3456" gray="1" boost="0" />
+  <gammagroup id="Backgrounds" value="3392, 3456, 3456" gray="1" boost="0" />
+  <gammagroup id="Buttons"  value="3392, 3456, 3456" gray="1" boost="0" />
+</gammaset>
+<gammaset id="Silver-Blue2">
+  <gammagroup id="GlassLabels" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Lights" value="64, -96, 1344" gray="0" boost="0" />
+  <gammagroup id="MainAnim" value="64, -96, 1344" gray="0" boost="0" />
+  <gammagroup id="Anim1Treble" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Bass" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Mid" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim2" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim3" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Rings" value="64, -96, 1344" gray="0" boost="0" />
+  <gammagroup id="Glass" value="64, -96, 1344" gray="0" boost="0" />
+  <gammagroup id="DarkGlass" value="64, -96, 1344" gray="0" boost="0" />
+  <gammagroup id="PlaybackButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="VolumeandSeeker" value="64, -96, 1344" gray="0" boost="0" />
+  <gammagroup id="ShadeButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Volume" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Seeker" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="WindowButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="EqualizerSliders" value="64, -96, 1344" gray="0" boost="0" />
+ <gammagroup id="Equalizer Buttons" value="64, -96, 1344" gray="0" boost="0" />
+  <gammagroup id="VisPreview" value="64, -96, 1344" gray="0" boost="0" />
+   <gammagroup id="BackgroundsOuter"  value="3392, 3456, 3456" gray="1" boost="0" />
+  <gammagroup id="BackgroundsInner"  value="3392, 3456, 3456" gray="1" boost="0" />
+  <gammagroup id="Backgrounds" value="3392, 3456, 3456" gray="1" boost="0" />
+  <gammagroup id="Buttons"  value="3392, 3456, 3456" gray="1" boost="0" />
+</gammaset>
+<gammaset id="Silver-teal">
+  <gammagroup id="GlassLabels" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Lights" value="-768, 864, 448" gray="0" boost="0" />
+ 
+  <gammagroup id="MainAnim" value="-768, 864, 448" gray="0" boost="0" />
+  <gammagroup id="Anim1Treble" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Bass" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Mid" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim2" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim3" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Rings" value="-768, 864, 448" gray="0" boost="0" />
+  <gammagroup id="Glass" value="-768, 864, 448" gray="0" boost="0" />
+  <gammagroup id="DarkGlass" value="-768, 864, 448" gray="0" boost="0" />
+ 
+  <gammagroup id="PlaybackButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="VolumeandSeeker" value="-768, 864, 448" gray="0" boost="0" />
+  
+  <gammagroup id="ShadeButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Volume" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Seeker" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="WindowButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="EqualizerSliders" value="-768, 864, 448" gray="0" boost="0" />
+  <gammagroup id="Equalizer Buttons" value="-768, 864, 448" gray="0" boost="0" />
+  <gammagroup id="VisPreview" value="-768, 864, 448" gray="0" boost="0" />
+   <gammagroup id="BackgroundsOuter"  value="3392, 3456, 3456" gray="1" boost="0" />
+  <gammagroup id="BackgroundsInner"  value="3392, 3456, 3456" gray="1" boost="0" />
+  <gammagroup id="Backgrounds" value="3392, 3456, 3456" gray="1" boost="0" />
+  <gammagroup id="Buttons"  value="3392, 3456, 3456" gray="1" boost="0" />
+</gammaset>
+<gammaset id="Silver-ltgreen">
+  <gammagroup id="GlassLabels" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Lights" value="-384, 864, -768" gray="0" boost="0" />
+
+  <gammagroup id="MainAnim" value="-384, 864, -768" gray="0" boost="0" />
+  <gammagroup id="Anim1Treble" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Bass" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim1Mid" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim2" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Anim3" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Rings" value="-384, 864, -768" gray="0" boost="0" />
+  <gammagroup id="Glass" value="-384, 864, -768" gray="0" boost="0" />
+  <gammagroup id="DarkGlass" value="-384, 864, -768" gray="0" boost="0" />
+ 
+  <gammagroup id="PlaybackButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="VolumeandSeeker" value="-384, 864, -768" gray="0" boost="0" />
+  <gammagroup id="ShadeButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Volume" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Seeker" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="WindowButtons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="EqualizerSliders" value="-384, 864, -768" gray="0" boost="0" />
+  <gammagroup id="Equalizer Buttons" value="-384, 864, -768" gray="0" boost="0" />
+  <gammagroup id="VisPreview" value="-384, 864, -768" gray="0" boost="0" />
+ <gammagroup id="BackgroundsOuter"  value="3392, 3456, 3456" gray="1" boost="0" />
+  <gammagroup id="BackgroundsInner"  value="3392, 3456, 3456" gray="1" boost="0" />
+  <gammagroup id="Backgrounds" value="3392, 3456, 3456" gray="1" boost="0" />
+  <gammagroup id="Buttons"  value="3392, 3456, 3456" gray="1" boost="0" />
+</gammaset>
+
+
+  

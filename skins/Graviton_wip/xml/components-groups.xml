@@ -1,0 +1,58 @@
+<include file="system-elements.xml" />
+<include file="system-colors.xml" />
+
+<elements>
+ <bitmap id="frame.top.left" file="images/components/frame.png" x="0" y="0" w="18" h="27" gammagroup="Background" />
+ <bitmap id="frame.top.middle" file="images/components/frame.png" x="18" y="0" w="77" h="27" gammagroup="Background" />
+ <bitmap id="frame.top.right" file="images/components/frame.png" x="95" y="0" w="18" h="27" gammagroup="Background" />
+ 
+ <bitmap id="frame.left" file="images/components/frame.png" x="0" y="27" w="26" h="52" gammagroup="Background" />
+ <bitmap id="frame.middle" file="images/components/frame.png" x="18" y="27" w="77" h="52" gammagroup="Background" />
+ <bitmap id="frame.right" file="images/components/frame.png" x="95" y="27" w="18" h="52" gammagroup="Background" />
+ 
+ <bitmap id="frame.bot.left" file="images/components/frame.png" x="0" y="79" w="18" h="34" gammagroup="Background" />
+ <bitmap id="frame.bot.middle" file="images/components/frame.png" x="18" y="79" w="77" h="34" gammagroup="Background" />
+ <bitmap id="frame.bot.right" file="images/components/frame.png" x="95" y="79" w="18" h="34" gammagroup="Background" />
+ 
+
+ <bitmap id="frame.cut.top.left" file="images/components/frame-cut.png" x="0" y="0" w="18" h="27" />
+ <bitmap id="frame.cut.top.right" file="images/components/frame-cut.png" x="95" y="0" w="18" h="27" />
+ <bitmap id="frame.cut.bot.left" file="images/components/frame-cut.png" x="0" y="79" w="18" h="34" />
+ <bitmap id="frame.cut.bot.right" file="images/components/frame-cut.png" x="95" y="79" w="18" h="34" /> 
+</elements>
+
+<groupdef id="win.frame">
+ <grid
+   id="frame.grid"
+   x="0" y="0"
+   w="0" h="0"
+   relatw="1" relath="1"
+   topleft="frame.top.left"
+   top="frame.top.middle"
+   topright="frame.top.right"
+   left="frame.left"
+   middle="frame.middle"
+   right="frame.right"
+   bottomleft="frame.bot.left"
+   bottom="frame.bot.middle"
+   bottomright="frame.bot.right"
+   move="1"
+   tile="1"
+ />
+ 
+ <layer image="frame.cut.top.left" x="0" y="0" sysregion="-2" />
+ <layer image="frame.cut.top.right" x="-18" y="0" relatx="1" sysregion="-2" />
+ <layer image="frame.cut.bot.left" x="0" y="-34" relaty="1" sysregion="-2" />
+ <layer image="frame.cut.bot.right" x="-18" y="-34" relatx="1" relaty="1" sysregion="-2" />
+  
+ <layer x="0" y="0" w="10" h="10" resize="topleft" />
+ <layer x="5" y="0" w="-5" h="5" relatw="1" resize="top" />
+ <layer x="-10" y="0" w="10" h="10" relatx="1" resize="topright" />
+ <layer x="0" y="5" w="5" h="-5" relath="1" resize="left" />
+ <layer x="-5" y="5" w="5" h="-5" relatx="1" relath="1" resize="right" />
+ <layer x="0" y="-10" w="10" h="10" relaty="1" resize="bottomleft" />
+ <layer x="5" y="-5" w="-5" h="5" relatw="1" relaty="1" resize="bottom" />
+ <layer x="-10" y="-10" w="10" h="10" relatx="1" relaty="1" resize="bottomright" />
+</groupdef>
+
+<include file="components.xml" />

@@ -1,0 +1,104 @@
+<elements>
+
+	<bitmap id="frame.top.left" x="0" y="0" w="100" h="30" file="images/components/background-base.png" gammagroup="Backgrounds" />
+	<bitmap id="frame.top.middle" x="100" y="0" w="120" h="30" file="images/components/background-base.png" gammagroup="Backgrounds" />
+	<bitmap id="frame.top.right" x="220" y="0" w="100" h="30" file="images/components/background-base.png" gammagroup="Backgrounds" />
+
+	<bitmap id="frame.left" x="0" y="30" w="16" h="1" file="images/components/background-base.png" gammagroup="Backgrounds" />
+	<bitmap id="frame.right" x="304" y="30" w="16" h="1" file="images/components/background-base.png" gammagroup="Backgrounds" />
+
+	<bitmap id="frame.bottom.left" x="0" y="31" w="100" h="30" file="images/components/background-base.png" gammagroup="Backgrounds" />
+	<bitmap id="frame.bottom.middle" x="100" y="31" w="120" h="30" file="images/components/background-base.png" gammagroup="Backgrounds" />
+	<bitmap id="frame.bottom.right" x="220" y="31" w="100" h="30" file="images/components/background-base.png" gammagroup="Backgrounds" />
+
+	<bitmap id="frame.center" x="16" y="30" w="288" h="1" file="images/components/background-base.png" gammagroup="Backgrounds" />
+
+	<bitmap id="frame.glass.top.left" x="0" y="0" w="100" h="30" file="images/components/glass.png" gammagroup="Glass" />
+	<bitmap id="frame.glass.top.middle" x="120" y="0" w="1" h="30" file="images/components/glass.png" gammagroup="Glass" />
+	<bitmap id="frame.glass.top.right" x="220" y="0" w="100" h="30" file="images/components/glass.png" gammagroup="Glass" />
+
+	<bitmap id="frame.glass.left" x="0" y="30" w="16" h="1" file="images/components/glass.png" gammagroup="Glass" />
+	<bitmap id="frame.glass.right" x="304" y="30" w="16" h="1" file="images/components/glass.png" gammagroup="Glass" />
+
+	<bitmap id="frame.glass.bottom.left" x="0" y="31" w="100" h="30" file="images/components/glass.png" gammagroup="Glass" />
+	<bitmap id="frame.glass.bottom.middle" x="100" y="31" w="1" h="30" file="images/components/glass.png" gammagroup="Glass" />
+	<bitmap id="frame.glass.bottom.right" x="220" y="31" w="100" h="30" file="images/components/glass.png" gammagroup="Glass" />
+
+	<bitmap id="frame.glass.center" x="16" y="30" w="288" h="1" file="images/components/glass.png" gammagroup="Glass" />
+
+	<bitmap id="frame.button"  file="images/components/button.png" gammagroup="Window Buttons" />
+	<bitmap id="frame.button.hover"  file="images/components/buttond.png" gammagroup="Window Buttons" />
+	<bitmap id="frame.button.down" file="images/components/buttond.png" gammagroup="Window Buttons" />
+
+	<bitmap id="frame.region.top.left" x="0" y="0" w="11" h="11" file="images/components/regions.png" />
+	<bitmap id="frame.region.top.right" x="11" y="0" w="11" h="11" file="images/components/regions.png" />
+	<bitmap id="frame.region.bottom.left" x="0" y="11" w="11" h="11" file="images/components/regions.png" />
+	<bitmap id="frame.region.bottom.right" x="11" y="11" w="11" h="11" file="images/components/regions.png" />
+
+</elements>
+
+
+
+<groupdef id="wasabi.frame.layout" >
+
+	<layer id="mousetrap" x="0" y="2" w="0" h="-2" relatw="1" relath="1" move="1" />
+
+	<layer id="component.center" x="16" y="30" w="-32" h="-60" relatw="1" relath="1" image="frame.center" sysregion="1" />
+
+	<layer id="component.top.left" x="0" y="0" image="frame.top.left" resize="topleft" sysregion="1" />
+	<layer id="component.top.middle" x="100" y="0" w="-200" relatw="1" image="frame.top.middle" sysregion="1" />
+	<layer id="component.top.right" x="-100" y="0" relatx="1" image="frame.top.right" resize="topright" sysregion="1" />
+
+	<layer id="component.left" x="0" y="30" h="-60" relath="1" image="frame.left" resize="left" sysregion="1" />
+	<layer id="component.right" x="-16" y="30" h="-60" relatx="1" relath="1" image="frame.right" resize="right" sysregion="1" />
+
+	<layer id="component.bottom.left" x="0" y="-30" relaty="1" image="frame.bottom.left" resize="bottomleft" sysregion="1" />
+	<layer id="component.bottom.middle" x="100" y="-30" w="-200" relatw="1" relaty="1" image="frame.bottom.middle" resize="bottom" sysregion="1" />
+	<layer id="component.bottom.right" x="-100" y="-30" relaty="1" relatx="1" image="frame.bottom.right" resize="bottomright" sysregion="1" />
+
+	<layer x="16" y="30" w="-32" h="-60" relatw="1" relath="1" image="frame.glass.center" sysregion="1" />
+
+	<layer x="0" y="0" image="frame.glass.top.left" sysregion="1" />
+	<layer x="100" y="0" w="-200" relatw="1" image="frame.glass.top.middle" sysregion="1" />
+	<layer x="-100" y="0" relatx="1" image="frame.glass.top.right" sysregion="1" />
+
+	<layer x="0" y="30" h="-60" relath="1" image="frame.glass.left" sysregion="1" />
+	<layer x="-16" y="30" h="-60" relatx="1" relath="1" image="frame.glass.right" sysregion="1" />
+
+	
+	<button x="-39" y="0" relatx="1" image="frame.button" hoverimage="frame.button.hover" downimage="frame.button.down" action="close" />
+
+	<layer x="0" y="-30" relaty="1" image="frame.glass.bottom.left" sysregion="1" />
+	<layer x="100" y="-30" w="-200" relatw="1" relaty="1" image="frame.glass.bottom.middle" sysregion="1" />
+	<layer x="-100" y="-30" relaty="1" relatx="1" image="frame.glass.bottom.right" sysregion="1" />
+
+	<layer id="regiontopleft" x="0" y="0" image="frame.region.top.left" sysregion="-2" />
+	<layer id="regiontopright" x="-11" y="0" relatx="1" image="frame.region.top.right" sysregion="-2" />
+	<layer id="regionbottomleft" x="0" y="-11" relaty="1" image="frame.region.bottom.left" sysregion="-2" />
+	<layer id="regionbottomright" x="-11" y="-11" relatx="1" relaty="1" image="frame.region.bottom.right" sysregion="-2" />
+
+	<group id="wasabi.titlebar" x="0" y="0" w="0" h="0" />
+</groupdef>
+
+<groupdef id="wasabi.standardframe.statusbar" inherit_content="0" >
+	<group id="wasabi.frame.layout" x="0" y="0" w="0" relatw="1" h="0" relath="1" />
+	<LayoutStatus id="standardframe.layoutstatus" x="16" y="-45" relaty="1" w="-32" relatw="1" h="15" exclude="{system}" />
+	<script id="standardframe.script" file="scripts/standardframe.maki" param="16,30,-32,-79,0,0,1,1" />
+</groupdef>
+
+<groupdef id="wasabi.standardframe.nostatusbar" inherit_content="0">
+	<group id="wasabi.frame.layout" x="0" y="0" w="0" h="0" relatw="1" relath="1" />
+	<script id="standardframe.script" file="scripts/standardframe.maki" param="16,30,-32,-60,0,0,1,1" />
+</groupdef>
+
+
+<groupdef id="wasabi.standardframe.modal" inherit_group="wasabi.standardframe.nostatusbar">
+	<group id="wasabi.panel" x="23" y="-21" w="-56" h="-10"
+		relatw="1" relath="1"
+	/>
+	<hideobject target="sysmenu" />
+</groupdef>
+
+<groupdef id="wasabi.standardframe.static" inherit_group="wasabi.standardframe.nostatusbar">
+	<hideobject target="cornerresize" />
+</groupdef>

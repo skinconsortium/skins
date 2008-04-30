@@ -1,0 +1,14 @@
+<groupdef id="wasabi.standardframe.statusbar" background="frame.middle" sysregion="1" xuitag="Wasabi:StandardFrame:Status">
+ <group id="win.frame" x="0" y="0" w="0" h="0" relatw="1" relath="1"/>
+ <LayoutStatus id="standardframe.layoutstatus" x="18" y="-21" w="-36" h="15" relaty="1" relatw="1" exclude="{system}" />
+ 
+ <text ghost="1" font="Arial" bold="1" color="#E1B93C" fontsize="16" default=":componentname" x="75" y="11" w="-150" h="25" relatw="1" align="center" valign="top" antialias="1" forceupcase="0" />
+ <script id="standardframe.script" file="scripts/standardframe.maki" param="8,29,-16,-58,0,0,1,1" />
+</groupdef>
+
+<groupdef id="wasabi.standardframe.nostatusbar" background="frame.middle" sysregion="1" xuitag="Wasabi:StandardFrame:NoStatus">
+ <group id="win.frame" x="0" y="0" w="0" h="0" relatw="1" relath="1"/>
+ 
+ <text ghost="1" font="Arial" bold="1" color="#E1B93C" fontsize="16" default=":componentname" x="75" y="11" w="-150" h="25" relatw="1" align="center" valign="top" antialias="1" forceupcase="0" />
+ <script id="standardframe.script" file="scripts/standardframe.maki" param="8,29,-16,-58,0,0,1,1" />
+</groupdef>

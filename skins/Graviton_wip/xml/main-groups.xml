@@ -1,0 +1,212 @@
+<groupdef id="group.cbutton" xuitag="cbutton">
+ <button id="library" x="0" y="0" 
+  image="custom.button.1.library" hoverimage="custom.button.1.library.hover" downimage="custom.button.1.library.down" 
+  action="toggle" param="guid:ml" tooltip="Toggle Media Library" sysregion="1"
+ />
+ <button id="visuals" x="0" y="0" 
+  image="custom.button.1.visuals" hoverimage="custom.button.1.visuals.hover" downimage="custom.button.1.visuals.down" 
+  tooltip="Toggle Visuals" sysregion="1"
+ /><!-- action="toggle" param="*" --> 
+ <button id="video" x="0" y="0" 
+  image="custom.button.1.video" hoverimage="custom.button.1.video.hover" downimage="custom.button.1.video.down" 
+  action="toggle" param="guid:{F0816D7B-FFFC-4343-80F2-E8199AA15CC3}" tooltip="Toggle Video Display" sysregion="1"
+ />
+ <button id="playlist" x="0" y="0" 
+  image="custom.button.1.playlist" hoverimage="custom.button.1.playlist.hover" downimage="custom.button.1.playlist.down" 
+  action="toggle" param="guid:pl" tooltip="Toggle Playlist Editor" sysregion="1"
+ />
+ <button id="config" x="0" y="0" 
+  image="custom.button.1.config" hoverimage="custom.button.1.config.hover" downimage="custom.button.1.config.down" 
+  action="toggle" param="win.config" tooltip="Toggle Configuration" sysregion="1"
+ />
+ <button id="equalizer" x="0" y="0" 
+  image="custom.button.1.equalizer" hoverimage="custom.button.1.equalizer.hover" downimage="custom.button.1.equalizer.down" 
+  action="toggle" param="equalizer" tooltip="Toggle Equalizer" sysregion="1"
+ />
+ <hideobject target="visuals;video;playlist;config;equalizer" />
+ <script id="custombutton" file="scripts/custombutton.maki" />
+</groupdef>
+
+<groupdef id="main.window.background">
+ <layer x="0" y="0" image="main.background.shadow" regionop="0" />
+ <layer x="0" y="0" image="main.background.lights" regionop="0" />
+ <layer id="main.outer.mask.dta" x="0" y="0" image="main.background.base.outer.mask.dta" regionop="1"/>
+ <layer x="0" y="0" image="main.background.base.outer" regionop="1" />
+ 
+</groupdef>
+
+<groupdef id="main.window.background.inner">
+ <layer x="0" y="0" image="main.background.base.inner" regionop="1" />
+
+  <layer x="39" y="156" w="220" h="104" image="main.slider.progress.base" ghost="1" />
+  <animatedlayer id="progress.ani" x="39" y="156" w="220" h="104" image="main.slider.progress.ani" frameheight="104" autoplay="0" autoreplay="0" move="0" />
+  <animatedlayer id="progress.key.ani" x="39" y="156" w="220" h="104" image="main.slider.progress.key.ani" frameheight="104" autoplay="0" autoreplay="0" move="0" ghost="1" />
+
+  <layer x="59" y="40" w="182" h="60" image="main.slider.volume.base" ghost="1" />
+  <animatedlayer id="volume.ani" x="59" y="40" w="182" h="60" image="main.slider.volume.ani" frameheight="60" autoplay="0" autoreplay="0" move="0" />
+  <animatedlayer id="volume.key.ani" x="59" y="40" w="182" h="60" image="main.slider.volume.key.ani" frameheight="60" autoplay="0" autoreplay="0" move="0" ghost="1" />
+
+ <layer id="glass" x="68" y="66" image="main.glass" regionop="1" rectrgn="0" />
+ 
+  
+</groupdef>
+
+<groupdef id="main.anim1">
+  <animatedlayer id="anim1.treble" x="105" y="122" w="90" h="14" image="main.anim1.treble" frameheight="14" speed="75" autoplay="0" autoreplay="0" move="0" />
+  <animatedlayer id="anim1.bass" x="125" y="125" w="50" h="50" image="main.anim1.bass" frameheight="50" speed="75" autoplay="0" autoreplay="0" move="0"/>
+  <animatedlayer id="anim1.mid" x="93" y="88" w="114" h="100" image="main.anim1.mid" frameheight="100" speed="75" autoplay="0" autoreplay="0" move="0" />
+</groupdef>
+
+<groupdef id="main.anim2">
+  <animatedlayer id="anim2" x="68" y="71" w="164" h="157" image="main.anim2" frameheight="157" speed="75" autoplay="0" autoreplay="0" move="0" />
+</groupdef>
+
+<groupdef id="main.anim3">
+  <animatedlayer id="anim3" x="78" y="75" w="144" h="150" image="main.anim3" frameheight="150" speed="75" autoplay="0" autoreplay="0" move="0" />
+</groupdef>
+
+<groupdef id="main.anim4">
+  <animatedlayer id="anim4" x="84" y="122" w="133" h="30" image="main.anim4" frameheight="30" speed="75" autoplay="0" autoreplay="0" move="0" />
+</groupdef>
+
+<groupdef id="main.display.anim">
+  <group id="main.anim1" x="0" y="0" w="300" h="300" alpha="255" />
+  <group id="main.anim2" x="0" y="0" w="300" h="300" alpha="255" />
+  <group id="main.anim3" x="0" y="0" w="300" h="300" alpha="255" />
+  <group id="main.anim4" x="0" y="0" w="300" h="300" alpha="255" />
+
+  <hideobject target="main.anim1;main.anim2;main.anim3;main.anim4" />
+</groupdef>
+
+<groupdef id="main.component.buttons">
+ <cbutton x="23" y="164" cb_id="1" cb_def="0" /> <!-- button1 -->
+ <cbutton x="48" y="215" cb_id="2" cb_def="3" /> <!-- button2 -->
+ <cbutton x="191" y="215" cb_id="3" cb_def="4" /> <!-- button3 -->
+ <cbutton x="235" y="164" cb_id="4" cb_def="5" /> <!-- button3 -->
+</groupdef>
+
+<groupdef id="main.window.controls">
+ <button x="59" y="26" w="63" h="48" image="main.button.shade" hoverimage="main.button.shade.hover" downimage="main.button.shade.down" action="switch" param="winshade" tooltip="Toggle Shademode" regionop="1" />
+ <button x="117" y="21" w="66" h="25" image="main.button.minimize" hoverimage="main.button.minimize.hover" downimage="main.button.minimize.down" action="minimize" tooltip="Minimize Winamp" regionop="1" />
+ <button x="178" y="26" w="63" h="48" image="main.button.close" hoverimage="main.button.close.hover" downimage="main.button.close.down" action="close" tooltip="Close Winamp" regionop="1" />
+ 
+	<togglebutton
+		id="Shuffle"
+		x="130" y="260"
+		image="player.main.close"
+		downimage="player.main.closed"
+		hoverimage="player.main.closed" rectrgn="1"
+		activeImage="player.main.closed" alpha="140"
+		tooltip="Shuffle"
+		cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Shuffle"       
+	/>
+
+	<togglebutton
+		id="Crossfade"
+		x="145" y="261"
+		image="player.main.close"
+		downimage="player.main.closed"
+		hoverimage="player.main.closed" alpha="140"
+		activeImage="player.main.closed" rectrgn="1"
+		tooltip="Crossfade"
+		cfgattrib="{FC3EAF78-C66E-4ED2-A0AA-1494DFCC13FF};Enable crossfading"
+	/>
+
+	<NStatesButton
+		id="Repeat"
+		x="160" y="260"
+		nstates="3"
+		autoelements="0"
+		image="player.main.close"
+		downimage="player.main.closed"
+		hoverimage="player.main.closed" rectrgn="1"
+		activeImage="player.main.closed" alpha="140"
+		tooltip="Toggle Playlist/Song Repeating"
+    	cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Repeat"
+    	cfgval="0;1;-1"
+	/> 
+</groupdef>
+
+<groupdef id="main.control.buttons">
+ <layer x="68" y="66" image="main.glass" regionop="1" rectrgn="0" />
+
+ <button id="prev" x="71" y="124" w="41" h="42" image="main.button.previous.hover" downimage="main.button.previous.down" action="prev" rectrgn="0" tooltip="Previous Track" />
+ <button id="next" x="187" y="123" w="42" h="44" image="main.button.next.hover" downimage="main.button.next.down" action="next" rectrgn="0" tooltip="Next Track" />
+ <button id="play" x="118" y="99" w="72" h="92" image="main.button.play.hover" downimage="main.button.play.down" action="play" rectrgn="0" tooltip="Play Track" />
+ <button id="pause" x="116" y="110" w="68" h="74" image="main.button.pause.hover" downimage="main.button.pause.down" action="pause" rectrgn="0" tooltip="Pause Track" />
+ <button id="load" x="124" y="69" w="52" h="38" image="main.button.load.hover" downimage="main.button.load.down" action="eject" rectrgn="0" tooltip="Load Files" />
+ <button id="stop" x="128" y="181" w="44" h="44" image="main.button.stop.hover" downimage="main.button.stop.down" action="stop" rectrgn="0" tooltip="Stop Track" />
+ <layer id="layer.prev" x="71" y="124" w="41" h="42" image="main.button.previous" ghost="0" rectrgn="0" />
+ <layer id="layer.next" x="187" y="123" w="42" h="44" image="main.button.next" ghost="0" rectrgn="0" />
+ <layer id="layer.play" x="118" y="99" w="72" h="92" image="main.button.play" ghost="0" rectrgn="0" />
+ <layer id="layer.pause" x="116" y="110" w="68" h="74" image="main.button.pause" ghost="0" rectrgn="0" />
+ <layer id="layer.load" x="124" y="69" w="52" h="38" image="main.button.load" ghost="0" rectrgn="0" />
+ <layer id="layer.stop" x="128" y="181" w="44" h="44" image="main.button.stop" ghost="0" rectrgn="0" />
+
+ <script id="hoverbuttons" file="scripts/hoverbuttons.maki" />
+</groupdef>
+
+<groupdef id="main.display.content">
+ <layer x="72" y="67" image="main.label.volprog" regionop="1" />
+
+ <text id="timer" display="time" x="89" y="105" w="122" h="24" font="main.font.timer.normal" align="center" timecolonwidth="14" timeroffstyle="1" showlen="1"/>
+ <text id="songticker" display="songname" ticker="1" x="74" y="131" w="152" h="29" font="main.font.arial.narrow" align="center" valign="center" shadowy="1" fontsize="30" color="main.color.font.normal" shadowcolor="main.color.font.shadow" rightclickaction="trackmenu" dblclickaction="trackinfo"/>
+ <text id="songalbum" x="70" y="158" w="160" h="29" font="main.font.arial.narrow" align="center" valign="center" shadowy="1" fontsize="16" color="main.color.font.normal" shadowcolor="main.color.font.shadow" />
+ <text id="songinfo" display="songinfo" x="100" y="179" w="100" h="29" font="main.font.arial.narrow" align="center" valign="center" shadowy="1" fontsize="16" color="main.color.font.normal" shadowcolor="main.color.font.shadow" />
+
+</groupdef>
+
+
+
+<groupdef id="winshade.window.background">
+ <layer x="0" y="7" image="winshade.background.shadow.left" regionop="0" />
+ <layer x="195" y="7" w="-390" relatw="1" image="winshade.background.shadow" regionop="0" />
+ <layer x="-195" y="7" relatx="1" image="winshade.background.shadow.right" regionop="0" />
+ <layer x="2" y="0" image="winshade.background.base.left" sysregion="1" />
+ <layer x="197" y="0" w="-394" relatw="1" image="winshade.background.base" sysregion="1" />
+ <layer x="-197" y="0" relatx="1" image="winshade.background.base.right" sysregion="1" resize="right" />
+
+ <layer x="2" y="0" image="winshade.background.base.left" regionop="1" />
+ <layer x="197" y="0" w="-394" relatw="1" image="winshade.background.base" regionop="1" />
+ <layer x="-197" y="0" relatx="1" image="winshade.background.base.right" regionop="1" resize="right" />
+ 
+ <group id="winshade.seeker" x="0" y="0" w="0" h="32" relatw="1" />
+
+ <layer x="2" y="0" image="winshade.background.base.left" ghost="1" />
+ <layer x="-197" y="0" relatx="1" image="winshade.background.base.right" ghost="1" />
+
+ <layer x="8" y="2" image="winshade.glass.left" regionop="1" />
+ <layer x="203" y="2" w="-406" relatw="1" image="winshade.glass" regionop="1" />
+ <layer x="-203" y="2" relatx="1" image="winshade.glass.right" regionop="1" />
+</groupdef>
+
+<groupdef id="winshade.window.controls">
+ <button x="8" y="1" image="winshade.button.shade" hoverimage="winshade.button.shade.hover" downimage="winshade.button.shade.down" action="switch" param="normal" tooltip="Toggle Mainmode" regionop="1" />
+ <button x="-23" y="10" relatx="1" image="winshade.button.minimize" hoverimage="winshade.button.minimize.hover" downimage="winshade.button.minimize.down" action="minimize" tooltip="Minimize Winamp" regionop="1" />
+ <button x="-30" y="2" relatx="1" image="winshade.button.close" hoverimage="winshade.button.close.hover" downimage="winshade.button.close.down" action="close" tooltip="Close Winamp" regionop="1" />
+
+ <button x="47" y="1" image="winshade.button.playlist" hoverimage="winshade.button.playlist.hover" downimage="winshade.button.playlist.down" action="toggle" param="guid:pl" tooltip="Toggle Playlist Editor" regionop="1" />
+ <button x="27" y="1" image="winshade.button.library" hoverimage="winshade.button.library.hover" downimage="winshade.button.library.down" action="toggle" param="guid:ml" tooltip="Toggle Media Library" regionop="1" />
+</groupdef>
+
+<groupdef id="winshade.display.content">
+ <layer x="-132" y="2" relatx="1" image="winshade.slider.volume.base" regionop="1" />
+ <layer id="volume" x="-132" y="2" relatx="1" image="winshade.slider.volume.on" regionop="1" rectrgn="1" move="0" />
+
+ <text id="ticker" display="songname" ticker="1" x="210" y="2" w="-360" h="14" relatw="1" font="main.font.silkscreen" align="left" valign="top" shadowy="1" fontsize="14" antialias="1" color="winshade.color.font.normal" shadowcolor="winshade.color.font.shadow" rightclickaction="trackmenu" dblclickaction="trackinfo"/>
+ <text id="songtimer" display="time" timecolonwidth="5" timeroffstyle="0" x="160" y="3" w="45" h="14" font="main.font.silkscreen" align="left" valign="top" shadowy="-1" fontsize="14" antialias="1" color="winshade.color.font.normal" shadowcolor="winshade.color.font.shadow" />
+</groupdef>
+
+<groupdef id="winshade.control.buttons">
+ <button x="74" y="5" image="winshade.button.previous" hoverimage="winshade.button.previous.hover" downimage="winshade.button.previous.down" action="prev" tooltip="Previous Track" />
+ <button x="120" y="5" image="winshade.button.next" hoverimage="winshade.button.next.hover" downimage="winshade.button.next.down" action="next" tooltip="Next Track" />
+ <button id="shade.play" x="90" y="3" image="winshade.button.play" hoverimage="winshade.button.play.hover" downimage="winshade.button.play.down" action="play" tooltip="Play Track" />
+ <button id="shade.pause" x="89" y="4" image="winshade.button.pause" hoverimage="winshade.button.pause.hover" downimage="winshade.button.pause.down" action="pause" tooltip="Pause Track" />
+ <button x="133" y="7" image="winshade.button.load" hoverimage="winshade.button.load.hover" downimage="winshade.button.load.down" action="eject" tooltip="Load Files" />
+ <button x="104" y="5" image="winshade.button.stop" hoverimage="winshade.button.stop.hover" downimage="winshade.button.stop.down" action="stop" tooltip="Stop Track" />
+</groupdef>
+
+<groupdef id="winshade.seeker">
+  <slider id="Seeker" action="SEEK" x="136" y="16" h="9" relatw="1" w="-272" thumb="winshade.slider.seeker.thumb" downThumb="winshade.slider.seeker.thumb.hover" hoverThumb="winshade.slider.seeker.thumb.hover" tooltip="Seeker" sysregion="1" />
+  <slider id="SeekerGhost" action="SEEK" x="136" y="16" h="9" relatw="1" w="-272" thumb="winshade.slider.seeker.thumb" downThumb="winshade.slider.seeker.thumb.hover" hoverThumb="winshade.slider.seeker.thumb.hover" alpha="155" sysregion="1" />
+</groupdef>

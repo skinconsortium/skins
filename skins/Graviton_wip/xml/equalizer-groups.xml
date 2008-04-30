@@ -1,0 +1,35 @@
+<groupdef id="eq.window.background">
+ <layer x="3" y="0" image="eq.background.shadow" regionop="0" />
+ <layer x="0" y="35" image="eq.background.lights" regionop="0" />
+ <layer x="15" y="11" image="eq.background.base" regionop="1" />
+ <layer x="25" y="15" image="eq.glass" regionop="1" />
+</groupdef>
+
+<groupdef id="eq.window.controls">
+
+ <button x="197" y="11" w="12" h="5" image="eq.button.close" hoverimage="eq.button.close.hover" downimage="eq.button.close.down" action="close" tooltip="Close Equalizer" regionop="1" />
+</groupdef>
+
+<groupdef id="eq.display.content">
+ <button id="reset" x="190" y="60" w="22" h="21" image="eq.button.reset" hoverimage="eq.button.reset.hover" downimage="eq.button.reset.down" tooltip="Reset Equalizer" regionop="1" />
+
+ <togglebutton x="28" y="79" w="22" h="22" image="eq.button.auto" hoverimage="eq.button.auto.hover" downimage="eq.button.auto.down" activeimage="eq.button.auto.hover" action="eq_auto" tooltip="Toggle Equalizer Automatic Processing On/Off" regionop="1" />
+ <togglebutton x="30" y="62" w="22" h="22" image="eq.button.power" hoverimage="eq.button.power.hover" downimage="eq.button.power.down" activeimage="eq.button.power.hover" action="eq_toggle" tooltip="Toggle Equalizer On/Off" regionop="1" />
+ <button x="192" y="79" w="22" h="22" image="eq.button.preset" hoverimage="eq.button.preset.hover" downimage="eq.button.preset.down" activeimage="eq.button.preset.hover" action="menu" param="presets" tooltip="Load Equalizer Presets" regionop="1" />
+
+ <layer x="55" y="27" image="eq.slider.eq.base" regionop="1" />
+
+ <layer id="eqpre" x="55" y="27" image="eq.slider.eqpre.on" regionop="1" move="0"/>
+ <layer id="eq1" x="73" y="27" image="eq.slider.eq1.on" regionop="1" move="0"/>
+ <layer id="eq2" x="85" y="27" image="eq.slider.eq2.on" regionop="1" move="0"/>
+ <layer id="eq3" x="97" y="27" image="eq.slider.eq3.on" regionop="1" move="0"/>
+ <layer id="eq4" x="108" y="27" image="eq.slider.eq4.on" regionop="1" move="0"/>
+ <layer id="eq5" x="120" y="27" image="eq.slider.eq5.on" regionop="1" move="0"/>
+ <layer id="eq6" x="131" y="27" image="eq.slider.eq6.on" regionop="1" move="0"/>
+ <layer id="eq7" x="142" y="27" image="eq.slider.eq7.on" regionop="1" move="0"/>
+ <layer id="eq8" x="154" y="27" image="eq.slider.eq8.on" regionop="1" move="0"/>
+ <layer id="eq9" x="165" y="27" image="eq.slider.eq9.on" regionop="1" move="0"/>
+ <layer id="eq10" x="177" y="27" image="eq.slider.eq10.on" regionop="1" move="0"/>
+
+ <script id="eqani" file="scripts/eqani.maki" />
+</groupdef>

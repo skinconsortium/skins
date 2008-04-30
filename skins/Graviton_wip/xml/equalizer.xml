@@ -1,0 +1,13 @@
+<elements>
+ <include file="equalizer-elements.xml" />
+</elements>
+
+<container id="equalizer" name="Equalizer">
+ <include file="equalizer-groups.xml" />
+ 
+ <layout id="normal" desktopalpha="1" w="242" h="126" droptarget="pldr" >
+  <group id="eq.window.background" x="0" y="0" w="242" h="126" />
+  <group id="eq.display.content" x="0" y="0" w="242" h="126" />
+  <group id="eq.window.controls" x="0" y="0" w="242" h="126" />
+ </layout>
+</container>

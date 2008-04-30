@@ -1,0 +1,47 @@
+<!-- Start Background Images -->
+<bitmap id="eq.background.shadow" file="images/equalizer/background-shadow.png" />
+<bitmap id="eq.background.lights" file="images/equalizer/background-lights.png" gammagroup="Lights" />
+<bitmap id="eq.background.base" file="images/equalizer/background-base.png" gammagroup="Backgrounds" />
+<bitmap id="eq.glass" file="images/equalizer/glass.png" gammagroup="Glass" />
+
+<!-- Start Equalizer Window Controls -->
+<bitmap id="eq.button.close" file="images/equalizer/button-close.png" x="0" y="0" w="12" h="5" gammagroup="Window Buttons" />
+<bitmap id="eq.button.close.hover" file="images/equalizer/button-close.png" x="12" y="0" w="12" h="5" gammagroup="Window Buttons" />
+<bitmap id="eq.button.close.down" file="images/equalizer/button-close.png" x="24" y="0" w="12" h="5" gammagroup="Window Buttons" />
+
+<bitmap id="eq.button.minimize" file="images/equalizer/button-minimize.png" x="0" y="0" w="12" h="5" gammagroup="Window Buttons" />
+<bitmap id="eq.button.minimize.hover" file="images/equalizer/button-minimize.png" x="12" y="0" w="12" h="5" gammagroup="Window Buttons" />
+<bitmap id="eq.button.minimize.down" file="images/equalizer/button-minimize.png" x="24" y="0" w="12" h="5" gammagroup="Window Buttons" />
+
+<!-- Start Slider Images -->
+<bitmap id="eq.slider.eqpre.on" file="images/equalizer/slider-eqpre-on.png" gammagroup="Equalizer Sliders" />
+<bitmap id="eq.slider.eq1.on" file="images/equalizer/slider-eq1-on.png" gammagroup="Equalizer Sliders" />
+<bitmap id="eq.slider.eq2.on" file="images/equalizer/slider-eq2-on.png" gammagroup="Equalizer Sliders" />
+<bitmap id="eq.slider.eq3.on" file="images/equalizer/slider-eq3-on.png" gammagroup="Equalizer Sliders" />
+<bitmap id="eq.slider.eq4.on" file="images/equalizer/slider-eq4-on.png" gammagroup="Equalizer Sliders" />
+<bitmap id="eq.slider.eq5.on" file="images/equalizer/slider-eq5-on.png" gammagroup="Equalizer Sliders" />
+<bitmap id="eq.slider.eq6.on" file="images/equalizer/slider-eq6-on.png" gammagroup="Equalizer Sliders" />
+<bitmap id="eq.slider.eq7.on" file="images/equalizer/slider-eq7-on.png" gammagroup="Equalizer Sliders" />
+<bitmap id="eq.slider.eq8.on" file="images/equalizer/slider-eq8-on.png" gammagroup="Equalizer Sliders" />
+<bitmap id="eq.slider.eq9.on" file="images/equalizer/slider-eq9-on.png" gammagroup="Equalizer Sliders" />
+<bitmap id="eq.slider.eq10.on" file="images/equalizer/slider-eq10-on.png" gammagroup="Equalizer Sliders" />
+
+<bitmap id="eq.slider.eq.base" file="images/equalizer/slider-eq-base.png" gammagroup="Equalizer Sliders" />
+<bitmap id="eq.slider.eq.map" file="images/equalizer/slider-eq-map.png" />
+
+<!-- Start Custom Button Images -->
+<bitmap id="eq.button.power" file="images/equalizer/button-power.png" x="0" y="0" w="22" h="22" gammagroup="Equalizer Buttons" />
+<bitmap id="eq.button.power.hover" file="images/equalizer/button-power.png" x="22" y="0" w="22" h="22" gammagroup="Equalizer Buttons" />
+<bitmap id="eq.button.power.down" file="images/equalizer/button-power.png" x="44" y="0" w="22" h="22" gammagroup="Equalizer Buttons" />
+
+<bitmap id="eq.button.auto" file="images/equalizer/button-auto.png" x="0" y="0" w="22" h="22" gammagroup="Equalizer Buttons" />
+<bitmap id="eq.button.auto.hover" file="images/equalizer/button-auto.png" x="22" y="0" w="22" h="22" gammagroup="Equalizer Buttons" />
+<bitmap id="eq.button.auto.down" file="images/equalizer/button-auto.png" x="44" y="0" w="22" h="22" gammagroup="Equalizer Buttons" />
+
+<bitmap id="eq.button.reset" file="images/equalizer/button-reset.png" x="0" y="0" w="22" h="21" gammagroup="Equalizer Buttons" />
+<bitmap id="eq.button.reset.hover" file="images/equalizer/button-reset.png" x="22" y="0" w="22" h="21" gammagroup="Equalizer Buttons" />
+<bitmap id="eq.button.reset.down" file="images/equalizer/button-reset.png" x="44" y="0" w="22" h="21" gammagroup="Equalizer Buttons" />
+
+<bitmap id="eq.button.preset" file="images/equalizer/button-preset.png" x="0" y="0" w="22" h="22" gammagroup="Equalizer Buttons" />
+<bitmap id="eq.button.preset.hover" file="images/equalizer/button-preset.png" x="22" y="0" w="22" h="22" gammagroup="Equalizer Buttons" />
+<bitmap id="eq.button.preset.down" file="images/equalizer/button-preset.png" x="44" y="0" w="22" h="22" gammagroup="Equalizer Buttons" />

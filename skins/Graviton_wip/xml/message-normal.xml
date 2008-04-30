@@ -1,0 +1,28 @@
+<groupdef id="dtabox.content">
+
+	<Wasabi:Text id="dta.text" x="0" y="15" w="-5" relatw="1" h="0" relath="1" wrap="1" antialias="0" color="255,255,255" default="    "/>
+	<togglebutton id="desktopalpha" 
+		cfgattrib="{9149C445-3C30-4E04-8433-5A518ED0FDDE};Enable desktop alpha"
+		action="Toggle" param="dta" 
+		image="DTA"
+		downimage="DTAD"
+		hoverimage="DTAD"
+		activeimage="DTAD"
+		rectrgn="1"
+		tooltip="Smoothskin" x="130" y="15" />
+</groupdef>
+
+<groupdef id="message.content.group"  default_h="150" default_w="350" minimum_h="150" minimum_w="350" maximum_h="150" maximum_w="350">
+<!-- 0,0 -->
+	<Wasabi:TitleBox id="radarbox" x="1" y="1" w="-3" h="90" relatw="1" relath="0" color="255,255,255" title="  BUTTON MUST BE TURNED ON FOR GRAPHIC SMOOTHING" content="dtabox.content" />
+   
+</groupdef>
+
+<layout id="normal" default_h="150" default_w="350">
+
+	<Wasabi:StandardFrame:Static
+		x="0" y="0" w="0" h="0" relatw="1" relath="1"
+		content="message.content.group"
+	/>
+
+</layout>

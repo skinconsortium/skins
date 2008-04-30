@@ -1,0 +1,70 @@
+<!-- 
+
+  system-colors.xml
+
+
+  this file contains all the static color definitions for Wasabi. An objects that does not rely on a group will use 
+  one of these elements to decide what color to use.
+
+-->
+
+
+<elements>
+  <!-- Generic Lists -->
+  <color id="wasabi.list.text" value="108,108,136" /> <!--lists/trees item foreground (also edit text) -->
+  <color id="wasabi.list.background" value="55,65,113" />  <!--lists/trees item background (also bg for edit) -->
+
+  <color id="wasabi.list.text.selected" value="212,212,222" /> <!--listview/treeview selection bar text color -->
+  <color id="wasabi.list.text.selected.background" value="36,42,73" /> <!--listview/treeview selection bar backcolor -->
+  <color id="studio.list.item.selected" value="212,212,222" />
+  <color id="studio.list.item.focused" value="212,212,222" />
+
+
+  <color id="wasabi.list.text.current" value="212,212,222" /> <!-- currently playing item in lists -->
+  <color id="wasabi.list.text.selected.inactive" value="108,108,136" /> <!-- listview/treeview selection bar textcolor (inactive) -->
+  <color id="wasabi.list.text.selected.background.inactive" value="63,63,90" /> <!-- listview/treeview selectionbar back color (inactive) -->
+
+  <color id="wasabi.list.column.background" value="55,65,113" /> <!-- listview header background color -->
+  <color id="wasabi.list.column.text" value="155,155,155" /> <!-- listview header text color -->
+  <color id="wasabi.list.column.frame.top" value="55,65,113" /> 
+  <color id="wasabi.list.column.frame.middle" value="55,65,113" />
+  <color id="wasabi.list.column.frame.bottom" value="55,65,113" />
+  <color id="wasabi.list.column.empty" value="10,10,56" />
+  <!-- edit wnds -->
+  <color id="wasabi.window.background" value="55,65,113" /> <!--window background. -  If this color is not defined, a whole container is created in memory to extract a pixel, so specifying it makes skin loading faster -->
+  <color id="wasabi.window.text" value="155,155,155" /> <!--text color within windows -->
+  <color id="wasabi.border.sunken" value="55,65,113" /> 
+
+  <color id="wasabi.scrollbar.foreground" value="55,65,113" /> <!-- scrollbar foreground color -->
+  <color id="wasabi.scrollbar.background" value="10,10,56" /> <!-- scrollbar background color -->
+  <color id="wasabi.scrollbar.foreground.inverted" value="0,0,0" /> <!-- inverse scrollbar foreground color -->
+  <color id="wasabi.scrollbar.background.inverted" value="0,0,0" /> <!-- inverse scrollbar background color -->
+
+  <color id="wasabi.button.text" value="180,180,180" /> <!-- Buttons text color -->
+  <color id="wasabi.button.hiliteText" value="255,255,255" /> <!-- Buttons hilite text color, used by tab windows-->
+  <color id="wasabi.button.dimmedText" value="255,255,255" /> <!-- Buttons dimmed text color, when disabled -->
+</elements>
+
+<groupdef id="wasabi.text.group" inherit_content="1">
+ <sendparams target="wasabi.text" color="255,255,255" shadowcolor="0,0,0" shadowx="0" shadowy="0" fontsize="14" />
+</groupdef>
+
+<groupdef id="studio.configgroup.std" inherit_content="1">
+ <sendparams target="cfg.txt" color="255,255,255" shadowcolor="0,0,0" shadowx="0" shadowy="0" fontsize="14" />
+</groupdef>
+
+<groupdef id="wasabi.buttonbar.stack" inherit_content="1">
+ <sendparams target="buttonbar.text" color="255,255,255" shadowcolor="0,0,0" shadowx="0" shadowy="0" fontsize="14" />
+</groupdef>
+
+<groupdef id="wasabi.titlebox.center.group" inherit_content="1" >
+ <sendparams target="titlebox.text" color="255,255,255" shadowcolor="0,0,0" shadowx="0" shadowy="0" fontsize="14" />
+</groupdef>
+
+<groupdef id="wasabi.tabsheet.button.selected.group" inherit_content="1">
+ <sendparams target="text" color="255,255,255" shadowcolor="0,0,0" shadowx="0" shadowy="0" fontsize="14" />
+</groupdef>
+
+<groupdef id="wasabi.tabsheet.button.unselected.group" inherit_content="1">
+ <sendparams target="text" color="255,255,255" shadowcolor="0,0,0" shadowx="0" shadowy="0" fontsize="14" />
+</groupdef>

@@ -1,0 +1,25 @@
+ <include file="manual-elements.xml" />
+ 
+ <container id="Manual" name="Manual" default_x="0" default_y="0" default_visible="1" dynamic="0">
+
+<groupdef id="manual.main.group">
+
+<layer id="manual.page.1" image="manual.page.1" x="0" y="0" />
+
+
+	
+
+</groupdef>
+
+<layout id="normal" x="0" y="0" w="740" h="490"  minimum_h="490" minimum_w="740" maximum_h="490" maximum_w="740">
+
+	<Wasabi:StandardFrame:NoStatus
+		x="0" y="0" w="0" h="0" relatw="1" relath="1"
+		content="manual.main.group"
+		padtitleright="18"
+		shade="stick"
+	/>
+
+</layout>
+
+</container>

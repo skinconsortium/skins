@@ -1,0 +1,22 @@
+<include file="../fileSelect/fileSelect.xml" /> <!-- thanks Rohan and Martin. -->
+
+	<!-- add layer as in below, change values accordingly
+
+		<layer
+			id="userbg"
+			x="195" y="32"
+			w="200" h="53"
+			image=""
+			move="0"
+			ghost="1"
+
+		/>
+		
+	-->
+	
+	<!-- add to skin.xml
+	
+		<include file="xml/xuiobjects.xml"/>
+		<include file="fileSelect/fileSelect.xml" />
+	
+	 -->

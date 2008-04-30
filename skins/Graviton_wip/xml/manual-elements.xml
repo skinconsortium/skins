@@ -1,0 +1,9 @@
+<elements>
+
+
+
+<bitmap id="manual.page.1" file="manual/manual1.jpg" gammagroup="BackGround"/>
+<bitmap id="manual.page.2" file="manual/manual2.jpg" gammagroup="BackGround"/>
+
+
+</elements>
