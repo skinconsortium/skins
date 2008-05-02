@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<WinampAbstractionLayer version="1.31">
+	<skininfo>
+		<version>0.1</version>
+		<name>Cover Flow</name>
+		<author>Martin Poehlmann</author>
+		<email>martin@skinconsortium.com</email>
+		<homepage>http://www.skinconsortium.com/</homepage>
+		<comment>Early Alpha Stage</comment>
+	</skininfo>
+
+	<include file="xml/interface.xml"/>
+
+</WinampAbstractionLayer>

@@ -1,0 +1,19 @@
+<groupdef id="sui.content">
+
+
+	<wasabi:button id="2" x="75" y="50" h="50" w="50" text="2" />
+	<wasabi:button id="1" x="50" y="50" h="50" w="50" text="1" />
+	<script file="scripts/s.maki"/>
+	
+</groupdef>
+
+<container id="main" name="MaIN wINDOW">
+
+	<layout id="normal" minimum_h="400" minimum_w="800" h="600" w="800" OSFRAME="1" desktopalpha="1">
+		<rect color="0,0,0," sysregion="1" fitparent="1" alpha="128"/>
+
+		<group id="sui.content" fitparent="1" sysregion="1"/>
+
+	</layout>
+
+</container>
