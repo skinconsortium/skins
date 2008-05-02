@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<WinampAbstractionLayer version="1.2">
+	<skininfo>
+		<version>2.0</version>
+		<name>SUI CORE TEST</name>
+		<author>Martin Poehlmann</author>
+		<email>martin@skinconsortium.com</email>
+		<homepage>http://www.skinconsortium.com/</homepage>
+		<comment></comment>
+	</skininfo>
+
+
+	<include file="xml/interface.xml"/>
+
+</WinampAbstractionLayer>

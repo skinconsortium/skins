@@ -1,0 +1,74 @@
+-- Variables Table ---------------------------------------------------
+var# |                Class |                                    What 
+----------------------------------------------------------------------
+0000 |               System |                                   System*
+0001 |                  Int |                                     NULL
+0002 |                  Int |                     __deprecated_runtime
+0003 |               Double |                                        v
+0004 |                  Int |                                        2
+0005 |                  Int |                                    65535
+0006 |                  Int |                                        1
+0007 |               String |                           "runtimecheck"
+0008 |                  Int |                                        0
+0009 |                  Int |                                     last
+000A |                  Int |                                      now
+000B |                  Int |                                     5000
+000C |               String |                  "This script requires "
+000D |               String |        "Winamp 5.51 (skin version 1.31)"
+000E |               String |                                  "Error"
+000F |               String |                                       ""
+0010 |               String |                                        s
+0011 |               String |                                  "DEBUG"
+0012 |                  Int |                                        s
+0013 |               PlEdit |                                   PlEdit*
+0014 |                PlDir |                                    PlDir*
+0015 |                Layer |                               AlbumCover[]
+0016 |           AlbumCover |                                    prev2
+0017 |           AlbumCover |                                    prev1
+0018 |           AlbumCover |                                     curr
+0019 |           AlbumCover |                                    next1
+001A |           AlbumCover |                                    next2
+001B |                Layer |                                  prev1sd
+001C |                Group |                                       sg
+001D |               String |                               "aa.prev2"
+001E |               String |                               "aa.prev1"
+001F |               String |                            "aa.prev1.sd"
+0020 |               String |                                "aa.curr"
+0021 |               String |                               "aa.next1"
+0022 |               String |                               "aa.next2"
+0023 |                  Int |                                  1000000
+0024 |               String |                                 newtitle
+0025 |                  Int |                                      cur
+0026 |                  Int |                                      max
+0027 |               String |                                 "source"
+0028 |               Double |                                dblSmidge
+0029 |               Double |                                        r
+002A |               Double |                                        d
+002B |               Double |                                        x
+002C |               Double |                                        y
+002D |               Double |                                        r
+002E |               Double |                                        d
+002F |               Double |                                        x
+0030 |               Double |                                        y
+0031 |               Double |                                        r
+0032 |               Double |                                        d
+0033 |               Double |                                        x
+0034 |               Double |                                        y
+0035 |               Double |                                      0.7
+0036 |               Double |                                 0.000001
+-- Events Table ------------------------------------------------------
+var# |         Code Pointer |                                    What 
+----------------------------------------------------------------------
+0000 |                 0153 |                    System.onScriptLoaded
+0000 |                 02A9 |                     System.onTitleChange
+001B |                 047E |                   prev1sd.fx_onGetPixelX
+001B |                 04AE |                   prev1sd.fx_onGetPixelY
+001B |                 04FB |                   prev1sd.fx_onGetPixelA
+001B |                 055E |                       prev1sd.fx_onFrame
+-- User Functions Table ----------------------------------------------
+               Code Pointer |                                    What 
+----------------------------------------------------------------------
+                       0000 |                             versionCheck
+                       00F2 |                                    debug
+                       011D |                                 debugInt
+                       02CA |                                   update
