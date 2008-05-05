@@ -22,14 +22,18 @@ var# |                Class |                                    What
 0012 |                  Int |                                        s
 0013 |               Button |                                       b1
 0014 |               Button |                                       b2
-0015 |               String |                                      "1"
-0016 |               String |                                      "2"
+0015 |                Group |                                       g1
+0016 |                Group |                                       g2
+0017 |               String |                                     "g1"
+0018 |               String |                                     "g2"
+0019 |               String |                                      "1"
+001A |               String |                                      "2"
 -- Events Table ------------------------------------------------------
 var# |         Code Pointer |                                    What 
 ----------------------------------------------------------------------
 0000 |                 0153 |                    System.onScriptLoaded
-0013 |                 01A3 |                           b1.onLeftClick
-0014 |                 01C5 |                           b2.onLeftClick
+0013 |                 01DD |                           b1.onLeftClick
+0014 |                 01FF |                           b2.onLeftClick
 -- User Functions Table ----------------------------------------------
                Code Pointer |                                    What 
 ----------------------------------------------------------------------
