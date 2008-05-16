@@ -2,7 +2,7 @@
 
 <bitmap id="focus.bg" file="player/focus-bg.png"  />
 
-<truetypefont id="player.font.ticker" file="player/Beware.ttf"/>
+<truetypefont id="player.font.bankgothic" file="player/font-bankgothic.ttf"/>
 <bitmap id="player.main.background.blank" file="player/background-blank.png" gammagroup="Background" />
 <bitmap id="player.main.background.noalpha" file="player/background-noalpha.png" gammagroup="Background" />
 <bitmap id="player.main.background" file="player/background.png" gammagroup="Background" />
@@ -14,11 +14,13 @@
 
 <bitmap id="player.main.backgroundover" file="player/backgroundover.png"  />
 
-
-
-
+<bitmap id="player.main.pl.button.add" file="player/mainPL-buttons.png" x="0" y="0" w="16" h="16"/>
+<bitmap id="player.main.pl.button.add.hover" file="player/mainPL-buttons.png" x="0" y="16" w="16" h="16"/>
+<bitmap id="player.main.pl.button.menu" file="player/mainPL-buttons.png" x="16" y="0" w="16" h="16"/>
+<bitmap id="player.main.pl.button.menu.hover" file="player/mainPL-buttons.png" x="16" y="16" w="16" h="16"/>
 
 <bitmap id="volpos" file="player/volpos.png" gammagroup="Glass"/>
+<bitmap id="imagesel" file="player/imagesel.png" />
 <bitmap id="anivis2" file="player/anivis.png" gammagroup="Glass"/>
 <bitmap id="animbut" file="player/animbut.png" />
 <bitmap id="animbutd" file="player/animbutd.png" />
@@ -62,17 +64,15 @@
 <bitmap id="togglebutton" file="player/main.png" gammagroup="Glass"/>
 <bitmap id="TBactive" file="player/mains.png" gammagroup="Glass"/>
 <bitmap id="TBdown" file="player/mains.png" gammagroup="Glass"/>
-
+<bitmap id="player.map.seek" file="player/SliderMap3.png"/>
+      
+ <bitmap id="player.map.seek2" file="player/SliderMap4.png"/>
 <bitmap id="player.over" file="player/over.png"/>
+<bitmap id="player.seekbk" file="player/songp.png"/>
 <bitmap id="player.over2" file="player/over2.png"/>
 <bitmap id="player.over3" file="player/over3.png" gammagroup="Glass"/>
 <bitmap id="player.membutton" file="player/membutton.png" gammagroup="Background"/>
 <bitmap id="player.membuttond" file="player/membuttond.png" gammagroup="Background"/>
-
-<bitmap id="player.map.seek" file="player/mapa.png" />
-<bitmap id="player.map.seek2" file="player/map2a.png" />
-<bitmap id="player.seek" file="player/seek.png" gammagroup="Background"/>
-
 
 <bitmap id="oneq" file="eq/oneq.png" gammagroup="Glass"/>
 <bitmap id="oneqd" file="eq/oneqd.png" gammagroup="Glass"/>
@@ -104,6 +104,7 @@
 <bitmap id="player.main.closefocus" file="player/closefocus.png" />
 <bitmap id="player.main.closed" file="player/closed.png" />
 <bitmap id="player.main.closemin" file="player/closemin.png" />
+<bitmap id="player.main.closepl" file="player/closepl.png" />
 <bitmap id="player.main.closestar" file="player/closestar.png" />
 <bitmap id="player.main.min" file="player/min.png" gammagroup="Glass"/>
 <bitmap id="my.music.pic" file="pics/1.png" />

@@ -16,7 +16,6 @@ Function FadeGroup(Group FadeGrp, Int AlphaValue);
 
 Global Group XUIGroup, cdbox, cdboxref, cdboxHolder, cdboxrefmask, ratings;
 Global GuiObject line1, line2, line3, BGCol, CDBoxFade;
-Global Timer delayMyResize;
 Global int xs, ys, ws, hs;
 Global int xc, yc, wc, hc;
 Global layer lyrFx, lyrFxFG;
@@ -41,9 +40,7 @@ System.onScriptLoaded(){
 	BGCol = XUIGroup.findObject("sc.nowplaying.bg");
 	CDBoxFade = XUIGroup.findObject("cdbox.fg.fademask");
 	
-	delayMyResize = new Timer;
-	delayMyResize.setDelay(100);
-	
+
 	lyrFx.fx_setBgFx(0);
   	lyrFx.fx_setWrap(0);
   	lyrFx.fx_setBilinear(1);
@@ -52,8 +49,7 @@ System.onScriptLoaded(){
   	lyrFx.fx_setRect(1);
 	lyrFx.fx_setClear(0); //left as zero as cover is a static image and we dont need to redraw
   	lyrFx.fx_setLocalized(1);
-  	lyrFx.fx_setRealtime(1);
-  	lyrFx.fx_setSpeed(2000); //slow timer as we dont really need to redraw much
+  	lyrFx.fx_setRealtime(0);
 	
 	lyrFxFG.fx_setBgFx(0);
   	lyrFxFG.fx_setWrap(0);
@@ -63,8 +59,7 @@ System.onScriptLoaded(){
   	lyrFxFG.fx_setRect(1);
 	lyrFxFG.fx_setClear(0); //left as zero as cover sheen is a static image and we dont need to redraw
   	lyrFxFG.fx_setLocalized(1);
-  	lyrFxFG.fx_setRealtime(1);
-  	lyrFxFG.fx_setSpeed(2000); //slow timer as we dont really need to redraw much
+  	lyrFxFG.fx_setRealtime(0);
 	
   	dblSmidge = 0;
 	//default half height - remove ability to resize for the now
@@ -77,7 +72,6 @@ System.onScriptLoaded(){
 system.onScriptUnloading()
 {
 	XUIGroup = NULL;
-	delete delayMyResize;
 }
 
 
@@ -163,7 +157,7 @@ XUIGroup.onSetVisible(boolean onOff)
 }
 
 XUIGroup.onResize(int x, int y, int w, int h){
-	ratings.setXmlParam("x", integerToString(w/2-31));
+	ratings.setXmlParam("x", integerToString((w-ratings.getguiw())/2));
 }
 
 cdboxHolder.onResize(int x, int y, int w, int h)
@@ -173,7 +167,7 @@ cdboxHolder.onResize(int x, int y, int w, int h)
 	ws = w;
 	hs = h*(200-reflectionheight)/200;
 	
-	delayMyResize.start();
+	resizeToThis(xs, ys, ws, hs);
 }
 
 resizeToThis(int x, int y, int w, int h)
@@ -230,14 +224,6 @@ resizeToThis(int x, int y, int w, int h)
 	//debug
 	//line2.setXmlParam("text", "  cdrefy=" + integertostring(cdrefy) + "newy=" + integertostring(((290-cdrefy)/2)-49) );
 	
-}
-
-//timer needed otherwise crap fatal error
-delayMyResize.onTimer(){
-
-	resizeToThis(xs, ys, ws, hs);
-	
-	if(xc==xs && yc==ys && wc==ws && hc==hs) delayMyResize.stop();
 }
 
 System.onTitleChange(String newTitle)

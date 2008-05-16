@@ -1,10 +1,13 @@
 <container id="config" name="Image Changer" dynamic="0" default_visible="0">
 
 <groupdef id="config.content" w="0" h="0" relatw="1" relath="1">
+	<layer image="studio.BaseTexture" fitparent="1" sysregion="1"/>
 	<rect id="bkground.temp" fitparent="1" color="50,50,50" filled="1"/>  <!-- temp object -->
-
+ 
+  <layer x="0" y="0" image="player.main.background.default"/>
+ <layer x="0" y="0" image="imagesel"/>
 	<wasabi:text text="Image Background:"
-		x="10" y="10" w="0" h="20" relatw="1"/>
+		x="30" y="10" w="0" h="20" relatw="1"/>
 		
 	<Wasabi:RadioGroup id="config.bg" />
 	<wasabi:checkbox id="config.bg.default"
@@ -25,14 +28,14 @@
 	<script file="scripts\config.maki"/>
 </groupdef>
 
-<layout id="normal" x="0" y="0" background="component.basetexture" desktopalpha="0" 
-	default_w="400" default_h="200" minimum_w="400" minimum_h="200" maximum_w="400" maximum_h="200"  owner="focus,normal">
-	
+<layout id="normal" background="player.main.background.blank" alphabackground="player.main.background.blank"
+	w="400" h="250" minimum_w="400" minimum_h="250" maximum_w="400" maximum_h="250">
 	
 	<Wasabi:StandardFrame:NoStatus
 		x="0" y="0" w="0" h="0" relatw="1" relath="1"
 		content="config.content"
 	/>
+
 </layout>
 
 </container>

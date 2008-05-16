@@ -17,7 +17,7 @@
 
 
 	<togglebutton id="main.button.focus"
-		x="665" y="27"
+		x="667" y="27"
 		image="player.main.close"
 		downimage="player.main.closefocus"
 		hoverimage="player.main.closefocus"
@@ -26,7 +26,7 @@
 		
 	<button 
 		id="Minimize"
-		x="679" y="27"
+		x="680" y="27"
 		action="CLOSE" 
 		image="player.main.close"
 		downimage="player.main.closemin"
@@ -34,9 +34,18 @@
 		rectrgn="1"
 		tooltip="Minimize"
 		/>
+	<button 
+		id="main.pl"
+		x="61" y="27"
+		image="player.main.close"
+		downimage="player.main.closepl"
+		hoverimage="player.main.closepl"
+		rectrgn="1"
+		tooltip="Playlist"
+		/>
 	<togglebutton 
 		id="eq"
-		x="50" y="27"
+		x="48" y="27"
 		action="TOGGLE" param="eq"
 		image="player.main.close"
 		downimage="player.main.closestar"
@@ -44,7 +53,7 @@
 		rectrgn="1"
 		tooltip="EQ and Systems"
 		/>
-<togglebutton 
+	<togglebutton 
 		id="config"
 		x="35" y="27"
 		action="TOGGLE" param="config"
@@ -63,7 +72,7 @@
 		downimage="player.main.closed"
 		hoverimage="player.main.closed"
 		rectrgn="1"
-		tooltip="Terminate"
+		tooltip="Close"
 		/>
 		
 		
@@ -130,23 +139,14 @@ image="player.main.rev"
 
 	
 <script file="scripts/hoverglow.maki" param="Eject,player.main.ejectd"/>
-<button 
- id="Play"
- x="132" y="384"
- action="PLAY" alpha="200"
- image="player.main.play"
-downimage="player.main.playd"
-    rectrgn="1"
- activeImage="player.main.playd"
- hoverImage="player.main.playd"
- tooltip="Pause"
- 
-/>
-<layer id="player.main.playd" image="player.main.playd" x="132" y="384" ghost="1"/>
+
+<button id="play.button" x="132" y="384"  action="PLAY" image="player.main.playd" hoverImage="player.main.playd" downImage="player.main.playd" tooltip="Play"/>
+<button id="pause.button" x="132" y="384"  action="PAUSE" image="player.main.Pause" hoverImage="player.main.Paused" downImage="player.main.play" tooltip="Pause"/>
+<script file="scripts/sc_PlayPause.maki" param="play.button;pause.button"/>
+<layer id="player.main.playd" image="player.main.playd"  x="132" y="384" ghost="1"/>
 
 	
-<script file="scripts/hoverglow.maki" param="Play,player.main.playd"/>
-
+<script file="scripts/hoverglow.maki" param="play.button,player.main.playd"/>
 
 <!--<button 
  id="Pause"
@@ -176,8 +176,8 @@ x="132" y="384"
 
  
 
-	<vis id="main.vis" x="90" y="296"
-		w="118" h="40" colorallbands="250,250,250"
+	<vis id="main.vis" x="90" y="311"
+		w="118" h="25" colorallbands="250,250,250"
 		colorosc1="250,250,250"
 		colorosc2="250,250,250"
 		colorosc3="250,250,250"
@@ -185,10 +185,11 @@ x="132" y="384"
 		colorosc5="250,250,250"
 		shadow="1" shadowcolor="0,0,0" bandwidth="thin"
 		colorbandpeak="250,250,250" alpha="100"
-		gammagroup="glass"/>
+		gammagroup="glass" 
+           />
 		
 	<vis id="main.vis.refl" x="90" y="336"
-		w="118" h="40" colorallbands="250,250,250"
+		w="118" h="25" colorallbands="250,250,250"
 		colorosc1="250,250,250"
 		colorosc2="250,250,250"
 		colorosc3="250,250,250"
@@ -196,7 +197,9 @@ x="132" y="384"
 		colorosc5="250,250,250" bandwidth="thin"
 		shadow="1" shadowcolor="0,0,0" flipv="2"
 		colorbandpeak="250,250,250" alpha="35"
-		gammagroup="glass"/>
+		gammagroup="glass" 
+        
+            />
 	<layer id="main.vis.mousetrap"
 		x="90" y="296" w="118" h="80" rectrgn="1" ghost="0"/>
 		
@@ -236,40 +239,50 @@ id="SongTicker" ticker="1"
 		bold="1" antialias="1" /> 
 
 
-<layer id="VolumeAnim" image="dominator.normal.Volume"  ALPHA="120" x="537" y="396" move="0" rectrgn="0"
-
-tooltip="Volume"/>
-
-
-<script id="VolumeScr" file="scripts/volumebyregion.maki"/>
-
-
-<!--<AnimatedLayer x="176" y="42" w="160" h="125" id="animation" image="anivis2" move="1" speed="45" autoplay="0" autoreplay="0" sysregion="1" />
-   
-
- 
-<button id="rightbutton" x="78" y="156" image="animbut"
- downimage="animbutd"   hoverimage="animbutd" tooltip="Brightness +" sysregion="1"/>
-
-<button id="leftbutton" x="88" y="156" image="animbut"
- downimage="animbutd"  hoverimage="animbutd" tooltip="Brightness -" sysregion="1"/>
-
-<script id="animation2" file="scripts/animadv.maki" />-->
-
-<slider id="seek"
-		action="SEEK"
-		x="532" y="320" w="134" h="35"
-		thumb="player.main.songpos" 
-		downThumb="player.main.songpos" 
-	/>
-
-<script file="scripts/DTACheck.maki"/>
+	<layer id="VolumeAnim" image="dominator.normal.Volume"  ALPHA="120" x="537" y="396" move="0" rectrgn="0"
+	
+	tooltip="Volume"/>
+	
+	
+	<script id="VolumeScr" file="scripts/volumebyregion.maki"/>
+	
+	<layer id="SeekAnim" image="player.seekbk"  x="536" y="332" move="0" rectrgn="0" tooltip="Seek"/>
+	<script id="seek" file="scripts/seekbyregion.maki"/>
+	
+	<slider id="seek2"
+			action="SEEK"
+			x="532" y="320" w="134" h="35"
+			thumb="player.main.songpos" 
+			downThumb="player.main.songpos" 
+		/>
+	
+	<script file="scripts/DTACheck.maki"/>
 </groupdef>
 
+<groupdef id="player.main.pl" w="290" h="180">
+	<playlistPlus id="main.pl" 
+			x="27" y="0" w="212" h="180"
+			font="player.font.bankgothic" fontsize="14" linespacing="-2" color="255,255,255"
+			playcolor="150,150,255" selcolor="50,50,50" selbgcolor="200,200,200" selalpha="150"
+			showslider="0" slidercolor="255,255,255" slideralpha="200"/>
+	<button id="main.bl.button.add"
+			x="5" y="140"
+			image="player.main.pl.button.add"
+			downimage="player.main.pl.button.add"
+			hoverimage="player.main.pl.button.add.hover"
+			action="PE_ADD" rectrgn="1"
+			tooltip="Add item(s) to playlist"/>
+	<button id="main.bl.button.menu"
+			x="5" y="160"
+			image="player.main.pl.button.menu"
+			downimage="player.main.pl.button.menu"
+			hoverimage="player.main.pl.button.menu.hover"
+			action="PE_LIST" rectrgn="1"
+			tooltip="Manage Playlist"/>
+		
+</groupdef>
 
-
-
-<layout id="normal" background="player.main.background.blank"  alphabackground="player.main.background.blank" owner="focus,normal">
+<layout id="normal" background="player.main.background.blank"  alphabackground="player.main.background.blank">
 
 	<layer id="bg.noalpha" x="0" y="0" image="player.main.background.noalpha" sysregion="1"/>
 	<script file="scripts\hideshow-attrib.maki" 
@@ -277,12 +290,13 @@ tooltip="Volume"/>
 
  	<layer x="0" y="0" image="player.main.background"/>
 
-	<CustomBG x="50" y="40" w="-95" h="-81" relatw="1" relath="1"/>  
+	<CustomBG x="50" y="40" w="-95" h="-81" relatw="1" relath="1"/>
 
- <group id="DrawerGroup" w="1000" h="1000" /> 
+	<group id="DrawerGroup" w="1000" h="1000" /> 
  
-<group id="player.main.cms" w="1000" h="1000"/>
+	<group id="player.main.cms" w="1000" h="1000"/>
 	
-	
+	<group id="player.main.pl" 
+		x="240" y="340" w="290" h="180" visible="0"/> 
 
 </layout>

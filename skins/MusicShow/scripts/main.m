@@ -14,8 +14,13 @@ Global layout main, focus;
 Global layer focusbg;
 Global togglebutton buttonFocus;
 
+Global button buttonPL;
+Global guiobject mainPL;
+
 Global vis vis1, vis2;
 Global layer vismousetrap;
+
+global timer delayfocus;
 
 System.onScriptLoaded() {
 	
@@ -23,6 +28,10 @@ System.onScriptLoaded() {
 	focus = getContainer("focus").getLayout("normal");
 	
 	buttonFocus = main.findObject("main.button.focus");
+	
+	buttonPL = main.findObject("main.pl");
+	mainPL = main.findObject("player.main.pl");
+	if (getPrivateInt(getSkinName(),"MainPLVisible",0) == 1) mainPL.show();
 	
 	vis1 = main.findObject("main.vis");
 	vis2 = main.findObject("main.vis.refl");
@@ -32,10 +41,22 @@ System.onScriptLoaded() {
 	focusbg.hide();
 	focus.resize(0,0, getMonitorWidth(), getMonitorHeight());
 	
+	delayfocus = new timer;
+	delayfocus.setDelay(50);
+	
 }
 
 System.onScriptUnloading() {
-  return;
+	delete delayfocus;
+}
+
+buttonPL.onLeftClick() {
+	int plshow = (getPrivateInt(getSkinName(),"MainPLVisible",0) == 0);
+	setPrivateInt(getSkinName(),"MainPLVisible",plshow);
+	if (plshow) 
+		mainPL.show();
+	else
+		mainPL.hide();
 }
 
 buttonFocus.onActivate(int on) {
@@ -44,11 +65,19 @@ buttonFocus.onActivate(int on) {
 
 		focus.setScale(1.0);
 		focus.resize(0,0, getMonitorWidth(), getMonitorHeight());
+		
+		
+		delayfocus.start();
 
 	} else {
 		focusbg.hide();
 	}
 
+}
+
+delayfocus.onTimer() {
+	stop();
+	main.setFocus();
 }
 
 focusbg.onLeftButtonDown(int x, int y) {
