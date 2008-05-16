@@ -23,7 +23,7 @@
 
 <container id="wasabi.alphaframe" dynamic="1" default_visible="0" nomenu="1">
 
-	<layout id="def" desktopalpha="1" w="200" h="150" minimum_h="150" minimum_w="200" owner="focus,normal">
+	<layout id="def" desktopalpha="1" w="200" h="150" minimum_h="150" minimum_w="200">
 
 		<layer id="window.topleft" x="0" y="0" h="30" w="10" image="wasabi.frame.topleft" resize="0" sysregion="1"/>
 		<layer id="window.top" x="10" y="0" h="30" w="-27" relatw="1" image="wasabi.frame.top" resize="0" sysregion="1"/>		
@@ -51,7 +51,6 @@
 
 		<button
 			id="CLOSE"
-			action="CLOSE"
 			x="-22" relatx="1" y="6"
 			rectrgn="1"
 			image="player.main.close"
@@ -159,10 +158,10 @@
 
 </groupdef>
 
-<!-- ******* -->
+<!-- ******* 
 
 <container id="resizable_status" name=":componenttitle" dynamic="1" hold="@all@" default_x="177" default_y="0">
-  <layout id="normal" minimum_w="358" minimum_h="299"  owner="focus,normal">
+  <layout id="normal" minimum_w="358" minimum_h="299">
     <Wasabi:StandardFrame:Status id="wasabi.standardframe"
       fitparent="1"
       content="component.content.group" 
@@ -172,7 +171,7 @@
 
 
 <container id="resizable_nostatus" name=":componenttitle" dynamic="1" hold="@all@" default_x="177" default_y="0">
-  <layout id="resizable_nostatus" minimum_w="358" minimum_h="299"  owner="focus,normal">
+  <layout id="resizable_nostatus" minimum_w="358" minimum_h="299">
     <Wasabi:StandardFrame:NoStatus 
       fitparent="1"
       content="component.content.group" 
@@ -182,7 +181,7 @@
 
 
 <container id="modal" name=":componenttitle" dynamic="1" hold="@all@" default_x="177" default_y="0">
-  <layout id="modal" minimum_w="358" minimum_h="299"  owner="focus,normal">
+  <layout id="modal" minimum_w="358" minimum_h="299">
     <Wasabi:StandardFrame:Modal
       fitparent="1"
       content="component.content.group" 
@@ -192,10 +191,10 @@
 
 
 <container id="static" name=":componenttitle" dynamic="1" hold="@all@" default_x="177" default_y="0">
-  <layout id="static" minimum_w="358" minimum_h="299"  owner="focus,normal">
+  <layout id="static" minimum_w="358" minimum_h="299">
     <Wasabi:StandardFrame:Static 
       fitparent="1"
       content="component.content.group" 
     />
   </layout>
-</container>
+</container> -->
