@@ -21,7 +21,8 @@ Known Bugs:
 #include <lib/std.mi>
 #include "../../scripts/attribs/init_general.m"
 
-#define LAYOUT_PROPS "owner,lockto,alpha,indesktop,linkwidth,layout,linkheight,taskbar,appbar,minimum_h,minimum_w,maximum_h,maximum_w,h,w,nme,lockminmax,default_visible,default_w,default_h"
+// *** modified by leechbite -- removed some properties that i think should not be changed "on-the-fly"
+#define LAYOUT_PROPS "alpha,linkwidth,layout,linkheight,taskbar,appbar,minimum_h,minimum_w,maximum_h,maximum_w,h,w,nme,lockminmax,default_visible,default_w,default_h"
 
 Function syncFrame();
 Function syncContent();
@@ -37,11 +38,13 @@ Global String x, y, w, h, rx, ry, rw, rh;
 Global Button Sysmenu, Close;
 Global GuiObject mousetrap;
 Global Boolean bypass, r_bypass;
-Global timer sync, delay;
+Global timer sync, delay, delayclose, delayfocus;
 Global Resizer left, right, bottomright, bottom, bottomleft;
 Global Layer top, topleft, topright;
 Global Text comptitle, comptitle_na, comptitle_dummy;
 Global int frame_alpha, comp_alpha;
+
+Global togglebutton buttonFocus;
 
 System.onScriptLoaded()
 {
@@ -51,8 +54,12 @@ System.onScriptLoaded()
 	comp_layout = scriptGroup.getParentLayout();
 	comptitle_dummy = comp_layout.findObject("wasabi.titlebar");
 	//debug(comptitle_dummy.getText());
+	
+	
 	frame_cont = newDynamicContainer("wasabi.alphaframe");
+	
 	frame_layout = frame_cont.getLayout("def");
+	
 	mousetrap = frame_layout.getObject("mousetrap");
 	topleft = frame_layout.getObject("window.topleft");
 	top = frame_layout.getObject("window.top");
@@ -68,9 +75,10 @@ System.onScriptLoaded()
 	frame_alpha = frame_layout.getAlpha();
 	comp_alpha = comp_layout.getAlpha();
 
-	desktopalpha_enabled_attrib.onDataChanged();	
+	desktopalpha_enabled_attrib.onDataChanged();
 
 	Close = frame_layout.getObject("Close");
+	
 
 	String param = getParam();
 	x = getToken(param, ",", 0);
@@ -83,21 +91,64 @@ System.onScriptLoaded()
 	rh = getToken(param, ",", 7);
 	sysmenu = scriptGroup.findObject("sysmenu");
 
-	sync = new Timer;
-	sync.setDelay(70);
+	
+	// **** modified by leechbite -- added check if timer has already been created
+	//		this protects on second init on non-dynamic containers
+	if (!sync) {
+		sync = new Timer;
+		sync.setDelay(70);
+	}
 
-	delay = new Timer;
-	delay.setDelay(1);
+	if (!delay) {
+		delay = new Timer;
+		delay.setDelay(1);
+	}
+	
+	if (!delayclose) {
+		delayclose = new Timer;
+		delayclose.setDelay(1);
+	}
+	
+	if (!delayfocus) {
+		delayfocus = new Timer;
+		delayfocus.setDelay(100);
+	}
+	
+	layout mainlay = getContainer("main").getLayout("normal");
+	buttonFocus = mainlay.findObject("main.button.focus");
+	
+	if (comp_layout.isVisible()) buttonFocus.onActivate(buttonFocus.getActivated());
+		
 
+
+}
+
+buttonFocus.onActivate(int on) {
+	if (on) {
+		delayfocus.start();
+	}
+
+}
+
+delayfocus.onTimer() {
+	stop();
+	
+	if (frame_layout) frame_layout.setFocus();
+	if (comp_layout) comp_layout.setFocus();
 }
 
 System.onScriptUnloading ()
 {
+	buttonFocus = NULL;
+	
 	sync.stop();
 	delete sync;
 	
 	delay.stop();
 	delete delay;
+	
+	delete delayclose;
+	delete delayfocus;
 }
 
 
@@ -187,8 +238,16 @@ comp_layout.onSetVisible (Boolean on)
 	}
 	else
 	{
-		frame_layout.hide();
+		// *** portion modified by leechbite
+		
 		sync.stop();
+		if (frame_layout) {
+			frame_cont.close(); // kill frame container, this is will be reinitiated on re-show of comp
+		}
+			frame_cont = NULL;
+			frame_layout = NULL;
+		
+		
 	}
 	
 }
@@ -208,26 +267,20 @@ comp_layout.onResize (int x, int y, int w, int h)
 // the next function one is needed cause you can click on pledit and frame isn't set focused, and it will also redirect the focus to the component
 sync.onTimer ()
 {
-	if (comp_layout.isActive() != bypass)
-	{
-		if (comp_layout.isActive())
-		{
+	
+	// ***** modified by leechbite
+	if (!bypass) {
+		if (comp_layout.isActive() || frame_layout.isActive()) {
 			frame_layout.setfocus();
 			comp_layout.setfocus();
 			bypass = true;
 		}
-		else
-		{
-			bypass = false;
-		}
 	}
-	if (!r_bypass)
-	{
-		if (frame_layout.isActive())
-		{
-			comp_layout.setfocus();
-		}	
+	
+	if (!frame_layout.isActive() && !comp_layout.isActive()) { // if at some point both layout is not focused, remove bypass
+		bypass = false;
 	}
+	
 	/** synchronize alpha **/
 	if (comp_layout.getAlpha() != frame_layout.getAlpha())
 	{
@@ -247,7 +300,7 @@ sync.onTimer ()
 
 /** synchronize max_w etc. **/
 
-CopyProperties()
+copyProperties()
 {
 	for (Int i = 0; i <= 19; i++)
 	{
@@ -264,9 +317,12 @@ syncContent ()
 		comp_layout.resize(frame_layout.getLeft(), frame_layout.getTop(), frame_layout.getWidth(), frame_layout.getHeight());
 }
 
-close.onLeftClick ()
-{
-	//invokeDebugger();
+close.onLeftClick () {
+	delayclose.start();
+}
+
+delayclose.onTimer() {
+	stop();
 	comp_layout.getContainer().close();
 }
 
@@ -274,13 +330,6 @@ frame_layout.onMove ()
 {
 	r_bypass = false;
 	syncContent();
-}
-
-//SLoB test
-frame_layout.onEndMove()
-{
-	sync.stop();
-	delay.stop();
 }
 
 frame_layout.onUserResize (int x, int y, int w, int h)
