@@ -299,7 +299,7 @@ x="100" y="24"
 </groupdef>
 
 <container id="eq" name="Equalizer" default_x="0" default_y="0" default_visible="0">
-  <layout id="normal2" background="player.main.background2"  alphabackground="player.main.background2" owner="focus,normal">
+  <layout id="normal2" background="player.main.background2"  alphabackground="player.main.background2" owner="main,normal">
  
 
   

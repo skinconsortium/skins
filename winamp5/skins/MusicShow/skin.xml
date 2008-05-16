@@ -18,8 +18,11 @@
 	<include file="xui/xui-files.xml"/>
 	<include file="xml/system-colors.xml"/>
 	<include file="xml/system-elements.xml"/>
-	<include file="wasabi/wasabi.xml" />
+	<include file="xml/player-elements.xml"/>
+	<include file="xml/focus.xml"/>
+	<include file="wasabi/wasabi.xml"/>
 	<include file="xml/player.xml"/>
+	<include file="xml/vis.xml"/>
 	<include file="xml/config.xml"/>
 	
 	<include file="xml/eq.xml"/>
@@ -27,5 +30,4 @@
 	<include file="windowmodebutton/windowmodebutton.xml"/>
   
    
-
  </WinampAbstractionLayer>
