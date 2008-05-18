@@ -2,9 +2,9 @@
 
 <groupdef id="config.content" w="0" h="0" relatw="1" relath="1">
 	<layer image="studio.BaseTexture" fitparent="1" sysregion="1"/>
-	<rect id="bkground.temp" fitparent="1" color="50,50,50" filled="1"/>  <!-- temp object -->
+	<rect id="bkground.temp" fitparent="1" color="105,105,105" filled="1"/>  <!-- temp object -->
  
-  <layer x="0" y="0" image="player.main.background.default"/>
+  <layer x="0" y="0" image="player.main.background.default1"/>
  <layer x="0" y="0" image="imagesel"/>
 	<wasabi:text text="Image Background:"
 		x="30" y="10" w="0" h="20" relatw="1"/>
