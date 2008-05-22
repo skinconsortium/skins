@@ -53,31 +53,31 @@ System.onScriptLoaded()
 	scriptGroup = getScriptGroup();
 	comp_layout = scriptGroup.getParentLayout();
 	comptitle_dummy = comp_layout.findObject("wasabi.titlebar");
-	//debug(comptitle_dummy.getText());
 	
+	//if (comp_layout.isVisible()) {
+		frame_cont = newDynamicContainer("wasabi.alphaframe");
+		
+		frame_layout = frame_cont.getLayout("def");
+		
+		mousetrap = frame_layout.getObject("mousetrap");
+		topleft = frame_layout.getObject("window.topleft");
+		top = frame_layout.getObject("window.top");
+		topright = frame_layout.getObject("window.topright");
+		left = frame_layout.getObject("window.left");
+		right = frame_layout.getObject("window.right");
+		bottomleft = frame_layout.getObject("window.bottomleft");
+		bottom = frame_layout.getObject("window.bottom");
+		bottomright = frame_layout.getObject("window.bottomright");
+		comptitle = frame_layout.getObject("window.titl");
+		comptitle.setText(comptitle_dummy.getText());
 	
-	frame_cont = newDynamicContainer("wasabi.alphaframe");
+		frame_alpha = frame_layout.getAlpha();
+		comp_alpha = comp_layout.getAlpha();
 	
-	frame_layout = frame_cont.getLayout("def");
+		desktopalpha_enabled_attrib.onDataChanged();
 	
-	mousetrap = frame_layout.getObject("mousetrap");
-	topleft = frame_layout.getObject("window.topleft");
-	top = frame_layout.getObject("window.top");
-	topright = frame_layout.getObject("window.topright");
-	left = frame_layout.getObject("window.left");
-	right = frame_layout.getObject("window.right");
-	bottomleft = frame_layout.getObject("window.bottomleft");
-	bottom = frame_layout.getObject("window.bottom");
-	bottomright = frame_layout.getObject("window.bottomright");
-	comptitle = frame_layout.getObject("window.titl");
-	comptitle.setText(comptitle_dummy.getText());
-
-	frame_alpha = frame_layout.getAlpha();
-	comp_alpha = comp_layout.getAlpha();
-
-	desktopalpha_enabled_attrib.onDataChanged();
-
-	Close = frame_layout.getObject("Close");
+		Close = frame_layout.getObject("Close");
+	//}
 	
 
 	String param = getParam();
@@ -166,16 +166,18 @@ System.onSetXuiParam(String param, String value)
 	}
 	if (param == "forcenoresize" && value == "1")
 	{
-		left.setXMLParam("resize", "0");
-		right.setXMLParam("resize", "0");
-		bottomleft.setXMLParam("resize", "0");
-		bottom.setXMLParam("resize", "0");
-		bottomright.setXMLParam("resize", "0");
-		left.setXMLParam("move", "1");
-		right.setXMLParam("move", "1");
-		bottomleft.setXMLParam("move", "1");
-		bottom.setXMLParam("move", "1");
-		bottomright.setXMLParam("move", "1");
+		if (frame_layout) {
+			left.setXMLParam("resize", "0");
+			right.setXMLParam("resize", "0");
+			bottomleft.setXMLParam("resize", "0");
+			bottom.setXMLParam("resize", "0");
+			bottomright.setXMLParam("resize", "0");
+			left.setXMLParam("move", "1");
+			right.setXMLParam("move", "1");
+			bottomleft.setXMLParam("move", "1");
+			bottom.setXMLParam("move", "1");
+			bottomright.setXMLParam("move", "1");
+		}
 	}
 }
 
@@ -231,7 +233,7 @@ comp_layout.onSetVisible (Boolean on)
 	if (on)
 	{
 		if (!comp_layout.getContainer().isDynamic()) system.onScriptLoaded();
-		frame_layout.show();
+		if (frame_layout) frame_layout.show();
 		syncFrame();
 		sync.start();
 
@@ -244,8 +246,8 @@ comp_layout.onSetVisible (Boolean on)
 		if (frame_layout) {
 			frame_cont.close(); // kill frame container, this is will be reinitiated on re-show of comp
 		}
-			frame_cont = NULL;
-			frame_layout = NULL;
+		frame_cont = NULL;
+		frame_layout = NULL;
 		
 		
 	}
@@ -259,6 +261,7 @@ comp_layout.onMove ()
 
 comp_layout.onResize (int x, int y, int w, int h)
 {
+	if (!frame_layout) return;
 	frame_layout.setfocus();
 	comp_layout.setfocus();
 	syncFrame();	
@@ -266,8 +269,8 @@ comp_layout.onResize (int x, int y, int w, int h)
 
 // the next function one is needed cause you can click on pledit and frame isn't set focused, and it will also redirect the focus to the component
 sync.onTimer ()
-{
-	
+{	if (!frame_layout) return;
+
 	// ***** modified by leechbite
 	if (!bypass) {
 		if (comp_layout.isActive() || frame_layout.isActive()) {
@@ -302,6 +305,8 @@ sync.onTimer ()
 
 copyProperties()
 {
+	if (!frame_layout) return;
+	
 	for (Int i = 0; i <= 19; i++)
 	{
 		if (frame_layout.getXMLParam(System.getToken(LAYOUT_PROPS,",",i)) != comp_layout.getXMLParam(System.getToken(LAYOUT_PROPS,",",i)))
@@ -313,6 +318,7 @@ copyProperties()
 
 syncContent ()
 {
+	if (!frame_layout) return;
 	if (comp_layout)
 		comp_layout.resize(frame_layout.getLeft(), frame_layout.getTop(), frame_layout.getWidth(), frame_layout.getHeight());
 }
@@ -439,7 +445,7 @@ comp_layout.onScale (Double newscalevalue)
 {
 	if (nocallback) return;
 	nocallback = true;
-	frame_layout.setScale(newscalevalue);
+	if (frame_layout) frame_layout.setScale(newscalevalue);
 	syncFrame();	
 	nocallback = false;
 }
@@ -448,6 +454,7 @@ comp_layout.onScale (Double newscalevalue)
 
 desktopalpha_enabled_attrib.onDataChanged ()
 {
+	if (!frame_layout) return;
 	if (getData() == "1")
 	{
 		topleft.setXMLParam("image", "wasabi.frame.topleft");

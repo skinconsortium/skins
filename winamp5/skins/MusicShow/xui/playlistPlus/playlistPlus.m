@@ -494,8 +494,9 @@ system.onKeyDown(string key) {
 		
 		complete;
 	} else if (key == "del") {
+		if (scrollAnim.isRunning()) scrollAnim.stop();
 		pledit.removeTrack(currSel);
-		
+		/*
 		if (currSel >= pledit.getNumTracks()) currSel = pledit.getNumTracks()-1;
 		
 		if (currSel < pltoptrack) {
@@ -509,7 +510,7 @@ system.onKeyDown(string key) {
 		}
 		
 		if (scrollAnim.isRunning()) scrollAnim.stop();
-		refreshPL();
+		refreshPL();*/
 		
 		complete;
 	} else {
