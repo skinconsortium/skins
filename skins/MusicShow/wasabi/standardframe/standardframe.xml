@@ -51,7 +51,7 @@
 
 		<button
 			id="CLOSE"
-			x="-22" relatx="1" y="6"
+			x="-57" relatx="1" y="11"
 			rectrgn="1"
 			image="player.main.close"
  downimage="player.main.closed"

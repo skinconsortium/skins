@@ -20,7 +20,7 @@
 	
 <button 
  id="Close"
- x="198" y="4"
+ x="168" y="4"
  action="CLOSE" 
   image="player.main.close"
  downimage="player.main.closed"
