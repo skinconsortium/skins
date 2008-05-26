@@ -33,10 +33,6 @@ System.onScriptLoaded() {
 	mainPL = main.findObject("player.main.pl");
 	if (getPrivateInt(getSkinName(),"MainPLVisible",0) == 1) mainPL.show();
 	
-	vis1 = main.findObject("main.vis");
-	vis2 = main.findObject("main.vis.refl");
-	vismousetrap = main.findObject("main.vis.mousetrap");
-	
 	focusbg = focus.findObject("focus.bg");
 	focusbg.hide();
 	focus.resize(0,0, getMonitorWidth(), getMonitorHeight());
@@ -82,10 +78,4 @@ delayfocus.onTimer() {
 
 focusbg.onLeftButtonDown(int x, int y) {
 	buttonFocus.setActivated(0);
-}
-
-vismousetrap.onLeftButtonDown(int x, int y) {
-	vis1.nextMode();
-	
-	vis2.setMode(vis1.getMode());
 }

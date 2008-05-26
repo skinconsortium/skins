@@ -1,26 +1,29 @@
 /*---------------------------------------------------
 -----------------------------------------------------
 Filename:	visualizer.m
-Version:	1.0
+Version:	1.4
 
 Type:		maki
-Date:		23. Nov. 2006 - 21:37 
+Date:		07. Okt. 2007 - 19:56  
 Author:		Martin Poehlmann aka Deimos
 E-Mail:		martin@skinconsortium.com
 Internet:	www.skinconsortium.com
 		www.martin.deimos.de.vu
+
+Note:		This script handles also the timer reflection
 -----------------------------------------------------
 ---------------------------------------------------*/
 
 #include <lib/std.mi>
 
+Function refreshVisSettings();
 Function setVis (int mode);
 Function ProcessMenuResult (int a);
-Function colorVis (boolean full);
 
 Global Group scriptGroup;
-Global Vis visualizer;
-Global Layer trigger;
+Global Vis visualizer, visualizer_m;
+Global Text tmr;
+
 Global PopUpMenu visMenu;
 Global PopUpMenu specmenu;
 Global PopUpMenu oscmenu;
@@ -28,27 +31,43 @@ Global PopUpMenu pksmenu;
 Global PopUpMenu anamenu;
 Global PopUpMenu stylemenu;
 
-Global string colorbandfull = "255,0,255", colorbandtop = "255,0,255", colorbandbottom = "255,0,255";
 Global Int currentMode, a_falloffspeed, p_falloffspeed, a_coloring;
-Global Boolean show_peaks;
+Global Boolean show_peaks, isShade;
+Global layer trigger;
+
+Global Layout thislayout;
+Global Container main;
 
 System.onScriptLoaded()
 { 
-	scriptGroup = getScriptGroup();
 
-	currentMode = getPrivateInt(getSkinName(), "Visualizer Mode", 1);
-	show_peaks = getPrivateInt(getSkinName(), "Visualizer show Peaks", 1);
-	a_falloffspeed = getPrivateInt(getSkinName(), "Visualizer analyzer falloff", 2);
-	p_falloffspeed = getPrivateInt(getSkinName(), "Visualizer peaks falloff", 1);
-	a_coloring = getPrivateInt(getSkinName(), "Visualizer analyzer coloring", 1);
+	scriptGroup = getScriptGroup();
+	thislayout = scriptGroup.getParentLayout();
+	main = thislayout.getContainer();
 
 	visualizer = scriptGroup.findObject("main.vis");
-	trigger = scriptGroup.findObject("main.vis.over");
 
-	string p = System.getParam();
-	colorbandfull = getToken(p, ";", 2);
-	colorbandbottom = getToken(p, ";", 0);
-	colorbandtop = getToken(p, ";", 1);
+	trigger = scriptGroup.findObject("main.vis.mousetrap");
+
+
+	visualizer_m = scriptGroup.findObject("main.vis.refl");
+
+	tmr = scriptGroup.findObject("SongTime");
+
+	visualizer.setXmlParam("peaks", integerToString(show_peaks));
+	visualizer.setXmlParam("peakfalloff", integerToString(p_falloffspeed));
+	visualizer.setXmlParam("falloff", integerToString(a_falloffspeed));
+
+	refreshVisSettings ();
+}
+
+refreshVisSettings ()
+{
+	currentMode = getPrivateInt(getSkinName(), "Visualizer Mode", 2);
+	show_peaks = getPrivateInt(getSkinName(), "Visualizer show Peaks", 1);
+	a_falloffspeed = getPrivateInt(getSkinName(), "Visualizer analyzer falloff", 3);
+	p_falloffspeed = getPrivateInt(getSkinName(), "Visualizer peaks falloff", 2);
+	a_coloring = getPrivateInt(getSkinName(), "Visualizer analyzer coloring", 0);
 
 	visualizer.setXmlParam("peaks", integerToString(show_peaks));
 	visualizer.setXmlParam("peakfalloff", integerToString(p_falloffspeed));
@@ -56,33 +75,52 @@ System.onScriptLoaded()
 
 	if (a_coloring == 0)
 	{
-		colorVis(1);
-		visualizer.setXmlParam("coloring", "normal");
+		visualizer.setXmlParam("coloring", "Normal");
+		visualizer_m.setXmlParam("coloring", "Normal");
 	}
 	else if (a_coloring == 1)
 	{
-		colorVis(0);
-		visualizer.setXmlParam("coloring", "normal");
+		visualizer.setXmlParam("coloring", "Normal");
+		visualizer_m.setXmlParam("coloring", "Normal");
 	}
 	else if (a_coloring == 2)
 	{
-		colorVis(0);
 		visualizer.setXmlParam("coloring", "Fire");
+		visualizer_m.setXmlParam("coloring", "Fire");
 	}
 	else if (a_coloring == 3)
 	{
-		colorVis(0);
-		visualizer.setXmlParam("coloring", "Fine");
+		visualizer.setXmlParam("coloring", "Line");
+		visualizer_m.setXmlParam("coloring", "Line");
 	}
 
+	if (!isShade)
+	{
+		visualizer_m.setXmlParam("peaks", integerToString(show_peaks));
+		visualizer_m.setXmlParam("peakfalloff", integerToString(p_falloffspeed));
+		visualizer_m.setXmlParam("falloff", integerToString(a_falloffspeed));		
+	}
+	
 	setVis (currentMode);
-
-	visualizer.show();
-	trigger.show();
 }
 
-trigger.onLeftButtonUp (int x, int y)
+trigger.onLeftButtonDown (int x, int y)
 {
+	if (isKeyDown(VK_ALT) && isKeyDown(VK_SHIFT) && isKeyDown(VK_CONTROL))
+	{
+		if (visualizer.getXmlParam("fliph") == "1")
+		{
+			visualizer.setXmlParam("fliph", "0");
+			visualizer_m.setXmlParam("fliph", "0");			
+		}
+		else
+		{
+			visualizer.setXmlParam("fliph", "1");
+			visualizer_m.setXmlParam("fliph", "1");			
+		}
+		return;
+	}
+
 	currentMode++;
 
 	if (currentMode == 6)
@@ -91,6 +129,7 @@ trigger.onLeftButtonUp (int x, int y)
 	}
 
 	setVis	(currentMode);
+	complete;
 }
 
 trigger.onRightButtonUp (int x, int y)
@@ -122,18 +161,16 @@ trigger.onRightButtonUp (int x, int y)
 	pksmenu.addCommand("Fast", 203, p_falloffspeed == 3, 0);
 	pksmenu.addCommand("Faster", 204, p_falloffspeed == 4, 0);
 	visMenu.addSubMenu(pksmenu, "Peak Falloff Speed");
-	anamenu.addCommand("Slower ", 300, a_falloffspeed == 0, 0);
-	anamenu.addCommand("Slow ", 301, a_falloffspeed == 1, 0);
-	anamenu.addCommand("Moderate ", 302, a_falloffspeed == 2, 0);
-	anamenu.addCommand("Fast ", 303, a_falloffspeed == 3, 0);
-	anamenu.addCommand("Faster ", 304, a_falloffspeed == 4, 0);
+	anamenu.addCommand("Slower", 300, a_falloffspeed == 0, 0);
+	anamenu.addCommand("Slow", 301, a_falloffspeed == 1, 0);
+	anamenu.addCommand("Moderate", 302, a_falloffspeed == 2, 0);
+	anamenu.addCommand("Fast", 303, a_falloffspeed == 3, 0);
+	anamenu.addCommand("Faster", 304, a_falloffspeed == 4, 0);
 	visMenu.addSubMenu(anamenu, "Analyzer Falloff Speed");
-	stylemenu.addCommand("Full", 400, a_coloring == 0, 0);
-	stylemenu.addCommand("Gradient", 401, a_coloring == 1, 0);
+	stylemenu.addCommand("Normal", 400, a_coloring == 0, 0);
 	stylemenu.addCommand("Fire", 402, a_coloring == 2, 0);
 	stylemenu.addCommand("Line", 403, a_coloring == 3, 0);
 	visMenu.addSubMenu(stylemenu, "Analyzer Coloring");
-
 
 	ProcessMenuResult (visMenu.popAtMouse());
 
@@ -161,6 +198,7 @@ ProcessMenuResult (int a)
 	{
 		show_peaks = (show_peaks - 1) * (-1);
 		visualizer.setXmlParam("peaks", integerToString(show_peaks));
+		visualizer_m.setXmlParam("peaks", integerToString(show_peaks));
 		setPrivateInt(getSkinName(), "Visualizer show Peaks", show_peaks);
 	}
 
@@ -168,6 +206,7 @@ ProcessMenuResult (int a)
 	{
 		p_falloffspeed = a - 200;
 		visualizer.setXmlParam("peakfalloff", integerToString(p_falloffspeed));
+		visualizer_m.setXmlParam("peakfalloff", integerToString(p_falloffspeed));
 		setPrivateInt(getSkinName(), "Visualizer peaks falloff", p_falloffspeed);
 	}
 
@@ -175,6 +214,7 @@ ProcessMenuResult (int a)
 	{
 		a_falloffspeed = a - 300;
 		visualizer.setXmlParam("falloff", integerToString(a_falloffspeed));
+		visualizer_m.setXmlParam("falloff", integerToString(a_falloffspeed));
 		setPrivateInt(getSkinName(), "Visualizer analyzer falloff", a_falloffspeed);
 	}
 
@@ -183,27 +223,26 @@ ProcessMenuResult (int a)
 		a_coloring = a - 400;
 		if (a_coloring == 0)
 		{
-			colorVis(1);
-			visualizer.setXmlParam("coloring", "normal");
+			visualizer.setXmlParam("coloring", "Normal");
+			visualizer_m.setXmlParam("coloring", "Normal");
 		}
 		else if (a_coloring == 1)
 		{
-			colorVis(0);
-			visualizer.setXmlParam("coloring", "normal");
+			visualizer.setXmlParam("coloring", "Normal");
+			visualizer_m.setXmlParam("coloring", "Normal");
 		}
 		else if (a_coloring == 2)
 		{
-			colorVis(0);
 			visualizer.setXmlParam("coloring", "Fire");
+			visualizer_m.setXmlParam("coloring", "Fire");
 		}
 		else if (a_coloring == 3)
 		{
-			colorVis(0);
 			visualizer.setXmlParam("coloring", "Line");
+			visualizer_m.setXmlParam("coloring", "Line");
 		}
 		setPrivateInt(getSkinName(), "Visualizer analyzer coloring", a_coloring);
 	}
-
 }
 
 setVis (int mode)
@@ -212,59 +251,42 @@ setVis (int mode)
 	if (mode == 0)
 	{
 		visualizer.setMode(0);
+		visualizer_m.setMode(0);
 	}
 	else if (mode == 1)
 	{
 		visualizer.setXmlParam("bandwidth", "wide");
-		visualizer.setMode(0);
 		visualizer.setMode(1);
+		visualizer_m.setXmlParam("bandwidth", "wide");
+		visualizer_m.setMode(1);
 	}
 	else if (mode == 2)
 	{
 		visualizer.setXmlParam("bandwidth", "thin");
-		visualizer.setMode(0);
 		visualizer.setMode(1);
+		visualizer_m.setXmlParam("bandwidth", "thin");
+		visualizer_m.setMode(1);
 	}
 	else if (mode == 3)
 	{
 		visualizer.setXmlParam("oscstyle", "solid");
 		visualizer.setMode(2);
+		visualizer_m.setXmlParam("oscstyle", "solid");
+		visualizer_m.setMode(2);
 	}
 	else if (mode == 4)
 	{
 		visualizer.setXmlParam("oscstyle", "dots");
 		visualizer.setMode(2);
+		visualizer_m.setXmlParam("oscstyle", "dots");
+		visualizer_m.setMode(2);
 	}
 	else if (mode == 5)
 	{
 		visualizer.setXmlParam("oscstyle", "lines");
 		visualizer.setMode(2);
+		visualizer_m.setXmlParam("oscstyle", "lines");
+		visualizer_m.setMode(2);
 	}
 	currentMode = mode;
-}
-
-colorVis(boolean full)
-{
-	if (full)
-	{
-		for ( int i = 1; i <= 16; i++ )
-		{
-			visualizer.setXmlParam("colorband" + integerToString(i), colorbandfull);
-		}
-	} 
-	else
-	{
-		int Rtop = getToken(colorbandtop, ",", 0);
-		int Gtop = getToken(colorbandtop, ",", 1);
-		int Btop = getToken(colorbandtop, ",", 2);
-
-		int Rbottom = getToken(colorbandbottom, ",", 0);
-		int Gbottom = getToken(colorbandbottom, ",", 1);
-		int Bbottom = getToken(colorbandbottom, ",", 2);
-		
-		for ( int i = 1; i <= 16; i++ )
-		{
-			visualizer.setXmlParam("colorband" + integerToString(i), integerToString(Rbottom + (Rtop-Rbottom)/15 * (i-1)) + "," + integerToString(Gbottom + (Gtop-Gbottom)/15 * (i-1)) + "," + integerToString(Bbottom + (Btop-Bbottom)/15 * (i-1)));
-		}
-	}
 }
