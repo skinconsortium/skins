@@ -167,15 +167,6 @@ x="132" y="384"
 <script file="scripts/hoverglow.maki" param="Pause,player.main.Paused"/>-->
 <layer id="volback" image="volback" x="537" y="396" ghost="1"/>
 
-
-		
-  
-
-
-
-
- 
-
 	<vis id="main.vis" x="90" y="311"
 		w="118" h="25" colorallbands="250,250,250"
 		colorosc1="250,250,250"
@@ -203,7 +194,7 @@ x="132" y="384"
 	<layer id="main.vis.mousetrap"
 		x="90" y="296" w="118" h="80" rectrgn="1" ghost="0"/>
 		
-	
+	<script file="scripts/visualizer.maki" />
 
 	 <SC:NowPlaying 
 		x="150" y="61"
