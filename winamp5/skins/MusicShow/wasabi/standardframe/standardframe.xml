@@ -31,7 +31,7 @@
 
 		<text
 			id="window.titl"
-			x="50" y="8"
+			x="50" y="6"
 			w="-100" relatw="1" h="16" sysregion="0" font="Arial"
 			size="16" ghost="1" align="center"
 		/>
@@ -51,7 +51,7 @@
 
 		<button
 			id="CLOSE"
-			x="-57" relatx="1" y="11"
+			x="-57" relatx="1" y="6"
 			rectrgn="1"
 			image="player.main.close"
  downimage="player.main.closed"
