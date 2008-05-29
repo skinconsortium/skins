@@ -23,6 +23,14 @@
 		hoverimage="player.main.closefocus"
 		rectrgn="1"
 		tooltip="Skin Focus"/>
+
+     <togglebutton id="browse"
+		x="50" y="526" w="25" h="20" action="TOGGLE" param="browser"
+		image="player.main.close" alpha="100"
+		downimage="player.main.closefocus"
+		hoverimage="player.main.closefocus"
+		rectrgn="1"
+		tooltip="Music Show Site"/>
 		
 	<button 
 		id="Minimize"
