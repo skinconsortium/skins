@@ -1,0 +1,44 @@
+<elements>
+
+	<bitmap id="cpro.ff.bg.a" file="background-alpha.png" />
+	<bitmap id="cpro.ff.bg" file="background.png" />
+	<bitmap id="cpro.ff.play" file="play.png" />
+	<bitmap id="cpro.ff.play.h" file="play-h.png" />
+	<bitmap id="cpro.ff.stop" file="stop.png" />
+	<bitmap id="cpro.ff.stop.h" file="stop-h.png" />
+	<bitmap id="cpro.ff.close" file="close.png" />
+	<bitmap id="cpro.ff.close.h" file="close-h.png" />
+
+</elements>
+
+<container id="main" name="Main Window" default_visible="1">
+
+	<layout background="cpro.ff.bg" alphabackground="cpro.ff.bg.a">
+
+		<button
+			x="0" y="0"
+			action="PLAY"
+			image="cpro.ff.play"
+			hoverImage="cpro.ff.play.h"
+			tooltip="Play"
+		/>
+
+		<button
+			x="0" y="0"
+			action="STOP"
+			image="cpro.ff.stop"
+			hoverImage="cpro.ff.stop.h"
+			tooltip="Stop Playback"
+		/>
+
+		<button
+			x="0" y="0"
+			action="EXIT"
+			image="cpro.ff.close"
+			hoverImage="cpro.ff.close.h"
+			tooltip="Exit Winamp"
+		/>
+
+	</layout>
+
+</container>
