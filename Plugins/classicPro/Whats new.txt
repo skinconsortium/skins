@@ -1,0 +1,184 @@
+todo...
+- use original browser xui (wip martin)
+- sui overhaul (much l8r)
+
+
+-------------------------------------------------------------
+Version 1.03 (29 May 2008)
+-------------------------------------------------------------
+- New: Plugin tab now have the name of the plugin (wa5.54)
+- New: Beta for the <ClassicPro/> xui object. See SC forum for more info.
+- Improved: About bg animation
+- Improved: Visualization tab now looks like it loads faster
+- Improved: File sizes of all png files
+- Optimized: SUI area code
+- Fixed: Main Window container now use canclose="0"
+- Fixed: Widget "browser_url" action doesnt open the browser tab
+- Fixed: DrO's Autoplay support... Seekerbg will show ;)
+
+-------------------------------------------------------------
+Version 1.02 (13 April 2008)
+-------------------------------------------------------------
+- Improved: Massive improvement with the component handling (I hope ;P)
+- New: Playlist Tab always visible now :D
+- New: Window Preset buttons (F9, F10, F11, F12... use Shift+F9, F10... to set them)
+- New: AlbumArt tab with reflection & ratings
+- New: Player tabs are now moveable+hideable (right-click them)
+- New: Multi actions for Winamp bolt (right-click)
+- New: Shademode playlist (rightclick the Songname for meny playlist)
+- New: Option for the dblclick titlebar (maximize or shade) See Options menu
+- New: Added Year id3 line to tagviewer (expect a better tagviewer soon ;)
+- New: ClassicPro auto update!
+- Fixed: Ratings no start 1pixel of '6th' star
+- Fixed: Extra area can now be resized much bigger
+- Fixed: Minimum Mainframe position doesnt overlap tabs
+- Fixed: A few maximize bugs. 
+- Fixed: Maximized window will stay maximized when you change the window scale
+- Fixed: Overlapping timer/title
+- Fixed: Shademode seeker bg still visible on stop
+- Fixed: Shademode ML playlist menu will popup under the button
+- Fixed: Drawer close when you goto shade mode
+- Fixed: Bundled the oscilliscope colors in cPro__Bento
+- Update: Window Frame slider update (wip... will be ready for wa5.54)
+- Update: Bundled cPro__Bento now have transparent shade down seeker & new animated vis
+- Update: Tabs will now only space them self when normal mode is visible (speed increase)
+-------------------------------------------------------------
+
+
+-------------------------------------------------------------
+Version 1.01 (02 March 2008)
+-------------------------------------------------------------
+- Fixed: Guru error with the Visualizer switching
+- Fixed: Main player center gfx not tiled
+- Fixed: Typo in Browser
+- Fixed: Oscilloscope color bug
+- Fixed: Global position on new skins (bypass Winamp bug)
+- Better numfont for the cPro__Bento skin
+- New warning.maki for Base Skin
+- Optimized default cPro skin (size <40kb)
+- Winamp will now open the default Cpro skin after install
+-------------------------------------------------------------
+
+
+-------------------------------------------------------------
+Version 1.00 (11 February 2008)
+-------------------------------------------------------------
+- New default homepage for the browser
+- Added custom color for shademode text
+- Speed up for resize
+- Block JTF from openning in sui area... dont use the skinned jtf area...
+- Fixed guru error in progress bar
+- Upgraged Toggle drawer & AOT buttons... (6states & 2 tooltips)
+- Skinners can now use only the beat_left image if they want... cool if you want a solid animation
+- Fixed eq bg cut off on smaller w
+-------------------------------------------------------------
+
+
+-------------------------------------------------------------
+Version 0.99c (03 February 2008)
+-------------------------------------------------------------
+- Changed all the 2007 -> 2008 in the whats new txt ;)
+- New: Frames will now resize themself to original positions
+- Browser: Auto search for artist on foxytunes was added
+- Added new override bitmap [mainframe_title.png].
+- [mainframe_title.png] Will only display if its present & the menu is disabled
+- Added the [pledit.bmp] Modern Skin hack to the cPro - Bento skin
+-------------------------------------------------------------
+
+
+-------------------------------------------------------------
+Version 0.99b (31 January 2008)
+-------------------------------------------------------------
+- Fixed small band vis mode (pixel error)
+- Added play/stop/paused indicator (optional)
+- Added lots of actions for the engine
+- Added visualizer to drawer
+- Widgets can now control the sui engine
+-------------------------------------------------------------
+
+
+-------------------------------------------------------------
+Version 0.99a (29 January 2008)
+-------------------------------------------------------------
+- Browser implemented complete ;)
+- Cool new browser Search mode: Lyric & Local... see Search Button > Auto Search playing file
+- Song Notifier added [notifier.png]
+- Fixed a few tooltips (Main Mode, Show Drawer....)
+- New about screen!
+- Increased the bundled "cPro - Bento" xfade buttons
+- Down thumb of "cPro - Bento" now transparent.
+- Implemented the aolradio/shoutcast cover pictures!
+- Shade mode mute implemented
+- Fixed alignment bug with 2frame beatvis(right side was a little off)
+- New improved warning.maki
+- Installer will now clean the cPro - Bento folder before install
+- Fixed: skin resize smaller than the minimum...
+- Optimized resizers...can only resize from the bottom, bottomright & right
+- Organized the colors.xml in cPro - Bento
+- Volume_ani.png can now be used for animated volume backgrounds... see manual
+- Added lots of new alternatives...
+- Skinners can now set the font of the skin... see colors.xml
+- Fixed: SongTitle and TrackTimer overlap.. again ;)
+- New improved seeker background... you can now use it with a transparent seeker thumb.
+- Added: Click on +12, 0, -12 to set all the sliders
+- Shade mode volume background implemented
+- Global settings for all cPro skins
+- Bundled skin is now called cPro - Bento....
+- New: Very cool new drawer... see all your cPro skins and switch to them!
+- New: Widget engine!!! Make your widget
+- Variable bitrate will now update display while playing
+- Bitrate display now limited to 99999kbps
+-------------------------------------------------------------
+
+
+-------------------------------------------------------------
+Version 0.08 (16 January 2008)
+-------------------------------------------------------------
+- New: Added warning.maki file to skin. This will warn the user if cPro isn't installed
+- Browser: Custom browser buttons.png
+- Browser: Browser is now fully translatable via text
+- Browser: Other various fixes
+- Tabs: Added component buttons [component.png]
+- Tabs: Can now resize to one letter
+- Fixed: About Winamp window opens the Plugins tab
+- Fixed: If blocked component open, skin still resize bigger
+- Mono/Stereo/Surround image is now hidden if nothing is playing
+- New gfx for bundled skin, "cPro - Bento"
+- Disabled lots of debug code
+- Volume hover bg added
+- Improved window handling
+- Fixed historyeditbox to not cut 2pixels of down button
+- Default Window stretched parts is now tiled... you can override this(see dev. manual)
+- Added custom tooltip & combobox gfx [tooltip.png & combobox.png]
+- Added the mute button to shade mode.. but must still add the code ;)
+- Added classicvis colors to the shade mode.
+-------------------------------------------------------------
+
+
+-------------------------------------------------------------
+Version 0.07 (10 January 2008)
+-------------------------------------------------------------
+- New: Winamp Browser (some stuff dont work yet...)
+- New: BottomRight logo button
+- New: TopLeft menu button
+- New: Promo pics when custom beatvis is not being shown
+- New: AlbumArt pictures for aolradio & shoutcast.
+- New: The beat.png was split into beat_left.png & beat_right.png
+- New: beat_left/right have new types of animations(normal, 1frame, 2frame) read more in the manual for developers
+- New: Your beat_left & right can now have any width that you want. It will be centered and both side must have the same width!
+- New: Enabled all the pictures for the seekbar in seekvol.png
+- New: Track ratings. Pictures added to buttons.png
+- New: Classic Visualization menu & modes
+- Changed: NoCover image names. See "cPro - Bento"
+- Changed: Font of songtimer to arial if no "numfont.png" is present
+- Changed: "cPro - Bento" nocover picture to higher res one
+- Fixed: AlbumArt refresh menu option showing nothing after refresh
+- Fixed: SongTitle and TrackTimer overlap
+- Fixed: Skin can only resize to a max of 1280
+- moved the TrackTimer up with 2pixels
+- Added info text (Volume, Seeker, Mute, Shuffle, ...)
+- Increased the size of the SongTitle
+- BeatVis can now be disabled with the rightclick menu or a dblclick
+- Dbl titlebar to toggle fullscreen
+- Added a few tooltips
+-------------------------------------------------------------

@@ -1,0 +1,123 @@
+<elements>
+	<bitmap id="about.0" file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\image\about-sc.png"/>
+	<bitmap id="about.1" file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\image\about-pjn123.png"/>
+	<bitmap id="about.2" file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\image\about-martin.png"/>
+	<bitmap id="about.3" file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\image\about-quad.png"/>
+	<bitmap id="about.4" file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\image\about-slob.png"/>
+	<bitmap id="about.5" file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\image\about-et.png"/>
+
+	<bitmap id="about.ani" file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\image\about-ani.png"/>
+</elements>
+
+
+<groupdef id="about.main.layer" w="380" h="321" rectrgn="1">
+	<layer id="cpro.about.gfx" x="0" y="0" w="380" h="321" image="about.gfx" rectrgn="1" cursor="IDC_HAND" tooltip="Click to toggle credits for ClassicPro"/>
+</groupdef>
+
+
+<groupdef id="credit.0" w="380" h="321" rectrgn="1">
+	<layer x="0" y="0" image="about.0"/>
+</groupdef>
+
+<groupdef id="credit.1" w="380" h="321" rectrgn="1">
+	<layer x="0" y="0" image="about.1"/>
+
+	<text x="20" y="10" w="0" relatw="1" align="left" ghost="1" bold="0" fontsize="30" font="tahoma" color="0,0,0" alpha="180"
+		text="Main Coder and Design:"
+	/>
+	<text x="0" y="38" w="0" relatw="1" align="center" ghost="1" bold="0" fontsize="22" font="tahoma" color="0,0,0" alpha="180"
+		text="by pjn123 (Pieter Nieuwoudt)"
+	/>
+	<text x="0" y="60" w="0" relatw="1" align="center" ghost="1" fontsize="16" font="tahoma" color="0,0,0" alpha="180"
+		text="from www.skinconsortium.com"
+	/>
+</groupdef>
+
+<groupdef id="credit.2" w="380" h="321" rectrgn="1">
+	<layer x="0" y="0" image="about.2"/>
+
+	<text x="20" y="10" w="0" relatw="1" align="left" ghost="1" bold="0" fontsize="30" font="tahoma" color="0,0,0" alpha="180"
+		text="Browser, Notifier and misc coding:"
+	/>
+	<text x="0" y="38" w="0" relatw="1" align="center" ghost="1" bold="0" fontsize="22" font="tahoma" color="0,0,0" alpha="180"
+		text="by martin.deimos (Martin Poehlmann)"
+	/>
+	<text x="0" y="60" w="0" relatw="1" align="center" ghost="1" fontsize="16" font="tahoma" color="0,0,0" alpha="180"
+		text="from www.SkinConsortium.com"
+	/>
+	<text x="0" y="80" w="-10" relatw="1" align="right" ghost="1" fontsize="16" font="tahoma" color="0,0,0" alpha="180"
+		text="also co-developer for the Widget engine"
+	/>
+</groupdef>
+
+<groupdef id="credit.3" w="380" h="321" rectrgn="1">
+	<layer x="0" y="0" image="about.3"/>
+
+	<text x="20" y="10" w="0" relatw="1" align="left" ghost="1" bold="0" fontsize="30" font="tahoma" color="0,0,0" alpha="180"
+		text="General graphics and promotions:"
+	/>
+	<text x="0" y="38" w="0" relatw="1" align="center" ghost="1" bold="0" fontsize="22" font="tahoma" color="0,0,0" alpha="180"
+		text="by QuadHelix (Ralph Barber)"
+	/>
+	<text x="0" y="60" w="0" relatw="1" align="center" ghost="1" fontsize="16" font="tahoma" color="0,0,0" alpha="180"
+		text="from www.SkinConsortium.com"
+	/>
+</groupdef>
+
+<groupdef id="credit.4" w="380" h="321" rectrgn="1">
+	<layer x="0" y="0" image="about.4"/>
+
+	<text x="20" y="10" w="0" relatw="1" align="left" ghost="1" bold="0" fontsize="30" font="tahoma" color="0,0,0" alpha="180"
+		text="AlbumArt with reflection and help:"
+	/>
+	<text x="0" y="38" w="0" relatw="1" align="center" ghost="1" bold="0" fontsize="22" font="tahoma" color="0,0,0" alpha="180"
+		text="by SLoB (Kev Jaques)"
+	/>
+	<text x="0" y="60" w="0" relatw="1" align="center" ghost="1" fontsize="16" font="tahoma" color="0,0,0" alpha="180"
+		text="from www.SkinConsortium.com"
+	/>
+</groupdef>
+
+<groupdef id="credit.5" w="380" h="321" rectrgn="1">
+	<layer x="0" y="0" image="about.5"/>
+
+	<text x="20" y="10" w="0" relatw="1" align="left" ghost="1" bold="0" fontsize="30" font="tahoma" color="0,0,0" alpha="180"
+		text="Widget engine co-developer:"
+	/>
+	<text x="0" y="38" w="0" relatw="1" align="center" ghost="1" bold="0" fontsize="22" font="tahoma" color="0,0,0" alpha="180"
+		text="by E-Trance (Egor Petrov)"
+	/>
+	<text x="0" y="60" w="0" relatw="1" align="center" ghost="1" fontsize="16" font="tahoma" color="0,0,0" alpha="180"
+		text="entrase@yandex.ru"
+	/>
+</groupdef>
+
+<groupdef id="credit.6" w="380" h="321" rectrgn="1">
+	<text x="20" y="10" w="0" relatw="1" align="left" ghost="1" bold="0" fontsize="30" font="tahoma" color="0,0,0" alpha="180"
+		text="Other thanks..."
+	/>
+	<text x="30" y="38" w="0" relatw="1" ghost="1" bold="0" fontsize="16" font="tahoma" color="0,0,0" alpha="180"
+		text=".. iron2000 for all the great cPro Skins!\n.. Taber Buhl for the Big Bento layout!\n.. Ben Allison for Wasabi development\n.. Wildrose-Wally for his suggestions and support\n.. TheElusiveMelon for the cPro clock\n.. fille1000 for sticking just like iron2000 :D\n.. Paparazzi for his suggestions\n.. everyone that entered the ClassicPro Design Awards 2008!\n.. everyone that reported bugs/wishes\nand all the users!"
+	/>
+
+</groupdef>
+
+<groupdef id="skin.about.group" w="0" h="0" relatw="1" relath="1" rectrgn="1">
+	<rect fitparent="1" filled="1" color="100,100,100"/>
+	<layer id="credit.bg.ani" fitparent="1" image="about.ani"/>
+
+	<group id="credit.0" x="0" y="0" w="380" h="321"/>
+	<group id="credit.1" x="380" y="0" w="380" h="321"/>
+	<group id="credit.2" x="380" y="0" w="380" h="321"/>
+	<group id="credit.3" x="380" y="0" w="380" h="321"/>
+	<group id="credit.4" x="380" y="0" w="380" h="321"/>
+	<group id="credit.5" x="380" y="0" w="380" h="321"/>
+	<group id="credit.6" x="380" y="0" w="380" h="321"/>
+
+	<group id="about.main.layer" x="0" y="0" w="380" h="321"/>
+	<text x="0" y="-26" w="0" relaty="1" relatw="1" align="center" ghost="1" fontsize="20" color="10,10,10" shadowcolor="200,200,200" shadowx="1" shadowy="1"
+		text="Copyright SkinConsortium 2006 - 2008" alpha="220"
+	/>
+
+	<script file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\scripts\about.maki"/>
+</groupdef>

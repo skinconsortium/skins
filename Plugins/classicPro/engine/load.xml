@@ -1,0 +1,7 @@
+<scripts>
+	<script file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\scripts\loadattribs.maki"/>
+</scripts>
+
+<include file="xui\xui-files.xml"/>
+<include file="widgets\load\*.xml"/>
+<include file="xml\files.xml"/>

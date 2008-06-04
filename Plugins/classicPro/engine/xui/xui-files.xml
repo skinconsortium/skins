@@ -1,0 +1,11 @@
+<include file="SC-ProgressGrid/SC-ProgressGrid.xml"/>
+<include file="AlbumArt/AlbumArt.xml"/>
+<include file="SC-Channels/sc-channels.xml"/>
+<include file="Ratings/Ratings.xml"/>
+<include file="browser/browser.xml"/>
+<include file="historyeditbox/historyeditbox.xml"/>
+<include file="FadeText/FadeText.xml"/>
+<include file="NowPlaying/NowPlaying.xml"/>
+<include file="CentroSUI/CentroSUI.xml"/>
+<include file="ModernSongticker/ModernSongticker.xml"/>
+<include file="updateSystem/updateSystem.xml"/>
