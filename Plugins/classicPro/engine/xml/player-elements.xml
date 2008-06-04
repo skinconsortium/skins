@@ -1,24 +1,35 @@
 <elements>
 
 
-	<bitmap id="fake.seeker" file="@WINAMPPATH@\Plugins\classicPro\engine\image\seeker.png"/>
+	<!-- mainframe.png -->
+	<bitmap id="player.topleft" file="mainframe.png" x="0" y="0" w="143" h="100" gammagroup="Background.bottom"/>
+	<bitmap id="player.top" file="mainframe.png" x="144" y="0" w="10" h="100" gammagroup="Background.bottom"/>
+	<bitmap id="player.topright" file="mainframe.png" x="155" y="0" w="174" h="100" gammagroup="Background.bottom"/>
+	<bitmap id="player.left" file="mainframe.png" x="0" y="101" w="6" h="20" gammagroup="Background.bottom"/>
+	<bitmap id="player.right" file="mainframe.png" x="323" y="101" w="6" h="20" gammagroup="Background.bottom"/>
+	<bitmap id="player.bottomleft" file="mainframe.png" x="0" y="122" w="157" h="68" gammagroup="Background.bottom"/>
+	<bitmap id="player.bottom" file="mainframe.png" x="158" y="122" w="10" h="68" gammagroup="Background.bottom"/>
+	<bitmap id="player.bottomright" file="mainframe.png" x="169" y="122" w="160" h="68" gammagroup="Background.bottom"/>
+	<bitmap id="player.center" file="mainframe.png" x="7" y="101" w="20" h="20" gammagroup="Background.bottom"/>
 
-	<!-- Player Gfx -->
+	<!-- mainframe_overlay.png -->
+	<bitmap id="player.o.topleft" file="mainframe_overlay.png" x="0" y="0" w="143" h="100" gammagroup="Background.overlay"/>
+	<bitmap id="player.o.top" file="mainframe_overlay.png" x="144" y="0" w="10" h="100" gammagroup="Background.overlay"/>
+	<bitmap id="player.o.topright" file="mainframe_overlay.png" x="155" y="0" w="174" h="100" gammagroup="Background.overlay"/>
+	<bitmap id="player.o.left" file="mainframe_overlay.png" x="0" y="101" w="6" h="20" gammagroup="Background.overlay"/>
+	<bitmap id="player.o.right" file="mainframe_overlay.png" x="323" y="101" w="6" h="20" gammagroup="Background.overlay"/>
+	<bitmap id="player.o.bottomleft" file="mainframe_overlay.png" x="0" y="122" w="157" h="68" gammagroup="Background.overlay"/>
+	<bitmap id="player.o.bottom" file="mainframe_overlay.png" x="158" y="122" w="10" h="68" gammagroup="Background.overlay"/>
+	<bitmap id="player.o.bottomright" file="mainframe_overlay.png" x="169" y="122" w="160" h="68" gammagroup="Background.overlay"/>
+	<bitmap id="player.o.center" file="mainframe_overlay.png" x="7" y="101" w="20" h="20" gammagroup="Background.overlay"/>
 
-	<bitmap id="player.topleft" file="mainframe.png" x="0" y="0" w="143" h="100"/>
-	<bitmap id="player.top" file="mainframe.png" x="144" y="0" w="10" h="100"/>
-	<bitmap id="player.topright" file="mainframe.png" x="155" y="0" w="174" h="100"/>
-	<bitmap id="player.left" file="mainframe.png" x="0" y="101" w="6" h="20"/>
-	<bitmap id="player.right" file="mainframe.png" x="323" y="101" w="6" h="20"/>
-	<bitmap id="player.bottomleft" file="mainframe.png" x="0" y="122" w="157" h="68"/>
-	<bitmap id="player.bottom" file="mainframe.png" x="158" y="122" w="10" h="68"/>
-	<bitmap id="player.bottomright" file="mainframe.png" x="169" y="122" w="160" h="68"/>
-	<bitmap id="player.center" file="mainframe.png" x="7" y="101" w="20" h="20"/>
 
+	<!-- mainframe_lr.png -->
 	<bitmap id="player.left.alt" file="mainframe_lr.png" x="0" y="0" w="6"/>
 	<bitmap id="player.right.alt" file="mainframe_lr.png" x="7" y="0" w="6"/>
 	<bitmap id="player.top.alt" file="mainframe_tb.png" x="0" y="0" h="100"/>
 	<bitmap id="player.bottom.alt" file="mainframe_tb.png" x="0" y="101" h="68"/>
+
 
 	<bitmap id="player.center.title" file="mainframe_title.png" x="0" y="0" w="90"/>
 
