@@ -1,0 +1,7 @@
+<include file="xui\xui-files.xml"/>
+<include file="widgets\load\*.xml"/>
+<include file="xml\files-cproxui.xml"/>
+
+<groupdef id="ClassicPro.xui" xuitag="ClassicPro">
+	<Centro:SUI id="cpro.sui" fitparent="1" drawer_h="119" guid_blacklist="{D6201408-476A-4308-BF1B-7BACA1124B12};{5F8D8373-EAA7-4390-B5AB-402E86A5F9DD};{00000000-0000-0000-0000-000000000000}"/>
+</groupdef>
