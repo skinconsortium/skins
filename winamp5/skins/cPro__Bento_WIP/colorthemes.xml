@@ -1,3 +1,5 @@
-<gammaset id="*Default">
+<gammaset id="default">
+	<gammagroup id="Buttons.Playback" value="0,0,0" gray="0" boost="0" />
 	<gammagroup id="Background.bottom" value="0,0,0" gray="0" boost="0" />
+	<gammagroup id="Background.overlay" value="0,0,0" gray="0" boost="0" />
 </gammaset>
