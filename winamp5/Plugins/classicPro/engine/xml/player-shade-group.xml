@@ -32,11 +32,18 @@
 		display="time" align="left" color="Shade.SongTicker.Text" fontsize="12" bold="2" valign="top"
 	/>
 
-	<SongTicker id="Songticker" nograbb="1" move="1"
-		x="38" y="5" h="12" w="-42" relatw="1"
-		display="SONGTITLE" showlen="1" ticker="1" rightpadding="-3"
-		dblclickaction="trackinfo" align="right"
-		color="Shade.SongTicker.Text" fontsize="12" valign="top" bold="2" font="cpro.winshade.font"
+	<ModernSongticker id="Songticker"
+		x="38" y="5" h="12" w="-42" relatw="1" nograbb="1" move="1"
+		id_layout="main;shade"
+		id_volume="Volume"
+		id_seeker="seeker"
+		id_prev="previous.track"
+		id_next="next.track"
+		id_open="open.tracks"
+		id_shuf="shuffle"
+		id_rep="repeat"
+		id_mute="mute2"
+		fontsize="12"
 	/>
 	<script file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\scripts\playlistmenu.maki" param="Songticker;40"/>
 </groupdef>
@@ -46,7 +53,6 @@
 	<layer fitparent="1" dblClickAction="SWITCH;normal" move="1"/>
 
 	<Slider
-		id="seeker"
 		action="SEEK"
 		x="1" y="7" h="8" w="-2" relatw="1"
 		thumb="s.seek.thumb.1"
@@ -58,7 +64,7 @@
 	/>
 
 	<Slider
-		id="seeker.ghost"
+		id="seeker"
 		action="SEEK"
 		x="1" y="7" h="8" w="-2" relatw="1"
 		thumb="s.seek.thumb.1"
@@ -68,6 +74,6 @@
 	/>
 </groupdef>
 <groupdef id="shade.seekticker">
-	<group id="shade.seekticker1" x="0" y="0" w="100" h="23" relatw="2"/>
 	<group id="shade.seekticker2" x="70" y="0" w="30" h="23" relatx="2" relatw="2" visible="0"/>
+	<group id="shade.seekticker1" x="0" y="0" w="100" h="23" relatw="2"/>
 </groupdef>
