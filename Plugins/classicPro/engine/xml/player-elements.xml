@@ -37,7 +37,6 @@
 	<bitmap id="cPro.promo.2" file="promo.png" x="0" y="46" w="200" h="45" gammagroup="Background.Promo"/>
 	<bitmap id="cPro.promo.3" file="promo.png" x="0" y="0" w="300" h="45" gammagroup="Background.Promo"/>
 
-
 	<!-- Buttons: Playback -->
 	<bitmap id="player.prev.1" file="buttons.png" x="0" y="0" w="27" h="28" gammagroup="Buttons.Playback"/>
 	<bitmap id="player.prev.2" file="buttons.png" x="0" y="29" w="27" h="28" gammagroup="Buttons.Playback"/>
@@ -169,6 +168,7 @@
 	<bitmap id="vis.band" file="mainframe.png" x="28" y="103" w="1" h="16"/>
 	<bitmap id="vis.region" file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\image\vis-overlay.png"/>
 	<bitmap id="vis.overlay" file="mainframe.png" x="20" y="75" w="108" h="16"/>
+	<bitmap id="tabpreview" file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\xui\CentroSUI\tabpreview.png"/>
 
 	<!-- Text: SongInfo -->
 	<bitmap id="size.kb" file="songinfo.png" x="0" y="16" w="10" h="5" gammagroup="Text.SongInfo"/>
@@ -182,6 +182,7 @@
 	<bitmap id="cover.sc" file="art_shoutcast.png" gammagroup="Layer.NoCover"/>
 	<bitmap id="cover.aolr" file="art_aolradio.png" gammagroup="Layer.NoCover"/>
 
+	<!-- BeatVis -->
 	<bitmap id="beat.left" file="beat_left.png" gammagroup="Layer.BeatVis"/>
 	<bitmap id="beat.right" file="beat_right.png" gammagroup="Layer.BeatVis"/>
 	<bitmap id="beat.left.0" file="beat_left.png" x="0" y="0" h="45" gammagroup="Layer.BeatVis"/>
@@ -189,241 +190,174 @@
 	<bitmap id="beat.left.1" file="beat_left.png" x="0" y="45" h="45" gammagroup="Layer.BeatVis"/>
 	<bitmap id="beat.right.1" file="beat_right.png" x="0" y="45" h="45" gammagroup="Layer.BeatVis"/>
 
+	<!-- Equilizer -->
+	<bitmap id="eq.bg" file="eq.png" x="0" y="0" w="377" h="82" gammagroup="Layer.EqBG"/>
+	<bitmap id="eq.label.winamp" file="eq.png" x="0" y="83" w="377" h="18" gammagroup="Layer.EqBG"/>
+	<bitmap id="eq.label.iso" file="eq.png" x="0" y="102" w="377" h="18" gammagroup="Layer.EqBG"/>
+	<bitmap id="eq.slider.h.1" file="eq.png" x="393" y="0" w="7" h="14" gammagroup="Slider.Eq"/>
+	<bitmap id="eq.slider.h.2" file="eq.png" x="401" y="0" w="7" h="14" gammagroup="Slider.Eq"/>
+	<bitmap id="eq.slider.h.3" file="eq.png" x="409" y="0" w="7" h="14" gammagroup="Slider.Eq"/>
+	<bitmap id="eq.slider.v.1" file="eq.png" x="378" y="0" w="14" h="7" gammagroup="Slider.Eq"/>
+	<bitmap id="eq.slider.v.2" file="eq.png" x="378" y="8" w="14" h="7" gammagroup="Slider.Eq"/>
+	<bitmap id="eq.slider.v.3" file="eq.png" x="378" y="16" w="14" h="7" gammagroup="Slider.Eq"/>
 
+	<!-- Xfade -->
+	<bitmap id="eq.xfade.1" file="eq.png" x="378" y="24" w="28" h="14" gammagroup="Buttons.Xfade"/>
+	<bitmap id="eq.xfade.2" file="eq.png" x="378" y="39" w="28" h="14" gammagroup="Buttons.Xfade"/>
+	<bitmap id="eq.xfade.3" file="eq.png" x="378" y="54" w="28" h="14" gammagroup="Buttons.Xfade"/>
+	<bitmap id="eq.xfade.4" file="eq.png" x="378" y="69" w="28" h="14" gammagroup="Buttons.Xfade"/>
+	<bitmap id="eq.xftime.less.1" file="eq.png" x="407" y="24" w="14" h="14" gammagroup="Buttons.Xfade"/>
+	<bitmap id="eq.xftime.less.2" file="eq.png" x="407" y="39" w="14" h="14" gammagroup="Buttons.Xfade"/>
+	<bitmap id="eq.xftime.less.3" file="eq.png" x="407" y="54" w="14" h="14" gammagroup="Buttons.Xfade"/>
+	<bitmap id="eq.xftime.more.1" file="eq.png" x="422" y="24" w="14" h="14" gammagroup="Buttons.Xfade"/>
+	<bitmap id="eq.xftime.more.2" file="eq.png" x="422" y="39" w="14" h="14" gammagroup="Buttons.Xfade"/>
+	<bitmap id="eq.xftime.more.3" file="eq.png" x="422" y="54" w="14" h="14" gammagroup="Buttons.Xfade"/>
 
+	<!-- Sui Buttons -->
+	<bitmap id="drawer.1.0" file="suiframe.png" x="111" y="0" w="20" h="20" gammagroup="Buttons.Sui"/>
+	<bitmap id="drawer.2.0" file="suiframe.png" x="111" y="21" w="20" h="20" gammagroup="Buttons.Sui"/>
+	<bitmap id="drawer.3.0" file="suiframe.png" x="111" y="42" w="20" h="20" gammagroup="Buttons.Sui"/>
+	<bitmap id="drawer.1.1" file="suiframe.png" x="111" y="72" w="20" h="20" gammagroup="Buttons.Sui"/>
+	<bitmap id="drawer.2.1" file="suiframe.png" x="132" y="72" w="20" h="20" gammagroup="Buttons.Sui"/>
+	<bitmap id="drawer.3.1" file="suiframe.png" x="153" y="72" w="20" h="20" gammagroup="Buttons.Sui"/>
+	<bitmap id="open.right.1" file="suiframe.png" x="141" y="9" w="20" h="20" gammagroup="Buttons.Sui"/>
+	<bitmap id="open.right.2" file="suiframe.png" x="141" y="30" w="20" h="20" gammagroup="Buttons.Sui"/>
+	<bitmap id="open.right.3" file="suiframe.png" x="141" y="51" w="20" h="20" gammagroup="Buttons.Sui"/>
+	<bitmap id="close.right.1" file="suiframe.png" x="162" y="9" w="20" h="20" gammagroup="Buttons.Sui"/>
+	<bitmap id="close.right.2" file="suiframe.png" x="162" y="30" w="20" h="20" gammagroup="Buttons.Sui"/>
+	<bitmap id="close.right.3" file="suiframe.png" x="162" y="51" w="20" h="20" gammagroup="Buttons.Sui"/>
 
-
-
-	<bitmap id="eq.bg" file="eq.png" x="0" y="0" w="377" h="82"/>
-	<bitmap id="eq.label.winamp" file="eq.png" x="0" y="83" w="377" h="18"/>
-	<bitmap id="eq.label.iso" file="eq.png" x="0" y="102" w="377" h="18"/>
-	
-	<bitmap id="eq.slider.h.1" file="eq.png" x="393" y="0" w="7" h="14"/>
-	<bitmap id="eq.slider.h.2" file="eq.png" x="401" y="0" w="7" h="14"/>
-	<bitmap id="eq.slider.h.3" file="eq.png" x="409" y="0" w="7" h="14"/>
-
-	<bitmap id="eq.slider.v.1" file="eq.png" x="378" y="0" w="14" h="7"/>
-	<bitmap id="eq.slider.v.2" file="eq.png" x="378" y="8" w="14" h="7"/>
-	<bitmap id="eq.slider.v.3" file="eq.png" x="378" y="16" w="14" h="7"/>
-
-	<bitmap id="eq.xfade.1" file="eq.png" x="378" y="24" w="28" h="14"/>
-	<bitmap id="eq.xfade.2" file="eq.png" x="378" y="39" w="28" h="14"/>
-	<bitmap id="eq.xfade.3" file="eq.png" x="378" y="54" w="28" h="14"/>
-	<bitmap id="eq.xfade.4" file="eq.png" x="378" y="69" w="28" h="14"/>
-
-	<bitmap id="eq.xftime.less.1" file="eq.png" x="407" y="24" w="14" h="14"/>
-	<bitmap id="eq.xftime.less.2" file="eq.png" x="407" y="39" w="14" h="14"/>
-	<bitmap id="eq.xftime.less.3" file="eq.png" x="407" y="54" w="14" h="14"/>
-
-	<bitmap id="eq.xftime.more.1" file="eq.png" x="422" y="24" w="14" h="14"/>
-	<bitmap id="eq.xftime.more.2" file="eq.png" x="422" y="39" w="14" h="14"/>
-	<bitmap id="eq.xftime.more.3" file="eq.png" x="422" y="54" w="14" h="14"/>
-
-
-
-
-
-	<bitmap id="drawer.1.0" file="suiframe.png" x="111" y="0" w="20" h="20"/>
-	<bitmap id="drawer.2.0" file="suiframe.png" x="111" y="21" w="20" h="20"/>
-	<bitmap id="drawer.3.0" file="suiframe.png" x="111" y="42" w="20" h="20"/>
-	<bitmap id="drawer.1.1" file="suiframe.png" x="111" y="72" w="20" h="20"/>
-	<bitmap id="drawer.2.1" file="suiframe.png" x="132" y="72" w="20" h="20"/>
-	<bitmap id="drawer.3.1" file="suiframe.png" x="153" y="72" w="20" h="20"/>
-
-	<bitmap id="open.right.1" file="suiframe.png" x="141" y="9" w="20" h="20"/>
-	<bitmap id="open.right.2" file="suiframe.png" x="141" y="30" w="20" h="20"/>
-	<bitmap id="open.right.3" file="suiframe.png" x="141" y="51" w="20" h="20"/>
-
-	<bitmap id="close.right.1" file="suiframe.png" x="162" y="9" w="20" h="20"/>
-	<bitmap id="close.right.2" file="suiframe.png" x="162" y="30" w="20" h="20"/>
-	<bitmap id="close.right.3" file="suiframe.png" x="162" y="51" w="20" h="20"/>
-
-
-	<bitmap id="tabpreview" file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\xui\CentroSUI\tabpreview.png"/>
-
-
-	<!-- Player Font -->
-
-	<bitmap id="player.bitmapfont.nums.source" file="numfont.png" x="0" y="0" h="93" w="240"  gammagroup="DisplayText"/>
+	<!-- Number Font -->
+	<bitmap id="player.bitmapfont.nums.source" file="numfont.png" x="0" y="0" h="93" w="240" gammagroup="Text.SongTime"/>
 	<bitmapfont id="player.bitmapfont.nums" file="player.bitmapfont.nums.source" charwidth="15" charheight="31" hspacing="0" vspacing="-2"/>
 
+	<!-- Menubar buttons -->
+	<bitmap id="window.titlebar.menu.1" file="buttons.png" x="0" y="87" w="10" h="21" gammagroup="Buttons.Menubar"/>
+	<bitmap id="window.titlebar.menu.2" file="buttons.png" x="11" y="87" w="10" h="21" gammagroup="Buttons.Menubar"/>
+	<bitmap id="window.titlebar.menu.3" file="buttons.png" x="22" y="87" w="10" h="21" gammagroup="Buttons.Menubar"/>
 
-	<bitmap id="window.titlebar.menu.1" file="buttons.png" x="0" y="87" w="10" h="21"/>
-	<bitmap id="window.titlebar.menu.2" file="buttons.png" x="11" y="87" w="10" h="21"/>
-	<bitmap id="window.titlebar.menu.3" file="buttons.png" x="22" y="87" w="10" h="21"/>
+	<!-- Winamp bold -->
+	<bitmap id="winamp.logo" file="buttons.png" x="258" y="162" w="34" h="34" gammagroup="Buttons.Bolt"/>
 
-	<bitmap id="winamp.logo" file="buttons.png" x="258" y="162" w="34" h="34"/>
+	<!-- Volume -->
+	<bitmap id="volume.bg" file="seekvol.png" x="0" y="63" w="97" h="15" gammagroup="Slider.Volume"/>
+	<bitmap id="volume.bg.hover" file="seekvol.png" x="0" y="79" w="97" h="15" gammagroup="Slider.Volume"/>
+	<bitmap id="volume.bg2" file="volume_ani.png" x="0" y="0" w="97" gammagroup="Slider.Volume"/>
+	<bitmap id="volume.thumb.1" file="seekvol.png" x="77" y="15" w="20" h="15" gammagroup="Slider.VolumeThumb"/>
+	<bitmap id="volume.thumb.2" file="seekvol.png" x="77" y="31" w="20" h="15" gammagroup="Slider.VolumeThumb"/>
+	<bitmap id="volume.thumb.3" file="seekvol.png" x="77" y="47" w="20" h="15" gammagroup="Slider.VolumeThumb"/>
 
-	<bitmap id="volume.bg" file="seekvol.png" x="0" y="63" w="97" h="15"/>
-	<bitmap id="volume.bg.hover" file="seekvol.png" x="0" y="79" w="97" h="15"/>
-	<bitmap id="volume.bg2" file="volume_ani.png" x="0" y="0" w="97"/>
+	<!-- Seeker -->
+	<bitmap id="seeker.bg.left.1" file="seekvol.png" x="0" y="0" w="10" h="20" gammagroup="Slider.Seeker.1"/>
+	<bitmap id="seeker.bg.left.2" file="seekvol.png" x="0" y="21" w="10" h="20" gammagroup="Slider.Seeker.2"/>
+	<bitmap id="seeker.bg.left.3" file="seekvol.png" x="0" y="42" w="10" h="20" gammagroup="Slider.Seeker.3"/>
+	<bitmap id="seeker.bg.center.1" file="seekvol.png" x="11" y="0" w="10" h="20" gammagroup="Slider.Seeker.1"/>
+	<bitmap id="seeker.bg.center.2" file="seekvol.png" x="11" y="21" w="10" h="20" gammagroup="Slider.Seeker.2"/>
+	<bitmap id="seeker.bg.center.3" file="seekvol.png" x="11" y="42" w="10" h="20" gammagroup="Slider.Seeker.3"/>
+	<bitmap id="seeker.bg.right.1" file="seekvol.png" x="22" y="0" w="10" h="20" gammagroup="Slider.Seeker.1"/>
+	<bitmap id="seeker.bg.right.2" file="seekvol.png" x="22" y="21" w="10" h="20" gammagroup="Slider.Seeker.2"/>
+	<bitmap id="seeker.bg.right.3" file="seekvol.png" x="22" y="42" w="10" h="20" gammagroup="Slider.Seeker.3"/>
+	<bitmap id="seeker.thumb.1" file="seekvol.png" x="33" y="0" w="38" h="20" gammagroup="Slider.SeekerThumb"/>
+	<bitmap id="seeker.thumb.2" file="seekvol.png" x="33" y="21" w="38" h="20" gammagroup="Slider.SeekerThumb"/>
+	<bitmap id="seeker.thumb.3" file="seekvol.png" x="33" y="42" w="38" h="20" gammagroup="Slider.SeekerThumb"/>
 
-	<bitmap id="volume.thumb.1" file="seekvol.png" x="77" y="15" w="20" h="15"/>
-	<bitmap id="volume.thumb.2" file="seekvol.png" x="77" y="31" w="20" h="15"/>
-	<bitmap id="volume.thumb.3" file="seekvol.png" x="77" y="47" w="20" h="15"/>
+	<!--  SUI Component Buttons: Small -->
+	<bitmap id="component.pl.add.1" file="comp_but.png" x="0" y="0" w="32" h="17" gammagroup="Buttons.ComponentSmall"/>
+	<bitmap id="component.pl.add.2" file="comp_but.png" x="0" y="18" w="32" h="17" gammagroup="Buttons.ComponentSmall"/>
+	<bitmap id="component.pl.add.3" file="comp_but.png" x="0" y="36" w="32" h="17" gammagroup="Buttons.ComponentSmall"/>
+	<bitmap id="component.pl.rem.1" file="comp_but.png" x="33" y="0" w="31" h="17" gammagroup="Buttons.ComponentSmall"/>
+	<bitmap id="component.pl.rem.2" file="comp_but.png" x="33" y="18" w="31" h="17" gammagroup="Buttons.ComponentSmall"/>
+	<bitmap id="component.pl.rem.3" file="comp_but.png" x="33" y="36" w="31" h="17" gammagroup="Buttons.ComponentSmall"/>
+	<bitmap id="component.pl.sel.1" file="comp_but.png" x="65" y="0" w="31" h="17" gammagroup="Buttons.ComponentSmall"/>
+	<bitmap id="component.pl.sel.2" file="comp_but.png" x="65" y="18" w="31" h="17" gammagroup="Buttons.ComponentSmall"/>
+	<bitmap id="component.pl.sel.3" file="comp_but.png" x="65" y="36" w="31" h="17" gammagroup="Buttons.ComponentSmall"/>
+	<bitmap id="component.pl.misc.1" file="comp_but.png" x="97" y="0" w="31" h="17" gammagroup="Buttons.ComponentSmall"/>
+	<bitmap id="component.pl.misc.2" file="comp_but.png" x="97" y="18" w="31" h="17" gammagroup="Buttons.ComponentSmall"/>
+	<bitmap id="component.pl.misc.3" file="comp_but.png" x="97" y="36" w="31" h="17" gammagroup="Buttons.ComponentSmall"/>
+	<bitmap id="component.pl.man.1" file="comp_but.png" x="129" y="0" w="32" h="17" gammagroup="Buttons.ComponentSmall"/>
+	<bitmap id="component.pl.man.2" file="comp_but.png" x="129" y="18" w="32" h="17" gammagroup="Buttons.ComponentSmall"/>
+	<bitmap id="component.pl.man.3" file="comp_but.png" x="129" y="36" w="32" h="17" gammagroup="Buttons.ComponentSmall"/>
+	<bitmap id="component.avs.opt.1" file="comp_but.png" x="164" y="0" w="32" h="17" gammagroup="Buttons.ComponentSmall"/>
+	<bitmap id="component.avs.opt.2" file="comp_but.png" x="164" y="18" w="32" h="17" gammagroup="Buttons.ComponentSmall"/>
+	<bitmap id="component.avs.opt.3" file="comp_but.png" x="164" y="36" w="32" h="17" gammagroup="Buttons.ComponentSmall"/>
+	<bitmap id="component.avs.prev.1" file="comp_but.png" x="197" y="0" w="31" h="17" gammagroup="Buttons.ComponentSmall"/>
+	<bitmap id="component.avs.prev.2" file="comp_but.png" x="197" y="18" w="31" h="17" gammagroup="Buttons.ComponentSmall"/>
+	<bitmap id="component.avs.prev.3" file="comp_but.png" x="197" y="36" w="31" h="17" gammagroup="Buttons.ComponentSmall"/>
+	<bitmap id="component.avs.ran.1" file="comp_but.png" x="229" y="0" w="31" h="17" gammagroup="Buttons.ComponentSmall"/>
+	<bitmap id="component.avs.ran.2" file="comp_but.png" x="229" y="18" w="31" h="17" gammagroup="Buttons.ComponentSmall"/>
+	<bitmap id="component.avs.ran.3" file="comp_but.png" x="229" y="36" w="31" h="17" gammagroup="Buttons.ComponentSmall"/>
+	<bitmap id="component.avs.ran.4" file="comp_but.png" x="229" y="54" w="31" h="17" gammagroup="Buttons.ComponentSmall"/>
+	<bitmap id="component.avs.next.1" file="comp_but.png" x="261" y="0" w="31" h="17" gammagroup="Buttons.ComponentSmall"/>
+	<bitmap id="component.avs.next.2" file="comp_but.png" x="261" y="18" w="31" h="17" gammagroup="Buttons.ComponentSmall"/>
+	<bitmap id="component.avs.next.3" file="comp_but.png" x="261" y="36" w="31" h="17" gammagroup="Buttons.ComponentSmall"/>
+	<bitmap id="component.menu.1" file="comp_but.png" x="295" y="0" w="32" h="17" gammagroup="Buttons.ComponentSmall"/>
+	<bitmap id="component.menu.2" file="comp_but.png" x="295" y="18" w="32" h="17" gammagroup="Buttons.ComponentSmall"/>
+	<bitmap id="component.menu.3" file="comp_but.png" x="295" y="36" w="32" h="17" gammagroup="Buttons.ComponentSmall"/>
+	<bitmap id="component.menu2.1" file="comp_but.png" x="328" y="0" w="31" h="17" gammagroup="Buttons.ComponentSmall"/>
+	<bitmap id="component.menu2.2" file="comp_but.png" x="328" y="18" w="31" h="17" gammagroup="Buttons.ComponentSmall"/>
+	<bitmap id="component.menu2.3" file="comp_but.png" x="328" y="36" w="31" h="17" gammagroup="Buttons.ComponentSmall"/>
+	<bitmap id="component.goto.1" file="comp_but.png" x="360" y="0" w="32" h="17" gammagroup="Buttons.ComponentSmall"/>
+	<bitmap id="component.goto.2" file="comp_but.png" x="360" y="18" w="32" h="17" gammagroup="Buttons.ComponentSmall"/>
+	<bitmap id="component.goto.3" file="comp_but.png" x="360" y="36" w="32" h="17" gammagroup="Buttons.ComponentSmall"/>
+	<bitmap id="eq.on.1" file="comp_but.png" x="395" y="0" w="31" h="17" gammagroup="Buttons.ComponentSmall"/>
+	<bitmap id="eq.on.2" file="comp_but.png" x="395" y="18" w="31" h="17" gammagroup="Buttons.ComponentSmall"/>
+	<bitmap id="eq.on.3" file="comp_but.png" x="395" y="36" w="31" h="17" gammagroup="Buttons.ComponentSmall"/>
+	<bitmap id="eq.on.4" file="comp_but.png" x="395" y="54" w="31" h="17" gammagroup="Buttons.ComponentSmall"/>
+	<bitmap id="eq.auto.1" file="comp_but.png" x="427" y="0" w="39" h="17" gammagroup="Buttons.ComponentSmall"/>
+	<bitmap id="eq.auto.2" file="comp_but.png" x="427" y="18" w="39" h="17" gammagroup="Buttons.ComponentSmall"/>
+	<bitmap id="eq.auto.3" file="comp_but.png" x="427" y="36" w="39" h="17" gammagroup="Buttons.ComponentSmall"/>
+	<bitmap id="eq.auto.4" file="comp_but.png" x="427" y="54" w="39" h="17" gammagroup="Buttons.ComponentSmall"/>
+	<bitmap id="eq.preset.1" file="comp_but.png" x="467" y="0" w="54" h="17" gammagroup="Buttons.ComponentSmall"/>
+	<bitmap id="eq.preset.2" file="comp_but.png" x="467" y="18" w="54" h="17" gammagroup="Buttons.ComponentSmall"/>
+	<bitmap id="eq.preset.3" file="comp_but.png" x="467" y="36" w="54" h="17" gammagroup="Buttons.ComponentSmall"/>
 
-
-	<bitmap id="seeker.bg.left.1" file="seekvol.png" x="0" y="0" w="10" h="20"/>
-	<bitmap id="seeker.bg.left.2" file="seekvol.png" x="0" y="21" w="10" h="20"/>
-	<bitmap id="seeker.bg.left.3" file="seekvol.png" x="0" y="42" w="10" h="20"/>
-	
-	<bitmap id="seeker.bg.center.1" file="seekvol.png" x="11" y="0" w="10" h="20"/>
-	<bitmap id="seeker.bg.center.2" file="seekvol.png" x="11" y="21" w="10" h="20"/>
-	<bitmap id="seeker.bg.center.3" file="seekvol.png" x="11" y="42" w="10" h="20"/>
-	
-	<bitmap id="seeker.bg.right.1" file="seekvol.png" x="22" y="0" w="10" h="20"/>
-	<bitmap id="seeker.bg.right.2" file="seekvol.png" x="22" y="21" w="10" h="20"/>
-	<bitmap id="seeker.bg.right.3" file="seekvol.png" x="22" y="42" w="10" h="20"/>
-
-	<bitmap id="seeker.thumb.1" file="seekvol.png" x="33" y="0" w="38" h="20"/>
-	<bitmap id="seeker.thumb.2" file="seekvol.png" x="33" y="21" w="38" h="20"/>
-	<bitmap id="seeker.thumb.3" file="seekvol.png" x="33" y="42" w="38" h="20"/>
-
-
-	<!-- Component Buttons -->
-
-
-
-
-<!--  Component: Playlist -->
-	<bitmap id="component.pl.add.1" file="comp_but.png" x="0" y="0" w="32" h="17"/>
-	<bitmap id="component.pl.add.2" file="comp_but.png" x="0" y="18" w="32" h="17"/>
-	<bitmap id="component.pl.add.3" file="comp_but.png" x="0" y="36" w="32" h="17"/>
-
-	<bitmap id="component.pl.rem.1" file="comp_but.png" x="33" y="0" w="31" h="17"/>
-	<bitmap id="component.pl.rem.2" file="comp_but.png" x="33" y="18" w="31" h="17"/>
-	<bitmap id="component.pl.rem.3" file="comp_but.png" x="33" y="36" w="31" h="17"/>
-
-	<bitmap id="component.pl.sel.1" file="comp_but.png" x="65" y="0" w="31" h="17"/>
-	<bitmap id="component.pl.sel.2" file="comp_but.png" x="65" y="18" w="31" h="17"/>
-	<bitmap id="component.pl.sel.3" file="comp_but.png" x="65" y="36" w="31" h="17"/>
-
-	<bitmap id="component.pl.misc.1" file="comp_but.png" x="97" y="0" w="31" h="17"/>
-	<bitmap id="component.pl.misc.2" file="comp_but.png" x="97" y="18" w="31" h="17"/>
-	<bitmap id="component.pl.misc.3" file="comp_but.png" x="97" y="36" w="31" h="17"/>
-
-	<bitmap id="component.pl.man.1" file="comp_but.png" x="129" y="0" w="32" h="17"/>
-	<bitmap id="component.pl.man.2" file="comp_but.png" x="129" y="18" w="32" h="17"/>
-	<bitmap id="component.pl.man.3" file="comp_but.png" x="129" y="36" w="32" h="17"/>
-
-<!--  Component: AVS -->
-	<bitmap id="component.avs.opt.1" file="comp_but.png" x="164" y="0" w="32" h="17"/>
-	<bitmap id="component.avs.opt.2" file="comp_but.png" x="164" y="18" w="32" h="17"/>
-	<bitmap id="component.avs.opt.3" file="comp_but.png" x="164" y="36" w="32" h="17"/>
-
-	<bitmap id="component.avs.prev.1" file="comp_but.png" x="197" y="0" w="31" h="17"/>
-	<bitmap id="component.avs.prev.2" file="comp_but.png" x="197" y="18" w="31" h="17"/>
-	<bitmap id="component.avs.prev.3" file="comp_but.png" x="197" y="36" w="31" h="17"/>
-
-	<bitmap id="component.avs.ran.1" file="comp_but.png" x="229" y="0" w="31" h="17"/>
-	<bitmap id="component.avs.ran.2" file="comp_but.png" x="229" y="18" w="31" h="17"/>
-	<bitmap id="component.avs.ran.3" file="comp_but.png" x="229" y="36" w="31" h="17"/>
-	<bitmap id="component.avs.ran.4" file="comp_but.png" x="229" y="54" w="31" h="17"/>
-
-	<bitmap id="component.avs.next.1" file="comp_but.png" x="261" y="0" w="31" h="17"/>
-	<bitmap id="component.avs.next.2" file="comp_but.png" x="261" y="18" w="31" h="17"/>
-	<bitmap id="component.avs.next.3" file="comp_but.png" x="261" y="36" w="31" h="17"/>
-
-<!--  Component: Custom stuff -->
-	<bitmap id="component.menu.1" file="comp_but.png" x="295" y="0" w="32" h="17"/>
-	<bitmap id="component.menu.2" file="comp_but.png" x="295" y="18" w="32" h="17"/>
-	<bitmap id="component.menu.3" file="comp_but.png" x="295" y="36" w="32" h="17"/>
-
-	<bitmap id="component.menu2.1" file="comp_but.png" x="328" y="0" w="31" h="17"/>
-	<bitmap id="component.menu2.2" file="comp_but.png" x="328" y="18" w="31" h="17"/>
-	<bitmap id="component.menu2.3" file="comp_but.png" x="328" y="36" w="31" h="17"/>
-
-	<bitmap id="component.goto.1" file="comp_but.png" x="360" y="0" w="32" h="17"/>
-	<bitmap id="component.goto.2" file="comp_but.png" x="360" y="18" w="32" h="17"/>
-	<bitmap id="component.goto.3" file="comp_but.png" x="360" y="36" w="32" h="17"/>
-
-<!--  Component: Equalizer -->
-	<bitmap id="eq.on.1" file="comp_but.png" x="395" y="0" w="31" h="17"/>
-	<bitmap id="eq.on.2" file="comp_but.png" x="395" y="18" w="31" h="17"/>
-	<bitmap id="eq.on.3" file="comp_but.png" x="395" y="36" w="31" h="17"/>
-	<bitmap id="eq.on.4" file="comp_but.png" x="395" y="54" w="31" h="17"/>
-
-	<bitmap id="eq.auto.1" file="comp_but.png" x="427" y="0" w="39" h="17"/>
-	<bitmap id="eq.auto.2" file="comp_but.png" x="427" y="18" w="39" h="17"/>
-	<bitmap id="eq.auto.3" file="comp_but.png" x="427" y="36" w="39" h="17"/>
-	<bitmap id="eq.auto.4" file="comp_but.png" x="427" y="54" w="39" h="17"/>
-
-	<bitmap id="eq.preset.1" file="comp_but.png" x="467" y="0" w="54" h="17"/>
-	<bitmap id="eq.preset.2" file="comp_but.png" x="467" y="18" w="54" h="17"/>
-	<bitmap id="eq.preset.3" file="comp_but.png" x="467" y="36" w="54" h="17"/>
-
-
-
-
-
-
-	<!-- Video -->
-
-	<bitmap id="video.button.fullscreen.normal" file="comp_but_tabs.png" x="0" y="0" h="21" w="24" gammagroup="WindowText"/>
-	<bitmap id="video.button.fullscreen.hover" file="comp_but_tabs.png" x="0" y="22" h="21" w="24" gammagroup="WindowText"/>
-	<bitmap id="video.button.fullscreen.down" file="comp_but_tabs.png" x="0" y="44" h="21" w="24" gammagroup="WindowText"/>
-
-	<bitmap id="video.button.1x.normal" file="comp_but_tabs.png" x="25" y="0" h="21" w="24" gammagroup="WindowText"/>
-	<bitmap id="video.button.1x.hover" file="comp_but_tabs.png" x="25" y="22" h="21" w="24" gammagroup="WindowText"/>
-	<bitmap id="video.button.1x.down" file="comp_but_tabs.png" x="25" y="44" h="21" w="24" gammagroup="WindowText"/>
-
-	<bitmap id="video.button.2x.normal" file="comp_but_tabs.png" x="50" y="0" h="21" w="24" gammagroup="WindowText"/>
-	<bitmap id="video.button.2x.hover" file="comp_but_tabs.png" x="50" y="22" h="21" w="24" gammagroup="WindowText"/>
-	<bitmap id="video.button.2x.down" file="comp_but_tabs.png" x="50" y="44" h="21" w="24" gammagroup="WindowText"/>
-
-	<bitmap id="video.button.itv.normal" file="comp_but_tabs.png" x="75" y="0" h="21" w="24" gammagroup="WindowText"/>
-	<bitmap id="video.button.itv.hover" file="comp_but_tabs.png" x="75" y="22" h="21" w="24" gammagroup="WindowText"/>
-	<bitmap id="video.button.itv.down" file="comp_but_tabs.png" x="75" y="44" h="21" w="24" gammagroup="WindowText"/>
-
-	<bitmap id="video.button.cfg.normal" file="comp_but_tabs.png" x="100" y="0" h="21" w="24" gammagroup="WindowText"/>
-	<bitmap id="video.button.cfg.hover" file="comp_but_tabs.png" x="100" y="22" h="21" w="24" gammagroup="WindowText"/>
-	<bitmap id="video.button.cfg.down" file="comp_but_tabs.png" x="100" y="44" h="21" w="24" gammagroup="WindowText"/>
+	<!--  SUI Component Buttons: Big -->
+	<bitmap id="video.button.fullscreen.normal" file="comp_but_tabs.png" x="0" y="0" h="21" w="24" gammagroup="Buttons.ComponentBig"/>
+	<bitmap id="video.button.fullscreen.hover" file="comp_but_tabs.png" x="0" y="22" h="21" w="24" gammagroup="Buttons.ComponentBig"/>
+	<bitmap id="video.button.fullscreen.down" file="comp_but_tabs.png" x="0" y="44" h="21" w="24" gammagroup="Buttons.ComponentBig"/>
+	<bitmap id="video.button.1x.normal" file="comp_but_tabs.png" x="25" y="0" h="21" w="24" gammagroup="Buttons.ComponentBig"/>
+	<bitmap id="video.button.1x.hover" file="comp_but_tabs.png" x="25" y="22" h="21" w="24" gammagroup="Buttons.ComponentBig"/>
+	<bitmap id="video.button.1x.down" file="comp_but_tabs.png" x="25" y="44" h="21" w="24" gammagroup="Buttons.ComponentBig"/>
+	<bitmap id="video.button.2x.normal" file="comp_but_tabs.png" x="50" y="0" h="21" w="24" gammagroup="Buttons.ComponentBig"/>
+	<bitmap id="video.button.2x.hover" file="comp_but_tabs.png" x="50" y="22" h="21" w="24" gammagroup="Buttons.ComponentBig"/>
+	<bitmap id="video.button.2x.down" file="comp_but_tabs.png" x="50" y="44" h="21" w="24" gammagroup="Buttons.ComponentBig"/>
+	<bitmap id="video.button.itv.normal" file="comp_but_tabs.png" x="75" y="0" h="21" w="24" gammagroup="Buttons.ComponentBig"/>
+	<bitmap id="video.button.itv.hover" file="comp_but_tabs.png" x="75" y="22" h="21" w="24" gammagroup="Buttons.ComponentBig"/>
+	<bitmap id="video.button.itv.down" file="comp_but_tabs.png" x="75" y="44" h="21" w="24" gammagroup="Buttons.ComponentBig"/>
+	<bitmap id="video.button.cfg.normal" file="comp_but_tabs.png" x="100" y="0" h="21" w="24" gammagroup="Buttons.ComponentBig"/>
+	<bitmap id="video.button.cfg.hover" file="comp_but_tabs.png" x="100" y="22" h="21" w="24" gammagroup="Buttons.ComponentBig"/>
+	<bitmap id="video.button.cfg.down" file="comp_but_tabs.png" x="100" y="44" h="21" w="24" gammagroup="Buttons.ComponentBig"/>
+	<bitmap id="vis.button.prev.normal" file="comp_but_tabs.png" x="125" y="0" h="21" w="21" gammagroup="Buttons.ComponentBig"/>
+	<bitmap id="vis.button.prev.hover" file="comp_but_tabs.png" x="125" y="22" h="21" w="21" gammagroup="Buttons.ComponentBig"/>
+	<bitmap id="vis.button.prev.down" file="comp_but_tabs.png" x="125" y="44" h="21" w="21" gammagroup="Buttons.ComponentBig"/>
+	<bitmap id="vis.button.next.normal" file="comp_but_tabs.png" x="147" y="0" h="21" w="21" gammagroup="Buttons.ComponentBig"/>
+	<bitmap id="vis.button.next.hover" file="comp_but_tabs.png" x="147" y="22" h="21" w="21" gammagroup="Buttons.ComponentBig"/>
+	<bitmap id="vis.button.next.down" file="comp_but_tabs.png" x="147" y="44" h="21" w="21" gammagroup="Buttons.ComponentBig"/>
+	<bitmap id="vis.button.random.normal" file="comp_but_tabs.png" x="169" y="0" h="21" w="25" gammagroup="Buttons.ComponentBig"/>
+	<bitmap id="vis.button.random.hover" file="comp_but_tabs.png" x="169" y="22" h="21" w="25" gammagroup="Buttons.ComponentBig"/>
+	<bitmap id="vis.button.random.down" file="comp_but_tabs.png" x="169" y="44" h="21" w="25" gammagroup="Buttons.ComponentBig"/>
+	<bitmap id="vis.button.random.active" file="comp_but_tabs.png" x="169" y="66" h="21" w="25" gammagroup="Buttons.ComponentBig"/>
+	<bitmap id="vis.button.presets.normal" file="comp_but_tabs.png" x="195" y="0" h="21" w="21" gammagroup="Buttons.ComponentBig"/>
+	<bitmap id="vis.button.presets.hover" file="comp_but_tabs.png" x="195" y="22" h="21" w="21" gammagroup="Buttons.ComponentBig"/>
+	<bitmap id="vis.button.presets.down" file="comp_but_tabs.png" x="195" y="44" h="21" w="21" gammagroup="Buttons.ComponentBig"/>
+	<bitmap id="pl2.add.1" file="comp_but_tabs.png" x="217" y="0" h="21" w="24" gammagroup="Buttons.ComponentBig"/>
+	<bitmap id="pl2.add.2" file="comp_but_tabs.png" x="217" y="22" h="21" w="24" gammagroup="Buttons.ComponentBig"/>
+	<bitmap id="pl2.add.3" file="comp_but_tabs.png" x="217" y="44" h="21" w="24" gammagroup="Buttons.ComponentBig"/>
+	<bitmap id="pl2.rem.1" file="comp_but_tabs.png" x="242" y="0" h="21" w="24" gammagroup="Buttons.ComponentBig"/>
+	<bitmap id="pl2.rem.2" file="comp_but_tabs.png" x="242" y="22" h="21" w="24" gammagroup="Buttons.ComponentBig"/>
+	<bitmap id="pl2.rem.3" file="comp_but_tabs.png" x="242" y="44" h="21" w="24" gammagroup="Buttons.ComponentBig"/>
+	<bitmap id="pl2.sel.1" file="comp_but_tabs.png" x="267" y="0" h="21" w="24" gammagroup="Buttons.ComponentBig"/>
+	<bitmap id="pl2.sel.2" file="comp_but_tabs.png" x="267" y="22" h="21" w="24" gammagroup="Buttons.ComponentBig"/>
+	<bitmap id="pl2.sel.3" file="comp_but_tabs.png" x="267" y="44" h="21" w="24" gammagroup="Buttons.ComponentBig"/>
+	<bitmap id="pl2.misc.1" file="comp_but_tabs.png" x="292" y="0" h="21" w="24" gammagroup="Buttons.ComponentBig"/>
+	<bitmap id="pl2.misc.2" file="comp_but_tabs.png" x="292" y="22" h="21" w="24" gammagroup="Buttons.ComponentBig"/>
+	<bitmap id="pl2.misc.3" file="comp_but_tabs.png" x="292" y="44" h="21" w="24" gammagroup="Buttons.ComponentBig"/>
+	<bitmap id="pl2.man.1" file="comp_but_tabs.png" x="317" y="0" h="21" w="24" gammagroup="Buttons.ComponentBig"/>
+	<bitmap id="pl2.man.2" file="comp_but_tabs.png" x="317" y="22" h="21" w="24" gammagroup="Buttons.ComponentBig"/>
+	<bitmap id="pl2.man.3" file="comp_but_tabs.png" x="317" y="44" h="21" w="24" gammagroup="Buttons.ComponentBig"/>
 
 
-	<!-- Visualizer -->
-
-	<bitmap id="vis.button.prev.normal" file="comp_but_tabs.png" x="125" y="0" h="21" w="21" gammagroup="WindowText"/>
-	<bitmap id="vis.button.prev.hover" file="comp_but_tabs.png" x="125" y="22" h="21" w="21" gammagroup="WindowText"/>
-	<bitmap id="vis.button.prev.down" file="comp_but_tabs.png" x="125" y="44" h="21" w="21" gammagroup="WindowText"/>
-
-	<bitmap id="vis.button.next.normal" file="comp_but_tabs.png" x="147" y="0" h="21" w="21" gammagroup="WindowText"/>
-	<bitmap id="vis.button.next.hover" file="comp_but_tabs.png" x="147" y="22" h="21" w="21" gammagroup="WindowText"/>
-	<bitmap id="vis.button.next.down" file="comp_but_tabs.png" x="147" y="44" h="21" w="21" gammagroup="WindowText"/>
-
-	<bitmap id="vis.button.random.normal" file="comp_but_tabs.png" x="169" y="0" h="21" w="25" gammagroup="WindowText"/>
-	<bitmap id="vis.button.random.hover" file="comp_but_tabs.png" x="169" y="22" h="21" w="25" gammagroup="WindowText"/>
-	<bitmap id="vis.button.random.down" file="comp_but_tabs.png" x="169" y="44" h="21" w="25" gammagroup="WindowText"/>
-	<bitmap id="vis.button.random.active" file="comp_but_tabs.png" x="169" y="66" h="21" w="25" gammagroup="PlayerButtonActive"/>
-
-	<bitmap id="vis.button.presets.normal" file="comp_but_tabs.png" x="195" y="0" h="21" w="21" gammagroup="WindowText"/>
-	<bitmap id="vis.button.presets.hover" file="comp_but_tabs.png" x="195" y="22" h="21" w="21" gammagroup="WindowText"/>
-	<bitmap id="vis.button.presets.down" file="comp_but_tabs.png" x="195" y="44" h="21" w="21" gammagroup="WindowText"/>
-
-
-	<!-- Playlist2 -->
-
-	<bitmap id="pl2.add.1" file="comp_but_tabs.png" x="217" y="0" h="21" w="24" gammagroup="WindowText"/>
-	<bitmap id="pl2.add.2" file="comp_but_tabs.png" x="217" y="22" h="21" w="24" gammagroup="WindowText"/>
-	<bitmap id="pl2.add.3" file="comp_but_tabs.png" x="217" y="44" h="21" w="24" gammagroup="WindowText"/>
-
-	<bitmap id="pl2.rem.1" file="comp_but_tabs.png" x="242" y="0" h="21" w="24" gammagroup="WindowText"/>
-	<bitmap id="pl2.rem.2" file="comp_but_tabs.png" x="242" y="22" h="21" w="24" gammagroup="WindowText"/>
-	<bitmap id="pl2.rem.3" file="comp_but_tabs.png" x="242" y="44" h="21" w="24" gammagroup="WindowText"/>
-
-	<bitmap id="pl2.sel.1" file="comp_but_tabs.png" x="267" y="0" h="21" w="24" gammagroup="WindowText"/>
-	<bitmap id="pl2.sel.2" file="comp_but_tabs.png" x="267" y="22" h="21" w="24" gammagroup="WindowText"/>
-	<bitmap id="pl2.sel.3" file="comp_but_tabs.png" x="267" y="44" h="21" w="24" gammagroup="WindowText"/>
-
-	<bitmap id="pl2.misc.1" file="comp_but_tabs.png" x="292" y="0" h="21" w="24" gammagroup="WindowText"/>
-	<bitmap id="pl2.misc.2" file="comp_but_tabs.png" x="292" y="22" h="21" w="24" gammagroup="WindowText"/>
-	<bitmap id="pl2.misc.3" file="comp_but_tabs.png" x="292" y="44" h="21" w="24" gammagroup="WindowText"/>
-
-	<bitmap id="pl2.man.1" file="comp_but_tabs.png" x="317" y="0" h="21" w="24" gammagroup="WindowText"/>
-	<bitmap id="pl2.man.2" file="comp_but_tabs.png" x="317" y="22" h="21" w="24" gammagroup="WindowText"/>
-	<bitmap id="pl2.man.3" file="comp_but_tabs.png" x="317" y="44" h="21" w="24" gammagroup="WindowText"/>
-
-
-	<!-- Main frame-->
+	<!--  SUI Frame -->
 	<bitmap id="player.suiframe.1" file="suiframe.png" x="0" y="0" w="4" h="33"/>
 	<bitmap id="player.suiframe.2" file="suiframe.png" x="5" y="0" w="10" h="33"/>
 	<bitmap id="player.suiframe.3" file="suiframe.png" x="16" y="0" w="4" h="33"/>
@@ -459,8 +393,6 @@
 	<bitmap id="player.gframe.9" file="suiframe.png" x="68" y="32" w="6" h="27"/>
 	<bitmap id="player.gframe.7.alt" file="suiframe.png" x="0" y="93" w="247" h="27"/>
 
-
-
 	<!-- Tab buttons-->
 	<bitmap id="wasabi.tabsheet.button.left.1" file="suiframe.png" x="78" y="0" w="10" h="29"/>
 	<bitmap id="wasabi.tabsheet.button.center.1" file="suiframe.png" x="89" y="0" w="10" h="29"/>
@@ -472,42 +404,40 @@
 	<bitmap id="wasabi.tabsheet.button.center.3" file="suiframe.png" x="89" y="60" w="10" h="29"/>
 	<bitmap id="wasabi.tabsheet.button.right.3" file="suiframe.png" x="100" y="60" w="10" h="29"/>
 
-
-
-
 	<!-- Frame windows -->
 	<bitmap id="wasabi.framewnd.verticaldivider" file="suiframe.png" x="132" y="9" h="20" w="8" gammagroup="Frame_Borders"/>
 	<bitmap id="wasabi.framewnd.verticalgrabber" file="suiframe.png" x="132" y="30" h="40" w="8" gammagroup="Frame_Borders"/>
 	<bitmap id="wasabi.framewnd.horizontaldivider" file="suiframe.png" x="132" y="0" h="8" w="20" gammagroup="Frame_Borders"/>
 	<bitmap id="wasabi.framewnd.horizontalgrabber" file="suiframe.png" x="153" y="0" h="8" w="40" gammagroup="Frame_Borders"/>
-<!--	<bitmap id="wasabi.framewnd.windowshade" file="../Big Bento/window/framewnd-windowshade.png" gammagroup="Frame_Borders"/>
--->
 
 	<!-- Wasabi stuff -->
-	<bitmap id="wasabi.scrollbar.horizontal.left" file="scrollbars.png" x="56" y="0" h="13" w="14" gammagroup="Scrollbar Buttons"/>
-	<bitmap id="wasabi.scrollbar.horizontal.left.hover" file="scrollbars.png" x="56" y="14" h="13" w="14" gammagroup="Scrollbar Buttons"/>
-	<bitmap id="wasabi.scrollbar.horizontal.left.pressed" file="scrollbars.png" x="56" y="28" h="13" w="14" gammagroup="Scrollbar Buttons"/>
-	<bitmap id="wasabi.scrollbar.horizontal.right" file="scrollbars.png" x="103" y="0" h="13" w="14" gammagroup="Scrollbar Buttons"/>
-	<bitmap id="wasabi.scrollbar.horizontal.right.hover" file="scrollbars.png" x="103" y="14" h="13" w="14" gammagroup="Scrollbar Buttons"/>
-	<bitmap id="wasabi.scrollbar.horizontal.right.pressed" file="scrollbars.png" x="103" y="28" h="13" w="14" gammagroup="Scrollbar Buttons"/>
-	<bitmap id="wasabi.scrollbar.horizontal.button" file="scrollbars.png" x="71" y="0" h="13" w="31" gammagroup="Scrollbar Buttons"/>
-	<bitmap id="wasabi.scrollbar.horizontal.button.hover" file="scrollbars.png" x="71" y="14" h="13" w="31" gammagroup="Scrollbar Buttons"/>
-	<bitmap id="wasabi.scrollbar.horizontal.button.pressed" file="scrollbars.png" x="71" y="28" h="13" w="31" gammagroup="Scrollbar Buttons"/>
+	<bitmap id="wasabi.scrollbar.horizontal.left" file="scrollbars.png" x="56" y="0" h="13" w="14" gammagroup="Scrollbar.Buttons"/>
+	<bitmap id="wasabi.scrollbar.horizontal.left.hover" file="scrollbars.png" x="56" y="14" h="13" w="14" gammagroup="Scrollbar.Buttons"/>
+	<bitmap id="wasabi.scrollbar.horizontal.left.pressed" file="scrollbars.png" x="56" y="28" h="13" w="14" gammagroup="Scrollbar.Buttons"/>
+	<bitmap id="wasabi.scrollbar.horizontal.right" file="scrollbars.png" x="103" y="0" h="13" w="14" gammagroup="Scrollbar.Buttons"/>
+	<bitmap id="wasabi.scrollbar.horizontal.right.hover" file="scrollbars.png" x="103" y="14" h="13" w="14" gammagroup="Scrollbar.Buttons"/>
+	<bitmap id="wasabi.scrollbar.horizontal.right.pressed" file="scrollbars.png" x="103" y="28" h="13" w="14" gammagroup="Scrollbar.Buttons"/>
+	<bitmap id="wasabi.scrollbar.horizontal.button" file="scrollbars.png" x="71" y="0" h="13" w="31" gammagroup="Scrollbar.Buttons"/>
+	<bitmap id="wasabi.scrollbar.horizontal.button.hover" file="scrollbars.png" x="71" y="14" h="13" w="31" gammagroup="Scrollbar.Buttons"/>
+	<bitmap id="wasabi.scrollbar.horizontal.button.pressed" file="scrollbars.png" x="71" y="28" h="13" w="31" gammagroup="Scrollbar.Buttons"/>
 	<bitmap id="wasabi.scrollbar.horizontal.background.middle" file="scrollbars.png" x="56" y="42" w="61" h="13" /> 
-
-	<bitmap id="wasabi.scrollbar.vertical.left" file="scrollbars.png" x="0" y="0" h="14" w="13" gammagroup="Scrollbar Buttons"/>
-	<bitmap id="wasabi.scrollbar.vertical.left.hover" file="scrollbars.png" x="14" y="0" h="14" w="13" gammagroup="Scrollbar Buttons"/>
-	<bitmap id="wasabi.scrollbar.vertical.left.pressed" file="scrollbars.png" x="28" y="0" h="14" w="13" gammagroup="Scrollbar Buttons"/>
-	<bitmap id="wasabi.scrollbar.vertical.right" file="scrollbars.png" x="0" y="47" h="14" w="13" gammagroup="Scrollbar Buttons"/>
-	<bitmap id="wasabi.scrollbar.vertical.right.hover" file="scrollbars.png" x="14" y="47" h="14" w="13" gammagroup="Scrollbar Buttons"/>
-	<bitmap id="wasabi.scrollbar.vertical.right.pressed" file="scrollbars.png" x="28" y="47" h="14" w="13" gammagroup="Scrollbar Buttons"/>
-	<bitmap id="wasabi.scrollbar.vertical.button" file="scrollbars.png" x="0" y="15" h="31" w="13" gammagroup="Scrollbar Buttons"/>
-	<bitmap id="wasabi.scrollbar.vertical.button.hover" file="scrollbars.png" x="14" y="15" h="31" w="13" gammagroup="Scrollbar Buttons"/>
-	<bitmap id="wasabi.scrollbar.vertical.button.pressed" file="scrollbars.png" x="28" y="15" h="31" w="13" gammagroup="Scrollbar Buttons"/>
+	<bitmap id="wasabi.scrollbar.vertical.left" file="scrollbars.png" x="0" y="0" h="14" w="13" gammagroup="Scrollbar.Buttons"/>
+	<bitmap id="wasabi.scrollbar.vertical.left.hover" file="scrollbars.png" x="14" y="0" h="14" w="13" gammagroup="Scrollbar.Buttons"/>
+	<bitmap id="wasabi.scrollbar.vertical.left.pressed" file="scrollbars.png" x="28" y="0" h="14" w="13" gammagroup="Scrollbar.Buttons"/>
+	<bitmap id="wasabi.scrollbar.vertical.right" file="scrollbars.png" x="0" y="47" h="14" w="13" gammagroup="Scrollbar.Buttons"/>
+	<bitmap id="wasabi.scrollbar.vertical.right.hover" file="scrollbars.png" x="14" y="47" h="14" w="13" gammagroup="Scrollbar.Buttons"/>
+	<bitmap id="wasabi.scrollbar.vertical.right.pressed" file="scrollbars.png" x="28" y="47" h="14" w="13" gammagroup="Scrollbar.Buttons"/>
+	<bitmap id="wasabi.scrollbar.vertical.button" file="scrollbars.png" x="0" y="15" h="31" w="13" gammagroup="Scrollbar.Buttons"/>
+	<bitmap id="wasabi.scrollbar.vertical.button.hover" file="scrollbars.png" x="14" y="15" h="31" w="13" gammagroup="Scrollbar.Buttons"/>
+	<bitmap id="wasabi.scrollbar.vertical.button.pressed" file="scrollbars.png" x="28" y="15" h="31" w="13" gammagroup="Scrollbar.Buttons"/>
 	<bitmap id="wasabi.scrollbar.vertical.background.middle" file="scrollbars.png" x="42" y="0" w="13" h="61" /> 
+	<bitmap id="wasabi.scrollbar.vertical.grip" file="window/scrollgrips.png" x="0" y="0" h="8" w="6" gammagroup="Scrollbar.Buttons"/>
+	<bitmap id="wasabi.scrollbar.horizontal.grip" file="window/scrollgrips.png" x="7" y="0" h="6" w="8" gammagroup="Scrollbar.Buttons"/>
 
-	<bitmap id="wasabi.scrollbar.vertical.grip" file="window/scrollgrips.png" x="0" y="0" h="8" w="6" gammagroup="Scrollbar Buttons"/>
-	<bitmap id="wasabi.scrollbar.horizontal.grip" file="window/scrollgrips.png" x="7" y="0" h="6" w="8" gammagroup="Scrollbar Buttons"/>
+
+
+
+
 
 
 
