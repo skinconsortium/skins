@@ -241,6 +241,14 @@
 	<button	x="95" y="-18" relaty="1" image="component.avs.next.1" hoverImage="component.avs.next.2" downImage="component.avs.next.3"	action="VIS_Next" tooltip="Next Visualization Preset"/>
 </groupdef>
 
+<groupdef id="drawer.colortheme">
+	<group id="drawer.tagviewer.bottomleft" x="0" y="-27" w="-6" relaty="1" relatw="1"/>
+	<ColorThemes:List
+		x="2" y="2" w="-4" h="-21" relatw="1" relath="1" antialias="0"
+		nohscroll="1" nocolheader="1" fontsize="13"
+	/>
+</groupdef>
+
 <groupdef id="drawer.skinchooser">
     <group id="drawer.tagviewer.bottomleft" x="0" y="-27" w="-6" relaty="1" relatw="1"/>
     <List id="skinlist" x="2" y="2" w="-4" h="-21" relatw="1" relath="1" antialias="0" 
@@ -266,13 +274,12 @@
 	<group id="drawer.tagviewer" fitparent="1" visible="0"/>
 	<group id="drawer.savedpl" fitparent="1" visible="0"/>
 	<group id="drawer.avs" fitparent="1" visible="0"/>
+	<group id="drawer.colortheme" fitparent="1" visible="0"/>
 	<group id="drawer.skinchooser" fitparent="1" visible="0"/>
 
 	<!-- This one is the dummyloader -->
 	<componentbucket id="widget.loader" x="0" y="0" h="20" w="20" wndtype="centro.widgets.drawer" visible="0" />
 	<customobject id="widget.holder" fitparent="1" visible="0" /> <!-- this one holds our widgets -->
-	
-	<!--include file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\widgets\widgets-groups.xml"/--> <!-- WIDGETS GROUPS -->
 
 	<button id="drawer.menulist" x="-33" y="-18" relatx="1" relaty="1" image="component.goto.1" hoverimage="component.goto.2" downimage="component.goto.3" tooltip="Select Drawer"/>
 	<script file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\scripts\drawer.maki"/>
