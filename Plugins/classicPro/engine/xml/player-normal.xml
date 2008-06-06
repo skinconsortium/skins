@@ -17,7 +17,6 @@
 	<layer x="-160" y="-68" relatx="1" relaty="1" regionop="1" image="player.bottomright" wantfocus="1"/>
 	<layer x="6" y="99" w="-12" h="-166" relatw="1" relath="1" regionop="1" tile="1" image="player.center" wantfocus="1"/>
 
-	<layer id="cpro.bg.title" x="0" y="0" image="player.center.title" ghost="1" visible="0"/>
 
 
 	<!-- Background: Overlay -->
@@ -30,6 +29,8 @@
 	<layer x="0" y="-68" relaty="1" image="player.o.bottomleft" wantfocus="1"/>
 	<layer x="-160" y="-68" relatx="1" relaty="1" image="player.o.bottomright" wantfocus="1"/>
 	<layer x="6" y="99" w="-12" h="-166" relatw="1" relath="1" tile="1" image="player.o.center" wantfocus="1"/>
+
+	<layer id="cpro.bg.title" x="0" y="0" image="player.center.title" ghost="1" visible="0"/>
 
 	<layer id="doubleclick" x="0" y="0" w="0" h="27" relatw="1" wantfocus="1"/>
 
@@ -55,6 +56,7 @@
 
 
 	<!-- Resizers -->
+	
 	<!--
 	<layer id="resizer.1" x="0" y="0" w="10" h="10" cursor="IDC_SIZENWSE" move="0"/>
 	<layer id="resizer.2" x="10" y="0" w="-20" h="3" relatw="1" cursor="IDC_SIZENS" move="0"/>
@@ -110,7 +112,7 @@
 	<images id="volume.images" source="volume" x="-109" y="82" w="97" h="15" relatx="1" visible="0" images="volume.bg2" imagesspacing="16"/>
 
 	<Slider	id="Volume" action="volume" x="-109" y="82" h="15" w="97" relatx="1" thumb="volume.thumb.1" hoverThumb="volume.thumb.2" downThumb="volume.thumb.3" tooltip="Volume" cursor="IDC_HAND"/>
-	<NStatesButton id="mute" x="-155" y="72" relatx="1" image="mute.1." hoverimage="mute.2." downimage="mute.3." rectrgn="1" nstates="2" tooltip="Mute Volume" cfgvals="0;1"/>
+	<NStatesButton id="mute" x="-155" y="72" relatx="1" image="mute.1." hoverimage="mute.2." downimage="mute.3." rectrgn="1" nstates="2" tooltip="Mute Volume"/>
 	
 
 	<button id="previous.track" x="11" y="-45" relaty="1" action="PREV" image="player.prev.1" hoverimage="player.prev.2" downimage="player.prev.3" tooltip="Previous Track"/>
