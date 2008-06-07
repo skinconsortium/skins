@@ -33,7 +33,7 @@
 	/>
 
 	<ModernSongticker id="Songticker"
-		x="38" y="5" h="12" w="-42" relatw="1" nograbb="1" move="1"
+		x="38" y="5" h="12" w="-42" relatw="1" nograbb="1" move="1" antialias="1"
 		id_layout="main;shade"
 		id_volume="Volume"
 		id_seeker="seeker"
