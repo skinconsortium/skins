@@ -79,6 +79,10 @@ System.onSetXuiParam(String param, String value) {
 	else if(strlower(param) == "id_mute"){
 		muteBut = mainLayout.findObject(value);
 	}
+	else{
+		info_songticker.setXmlParam(param, value);
+		info_news.setXmlParam(param, value);
+	}
 }
 
 
