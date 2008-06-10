@@ -358,79 +358,77 @@
 
 
 	<!--  SUI Frame -->
-	<bitmap id="player.suiframe.1" file="suiframe.png" x="0" y="0" w="4" h="33"/>
-	<bitmap id="player.suiframe.2" file="suiframe.png" x="5" y="0" w="10" h="33"/>
-	<bitmap id="player.suiframe.3" file="suiframe.png" x="16" y="0" w="4" h="33"/>
-	<bitmap id="player.suiframe.4" file="suiframe.png" x="0" y="34" w="4" h="20"/>
-	<bitmap id="player.suiframe.5" file="suiframe.png" x="5" y="34" w="10" h="20"/>
-	<bitmap id="player.suiframe.6" file="suiframe.png" x="16" y="34" w="4" h="20"/>
-	<bitmap id="player.suiframe.7" file="suiframe.png" x="0" y="55" w="4" h="27"/>
-	<bitmap id="player.suiframe.8" file="suiframe.png" x="5" y="55" w="10" h="27"/>
-	<bitmap id="player.suiframe.9" file="suiframe.png" x="16" y="55" w="4" h="27"/>
+	<bitmap id="player.suiframe.1" file="suiframe.png" x="0" y="0" w="4" h="33" gammagroup="Background.Sui"/>
+	<bitmap id="player.suiframe.2" file="suiframe.png" x="5" y="0" w="10" h="33" gammagroup="Background.Sui"/>
+	<bitmap id="player.suiframe.3" file="suiframe.png" x="16" y="0" w="4" h="33" gammagroup="Background.Sui"/>
+	<bitmap id="player.suiframe.4" file="suiframe.png" x="0" y="34" w="4" h="20" gammagroup="Background.Sui"/>
+	<bitmap id="player.suiframe.5" file="suiframe.png" x="5" y="34" w="10" h="20" gammagroup="Background.Sui"/>
+	<bitmap id="player.suiframe.6" file="suiframe.png" x="16" y="34" w="4" h="20" gammagroup="Background.Sui"/>
+	<bitmap id="player.suiframe.7" file="suiframe.png" x="0" y="55" w="4" h="27" gammagroup="Background.Sui"/>
+	<bitmap id="player.suiframe.8" file="suiframe.png" x="5" y="55" w="10" h="27" gammagroup="Background.Sui"/>
+	<bitmap id="player.suiframe.9" file="suiframe.png" x="16" y="55" w="4" h="27" gammagroup="Background.Sui"/>
 
 	<!-- Playlist frame-->
-	<bitmap id="player.plframe.1" file="suiframe.png" x="23" y="0" w="6" h="10"/>
-	<bitmap id="player.plframe.2" file="suiframe.png" x="30" y="0" w="10" h="10"/>
-	<bitmap id="player.plframe.3" file="suiframe.png" x="41" y="0" w="6" h="10"/>
-	<bitmap id="player.plframe.4" file="suiframe.png" x="23" y="11" w="6" h="20"/>
-	<bitmap id="player.plframe.5" file="suiframe.png" x="30" y="11" w="10" h="20"/>
-	<bitmap id="player.plframe.6" file="suiframe.png" x="41" y="11" w="6" h="20"/>
-	<bitmap id="player.plframe.7" file="suiframe.png" x="23" y="32" w="6" h="27"/>
-	<bitmap id="player.plframe.8" file="suiframe.png" x="30" y="32" w="10" h="27"/>
-	<bitmap id="player.plframe.9" file="suiframe.png" x="41" y="32" w="6" h="27"/>
-
-
+	<bitmap id="player.plframe.1" file="suiframe.png" x="23" y="0" w="6" h="10" gammagroup="Background.SuiFrame"/>
+	<bitmap id="player.plframe.2" file="suiframe.png" x="30" y="0" w="10" h="10" gammagroup="Background.SuiFrame"/>
+	<bitmap id="player.plframe.3" file="suiframe.png" x="41" y="0" w="6" h="10" gammagroup="Background.SuiFrame"/>
+	<bitmap id="player.plframe.4" file="suiframe.png" x="23" y="11" w="6" h="20" gammagroup="Background.SuiFrame"/>
+	<bitmap id="player.plframe.5" file="suiframe.png" x="30" y="11" w="10" h="20" gammagroup="Background.SuiFrame"/>
+	<bitmap id="player.plframe.6" file="suiframe.png" x="41" y="11" w="6" h="20" gammagroup="Background.SuiFrame"/>
+	<bitmap id="player.plframe.7" file="suiframe.png" x="23" y="32" w="6" h="27" gammagroup="Background.SuiFrame"/>
+	<bitmap id="player.plframe.8" file="suiframe.png" x="30" y="32" w="10" h="27" gammagroup="Background.SuiFrame"/>
+	<bitmap id="player.plframe.9" file="suiframe.png" x="41" y="32" w="6" h="27" gammagroup="Background.SuiFrame"/>
 
 	<!-- Gadget frame-->
-	<bitmap id="player.gframe.1" file="suiframe.png" x="50" y="0" w="6" h="10"/>
-	<bitmap id="player.gframe.2" file="suiframe.png" x="57" y="0" w="10" h="10"/>
-	<bitmap id="player.gframe.3" file="suiframe.png" x="68" y="0" w="6" h="10"/>
-	<bitmap id="player.gframe.4" file="suiframe.png" x="50" y="11" w="6" h="20"/>
-	<bitmap id="player.gframe.5" file="suiframe.png" x="57" y="11" w="10" h="20"/>
-	<bitmap id="player.gframe.6" file="suiframe.png" x="68" y="11" w="6" h="20"/>
-	<bitmap id="player.gframe.7" file="suiframe.png" x="50" y="32" w="6" h="27"/>
-	<bitmap id="player.gframe.8" file="suiframe.png" x="57" y="32" w="10" h="27"/>
-	<bitmap id="player.gframe.9" file="suiframe.png" x="68" y="32" w="6" h="27"/>
-	<bitmap id="player.gframe.7.alt" file="suiframe.png" x="0" y="93" w="247" h="27"/>
+	<bitmap id="player.gframe.1" file="suiframe.png" x="50" y="0" w="6" h="10" gammagroup="Background.SuiFrame"/>
+	<bitmap id="player.gframe.2" file="suiframe.png" x="57" y="0" w="10" h="10" gammagroup="Background.SuiFrame"/>
+	<bitmap id="player.gframe.3" file="suiframe.png" x="68" y="0" w="6" h="10" gammagroup="Background.SuiFrame"/>
+	<bitmap id="player.gframe.4" file="suiframe.png" x="50" y="11" w="6" h="20" gammagroup="Background.SuiFrame"/>
+	<bitmap id="player.gframe.5" file="suiframe.png" x="57" y="11" w="10" h="20" gammagroup="Background.SuiFrame"/>
+	<bitmap id="player.gframe.6" file="suiframe.png" x="68" y="11" w="6" h="20" gammagroup="Background.SuiFrame"/>
+	<bitmap id="player.gframe.7" file="suiframe.png" x="50" y="32" w="6" h="27" gammagroup="Background.SuiFrame"/>
+	<bitmap id="player.gframe.8" file="suiframe.png" x="57" y="32" w="10" h="27" gammagroup="Background.SuiFrame"/>
+	<bitmap id="player.gframe.9" file="suiframe.png" x="68" y="32" w="6" h="27" gammagroup="Background.SuiFrame"/>
+	<bitmap id="player.gframe.7.alt" file="suiframe.png" x="0" y="93" w="247" h="27" gammagroup="Background.SuiFrame"/>
 
 	<!-- Tab buttons-->
-	<bitmap id="wasabi.tabsheet.button.left.1" file="suiframe.png" x="78" y="0" w="10" h="29"/>
-	<bitmap id="wasabi.tabsheet.button.center.1" file="suiframe.png" x="89" y="0" w="10" h="29"/>
-	<bitmap id="wasabi.tabsheet.button.right.1" file="suiframe.png" x="100" y="0" w="10" h="29"/>
-	<bitmap id="wasabi.tabsheet.button.left.2" file="suiframe.png" x="78" y="30" w="10" h="29"/>
-	<bitmap id="wasabi.tabsheet.button.center.2" file="suiframe.png" x="89" y="30" w="10" h="29"/>
-	<bitmap id="wasabi.tabsheet.button.right.2" file="suiframe.png" x="100" y="30" w="10" h="29"/>
-	<bitmap id="wasabi.tabsheet.button.left.3" file="suiframe.png" x="78" y="60" w="10" h="29"/>
-	<bitmap id="wasabi.tabsheet.button.center.3" file="suiframe.png" x="89" y="60" w="10" h="29"/>
-	<bitmap id="wasabi.tabsheet.button.right.3" file="suiframe.png" x="100" y="60" w="10" h="29"/>
+	<bitmap id="wasabi.tabsheet.button.left.1" file="suiframe.png" x="78" y="0" w="10" h="29" gammagroup="Buttons.SuiTab.1"/>
+	<bitmap id="wasabi.tabsheet.button.center.1" file="suiframe.png" x="89" y="0" w="10" h="29" gammagroup="Buttons.SuiTab.1"/>
+	<bitmap id="wasabi.tabsheet.button.right.1" file="suiframe.png" x="100" y="0" w="10" h="29" gammagroup="Buttons.SuiTab.1"/>
+	<bitmap id="wasabi.tabsheet.button.left.2" file="suiframe.png" x="78" y="30" w="10" h="29" gammagroup="Buttons.SuiTab.2"/>
+	<bitmap id="wasabi.tabsheet.button.center.2" file="suiframe.png" x="89" y="30" w="10" h="29" gammagroup="Buttons.SuiTab.2"/>
+	<bitmap id="wasabi.tabsheet.button.right.2" file="suiframe.png" x="100" y="30" w="10" h="29" gammagroup="Buttons.SuiTab.2"/>
+	<bitmap id="wasabi.tabsheet.button.left.3" file="suiframe.png" x="78" y="60" w="10" h="29" gammagroup="Buttons.SuiTab.3"/>
+	<bitmap id="wasabi.tabsheet.button.center.3" file="suiframe.png" x="89" y="60" w="10" h="29" gammagroup="Buttons.SuiTab.3"/>
+	<bitmap id="wasabi.tabsheet.button.right.3" file="suiframe.png" x="100" y="60" w="10" h="29" gammagroup="Buttons.SuiTab.3"/>
 
 	<!-- Frame windows -->
-	<bitmap id="wasabi.framewnd.verticaldivider" file="suiframe.png" x="132" y="9" h="20" w="8" gammagroup="Frame_Borders"/>
-	<bitmap id="wasabi.framewnd.verticalgrabber" file="suiframe.png" x="132" y="30" h="40" w="8" gammagroup="Frame_Borders"/>
-	<bitmap id="wasabi.framewnd.horizontaldivider" file="suiframe.png" x="132" y="0" h="8" w="20" gammagroup="Frame_Borders"/>
-	<bitmap id="wasabi.framewnd.horizontalgrabber" file="suiframe.png" x="153" y="0" h="8" w="40" gammagroup="Frame_Borders"/>
+	<bitmap id="wasabi.framewnd.verticaldivider" file="suiframe.png" x="132" y="9" h="20" w="8" gammagroup="Layer.SuiFrames"/>
+	<bitmap id="wasabi.framewnd.verticalgrabber" file="suiframe.png" x="132" y="30" h="40" w="8" gammagroup="Layer.SuiFrames"/>
+	<bitmap id="wasabi.framewnd.horizontaldivider" file="suiframe.png" x="132" y="0" h="8" w="20" gammagroup="Layer.SuiFrames"/>
+	<bitmap id="wasabi.framewnd.horizontalgrabber" file="suiframe.png" x="153" y="0" h="8" w="40" gammagroup="Layer.SuiFrames"/>
 
 	<!-- Wasabi stuff -->
-	<bitmap id="wasabi.scrollbar.horizontal.left" file="scrollbars.png" x="56" y="0" h="13" w="14" gammagroup="Scrollbar.Buttons"/>
-	<bitmap id="wasabi.scrollbar.horizontal.left.hover" file="scrollbars.png" x="56" y="14" h="13" w="14" gammagroup="Scrollbar.Buttons"/>
-	<bitmap id="wasabi.scrollbar.horizontal.left.pressed" file="scrollbars.png" x="56" y="28" h="13" w="14" gammagroup="Scrollbar.Buttons"/>
-	<bitmap id="wasabi.scrollbar.horizontal.right" file="scrollbars.png" x="103" y="0" h="13" w="14" gammagroup="Scrollbar.Buttons"/>
-	<bitmap id="wasabi.scrollbar.horizontal.right.hover" file="scrollbars.png" x="103" y="14" h="13" w="14" gammagroup="Scrollbar.Buttons"/>
-	<bitmap id="wasabi.scrollbar.horizontal.right.pressed" file="scrollbars.png" x="103" y="28" h="13" w="14" gammagroup="Scrollbar.Buttons"/>
+	<bitmap id="wasabi.scrollbar.horizontal.left" file="scrollbars.png" x="56" y="0" h="13" w="14" gammagroup="Scrollbar.LeftRightButton"/>
+	<bitmap id="wasabi.scrollbar.horizontal.left.hover" file="scrollbars.png" x="56" y="14" h="13" w="14" gammagroup="Scrollbar.LeftRightButton"/>
+	<bitmap id="wasabi.scrollbar.horizontal.left.pressed" file="scrollbars.png" x="56" y="28" h="13" w="14" gammagroup="Scrollbar.LeftRightButton"/>
+	<bitmap id="wasabi.scrollbar.horizontal.right" file="scrollbars.png" x="103" y="0" h="13" w="14" gammagroup="Scrollbar.LeftRightButton"/>
+	<bitmap id="wasabi.scrollbar.horizontal.right.hover" file="scrollbars.png" x="103" y="14" h="13" w="14" gammagroup="Scrollbar.LeftRightButton"/>
+	<bitmap id="wasabi.scrollbar.horizontal.right.pressed" file="scrollbars.png" x="103" y="28" h="13" w="14" gammagroup="Scrollbar.LeftRightButton"/>
 	<bitmap id="wasabi.scrollbar.horizontal.button" file="scrollbars.png" x="71" y="0" h="13" w="31" gammagroup="Scrollbar.Buttons"/>
 	<bitmap id="wasabi.scrollbar.horizontal.button.hover" file="scrollbars.png" x="71" y="14" h="13" w="31" gammagroup="Scrollbar.Buttons"/>
 	<bitmap id="wasabi.scrollbar.horizontal.button.pressed" file="scrollbars.png" x="71" y="28" h="13" w="31" gammagroup="Scrollbar.Buttons"/>
-	<bitmap id="wasabi.scrollbar.horizontal.background.middle" file="scrollbars.png" x="56" y="42" w="61" h="13" /> 
-	<bitmap id="wasabi.scrollbar.vertical.left" file="scrollbars.png" x="0" y="0" h="14" w="13" gammagroup="Scrollbar.Buttons"/>
-	<bitmap id="wasabi.scrollbar.vertical.left.hover" file="scrollbars.png" x="14" y="0" h="14" w="13" gammagroup="Scrollbar.Buttons"/>
-	<bitmap id="wasabi.scrollbar.vertical.left.pressed" file="scrollbars.png" x="28" y="0" h="14" w="13" gammagroup="Scrollbar.Buttons"/>
-	<bitmap id="wasabi.scrollbar.vertical.right" file="scrollbars.png" x="0" y="47" h="14" w="13" gammagroup="Scrollbar.Buttons"/>
-	<bitmap id="wasabi.scrollbar.vertical.right.hover" file="scrollbars.png" x="14" y="47" h="14" w="13" gammagroup="Scrollbar.Buttons"/>
-	<bitmap id="wasabi.scrollbar.vertical.right.pressed" file="scrollbars.png" x="28" y="47" h="14" w="13" gammagroup="Scrollbar.Buttons"/>
+	<bitmap id="wasabi.scrollbar.horizontal.background.middle" file="scrollbars.png" x="56" y="42" w="61" h="13" gammagroup="Scrollbar.Bg"/>
+	<bitmap id="wasabi.scrollbar.vertical.left" file="scrollbars.png" x="0" y="0" h="14" w="13" gammagroup="Scrollbar.LeftRightButton"/>
+	<bitmap id="wasabi.scrollbar.vertical.left.hover" file="scrollbars.png" x="14" y="0" h="14" w="13" gammagroup="Scrollbar.LeftRightButton"/>
+	<bitmap id="wasabi.scrollbar.vertical.left.pressed" file="scrollbars.png" x="28" y="0" h="14" w="13" gammagroup="Scrollbar.LeftRightButton"/>
+	<bitmap id="wasabi.scrollbar.vertical.right" file="scrollbars.png" x="0" y="47" h="14" w="13" gammagroup="Scrollbar.LeftRightButton"/>
+	<bitmap id="wasabi.scrollbar.vertical.right.hover" file="scrollbars.png" x="14" y="47" h="14" w="13" gammagroup="Scrollbar.LeftRightButton"/>
+	<bitmap id="wasabi.scrollbar.vertical.right.pressed" file="scrollbars.png" x="28" y="47" h="14" w="13" gammagroup="Scrollbar.LeftRightButton"/>
 	<bitmap id="wasabi.scrollbar.vertical.button" file="scrollbars.png" x="0" y="15" h="31" w="13" gammagroup="Scrollbar.Buttons"/>
 	<bitmap id="wasabi.scrollbar.vertical.button.hover" file="scrollbars.png" x="14" y="15" h="31" w="13" gammagroup="Scrollbar.Buttons"/>
 	<bitmap id="wasabi.scrollbar.vertical.button.pressed" file="scrollbars.png" x="28" y="15" h="31" w="13" gammagroup="Scrollbar.Buttons"/>
-	<bitmap id="wasabi.scrollbar.vertical.background.middle" file="scrollbars.png" x="42" y="0" w="13" h="61" /> 
+	<bitmap id="wasabi.scrollbar.vertical.background.middle" file="scrollbars.png" x="42" y="0" w="13" h="61" gammagroup="Scrollbar.Bg"/>
 	<bitmap id="wasabi.scrollbar.vertical.grip" file="window/scrollgrips.png" x="0" y="0" h="8" w="6" gammagroup="Scrollbar.Buttons"/>
 	<bitmap id="wasabi.scrollbar.horizontal.grip" file="window/scrollgrips.png" x="7" y="0" h="6" w="8" gammagroup="Scrollbar.Buttons"/>
 
