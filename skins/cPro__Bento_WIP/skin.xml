@@ -11,8 +11,8 @@
 	<homepage>http://cpro.skinconsortium.com</homepage>
 	<screenshot>screenshot.png</screenshot>
 </skininfo>
+	<include file="colorthemes.xml"/>
 	<scripts> <script file="warning.maki" param="@COLORTHEMESPATH@"/> </scripts>
 	<include file="colors.xml"/>
 	<include file="@COLORTHEMESPATH@/../../Plugins/classicPro/engine/load.xml"/>
-	<include file="colorthemes.xml"/>
 </WasabiXML>
