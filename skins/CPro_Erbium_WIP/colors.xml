@@ -1,0 +1,117 @@
+<elements>
+
+	<!-- Please comment the fonts out if you dont use them!
+	... if you use arial
+	... you dont need this
+	-->
+
+  <truetypefont id="cpro.songname.font" file="space age.ttf" allowmapping="0"/>
+	<!--
+	<truetypefont id="cpro.tracktime.font" file="font.ttf" allowmapping="0"/>
+	<truetypefont id="cpro.songinfo2.font" file="font.ttf" allowmapping="0"/>
+	<truetypefont id="cpro.menu.font" file="font.ttf" allowmapping="0"/>
+	<truetypefont id="cpro.tab.font" file="font.ttf" allowmapping="0"/>
+ 	<truetypefont id="cpro.status.font" file="font.ttf" allowmapping="0"/>
+ 	<truetypefont id="cpro.winshade.font" file="font.ttf" allowmapping="0"/>
+	-->
+
+
+	<!-- cPro player colors -->
+	<color id="Menu.Text" value="178,2,59" gammagroup="Color.MenuText"/><!--W&V's N: font color for the menu bar-->
+	<color id="Playlist.Status.Text" value="234,195,205" gammagroup="Color.GenericText"/><!--W&V's N: font color for the playlist status bar-->
+	
+	<color id="Tab.Text.On" value="255,255,255" gammagroup="Color.TabText"/><!--W&V's N: font color for the active tab-->
+	<color id="Tab.Text.Off" value="234,195,205" gammagroup="Color.TabText"/><!--W&V's N: font color for the inactive tab-->
+	<color id="Tab.Text.Hover" value="244,211,226" gammagroup="Color.TabText"/><!--W&V's N: font color for the inactive tab you mouse-over-->
+
+	<color id="Tag.Info.Text" value="255,255,255" gammagroup="Color.GenericText"/><!--W&V's N: color for the text of the tag viewer-->
+	<color id="Player.SongTicker.Text" value="255,255,255" gammagroup="Color.SongTicker"/><!--W&V's N: color for the songticker-->
+	<color id="Eq.xfade.Text" value="255,255,255" gammagroup="Color.GenericText"/><!--W&V's N: color for the crossfade value in equalizer-->
+	<color id="ComponentTab.Status.Text" value="255,255,255" gammagroup="Color.GenericText"/>
+	<color id="Browser.MediaMonitor" value="234,195,205" gammagroup="Color.GenericText"/><!--W&V's N: color for the text "Media Monitor" and commands text in Media Monitor-->
+	<color id="wasabi.tooltips.textcolor" value="255,255,255" gammagroup="TooltipCombobox"/><!--W&V's N: font color for tooltip-->
+	<color id="wasabi.button.text" value="255,255,255" gammagroup="Color.GenericText"/><!--W&V's N: font color for wasabi buttons-->
+
+	<color id="Shade.SongTicker.Text" value="255,255,255" gammagroup="_Color.SongTicker"/>
+
+
+<!-- =================================
+	
+		General Color Definitions
+	 =================================
+-->
+	<!-- Notifier Definitions -->
+	<color id="notifier.dark" value="0, 0, 0" gammagroup="Notifier.Text"/> <!-- Sombra Tema -->
+	<color id="notifier.bright" value="234,195,205" gammagroup="Notifier.Text"/> <!-- Tema -->
+	<color id="notifier.dark.upper" value="255,255,255" gammagroup="Notifier.Text"/> <!-- Titulo -->
+	<color id="notifier.bright.upper" value="0,0,0" gammagroup="Notifier.Text"/> <!-- Sombra Titulo -->
+
+
+	<!-- List text color -->
+	<color id="color.display" value="234,195,205"/>
+	<color id="wasabi.tree.text" value="color.display" gammagroup="Color.ListText"/> <!-- Item text color -->
+	<color id="wasabi.list.text" value="color.display" gammagroup="Color.ListText"/> <!--lists/trees item foreground (also edit text) -->
+	<color id="wasabi.button.hiliteText" value="color.display" gammagroup="Color.ListText"/> <!-- Buttons hilite text color, used by tab windows-->
+	<!--W&V's N: figure out for yourself in the first line was declared a "macro" for te color 124,114,109, and then it was used
+	in the declaration for the next components color. Therefore, just change the color value in "color display", and the colors of "wasabi.tree.text",
+	"wasabi.list.text" and "wasabi.button.hiliteText" are automatically changed-->
+
+	<!-- List background color -->
+	<color id="color.display.bg" value="178,2,59"/>
+	<color id="wasabi.list.background" value="color.display.bg" gammagroup="Color.ListBg"/>	<!--lists/trees item background (also bg for edit) -->
+	<color id="wasabi.border.sunken" value="187,33,83" gammagroup="Color.ListBg"/> <!-- color of dividers and sunken borders -->
+	<bitmap id="wasabi.tree.background" file="$solid" h="64" w="64" color="178,2,59" gammagroup="Color.ListBg"/><!-- Tree background bitmap (tile) -->
+	<bitmap id="wasabi.list.background" file="$solid" h="64" w="64" color="178,2,59" gammagroup="Color.ListBg"/><!-- List background bitmap (tile) -->
+	<!--W&V's N: DO NOT index the color of "wasabi.tree.background" and "wasabi.list.background" with "color.display.bg", altough its value is 
+	the same as this color id, because the bitmap declaration does not accept a color id to define the color value (you'll get a magneta background if you do it!)-->
+	<!--W&V's N: in the original cPro_Bento, "wasabi.border.sunken" has the value "color.display.bg" (would be 83,71,65 in this skin), but it was adopted another color value for merely aesthetical reasons-->
+	
+	<!-- Background color for components(ML, Pl(sides) & other -->
+	<color id="color.window.bg" value="178,2,59"/>
+	<color id="wasabi.list.column.empty" value="0,0,0" gammagroup="Color.CompBg"/> <!-- listview header empty color (beyond the columns -->
+	<color id="wasabi.window.background" value="color.window.bg" gammagroup="Color.CompBg"/> <!--window background. -	If this color is not defined, a whole container is created in memory to extract a pixel, so specifying it makes skin loading faster -->
+	<!--W&V's N: in the original cPro_Bento, "wasabi.list.column.empty" has the value "color.window.bg" (would be 214,162,34 in this skin), but it was adopted another color value for merely aesthetical reasons-->
+	
+	<!-- Text color on the above background for components -->
+	<color id="color.window.txt" value="244,211,226"/>
+	<color id="wasabi.list.text.selected.inactive" value="color.window.txt" gammagroup="Color.GenericText"/> <!-- listview/treeview selection bar textcolor (inactive) -->
+	<color id="wasabi.list.column.text" value="wasabi.button.text" gammagroup="Color.GenericText"/> <!-- listview header text color -->
+	<color id="wasabi.window.text" value="wasabi.button.text" gammagroup="Color.GenericText"/> <!--text color within windows -->
+	<!--W&V's N: in this skin, the text color for listview header and inner window was adopted the same as the wasabi buttons instead of "color.window.text", as it happens in cPro_Bento, for merely aesthetical reasons-->
+	
+	<!-- Text color on the above background for components -->
+	<color id="color.selected.active" value="255,255,255"/>
+	<color id="wasabi.tree.selected" value="color.selected.active" gammagroup="Color.ListTextCurrent"/> <!-- Select item text background color -->
+	<color id="wasabi.tree.hiliteddrop" value="color.selected.active" gammagroup="Color.ListTextCurrent"/> <!-- Drop marker color -->
+	<color id="wasabi.list.text.selected" value="color.selected.active" gammagroup="Color.ListTextCurrent"/> <!--listview/treeview selection bar text color -->
+	<color id="studio.list.item.selected" value="color.selected.active" gammagroup="Color.ListTextCurrent"/>
+	<color id="wasabi.list.text.current" value="color.selected.active" gammagroup="Color.ListTextCurrent"/> <!-- currently playing item in lists -->
+
+	
+	<!-- Selected list text color (active) -->
+	<color id="color.selected.active.bg" value="197,65,108"/>
+	<color id="wasabi.list.text.selected.background" value="color.selected.active.bg" gammagroup="Color.ListSelectBg"/> <!--listview/treeview selection bar backcolor -->
+	<color id="studio.list.item.focused" value="color.selected.active.bg" gammagroup="Color.ListSelectBg"/>
+
+	
+	<!-- Selected list text color (inactive) -->
+	<color id="color.selected.inactive.bg" value="187,33,83"/>
+	<color id="wasabi.list.text.selected.background.inactive" value="color.selected.inactive.bg" gammagroup="Color.ListSelectBg"/> <!-- listview/treeview selectionbar back color (inactive) -->
+
+
+	<!-- Column colors... also see: "wasabi.list.column.text"-->
+	<color id="wasabi.list.column.background" value="187,33,83" gammagroup="Color.Column"/> <!-- listview header background color -->
+	<color id="wasabi.list.column.frame.top" value="187,33,83" gammagroup="Color.Column"/> <!-- listview header frame top color -->
+	<color id="wasabi.list.column.frame.middle" value="197,65,108" gammagroup="Color.Column"/> <!-- listview header frame middle color -->
+	<color id="wasabi.list.column.frame.bottom" value="187,33,83" gammagroup="Color.Column"/> <!-- listview header frame bottom color -->
+
+
+	<!-- These colors is used in plugins for the scrollbar...example: "Album List 2". The ML uses skinned scrollbars since wa5.5 -->
+	<!-- The playlist also use this color for the bg of the slider-->
+	<color id="color.scrollbar.old" value="178,2,59"/>
+	<color id="wasabi.scrollbar.foreground" value="color.scrollbar.old" gammagroup="Scrollbars.Gfx"/> <!-- scrollbar foreground color -->
+	<color id="wasabi.scrollbar.background" value="color.scrollbar.old" gammagroup="Scrollbars.Gfx"/> <!-- scrollbar background color -->
+	<color id="wasabi.scrollbar.foreground.inverted" value="color.scrollbar.old" gammagroup="Scrollbars.Gfx"/> <!-- inverse scrollbar foreground color -->
+	<color id="wasabi.scrollbar.background.inverted" value="color.scrollbar.old" gammagroup="Scrollbars.Gfx"/> <!-- inverse scrollbar background color -->
+
+</elements>

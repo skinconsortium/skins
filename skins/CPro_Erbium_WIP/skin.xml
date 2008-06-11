@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<WasabiXML version="1.31">
+
+<skininfo>
+	<version>1.01 - Lollipop flavour</version>
+	<name>cPro - Erbium</name>
+	<comment>Skin design by Veroka, cPro plugin by Skin Consortium</comment>
+	<author gaybag="Veroka">Veronica Mogni</author>
+	<email>vamogni@gmail.com</email>
+	<homepage>http://veroka.deviantart.com</homepage>
+	<screenshot>screenshot.png</screenshot>
+</skininfo>
+	<scripts> <script file="warning.maki" param="@COLORTHEMESPATH@"/> </scripts>
+	<include file="colorthemes.xml"/>
+	<include file="colors.xml"/>
+	<include file="@COLORTHEMESPATH@/../../Plugins/classicPro/engine/load.xml"/>
+</WasabiXML>
