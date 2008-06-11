@@ -297,6 +297,18 @@
 	<bitmap id="eq.preset.2" file="comp_but.png" x="467" y="18" w="54" h="17"/>
 	<bitmap id="eq.preset.3" file="comp_but.png" x="467" y="36" w="54" h="17"/>
 
+	<!--  Colorthemes buttons -->
+	<bitmap id="component.ct.prev.1" file="colorthemes.png" x="0" y="0" w="32" h="17"/>
+	<bitmap id="component.ct.prev.2" file="colorthemes.png" x="0" y="18" w="32" h="17"/>
+	<bitmap id="component.ct.prev.3" file="colorthemes.png" x="0" y="36" w="32" h="17"/>
+	<bitmap id="component.ct.set.1" file="colorthemes.png" x="33" y="0" w="31" h="17"/>
+	<bitmap id="component.ct.set.2" file="colorthemes.png" x="33" y="18" w="31" h="17"/>
+	<bitmap id="component.ct.set.3" file="colorthemes.png" x="33" y="36" w="31" h="17"/>
+	<bitmap id="component.ct.next.1" file="colorthemes.png" x="65" y="0" w="31" h="17"/>
+	<bitmap id="component.ct.next.2" file="colorthemes.png" x="65" y="18" w="31" h="17"/>
+	<bitmap id="component.ct.next.3" file="colorthemes.png" x="65" y="36" w="31" h="17"/>
+
+
 	<!--  SUI Component Buttons: Big -->
 	<bitmap id="video.button.fullscreen.normal" file="comp_but_tabs.png" x="0" y="0" h="21" w="24"/>
 	<bitmap id="video.button.fullscreen.hover" file="comp_but_tabs.png" x="0" y="22" h="21" w="24"/>

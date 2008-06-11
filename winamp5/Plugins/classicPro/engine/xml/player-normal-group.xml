@@ -242,10 +242,39 @@
 </groupdef>
 
 <groupdef id="drawer.colortheme">
-	<group id="drawer.tagviewer.bottomleft" x="0" y="-27" w="-6" relaty="1" relatw="1"/>
-	<ColorThemes:List
+	<layer visible="0" id="drawer.ct.fakelayer" image="component.ct.prev.1" w="0" h="0"/>
+	<ColorThemes:List id="colorthemes"
 		x="2" y="2" w="-4" h="-21" relatw="1" relath="1" antialias="0"
 		nohscroll="1" nocolheader="1" fontsize="13"
+	/>
+	<button
+		action="colorthemes_previous"
+		action_target="colorthemes"
+		x="1"  y="-18" relaty="1"
+		image="component.ct.prev.1"
+		hoverImage="component.ct.prev.2"
+		downImage="component.ct.prev.3"
+		tooltip="Previous Color Theme"
+	/>
+
+	<button
+	    action="colorthemes_switch"
+		action_target="colorthemes"
+		x="33" y="-18" relaty="1"
+		image="component.ct.set.1"
+		hoverImage="component.ct.set.2"
+		downImage="component.ct.set.3"
+		tooltip="Switch to selected Color Theme"
+	/>
+
+	<button
+		action="colorthemes_next"
+		action_target="colorthemes"
+		x="64" y="-18" relaty="1"
+		image="component.ct.next.1"
+		hoverImage="component.ct.next.2"
+		downImage="component.ct.next.3"
+		tooltip="Next Color Theme"
 	/>
 </groupdef>
 
