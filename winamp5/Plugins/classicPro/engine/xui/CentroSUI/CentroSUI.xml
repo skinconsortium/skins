@@ -209,8 +209,27 @@
 <groupdef id="centro.other" name="Plugins">
 	<windowholder id="centro.windowholder.other" x="1" y="1" w="-2" relatw="1" h="-2" relath="1"  autofocus="0" wantfocus="0" autoclose="1" autoopen="1" autoavailable="0" visible="1" hold="@all@"/>
 </groupdef>
-<groupdef id="centro.nowplaying" name="AlbumArt">
-	<SC:NowPlaying id="nowplaying.component" x="1" y="1" w="-2" relatw="1" h="-2" relath="1" dropshadowcdcase="1" reflectionheightpercentage="100"/>
+<groupdef id="centro.widget" name="Widget">
+
+	<!--
+	@martin - widget stuff can go here... the "Configure this widget" button is just temp.. the widget developer can use that to trigger a menu but that button will be in the widget itself...
+	The "Select Widget" is the one where you choose the widget... Also check the other widget code....added a little check to see if the group is still there (if widget was uninstalled)
+	-->
+
+	<Button
+		x="-52" y="-23" h="21" w="24" relatx="1" relaty="1" rectrgn="1"
+		image="video.button.cfg.normal"
+		hoverImage="video.button.cfg.hover"
+		downImage="video.button.cfg.down"
+		tooltip="Configure this widget"
+	/>
+	<Button
+		x="-27" y="-23" h="21" w="24" relatx="1" relaty="1" rectrgn="1"
+		image="vis.button.presets.normal"
+		hoverImage="vis.button.presets.hover"
+		downImage="vis.button.presets.down"
+		tooltip="Select Widget"
+	/>
 </groupdef>
 
 <groupdef id="centro.tabdivider">
@@ -228,7 +247,7 @@
 	<Centro:Tab id="centro.tabtog.3" x="2" y="0" tabtext="Browser" visible="0"/>
 	<Centro:Tab id="centro.tabtog.4" x="2" y="0" tabtext="Playlist" visible="0"/>
 	<Centro:Tab id="centro.tabtog.5" x="2" y="0" tabtext="Plugins" visible="0"/>
-	<Centro:Tab id="centro.tabtog.6" x="2" y="0" tabtext="AlbumArt" visible="0"/>
+	<Centro:Tab id="centro.tabtog.6" x="2" y="0" tabtext="Widget" visible="0"/>
 
 	<group id="centro.tabdivider" x="0" y="1" w="5" h="27" visible="0" ghost="1"/>
 </groupdef>
@@ -240,7 +259,7 @@
 	<group id="centro.browser" x="0" y="0" w="0" h="0" relatw="1" relath="1" visible="0" wantfocus="1"/>
 	<group id="centro.playlist2" x="0" y="0" w="0" h="0" relatw="1" relath="1" visible="0" wantfocus="1"/>
 	<group id="centro.other" x="0" y="0" w="0" h="0" relatw="1" relath="1" visible="0" wantfocus="1"/>
-	<group id="centro.nowplaying" x="0" y="0" w="0" h="0" relatw="1" relath="1" visible="0" wantfocus="1"/>
+	<group id="centro.widget" x="0" y="0" w="0" h="0" relatw="1" relath="1" visible="0" wantfocus="1"/>
 </groupdef>
 
 <groupdef id="centro.componentsheet">
