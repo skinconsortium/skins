@@ -46,7 +46,7 @@ Function String replaceString(string baseString, string toreplace, string replac
 Function setFrame1();
 Function setFrame2(int pos, int h);
 
-Global Group xuiGroup, tab_library, tab_video, tab_avs, tab_Browser, tab_Playlist, tab_Other, tab_NowPlay, drawer, mainTabsheet;
+Global Group xuiGroup, tab_library, tab_video, tab_avs, tab_Browser, tab_Playlist, tab_Other, tab_Widget, drawer, mainTabsheet;
 Global Group area_left, area_right, area_mini, area_right_pl;
 Global Group mini_Cover, mini_Video, mini_AVS, mini_SavedPL;
 Global Group tabbut_vid, tabbut_avs, tabbut_pl;
@@ -57,14 +57,14 @@ Global PopUpMenu popMenu, tabMenu;
 
 Global Browser xuiBrowser;
 
-Global GuiObject nowPlaying, visRectBg;
+Global GuiObject visRectBg;
 
 Global Button but_miniGoto, closeFrame, openFrame;
 
 Global Text visName;
 
 Global ToggleButton tog_library, tog_video, tog_avs, tog_Browser, tog_Playlist, tog_Other, tog_NowPlay, tog_drawer;
-Global GuiObject tog_library1, tog_video1, tog_avs1, tog_Browser1, tog_Playlist1, tog_Other1, tog_NowPlay1, tog_fake1;
+Global GuiObject tog_library1, tog_video1, tog_avs1, tog_Browser1, tog_Playlist1, tog_Other1, tog_Widget1, tog_fake1;
 Global WindowHolder hold_Other, hold_Pl1, hold_Pl2, hold_vid, hold_avs, hold_ml, hold_vis;
 
 Global Frame mainFrame, plFrame;
@@ -120,11 +120,11 @@ System.onScriptLoaded() {
 	drawer = xuiGroup.findObject("centro.multidrawer");
 
 	// Reader for classic vis colors from bitmap (wa5.51)
-	Map myMap = new Map;
+	/*Map myMap = new Map;
 	myMap.loadMap("wasabi.list.background");
 	nowPlaying = xuiGroup.findObject("nowplaying.component");
 	nowPlaying.setXmlParam("bgcolor", integerToString(myMap.getARGBValue(0,0,2))+","+integerToString(myMap.getARGBValue(0,0,1))+","+integerToString(myMap.getARGBValue(0,0,0)));
-	delete myMap;
+	delete myMap;*/
 
 	//Tab Component Buttons
 	tabbut_vid = xuiGroup.findObject("centro.video.buttons");
@@ -146,7 +146,7 @@ System.onScriptLoaded() {
 	tab_Browser = xuiGroup.findObject("centro.browser");
 	tab_Playlist = xuiGroup.findObject("centro.playlist2");
 	tab_Other = xuiGroup.findObject("centro.other");
-	tab_NowPlay = xuiGroup.findObject("centro.nowplaying");
+	tab_Widget = xuiGroup.findObject("centro.widget");
 	tog_drawer = xuiGroup.findObject("tog.drawer");
 	
 	area_left = xuiGroup.findObject("centro.components");
@@ -176,7 +176,7 @@ System.onScriptLoaded() {
 	tog_Browser1 = xuiGroup.findObject("centro.tabtog.3");
 	tog_Playlist1 = xuiGroup.findObject("centro.tabtog.4");
 	tog_Other1 = xuiGroup.findObject("centro.tabtog.5");
-	tog_NowPlay1 = xuiGroup.findObject("centro.tabtog.6");
+	tog_Widget1 = xuiGroup.findObject("centro.tabtog.6");
 
 	CODE_MARTIN start
 	dummyBuck = xuiGroup.findObject("widget.loader.mini");
@@ -237,9 +237,9 @@ tab_SetText(int tab, int limit){
 	int tokenNo = stringToInteger(getToken(getPublicString("cPro.tabOrder", DEFAULT_TAB_ORDER), ";", tab));
 
 	String tabnames;
-	if(limit==0)  tabnames = "Media Library;Video;Visualization;Browser;Playlist;"+hold_Other.getComponentName()+";AlbumArt";
-	else if(limit==1)  tabnames = "ML;Vid;Vis;Bro;PL;"+System.strleft(hold_Other.getComponentName(), 3)+";Art";
-	else if(limit==2)  tabnames = "M;V;V;B;P;"+System.strleft(hold_Other.getComponentName(), 1)+";A";
+	if(limit==0)  tabnames = "Media Library;Video;Visualization;Browser;Playlist;"+hold_Other.getComponentName()+";Widget";
+	else if(limit==1)  tabnames = "ML;Vid;Vis;Bro;PL;"+System.strleft(hold_Other.getComponentName(), 3)+";Wid";
+	else if(limit==2)  tabnames = "M;V;V;B;P;"+System.strleft(hold_Other.getComponentName(), 1)+";W";
 
 	tog_fake1.setXmlParam("tabtext", getToken(tabnames, ";", tokenNo));
 }
@@ -566,8 +566,8 @@ updateTabShow(){
 	if(getPublicInt("cPro.tab.onoff.4", 1)==1 || active_tab==4) tog_Playlist1.show();
 	else tog_Playlist1.hide();
 	
-	if(getPublicInt("cPro.tab.onoff.6", 1)==1 || active_tab==6) tog_NowPlay1.show();
-	else tog_NowPlay1.hide();
+	if(getPublicInt("cPro.tab.onoff.6", 1)==1 || active_tab==6) tog_Widget1.show();
+	else tog_Widget1.hide();
 
 	if(active_tab==5) tog_Other1.show();
 	else tog_Other1.hide();
@@ -607,7 +607,7 @@ openTabNo(int tabNo){
 		tab_Browser.hide();
 		tab_Playlist.hide();
 		tab_Other.hide();
-		tab_NowPlay.hide();
+		tab_Widget.hide();
 	}
 	
 	updateTabButtonStates();
@@ -650,9 +650,9 @@ openTabNo(int tabNo){
 		tog_Other1.show();
 	}
 	else if(tabNo==6){
-		tab_NowPlay.show();
+		tab_Widget.show();
 		tog_NowPlay.setActivated(1);
-		tog_NowPlay1.show();
+		tog_Widget1.show();
 	}
 	else{
 		tab_library.show();
@@ -819,7 +819,7 @@ tog_NowPlay.onLeftButtonDown(int x, int y){
 tog_NowPlay.onLeftButtonUp(int x, int y){
 	tabMouseDown=false;
 	if(mmove){
-		tog_NowPlay1.setAlpha(255);
+		tog_Widget1.setAlpha(255);
 		tabDivider.hide();
 		moveTab(6, lastDivider);
 	}
@@ -827,7 +827,7 @@ tog_NowPlay.onLeftButtonUp(int x, int y){
 tog_NowPlay.onMouseMove(int x, int y){
 	if(downX > x+3|| downX < x-3) mmove=true;
 	if(tabMouseDown && mmove){
-		tog_NowPlay1.setAlpha(200);
+		tog_Widget1.setAlpha(200);
 		tabDivider.show();
 		setDividerX(x-tab_GetX(0));
 	}
@@ -1038,7 +1038,7 @@ initTabSubMenu(){
 	tabMenu.addCommand("Visualization", 102, getPublicInt("cPro.tab.onoff.2", 1), 0);
 	tabMenu.addCommand("Browser", 103, getPublicInt("cPro.tab.onoff.3", 1), 0);
 	tabMenu.addCommand("Playlist", 104, getPublicInt("cPro.tab.onoff.4", 1), 0);
-	tabMenu.addCommand("Now Playing", 106, getPublicInt("cPro.tab.onoff.6", 1), 0);
+	tabMenu.addCommand("Widget", 106, getPublicInt("cPro.tab.onoff.6", 1), 0);
 }
 setTabSubMenuResult(int opt){
 	if(opt>=0 && opt<7 && opt!=5) setPublicInt("cPro.tab.onoff."+integerToString(opt), !getPublicInt("cPro.tab.onoff."+integerToString(opt), 1));
@@ -1335,6 +1335,6 @@ tab_Playlist.onSetVisible(boolean onOff){
 tab_Other.onSetVisible(boolean onOff){
 	debugString("tab_Other="+integerToString(onOff),9);
 }
-tab_NowPlay.onSetVisible(boolean onOff){
-	debugString("tab_NowPlay="+integerToString(onOff),9);
+tab_Widget.onSetVisible(boolean onOff){
+	debugString("tab_Widget="+integerToString(onOff),9);
 }*/
