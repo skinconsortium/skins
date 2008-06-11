@@ -7,6 +7,8 @@ Global Group drawer_equalizer, drawer_savedpl, drawer_tagviewer, drawer_avs, dra
 Global PopUpMenu popMenu, widgetmenu;
 Global Button but_drawerGoto;
 Global GuiObject cpro_sui;
+Global Layer ct_fakeLayer;
+Global Boolean gotThemes;
 
 Global ComponentBucket dummyBuck;
 Global GuiObject customObj;
@@ -20,11 +22,15 @@ System.onScriptLoaded() {
 	drawer_avs = myGroup.findObject("drawer.avs");
 	drawer_ct = myGroup.findObject("drawer.colortheme");
 	drawer_skinchooser = myGroup.findObject("drawer.skinchooser");
+	ct_fakeLayer = myGroup.findObject("drawer.ct.fakelayer");
 	
 	cpro_sui = getContainer("main").getLayout("normal").findObject("cpro.sui");
 
 	dummyBuck = myGroup.findObject("widget.loader");
 	customObj = myGroup.findObject("widget.holder");
+
+	gotThemes = ct_fakeLayer.isInvalid();
+	//if(!ct_fakeLayer.isInvalid()) gotThemes=true;
 
 	//Saved Settings
 	openDrawer(getPublicInt("cPro.lastDrawer", 0));
@@ -37,7 +43,7 @@ but_drawerGoto.onleftClick(){
 	popMenu.addCommand("Equalizer", 0, 0, 0);
 	popMenu.addCommand("Tag Viewer", 1, 0, 0);
 	popMenu.addCommand("Visualizer", 3, 0, 0);
-	popMenu.addCommand("Color Themes", 5, 0, 0);
+	popMenu.addCommand("Color Themes", 5, 0, gotThemes);
 	popMenu.addCommand("Saved Playlists", 2, 0, 0);
 	popMenu.addCommand("Skin Chooser", 4, 0, 0);
 
@@ -98,14 +104,17 @@ openDrawer(int drawerNo){
 		drawer_avs.show();
 	}
 	else if(drawerNo==4) drawer_skinchooser.show();
-	else if(drawerNo==5) drawer_ct.show();
+	else if(drawerNo==5 && !gotThemes) drawer_ct.show();
 	else if(drawerNo >= 100) {
 		GuiObject gr = dummyBuck.enumChildren(drawerNo-100);
 		String id = gr.getXMLparam("userdata");
 		customObj.setXmlParam("groupid", id);
 		customObj.show();
 	}
-	else drawer_equalizer.show();
+	else{
+		drawerNo=0;
+		drawer_equalizer.show();
+	}
 
 	setPublicInt("cPro.lastDrawer", drawerNo);
 }
