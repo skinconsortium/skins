@@ -1,13 +1,16 @@
 <groupdef id="shade.visgroup" background="shade.vis">
+	<layer x="0" y="0" image="shade.o.vis" ghost="1"/>
 	<layer fitparent="1" dblClickAction="SWITCH;normal"/>
 	<vis
 		id="shade.vis"
 		x="4" y="7"
 		w="54" h="10"
+		gammagroup="_Vis.Shade"
 	/>
 </groupdef>
 
 <groupdef id="shade.volgroup" background="shade.volume.bg">
+	<layer x="0" y="0" image="shade.o.volume.bg" ghost="1"/>
 	<layer fitparent="1" dblClickAction="SWITCH;normal"/>
 	<NStatesButton id="mute2" x="5" y="4" image="s.mute.1." hoverimage="s.mute.2." downimage="s.mute.3." rectrgn="1" nstates="2" tooltip="Mute Volume" cfgvals="0;1"/>
 
@@ -26,6 +29,7 @@
 
 <groupdef id="shade.seekticker1">
 	<grid x="0" y="0" w="0" h="23" relatw="1" topleft="shade.ticker.bg.1" top="shade.ticker.bg.2" topright="shade.ticker.bg.3"/>
+	<grid x="0" y="0" w="0" h="23" relatw="1" topleft="shade.o.ticker.bg.1" top="shade.o.ticker.bg.2" topright="shade.o.ticker.bg.3"/>
 	<layer fitparent="1" dblClickAction="SWITCH;normal" move="1"/>
 	<text id="SongTime"
 		x="3" y="5" h="12" w="35" relatw="0" timeroffstyle="1" timecolonwidth="6" font="cpro.winshade.font"
@@ -33,7 +37,7 @@
 	/>
 
 	<ModernSongticker id="Songticker"
-		x="38" y="5" h="12" w="-42" relatw="1" nograbb="1" move="1" antialias="1"
+		x="38" y="5" h="12" w="-42" relatw="1" move="1" antialias="1"
 		id_layout="main;shade"
 		id_volume="Volume"
 		id_seeker="seeker"
@@ -44,11 +48,14 @@
 		id_rep="repeat"
 		id_mute="mute2"
 		fontsize="12"
+		color="Shade.SongTicker.Text"
 	/>
-	<script file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\scripts\playlistmenu.maki" param="Songticker;40"/>
+	<layer id="Songticker.trap" x="38" y="0" h="0" w="-42" relatw="1" relath="1" move="1"/>
+	<script file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\scripts\playlistmenu.maki" param="Songticker.trap;40"/>
 </groupdef>
 <groupdef id="shade.seekticker2">
 	<grid x="0" y="0" w="0" h="23" relatw="1" topleft="shade.seek.bg.1" top="shade.seek.bg.2" topright="shade.seek.bg.3"/>
+	<grid x="0" y="0" w="0" h="23" relatw="1" topleft="shade.o.seek.bg.1" top="shade.o.seek.bg.2" topright="shade.o.seek.bg.3"/>
 	<ProgressGrid id="progressbar" x="0" y="0" h="23" w="0" relatw="1" orientation="right" left="shade.seek.fg.1" middle="shade.seek.fg.2"/>
 	<layer fitparent="1" dblClickAction="SWITCH;normal" move="1"/>
 

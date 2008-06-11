@@ -33,7 +33,7 @@ Global PopUpMenu stylemenu;
 
 Global Int currentMode, a_falloffspeed, p_falloffspeed, a_coloring;
 Global Boolean show_peaks, isShade;
-Global layer trigger, overlay;
+Global layer trigger, overlay1, overlay2;
 
 Global Layout thislayout;
 Global Container main;
@@ -48,7 +48,8 @@ System.onScriptLoaded()
 	//isShade = (scriptGroup.getParentlayout().getID() == "shade");
 
 	visualizer = scriptGroup.findObject("main.vis");
-	overlay = scriptGroup.findObject("vis.overlay");
+	overlay1 = scriptGroup.findObject("vis.overlay.1");
+	overlay2 = scriptGroup.findObject("vis.overlay.2");
 	trigger = scriptGroup.findObject("vis.mousetrap");
 
 	visualizer.setXmlParam("peaks", integerToString(show_peaks));
@@ -58,7 +59,8 @@ System.onScriptLoaded()
 ///////////////
 	Map myMap = new Map;
 	myMap.loadMap("vis.region");
-	overlay.setRegionFromMap(myMap, 255, 0);
+	overlay1.setRegionFromMap(myMap, 255, 0);
+	overlay2.setRegionFromMap(myMap, 255, 0);
 ///////////////
 
 	refreshVisSettings ();
@@ -232,7 +234,8 @@ ProcessMenuResult (int a)
 setVis (int mode)
 {
 	setPrivateInt(getSkinName(), "Visualizer Mode", mode);
-	overlay.hide();
+	overlay1.hide();
+	overlay2.hide();
 	if (mode == 0)
 	{
 		visualizer.setMode(0);
@@ -244,7 +247,8 @@ setVis (int mode)
 	}
 	else if (mode == 2)
 	{
-		overlay.show();
+		overlay1.show();
+		overlay2.show();
 		visualizer.setXmlParam("bandwidth", "thin");
 		visualizer.setMode(1);
 	}
