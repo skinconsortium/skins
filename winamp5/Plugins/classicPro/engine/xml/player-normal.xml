@@ -87,13 +87,10 @@
 		x="20" y="74"
 		w="108" h="16"
 		bandwidth="thin"
+		gammagroup="Vis.Normal"
 	/>
-	<layer
-		id="vis.overlay"
-		x="20" y="75"
-		w="108" h="16"
-		image="vis.overlay"
-	/>
+	<layer id="vis.overlay.1" x="20" y="75" w="108" h="16" image="vis.overlay1"/>
+	<layer id="vis.overlay.2" x="20" y="75" w="108" h="16" image="vis.overlay2"/>
 	<layer
 		id="vis.mousetrap"
 		x="20" y="74"

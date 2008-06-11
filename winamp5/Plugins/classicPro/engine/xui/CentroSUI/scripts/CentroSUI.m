@@ -434,22 +434,22 @@ System.onOpenUrl(string url){
 }
 
 System.onGetCancelComponent(String guid, boolean goingvisible){
-	//debugString(integerToString(goingvisible)+guid, 9);
+	// Check to see if this component is on the blacklist, and if it is, it will open in its own window or just close it...
+	for(int i=0;i<10;i++){
+		if(getToken(guid_blacklist, ";", i)== guid){
+			return false;
+		}
+		else if(getToken(guid_blacklist, ";", i)== ""){
+			break;
+		}
+	}
+
+	//debug(integerToString(goingvisible)+guid);
 	//If a component want to open (else = close)
 	if(goingvisible){
 		
 		openMainLayoutNow();
 
-		// Check to see if this component is on the blacklist, and if it is, it will open in its own window;
-		for(int i=0;i<10;i++){
-			if(getToken(guid_blacklist, ";", i)== guid){
-				return false;
-			}
-			else if(getToken(guid_blacklist, ";", i)== ""){
-				break;
-			}
-		}
-		
 		//Resize player bigger on component activity if size is to small
 		if(xuiGroup.getheight()<10){
 			normal.resize(getCurAppLeft(),getCurAppTop(),getCurAppWidth(), 300);
@@ -947,6 +947,11 @@ but_miniGoto.onleftClick(){
 }
 
 openMini(int miniNo){
+	//Safety check to see if the widgets is still there ;)
+	if(miniNo>=100){
+		if(dummyBuck.getNumChildren()<miniNo-99) miniNo=0;
+	}
+
 	mini_Cover.hide();
 	mini_Video.hide();
 	mini_AVS.hide();
