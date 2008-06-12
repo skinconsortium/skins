@@ -24,7 +24,7 @@
 		fontsize="30"
 		bold="2"
 	/>-->
-	<ModernSongticker
+	<ModernSongticker id="songticker"
 		x="8" y="2" h="30" w="-16" relatw="1"
 		id_layout="main;normal"
 		id_volume="Volume"
@@ -34,7 +34,7 @@
 		id_open="open"
 		id_shuf="shuffle"
 		id_rep="repeat"
-		id_mute="mute"
+		id_mute="vol.mute"
 		color="color.display" fontsize="30" bold="2"
 	/>
 
@@ -59,7 +59,7 @@
 		thumb="seek.button"
 	/>
 
-	<script file="scripts/seek.maki"/>
+	<!--<script file="scripts/seek.maki"/>-->
 
 </groupdef>
 

@@ -19,7 +19,7 @@ Note:		This script is based on mute.m
 
 Global Group frameGroup;
 Global Togglebutton MuteBtn;
-Global Text SongTicker;
+Global GuiObject SongTicker;
 Global Float VolumeLevel;
 Global Boolean Muted, BtnPressed;
 
@@ -38,7 +38,7 @@ System.onScriptLoaded()
 	if (Muted)
 	{
 		string sm = getPrivateString(getSkinNAme(), "Mute.method", "Mute");
-		SongTicker.sendAction("showinfo", sm +": On", 0, 0, 0, 0);
+		//SongTicker.sendAction("showinfo", sm +": On", 0, 0, 0, 0);
 	}
 	BtnPressed = 0;
 }
@@ -61,14 +61,14 @@ MuteBtn.onLeftClick()
 		else System.setVolume(0);
 		Muted = 1;
 		setPrivateInt(getSkinNAme(), "muted", Muted);
-		SongTicker.sendAction("showinfo", sm +": On", 0, 0, 0, 0);
+		//SongTicker.sendAction("showinfo", sm +": On", 0, 0, 0, 0);
 	}
 	else
 	{
 		System.setVolume(VolumeLevel);
 		Muted = 0;
 		setPrivateInt(getSkinNAme(), "muted", Muted);
-		SongTicker.sendAction("showinfo", "Mute: Off", 0, 0, 0, 0);
+		//SongTicker.sendAction("showinfo", "Mute: Off", 0, 0, 0, 0);
 	}
 }
 

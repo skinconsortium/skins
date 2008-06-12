@@ -22,7 +22,7 @@ Global Layer fill;
 Global Slider eqband;
 
 Global String str_container = "this";
-Global Text SongTicker;
+Global GuiObject SongTicker;
 Global int i_count, su;
 Global string link;
 

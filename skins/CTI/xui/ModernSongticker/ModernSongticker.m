@@ -97,11 +97,12 @@ repBut.onToggle(Boolean onOff){
 muteBut.onToggle(Boolean onoff){
 	//Cancel next volume info tip
 	cancelNext=true;
-	if(muteBut.getCurCfgVal()==0){
-		updateInfo("Mute: Off");
+	if(muteBut.getActivated()==0){ //	if(muteBut.getCurCfgVal()==0){ changed for CTI
+
+		updateInfo(getPrivateString(getSkinNAme(), "Mute.method", "Mute") +": Off");
 	}
 	else{
-		updateInfo("Mute: On");
+		updateInfo(getPrivateString(getSkinNAme(), "Mute.method", "Mute") +": On");
 	}
 }
 
@@ -219,4 +220,21 @@ sl_seeker.onLeftButtonUp(int x, int y){
 }
 sl_seeker.onLeftButtonDown(int x, int y){
 	busyWithSeek=true;
+}
+
+
+/*
+Actions from other scripts
+*/
+
+mainGroup.onAction (String action, String param, Int x, int y, int p1, int p2, GuiObject source)
+{
+	if (strlower(action) == "showinfo")
+	{
+		updateInfo(param);
+	}
+	/*else if (strlower(action) == "cancelinfo")
+	{
+		SongTickerTimer.onTimer ();
+	}*/
 }
