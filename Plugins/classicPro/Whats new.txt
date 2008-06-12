@@ -1,18 +1,23 @@
-todo...
-- use original browser xui (wip martin)
-- sui overhaul (much l8r)
-
+-------------------------------------------------------------
+Version 1.04 (13 Jun 2008)
+-------------------------------------------------------------
+- New: ColorTheme support! (also added colorthemes.png)
+- New: Widget Tab! (!!!!!!wip!!!!!!!!)
+- New: Plugin tab now have the name of the plugin (wa5.54)
+- New: Now using the Winamp Browser (wa5.54)
+- New: Using the same xui object for the songticker
+- Optimized: SUI area code (black list stuff)
+- Fixed: Removing a widget might crash Winamp
+- Fixed: Main Window container now use canclose="0"
 
 -------------------------------------------------------------
 Version 1.03 (29 May 2008)
 -------------------------------------------------------------
-- New: Plugin tab now have the name of the plugin (wa5.54)
 - New: Beta for the <ClassicPro/> xui object. See SC forum for more info.
 - Improved: About bg animation
 - Improved: Visualization tab now looks like it loads faster
 - Improved: File sizes of all png files
 - Optimized: SUI area code
-- Fixed: Removing a widget might crash Winamp
 - Fixed: Main Window container now use canclose="0"
 - Fixed: Widget "browser_url" action doesnt open the browser tab
 - Fixed: DrO's Autoplay support... Seekerbg will show ;)
