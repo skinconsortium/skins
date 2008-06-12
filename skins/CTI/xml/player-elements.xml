@@ -119,4 +119,7 @@
 	<bitmap id="player.vis.prev" file="player/vis-rnd.png" gammagroup="text" x="63" y="0" w="21" h="16"/>
 
 	<bitmap id="player.visover" file="player/visover.png" gammagroup="background"/>
+	
+	
+
 </elements>

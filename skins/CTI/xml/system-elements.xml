@@ -38,7 +38,7 @@
    <bitmap id="studio.tree.sort.icon" file="window/tree-sort-icon.png" gammagroup="text"/>
 
    <!-- Old List & Tree scrollbars -->
-   <bitmap id="studio.scrollbar.horizontal.background" file="window/window-elements.png" x="58" y="52" h="13" w="41" gammagroup="background"/>
+<!--   <bitmap id="studio.scrollbar.horizontal.background" file="window/window-elements.png" x="58" y="52" h="13" w="41" gammagroup="background"/>
    <bitmap id="studio.scrollbar.horizontal.left" file="window/window-elements.png" x="40" y="13" h="13" w="17" gammagroup="Buttons"/>
    <bitmap id="studio.scrollbar.horizontal.left.hilite" file="window/window-elements.png" x="40" y="26" h="13" w="17" gammagroup="Buttons"/>
    <bitmap id="studio.scrollbar.horizontal.left.pressed" file="window/window-elements.png" x="40" y="39" h="13" w="17" gammagroup="Buttons"/>
@@ -59,9 +59,9 @@
    <bitmap id="studio.scrollbar.vertical.button" file="window/window-elements.png" x="0" y="55" h="41" w="13" gammagroup="Buttons"/>
    <bitmap id="studio.scrollbar.vertical.button.hilite" file="window/window-elements.png" x="13" y="55" h="41" w="13" gammagroup="Buttons"/>
    <bitmap id="studio.scrollbar.vertical.button.pressed" file="window/window-elements.png" x="26" y="55" h="41" w="13" gammagroup="Buttons"/>
-
+-->
    <!-- NewList & Tree scrollbars -->
-   <bitmap id="wasabi.scrollbar.horizontal.background" file="window/window-elements.png" x="58" y="52" h="13" w="41" gammagroup="background"/>
+<!--   <bitmap id="wasabi.scrollbar.horizontal.background" file="window/window-elements.png" x="58" y="52" h="13" w="41" gammagroup="background"/>
 
    <bitmap id="wasabi.scrollbar.horizontal.left" file="window/window-elements.png" x="40" y="13" h="13" w="17" gammagroup="Buttons"/>
    <bitmap id="wasabi.scrollbar.horizontal.left.hover" file="window/window-elements.png" x="40" y="26" h="13" w="17" gammagroup="Buttons"/>
@@ -104,6 +104,8 @@
    <bitmap id="wasabi.scrollbar.vertical.button.top.pressed" file="window/window-elements.png" x="26" y="55" h="3" w="13" gammagroup="Buttons"/>
    <bitmap id="wasabi.scrollbar.vertical.button.middle.pressed" file="window/window-elements.png" x="26" y="58" h="35" w="13" gammagroup="Scrollbar Buttons"/>
    <bitmap id="wasabi.scrollbar.vertical.button.bottom.pressed" file="window/window-elements.png" x="26" y="93" h="3" w="13" gammagroup="Buttons"/>
+-->
+
 
    <!-- labelwnd titles -->
    <bitmap id="studio.label.upperLeft" file="window/window-elements.png" x="0" y="170" w="2" h="2" gammagroup="background"/>
@@ -382,6 +384,28 @@
 	<bitmap id="wasabi.scrollbar.vertical.grip" file="window/scrollgrips.png" x="0" y="0" h="8" w="6" gammagroup="text"/>
 	<bitmap id="wasabi.scrollbar.horizontal.grip" file="window/scrollgrips.png" x="7" y="0" h="6" w="8" gammagroup="text"/>
 
+
+
+	<bitmap id="wasabi.scrollbar.horizontal.left" file="window/scrollbars.png" x="56" y="0" h="13" w="14" gammagroup="Buttons"/>
+	<bitmap id="wasabi.scrollbar.horizontal.left.hover" file="window/scrollbars.png" x="56" y="14" h="13" w="14" gammagroup="Buttons"/>
+	<bitmap id="wasabi.scrollbar.horizontal.left.pressed" file="window/scrollbars.png" x="56" y="28" h="13" w="14" gammagroup="Buttons"/>
+	<bitmap id="wasabi.scrollbar.horizontal.right" file="window/scrollbars.png" x="103" y="0" h="13" w="14" gammagroup="Buttons"/>
+	<bitmap id="wasabi.scrollbar.horizontal.right.hover" file="window/scrollbars.png" x="103" y="14" h="13" w="14" gammagroup="Buttons"/>
+	<bitmap id="wasabi.scrollbar.horizontal.right.pressed" file="window/scrollbars.png" x="103" y="28" h="13" w="14" gammagroup="Buttons"/>
+	<bitmap id="wasabi.scrollbar.horizontal.button" file="window/scrollbars.png" x="71" y="0" h="13" w="31" gammagroup="Buttons"/>
+	<bitmap id="wasabi.scrollbar.horizontal.button.hover" file="window/scrollbars.png" x="71" y="14" h="13" w="31" gammagroup="Buttons"/>
+	<bitmap id="wasabi.scrollbar.horizontal.button.pressed" file="window/scrollbars.png" x="71" y="28" h="13" w="31" gammagroup="Buttons"/>
+	<bitmap id="wasabi.scrollbar.horizontal.background.middle" file="window/scrollbars.png" x="56" y="42" w="61" h="13" gammagroup="background"/>
+	<bitmap id="wasabi.scrollbar.vertical.left" file="window/scrollbars.png" x="0" y="0" h="14" w="13" gammagroup="Buttons"/>
+	<bitmap id="wasabi.scrollbar.vertical.left.hover" file="window/scrollbars.png" x="14" y="0" h="14" w="13" gammagroup="Buttons"/>
+	<bitmap id="wasabi.scrollbar.vertical.left.pressed" file="window/scrollbars.png" x="28" y="0" h="14" w="13" gammagroup="Buttons"/>
+	<bitmap id="wasabi.scrollbar.vertical.right" file="window/scrollbars.png" x="0" y="47" h="14" w="13" gammagroup="Buttons"/>
+	<bitmap id="wasabi.scrollbar.vertical.right.hover" file="window/scrollbars.png" x="14" y="47" h="14" w="13" gammagroup="Buttons"/>
+	<bitmap id="wasabi.scrollbar.vertical.right.pressed" file="window/scrollbars.png" x="28" y="47" h="14" w="13" gammagroup="Buttons"/>
+	<bitmap id="wasabi.scrollbar.vertical.button" file="window/scrollbars.png" x="0" y="15" h="31" w="13" gammagroup="Buttons"/>
+	<bitmap id="wasabi.scrollbar.vertical.button.hover" file="window/scrollbars.png" x="14" y="15" h="31" w="13" gammagroup="Buttons"/>
+	<bitmap id="wasabi.scrollbar.vertical.button.pressed" file="window/scrollbars.png" x="28" y="15" h="31" w="13" gammagroup="Buttons"/>
+	<bitmap id="wasabi.scrollbar.vertical.background.middle" file="window/scrollbars.png" x="42" y="0" w="13" h="61" gammagroup="background"/>
 
 
 </elements>
