@@ -2,14 +2,14 @@
 	<text id="m.st.news" 
 		fitparent="1"
 		visible="0" font="cpro.songname.font"
-		rightclickaction="trackmenu" dblclickaction="trackinfo" align="right"
-		color="Player.SongTicker.Text" fontsize="16" valign="top" antialias="0" 
+		rightclickaction="trackmenu" dblclickaction="trackinfo" align="left"
+		color="Player.SongTicker.Text" fontsize="16" valign="top" antialias="1" 
 	/>
 	<SongTicker id="m.st.ticker" 
 		fitparent="1"
 		showlen="1" font="cpro.songname.font"
-		rightclickaction="trackmenu" dblclickaction="trackinfo" align="right"
-		color="Player.SongTicker.Text" fontsize="16" valign="top" antialias="0" 
+		rightclickaction="trackmenu" dblclickaction="trackinfo" align="left"
+		color="Player.SongTicker.Text" fontsize="16" valign="top" antialias="1" 
 	/>
 	
 	<script file="xui\ModernSongticker\ModernSongticker.maki"/>
