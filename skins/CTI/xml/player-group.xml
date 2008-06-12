@@ -15,7 +15,7 @@
 		bold="2"
 	/>
 
-	<text id="songticker" ticker="1" showlen="1"
+	<!--<text id="songticker" ticker="1" showlen="1"
 		x="8" y="2" h="30" w="-16" relatw="1"
 		rightclickaction="trackmenu" dblclickaction="trackinfo"
 		display="SONGTITLE"
@@ -23,9 +23,22 @@
 		font="Tahoma"
 		fontsize="30"
 		bold="2"
+	/>-->
+	<ModernSongticker
+		x="8" y="2" h="30" w="-16" relatw="1"
+		id_layout="main;normal"
+		id_volume="Volume"
+		id_seeker="Seeker.Ghost"
+		id_prev="player.button.previous"
+		id_next="player.button.next"
+		id_open="open"
+		id_shuf="shuffle"
+		id_rep="repeat"
+		id_mute="mute"
+		color="color.display" fontsize="30" bold="2"
 	/>
 
-	<script file="scripts/songticker.maki" />
+	<!--<script file="scripts/songticker.maki" />-->
 
 	<rect x="98" w="-118" y="44" h="7" relatw="1" color="227,0,0" gammagroup="text" />
 
