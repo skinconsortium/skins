@@ -1,0 +1,172 @@
+<!-- 
+Edited zittware@hotmail.com 1/16/2007 to add "amber" gammas to support G35 project: 
+http://zittware.com/mod/G35_mini
+-->
+
+<gammaset id="Amber | Black (G35) * Day">
+  <gammagroup id="text" value="-2891,-2891,-2891" gray="2" boost="0" />
+  <gammagroup id="background" value="4064,864,-3968" gray="2" boost="1" />
+  <gammagroup id="selected" value="1578,-869,-4096" gray="1" boost="0" />
+  <gammagroup id="current" value="1613,1365,1010" gray="2" boost="1" />
+</gammaset>
+
+<gammaset id="Amber | Black (G35) * Night">
+  <gammagroup id="text" value="3040,160,-4096" gray="2" boost="1" />
+  <gammagroup id="background" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="selected" value="-586,-1791,-4096" gray="1" boost="1" />
+  <gammagroup id="current" value="3040,1755,585" gray="2" boost="1" />
+</gammaset>
+
+<gammaset id="White | Grey * Day">
+  <gammagroup id="text" value="192,-64,-224" gray="2" boost="0" />
+  <gammagroup id="background" value="4096,4096,4096" gray="0" boost="1" />
+  <gammagroup id="selected" value="2074,1861,2287" gray="1" boost="0" />
+  <gammagroup id="current" value="192,-64,-224" gray="2" boost="1" />
+</gammaset>
+
+<gammaset id="White | Grey * Night">
+  <gammagroup id="text" value="2358,2393,2464" gray="2" boost="1" />
+  <gammagroup id="background" value="-940,-976,-940" gray="2" boost="1" />
+  <gammagroup id="selected" value="-4096,-4096,-4096" gray="1" boost="0" />
+  <gammagroup id="current" value="192,-64,-224" gray="2" boost="1" />
+</gammaset>
+
+<gammaset id="Amber | Grey * Day">
+  <gammagroup id="text" value="192, -64, -224" gray="2" boost="0" />
+  <gammagroup id="background" value="4064, 864, -3968" gray="2" boost="1" />
+  <gammagroup id="selected" value="4064,864,-3968" gray="2" boost="1" />
+  <gammagroup id="current" value="3040,1755,585" gray="2" boost="1" />
+</gammaset>
+
+<gammaset id="Amber | Grey * Night">
+  <gammagroup id="text" value="3040,160,-4096" gray="2" boost="1" />
+  <gammagroup id="background" value="-1472,-1543,-1720" gray="1" boost="1" />
+  <gammagroup id="selected" value="-586,-1791,-4096" gray="1" boost="1" />
+  <gammagroup id="current" value="3040,1755,585" gray="2" boost="1" />
+</gammaset>
+
+<gammaset id="Blue | White * Day">
+  <gammagroup id="text" value="-2394,-2323,2961" gray="1" boost="0" />
+  <gammagroup id="background" value="4096,4096,4096" gray="0" boost="1" />
+  <gammagroup id="selected" value="-196,1081,2961" gray="1" boost="0" />
+  <gammagroup id="current" value="-2394,-2323,2961" gray="1" boost="0" />
+</gammaset>
+
+<gammaset id="Blue | White * Night">
+  <gammagroup id="text" value="443,372,407" gray="1" boost="0" />
+  <gammagroup id="background" value="-940,1188,4096" gray="2" boost="1" />
+  <gammagroup id="selected" value="-1118,762,3883" gray="1" boost="0" />
+  <gammagroup id="current" value="-1189,1258,4096" gray="1" boost="0" />
+</gammaset>
+
+<gammaset id="Red | Black * Day">
+  <gammagroup id="text" value="-4096,-4096,-4096" gray="0" boost="0" />
+  <gammagroup id="background" value="4096,-4096,-4096" gray="0" boost="1" />
+  <gammagroup id="selected" value="1790,0,0" gray="0" boost="0" />
+  <gammagroup id="current" value="-1650,-4096,-4096" gray="0" boost="1" />
+</gammaset>
+
+<gammaset id="Red | Black * Night">
+  <gammagroup id="text" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="background" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="selected" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="current" value="0,0,0" gray="0" boost="0" />
+</gammaset>
+
+<gammaset id="Red | White * Day">
+  <gammagroup id="text" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="background" value="4096,4096,4096" gray="0" boost="1" />
+  <gammagroup id="selected" value="4096,2642,2642" gray="0" boost="1" />
+  <gammagroup id="current" value="0,0,0" gray="0" boost="0" />
+</gammaset>
+
+<gammaset id="Red | White * Night">
+  <gammagroup id="text" value="3173,3244,3138" gray="0" boost="1" />
+  <gammagroup id="background" value="3173,-4096,-4061" gray="0" boost="1" />
+  <gammagroup id="selected" value="1258,-1933,-1969" gray="0" boost="1" />
+  <gammagroup id="current" value="-1437,-4096,-4096" gray="0" boost="1" />
+</gammaset>
+
+<gammaset id="Blue | Black * Day">
+  <gammagroup id="text" value="-4096,-4061,-4096" gray="1" boost="0" />
+  <gammagroup id="background" value="-940,1188,4096" gray="2" boost="1" />
+  <gammagroup id="selected" value="-1862,-798,2074" gray="1" boost="0" />
+  <gammagroup id="current" value="-834,-869,-798" gray="1" boost="0" />
+</gammaset>
+
+<gammaset id="Blue | Black * Night">
+  <gammagroup id="text" value="-834,-869,2961" gray="1" boost="0" />
+  <gammagroup id="background" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="selected" value="-834,-869,2961" gray="1" boost="0" />
+  <gammagroup id="current" value="-834,-869,2961" gray="1" boost="0" />
+</gammaset>
+
+<gammaset id="Green | Black * Day">
+  <gammagroup id="text" value="-4096,-4061,-4096" gray="1" boost="0" />
+  <gammagroup id="background" value="336,1188,-1472" gray="2" boost="1" />
+  <gammagroup id="selected" value="-2465,-1118,-2501" gray="1" boost="0" />
+  <gammagroup id="current" value="3812,1188,-2997" gray="2" boost="1" />
+</gammaset>
+
+<gammaset id="Green | Black * Night">
+  <gammagroup id="text" value="336,1188,-1472" gray="2" boost="1" />
+  <gammagroup id="background" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="selected" value="-1401,-798,-1472" gray="2" boost="1" />
+  <gammagroup id="current" value="3812,1188,-2997" gray="2" boost="1" />
+</gammaset>
+
+<gammaset id="Nitrous Audio * Day">
+  <gammagroup id="text" value="-798,-834,-798" gray="0" boost="0" />
+  <gammagroup id="background" value="-621,2925,4096" gray="0" boost="1" />
+  <gammagroup id="selected" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="current" value="0,0,0" gray="0" boost="0" />
+</gammaset>
+
+<gammaset id="Nitrous Audio * Night">
+  <gammagroup id="text" value="-1720,2429,4096" gray="0" boost="1" />
+  <gammagroup id="background" value="-160,-3600,-3742" gray="0" boost="1" />
+  <gammagroup id="selected" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="current" value="0,0,0" gray="0" boost="0" />
+</gammaset>
+
+<gammaset id="Blue Vision * Night">
+  <gammagroup id="text" value="-1720,2429,4096" gray="0" boost="1" />
+  <gammagroup id="background" value="-2394,-1543,-373" gray="0" boost="1" />
+  <gammagroup id="selected" value="-4026,762,2571" gray="0" boost="1" />
+  <gammagroup id="current" value="4096,4096,4096" gray="0" boost="1" />
+</gammaset>
+
+<gammaset id="Blue Vision * Day">
+  <gammagroup id="text" value="-2394,-1543,-373" gray="0" boost="1" />
+  <gammagroup id="background" value="549,2535,3422" gray="0" boost="1" />
+  <gammagroup id="selected" value="-4026,762,2571" gray="0" boost="1" />
+  <gammagroup id="current" value="4096,4096,4096" gray="0" boost="1" />
+</gammaset>
+
+<gammaset id="Army * Night">
+  <gammagroup id="text" value="336,1188,-1472" gray="2" boost="1" />
+  <gammagroup id="background" value="-408,-2288,-3671" gray="0" boost="1" />
+  <gammagroup id="selected" value="-1401,-798,-1472" gray="2" boost="1" />
+  <gammagroup id="current" value="3812,1188,-2997" gray="2" boost="1" />
+</gammaset>
+
+<gammaset id="Army * Day">
+  <gammagroup id="text" value="-940,-2288,-3671" gray="0" boost="1" />
+  <gammagroup id="background" value="2003,1294,-1472" gray="2" boost="1" />
+  <gammagroup id="selected" value="-2465,-1118,-2501" gray="1" boost="0" />
+  <gammagroup id="current" value="3812,1188,-2997" gray="2" boost="1" />
+</gammaset>
+
+<gammaset id="Sexy Jeans * Day">
+  <gammagroup id="text" value="-2394,-1543,-373" gray="0" boost="1" />
+  <gammagroup id="background" value="4096,2110,-4096" gray="2" boost="1" />
+  <gammagroup id="selected" value="4096,1649,-4096" gray="2" boost="1" />
+  <gammagroup id="current" value="4096,4096,4096" gray="0" boost="1" />
+</gammaset>
+
+<gammaset id="Sexy Jeans * Night">
+  <gammagroup id="text" value="4096,1436,-4096" gray="2" boost="1" />
+  <gammagroup id="background" value="-2394,-1543,-727" gray="0" boost="1" />
+  <gammagroup id="selected" value="-4026,0,1471" gray="0" boost="1" />
+  <gammagroup id="current" value="4096,4096,4096" gray="0" boost="1" />
+</gammaset>

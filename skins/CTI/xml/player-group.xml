@@ -1,0 +1,686 @@
+<groupdef id="player.songticker" >
+
+	<grid fitparent="1" 
+		left="player.songticker.bg.l"
+		right="player.songticker.bg.r"
+		middle="player.songticker.bg.c"
+	/>
+
+	<text id="time"
+		x="8" y="30" h="32" w="80"
+		display="TIME"
+		color="color.display"
+		font="Tahoma"
+		fontsize="30"
+		bold="2"
+	/>
+
+	<text id="songticker" ticker="1" showlen="1"
+		x="8" y="2" h="30" w="-16" relatw="1"
+		rightclickaction="trackmenu" dblclickaction="trackinfo"
+		display="SONGTITLE"
+		color="color.display"
+		font="Tahoma"
+		fontsize="30"
+		bold="2"
+	/>
+
+	<script file="scripts/songticker.maki" />
+
+	<rect x="98" w="-118" y="44" h="7" relatw="1" color="227,0,0" gammagroup="text" />
+
+	<ProgressGrid  x="99" w="-120" y="45" h="5" relatw="1"  middle="seek.fill" alpha="120"/>
+
+	<Slider
+		id="Seeker"
+		action="SEEK"
+		x="95" w="-112" y="37" h="21" relatw="1"
+		thumb="seek.button"
+		alpha="160" ghost="1"
+	/>
+
+	<Slider
+		id="Seeker.Ghost"
+		action="SEEK"
+		x="95" w="-112" y="37" h="21" relatw="1"
+		thumb="seek.button"
+	/>
+
+	<script file="scripts/seek.maki"/>
+
+</groupdef>
+
+<groupdef id="player.cbuttons" >
+
+	<button id="play" x="146" y="0" image="player.cbuttons.play" downimage="player.cbuttons.play.d" visible="0" action="PLAY"/>
+	<button id="pause" x="146" y="0" image="player.cbuttons.pause" downimage="player.cbuttons.pause.d" visible="1" action="PAUSE"/>
+	<button id="open" x="0" y="0" image="player.cbuttons.open" downimage="player.cbuttons.open.d" visible="1" action="EJECT"/>
+	<button id="stop" x="291" y="0" image="player.cbuttons.stop" downimage="player.cbuttons.stop.d" visible="1" action="STOP"/>
+
+</groupdef>
+
+<groupdef id="player.volume" >
+
+	<button id="vol.up" x="0" y="0" image="player.volume.up" downimage="player.volume.up.d" />
+	<togglebutton id="vol.mute" x="0" y="104" image="player.volume.mute" downimage="player.volume.mute.d" activeimage="player.volume.mute.a"/>
+	<button id="vol.down" x="0" y="155" image="player.volume.down" downimage="player.volume.down.d" />
+
+	<script file="scripts/mute.maki" />
+
+</groupdef>
+
+<groupdef id="player.playmode" >
+
+	<NStatesButton
+		id="repeat"
+		x="0" y="0" relatx="0"
+		image="player.mode.repeat"
+		hoverimage="player.mode.repeat"
+		downimage="player.mode.repeat.d"
+		extendedSongtickerMessage="Repeat: Playlist;Repeat: Track;Repeat: Off"
+		rectrgn="0" nstates="3"
+		cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Repeat"
+		cfgvals="0;1;-1"
+	/>
+	<NStatesButton
+		id="shuffle"
+		x="0" y="155" relatx="0"
+		image="player.mode.shuffle"
+		hoverimage="player.mode.shuffle"
+		downimage="player.mode.shuffle.d"
+		extendedSongtickerMessage="Repeat: Playlist;Repeat: Track;Repeat: Off"
+		rectrgn="0" nstates="2"
+		cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Shuffle"
+		cfgvals="0;1"
+	/>
+
+</groupdef>
+
+<groupdef id="player.modeselect" >
+
+	<button id="sel.pl" x="0" y="0" image="player.modesel.playlist" downimage="player.modesel.playlist.d" />
+	<button id="sel.ml" x="283" y="0" image="player.modesel.library"  downimage="player.modesel.library.d" />
+	<button id="sel.vis" x="0" y="153" image="player.modesel.vidvis"  downimage="player.modesel.vidvis.d" />
+	<button id="sel.cf" x="283" y="153" image="player.modesel.config"  downimage="player.modesel.config.d" />
+	<button id="sel.aa" x="0" y="0" image="player.modesel.albumart"  downimage="player.modesel.albumart.d" />
+
+</groupdef>
+
+<groupdef id="player.albumart" >
+
+	<grid fitparent="1"
+		topleft="player.frame.topleft"
+		topright="player.frame.topright"
+		top="player.frame.top"
+		left="player.frame.left"
+		right="player.frame.right"
+		bottomleft="player.frame.bottomleft"
+		bottomright="player.frame.bottomright"
+		bottom="player.frame.bottom"
+	/>
+
+	<SC:NowPlaying id="vis.group" y="40" h="-80" x="50" w="-100" relath="1" relatw="1" dropshadowcdcase="1" reflectionheightpercentage="70"/>	
+
+</groupdef>
+
+<groupdef id="player.playlist" >
+
+	<grid fitparent="1"
+		topleft="player.frame.topleft"
+		topright="player.frame.topright"
+		top="player.frame.top"
+		left="player.frame.left"
+		right="player.frame.right"
+		bottomleft="player.frame.bottomleft"
+		bottomright="player.frame.bottomright"
+		bottom="player.frame.bottom"
+	/>
+
+	<windowholder y="50" h="-130" x="50" w="-100" relath="1" relatw="1" autofocus="0" wantfocus="0" autoclose="1" autoopen="1" autoavailable="1" visible="1" hold="guid:{45f3f7c1-a6f3-4ee6-a15e-125e92fc3f8d}"/>
+
+	<wasabi:button y="50" h="-130" x="50" w="-100" relath="1" relatw="1" text="Push if Playlist isn't visible!" action="TOGGLE" param="guid:{45f3f7c1-a6f3-4ee6-a15e-125e92fc3f8d}" />
+
+	<Wasabi:Button y="-80" relaty="1" h="30" x="50" relatx="0" w="50" action="PE_Add"
+    text="ADD" />
+
+	<Wasabi:Button y="-80" relaty="1" h="30" x="100" relatx="0" w="50" action="PE_Rem"
+    text="REM" />
+
+	<Wasabi:Button y="-80" relaty="1" h="30" x="150" relatx="0" w="50" action="PE_Sel"
+    text="SEL" />
+
+	<Wasabi:Button y="-80" relaty="1" h="30" x="200" relatx="0" w="50" action="PE_Misc"
+    text="MISC" />
+
+	<rect y="-80" h="30" x="250" relatw="1" w="-350" relaty="1" color="color.display" />
+
+	<text id="info" display="PE_Info"
+		y="-80" h="30" x="255" relatw="1" w="-360" relaty="1"
+		color="color.display"
+		font="Tahoma" align="center"
+		fontsize="18"
+		bold="1"
+	/>
+
+	<Wasabi:Button y="-80" relaty="1" h="30" x="-100" relatx="1" w="50" action="PE_List"
+    text="LIST" />
+
+</groupdef>
+
+<groupdef id="player.library" >
+
+	<grid fitparent="1"
+		topleft="player.frame.topleft"
+		topright="player.frame.topright"
+		top="player.frame.top"
+		left="player.frame.left"
+		right="player.frame.right"
+		bottomleft="player.frame.bottomleft"
+		bottomright="player.frame.bottomright"
+		bottom="player.frame.bottom"
+	/>
+
+	<windowholder y="50" h="-100" x="50" w="-100" relath="1" relatw="1" autofocus="0" wantfocus="0" autoclose="1" autoopen="1" autoavailable="1" visible="1" hold="guid:{6B0EDF80-C9A5-11D3-9F26-00C04F39FFC6}"/>
+
+	<wasabi:button y="50" h="-100" x="50" w="-100" relath="1" relatw="1" text="Push if Library isn't visible!" action="TOGGLE" param="guid:{6B0EDF80-C9A5-11D3-9F26-00C04F39FFC6}" />
+
+</groupdef>
+
+<groupdef id="vis.group" >
+
+	<vis id="main.vis1"
+		x="0" y="0" h="50" w="0" relatw="1" relath="%"
+		colorbandpeak="200,0,0"
+		colorosc1="200,0,0"
+		colorosc2="170,0,0"
+		colorosc3="150,0,0"
+		colorosc4="130,0,0"
+		colorosc5="120,0,0"
+		visible="1"
+		gammagroup="text"
+	/>
+
+	<vis id="main.vis2"
+		x="0" relaty="%" y="50" h="50" w="0" relatw="1" relath="%"
+		colorbandpeak="200,0,0"
+		colorosc1="200,0,0"
+		colorosc2="170,0,0"
+		colorosc3="150,0,0"
+		colorosc4="130,0,0"
+		colorosc5="120,0,0"
+		visible="1"
+		flipv="1"
+		gammagroup="text"
+	/>
+
+	<layer
+		id="main.vis.over"
+		image="player.visover"
+		rectrgn="1"
+	/>
+
+	<script file="scripts/visualizer2.maki" param="0,0,0;200,0,0;200,0,0" />
+
+</groupdef>
+
+<groupdef id="player.vis" >
+
+	<grid fitparent="1"
+		topleft="player.frame.topleft"
+		topright="player.frame.topright"
+		top="player.frame.top"
+		left="player.frame.left"
+		right="player.frame.right"
+		bottomleft="player.frame.bottomleft"
+		bottomright="player.frame.bottomright"
+		bottom="player.frame.bottom"
+	/>
+
+	<group id="vis.group" y="40" h="-120" x="50" w="-100" relath="1" relatw="1"/>	
+
+	<Button id="s.vid" y="-60" x="100" relaty="1" image="player.switch.video" downimage="player.switch.video.d" />
+	<Button id="s.avs" y="-60" x="-246" relaty="1" relatx="1" image="player.switch.avs" downimage="player.switch.avs.d" />
+
+</groupdef>
+
+<groupdef id="player.vid" >
+
+	<grid fitparent="1"
+		topleft="player.frame.topleft"
+		topright="player.frame.topright"
+		top="player.frame.top"
+		left="player.frame.left"
+		right="player.frame.right"
+		bottomleft="player.frame.bottomleft"
+		bottomright="player.frame.bottomright"
+		bottom="player.frame.bottom"
+	/>
+
+	<windowholder y="50" h="-150" x="50" w="-100" relath="1" relatw="1" autofocus="0" wantfocus="0" autoclose="1" autoopen="1" autoavailable="1" visible="1" hold="guid:{F0816D7B-FFFC-4343-80F2-E8199AA15CC3}"/>
+
+	<wasabi:button y="50" h="-150" x="50" w="-100" relath="1" relatw="1" text="Push if Video isn't visible!" action="TOGGLE" param="guid:{F0816D7B-FFFC-4343-80F2-E8199AA15CC3}" />
+
+
+	<Wasabi:Button y="-100" relaty="1" h="30" x="50" relatx="0" w="50" action="VID_FS"
+    text="FULL" />
+
+	<rect y="-100" h="30" x="100" relatw="1" w="-200" relaty="1" color="color.display" />
+
+	<text id="info" display="VID_Info"
+		y="-105" h="30" x="105" relatw="1" w="-210" relaty="1"
+		color="color.display"
+		font="Tahoma" align="center"
+		fontsize="18"
+		bold="1"
+	/>
+
+	<Wasabi:Button y="-100" relaty="1" h="30" x="-100" relatx="1" w="50" action="VID_Misc"
+    text="OPT" />
+
+
+	<Button id="s.vis" y="-60" x="100" relaty="1" image="player.switch.vis" downimage="player.switch.vis.d" />
+	<Button id="s.avs" y="-60" x="-246" relaty="1" relatx="1" image="player.switch.avs" downimage="player.switch.avs.d" />
+
+</groupdef>
+
+<groupdef id="player.avs" >
+
+	<grid fitparent="1"
+		topleft="player.frame.topleft"
+		topright="player.frame.topright"
+		top="player.frame.top"
+		left="player.frame.left"
+		right="player.frame.right"
+		bottomleft="player.frame.bottomleft"
+		bottomright="player.frame.bottomright"
+		bottom="player.frame.bottom"
+	/>
+
+	<windowholder y="50" h="-150" x="50" w="-100" relath="1" relatw="1" autofocus="0" wantfocus="0" autoclose="1" autoopen="1" autoavailable="1" visible="1" hold="guid:{0000000A-000C-0010-FF7B-01014263450C}"/>
+
+	<wasabi:button y="50" h="-150" x="50" w="-100" relath="1" relatw="1" text="Push if AVS isn't visible!" action="TOGGLE" param="guid:{0000000A-000C-0010-FF7B-01014263450C}" />
+
+	<Wasabi:Button y="-100" relaty="1" h="30" x="50" relatx="0" w="50" action="VIS_FS"
+    text="FULL" />
+
+	<Wasabi:Button y="-100" relaty="1" h="30" x="100" relatx="0" w="50" action="VIS_Prev"
+    image="player.vis.prev" center_image="1"/>
+
+	<Wasabi:Button y="-100" relaty="1" h="30" x="150" relatx="0" w="50" action="VIS_Next"
+    image="player.vis.next" center_image="1" />
+
+	<Wasabi:ToggleButton y="-100" relaty="1" h="30" x="200" relatx="0" w="50"
+    cfgattrib="{0000000A-000C-0010-FF7B-01014263450C};Random" activeimage="player.vis.rnd.on" image="player.vis.rnd.off" center_image="1"/>
+
+	<rect y="-100" h="30" x="250" relatw="1" w="-350" relaty="1" color="color.display" />
+
+
+	<Wasabi:Button y="-100" relaty="1" h="30" x="-100" relatx="1" w="50" action="Vis_Menu"
+    text="OPT" />
+
+	<Button id="s.vid" y="-60" x="100" relaty="1" image="player.switch.video" downimage="player.switch.video.d" />
+	<Button id="s.vis" y="-60" x="-246" relaty="1" relatx="1" image="player.switch.vis" downimage="player.switch.vis.d" />
+
+</groupdef>
+
+<groupdef id="player.config.themes" >
+
+	<layer image="player.cfbg" move="0"/>
+
+	<Colorthemes:list id="colorthemes" y="50" h="-100" x="75" w="-310" relath="1" relatw="1" nohscroll="1" nocolheader="1" />
+
+	<Wasabi:Button y="50" relaty="0" h="30" x="-220" relatx="1" w="50" action="colorthemes_previous"
+    action_target="colorthemes" id="cthemes.previous" text="Prev" />
+
+	<Wasabi:Button y="50" relaty="0" h="30" x="-120" relatx="1" w="50" action="colorthemes_next"
+    action_target="colorthemes" id="cthemes.next" text="Next" />
+
+	<Wasabi:Button y="50" relaty="0" h="30" x="-170" relatx="1" w="50" action="colorthemes_switch"
+    action_target="colorthemes" id="cthemes.switch" text="OK" />
+
+	<text id="info"
+		y="80" h="30" x="-220" relatx="1" w="165"
+		text="Auto Switch on Daytime"
+		color="color.display"
+		font="Tahoma"
+		fontsize="16"
+		bold="2"
+	/>
+
+	<Wasabi:Button id="cthemes.autoswitch" y="110" relaty="0" h="30" x="-170" relatx="1" w="50" action="ct.autoswitch" param="toggle" action_target="player.config" text="ON" />
+
+	<text id="info"
+		y="140" h="30" x="-220" relatx="1" w="165"
+		text="Night begins at:"
+		color="color.display"
+		font="Tahoma"
+		fontsize="16"
+		bold="2"
+	/>
+
+	<Wasabi:Button id="cthemes.autoswitch" y="165" relaty="0" h="20" x="-220" relatx="1" w="55" action="ct.autoswitch" param="n.down" action_target="player.config" text="DOWN" />
+	<Wasabi:Button id="cthemes.autoswitch" y="165" relaty="0" h="20" x="-125" relatx="1" w="55" action="ct.autoswitch" param="n.up" action_target="player.config" text="UP" />
+
+	<text id="info.night"
+		y="160" h="30" x="-170" relatx="1" w="50"
+		text="10 PM"
+		color="color.display"
+		font="Tahoma"
+		fontsize="16"
+		bold="2"
+		align="center"
+	/>
+
+	<text id="info"
+		y="185" h="30" x="-220" relatx="1" w="165"
+		text="Day begins at:"
+		color="color.display"
+		font="Tahoma"
+		fontsize="16"
+		bold="2"
+	/>
+
+	<Wasabi:Button id="cthemes.autoswitch" y="210" relaty="0" h="20" x="-220" relatx="1" w="55" action="ct.autoswitch" param="d.down" action_target="player.config" text="DOWN" />
+	<Wasabi:Button id="cthemes.autoswitch" y="210" relaty="0" h="20" x="-125" relatx="1" w="55" action="ct.autoswitch" param="d.up" action_target="player.config" text="UP" />
+
+	<text id="info.day"
+		y="205" h="30" x="-170" relatx="1" w="50"
+		text="8 AM"
+		color="color.display"
+		font="Tahoma"
+		fontsize="16"
+		bold="2"
+		align="center"
+	/>
+
+</groupdef>
+
+<groupdef id="eqslider" xuitag="SC:EqBand" embed_xui="">
+	<layer image="player.eq.div" x="0" y="0" ghost="1"/>
+	<script file="scripts/eq-slider.maki"/>
+</groupdef>
+
+<groupdef id="player.config.eq">
+
+	<layer image="player.cfbg" move="0"/>
+
+	<slider
+		  id="preamp"
+		  action="EQ_BAND" param="preamp"
+		  x="76" y="50"
+		  w="26" h="206"
+		  orientation="vertical"
+		  thumb="player.eq.slider"
+	/>
+	<SC:EqBand id="band.preamp" link="preamp" x="75" y="50" h="206" w="27" ghost="1" songtickercontainer="main;normal"/>
+	<layer image="player.eq.div" x="102" y="50" ghost="1"/>
+
+	<slider
+		  id="eq1"
+		  action="EQ_BAND" param="1"
+		  x="121" y="50"
+		  w="26" h="206"
+		  orientation="vertical"
+		  thumb="player.eq.slider"
+	/>
+	<SC:EqBand id="band.1" link="eq1" x="120" y="50" h="206" w="27" ghost="1" songtickercontainer="main;normal"/>
+
+	<slider
+		  id="eq2"
+		  action="EQ_BAND" param="2"
+		  x="148" y="50"
+		  w="26" h="206"
+		  orientation="vertical"
+		  thumb="player.eq.slider"
+	/>
+	<SC:EqBand id="band.2" link="eq2" x="147" y="50" h="206" w="27" ghost="1" songtickercontainer="main;normal"/>
+
+	<slider
+		  id="eq3"
+		  action="EQ_BAND" param="3"
+		  x="175" y="50"
+		  w="26" h="206"
+		  orientation="vertical"
+		  thumb="player.eq.slider"
+	/>
+	<SC:EqBand id="band.3" link="eq3" x="174" y="50" h="206" w="27" ghost="1" songtickercontainer="main;normal"/>
+
+	<slider
+		  id="eq4"
+		  action="EQ_BAND" param="4"
+		  x="202" y="50"
+		  w="26" h="206"
+		  orientation="vertical"
+		  thumb="player.eq.slider"
+	/>
+	<SC:EqBand id="band.4" link="eq4" x="201" y="50" h="206" w="27" ghost="1" songtickercontainer="main;normal"/>
+
+	<slider
+		  id="eq5"
+		  action="EQ_BAND" param="5"
+		  x="229" y="50"
+		  w="26" h="206"
+		  orientation="vertical"
+		  thumb="player.eq.slider"
+	/>
+	<SC:EqBand id="band.5" link="eq5" x="228" y="50" h="206" w="27" ghost="1" songtickercontainer="main;normal"/>
+
+	<slider
+		  id="eq6"
+		  action="EQ_BAND" param="6"
+		  x="256" y="50"
+		  w="26" h="206"
+		  orientation="vertical"
+		  thumb="player.eq.slider"
+	/>
+	<SC:EqBand id="band.6" link="eq6" x="255" y="50" h="206" w="27" ghost="1" songtickercontainer="main;normal"/>
+
+	<slider
+		  id="eq7"
+		  action="EQ_BAND" param="7"
+		  x="283" y="50"
+		  w="26" h="206"
+		  orientation="vertical"
+		  thumb="player.eq.slider"
+	/>
+	<SC:EqBand id="band.7" link="eq7" x="282" y="50" h="206" w="27" ghost="1" songtickercontainer="main;normal"/>
+
+	<slider
+		  id="eq8"
+		  action="EQ_BAND" param="8"
+		  x="310" y="50"
+		  w="26" h="206"
+		  orientation="vertical"
+		  thumb="player.eq.slider"
+	/>
+	<SC:EqBand id="band.8" link="eq8" x="309" y="50" h="206" w="27" ghost="1" songtickercontainer="main;normal"/>
+
+	<slider
+		  id="eq9"
+		  action="EQ_BAND" param="9"
+		  x="337" y="50"
+		  w="26" h="206"
+		  orientation="vertical"
+		  thumb="player.eq.slider"
+	/>
+	<SC:EqBand id="band.9" link="eq9" x="336" y="50" h="206" w="27" ghost="1" songtickercontainer="main;normal"/>
+
+	<slider
+		  id="eq10"
+		  action="EQ_BAND" param="10"
+		  x="364" y="50"
+		  w="26" h="206"
+		  orientation="vertical"
+		  thumb="player.eq.slider"
+	/>
+	<SC:EqBand id="band.10" link="eq10" x="363" y="50" h="206" w="27" ghost="1" songtickercontainer="main;normal"/>
+	<layer image="player.eq.div" x="390" y="50" ghost="1"/>
+
+	<Wasabi:ToggleButton y="50" relaty="0" h="30" x="-165" relatx="1" w="40" action="EQ_TOGGLE" activeimage="player.eq.toggle.on" image="player.eq.toggle.off" center_image="1" />
+
+	<Wasabi:ToggleButton y="50" relaty="0" h="30" x="-125" relatx="1" w="60" action="EQ_AUTO" activeimage="player.eq.attoggle.on" image="player.eq.attoggle.off" center_image="1" />
+
+	<Wasabi:Button y="85" relaty="0" h="30" x="-165" relatx="1" w="100" action="MENU" param="presets" text="PRESETS"/>
+
+	<Wasabi:Button y="120" relaty="0" h="20" x="-165" relatx="1" w="100" action="seteq" action_target="player.config" param="normal" text="Normal"/>
+	<Wasabi:Button y="140" relaty="0" h="20" x="-165" relatx="1" w="100" action="seteq" action_target="player.config" param="rock" text="Rock"/>
+	<Wasabi:Button y="160" relaty="0" h="20" x="-165" relatx="1" w="100" action="seteq" action_target="player.config" param="pop" text="Pop"/>
+	<Wasabi:Button y="180" relaty="0" h="20" x="-165" relatx="1" w="100" action="seteq" action_target="player.config" param="bass" text="Bass"/>
+	<Wasabi:Button y="200" relaty="0" h="20" x="-165" relatx="1" w="100" action="seteq" action_target="player.config" param="soft" text="Soft"/>
+	<Wasabi:Button y="220" relaty="0" h="20" x="-165" relatx="1" w="100" action="seteq" action_target="player.config" param="techno" text="Techno"/>
+	<Wasabi:Button y="240" relaty="0" h="20" x="-165" relatx="1" w="100" action="seteq" action_target="player.config" param="country" text="Country"/>
+
+</groupdef>
+
+<groupdef id="player.config.vol">
+
+	<layer image="player.cfbg" move="0"/>
+
+	<text
+		y="50" h="30" x="75"
+		text="Muting Mode:"
+		color="color.display"
+		font="Tahoma"
+		fontsize="20"
+		bold="2"
+		align="center"
+	/>
+
+	<Wasabi:Button id="volume.mutemode" y="50" relaty="75" h="30" x="200" w="150" action="volume" action_target="player.config" param="mutemode" text="Mute"/>
+
+	<text
+		y="90" h="30" x="75"
+		text="Volume In-/Decrease Rate:"
+		color="color.display"
+		font="Tahoma"
+		fontsize="20"
+		bold="2"
+		align="center"
+	/>
+
+	<Wasabi:Button id="volume.1" y="125" h="30" x="75" w="50" action="volume" action_target="player.config" param="1" text="1 %"/>
+
+	<Wasabi:Button id="volume.2" y="125" h="30" x="130" w="50" action="volume" action_target="player.config" param="2" text="2 %"/>
+
+	<Wasabi:Button id="volume.5" y="125" h="30" x="185" w="50" action="volume" action_target="player.config" param="5" text="5 %"/>
+
+	<Wasabi:Button id="volume.7" y="125" h="30" x="240" w="50" action="volume" action_target="player.config" param="7" text="7 %"/>
+
+	<Wasabi:Button id="volume.10" y="125" h="30" x="295" w="50" action="volume" action_target="player.config" param="10" text="10 %"/>
+
+	<Wasabi:Button id="volume.15" y="125" h="30" x="350" w="50" action="volume" action_target="player.config" param="15" text="15 %"/>
+
+	<Wasabi:Button id="volume.20" y="125" h="30" x="405" w="50" action="volume" action_target="player.config" param="20" text="20 %"/>
+
+	<text
+		y="165" h="30" x="75"
+		text="Crossfader"
+		color="color.display"
+		font="Tahoma"
+		fontsize="20"
+		bold="2"
+		align="center"
+	/>
+
+	<Wasabi:ToggleButton id="xfade.tg" y="199" h="30" x="75" w="50" image="player.xfade.off" center_image="1" activeimage="player.xfade.on" cfgattrib="{FC3EAF78-C66E-4ED2-A0AA-1494DFCC13FF};Enable crossfading"/>
+
+	<slider
+		id="eq10"
+		cfgattrib="{F1239F09-8CC6-4081-8519-C2AE99FCB14C};Crossfade time"
+		high="20"
+		x="140" y="200"
+		h="26" w="206"
+		thumb="player.xfade.slider"
+	/>
+	<layer x="139" y="199" w="206" h="28" image="player.xfade.bg" ghost="1" move="0"/>
+
+	<text
+		y="200" h="30" x="350"  w="100" id="xfade.time"
+		text=""
+		color="color.display"
+		font="Tahoma"
+		fontsize="20"
+		bold="2"
+		align="center"
+	/>
+
+</groupdef>
+
+<groupdef id="player.config.misc">
+
+	<layer image="player.cfbg" move="0"/>
+
+	<text
+		y="50" h="30" x="75"
+		text="Stretch Mode:"
+		color="color.display"
+		font="Tahoma"
+		fontsize="20"
+		bold="2"
+		align="center"
+	/>
+
+	<Wasabi:Button id="monitor.mode" y="50" relaty="75" h="30" x="200" w="150" action="monitormode" action_target="player.config" text="Monitor"/>
+
+
+	<text
+		y="90" h="30" x="75"
+		text="Forward/Reward (sec per delay):"
+		color="color.display"
+		font="Tahoma"
+		fontsize="20"
+		bold="2"
+		align="center"
+	/>
+
+	<Wasabi:Button id="seek.1" y="125" h="30" x="75" w="50" action="seek" action_target="player.config" param="1" text="1"/>
+
+	<Wasabi:Button id="seek.2" y="125" h="30" x="130" w="50" action="seek" action_target="player.config" param="2" text="2"/>
+
+	<Wasabi:Button id="seek.5" y="125" h="30" x="185" w="50" action="seek" action_target="player.config" param="5" text="5"/>
+
+	<Wasabi:Button id="seek.7" y="125" h="30" x="240" w="50" action="seek" action_target="player.config" param="7" text="7"/>
+
+	<Wasabi:Button id="seek.10" y="125" h="30" x="295" w="50" action="seek" action_target="player.config" param="10" text="10"/>
+
+	<Wasabi:Button id="seek.15" y="125" h="30" x="350" w="50" action="seek" action_target="player.config" param="15" text="15"/>
+
+	<Wasabi:Button id="seek.20" y="125" h="30" x="405" w="50" action="seek" action_target="player.config" param="20" text="20"/>
+
+	<Wasabi:Button id="seek.1" y="170" h="30" x="75" w="170" action="TOGGLE" param="guid:{B397A4CE-455A-4D62-8BF6-D0F91ACB70E6}" text="Winamp Preferences"/>
+
+
+	<text
+		y="215" h="30" x="75"
+		text="Click on Vis:"
+		color="color.display"
+		font="Tahoma"
+		fontsize="20"
+		bold="2"
+		align="center"
+	/>
+
+	<Wasabi:Button id="vis.lclick" y="215" relaty="75" h="30" x="200" w="150" action="visualizer" action_target="player.config" param="lclick" text="Next Preset"/>
+
+</groupdef>
+
+<groupdef id="player.config.sel" >
+
+	<button id="sel.1" x="0" y="0" image="player.omodesel.1" downimage="player.omodesel.1.d" action="switchto" param="themes" action_target="player.config"/>
+	<button id="sel.2" x="283" y="0" image="player.omodesel.2"  downimage="player.omodesel.2.d" action="switchto" param="vol" action_target="player.config"/>
+	<button id="sel.3" x="0" y="153" image="player.omodesel.3"  downimage="player.omodesel.3.d" action="switchto" param="eq" action_target="player.config" />
+	<button id="sel.4" x="283" y="153" image="player.omodesel.4"  downimage="player.omodesel.4.d" action="switchto" param="misc" action_target="player.config" />
+
+</groupdef>
+
+<groupdef id="player.config" >
+
+	<group id="player.config.sel" fitparent="1"/>
+	<group id="player.config.themes" fitparent="1" visible="0"/>
+	<group id="player.config.eq" fitparent="1" visible="0"/>
+	<group id="player.config.vol" fitparent="1" visible="0"/>
+	<group id="player.config.misc" fitparent="1" visible="0"/>
+
+	<CustomObject id="player.config.holder" groupid="player.config.sel" fitparent="1"/>
+
+</groupdef>
