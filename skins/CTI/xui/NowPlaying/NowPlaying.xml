@@ -1,8 +1,8 @@
 <elements>
-	<bitmap id="sc.cdbox.bg" file="NowPlaying\cdbox-bg_drop.png"/>
-	<bitmap id="sc.cdbox.fg" file="NowPlaying\cdbox-fg.png"/>
-	<bitmap id="sc.cdbox.bg.ref" file="NowPlaying\cdbox-bg-reflection.png"/>
-	<bitmap id="sc.cdbox.ref" file="NowPlaying\blank.png"/>
+	<bitmap id="sc.cdbox.bg" file="xui\NowPlaying\cdbox-bg_drop.png"/>
+	<bitmap id="sc.cdbox.fg" file="xui\NowPlaying\cdbox-fg.png"/>
+	<bitmap id="sc.cdbox.bg.ref" file="xui\NowPlaying\cdbox-bg-reflection.png"/>
+	<bitmap id="sc.cdbox.ref" file="xui\NowPlaying\blank.png"/>
 </elements>
 
 <groupdef id="sc.nowplaying.ratings">
@@ -17,7 +17,7 @@
 	<button id="rate.4" x="60" y="0" w="21" h="0" relatx="2" relatw="2" relath="1" rectrgn="1" cursor="IDC_HAND"/>
 	<button id="rate.5" x="80" y="0" w="21" h="0" relatx="2" relatw="2" relath="1" rectrgn="1" cursor="IDC_HAND"/>
 
-	<script file="NowPlaying\ratings.maki"/>
+	<script file="xui\NowPlaying\ratings.maki"/>
 </groupdef>
 
 
@@ -33,8 +33,8 @@
 <group id="sc.nowplaying.ratings" x="0" y="70" w="68" h="28"/>
 
 
-	<script file="NowPlaying\NowPlaying.maki"/>
-	<script file="NowPlaying\albumart.maki"/>
+	<script file="xui\NowPlaying\NowPlaying.maki"/>
+	<script file="xui\NowPlaying\albumart.maki"/>
 </groupdef>
 
 <groupdef id="sc.nowplaying.cdbox.holder.top">
