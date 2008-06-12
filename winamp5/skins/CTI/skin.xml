@@ -19,8 +19,7 @@
 
 	<include file="about/about.xml"/>
 	<include file="xml/system-colors.xml"/>
-	<include file="FadeText/FadeText.xml"/>
-	<include file="NowPlaying/NowPlaying.xml"/> 
+	<include file="xui/xui-files.xml"/>
 	<include file="xml/player.xml"/>
 	<include file="xml/gamma-presets.xml"/>
 	<include file="xml/system-elements.xml"/>

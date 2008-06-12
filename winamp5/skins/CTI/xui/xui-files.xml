@@ -1,0 +1,3 @@
+<include file="ModernSongticker/ModernSongticker.xml"/>
+<include file="FadeText/FadeText.xml"/>
+<include file="NowPlaying/NowPlaying.xml"/> 

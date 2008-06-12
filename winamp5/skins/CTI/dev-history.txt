@@ -1,0 +1,6 @@
+-------------------------------
+12-JUN-2008
+
+==pjn123==
+- Added this doc
+- Moved all xui's into the xui directory and change the script path for fade text because it was pointing to cpro. 
