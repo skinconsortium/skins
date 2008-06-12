@@ -81,7 +81,7 @@ Global GuiObject g_modesel, g_cbuttons, g_volume, g_pmode;
 Global Button b_play, b_pause, b_back, b_min, sel_pl, sel_ml, sel_vis, sel_cf, sel_aa;
 Global InfoButton b_repeat, b_shuffle;
 Global AutoRepeatButton arb_volup, arb_voldown, arp_fwd, arp_rwd;
-Global text SongTicker;
+Global GuiObject SongTicker;
 Global group g_pl, g_ml, g_vis, g_config, g_vid, g_avs, g_aa;
 Global button s_vis, s_vid, s_avs, s_vis2, s_avs2, s_vid2;
 Global Button ct_next, ct_prev;
@@ -680,7 +680,7 @@ arb_voldown.onLeftClick ()
 	}	
 }
 
-System.onvolumechanged(int newvol)
+/*System.onvolumechanged(int newvol)
 {
 	if (getPrivateInt(getSkinNAme(), "muted", 0)) return;
 	SongTicker.sendAction
@@ -689,7 +689,7 @@ System.onvolumechanged(int newvol)
 			"Volume:" + System.integerToString(newvol/2.55) + " %",
 			0, 0, 0, 0
 	);
-}
+}*/
 
 /*---------------------------------------------------
 	Seek Handles
@@ -753,7 +753,7 @@ arp_rwd.onLeftButtonUp (int x, int y)
 }
 
 
-System.onSeek (int newpos)
+/*System.onSeek (int newpos)
 {
 	Int f;
 	int len = getPlayItemLength();
@@ -767,7 +767,7 @@ System.onSeek (int newpos)
 			0, 0, 0, 0
 		);
 	}
-}
+}*/
 
 
 /*---------------------------------------------------
@@ -858,9 +858,9 @@ setDTtxt ()
 	Info Messages from Buttons
 ---------------------------------------------------*/
 
-InfoButton.onLeftClick ()
+/*InfoButton.onLeftClick ()
 {
-	/*if (InfoButton == b_crossfade)
+	if (InfoButton == b_crossfade)
 	{
 		if (getCurCfgVal() == 1)
 		{
@@ -871,7 +871,7 @@ InfoButton.onLeftClick ()
 			SongTicker.sendAction("showinfo", "Crossfade: Off", 0, 0, 0, 0);
 		}
 	}
-	else */if (InfoButton == b_shuffle)
+	else if (InfoButton == b_shuffle)
 	{
 		if (getCurCfgVal() == 1)
 		{
@@ -898,7 +898,7 @@ InfoButton.onLeftClick ()
 		}
 	}
 }
-
+*/
 crossfade_time_attrib.onDataChanged ()
 {
 	t_cftime.setText(getData() + " sec");
