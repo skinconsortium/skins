@@ -16,8 +16,8 @@
 ;General
 
   ;Name and file
-  Name "ClassicPro© v1.03"
-  OutFile "ClassicPro_1.03.exe"
+  Name "ClassicPro© v1.04"
+  OutFile "ClassicPro_1.04_beta1.exe"
 
 	; The default installation directory
 	InstallDir $PROGRAMFILES\Winamp
@@ -169,16 +169,12 @@ Section "Dummy Section" SecDummy
   File "${SOURCEPATH}\engine\xui\Ratings\*.m"
   File "${SOURCEPATH}\engine\xui\Ratings\*.maki"
 
-  SetOutPath $INSTDIR\Plugins\classicPro\engine\xui\NowPlaying
-  File "${SOURCEPATH}\engine\xui\NowPlaying\*.xml"
-  File "${SOURCEPATH}\engine\xui\NowPlaying\*.png"
-  File "${SOURCEPATH}\engine\xui\NowPlaying\*.m"
-  File "${SOURCEPATH}\engine\xui\NowPlaying\*.maki"
+  SetOutPath $INSTDIR\Plugins\classicPro\engine\xui\ModernSongticker
+  File "${SOURCEPATH}\engine\xui\ModernSongticker\*.xml"
+  File "${SOURCEPATH}\engine\xui\ModernSongticker\*.txt"
+  File "${SOURCEPATH}\engine\xui\ModernSongticker\*.m"
+  File "${SOURCEPATH}\engine\xui\ModernSongticker\*.maki"
 
-  SetOutPath $INSTDIR\Plugins\classicPro\engine\xui\FadeText
-  File "${SOURCEPATH}\engine\xui\FadeText\*.xml"
-  File "${SOURCEPATH}\engine\xui\FadeText\*.m"
-  File "${SOURCEPATH}\engine\xui\FadeText\*.maki"
 
   SetOutPath "$INSTDIR\Skins"
   File "C:\Program Files\Winamp\Skins\cPro__Bento.wal"
