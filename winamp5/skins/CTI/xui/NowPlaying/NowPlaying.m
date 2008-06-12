@@ -16,9 +16,9 @@ Function FadeGroup(Group FadeGrp, Int AlphaValue);
 
 Global Group XUIGroup, cdbox, cdboxref, cdboxHolder, ratings, cdbox_2;
 Global GuiObject line1, line2, line3, BGCol, CDBoxFade;
-Global Timer delayMyResize;
-Global int xs, ys, ws, hs;
-Global int xc, yc, wc, hc;
+//Global Timer delayMyResize;
+//Global int xs, ys, ws, hs;
+//Global int xc, yc, wc, hc;
 Global layer lyrFx, lyrFxFG;
 global double dblSmidge;
 Global int reflectionheight;
@@ -43,8 +43,8 @@ System.onScriptLoaded(){
 	BGCol = XUIGroup.findObject("sc.nowplaying.bg");
 	CDBoxFade = XUIGroup.findObject("cdbox.fg.fademask");
 	
-	delayMyResize = new Timer;
-	delayMyResize.setDelay(100);
+	//delayMyResize = new Timer;
+	//delayMyResize.setDelay(100);
 	
 	lyrFx.fx_setBgFx(0);
   	lyrFx.fx_setWrap(0);
@@ -72,14 +72,12 @@ System.onScriptLoaded(){
 	//default half height - remove ability to resize for the now
 	reflectionheight=50;
 	//cdboxHolder.Resize(0, 0, 190, 190);
-	
-		
 }
 
 system.onScriptUnloading()
 {
 	XUIGroup = NULL;
-	delete delayMyResize;
+	//delete delayMyResize;
 }
 
 System.onSetXuiParam(String param, String value)
@@ -162,7 +160,7 @@ XUIGroup.onSetVisible(boolean onOff)
 		lyrFxFG.fx_setEnabled(1);
 		
 		setAllTags();
-		delayMyResize.start();	
+		//delayMyResize.start();	
 	}
 	else{
 		lyrFx.fx_setEnabled(0);
@@ -176,12 +174,13 @@ XUIGroup.onResize(int x, int y, int w, int h){
 
 cdboxHolder.onResize(int x, int y, int w, int h)
 {
-	xs = x;
+	/*xs = x;
 	ys = y;
 	ws = w;
 	hs = h;
 	
-	if(XUIGroup.isVisible()) delayMyResize.start();
+	if(XUIGroup.isVisible()) delayMyResize.start();*/
+	resizeToThis(x, y, w, h);
 }
 
 resizeToThis(int x, int y, int w, int h)
@@ -191,7 +190,7 @@ resizeToThis(int x, int y, int w, int h)
 	
 	int x1, w1, h1;
 	
-	xc = x; yc=y; wc= w; hc=h;
+	//xc = x; yc=y; wc= w; hc=h;
 
 	//we want to keep the ratio of the art+reflection... and remember the variable reflection xui param!
 	double ratio = 529/(488*(1+(reflectionheight/100))); // r=w/h... dws... w=r*h .....h=w/r
@@ -219,12 +218,12 @@ resizeToThis(int x, int y, int w, int h)
 }
 
 //timer needed otherwise crap fatal error
-delayMyResize.onTimer(){
+/*delayMyResize.onTimer(){
 
 	resizeToThis(xs, ys, ws, hs);
 	
 	if(xc==xs && yc==ys && wc==ws && hc==hs) delayMyResize.stop();
-}
+}*/
 
 System.onTitleChange(String newTitle)
 {
