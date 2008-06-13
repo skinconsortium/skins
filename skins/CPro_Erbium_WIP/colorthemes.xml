@@ -39,9 +39,57 @@
   <gammagroup id="Notifier.Bg" value="-2678,-2926,-727" gray="0" boost="0" />
   <gammagroup id="Notifier.Text" value="3173,1188,2500" gray="0" boost="0" />
   <gammagroup id="Scrollbars.Gfx" value="-2536,-3174,-1472" gray="0" boost="0" />
-  <gammagroup id="Vis.Normal" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="_Vis.Shade" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Vis.Normal" value="-2784,-2536,-1295" gray="0" boost="0" />
+  <gammagroup id="_Vis.Shade" value="-2784,-2536,-1295" gray="0" boost="0" />
   <gammagroup id="_Background.Bottom" value="-2572,-2926,0" gray="0" boost="0" />
+  <gammagroup id="_Background.Overlay" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="_Color.SongTicker" value="0,0,0" gray="0" boost="0" />
+</gammaset>
+
+<gammaset id="Green Springbok">
+  <gammagroup id="Background.Bottom" value="-4096,-408,-4096" gray="0" boost="1" />
+  <gammagroup id="Background.Alt" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Background.Overlay" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Color.TabText" value="-4096,-2926,-4096" gray="0" boost="1" />
+  <gammagroup id="Color.ListBg" value="-4096,-408,-4096" gray="0" boost="1" />
+  <gammagroup id="Color.ListTextCurrent" value="-4096,-408,-4096" gray="0" boost="1" />
+  <gammagroup id="Color.CompBg" value="-4096,-408,-4096" gray="0" boost="1" />
+  <gammagroup id="Color.GenericText" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Color.ListSelectBg" value="-4096,-408,-4096" gray="0" boost="1" />
+  <gammagroup id="Color.Column" value="-4096,-976,-4096" gray="0" boost="1" />
+  <gammagroup id="Color.MenuText" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Color.SongTicker" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="TooltipCombobox" value="-4096,-408,-4096" gray="0" boost="1" />
+  <gammagroup id="Notifier.Bg" value="-4096,-408,-4096" gray="0" boost="1" />
+  <gammagroup id="Notifier.Text" value="4096,4096,3989" gray="0" boost="0" />
+  <gammagroup id="Scrollbars.Gfx" value="-4096,-408,-4096" gray="0" boost="1" />
+  <gammagroup id="Vis.Normal" value="-4096,-408,-4096" gray="0" boost="1" />
+  <gammagroup id="_Vis.Shade" value="-4096,-408,-4096" gray="0" boost="1" />
+  <gammagroup id="_Background.Bottom" value="-4096,-408,-4096" gray="0" boost="1" />
+  <gammagroup id="_Background.Overlay" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="_Color.SongTicker" value="0,0,0" gray="0" boost="0" />
+</gammaset>
+
+<gammaset id="Blue Bird">
+  <gammagroup id="Background.Bottom" value="-4096,-4096,4096" gray="0" boost="0" />
+  <gammagroup id="Background.Alt" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Background.Overlay" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Color.TabText" value="-302,1471,4096" gray="0" boost="0" />
+  <gammagroup id="Color.ListBg" value="-4096,-4096,4096" gray="0" boost="0" />
+  <gammagroup id="Color.ListTextCurrent" value="-4096,-940,4096" gray="0" boost="0" />
+  <gammagroup id="Color.CompBg" value="-4096,-4096,4096" gray="0" boost="0" />
+  <gammagroup id="Color.GenericText" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Color.ListSelectBg" value="-4096,-4096,4096" gray="0" boost="0" />
+  <gammagroup id="Color.Column" value="-4096,-4096,4096" gray="0" boost="0" />
+  <gammagroup id="Color.MenuText" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Color.SongTicker" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="TooltipCombobox" value="-4096,-1259,4096" gray="0" boost="0" />
+  <gammagroup id="Notifier.Bg" value="-4096,-4096,4096" gray="0" boost="0" />
+  <gammagroup id="Notifier.Text" value="3351,3493,3741" gray="0" boost="0" />
+  <gammagroup id="Scrollbars.Gfx" value="-4096,-1401,2322" gray="0" boost="0" />
+  <gammagroup id="Vis.Normal" value="-4096,-4096,4096" gray="0" boost="0" />
+  <gammagroup id="_Vis.Shade" value="-4096,-4096,-444" gray="0" boost="0" />
+  <gammagroup id="_Background.Bottom" value="-4096,-4096,4096" gray="0" boost="0" />
   <gammagroup id="_Background.Overlay" value="0,0,0" gray="0" boost="0" />
   <gammagroup id="_Color.SongTicker" value="0,0,0" gray="0" boost="0" />
 </gammaset>
