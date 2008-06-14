@@ -35,7 +35,6 @@
 		x="3" y="5" h="12" w="35" relatw="0" timeroffstyle="1" timecolonwidth="6" font="cpro.winshade.font"
 		display="time" align="left" color="Shade.SongTicker.Text" fontsize="12" bold="2" valign="top"
 	/>
-
 	<ModernSongticker id="Songticker"
 		x="38" y="5" h="12" w="-42" relatw="1" move="1" antialias="1"
 		id_layout="main;shade"
@@ -48,6 +47,7 @@
 		id_rep="repeat"
 		id_mute="mute2"
 		fontsize="12"
+		font="cpro.winshade.font"
 		color="Shade.SongTicker.Text"
 	/>
 	<layer id="Songticker.trap" x="38" y="0" h="0" w="-42" relatw="1" relath="1" move="1"/>
@@ -81,6 +81,6 @@
 	/>
 </groupdef>
 <groupdef id="shade.seekticker">
-	<group id="shade.seekticker2" x="70" y="0" w="30" h="23" relatx="2" relatw="2" visible="0"/>
 	<group id="shade.seekticker1" x="0" y="0" w="100" h="23" relatw="2"/>
+	<group id="shade.seekticker2" x="70" y="0" w="30" h="23" relatx="2" relatw="2" visible="0"/>
 </groupdef>

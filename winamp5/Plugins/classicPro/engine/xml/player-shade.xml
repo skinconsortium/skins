@@ -59,7 +59,7 @@
 		action="NEXT" tooltip="Next Track"
 	/>
 
-	<Button id="Eject"
+	<Button id="open.tracks"
 		x="-114" y="4" relatx="1"
 		image="s.eject.1"
 		hoverImage="s.eject.2"

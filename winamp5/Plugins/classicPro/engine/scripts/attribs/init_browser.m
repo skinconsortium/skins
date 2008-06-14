@@ -24,8 +24,6 @@ Depending Files:
 #define CUSTOM_PAGE_BROWSER "{0E17DBEA-9398-49e6-AE6F-3AB17D001DF3}"
 #define CUSTOM_PAGE_BROWSER_WASEARCH "{180E87DF-C482-41fe-A570-8575C673E1BA}"
 #define CUSTOM_PAGE_BROWSER_CONCERTSEARCH "{B8171DB3-ECF6-40c6-9332-DDEA57A8F13E}"
-#define CUSTOM_PAGE_BROWSER_AUTOSEARCH "{FF193261-0FCE-4A8C-9EFE-6311E7746D1C}"
-
 
 Function initAttribs_browser();
 
@@ -41,7 +39,7 @@ Global list SearchAttributeList;
 
 Global ConfigAttribute browser_scr_show_attrib, browser_search_attrib;
 Global SearchAttribute /*browser_search_google_attrib,*/ browser_search_truveo_attrib, browser_aol_search;
-Global SearchAttribute browser_search_winamp_mskins_attrib, browser_search_winamp_cskins_attrib, browser_search_winamp_plugins_attrib,browser_search_winamp_videos_attrib, browser_search_winamp_music_attrib, browser_search_winamp_web_attrib, browser_search_wiki_attrib, browser_search_lyric_attrib, browser_search_local_attrib, browser_search_foxy_attrib;
+Global SearchAttribute browser_search_winamp_mskins_attrib, browser_search_winamp_cskins_attrib, browser_search_winamp_plugins_attrib,browser_search_winamp_videos_attrib, browser_search_winamp_music_attrib, browser_search_winamp_web_attrib, browser_search_wiki_attrib;
 Global SearchAttribute browser_c_aol_attrib, browser_c_pollstar_attrib, browser_c_bit_attrib, browser_c_ln_attrib, browser_c_jambase_attrib/*browser_c_OnTour_attrib,browser_c_eventful_attrib,browser_c_podbop_attrib*/;
 
 initAttribs_browser()
@@ -60,21 +58,27 @@ initAttribs_browser()
 
 	browser_aol_search = custom_page_browser.newAttribute("AOL Music Search", "0");
 	SearchAttributeList.addItem (browser_aol_search);
+
+
 	browser_search_truveo_attrib = custom_page_browser.newAttribute("Truveo Video Search", "0");
 	SearchAttributeList.addItem (browser_search_truveo_attrib);
+
 	browser_search_wiki_attrib = custom_page_browser.newAttribute("Wikipedia Search", "0");
 	SearchAttributeList.addItem (browser_search_wiki_attrib);
-
 
 	ConfigItem custom_page_browser_concertsearch = addConfigSubMenu(custom_page_browser, "Concert Search", CUSTOM_PAGE_BROWSER_CONCERTSEARCH);
 	browser_c_aol_attrib = custom_page_browser_concertsearch.newAttribute("AOL Tickets", "0");
 	SearchAttributeList.addItem (browser_c_aol_attrib);
+
 	browser_c_jambase_attrib = custom_page_browser_concertsearch.newAttribute("JamBase", "0");
 	SearchAttributeList.addItem (browser_c_jambase_attrib);
+
 	browser_c_pollstar_attrib = custom_page_browser_concertsearch.newAttribute("Pollstar", "0");
 	SearchAttributeList.addItem (browser_c_pollstar_attrib);
+
 	browser_c_ln_attrib = custom_page_browser_concertsearch.newAttribute("Live Nation", "0");
 	SearchAttributeList.addItem (browser_c_ln_attrib);
+
 	browser_c_bit_attrib = custom_page_browser_concertsearch.newAttribute("Bandsintown", "0");
 	SearchAttributeList.addItem (browser_c_bit_attrib);
 
@@ -95,15 +99,6 @@ initAttribs_browser()
 	SearchAttributeList.addItem (browser_search_winamp_videos_attrib);
 	browser_search_winamp_music_attrib = custom_page_browser_winampsearch.newAttribute("Music", "0");
 	SearchAttributeList.addItem (browser_search_winamp_music_attrib);
-
-	ConfigItem custom_page_browser_autosearch = addConfigSubMenu(custom_page_browser, "Auto Search playing file", CUSTOM_PAGE_BROWSER_AUTOSEARCH);
-	browser_search_lyric_attrib = custom_page_browser_autosearch.newAttribute("Lyric Search", "0");
-	SearchAttributeList.addItem (browser_search_lyric_attrib);
-	browser_search_local_attrib = custom_page_browser_autosearch.newAttribute("Explorer Search", "0");
-	SearchAttributeList.addItem (browser_search_local_attrib);
-	browser_search_foxy_attrib = custom_page_browser_autosearch.newAttribute("Artist Search on www.FoxyTunes.com", "0");
-	SearchAttributeList.addItem (browser_search_foxy_attrib);
-
 
 	addMenuSeparator(custom_page_browser);
 
@@ -135,9 +130,6 @@ browser_search_attrib.onDataChanged ()
 	else if (dta == "Truveo Video Search") browser_search_truveo_attrib.setData("1");
 	else if (dta == "AOL Tickets") browser_c_aol_attrib.setData("1");
 	else if (dta == "Wikipedia Search") browser_search_wiki_attrib.setData("1");
-	else if (dta == "Lyric Search") browser_search_lyric_attrib.setData("1");
-	else if (dta == "Explorer Search") browser_search_local_attrib.setData("1");
-	else if (dta == "Artist Search on www.FoxyTunes.com") browser_search_foxy_attrib.setData("1");
 }
 
 SearchAttribute.onDataChanged()
@@ -164,9 +156,7 @@ SearchAttribute.onDataChanged()
 	check (s, browser_c_pollstar_attrib);
 	check (s, browser_c_aol_attrib);
 	check (s, browser_search_wiki_attrib);
-	check (s, browser_search_lyric_attrib);
-	check (s, browser_search_local_attrib);
-	check (s, browser_search_foxy_attrib);
+
 	attribs_mychange = 0;
 }
 

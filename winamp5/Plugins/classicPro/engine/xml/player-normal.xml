@@ -20,7 +20,7 @@
 
 
 	<!-- Background: Overlay -->
-	<layer x="143" y="0" w="-316" relatw="1" tile="1" image="player.o.top" wantfocus="1"/>
+	<layer x="143" y="0" w="-317" relatw="1" tile="1" image="player.o.top" wantfocus="1"/>
 	<layer x="156" y="-68" w="-315" relaty="1" relatw="1" tile="1" image="player.o.bottom" wantfocus="1"/>
 	<layer x="0" y="99" h="-166" relath="1" tile="1" image="player.o.left" wantfocus="1"/>
 	<layer x="-6" y="99" h="-166" relatx="1" relath="1" tile="1" image="player.o.right" wantfocus="1"/>
@@ -157,6 +157,7 @@
 		id_shuf="shuffle"
 		id_rep="repeat"
 		id_mute="mute"
+		font="cpro.songname.font"
 	/>
 
 </layout>

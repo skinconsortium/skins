@@ -1,5 +1,7 @@
 <groupdef id="wasabi.historyeditbox.main.group" inherit_group="wasabi.objectframe.group" embed_xui="historyeditbox.edit">
-  <Edit
+ <rect filled="1" fitparent="1" color="wasabi.window.background"/>
+ <layer image="browser.editframe.center.2" x="0" y="0" w="0" relatw="1"/>
+ <Edit
     id="historyeditbox.edit"
     x="1" y="1"
     w="-52" h="-2"
@@ -47,7 +49,7 @@
     bottomleft="wasabi.dropdownlist.list.bottom.left"
     bottom="wasabi.dropdownlist.list.bottom"
     bottomright="wasabi.dropdownlist.list.bottom.right"
-    sysregion="1"
+    sysregion="1" NOCOLHEADER="1"
   />
   <list id="historyeditbox.list" x="2" y="2" w="-4" h="-4" relatw="1" relath="1" />
   <layer x="0" y="-2" relaty="1" w="0" relatw="1" h="2" resize="bottom" />

@@ -40,7 +40,7 @@
 </groupdef>
 <groupdef id="centro.video.buttons">
 	<Button action="VID_FS"
-		x="4" y="1" h="21" w="24" rectrgn="1"
+		x="4" y="1" rectrgn="1"
 		image="video.button.fullscreen.normal"
 		hoverImage="video.button.fullscreen.hover"
 		downImage="video.button.fullscreen.down"
@@ -48,7 +48,7 @@
 	/>
 
 	<Button action="VID_1X"
-		x="29" y="1" h="21" w="24" rectrgn="1"
+		x="29" y="1" rectrgn="1"
 		image="video.button.1x.normal"
 		hoverImage="video.button.1x.hover"
 		downImage="video.button.1x.down"
@@ -56,7 +56,7 @@
 	/>
 
 	<Button action="VID_2X"
-		x="54" y="1" h="21" w="24" rectrgn="1"
+		x="54" y="1" rectrgn="1"
 		image="video.button.2x.normal"
 		hoverImage="video.button.2x.hover"
 		downImage="video.button.2x.down"
@@ -64,7 +64,7 @@
 	/>
 
 	<Button action="VID_TV"
-		x="80" y="1" h="21" w="24" rectrgn="1"
+		x="80" y="1" rectrgn="1"
 		image="video.button.itv.normal"
 		hoverImage="video.button.itv.hover"
 		downImage="video.button.itv.down"
@@ -72,7 +72,7 @@
 	/>
 
 	<Button action="VID_Misc"
-		x="-27" y="1" h="21" w="24" relatx="1" rectrgn="1"
+		x="-27" y="1" relatx="1" rectrgn="1"
 		image="video.button.cfg.normal"
 		hoverImage="video.button.cfg.hover"
 		downImage="video.button.cfg.down"
@@ -80,18 +80,18 @@
 	/>
 
 	<text id="info" display="VID_Info" ticker="1"
-		x="105" y="4" h="13" w="-135" relatw="1"
+		x="105" y="4" relatw="1"
 		align="center" color="ComponentTab.Status.Text" font="cpro.status.font"
 	/>
 
 </groupdef>
 <groupdef id="centro.video" name="Video">
 	<windowholder id="centro.windowholder.video" x="1" y="1" w="-2" relatw="1" h="-27" relath="1" autofocus="1" wantfocus="0" autoclose="1" autoopen="1" autoavailable="1" visible="1" hold="guid:{F0816D7B-FFFC-4343-80F2-E8199AA15CC3}"/>
-	<group id="centro.video.buttons" x="1" y="-24" w="-2" relatw="1" h="21" relaty="1" visible="0"/>
+	<group id="centro.video.buttons" x="1" y="-24" w="-2" relatw="1" h="22" relaty="1" visible="0"/>
 </groupdef>
 <groupdef id="centro.visualization.buttons">
 	<Button action="VIS_FS"
-		x="4" y="1" h="21" w="24" rectrgn="1"
+		x="4" y="1" rectrgn="1"
 		image="video.button.fullscreen.normal"
 		hoverImage="video.button.fullscreen.hover"
 		downImage="video.button.fullscreen.down"
@@ -99,7 +99,7 @@
 	/>
 
 	<Button action="VIS_Prev"
-		x="29" y="1" h="21" w="21" rectrgn="1"
+		x="29" y="1" rectrgn="1"
 		image="vis.button.prev.normal"
 		hoverImage="vis.button.prev.hover"
 		downImage="vis.button.prev.down"
@@ -107,7 +107,7 @@
 	/>
 
 	<Button action="VIS_Next"
-		x="51" y="1" h="21" w="21" rectrgn="1"
+		x="51" y="1" rectrgn="1"
 		image="vis.button.next.normal"
 		hoverImage="vis.button.next.hover"
 		downImage="vis.button.next.down"
@@ -115,7 +115,7 @@
 	/>
 
 	<ToggleButton id="vis.random"
-		x="74" y="1" h="21" w="24" rectrgn="1"
+		x="74" y="1" rectrgn="1"
 		image="vis.button.random.normal"
 		hoverImage="vis.button.random.hover"
 		downImage="vis.button.random.down"
@@ -125,7 +125,7 @@
 	/>
 
 	<Button action="VIS_Menu"
-		x="-52" y="1" h="21" w="24"  relatx="1" rectrgn="1"
+		x="-52" y="1" relatx="1" rectrgn="1"
 		image="vis.button.presets.normal"
 		hoverImage="vis.button.presets.hover"
 		downImage="vis.button.presets.down"
@@ -133,7 +133,7 @@
 	/>
 
 	<Button action="VIS_Cfg"
-		x="-27" y="1" h="21" w="24" relatx="1" rectrgn="1"
+		x="-27" y="1" relatx="1" rectrgn="1"
 		image="video.button.cfg.normal"
 		hoverImage="video.button.cfg.hover"
 		downImage="video.button.cfg.down"
@@ -149,16 +149,15 @@
 <groupdef id="centro.visualization" name="Visualization">
 	<rect id="centro.windowholder.visualization.bg" x="1" y="1" w="-2" relatw="1" h="-27" relath="1" color="0,0,0" filled="1"/>
 	<windowholder id="centro.windowholder.visualization" x="1" y="1" w="-2" relatw="1" h="-27" relath="1"  autofocus="1" wantfocus="0" autoclose="1" autoopen="1" autoavailable="0" visible="1" hold="guid:{0000000A-000C-0010-FF7B-01014263450C}"/>
-	<group id="centro.visualization.buttons" x="1" y="-24" w="-2" relatw="1" h="21" relaty="1" visible="0"/>
+	<group id="centro.visualization.buttons" x="1" y="-24" w="-2" relatw="1" h="22" relaty="1" visible="0"/>
 </groupdef>
 <groupdef id="centro.browser" name="Browser">
-	<!--<ClassicPro:Browser id="cpro.browser" x="1" y="1" w="-2" relatw="1" h="-4" relath="1"/>-->
-	<!--<Winamp:Browser id="cpro.browser" x="1" y="1" w="-2" relatw="1" h="-4" relath="1"/>-->
-	<Winamp:Browser id="cpro.browser" x="0" y="1" w="0" relatw="1" h="-4" relath="1"/>
+	<rect color="wasabi.window.background" filled="1" x="0" y="1" w="0" relatw="1" h="-4" relath="1"/>
+	<Winamp:Browser id="cpro.browser" x="0" y="1" w="0" relatw="1" h="-4" relath="1" home="http://cpro.skinconsortium.com/browser.php"/>
 </groupdef>
 <groupdef id="centro.playlist2.buttons">
 	<Button action="PE_Add"
-		x="4" y="1" h="21" w="24" rectrgn="1"
+		x="4" y="1" rectrgn="1"
 		image="pl2.add.1"
 		hoverImage="pl2.add.2"
 		downImage="pl2.add.3"
@@ -166,7 +165,7 @@
 	/>
 
 	<Button action="PE_Rem"
-		x="29" y="1" h="21" w="24" rectrgn="1"
+		x="29" y="1" rectrgn="1"
 		image="pl2.rem.1"
 		hoverImage="pl2.rem.2"
 		downImage="pl2.rem.3"
@@ -174,7 +173,7 @@
 	/>
 
 	<Button action="PE_Sel"
-		x="54" y="1" h="21" w="24" rectrgn="1"
+		x="54" y="1" rectrgn="1"
 		image="pl2.sel.1"
 		hoverImage="pl2.sel.2"
 		downImage="pl2.sel.3"
@@ -182,7 +181,7 @@
 	/>
 
 	<Button action="PE_Misc"
-		x="80" y="1" h="21" w="24" rectrgn="1"
+		x="80" y="1" rectrgn="1"
 		image="pl2.misc.1"
 		hoverImage="pl2.misc.2"
 		downImage="pl2.misc.3"
@@ -190,7 +189,7 @@
 	/>
 
 	<Button action="PE_List"
-		x="-27" y="1" h="21" w="24" relatx="1" rectrgn="1"
+		x="-27" y="1" relatx="1" rectrgn="1"
 		image="pl2.man.1"
 		hoverImage="pl2.man.2"
 		downImage="pl2.man.3"
@@ -204,7 +203,7 @@
 </groupdef>
 <groupdef id="centro.playlist2" name="Playlist">
 	<windowholder id="centro.windowholder.playlist2" x="1" y="1" w="-2" relatw="1" h="-4" relath="1" autofocus="0" wantfocus="0" autoclose="1" autoopen="1" autoavailable="1" visible="1" hold="guid:{45f3f7c1-a6f3-4ee6-a15e-125e92fc3f8d}"/>
-	<group id="centro.playlist2.buttons" x="1" y="-24" w="-2" relatw="1" h="21" relaty="1" visible="0"/>
+	<group id="centro.playlist2.buttons" x="1" y="-24" w="-2" relatw="1" h="22" relaty="1" visible="0"/>
 </groupdef>
 <groupdef id="centro.other" name="Plugins">
 	<windowholder id="centro.windowholder.other" x="1" y="1" w="-2" relatw="1" h="-2" relath="1"  autofocus="0" wantfocus="0" autoclose="1" autoopen="1" autoavailable="0" visible="1" hold="@all@"/>
@@ -217,14 +216,14 @@
 	-->
 
 	<Button
-		x="-52" y="-23" h="21" w="24" relatx="1" relaty="1" rectrgn="1"
+		x="-52" y="-23" relatx="1" relaty="1" rectrgn="1"
 		image="video.button.cfg.normal"
 		hoverImage="video.button.cfg.hover"
 		downImage="video.button.cfg.down"
 		tooltip="Configure this widget"
 	/>
 	<Button
-		x="-27" y="-23" h="21" w="24" relatx="1" relaty="1" rectrgn="1"
+		x="-27" y="-23" relatx="1" relaty="1" rectrgn="1"
 		image="vis.button.presets.normal"
 		hoverImage="vis.button.presets.hover"
 		downImage="vis.button.presets.down"

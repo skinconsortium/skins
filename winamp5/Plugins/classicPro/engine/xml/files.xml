@@ -1,3 +1,4 @@
+<include file="internal-colors.xml"/>
 <include file="notifier.xml"/>
 <include file="player-elements.xml"/>
 <include file="player-shade-elements.xml"/>

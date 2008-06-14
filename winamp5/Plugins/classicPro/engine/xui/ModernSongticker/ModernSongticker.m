@@ -15,6 +15,7 @@ Global Slider sl_volume, sl_seeker;
 Global Button prev, next, open;
 Global Boolean isShort, busyWithSeek, cancelNext;
 Global Togglebutton shufBut, repBut, muteBut;
+Global String def_Layout, def_Volume, def_Seeker, def_Prev, def_Next, def_Open, def_Shuf, def_Rep, def_Mute;
 
 System.onScriptLoaded(){
 	mainGroup = getScriptGroup();
@@ -28,23 +29,19 @@ System.onScriptLoaded(){
 	cancelNext=false;
 }
 
-/*System.onShowLayout(Layout _layout){
-	mainLayout = getContainer("main").getLayout("normal");
+System.onShowLayout(Layout _layout){
+	mainLayout = getContainer(getToken(def_Layout, ";", 0)).getLayout(getToken(def_Layout, ";", 1));
 	if(mainLayout==_layout){
-		//mainGroup = getScriptGroup();
-		//info_songticker = mainGroup.findObject("m.st.ticker");
-		//info_news = mainGroup.findObject("m.st.news");
-		
-		//sl_volume = mainLayout.findObject("Volume");
-		//sl_seeker = mainLayout.findObject("seeker");
-		//prev = mainLayout.findObject("previous.track");
-		//next = mainLayout.findObject("next.track");
-		//open = mainLayout.findObject("open.tracks");
-		//shufBut = mainLayout.findObject("shuffle");
-		//repBut = mainLayout.findObject("repeat");
-		//muteBut = mainLayout.findObject("mute");
+		sl_volume = mainLayout.findObject(def_Volume);
+		sl_seeker = mainLayout.findObject(def_Seeker);
+		prev = mainLayout.findObject(def_Prev);
+		next = mainLayout.findObject(def_Next);
+		open = mainLayout.findObject(def_Open);
+		shufBut = mainLayout.findObject(def_Shuf);
+		repBut = mainLayout.findObject(def_Rep);
+		muteBut = mainLayout.findObject(def_Mute);
 	}
-}*/
+}
 
 System.onscriptunloading(){
 	delete fade;
@@ -53,38 +50,37 @@ System.onscriptunloading(){
 
 System.onSetXuiParam(String param, String value) {
 	if(strlower(param) == "id_layout"){
-		mainLayout = getContainer(getToken(value, ";", 0)).getLayout(getToken(value, ";", 1));
+		def_Layout = value;
 	}
 	else if(strlower(param) == "id_volume"){
-		sl_volume = mainLayout.findObject(value);
+		def_Volume = value;
 	}
 	else if(strlower(param) == "id_seeker"){
-		sl_seeker = mainLayout.findObject(value);
+		def_Seeker = value;
 	}
 	else if(strlower(param) == "id_prev"){
-		prev = mainLayout.findObject(value);
+		def_Prev = value;
 	}
 	else if(strlower(param) == "id_next"){
-		next = mainLayout.findObject(value);
+		def_Next = value;
 	}
 	else if(strlower(param) == "id_open"){
-		open = mainLayout.findObject(value);
+		def_Open = value;
 	}
 	else if(strlower(param) == "id_shuf"){
-		shufBut = mainLayout.findObject(value);
+		def_Shuf = value;
 	}
 	else if(strlower(param) == "id_rep"){
-		repBut = mainLayout.findObject(value);
+		def_Rep = value;
 	}
 	else if(strlower(param) == "id_mute"){
-		muteBut = mainLayout.findObject(value);
+		def_Mute = value;
 	}
 	else{
 		info_songticker.setXmlParam(param, value);
 		info_news.setXmlParam(param, value);
 	}
 }
-
 
 shufBut.onToggle(Boolean onOff){
 	if(onOff) updateInfo("Shuffle: On");

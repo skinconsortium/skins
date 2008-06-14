@@ -49,7 +49,7 @@ Function setFrame2(int pos, int h);
 Global Group xuiGroup, tab_library, tab_video, tab_avs, tab_Browser, tab_Playlist, tab_Other, tab_Widget, drawer, mainTabsheet;
 Global Group area_left, area_right, area_mini, area_right_pl;
 Global Group mini_Cover, mini_Video, mini_AVS, mini_SavedPL;
-Global Group tabbut_vid, tabbut_avs, tabbut_pl;
+Global Group tabbut_vid, tabbut_avs, tabbut_pl, browserGroup;
 
 Global Container player;
 Global Layout normal;
@@ -57,7 +57,7 @@ Global PopUpMenu popMenu, tabMenu;
 
 Global Browser xuiBrowser;
 
-Global GuiObject visRectBg;
+Global GuiObject visRectBg, tempbutton;
 
 Global Button but_miniGoto, closeFrame, openFrame;
 
@@ -138,7 +138,17 @@ System.onScriptLoaded() {
 	mini_AVS = xuiGroup.findObject("centro.playlist.directory.vis");
 	mini_SavedPL = xuiGroup.findObject("centro.playlist.directory.spl");
 
-	xuiBrowser = xuiGroup.findObject("cpro.browser"); 
+
+///////////////////////
+	xuiBrowser = xuiGroup.findObject("cpro.browser");
+	browserGroup = xuiGroup.findObject("cpro.browser");
+	
+	tempbutton = browserGroup.findObject("browser.navigate");
+	tempbutton.setXmlParam("text", "Go");
+	tempbutton = browserGroup.findObject("search.go");
+	tempbutton.setXmlParam("text", "Search");
+//////////////////
+
 	
 	tab_library = xuiGroup.findObject("centro.library");
 	tab_video = xuiGroup.findObject("centro.video");
@@ -235,11 +245,16 @@ tab_SetText(int tab, int limit){
 	tog_fake1 = xuiGroup.findObject("centro.tabtog." + getToken(getPublicString("cPro.tabOrder", DEFAULT_TAB_ORDER), ";", tab));
 
 	int tokenNo = stringToInteger(getToken(getPublicString("cPro.tabOrder", DEFAULT_TAB_ORDER), ";", tab));
-
+	
+	String pluginName = "";
+	if(stringToFloat(System.getWinampVersion())>5.531) pluginName = hold_Other.getComponentName();
+	
+	if (pluginName=="") pluginName="Plugin";
+	
 	String tabnames;
-	if(limit==0)  tabnames = "Media Library;Video;Visualization;Browser;Playlist;"+hold_Other.getComponentName()+";Widget";
-	else if(limit==1)  tabnames = "ML;Vid;Vis;Bro;PL;"+System.strleft(hold_Other.getComponentName(), 3)+";Wid";
-	else if(limit==2)  tabnames = "M;V;V;B;P;"+System.strleft(hold_Other.getComponentName(), 1)+";W";
+	if(limit==0)  tabnames = "Media Library;Video;Visualization;Browser;Playlist;"+pluginName+";Widget";
+	else if(limit==1)  tabnames = "ML;Vid;Vis;Bro;PL;"+System.strleft(pluginName, 3)+";Wid";
+	else if(limit==2)  tabnames = "M;V;V;B;P;"+System.strleft(pluginName, 1)+";W";
 
 	tog_fake1.setXmlParam("tabtext", getToken(tabnames, ";", tokenNo));
 }
