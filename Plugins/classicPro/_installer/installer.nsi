@@ -17,7 +17,7 @@
 
   ;Name and file
   Name "ClassicPro© v1.04"
-  OutFile "ClassicPro_1.04_beta1.exe"
+  OutFile "ClassicPro_1.04_beta2.exe"
 
 	; The default installation directory
 	InstallDir $PROGRAMFILES\Winamp
@@ -133,16 +133,13 @@ Section "Dummy Section" SecDummy
   File "${SOURCEPATH}\engine\xui\CentroSUI\scripts\*.m"
   File "${SOURCEPATH}\engine\xui\CentroSUI\scripts\*.maki"
 
-  SetOutPath $INSTDIR\Plugins\classicPro\engine\xui\browser
-  File "${SOURCEPATH}\engine\xui\browser\*.xml"
-  File "${SOURCEPATH}\engine\xui\browser\*.png"
-  File "${SOURCEPATH}\engine\xui\browser\*.m"
-  File "${SOURCEPATH}\engine\xui\browser\*.maki"
-
   SetOutPath $INSTDIR\Plugins\classicPro\engine\xui\updateSystem
   File "${SOURCEPATH}\engine\xui\updateSystem\*.xml"
   File "${SOURCEPATH}\engine\xui\updateSystem\*.m"
   File "${SOURCEPATH}\engine\xui\updateSystem\*.maki"
+
+  SetOutPath $INSTDIR\Plugins\classicPro\engine\xui\editbox
+  File "${SOURCEPATH}\engine\xui\editbox\*.xml"
 
   SetOutPath $INSTDIR\Plugins\classicPro\engine\xui\historyeditbox
   File "${SOURCEPATH}\engine\xui\historyeditbox\*.xml"

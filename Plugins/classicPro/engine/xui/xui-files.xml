@@ -4,7 +4,6 @@
 <include file="Ratings/Ratings.xml"/>
 <include file="historyeditbox/historyeditbox.xml"/>
 <include file="editbox/editbox.xml"/>
-<include file="FadeText/FadeText.xml"/>
 <include file="CentroSUI/CentroSUI.xml"/>
 <include file="ModernSongticker/ModernSongticker.xml"/>
 <include file="updateSystem/updateSystem.xml"/>
