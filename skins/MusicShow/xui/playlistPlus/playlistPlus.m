@@ -242,8 +242,8 @@ refreshPL() {
 			temp.setAlpha((c*texth - pltopMod)*70/texth + 80);
 			templen.setAlpha((c*texth - pltopMod)*70/texth + 80);
 		} else if ((numlines-c) <= 4) {
-			temp.setAlpha(((numlines-c-2)*texth+pltopMod)*70/texth+80);
-			templen.setAlpha(((numlines-c-2)*texth+pltopMod)*70/texth+80);
+			temp.setAlpha(((numlines-c-1)*texth+pltopMod)*70/texth+80);
+			templen.setAlpha(((numlines-c-1)*texth+pltopMod)*70/texth+80);
 		} else {
 			temp.setAlpha(255);
 			templen.setAlpha(255);
