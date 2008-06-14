@@ -149,9 +149,11 @@
 		bottom="player.frame.bottom"
 	/>
 
-	<windowholder y="50" h="-130" x="50" w="-100" relath="1" relatw="1" autofocus="0" wantfocus="0" autoclose="1" autoopen="1" autoavailable="1" visible="1" hold="guid:{45f3f7c1-a6f3-4ee6-a15e-125e92fc3f8d}"/>
+	
+			
+	<!--windowholder y="50" h="-130" x="50" w="-100" relath="1" relatw="1" autofocus="0" wantfocus="0" autoclose="1" autoopen="1" autoavailable="1" visible="1" hold="guid:{45f3f7c1-a6f3-4ee6-a15e-125e92fc3f8d}"/-->
 
-	<wasabi:button y="50" h="-130" x="50" w="-100" relath="1" relatw="1" text="Push if Playlist isn't visible!" action="TOGGLE" param="guid:{45f3f7c1-a6f3-4ee6-a15e-125e92fc3f8d}" />
+	<wasabi:button y="50" h="-130" x="50" w="-100" relath="1" relatw="1" visible="0" text="Push if Playlist isn't visible!" action="TOGGLE" param="guid:{45f3f7c1-a6f3-4ee6-a15e-125e92fc3f8d}" />
 
 	<Wasabi:Button y="-80" relaty="1" h="30" x="50" relatx="0" w="50" action="PE_Add"
     text="ADD" />
@@ -177,6 +179,12 @@
 
 	<Wasabi:Button y="-80" relaty="1" h="30" x="-100" relatx="1" w="50" action="PE_List"
     text="LIST" />
+    
+    <playlistPlus id="main.pl" 
+			y="30" h="-110" x="51" w="-102" relath="1" relatw="1"
+			font="font.pl" altfont="font.pl" fontsize="34" linespacing="-2" color="color.display"
+			playcolor="color.display" selcolor="color.display" selbgcolor="color.display" selalpha="128"
+			showslider="0"/>
 
 </groupdef>
 

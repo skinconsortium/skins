@@ -1,5 +1,8 @@
 <elements>
 
+	<bitmap id="bitmap.font.pl" file="player/pl-font2.png" gammagroup="text"/>
+	<bitmapfont id="font.pl" file="bitmap.font.pl" charwidth="36" charheight="36" hspacing="-10" vspacing="0"/>
+
 	<bitmap id="seek.fill" file="$solid" h="5" w="1" color="227,0,0" gammagroup="text" />
 	<bitmap id="seek.button" file="$polygon" h="21" w="21" points="4,4;4,17;17,17;17,4;4,4=227,0,0" gammagroup="text"/>
 
