@@ -1,0 +1,4 @@
+<elements>
+	<color id="browser.text" value="Browser.MediaMonitor"/>
+	<color id="browser.text.active" value="wasabi.window.text" gammagroup="Color.GenericText"/>
+</elements>

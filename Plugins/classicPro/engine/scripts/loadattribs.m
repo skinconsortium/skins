@@ -17,7 +17,7 @@ Internet:	www.skinconsortium.com
 
 #include <lib/std.mi>
 
-#include ../xui/browser/init_browser.m
+#include ../scripts/attribs/init_browser.m
 #include ../scripts/attribs/init_notifier.m
 #include ../scripts/attribs/init_Autoresize.m
 

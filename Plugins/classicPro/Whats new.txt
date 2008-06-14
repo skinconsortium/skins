@@ -1,5 +1,5 @@
 -------------------------------------------------------------
-Version 1.04 (13 Jun 2008)
+Version 1.04 (14 Jun 2008)
 -------------------------------------------------------------
 - New: ColorTheme support! (also added colorthemes.png)
 - New: Widget Tab! (!!!!!!wip!!!!!!!!)
@@ -9,6 +9,7 @@ Version 1.04 (13 Jun 2008)
 - Optimized: SUI area code (black list stuff)
 - Fixed: Removing a widget might crash Winamp
 - Fixed: Main Window container now use canclose="0"
+- Fixed: comp_but_tabs.png buttons missing 1 pixel & some buttons are stretched
 
 -------------------------------------------------------------
 Version 1.03 (29 May 2008)
