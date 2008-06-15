@@ -11,6 +11,7 @@
 #include <lib/pldir.mi>
 
 function refreshPL();
+function string strClean(string s);
 
 #define SCROLL_UP 1
 #define SCROLL_DOWN 2
@@ -105,6 +106,26 @@ scriptGroup.onSetVisible(int on) {
 	if (on) refreshPL();
 }
 
+string strClean(string s) {
+	string ns = "", char;
+	int c;
+	
+	for (c=0; c < strlen(s); c++) {
+		char = strmid(s,c,1);
+		
+		if (char >= " " && char <= "z")
+			ns += char;
+		else if ((char >= chr(232) && char <= chr(235)) || (char >= chr(200) && char <= chr(203)))
+			ns += "E";
+		else if (char >= chr(323) && char <= chr(331))
+			ns += "N";
+		else
+			ns += "?";
+	}
+	
+	return ns;
+}
+
 
 refreshPL() {
 	text temp;
@@ -173,6 +194,7 @@ refreshPL() {
 			temp.setXMLParam("move","0");
 			temp.setXMLParam("ghost","1");
 			temp.setXMLParam("ticker","0");
+			
 
 		}
 		
@@ -231,7 +253,8 @@ refreshPL() {
 		templen.setXMLParam("y",integertostring(c*texth - pltopMod));
 		
 		if ((trackc < numtracks) && (trackc >= 0)) {
-			temp.setText(integertostring(trackc+1)+". "+PlEdit.getTitle(trackc));
+			
+			temp.setText(integertostring(trackc+1)+". "+strClean(PlEdit.getTitle(trackc)));
 			templen.setText(PlEdit.getLength(trackc));
 		} else {
 			temp.setText(" ");

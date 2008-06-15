@@ -182,7 +182,7 @@
     
     <playlistPlus id="main.pl" 
 			y="30" h="-110" x="51" w="-102" relath="1" relatw="1"
-			font="font.pl" altfont="font.pl" fontsize="34" linespacing="-2" color="color.display"
+			font="font.pl" fontsize="34" linespacing="-2" color="color.display"
 			playcolor="color.display" selcolor="color.display" selbgcolor="color.display" selalpha="128"
 			showslider="0"/>
 
