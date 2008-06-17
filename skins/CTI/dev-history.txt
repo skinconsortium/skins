@@ -1,4 +1,13 @@
 -------------------------------
+17-JUN-2008
+
+==pjn123==
+- fixed the first load fullscreen issue (winamp bug override)
+- fixed the moveable vis (move=0 now)
+- fixed the moveable albumart (move=0 now)
+
+
+-------------------------------
 16-JUN-2008
 
 ==leechbite==
