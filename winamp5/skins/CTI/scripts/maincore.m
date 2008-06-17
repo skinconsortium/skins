@@ -85,7 +85,7 @@ Global GuiObject SongTicker;
 Global group g_pl, g_ml, g_vis, g_config, g_vid, g_avs, g_aa;
 Global button s_vis, s_vid, s_avs, s_vis2, s_avs2, s_vid2;
 Global Button ct_next, ct_prev;
-Global timer dte_tmr;
+Global timer dte_tmr, recheckPos;
 
 Global text t_ct_day, t_ct_night, t_cftime;
 
@@ -234,6 +234,10 @@ System.onScriptLoaded ()
 	crossfade_time_attrib.onDataChanged ();
 
 	setFullscreen(normal);
+	
+	recheckPos = new Timer;
+	recheckPos.setDelay(100);
+	recheckPos.start();
 }
 
 System.onScriptUnloading ()
@@ -245,6 +249,12 @@ System.onScriptUnloading ()
 	AutoRepeat_Unload();
 	dte_tmr.stop();
 	delete dte_tmr;
+	delete recheckPos;
+}
+
+recheckPos.onTimer(){
+	setFullscreen(normal);
+	recheckPos.stop();
 }
 
 
