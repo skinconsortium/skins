@@ -137,7 +137,7 @@ refreshPL() {
 	int c = 0, b = 0;
 	string currparam = "", par, val;
 	
-	selector.setXMLParam("h",integertostring(texth));
+	//selector.setXMLParam("h",integertostring(texth)); //** removed for CTI
 	selector.setXMLParam("y","-100");
 	
 	if (plslider.getXMLParam("visible")=="1") {
@@ -183,7 +183,7 @@ refreshPL() {
 			temp.init(scriptGroup);
 			
 			temp.setXMLParam("id","line"+integertostring(c));
-			temp.setXMLParam("x","0");
+			temp.setXMLParam("x","2");
 			if (plslider.getXMLParam("visible")=="1")
 				temp.setXMLParam("w",integertostring(-lenw-plslider.getguiw()-2));
 			else
@@ -245,7 +245,7 @@ refreshPL() {
 		if (trackc == currSel) {
 			temp.setXMLParam("color",selcolor);
 			templen.setXMLParam("color",selcolor);
-			selector.setXMLParam("y",integertostring(c*texth - pltopMod));
+			selector.setXMLParam("y",integertostring(c*texth - pltopMod - 2));
 			selector.show();
 		}
 
@@ -254,7 +254,7 @@ refreshPL() {
 		
 		if ((trackc < numtracks) && (trackc >= 0)) {
 			
-			temp.setText(integertostring(trackc+1)+". "+strClean(PlEdit.getTitle(trackc)));
+			temp.setText(integertostring(trackc+1)+"."+strClean(PlEdit.getTitle(trackc)));
 			templen.setText(PlEdit.getLength(trackc));
 		} else {
 			temp.setText(" ");
@@ -432,7 +432,7 @@ system.onKeyDown(string key) {
 	} else if (key == "down") {
 		currSel++;
 		if (currSel >= pledit.getNumTracks()) currSel = pledit.getNumTracks()-1;
-		
+
 		if (currSel < pltoptrack) {
 			pltoptrack = currSel;
 			pltopMod = 0;
@@ -542,6 +542,15 @@ system.onKeyDown(string key) {
 	}
 	
 	
+}
+
+scriptGroup.onAction(String action, String param, Int x, int y, int p1, int p2, GuiObject source) {
+	if (strupper(action) == "PLPLUS_REM") {
+		if (scrollAnim.isRunning()) scrollAnim.stop();
+		pledit.removeTrack(currSel);
+
+		complete;
+	}
 }
 
 mousetrap.onLeftButtonDblClk(int x, int y) {

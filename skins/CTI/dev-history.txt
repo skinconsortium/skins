@@ -1,4 +1,12 @@
 -------------------------------
+16-JUN-2008
+
+==leechbite==
+- replaced default PL with playlistPlus XUI object.
+- changed/removed some of the default PL buttons for compatibility with playlistPlus.
+
+
+-------------------------------
 12-JUN-2008
 
 ==pjn123==

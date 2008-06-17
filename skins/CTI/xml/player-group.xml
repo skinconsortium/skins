@@ -152,25 +152,31 @@
 	
 			
 	<!--windowholder y="50" h="-130" x="50" w="-100" relath="1" relatw="1" autofocus="0" wantfocus="0" autoclose="1" autoopen="1" autoavailable="1" visible="1" hold="guid:{45f3f7c1-a6f3-4ee6-a15e-125e92fc3f8d}"/-->
-
+	
 	<wasabi:button y="50" h="-130" x="50" w="-100" relath="1" relatw="1" visible="0" text="Push if Playlist isn't visible!" action="TOGGLE" param="guid:{45f3f7c1-a6f3-4ee6-a15e-125e92fc3f8d}" />
+	
+	<playlistPlus id="main.pl" 
+			y="30" h="-110" x="51" w="-102" relath="1" relatw="1"
+			font="font.pl" fontsize="34" linespacing="-2" color="color.display"
+			playcolor="color.display" selcolor="color.display" selbgcolor="color.display" selalpha="128"
+			showslider="0"/>
 
 	<Wasabi:Button y="-80" relaty="1" h="30" x="50" relatx="0" w="50" action="PE_Add"
     text="ADD" />
 
-	<Wasabi:Button y="-80" relaty="1" h="30" x="100" relatx="0" w="50" action="PE_Rem"
+	<Wasabi:Button y="-80" relaty="1" h="30" x="100" relatx="0" w="50" action_target="main.pl" action="plPlus_Rem"
     text="REM" />
 
-	<Wasabi:Button y="-80" relaty="1" h="30" x="150" relatx="0" w="50" action="PE_Sel"
-    text="SEL" />
+	<!--Wasabi:Button y="-80" relaty="1" h="30" x="150" relatx="0" w="50" action="PE_Sel"
+    text="SEL" /-->
 
-	<Wasabi:Button y="-80" relaty="1" h="30" x="200" relatx="0" w="50" action="PE_Misc"
+	<Wasabi:Button y="-80" relaty="1" h="30" x="150" relatx="0" w="50" action="PE_Misc"
     text="MISC" />
 
-	<rect y="-80" h="30" x="250" relatw="1" w="-350" relaty="1" color="color.display" />
+	<rect y="-80" h="30" x="200" relatw="1" w="-300" relaty="1" color="color.display" />
 
 	<text id="info" display="PE_Info"
-		y="-80" h="30" x="255" relatw="1" w="-360" relaty="1"
+		y="-80" h="30" x="205" relatw="1" w="-310" relaty="1"
 		color="color.display"
 		font="Tahoma" align="center"
 		fontsize="18"
@@ -180,11 +186,7 @@
 	<Wasabi:Button y="-80" relaty="1" h="30" x="-100" relatx="1" w="50" action="PE_List"
     text="LIST" />
     
-    <playlistPlus id="main.pl" 
-			y="30" h="-110" x="51" w="-102" relath="1" relatw="1"
-			font="font.pl" fontsize="34" linespacing="-2" color="color.display"
-			playcolor="color.display" selcolor="color.display" selbgcolor="color.display" selalpha="128"
-			showslider="0"/>
+    
 
 </groupdef>
 
