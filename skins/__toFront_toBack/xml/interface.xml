@@ -11,13 +11,24 @@
 
 	<wasabi:button id="1" x="50" y="50" h="50" w="50" text="1" />
 
-	
+	<text x="180" y="116" w="92" h="8" fontsize="20" bold="0" color="#5799b9" display="songname" ticker="1" showlen="1" />
+	<text
+  id="songticker" ticker="1"
+  display="songname" default="" showlen="1"
+  x="100" y="6"
+  w="159" h="14"
+  rightclickaction="trackmenu"
+  dblclickaction="trackinfo"
+  fontsize="14"
+  valign="top"
+  color="wasabi.statusbar.text"
+/>
 </groupdef>
 
 <container id="main" name="MaIN wINDOW">
 
 	<layout id="normal" minimum_h="400" minimum_w="800" h="600" w="800" OSFRAME="1" desktopalpha="1">
-		<rect color="0,0,0," sysregion="1" fitparent="1" alpha="128"/>
+		<rect color="0,0,0" filled="1" sysregion="1" fitparent="1" alpha="128" move="1"/>
 
 		<group id="g1" fitparent="1" sysregion="1"/>
 		<group id="g2" fitparent="1" sysregion="1"/>

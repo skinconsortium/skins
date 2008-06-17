@@ -1,0 +1,17 @@
+<elements>
+  <bitmap id="about.fg" file="about/about_fg.png"/>
+</elements>
+
+<groupdef id="skin.about.group" w="0" h="0" relatw="1" relath="1" rectrgn="1">
+  <rect fitparent="1" color="110,119,134" filled="1" />
+
+  <layer
+    x="0" y="0"
+    w="371"
+    h="321"
+    image="about.fg"
+  />
+
+ <guiobject fitparent="1" />
+
+</groupdef>

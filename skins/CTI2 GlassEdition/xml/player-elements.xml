@@ -1,0 +1,132 @@
+<elements>
+
+	<bitmap id="bitmap.font.pl" file="player/pl-font2.png" gammagroup="text"/>
+	<bitmapfont id="font.pl" file="bitmap.font.pl" charwidth="36" charheight="36" hspacing="-10" vspacing="0"/>
+	
+	<bitmap id="pl.selector.left" file="player/pl-selector.png" x="0" y="0" w="15" h="32" gammagroup="text" />
+	<bitmap id="pl.selector.middle" file="player/pl-selector.png" x="15" y="0" w="73" h="32" gammagroup="text" />
+	<bitmap id="pl.selector.right" file="player/pl-selector.png" x="88" y="0" w="15" h="32" gammagroup="text" />
+
+	<bitmap id="seek.fill" file="$solid" h="5" w="1" color="227,0,0" gammagroup="text" />
+	<bitmap id="seek.button" file="$polygon" h="21" w="21" points="4,4;4,17;17,17;17,4;4,4=227,0,0" gammagroup="text"/>
+
+	<bitmap id="main.bg" file="$gradient" mode="linear" antialias="1"
+		gradient_x1="0" gradient_y1="0" gradient_x2="0" gradient_y2="1"
+		points="0.0=0,0,0,50;1.0=0,0,0,255" h="800" w="800"
+		gammagroup="background"
+	/>
+
+	<bitmap id="player.back" file="player/back.png" gammagroup="text"/>
+	<bitmap id="player.minimize" file="player/minimize.png" gammagroup="text"/>
+	<bitmap id="player.close" file="player/close.png" gammagroup="text"/>
+	<bitmap id="player.previous" file="player/previous.png" gammagroup="text"/>
+	<bitmap id="player.next" file="player/next.png" gammagroup="text"/>
+
+	<bitmap id="player.back.d" file="player/back-d.png" gammagroup="text"/>
+	<bitmap id="player.minimize.d" file="player/minimize-d.png" gammagroup="text"/>
+	<bitmap id="player.close.d" file="player/close-d.png" gammagroup="text"/>
+	<bitmap id="player.previous.d" file="player/previous-d.png" gammagroup="text"/>
+	<bitmap id="player.next.d" file="player/next-d.png" gammagroup="text"/>
+
+	<bitmap id="player.switch.avs.d" file="player/avs-d.png" gammagroup="text"/>
+	<bitmap id="player.switch.vis.d" file="player/vis-d.png" gammagroup="text"/>
+	<bitmap id="player.switch.video.d" file="player/video-d.png" gammagroup="text"/>
+
+	<bitmap id="player.switch.avs" file="player/avs.png" gammagroup="text"/>
+	<bitmap id="player.switch.vis" file="player/vis.png" gammagroup="text"/>
+	<bitmap id="player.switch.video" file="player/video.png" gammagroup="text"/>
+
+	<bitmap id="player.cbuttons.open" file="player/cbuttons.png" gammagroup="text" x="0" y="0" h="52" w="146"/>
+	<bitmap id="player.cbuttons.play" file="player/cbuttons.png" gammagroup="text" x="146" y="0" h="52" w="145"/>
+	<bitmap id="player.cbuttons.stop" file="player/cbuttons.png" gammagroup="text" x="291" y="0" h="52" w="145"/>
+	<bitmap id="player.cbuttons.pause" file="player/cbuttons.png" gammagroup="text" x="146" y="52" h="52" w="145"/>
+
+	<bitmap id="player.cbuttons.open.d" file="player/cbuttons-d.png" gammagroup="text" x="0" y="0" h="52" w="146"/>
+	<bitmap id="player.cbuttons.play.d" file="player/cbuttons-d.png" gammagroup="text" x="146" y="0" h="52" w="145"/>
+	<bitmap id="player.cbuttons.stop.d" file="player/cbuttons-d.png" gammagroup="text" x="291" y="0" h="52" w="145"/>
+	<bitmap id="player.cbuttons.pause.d" file="player/cbuttons-d.png" gammagroup="text" x="146" y="52" h="52" w="145"/>
+
+	<bitmap id="player.volume.up" file="player/volbuttons.png" gammagroup="text" x="0" y="0" h="155" w="115"/>
+	<bitmap id="player.volume.down" file="player/volbuttons.png" gammagroup="text" x="0" y="155" h="155" w="115"/>
+
+	<bitmap id="player.volume.up.d" file="player/volbuttons-d.png" gammagroup="text" x="0" y="0" h="155" w="115"/>
+	<bitmap id="player.volume.down.d" file="player/volbuttons-d.png" gammagroup="text" x="0" y="155" h="155" w="115"/>
+
+	<bitmap id="player.volume.mute" file="player/mute.png" gammagroup="text" />
+	<bitmap id="player.volume.mute.d" file="player/mute-d.png" gammagroup="text" />
+	<bitmap id="player.volume.mute.a" file="player/mute-a.png" gammagroup="text" />
+
+	<bitmap id="player.mode.repeat0" file="player/playmode.png" gammagroup="text" x="230" y="0" h="155" w="115"/>
+	<bitmap id="player.mode.repeat1" file="player/playmode.png" gammagroup="text" x="0" y="0" h="155" w="115"/>
+	<bitmap id="player.mode.repeat2" file="player/playmode.png" gammagroup="text" x="115" y="0" h="155" w="115"/>
+
+	<bitmap id="player.mode.repeat.d0" file="player/playmode-d.png" gammagroup="text" x="230" y="0" h="155" w="115"/>
+	<bitmap id="player.mode.repeat.d1" file="player/playmode-d.png" gammagroup="text" x="0" y="0" h="155" w="115"/>
+	<bitmap id="player.mode.repeat.d2" file="player/playmode-d.png" gammagroup="text" x="115" y="0" h="155" w="115"/>
+
+	<bitmap id="player.mode.shuffle0" file="player/playmode.png" gammagroup="text" x="115" y="155" h="155" w="115"/>
+	<bitmap id="player.mode.shuffle1" file="player/playmode.png" gammagroup="text" x="0" y="155" h="155" w="115"/>
+
+	<bitmap id="player.mode.shuffle.d0" file="player/playmode-d.png" gammagroup="text" x="115" y="155" h="155" w="115"/>
+	<bitmap id="player.mode.shuffle.d1" file="player/playmode-d.png" gammagroup="text" x="0" y="155" h="155" w="115"/>
+
+	<bitmap id="player.modesel.playlist" file="player/modesel.png" gammagroup="text" x="0" y="0" h="153" w="283"/>
+	<bitmap id="player.modesel.library" file="player/modesel.png" gammagroup="text" x="283" y="0" h="153" w="283"/>
+	<bitmap id="player.modesel.vidvis" file="player/modesel.png" gammagroup="text" x="0" y="153" h="153" w="283"/>
+	<bitmap id="player.modesel.config" file="player/modesel.png" gammagroup="text" x="283" y="153" h="153" w="283"/>
+	<bitmap id="player.modesel.albumart" file="player/modesel2.png" gammagroup="text" />
+
+	<bitmap id="player.modesel.playlist.d" file="player/modesel-d.png" gammagroup="text" x="0" y="0" h="153" w="283"/>
+	<bitmap id="player.modesel.library.d" file="player/modesel-d.png" gammagroup="text" x="283" y="0" h="153" w="283"/>
+	<bitmap id="player.modesel.vidvis.d" file="player/modesel-d.png" gammagroup="text" x="0" y="153" h="153" w="283"/>
+	<bitmap id="player.modesel.config.d" file="player/modesel-d.png" gammagroup="text" x="283" y="153" h="153" w="283"/>
+	<bitmap id="player.modesel.albumart.d" file="player/modesel2-d.png" gammagroup="text" />
+
+	<bitmap id="player.omodesel.1" file="player/omodesel.png" gammagroup="text" x="0" y="0" h="153" w="283"/>
+	<bitmap id="player.omodesel.2" file="player/omodesel.png" gammagroup="text" x="283" y="0" h="153" w="283"/>
+	<bitmap id="player.omodesel.3" file="player/omodesel.png" gammagroup="text" x="0" y="153" h="153" w="283"/>
+	<bitmap id="player.omodesel.4" file="player/omodesel.png" gammagroup="text" x="283" y="153" h="153" w="283"/>
+
+	<bitmap id="player.omodesel.1.d" file="player/omodesel-d.png" gammagroup="text" x="0" y="0" h="153" w="283"/>
+	<bitmap id="player.omodesel.2.d" file="player/omodesel-d.png" gammagroup="text" x="283" y="0" h="153" w="283"/>
+	<bitmap id="player.omodesel.3.d" file="player/omodesel-d.png" gammagroup="text" x="0" y="153" h="153" w="283"/>
+	<bitmap id="player.omodesel.4.d" file="player/omodesel-d.png" gammagroup="text" x="283" y="153" h="153" w="283"/>
+
+	<bitmap id="player.frame.topleft" file="player/frame.png" gammagroup="text" x="0" y="0" h="150" w="280"/>
+	<bitmap id="player.frame.top" file="player/frame.png" gammagroup="text" x="280" y="0" h="150" w="10"/>
+	<bitmap id="player.frame.topright" file="player/frame.png" gammagroup="text" x="290" y="0" h="150" w="280"/>
+	<bitmap id="player.frame.left" file="player/frame.png" gammagroup="text" x="0" y="150" h="10" w="280"/>
+	<bitmap id="player.frame.right" file="player/frame.png" gammagroup="text" x="290" y="150" h="10" w="280"/>
+	<bitmap id="player.frame.bottomleft" file="player/frame.png" gammagroup="text" x="0" y="160" h="150" w="280"/>
+	<bitmap id="player.frame.bottom" file="player/frame.png" gammagroup="text" x="280" y="160" h="150" w="10"/>
+	<bitmap id="player.frame.bottomright" file="player/frame.png" gammagroup="text" x="290" y="160" h="150" w="280"/>
+
+	<bitmap id="player.cfbg" file="player/cfbg.png" gammagroup="text" />
+
+	<bitmap id="player.songticker.bg.l" file="player/songticker.png" gammagroup="text" x="0" w="30"/>
+	<bitmap id="player.songticker.bg.c" file="player/songticker.png" gammagroup="text" x="30" w="346"/>
+	<bitmap id="player.songticker.bg.r" file="player/songticker.png" gammagroup="text" x="406" w="30"/>
+
+	<bitmap id="player.eq.div" file="player/eq-div.png" gammagroup="text"/>
+	<bitmap id="player.eq.slider" file="player/eq-slider.png" gammagroup="text"/>
+	<bitmap id="player.eq.toggle.on" file="player/eq-toggle.png" gammagroup="text" x="0" y="0" w="30" h="24"/>
+	<bitmap id="player.eq.toggle.off" file="player/eq-toggle.png" gammagroup="text" x="30" y="0" w="30" h="24"/>
+	<bitmap id="player.eq.attoggle.on" file="player/eq-attoggle.png" gammagroup="text" x="0" y="0" w="50" h="24"/>
+	<bitmap id="player.eq.attoggle.off" file="player/eq-attoggle.png" gammagroup="text" x="50" y="0" w="50" h="24"/>
+
+	<bitmap id="player.xfade.slider" file="player/xfade-slider.png" gammagroup="text"/>
+	<bitmap id="player.xfade.bg" file="player/xfade-bg.png" gammagroup="text"/>
+
+	<bitmap id="player.xfade.on" file="player/xfade-toggle.png" gammagroup="text" x="0" y="0" w="30" h="9"/>
+	<bitmap id="player.xfade.off" file="player/xfade-toggle.png" gammagroup="text" x="30" y="0" w="30" h="9"/>
+
+	<bitmap id="player.vis.rnd.on" file="player/vis-rnd.png" gammagroup="text" x="0" y="0" w="21" h="16"/>
+	<bitmap id="player.vis.rnd.off" file="player/vis-rnd.png" gammagroup="text" x="21" y="0" w="21" h="16"/>
+	<bitmap id="player.vis.next" file="player/vis-rnd.png" gammagroup="text" x="42" y="0" w="21" h="16"/>
+	<bitmap id="player.vis.prev" file="player/vis-rnd.png" gammagroup="text" x="63" y="0" w="21" h="16"/>
+
+	<bitmap id="player.visover" file="player/visover.png" gammagroup="background"/>
+	
+	
+
+</elements>

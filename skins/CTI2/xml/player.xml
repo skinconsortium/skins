@@ -1,0 +1,48 @@
+<include file="player-elements.xml"/>
+<include file="player-group.xml"/>
+
+<container id="main" name="Main window">
+
+	<layout id="Normal" desktopalpha="0" minimum_w="800" minimum_h="480" w="800" h="480" >
+
+		<rect id="bg.base" filled="1" color="color.boddy" fitparent="1" regionop="1" />
+
+		<button id="player.button.back" x="0" y="0" image="player.back" downimage="player.back.d" visible="0"/>
+		<button id="player.button.minimize" x="0" y="0" image="player.minimize" downimage="player.minimize.d" action="MINIMIZE"/>
+		<button id="player.button.close" x="-167" relatx="1" y="0" image="player.close" downimage="player.close.d" action="CLOSE"/>
+
+		<button id="player.button.previous" x="0" y="-97" relaty="1" image="player.previous" downimage="player.previous.d" />
+
+		<button id="player.button.next" x="-167" relatx="1" y="-97" relaty="1" image="player.next" downimage="player.next.d" />
+
+		<group id="player.songticker" x="175" w="-350" h="66" relatw="1" />
+
+		<group id="player.cbuttons" x="0" y="-52" relaty="1" w="436" h="52" />
+		<group id="player.volume" x="0" y="0" relaty="0" h="310" w="115" />
+		<group id="player.playmode" x="-115" relatx="1" y="0" relaty="0" h="310" w="115" />
+
+
+		<group w="566" h="306" id="player.modeselect"/>
+
+		<group x="140" y="80" h="-160" w="-280" relath="1" relatw="1" id="player.playlist" visible="0"/>
+		<group x="140" y="80" h="-160" w="-280" relath="1" relatw="1" id="player.library" visible="0"/>
+		<group x="140" y="80" h="-160" w="-280" relath="1" relatw="1" id="player.vis" visible="0"/>
+		<group x="140" y="80" h="-160" w="-280" relath="1" relatw="1" id="player.vid" visible="0"/>
+		<group x="140" y="80" h="-160" w="-280" relath="1" relatw="1" id="player.avs" visible="0"/>
+		<group x="140" y="80" h="-160" w="-280" relath="1" relatw="1" id="player.albumart" visible="0"/>
+
+		<group w="566" h="306" id="player.config" visible="0"/>
+
+		<!-- Daytime stimulator -->
+
+		<Colorthemes:list id="d.colorthemes" y="-11" h="10" x="0" w="100" nohscroll="1" nocolheader="1" alpha="0" visible="1" autofocus="0" wantfocus="0" />
+
+		<Wasabi:Button y="-1" h="0" x="-1" w="0" action="colorthemes_previous"
+		action_target="d.colorthemes" id="d.cthemes.prev" text="Previous Preset" visible="1" autofocus="0" wantfocus="0" />
+
+		<Wasabi:Button y="-1" h="0" x="-1" w="0" action="colorthemes_next"
+		action_target="d.colorthemes" id="d.cthemes.next" text="Next Preset"  visible="1" autofocus="0" wantfocus="0" />
+
+	</layout>
+
+</container>

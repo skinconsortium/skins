@@ -1,0 +1,211 @@
+<elements>
+
+ <bitmap id="wasabi.frame.basetexture" file="window/background.png" gammagroup="Backgrounds" />
+  <elementalias id="component.basetexture" target="wasabi.frame.basetexture" />
+  <elementalias id="studio.basetexture" target="wasabi.frame.basetexture" />
+
+  <bitmap id="component.top.left" file="window/standardframe.png" x="0" y="0" w="27" h="27" gammagroup="background" />
+  <bitmap id="component.top.middle" file="window/standardframe.png" x="27" y="0" w="142" h="19" gammagroup="background" />
+  <bitmap id="component.top.right" file="window/standardframe.png" x="169" y="0" w="27" h="27" gammagroup="background" />
+  <bitmap id="component.left" file="window/standardframe.png" x="0" y="27" w="19" h="56" gammagroup="background" />
+  <bitmap id="component.right" file="window/standardframe.png" x="177" y="27" w="19" h="56" gammagroup="background" />
+  <bitmap id="component.bottom.left" file="window/standardframe.png" x="0" y="83" w="30" h="27" gammagroup="background" />
+  <bitmap id="component.bottom.middle" file="window/standardframe.png" x="30" y="92" w="137" h="18" gammagroup="background" />
+  <bitmap id="component.bottom.right" file="window/standardframe.png" x="167" y="83" w="29" h="27" gammagroup="background" />
+
+  <bitmap id="component.region.top.left" file="window/regions.png" x="0" y="0" w="5" h="5"/>
+  <bitmap id="component.region.top.right" file="window/regions.png" x="191" y="0" w="5" h="5"/>
+  <bitmap id="component.region.bottom.left" file="window/regions.png" x="0" y="105" w="5" h="5"/>
+  <bitmap id="component.region.bottom.right" file="window/regions.png" x="191" y="105" w="5" h="5"/>
+
+  <bitmap id="component.closebutton" file="window/closebutton.png" 
+	x="0" y="0" w="12" h="12" gammagroup="GlassButtons"/>
+  <bitmap id="component.closebutton.pressed" file="window/closebutton.png" 
+	x="0" y="12" w="12" h="12" gammagroup="GlassButtons"/>
+
+
+	<bitmap id="frame.top.left" file="player/standardframe.png" x="0" y="0" w="56" h="27" gammagroup="background"/>
+	<bitmap id="frame.top" file="player/standardframe.png" x="56" y="0" w="137" h="27" gammagroup="background"/>
+	<bitmap id="frame.top.right" file="player/standardframe.png" x="193" y="0" w="55" h="27" gammagroup="background"/>
+	<bitmap id="frame.left" file="player/standardframe.png" x="0" y="27" w="16" h="36" gammagroup="background"/>
+	<bitmap id="frame.right" file="player/standardframe.png" x="232" y="27" w="16" h="36" gammagroup="background"/>
+	<bitmap id="frame.bottom.left" file="player/standardframe.png" x="0" y="64" w="65" h="101" gammagroup="background"/>
+	<bitmap id="frame.bottom.left.1" file="player/standardframe.png" x="0" y="63" w="16" h="101" gammagroup="background"/>
+	<bitmap id="frame.bottom.right.1" file="player/standardframe.png" x="234" y="63" w="16" h="101" gammagroup="background"/>
+	<bitmap id="frame.bottom.left.2" file="player/standardframe.png" x="16" y="122" w="44" h="42" gammagroup="background"/>
+	<bitmap id="frame.bottom.right.2" file="player/standardframe.png" x="188" y="122" w="44" h="42" gammagroup="background"/>
+	<bitmap id="frame.bottom" file="player/standardframe.png" x="60" y="122" w="128" h="42" gammagroup="background"/>
+	<bitmap id="frame.bckg" file="player/standardframe.png" x="16" y="27" w="32" h="32" gammagroup="background"/>
+	<bitmap id="frame.header" file="player/sfheader.png" x="0" y="0" w="5" h="24" gammagroup="Glass"/>
+	<bitmap id="frame.header.corner" file="player/sfheader.png" x="154" y="0" w="65" h="24" gammagroup="Glass"/>
+
+	<bitmap id="frame.bottom.left.1.region" file="player/sfrgn1.png"/>
+	<bitmap id="frame.bottom.right.1.region" file="player/sfrgn2.png"/>
+	<bitmap id="frame.bottom.left.2.region" file="player/sfrgn3.png"/>
+	<bitmap id="frame.bottom.right.2.region" file="player/sfrgn4.png"/>
+
+</elements>
+
+<groupdef id="frame.generic">
+ <layer
+ id="bckg"
+ x="10" y="10"
+ w="-10" h="-38"
+ relatw="1" relath="1"
+ image="frame.bckg"
+ sysregion="1"
+/>
+<layer
+ id="sf.header"
+ x="16" y="23"
+ w="-71" relatw="1"
+ image="frame.header" 
+ tile="1"
+/>
+<layer
+ id="sf.nostretch"
+ x="-82" y="23"
+ relatx="1" w="65" h="24"
+ relatw="0" relath="0"
+ image="frame.header.corner"
+/>
+<rect
+ id="border.keep"
+ x="16" y="27"
+ w="-22" h="21" relatw="1"
+ color="wasabi.text.color"
+/>
+<text id="text.window" x="16" y="22" shadowx="1" shadowy="1" font="player.font.ticker" default=":componentname" color="wasabi.text.color" fontsize="25" w="0" h="30" relatw="1" ghost="1"/>
+<!--<text
+ id="small.timer"
+ x="-75" y="20" relatx="1"
+ font="small.numbers"
+ display="TIME"
+ w="20" h="5"
+/>-->
+<layer
+ id="top.left"
+ x="0" y="0"
+ w="56" h="27"
+ image="frame.top.left"
+ relatw="0" relath="0"
+ sysregion="1"
+/>
+<layer
+ id="top.bar"
+ x="56" y="0"
+ w="-55" h="27"
+ relatw="1" relath="0"
+ image="frame.top"
+ sysregion="1"
+/>
+<layer
+ id="top.right"
+ x="-55" y="0" relatx="1"
+ w="55" h="27"
+ image="frame.top.right"
+ relatw="0" relath="0"
+ sysregion="1"
+/>
+<layer
+ id="left.bar"
+ x="0" y="27"
+ w="16" h="-101"
+ relatw="0" relath="1"
+ image="frame.left"
+ sysregion="1"
+/>
+<layer
+ id="bottom.left.1"
+ x="0" y="-101" relaty="1"
+ w="16" h="101"
+ relatw="0" relath="0"
+ image="frame.bottom.left.1"
+ sysregion="1"
+/>
+<layer
+ id="bottom.left.2"
+ x="16" y="-42"
+ relaty="1" relatw="0" relath="0"
+ image="frame.bottom.left.2"
+ sysregion="1"
+/>
+<layer
+ id="bottom.bar"
+ x="60" y="-42" w="-95"
+ relaty="1" relatw="1" relath="0"
+ image="frame.bottom"
+ sysregion="1"
+/>
+<layer
+ id="right.bar"
+ x="-16" y="27"
+ w="16" h="-101" relatx="1"
+ relatw="0" relath="1"
+ image="frame.right"
+ sysregion="1"
+/>
+<layer
+ id="bottom.right.1"
+ x="-15" y="-100" relaty="1" relatx="1"
+ w="16" h="101"
+ relatw="0" relath="0"
+ image="frame.bottom.right.1"
+ sysregion="1"
+/>
+
+<layer
+ id="bottom.left.2"
+ x="-59" y="-42" relatx="1"
+ relaty="1" relatw="0" relath="0"
+ image="frame.bottom.right.2"
+ sysregion="1"
+/>
+
+<button
+ id="close"
+ action="close"
+ x="-16" y="5" relatx="1"
+ image="sframe.close.image"
+/>
+<layer id="resize.1" resize="bottomright" x="-45" y="-45" w="45" h="45" relatx="1" relaty="1"/>
+</groupdef>
+
+
+<!-- Wasabi:StandardFrame:Status  -->
+
+<groupdef id="wasabi.standardframe.statusbar" xuitag="Wasabi:StandardFrame:Status" desktopalpha="1" minimum_w="400" minimum_h="400" inherit_params="0">
+
+	<group id="frame.generic" x="0" y="0" w="0" h="0" relatw="1" relath="1" sysregion="1"/>
+
+ <LayoutStatus id="standardframe.layoutstatus" x="19" y="-58" relaty="1" w="-38" relatw="1" h="15" exclude="{system}" />
+ <script id="standardframe.script" file="scripts/standardframe.maki" param="19,49,-38,-109,0,0,1,1" />
+
+</groupdef>
+
+
+<!-- Wasabi:StandardFrame:NoStatus -->
+
+<groupdef id="wasabi.standardframe.nostatusbar" sysregion="1" xuitag="Wasabi:StandardFrame:NoStatus" inherit_params="0">
+
+ <group id="frame.generic" x="0" y="0" w="0" h="0" relatw="1" relath="1"/>
+
+ <script id="standardframe.script" file="scripts/standardframe.maki" param="19,49,-38,-89,0,0,1,1" />
+
+</groupdef>
+
+
+<!-- Wasabi:StandardFrame:Modal -->
+
+<groupdef id="wasabi.standardframe.modal" inherit_group="wasabi.standardframe.nostatusbar" sysregion="1" xuitag="Wasabi:StandardFrame:Modal">
+  <hideobject target="sysmenu;sysmenu.inactive"/>
+  <sendparams target="wasabi.titlebar" x="4" w="-24" relatw="1" />
+  <sendparams target="window.top.left;window.top;window.top.right;window.left;window.right;window.bottom.left.top;window.bottom.left;window.bottom.left.bottom;window.bottom.top;window.bottom;window.bottom.bottom;window.bottom.right.top;window.bottom.right;window.bottom.right.bottom" resize="0" />
+</groupdef>
+
+
+<!-- Wasabi:StandardFrame:Static -->
+
+<groupdef id="wasabi.standardframe.static" inherit_group="wasabi.standardframe.nostatusbar" sysregion="1" xuitag="Wasabi:StandardFrame:Static">
+  <sendparams target="window.top.left;window.top;window.top.right;window.left;window.right;window.bottom.left.top;window.bottom.left;window.bottom.left.bottom;window.bottom.top;window.bottom;window.bottom.bottom;window.bottom.right.top;window.bottom.right;window.bottom.right.bottom" resize="0" />
+</groupdef>

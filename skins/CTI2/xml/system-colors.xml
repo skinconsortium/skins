@@ -1,0 +1,76 @@
+<!--
+
+  system-colors.xml
+
+  this file contains all the static color definitions for Wasabi. An objects that does not rely on a group will use
+  one of these elements to decide what color to use.
+
+-->
+
+<elements>
+
+  <!-- Generic colors for usage --><!-- Placed at the first for protecting overrides -->
+  <color id="white" value="255,255,255"/>
+  <color id="black" value="0,0,0"/>
+  <color id="red" value="255,0,0"/>
+  <color id="blue" value="0,0,255"/>
+  <color id="green" value="0,255,0"/>
+  <color id="yellow" value="255,255,0"/>
+  <color id="cyan" value="0,255,255"/>
+  <color id="pink" value="255,0,255"/>
+  <!-- End Of Generic colors for usage -->
+
+  <!-- Warp custom colors -->
+  <color id="color.display" value="227,0,0" gammagroup="text"/>
+  <color id="color.selected.bg" value="150,0,0" gammagroup="selected"/>
+  <color id="color.current" value="255,0,0" gammagroup="current"/>
+  <color id="color.boddy" value="0,0,0" gammagroup="background"/>
+
+  <!-- wasabi colors -->
+  <color id="white" value="color.display" /> <!-- hehe, overrides the white id to black. yah a bit confusing -->
+  <color id="wasabi.text.color" value="color.display" />
+  <color id="wasabi.tooltips.textcolor" value="0,0,0" />
+  <color id="wasabi.text.color.inverse" value="color.boddy" gammagroup="background"/>
+
+<!-- Generic Trees -->
+  <color id="wasabi.tree.text" value="color.display" gammagroup="text"/> <!-- Item text color -->
+  <color id="wasabi.tree.selected" value="color.selected.bg" gammagroup="selected"/> <!-- Select item text background color -->
+
+  <!-- Generic Lists -->
+  <color id="wasabi.list.text" value="color.display" gammagroup="text"/> <!--lists/trees item foreground (also edit text) -->
+  <color id="wasabi.list.background" value="color.boddy" gammagroup="background"/>  <!--lists/trees item background (also bg for edit) -->
+
+  <color id="wasabi.list.text.selected" value="color.current" gammagroup="current"/> <!--listview/treeview selection bar text color -->
+  <color id="wasabi.list.text.selected.background" value="color.selected.bg" gammagroup="selected"/> <!--listview/treeview selection bar backcolor -->
+
+  <color id="studio.list.item.selected" value="color.current" gammagroup="current"/> 
+  <color id="studio.list.item.focused" value="color.selected.bg" gammagroup="selected"/> 
+
+  <color id="wasabi.list.text.current" value="color.current" gammagroup="current"/> <!-- currently playing item in lists -->
+  <color id="wasabi.list.text.selected.inactive" value="color.display" gammagroup="text"/> <!-- listview/treeview selection bar textcolor (inactive) -->
+  <color id="wasabi.list.text.selected.background.inactive" value="color.selected.bg" gammagroup="selected"/> <!-- listview/treeview selectionbar back color (inactive) -->
+
+  <color id="wasabi.list.column.background" value="color.boddy" gammagroup="background"/> <!-- listview header background color -->
+  <color id="wasabi.list.column.text"  value="color.display" gammagroup="text"/> <!-- listview header text color -->
+  <color id="wasabi.list.column.frame.top"  value="color.display" gammagroup="text"/> // listview header frame top color
+  <color id="wasabi.list.column.frame.middle" value="color.boddy" gammagroup="background"/> // listview header frame middle color
+  <color id="wasabi.list.column.frame.bottom"  value="color.display" gammagroup="text"/> // listview header frame bottom color
+  <color id="wasabi.list.column.empty"  value="color.boddy" gammagroup="background"/> // listview header empty color (beyond the columns
+
+  <!-- edit wnds -->
+  <color id="wasabi.window.background" value="color.boddy" gammagroup="background"/> <!--ML WINDOW BORDERS window background. -  If this color is not defined, a whole container is created in memory to extract a pixel, so specifying it makes skin loading faster -->
+  <color id="wasabi.window.text" value="color.display" gammagroup="text"/> <!--text color within windows -->
+  <color id="wasabi.border.sunken" value="color.display" gammagroup="text"/> // color of dividers and sunken borders
+  <color id="wasabi.text" value="color.display"/>
+
+  <color id="wasabi.scrollbar.foreground" value="color.boddy" gammagroup="background"/> <!-- scrollbar foreground color -->
+  <color id="wasabi.scrollbar.background" value="color.boddy" gammagroup="background"/> <!-- scrollbar background color -->
+  <color id="wasabi.scrollbar.foreground.inverted" value="color.boddy" gammagroup="background"/> <!-- inverse scrollbar foreground color -->
+  <color id="wasabi.scrollbar.background.inverted" value="color.boddy" gammagroup="background"/> <!-- inverse scrollbar background color -->
+
+  <color id="wasabi.button.text" value="color.display" gammagroup="text"/> <!-- Buttons text color -->
+  <color id="wasabi.button.hiliteText" value="color.display" gammagroup="text"/> <!-- Buttons hilite text color, used by tab windows-->
+  <color id="wasabi.button.dimmedText" value="color.display" gammagroup="text"/> <!-- Buttons dimmed text color, when disabled -->
+
+</elements>
+

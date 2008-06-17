@@ -1,0 +1,18 @@
+-------------------------------
+16-JUN-2008
+
+==leechbite==
+- replaced default PL with playlistPlus XUI object.
+- changed/removed some of the default PL buttons for compatibility with playlistPlus.
+
+
+-------------------------------
+12-JUN-2008
+
+==pjn123==
+- Added this doc
+- Moved all xui's into the xui directory and change the script path for fade text because it was pointing to cpro. 
+- Added ModernSongticker xui... also edited the code so that it can be implemented anywhere (previously it wont find the objects if it wasnt created already)
+- ModernSongticker implemented with sendactions... also edited all other relevant scripts
+- NowPlaying xui.. removed delayed resize because (dont need it here)
+- Changed the wasabi sliders... someone need to change the gfx+gammagroups

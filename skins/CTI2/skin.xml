@@ -1,0 +1,32 @@
+<?xml version="1.33" encoding="UTF-8" standalone="yes"?>
+
+<WinampAbstractionLayer version="1.33">
+
+	<skininfo>
+		<version>1.0</version>
+		<name>CTI</name>
+		<comment>Nitrous Audio - Car Touchscreen Interface</comment>
+		<author gaybag="deimos">Nitrous Audio</author>
+		<email>info@nitrousaudio.com</email>
+		<homepage>http://www.nitrousaudio.com</homepage>
+	 </skininfo>
+
+	 <!-- See License.txt for more information about using, editing this skin -->
+
+	<scripts>
+		<script file="scripts/loadattribs.maki"/>
+	</scripts>
+
+	<include file="about/about.xml"/>
+	<include file="xml/system-colors.xml"/>
+	<include file="xui/xui-files.xml"/>
+	<include file="xml/player.xml"/>
+	<include file="xml/gamma-presets.xml"/>
+	<include file="xml/system-elements.xml"/>
+	<include file="xml/window-overrides.xml"/>
+    <include file="xui/playlistPlus/playlistPlus.xml"/>
+	<scripts>
+		<script file="scripts/maincore.maki" param="@COLORTHEMESPATH@"/>
+	</scripts>
+
+ </WinampAbstractionLayer>

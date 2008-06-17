@@ -1,0 +1,571 @@
+-- Variables Table ---------------------------------------------------
+var# |                Class |                                    What 
+----------------------------------------------------------------------
+0000 |               System |                                   System*
+0001 |                  Int |                                     NULL
+0002 |                  Int |                     __deprecated_runtime
+0003 |               Double |                                        v
+0004 |                  Int |                                        2
+0005 |                  Int |                                    65535
+0006 |                  Int |                                        1
+0007 |               String |                           "runtimecheck"
+0008 |                  Int |                                        0
+0009 |                  Int |                                     last
+000A |                  Int |                                      now
+000B |                  Int |                                     5000
+000C |               String |                  "This script requires "
+000D |               String |        "Winamp 5.51 (skin version 1.31)"
+000E |               String |                                  "Error"
+000F |               String |                                       ""
+0010 |               String |                                        s
+0011 |               String |                                  "DEBUG"
+0012 |                  Int |                                        s
+0013 |               Config |                                   Config*
+0014 |               Button |                         AutoRepeatButton[]
+0015 |                Timer |                         _autorepeatTimer
+0016 |                  Int |                            _InitialDelay
+0017 |                  Int |                             _RepeatDelay
+0018 |                  Int |                     AutoRepeat_ClickType
+0019 |               Button |                                 _Latched
+001A |                  Int |                                        x
+001B |                  Int |                                        y
+001C |                  Int |                                        x
+001D |                  Int |                                        y
+001E |                  Int |                                      800
+001F |                  Int |                                       80
+0020 |                  Int |                                   millis
+0021 |                  Int |                                   millis
+0022 |           ConfigItem |                         optionsmenu_page
+0023 |           ConfigItem |                      custom_windows_page
+0024 |           ConfigItem |                   custom_page_nonexposed
+0025 |               String |                                 "Hidden"
+0026 |               String | "{E9C2D926-53CA-400f-9A4D-85E31755A4CF}"
+0027 |               String | "{1828D28F-78DD-4647-8532-EBA504B8FC04}"
+0028 |               String | "{6559CA61-7EB2-4415-A8A9-A2AEEF762B7F}"
+0029 |                  Int |                         attribs_mychange
+002A |      ConfigAttribute |                                      sep
+002B |                  Int |                                sep_count
+002C |           ConfigItem |                              cfgmenupage
+002D |           ConfigItem |                                   parent
+002E |               String |                                     name
+002F |               String |                                     guid
+0030 |           ConfigItem |                                    __ret
+0031 |      ConfigAttribute |                                   __dret
+0032 |      ConfigAttribute |                    crossfade_time_attrib
+0033 |               String | "{F1239F09-8CC6-4081-8519-C2AE99FCB14C}"
+0034 |           ConfigItem |                      custom_page_general
+0035 |               String |                         "Crossfade time"
+0036 |            GuiObject |                           _CButtonsLayer
+0037 |                Group |                           _CButtonsGroup
+0038 |                  Int |                         _CButtonscenterx
+0039 |                  Int |                         _CButtonscentery
+003A |                  Int |                            _CButtonsaddx
+003B |                  Int |                            _CButtonsaddy
+003C |                  Int |                            _CButtonsaddh
+003D |                  Int |                            _CButtonsaddw
+003E |            GuiObject |                                   _layer
+003F |                Group |                             parentLayout
+0040 |                  Int |                                  centerx
+0041 |                  Int |                                  centery
+0042 |                  Int |                                      val
+0043 |                  Int |                                      val
+0044 |                  Int |                                      val
+0045 |                  Int |                                      val
+0046 |                  Int |                                      myw
+0047 |                  Int |                                      myh
+0048 |                  Int |                                   layerw
+0049 |                  Int |                                   layerh
+004A |                  Int |                                        x
+004B |                  Int |                                        y
+004C |               String |                                      "x"
+004D |               String |                                      "y"
+004E |              Boolean |                                  iserror
+004F |                  Int |                                        x
+0050 |                  Int |                                        y
+0051 |                  Int |                                        w
+0052 |                  Int |                                        h
+0053 |            GuiObject |                            _ModeSelLayer
+0054 |                Group |                            _ModeSelGroup
+0055 |                  Int |                          _ModeSelcenterx
+0056 |                  Int |                          _ModeSelcentery
+0057 |                  Int |                             _ModeSeladdx
+0058 |                  Int |                             _ModeSeladdy
+0059 |                  Int |                             _ModeSeladdh
+005A |                  Int |                             _ModeSeladdw
+005B |            GuiObject |                                   _layer
+005C |                Group |                             parentLayout
+005D |                  Int |                                  centerx
+005E |                  Int |                                  centery
+005F |                  Int |                                      val
+0060 |                  Int |                                      val
+0061 |                  Int |                                      val
+0062 |                  Int |                                      val
+0063 |                  Int |                                      myw
+0064 |                  Int |                                      myh
+0065 |                  Int |                                   layerw
+0066 |                  Int |                                   layerh
+0067 |                  Int |                                        x
+0068 |                  Int |                                        y
+0069 |              Boolean |                                  iserror
+006A |                  Int |                                        x
+006B |                  Int |                                        y
+006C |                  Int |                                        w
+006D |                  Int |                                        h
+006E |            GuiObject |                           _VolGroupLayer
+006F |                Group |                           _VolGroupGroup
+0070 |                  Int |                         _VolGroupcenterx
+0071 |                  Int |                         _VolGroupcentery
+0072 |                  Int |                            _VolGroupaddx
+0073 |                  Int |                            _VolGroupaddy
+0074 |                  Int |                            _VolGroupaddh
+0075 |                  Int |                            _VolGroupaddw
+0076 |            GuiObject |                                   _layer
+0077 |                Group |                             parentLayout
+0078 |                  Int |                                  centerx
+0079 |                  Int |                                  centery
+007A |                  Int |                                      val
+007B |                  Int |                                      val
+007C |                  Int |                                      val
+007D |                  Int |                                      val
+007E |                  Int |                                      myw
+007F |                  Int |                                      myh
+0080 |                  Int |                                   layerw
+0081 |                  Int |                                   layerh
+0082 |                  Int |                                        x
+0083 |                  Int |                                        y
+0084 |              Boolean |                                  iserror
+0085 |                  Int |                                        x
+0086 |                  Int |                                        y
+0087 |                  Int |                                        w
+0088 |                  Int |                                        h
+0089 |            GuiObject |                         _PModeGroupLayer
+008A |                Group |                         _PModeGroupGroup
+008B |                  Int |                       _PModeGroupcenterx
+008C |                  Int |                       _PModeGroupcentery
+008D |                  Int |                          _PModeGroupaddx
+008E |                  Int |                          _PModeGroupaddy
+008F |                  Int |                          _PModeGroupaddh
+0090 |                  Int |                          _PModeGroupaddw
+0091 |            GuiObject |                                   _layer
+0092 |                Group |                             parentLayout
+0093 |                  Int |                                  centerx
+0094 |                  Int |                                  centery
+0095 |                  Int |                                      val
+0096 |                  Int |                                      val
+0097 |                  Int |                                      val
+0098 |                  Int |                                      val
+0099 |                  Int |                                      myw
+009A |                  Int |                                      myh
+009B |                  Int |                                   layerw
+009C |                  Int |                                   layerh
+009D |                  Int |                                        x
+009E |                  Int |                                        y
+009F |              Boolean |                                  iserror
+00A0 |                  Int |                                        x
+00A1 |                  Int |                                        y
+00A2 |                  Int |                                        w
+00A3 |                  Int |                                        h
+00A4 |            GuiObject |                        _ConfigGroupLayer
+00A5 |                Group |                        _ConfigGroupGroup
+00A6 |                  Int |                      _ConfigGroupcenterx
+00A7 |                  Int |                      _ConfigGroupcentery
+00A8 |                  Int |                         _ConfigGroupaddx
+00A9 |                  Int |                         _ConfigGroupaddy
+00AA |                  Int |                         _ConfigGroupaddh
+00AB |                  Int |                         _ConfigGroupaddw
+00AC |            GuiObject |                                   _layer
+00AD |                Group |                             parentLayout
+00AE |                  Int |                                  centerx
+00AF |                  Int |                                  centery
+00B0 |                  Int |                                      val
+00B1 |                  Int |                                      val
+00B2 |                  Int |                                      val
+00B3 |                  Int |                                      val
+00B4 |                  Int |                                      myw
+00B5 |                  Int |                                      myh
+00B6 |                  Int |                                   layerw
+00B7 |                  Int |                                   layerh
+00B8 |                  Int |                                        x
+00B9 |                  Int |                                        y
+00BA |              Boolean |                                  iserror
+00BB |                  Int |                                        x
+00BC |                  Int |                                        y
+00BD |                  Int |                                        w
+00BE |                  Int |                                        h
+00BF |         ToggleButton |                               InfoButton[]
+00C0 |               Layout |                                   normal
+00C1 |            GuiObject |                                g_modesel
+00C2 |            GuiObject |                               g_cbuttons
+00C3 |            GuiObject |                                 g_volume
+00C4 |            GuiObject |                                  g_pmode
+00C5 |               Button |                                   b_play
+00C6 |               Button |                                  b_pause
+00C7 |               Button |                                   b_back
+00C8 |               Button |                                    b_min
+00C9 |               Button |                                   sel_pl
+00CA |               Button |                                   sel_ml
+00CB |               Button |                                  sel_vis
+00CC |               Button |                                   sel_cf
+00CD |               Button |                                   sel_aa
+00CE |           InfoButton |                                 b_repeat
+00CF |           InfoButton |                                b_shuffle
+00D0 |     AutoRepeatButton |                                arb_volup
+00D1 |     AutoRepeatButton |                              arb_voldown
+00D2 |     AutoRepeatButton |                                  arp_fwd
+00D3 |     AutoRepeatButton |                                  arp_rwd
+00D4 |                 Text |                               SongTicker
+00D5 |                Group |                                     g_pl
+00D6 |                Group |                                     g_ml
+00D7 |                Group |                                    g_vis
+00D8 |                Group |                                 g_config
+00D9 |                Group |                                    g_vid
+00DA |                Group |                                    g_avs
+00DB |                Group |                                     g_aa
+00DC |               Button |                                    s_vis
+00DD |               Button |                                    s_vid
+00DE |               Button |                                    s_avs
+00DF |               Button |                                   s_vis2
+00E0 |               Button |                                   s_avs2
+00E1 |               Button |                                   s_vid2
+00E2 |               Button |                                  ct_next
+00E3 |               Button |                                  ct_prev
+00E4 |                Timer |                                  dte_tmr
+00E5 |                 Text |                                 t_ct_day
+00E6 |                 Text |                               t_ct_night
+00E7 |                 Text |                                 t_cftime
+00E8 |              Boolean |                                 oneclick
+00E9 |               String |                              video_close
+00EA |               String |                             video_resize
+00EB |      ConfigAttribute |                       video_close_attrib
+00EC |      ConfigAttribute |                      video_resize_attrib
+00ED |               String |                                   "main"
+00EE |               String |                                 "normal"
+00EF |               String | "{0542AFA4-48D9-4c9f-8900-5739D52C114F}"
+00F0 |           ConfigItem |                                     item
+00F1 |               String | "Prevent video playback Stop on video window Close"
+00F2 |               String |                   "Prevent video resize"
+00F3 |               String |                                      "1"
+00F4 |               String |                        "player.cbuttons"
+00F5 |               String |                      "player.modeselect"
+00F6 |               String |                          "player.volume"
+00F7 |               String |                        "player.playmode"
+00F8 |               String |                                   "play"
+00F9 |               String |                                  "pause"
+00FA |               String |                                 "repeat"
+00FB |               String |                                "shuffle"
+00FC |               String |                                 "vol.up"
+00FD |               String |                               "vol.down"
+00FE |               String |                     "player.button.next"
+00FF |               String |                 "player.button.previous"
+0100 |               String |                             "songticker"
+0101 |               String |                     "player.button.back"
+0102 |               String |                 "player.button.minimize"
+0103 |               String |                                 "sel.pl"
+0104 |               String |                                 "sel.ml"
+0105 |               String |                                "sel.vis"
+0106 |               String |                                 "sel.cf"
+0107 |               String |                                 "sel.aa"
+0108 |               String |                        "player.playlist"
+0109 |               String |                         "player.library"
+010A |               String |                             "player.vis"
+010B |               String |                             "player.vid"
+010C |               String |                             "player.avs"
+010D |               String |                          "player.config"
+010E |               String |                        "player.albumart"
+010F |               String |                                  "s.vis"
+0110 |               String |                                  "s.vid"
+0111 |               String |                                  "s.avs"
+0112 |               String |                               "info.day"
+0113 |               String |                             "info.night"
+0114 |               String |                             "xfade.time"
+0115 |               String |                             "HoldConfig"
+0116 |               String |                                    "sel"
+0117 |               String |                                     mode
+0118 |               String |                               "switchto"
+0119 |               String |                                   "Hold"
+011A |               String |                              "g_modesel"
+011B |               String |                                   "g_pl"
+011C |               String |                                   "g_ml"
+011D |               String |                                  "g_vis"
+011E |               String |                               "g_config"
+011F |               String |                                  "g_avs"
+0120 |               String |                                   "g_aa"
+0121 |               String |                         "d.cthemes.next"
+0122 |               String |                         "d.cthemes.prev"
+0123 |                  Int |                                     1000
+0124 |               String |                 "Colorthemes.Autoswitch"
+0125 |               String |                     "cthemes.autoswitch"
+0126 |               String |                                   "text"
+0127 |               String |                                    "OFF"
+0128 |               String |                        "volume.mutemode"
+0129 |               String |                            "Mute.method"
+012A |               String |                                   "Mute"
+012B |               String |                           "monitor.mode"
+012C |               String |                                "Monitor"
+012D |               String |                             "vis.lclick"
+012E |               String |                            "Next Preset"
+012F |               String |                                  "g_vid"
+0130 |               String |                                   action
+0131 |               String |                                    param
+0132 |                  Int |                                        x
+0133 |                  Int |                                        y
+0134 |                  Int |                                       p1
+0135 |                  Int |                                       p2
+0136 |            GuiObject |                                   source
+0137 |                  Int |                                        n
+0138 |                  Int |                                        i
+0139 |               String |                         "player.config."
+013A |               String |                          "ct.autoswitch"
+013B |               String |                                 "toggle"
+013C |               Button |                                        t
+013D |               String |                                     "ON"
+013E |               String |                                   "d.up"
+013F |               String |             "Colorthemes.Autoswitch.Day"
+0140 |                  Int |                                        8
+0141 |                  Int |                                       dt
+0142 |               String |           "Colorthemes.Autoswitch.Night"
+0143 |                  Int |                                       22
+0144 |                  Int |                                       23
+0145 |               String |                                 "d.down"
+0146 |                  Int |                                       dt
+0147 |               String |                                   "n.up"
+0148 |                  Int |                                       dt
+0149 |               String |                                 "n.down"
+014A |                  Int |                                       dt
+014B |               String |                                  "seteq"
+014C |                  Int |                                        i
+014D |                  Int |                                        9
+014E |               String |                    "0,0,0,0,0,0,0,0,0,0"
+014F |               String |                                      ","
+0150 |               String |                                    "pop"
+0151 |                  Int |                                        i
+0152 |               String |    "-15,27,43,47,31,-11,-19,-19,-15,-15"
+0153 |               String |                                   "rock"
+0154 |                  Int |                                        i
+0155 |               String |      "49,29,-39,-55,-27,25,57,69,69,69,"
+0156 |               String |                                   "bass"
+0157 |                  Int |                                        i
+0158 |               String |      "59,59,59,35,7,-31,-59,-71,-75,-75"
+0159 |               String |                                 "techno"
+015A |                  Int |                                        i
+015B |               String |         "49,37,1,-39,-35,1,49,61,61,57,"
+015C |                  Int |                                        i
+015D |               String |                                   "soft"
+015E |                  Int |                                        i
+015F |               String |        "27,7,-11,-19,-11,23,51,59,67,75"
+0160 |               String |                                "country"
+0161 |                  Int |                                        i
+0162 |               String |      "22,22,12,-6,-26,-32,-19,-3,16,47,"
+0163 |               String |                                      txt
+0164 |               String |                               "showinfo"
+0165 |               String |                             "EqPreset: "
+0166 |               String |                                 "volume"
+0167 |               String |                               "mutemode"
+0168 |               String |                              "Attenuate"
+0169 |               String |                            "Volume.rate"
+016A |               String |                          "Volume Rate: "
+016B |               String |                                     " %"
+016C |               String |                                   "seek"
+016D |               String |                              "Seek.rate"
+016E |               String |                            "Seek Rate: "
+016F |               String |                                   " sec"
+0170 |               String |                            "monitormode"
+0171 |               String |                               "ViewPort"
+0172 |               String |                             "visualizer"
+0173 |               String |                                 "lclick"
+0174 |               String |                              "Open Menu"
+0175 |                  Int |                                      vol
+0176 |               Double |                                     2.55
+0177 |                  Int |                                      255
+0178 |                  Int |                                      vol
+0179 |                  Int |                                   newvol
+017A |               String |                                  "muted"
+017B |               String |                                "Volume:"
+017C |                  Int |                                      pos
+017D |                  Int |                                        5
+017E |                  Int |                                      pos
+017F |                  Int |                                        x
+0180 |                  Int |                                        y
+0181 |                  Int |                                        x
+0182 |                  Int |                                        y
+0183 |                  Int |                                   newpos
+0184 |                  Int |                                        f
+0185 |                  Int |                                      len
+0186 |                  Int |                                      100
+0187 |               String |                                 "SEEK: "
+0188 |               String |                                      "/"
+0189 |               String |                                     " ("
+018A |               String |                                    "%) "
+018B |                  Int |                                    60000
+018C |                  Int |                                     TIME
+018D |               String |                          "Color Themes/"
+018E |               String |                                       CT
+018F |                  Int |                                      dtn
+0190 |                  Int |                                      dtd
+0191 |               String |                                  "night"
+0192 |               String |                                    "day"
+0193 |                  Int |                                       dt
+0194 |               String |                                    " AM"
+0195 |               String |                                   suffix
+0196 |                  Int |                                       12
+0197 |               String |                                    " PM"
+0198 |                  Int |                                       dt
+0199 |               String |                            "Shuffle: On"
+019A |               String |                           "Shuffle: Off"
+019B |               String |                       "Repeat: Playlist"
+019C |               String |                          "Repeat: Track"
+019D |               String |                            "Repeat: Off"
+019E |                  Int |                                        x
+019F |                  Int |                                        y
+01A0 |                  Int |                                        w
+01A1 |                  Int |                                        h
+01A2 |               Double |                            newscalevalue
+01A3 |               Layout |                                        l
+01A4 |               String | "setFullscreen () -> Unexisting Layout!"
+01A5 |               Double |                                        d
+01A6 |                  Int |                                        x
+01A7 |                  Int |                                        y
+01A8 |                  Int |                                        w
+01A9 |               String |                                        s
+01AA |               String | "This skin requires Winamp 5.33 or any newer version to run!\nDo you wish to downlaod the newest version now?\n\nIf you choose YES, Winamp will close now and start the download!\nIf you click NO Winamp will switch to default Modern Skin\n"
+01AB |               String |                   "Wrong Winamp Version"
+01AC |                  Int |                                        4
+01AD |                  Int |                                        i
+01AE |               String |           "http://www.winamp.com/player"
+01AF |               String |                    "player.button.close"
+01B0 |               Button |                                        b
+01B1 |               String |                          "Winamp Modern"
+01B2 |                  Int |                                      600
+01B3 |               Double |                                     0.75
+01B4 |                  Int |                                        h
+01B5 |                  Int |                                      480
+01B6 |                  Int |                                        h
+01B7 |                Group |                                        g
+01B8 |                  Int |                                        x
+01B9 |                  Int |                                       rx
+01BA |                  Int |                                        y
+01BB |                  Int |                                       ry
+01BC |                  Int |                                        w
+01BD |                  Int |                                       rw
+01BE |                  Int |                                        h
+01BF |                  Int |                                       rh
+01C0 |               String |     "fitInt () -> Unexisting GuiObject!"
+01C1 |               String |                                      "w"
+01C2 |               String |                                      "h"
+01C3 |               String |                                 "relatx"
+01C4 |               String |                                 "relaty"
+01C5 |               String |                                 "relatw"
+01C6 |               String |                                 "relath"
+01C7 |              Boolean |                                       qu
+01C8 |               String |                    "nitrous audio - cti"
+01C9 |               String |                            "ColorThemes"
+01CA |               String |               "Plugins\\avs\\nwhite.jpg"
+01CB |               String |                                    ppath
+01CC |                  Map |                                        m
+01CD |               String | "CTI doesn't run in the same enviroment you have installed it!\nWinamp will close now!\nPlease reinstall the product or contact info@nitrousaudio.com!"
+01CE |               String |                         "Rip Protection"
+01CF |               Button |                                        b
+-- Events Table ------------------------------------------------------
+var# |         Code Pointer |                                    What 
+----------------------------------------------------------------------
+0014 |                 0153 |        AutoRepeatButton.onLeftButtonDown
+0014 |                 01C0 |          AutoRepeatButton.onLeftButtonUp
+0015 |                 01F8 |                 _autorepeatTimer.onTimer
+0037 |                 0645 |                  _CButtonsGroup.onResize
+0054 |                 08A9 |                   _ModeSelGroup.onResize
+006F |                 0B0D |                  _VolGroupGroup.onResize
+008A |                 0D71 |                _PModeGroupGroup.onResize
+00A5 |                 0FD5 |               _ConfigGroupGroup.onResize
+0000 |                 1011 |                    System.onScriptLoaded
+0000 |                 17A4 |                 System.onScriptUnloading
+0000 |                 17F5 |                            System.onPlay
+0000 |                 1823 |                          System.onResume
+0000 |                 1851 |                            System.onStop
+0000 |                 187F |                           System.onPause
+00C7 |                 18AD |                       b_back.onLeftClick
+00CD |                 1A03 |                       sel_aa.onLeftClick
+00C9 |                 1A6A |                       sel_pl.onLeftClick
+00CA |                 1AD1 |                       sel_ml.onLeftClick
+00CB |                 1B38 |                      sel_vis.onLeftClick
+00CC |                 1B9F |                       sel_cf.onLeftClick
+00DC |                 1C06 |                        s_vis.onLeftClick
+00DD |                 1C85 |                        s_vid.onLeftClick
+00DE |                 1D04 |                        s_avs.onLeftClick
+00DF |                 1D83 |                       s_vis2.onLeftClick
+00E1 |                 1E02 |                       s_vid2.onLeftClick
+00E0 |                 1E81 |                       s_avs2.onLeftClick
+00D8 |                 1F00 |                        g_config.onAction
+00D0 |                 2B99 |                    arb_volup.onLeftClick
+00D1 |                 2C3C |                  arb_voldown.onLeftClick
+0000 |                 2CDF |                   System.onvolumechanged
+00D2 |                 2D6C |                      arp_fwd.onLeftClick
+00D3 |                 2E1B |                      arp_rwd.onLeftClick
+00D2 |                 2EE6 |                   arp_fwd.onLeftButtonUp
+00D3 |                 2F2E |                   arp_rwd.onLeftButtonUp
+0000 |                 2F76 |                            System.onSeek
+00E4 |                 3046 |                          dte_tmr.onTimer
+00BF |                 3344 |                   InfoButton.onLeftClick
+0032 |                 34B9 |      crossfade_time_attrib.onDataChanged
+00C0 |                 34EC |                          normal.onResize
+00C0 |                 3568 |                            normal.onMove
+00C0 |                 35DC |                           normal.onScale
+-- User Functions Table ----------------------------------------------
+               Code Pointer |                                    What 
+----------------------------------------------------------------------
+                       0000 |                             versionCheck
+                       00F2 |                                    debug
+                       011D |                                 debugInt
+                       0259 |                          AutoRepeat_Load
+                       028F |                        AutoRepeat_Unload
+                       02E2 |                          AutoRepeat_Stop
+                       0300 |              AutoRepeat_GetCurrentButton
+                       029C |                AutoRepeat_SetInitalDelay
+                       02B3 |                AutoRepeat_SetRepeatDelay
+                       02CA |                AutoRepeat_GetInitalDelay
+                       02D6 |                AutoRepeat_GetRepeatDelay
+                       030C |                                initPages
+                       0368 |                         addMenuSeparator
+                       0373 |                         addConfigSubMenu
+                       03D7 |                      initAttribs_general
+                       0441 |                            _CButtonsInit
+                       04ED |                    _CButtonshandleResize
+                       0491 |                       _CButtonssetXSpace
+                       04A8 |                       _CButtonssetYSpace
+                       04D6 |                       _CButtonssetWSpace
+                       04BF |                       _CButtonssetHSpace
+                       063A |                       _CButtonssizeError
+                       06A5 |                             _ModeSelInit
+                       0751 |                     _ModeSelhandleResize
+                       06F5 |                        _ModeSelsetXSpace
+                       070C |                        _ModeSelsetYSpace
+                       073A |                        _ModeSelsetWSpace
+                       0723 |                        _ModeSelsetHSpace
+                       089E |                        _ModeSelsizeError
+                       0909 |                            _VolGroupInit
+                       09B5 |                    _VolGrouphandleResize
+                       0959 |                       _VolGroupsetXSpace
+                       0970 |                       _VolGroupsetYSpace
+                       099E |                       _VolGroupsetWSpace
+                       0987 |                       _VolGroupsetHSpace
+                       0B02 |                       _VolGroupsizeError
+                       0B6D |                          _PModeGroupInit
+                       0C19 |                  _PModeGrouphandleResize
+                       0BBD |                     _PModeGroupsetXSpace
+                       0BD4 |                     _PModeGroupsetYSpace
+                       0C02 |                     _PModeGroupsetWSpace
+                       0BEB |                     _PModeGroupsetHSpace
+                       0D66 |                     _PModeGroupsizeError
+                       0DD1 |                         _ConfigGroupInit
+                       0E7D |                 _ConfigGrouphandleResize
+                       0E21 |                    _ConfigGroupsetXSpace
+                       0E38 |                    _ConfigGroupsetYSpace
+                       0E66 |                    _ConfigGroupsetWSpace
+                       0E4F |                    _ConfigGroupsetHSpace
+                       0FCA |                    _ConfigGroupsizeError
+                       3602 |                            setFullscreen
+                       38DD |                                   fitInt
+                       36EC |                          getAutoResWidth
+                       3835 |                         getAutoResHeight
+                       3073 |                     setColorThemeForTime
+                       3238 |                                 setDTtxt
+                       3A3F |                            ripProtection
