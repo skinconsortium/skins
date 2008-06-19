@@ -156,8 +156,8 @@
 	<wasabi:button y="50" h="-130" x="50" w="-100" relath="1" relatw="1" visible="0" text="Push if Playlist isn't visible!" action="TOGGLE" param="guid:{45f3f7c1-a6f3-4ee6-a15e-125e92fc3f8d}" />
 	
 	<playlistPlus id="main.pl" 
-			y="30" h="-110" x="51" w="-102" relath="1" relatw="1"
-			font="font.pl" fontsize="34" linespacing="-2" color="color.display"
+			y="30" h="-111" x="51" w="-102" relath="1" relatw="1"
+			font="font.pl" fontcurr="font.pl.curr" fontsize="34" linespacing="-2" color="color.display"
 			playcolor="color.current" selcolor="color.display" selbgcolor="color.display" selalpha="128"
 			showslider="0"/>
 
