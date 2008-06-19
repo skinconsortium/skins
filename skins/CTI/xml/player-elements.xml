@@ -3,6 +3,9 @@
 	<bitmap id="bitmap.font.pl" file="player/pl-font2.png" gammagroup="text"/>
 	<bitmapfont id="font.pl" file="bitmap.font.pl" charwidth="36" charheight="36" hspacing="-10" vspacing="0"/>
 	
+	<bitmap id="bitmap.font.pl.curr" file="player/pl-font-current.png" gammagroup="current"/>
+	<bitmapfont id="font.pl.curr" file="bitmap.font.pl.curr" charwidth="36" charheight="36" hspacing="-10" vspacing="0"/>
+	
 	<bitmap id="pl.selector.left" file="player/pl-selector.png" x="0" y="0" w="15" h="32" gammagroup="text" />
 	<bitmap id="pl.selector.middle" file="player/pl-selector.png" x="15" y="0" w="73" h="32" gammagroup="text" />
 	<bitmap id="pl.selector.right" file="player/pl-selector.png" x="88" y="0" w="15" h="32" gammagroup="text" />
