@@ -27,7 +27,7 @@ global layer mousetrap;
 global string xuiparams = "";
 global int currNumLines, currMaxLines, linespace, pltopMod;
 global int currSel;
-global string currTrackColor, currSelColorBk, playcolor, textcolor, selcolor;
+global string currTrackColor, trackFont, currTrackFont, currSelColorBk, playcolor, textcolor, selcolor;
 
 global PlEdit PeListener;
 
@@ -36,7 +36,7 @@ global int targetPLTop, scrollSpeed, scrollDir, noSlow;
 
 global int texth = 15;
 global int lenw, numlines;
-global int mousePressed, lastY, lastY2, lastpltop, pltoptrack, lastmove, lasttime, origtime;
+global int mousePressed, lastY, lastY2, lastpltop, lastpltopref, pltoptrack, lastmove, lasttime, origtime;
 global int mousePressedSlider, lastYSlider, lastpltopSlider;
 
 System.onScriptLoaded() {
@@ -88,6 +88,8 @@ PeListener.onPleditModified () {
 	if ((pltoptrack + numlines) >= numtracks ) { pltoptrack = numtracks - numlines + 1; pltopMod = 0;}
 	if (pltoptrack < 0) { pltoptrack = 0; pltopMod = 0;}
 	if (numtracks < numlines) { pltoptrack = 0; pltopMod = 0; }
+	
+	lastpltopref = -1;
 	
 	if (!delayRefreshPL.isRunning()) delayRefreshPL.start();
 }
@@ -237,9 +239,13 @@ refreshPL() {
 		if ((c+pltoptrack) == PlEdit.getCurrentIndex ()) {
 			temp.setXMLParam("color",playcolor);
 			templen.setXMLParam("color",playcolor);
+			temp.setXMLParam("font",currTrackFont);
+			templen.setXMLParam("font",currTrackFont);
 		} else  {
 			temp.setXMLParam("color",textcolor);
 			templen.setXMLParam("color",textcolor);
+			temp.setXMLParam("font",trackFont);
+			templen.setXMLParam("font",trackFont);
 		}
 		
 		if (trackc == currSel) {
@@ -253,9 +259,10 @@ refreshPL() {
 		templen.setXMLParam("y",integertostring(c*texth - pltopMod));
 		
 		if ((trackc < numtracks) && (trackc >= 0)) {
-			
-			temp.setText(integertostring(trackc+1)+"."+strClean(PlEdit.getTitle(trackc)));
-			templen.setText(PlEdit.getLength(trackc));
+			if (lastpltopref!=pltoptrack) {
+				temp.setText(integertostring(trackc+1)+"."+strClean(PlEdit.getTitle(trackc)));
+				templen.setText(PlEdit.getLength(trackc));
+			}
 		} else {
 			temp.setText(" ");
 			templen.setText(" ");
@@ -274,6 +281,8 @@ refreshPL() {
 
 
 	}
+	
+	lastpltopref = pltoptrack;
 	
 	if (currMaxLines < numlines) currMaxLines = numlines;
 	currNumLines = numlines;
@@ -555,14 +564,14 @@ scriptGroup.onAction(String action, String param, Int x, int y, int p1, int p2, 
 
 mousetrap.onLeftButtonDblClk(int x, int y) {
 
-	lastpltop = pltoptrack;
+	/*lastpltop = pltoptrack;
 	
 	int sel = (y - mouseTrap.getTop()) / texth;
 	currSel = sel + lastpltop;
 	
 	if (currSel >= pledit.getNumTracks()) currSel = pledit.getNumTracks()-1;
 	
-	refreshPL();
+	refreshPL();*/
 	
 	PlEdit.playTrack(currSel);
 
@@ -726,6 +735,11 @@ System.onSetXuiParam(String param, String value) {
 		selector.setXMLParam("alpha",value);
 	} else if (param=="playcolor") {
 		playcolor = value;
+	} else if (param=="font") {
+		trackFont = value;
+		dummy.setXMLParam(param, value);
+	} else if (param=="fontcurr") {
+		currTrackFont = value;
 	} else if (param=="color") {
 		textcolor = value;
 	} else if (param=="showslider") {

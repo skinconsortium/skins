@@ -156,9 +156,9 @@
 	<wasabi:button y="50" h="-130" x="50" w="-100" relath="1" relatw="1" visible="0" text="Push if Playlist isn't visible!" action="TOGGLE" param="guid:{45f3f7c1-a6f3-4ee6-a15e-125e92fc3f8d}" />
 	
 	<playlistPlus id="main.pl" 
-			y="30" h="-110" x="51" w="-102" relath="1" relatw="1"
-			font="font.pl" fontsize="34" linespacing="-2" color="color.display"
-			playcolor="color.display" selcolor="color.display" selbgcolor="color.display" selalpha="128"
+			y="30" h="-111" x="51" w="-102" relath="1" relatw="1"
+			font="font.pl" fontcurr="font.pl.curr" fontsize="34" linespacing="-2" color="color.display"
+			playcolor="color.current" selcolor="color.display" selbgcolor="color.display" selalpha="128"
 			showslider="0"/>
 
 	<Wasabi:Button y="-80" relaty="1" h="30" x="50" relatx="0" w="50" action="PE_Add"
@@ -239,7 +239,7 @@
 	<layer
 		id="main.vis.over"
 		image="player.visover"
-		rectrgn="1"
+		rectrgn="1" move="0"
 	/>
 
 	<script file="scripts/visualizer2.maki" param="0,0,0;200,0,0;200,0,0" />
