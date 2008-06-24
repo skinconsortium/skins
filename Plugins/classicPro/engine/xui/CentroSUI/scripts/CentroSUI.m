@@ -405,7 +405,7 @@ setDrawer(boolean onOff){
 	busyWithDrawer=true;
 	boolean dontSave = false;
 
-	if(xuiGroup.getHeight()<default_drawer_h+70){ //0 = first load... not drawn yet
+	if(xuiGroup.getHeight()<default_drawer_h+90){ //0 = first load... not drawn yet
 		onOff=false;
 		dontSave=true;
 	}
