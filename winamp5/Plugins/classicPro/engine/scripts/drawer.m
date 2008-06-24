@@ -1,19 +1,24 @@
 #include <lib/std.mi>
 
 Function openDrawer(int drawerNo);
+Function gotoPrevDrawer();
+Function gotoNextDrawer();
 
+Global Layout myLayout;
 Global Group myGroup;
 Global Group drawer_equalizer, drawer_savedpl, drawer_tagviewer, drawer_avs, drawer_ct, drawer_skinchooser;
 Global PopUpMenu popMenu, widgetmenu;
 Global Button but_drawerGoto;
 Global GuiObject cpro_sui;
 Global Layer ct_fakeLayer;
-Global Boolean gotThemes;
+Global Boolean gotThemes, mouse_but_drawerGoto;
 
 Global ComponentBucket dummyBuck;
 Global GuiObject customObj;
 
 System.onScriptLoaded() {
+	myLayout = getContainer("main").getLayout("normal");
+
 	myGroup = getScriptGroup();
 	but_drawerGoto = myGroup.findObject("drawer.menulist");
 	drawer_equalizer = myGroup.findObject("drawer.equalizer");
@@ -42,7 +47,7 @@ but_drawerGoto.onleftClick(){
 
 	popMenu.addCommand("Equalizer", 0, 0, 0);
 	popMenu.addCommand("Tag Viewer", 1, 0, 0);
-	popMenu.addCommand("Visualizer", 3, 0, 0);
+	popMenu.addCommand("Visualization", 3, 0, 0);
 	popMenu.addCommand("Color Themes", 5, 0, gotThemes);
 	popMenu.addCommand("Saved Playlists", 2, 0, 0);
 	popMenu.addCommand("Skin Chooser", 4, 0, 0);
@@ -121,4 +126,43 @@ openDrawer(int drawerNo){
 
 myGroup.onAction (String action, String param, int x, int y, int p1, int p2, GuiObject source){
 	if (strlower(action) == "switch_to_drawer") openDrawer(x);
+}
+
+but_drawerGoto.onEnterArea(){
+	mouse_but_drawerGoto=true;
+}
+but_drawerGoto.onLeaveArea(){
+	mouse_but_drawerGoto=false;
+}
+
+myLayout.onMouseWheelUp(int clicked , int lines){
+	if(mouse_but_drawerGoto){
+		gotoNextDrawer();
+		return 1;
+	}
+}
+
+myLayout.onMouseWheelDown(int clicked , int lines){
+	if(mouse_but_drawerGoto){
+		gotoPrevDrawer();
+		return 1;
+	}
+}
+
+gotoPrevDrawer(){
+	int pos = getPublicInt("cPro.lastDrawer", 0);
+	pos--;
+	
+	if(pos==3) pos--; //we dont toggle to the visualizer because its slows it down & loose focus ;)
+	if(pos==99)	pos=5-gotThemes;
+	if(pos<0) pos=dummyBuck.getNumChildren()+99;
+	openDrawer(pos);
+}
+gotoNextDrawer(){
+	int pos = getPublicInt("cPro.lastDrawer", 0);
+	pos++;
+	
+	if(pos==3) pos++; //we dont toggle to the visualizer because its slows it down & loose focus ;)
+	if(pos==6-gotThemes) pos=100;
+	openDrawer(pos);
 }
