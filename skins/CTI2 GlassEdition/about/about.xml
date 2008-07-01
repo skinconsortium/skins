@@ -1,17 +1,15 @@
 <elements>
-  <bitmap id="about.fg" file="about/about_fg.png"/>
+  <!--<bitmap id="about.fg" file="about/about_fg.png"/>-->
+  <bitmap id="about.fg" file="about/about.jpg"/>
 </elements>
 
 <groupdef id="skin.about.group" w="0" h="0" relatw="1" relath="1" rectrgn="1">
-  <rect fitparent="1" color="110,119,134" filled="1" />
-
-  <layer
-    x="0" y="0"
-    w="371"
-    h="321"
-    image="about.fg"
-  />
-
- <guiobject fitparent="1" />
-
+	<rect fitparent="1" color="115,8,0" filled="1" />
+	<layer id="cti.bg" x="0" y="0" image="about.fg"/>
+	<text x="0" y="227" w="0" relatw="1" align="center" text="CAR TOUCHSCREEN INTERFACE" font="wasabi.font.default"/>
+	<text x="0" y="244" w="0" relatw="1" align="center" text="VERSION 2.0" font="wasabi.font.default"/>
+	<text x="0" y="269" w="0" relatw="1" align="center" text="FOR NULLSOFT WINAMP 5.33+" font="wasabi.font.default"/>
+	<text x="0" y="303" w="0" relatw="1" align="center" text="(C) WWW.NITROUSAUDIO.COM" font="wasabi.font.default"/>
+	<script file="about/about.maki"/>
+	<guiobject fitparent="1"/>
 </groupdef>
