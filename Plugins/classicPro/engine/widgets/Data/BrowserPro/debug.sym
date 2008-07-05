@@ -1,0 +1,159 @@
+-- Variables Table ---------------------------------------------------
+var# |                Class |                                    What 
+----------------------------------------------------------------------
+0000 |               System |                                   System*
+0001 |                  Int |                                     NULL
+0002 |                  Int |                     __deprecated_runtime
+0003 |               Double |                                        v
+0004 |                  Int |                                        2
+0005 |                  Int |                                    65535
+0006 |                  Int |                                        1
+0007 |               String |                           "runtimecheck"
+0008 |                  Int |                                        0
+0009 |                  Int |                                     last
+000A |                  Int |                                      now
+000B |                  Int |                                     5000
+000C |               String |                  "This script requires "
+000D |               String |        "Winamp 5.54 (skin version 1.34)"
+000E |               String |                                  "Error"
+000F |               String |                                       ""
+0010 |               String |                                        s
+0011 |               String |                                  "DEBUG"
+0012 |                  Int |                                        s
+0013 |            GuiObject |                                 cpro_sui
+0014 |               String |                                   "main"
+0015 |               String |                                 "normal"
+0016 |               String |                               "cpro.sui"
+0017 |               String |                                      url
+0018 |               String |                            "browser_url"
+0019 |                  Int |                                    tabno
+001A |               String |                          "switch_to_tab"
+001B |                  Int |                                   miniNo
+001C |               String |                         "switch_to_mini"
+001D |              Boolean |                                    onOff
+001E |               String |                           "drawer_onoff"
+001F |                  Int |                                      pos
+0020 |               String |                     "frame_main_setsize"
+0021 |                  Int |                                      pos
+0022 |               String |                     "frame_mini_setsize"
+0023 |              Boolean |                                    onOff
+0024 |               String |                         "sideview_onoff"
+0025 |               PlEdit |                                   PlEdit*
+0026 |                PlDir |                                    PlDir*
+0027 |          Application |                              Application*
+0028 |                Group |                                  myGroup
+0029 |              GuiList |                                   myList
+002A |               XmlDoc |                                    myDoc
+002B |                 List |                           loaded_P_Names
+002C |                 List |                             loaded_P_Url
+002D |                  Int |                                 sourceNo
+002E |              Boolean |                                  onetime
+002F |                 Text |                               statusInfo
+0030 |         ToggleButton |                            enabledSwitch
+0031 |               Button |                              menuOptions
+0032 |            PopupMenu |                                  popMenu
+0033 |               String |                         "bp.servicelist"
+0034 |               String |                           "bp.statusbar"
+0035 |               String |                               "bp.onoff"
+0036 |               String |                             "bp.options"
+0037 |                  Int |                                       16
+0038 |               String |          "ClassicPro.BrowserPro.enabled"
+0039 |              Boolean |                                    onOff
+003A |              Boolean |                                    onOff
+003B |               String | "\Plugins\classicPro\engine\widgets\Data\BrowserPro\source.xml"
+003C |               String |                                     temp
+003D |               String |                 "WasabiXML/BrowserPro/*"
+003E |                 List |                                paramname
+003F |                 List |                               paramvalue
+0040 |               String |                             "Read error"
+0041 |                  Int |                                        i
+0042 |               String |                                   "name"
+0043 |               String |                                "comment"
+0044 |               String |                                    "url"
+0045 |               String |                                   "icon"
+0046 |               String |                                  xmlpath
+0047 |               String |                                   xmltag
+0048 |                 List |                                paramname
+0049 |                 List |                               paramvalue
+004A |               String |                             "sourceitem"
+004B |                  Int |                                  itemnum
+004C |               String |                                    myUrl
+004D |                  Int |                                  itemnum
+004E |               String |                  "ClassicPro.BrowserPro"
+004F |                  Int |                                      col
+0050 |                  Int |                                        x
+0051 |                  Int |                                        y
+0052 |                  Int |                                  itemnum
+0053 |                  Int |                                 selected
+0054 |               String |                 "Selected auto search: "
+0055 |               String |                                    input
+0056 |               String |                                  "%AND%"
+0057 |               String |                                      "&"
+0058 |               String |                                 "%PATH%"
+0059 |               String |                                "file://"
+005A |               String |                               "filename"
+005B |               String |                               "%ARTIST%"
+005C |               String |                                 "artist"
+005D |               String |                                "%TITLE%"
+005E |               String |                                  "title"
+005F |               String |                                "%ALBUM%"
+0060 |               String |                                  "album"
+0061 |               String |                                 "%YEAR%"
+0062 |               String |                                   "year"
+0063 |               String |                                "%GENRE%"
+0064 |               String |                                  "genre"
+0065 |               String |                               baseString
+0066 |               String |                                toreplace
+0067 |               String |                               replacedby
+0068 |               String |                                      sf1
+0069 |               String |                                      sf2
+006A |                  Int |                                        i
+006B |               String |                                     left
+006C |               String |                                    right
+006D |               String |                                    input
+006E |                  Int |                                        i
+006F |               String |                                      "0"
+0070 |                  Int |                                        i
+0071 |               String |                                    myUrl
+0072 |               String |                                 newtitle
+0073 |               String |          "ClassicPro.BrowserPro.opentab"
+0074 |               String |                 "cPro.lastComponentPage"
+0075 |                  Int |                                        3
+0076 |               String |            "Open browser if it's closed"
+0077 |                  Int |                                   result
+-- Events Table ------------------------------------------------------
+var# |         Code Pointer |                                    What 
+----------------------------------------------------------------------
+0000 |                 02F9 |                    System.onScriptLoaded
+0000 |                 03D2 |                 System.onScriptUnloading
+0030 |                 0402 |                   enabledSwitch.onToggle
+0028 |                 0433 |                     myGroup.onSetVisible
+002A |                 06A7 |                  myDoc.parser_onCallback
+0029 |                 06FC |                     myList.onDoubleClick
+0029 |                 0759 |                       myList.onLeftClick
+0029 |                 079A |                myList.onColumnLabelClick
+0029 |                 07C5 |                   myList.onItemSelection
+0000 |                 0B73 |                     System.onTitleChange
+0031 |                 0BF9 |                  menuOptions.onLeftClick
+-- User Functions Table ----------------------------------------------
+               Code Pointer |                                    What 
+----------------------------------------------------------------------
+                       0000 |                             versionCheck
+                       00F2 |                                    debug
+                       011D |                                 debugInt
+                       0153 |                               initWidget
+                       0186 |                           gotoBrowserUrl
+                       01BB |                               gotoSuiTab
+                       01F0 |                              gotoSuiMini
+                       0225 |                             toggleDrawer
+                       025A |                             setFrameMain
+                       028F |                             setFrameMini
+                       02C4 |                           toggleSideView
+                       FFFFFFFF |                             refreshStuff
+                       0505 |                              addProvider
+                       0937 |                            replaceString
+                       0816 |                                   fixUrl
+                       0A89 |                      searchInListForItem
+                       0AEE |                              selectSaved
+                       0B2B |                             surfSelected
+                       0465 |                            initLoadFiles
