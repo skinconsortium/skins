@@ -47,6 +47,7 @@ System.onScriptLoaded() {
 	selector = scriptGroup.getObject("selector");
 	plslider = scriptGroup.getObject("plslider");
 	
+	lastpltopref = -1;
 	pltoptrack = getPrivateInt(getSkinName(),"PLTopTrack",0);
 	playcolor = "wasabi.list.text.current";
 	textcolor = "wasabi.text.color";
@@ -57,7 +58,7 @@ System.onScriptLoaded() {
 	
 	delayRefreshPL = new Timer;
 	delayRefreshPL.setDelay(50);
-	delayRefreshPL.start();
+	//delayRefreshPL.start();
 	
 	scrollAnim = new Timer;
 	scrollAnim.setDelay(33);
@@ -257,7 +258,7 @@ refreshPL() {
 
 		temp.setXMLParam("y",integertostring(c*texth - pltopMod));
 		templen.setXMLParam("y",integertostring(c*texth - pltopMod));
-		
+
 		if ((trackc < numtracks) && (trackc >= 0)) {
 			if (lastpltopref!=pltoptrack) {
 				temp.setText(integertostring(trackc+1)+"."+strClean(PlEdit.getTitle(trackc)));
