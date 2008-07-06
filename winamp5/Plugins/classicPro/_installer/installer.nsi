@@ -16,8 +16,8 @@
 ;General
 
   ;Name and file
-  Name "ClassicPro© v1.04"
-  OutFile "ClassicPro_1.04_beta2.exe"
+  Name "ClassicPro© v1.03"
+  OutFile "ClassicPro_1.03_rc5.exe"
 
 	; The default installation directory
 	InstallDir $PROGRAMFILES\Winamp
@@ -44,7 +44,7 @@ FunctionEnd
 
 ;--------------------------------
 ;Interface Settings
-  !define MUI_TEXT_WELCOME_INFO_TEXT "This wizard will guide you through the installation of $(^NameDA).$\r$\n$\r$\nIt is recommended that you close Winamp before starting Setup. This will make it possible to update all relevant Winamp files.$\n$\nYou'll at least need Winamp 5.53 for this version of ClassicPro to work!$\r$\n$\r$\n$_CLICK"
+  !define MUI_TEXT_WELCOME_INFO_TEXT "This wizard will guide you through the installation of $(^NameDA).$\r$\n$\r$\nIt is recommended that you close Winamp before starting Setup. This will make it possible to update all relevant Winamp files.$\n$\nYou'll at least need Winamp 5.54 for this version of ClassicPro to work!$\r$\n$\r$\n$_CLICK"
 
   !define MUI_WELCOMEFINISHPAGE_BITMAP "${SOURCEPATH}\_installer\win.bmp"
   !define MUI_UNWELCOMEFINISHPAGE_BITMAP "${SOURCEPATH}\_installer\win.bmp"
@@ -67,7 +67,7 @@ FunctionEnd
 
   !insertmacro MUI_PAGE_WELCOME
   !insertmacro MUI_PAGE_LICENSE "${SOURCEPATH}\License.txt"
-  ;!insertmacro MUI_PAGE_COMPONENTS
+  !insertmacro MUI_PAGE_COMPONENTS
   !insertmacro MUI_PAGE_DIRECTORY
   !insertmacro MUI_PAGE_INSTFILES
   !insertmacro MUI_PAGE_FINISH
@@ -86,11 +86,14 @@ FunctionEnd
 ;--------------------------------
 ;Installer Sections
 
-Section "Dummy Section" SecDummy
+
+Section "ClassicPro plugin" cproFiles
 
 	!ifdef WINAMP_AUTOINSTALL
 	  Call MakeSureIGotWinamp
 	!endif
+
+  SectionIn RO    ; required
 
   SetOutPath $INSTDIR\Plugins\classicPro
   File "${SOURCEPATH}\*.txt"
@@ -151,6 +154,17 @@ Section "Dummy Section" SecDummy
   File "${SOURCEPATH}\engine\xui\SC-ProgressGrid\*.m"
   File "${SOURCEPATH}\engine\xui\SC-ProgressGrid\*.maki"
 
+  SetOutPath $INSTDIR\Plugins\classicPro\engine\xui\NowPlaying
+  File "${SOURCEPATH}\engine\xui\NowPlaying\*.xml"
+  File "${SOURCEPATH}\engine\xui\NowPlaying\*.m"
+  File "${SOURCEPATH}\engine\xui\NowPlaying\*.maki"
+  File "${SOURCEPATH}\engine\xui\NowPlaying\*.png"
+
+  SetOutPath $INSTDIR\Plugins\classicPro\engine\xui\FadeText
+  File "${SOURCEPATH}\engine\xui\FadeText\*.xml"
+  File "${SOURCEPATH}\engine\xui\FadeText\*.m"
+  File "${SOURCEPATH}\engine\xui\FadeText\*.maki"
+
   SetOutPath $INSTDIR\Plugins\classicPro\engine\xui\AlbumArt
   File "${SOURCEPATH}\engine\xui\AlbumArt\*.xml"
   File "${SOURCEPATH}\engine\xui\AlbumArt\*.m"
@@ -185,15 +199,39 @@ Section "Dummy Section" SecDummy
 
 SectionEnd
 
+SectionGroup "Widgets" WidgetsSection
+Section "BrowserPro" wBrowserPro
+
+	SetOutPath "$INSTDIR\Plugins\classicPro\engine\widgets\Load"
+	File "${SOURCEPATH}\engine\widgets\Load\browserpro.xml"
+ 
+	SetOutPath "$INSTDIR\Plugins\classicPro\engine\widgets\Data\BrowserPro"
+	File "${SOURCEPATH}\engine\widgets\Data\BrowserPro\*.m"
+	File "${SOURCEPATH}\engine\widgets\Data\BrowserPro\*.maki"
+	File "${SOURCEPATH}\engine\widgets\Data\BrowserPro\*.xml"
+
+	SetOutPath "$INSTDIR\Plugins\classicPro\engine\widgets\Data\BrowserPro\icons"
+	File "${SOURCEPATH}\engine\widgets\Data\BrowserPro\icons\*.png"
+
+	SetOutPath "$INSTDIR\Plugins\classicPro\engine\widgets"
+	File /nonfatal "${SOURCEPATH}\engine\widgets\cpro-widget-BrowserPro.nsi"
+
+SectionEnd
+SectionGroupEnd
+
 ;--------------------------------
 ;Descriptions
 
   ;Language strings
-  LangString DESC_SecDummy ${LANG_ENGLISH} "A test section."
+  LangString DESC_cproFiles ${LANG_ENGLISH} "This will install all the files that ClassicPro needs to work."
+  LangString DESC_wBrowserPro ${LANG_ENGLISH} "BrowserPro is a widget that will enable your browser to auto navigate to pupular websites and explore the playing directory."
+  LangString DESC_Widget ${LANG_ENGLISH} "ClassicPro skins support widgets and here you'll find some of them that we decided to bundle with this installer."
 
   ;Assign language strings to sections
   !insertmacro MUI_FUNCTION_DESCRIPTION_BEGIN
-    !insertmacro MUI_DESCRIPTION_TEXT ${SecDummy} $(DESC_SecDummy)
+    !insertmacro MUI_DESCRIPTION_TEXT ${cproFiles} $(DESC_cproFiles)
+    !insertmacro MUI_DESCRIPTION_TEXT ${wBrowserPro} $(DESC_wBrowserPro)
+    !insertmacro MUI_DESCRIPTION_TEXT ${WidgetsSection} $(DESC_Widget)
   !insertmacro MUI_FUNCTION_DESCRIPTION_END
 
 ;--------------------------------
