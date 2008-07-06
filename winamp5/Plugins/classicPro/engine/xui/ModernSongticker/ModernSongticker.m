@@ -160,7 +160,7 @@ System.onVolumeChanged(int newvol){
 	if(cancelNext){
 		cancelNext=false;
 	}
-	else updateInfo("Volume:" + " "+integerToString(newvol/255*100)+"%");
+	else updateInfo(System.translate("Volume") +": "+integerToString(newvol/255*100)+"%");
 }
 
 goBack.onTimer(){
@@ -169,7 +169,7 @@ goBack.onTimer(){
 }
 
 sl_seeker.onSetPosition(int newpos){
-	updateInfo("Seek: " + integerToTime(newpos/255*getPlayItemLength()) + "/" + integerToTime(getPlayItemLength()) +" ("+ integerToString(newpos/255*100)+"%)");
+	updateInfo(System.translate("Seek") +": "+integerToTime(newpos/255*getPlayItemLength()) + "/" + integerToTime(getPlayItemLength()) +" ("+ integerToString(newpos/255*100)+"%)");
 }
 
 prev.onLeftClick(){
@@ -204,7 +204,7 @@ This will check to see if mouse is still down... aka user busy with seek. If thi
 sl_volume.onLeftButtonUp(int x, int y){
 	busyWithSeek=false;
 	int newpos = System.getVolume();
-	updateInfo("Volume:" + " "+integerToString(newpos/255*100)+"%");
+	updateInfo(System.translate("Volume") +": "+integerToString(newpos/255*100)+"%");
 }
 sl_volume.onLeftButtonDown(int x, int y){
 	busyWithSeek=true;
@@ -214,7 +214,7 @@ sl_seeker.onLeftButtonUp(int x, int y){
 	busyWithSeek=false;
 	isShort=true;
 	int newpos = sl_seeker.getPosition();
-	updateInfo("Seek: " + integerToTime(newpos/255*getPlayItemLength()) + "/" + integerToTime(getPlayItemLength()) +" ("+ integerToString(newpos/255*100)+"%)");
+	updateInfo(System.translate("Seek") +": "+integerToTime(newpos/255*getPlayItemLength()) + "/" + integerToTime(getPlayItemLength()) +" ("+ integerToString(newpos/255*100)+"%)");
 }
 sl_seeker.onLeftButtonDown(int x, int y){
 	busyWithSeek=true;

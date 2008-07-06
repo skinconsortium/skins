@@ -1,28 +1,26 @@
 -------------------------------------------------------------
-Version 1.04 (14 Jun 2008)
+Version 1.03 (7 Jul 2008)
 -------------------------------------------------------------
-
-- New: About screen ;)
-
-
 - New: ColorTheme support! (also added colorthemes.png)
-- New: Widget Tab! (!!!!!!wip!!!!!!!!)
+- New: About screen ;)
 - New: Beta for the <ClassicPro/> xui object. See SC forum for more info.
 - New: Plugin tab now have the name of the plugin (wa5.54)
 - New: Now using the Winamp Browser (wa5.54)
-- New: Using the same xui object for the songticker
+- New: Better songticker for shademode
 - New: You can now use the mousewheel to scroll through the drawers if 
-	the mouse is over the "Select Drawer" button.
-- Optimized: SUI area code
-- Improved: About bg animation
+	the mouse is over the "Select Drawer" button. (wa5.54)
+- Improved: SUI area code optimized
 - Improved: Visualization tab now looks like it loads faster
 - Improved: File sizes of all png files
+- Improved: Language update for wa5.54
 - Fixed: Removing a widget might crash Winamp
-- Fixed: Main Window container now use canclose="0"
+- Fixed: Cant disable the main window anymore
 - Fixed: comp_but_tabs.png buttons missing 1 pixel & some buttons are stretched
 - Fixed: Media Library have a small Library button after small resize
 - Fixed: Widget "browser_url" action doesnt open the browser tab
 - Fixed: DrO's Autoplay support... Seekerbg will show ;)
+-------------------------------------------------------------
+
 
 -------------------------------------------------------------
 Version 1.02 (13 April 2008)

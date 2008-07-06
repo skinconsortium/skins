@@ -57,7 +57,7 @@ Global PopUpMenu popMenu, tabMenu;
 
 Global Browser xuiBrowser;
 
-Global GuiObject visRectBg, tempbutton;
+Global GuiObject visRectBg, tempbutton, nowPlaying;
 
 Global Button but_miniGoto, closeFrame, openFrame;
 
@@ -120,11 +120,11 @@ System.onScriptLoaded() {
 	drawer = xuiGroup.findObject("centro.multidrawer");
 
 	// Reader for classic vis colors from bitmap (wa5.51)
-	/*Map myMap = new Map;
+	Map myMap = new Map;
 	myMap.loadMap("wasabi.list.background");
 	nowPlaying = xuiGroup.findObject("nowplaying.component");
 	nowPlaying.setXmlParam("bgcolor", integerToString(myMap.getARGBValue(0,0,2))+","+integerToString(myMap.getARGBValue(0,0,1))+","+integerToString(myMap.getARGBValue(0,0,0)));
-	delete myMap;*/
+	delete myMap;
 
 	//Tab Component Buttons
 	tabbut_vid = xuiGroup.findObject("centro.video.buttons");
@@ -252,8 +252,8 @@ tab_SetText(int tab, int limit){
 	if (pluginName=="") pluginName="Plugin";
 	
 	String tabnames;
-	if(limit==0)  tabnames = "Media Library;Video;Visualization;Browser;Playlist;"+pluginName+";Widget";
-	else if(limit==1)  tabnames = "ML;Vid;Vis;Bro;PL;"+System.strleft(pluginName, 3)+";Wid";
+	if(limit==0)  tabnames = "Media Library;Video;Visualization;Browser;Playlist;"+pluginName+";AlbumArt";
+	else if(limit==1)  tabnames = "ML;Vid;Vis;Bro;PL;"+System.strleft(pluginName, 3)+";Art";
 	else if(limit==2)  tabnames = "M;V;V;B;P;"+System.strleft(pluginName, 1)+";W";
 
 	tog_fake1.setXmlParam("tabtext", getToken(tabnames, ";", tokenNo));
@@ -1053,7 +1053,7 @@ initTabSubMenu(){
 	tabMenu.addCommand("Visualization", 102, getPublicInt("cPro.tab.onoff.2", 1), 0);
 	tabMenu.addCommand("Browser", 103, getPublicInt("cPro.tab.onoff.3", 1), 0);
 	tabMenu.addCommand("Playlist", 104, getPublicInt("cPro.tab.onoff.4", 1), 0);
-	tabMenu.addCommand("Widget", 106, getPublicInt("cPro.tab.onoff.6", 1), 0);
+	tabMenu.addCommand("AlbumArt", 106, getPublicInt("cPro.tab.onoff.6", 1), 0);
 }
 setTabSubMenuResult(int opt){
 	if(opt>=0 && opt<7 && opt!=5) setPublicInt("cPro.tab.onoff."+integerToString(opt), !getPublicInt("cPro.tab.onoff."+integerToString(opt), 1));
