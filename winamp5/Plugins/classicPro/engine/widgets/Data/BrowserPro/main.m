@@ -1,5 +1,5 @@
 #include <lib/std.mi>
-#include ../../cprowidget.mi
+#include <lib/cprowidget.mi>
 #include <lib/pldir.mi>
 #include <lib/fileio.mi>
 #include <lib/application.mi>
@@ -68,11 +68,7 @@ initLoadFiles(){
 		myDoc.parser_destroy();
 		delete myDoc;
 		
-		//mpdeimos> CUT! isn't working due to some strange reasons
-		//mylist.setSortColumn(0);
-		//mylist.setSortDirection(0);
-		//mylist.resort();
-
+		myList.setAutoSort(1);
 		selectSaved();
 
 		onetime=true;
