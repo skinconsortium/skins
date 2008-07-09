@@ -23,6 +23,7 @@ Version 1.03 (7 Jul 2008)
 - Fixed: Widget "browser_url" action doesnt open the browser tab
 - Fixed: DrO's Autoplay support... Seekerbg will show ;)
 - Fixed: Video info is cut off on load
+- Fixed: Tabs moving when you right-click and click on another tab (thx MerTcaN)
 -------------------------------------------------------------
 
 

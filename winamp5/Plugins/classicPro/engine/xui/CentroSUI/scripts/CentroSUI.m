@@ -716,11 +716,13 @@ tog_library.onLeftButtonDown(int x, int y){
 	downX=x;
 }
 tog_library.onLeftButtonUp(int x, int y){
-	tabMouseDown=false;
-	if(mmove){
-		tog_library1.setAlpha(255);
-		tabDivider.hide();
-		moveTab(0, lastDivider);
+	if(tabMouseDown){
+		tabMouseDown=false;
+		if(mmove){
+			tog_library1.setAlpha(255);
+			tabDivider.hide();
+			moveTab(0, lastDivider);
+		}
 	}
 }
 tog_library.onMouseMove(int x, int y){
@@ -739,11 +741,13 @@ tog_video.onLeftButtonDown(int x, int y){
 	downX=x;
 }
 tog_video.onLeftButtonUp(int x, int y){
-	tabMouseDown=false;
-	if(mmove){
-		tog_video1.setAlpha(255);
-		tabDivider.hide();
-		moveTab(1, lastDivider);
+	if(tabMouseDown){
+		tabMouseDown=false;
+		if(mmove){
+			tog_video1.setAlpha(255);
+			tabDivider.hide();
+			moveTab(1, lastDivider);
+		}
 	}
 }
 tog_video.onMouseMove(int x, int y){
@@ -762,11 +766,13 @@ tog_avs.onLeftButtonDown(int x, int y){
 	downX=x;
 }
 tog_avs.onLeftButtonUp(int x, int y){
-	tabMouseDown=false;
-	if(mmove){
-		tog_avs1.setAlpha(255);
-		tabDivider.hide();
-		moveTab(2, lastDivider);
+	if(tabMouseDown){
+		tabMouseDown=false;
+		if(mmove){
+			tog_avs1.setAlpha(255);
+			tabDivider.hide();
+			moveTab(2, lastDivider);
+		}
 	}
 }
 tog_avs.onMouseMove(int x, int y){
@@ -785,11 +791,13 @@ tog_Browser.onLeftButtonDown(int x, int y){
 	downX=x;
 }
 tog_Browser.onLeftButtonUp(int x, int y){
-	tabMouseDown=false;
-	if(mmove){
-		tog_Browser1.setAlpha(255);
-		tabDivider.hide();
-		moveTab(3, lastDivider);
+	if(tabMouseDown){
+		tabMouseDown=false;
+		if(mmove){
+			tog_Browser1.setAlpha(255);
+			tabDivider.hide();
+			moveTab(3, lastDivider);
+		}
 	}
 }
 tog_Browser.onMouseMove(int x, int y){
@@ -808,11 +816,13 @@ tog_Playlist.onLeftButtonDown(int x, int y){
 	downX=x;
 }
 tog_Playlist.onLeftButtonUp(int x, int y){
-	tabMouseDown=false;
-	if(mmove){
-		tog_Playlist1.setAlpha(255);
-		tabDivider.hide();
-		moveTab(4, lastDivider);
+	if(tabMouseDown){
+		tabMouseDown=false;
+		if(mmove){
+			tog_Playlist1.setAlpha(255);
+			tabDivider.hide();
+			moveTab(4, lastDivider);
+		}
 	}
 }
 tog_Playlist.onMouseMove(int x, int y){
@@ -832,11 +842,13 @@ tog_NowPlay.onLeftButtonDown(int x, int y){
 	downX=x;
 }
 tog_NowPlay.onLeftButtonUp(int x, int y){
-	tabMouseDown=false;
-	if(mmove){
-		tog_Widget1.setAlpha(255);
-		tabDivider.hide();
-		moveTab(6, lastDivider);
+	if(tabMouseDown){
+		tabMouseDown=false;
+		if(mmove){
+			tog_Widget1.setAlpha(255);
+			tabDivider.hide();
+			moveTab(6, lastDivider);
+		}
 	}
 }
 tog_NowPlay.onMouseMove(int x, int y){
@@ -855,11 +867,13 @@ tog_Other.onLeftButtonDown(int x, int y){
 	downX=x;
 }
 tog_Other.onLeftButtonUp(int x, int y){
-	tabMouseDown=false;
-	if(mmove){
-		tog_Other1.setAlpha(255);
-		tabDivider.hide();
-		moveTab(5, lastDivider);
+	if(tabMouseDown){
+		tabMouseDown=false;
+		if(mmove){
+			tog_Other1.setAlpha(255);
+			tabDivider.hide();
+			moveTab(5, lastDivider);
+		}
 	}
 }
 tog_Other.onMouseMove(int x, int y){
@@ -1045,6 +1059,7 @@ waitForPreview.onTimer(){
 Toggle component buttons
 */
 initTabSubMenu(){
+	tabMouseDown=false;
 	tabMenu = new PopUpMenu;
 	tabMenu.addCommand(TAB_TABSELECT, -1, 0, 1);
 	tabMenu.addSeparator();

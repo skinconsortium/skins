@@ -1,0 +1,39 @@
+-------------------------------------------------------------------------
+Internal Gammagroups in ClassicPro (last updated for Cpro 1.03)
+-------------------------------------------------------------------------
+
+
+::Normal Mode::
+
+n.Background.Bottom
+n.Background.Alt
+n.Background.Overlay
+n.Vis
+n.Text.SongInfo
+n.Text.SongTime
+n.Scrollbars.Gfx
+n.TooltipCombobox
+n.Notifier.Bg
+n.Seeker.BG
+n.Seeker.Thumb
+n.Volume.BG
+n.Volume.Thumb
+
+
+
+
+:::::::::::::::::::::::::
+
+
+
+
+
+::Shade Mode::
+
+s.Background.Bottom
+s.Background.Overlay
+s.Vis
+s.Seeker.BG
+s.Seeker.Thumb
+s.Volume.BG
+s.Volume.Thumb
