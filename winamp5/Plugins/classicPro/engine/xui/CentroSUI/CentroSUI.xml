@@ -80,8 +80,8 @@
 	/>
 
 	<text id="info" display="VID_Info" ticker="1"
-		x="105" y="4" relatw="1"
-		align="center" color="ComponentTab.Status.Text" font="cpro.status.font"
+		x="105" y="4" w="-135" relatw="1"
+		align="center" valign="top" color="ComponentTab.Status.Text" font="cpro.status.font"
 	/>
 
 </groupdef>

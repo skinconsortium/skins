@@ -8,7 +8,7 @@
 
 	<!-- Background: Base -->
 	<layer id="cpro.bg.top" x="143" y="0" w="-316" relatw="1" regionop="1" tile="1" image="player.top" wantfocus="1"/>
-	<layer id="cpro.bg.bottom" x="156" y="-68" w="-315" relaty="1" relatw="1" tile="1" regionop="1" image="player.bottom" wantfocus="1"/>
+	<layer id="cpro.bg.bottom" x="157" y="-68" w="-317" relaty="1" relatw="1" tile="1" regionop="1" image="player.bottom" wantfocus="1"/>
 	<layer id="cpro.bg.left" x="0" y="99" h="-166" relath="1" regionop="1" tile="1" image="player.left" wantfocus="1"/>
 	<layer id="cpro.bg.right" x="-6" y="99" h="-166" relatx="1" relath="1" tile="1" regionop="1" image="player.right" wantfocus="1"/>
 	<layer x="0" y="0" regionop="1" image="player.topleft" wantfocus="1"/>
@@ -21,7 +21,7 @@
 
 	<!-- Background: Overlay -->
 	<layer x="143" y="0" w="-317" relatw="1" tile="1" image="player.o.top" wantfocus="1"/>
-	<layer x="156" y="-68" w="-315" relaty="1" relatw="1" tile="1" image="player.o.bottom" wantfocus="1"/>
+	<layer x="157" y="-68" w="-317" relaty="1" relatw="1" tile="1" image="player.o.bottom" wantfocus="1"/>
 	<layer x="0" y="99" h="-166" relath="1" tile="1" image="player.o.left" wantfocus="1"/>
 	<layer x="-6" y="99" h="-166" relatx="1" relath="1" tile="1" image="player.o.right" wantfocus="1"/>
 	<layer x="0" y="0" image="player.o.topleft" wantfocus="1"/>
@@ -87,7 +87,7 @@
 		x="20" y="74"
 		w="108" h="16"
 		bandwidth="thin"
-		gammagroup="Vis.Normal"
+		gammagroup="n.Vis"
 	/>
 	<layer id="vis.overlay.1" x="20" y="75" w="108" h="16" image="vis.overlay1"/>
 	<layer id="vis.overlay.2" x="20" y="75" w="108" h="16" image="vis.overlay2"/>
@@ -111,7 +111,20 @@
 	<Slider	id="Volume" action="volume" x="-109" y="82" h="15" w="97" relatx="1" thumb="volume.thumb.1" hoverThumb="volume.thumb.2" downThumb="volume.thumb.3" tooltip="Volume" cursor="IDC_HAND"/>
 	<NStatesButton id="mute" x="-155" y="72" relatx="1" image="mute.1." hoverimage="mute.2." downimage="mute.3." rectrgn="1" nstates="2" tooltip="Mute Volume"/>
 	
-
+	<ModernSongticker
+		x="114" y="30" h="20" w="-126" relatw="1"
+		id_layout="main;normal"
+		id_volume="Volume"
+		id_seeker="seeker"
+		id_prev="previous.track"
+		id_next="next.track"
+		id_open="open.tracks"
+		id_shuf="shuffle"
+		id_rep="repeat"
+		id_mute="mute"
+		font="cpro.songname.font"
+	/>
+	
 	<button id="previous.track" x="11" y="-45" relaty="1" action="PREV" image="player.prev.1" hoverimage="player.prev.2" downimage="player.prev.3" tooltip="Previous Track"/>
 	<button x="38" y="-45" relaty="1" action="PLAY" image="player.play.1" hoverimage="player.play.2" downimage="player.play.3" tooltip="Play"/>
 	<button x="65" y="-45" relaty="1" action="PAUSE" image="player.pause.1" hoverimage="player.pause.2" downimage="player.pause.3" tooltip="Pause Playback"/>
@@ -139,25 +152,11 @@
 	<button x="-24" relatx="1" y="3" action="CLOSE" image="close.1" hoverImage="close.2" downImage="close.3" rectrgn="1" tooltip="Exit Winamp"/>
 
 	<button id="aboutwinamp.hidden" x="0" y="0" w="0" h="0" relatx="1" relaty="1" action="TOGGLE" param="guid:{D6201408-476A-4308-BF1B-7BACA1124B12}"/>
-	<button id="winampbolt" x="-38" y="-49" w="34" h="34" relatx="1" relaty="1" hoverImage="winamp.logo" rectrgn="1" tooltip="Multi-Button (right-click for Options)"/>
+
+	<button id="winampbolt" x="-38" y="-49" w="34" h="34" relatx="1" relaty="1" hoverImage="winamp.logo.2" rectrgn="1" tooltip="Multi-Button (right-click for Options)"/>
 
 	<script file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\scripts\player.maki"/>
 	<script file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\scripts\presetpos.maki"/>
 	
 	<SC:UpdateSystem x="0" y="0" h="0" w="0" skinname="classicpro" skinversion="1.02" />
-
-	<ModernSongticker
-		x="114" y="30" h="20" w="-126" relatw="1"
-		id_layout="main;normal"
-		id_volume="Volume"
-		id_seeker="seeker"
-		id_prev="previous.track"
-		id_next="next.track"
-		id_open="open.tracks"
-		id_shuf="shuffle"
-		id_rep="repeat"
-		id_mute="mute"
-		font="cpro.songname.font"
-	/>
-
 </layout>

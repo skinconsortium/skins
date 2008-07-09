@@ -1,29 +1,29 @@
 <elements>
-	<bitmap id="player.topleft" file="mainframe.png" x="0" y="0" w="143" h="100" gammagroup="Background.Bottom"/>
-	<bitmap id="player.top" file="mainframe.png" x="144" y="0" w="10" h="100" gammagroup="Background.Bottom"/>
-	<bitmap id="player.topright" file="mainframe.png" x="155" y="0" w="174" h="100" gammagroup="Background.Bottom"/>
-	<bitmap id="player.left" file="mainframe.png" x="0" y="101" w="6" h="20" gammagroup="Background.Bottom"/>
-	<bitmap id="player.right" file="mainframe.png" x="323" y="101" w="6" h="20" gammagroup="Background.Bottom"/>
-	<bitmap id="player.bottomleft" file="mainframe.png" x="0" y="122" w="157" h="68" gammagroup="Background.Bottom"/>
-	<bitmap id="player.bottom" file="mainframe.png" x="158" y="122" w="10" h="68" gammagroup="Background.Bottom"/>
-	<bitmap id="player.bottomright" file="mainframe.png" x="169" y="122" w="160" h="68" gammagroup="Background.Bottom"/>
-	<bitmap id="player.center" file="mainframe.png" x="7" y="101" w="20" h="20" gammagroup="Background.Bottom"/>
+	<bitmap id="player.topleft" file="mainframe.png" x="0" y="0" w="143" h="100" gammagroup="n.Background.Bottom"/>
+	<bitmap id="player.top" file="mainframe.png" x="144" y="0" w="10" h="100" gammagroup="n.Background.Bottom"/>
+	<bitmap id="player.topright" file="mainframe.png" x="155" y="0" w="174" h="100" gammagroup="n.Background.Bottom"/>
+	<bitmap id="player.left" file="mainframe.png" x="0" y="101" w="6" h="20" gammagroup="n.Background.Bottom"/>
+	<bitmap id="player.right" file="mainframe.png" x="323" y="101" w="6" h="20" gammagroup="n.Background.Bottom"/>
+	<bitmap id="player.bottomleft" file="mainframe.png" x="0" y="122" w="157" h="68" gammagroup="n.Background.Bottom"/>
+	<bitmap id="player.bottom" file="mainframe.png" x="158" y="122" w="10" h="68" gammagroup="n.Background.Bottom"/>
+	<bitmap id="player.bottomright" file="mainframe.png" x="169" y="122" w="160" h="68" gammagroup="n.Background.Bottom"/>
+	<bitmap id="player.center" file="mainframe.png" x="7" y="101" w="20" h="20" gammagroup="n.Background.Bottom"/>
 
-	<bitmap id="player.left.alt" file="mainframe_lr.png" x="0" y="0" w="6" gammagroup="Background.Alt"/>
-	<bitmap id="player.right.alt" file="mainframe_lr.png" x="7" y="0" w="6" gammagroup="Background.Alt"/>
-	<bitmap id="player.top.alt" file="mainframe_tb.png" x="0" y="0" h="100" gammagroup="Background.Alt"/>
-	<bitmap id="player.bottom.alt" file="mainframe_tb.png" x="0" y="101" h="68" gammagroup="Background.Alt"/>
-	<bitmap id="player.center.title" file="mainframe_title.png" x="0" y="0" w="90" gammagroup="Background.Alt"/>
+	<bitmap id="player.left.alt" file="mainframe_lr.png" x="0" y="0" w="6" gammagroup="n.Background.Alt"/>
+	<bitmap id="player.right.alt" file="mainframe_lr.png" x="7" y="0" w="6" gammagroup="n.Background.Alt"/>
+	<bitmap id="player.top.alt" file="mainframe_tb.png" x="0" y="0" h="100" gammagroup="n.Background.Alt"/>
+	<bitmap id="player.bottom.alt" file="mainframe_tb.png" x="0" y="101" h="68" gammagroup="n.Background.Alt"/>
+	<bitmap id="player.center.title" file="mainframe_title.png" x="0" y="0" w="90" gammagroup="n.Background.Alt"/>
 
-	<bitmap id="player.o.topleft" file="mainframe_overlay.png" x="0" y="0" w="143" h="100" gammagroup="Background.Overlay"/>
-	<bitmap id="player.o.top" file="mainframe_overlay.png" x="144" y="0" w="10" h="100" gammagroup="Background.Overlay"/>
-	<bitmap id="player.o.topright" file="mainframe_overlay.png" x="155" y="0" w="174" h="100" gammagroup="Background.Overlay"/>
-	<bitmap id="player.o.left" file="mainframe_overlay.png" x="0" y="101" w="6" h="20" gammagroup="Background.Overlay"/>
-	<bitmap id="player.o.right" file="mainframe_overlay.png" x="323" y="101" w="6" h="20" gammagroup="Background.Overlay"/>
-	<bitmap id="player.o.bottomleft" file="mainframe_overlay.png" x="0" y="122" w="157" h="68" gammagroup="Background.Overlay"/>
-	<bitmap id="player.o.bottom" file="mainframe_overlay.png" x="158" y="122" w="10" h="68" gammagroup="Background.Overlay"/>
-	<bitmap id="player.o.bottomright" file="mainframe_overlay.png" x="169" y="122" w="160" h="68" gammagroup="Background.Overlay"/>
-	<bitmap id="player.o.center" file="mainframe_overlay.png" x="7" y="101" w="20" h="20" gammagroup="Background.Overlay"/>
+	<bitmap id="player.o.topleft" file="mainframe_overlay.png" x="0" y="0" w="143" h="100" gammagroup="n.Background.Overlay"/>
+	<bitmap id="player.o.top" file="mainframe_overlay.png" x="144" y="0" w="10" h="100" gammagroup="n.Background.Overlay"/>
+	<bitmap id="player.o.topright" file="mainframe_overlay.png" x="155" y="0" w="174" h="100" gammagroup="n.Background.Overlay"/>
+	<bitmap id="player.o.left" file="mainframe_overlay.png" x="0" y="101" w="6" h="20" gammagroup="n.Background.Overlay"/>
+	<bitmap id="player.o.right" file="mainframe_overlay.png" x="323" y="101" w="6" h="20" gammagroup="n.Background.Overlay"/>
+	<bitmap id="player.o.bottomleft" file="mainframe_overlay.png" x="0" y="122" w="157" h="68" gammagroup="n.Background.Overlay"/>
+	<bitmap id="player.o.bottom" file="mainframe_overlay.png" x="158" y="122" w="10" h="68" gammagroup="n.Background.Overlay"/>
+	<bitmap id="player.o.bottomright" file="mainframe_overlay.png" x="169" y="122" w="160" h="68" gammagroup="n.Background.Overlay"/>
+	<bitmap id="player.o.center" file="mainframe_overlay.png" x="7" y="101" w="20" h="20" gammagroup="n.Background.Overlay"/>
 
 	<bitmap id="cPro.promo.1" file="promo.png" x="201" y="46" w="99" h="45"/>
 	<bitmap id="cPro.promo.2" file="promo.png" x="0" y="46" w="200" h="45"/>
@@ -151,16 +151,17 @@
 	<bitmap id="vis.band" file="mainframe.png" x="28" y="103" w="1" h="16"/>
 	<bitmap id="vis.region" file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\image\vis-overlay.png"/>
 
-	<bitmap id="vis.overlay1" file="mainframe.png" x="20" y="75" w="108" h="16" gammagroup="Background.Bottom"/>
-	<bitmap id="vis.overlay2" file="mainframe_overlay.png" x="20" y="75" w="108" h="16" gammagroup="Background.Overlay"/>
+	<bitmap id="vis.overlay1" file="mainframe.png" x="20" y="75" w="108" h="16" gammagroup="n.Background.Bottom"/>
+	<bitmap id="vis.overlay2" file="mainframe_overlay.png" x="20" y="75" w="108" h="16" gammagroup="n.Background.Overlay"/>
 	
 	<bitmap id="tabpreview" file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\xui\CentroSUI\tabpreview.png"/>
 
 	<!-- Text: SongInfo -->
-	<bitmap id="size.kb" file="songinfo.png" x="0" y="16" w="10" h="5" gammagroup="Text.SongInfo"/>
-	<bitmap id="size.mb" file="songinfo.png" x="0" y="22" w="10" h="5" gammagroup="Text.SongInfo"/>
-	<bitmap id="size.gb" file="songinfo.png" x="0" y="28" w="10" h="5" gammagroup="Text.SongInfo"/>
-	<bitmap id="songinfo.source" file="songinfo.png" x="0" y="0" h="15" w="110" gammagroup="Text.SongInfo"/>
+	<bitmap id="size.khzkbps" file="songinfo.png" x="111" y="0" w="25" h="15" gammagroup="n.Text.SongInfo"/>
+	<bitmap id="size.kb" file="songinfo.png" x="0" y="16" w="10" h="5" gammagroup="n.Text.SongInfo"/>
+	<bitmap id="size.mb" file="songinfo.png" x="0" y="22" w="10" h="5" gammagroup="n.Text.SongInfo"/>
+	<bitmap id="size.gb" file="songinfo.png" x="0" y="28" w="10" h="5" gammagroup="n.Text.SongInfo"/>
+	<bitmap id="songinfo.source" file="songinfo.png" x="0" y="0" h="15" w="110" gammagroup="n.Text.SongInfo"/>
 	<bitmapfont id="bitmapfont.songinfo" file="songinfo.source" charwidth="5" charheight="5" hspacing="0" vspacing="0" />
 
 	<!-- Layer: NoCover -->
@@ -214,7 +215,7 @@
 	<bitmap id="close.right.3" file="suiframe.png" x="162" y="51" w="20" h="20"/>
 
 	<!-- Number Font -->
-	<bitmap id="player.bitmapfont.nums.source" file="numfont.png" x="0" y="0" h="93" w="240" gammagroup="Text.SongTime"/>
+	<bitmap id="player.bitmapfont.nums.source" file="numfont.png" x="0" y="0" h="93" w="240" gammagroup="n.Text.SongTime"/>
 	<bitmapfont id="player.bitmapfont.nums" file="player.bitmapfont.nums.source" charwidth="15" charheight="31" hspacing="0" vspacing="-2"/>
 
 	<!-- Menubar buttons -->
@@ -223,29 +224,32 @@
 	<bitmap id="window.titlebar.menu.3" file="buttons.png" x="22" y="87" w="10" h="21"/>
 
 	<!-- Winamp bold -->
-	<bitmap id="winamp.logo" file="buttons.png" x="258" y="162" w="34" h="34"/>
+	<bitmap id="file.buttons.png" file="buttons.png"/>
+	<bitmap id="winamp.logo.1" file="buttons.png" x="298" y="127" w="34" h="34"/>
+	<bitmap id="winamp.logo.2" file="buttons.png" x="258" y="162" w="34" h="34"/>
+	<bitmap id="winamp.logo.3" file="buttons.png" x="293" y="162" w="34" h="34"/>
 
 	<!-- Volume -->
-	<bitmap id="volume.bg" file="seekvol.png" x="0" y="63" w="97" h="15"/>
-	<bitmap id="volume.bg.hover" file="seekvol.png" x="0" y="79" w="97" h="15"/>
-	<bitmap id="volume.bg2" file="volume_ani.png" x="0" y="0" w="97"/>
-	<bitmap id="volume.thumb.1" file="seekvol.png" x="77" y="15" w="20" h="15"/>
-	<bitmap id="volume.thumb.2" file="seekvol.png" x="77" y="31" w="20" h="15"/>
-	<bitmap id="volume.thumb.3" file="seekvol.png" x="77" y="47" w="20" h="15"/>
+	<bitmap id="volume.bg" file="seekvol.png" x="0" y="63" w="97" h="15" gammagroup="n.Volume.BG"/>
+	<bitmap id="volume.bg.hover" file="seekvol.png" x="0" y="79" w="97" h="15" gammagroup="n.Volume.BG"/>
+	<bitmap id="volume.bg2" file="volume_ani.png" x="0" y="0" w="97" gammagroup="n.Volume.BG"/>
+	<bitmap id="volume.thumb.1" file="seekvol.png" x="77" y="15" w="20" h="15" gammagroup="n.Volume.Thumb"/>
+	<bitmap id="volume.thumb.2" file="seekvol.png" x="77" y="31" w="20" h="15" gammagroup="n.Volume.Thumb"/>
+	<bitmap id="volume.thumb.3" file="seekvol.png" x="77" y="47" w="20" h="15" gammagroup="n.Volume.Thumb"/>
 
 	<!-- Seeker -->
-	<bitmap id="seeker.bg.left.1" file="seekvol.png" x="0" y="0" w="10" h="20"/>
-	<bitmap id="seeker.bg.left.2" file="seekvol.png" x="0" y="21" w="10" h="20"/>
-	<bitmap id="seeker.bg.left.3" file="seekvol.png" x="0" y="42" w="10" h="20"/>
-	<bitmap id="seeker.bg.center.1" file="seekvol.png" x="11" y="0" w="10" h="20"/>
-	<bitmap id="seeker.bg.center.2" file="seekvol.png" x="11" y="21" w="10" h="20"/>
-	<bitmap id="seeker.bg.center.3" file="seekvol.png" x="11" y="42" w="10" h="20"/>
-	<bitmap id="seeker.bg.right.1" file="seekvol.png" x="22" y="0" w="10" h="20"/>
-	<bitmap id="seeker.bg.right.2" file="seekvol.png" x="22" y="21" w="10" h="20"/>
-	<bitmap id="seeker.bg.right.3" file="seekvol.png" x="22" y="42" w="10" h="20"/>
-	<bitmap id="seeker.thumb.1" file="seekvol.png" x="33" y="0" w="38" h="20"/>
-	<bitmap id="seeker.thumb.2" file="seekvol.png" x="33" y="21" w="38" h="20"/>
-	<bitmap id="seeker.thumb.3" file="seekvol.png" x="33" y="42" w="38" h="20"/>
+	<bitmap id="seeker.bg.left.1" file="seekvol.png" x="0" y="0" w="10" h="20" gammagroup="n.Seeker.BG"/>
+	<bitmap id="seeker.bg.left.2" file="seekvol.png" x="0" y="21" w="10" h="20" gammagroup="n.Seeker.BG"/>
+	<bitmap id="seeker.bg.left.3" file="seekvol.png" x="0" y="42" w="10" h="20" gammagroup="n.Seeker.BG"/>
+	<bitmap id="seeker.bg.center.1" file="seekvol.png" x="11" y="0" w="10" h="20" gammagroup="n.Seeker.BG"/>
+	<bitmap id="seeker.bg.center.2" file="seekvol.png" x="11" y="21" w="10" h="20" gammagroup="n.Seeker.BG"/>
+	<bitmap id="seeker.bg.center.3" file="seekvol.png" x="11" y="42" w="10" h="20" gammagroup="n.Seeker.BG"/>
+	<bitmap id="seeker.bg.right.1" file="seekvol.png" x="22" y="0" w="10" h="20" gammagroup="n.Seeker.BG"/>
+	<bitmap id="seeker.bg.right.2" file="seekvol.png" x="22" y="21" w="10" h="20" gammagroup="n.Seeker.BG"/>
+	<bitmap id="seeker.bg.right.3" file="seekvol.png" x="22" y="42" w="10" h="20" gammagroup="n.Seeker.BG"/>
+	<bitmap id="seeker.thumb.1" file="seekvol.png" x="33" y="0" w="38" h="20" gammagroup="n.Seeker.Thumb"/>
+	<bitmap id="seeker.thumb.2" file="seekvol.png" x="33" y="21" w="38" h="20" gammagroup="n.Seeker.Thumb"/>
+	<bitmap id="seeker.thumb.3" file="seekvol.png" x="33" y="42" w="38" h="20" gammagroup="n.Seeker.Thumb"/>
 
 	<!--  SUI Component Buttons: Small -->
 	<bitmap id="component.pl.add.1" file="comp_but.png" x="0" y="0" w="32" h="17"/>
@@ -407,112 +411,112 @@
 	<bitmap id="wasabi.framewnd.horizontalgrabber" file="suiframe.png" x="153" y="0" h="8" w="40"/>
 
 	<!-- Wasabi stuff -->
-	<bitmap id="wasabi.scrollbar.horizontal.left" file="scrollbars.png" x="56" y="0" h="13" w="14" gammagroup="Scrollbars.Gfx"/>
-	<bitmap id="wasabi.scrollbar.horizontal.left.hover" file="scrollbars.png" x="56" y="14" h="13" w="14" gammagroup="Scrollbars.Gfx"/>
-	<bitmap id="wasabi.scrollbar.horizontal.left.pressed" file="scrollbars.png" x="56" y="28" h="13" w="14" gammagroup="Scrollbars.Gfx"/>
-	<bitmap id="wasabi.scrollbar.horizontal.right" file="scrollbars.png" x="103" y="0" h="13" w="14" gammagroup="Scrollbars.Gfx"/>
-	<bitmap id="wasabi.scrollbar.horizontal.right.hover" file="scrollbars.png" x="103" y="14" h="13" w="14" gammagroup="Scrollbars.Gfx"/>
-	<bitmap id="wasabi.scrollbar.horizontal.right.pressed" file="scrollbars.png" x="103" y="28" h="13" w="14" gammagroup="Scrollbars.Gfx"/>
-	<bitmap id="wasabi.scrollbar.horizontal.button" file="scrollbars.png" x="71" y="0" h="13" w="31" gammagroup="Scrollbars.Gfx"/>
-	<bitmap id="wasabi.scrollbar.horizontal.button.hover" file="scrollbars.png" x="71" y="14" h="13" w="31" gammagroup="Scrollbars.Gfx"/>
-	<bitmap id="wasabi.scrollbar.horizontal.button.pressed" file="scrollbars.png" x="71" y="28" h="13" w="31" gammagroup="Scrollbars.Gfx"/>
-	<bitmap id="wasabi.scrollbar.horizontal.background.middle" file="scrollbars.png" x="56" y="42" w="61" h="13" gammagroup="Scrollbars.Gfx"/>
-	<bitmap id="wasabi.scrollbar.vertical.left" file="scrollbars.png" x="0" y="0" h="14" w="13" gammagroup="Scrollbars.Gfx"/>
-	<bitmap id="wasabi.scrollbar.vertical.left.hover" file="scrollbars.png" x="14" y="0" h="14" w="13" gammagroup="Scrollbars.Gfx"/>
-	<bitmap id="wasabi.scrollbar.vertical.left.pressed" file="scrollbars.png" x="28" y="0" h="14" w="13" gammagroup="Scrollbars.Gfx"/>
-	<bitmap id="wasabi.scrollbar.vertical.right" file="scrollbars.png" x="0" y="47" h="14" w="13" gammagroup="Scrollbars.Gfx"/>
-	<bitmap id="wasabi.scrollbar.vertical.right.hover" file="scrollbars.png" x="14" y="47" h="14" w="13" gammagroup="Scrollbars.Gfx"/>
-	<bitmap id="wasabi.scrollbar.vertical.right.pressed" file="scrollbars.png" x="28" y="47" h="14" w="13" gammagroup="Scrollbars.Gfx"/>
-	<bitmap id="wasabi.scrollbar.vertical.button" file="scrollbars.png" x="0" y="15" h="31" w="13" gammagroup="Scrollbars.Gfx"/>
-	<bitmap id="wasabi.scrollbar.vertical.button.hover" file="scrollbars.png" x="14" y="15" h="31" w="13" gammagroup="Scrollbars.Gfx"/>
-	<bitmap id="wasabi.scrollbar.vertical.button.pressed" file="scrollbars.png" x="28" y="15" h="31" w="13" gammagroup="Scrollbars.Gfx"/>
-	<bitmap id="wasabi.scrollbar.vertical.background.middle" file="scrollbars.png" x="42" y="0" w="13" h="61" gammagroup="Scrollbars.Gfx"/>
-	<bitmap id="wasabi.scrollbar.vertical.grip" file="window/scrollgrips.png" x="0" y="0" h="8" w="6" gammagroup="Scrollbars.Gfx"/>
-	<bitmap id="wasabi.scrollbar.horizontal.grip" file="window/scrollgrips.png" x="7" y="0" h="6" w="8" gammagroup="Scrollbars.Gfx"/>
+	<bitmap id="wasabi.scrollbar.horizontal.left" file="scrollbars.png" x="56" y="0" h="13" w="14" gammagroup="n.Scrollbars.Gfx"/>
+	<bitmap id="wasabi.scrollbar.horizontal.left.hover" file="scrollbars.png" x="56" y="14" h="13" w="14" gammagroup="n.Scrollbars.Gfx"/>
+	<bitmap id="wasabi.scrollbar.horizontal.left.pressed" file="scrollbars.png" x="56" y="28" h="13" w="14" gammagroup="n.Scrollbars.Gfx"/>
+	<bitmap id="wasabi.scrollbar.horizontal.right" file="scrollbars.png" x="103" y="0" h="13" w="14" gammagroup="n.Scrollbars.Gfx"/>
+	<bitmap id="wasabi.scrollbar.horizontal.right.hover" file="scrollbars.png" x="103" y="14" h="13" w="14" gammagroup="n.Scrollbars.Gfx"/>
+	<bitmap id="wasabi.scrollbar.horizontal.right.pressed" file="scrollbars.png" x="103" y="28" h="13" w="14" gammagroup="n.Scrollbars.Gfx"/>
+	<bitmap id="wasabi.scrollbar.horizontal.button" file="scrollbars.png" x="71" y="0" h="13" w="31" gammagroup="n.Scrollbars.Gfx"/>
+	<bitmap id="wasabi.scrollbar.horizontal.button.hover" file="scrollbars.png" x="71" y="14" h="13" w="31" gammagroup="n.Scrollbars.Gfx"/>
+	<bitmap id="wasabi.scrollbar.horizontal.button.pressed" file="scrollbars.png" x="71" y="28" h="13" w="31" gammagroup="n.Scrollbars.Gfx"/>
+	<bitmap id="wasabi.scrollbar.horizontal.background.middle" file="scrollbars.png" x="56" y="42" w="61" h="13" gammagroup="n.Scrollbars.Gfx"/>
+	<bitmap id="wasabi.scrollbar.vertical.left" file="scrollbars.png" x="0" y="0" h="14" w="13" gammagroup="n.Scrollbars.Gfx"/>
+	<bitmap id="wasabi.scrollbar.vertical.left.hover" file="scrollbars.png" x="14" y="0" h="14" w="13" gammagroup="n.Scrollbars.Gfx"/>
+	<bitmap id="wasabi.scrollbar.vertical.left.pressed" file="scrollbars.png" x="28" y="0" h="14" w="13" gammagroup="n.Scrollbars.Gfx"/>
+	<bitmap id="wasabi.scrollbar.vertical.right" file="scrollbars.png" x="0" y="47" h="14" w="13" gammagroup="n.Scrollbars.Gfx"/>
+	<bitmap id="wasabi.scrollbar.vertical.right.hover" file="scrollbars.png" x="14" y="47" h="14" w="13" gammagroup="n.Scrollbars.Gfx"/>
+	<bitmap id="wasabi.scrollbar.vertical.right.pressed" file="scrollbars.png" x="28" y="47" h="14" w="13" gammagroup="n.Scrollbars.Gfx"/>
+	<bitmap id="wasabi.scrollbar.vertical.button" file="scrollbars.png" x="0" y="15" h="31" w="13" gammagroup="n.Scrollbars.Gfx"/>
+	<bitmap id="wasabi.scrollbar.vertical.button.hover" file="scrollbars.png" x="14" y="15" h="31" w="13" gammagroup="n.Scrollbars.Gfx"/>
+	<bitmap id="wasabi.scrollbar.vertical.button.pressed" file="scrollbars.png" x="28" y="15" h="31" w="13" gammagroup="n.Scrollbars.Gfx"/>
+	<bitmap id="wasabi.scrollbar.vertical.background.middle" file="scrollbars.png" x="42" y="0" w="13" h="61" gammagroup="n.Scrollbars.Gfx"/>
+	<bitmap id="wasabi.scrollbar.vertical.grip" file="window/scrollgrips.png" x="0" y="0" h="8" w="6" gammagroup="n.Scrollbars.Gfx"/>
+	<bitmap id="wasabi.scrollbar.horizontal.grip" file="window/scrollgrips.png" x="7" y="0" h="6" w="8" gammagroup="n.Scrollbars.Gfx"/>
 
 	<!-- Tooltips-->
-	<bitmap id="wasabi.tooltip.top.left" file="tooltip.png" x="0" y="0" h="4" w="4" gammagroup="TooltipCombobox"/>
-	<bitmap id="wasabi.tooltip.top" file="tooltip.png" x="4" y="0" h="4" w="8" gammagroup="TooltipCombobox"/>
-	<bitmap id="wasabi.tooltip.top.right" file="tooltip.png" x="13" y="0" h="4" w="4" gammagroup="TooltipCombobox"/>
-	<bitmap id="wasabi.tooltip.left" file="tooltip.png" x="0" y="4" h="8" w="4" gammagroup="TooltipCombobox"/>
-	<bitmap id="wasabi.tooltip.center" file="tooltip.png" x="4" y="4" h="8" w="8" gammagroup="TooltipCombobox"/>
-	<bitmap id="wasabi.tooltip.right" file="tooltip.png" x="13" y="4" h="8" w="4" gammagroup="TooltipCombobox"/>
-	<bitmap id="wasabi.tooltip.bottom.left" file="tooltip.png" x="0" y="13" h="4" w="4" gammagroup="TooltipCombobox"/>
-	<bitmap id="wasabi.tooltip.bottom" file="tooltip.png" x="4" y="13" h="4" w="8" gammagroup="TooltipCombobox"/>
-	<bitmap id="wasabi.tooltip.bottom.right" file="tooltip.png" x="13" y="13" h="4" w="4" gammagroup="TooltipCombobox"/>
+	<bitmap id="wasabi.tooltip.top.left" file="tooltip.png" x="0" y="0" h="4" w="4" gammagroup="n.TooltipCombobox"/>
+	<bitmap id="wasabi.tooltip.top" file="tooltip.png" x="4" y="0" h="4" w="8" gammagroup="n.TooltipCombobox"/>
+	<bitmap id="wasabi.tooltip.top.right" file="tooltip.png" x="13" y="0" h="4" w="4" gammagroup="n.TooltipCombobox"/>
+	<bitmap id="wasabi.tooltip.left" file="tooltip.png" x="0" y="4" h="8" w="4" gammagroup="n.TooltipCombobox"/>
+	<bitmap id="wasabi.tooltip.center" file="tooltip.png" x="4" y="4" h="8" w="8" gammagroup="n.TooltipCombobox"/>
+	<bitmap id="wasabi.tooltip.right" file="tooltip.png" x="13" y="4" h="8" w="4" gammagroup="n.TooltipCombobox"/>
+	<bitmap id="wasabi.tooltip.bottom.left" file="tooltip.png" x="0" y="13" h="4" w="4" gammagroup="n.TooltipCombobox"/>
+	<bitmap id="wasabi.tooltip.bottom" file="tooltip.png" x="4" y="13" h="4" w="8" gammagroup="n.TooltipCombobox"/>
+	<bitmap id="wasabi.tooltip.bottom.right" file="tooltip.png" x="13" y="13" h="4" w="4" gammagroup="n.TooltipCombobox"/>
 
 	<!-- Combo Box List-->
-	<bitmap id="wasabi.dropdownlist.list.top.left" file="combobox.png" x="0" y="0" h="4" w="4" gammagroup="TooltipCombobox"/>
-	<bitmap id="wasabi.dropdownlist.list.top" file="combobox.png" x="4" y="0" h="4" w="8" gammagroup="TooltipCombobox"/>
-	<bitmap id="wasabi.dropdownlist.list.top.right" file="combobox.png" x="13" y="0" h="4" w="4" gammagroup="TooltipCombobox"/>
-	<bitmap id="wasabi.dropdownlist.list.left" file="combobox.png" x="0" y="4" h="8" w="4" gammagroup="TooltipCombobox"/>
-	<bitmap id="wasabi.dropdownlist.list.center" file="combobox.png" x="4" y="4" h="8" w="8" gammagroup="TooltipCombobox"/>
-	<bitmap id="wasabi.dropdownlist.list.right" file="combobox.png" x="13" y="4" h="8" w="4" gammagroup="TooltipCombobox"/>
-	<bitmap id="wasabi.dropdownlist.list.bottom.left" file="combobox.png" x="0" y="13" h="4" w="4" gammagroup="TooltipCombobox"/>
-	<bitmap id="wasabi.dropdownlist.list.bottom" file="combobox.png" x="4" y="13" h="4" w="8" gammagroup="TooltipCombobox"/>
-	<bitmap id="wasabi.dropdownlist.list.bottom.right" file="combobox.png" x="13" y="13" h="4" w="4" gammagroup="TooltipCombobox"/>
+	<bitmap id="wasabi.dropdownlist.list.top.left" file="combobox.png" x="0" y="0" h="4" w="4" gammagroup="n.TooltipCombobox"/>
+	<bitmap id="wasabi.dropdownlist.list.top" file="combobox.png" x="4" y="0" h="4" w="8" gammagroup="n.TooltipCombobox"/>
+	<bitmap id="wasabi.dropdownlist.list.top.right" file="combobox.png" x="13" y="0" h="4" w="4" gammagroup="n.TooltipCombobox"/>
+	<bitmap id="wasabi.dropdownlist.list.left" file="combobox.png" x="0" y="4" h="8" w="4" gammagroup="n.TooltipCombobox"/>
+	<bitmap id="wasabi.dropdownlist.list.center" file="combobox.png" x="4" y="4" h="8" w="8" gammagroup="n.TooltipCombobox"/>
+	<bitmap id="wasabi.dropdownlist.list.right" file="combobox.png" x="13" y="4" h="8" w="4" gammagroup="n.TooltipCombobox"/>
+	<bitmap id="wasabi.dropdownlist.list.bottom.left" file="combobox.png" x="0" y="13" h="4" w="4" gammagroup="n.TooltipCombobox"/>
+	<bitmap id="wasabi.dropdownlist.list.bottom" file="combobox.png" x="4" y="13" h="4" w="8" gammagroup="n.TooltipCombobox"/>
+	<bitmap id="wasabi.dropdownlist.list.bottom.right" file="combobox.png" x="13" y="13" h="4" w="4" gammagroup="n.TooltipCombobox"/>
 
 
-	<bitmap id="notifier.bg.left" file="notifier.png" x="0" y="0" w="13" h="80" gammagroup="Notifier.Bg"/>
-	<bitmap id="notifier.bg.center" file="notifier.png" x="14" y="0" w="133" h="80" gammagroup="Notifier.Bg"/>
-	<bitmap id="notifier.bg.right" file="notifier.png" x="148" y="0" w="13" h="80" gammagroup="Notifier.Bg"/>
-	<bitmap id="notifier.bg.left.da" file="notifier.png" x="0" y="81" w="13" h="80" gammagroup="Notifier.Bg"/>
-	<bitmap id="notifier.bg.center.da" file="notifier.png" x="14" y="81" w="133" h="80" gammagroup="Notifier.Bg"/>
-	<bitmap id="notifier.bg.right.da" file="notifier.png" x="148" y="81" w="13" h="80" gammagroup="Notifier.Bg"/>
-	<bitmap id="notifier.bg.cover" file="notifier.png" x="0" y="162" w="78" h="80" gammagroup="Notifier.Bg"/>
+	<bitmap id="notifier.bg.left" file="notifier.png" x="0" y="0" w="13" h="80" gammagroup="n.Notifier.Bg"/>
+	<bitmap id="notifier.bg.center" file="notifier.png" x="14" y="0" w="133" h="80" gammagroup="n.Notifier.Bg"/>
+	<bitmap id="notifier.bg.right" file="notifier.png" x="148" y="0" w="13" h="80" gammagroup="n.Notifier.Bg"/>
+	<bitmap id="notifier.bg.left.da" file="notifier.png" x="0" y="81" w="13" h="80" gammagroup="n.Notifier.Bg"/>
+	<bitmap id="notifier.bg.center.da" file="notifier.png" x="14" y="81" w="133" h="80" gammagroup="n.Notifier.Bg"/>
+	<bitmap id="notifier.bg.right.da" file="notifier.png" x="148" y="81" w="13" h="80" gammagroup="n.Notifier.Bg"/>
+	<bitmap id="notifier.bg.cover" file="notifier.png" x="0" y="162" w="78" h="80" gammagroup="n.Notifier.Bg"/>
 
 
 	<!-- Browser -->
 	
-	<bitmap id="browser.editframe.left" file="browser.png" x="132" y="42" h="22" w="4" gammagroup="ComponentFrame"/>
-	<bitmap id="browser.editframe.center" file="browser.png" x="137" y="42" h="22" w="2" gammagroup="ComponentFrame"/>
-	<bitmap id="browser.editframe.right" file="browser.png" x="140" y="42" h="22" w="4" gammagroup="ComponentFrame"/>
+	<bitmap id="browser.editframe.left" file="browser.png" x="132" y="42" h="22" w="4"/>
+	<bitmap id="browser.editframe.center" file="browser.png" x="137" y="42" h="22" w="2"/>
+	<bitmap id="browser.editframe.right" file="browser.png" x="140" y="42" h="22" w="4"/>
 
-	<bitmap id="browser.editframe.center.2" file="browser.png" x="137" y="44" h="18" w="2" gammagroup="ComponentFrame"/>
+	<bitmap id="browser.editframe.center.2" file="browser.png" x="137" y="44" h="18" w="2"/>
 	
-	<bitmap id="browser.button.back.normal" file="browser.png" x="0" y="0" h="26" w="21" gammagroup="WindowText"/>
-	<bitmap id="browser.button.back.hover" file="browser.png" x="0" y="27" h="26" w="21" gammagroup="WindowText"/>
-	<bitmap id="browser.button.back.down" file="browser.png" x="0" y="54" h="26" w="21" gammagroup="WindowText"/>
+	<bitmap id="browser.button.back.normal" file="browser.png" x="0" y="0" h="26" w="21"/>
+	<bitmap id="browser.button.back.hover" file="browser.png" x="0" y="27" h="26" w="21"/>
+	<bitmap id="browser.button.back.down" file="browser.png" x="0" y="54" h="26" w="21"/>
 
-	<bitmap id="browser.button.forth.normal" file="browser.png" x="22" y="0" h="26" w="21" gammagroup="WindowText"/>
-	<bitmap id="browser.button.forth.hover" file="browser.png" x="22" y="27" h="26" w="21" gammagroup="WindowText"/>
-	<bitmap id="browser.button.forth.down" file="browser.png" x="22" y="54" h="26" w="21" gammagroup="WindowText"/>
+	<bitmap id="browser.button.forth.normal" file="browser.png" x="22" y="0" h="26" w="21"/>
+	<bitmap id="browser.button.forth.hover" file="browser.png" x="22" y="27" h="26" w="21"/>
+	<bitmap id="browser.button.forth.down" file="browser.png" x="22" y="54" h="26" w="21"/>
 
-	<bitmap id="browser.button.reload.normal" file="browser.png" x="44" y="0" h="26" w="21" gammagroup="WindowText"/>
-	<bitmap id="browser.button.reload.hover" file="browser.png" x="44" y="27" h="26" w="21" gammagroup="WindowText"/>
-	<bitmap id="browser.button.reload.down" file="browser.png" x="44" y="54" h="26" w="21" gammagroup="WindowText"/>
+	<bitmap id="browser.button.reload.normal" file="browser.png" x="44" y="0" h="26" w="21"/>
+	<bitmap id="browser.button.reload.hover" file="browser.png" x="44" y="27" h="26" w="21"/>
+	<bitmap id="browser.button.reload.down" file="browser.png" x="44" y="54" h="26" w="21"/>
 
-	<bitmap id="browser.button.stop.normal" file="browser.png" x="66" y="0" h="26" w="21" gammagroup="WindowText"/>
-	<bitmap id="browser.button.stop.hover" file="browser.png" x="66" y="27" h="26" w="21" gammagroup="WindowText"/>
-	<bitmap id="browser.button.stop.down" file="browser.png" x="66" y="54" h="26" w="21" gammagroup="WindowText"/>
+	<bitmap id="browser.button.stop.normal" file="browser.png" x="66" y="0" h="26" w="21"/>
+	<bitmap id="browser.button.stop.hover" file="browser.png" x="66" y="27" h="26" w="21"/>
+	<bitmap id="browser.button.stop.down" file="browser.png" x="66" y="54" h="26" w="21"/>
 
-	<bitmap id="browser.button.home.normal" file="browser.png" x="88" y="0" h="26" w="21" gammagroup="WindowText"/>
-	<bitmap id="browser.button.home.hover" file="browser.png" x="88" y="27" h="26" w="21" gammagroup="WindowText"/>
-	<bitmap id="browser.button.home.down" file="browser.png" x="88" y="54" h="26" w="21" gammagroup="WindowText"/>
+	<bitmap id="browser.button.home.normal" file="browser.png" x="88" y="0" h="26" w="21"/>
+	<bitmap id="browser.button.home.hover" file="browser.png" x="88" y="27" h="26" w="21"/>
+	<bitmap id="browser.button.home.down" file="browser.png" x="88" y="54" h="26" w="21"/>
 
-	<bitmap id="browser.button.links.normal" file="browser.png" x="110" y="0" h="26" w="21" gammagroup="WindowText"/>
-	<bitmap id="browser.button.links.hover" file="browser.png" x="110" y="27" h="26" w="21" gammagroup="WindowText"/>
-	<bitmap id="browser.button.links.down" file="browser.png" x="110" y="54" h="26" w="21" gammagroup="WindowText"/>
+	<bitmap id="browser.button.links.normal" file="browser.png" x="110" y="0" h="26" w="21"/>
+	<bitmap id="browser.button.links.hover" file="browser.png" x="110" y="27" h="26" w="21"/>
+	<bitmap id="browser.button.links.down" file="browser.png" x="110" y="54" h="26" w="21"/>
 
-	<bitmap id="browser.button.scraper.hide.normal" file="browser.png" x="132" y="0" h="13" w="17" gammagroup="WindowText"/>
-	<bitmap id="browser.button.scraper.hide.hover" file="browser.png" x="132" y="14" h="13" w="17" gammagroup="WindowText"/>
-	<bitmap id="browser.button.scraper.hide.down" file="browser.png" x="132" y="28" h="13" w="17" gammagroup="WindowText"/>
+	<bitmap id="browser.button.scraper.hide.normal" file="browser.png" x="132" y="0" h="13" w="17"/>
+	<bitmap id="browser.button.scraper.hide.hover" file="browser.png" x="132" y="14" h="13" w="17"/>
+	<bitmap id="browser.button.scraper.hide.down" file="browser.png" x="132" y="28" h="13" w="17"/>
 
-	<bitmap id="browser.button.scraper.play.normal" file="browser.png" x="186" y="0" h="13" w="17" gammagroup="WindowText"/>
-	<bitmap id="browser.button.scraper.play.hover" file="browser.png" x="186" y="14" h="13" w="17" gammagroup="WindowText"/>
-	<bitmap id="browser.button.scraper.play.down" file="browser.png" x="186" y="28" h="13" w="17" gammagroup="WindowText"/>
+	<bitmap id="browser.button.scraper.play.normal" file="browser.png" x="186" y="0" h="13" w="17"/>
+	<bitmap id="browser.button.scraper.play.hover" file="browser.png" x="186" y="14" h="13" w="17"/>
+	<bitmap id="browser.button.scraper.play.down" file="browser.png" x="186" y="28" h="13" w="17"/>
 
-	<bitmap id="browser.button.scraper.download.normal" file="browser.png" x="204" y="0" h="13" w="17" gammagroup="WindowText"/>
-	<bitmap id="browser.button.scraper.download.hover" file="browser.png" x="204" y="14" h="13" w="17" gammagroup="WindowText"/>
-	<bitmap id="browser.button.scraper.download.down" file="browser.png" x="204" y="28" h="13" w="17" gammagroup="WindowText"/>
+	<bitmap id="browser.button.scraper.download.normal" file="browser.png" x="204" y="0" h="13" w="17"/>
+	<bitmap id="browser.button.scraper.download.hover" file="browser.png" x="204" y="14" h="13" w="17"/>
+	<bitmap id="browser.button.scraper.download.down" file="browser.png" x="204" y="28" h="13" w="17"/>
 
-	<bitmap id="browser.button.scraper.show.normal" file="browser.png" x="150" y="0" h="13" w="17" gammagroup="WindowText"/>
-	<bitmap id="browser.button.scraper.show.hover" file="browser.png" x="150" y="14" h="13" w="17" gammagroup="WindowText"/>
-	<bitmap id="browser.button.scraper.show.down" file="browser.png" x="150" y="28" h="13" w="17" gammagroup="WindowText"/>
+	<bitmap id="browser.button.scraper.show.normal" file="browser.png" x="150" y="0" h="13" w="17"/>
+	<bitmap id="browser.button.scraper.show.hover" file="browser.png" x="150" y="14" h="13" w="17"/>
+	<bitmap id="browser.button.scraper.show.down" file="browser.png" x="150" y="28" h="13" w="17"/>
 
-	<bitmap id="browser.button.scraper.rescan.normal" file="browser.png" x="168" y="0" h="13" w="17" gammagroup="WindowText"/>
-	<bitmap id="browser.button.scraper.rescan.hover" file="browser.png" x="168" y="14" h="13" w="17" gammagroup="WindowText"/>
-	<bitmap id="browser.button.scraper.rescan.down" file="browser.png" x="168" y="28" h="13" w="17" gammagroup="WindowText"/>
+	<bitmap id="browser.button.scraper.rescan.normal" file="browser.png" x="168" y="0" h="13" w="17"/>
+	<bitmap id="browser.button.scraper.rescan.hover" file="browser.png" x="168" y="14" h="13" w="17"/>
+	<bitmap id="browser.button.scraper.rescan.down" file="browser.png" x="168" y="28" h="13" w="17"/>
 
 	<bitmap id="browser.button.go.normal" file=""/>
 	<bitmap id="browser.button.search.normal" file=""/>
