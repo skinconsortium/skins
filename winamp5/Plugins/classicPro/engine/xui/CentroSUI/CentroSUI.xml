@@ -153,7 +153,7 @@
 </groupdef>
 <groupdef id="centro.browser" name="Browser">
 	<rect color="wasabi.window.background" filled="1" x="0" y="1" w="0" relatw="1" h="-4" relath="1"/>
-	<Winamp:Browser id="cpro.browser" x="0" y="1" w="0" relatw="1" h="-4" relath="1" home="http://cpro.skinconsortium.com/browser.php"/>
+	<Winamp:BrowserTemp id="cpro.browser" x="0" y="1" w="0" relatw="1" h="-4" relath="1" home="http://cpro.skinconsortium.com/browser.php"/>
 </groupdef>
 <groupdef id="centro.playlist2.buttons">
 	<Button action="PE_Add"

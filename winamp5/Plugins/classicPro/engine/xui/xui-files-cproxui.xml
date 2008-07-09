@@ -1,3 +1,4 @@
+<include file="browser/browser.xml"/>
 <include file="FadeText/FadeText.xml"/>
 <include file="NowPlaying/NowPlaying.xml"/>
 <include file="AlbumArt/AlbumArt.xml"/>

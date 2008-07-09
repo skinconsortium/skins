@@ -3,16 +3,18 @@
 #include <lib/pldir.mi>
 #include <lib/fileio.mi>
 #include <lib/application.mi>
+#include "convert_address.mi"
 
 Function refreshStuff();
 Function addProvider(list paramname, list paramvalue);
 Function String replaceString(string baseString, string toreplace, string replacedby);
-Function String fixUrl(String input);
 Function int searchInListForItem(String input);
 Function selectSaved();
 Function surfSelected();
 Function initLoadFiles();
 
+
+Global Layout mainLayout;
 
 Global Group myGroup;
 Global GuiList myList;
@@ -24,8 +26,11 @@ Global Text statusInfo;
 Global ToggleButton enabledSwitch;
 Global Button menuOptions;
 Global PopUpMenu popMenu;
+Global GuiObject browserXUI;
 
 System.onScriptLoaded(){
+	setPublicInt("ClassicPro.BrowserPro.loaded", 1);
+	mainLayout = getContainer("main").getLayout("normal");
 	initWidget();
 	myGroup = getScriptGroup();
 	myList = myGroup.findObject("bp.servicelist");
@@ -38,7 +43,19 @@ System.onScriptLoaded(){
 	enabledSwitch.setActivated(getPublicInt("ClassicPro.BrowserPro.enabled", 0));
 }
 
+System.onShowLayout(Layout _layout){
+	if(mainLayout==_layout){
+		browserXUI = getContainer("main").getLayout("normal").findObject("cpro.browser");
+		
+		if(getPublicInt("cPro.lastComponentPage", 0)==3 && getPublicInt("ClassicPro.BrowserPro.enabled", 0)){
+			initLoadFiles();
+			surfSelected();
+		}
+	}
+}
+
 System.onScriptUnloading (){
+	setPublicInt("ClassicPro.BrowserPro.loaded", 0);
 	myGroup.hide();
 	delete loaded_P_Names;
 	delete loaded_P_Url;
@@ -46,6 +63,13 @@ System.onScriptUnloading (){
 
 enabledSwitch.onToggle(boolean onOff){
 	setPublicInt("ClassicPro.BrowserPro.enabled", onOff);
+	if(onOff) surfSelected();
+}
+
+browserXUI.onSetVisible(boolean onOff){
+	if(onOff && getPublicInt("ClassicPro.BrowserPro.enabled", 0)){
+		surfSelected();
+	}
 }
 
 myGroup.onSetVisible(boolean onOff){
@@ -103,11 +127,14 @@ myDoc.parser_onCallback (String xmlpath, String xmltag, list paramname, list par
 
 myList.onDoubleClick(Int itemnum){
 	String myUrl = loaded_P_Url.enumItem(loaded_P_Names.findItem(myList.getItemLabel(itemnum, 0)));
-	gotoBrowserUrl(fixUrl(myUrl));
+	gotoBrowserUrl(prepareCustomUrl(myUrl));
 }
 
 myList.onLeftClick(Int itemnum){
 	setPublicString("ClassicPro.BrowserPro", myList.getItemLabel(itemnum, 0));
+
+	String myUrl = loaded_P_Url.enumItem(loaded_P_Names.findItem(myList.getItemLabel(itemnum, 0)));
+	setPublicString("ClassicPro.BrowserPro.lastselected", myUrl);
 }
 myList.onColumnLabelClick(Int col, Int x, Int y){
 	selectSaved();
@@ -116,17 +143,6 @@ myList.onItemSelection(Int itemnum, Int selected){
 	if(selected){
 		statusInfo.setText("Selected auto search: " + myList.getItemLabel(itemnum, 0));
 	}
-}
-
-fixUrl(String input){
-	input = replaceString(input, "%AND%", "&");
-	input = replaceString(input, "%PATH%", "file://"+getPath(getPlayItemMetaDataString("filename")));
-	input = replaceString(input, "%ARTIST%", getPlayItemMetaDataString("artist"));
-	input = replaceString(input, "%TITLE%", getPlayItemMetaDataString("title"));
-	input = replaceString(input, "%ALBUM%", getPlayItemMetaDataString("album"));
-	input = replaceString(input, "%YEAR%", getPlayItemMetaDataString("year"));
-	input = replaceString(input, "%GENRE%", getPlayItemMetaDataString("genre"));
-	return input;
 }
 
 String replaceString(string baseString, string toreplace, string replacedby) {
@@ -157,7 +173,7 @@ selectSaved(){
 
 surfSelected(){
 	String myUrl = loaded_P_Url.enumItem(loaded_P_Names.findItem(getPublicString("ClassicPro.BrowserPro", "0")));
-	gotoBrowserUrl(fixUrl(myUrl));
+	gotoBrowserUrl(prepareCustomUrl(myUrl));
 }
 
 System.onTitleChange(String newtitle){
