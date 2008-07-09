@@ -94,6 +94,13 @@ System.onScriptLoaded() {
 	for(i=0;i<5;i++){
 		mainVis.setXmlParam("colorosc"+integerToString(5-i),integerToString(myMap.getARGBValue(2,i,2))+","+integerToString(myMap.getARGBValue(2,i,1))+","+integerToString(myMap.getARGBValue(2,i,0)));
 	}
+
+	//Support for colorthemes needs a bolt that can be semi transparent [cpro v1.03]
+	myMap.loadMap("buttons.png");
+	if(myMap.getWidth()==332){
+		bolt.setXmlParam("image", "winamp.logo.1");
+		bolt.setXmlParam("downImage", "winamp.logo.3");
+	}
 	delete myMap;
 	
 	

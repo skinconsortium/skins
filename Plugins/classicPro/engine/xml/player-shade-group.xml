@@ -5,7 +5,7 @@
 		id="shade.vis"
 		x="4" y="7"
 		w="54" h="10"
-		gammagroup="_Vis.Shade"
+		gammagroup="s.Vis"
 	/>
 </groupdef>
 
