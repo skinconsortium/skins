@@ -1,1 +1,3 @@
+<include file="internal-colors.xml"/>
+<include file="notifier.xml"/>
 <include file="player-normal-group.xml"/>
