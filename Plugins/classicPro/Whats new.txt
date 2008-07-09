@@ -1,5 +1,5 @@
 -------------------------------------------------------------
-Version 1.03 (7 Jul 2008)
+Version 1.03 (10 Jul 2008)
 -------------------------------------------------------------
 - New: ColorTheme support! (also added colorthemes.png)
 - New: Tag Viewer
@@ -7,6 +7,7 @@ Version 1.03 (7 Jul 2008)
 - New: Beta for the <ClassicPro/> xui object. See SC forum for more info.
 - New: Plugin tab now have the name of the plugin (wa5.54)
 - New: Now using the Winamp Browser (wa5.54)
+- New: Bundled widget for auto searches (BrowserPro)
 - New: Better songticker for shademode
 - New: You can now use the mousewheel to scroll through the drawers if 
 	the mouse is over the "Select Drawer" button. (wa5.54)

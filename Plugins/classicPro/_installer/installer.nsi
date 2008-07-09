@@ -17,7 +17,7 @@
 
   ;Name and file
   Name "ClassicPro© v1.03"
-  OutFile "ClassicPro_1.03_rc5.exe"
+  OutFile "ClassicPro_1.03_rc6.exe"
 
 	; The default installation directory
 	InstallDir $PROGRAMFILES\Winamp
@@ -140,6 +140,10 @@ Section "ClassicPro plugin" cproFiles
   File "${SOURCEPATH}\engine\xui\updateSystem\*.xml"
   File "${SOURCEPATH}\engine\xui\updateSystem\*.m"
   File "${SOURCEPATH}\engine\xui\updateSystem\*.maki"
+
+  SetOutPath $INSTDIR\Plugins\classicPro\engine\xui\browser
+  File "${SOURCEPATH}\engine\xui\browser\*.xml"
+  File "${SOURCEPATH}\engine\xui\browser\*.maki"
 
   SetOutPath $INSTDIR\Plugins\classicPro\engine\xui\editbox
   File "${SOURCEPATH}\engine\xui\editbox\*.xml"
