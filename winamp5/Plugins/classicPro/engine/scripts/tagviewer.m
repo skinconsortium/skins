@@ -468,7 +468,7 @@ loadFileInfo ()
 				// if tracknumber is like 1/9 we display 1 of 9
 				if (strsearch(s, "/") != -1)
 				{
-					s = getToken(s, "/", 0) + " of " + getToken(s, "/", 1);
+					s = getToken(s, "/", 0) + translate(" of ") + getToken(s, "/", 1);
 				}				
 				if (n > 0) pos += 15;
 				t_track.setText(s);
@@ -567,8 +567,9 @@ loadFileInfo ()
 					{
 						if (g_Track.getGuiY() == pos) g_Track.hide();
 						if (g_year.getGuiY() == pos) g_year.hide();
+						if (g_genre.getGuiY() == pos) g_genre.hide();
 						startwith = cycle.getNumitems() - 1;
-						g_genre.show();
+						g_disc.show();
 					}
 				}
 			}
@@ -758,7 +759,7 @@ cycler.onTimer ()
 	// Important: stop the cycler if branding is visible
 	//if (l_branding.isvisible()) cycler.stop();
 	//if (infocomp_cycle.getData() == "0" && !quick_change) { cycler.stop(); return; }
-	if (false && !quick_change) { cycler.stop(); return; }
+	if (getPublicInt("ClassicPro.tagviewer.100", 1) == 0 && !quick_change) { cycler.stop(); return; }
 
 	// g_target is defined --> we save the currently shown line as g_target
 	if (!g_target)
@@ -850,7 +851,7 @@ g_target.onTargetReached ()
 		// add g_target to end of cycle
 		cycle.addItem(g_target);
 		//if (infocomp_cycle.getData() == "1" && !cycler.isRunning()) cycler.start(); // check if we should start cycler
-		if (true && !cycler.isRunning()) cycler.start(); // check if we should start cycler
+		if (getPublicInt("ClassicPro.tagviewer.100", 1) == 1 && !cycler.isRunning()) cycler.start(); // check if we should start cycler
 		quick_change = 0;
 	}
 }
@@ -943,6 +944,11 @@ LinkObject.onLeftButtonUp (int x, int y)
 	if (LinkObject == linkArtist) s = t_artist.getText();
 	if (LinkObject == linkAlbum) s = t_artist.getText() + " " + t_album.getText();
 	if (LinkObject == linkTitle) s = t_artist.getText() + " " + t_title.getText();
+
+	if (s == "") return;
+
+	sui.sendAction ("browser_search", s, 0, 0, 0, 0);
+
 	if (stationLink != "" && ( LinkObject == linkSname || LinkObject == linkSurl))
 	{
 		sui.sendAction ("browser_url", stationLink, 0, 0, 0, 0);
@@ -950,9 +956,10 @@ LinkObject.onLeftButtonUp (int x, int y)
 		return;
 	}
 
-	if (s == "") return;
-
-	sui.sendAction ("browser_search", s, 0, 0, 0, 0);
+	/*String artist = t_artist.getText();
+	if (artist == "") return;
+	System.navigateUrlBrowser("http://client.winamp.com/nowplaying/artist/?artistName=" + artist);
+	*/
 }
 
 
