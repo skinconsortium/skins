@@ -92,7 +92,8 @@ initLoadFiles(){
 		myDoc.parser_destroy();
 		delete myDoc;
 		
-		myList.setAutoSort(1);
+		//myList.setAutoSort(1);
+		//myList.setXmlParam("sort", "1");
 		selectSaved();
 
 		onetime=true;
