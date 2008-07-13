@@ -13,6 +13,7 @@ Version 1.03 (10 Jul 2008)
 	the mouse is over the "Select Drawer" button. (wa5.54)
 - New: buttons.png now have 3modes for the Winamp bolt button
 - New: songinfo.png now have a image for the khz/kbps
+- New: Vis plugin name shows in its status bar (dbl click to select plugin)
 - Improved: SUI area code optimized
 - Improved: Visualization tab now looks like it loads faster
 - Improved: File sizes of all png files

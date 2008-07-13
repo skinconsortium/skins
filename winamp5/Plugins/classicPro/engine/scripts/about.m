@@ -1,34 +1,44 @@
 #include <lib/std.mi>
 
 Function showAbout(int no);
+Function toggleCredits();
+
 
 Global Group mainGroup;
 
-Global Layer bganim, aboutLay;
+Global Layer bganim, aboutLay, mousetrap;
 Global Double smidge, vusmidge;
 Global int aniNO, vuValue, p_ani, pp_ani, creditPage;
 Global Timer animationToggle, animationToggleFade, waitForStart, creditRoll;
-Global GuiObject about_pjn, about_martin, about_quad, about_slob, about_trance, tempobject;
+Global GuiObject about_pjn, about_martin, about_quad, about_slob, about_trance, tempobject, about_other;
+Global boolean creditsON;
 
 System.onScriptLoaded() {
 	mainGroup = getScriptGroup();
 	bganim = mainGroup.findObject("animationscreen");
 	aboutLay = mainGroup.findObject("about.layer");
+	mousetrap = mainGroup.findObject("mousetrap");
 	
 	about_pjn = mainGroup.findObject("about.1");
 	about_martin = mainGroup.findObject("about.2");
 	about_quad = mainGroup.findObject("about.3");
 	about_slob = mainGroup.findObject("about.4");
 	about_trance = mainGroup.findObject("about.5");
+	about_other = mainGroup.findObject("about.6");
 		
 	waitForStart = new Timer;
 	waitForStart.setDelay(3000);
 	waitForStart.start();
-	
+}
+System.onScriptUnloading() {
+	delete animationToggle;
+	delete animationToggleFade;
+	delete creditRoll;
 }
 
 waitForStart.onTimer(){
 	waitForStart.stop();
+	delete waitForStart;
 	
 	bganim.show();
 	bganim.fx_setBgFx(1);
@@ -56,23 +66,13 @@ waitForStart.onTimer(){
 	animationToggleFade.setDelay(7000);
 	animationToggleFade.start();
 	
-	creditPage=1;
-	creditRoll = new Timer;
-	creditRoll.setDelay(5000);
-	creditRoll.start();
-
-	about_pjn.setXmlParam("x", integerToString(5+random(155)));
-	about_pjn.setXmlParam("y", integerToString(5+random(155)));
-	about_pjn.setAlpha(0);
-	about_pjn.setTargetA(255);
-	about_pjn.setTargetSpeed(1);
-	about_pjn.show();
-	about_pjn.gotoTarget();
+	creditsON=true;
+	toggleCredits();
 }
 
 creditRoll.onTimer(){
+	creditRoll.setDelay(5000);
 	creditPage++;
-	if(creditPage>5) creditPage=1;
 	showAbout(creditPage);
 }
 
@@ -156,14 +156,90 @@ bganim.fx_onFrame()
 }
 
 showAbout(int no){
+	if(creditPage>6){
+		creditPage=1;
+		no=1;
+	}
+	if(creditPage<1){
+		creditPage=6;
+		no=6;
+	}
+	
 	about_pjn.hide();
 	about_martin.hide();
 	about_quad.hide();
 	about_slob.hide();
 	about_trance.hide();
+	about_other.hide();
 	
 	tempobject = mainGroup.findObject("about."+integerToString(no));
-	tempobject.setXmlParam("x", integerToString(5+random(155)));
-	tempobject.setXmlParam("y", integerToString(5+random(155)));
+	if(no!=6){
+		tempobject.setXmlParam("x", integerToString(5+random(155)));
+		tempobject.setXmlParam("y", integerToString(5+random(155)));
+	}
 	tempobject.show();
+	delete tempobject;
+}
+
+mainGroup.onMouseWheelUp(int clicked , int lines){
+	if(waitForStart!=NULL) return 1; //wait until the intro is finished
+	
+	if(!creditsON){
+		creditsON=true;
+		toggleCredits();
+	}
+	else{
+		creditPage++;
+	}
+	showAbout(creditPage);
+	creditRoll.setDelay(10000);
+	return 1;
+}
+mainGroup.onMouseWheelDown(int clicked , int lines){
+	if(waitForStart!=NULL) return 1; //wait until the intro is finished
+
+	if(!creditsON){
+		creditsON=true;
+		toggleCredits();
+	}
+	else{
+		creditPage--;
+	}
+	showAbout(creditPage);
+	creditRoll.setDelay(10000);
+	return 1;
+}
+
+toggleCredits(){
+	if(waitForStart!=NULL) return; //wait until the intro is finished
+
+	if(creditsON){
+		creditPage=1;
+		creditRoll = new Timer;
+		creditRoll.setDelay(5000);
+		creditRoll.start();
+
+		about_pjn.setXmlParam("x", integerToString(5+random(155)));
+		about_pjn.setXmlParam("y", integerToString(5+random(155)));
+		about_pjn.setAlpha(0);
+		about_pjn.setTargetA(255);
+		about_pjn.setTargetSpeed(1);
+		about_pjn.show();
+		about_pjn.gotoTarget();
+	}
+	else{
+		creditRoll.stop();
+		delete creditRoll;
+		about_pjn.hide();
+		about_martin.hide();
+		about_quad.hide();
+		about_slob.hide();
+		about_trance.hide();
+		about_other.hide();
+	}
+}
+
+mousetrap.onLeftButtonDblClk(int x, int y){
+	creditsON=!creditsON;
+	toggleCredits();
 }

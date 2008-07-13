@@ -4,6 +4,7 @@
 	<bitmap id="about.gfx.pjn" file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\image\mugshot-pjn.png"/>
 	<bitmap id="about.gfx.slob" file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\image\mugshot-slob.png"/>
 	<bitmap id="about.gfx.etrance" file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\image\mugshot-etrance.png"/>
+	<bitmap id="paypal.donate" file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\image\donate.png"/>
 </elements>
 
 <groupdef id="cpro.about.xui" xuitag="cPro:About">
@@ -24,6 +25,13 @@
 	<script file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\scripts\cproabout.maki"/>
 </groupdef>
 
+<groupdef id="about.6">
+	<text x="20" y="50" text="Special thanks to..." fontsize="26" color="255,255,255" shadowcolor="0,0,0" shadowx="1" shadowy="1" font="Tahoma"/>
+	<group id="about.6.names" x="50" y="40" h="300"/>
+</groupdef>
+<groupdef id="about.6.names">
+	<text fitparent="1" ghost="1" text="- iron2000 (made the first cPro skin!)\n- Veroka (helped with implementing ColorTheme support)\n- Zarko Jovic (helped with implementing ColorTheme support)\n- Wilian and Veroka (creating a template for cpro skins)\n- TheElusiveMelon (ClassicPro clock)\n- and1945 (beta testing and spreading the word ;)\n- fille1000\n- Wildrose-Wally (helped with publising)\n- Koogle (always full of new ideas)\n- Paparazzi\n- Taber Buhl (Original Big Bento gfx)\n- Benski (Winamp gen_ff developments)\n- Winamp Development team\n- MerTcaN (beta testing ;)\n- mynameisnobody (beta testing ;)" color="255,255,255" shadowcolor="0,0,0" shadowx="1" shadowy="1" font="Tahoma"/>
+</groupdef>
 
 <groupdef id="skin.about.credits">
 	<cPro:About id="about.1"
@@ -59,6 +67,8 @@
 		about_country="RUSSIA"	about_image="about.gfx.etrance"
 		credits="Credits:\n - Widget engine co-developer\n - Suggestions ;)"
 	/>
+	<group id="about.6" visible="0" fitparent="1"/>
+	<layer id="mousetrap" fitparent="1" rectrgn="1" tooltip="Double-Click to toggle the credits on/off"/>
 </groupdef>
 
 <groupdef id="skin.about.group" w="0" h="0" relatw="1" relath="1" rectrgn="1">
@@ -69,6 +79,7 @@
 	<layer fitparent="1" id="about.layer" image="about.gfx" ghost="1"/>
 
 	<group id="skin.about.credits" fitparent="1"/>
-	
+	<button id="donate" x="-60" y="-38" relatx="1" relaty="1" image="paypal.donate" alpha="160" cursor="IDC_HAND" tooltip="If you like ClassicPro and would like thank us for our hard work, please click here to donate ;)"/>
+	<script file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\scripts\donate.maki" param="ClassicPro"/>
 	<script file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\scripts\about.maki"/>
 </groupdef>

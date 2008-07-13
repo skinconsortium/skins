@@ -807,6 +807,8 @@ cycler.onTimer ()
 	// otherwise g_target is the last item of cycle
 	else g_target = cycle.enumItem(cycle.getNumItems()-1);
 
+
+	if(g_target==NULL) return;
 	// fade out g_target
 	g_target.setTargetA(0);
 	g_target.setTargetY(g_target.getGuiY());
