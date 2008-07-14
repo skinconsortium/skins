@@ -14,6 +14,7 @@ Version 1.03 (15 Jul 2008)
 - New: buttons.png now have 3modes for the Winamp bolt button
 - New: songinfo.png now have a image for the khz/kbps
 - New: Vis plugin name shows in its status bar (dbl click to select plugin)
+- Improved: Minor cPro__Bento gfx updates
 - Improved: SUI area code optimized
 - Improved: Visualization tab now looks like it loads faster
 - Improved: File sizes of all png files

@@ -51,10 +51,11 @@ Special thanks to...
 - Zarko Jovic (helped with implementing ColorTheme support)
 - Wilian and Veroka (creating a template for cpro skins)
 - and1945 (beta testing and spreading the word ;)
-- fille1000
+- fille1000 (widgets and skins ;)
+- leechbite (widgets and skins ;)
 - Wildrose-Wally (helped with publising)
 - Koogle (always full of new ideas)
-- Paparazzi
+- Paparazzi (ideas and testing)
 - Taber Buhl (Original Big Bento gfx)
 - Benski (Winamp gen_ff developments)
 - Winamp Development team
