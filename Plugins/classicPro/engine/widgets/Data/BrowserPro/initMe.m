@@ -35,6 +35,8 @@ browserXUI.onSetVisible(boolean onOff){
 }
 
 surfSelected(){
+	if(getContainer("main").getCurLayout() != mainLayout) return;
+	cpro_sui = getContainer("main").getLayout("normal").findObject("cpro.sui");
 	String myUrl = getPublicString("ClassicPro.BrowserPro.lastselected", "about:blank");
 	gotoBrowserUrl(prepareCustomUrl(myUrl));
 }

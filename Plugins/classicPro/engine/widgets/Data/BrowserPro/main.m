@@ -51,6 +51,10 @@ System.onShowLayout(Layout _layout){
 			initLoadFiles();
 			surfSelected();
 		}
+		/*else if(getPublicInt("ClassicPro.BrowserPro.opentab", 1) && getPublicInt("ClassicPro.BrowserPro.enabled", 0)){
+			initLoadFiles();
+			surfSelected();
+		}*/
 	}
 }
 
@@ -173,6 +177,9 @@ selectSaved(){
 }
 
 surfSelected(){
+	if(getContainer("main").getCurLayout() != mainLayout) return;
+
+	cpro_sui = getContainer("main").getLayout("normal").findObject("cpro.sui");
 	String myUrl = loaded_P_Url.enumItem(loaded_P_Names.findItem(getPublicString("ClassicPro.BrowserPro", "0")));
 	gotoBrowserUrl(prepareCustomUrl(myUrl));
 }

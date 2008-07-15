@@ -16,12 +16,18 @@ Internet:	www.skinconsortium.com
 
 Function String replaceString(string baseString, string toreplace, string replacedby);
 
+//Global GuiObject cpro_sui;
 Global Button paypal;
+Global Timer navigateDontate;
+Global String finaltext;
 
-System.onScriptLoaded ()
-{
+System.onScriptLoaded (){
 	paypal = getScriptGroup().getObject("donate");
-}
+	//cpro_sui = getContainer("main").getLayout("normal").findObject("cpro.sui");
+}/*
+System.onScriptunLoading (){
+	delete navigateDontate;
+}*/
 
 paypal.onLeftClick ()
 {
@@ -35,7 +41,24 @@ paypal.onLeftClick ()
 	}
 	string s3 = "&no_shipping=1&no_note=1&cn=Optional%20Message&tax=0";///*&currency_code=EUR&lc=GB&**/;//"bn=PP%2dDonationsBF";//&charset=UTF%2d8";
 	System.navigateUrl(s1 + s2 + s3);
+	/*finaltext = s1 + s2 + s3;
+
+	if(cpro_sui==NULL){
+		System.navigateUrl(s1 + s2 + s3);
+		return;
+	}
+	cpro_sui.sendAction ("switch_to_tab", "", 3, 0, 0, 0);
+	navigateDontate = new timer;
+	navigateDontate.setDelay(100);
+	navigateDontate.start();*/
+	
 }
+/*
+navigateDontate.onTimer(){
+	navigateDontate.stop();
+	cpro_sui.sendAction ("browser_url", (finaltext), 0, 0, 0, 0);
+}*/
+
 
 String replaceString(string baseString, string toreplace, string replacedby) {
 	if (toreplace == "") return baseString;
