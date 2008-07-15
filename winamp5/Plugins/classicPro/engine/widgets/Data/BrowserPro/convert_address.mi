@@ -6,7 +6,12 @@ Function String prepareCustomUrl(String input);
 Function String replaceString(string baseString, string toreplace, string replacedby);
 
 String prepareCustomUrl(String input){
-	input = replaceString(input, "%AND%", "&");
+	String change;
+	while(true){
+		change = input;
+		input = replaceString(input, "%AND%", "&");
+		if(change==input) break;
+	}
 	input = replaceString(input, "%PATH%", getPath(getPlayItemMetaDataString("filename")));
 	input = replaceString(input, "%FILENAME%", removePath(getPlayItemMetaDataString("filename")));
 	input = replaceString(input, "%ARTIST%", getPlayItemMetaDataString("artist"));
