@@ -1,5 +1,5 @@
 -------------------------------------------------------------
-Version 1.03 (15 Jul 2008)
+Version 1.03 (16 Jul 2008)
 -------------------------------------------------------------
 - New: ColorTheme support! (also added colorthemes.png)
 - New: Tag Viewer
