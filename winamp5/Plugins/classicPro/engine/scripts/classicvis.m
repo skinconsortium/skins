@@ -48,7 +48,7 @@ System.onScriptLoaded()
 	//isShade = (scriptGroup.getParentlayout().getID() == "shade");
 
 	visualizer = scriptGroup.findObject("main.vis");
-	overlay1 = scriptGroup.findObject("vis.overlay.1");
+	overlay1 = scriptGroup.findObject("vis.overlay");
 	overlay2 = scriptGroup.findObject("vis.overlay.2");
 	trigger = scriptGroup.findObject("vis.mousetrap");
 

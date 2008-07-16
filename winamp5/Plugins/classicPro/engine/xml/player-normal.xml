@@ -89,7 +89,7 @@
 		bandwidth="thin"
 		gammagroup="n.Vis"
 	/>
-	<layer id="vis.overlay.1" x="20" y="75" w="108" h="16" image="vis.overlay1"/>
+	<layer id="vis.overlay" x="20" y="75" w="108" h="16" image="vis.overlay1"/>
 	<layer id="vis.overlay.2" x="20" y="75" w="108" h="16" image="vis.overlay2"/>
 	<layer
 		id="vis.mousetrap"
@@ -111,7 +111,8 @@
 	<Slider	id="Volume" action="volume" x="-109" y="82" h="15" w="97" relatx="1" thumb="volume.thumb.1" hoverThumb="volume.thumb.2" downThumb="volume.thumb.3" tooltip="Volume" cursor="IDC_HAND"/>
 	<NStatesButton id="mute" x="-155" y="72" relatx="1" image="mute.1." hoverimage="mute.2." downimage="mute.3." rectrgn="1" nstates="2" tooltip="Mute Volume"/>
 	
-	<ModernSongticker
+	<text id="infodisplay" visible="0" alpha="0" x="0" y="0" w="0" h="0"/>
+	<ModernSongticker id="infosongticker"
 		x="114" y="30" h="20" w="-126" relatw="1"
 		id_layout="main;normal"
 		id_volume="Volume"
