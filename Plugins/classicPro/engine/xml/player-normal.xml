@@ -7,10 +7,10 @@
 	<layer id="read.bg.left" x="0" y="0" h="0" image="player.left.alt" visible="0"/>
 
 	<!-- Background: Base -->
-	<layer id="cpro.bg.top" x="143" y="0" w="-316" relatw="1" regionop="1" tile="1" image="player.top" wantfocus="1"/>
-	<layer id="cpro.bg.bottom" x="157" y="-68" w="-317" relaty="1" relatw="1" tile="1" regionop="1" image="player.bottom" wantfocus="1"/>
-	<layer id="cpro.bg.left" x="0" y="99" h="-166" relath="1" regionop="1" tile="1" image="player.left" wantfocus="1"/>
-	<layer id="cpro.bg.right" x="-6" y="99" h="-166" relatx="1" relath="1" tile="1" regionop="1" image="player.right" wantfocus="1"/>
+	<layer id="cpro.bg.top" x="143" y="0" w="-315" relatw="1" regionop="1" tile="1" image="player.top" wantfocus="1"/>
+	<layer id="cpro.bg.bottom" x="157" y="-68" w="-316" relaty="1" relatw="1" tile="1" regionop="1" image="player.bottom" wantfocus="1"/>
+	<layer id="cpro.bg.left" x="0" y="99" h="-165" relath="1" regionop="1" tile="1" image="player.left" wantfocus="1"/>
+	<layer id="cpro.bg.right" x="-6" y="99" h="-165" relatx="1" relath="1" tile="1" regionop="1" image="player.right" wantfocus="1"/>
 	<layer x="0" y="0" regionop="1" image="player.topleft" wantfocus="1"/>
 	<layer x="-174" y="0" relatx="1" regionop="1" image="player.topright" wantfocus="1"/>
 	<layer x="0" y="-68" relaty="1" regionop="1" image="player.bottomleft" wantfocus="1"/>
