@@ -70,7 +70,7 @@ Global WindowHolder hold_Other, hold_Pl1, hold_Pl2, hold_vid, hold_avs, hold_ml,
 Global Frame mainFrame, plFrame;
 Global Timer openMainLayout, openDefaultTab, refreshAIOTab, checkVisName;
 Global GuiObject main_Frame;
-Global boolean openLib, openVid, openVis, loaded, open_drawer, skipLoad, mouseDownF1, mouseDownF2, busyWithDrawer, busyWithThisFunction;
+Global boolean openLib, openVid, openVis, loaded, open_drawer, skipLoad, mouseDownF1, mouseDownF2, busyWithDrawer, busyWithThisFunction, wasTabTrig;
 Global int default_drawer_h, active_tab, tab_openned;
 Global String guid_blacklist, tabNames, closeGUID;
 
@@ -225,7 +225,7 @@ System.onscriptunloading(){
 }
 
 xuiGroup.onSetVisible(boolean onOff){
-	if(skipLoad){
+	if(skipLoad && 	!wasTabTrig){
 		int pageNo = getPublicInt("cPro.lastComponentPage", 0);
 		if(pageNo==5) pageNo=0;
 		openTabNo(pageNo);
@@ -613,6 +613,7 @@ openTabNo(int tabNo){
 	if(busyWithThisFunction) return;
 	busyWithThisFunction=true;
 	
+	if(skipLoad) wasTabTrig=true;
 	active_tab = tabNo;
 	
 	if(active_tab!=tab_openned){ //check to see if the current tab is already opened...
