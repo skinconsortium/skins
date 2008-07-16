@@ -1,0 +1,33 @@
+Copyright © 2006-2008 by Nitrous Audio
+
+
+READ THIS AGREEMENT CAREFULLY. WE ARE WILLING TO LICENSE OUR SOFTWARE TO YOU ONLY ON THE CONDITION THAT YOU ACCEPT ALL OF THE TERMS IN THIS LICENSE  AGREEMENT.
+
+
+ACCEPTANCE OF TERMS THROUGH USE
+
+By accessing or using this Software in any way, you agree to and are bound by the Terms of Use. If you do not agree to these Terms of Use please do not use this Software. If you breach any of the Terms of Use, your authorization to use this Software automatically terminates, and any Content downloaded or printed from the Software in violation of the Terms of Use must be immediately destroyed. We reserve the right, at our discretion, to update or revise these Terms of Use. Please check the Terms of Use periodically for changes. Your continued use of this Software following the posting of any changes to the Terms of Use constitutes acceptance of those changes.
+
+
+PROPRIETARY RIGHTS
+
+You acknowledge and agree that all Content available in The Softaware is protected by copyright, trademark, patent, trade secret, and other proprietary rights and laws. For example, Nullsoft owns Winamp. Nitrous Audio whose Content appears in the skin Program own the copyright in the Content original to Nitrous Audio. Check Winamp Copyrights http://www.winamp.com/legal/tos.php
+
+DISCLAIMER OF WARRANTIES
+
+THE SOFTWARE AND THE CONTENT ARE PROVIDED WITH ALL FAULTS ON AN "AS IS" AND "AS AVAILABLE" BASIS. NITROUS AUDIO, ITS LICENSORS AND OTHER SUPPLIERS DISCLAIM ALL WARRANTIES, WHETHER EXPRESS OR IMPLIED, INCLUDING THE WARRANTIES THAT THE SOFTWARE AND CONTENT ARE FREE OF DEFECTS, VIRUS FREE, AND ABLE TO OPERATE ON AN UNINTERRUPTED BASIS, THAT THEY WILL MEET YOUR REQUIREMENTS, OR THAT ERRORS WILL BE CORRECTED, AND THE IMPLIED WARRANTIES THAT THE SOFTWARE AND CONTENT ARE MERCHANTABLE, OF SATISFACTORY QUALITY, ACCURATE, FIT FOR A PARTICULAR PURPOSE OR NEED, OR NON-INFRINGING, UNLESS SUCH IMPLIED WARRANTIES ARE LEGALLY INCAPABLE OF EXCLUSION. YOUR USE OF THIS SOFTWARE IS SOLELY AT YOUR OWN RISK.
+
+
+LIMITATION OF LIABILITY
+
+UNDER NO CIRCUMSTANCES SHALL NITROUS AUDIO, OR THEIR RESPECTIVE PARENTS, AFFILIATES, DIRECTORS, EMPLOYEES, DISTRIBUTORS, SUPPLIERS, AGENTS OR RESELLERS BE LIABLE FOR ANY INDIRECT, SPECIAL, INCIDENTAL, CONSEQUENTIAL, OR EXEMPLARY DAMAGES THAT RESULT FROM THE USE OF, OR INABILITY TO USE, THIS SOFTWARE AND ITS CONTENT. THIS LIMITATION APPLIES WHETHER THE ALLEGED LIABILITY IS BASED ON CONTRACT, TORT, NEGLIGENCE, STRICT LIABILITY, OR ANY OTHER BASIS, EVEN IF NITROUS AUDIO HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. BECAUSE SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OR LIMITATION OF INCIDENTAL OR CONSEQUENTIAL DAMAGES, THE NITROUS AUDIO'S LIABILITY IN SUCH JURISDICTIONS SHALL BE LIMITED TO THE EXTENT PERMITTED BY LAW. ADDITIONALLY, UNDER NO CIRCUMSTANCES SHALL NITROUS AUDIO BE HELD RESPONSIBLE OR LIABLE, DIRECTLY OR INDIRECTLY, FOR ANY LOSS OR DAMAGE CAUSED OR ALLEGED TO HAVE BEEN CAUSED TO YOU IN CONNECTION WITH THE USE OF THIS SOFTWARE.
+
+
+RESTRICTIONS ON USE
+
+You may not: (i) modify or create any derivative works of the Product; (ii) decompile, disassemble, reverse engineer, or otherwise attempt to (a) derive the source code, underlying ideas, algorithms, structure or organization of the Product, or (b) defeat, avoid, bypass, remove, deactivate or otherwise circumvent any software protection mechanisms in the Product (except to the extent applicable laws specifically prohibit such restriction); (iii) attempt to access or use the premium features of the Pro Product if you have not paid the applicable fees or by any manner or method other than using the installer that you have recieved directly by mail from Nirous Audio; (iv) redistribute, encumber, sell, rent, lease, sublicense, or otherwise transfer the Product or rights thereto; (v) use the Product to reproduce, display, perform, or distribute audio and/or video content in any manner that violates any U.S. or foreign laws or regulations or any third party's rights, including copyright, privacy or publicity rights, or other intellectual property right; (vi) use the Product in a timesharing or service bureau arrangement; or (vii) remove or alter any trademark, logo, copyright or other proprietary notices, legends, symbols or labels in the Product. The Skin that is provided with the Product may only be used with the Product and may not be redistributed.
+
+
+CONTACTS
+
+For help with the Nitrous Audio, go to http://www.nitrousaudio.com/support.htm
