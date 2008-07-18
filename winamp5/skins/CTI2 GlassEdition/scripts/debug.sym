@@ -14,7 +14,7 @@ var# |                Class |                                    What
 000A |                  Int |                                      now
 000B |                  Int |                                     5000
 000C |               String |                  "This script requires "
-000D |               String |        "Winamp 5.51 (skin version 1.31)"
+000D |               String |        "Winamp 5.54 (skin version 1.34)"
 000E |               String |                                  "Error"
 000F |               String |                                       ""
 0010 |               String |                                        s
@@ -213,7 +213,7 @@ var# |                Class |                                    What
 00D1 |     AutoRepeatButton |                              arb_voldown
 00D2 |     AutoRepeatButton |                                  arp_fwd
 00D3 |     AutoRepeatButton |                                  arp_rwd
-00D4 |                 Text |                               SongTicker
+00D4 |            GuiObject |                               SongTicker
 00D5 |                Group |                                     g_pl
 00D6 |                Group |                                     g_ml
 00D7 |                Group |                                    g_vis
@@ -230,241 +230,229 @@ var# |                Class |                                    What
 00E2 |               Button |                                  ct_next
 00E3 |               Button |                                  ct_prev
 00E4 |                Timer |                                  dte_tmr
-00E5 |                 Text |                                 t_ct_day
-00E6 |                 Text |                               t_ct_night
-00E7 |                 Text |                                 t_cftime
-00E8 |              Boolean |                                 oneclick
-00E9 |               String |                              video_close
-00EA |               String |                             video_resize
-00EB |      ConfigAttribute |                       video_close_attrib
-00EC |      ConfigAttribute |                      video_resize_attrib
-00ED |               String |                                   "main"
-00EE |               String |                                 "normal"
-00EF |               String | "{0542AFA4-48D9-4c9f-8900-5739D52C114F}"
-00F0 |           ConfigItem |                                     item
-00F1 |               String | "Prevent video playback Stop on video window Close"
-00F2 |               String |                   "Prevent video resize"
-00F3 |               String |                                      "1"
-00F4 |               String |                        "player.cbuttons"
-00F5 |               String |                      "player.modeselect"
-00F6 |               String |                          "player.volume"
-00F7 |               String |                        "player.playmode"
-00F8 |               String |                                   "play"
-00F9 |               String |                                  "pause"
-00FA |               String |                                 "repeat"
-00FB |               String |                                "shuffle"
-00FC |               String |                                 "vol.up"
-00FD |               String |                               "vol.down"
-00FE |               String |                     "player.button.next"
-00FF |               String |                 "player.button.previous"
-0100 |               String |                             "songticker"
-0101 |               String |                     "player.button.back"
-0102 |               String |                 "player.button.minimize"
-0103 |               String |                                 "sel.pl"
-0104 |               String |                                 "sel.ml"
-0105 |               String |                                "sel.vis"
-0106 |               String |                                 "sel.cf"
-0107 |               String |                                 "sel.aa"
-0108 |               String |                        "player.playlist"
-0109 |               String |                         "player.library"
-010A |               String |                             "player.vis"
-010B |               String |                             "player.vid"
-010C |               String |                             "player.avs"
-010D |               String |                          "player.config"
-010E |               String |                        "player.albumart"
-010F |               String |                                  "s.vis"
-0110 |               String |                                  "s.vid"
-0111 |               String |                                  "s.avs"
-0112 |               String |                               "info.day"
-0113 |               String |                             "info.night"
-0114 |               String |                             "xfade.time"
-0115 |               String |                             "HoldConfig"
-0116 |               String |                                    "sel"
-0117 |               String |                                     mode
-0118 |               String |                               "switchto"
-0119 |               String |                                   "Hold"
-011A |               String |                              "g_modesel"
-011B |               String |                                   "g_pl"
-011C |               String |                                   "g_ml"
-011D |               String |                                  "g_vis"
-011E |               String |                               "g_config"
-011F |               String |                                  "g_avs"
-0120 |               String |                                   "g_aa"
-0121 |               String |                         "d.cthemes.next"
-0122 |               String |                         "d.cthemes.prev"
-0123 |                  Int |                                     1000
-0124 |               String |                 "Colorthemes.Autoswitch"
-0125 |               String |                     "cthemes.autoswitch"
-0126 |               String |                                   "text"
-0127 |               String |                                    "OFF"
-0128 |               String |                        "volume.mutemode"
-0129 |               String |                            "Mute.method"
-012A |               String |                                   "Mute"
-012B |               String |                           "monitor.mode"
-012C |               String |                                "Monitor"
-012D |               String |                             "vis.lclick"
-012E |               String |                            "Next Preset"
-012F |               String |                                  "g_vid"
-0130 |               String |                                   action
-0131 |               String |                                    param
-0132 |                  Int |                                        x
-0133 |                  Int |                                        y
-0134 |                  Int |                                       p1
-0135 |                  Int |                                       p2
-0136 |            GuiObject |                                   source
-0137 |                  Int |                                        n
-0138 |                  Int |                                        i
-0139 |               String |                         "player.config."
-013A |               String |                          "ct.autoswitch"
-013B |               String |                                 "toggle"
-013C |               Button |                                        t
-013D |               String |                                     "ON"
-013E |               String |                                   "d.up"
-013F |               String |             "Colorthemes.Autoswitch.Day"
-0140 |                  Int |                                        8
-0141 |                  Int |                                       dt
-0142 |               String |           "Colorthemes.Autoswitch.Night"
-0143 |                  Int |                                       22
-0144 |                  Int |                                       23
-0145 |               String |                                 "d.down"
-0146 |                  Int |                                       dt
-0147 |               String |                                   "n.up"
+00E5 |                Timer |                               recheckPos
+00E6 |                 Text |                                 t_ct_day
+00E7 |                 Text |                               t_ct_night
+00E8 |                 Text |                                 t_cftime
+00E9 |              Boolean |                                 oneclick
+00EA |               String |                              video_close
+00EB |               String |                             video_resize
+00EC |      ConfigAttribute |                       video_close_attrib
+00ED |      ConfigAttribute |                      video_resize_attrib
+00EE |               String |                                   "main"
+00EF |               String |                                 "normal"
+00F0 |               String | "{0542AFA4-48D9-4c9f-8900-5739D52C114F}"
+00F1 |           ConfigItem |                                     item
+00F2 |               String | "Prevent video playback Stop on video window Close"
+00F3 |               String |                   "Prevent video resize"
+00F4 |               String |                                      "1"
+00F5 |               String |                        "player.cbuttons"
+00F6 |               String |                      "player.modeselect"
+00F7 |               String |                          "player.volume"
+00F8 |               String |                        "player.playmode"
+00F9 |               String |                                   "play"
+00FA |               String |                                  "pause"
+00FB |               String |                                 "repeat"
+00FC |               String |                                "shuffle"
+00FD |               String |                                 "vol.up"
+00FE |               String |                               "vol.down"
+00FF |               String |                     "player.button.next"
+0100 |               String |                 "player.button.previous"
+0101 |               String |                             "songticker"
+0102 |               String |                     "player.button.back"
+0103 |               String |                 "player.button.minimize"
+0104 |               String |                                 "sel.pl"
+0105 |               String |                                 "sel.ml"
+0106 |               String |                                "sel.vis"
+0107 |               String |                                 "sel.cf"
+0108 |               String |                                 "sel.aa"
+0109 |               String |                        "player.playlist"
+010A |               String |                         "player.library"
+010B |               String |                             "player.vis"
+010C |               String |                             "player.vid"
+010D |               String |                             "player.avs"
+010E |               String |                          "player.config"
+010F |               String |                        "player.albumart"
+0110 |               String |                                  "s.vis"
+0111 |               String |                                  "s.vid"
+0112 |               String |                                  "s.avs"
+0113 |               String |                               "info.day"
+0114 |               String |                             "info.night"
+0115 |               String |                             "xfade.time"
+0116 |               String |                             "HoldConfig"
+0117 |               String |                                    "sel"
+0118 |               String |                                     mode
+0119 |               String |                               "switchto"
+011A |               String |                                   "Hold"
+011B |               String |                              "g_modesel"
+011C |               String |                                   "g_pl"
+011D |               String |                                   "g_ml"
+011E |               String |                                  "g_vis"
+011F |               String |                               "g_config"
+0120 |               String |                                  "g_avs"
+0121 |               String |                                   "g_aa"
+0122 |               String |                         "d.cthemes.next"
+0123 |               String |                         "d.cthemes.prev"
+0124 |                  Int |                                     1000
+0125 |               String |                 "Colorthemes.Autoswitch"
+0126 |               String |                     "cthemes.autoswitch"
+0127 |               String |                                   "text"
+0128 |               String |                                    "OFF"
+0129 |               String |                        "volume.mutemode"
+012A |               String |                            "Mute.method"
+012B |               String |                                   "Mute"
+012C |               String |                           "monitor.mode"
+012D |               String |                                "Monitor"
+012E |               String |                             "vis.lclick"
+012F |               String |                            "Next Preset"
+0130 |                  Int |                                      100
+0131 |               String |                                  "g_vid"
+0132 |               String |                                   action
+0133 |               String |                                    param
+0134 |                  Int |                                        x
+0135 |                  Int |                                        y
+0136 |                  Int |                                       p1
+0137 |                  Int |                                       p2
+0138 |            GuiObject |                                   source
+0139 |                  Int |                                        n
+013A |                  Int |                                        i
+013B |               String |                         "player.config."
+013C |               String |                          "ct.autoswitch"
+013D |               String |                                 "toggle"
+013E |               Button |                                        t
+013F |               String |                                     "ON"
+0140 |               String |                                   "d.up"
+0141 |               String |             "Colorthemes.Autoswitch.Day"
+0142 |                  Int |                                        8
+0143 |                  Int |                                       dt
+0144 |               String |           "Colorthemes.Autoswitch.Night"
+0145 |                  Int |                                       22
+0146 |                  Int |                                       23
+0147 |               String |                                 "d.down"
 0148 |                  Int |                                       dt
-0149 |               String |                                 "n.down"
+0149 |               String |                                   "n.up"
 014A |                  Int |                                       dt
-014B |               String |                                  "seteq"
-014C |                  Int |                                        i
-014D |                  Int |                                        9
-014E |               String |                    "0,0,0,0,0,0,0,0,0,0"
-014F |               String |                                      ","
-0150 |               String |                                    "pop"
-0151 |                  Int |                                        i
-0152 |               String |    "-15,27,43,47,31,-11,-19,-19,-15,-15"
-0153 |               String |                                   "rock"
-0154 |                  Int |                                        i
-0155 |               String |      "49,29,-39,-55,-27,25,57,69,69,69,"
-0156 |               String |                                   "bass"
-0157 |                  Int |                                        i
-0158 |               String |      "59,59,59,35,7,-31,-59,-71,-75,-75"
-0159 |               String |                                 "techno"
-015A |                  Int |                                        i
-015B |               String |         "49,37,1,-39,-35,1,49,61,61,57,"
+014B |               String |                                 "n.down"
+014C |                  Int |                                       dt
+014D |               String |                                  "seteq"
+014E |                  Int |                                        i
+014F |                  Int |                                        9
+0150 |               String |                    "0,0,0,0,0,0,0,0,0,0"
+0151 |               String |                                      ","
+0152 |               String |                                    "pop"
+0153 |                  Int |                                        i
+0154 |               String |    "-15,27,43,47,31,-11,-19,-19,-15,-15"
+0155 |               String |                                   "rock"
+0156 |                  Int |                                        i
+0157 |               String |      "49,29,-39,-55,-27,25,57,69,69,69,"
+0158 |               String |                                   "bass"
+0159 |                  Int |                                        i
+015A |               String |      "59,59,59,35,7,-31,-59,-71,-75,-75"
+015B |               String |                                 "techno"
 015C |                  Int |                                        i
-015D |               String |                                   "soft"
+015D |               String |         "49,37,1,-39,-35,1,49,61,61,57,"
 015E |                  Int |                                        i
-015F |               String |        "27,7,-11,-19,-11,23,51,59,67,75"
-0160 |               String |                                "country"
-0161 |                  Int |                                        i
-0162 |               String |      "22,22,12,-6,-26,-32,-19,-3,16,47,"
-0163 |               String |                                      txt
-0164 |               String |                               "showinfo"
-0165 |               String |                             "EqPreset: "
-0166 |               String |                                 "volume"
-0167 |               String |                               "mutemode"
-0168 |               String |                              "Attenuate"
-0169 |               String |                            "Volume.rate"
-016A |               String |                          "Volume Rate: "
-016B |               String |                                     " %"
-016C |               String |                                   "seek"
-016D |               String |                              "Seek.rate"
-016E |               String |                            "Seek Rate: "
-016F |               String |                                   " sec"
-0170 |               String |                            "monitormode"
-0171 |               String |                               "ViewPort"
-0172 |               String |                             "visualizer"
-0173 |               String |                                 "lclick"
-0174 |               String |                              "Open Menu"
-0175 |                  Int |                                      vol
-0176 |               Double |                                     2.55
-0177 |                  Int |                                      255
-0178 |                  Int |                                      vol
-0179 |                  Int |                                   newvol
-017A |               String |                                  "muted"
-017B |               String |                                "Volume:"
-017C |                  Int |                                      pos
-017D |                  Int |                                        5
-017E |                  Int |                                      pos
-017F |                  Int |                                        x
-0180 |                  Int |                                        y
-0181 |                  Int |                                        x
-0182 |                  Int |                                        y
-0183 |                  Int |                                   newpos
-0184 |                  Int |                                        f
-0185 |                  Int |                                      len
-0186 |                  Int |                                      100
-0187 |               String |                                 "SEEK: "
-0188 |               String |                                      "/"
-0189 |               String |                                     " ("
-018A |               String |                                    "%) "
-018B |                  Int |                                    60000
-018C |                  Int |                                     TIME
-018D |               String |                          "Color Themes/"
-018E |               String |                                       CT
-018F |                  Int |                                      dtn
-0190 |                  Int |                                      dtd
-0191 |               String |                                  "night"
-0192 |               String |                                    "day"
-0193 |                  Int |                                       dt
-0194 |               String |                                    " AM"
-0195 |               String |                                   suffix
-0196 |                  Int |                                       12
-0197 |               String |                                    " PM"
-0198 |                  Int |                                       dt
-0199 |               String |                            "Shuffle: On"
-019A |               String |                           "Shuffle: Off"
-019B |               String |                       "Repeat: Playlist"
-019C |               String |                          "Repeat: Track"
-019D |               String |                            "Repeat: Off"
-019E |                  Int |                                        x
-019F |                  Int |                                        y
-01A0 |                  Int |                                        w
-01A1 |                  Int |                                        h
-01A2 |               Double |                            newscalevalue
-01A3 |               Layout |                                        l
-01A4 |               String | "setFullscreen () -> Unexisting Layout!"
-01A5 |               Double |                                        d
-01A6 |                  Int |                                        x
-01A7 |                  Int |                                        y
-01A8 |                  Int |                                        w
-01A9 |               String |                                        s
-01AA |               String | "This skin requires Winamp 5.33 or any newer version to run!\nDo you wish to downlaod the newest version now?\n\nIf you choose YES, Winamp will close now and start the download!\nIf you click NO Winamp will switch to default Modern Skin\n"
-01AB |               String |                   "Wrong Winamp Version"
-01AC |                  Int |                                        4
-01AD |                  Int |                                        i
-01AE |               String |           "http://www.winamp.com/player"
-01AF |               String |                    "player.button.close"
-01B0 |               Button |                                        b
-01B1 |               String |                          "Winamp Modern"
-01B2 |                  Int |                                      600
-01B3 |               Double |                                     0.75
-01B4 |                  Int |                                        h
-01B5 |                  Int |                                      480
-01B6 |                  Int |                                        h
-01B7 |                Group |                                        g
-01B8 |                  Int |                                        x
-01B9 |                  Int |                                       rx
-01BA |                  Int |                                        y
-01BB |                  Int |                                       ry
-01BC |                  Int |                                        w
-01BD |                  Int |                                       rw
-01BE |                  Int |                                        h
-01BF |                  Int |                                       rh
-01C0 |               String |     "fitInt () -> Unexisting GuiObject!"
-01C1 |               String |                                      "w"
-01C2 |               String |                                      "h"
-01C3 |               String |                                 "relatx"
-01C4 |               String |                                 "relaty"
-01C5 |               String |                                 "relatw"
-01C6 |               String |                                 "relath"
-01C7 |              Boolean |                                       qu
-01C8 |               String |                    "nitrous audio - cti"
-01C9 |               String |                            "ColorThemes"
-01CA |               String |               "Plugins\\avs\\nwhite.jpg"
-01CB |               String |                                    ppath
-01CC |                  Map |                                        m
-01CD |               String | "CTI doesn't run in the same enviroment you have installed it!\nWinamp will close now!\nPlease reinstall the product or contact info@nitrousaudio.com!"
-01CE |               String |                         "Rip Protection"
-01CF |               Button |                                        b
+015F |               String |                                   "soft"
+0160 |                  Int |                                        i
+0161 |               String |        "27,7,-11,-19,-11,23,51,59,67,75"
+0162 |               String |                                "country"
+0163 |                  Int |                                        i
+0164 |               String |      "22,22,12,-6,-26,-32,-19,-3,16,47,"
+0165 |               String |                                      txt
+0166 |               String |                               "showinfo"
+0167 |               String |                             "EqPreset: "
+0168 |               String |                                 "volume"
+0169 |               String |                               "mutemode"
+016A |               String |                              "Attenuate"
+016B |               String |                            "Volume.rate"
+016C |               String |                          "Volume Rate: "
+016D |               String |                                     " %"
+016E |               String |                                   "seek"
+016F |               String |                              "Seek.rate"
+0170 |               String |                            "Seek Rate: "
+0171 |               String |                                   " sec"
+0172 |               String |                            "monitormode"
+0173 |               String |                               "ViewPort"
+0174 |               String |                             "visualizer"
+0175 |               String |                                 "lclick"
+0176 |               String |                              "Open Menu"
+0177 |                  Int |                                      vol
+0178 |               Double |                                     2.55
+0179 |                  Int |                                      255
+017A |                  Int |                                      vol
+017B |                  Int |                                      pos
+017C |                  Int |                                        5
+017D |                  Int |                                      pos
+017E |                  Int |                                        x
+017F |                  Int |                                        y
+0180 |                  Int |                                        x
+0181 |                  Int |                                        y
+0182 |                  Int |                                    60000
+0183 |                  Int |                                     TIME
+0184 |               String |                          "Color Themes/"
+0185 |               String |                                       CT
+0186 |                  Int |                                      dtn
+0187 |                  Int |                                      dtd
+0188 |               String |                                  "night"
+0189 |               String |                                    "day"
+018A |                  Int |                                       dt
+018B |               String |                                    " AM"
+018C |               String |                                   suffix
+018D |                  Int |                                       12
+018E |               String |                                    " PM"
+018F |                  Int |                                       dt
+0190 |                  Int |                                        x
+0191 |                  Int |                                        y
+0192 |                  Int |                                        w
+0193 |                  Int |                                        h
+0194 |               Double |                            newscalevalue
+0195 |               Layout |                                        l
+0196 |               String | "setFullscreen () -> Unexisting Layout!"
+0197 |               Double |                                        d
+0198 |                  Int |                                        x
+0199 |                  Int |                                        y
+019A |                Float |                                      ver
+019B |               Double |                                      5.5
+019C |               String |                                        s
+019D |               String | "This skin requires Winamp 5.5 or any newer version to run!\nDo you wish to downlaod the newest version now?\n\nIf you choose YES, Winamp will close now and start the download!\nIf you click NO Winamp will switch to default Modern Skin\n"
+019E |               String |                   "Wrong Winamp Version"
+019F |                  Int |                                        4
+01A0 |                  Int |                                        i
+01A1 |               String |           "http://www.winamp.com/player"
+01A2 |               String |                    "player.button.close"
+01A3 |               Button |                                        b
+01A4 |               String |                          "Winamp Modern"
+01A5 |                  Int |                                        w
+01A6 |                  Int |                                      600
+01A7 |               Double |                                     0.75
+01A8 |                  Int |                                        h
+01A9 |                  Int |                                      480
+01AA |                  Int |                                        h
+01AB |                Group |                                        g
+01AC |                  Int |                                        x
+01AD |                  Int |                                       rx
+01AE |                  Int |                                        y
+01AF |                  Int |                                       ry
+01B0 |                  Int |                                        w
+01B1 |                  Int |                                       rw
+01B2 |                  Int |                                        h
+01B3 |                  Int |                                       rh
+01B4 |               String |     "fitInt () -> Unexisting GuiObject!"
+01B5 |               String |                                      "w"
+01B6 |               String |                                      "h"
+01B7 |               String |                                 "relatx"
+01B8 |               String |                                 "relaty"
+01B9 |               String |                                 "relatw"
+01BA |               String |                                 "relath"
+01BB |              Boolean |                                       qu
+01BC |               String |                    "nitrous audio - cti"
+01BD |               String |                            "ColorThemes"
+01BE |               String |               "Plugins\\avs\\nwhite.jpg"
+01BF |               String |                                    ppath
+01C0 |                  Map |                                        m
+01C1 |               String | "CTI doesn't run in the same enviroment you have installed it!\nWinamp will close now!\nPlease reinstall the product or contact info@nitrousaudio.com!"
+01C2 |               String |                         "Rip Protection"
+01C3 |               Button |                                        b
 -- Events Table ------------------------------------------------------
 var# |         Code Pointer |                                    What 
 ----------------------------------------------------------------------
@@ -477,38 +465,36 @@ var# |         Code Pointer |                                    What
 008A |                 0D71 |                _PModeGroupGroup.onResize
 00A5 |                 0FD5 |               _ConfigGroupGroup.onResize
 0000 |                 1011 |                    System.onScriptLoaded
-0000 |                 17A4 |                 System.onScriptUnloading
-0000 |                 17F5 |                            System.onPlay
-0000 |                 1823 |                          System.onResume
-0000 |                 1851 |                            System.onStop
-0000 |                 187F |                           System.onPause
-00C7 |                 18AD |                       b_back.onLeftClick
-00CD |                 1A03 |                       sel_aa.onLeftClick
-00C9 |                 1A6A |                       sel_pl.onLeftClick
-00CA |                 1AD1 |                       sel_ml.onLeftClick
-00CB |                 1B38 |                      sel_vis.onLeftClick
-00CC |                 1B9F |                       sel_cf.onLeftClick
-00DC |                 1C06 |                        s_vis.onLeftClick
-00DD |                 1C85 |                        s_vid.onLeftClick
-00DE |                 1D04 |                        s_avs.onLeftClick
-00DF |                 1D83 |                       s_vis2.onLeftClick
-00E1 |                 1E02 |                       s_vid2.onLeftClick
-00E0 |                 1E81 |                       s_avs2.onLeftClick
-00D8 |                 1F00 |                        g_config.onAction
-00D0 |                 2B99 |                    arb_volup.onLeftClick
-00D1 |                 2C3C |                  arb_voldown.onLeftClick
-0000 |                 2CDF |                   System.onvolumechanged
-00D2 |                 2D6C |                      arp_fwd.onLeftClick
-00D3 |                 2E1B |                      arp_rwd.onLeftClick
-00D2 |                 2EE6 |                   arp_fwd.onLeftButtonUp
-00D3 |                 2F2E |                   arp_rwd.onLeftButtonUp
-0000 |                 2F76 |                            System.onSeek
-00E4 |                 3046 |                          dte_tmr.onTimer
-00BF |                 3344 |                   InfoButton.onLeftClick
-0032 |                 34B9 |      crossfade_time_attrib.onDataChanged
-00C0 |                 34EC |                          normal.onResize
-00C0 |                 3568 |                            normal.onMove
-00C0 |                 35DC |                           normal.onScale
+0000 |                 17CD |                 System.onScriptUnloading
+00E5 |                 1825 |                       recheckPos.onTimer
+0000 |                 1852 |                            System.onPlay
+0000 |                 1880 |                          System.onResume
+0000 |                 18AE |                            System.onStop
+0000 |                 18DC |                           System.onPause
+00C7 |                 190A |                       b_back.onLeftClick
+00CD |                 1A60 |                       sel_aa.onLeftClick
+00C9 |                 1AC7 |                       sel_pl.onLeftClick
+00CA |                 1B2E |                       sel_ml.onLeftClick
+00CB |                 1B95 |                      sel_vis.onLeftClick
+00CC |                 1BFC |                       sel_cf.onLeftClick
+00DC |                 1C63 |                        s_vis.onLeftClick
+00DD |                 1CE2 |                        s_vid.onLeftClick
+00DE |                 1D61 |                        s_avs.onLeftClick
+00DF |                 1DE0 |                       s_vis2.onLeftClick
+00E1 |                 1E5F |                       s_vid2.onLeftClick
+00E0 |                 1EDE |                       s_avs2.onLeftClick
+00D8 |                 1F5D |                        g_config.onAction
+00D0 |                 2BF6 |                    arb_volup.onLeftClick
+00D1 |                 2C99 |                  arb_voldown.onLeftClick
+00D2 |                 2D3C |                      arp_fwd.onLeftClick
+00D3 |                 2DEB |                      arp_rwd.onLeftClick
+00D2 |                 2EB6 |                   arp_fwd.onLeftButtonUp
+00D3 |                 2EFE |                   arp_rwd.onLeftButtonUp
+00E4 |                 2F46 |                          dte_tmr.onTimer
+0032 |                 3244 |      crossfade_time_attrib.onDataChanged
+00C0 |                 3277 |                          normal.onResize
+00C0 |                 32F3 |                            normal.onMove
+00C0 |                 3367 |                           normal.onScale
 -- User Functions Table ----------------------------------------------
                Code Pointer |                                    What 
 ----------------------------------------------------------------------
@@ -562,10 +548,10 @@ var# |         Code Pointer |                                    What
                        0E66 |                    _ConfigGroupsetWSpace
                        0E4F |                    _ConfigGroupsetHSpace
                        0FCA |                    _ConfigGroupsizeError
-                       3602 |                            setFullscreen
-                       38DD |                                   fitInt
-                       36EC |                          getAutoResWidth
-                       3835 |                         getAutoResHeight
-                       3073 |                     setColorThemeForTime
-                       3238 |                                 setDTtxt
-                       3A3F |                            ripProtection
+                       338D |                            setFullscreen
+                       3685 |                                   fitInt
+                       3477 |                          getAutoResWidth
+                       35DD |                         getAutoResHeight
+                       2F73 |                     setColorThemeForTime
+                       3138 |                                 setDTtxt
+                       37E7 |                            ripProtection
