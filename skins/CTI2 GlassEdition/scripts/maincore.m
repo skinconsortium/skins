@@ -15,28 +15,28 @@ Internet:	www.skinconsortium.com
 
 #include <lib/std.mi>
 #include <lib/config.mi>
-#include <lib/AutoRepeatButton.m>
+#include <lib/com/AutoRepeatButton.m>
 #include attribs/init_general.m
 
 /* Define Center Vars */
 #define CENTER_VAR CButtons
-#include <lib/centerlayer.m>
+#include <lib/com/centerlayer.m>
 #undef CENTER_VAR
 
 #define CENTER_VAR ModeSel
-#include <lib/centerlayer.m>
+#include <lib/com/centerlayer.m>
 #undef CENTER_VAR
 
 #define CENTER_VAR VolGroup
-#include <lib/centerlayer.m>
+#include <lib/com/centerlayer.m>
 #undef CENTER_VAR
 
 #define CENTER_VAR PModeGroup
-#include <lib/centerlayer.m>
+#include <lib/com/centerlayer.m>
 #undef CENTER_VAR
 
 #define CENTER_VAR ConfigGroup
-#include <lib/centerlayer.m>
+#include <lib/com/centerlayer.m>
 #undef CENTER_VAR
 
 
@@ -967,12 +967,12 @@ setFullscreen (layout l)
 
 Int getAutoResWidth ()
 {
-	int w = getMonitorWidth();
-	if (w == NULL)
+	float ver = StringToFloat(getWinampVersion());
+	if (ver < 5.5)
 	{
 		// if we have wa5.03 - 5.32
 		string s;
-		int i = messageBox ("This skin requires Winamp 5.33 or any newer version to run!\nDo you wish to downlaod the newest version now?\n\nIf you choose YES, Winamp will close now and start the download!\nIf you click NO Winamp will switch to default Modern Skin\n", "Wrong Winamp Version" , 4, s);
+		int i = messageBox ("This skin requires Winamp 5.5 or any newer version to run!\nDo you wish to downlaod the newest version now?\n\nIf you choose YES, Winamp will close now and start the download!\nIf you click NO Winamp will switch to default Modern Skin\n", "Wrong Winamp Version" , 4, s);
 		if (i == 4)
 		{
 			system.navigateUrl("http://www.winamp.com/player");
@@ -987,6 +987,7 @@ Int getAutoResWidth ()
 	}
 	else
 	{
+		int w = getMonitorWidth();
 		// if we have wa5.33+
 		if (getPrivateString(getSkinNAme(), "Monitor.mode", "Monitor") == "Monitor")
 		{
