@@ -1,0 +1,27 @@
+
+
+<WinampAbstractionLayer version="0.8">
+
+<skininfo>
+    <version>1.0</version>
+    <name>RobotArm</name>
+    <comment>blah </comment>
+    <author>Quadhelix</author>
+    <email>j106_vulcan@hotmail.com</email>
+    <homepage></homepage>
+    <screenshot>skinshot.png</screenshot>
+  
+  </skininfo>
+>
+  <include file="xml/player.xml"/>
+  
+
+  
+  
+   <include file="xml/gamma-presets.xml"/>
+  
+   
+  
+   
+
+ </WinampAbstractionLayer>

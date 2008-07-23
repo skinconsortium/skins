@@ -1,0 +1,10 @@
+  <include file="player-elements.xml"/>
+
+<!--this defines the container-->
+
+<container id="main" name="Main window">
+
+<!-- layouts to go in the container go here-->
+  <include file="player-normal.xml"/>
+ 
+</container>
