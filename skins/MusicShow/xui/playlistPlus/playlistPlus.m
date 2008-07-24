@@ -380,6 +380,37 @@ plslider.onLeftButtonUp(int x, int y) {
 	mousePressedSlider = 0;
 }
 
+parentLayout.onMouseWheelUp(int clicked , int lines) {
+	if (!scriptGroup.isVisible()) return 0;
+	if (!mousetrap.isMouseOverRect()) return 0;
+	
+	pltoptrack = pltoptrack - lines;
+	pltopMod = 0;
+	
+	if (pltoptrack < -4) pltoptrack = -4;
+	
+	if (scrollAnim.isRunning()) scrollAnim.stop();
+	refreshPL();
+		
+	
+	return 1;
+}
+
+parentLayout.onMouseWheelDown(int clicked , int lines) {
+	if (!scriptGroup.isVisible()) return 0;
+	if (!mousetrap.isMouseOverRect()) return 0;
+	
+	pltoptrack = pltoptrack + lines;
+	pltopMod = 0;
+	
+	if (pltoptrack > (pledit.getNumTracks() - numlines +4)) pltoptrack = pledit.getNumTracks() - numlines +4;
+	
+	if (scrollAnim.isRunning()) scrollAnim.stop();
+	refreshPL();
+	
+	return 1;
+}
+
 system.onKeyDown(string key) {
 	if (!parentLayout.isActive()) return;
 	if (!scriptGroup.isVisible()) return;
