@@ -16,8 +16,8 @@
 ;General
 
   ;Name and file
-  Name "ClassicPro© v1.03"
-  OutFile "ClassicPro_1.03.exe"
+  Name "ClassicPro© v1.04"
+  OutFile "ClassicPro_1.04_beta1.exe"
 
 	; The default installation directory
 	InstallDir $PROGRAMFILES\Winamp
@@ -244,8 +244,7 @@ SectionGroupEnd
 
 Section "Uninstall"
 
-  Delete "$INSTDIR\Uninstall ClassicPro.exe"
-  RMDir "$INSTDIR\Plugins\classicPro"
+  RMDir /r "$INSTDIR\Plugins\classicPro"
 
 SectionEnd
 

@@ -154,11 +154,11 @@ trigger.onRightButtonUp (int x, int y)
 	pksmenu.addCommand("Fast", 203, p_falloffspeed == 3, 0);
 	pksmenu.addCommand("Faster", 204, p_falloffspeed == 4, 0);
 	visMenu.addSubMenu(pksmenu, "Peak Falloff Speed");
-	anamenu.addCommand("Slower ", 300, a_falloffspeed == 0, 0);
-	anamenu.addCommand("Slow ", 301, a_falloffspeed == 1, 0);
-	anamenu.addCommand("Moderate ", 302, a_falloffspeed == 2, 0);
-	anamenu.addCommand("Fast ", 303, a_falloffspeed == 3, 0);
-	anamenu.addCommand("Faster ", 304, a_falloffspeed == 4, 0);
+	anamenu.addCommand("Slower", 300, a_falloffspeed == 0, 0);
+	anamenu.addCommand("Slow", 301, a_falloffspeed == 1, 0);
+	anamenu.addCommand("Moderate", 302, a_falloffspeed == 2, 0);
+	anamenu.addCommand("Fast", 303, a_falloffspeed == 3, 0);
+	anamenu.addCommand("Faster", 304, a_falloffspeed == 4, 0);
 	visMenu.addSubMenu(anamenu, "Analyzer Falloff Speed");
 	stylemenu.addCommand("Normal", 400, a_coloring == 0, 0);
 	stylemenu.addCommand("Fire", 402, a_coloring == 2, 0);

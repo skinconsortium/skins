@@ -281,7 +281,7 @@
 <groupdef id="drawer.skinchooser">
     <group id="drawer.tagviewer.bottomleft" x="0" y="-27" w="-6" relaty="1" relatw="1"/>
     <List id="skinlist" x="2" y="2" w="-4" h="-21" relatw="1" relath="1" antialias="0" 
-        numcolumns="2" columnwidths="-1;50" columnlabels="Name;Type"
+        numcolumns="2" columnwidths="-1;-1" columnlabels="Name;Type"
     />
     <button    id="switch" x="-64" y="-18" relatx="1" relaty="1"
         image="component.menu2.1"
