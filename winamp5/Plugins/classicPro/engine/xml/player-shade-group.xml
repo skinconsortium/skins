@@ -50,7 +50,7 @@
 		font="cpro.winshade.font"
 		color="Shade.SongTicker.Text"
 	/>
-	<layer id="Songticker.trap" x="38" y="0" h="0" w="-42" relatw="1" relath="1" move="1"/>
+	<layer id="Songticker.trap" x="38" y="0" h="0" w="-42" relatw="1" relath="1" move="1" dblClickAction="SWITCH;normal"/>
 	<script file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\scripts\playlistmenu.maki" param="Songticker.trap;40"/>
 </groupdef>
 <groupdef id="shade.seekticker2">

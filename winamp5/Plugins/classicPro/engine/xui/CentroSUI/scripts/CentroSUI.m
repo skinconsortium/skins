@@ -1052,6 +1052,9 @@ waitForPreview.onTimer(){
 		}
 		preview_layout.resize(tog_video.clientToScreenX(tog_video.getLeft()), tog_video.clientToScreenY(tog_video.getTop() + tog_video.getHeight()),150,150);
 		preview_layout.show();
+		// Fix if always on top is enabled.. it just refresh the ontop ;)
+		preview_layout.setXmlParam("ontop", "0");
+		preview_layout.setXmlParam("ontop", "1");
 	}
 	waitForPreview.stop();
 }

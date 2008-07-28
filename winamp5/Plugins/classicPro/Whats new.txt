@@ -1,4 +1,13 @@
 -------------------------------------------------------------
+Version 1.04 (xx Jul 2008)
+-------------------------------------------------------------
+- New: Language pack compatible. See http://cpro.skinconsortium.com
+- Fixed: Video preview shows under player when AOT is enabled
+- Fixed: Shade mode songticker double click doesn't swith to normal mode
+-------------------------------------------------------------
+
+
+-------------------------------------------------------------
 Version 1.03 (16 Jul 2008)
 -------------------------------------------------------------
 - New: ColorTheme support! (also added colorthemes.png)

@@ -35,7 +35,7 @@ System.onScriptLoaded ()
 		String name = getPublicString("classicPro_skinlist_nr"+integertoString(i), "");
 		String type = getPublicString("classicPro_skinlist_tnr"+integertoString(i), "");
 		skinlist.addItem(name);
-		skinlist.setSubItem(i,1,type);
+		skinlist.setSubItem(i,1, translate(type));
 		if (name == getSkinName())
 			isPartOf = true;		
 	}
@@ -56,7 +56,7 @@ System.onScriptLoaded ()
 		setPublicString("classicPro_skinlist_tnr"+integertoString(i), type);
 		setPublicInt("classicPro_skinlist_numskins", n+1);
 		skinlist.addItem(getSkinName());
-		skinlist.setSubItem(n,1,type);
+		skinlist.setSubItem(n,1, translate(type));
 	}
 }
 
@@ -64,7 +64,7 @@ skinlist.onDoubleClick(int itemnum)
 {
 	String skin = skinlist.getItemLabel(itemnum, 0);
 
-	if (getItemLabel(itemnum, 1) == "Zipped")
+	if (getItemLabel(itemnum, 1) == translate("Zipped"))
 	{
 		skin += ".wal";
 	}
