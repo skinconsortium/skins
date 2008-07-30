@@ -1284,7 +1284,7 @@ area_right.onResize(int x, int y, int w, int h){
 		//Update window size toggle
 		closeFrame.hide();
 		openFrame.show();
-		
+		if(!mouseDownF1) mainFrame.setXmlParam("resizable", "0");
 	}
 	else{
 		area_right.show();
@@ -1299,6 +1299,16 @@ area_right.onResize(int x, int y, int w, int h){
 	setFrame1();
 	//spaceTabs();
 }
+mainFrame.onLeftButtonDown(int x, int y){
+	mainFrame.setXmlParam("resizable", "1");
+	mouseDownF1=true;
+}
+
+mainFrame.onLeftButtonUp(int x, int y){
+	mouseDownF1=false;
+	if(area_right.getWidth()<10) mainFrame.setXmlParam("resizable", "0");
+	mainFrame.setPosition(mainFrame.getPosition()); //This is done to refresh the hide of the resizer ;)
+}
 
 setFrame1(){
 	if(mainFrame.getPosition()<180 && mainFrame.getPosition()>=158){
@@ -1307,11 +1317,13 @@ setFrame1(){
 }
 closeFrame.onLeftClick(){
 	setPublicInt("cpro.e1.closeframe.lastpos", mainFrame.getPosition());
+	mainFrame.setXmlParam("resizable", "0");
 	mainFrame.setPosition(0);
 }
 openFrame.onLeftClick(){
 	int pos = getPublicInt("cpro.e1.closeframe.lastpos", 200);
 	if(pos<158) pos = 158;
+	mainFrame.setXmlParam("resizable", "1");
 	mainFrame.setPosition(pos);
 }
 
