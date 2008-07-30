@@ -146,7 +146,7 @@ System.onScriptUnloading(){
 	setPrivateInt(getSkinName(), "muted", mute_but.getCurCfgVal());
 }
 
-mainGroup.onResize(int x, int y, int w, int h){
+myLayout.onResize(int x, int y, int w, int h){
 	lastKnownW = w;
 	lastKnownH = h;
 }
@@ -311,7 +311,7 @@ resize6.onLeftButtonUp(int x, int y){mouseDown=false;}
 resize6.onMouseMove(int x, int y){
 	if(mouseDown){
 		x=x-(x-317)%rres;
-		saveResize(getCurAppLeft(), getCurAppTop(),x+10,getCurAppHeight());
+		saveResize(myLayout.getLeft(), myLayout.getTop(),x+10,myLayout.getHeight());
 	}
 }
 
@@ -320,7 +320,7 @@ resize8.onLeftButtonUp(int x, int y){mouseDown=false;}
 resize8.onMouseMove(int x, int y){
 	if(mouseDown){
 		y=y-(y-168)%rres;
-		saveResize(getCurAppLeft(), getCurAppTop(), getCurAppWidth(),y+10);
+		saveResize(myLayout.getLeft(), myLayout.getTop(), myLayout.getWidth(),y+10);
 	}
 }
 resize9.onLeftButtonDown(int x, int y){mouseDown=true;}
@@ -329,7 +329,7 @@ resize9.onMouseMove(int x, int y){
 	if(mouseDown){
 		x=x-(x-317)%rres;
 		y=y-(y-168)%rres;
-		saveResize(getCurAppLeft(), getCurAppTop(),x+10,y+10);
+		saveResize(myLayout.getLeft(), myLayout.getTop(),x+10,y+10);
 	}
 }
 
@@ -338,5 +338,5 @@ saveResize(int x, int y, int w, int h){
 	if(w<317) w=317;
 	if(h<220) h=168;
 	
-	mainGroup.resize(x,y,w,h);
+	myLayout.resize(x,y,w,h);
 }
