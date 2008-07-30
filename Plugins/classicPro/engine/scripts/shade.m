@@ -11,11 +11,14 @@ Global Vis shadeVis;
 Global Button mlMenu1, mlMenu2;
 Global int i;
 
+Global Layout shade;
+
 //MuteButton
 Global Togglebutton mute_but;
 
 System.onScriptLoaded() {
 	mainGroup = getScriptGroup();
+	shade = mainGroup.getParentLayout();
 	gr_Vis = mainGroup.findObject("shade.visgroup");
 	gr_Vol = mainGroup.findObject("shade.volgroup");
 	gr_seektick = mainGroup.findObject("shade.seekticker");
@@ -142,6 +145,6 @@ resize6.onMouseMove(int x, int y){
 		x=x-x%rres;
 		int w = x+2;
 		if(w<stringToInteger(mainGroup.getXmlParam("minimum_w"))){w=stringToInteger(mainGroup.getXmlParam("minimum_w"));}
-		mainGroup.resize(getCurAppLeft(), getCurAppTop(),w,getCurAppHeight());
+		shade.resize(shade.getLeft(), shade.getTop(),w,shade.getHeight());
 	}
 }
