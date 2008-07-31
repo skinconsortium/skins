@@ -1,4 +1,5 @@
 #include <lib/std.mi>
+#include <lib/pldir.mi>
 //#include "lib/std.mi"
 
 #define VIDEO_GUID "{F0816D7B-FFFC-4343-80F2-E8199AA15CC3}"
@@ -61,7 +62,7 @@ Global GuiObject visRectBg, tempbutton, nowPlaying;
 
 Global Button but_miniGoto, closeFrame, openFrame;
 
-Global Text visName;
+Global Text visName, plText1, plText2;
 
 Global ToggleButton tog_library, tog_video, tog_avs, tog_Browser, tog_Playlist, tog_Other, tog_NowPlay, tog_drawer;
 Global GuiObject tog_library1, tog_video1, tog_avs1, tog_Browser1, tog_Playlist1, tog_Other1, tog_Widget1, tog_fake1;
@@ -138,6 +139,8 @@ System.onScriptLoaded() {
 	mini_AVS = xuiGroup.findObject("centro.playlist.directory.vis");
 	mini_SavedPL = xuiGroup.findObject("centro.playlist.directory.spl");
 
+	plText1 = xuiGroup.findObject("centro.playlist.pltext1");
+	plText2 = xuiGroup.findObject("centro.playlist.pltext2");
 
 ///////////////////////
 	xuiBrowser = xuiGroup.findObject("cpro.browser");
@@ -1358,6 +1361,14 @@ setFrame2(int pos, int h){
 	
 	if(output!=plFrame.getPosition()) plFrame.setPosition(output);
 }
+
+plText1.onLeftButtonDblClk(int x, int y){
+	PlEdit.showCurrentlyPlayingTrack ();
+}
+plText2.onLeftButtonDblClk(int x, int y){
+	PlEdit.showCurrentlyPlayingTrack ();
+}
+
 
 /*
 DEBUG CODE!!!!!!!!!!!!

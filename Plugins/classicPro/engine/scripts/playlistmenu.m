@@ -3,8 +3,8 @@
 Filename:	playlistmenu.m
 
 Type:		maki/source
-Version:	skin version 1.31
-Date:		11:21 04.04.2008
+Version:	skin version 1.37
+Date:		10:45 31.07.2008
 Author:		Pieter Nieuwoudt aka pjn123
 E-Mail:		sylvester@skinconsortium.com
 Internet:	http://forums.skinconsortium.com
@@ -29,6 +29,7 @@ Global Group myGroup;
 Global GuiObject clickMe;
 Global Popupmenu menuList;
 Global int ListLength;
+Global String tempString, menutext;
 
 System.onScriptLoaded(){
 	myGroup = getScriptGroup();
@@ -41,7 +42,7 @@ clickMe.onRightButtonUp(int x, int y){
 	menuList = new PopupMenu;
 	
 	int startpos;
-	String menutext = "";
+	menutext = "";
 	
 	if(PlEdit.getNumTracks()-PlEdit.getCurrentIndex() < ListLength/2) startpos=PlEdit.getNumTracks()-ListLength;
 	else startpos=PlEdit.getCurrentIndex()-ListLength/2;
@@ -52,7 +53,13 @@ clickMe.onRightButtonUp(int x, int y){
 		if(i==PlEdit.getNumTracks()) break;
 		menutext=integerToString(i+1)+". "+ strleft(PlEdit.getTitle(i),70);
 		if(strlen(PlEdit.getTitle(i))>70) menutext+="...";
-		menutext+="\t["+PlEdit.getLength(i)+"]";
+		
+		if(PlEdit.getLength(i)!="") tempString="\t["+PlEdit.getLength(i)+"]";
+		//else if(PlEdit.getMetaData(i, "length")!="") tempString="\t["+integerToTime(stringToInteger(PlEdit.getMetaData(i, "length")))+"]"; //dont know if this will work good on optical media
+		else tempString="";
+	
+		//menutext+="\t["+PlEdit.getLength(i)+"pjn"+PlEdit.getMetaData(i, "length")+"]";
+		menutext+=tempString;
 		menuList.addCommand(menutext, i, (PlEdit.getCurrentIndex()==i), (PlEdit.getCurrentIndex()==i));
 	}
 	

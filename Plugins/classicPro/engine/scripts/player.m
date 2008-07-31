@@ -25,7 +25,7 @@ Global Timer reCheck;
 
 //Global Layer resize1, resize2, resize3, resize4, resize6, resize7, resize8, resize9;
 Global Layer resize6, resize8, resize9;
-Global Boolean mouseDown, dontResize;
+Global Boolean mouseDown, dontResize, checkHeightAgain;
 Global int i, lastKnownW, lastKnownH;
 
 System.onScriptLoaded() {
@@ -141,9 +141,10 @@ System.onScriptLoaded() {
 	//updateTextSizes();
 }
 System.onScriptUnloading(){
-	delete reCheck;
 	saveGlobal();
 	setPrivateInt(getSkinName(), "muted", mute_but.getCurCfgVal());
+	setPublicInt("cPro.firstlayout", 0);
+	delete reCheck;
 }
 
 myLayout.onResize(int x, int y, int w, int h){
@@ -158,25 +159,29 @@ gotoGlobal(){
 	int h = getPublicInt("cPro.h", getCurAppHeight());
 	
 	if(w<317) w= 317;
-	if(h<168) w= 168;
+	if(h<168) h= 168; //why was this w=168??? just change back if any bugs arise
 	
 	//debugstring("resize to: "+integerToString(x)+", "+integerToString(y)+", "+integerToString(w)+", "+integerToString(h), 9);
-	mylayout.resize(x,y,w,h);
+	if(checkHeightAgain) mylayout.resize(mylayout.getLeft(),mylayout.getTop(),lastKnownW,h);
+	else mylayout.resize(x,y,w,h);
 }	
 saveGlobal(){
-	setPublicInt("cPro.x", mainGroup.getLeft());
-	setPublicInt("cPro.y", mainGroup.getTop());
-	setPublicInt("cPro.w", lastKnownW);
+
+	if(main.getCurLayout() == mylayout){
+		setPublicInt("cPro.x", mainGroup.getLeft());
+		setPublicInt("cPro.y", mainGroup.getTop());
+		setPublicInt("cPro.w", lastKnownW);
+	}
 	setPublicInt("cPro.h", lastKnownH);
 	//debugstring("save done: "+integerToString( mainGroup.getLeft())+", "+integerToString(mainGroup.getTop())+", "+integerToString(lastKnownW)+", "+integerToString(lastKnownH), 9);
 }
-
+/* dont think i need this... removed for 1.04!
 System.onCreateLayout(Layout _layout){
 	if(_layout==mylayout){
 		gotoGlobal();
 		//debugstring("a  == "+integerToString(getPublicInt("cPro.w", getCurAppWidth())), 9);
 	}
-}
+}*/
 System.onShowLayout(Layout _layout){
 	if(dontResize){
 		if(getPrivateInt(getSkinName(), "muted", 0)==1){
@@ -190,13 +195,16 @@ System.onShowLayout(Layout _layout){
 
 	}
 
-	if(_layout==mylayout && !dontResize){
-		//gotoGlobal();
+	if(_layout==mylayout && !dontResize && getPublicInt("cPro.firstlayout", 0)==0){
+		setPublicInt("cPro.firstlayout", 1);
 		reCheck.start();
 		dontResize=true;
-		//debugstring("a  == "+integerToString(getPublicInt("cPro.w", getCurAppWidth())), 9);
 	}
-
+	else if(_layout==mylayout && !checkHeightAgain && !dontResize){
+		checkHeightAgain=true;
+		reCheck.start();
+		dontResize=true;
+	}
 }
 reCheck.onTimer(){
 		reCheck.stop();
