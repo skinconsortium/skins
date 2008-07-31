@@ -17,7 +17,7 @@
 
   ;Name and file
   Name "ClassicPro© v1.04"
-  OutFile "ClassicPro_1.04_beta1.exe"
+  OutFile "ClassicPro_1.04_(2008-07-31).exe"
 
 	; The default installation directory
 	InstallDir $PROGRAMFILES\Winamp
