@@ -39,21 +39,8 @@
 	<windowholder id="centro.windowholder.library" x="1" y="1" w="-2" relatw="1" h="-4" relath="1" autofocus="1" wantfocus="0" autoclose="1" autoopen="1" autoavailable="1" visible="1" hold="guid:{6B0EDF80-C9A5-11D3-9F26-00C04F39FFC6}"/>
 </groupdef>
 <groupdef id="centro.video.buttons">
-	<Button action="VID_FS"
-		x="4" y="1" rectrgn="1"
-		image="video.button.fullscreen.normal"
-		hoverImage="video.button.fullscreen.hover"
-		downImage="video.button.fullscreen.down"
-		tooltip="Fullscreen"
-	/>
-
-	<Button action="VID_1X"
-		x="29" y="1" rectrgn="1"
-		image="video.button.1x.normal"
-		hoverImage="video.button.1x.hover"
-		downImage="video.button.1x.down"
-		tooltip="Normal Size"
-	/>
+	<Button action="VID_FS"	x="4" y="1" rectrgn="1" image="video.button.fullscreen.normal" hoverImage="video.button.fullscreen.hover" downImage="video.button.fullscreen.down" tooltip="Fullscreen"/>
+	<Button action="VID_1X"	x="29" y="1" rectrgn="1" image="video.button.1x.normal" hoverImage="video.button.1x.hover" downImage="video.button.1x.down" tooltip="Normal Size"/>
 
 	<Button action="VID_2X"
 		x="54" y="1" rectrgn="1"
@@ -81,7 +68,7 @@
 
 	<text id="info" display="VID_Info" ticker="1"
 		x="105" y="4" w="-135" relatw="1"
-		align="center" valign="top" color="ComponentTab.Status.Text" font="cpro.status.font"
+		align="center" valign="top" color="ComponentTab.Status.Text" font="cpro.status.font" move="1"
 	/>
 
 </groupdef>
@@ -143,7 +130,7 @@
 	<!-- action="WA5:Prefs" param="33" -->
 	<text id="centro.visname" ticker="1"
 		x="105" y="4" h="13" w="-163" relatw="1" dblclickaction="WA5:Prefs" dblclickparam="33"
-		align="center" color="ComponentTab.Status.Text" font="cpro.status.font"
+		align="center" color="ComponentTab.Status.Text" font="cpro.status.font" move="1"
 	/>
 </groupdef>
 <groupdef id="centro.visualization" name="Visualization">
@@ -196,9 +183,9 @@
 		tooltip="Manage Playlist"
 	/>
 
-	<text id="info" display="PE_Info" ticker="1"
+	<text id="centro.playlist.pltext1" display="PE_Info" ticker="1"
 		x="105" y="4" h="13" w="-135" relatw="1"
-		align="center" color="ComponentTab.Status.Text" font="cpro.status.font"
+		align="center" color="ComponentTab.Status.Text" font="cpro.status.font" move="1"
 	/>
 </groupdef>
 <groupdef id="centro.playlist2" name="Playlist">
@@ -287,7 +274,7 @@
 	<button x="32" y="0" image="component.pl.rem.1" hoverImage="component.pl.rem.2" downImage="component.pl.rem.3" action="PE_Rem" tooltip="Remove Files from Playlist"/>
 	<button x="63" y="0" image="component.pl.sel.1" hoverImage="component.pl.sel.2" downImage="component.pl.sel.3" action="PE_Sel" tooltip="Select Files from Playlist"/>
 	<button	x="94" y="0" image="component.pl.misc.1" hoverImage="component.pl.misc.2" downImage="component.pl.misc.3" action="PE_Misc" tooltip="Misc Actions"/>
-	<text id="PLTime" ticker="1" display="PE_Info" x="126" y="2" h="13" w="-159" relatw="1" align="center" fontsize="13" antialias="0" color="Playlist.Status.Text" font="cpro.status.font"/>
+	<text id="centro.playlist.pltext2" ticker="1" display="PE_Info" x="126" y="2" h="13" w="-159" relatw="1" align="center" fontsize="13" antialias="0" color="Playlist.Status.Text" font="cpro.status.font" move="1"/>
 	<button x="-33" y="0" relatx="1" image="component.pl.man.1" hoverImage="component.pl.man.2" downImage="component.pl.man.3" action="PE_List" tooltip="Manage Playlist"/>
 </groupdef>
 <groupdef id="centro.playlist.component">

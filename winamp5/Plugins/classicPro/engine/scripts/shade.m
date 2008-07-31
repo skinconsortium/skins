@@ -2,6 +2,9 @@
 
 #define rres 25 
 
+Function gotoGlobal();
+Function saveGlobal();
+
 Global Group mainGroup, gr_Vis, gr_Vol, gr_seektick, gr_seektick1, gr_seektick2;
 Global GuiObject progressbar;
 Global Layer vol_bg, resize6;
@@ -9,8 +12,11 @@ Global Slider vol_sl;
 Global Boolean mouseDown;
 Global Vis shadeVis;
 Global Button mlMenu1, mlMenu2;
-Global int i;
+Global int i, lastKnownW;
+Global Timer reCheck;
+Global Boolean dontResize;
 
+Global Container main;
 Global Layout shade;
 
 //MuteButton
@@ -18,7 +24,10 @@ Global Togglebutton mute_but;
 
 System.onScriptLoaded() {
 	mainGroup = getScriptGroup();
-	shade = mainGroup.getParentLayout();
+
+	main = System.getContainer("main");
+	shade = main.getLayout("shade");
+
 	gr_Vis = mainGroup.findObject("shade.visgroup");
 	gr_Vol = mainGroup.findObject("shade.volgroup");
 	gr_seektick = mainGroup.findObject("shade.seekticker");
@@ -58,10 +67,14 @@ System.onScriptLoaded() {
 	}
 	delete myMap;
 	
-
+	reCheck = new Timer;
+	reCheck.setDelay(10);
 }
 System.onScriptUnloading() {
+	saveGlobal();
+	setPublicInt("cPro.firstlayout", 0);
 	setPrivateInt(getSkinName(), "muted", mute_but.getCurCfgVal());
+	delete reCheck;
 }
 mainGroup.onSetVisible(boolean onOff){
 	if(getPrivateInt(getSkinName(), "muted", 0)==1){
@@ -147,4 +160,45 @@ resize6.onMouseMove(int x, int y){
 		if(w<stringToInteger(mainGroup.getXmlParam("minimum_w"))){w=stringToInteger(mainGroup.getXmlParam("minimum_w"));}
 		shade.resize(shade.getLeft(), shade.getTop(),w,shade.getHeight());
 	}
+}
+
+gotoGlobal(){
+	int x = getPublicInt("cPro.x", getCurAppLeft());
+	int y = getPublicInt("cPro.y", getCurAppTop());
+	int w = getPublicInt("cPro.w", getCurAppWidth());
+	int h = 23;
+	
+	if(w<317) w= 317;
+	
+	//debugstring("resize to: "+integerToString(x)+", "+integerToString(y)+", "+integerToString(w)+", "+integerToString(h), 9);
+	shade.resize(x,y,w,h);
+}
+saveGlobal(){
+	if(main.getCurLayout() == shade){
+		setPublicInt("cPro.x", shade.getLeft());
+		setPublicInt("cPro.y", shade.getTop());
+		setPublicInt("cPro.w", lastKnownW);
+	}
+}
+shade.onResize(int x, int y, int w, int h){
+	lastKnownW = w;
+}
+System.onShowLayout(Layout _layout){
+	if(_layout==shade && !dontResize && getPublicInt("cPro.firstlayout", 0)==0){
+		setPublicInt("cPro.firstlayout", 1);
+		reCheck.start();
+		dontResize=true;
+	}
+}
+
+/*
+System.onCreateLayout(Layout _layout){
+	if(_layout==mylayout){
+		gotoGlobal();
+		//debugstring("a  == "+integerToString(getPublicInt("cPro.w", getCurAppWidth())), 9);
+	}
+}*/
+reCheck.onTimer(){
+		reCheck.stop();
+		gotoGlobal();
 }
