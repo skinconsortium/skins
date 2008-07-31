@@ -4,10 +4,12 @@ Version 1.04 (xx Jul 2008)
 - New: Inner frame slider/divider now hides when its closed
 - New: Language pack compatible. See http://cpro.skinconsortium.com
 - New: Double-Click the playlist info to show current playing track
+- New: Double-Click the stereo indicator to go to the preferences
+- New: No compression used for bundled skin (speed up + smaller installer)
 - Fixed: Possible shade mode that goes invisible
-- Fixed: Shademode dont remember previous position if you switch to new cPro skin
+- Fixed: Shademode don’t remember previous position if you switch to new cPro skin
 - Fixed: Video preview shows under player when AOT is enabled
-- Fixed: Shade mode songticker double click doesn't swith to normal mode
+- Fixed: Shade mode songticker double click doesn't switch to normal mode
 - Fixed: Shade playlist menu will not show [] if the track time isn't found
 - Fixed: Skin can't be easymoved on tab status text
 -------------------------------------------------------------

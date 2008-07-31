@@ -380,7 +380,7 @@
 <groupdef id="fileinfo.mode.2" w="124" h="15">
 	<text id="fileinfo.mode.2.text" 
 		x="0" y="0" h="20" w="0" relatw="1" font="cpro.songinfo2.font"
-		rightclickaction="trackmenu" dblclickaction="trackinfo" align="right"
-		color="Player.SongTicker.Text" fontsize="12" valign="top" antialias="0" 
+		rightclickaction="trackmenu" align="right" move="1"
+		color="Player.SongTicker.Text" fontsize="12" valign="top" antialias="0"  dblclickaction="WA5:Prefs" dblclickparam="42"
 	/>
 </groupdef>
