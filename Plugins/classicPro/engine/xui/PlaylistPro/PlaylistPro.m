@@ -12,7 +12,7 @@ Function clearSearchBox();
 
 Global Group frameGroup, topbar;
 Global Edit searchBox;
-Global Text clearButtonText;
+Global Text clearButtonText, helpSearch;
 Global GuiObject fakeSB, searchXUI;
 Global Button searchButton, clearButton;
 Global GuiList searchResults;
@@ -35,6 +35,7 @@ System.onScriptLoaded() {
 	fakeSB = frameGroup.findObject("pl.search.edit.rect");
 	clearButton = frameGroup.findObject("pl.search.edit.clear");
 	clearButtonText = frameGroup.findObject("pl.search.edit.clear.text");
+	helpSearch = frameGroup.findObject("pl.search.edit.searchhelp");
 	
 	results_container = newDynamicContainer("searchresults");
 	results_layout = results_container.getLayout("normal");
@@ -184,12 +185,14 @@ setSearchBox(boolean onOff){
 		searchBox.show();
 		clearButton.show();
 		clearButtonText.show();
+		helpSearch.hide();
 		searchBox.setFocus();
 	}
 	else{
 		searchBox.hide();
 		clearButton.hide();
 		clearButtonText.hide();
+		helpSearch.show();
 		//searchXUI.hide();
 	}
 }
