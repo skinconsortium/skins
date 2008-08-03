@@ -1,3 +1,4 @@
+//amended by SLoB 2nd August 2008 - fixed vu display if only using left frame animation strip so it uses both left and right vu levels, also should be faster as removed 3 calls to get left vu value
 #include <lib/std.mi>
 
 Function ProcessMenuResult(int a);
@@ -7,7 +8,7 @@ Global Group frameGroup, beatGroup, promoGroup, b01, b02;
 
 Global AnimatedLayer t01, t02;
 Global Timer myTimer;
-Global int lastBeatLeft,lastBeatRight, myFrames, aniW;
+Global int lastBeatLeft,lastBeatRight, myFrames, aniW, beatLeft, beatRight, frameLeft, frameRight;
 Global Boolean showBeat, showPromo, animTypeB, oneSide;
 Global Layer promoPic, mouseTrap, b01layer, b02layer, c01, c02;
 Global Popupmenu selMenu;
@@ -30,7 +31,7 @@ System.onScriptLoaded (){
 	c01 = frameGroup.findObject("beatvisC.left");
 	c02 = frameGroup.findObject("beatvisC.right");
 
-
+	
 
 	myFrames = t01.getLength();
 	
@@ -98,22 +99,21 @@ System.onscriptunloading(){
 
 myTimer.onTimer(){
 
-	int beatLeft = System.getLeftVuMeter();
-	int beatRight = System.getRightVuMeter();
+	beatLeft = System.getLeftVuMeter();
+	beatRight = System.getRightVuMeter();
 	
-	if(oneSide) beatLeft=(System.getLeftVuMeter()+System.getRightVuMeter())/2;
-
+	if(oneSide) beatLeft=(beatLeft+beatRight)/2;
+	
 	if(animTypeB){
 		beatLeft=aniW/255*beatLeft;
 		b01.setXmlParam("w", integerToString(beatLeft));
 		b01.setXmlParam("x", integerToString(aniW-beatLeft));
-		b02.setXmlParam("w", integerToString(aniW/255*beatRight));
+		if(!oneSide) b02.setXmlParam("w", integerToString(aniW/255*beatRight));
 	}
-	else{
-		beatLeft= System.getLeftVuMeter();
-
-		int frameLeft=beatLeft/255*myFrames;
-		int frameRight=beatRight/255*myFrames;
+	else
+	{	
+		frameLeft=beatLeft/255*myFrames;
+		frameRight=beatRight/255*myFrames;
 
 
 		if (frameLeft>myFrames) frameLeft=myFrames;
@@ -216,9 +216,6 @@ frameGroup.onResize(int x, int y, int w, int h){
 		showPromo=false;
 	}
 
-	//check to see if its disabled
-	//if(getPrivateInt(getSkinName(), "beatvis", 1)==0) showBeat=false;
-	
 	refreshView();
 }
 

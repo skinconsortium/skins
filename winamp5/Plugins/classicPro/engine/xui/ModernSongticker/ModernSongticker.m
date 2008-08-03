@@ -5,6 +5,7 @@ Function updateInfo(String showThis);
 Function showNews(boolean show);
 Function cancelStuff();
 
+Global Container mainContainer;
 Global Layout mainLayout;
 
 Global Group mainGroup;
@@ -30,7 +31,8 @@ System.onScriptLoaded(){
 }
 
 System.onShowLayout(Layout _layout){
-	mainLayout = getContainer(getToken(def_Layout, ";", 0)).getLayout(getToken(def_Layout, ";", 1));
+	mainContainer = getContainer(getToken(def_Layout, ";", 0));
+	mainLayout = mainContainer.getLayout(getToken(def_Layout, ";", 1));
 	if(mainLayout==_layout){
 		sl_volume = mainLayout.findObject(def_Volume);
 		sl_seeker = mainLayout.findObject(def_Seeker);
@@ -105,6 +107,7 @@ muteBut.onToggle(Boolean onoff){
 }
 
 updateInfo(String showThis){
+	if(mainLayout!=mainContainer.getCurLayout()) return;
 	cancelStuff();
 
 	//do stuff
