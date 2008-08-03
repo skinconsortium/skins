@@ -65,8 +65,8 @@ Global Button but_miniGoto, closeFrame, openFrame;
 Global Text visName, plText1, plText2;
 
 Global ToggleButton tog_library, tog_video, tog_avs, tog_Browser, tog_Playlist, tog_Other, tog_NowPlay, tog_drawer;
-Global GuiObject tog_library1, tog_video1, tog_avs1, tog_Browser1, tog_Playlist1, tog_Other1, tog_Widget1, tog_fake1;
-Global WindowHolder hold_Other, hold_Pl1, hold_Pl2, hold_vid, hold_avs, hold_ml, hold_vis;
+Global GuiObject tog_library1, tog_video1, tog_avs1, tog_Browser1, tog_Playlist1, tog_Other1, tog_Widget1, tog_fake1, guihold_Pl2;
+Global WindowHolder hold_Other, hold_Pl2, hold_vid, hold_avs, hold_ml, hold_vis;
 
 Global Frame mainFrame, plFrame;
 Global Timer openMainLayout, openDefaultTab, refreshAIOTab, checkVisName;
@@ -167,8 +167,8 @@ System.onScriptLoaded() {
 	area_right_pl = xuiGroup.findObject("centro.playlist.component"); 
 	area_mini = xuiGroup.findObject("centro.playlist.directory");
 
-	hold_Pl1 = xuiGroup.findObject("wdh.playlist1");
 	hold_Pl2 = xuiGroup.findObject("centro.windowholder.playlist2");
+	guihold_Pl2 = xuiGroup.findObject("centro.windowholder.playlist2");
 	hold_vid = xuiGroup.findObject("centro.windowholder.video");
 	hold_avs = xuiGroup.findObject("centro.windowholder.visualization");
 	hold_ml = xuiGroup.findObject("centro.windowholder.library");
@@ -1206,11 +1206,11 @@ tog_other.onRightButtonUp(int x, int y){
 
 refreshComponentButtons(){
 	if(getPublicInt("ClassicPro.1.plbuttons", 1)){
-			hold_Pl2.setXmlParam("h", "-27");
+			guihold_Pl2.setXmlParam("h", "-27");
 			tabbut_pl.show();
 	}
 	else{
-			hold_Pl2.setXmlParam("h", "-4");
+			guihold_Pl2.setXmlParam("h", "-4");
 			tabbut_pl.hide();
 	}
 

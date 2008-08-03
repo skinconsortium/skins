@@ -17,7 +17,13 @@
 
   ;Name and file
   Name "ClassicPro© v1.04"
-  OutFile "ClassicPro_1.04_(2008-07-31).exe"
+  
+  ;RELEASE  
+  ;OutFile "ClassicPro_1.04.exe"
+
+  ;BETA STAGE  
+  !define /date DATE "%Y-%m-%d"
+  OutFile "ClassicPro_1.04_(${DATE}).exe"
 
 	; The default installation directory
 	InstallDir $PROGRAMFILES\Winamp
@@ -183,6 +189,11 @@ Section "ClassicPro plugin" cproFiles
   File "${SOURCEPATH}\engine\xui\Ratings\*.xml"
   File "${SOURCEPATH}\engine\xui\Ratings\*.m"
   File "${SOURCEPATH}\engine\xui\Ratings\*.maki"
+
+  SetOutPath $INSTDIR\Plugins\classicPro\engine\xui\PlaylistPro
+  File "${SOURCEPATH}\engine\xui\PlaylistPro\*.xml"
+  File "${SOURCEPATH}\engine\xui\PlaylistPro\*.m"
+  File "${SOURCEPATH}\engine\xui\PlaylistPro\*.maki"
 
   SetOutPath $INSTDIR\Plugins\classicPro\engine\xui\ModernSongticker
   File "${SOURCEPATH}\engine\xui\ModernSongticker\*.xml"
