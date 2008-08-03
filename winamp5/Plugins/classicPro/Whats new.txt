@@ -1,6 +1,7 @@
 -------------------------------------------------------------
 Version 1.04 (xx Jul 2008)
 -------------------------------------------------------------
+- New: PlaylistPro (build in search)
 - New: Inner frame slider/divider now hides when its closed
 - New: Language pack compatible. See http://cpro.skinconsortium.com
 - New: Double-Click the playlist info to show current playing track
