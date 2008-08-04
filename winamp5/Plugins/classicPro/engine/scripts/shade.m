@@ -1,6 +1,6 @@
 #include <lib/std.mi>
 
-#define rres 25 
+#define rres 20 
 
 Function gotoGlobal();
 Function saveGlobal();
@@ -109,7 +109,7 @@ mainGroup.onResize(int x, int y, int w, int h){
 		gr_Vis.show();
 	}
 	
-	if(w<405){
+	if(w<410){
 		gr_Vol.hide();
 	}
 	else{

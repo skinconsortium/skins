@@ -184,6 +184,8 @@ delayLoad.onTimer()
 
 System.onTitleChange (String newtitle)
 {
+	if(!scriptGroup.isVisible()) return;
+
 	// Get rid of "" calls
 	if (newtitle == "" && getplayitemmetadatastring("title") == "" && !delayLoad.isRunning())
 	{
@@ -220,6 +222,8 @@ System.onTitleChange (String newtitle)
 
 loadFileInfo ()
 {
+	if(!scriptGroup.isVisible()) return;
+
 	if(getPublicInt("ClassicPro.tagviewer.1", 1)){
 		g_cover.show();
 		tagsGroup.setXmlParam("x", "130");
@@ -995,4 +999,8 @@ optionsButton.onLeftClick ()
 	}
 	loadFileInfo();
 
+}
+
+scriptGroup.onSetVisible(boolean onOff){
+	if(onOff) loadFileInfo();
 }

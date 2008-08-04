@@ -14,7 +14,10 @@ Version 1.04 (xx Jul 2008)
 - Fixed: Shade playlist menu will not show [] if the track time isn't found
 - Fixed: Skin can't be easymoved on tab status text
 - Fixed: Bundled skin have wrong TagViewer colors
-- Fixed: Hidden mode still updates news tips (Volume: xx%) 
+- Fixed: Hidden mode still updates news tips (Volume: xx%)
+- Fixed: Shade mode volume overlap
+- Improved: Beat vis optimization
+- Improved: Tagviewer now doesn't update the info if not visible
 -------------------------------------------------------------
 
 
