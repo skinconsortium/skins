@@ -2,6 +2,7 @@
 Version 1.04 (xx Jul 2008)
 -------------------------------------------------------------
 - New: PlaylistPro (build in search)
+- New: Now warns you if you dont have the minimum Winamp version installed
 - New: Inner frame slider/divider now hides when its closed
 - New: Language pack compatible. See http://cpro.skinconsortium.com
 - New: Double-Click the playlist info to show current playing track
@@ -17,6 +18,7 @@ Version 1.04 (xx Jul 2008)
 - Fixed: Hidden mode still updates news tips (Volume: xx%)
 - Fixed: Shade mode volume overlap
 - Fixed: Shade mode resize steps not the same as the normal mode
+- Fixed: Various buttons dont have rectrgn="1" (normal & shade). Should help "cPro - Fluke"
 - Improved: Beat vis optimization
 - Improved: Tagviewer now doesn't update the info if not visible
 -------------------------------------------------------------
