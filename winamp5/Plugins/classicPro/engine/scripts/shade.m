@@ -4,6 +4,7 @@
 
 Function gotoGlobal();
 Function saveGlobal();
+Function saveResize(int x, int y, int w, int h);
 
 Global Group mainGroup, gr_Vis, gr_Vol, gr_seektick, gr_seektick1, gr_seektick2;
 Global GuiObject progressbar;
@@ -102,14 +103,14 @@ mute_but.onToggle(Boolean onoff){
 
 
 mainGroup.onResize(int x, int y, int w, int h){
-	if(w<342){
+	if(w<348){
 		gr_Vis.hide();
 	}
 	else{
 		gr_Vis.show();
 	}
 	
-	if(w<410){
+	if(w<416){
 		gr_Vol.hide();
 	}
 	else{
@@ -151,7 +152,7 @@ mlMenu1.onLeftClick(){
 	mlMenu2.leftClick(); //pass click onto the fakebutton so because we need the menu to pop a few pixels down... not over the whole shademode ;)
 }
 
-resize6.onLeftButtonDown(int x, int y){mouseDown=true;}
+/*resize6.onLeftButtonDown(int x, int y){mouseDown=true;}
 resize6.onLeftButtonUp(int x, int y){mouseDown=false;}
 resize6.onMouseMove(int x, int y){
 	if(mouseDown){
@@ -159,6 +160,15 @@ resize6.onMouseMove(int x, int y){
 		int w = x+2;
 		if(w<stringToInteger(mainGroup.getXmlParam("minimum_w"))){w=stringToInteger(mainGroup.getXmlParam("minimum_w"));}
 		shade.resize(shade.getLeft(), shade.getTop(),w,shade.getHeight());
+	}
+}*/
+
+resize6.onLeftButtonDown(int x, int y){mouseDown=true;}
+resize6.onLeftButtonUp(int x, int y){mouseDown=false;}
+resize6.onMouseMove(int x, int y){
+	if(mouseDown){
+		x=x-(x-317)%rres;
+		saveResize(shade.getLeft(), shade.getTop(),x+10,23);
 	}
 }
 
@@ -201,4 +211,9 @@ System.onCreateLayout(Layout _layout){
 reCheck.onTimer(){
 		reCheck.stop();
 		gotoGlobal();
+}
+
+saveResize(int x, int y, int w, int h){
+	if(w<317) w=317;
+	shade.resize(x,y,w,h);
 }

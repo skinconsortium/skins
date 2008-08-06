@@ -16,6 +16,7 @@ Version 1.04 (xx Jul 2008)
 - Fixed: Bundled skin have wrong TagViewer colors
 - Fixed: Hidden mode still updates news tips (Volume: xx%)
 - Fixed: Shade mode volume overlap
+- Fixed: Shade mode resize steps not the same as the normal mode
 - Improved: Beat vis optimization
 - Improved: Tagviewer now doesn't update the info if not visible
 -------------------------------------------------------------
