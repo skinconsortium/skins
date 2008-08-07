@@ -53,7 +53,6 @@ System.onScriptLoaded (){
 	if(b02layer.isInvalid()){
 		oneSide=true;
 	}
-
 	
 	if(myMap.getHeight()==45){
 		animTypeB=true;
@@ -176,40 +175,43 @@ beatGroup.onSetVisible(Boolean onoff){
 frameGroup.onResize(int x, int y, int w, int h){
 
 	if(oneSide){
-		beatGroup.setXmlParam("x", integerToString(129 + (w-129-167)/2-aniW/2));
+		//beatGroup.setXmlParam("x", integerToString(129 + (w-129-167)/2-aniW/2+xtraX));
+		beatGroup.setXmlParam("x", integerToString(143+(w-317)/2-aniW/2));
 		h=aniW;
 	}
 	else{
-		beatGroup.setXmlParam("x", integerToString(129 + (w-129-167)/2-aniW));
+		//beatGroup.setXmlParam("x", integerToString(129 + (w-129-167)/2-aniW));
+		beatGroup.setXmlParam("x", integerToString(143+(w-317)/2-aniW));
 		h=aniW*2;
 	}
 
 	
-	if(w>296+h){
+	if(w>317+h){
 		showBeat=true;
 	}
 	else{
 		showBeat=false;
 	}
 
-	if(w>596){
+	if(w>618){
 		promoPic.setXmlParam("image", "cPro.promo.3");
 		promoPic.resize(0,0,300,45);
-		mouseTrap.resize(0,0,300,45);
+		//mouseTrap.resize(0,0,300,45);
 	}
-	else if(w>496){
+	else if(w>517){
 		promoPic.setXmlParam("image", "cPro.promo.2");
 		promoPic.resize(50,0,200,45);
-		mouseTrap.resize(50,0,200,45);
+		//mouseTrap.resize(50,0,200,45);
 	}
 	else{
 		promoPic.setXmlParam("image", "cPro.promo.1");
 		promoPic.resize(150,0,99,45);
-		mouseTrap.resize(150,0,99,45);
+		//mouseTrap.resize(150,0,99,45);
 	}
-	promoGroup.setXmlParam("x", integerToString(129 + (w-129-167)/2-promoPic.getWidth()/2));
+	//promoGroup.setXmlParam("x", integerToString(129 + (w-129-167)/2-promoPic.getWidth()/2));
+	promoGroup.setXmlParam("x", integerToString(143+(w-317)/2-promoPic.getWidth()/2));
 	
-	if(w>395){
+	if(w>416){
 		showPromo=true;
 	}
 	else{
