@@ -24,7 +24,13 @@
 	<layer id="beat.promo" x="0" y="0" image="cPro.promo.1"/>
 </groupdef>
 
+<groupdef id="cpro.screen">
+	<layer id="cpro.bg.title" x="0" y="0" image="player.center.title" ghost="1" visible="0"/>
 
+	<group id="beatvis" x="200" y="47" w="300" h="45"/>
+	<group id="beatpromo" x="200" y="47" w="300" h="45" visible="0"/>
+	<layer id="beat.mousetrap" x="143" y="47" w="-317" h="45" relatw="1"/>
+</groupdef>
 
 <groupdef id="equalizer.sliders">
 	<slider id="preamp" action="EQ_BAND" param="preamp" x="0" y="0" w="14" h="55" thumb="eq.slider.v.1" hoverThumb="eq.slider.v.2" downThumb="eq.slider.v.3" tooltip="Preamp" orientation="v" cursor="IDC_HAND"/>

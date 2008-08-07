@@ -55,6 +55,12 @@ System.onScriptLoaded() {
 	searchButtonXui.setXmlParam("x", integerToString(-1*fakeText.getAutoWidth()-4));
 	searchButtonXui.setXmlParam("w", integerToString(fakeText.getAutoWidth()+2));
 	searchXUI.setXmlParam("w", integerToString(-1*fakeText.getAutoWidth()-9));
+
+	refreshActiveCheck = new Timer;
+	refreshActiveCheck.setDelay(100);
+}
+System.onScriptUnLoading() {
+		delete refreshActiveCheck;
 }
 
 refreshActiveCheck.onTimer(){
@@ -63,16 +69,16 @@ refreshActiveCheck.onTimer(){
 
 results_layout.onSetVisible(boolean onOff){
 	if(onOff){
-		refreshActiveCheck = new Timer;
-		refreshActiveCheck.setDelay(100);
 		refreshActiveCheck.start();
 	}
 	else{
 		refreshActiveCheck.stop();
-		delete refreshActiveCheck;
 	}
 }
 
+System.onShowLayout(Layout _layout){
+	if(main_layout.isVisible()) results_layout.setXmlParam("ontop", "1");
+}
 
 /*main_layout.onSetVisible(boolean onOff){
 	if(onOff) results_layout.resize(fakeSB.clientToScreenX(fakeSB.getLeft()), fakeSB.clientToScreenY(fakeSB.getTop() + fakeSB.getHeight()),fakeSB.getWidth(),400);

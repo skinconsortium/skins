@@ -28,15 +28,13 @@
 	<layer x="-160" y="-68" relatx="1" relaty="1" image="player.o.bottomright" wantfocus="1"/>
 	<layer x="6" y="99" w="-12" h="-166" relatw="1" relath="1" tile="1" image="player.o.center" wantfocus="1"/>
 
-	<layer id="cpro.bg.title" x="0" y="0" image="player.center.title" ghost="1" visible="0"/>
 
 	<layer id="doubleclick" x="0" y="0" w="0" h="27" relatw="1" wantfocus="1"/>
 
-
-	<group id="beatvis" x="200" y="47" w="300" h="45"/>
-	<group id="beatpromo" x="200" y="47" w="300" h="45" visible="0"/>
-	<layer id="beat.mousetrap" x="130" y="47" w="-300" h="45" relatw="1"/>
+	<group id="cpro.screen" x="0" y="0" w="0" h="92" relatw="1"/>
 	<script file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\scripts\beat.maki"/>
+
+
 
 	<!-- Resizers -->
 	

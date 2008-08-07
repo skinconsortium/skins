@@ -18,7 +18,6 @@ System.onScriptLoaded() {
 			
 			if(!bg_title.isInvalid()){
 				titleOn=true;
-				bg_title.setXmlParam("x", integerToString(mainGroup.getWidth()/2-45));
 				bg_title.show();
 			}
 			
@@ -46,6 +45,6 @@ mainGroup.onResize(int x, int y, int w, int h){
 	}
 	
 	if(titleOn){
-		bg_title.setXmlParam("x", integerToString((w-38)/2-45));
+		bg_title.setXmlParam("x", integerToString(143+(w-317)/2-45));
 	}
 }
