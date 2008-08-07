@@ -147,10 +147,6 @@ Section "ClassicPro plugin" cproFiles
   File "${SOURCEPATH}\engine\xui\updateSystem\*.m"
   File "${SOURCEPATH}\engine\xui\updateSystem\*.maki"
 
-  SetOutPath $INSTDIR\Plugins\classicPro\engine\xui\browser
-  File "${SOURCEPATH}\engine\xui\browser\*.xml"
-  File "${SOURCEPATH}\engine\xui\browser\*.maki"
-
   SetOutPath $INSTDIR\Plugins\classicPro\engine\xui\editbox
   File "${SOURCEPATH}\engine\xui\editbox\*.xml"
 
