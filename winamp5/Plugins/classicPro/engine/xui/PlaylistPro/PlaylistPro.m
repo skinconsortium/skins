@@ -1,5 +1,5 @@
 /*
-PlaylistPro build 001
+PlaylistPro build 002
 by pjn123 (www.skinconsortium.com)
 */
 
@@ -12,14 +12,15 @@ Function clearSearchBox();
 
 Global Group frameGroup, topbar;
 Global Edit searchBox;
-Global Text clearButtonText, helpSearch;
-Global GuiObject fakeSB, searchXUI;
+Global Text clearButtonText, helpSearch, searchNews, fakeText;
+Global GuiObject fakeSB, searchXUI, searchButtonXui;
 Global Button searchButton, clearButton;
 Global GuiList searchResults;
 Global Boolean foundsomething;
 Global int tn;
 Global String temptoken;
 Global Windowholder plwh;
+GLobal Timer refreshActiveCheck;
 
 Global Container results_container;
 Global Layout results_layout, main_layout;
@@ -32,19 +33,46 @@ System.onScriptLoaded() {
 	searchBox = frameGroup.findObject("wasabi.edit.box");
 	searchXUI = frameGroup.findObject("pl.search.edit");
 	searchButton = frameGroup.findObject("pl.search.go");
+	searchButtonXui = frameGroup.findObject("pl.search.go");
 	fakeSB = frameGroup.findObject("pl.search.edit.rect");
 	clearButton = frameGroup.findObject("pl.search.edit.clear");
 	clearButtonText = frameGroup.findObject("pl.search.edit.clear.text");
 	helpSearch = frameGroup.findObject("pl.search.edit.searchhelp");
+	fakeText = frameGroup.findObject("pl.search.go.text.fake");
 	
 	results_container = newDynamicContainer("searchresults");
 	results_layout = results_container.getLayout("normal");
-	searchResults = results_layout.findObject("combobox.list");
+	searchResults = results_layout.findObject("PlaylistPro.list");
 	searchResults.setXmlParam("antialias", "0");
+	searchResults.setFontSize(12);
+	searchNews = results_layout.findObject("PlaylistPro.list.news");
 	
 	main_layout = getContainer("main").getLayout("normal");
 	
+	
+	//translation workaround
+	searchButtonXui.setXmlParam("text", System.translate("Search"));
+	searchButtonXui.setXmlParam("x", integerToString(-1*fakeText.getAutoWidth()-4));
+	searchButtonXui.setXmlParam("w", integerToString(fakeText.getAutoWidth()+2));
+	searchXUI.setXmlParam("w", integerToString(-1*fakeText.getAutoWidth()-9));
 }
+
+refreshActiveCheck.onTimer(){
+	if(!System.isAppActive()) results_layout.hide();
+}
+
+results_layout.onSetVisible(boolean onOff){
+	if(onOff){
+		refreshActiveCheck = new Timer;
+		refreshActiveCheck.setDelay(100);
+		refreshActiveCheck.start();
+	}
+	else{
+		refreshActiveCheck.stop();
+		delete refreshActiveCheck;
+	}
+}
+
 
 /*main_layout.onSetVisible(boolean onOff){
 	if(onOff) results_layout.resize(fakeSB.clientToScreenX(fakeSB.getLeft()), fakeSB.clientToScreenY(fakeSB.getTop() + fakeSB.getHeight()),fakeSB.getWidth(),400);
@@ -52,6 +80,11 @@ System.onScriptLoaded() {
 
 frameGroup.onSetVisible(boolean onOff){
 	if(!onOff) clearSearchBox();
+	
+	/*if(onOff){
+		searchButtonXui.setXmlParam("x", integerToString(-1*fakeText.getAutoWidth()-4));
+		searchButtonXui.setXmlParam("w", integerToString(fakeText.getAutoWidth()+2));
+	}*/
 }
 
 searchButton.onLeftClick(){
@@ -97,7 +130,7 @@ doSearch(String input){
 
 	results_layout.setXmlParam("x", integerToString(fakeSB.clientToScreenX(fakeSB.getLeft())));
 	results_layout.setXmlParam("y", integerToString(fakeSB.clientToScreenY(fakeSB.getTop() + fakeSB.getHeight())));
-	results_layout.setXmlParam("w", integerToString(fakeSB.getWidth()));
+	results_layout.setXmlParam("w", integerToString(frameGroup.getWidth()-13));
 	
 	if(!results_layout.isVisible()) results_layout.setXmlParam("h", "1");
 
@@ -115,7 +148,7 @@ doSearch(String input){
 			}
 		
 			temptoken = getToken(input, " ", tn);
-			if(strsearch(strlower(PlEdit.getTitle(i)), temptoken)>=0){
+			if(strsearch(strlower(PlEdit.getTitle(i) + " " + PlEdit.getFileName(i)), temptoken)>=0){
 				foundsomething=true;
 			}
 			else{
@@ -131,7 +164,8 @@ doSearch(String input){
 			itemsfound++;
 			searchResults.addItem(integerToString(i+1)+". " + PlEdit.getTitle(i));
 			if(itemsfound>500){
-				searchResults.addItem("** SEARCH LIMITED TO 500 ITEMS **");
+				searchNews.setText("** SEARCH LIMITED TO 500 ITEMS **");
+				//searchResults.addItem("** SEARCH LIMITED TO 500 ITEMS **");
 				break;
 			}
 		}
@@ -153,14 +187,17 @@ doSearch(String input){
 	}
 
 	if(itemsfound==0){
-				searchResults.addItem("** Nothing found **");
+		searchNews.setText("** Nothing found **");
+		//searchResults.addItem("** Nothing found **");
 	}
 	else if(itemsfound<=500){
 		if(itemsfound>1){
-			searchResults.addItem("** Found "+integerToString(itemsfound)+" items **");
+			searchNews.setText("** Found "+integerToString(itemsfound)+" items **");
+			//searchResults.addItem("** Found "+integerToString(itemsfound)+" items **");
 		}
 		else{
-			searchResults.addItem("** Found 1 item **");
+			searchNews.setText("** Found 1 item **");
+			//searchResults.addItem("** Found 1 item **");
 		}
 	}
 	resizeResults(itemsfound);
