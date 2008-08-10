@@ -27,7 +27,7 @@
 
 <groupdef id="wasabi.edits" xuitag="Wasabi:EditBox2" embed_xui="wasabi.edit.box" h="20">
 	<rect x="1" y="1" w="-2" h="-2" relatw="1" relath="1" filled="1" color="wasabi.list.background"/>
-	<button id="pl.search.edit.rect" x="1" y="1" w="-1" h="-2" relatw="1" relath="1" rectrgn="1"/>
+	<button id="pl.search.edit.rect" x="1" y="1" w="-1" h="-2" relatw="1" relath="1" rectrgn="1" tooltip="Click to searh the playlist (Right-Click for search history)"/>
 	<text id="pl.search.edit.searchhelp" x="1" y="1" w="-2" h="-2" relatw="1" relath="1" italic="1" antialias="0" color="wasabi.list.text" text="Search in Playlist" ghost="1"/>
 	<edit id="wasabi.edit.box" x="1" y="1" w="-18" h="-2" relatw="1" relath="1" autoselect="1" visible="0"/>
 	<text id="pl.search.edit.clear.text" x="-16" y="0" w="15" h="15" relatx="1" text="x" color="wasabi.list.text" visible="0"/>
@@ -51,7 +51,7 @@
 	<group id="player.component.playlist.searchbar.search" x="0" y="0" w="0" relatw="1"/>
 </groupdef>
 
-<groupdef id="player.component.playlist" wantfocus="1" rectrgn="1" xuitag="PlaylistPro" embed_xui="PlaylistPro.wdh">
+<groupdef id="PlaylistPro.xui" wantfocus="1" rectrgn="1" xuitag="PlaylistPro" embed_xui="PlaylistPro.wdh">
 	<rect fitparent="1" filled="1" color="wasabi.window.background"/>
 
 	<windowholder id="PlaylistPro.wdh" y="24" h="-24" x="0" w="0" relath="1" relatw="1" autofocus="0" wantfocus="0" autoclose="1" autoopen="1" autoavailable="1" visible="1" hold="guid:{45f3f7c1-a6f3-4ee6-a15e-125e92fc3f8d}"/>
