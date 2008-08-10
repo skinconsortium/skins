@@ -1,5 +1,5 @@
 /*
-PlaylistPro build 002
+PlaylistPro build 003
 by pjn123 (www.skinconsortium.com)
 */
 
@@ -9,6 +9,7 @@ Function resizeResults(int items);
 Function doSearch(String input);
 Function setSearchBox(boolean onOff);
 Function clearSearchBox();
+Function int getPlEntry(int search_item);
 
 Global Group frameGroup, topbar;
 Global Edit searchBox;
@@ -17,10 +18,11 @@ Global GuiObject fakeSB, searchXUI, searchButtonXui;
 Global Button searchButton, clearButton;
 Global GuiList searchResults;
 Global Boolean foundsomething;
-Global int tn;
+Global int tn, h_tune;
 Global String temptoken;
 Global Windowholder plwh;
 GLobal Timer refreshActiveCheck;
+Global PopupMenu search_rc;
 
 Global Container results_container;
 Global Layout results_layout, main_layout;
@@ -43,7 +45,6 @@ System.onScriptLoaded() {
 	results_container = newDynamicContainer("searchresults");
 	results_layout = results_container.getLayout("normal");
 	searchResults = results_layout.findObject("PlaylistPro.list");
-	searchResults.setXmlParam("antialias", "0");
 	searchResults.setFontSize(12);
 	searchNews = results_layout.findObject("PlaylistPro.list.news");
 	
@@ -64,7 +65,7 @@ System.onScriptUnLoading() {
 }
 
 refreshActiveCheck.onTimer(){
-	if(!System.isAppActive()) results_layout.hide();
+	if(!System.isAppActive() || System.isMinimized()) results_layout.hide();
 }
 
 results_layout.onSetVisible(boolean onOff){
@@ -105,15 +106,17 @@ resizeResults(int items){
 	results_layout.setTargetSpeed(1);
 	results_layout.gotoTarget();
 
-	items++; //temp add one extra for info... xx items found
+	//items++; //temp add one extra for info... xx items found
 	if(items>20) items=20;
 	
+	if(items>1) h_tune=24;
+	else h_tune=19;
 	//results_layout.setXmlParam("h", integerToString(20+items*18));
 
 	results_layout.setTargetX(results_layout.getLeft());
 	results_layout.setTargetY(results_layout.getTop());
 	results_layout.setTargetW(results_layout.getWidth());
-	results_layout.setTargetH(20+items*18);
+	results_layout.setTargetH(h_tune+items*16);
 	results_layout.setTargetSpeed(0.3);
 	results_layout.gotoTarget();
 }
@@ -144,6 +147,7 @@ doSearch(String input){
 	//else results_layout.hide();
 
 	searchResults.deleteAllItems();
+	searchResults.scrollToItem(0);
 	
 	for(int i = 0; i<PlEdit.getNumTracks(); i++){
 		foundsomething=false;
@@ -216,10 +220,65 @@ doSearch(String input){
 }
 
 searchResults.onDoubleClick(Int itemnum){
-	PlEdit.showTrack(stringToInteger(getToken(searchResults.getItemLabel(itemnum,0), ". ", 0))-1);
-	PlEdit.playTrack (stringToInteger(getToken(searchResults.getItemLabel(itemnum,0), ". ", 0))-1);
+	//PlEdit.showTrack(stringToInteger(getToken(searchResults.getItemLabel(itemnum,0), ". ", 0))-1);
+	PlEdit.playTrack (getPlEntry(itemnum));
 	results_layout.hide();
 	setSearchBox(false);
+}
+
+searchResults.onRightClick(Int itemnum){
+	search_rc = new PopupMenu;
+	search_rc.addCommand("Move selected to top", 1, 0, 0);
+	search_rc.addCommand("Move selected to bottom", 2, 0, 0);
+	search_rc.addCommand("Move selected after current", 3, 0, 1);
+	search_rc.addCommand("Move selected together", 4, 0, 0);
+	search_rc.addSeparator();
+	search_rc.addCommand("Remove selected from playlist", 5, 0, 1);
+	int result = search_rc.popAtMouse();
+	
+	int lastselected = searchResults.getFirstItemSelected();
+	int itemcounter = 1;
+
+	if(result==1){
+		PlEdit.moveTo (getPlEntry(lastselected), 0);
+		while(searchResults.getNextItemSelected(lastselected) != -1){
+			lastselected = searchResults.getNextItemSelected(lastselected);
+			PlEdit.moveTo (getPlEntry(lastselected), itemcounter);
+			itemcounter++;
+		}
+		PlEdit.showTrack(0);
+	}
+	else if(result==2){
+		PlEdit.moveTo (getPlEntry(lastselected), PlEdit.getNumTracks ()-1);
+		while(searchResults.getNextItemSelected(lastselected) != -1){
+			lastselected = searchResults.getNextItemSelected(lastselected);
+			PlEdit.moveTo (getPlEntry(lastselected)-itemcounter, PlEdit.getNumTracks ()-1);
+			itemcounter++;
+		}
+		PlEdit.showTrack(PlEdit.getNumTracks ()-1);
+	}
+	else if(result==4){
+		int startpos = getPlEntry(lastselected);
+		while(searchResults.getNextItemSelected(lastselected) != -1){
+			lastselected = searchResults.getNextItemSelected(lastselected);
+			PlEdit.moveTo (getPlEntry(lastselected), startpos+itemcounter);
+			itemcounter++;
+		}
+		PlEdit.showTrack(startpos);
+	}
+
+	/*
+	extern Int GuiList.getFirstItemSelected();
+	extern Int GuiList.getNextItemSelected(Int lastpos);
+	*/
+	
+	//hides the search
+	results_layout.hide();
+	setSearchBox(false);
+}
+
+int getPlEntry(int search_item){
+	return stringToInteger(getToken(searchResults.getItemLabel(search_item,0), ". ", 0))-1;
 }
 
 setSearchBox(boolean onOff){
