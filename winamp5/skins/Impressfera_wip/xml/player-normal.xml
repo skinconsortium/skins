@@ -1,0 +1,18 @@
+<include file="player-normal-group.xml"/>
+
+<layout id="normal" background="impf.main" alphabackground="impf.main.alpha">
+	<layer id="cpro.bg.top" x="143" y="0" w="-315" relatw="1" regionop="1" tile="1" image="player.top" wantfocus="1"/>
+	<ModernSongticker id="infosongticker"
+		x="147" y="314" h="16" w="145"
+		id_layout="main;normal"
+		id_volume="Volume"
+		id_seeker="seeker"
+		id_prev="previous.track"
+		id_next="next.track"
+		id_open="open.tracks"
+		id_shuf="shuffle"
+		id_rep="repeat"
+		id_mute="mute"
+		font="cpro.songname.font"
+	/>
+</layout>

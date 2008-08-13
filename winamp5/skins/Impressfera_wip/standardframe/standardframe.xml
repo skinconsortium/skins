@@ -1,0 +1,328 @@
+<!-- =======================================================================================================
+
+  This file implements the following objects :
+
+  - Wasabi:MainFrame:NoStatus
+  - Wasabi:PlaylistFrame:NoStatus
+  - Wasabi:MediaLibraryFrame:NoStatus
+  Available parameters :
+
+    padtitleleft  : resizes the title from the left by the specified amount of pixels
+    padtitleright : resizes the title from the right by the specified amount of pixels
+    content     : tells the object which group to instantiate in its client area
+
+======================================================================================================== -->
+
+<include file="standardframe-elements.xml" />
+<include file="window_menus.xml" />
+
+<groupdef id="wasabi.main.layout" h="161">
+  <layer id="window.top.left" x="0" y="0" image="wasabi.frame.top.left" resize="topleft" regionop="1"/>
+  <layer id="window.top" x="40" y="0" w="-80" relatw="1" image="wasabi.frame.top" resize="top" regionop="1"/>
+  <layer id="window.top.right" x="-40" y="0" relatx="1" image="wasabi.frame.top.right" resize="topright" regionop="1"/>
+
+  <Wasabi:TitleBar
+    id="wasabi.titlebar"
+    x="10" y="0"
+    w="-29" h="18"
+    relatw="1"
+  />
+
+  <layer x="5" y="4" image="wasabi.button.bg.title"/>
+  <button
+    id="MainMenu.inactive"
+    action="SYSMENU"
+    x="6" y="4"
+    image="wasabi.button.sysmenu.inactive"
+    tooltip="Main Menu"
+    activeAlpha="0"
+  />
+  <button
+    id="MainMenu"
+    action="SYSMENU"
+    x="6" y="4"
+    image="wasabi.button.sysmenu"
+    downImage="wasabi.button.sysmenu.pressed"
+    hoverImage="wasabi.button.sysmenu.hover"
+    tooltip="Main Menu"
+    inactiveAlpha="0"
+  />
+  <button
+    id="Close.inactive"
+    action="CLOSE"
+    x="-17" y="4"
+    relatx="1"
+    image="wasabi.button.exit.inactive"
+    tooltip="Close Window"
+    activeAlpha="0"
+  />
+  <button
+    id="Close"
+    action="CLOSE"
+    x="-17" y="4"
+    relatx="1"
+    image="wasabi.button.exit"
+    downImage="wasabi.button.exit.pressed"
+    hoverImage="wasabi.button.exit.hover"
+    tooltip="Close Window"
+    inactiveAlpha="0"
+  />
+</groupdef>
+
+
+
+<groupdef id="wasabi.standard.layout">
+  <layer id="window.top.left" x="0" y="0" image="wasabi.frame.top.left" resize="topleft" regionop="1"/>
+  <layer id="window.top" x="40" y="0" w="-80" relatw="1" image="wasabi.frame.top" resize="top" regionop="1"/>
+  <layer id="window.top.right" x="-40" y="0" relatx="1" image="wasabi.frame.top.right" resize="topright" regionop="1"/>
+
+  <Wasabi:TitleBar
+    id="wasabi.titlebar"
+    x="10" y="0"
+    w="-29" h="18"
+    relatw="1" visible="0"
+  />
+
+  <layer
+    x="5" y="4"
+    image="wasabi.button.bg.title"
+  />
+  <button
+    id="MainMenu"
+    action="SYSMENU"
+    x="6" y="4"
+    image="wasabi.button.sysmenu.inactive"
+    tooltip="Main Menu"
+    activeAlpha="0"
+  />
+  <button
+    id="MainMenu"
+    action="SYSMENU"
+    x="6" y="4"
+    image="wasabi.button.sysmenu"
+    downImage="wasabi.button.sysmenu.pressed"
+    hoverImage="wasabi.button.sysmenu.hover"
+    tooltip="Main Menu"
+    inactiveAlpha="0"
+  />
+  <button
+    id="Close.inactive"
+    action="CLOSE"
+    x="-17" y="4"
+    relatx="1"
+    image="wasabi.button.exit.inactive"
+    tooltip="Close Window"
+    activeAlpha="0"
+  />
+  <button
+    id="Close"
+    action="CLOSE"
+    x="-17" y="4"
+    relatx="1"
+    image="wasabi.button.exit"
+    downImage="wasabi.button.exit.pressed"
+    hoverImage="wasabi.button.exit.hover"
+    tooltip="Close Window"
+    inactiveAlpha="0"
+  />
+</groupdef>
+
+<!-- <Wasabi:MainFrame:NoStatus /> implementation -->
+<groupdef id="wasabi.mainframe.nostatusbar" sysregion="1" xuitag="Wasabi:MainFrame:NoStatus">
+  <group id="wasabi.main.layout" x="0" y="0" w="0" relatw="1" sysregion="1"/>
+  <group id="wasabi.menubar" x="0" y="18" w="0" relatw="1" sysregion="1" visible="1"/>
+  <script id="standardframe.script" file="scripts/standardframe.maki" param="0,18,0,0,0,0,1,1" />
+</groupdef>
+
+<!-- <Wasabi:PlaylistFrame:NoStatus /> implementation -->
+<groupdef id="wasabi.playlistframe.nostatusbar" sysregion="1" xuitag="Wasabi:PlaylistFrame:NoStatus">
+  <group id="wasabi.standard.layout" x="0" y="0" w="0" relatw="1" sysregion="1"/>
+  <group id="wasabi.menubar.pl" x="0" y="18" w="0" relatw="1" sysregion="1" visible="1"/>
+  <script id="standardframe.script" file="scripts/standardframe.maki" param="0,18,0,0,0,0,1,1" />
+</groupdef>
+
+<!-- <Wasabi:MediaLibraryFrame:NoStatus /> implementation -->
+<groupdef id="wasabi.medialibraryframe.nostatusbar" sysregion="1" xuitag="Wasabi:MediaLibraryFrame:NoStatus">
+  <group id="wasabi.standard.layout" x="0" y="0" w="0" relatw="1" sysregion="1"/>
+  <group id="wasabi.menubar.ml" x="0" y="18" w="0" relatw="1" sysregion="1" visible="1"/>
+  <script id="standardframe.script" file="scripts/standardframe.maki" param="0,18,0,0,0,0,1,1" />
+</groupdef>
+
+<!-- <Wasabi:VISFrame:NoStatus /> implementation -->
+<groupdef id="wasabi.visframe.nostatusbar" sysregion="1" xuitag="Wasabi:VISFrame:NoStatus">
+  <group id="wasabi.standard.layout" x="0" y="0" w="0" relatw="1" sysregion="1"/>
+  <script id="standardframe.script" file="scripts/standardframe.maki" param="0,18,0,0,0,0,1,1" />
+</groupdef>
+
+
+
+
+
+
+
+
+<!-- =======================================================================================================
+
+  This group serves as a template for all the Wasabi:StandardFrame objects
+
+======================================================================================================== -->
+
+<groupdef id="wasabi.frame.layout">
+
+  <layer id="window.top.left" x="0" y="0" image="wasabi.frame.top.left" resize="topleft" regionop="1"/>
+  <layer id="window.top" x="40" y="0" w="-80" relatw="1" image="wasabi.frame.top" resize="top" regionop="1"/>
+  <layer id="window.top.right" x="-40" y="0" relatx="1" image="wasabi.frame.top.right" resize="topright" regionop="1"/>
+
+   <layer id="window.resize.disabler" x="6" y="6" w="-12" h="-12" relatw="1" relath="1"/>
+
+   <LayoutStatus id="sysmenu.status" bg="0" x="5" y="3" w="14" h="9" includeonly="{system}" />
+   <hideobject target="sysmenu.status"/>
+
+  <Wasabi:TitleBar
+    id="wasabi.titlebar"
+    x="20" y="0"
+    w="-39" h="18"
+    relatw="1" visible=""
+  />
+
+  <layer
+    id="MainMenu.button.bg"
+    x="5" y="4"
+    image="wasabi.button.bg.title"
+  />
+  <button
+    id="MainMenu.inactive"
+    action="SYSMENU"
+    x="6" y="4"
+    image="wasabi.button.sysmenu.inactive"
+    tooltip="Main Menu"
+    activeAlpha="0"
+  />
+  <button
+    id="MainMenu"
+    action="SYSMENU"
+    x="6" y="4"
+    image="wasabi.button.sysmenu"
+    downImage="wasabi.button.sysmenu.pressed"
+    hoverImage="wasabi.button.sysmenu.hover"
+    tooltip="Main Menu"
+    inactiveAlpha="0"
+  />
+  <button
+    id="Close.inactive"
+    action="CLOSE"
+    x="-17" y="4"
+    relatx="1"
+    image="wasabi.button.exit.inactive"
+    tooltip="Close Window"
+    activeAlpha="0"
+  />
+  <button
+    id="Close"
+    action="CLOSE"
+    x="-17" y="4"
+    relatx="1"
+    image="wasabi.button.exit"
+    downImage="wasabi.button.exit.pressed"
+    hoverImage="wasabi.button.exit.hover"
+    tooltip="Close Window"
+    inactiveAlpha="0"
+  />
+
+ </groupdef>
+
+
+
+
+<!-- =======================================================================================================
+
+  <Wasabi:StandardFrame:Status /> implementation
+
+======================================================================================================== -->
+
+ <groupdef id="wasabi.standardframe.statusbar" background="wasabi.frame.basetexture" sysregion="1" xuitag="Wasabi:StandardFrame:Status">
+
+	<layer id="window.top.left" x="0" y="0" image="wasabi.frame.top.left" regionop="1"/>
+	<layer id="window.top" x="40" y="0" w="-80" relatw="1" image="wasabi.frame.top" regionop="1"/>
+	<layer id="window.top.right" x="-40" y="0" relatx="1" image="wasabi.frame.top.right" regionop="1"/>
+
+	<layer id="window.left" x="0" y="40" image="wasabi.frame.left" regionop="1"/>
+	<layer id="window.center" x="40" y="40" w="-80" h="-80" relatw="1" relath="1" image="wasabi.frame.center" regionop="1"/>
+	<layer id="window.right" x="-40" y="40" relatx="1" image="wasabi.frame.right" regionop="1"/>
+
+	<layer id="window.bottom.left" x="0" y="-40" relaty="1" image="wasabi.frame.bottom.left" regionop="1"/>
+	<layer id="window.bottom" x="40" y="-40" w="-80" relaty="1" relatw="1" image="wasabi.frame.bottom" regionop="1"/>
+	<layer id="window.bottom.right" x="-40" y="-40" relatx="1" relaty="1" image="wasabi.frame.bottom.right" regionop="1" resize="bottomright"/>
+
+  <Wasabi:TitleBar
+    id="wasabi.titlebar"
+    x="20" y="0"
+    w="-39" h="18"
+    relatw="1" visible=""
+  />
+
+
+  <LayoutStatus id="standardframe.layoutstatus" x="11" y="-21" relaty="1" w="-43" relatw="1" h="18" exclude="{system}" />
+  <script id="standardframe.script" file="scripts/standardframe.maki" param="6,23,-12,-48,0,0,1,1" />
+
+</groupdef>
+
+
+
+
+<!-- =======================================================================================================
+
+  <Wasabi:StandardFrame:NoStatus /> implementation
+
+======================================================================================================== -->
+
+<groupdef id="wasabi.standardframe.nostatusbar" background="wasabi.frame.basetexture" sysregion="1" xuitag="Wasabi:StandardFrame:NoStatus">
+
+	<layer id="window.top.left" x="0" y="0" image="wasabi.frame.top.left" regionop="1"/>
+	<layer id="window.top" x="40" y="0" w="-80" relatw="1" image="wasabi.frame.top" regionop="1"/>
+	<layer id="window.top.right" x="-40" y="0" relatx="1" image="wasabi.frame.top.right" regionop="1"/>
+
+	<layer id="window.left" x="0" y="40" image="wasabi.frame.left" regionop="1"/>
+	<layer id="window.center" x="40" y="40" w="-80" h="-80" relatw="1" relath="1" image="wasabi.frame.center" regionop="1"/>
+	<layer id="window.right" x="-40" y="40" relatx="1" image="wasabi.frame.right" regionop="1"/>
+
+	<layer id="window.bottom.left" x="0" y="-40" relaty="1" image="wasabi.frame.bottom.left" regionop="1"/>
+	<layer id="window.bottom" x="40" y="-40" w="-80" relaty="1" relatw="1" image="wasabi.frame.bottom" regionop="1"/>
+	<layer id="window.bottom.right" x="-40" y="-40" relatx="1" relaty="1" image="wasabi.frame.bottom.right" regionop="1" resize="bottomright"/>
+
+  <Wasabi:TitleBar
+    id="wasabi.titlebar"
+    x="20" y="0"
+    w="-39" h="18"
+    relatw="1" visible=""
+  />
+  <script id="standardframe.script" file="scripts/standardframe.maki" param="6,23,-12,-33,0,0,1,1" />
+
+</groupdef>
+
+
+
+
+
+<!-- =======================================================================================================
+
+  <Wasabi:StandardFrame:Modal /> implementation
+
+======================================================================================================== -->
+
+<groupdef id="wasabi.standardframe.modal" inherit_group="wasabi.standardframe.nostatusbar" sysregion="1" xuitag="Wasabi:StandardFrame:Modal">
+  <sendparams target="wasabi.titlebar" x="4" w="-22" relatw="1" />
+  <hideobject target="MainMenu;MainMenu.inactive.inactive;MainMenu.button.bg"/>
+  <sendparams target="window.top.left;window.top;window.top.right;window.left;window.right;window.bottom.left.top;window.bottom.left;window.bottom.left.bottom;window.bottom.top;window.bottom;window.bottom.bottom;window.bottom.right.top;window.bottom.right;window.bottom.right.bottom" resize="0" />
+</groupdef>
+
+
+<!-- =======================================================================================================
+
+  <Wasabi:StandardFrame:Static /> implementation
+
+======================================================================================================== -->
+
+<groupdef id="wasabi.standardframe.static" inherit_group="wasabi.standardframe.nostatusbar" sysregion="1" xuitag="Wasabi:StandardFrame:Static">
+  <sendparams target="window.top.left;window.top;window.top.right;window.left;window.right;window.bottom.left.top;window.bottom.left;window.bottom.left.bottom;window.bottom.top;window.bottom;window.bottom.bottom;window.bottom.right.top;window.bottom.right;window.bottom.right.bottom" resize="0" />
+</groupdef>

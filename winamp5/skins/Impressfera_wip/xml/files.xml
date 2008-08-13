@@ -1,0 +1,7 @@
+
+
+<include file="colors.xml"/>
+<include file="player-elements.xml"/>
+<include file="player-shade-elements.xml"/>
+<include file="player.xml"/>
+<include file="about.xml"/>

@@ -1,0 +1,20 @@
+<elements>
+
+  <bitmap id="wasabi.frame.top.left" file="images/standard-frame.png" x="0" y="0" w="40" h="40" gammagroup="Titlebar"/>
+  <bitmap id="wasabi.frame.top" file="images/standard-frame.png" x="40" y="0" w="103" h="40" gammagroup="Titlebar"/>
+  <bitmap id="wasabi.frame.top.right" file="images/standard-frame.png" x="143" y="0" w="40" h="40" gammagroup="Titlebar"/>
+
+  <bitmap id="wasabi.frame.left" file="images/standard-frame.png" x="0" y="40" w="40" h="34" gammagroup="Titlebar"/>
+  <bitmap id="wasabi.frame.center" file="images/standard-frame.png" x="40" y="0" w="103" h="34" gammagroup="Titlebar"/>
+  <bitmap id="wasabi.frame.right" file="images/standard-frame.png" x="143" y="0" w="40" h="34" gammagroup="Titlebar"/>
+
+  <bitmap id="wasabi.frame.bottom.left" file="images/standard-frame.png" x="0" y="74" w="40" h="40" gammagroup="Titlebar"/>
+  <bitmap id="wasabi.frame.bottom" file="images/standard-frame.png" x="40" y="74" w="103" h="40" gammagroup="Titlebar"/>
+  <bitmap id="wasabi.frame.bottom.right" file="images/standard-frame.png" x="143" y="74" w="40" h="40" gammagroup="Titlebar"/>
+
+
+  <bitmap id="wasabi.frame.basetexture" file="images/standard-frame.png" x="40" y="0" w="103" h="34" gammagroup="Backgrounds"/>
+  <elementalias id="component.basetexture" target="wasabi.frame.basetexture" />
+
+
+</elements>
