@@ -1,0 +1,90 @@
+<elements>
+	<bitmap id="impf.main" file="images/normal-bg.png" gammagroup="Player.Background"/>
+	<bitmap id="impf.main.alpha" file="images/normal-bg-alpha.png" gammagroup="Player.Background"/>
+
+
+
+
+
+	<bitmap id="wasabi.button.top.left" file="images/wasabi-button-1.png" x="0" y="0" w="5" h="9" gammagroup="main.buttons"/>
+	<bitmap id="wasabi.button.top" file="images/wasabi-button-1.png" x="5" y="0" w="27" h="9" gammagroup="main.buttons"/>
+	<bitmap id="wasabi.button.top.right" file="images/wasabi-button-1.png" x="32" y="0" w="8" h="9" gammagroup="main.buttons"/>
+	<bitmap id="wasabi.button.left" file="images/wasabi-button-1.png" x="0" y="8" w="8" h="4" gammagroup="main.buttons"/>
+	<bitmap id="wasabi.button.center" file="images/wasabi-button-1.png" x="5" y="8" w="27" h="4" gammagroup="main.buttons"/>
+	<bitmap id="wasabi.button.right" file="images/wasabi-button-1.png" x="32" y="8" w="8" h="4" gammagroup="main.buttons"/>
+	<bitmap id="wasabi.button.bottom.left" file="images/wasabi-button-1.png" x="0" y="13" w="5" h="9" gammagroup="main.buttons"/>
+	<bitmap id="wasabi.button.bottom" file="images/wasabi-button-1.png" x="5" y="13" w="27" h="9" gammagroup="main.buttons"/>
+	<bitmap id="wasabi.button.bottom.right" file="images/wasabi-button-1.png" x="32" y="13" w="5" h="9" gammagroup="main.buttons"/>
+
+	<bitmap id="wasabi.button.hover.top.left" file="images/wasabi-button-2.png" x="0" y="0" w="5" h="9" gammagroup="main.buttons"/>
+	<bitmap id="wasabi.button.hover.top" file="images/wasabi-button-2.png" x="5" y="0" w="27" h="9" gammagroup="main.buttons"/>
+	<bitmap id="wasabi.button.hover.top.right" file="images/wasabi-button-2.png" x="32" y="0" w="8" h="9" gammagroup="main.buttons"/>
+	<bitmap id="wasabi.button.hover.left" file="images/wasabi-button-2.png" x="0" y="8" w="8" h="4" gammagroup="main.buttons"/>
+	<bitmap id="wasabi.button.hover.center" file="images/wasabi-button-2.png" x="5" y="8" w="27" h="4" gammagroup="main.buttons"/>
+	<bitmap id="wasabi.button.hover.right" file="images/wasabi-button-2.png" x="32" y="8" w="8" h="4" gammagroup="main.buttons"/>
+	<bitmap id="wasabi.button.hover.bottom.left" file="images/wasabi-button-2.png" x="0" y="13" w="5" h="9" gammagroup="main.buttons"/>
+	<bitmap id="wasabi.button.hover.bottom" file="images/wasabi-button-2.png" x="5" y="13" w="27" h="9" gammagroup="main.buttons"/>
+	<bitmap id="wasabi.button.hover.bottom.right" file="images/wasabi-button-2.png" x="32" y="13" w="5" h="9" gammagroup="main.buttons"/>
+
+	<bitmap id="wasabi.button.pressed.top.left" file="images/wasabi-button-3.png" x="0" y="0" w="5" h="9" gammagroup="main.buttons"/>
+	<bitmap id="wasabi.button.pressed.top" file="images/wasabi-button-3.png" x="5" y="0" w="27" h="9" gammagroup="main.buttons"/>
+	<bitmap id="wasabi.button.pressed.top.right" file="images/wasabi-button-3.png" x="32" y="0" w="8" h="9" gammagroup="main.buttons"/>
+	<bitmap id="wasabi.button.pressed.left" file="images/wasabi-button-3.png" x="0" y="8" w="8" h="4" gammagroup="main.buttons"/>
+	<bitmap id="wasabi.button.pressed.center" file="images/wasabi-button-3.png" x="5" y="8" w="27" h="4" gammagroup="main.buttons"/>
+	<bitmap id="wasabi.button.pressed.right" file="images/wasabi-button-3.png" x="32" y="8" w="8" h="4" gammagroup="main.buttons"/>
+	<bitmap id="wasabi.button.pressed.bottom.left" file="images/wasabi-button-3.png" x="0" y="13" w="5" h="9" gammagroup="main.buttons"/>
+	<bitmap id="wasabi.button.pressed.bottom" file="images/wasabi-button-3.png" x="5" y="13" w="27" h="9" gammagroup="main.buttons"/>
+	<bitmap id="wasabi.button.pressed.bottom.right" file="images/wasabi-button-3.png" x="32" y="13" w="5" h="9" gammagroup="main.buttons"/>
+
+	
+	<bitmap id="wasabi.button.middle" file="images/wasabi-button-1.png" x="3" y="5" h="42" w="43" gammagroup="main.buttons"/>
+	<bitmap id="wasabi.button.hover.middle" file="images/wasabi-button-2.png" x="3" y="5" h="42" w="43" gammagroup="main.buttons"/>
+	<bitmap id="wasabi.button.pressed.middle" file="images/wasabi-button-3.png" x="3" y="5" h="42" w="43" gammagroup="main.buttons"/>
+
+
+	<!-- Wasabi stuff -->
+	<bitmap id="wasabi.scrollbar.horizontal.left" file="images/scrollbars.png" x="56" y="0" h="13" w="14" gammagroup="n.Scrollbars.Gfx"/>
+	<bitmap id="wasabi.scrollbar.horizontal.left.hover" file="images/scrollbars.png" x="56" y="14" h="13" w="14" gammagroup="n.Scrollbars.Gfx"/>
+	<bitmap id="wasabi.scrollbar.horizontal.left.pressed" file="images/scrollbars.png" x="56" y="28" h="13" w="14" gammagroup="n.Scrollbars.Gfx"/>
+	<bitmap id="wasabi.scrollbar.horizontal.right" file="images/scrollbars.png" x="103" y="0" h="13" w="14" gammagroup="n.Scrollbars.Gfx"/>
+	<bitmap id="wasabi.scrollbar.horizontal.right.hover" file="images/scrollbars.png" x="103" y="14" h="13" w="14" gammagroup="n.Scrollbars.Gfx"/>
+	<bitmap id="wasabi.scrollbar.horizontal.right.pressed" file="images/scrollbars.png" x="103" y="28" h="13" w="14" gammagroup="n.Scrollbars.Gfx"/>
+	<bitmap id="wasabi.scrollbar.horizontal.button" file="images/scrollbars.png" x="71" y="0" h="13" w="31" gammagroup="n.Scrollbars.Gfx"/>
+	<bitmap id="wasabi.scrollbar.horizontal.button.hover" file="images/scrollbars.png" x="71" y="14" h="13" w="31" gammagroup="n.Scrollbars.Gfx"/>
+	<bitmap id="wasabi.scrollbar.horizontal.button.pressed" file="images/scrollbars.png" x="71" y="28" h="13" w="31" gammagroup="n.Scrollbars.Gfx"/>
+	<bitmap id="wasabi.scrollbar.horizontal.background.middle" file="images/scrollbars.png" x="56" y="42" w="61" h="13" gammagroup="n.Scrollbars.Gfx"/>
+	<bitmap id="wasabi.scrollbar.vertical.left" file="images/scrollbars.png" x="0" y="0" h="14" w="13" gammagroup="n.Scrollbars.Gfx"/>
+	<bitmap id="wasabi.scrollbar.vertical.left.hover" file="images/scrollbars.png" x="14" y="0" h="14" w="13" gammagroup="n.Scrollbars.Gfx"/>
+	<bitmap id="wasabi.scrollbar.vertical.left.pressed" file="images/scrollbars.png" x="28" y="0" h="14" w="13" gammagroup="n.Scrollbars.Gfx"/>
+	<bitmap id="wasabi.scrollbar.vertical.right" file="images/scrollbars.png" x="0" y="47" h="14" w="13" gammagroup="n.Scrollbars.Gfx"/>
+	<bitmap id="wasabi.scrollbar.vertical.right.hover" file="images/scrollbars.png" x="14" y="47" h="14" w="13" gammagroup="n.Scrollbars.Gfx"/>
+	<bitmap id="wasabi.scrollbar.vertical.right.pressed" file="images/scrollbars.png" x="28" y="47" h="14" w="13" gammagroup="n.Scrollbars.Gfx"/>
+	<bitmap id="wasabi.scrollbar.vertical.button" file="images/scrollbars.png" x="0" y="15" h="31" w="13" gammagroup="n.Scrollbars.Gfx"/>
+	<bitmap id="wasabi.scrollbar.vertical.button.hover" file="images/scrollbars.png" x="14" y="15" h="31" w="13" gammagroup="n.Scrollbars.Gfx"/>
+	<bitmap id="wasabi.scrollbar.vertical.button.pressed" file="images/scrollbars.png" x="28" y="15" h="31" w="13" gammagroup="n.Scrollbars.Gfx"/>
+	<bitmap id="wasabi.scrollbar.vertical.background.middle" file="images/scrollbars.png" x="42" y="0" w="13" h="61" gammagroup="n.Scrollbars.Gfx"/>
+	<bitmap id="wasabi.scrollbar.vertical.grip" file="window/scrollgrips.png" x="0" y="0" h="8" w="6" gammagroup="n.Scrollbars.Gfx"/>
+	<bitmap id="wasabi.scrollbar.horizontal.grip" file="window/scrollgrips.png" x="7" y="0" h="6" w="8" gammagroup="n.Scrollbars.Gfx"/>
+
+	<!-- Tooltips-->
+	<bitmap id="wasabi.tooltip.top.left" file="tooltip.png" x="0" y="0" h="4" w="4" gammagroup="n.TooltipCombobox"/>
+	<bitmap id="wasabi.tooltip.top" file="tooltip.png" x="4" y="0" h="4" w="8" gammagroup="n.TooltipCombobox"/>
+	<bitmap id="wasabi.tooltip.top.right" file="tooltip.png" x="13" y="0" h="4" w="4" gammagroup="n.TooltipCombobox"/>
+	<bitmap id="wasabi.tooltip.left" file="tooltip.png" x="0" y="4" h="8" w="4" gammagroup="n.TooltipCombobox"/>
+	<bitmap id="wasabi.tooltip.center" file="tooltip.png" x="4" y="4" h="8" w="8" gammagroup="n.TooltipCombobox"/>
+	<bitmap id="wasabi.tooltip.right" file="tooltip.png" x="13" y="4" h="8" w="4" gammagroup="n.TooltipCombobox"/>
+	<bitmap id="wasabi.tooltip.bottom.left" file="tooltip.png" x="0" y="13" h="4" w="4" gammagroup="n.TooltipCombobox"/>
+	<bitmap id="wasabi.tooltip.bottom" file="tooltip.png" x="4" y="13" h="4" w="8" gammagroup="n.TooltipCombobox"/>
+	<bitmap id="wasabi.tooltip.bottom.right" file="tooltip.png" x="13" y="13" h="4" w="4" gammagroup="n.TooltipCombobox"/>
+
+	<!-- Combo Box List-->
+	<bitmap id="wasabi.dropdownlist.list.top.left" file="combobox.png" x="0" y="0" h="4" w="4" gammagroup="n.TooltipCombobox"/>
+	<bitmap id="wasabi.dropdownlist.list.top" file="combobox.png" x="4" y="0" h="4" w="8" gammagroup="n.TooltipCombobox"/>
+	<bitmap id="wasabi.dropdownlist.list.top.right" file="combobox.png" x="13" y="0" h="4" w="4" gammagroup="n.TooltipCombobox"/>
+	<bitmap id="wasabi.dropdownlist.list.left" file="combobox.png" x="0" y="4" h="8" w="4" gammagroup="n.TooltipCombobox"/>
+	<bitmap id="wasabi.dropdownlist.list.center" file="combobox.png" x="4" y="4" h="8" w="8" gammagroup="n.TooltipCombobox"/>
+	<bitmap id="wasabi.dropdownlist.list.right" file="combobox.png" x="13" y="4" h="8" w="4" gammagroup="n.TooltipCombobox"/>
+	<bitmap id="wasabi.dropdownlist.list.bottom.left" file="combobox.png" x="0" y="13" h="4" w="4" gammagroup="n.TooltipCombobox"/>
+	<bitmap id="wasabi.dropdownlist.list.bottom" file="combobox.png" x="4" y="13" h="4" w="8" gammagroup="n.TooltipCombobox"/>
+	<bitmap id="wasabi.dropdownlist.list.bottom.right" file="combobox.png" x="13" y="13" h="4" w="4" gammagroup="n.TooltipCombobox"/>
+</elements>
