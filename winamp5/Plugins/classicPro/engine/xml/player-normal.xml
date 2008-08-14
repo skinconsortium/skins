@@ -7,6 +7,7 @@
 	<layer id="read.bg.left" x="0" y="0" h="0" image="player.left.alt" visible="0"/>
 
 	<!-- Background: Base -->
+	<layer x="6" y="99" w="-12" h="-166" relatw="1" relath="1" regionop="1" tile="1" image="player.center" wantfocus="1"/>
 	<layer id="cpro.bg.top" x="143" y="0" w="-315" relatw="1" regionop="1" tile="1" image="player.top" wantfocus="1"/>
 	<layer id="cpro.bg.bottom" x="157" y="-68" w="-316" relaty="1" relatw="1" tile="1" regionop="1" image="player.bottom" wantfocus="1"/>
 	<layer id="cpro.bg.left" x="0" y="99" h="-165" relath="1" regionop="1" tile="1" image="player.left" wantfocus="1"/>
@@ -15,7 +16,6 @@
 	<layer x="-174" y="0" relatx="1" regionop="1" image="player.topright" wantfocus="1"/>
 	<layer x="0" y="-68" relaty="1" regionop="1" image="player.bottomleft" wantfocus="1"/>
 	<layer x="-160" y="-68" relatx="1" relaty="1" regionop="1" image="player.bottomright" wantfocus="1"/>
-	<layer x="6" y="99" w="-12" h="-166" relatw="1" relath="1" regionop="1" tile="1" image="player.center" wantfocus="1"/>
 
 	<!-- Background: Overlay -->
 	<layer x="143" y="0" w="-317" relatw="1" tile="1" image="player.o.top" wantfocus="1"/>
@@ -26,7 +26,7 @@
 	<layer x="-174" y="0" relatx="1" image="player.o.topright" wantfocus="1"/>
 	<layer x="0" y="-68" relaty="1" image="player.o.bottomleft" wantfocus="1"/>
 	<layer x="-160" y="-68" relatx="1" relaty="1" image="player.o.bottomright" wantfocus="1"/>
-	<layer x="6" y="99" w="-12" h="-166" relatw="1" relath="1" tile="1" image="player.o.center" wantfocus="1"/>
+	<layer x="6" y="100" w="-12" h="-168" relatw="1" relath="1" tile="1" image="player.o.center" wantfocus="1"/>
 
 
 	<layer id="doubleclick" x="0" y="0" w="0" h="27" relatw="1" wantfocus="1"/>

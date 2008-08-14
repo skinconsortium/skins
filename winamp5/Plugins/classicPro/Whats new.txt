@@ -1,5 +1,5 @@
 -------------------------------------------------------------
-Version 1.04 (xx Aug 2008)
+Version 1.04 (xxx Aug 2008)
 -------------------------------------------------------------
 - New: PlaylistPro (build in search) WIP!!!!!!
 - New: Now warns you if you dont have the minimum Winamp version installed
@@ -19,6 +19,7 @@ Version 1.04 (xx Aug 2008)
 - Fixed: Shade mode volume overlap
 - Fixed: Shade mode resize steps not the same as the normal mode
 - Fixed: Various buttons dont have rectrgn="1" (normal & shade). Should help "cPro - Fluke"
+- Fixed: Pixel overlap for center mainframe gfx (top & bottom)
 - Improved: Beat vis optimization
 - Improved: Tagviewer now doesn't update the info if not visible
 - Improved: More accurate beatvis & player title center
