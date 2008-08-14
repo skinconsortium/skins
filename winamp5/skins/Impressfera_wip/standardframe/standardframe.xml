@@ -33,6 +33,9 @@
 	<text x="11" y="8" w="-29" h="18" relatw="1" default=":componentname" bold="0" antialias="1" align="center" font="standardframe.title" fontsize="26" ghost="1" forceuppercase="1" color="0,0,0" alpha="150"/>
 	<text x="10" y="7" w="-29" h="18" relatw="1" default=":componentname" bold="0" antialias="1" align="center" font="standardframe.title" fontsize="26" inactiveAlpha="150" ghost="1" forceuppercase="1" activealpha="250"/>
 	<text x="10" y="7" w="-29" h="18" relatw="1" default=":componentname" bold="0" antialias="1" align="center" font="standardframe.title" fontsize="26" inactiveAlpha="150" ghost="1" forceuppercase="1" activealpha="250"/>
+
+	<button x="-20" y="9" relatx="1" image="wasabi.frame.button.close.1" hoverimage="wasabi.frame.button.close.2" downimage="wasabi.frame.button.close.3" action="CLOSE" tooltip="Close Window"/>
+	<button x="11" y="9" image="wasabi.frame.button.menu.1" hoverimage="wasabi.frame.button.menu.2" downimage="wasabi.frame.button.menu.3" action="CONTROLMENU" tooltip="Control Menu"/>
 </groupdef>
 
 
