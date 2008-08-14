@@ -1,28 +1,7 @@
 <elements>
-
-	<!-- Please comment the fonts out if you dont use them!
-	... if you use arial
-	... you dont need this
-	-->
-
-
 	<truetypefont id="standardframe.title" file="Tall Films Expanded.ttf" allowmapping="0"/>
 
 
-
-	<!-- cPro player colors -->
-	<color id="Menu.Text" value="199,201,207"/>
-	<color id="Playlist.Status.Text" value="162,193,204"/>
-	
-	<color id="Tab.Text.On" value="210,210,210"/>
-	<color id="Tab.Text.Off" value="200,200,200"/>
-	<color id="Tab.Text.Hover" value="210,210,210"/>
-
-	<color id="Tag.Info.Text" value="147,175,185"/>
-	<color id="Player.SongTicker.Text" value="147,175,185"/>
-	<color id="Eq.xfade.Text" value="147,175,185"/>
-	<color id="ComponentTab.Status.Text" value="210,210,210"/>
-	<color id="Browser.MediaMonitor" value="173,173,173"/>
 	<color id="wasabi.tooltips.textcolor" value="147,175,185"/>
 	<color id="wasabi.button.text" value="180,180,180"/>
 
@@ -42,14 +21,14 @@
 
 
 	<!-- List text color -->
-	<color id="color.display" value="147,175,185"/>
+	<color id="color.display" value="100,100,100"/>
 	<color id="wasabi.tree.text" value="color.display"/> <!-- Item text color -->
 	<color id="wasabi.list.text" value="color.display"/> <!--lists/trees item foreground (also edit text) -->
 	<color id="wasabi.button.hiliteText" value="color.display"/> <!-- Buttons hilite text color, used by tab windows-->
 
 	
 	<!-- List background color -->
-	<color id="color.display.bg" value="8,9,10"/>
+	<color id="color.display.bg" value="0,0,0"/>
 	<color id="wasabi.list.background" value="color.display.bg"/>	<!--lists/trees item background (also bg for edit) -->
 	<color id="wasabi.border.sunken" value="color.display.bg"/> <!-- color of dividers and sunken borders -->
 	<bitmap id="wasabi.tree.background" file="$solid" h="64" w="64" color="8,9,10"/><!-- Tree background bitmap (tile) -->
@@ -63,29 +42,30 @@
 
 	
 	<!-- Text color on the above background for components -->
-	<color id="color.window.txt" value="210,210,210"/>
-	<color id="wasabi.list.text.selected.inactive" value="color.window.txt"/> <!-- listview/treeview selection bar textcolor (inactive) -->
+	<color id="color.window.txt" value="120,120,120"/>
 	<color id="wasabi.list.column.text" value="color.window.txt"/> <!-- listview header text color -->
 	<color id="wasabi.window.text" value="color.window.txt"/> <!--text color within windows -->
 
 	
-	<!-- Text color on the above background for components -->
-	<color id="color.selected.active" value="200,200,200"/>
+	<!-- Text highlighted -->
+	<color id="color.selected.active" value="255,255,255"/>
 	<color id="wasabi.tree.selected" value="color.selected.active"/> <!-- Select item text background color -->
 	<color id="wasabi.tree.hiliteddrop" value="color.selected.active"/> <!-- Drop marker color -->
 	<color id="wasabi.list.text.selected" value="color.selected.active"/> <!--listview/treeview selection bar text color -->
 	<color id="studio.list.item.selected" value="color.selected.active"/>
 	<color id="wasabi.list.text.current" value="color.selected.active"/> <!-- currently playing item in lists -->
 
-	
-	<!-- Selected list text color (active) -->
-	<color id="color.selected.active.bg" value="49,53,64"/>
+	<!-- Text highlighted  (inactive)-->
+	<color id="wasabi.list.text.selected.inactive" value="240,240,240"/> <!-- listview/treeview selection bar textcolor (inactive) -->
+
+	<!-- Text highlighted BG-->
+	<color id="color.selected.active.bg" value="198,13,16"/>
 	<color id="wasabi.list.text.selected.background" value="color.selected.active.bg"/> <!--listview/treeview selection bar backcolor -->
 	<color id="studio.list.item.focused" value="color.selected.active.bg"/>
 
 	
-	<!-- Selected list text color (inactive) -->
-	<color id="color.selected.inactive.bg" value="42,46,57"/>
+	<!-- Text highlighted BG (inactive) -->
+	<color id="color.selected.inactive.bg" value="180,12,15"/>
 	<color id="wasabi.list.text.selected.background.inactive" value="color.selected.inactive.bg"/> <!-- listview/treeview selectionbar back color (inactive) -->
 
 

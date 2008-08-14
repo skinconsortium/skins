@@ -12,6 +12,7 @@
 	<screenshot>skinpreview.png</screenshot>
 </skininfo>
   
+<include file="standardframe/statusbar.xml"/>
 <include file="standardframe/standardframe.xml"/>
 <include file="xui\xui-files.xml"/>
 <include file="xml\files.xml"/>
