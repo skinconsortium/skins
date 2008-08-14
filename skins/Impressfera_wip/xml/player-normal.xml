@@ -1,18 +1,24 @@
 <include file="player-normal-group.xml"/>
 
 <layout id="normal" background="impf.main" alphabackground="impf.main.alpha">
-	<layer id="cpro.bg.top" x="143" y="0" w="-315" relatw="1" regionop="1" tile="1" image="player.top" wantfocus="1"/>
+	<slider id="seeker.slider" x="117" y="198" h="0" action="seek" visible="0" thumb="impf.transparent"/>
+	<layer id="seeker.bg.1" x="117" y="198" image="impf.seeker.bg" move="0"/>
+	<layer id="seeker.bg.2" x="117" y="198" image="impf.seeker.bg2" move="0" alpha="50" visible="0" ghost="1"/>
+
 	<ModernSongticker id="infosongticker"
 		x="147" y="314" h="16" w="145"
 		id_layout="main;normal"
 		id_volume="Volume"
-		id_seeker="seeker"
+		id_seeker="seeker.slider"
 		id_prev="previous.track"
 		id_next="next.track"
 		id_open="open.tracks"
 		id_shuf="shuffle"
 		id_rep="repeat"
 		id_mute="mute"
-		font="cpro.songname.font"
+		font="Arial"
+		color="255,255,255"
 	/>
+	
+	<script file="scripts/seeker.maki" param="seeker.bg.1;impf.seeker.map"/>
 </layout>

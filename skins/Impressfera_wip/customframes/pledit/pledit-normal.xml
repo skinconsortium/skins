@@ -9,7 +9,7 @@
 	/>
 
 	<Button action="PE_Rem"
-		x="32" y="0" rectrgn="1"
+		x="33" y="0" rectrgn="1"
 		image="pledit.rem.1"
 		hoverImage="pledit.rem.2"
 		downImage="pledit.rem.3"
@@ -17,7 +17,7 @@
 	/>
 
 	<Button action="PE_Sel"
-		x="64" y="0" rectrgn="1"
+		x="66" y="0" rectrgn="1"
 		image="pledit.sel.1"
 		hoverImage="pledit.sel.2"
 		downImage="pledit.sel.3"
@@ -25,7 +25,7 @@
 	/>
 
 	<Button action="PE_Misc"
-		x="96" y="0" rectrgn="1"
+		x="99" y="0" rectrgn="1"
 		image="pledit.misc.1"
 		hoverImage="pledit.misc.2"
 		downImage="pledit.misc.3"
