@@ -1,0 +1,75 @@
+
+<groupdef id="pledit.content.statusbar">
+	<Button action="PE_Add"
+		x="0" y="0" rectrgn="1"
+		image="pledit.add.1"
+		hoverImage="pledit.add.2"
+		downImage="pledit.add.3"
+		tooltip="Add Files to Playlist"
+	/>
+
+	<Button action="PE_Rem"
+		x="32" y="0" rectrgn="1"
+		image="pledit.rem.1"
+		hoverImage="pledit.rem.2"
+		downImage="pledit.rem.3"
+		tooltip="Remove Files from Playlist"
+	/>
+
+	<Button action="PE_Sel"
+		x="64" y="0" rectrgn="1"
+		image="pledit.sel.1"
+		hoverImage="pledit.sel.2"
+		downImage="pledit.sel.3"
+		tooltip="Select Files from Playlist"
+	/>
+
+	<Button action="PE_Misc"
+		x="96" y="0" rectrgn="1"
+		image="pledit.misc.1"
+		hoverImage="pledit.misc.2"
+		downImage="pledit.misc.3"
+		tooltip="Misc Actions"
+	/>
+
+	<Button action="PE_List"
+		x="-32" y="1" relatx="1" rectrgn="1"
+		image="pledit.list.1"
+		hoverImage="pledit.list.2"
+		downImage="pledit.list.3"
+		tooltip="Manage Playlist"
+	/>
+
+	<text id="centro.playlist.pltext1" display="PE_Info"
+		x="145" y="1" h="20" w="-195" relatw="1" fontsize="26"
+		align="center" color="200,200,200" font="standardframe.title" move="1"
+	/>
+</groupdef>
+
+
+
+<groupdef id="player.content.pl.dummy.group" name="PlaylistDummyGroup">
+	<windowholder
+		fitparent="1"
+		noshowcmdbar="1"
+		autoopen="1"
+		autoclose="0"
+		param="guid:{45F3F7C1-A6F3-4ee6-A15E-125E92FC3F8D}"
+	/>
+</groupdef>
+
+
+<groupdef id="pledit.content.group" name="PlaylistContent">
+	<group id="player.content.pl.dummy.group" fitparent="1"/>
+</groupdef>
+
+<layout id="normal" minimum_w="354" minimum_h="164" h="164" w="436" linkwidth="shade" appbar="left|top|right|bottom">
+	<Wasabi:StandardFrame:Status
+		x="0" y="0" w="0" h="0" relatw="1" relath="1"
+		content="pledit.content.group"
+		padtitleleft="10"
+		padtitleright="12"
+	/>
+	<hideobject target="standardframe.layoutstatus"/>
+	<group id="pledit.content.statusbar" x="15" y="-30" w="-30" h="20" relaty="1" relatw="1"/>
+</layout>

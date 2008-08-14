@@ -8,14 +8,11 @@
 <groupdef id="wasabi.statusbar" default_h="12">
 
   <!--<group id="wasabi.objectframe.group" x="0" y="0" w="0" h="0" relatw="1" relath="1" alpha="100"/>-->
-  <rect x="4" y="0" w="-8" h="0" relatw="1" relath="1" filled="1" color="0,0,0" alpha="150"/>
-  <rect x="4" y="0" w="-8" h="0" relatw="1" relath="1" filled="0" color="20,20,20" alpha="150"/>
 
   <!-- nonmodal progress bar -->
   <rect id="wasabi.statusbar.progress.outline" x="-104" relatx="1" y="3" w="100" h="8" filled="0" color="0,128,128" visible="0"/>
   <rect id="wasabi.statusbar.progress.inside" x="-104" relatx="1" y="3" w="1" h="8" filled="1" color="0,192,192" visible="0"/>
 
   <!-- text line -->
-  <text id="wasabi.statusbar.text" x="8" y="0" w="-16" h="0" relatw="1" relath="1" font="studio.component.statusbar" alpha="100"/>
-
+  <text id="wasabi.statusbar.text" x="8" y="0" w="-16" h="0" relatw="1" relath="1" font="standardframe.title" fontsize="26" alpha="100"/>
 </groupdef>
