@@ -12,5 +12,5 @@
 		color="Player.SongTicker.Text" fontsize="16" valign="top" antialias="0" 
 	/>
 	
-	<script file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\xui\ModernSongticker\ModernSongticker.maki"/>
+	<script file="xui\ModernSongticker\ModernSongticker.maki"/>
 </groupdef>
