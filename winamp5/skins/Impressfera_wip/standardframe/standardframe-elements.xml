@@ -1,16 +1,24 @@
 <elements>
 
-  <bitmap id="wasabi.frame.top.left" file="images/standard-frame.png" x="0" y="0" w="40" h="40" gammagroup="Titlebar"/>
-  <bitmap id="wasabi.frame.top" file="images/standard-frame.png" x="40" y="0" w="103" h="40" gammagroup="Titlebar"/>
-  <bitmap id="wasabi.frame.top.right" file="images/standard-frame.png" x="143" y="0" w="40" h="40" gammagroup="Titlebar"/>
+  <bitmap id="wasabi.frame.s.top.left" file="images/standard-frame-status.png" x="0" y="0" w="40" h="40" gammagroup="Titlebar"/>
+  <bitmap id="wasabi.frame.s.top" file="images/standard-frame-status.png" x="40" y="0" w="103" h="40" gammagroup="Titlebar"/>
+  <bitmap id="wasabi.frame.s.top.right" file="images/standard-frame-status.png" x="143" y="0" w="40" h="40" gammagroup="Titlebar"/>
+  <bitmap id="wasabi.frame.s.left" file="images/standard-frame-status.png" x="0" y="40" w="40" h="34" gammagroup="Titlebar"/>
+  <bitmap id="wasabi.frame.s.center" file="images/standard-frame-status.png" x="40" y="40" w="103" h="34" gammagroup="Titlebar"/>
+  <bitmap id="wasabi.frame.s.right" file="images/standard-frame-status.png" x="143" y="40" w="40" h="34" gammagroup="Titlebar"/>
+  <bitmap id="wasabi.frame.s.bottom.left" file="images/standard-frame-status.png" x="0" y="74" w="40" h="43" gammagroup="Titlebar"/>
+  <bitmap id="wasabi.frame.s.bottom" file="images/standard-frame-status.png" x="40" y="74" w="103" h="43" gammagroup="Titlebar"/>
+  <bitmap id="wasabi.frame.s.bottom.right" file="images/standard-frame-status.png" x="143" y="74" w="40" h="43" gammagroup="Titlebar"/>
 
-  <bitmap id="wasabi.frame.left" file="images/standard-frame.png" x="0" y="40" w="40" h="34" gammagroup="Titlebar"/>
-  <bitmap id="wasabi.frame.center" file="images/standard-frame.png" x="40" y="40" w="103" h="34" gammagroup="Titlebar"/>
-  <bitmap id="wasabi.frame.right" file="images/standard-frame.png" x="143" y="40" w="40" h="34" gammagroup="Titlebar"/>
-
-  <bitmap id="wasabi.frame.bottom.left" file="images/standard-frame.png" x="0" y="74" w="40" h="43" gammagroup="Titlebar"/>
-  <bitmap id="wasabi.frame.bottom" file="images/standard-frame.png" x="40" y="74" w="103" h="43" gammagroup="Titlebar"/>
-  <bitmap id="wasabi.frame.bottom.right" file="images/standard-frame.png" x="143" y="74" w="40" h="43" gammagroup="Titlebar"/>
+  <bitmap id="wasabi.frame.ns.top.left" file="images/standard-frame-nostatus.png" x="0" y="0" w="40" h="40" gammagroup="Titlebar"/>
+  <bitmap id="wasabi.frame.ns.top" file="images/standard-frame-nostatus.png" x="40" y="0" w="103" h="40" gammagroup="Titlebar"/>
+  <bitmap id="wasabi.frame.ns.top.right" file="images/standard-frame-nostatus.png" x="143" y="0" w="40" h="40" gammagroup="Titlebar"/>
+  <bitmap id="wasabi.frame.ns.left" file="images/standard-frame-nostatus.png" x="0" y="40" w="40" h="34" gammagroup="Titlebar"/>
+  <bitmap id="wasabi.frame.ns.center" file="images/standard-frame-nostatus.png" x="40" y="40" w="103" h="34" gammagroup="Titlebar"/>
+  <bitmap id="wasabi.frame.ns.right" file="images/standard-frame-nostatus.png" x="143" y="40" w="40" h="34" gammagroup="Titlebar"/>
+  <bitmap id="wasabi.frame.ns.bottom.left" file="images/standard-frame-nostatus.png" x="0" y="74" w="40" h="43" gammagroup="Titlebar"/>
+  <bitmap id="wasabi.frame.ns.bottom" file="images/standard-frame-nostatus.png" x="40" y="74" w="103" h="43" gammagroup="Titlebar"/>
+  <bitmap id="wasabi.frame.ns.bottom.right" file="images/standard-frame-nostatus.png" x="143" y="74" w="40" h="43" gammagroup="Titlebar"/>
 
   <bitmap id="wasabi.frame.top.left.r" file="images/standard-frame-region.png" x="0" y="0" w="40" h="40" gammagroup="Titlebar"/>
   <bitmap id="wasabi.frame.top.r" file="images/standard-frame-region.png" x="40" y="0" w="103" h="40" gammagroup="Titlebar"/>

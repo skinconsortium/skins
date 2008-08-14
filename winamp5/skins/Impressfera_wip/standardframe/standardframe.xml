@@ -1,4 +1,5 @@
 <include file="standardframe-elements.xml" />
+<include file="statusbar.xml" />
 
 
 <!-- =======================================================================================================
@@ -8,17 +9,6 @@
 ======================================================================================================== -->
 
 <groupdef id="wasabi.frame.layout">
-	<!-- Window gfx -->
-	<layer id="window.top.left" x="0" y="0" image="wasabi.frame.top.left" regionop="1"/>
-	<layer id="window.top" x="40" y="0" w="-80" relatw="1" image="wasabi.frame.top" regionop="1"/>
-	<layer id="window.top.right" x="-40" y="0" relatx="1" image="wasabi.frame.top.right" regionop="1"/>
-	<layer id="window.left" x="0" y="40" h="-80" relath="1" image="wasabi.frame.left" regionop="1"/>
-	<layer id="window.center" x="40" y="40" w="-83" h="-80" relatw="1" relath="1" image="wasabi.frame.center" regionop="1"/>
-	<layer id="window.right" x="-40" y="40" h="-83" relath="1" relatx="1" image="wasabi.frame.right" regionop="1"/>
-	<layer id="window.bottom.left" x="0" y="-43" relaty="1" image="wasabi.frame.bottom.left" regionop="1"/>
-	<layer id="window.bottom" x="40" y="-43" w="-80" relaty="1" relatw="1" image="wasabi.frame.bottom" regionop="1"/>
-	<layer id="window.bottom.right" x="-40" y="-43" relatx="1" relaty="1" image="wasabi.frame.bottom.right" regionop="1" resize="bottomright"/>
-
 	<!-- Window region -->
 	<layer x="0" y="0" image="wasabi.frame.top.left.r" regionop="-2"/>
 	<layer x="40" y="0" w="-80" relatw="1" image="wasabi.frame.top.r" regionop="-2"/>
@@ -27,11 +17,22 @@
 	<layer x="-40" y="40" h="-83" relatx="1" relath="1" image="wasabi.frame.right.r" regionop="-2"/>
 	<layer x="0" y="-43" relaty="1" image="wasabi.frame.bottom.left.r" regionop="-2"/>
 	<layer x="40" y="-43" w="-80" relaty="1" relatw="1" image="wasabi.frame.bottom.r" regionop="-2"/>
-	<layer x="-40" y="-43" relatx="1" relaty="1" image="wasabi.frame.bottom.right.r" regionop="-2" resize="bottomright"/>
+	<layer x="-40" y="-43" relatx="1" relaty="1" image="wasabi.frame.bottom.right.r" regionop="-2"/>
 
+	<!-- Window resizers -->
+	<layer x="0" y="17" w="6" h="-27" relath="1" resize="left"/>
+	<layer x="-7" y="7" w="7" h="-17" relatx="1" relath="1" resize="right"/>
+	<layer x="23" y="0" w="-30" h="5" relatw="1" resize="top"/>
+	<layer x="10" y="-6" w="-20" h="6" relaty="1" relatw="1" resize="bottom"/>
+	<layer x="0" y="0" w="23" h="17" resize="topleft"/>
+	<layer x="-7" y="0" w="7" h="7"  relatx="1" resize="topright"/>
+	<layer x="0" y="-10" w="10" h="10" relaty="1" resize="bottomleft"/>
+	<layer x="-10" y="-10" w="10" h="10" relatx="1" relaty="1" resize="bottomright"/>
 
 	<!-- Window title -->
-	<text x="10" y="7" w="-29" h="18" relatw="1" default=":componentname" align="center" font="standardframe.title" fontsize="26" inactiveAlpha="200" ghost="1" forceuppercase="1"/>
+	<text x="11" y="8" w="-29" h="18" relatw="1" default=":componentname" bold="0" antialias="1" align="center" font="standardframe.title" fontsize="26" ghost="1" forceuppercase="1" color="0,0,0" alpha="150"/>
+	<text x="10" y="7" w="-29" h="18" relatw="1" default=":componentname" bold="0" antialias="1" align="center" font="standardframe.title" fontsize="26" inactiveAlpha="150" ghost="1" forceuppercase="1" activealpha="250"/>
+	<text x="10" y="7" w="-29" h="18" relatw="1" default=":componentname" bold="0" antialias="1" align="center" font="standardframe.title" fontsize="26" inactiveAlpha="150" ghost="1" forceuppercase="1" activealpha="250"/>
 </groupdef>
 
 
@@ -44,9 +45,21 @@
 ======================================================================================================== -->
 
  <groupdef id="wasabi.standardframe.statusbar" xuitag="Wasabi:StandardFrame:Status">
+
+	<!-- Window gfx -->
+	<layer x="0" y="0" image="wasabi.frame.s.top.left" regionop="1"/>
+	<layer x="40" y="0" w="-80" relatw="1" image="wasabi.frame.s.top" regionop="1"/>
+	<layer x="-40" y="0" relatx="1" image="wasabi.frame.s.top.right" regionop="1"/>
+	<layer x="0" y="40" h="-80" relath="1" image="wasabi.frame.s.left" regionop="1"/>
+	<layer x="40" y="40" w="-80" h="-80" relatw="1" relath="1" image="wasabi.frame.s.center" regionop="1"/>
+	<layer x="-40" y="40" h="-83" relath="1" relatx="1" image="wasabi.frame.s.right" regionop="1"/>
+	<layer x="0" y="-43" relaty="1" image="wasabi.frame.s.bottom.left" regionop="1"/>
+	<layer x="40" y="-43" w="-80" relaty="1" relatw="1" image="wasabi.frame.s.bottom" regionop="1"/>
+	<layer x="-40" y="-43" relatx="1" relaty="1" image="wasabi.frame.s.bottom.right" regionop="1" resize="bottomright"/>
+
 	<group id="wasabi.frame.layout" fitparent="1"/>
-	<LayoutStatus id="standardframe.layoutstatus" x="13" y="-31" relaty="1" w="-30" relatw="1" h="20" exclude="{system}" />
-	<script id="standardframe.script" file="scripts/standardframe.maki" param="4,40,-8,-83,0,0,1,1" />
+	<LayoutStatus id="standardframe.layoutstatus" x="13" y="-33" relaty="1" w="-30" relatw="1" h="20" exclude="{system}" />
+	<script id="standardframe.script" file="scripts/standardframe.maki" param="3,30,-6,-73,0,0,1,1" />
 </groupdef>
 
 
@@ -59,8 +72,20 @@
 ======================================================================================================== -->
 
 <groupdef id="wasabi.standardframe.nostatusbar" xuitag="Wasabi:StandardFrame:NoStatus">
+
+	<!-- Window gfx -->
+	<layer x="0" y="0" image="wasabi.frame.ns.top.left" regionop="1"/>
+	<layer x="40" y="0" w="-80" relatw="1" image="wasabi.frame.ns.top" regionop="1"/>
+	<layer x="-40" y="0" relatx="1" image="wasabi.frame.ns.top.right" regionop="1"/>
+	<layer x="0" y="40" h="-80" relath="1" image="wasabi.frame.ns.left" regionop="1"/>
+	<layer x="40" y="40" w="-80" h="-80" relatw="1" relath="1" image="wasabi.frame.ns.center" regionop="1"/>
+	<layer x="-40" y="40" h="-83" relath="1" relatx="1" image="wasabi.frame.ns.right" regionop="1"/>
+	<layer x="0" y="-43" relaty="1" image="wasabi.frame.ns.bottom.left" regionop="1"/>
+	<layer x="40" y="-43" w="-80" relaty="1" relatw="1" image="wasabi.frame.ns.bottom" regionop="1"/>
+	<layer x="-40" y="-43" relatx="1" relaty="1" image="wasabi.frame.ns.bottom.right" regionop="1" resize="bottomright"/>
+
 	<group id="wasabi.frame.layout" fitparent="1"/>
-	<script id="standardframe.script" file="scripts/standardframe.maki" param="4,40,-8,-83,0,0,1,1" />
+	<script id="standardframe.script" file="scripts/standardframe.maki" param="3,30,-6,-55,0,0,1,1" />
 </groupdef>
 
 
