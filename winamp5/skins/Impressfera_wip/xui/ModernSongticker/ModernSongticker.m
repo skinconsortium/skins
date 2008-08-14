@@ -5,7 +5,6 @@ Function updateInfo(String showThis);
 Function showNews(boolean show);
 Function cancelStuff();
 
-Global Container mainContainer;
 Global Layout mainLayout;
 
 Global Group mainGroup;
@@ -31,8 +30,7 @@ System.onScriptLoaded(){
 }
 
 System.onShowLayout(Layout _layout){
-	mainContainer = getContainer(getToken(def_Layout, ";", 0));
-	mainLayout = mainContainer.getLayout(getToken(def_Layout, ";", 1));
+	mainLayout = getContainer(getToken(def_Layout, ";", 0)).getLayout(getToken(def_Layout, ";", 1));
 	if(mainLayout==_layout){
 		sl_volume = mainLayout.findObject(def_Volume);
 		sl_seeker = mainLayout.findObject(def_Seeker);
@@ -84,6 +82,7 @@ System.onSetXuiParam(String param, String value) {
 	}
 }
 
+
 shufBut.onToggle(Boolean onOff){
 	if(onOff) updateInfo("Shuffle: On");
 	else updateInfo("Shuffle: Off");
@@ -98,16 +97,16 @@ repBut.onToggle(Boolean onOff){
 muteBut.onToggle(Boolean onoff){
 	//Cancel next volume info tip
 	cancelNext=true;
-	if(muteBut.getCurCfgVal()==0){
-		updateInfo("Mute: Off");
+	if(muteBut.getActivated()==0){ //	if(muteBut.getCurCfgVal()==0){ changed for CTI
+
+		updateInfo(getPrivateString(getSkinNAme(), "Mute.method", "Mute") +": Off");
 	}
 	else{
-		updateInfo("Mute: On");
+		updateInfo(getPrivateString(getSkinNAme(), "Mute.method", "Mute") +": On");
 	}
 }
 
 updateInfo(String showThis){
-	if(mainLayout!=mainContainer.getCurLayout()) return;
 	cancelStuff();
 
 	//do stuff
@@ -163,7 +162,7 @@ System.onVolumeChanged(int newvol){
 	if(cancelNext){
 		cancelNext=false;
 	}
-	else updateInfo(System.translate("Volume") +": "+integerToString(newvol/255*100)+"%");
+	else updateInfo("Volume:" + " "+integerToString(newvol/255*100)+"%");
 }
 
 goBack.onTimer(){
@@ -172,7 +171,7 @@ goBack.onTimer(){
 }
 
 sl_seeker.onSetPosition(int newpos){
-	updateInfo(System.translate("Seek") +": "+integerToTime(newpos/255*getPlayItemLength()) + "/" + integerToTime(getPlayItemLength()) +" ("+ integerToString(newpos/255*100)+"%)");
+	updateInfo("Seek: " + integerToTime(newpos/255*getPlayItemLength()) + "/" + integerToTime(getPlayItemLength()) +" ("+ integerToString(newpos/255*100)+"%)");
 }
 
 prev.onLeftClick(){
@@ -207,7 +206,7 @@ This will check to see if mouse is still down... aka user busy with seek. If thi
 sl_volume.onLeftButtonUp(int x, int y){
 	busyWithSeek=false;
 	int newpos = System.getVolume();
-	updateInfo(System.translate("Volume") +": "+integerToString(newpos/255*100)+"%");
+	updateInfo("Volume:" + " "+integerToString(newpos/255*100)+"%");
 }
 sl_volume.onLeftButtonDown(int x, int y){
 	busyWithSeek=true;
@@ -217,8 +216,25 @@ sl_seeker.onLeftButtonUp(int x, int y){
 	busyWithSeek=false;
 	isShort=true;
 	int newpos = sl_seeker.getPosition();
-	updateInfo(System.translate("Seek") +": "+integerToTime(newpos/255*getPlayItemLength()) + "/" + integerToTime(getPlayItemLength()) +" ("+ integerToString(newpos/255*100)+"%)");
+	updateInfo("Seek: " + integerToTime(newpos/255*getPlayItemLength()) + "/" + integerToTime(getPlayItemLength()) +" ("+ integerToString(newpos/255*100)+"%)");
 }
 sl_seeker.onLeftButtonDown(int x, int y){
 	busyWithSeek=true;
+}
+
+
+/*
+Actions from other scripts
+*/
+
+mainGroup.onAction (String action, String param, Int x, int y, int p1, int p2, GuiObject source)
+{
+	if (strlower(action) == "showinfo")
+	{
+		updateInfo(param);
+	}
+	/*else if (strlower(action) == "cancelinfo")
+	{
+		SongTickerTimer.onTimer ();
+	}*/
 }
