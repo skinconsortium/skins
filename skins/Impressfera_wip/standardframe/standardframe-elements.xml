@@ -35,5 +35,12 @@
   <bitmap id="wasabi.frame.basetexture" file="images/standard-frame.png" x="40" y="0" w="103" h="34" gammagroup="Backgrounds"/>
   <elementalias id="component.basetexture" target="wasabi.frame.basetexture" />
 
+  <bitmap id="wasabi.frame.button.close.1" file="images/standard-frame-buttons.png" x="0" y="0" w="12" h="12" gammagroup="Titlebar"/>
+  <bitmap id="wasabi.frame.button.close.2" file="images/standard-frame-buttons.png" x="0" y="12" w="12" h="12" gammagroup="Titlebar"/>
+  <bitmap id="wasabi.frame.button.close.3" file="images/standard-frame-buttons.png" x="0" y="24" w="12" h="12" gammagroup="Titlebar"/>
+
+  <bitmap id="wasabi.frame.button.menu.1" file="images/standard-frame-buttons.png" x="13" y="0" w="12" h="12" gammagroup="Titlebar"/>
+  <bitmap id="wasabi.frame.button.menu.2" file="images/standard-frame-buttons.png" x="13" y="12" w="12" h="12" gammagroup="Titlebar"/>
+  <bitmap id="wasabi.frame.button.menu.3" file="images/standard-frame-buttons.png" x="13" y="24" w="12" h="12" gammagroup="Titlebar"/>
 
 </elements>
