@@ -6,7 +6,7 @@ Global Map SeekerMap1;
 Global Boolean volClicked;
 Global Slider seeker;
 Global int finalseek;
-Global Group modernTicker;
+Global GuiObject SongTicker;
 
 System.onScriptLoaded() {
 	myGroup = getScriptGroup();
@@ -17,7 +17,7 @@ System.onScriptLoaded() {
 	String vLayer = getToken(getParam(), ";", 0);
 	String vMap = getToken(getParam(), ";", 1);
 
-	modernTicker = myGroup.getObject("infosongticker");
+	SongTicker = myGroup.findObject("infosongticker");
 	
 	seeker = myGroup.getObject("seeker.slider");
 	seekerLayer1 = myGroup.getObject(vLayer);
@@ -46,7 +46,7 @@ seekerLayer1.onLeftButtonDown(int x, int y) {
 		//System.seekTo(System.getPlayItemLength()*tvol/255);
 		finalseek = System.getPlayItemLength()*tvol/255;
 		seekerLayer2.setRegionFromMap(SeekerMap1,tvol,1);
-		modernTicker.sendAction("showinfo",System.translate("Seek") +": "+integerToTime(tvol/255*getPlayItemLength()) + "/" + integerToTime(getPlayItemLength()) +" ("+ integerToString(tvol/255*100)+"%)",0,0,0,0);
+		SongTicker.sendAction("showinfo",System.translate("Seek") +": "+integerToTime(tvol/255*getPlayItemLength()) + "/" + integerToTime(getPlayItemLength()) +" ("+ integerToString(tvol/255*100)+"%)", 0, 0, 0, 0);
 	}
 	seekerLayer2.show();
 }
@@ -66,7 +66,7 @@ seekerLayer1.onMouseMove(int x, int y) {
 			int tvol = SeekerMap1.getValue(x, y);
 			finalseek = System.getPlayItemLength()*tvol/255;
 			seekerLayer2.setRegionFromMap(SeekerMap1,tvol,1);
-			modernTicker.sendAction("showinfo",System.translate("Seek") +": "+integerToTime(tvol/255*getPlayItemLength()) + "/" + integerToTime(getPlayItemLength()) +" ("+ integerToString(tvol/255*100)+"%)",0,0,0,0);
+			SongTicker.sendAction("showinfo",System.translate("Seek") +": "+integerToTime(tvol/255*getPlayItemLength()) + "/" + integerToTime(getPlayItemLength()) +" ("+ integerToString(tvol/255*100)+"%)", 0, 0, 0, 0);
 		}
 	}
 }
