@@ -5,15 +5,9 @@
 	... you dont need this
 	-->
 
-	<!--
-	<truetypefont id="cpro.tracktime.font" file="font.ttf" allowmapping="0"/>
-	<truetypefont id="cpro.songname.font" file="font.ttf" allowmapping="0"/>
-	<truetypefont id="cpro.songinfo2.font" file="font.ttf" allowmapping="0"/>
-	<truetypefont id="cpro.menu.font" file="font.ttf" allowmapping="0"/>
-	<truetypefont id="cpro.tab.font" file="font.ttf" allowmapping="0"/>
- 	<truetypefont id="cpro.status.font" file="font.ttf" allowmapping="0"/>
- 	<truetypefont id="cpro.winshade.font" file="font.ttf" allowmapping="0"/>
-	-->
+
+	<truetypefont id="standardframe.title" file="Tall Films Expanded.ttf" allowmapping="0"/>
+
 
 
 	<!-- cPro player colors -->

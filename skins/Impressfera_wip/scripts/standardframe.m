@@ -1,6 +1,6 @@
 #include <lib/std.mi>
 
-Global Group frameGroup, content, titlebar;
+Global Group frameGroup, content;//, titlebar;
 Global String x, y, w, h, rx, ry, rw, rh;
 Global Layer mouselayer;
 Global Button Sysmenu;
@@ -24,12 +24,12 @@ System.onScriptLoaded() {
 System.onSetXuiParam(String param, String value) {
   if (param == "content") {
     setNewGroup(value);
-    titlebar = frameGroup.findObject("wasabi.titlebar");
-    mouselayer = titlebar.findObject("mousetrap");
+   /* titlebar = frameGroup.findObject("wasabi.titlebar");
+    mouselayer = titlebar.findObject("mousetrap");*/
   }
-  if (param == "padtitleright" || param == "padtitleleft") {
+  /*if (param == "padtitleright" || param == "padtitleleft") {
     if (titlebar != NULL) titlebar.setXmlParam(param, value); 
-  }
+  }*/
   if (param == "shade") {
     if (mouselayer != NULL) mouselayer.setXmlParam("dblclickaction", "switch;"+value);
     else messagebox("Cannot set shade parameter for StandardFrame object, no mousetrap found", "Skin Error", 0, "");
