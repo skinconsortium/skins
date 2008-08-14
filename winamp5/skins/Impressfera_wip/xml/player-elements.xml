@@ -37,9 +37,9 @@
 	<bitmap id="wasabi.button.pressed.bottom.right" file="images/wasabi-button-3.png" x="32" y="13" w="5" h="9" gammagroup="main.buttons"/>
 
 	
-	<bitmap id="wasabi.button.middle" file="images/wasabi-button-1.png" x="3" y="5" h="42" w="43" gammagroup="main.buttons"/>
-	<bitmap id="wasabi.button.hover.middle" file="images/wasabi-button-2.png" x="3" y="5" h="42" w="43" gammagroup="main.buttons"/>
-	<bitmap id="wasabi.button.pressed.middle" file="images/wasabi-button-3.png" x="3" y="5" h="42" w="43" gammagroup="main.buttons"/>
+	<bitmap id="wasabi.button.middle" file="images/wasabi-button-1.png" x="5" y="8" w="27" h="4" gammagroup="main.buttons"/>
+	<bitmap id="wasabi.button.hover.middle" file="images/wasabi-button-2.png" x="5" y="8" w="27" h="4" gammagroup="main.buttons"/>
+	<bitmap id="wasabi.button.pressed.middle" file="images/wasabi-button-3.png" x="5" y="8" w="27" h="4" gammagroup="main.buttons"/>
 
 
 	<!-- Wasabi stuff -->
