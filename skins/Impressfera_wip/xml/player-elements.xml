@@ -8,7 +8,7 @@
 	<bitmap id="impf.seeker.map" file="images/seeker-map.png" gammagroup="Player.Background"/>
 
 	<bitmap id="impf.transparent" file="images/transparent.png"/> <!-- for fake seeker -->
-
+    <bitmap id="tribesm" file="images/tribesmall.png"/>
 
 	<bitmap id="wasabi.button.top.left" file="images/wasabi-button-1.png" x="0" y="0" w="5" h="9" gammagroup="main.buttons"/>
 	<bitmap id="wasabi.button.top" file="images/wasabi-button-1.png" x="5" y="0" w="27" h="9" gammagroup="main.buttons"/>
@@ -91,4 +91,70 @@
 	<bitmap id="wasabi.dropdownlist.list.bottom.left" file="combobox.png" x="0" y="13" h="4" w="4" gammagroup="n.TooltipCombobox"/>
 	<bitmap id="wasabi.dropdownlist.list.bottom" file="combobox.png" x="4" y="13" h="4" w="8" gammagroup="n.TooltipCombobox"/>
 	<bitmap id="wasabi.dropdownlist.list.bottom.right" file="combobox.png" x="13" y="13" h="4" w="4" gammagroup="n.TooltipCombobox"/>
+
+	<!-- PlayButtons -->
+    <bitmap id="player.main.play" file="images/play.png" gammagroup="main.buttons"/>
+
+    <bitmap id="player.main.playd" file="images/playd.png" gammagroup="main.buttons"/>
+   
+    <bitmap id="player.main.Pause" file="images/pause.png" gammagroup="main.buttons"/>
+   
+	<bitmap id="player.main.Paused" file="images/paused.png" gammagroup="main.buttons"/>
+    
+	<bitmap id="player.main.stop" file="images/stop.png" gammagroup="main.buttons"/>
+    
+	<bitmap id="player.main.stopd" file="images/stopd.png" gammagroup="main.buttons"/>
+    
+	<bitmap id="player.main.rev" file="images/rev.png" gammagroup="main.buttons"/>
+    
+	<bitmap id="player.main.revd" file="images/revd.png" gammagroup="main.buttons"/>
+    
+	<bitmap id="player.main.forward" file="images/forward.png" gammagroup="main.buttons"/>
+    
+	<bitmap id="player.main.forwardd" file="images/forwardd.png" gammagroup="main.buttons"/>
+    
+    <bitmap id="player.main.eject" file="images/eject.png" gammagroup="main.buttons"/>
+    
+	<bitmap id="player.main.ejectd" file="images/ejectd.png" gammagroup="main.buttons"/>
+
+     <!-- Shuf REP Xfade -->
+
+     <bitmap id="player.main.r" file="images/repeat.png" gammagroup="main.buttons"/>
+     
+	 <bitmap id="player.main.rd" file="images/repeatd.png" gammagroup="main.buttons"/>
+
+     <bitmap id="player.main.s" file="images/shuf.png" gammagroup="main.buttons"/>
+     
+	 <bitmap id="player.main.sd" file="images/shufd.png" gammagroup="main.buttons"/>
+	 
+	 <bitmap id="player.main.x" file="images/xfade.png" gammagroup="main.buttons"/>
+     
+	 <bitmap id="player.main.xd" file="images/xfaded.png" gammagroup="main.buttons"/>
+     
+	 
+
+      <!-- ML PL EQ -->
+      <bitmap id="player.main.PL" file="images/PL.png" gammagroup="main.buttons"  />
+      <bitmap id="player.main.PLd" file="images/PLd.png" gammagroup="main.buttons"  />
+      
+      <bitmap id="player.main.ML" file="images/ML.png" gammagroup="main.buttons" />
+      <bitmap id="player.main.MLd" file="images/MLd.png" gammagroup="main.buttons"/>
+
+      <bitmap id="player.main.Eq" file="images/Eq.png" gammagroup="main.buttons" />
+      <bitmap id="player.main.Eqd" file="images/Eqd.png" gammagroup="main.buttons"/>
+
+       <!-- min close shade -->
+       <bitmap id="player.main.close" file="images/close.png" />
+
+       <bitmap id="player.main.closed" file="images/closed.png" />
+       
+	   <bitmap id="player.main.min" file="images/min.png" gammagroup="Glass"/>
+       
+	   <bitmap id="player.main.mind" file="images/mind.png" gammagroup="Glass"/>
+       
+	   <bitmap id="player.main.shade" file="images/shade.png" gammagroup="Glass"/>
+       
+	   <bitmap id="player.main.shaded" file="images/shaded.png" gammagroup="Glass"/>
+    
+
 </elements>
