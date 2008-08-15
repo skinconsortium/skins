@@ -1,21 +1,83 @@
 <elements>
-	<bitmap id="pledit.add.1" file="images/playlistbuttons.png" x="0" y="0" w="32" h="20" gammagroup="Titlebar"/>
-	<bitmap id="pledit.add.2" file="images/playlistbuttons.png" x="0" y="20" w="32" h="20" gammagroup="Titlebar"/>
-	<bitmap id="pledit.add.3" file="images/playlistbuttons.png" x="0" y="40" w="32" h="20" gammagroup="Titlebar"/>
 
-	<bitmap id="pledit.rem.1" file="images/playlistbuttons.png" x="32" y="0" w="32" h="20" gammagroup="Titlebar"/>
-	<bitmap id="pledit.rem.2" file="images/playlistbuttons.png" x="32" y="20" w="32" h="20" gammagroup="Titlebar"/>
-	<bitmap id="pledit.rem.3" file="images/playlistbuttons.png" x="32" y="40" w="32" h="20" gammagroup="Titlebar"/>
+	<bitmap id="browser.editframe.left" file="images/browser.png" x="0" y="78" h="22" w="4" gammagroup="ComponentFrame"/>
+	<bitmap id="browser.editframe.center" file="images/browser.png" x="4" y="78" h="22" w="2" gammagroup="ComponentFrame"/>
+	<bitmap id="browser.editframe.right" file="images/browser.png" x="6" y="78" h="22" w="4" gammagroup="ComponentFrame"/>
 
-	<bitmap id="pledit.sel.1" file="images/playlistbuttons.png" x="64" y="0" w="32" h="20" gammagroup="Titlebar"/>
-	<bitmap id="pledit.sel.2" file="images/playlistbuttons.png" x="64" y="20" w="32" h="20" gammagroup="Titlebar"/>
-	<bitmap id="pledit.sel.3" file="images/playlistbuttons.png" x="64" y="40" w="32" h="20" gammagroup="Titlebar"/>
+	<bitmap id="browser.button.back.normal" file="images/browser.png" x="8" y="0" h="26" w="21" gammagroup="WindowText"/>
+	<bitmap id="browser.button.back.hover" file="images/browser.png" x="8" y="26" h="26" w="21" gammagroup="WindowText"/>
+	<bitmap id="browser.button.back.down" file="images/browser.png" x="8" y="52" h="26" w="21" gammagroup="WindowText"/>
 
-	<bitmap id="pledit.misc.1" file="images/playlistbuttons.png" x="96" y="0" w="32" h="20" gammagroup="Titlebar"/>
-	<bitmap id="pledit.misc.2" file="images/playlistbuttons.png" x="96" y="20" w="32" h="20" gammagroup="Titlebar"/>
-	<bitmap id="pledit.misc.3" file="images/playlistbuttons.png" x="96" y="40" w="32" h="20" gammagroup="Titlebar"/>
+	<bitmap id="browser.button.forth.normal" file="images/browser.png" x="29" y="0" h="26" w="21" gammagroup="WindowText"/>
+	<bitmap id="browser.button.forth.hover" file="images/browser.png" x="29" y="26" h="26" w="21" gammagroup="WindowText"/>
+	<bitmap id="browser.button.forth.down" file="images/browser.png" x="29" y="52" h="26" w="21" gammagroup="WindowText"/>
 
-	<bitmap id="pledit.list.1" file="images/playlistbuttons.png" x="128" y="0" w="32" h="20" gammagroup="Titlebar"/>
-	<bitmap id="pledit.list.2" file="images/playlistbuttons.png" x="128" y="20" w="32" h="20" gammagroup="Titlebar"/>
-	<bitmap id="pledit.list.3" file="images/playlistbuttons.png" x="128" y="40" w="32" h="20" gammagroup="Titlebar"/>
+	<bitmap id="browser.button.reload.normal" file="images/browser.png" x="50" y="0" h="26" w="21" gammagroup="WindowText"/>
+	<bitmap id="browser.button.reload.hover" file="images/browser.png" x="50" y="26" h="26" w="21" gammagroup="WindowText"/>
+	<bitmap id="browser.button.reload.down" file="images/browser.png" x="50" y="52" h="26" w="21" gammagroup="WindowText"/>
+
+	<bitmap id="browser.button.stop.normal" file="images/browser.png" x="71" y="0" h="26" w="21" gammagroup="WindowText"/>
+	<bitmap id="browser.button.stop.hover" file="images/browser.png" x="71" y="26" h="26" w="21" gammagroup="WindowText"/>
+	<bitmap id="browser.button.stop.down" file="images/browser.png" x="71" y="52" h="26" w="21" gammagroup="WindowText"/>
+
+	<bitmap id="browser.button.home.normal" file="images/browser.png" x="92" y="0" h="26" w="21" gammagroup="WindowText"/>
+	<bitmap id="browser.button.home.hover" file="images/browser.png" x="92" y="26" h="26" w="21" gammagroup="WindowText"/>
+	<bitmap id="browser.button.home.down" file="images/browser.png" x="92" y="52" h="26" w="21" gammagroup="WindowText"/>
+
+	<bitmap id="browser.button.links.normal" file="images/browser.png" x="113" y="0" h="26" w="21" gammagroup="WindowText"/>
+	<bitmap id="browser.button.links.hover" file="images/browser.png" x="113" y="26" h="26" w="21" gammagroup="WindowText"/>
+	<bitmap id="browser.button.links.down" file="images/browser.png" x="113" y="52" h="26" w="21" gammagroup="WindowText"/>
+
+	<bitmap id="browser.button.go.normal" file="images/browser.png" x="145" y="78" h="16" w="11" gammagroup="PlayerButton"/>
+	<bitmap id="browser.button.search.normal" file="images/browser.png" x="108" y="152" h="16" w="31" gammagroup="PlayerButton"/>
+
+	<bitmap id="browser.button.search.winamp.normal" file="images/browser.png" x="45" y="78" h="16" w="25" gammagroup="none"/>
+	<bitmap id="browser.button.search.google.normal" file="images/browser.png" x="20" y="78" h="16" w="25" gammagroup="none"/>
+	<bitmap id="browser.button.search.aol.normal" file="images/browser.png" x="70" y="78" h="16" w="25" gammagroup="none"/>
+	<bitmap id="browser.button.search.eventful.normal" file="images/browser.png" x="95" y="78" h="16" w="25" gammagroup="none"/>
+	<bitmap id="browser.button.search.pollstar.normal" file="images/browser.png" x="0" y="180" h="16" w="25" gammagroup="none"/>
+	<bitmap id="browser.button.search.wiki.normal" file="images/browser.png" x="25" y="180" h="16" w="25" gammagroup="none"/>
+	<bitmap id="browser.button.search.bit.normal" file="images/browser.png" x="50" y="180" h="16" w="25" gammagroup="none"/>
+	<bitmap id="browser.button.search.jambase.normal" file="images/browser.png" x="75" y="180" h="16" w="25" gammagroup="none"/>
+	<bitmap id="browser.button.search.ln.normal" file="images/browser.png" x="100" y="180" h="16" w="25" gammagroup="none"/>
+	<bitmap id="browser.button.search.ontour.normal" file="images/browser.png" x="125" y="180" h="16" w="25" gammagroup="none"/>
+	<bitmap id="browser.button.search.truveo.normal" file="images/browser.png" x="120" y="78" h="16" w="25" gammagroup="none"/>
+
+	<bitmap id="browser.button.scraper.hide.normal" file="images/browser2.png" x="17" y="0" h="13" w="17" gammagroup="WindowText"/>
+	<bitmap id="browser.button.scraper.hide.hover" file="images/browser2.png" x="17" y="13" h="13" w="17" gammagroup="WindowText"/>
+	<bitmap id="browser.button.scraper.hide.down" file="images/browser2.png" x="17" y="26" h="13" w="17" gammagroup="WindowText"/>
+
+	<bitmap id="browser.button.scraper.show.normal" file="images/browser2.png" x="0" y="0" h="13" w="17" gammagroup="WindowText"/>
+	<bitmap id="browser.button.scraper.show.hover" file="images/browser2.png" x="0" y="13" h="13" w="17" gammagroup="WindowText"/>
+	<bitmap id="browser.button.scraper.show.down" file="images/browser2.png" x="0" y="26" h="13" w="17" gammagroup="WindowText"/>
+
+	<bitmap id="browser.button.scraper.play.normal" file="images/browser2.png" x="34" y="0" h="13" w="17" gammagroup="WindowText"/>
+	<bitmap id="browser.button.scraper.play.hover" file="images/browser2.png" x="34" y="13" h="13" w="17" gammagroup="WindowText"/>
+	<bitmap id="browser.button.scraper.play.down" file="images/browser2.png" x="34" y="26" h="13" w="17" gammagroup="WindowText"/>
+
+	<bitmap id="browser.button.scraper.download.normal" file="images/browser2.png" x="51" y="0" h="13" w="17" gammagroup="WindowText"/>
+	<bitmap id="browser.button.scraper.download.hover" file="images/browser2.png" x="51" y="13" h="13" w="17" gammagroup="WindowText"/>
+	<bitmap id="browser.button.scraper.download.down" file="images/browser2.png" x="51" y="26" h="13" w="17" gammagroup="WindowText"/>
+
+	<bitmap id="browser.button.scraper.rescan.normal" file="images/browser2.png" x="68" y="0" h="13" w="17" gammagroup="WindowText"/>
+	<bitmap id="browser.button.scraper.rescan.hover" file="images/browser2.png" x="68" y="13" h="13" w="17" gammagroup="WindowText"/>
+	<bitmap id="browser.button.scraper.rescan.down" file="images/browser2.png" x="68" y="26" h="13" w="17" gammagroup="WindowText"/>
+
+	<bitmap id="browser.button.scraper.normal" file="images/browser2.png" x="0" y="39" h="18" w="20" gammagroup="WindowText"/>
+	<bitmap id="browser.button.scraper.hover" file="images/browser2.png" x="0" y="57" h="18" w="20" gammagroup="WindowText"/>
+	<bitmap id="browser.button.scraper.down" file="images/browser2.png" x="0" y="76" h="18" w="20" gammagroup="WindowText"/>
+
+	<bitmap id="browser.button.dlds.normal" file="images/browser2.png" x="20" y="39" h="18" w="20" gammagroup="WindowText"/>
+	<bitmap id="browser.button.dlds.hover" file="images/browser2.png" x="20" y="57" h="18" w="20" gammagroup="WindowText"/>
+	<bitmap id="browser.button.dlds.down" file="images/browser2.png" x="20" y="76" h="18" w="20" gammagroup="WindowText"/>
+
+	<bitmap id="browser.button.settings.normal" file="images/browser2.png" x="40" y="39" h="18" w="20" gammagroup="WindowText"/>
+	<bitmap id="browser.button.settings.hover" file="images/browser2.png" x="40" y="57" h="18" w="20" gammagroup="WindowText"/>
+	<bitmap id="browser.button.settings.down" file="images/browser2.png" x="40" y="76" h="18" w="20" gammagroup="WindowText"/>
+
+	<bitmap id="browser.list.label" file="images/browser2.png" x="0" y="93" w="32" h="12" gammagroup="DisplayText"/>
+
+	<color id="browser.text" value="172,172,172" gammagroup="WindowText" />
+	<color id="browser.text.active" value="238,238,238" gammagroup="WindowText" />
+
 </elements>
