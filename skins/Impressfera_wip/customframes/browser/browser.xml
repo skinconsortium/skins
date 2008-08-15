@@ -1,0 +1,4 @@
+<include file="browser-elements.xml" />
+<container id="winampbrowser" name="Winamp Browser" default_x="354" default_y="0" default_visible="1" nomenu="0">
+	<include file="browser-normal.xml"/>
+</container>

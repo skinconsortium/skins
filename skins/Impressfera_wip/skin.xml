@@ -11,13 +11,18 @@
 	<homepage>http://www.skinconsortium.com</homepage>
 	<screenshot>skinpreview.png</screenshot>
 </skininfo>
-  
+
+<include file="xml\colors.xml"/>
+<include file="xml\player-elements.xml"/>
+
 <include file="standardframe/statusbar.xml"/>
 <include file="standardframe/standardframe.xml"/>
 <include file="customframes/customframes.xml"/>
 
 <include file="xui\xui-files.xml"/>
 <include file="xml\files.xml"/>
+
+
 
 </WasabiXML>
 
