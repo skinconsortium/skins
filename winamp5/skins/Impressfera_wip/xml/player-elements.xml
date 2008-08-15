@@ -1,6 +1,7 @@
 <elements>
 	<bitmap id="impf.main" file="images/normal-bg.png" gammagroup="Player.Background"/>
 	<bitmap id="impf.main.alpha" file="images/normal-bg-alpha.png" gammagroup="Player.Background"/>
+	<bitmap id="impf.main.overlay" file="images/normal-bg-overlay.png" gammagroup="Player.Background"/>
 
 
 	<bitmap id="impf.seeker.bg" file="images/seeker-bg.png"/>
@@ -119,9 +120,14 @@
 
      <!-- Shuf REP Xfade -->
 
-     <bitmap id="player.main.r" file="images/repeat.png" gammagroup="main.buttons"/>
-     
-	 <bitmap id="player.main.rd" file="images/repeatd.png" gammagroup="main.buttons"/>
+     <bitmap id="player.main.r.0" file="images/repeat.png" gammagroup="main.buttons"/>
+ 	 <bitmap id="player.main.rd.0" file="images/repeatd.png" gammagroup="main.buttons"/>
+
+     <bitmap id="player.main.r.1" file="images/repeat.png" gammagroup="main.buttons"/>
+ 	 <bitmap id="player.main.rd.1" file="images/repeatd.png" gammagroup="main.buttons"/>
+
+     <bitmap id="player.main.r.2" file="images/repeat.png" gammagroup="main.buttons"/>
+ 	 <bitmap id="player.main.rd.2" file="images/repeatd.png" gammagroup="main.buttons"/>
 
      <bitmap id="player.main.s" file="images/shuf.png" gammagroup="main.buttons"/>
      

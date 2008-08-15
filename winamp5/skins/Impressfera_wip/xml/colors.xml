@@ -31,8 +31,8 @@
 	<color id="color.display.bg" value="0,0,0"/>
 	<color id="wasabi.list.background" value="color.display.bg"/>	<!--lists/trees item background (also bg for edit) -->
 	<color id="wasabi.border.sunken" value="color.display.bg"/> <!-- color of dividers and sunken borders -->
-	<bitmap id="wasabi.tree.background" file="$solid" h="64" w="64" color="8,9,10"/><!-- Tree background bitmap (tile) -->
-	<bitmap id="wasabi.list.background" file="$solid" h="64" w="64" color="8,9,10"/><!-- List background bitmap (tile) -->
+	<bitmap id="wasabi.tree.background" file="$solid" h="64" w="64" color="0,0,0"/><!-- Tree background bitmap (tile) -->
+	<bitmap id="wasabi.list.background" file="$solid" h="64" w="64" color="0,0,0"/><!-- List background bitmap (tile) -->
 
 	
 	<!-- Background color for components(ML, Pl(sides) & other -->
@@ -70,10 +70,10 @@
 
 
 	<!-- Column colors... also see: "wasabi.list.column.text"-->
-	<color id="wasabi.list.column.background" value="73,76,77"/> <!-- listview header background color -->
-	<color id="wasabi.list.column.frame.top" value="100,103,104"/> <!-- listview header frame top color -->
-	<color id="wasabi.list.column.frame.middle" value="57,61,62"/> <!-- listview header frame middle color -->
-	<color id="wasabi.list.column.frame.bottom" value="31,34,35"/> <!-- listview header frame bottom color -->
+	<color id="wasabi.list.column.background" value="10,10,10"/> <!-- listview header background color -->
+	<color id="wasabi.list.column.frame.top" value="20,20,20"/> <!-- listview header frame top color -->
+	<color id="wasabi.list.column.frame.middle" value="15,15,15"/> <!-- listview header frame middle color -->
+	<color id="wasabi.list.column.frame.bottom" value="25,25,25"/> <!-- listview header frame bottom color -->
 
 
 	<!-- These colors is used in plugins for the scrollbar...example: "Album List 2". The ML uses skinned scrollbars since wa5.5 -->

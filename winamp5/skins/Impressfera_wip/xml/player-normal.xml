@@ -2,222 +2,185 @@
 
 <layout id="normal" background="impf.main" alphabackground="impf.main.alpha">
 	<slider id="seeker.slider" x="117" y="198" h="0" action="seek" visible="0" thumb="impf.transparent"/>
-	<layer id="seeker.bg.1" x="117" y="198" image="impf.seeker.bg" move="0"/>
+	<layer id="seeker.bg.1" x="117" y="198" image="impf.seeker.bg" move="0" tooltip="Seeker"/>
 	<layer id="seeker.bg.2" x="117" y="198" image="impf.seeker.bg2" move="0" alpha="50" visible="0" ghost="1"/>
-<layer id="tribesm" image="tribesm" x="140" y="219"
-  ghost="1"/>
+
+	<layer image="impf.main.overlay" x="8" y="2" ghost="1"/>
+	<layer id="tribesm" image="tribesm" x="140" y="219" rectrgn="0"/>
 
 	<ModernSongticker id="infosongticker"
 		x="147" y="314" h="16" w="145"
 		id_layout="main;normal"
 		id_volume="Volume"
 		id_seeker="seeker.slider"
-		id_prev="previous.track"
-		id_next="next.track"
-		id_open="open.tracks"
-		id_shuf="shuffle"
-		id_rep="repeat"
+		id_prev="Rev"
+		id_next="Next"
+		id_open="Eject"
+		id_shuf="Shuffle"
+		id_rep="Repeat"
 		id_mute="mute"
 		font="Arial"
 		color="255,255,255"
 	/>
-	
 	<script file="scripts/seeker.maki" param="seeker.bg.1;impf.seeker.map"/>
-<button 
-  id="Minimize"
- x="58" y="26"
- action="MINIMIZE" 
- image="player.main.min"
- downimage="player.main.mind"
- hoverimage="player.main.mind"
- rectrgn="1"
- tooltip="Minimize"
-/>
 
-<button 
- id="Close"
- x="41" y="25"
- action="CLOSE" 
-  image="player.main.close"
- downimage="player.main.closed"
- hoverimage="player.main.closed"
-rectrgn="1"
- tooltip="Terminate"
-/>
-<button 
- id="normal2"
- action="SWITCH" param="normal2" rectrgn="1"
-  x="297" y="5" image="fglobe" 
- downimage="fglobe" 
+	<button 
+		id="Minimize"
+		x="58" y="26"
+		action="MINIMIZE" 
+		image="player.main.min"
+		downimage="player.main.mind"
+		hoverimage="player.main.mind"
+		rectrgn="1"
+		tooltip="Minimize"
+	/>
 
-  
- tooltip="ON FIRE"
- />
+	<button 
+		id="Close"
+		x="41" y="25"
+		action="CLOSE" 
+		image="player.main.close"
+		downimage="player.main.closed"
+		hoverimage="player.main.closed"
+		rectrgn="1"
+		tooltip="Terminate"
+	/>
+	<button 
+		id="normal2"
+		action="SWITCH" param="normal2" rectrgn="1"
+		x="297" y="5" image="fglobe" 
+		downimage="fglobe" 
+		tooltip="ON FIRE"
+	/>
 
-<button 
- id="Stop"
- x="315" y="321"
- action="STOP"  
- image="player.main.stop"  
- downimage="player.main.stopd"
-    rectrgn="1"
- activeImage="player.main.stopd"
- hoverImage="player.main.stopd"
- tooltip="Stop"
- 
-/>
-<layer id="player.main.stopd" image="player.main.stopd"  x="315" y="321"  ghost="1"/>
+	<button 
+		id="Stop"
+		x="315" y="321"
+		action="STOP"  
+		image="player.main.stop"  
+		downimage="player.main.stopd"
+		rectrgn="1"
+		activeImage="player.main.stopd"
+		hoverImage="player.main.stopd"
+		tooltip="Stop"
+	/>
+	<layer id="player.main.stopd" image="player.main.stopd"  x="315" y="321"  ghost="1"/>
+	<script file="scripts/hoverglow.maki" param="Stop,player.main.stopd"/>
 
+	<button 
+		id="Next"
+		x="302" y="355"
+		action="NEXT" 
+		image="player.main.forward"
+		downimage="player.main.forwardd"
+		rectrgn="1"
+		activeImage="player.main.forwardd"
+		hoverImage="player.main.forwardd"
+		tooltip="Next Track"
+	/>
+	<layer id="player.main.forwardd" image="player.main.forwardd" x="302" y="355"  ghost="1"/>
+	<script file="scripts/hoverglow.maki" param="Next,player.main.forwardd"/>
+
+	<button 
+		id="Rev"
+		x="308" y="232"
+		action="PREV"  
+		image="player.main.rev" 
+		downimage="player.main.revd"
+		rectrgn="1"
+		activeImage="player.main.revd"
+		hoverImage="player.main.revd"
+		tooltip="Prev Track"
+	/>
+	<layer id="player.main.revd" image="player.main.revd"  x="308" y="232" ghost="1"/>
+	<script file="scripts/hoverglow.maki" param="Rev,player.main.revd"/>
+
+	<button 
+		id="Eject"
+		x="205" y="395"
+		action="EJECT"  
+		image="player.main.eject"
+		downimage="player.main.ejectd"
+		rectrgn="1"
+		activeImage="player.main.ejectd"
+		hoverImage="player.main.ejectd"
+		tooltip="Open"
+	/>
+	<layer id="player.main.ejectd" image="player.main.ejectd" x="205" y="395" ghost="1"/>
+	<script file="scripts/hoverglow.maki" param="Eject,player.main.ejectd"/>
+
+	<button 
+		id="Play"
+		x="320" y="253"
+		action="PLAY"
+		image="player.main.play"
+		downimage="player.main.playd"
+		rectrgn="1"
+		activeImage="player.main.playd"
+		hoverImage="player.main.playd"
+		tooltip="Pause"
+	/>
+	<layer id="player.main.playd" image="player.main.playd" x="320" y="253" ghost="1"/>
+	<script file="scripts/hoverglow.maki" param="Play,player.main.playd"/>
 	
-<script file="scripts/hoverglow.maki" param="Stop,player.main.stopd"/>
-<button 
- id="Next"
-x="302" y="355"
-action="NEXT" 
-image="player.main.forward"
- downimage="player.main.forwardd"
-    rectrgn="1"
- activeImage="player.main.forwardd"
- hoverImage="player.main.forwardd"
- tooltip="Next Track"
- 
-/>
-<layer id="player.main.forwardd" image="player.main.forwardd" x="302" y="355"  ghost="1"/>
+	<button 
+		id="Pause"
+		x="322" y="285"
+		action="pause"
+		image="player.main.Pause"
+		downimage="player.main.Paused"
+		rectrgn="1"
+		activeImage="player.main.Paused"
+		hoverImage="player.main.Paused"
+		tooltip="Pause"  
+	/> 
+	<layer id="player.main.Paused" image="player.main.Paused" x="322" y="286" ghost="1"/>
+	<script file="scripts/hoverglow.maki" param="Pause,player.main.Paused"/>
 
-	
-<script file="scripts/hoverglow.maki" param="Next,player.main.forwardd"/>
-<button 
- id="Rev"
- x="308" y="232"
- action="PREV"  
-image="player.main.rev" 
- downimage="player.main.revd"
-    rectrgn="1"
- activeImage="player.main.revd"
- hoverImage="player.main.revd"
- tooltip="Prev Track"
- 
-/>
-<layer id="player.main.revd" image="player.main.revd"  x="308" y="232" ghost="1"/>
-
-	
-<script file="scripts/hoverglow.maki" param="Rev,player.main.revd"/>
-<button 
- id="Eject"
- x="205" y="395"
- action="EJECT"  
- image="player.main.eject"
- downimage="player.main.ejectd"
-    rectrgn="1"
- activeImage="player.main.ejectd"
- hoverImage="player.main.ejectd"
- tooltip="Open"
- 
-/>
-<layer id="player.main.ejectd" image="player.main.ejectd" x="205" y="395" ghost="1"/>
-
-	
-<script file="scripts/hoverglow.maki" param="Eject,player.main.ejectd"/>
-<button 
- id="Play"
- x="320" y="253"
- action="PLAY"
- image="player.main.play"
-downimage="player.main.playd"
-    rectrgn="1"
- activeImage="player.main.playd"
- hoverImage="player.main.playd"
- tooltip="Pause"
- 
-/>
-<layer id="player.main.playd" image="player.main.playd" x="320" y="253" ghost="1"/>
-
-	
-<script file="scripts/hoverglow.maki" param="Play,player.main.playd"/>
-<button 
- id="Pause"
- x="322" y="285"
- action="pause"
- image="player.main.Pause"
- downimage="player.main.Paused"
-    rectrgn="1"
- activeImage="player.main.Paused"
- hoverImage="player.main.Paused"
- tooltip="Pause"  
- 
-/>
- 
-<layer id="player.main.Paused" image="player.main.Paused" x="322" y="286" ghost="1"/>
-
-	
-<script file="scripts/hoverglow.maki" param="Pause,player.main.Paused"/>
-
- <togglebutton
-      id="Shuffle"
-      x="247" y="400" 
-  image="player.main.s" rectrgn="1" 
-     
-      activeImage="player.main.sd"
-   hoverImage="player.main.sd"
-      tooltip="Shuffle" 
-      cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Shuffle"
-       
-    />
-<layer id="player.main.sd" image="player.main.sd"  x="247" y="400" 
-  ghost="1"/>
-
-	
-<script file="scripts/hoverglow.maki" param="Shuffle,player.main.sd"/>
+	<togglebutton
+		id="Shuffle"
+		x="247" y="400" 
+		image="player.main.s" rectrgn="1" 
+		activeImage="player.main.sd"
+		hoverImage="player.main.sd"
+		tooltip="Shuffle" 
+		cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Shuffle"
+	/>
+	<layer id="player.main.sd" image="player.main.sd"  x="247" y="400" ghost="1"/>
+	<script file="scripts/hoverglow.maki" param="Shuffle,player.main.sd"/>
    
- 
+	<NStatesButton
+		id="Repeat"
+		x="157" y="400" 
+		image="player.main.r." rectrgn="1"
+		hoverImage="player.main.r."
+		downimage="player.main.rd."
+		font="player.font.ticker"
+		tooltip="Toggle Playlist/Song Repeating"
+		nstates="3" cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Repeat" cfgvals="0;1;-1"
+	/> 
+	<layer id="player.main.rd" image="player.main.rd.0" x="157" y="400" ghost="1"/>
+	<script file="scripts/hoverglow.maki" param="Repeat,player.main.rd"/>
 
-    <togglebutton
-      id="Repeat"
-     
-      x="157" y="400" 
-    image="player.main.r" rectrgn="1"
-      downimage="player.main.rd"
-      activeImage="player.main.rd"
-hoverImage="player.main.r"
-   font="player.font.ticker"
-      tooltip="Repeat"
-      cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Repeat"
-    /> 
-<layer id="player.main.rd" image="player.main.rd"   x="157" y="400" 
-  ghost="1"/>
-<script file="scripts/hoverglow.maki" param="Repeat,player.main.rd"/>
-
-<togglebutton
- id="ML"  action="TOGGLE" param="guid:ml"
- x="86" y="253"
-
- image="player.main.ML" rectrgn="1"
-      downimage="player.main.ML"
-      activeImage="player.main.ML"
-hoverImage="player.main.ML"
- tooltip="Media Library"
-/>
-<layer id="player.main.MLD" image="player.main.MLD" x="86" y="253"
-  ghost="1"/>
-
+	<togglebutton
+		id="ML" action="TOGGLE" param="guid:ml"
+		x="86" y="253"
+		image="player.main.ML" rectrgn="1"
+		downimage="player.main.ML"
+		activeImage="player.main.ML"
+		hoverImage="player.main.ML"
+		tooltip="Media Library"
+	/>
+	<layer id="player.main.MLD" image="player.main.MLD" x="86" y="253" ghost="1"/>
+	<script file="scripts/hoverglow.maki" param="ML,player.main.MLD"/>
 	
-<script file="scripts/hoverglow.maki" param="ML,player.main.MLD"/>
-<togglebutton
- id="PL"  action="TOGGLE" param="guid:pl"
- x="83" y="287"
-
-
-
- image="player.main.PL" rectrgn="1"
-      downimage="player.main.PL"
-      activeImage="player.main.PL"
-hoverImage="player.main.PL"
- tooltip="PlayList"
-/>
-
-	<layer id="player.main.PLD" image="player.main.PLD"  x="83" y="287"
-  ghost="1"/>
-
-	
-<script file="scripts/hoverglow.maki" param="PL,player.main.PLD"/>
+	<togglebutton id="PL" action="TOGGLE" param="guid:pl"
+		x="83" y="287" 
+		image="player.main.PL" rectrgn="1" downimage="player.main.PL"
+		activeImage="player.main.PL"
+		hoverImage="player.main.PL"
+		tooltip="PlayList"
+	/>
+	<layer id="player.main.PLD" image="player.main.PLD" x="83" y="287" ghost="1"/>
+	<script file="scripts/hoverglow.maki" param="PL,player.main.PLD"/>
 </layout>

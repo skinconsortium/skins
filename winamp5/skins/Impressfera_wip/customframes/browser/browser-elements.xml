@@ -1,0 +1,21 @@
+<elements>
+	<bitmap id="pledit.add.1" file="images/playlistbuttons.png" x="0" y="0" w="32" h="20" gammagroup="Titlebar"/>
+	<bitmap id="pledit.add.2" file="images/playlistbuttons.png" x="0" y="20" w="32" h="20" gammagroup="Titlebar"/>
+	<bitmap id="pledit.add.3" file="images/playlistbuttons.png" x="0" y="40" w="32" h="20" gammagroup="Titlebar"/>
+
+	<bitmap id="pledit.rem.1" file="images/playlistbuttons.png" x="32" y="0" w="32" h="20" gammagroup="Titlebar"/>
+	<bitmap id="pledit.rem.2" file="images/playlistbuttons.png" x="32" y="20" w="32" h="20" gammagroup="Titlebar"/>
+	<bitmap id="pledit.rem.3" file="images/playlistbuttons.png" x="32" y="40" w="32" h="20" gammagroup="Titlebar"/>
+
+	<bitmap id="pledit.sel.1" file="images/playlistbuttons.png" x="64" y="0" w="32" h="20" gammagroup="Titlebar"/>
+	<bitmap id="pledit.sel.2" file="images/playlistbuttons.png" x="64" y="20" w="32" h="20" gammagroup="Titlebar"/>
+	<bitmap id="pledit.sel.3" file="images/playlistbuttons.png" x="64" y="40" w="32" h="20" gammagroup="Titlebar"/>
+
+	<bitmap id="pledit.misc.1" file="images/playlistbuttons.png" x="96" y="0" w="32" h="20" gammagroup="Titlebar"/>
+	<bitmap id="pledit.misc.2" file="images/playlistbuttons.png" x="96" y="20" w="32" h="20" gammagroup="Titlebar"/>
+	<bitmap id="pledit.misc.3" file="images/playlistbuttons.png" x="96" y="40" w="32" h="20" gammagroup="Titlebar"/>
+
+	<bitmap id="pledit.list.1" file="images/playlistbuttons.png" x="128" y="0" w="32" h="20" gammagroup="Titlebar"/>
+	<bitmap id="pledit.list.2" file="images/playlistbuttons.png" x="128" y="20" w="32" h="20" gammagroup="Titlebar"/>
+	<bitmap id="pledit.list.3" file="images/playlistbuttons.png" x="128" y="40" w="32" h="20" gammagroup="Titlebar"/>
+</elements>
