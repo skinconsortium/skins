@@ -2,7 +2,7 @@
 
 <layout id="normal" background="impf.main" alphabackground="impf.main.alpha">
 	<slider id="seeker.slider" x="117" y="198" h="0" action="seek" visible="0" thumb="impf.transparent"/>
-	<layer id="seeker.bg.1" x="117" y="198" image="impf.seeker.bg" move="0" tooltip="Seeker"/>
+	<layer id="seeker.bg.1" x="117" y="198" image="impf.seeker.bg" move="0" tooltip="Seeker" rectrgn="0"/>
 	<layer id="seeker.bg.2" x="117" y="198" image="impf.seeker.bg2" move="0" alpha="50" visible="0" ghost="1"/>
 
 	<layer image="impf.main.overlay" x="8" y="2" ghost="1"/>
