@@ -77,7 +77,7 @@
 
 	<bitmap id="browser.list.label" file="images/browser2.png" x="0" y="93" w="32" h="12" gammagroup="DisplayText"/>
 
-	<color id="browser.text" value="172,172,172" gammagroup="WindowText" />
-	<color id="browser.text.active" value="238,238,238" gammagroup="WindowText" />
+	<color id="browser.text" value="120,120,120" gammagroup="WindowText" />
+	<color id="browser.text.active" value="200,200,200" gammagroup="WindowText" />
 
 </elements>
