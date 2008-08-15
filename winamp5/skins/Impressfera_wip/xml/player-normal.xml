@@ -24,33 +24,31 @@
 	/>
 	<script file="scripts/seeker.maki" param="seeker.bg.1;impf.seeker.map"/>
 
-	<button 
-		id="Minimize"
-		x="58" y="26"
+	<button
+		x="327" y="175"
 		action="MINIMIZE" 
-		image="player.main.min"
-		downimage="player.main.mind"
-		hoverimage="player.main.mind"
+		image="wasabi.frame.button.min.1"
+		hoverimage="wasabi.frame.button.min.2"
+		downimage="wasabi.frame.button.min.3"
 		rectrgn="1"
 		tooltip="Minimize"
 	/>
-
-	<button 
-		id="Close"
-		x="41" y="25"
-		action="CLOSE" 
-		image="player.main.close"
-		downimage="player.main.closed"
-		hoverimage="player.main.closed"
-		rectrgn="1"
-		tooltip="Terminate"
+	<button
+		action="SWITCH" param="shade" rectrgn="1"
+		x="340" y="175"
+		image="wasabi.frame.button.menu.1"
+		hoverimage="wasabi.frame.button.menu.2"
+		downimage="wasabi.frame.button.menu.3"
+		tooltip="Switch to shade mode"
 	/>
-	<button 
-		id="normal2"
-		action="SWITCH" param="normal2" rectrgn="1"
-		x="297" y="5" image="fglobe" 
-		downimage="fglobe" 
-		tooltip="ON FIRE"
+	<button
+		x="353" y="175"
+		action="CLOSE" 
+		image="wasabi.frame.button.close.1"
+		hoverimage="wasabi.frame.button.close.2"
+		downimage="wasabi.frame.button.close.3"
+		rectrgn="1"
+		tooltip="Close Winamp"
 	/>
 
 	<button 
