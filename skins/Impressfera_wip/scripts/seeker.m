@@ -70,3 +70,8 @@ seekerLayer1.onMouseMove(int x, int y) {
 		}
 	}
 }
+
+System.onStop(){
+	seekerLayer1.setRegionFromMap(SeekerMap1,0,1);
+	seekerLayer2.hide();
+}
