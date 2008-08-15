@@ -43,4 +43,8 @@
   <bitmap id="wasabi.frame.button.menu.2" file="images/standard-frame-buttons.png" x="13" y="12" w="12" h="12" gammagroup="Titlebar"/>
   <bitmap id="wasabi.frame.button.menu.3" file="images/standard-frame-buttons.png" x="13" y="24" w="12" h="12" gammagroup="Titlebar"/>
 
+  <bitmap id="wasabi.frame.button.min.1" file="images/standard-frame-buttons.png" x="26" y="0" w="12" h="12" gammagroup="Titlebar"/>
+  <bitmap id="wasabi.frame.button.min.2" file="images/standard-frame-buttons.png" x="26" y="12" w="12" h="12" gammagroup="Titlebar"/>
+  <bitmap id="wasabi.frame.button.min.3" file="images/standard-frame-buttons.png" x="26" y="24" w="12" h="12" gammagroup="Titlebar"/>
+
 </elements>
