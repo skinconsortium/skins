@@ -19,8 +19,7 @@ System.onShowLayout(Layout _layout){
 	mainLayout = getContainer("main").getLayout("normal");
 	if(mainLayout==_layout && !getPublicInt("ClassicPro.BrowserPro.loaded", 0)){
 		initWidget();
-
-		browserXUI = getContainer("main").getLayout("normal").findObject("cpro.browser");
+		browserXUI = mainLayout.findObject("cpro.browser");
 		
 		if(getPublicInt("cPro.lastComponentPage", 0)==3 && getPublicInt("ClassicPro.BrowserPro.enabled", 0)){
 			surfSelected();
@@ -43,7 +42,7 @@ surfSelected(){
 
 System.onTitleChange(String newtitle){
 	if(getPublicInt("ClassicPro.BrowserPro.enabled", 0) && !getPublicInt("ClassicPro.BrowserPro.loaded", 0)){
-		if(getPublicInt("ClassicPro.BrowserPro.opentab", 1)){
+		if(getPublicInt("ClassicPro.BrowserPro.opentab", 0)){
 			surfSelected();
 		}
 		else if(getPublicInt("cPro.lastComponentPage", 0)==3){
