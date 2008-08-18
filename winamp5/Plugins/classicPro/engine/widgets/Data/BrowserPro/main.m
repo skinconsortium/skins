@@ -30,13 +30,17 @@ Global GuiObject browserXUI;
 
 System.onScriptLoaded(){
 	setPublicInt("ClassicPro.BrowserPro.loaded", 1);
-	mainLayout = getContainer("main").getLayout("normal");
 	initWidget();
+	
+	mainLayout = getContainer("main").getLayout("normal");
+	browserXUI = mainLayout.findObject("cpro.browser");
 	myGroup = getScriptGroup();
 	myList = myGroup.findObject("bp.servicelist");
 	statusInfo = myGroup.findObject("bp.statusbar");
 	enabledSwitch = myGroup.findObject("bp.onoff");
 	menuOptions = myGroup.findObject("bp.options");
+	
+
 	myList.setIconWidth(16);
 	myList.setShowIcons(1);
 	sourceNo=0;
@@ -44,9 +48,9 @@ System.onScriptLoaded(){
 }
 
 System.onShowLayout(Layout _layout){
+	mainLayout = getContainer("main").getLayout("normal");
+	browserXUI = mainLayout.findObject("cpro.browser");
 	if(mainLayout==_layout){
-		browserXUI = getContainer("main").getLayout("normal").findObject("cpro.browser");
-		
 		if(getPublicInt("cPro.lastComponentPage", 0)==3 && getPublicInt("ClassicPro.BrowserPro.enabled", 0)){
 			initLoadFiles();
 			surfSelected();
@@ -67,7 +71,7 @@ System.onScriptUnloading (){
 
 enabledSwitch.onToggle(boolean onOff){
 	setPublicInt("ClassicPro.BrowserPro.enabled", onOff);
-	if(onOff) surfSelected();
+	if(onOff && (browserXUI.isVisible() || getPublicInt("ClassicPro.BrowserPro.opentab", 0))) surfSelected();
 }
 
 browserXUI.onSetVisible(boolean onOff){
@@ -187,7 +191,7 @@ surfSelected(){
 System.onTitleChange(String newtitle){
 	initLoadFiles();
 	if(getPublicInt("ClassicPro.BrowserPro.enabled", 0)){
-		if(getPublicInt("ClassicPro.BrowserPro.opentab", 1)){
+		if(getPublicInt("ClassicPro.BrowserPro.opentab", 0)){
 			surfSelected();
 		}
 		else if(getPublicInt("cPro.lastComponentPage", 0)==3){
@@ -198,12 +202,12 @@ System.onTitleChange(String newtitle){
 
 menuOptions.onLeftClick(){
 	popMenu = new PopUpMenu;
-	popMenu.addCommand("Open browser if it's closed", 1, getPublicInt("ClassicPro.BrowserPro.opentab", 1), 0);
+	popMenu.addCommand("Open browser if it's closed", 1, getPublicInt("ClassicPro.BrowserPro.opentab", 0), 0);
 
 	int result = popMenu.popAtXY(clientToScreenX(menuOptions.getLeft()), clientToScreenY(menuOptions.getTop() + menuOptions.getHeight()));
 
 	if(result==1){
-		setPublicInt("ClassicPro.BrowserPro.opentab", !getPublicInt("ClassicPro.BrowserPro.opentab", 1));
+		setPublicInt("ClassicPro.BrowserPro.opentab", !getPublicInt("ClassicPro.BrowserPro.opentab", 0));
 	}
 
 	delete popMenu;
