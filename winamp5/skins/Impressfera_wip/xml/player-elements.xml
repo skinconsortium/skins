@@ -1,6 +1,8 @@
 <elements>
 	<bitmap id="impf.main" file="images/normal-bg.png" gammagroup="Player.Background"/>
 	<bitmap id="impf.main.alpha" file="images/normal-bg-alpha.png" gammagroup="Player.Background"/>
+    <bitmap id="impf.main2" file="images/normal-bg2.png" gammagroup="Player.Background"/>
+	<bitmap id="impf.main.alpha2" file="images/normal-bg-alpha2.png" gammagroup="Player.Background"/>
 	<bitmap id="impf.main.overlay" file="images/normal-bg-overlay.png" gammagroup="Player.Background"/>
 
 

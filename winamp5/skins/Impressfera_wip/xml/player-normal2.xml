@@ -1,15 +1,11 @@
 <include file="player-normal-group.xml"/>
 
-<layout id="normal" background="impf.main" alphabackground="impf.main.alpha">
-	<slider id="seeker.slider" x="117" y="198" h="0" action="seek" visible="0" thumb="impf.transparent"/>
-	<layer id="seeker.bg.1" x="117" y="198" image="impf.seeker.bg" move="0" tooltip="Seeker" rectrgn="0"/>
-	<layer id="seeker.bg.2" x="117" y="198" image="impf.seeker.bg2" move="0" alpha="50" visible="0" ghost="1"/>
-
-	<layer image="impf.main.overlay" x="8" y="2" ghost="1"/>
-	<layer id="tribesm" image="tribesm" x="140" y="219" rectrgn="0"/>
+<layout id="normal2" background="impf.main2" alphabackground="impf.main.alpha2">
+	
+	
 
 	<ModernSongticker id="infosongticker"
-		x="147" y="314" h="16" w="145"
+		x="210" y="55" h="15" w="130"
 		id_layout="main;normal"
 		id_volume="Volume"
 		id_seeker="seeker.slider"
@@ -22,7 +18,7 @@
 		font="Arial"
 		color="255,255,255"
 	/>
-	<script file="scripts/seeker.maki" param="seeker.bg.1;impf.seeker.map"/>
+	
 
 	<button
 		x="327" y="175"
@@ -34,8 +30,8 @@
 		tooltip="Minimize"
 	/>
 	<button
-		action="SWITCH" param="normal2" rectrgn="1"
-		x="340" y="175"
+		action="SWITCH" param="normal" rectrgn="1"
+		x="30" y="10"
 		image="wasabi.frame.button.menu.1"
 		hoverimage="wasabi.frame.button.menu.2"
 		downimage="wasabi.frame.button.menu.3"
@@ -53,8 +49,8 @@
 
 	<button 
 		id="Stop"
-		x="315" y="321"
-		action="STOP"  
+		x="160" y="48"
+		action="STOP"  w="23" h="25"
 		image="player.main.stop"  
 		downimage="player.main.stopd"
 		rectrgn="1"
@@ -62,12 +58,12 @@
 		hoverImage="player.main.stopd"
 		tooltip="Stop"
 	/>
-	<layer id="player.main.stopd" image="player.main.stopd"  x="315" y="321"  ghost="1"/>
+	<layer id="player.main.stopd" image="player.main.stopd" x="160" y="48" w="23" h="25"  ghost="1"/>
 	<script file="scripts/hoverglow.maki" param="Stop,player.main.stopd"/>
 
 	<button 
 		id="Next"
-		x="302" y="355"
+		x="182" y="51" w="17" h="19"
 		action="NEXT" 
 		image="player.main.forward"
 		downimage="player.main.forwardd"
@@ -76,12 +72,12 @@
 		hoverImage="player.main.forwardd"
 		tooltip="Next Track"
 	/>
-	<layer id="player.main.forwardd" image="player.main.forwardd" x="302" y="355"  ghost="1"/>
+	<layer id="player.main.forwardd" image="player.main.forwardd" x="182" y="51" w="17" h="19"  ghost="1"/>
 	<script file="scripts/hoverglow.maki" param="Next,player.main.forwardd"/>
 
 	<button 
 		id="Rev"
-		x="308" y="232"
+		x="94" y="51" w="17" h="19"
 		action="PREV"  
 		image="player.main.rev" 
 		downimage="player.main.revd"
@@ -90,7 +86,7 @@
 		hoverImage="player.main.revd"
 		tooltip="Prev Track"
 	/>
-	<layer id="player.main.revd" image="player.main.revd"  x="308" y="232" ghost="1"/>
+	<layer id="player.main.revd" image="player.main.revd"  x="94" y="51" w="17" h="19" ghost="1"/>
 	<script file="scripts/hoverglow.maki" param="Rev,player.main.revd"/>
 
 	<button 
@@ -109,8 +105,8 @@
 
 	<button 
 		id="Play"
-		x="320" y="253"
-		action="PLAY"
+		x="112" y="48"
+		action="PLAY" w="23" h="25"
 		image="player.main.play"
 		downimage="player.main.playd"
 		rectrgn="1"
@@ -118,12 +114,12 @@
 		hoverImage="player.main.playd"
 		tooltip="Pause"
 	/>
-	<layer id="player.main.playd" image="player.main.playd" x="320" y="253" ghost="1"/>
+	<layer id="player.main.playd" image="player.main.playd" w="23" h="25" x="112" y="48" ghost="1"/>
 	<script file="scripts/hoverglow.maki" param="Play,player.main.playd"/>
 	
 	<button 
 		id="Pause"
-		x="322" y="285"
+		x="136" y="48" w="23" h="25"
 		action="pause"
 		image="player.main.Pause"
 		downimage="player.main.Paused"
@@ -132,7 +128,7 @@
 		hoverImage="player.main.Paused"
 		tooltip="Pause"  
 	/> 
-	<layer id="player.main.Paused" image="player.main.Paused" x="322" y="286" ghost="1"/>
+	<layer id="player.main.Paused" image="player.main.Paused" x="136" y="48" w="23" h="25" ghost="1"/>
 	<script file="scripts/hoverglow.maki" param="Pause,player.main.Paused"/>
 
 	<togglebutton
