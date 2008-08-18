@@ -32,6 +32,7 @@ Function initTabSubMenu();
 Function updateTabButtonStates();
 Function updateTabShow();
 Function setTabSubMenuResult(int sel);
+Function setMainFrame(boolean open);
 
 // new dynamic tabs (dynamic size, custom position, hideable..will show again when system trigger it ;)
 Function tab_SetText(int tab, int limit);
@@ -48,7 +49,7 @@ Function setFrame1();
 Function setFrame2(int pos, int h);
 
 Global Group xuiGroup, tab_library, tab_video, tab_avs, tab_Browser, tab_Playlist, tab_Other, tab_Widget, drawer, mainTabsheet;
-Global Group area_left, area_right, area_mini, area_right_pl;
+Global Group area_left, area_right, area_mini, area_right_pl, ocFrame, tabsGroup;
 Global Group mini_Cover, mini_Video, mini_AVS, mini_SavedPL;
 Global Group tabbut_vid, tabbut_avs, tabbut_pl, browserGroup;
 
@@ -110,6 +111,9 @@ System.onScriptLoaded() {
 	mainTabsheet = xuiGroup.findObject("centro.componentsheet");
 	mainFrame = xuiGroup.findObject("centro.mainframe");
 	plFrame = xuiGroup.findObject("centro.plframe");
+
+	ocFrame = xuiGroup.findObject("centro.componentsheet.opencloseframe");
+	tabsGroup = xuiGroup.findObject("centro.componentsheet.tabs");
 	
 	visName = xuiGroup.findObject("centro.visname");
 	
@@ -362,9 +366,12 @@ String replaceString(string baseString, string toreplace, string replacedby) {
 
 spaceTabs(boolean important){
 	if(!xuiGroup.isVisible()) return;
+	//area_left
+	int oc = 50;
+	if(!ocFrame.isVisible()) oc = 26;
 	
-	if(lastSpaceTab == area_left.getWidth() && !important) return; //dont need to check the same width again ;) ... if important do it anyway ;)
-	lastSpaceTab = area_left.getWidth();
+	if(lastSpaceTab == area_left.getWidth()-oc && !important) return; //dont need to check the same width again ;) ... if important do it anyway ;)
+	lastSpaceTab = area_left.getWidth()-oc;
 	
 	//Set text of all the tabs to the biggest version
 	for(int i=0;i<=6;i++){
@@ -376,7 +383,7 @@ spaceTabs(boolean important){
 		for(int noLongTabs=14; noLongTabs>0; noLongTabs--){
 			totalTabW = tab_GetTotalW();
 			
-			if(area_left.getWidth()-46<totalTabW+5){
+			if(area_left.getWidth()-oc<totalTabW){
 				if(noLongTabs>7) tab_SetText(noLongTabs-8, 1);  //make sure about this!
 				else tab_SetText(noLongTabs-1, 2);
 			}
@@ -390,6 +397,7 @@ spaceTabs(boolean important){
 	for(int i=1;i<=6;i++){
 		tab_SetX(i, tab_GetX(i-1)+tab_GetW(i-1)*tab_isVisible(i-1));
 	}
+	//debugstring(integerToString(area_left.getWidth()-oc),9);
 }
 
 System.onSetXuiParam(String param, String value) {
@@ -538,22 +546,30 @@ refreshAIOTab.onTimer(){
 }
 
 openDefaultTab.onTimer(){
+	openDefaultTab.stop();
+	debugString(closeGUID,9);
+
 	if(closeGUID == PL_GUID){ //PL
 		if(mainFrame.getPosition()!=0){
-			mainFrame.setPosition(0);
+			//mainFrame.setPosition(0);
+			setMainFrame(false);
+			return;
 		}
 	}
 	else if(closeGUID == VIDEO_GUID){
-		if(getPublicInt("cPro.lastMini", 0)==1){
+		if(getPublicInt("cPro.lastMini", 0)==1){	//video is openned in mini view
 			openMini(0);
+			return;
 		}
 	}
 	else if(closeGUID == VIS_GUID){
 		if(getPublicInt("cPro.lastDrawer", 0)==3 && open_drawer){
 			drawer.sendAction ("switch_to_drawer", "", 0, 0, 0, 0);
+			return;
 		}
 		else if(getPublicInt("cPro.lastMini", 0)==2){
 			openMini(0);
+			return;
 		}
 	}
 
@@ -564,7 +580,6 @@ openDefaultTab.onTimer(){
 		openTabNo(0);
 	}
 	spaceTabs(true);
-	openDefaultTab.stop();
 }
 
 updateTabShow(){
@@ -659,7 +674,7 @@ openTabNo(int tabNo){
 		tog_Browser.setActivated(1);
 	}
 	else if(tabNo==4){
-		if(mainFrame.getPosition()!=0) closeFrame.leftClick(); //if not closed.. close sideview
+		if(mainFrame.getPosition()!=0) setMainFrame(false); //if not closed.. close sideview
 		tab_Playlist.show();
 		tog_Playlist.setActivated(1);
 	}
@@ -1267,14 +1282,29 @@ xuiGroup.onAction (String action, String param, int x, int y, int p1, int p2, Gu
 		setFrame2(x, area_right_pl.getHeight());
 	}
 	else if (strlower(action) == "sideview_onoff"){
-		if(x==1) openFrame.leftClick();
-		else closeFrame.leftClick();
+		if(x==1) setMainFrame(true);
+		else setMainFrame(false);
 	}
 }
 
 //Main Frame code
 xuiGroup.onResize(int x, int y, int w, int h){
 	setDrawer(getPublicInt("cPro.draweropened", 0));
+	
+	if(w<410){
+		//boolean prevState = ocFrame.isVisible();
+		ocFrame.hide();
+		tog_drawer.setXmlParam("x", "-24");
+		tabsGroup.setXmlParam("w", "-27");
+		
+		//if(prevState) spaceTabs(true);
+	}
+	else{
+		tog_drawer.setXmlParam("x", "-48");
+		ocFrame.show();
+		tabsGroup.setXmlParam("w", "-51");
+	}
+	//spaceTabs(true);
 }
 area_left.onResize(int x, int y, int w, int h){
 	setFrame1();
@@ -1297,7 +1327,7 @@ area_right.onResize(int x, int y, int w, int h){
 		openFrame.hide();
 	}
 	
-	if(w<158 && closeFrame.isVisible()) closeFrame.leftClick();
+	if(w<158) setMainFrame(false);
 	
 	setFrame1();
 	//spaceTabs();
@@ -1319,17 +1349,25 @@ setFrame1(){
 	}
 }
 closeFrame.onLeftClick(){
-	setPublicInt("cpro.e1.closeframe.lastpos", mainFrame.getPosition());
-	mainFrame.setXmlParam("resizable", "0");
-	mainFrame.setPosition(0);
+	setMainFrame(false);
 }
 openFrame.onLeftClick(){
-	int pos = getPublicInt("cpro.e1.closeframe.lastpos", 200);
-	if(pos<158) pos = 158;
-	mainFrame.setXmlParam("resizable", "1");
-	mainFrame.setPosition(pos);
+	setMainFrame(true);
 }
 
+setMainFrame(boolean open){
+	if(open){
+		int pos = getPublicInt("cpro.e1.closeframe.lastpos", 200);
+		if(pos<158) pos = 158;
+		mainFrame.setXmlParam("resizable", "1");
+		mainFrame.setPosition(pos);
+	}
+	else{
+		setPublicInt("cpro.e1.closeframe.lastpos", mainFrame.getPosition());
+		mainFrame.setXmlParam("resizable", "0");
+		mainFrame.setPosition(0);
+	}
+}
 
 
 //Mini Frame code
