@@ -1,5 +1,8 @@
 //amended by SLoB 2nd August 2008 - fixed vu display if only using left frame animation strip so it uses both left and right vu levels, also should be faster as removed 3 calls to get left vu value
+//SLoB - tweaked beatvis vu values cos theyve been crap since 5.31, vu values are at least 50-100 lower than previous values, this gives it a bit of oomph
 #include <lib/std.mi>
+
+#define SENSITIVITY 1.4
 
 Function ProcessMenuResult(int a);
 Function refreshView();
@@ -12,6 +15,7 @@ Global int lastBeatLeft,lastBeatRight, myFrames, aniW, beatLeft, beatRight, fram
 Global Boolean showBeat, showPromo, animTypeB, oneSide;
 Global Layer promoPic, mouseTrap, b01layer, b02layer, c01, c02;
 Global Popupmenu selMenu;
+//Global Text vutrackTitle;
 
 System.onScriptLoaded (){
 
@@ -31,8 +35,10 @@ System.onScriptLoaded (){
 	c01 = frameGroup.findObject("beatvisC.left");
 	c02 = frameGroup.findObject("beatvisC.right");
 
-	
-
+	//dbg
+	//vutrackTitle = frameGroup.findObject("SongTime");
+		
+		
 	myFrames = t01.getLength();
 	
 	myTimer = new Timer;
@@ -95,13 +101,23 @@ System.onscriptunloading(){
 	delete myTimer;
 }
 
+//SLoB - test vu values, cos vu values seem to be shite since 5.31 - as suspected not even hitting 175, so we got loads to play with, lets make it more sensitive so we use the whole 0-255
+//vutrackTitle.setText(integertostring(beatLeft));
 
 myTimer.onTimer(){
 
-	beatLeft = System.getLeftVuMeter();
-	beatRight = System.getRightVuMeter();
+	beatLeft = System.getLeftVuMeter() * SENSITIVITY;
+	beatRight = System.getRightVuMeter() * SENSITIVITY;
 	
-	if(oneSide) beatLeft=(beatLeft+beatRight)/2;
+	if(oneSide)
+	{
+		beatLeft=(beatLeft+beatRight)/2;
+	}
+	
+	if (beatLeft > 255) beatLeft = 255;
+	if (beatRight > 255) beatRight = 255;
+//debug - add vutrack
+	
 	
 	if(animTypeB){
 		beatLeft=aniW/255*beatLeft;

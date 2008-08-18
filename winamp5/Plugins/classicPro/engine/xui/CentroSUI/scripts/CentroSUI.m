@@ -1327,7 +1327,10 @@ area_right.onResize(int x, int y, int w, int h){
 		openFrame.hide();
 	}
 	
-	if(w<158) setMainFrame(false);
+	if(w<158){
+		if(mouseDownF1) mainFrame.setPosition(0);
+		else setMainFrame(false);
+	}
 	
 	setFrame1();
 	//spaceTabs();
