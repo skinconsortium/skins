@@ -251,6 +251,10 @@
 	<group id="centro.widget" x="0" y="0" w="0" h="0" relatw="1" relath="1" visible="0" wantfocus="1"/>
 </groupdef>
 
+<groupdef id="centro.componentsheet.opencloseframe">
+	<button id="open.rightframe" x="0" y="0" image="open.right.1" hoverimage="open.right.2" downimage="open.right.3" rectrgn="1" tooltip="Open Side" visible="0"/>
+	<button id="close.rightframe" x="0" y="0" image="close.right.1" hoverimage="close.right.2" downimage="close.right.3" rectrgn="1" tooltip="Close Side"/>
+</groupdef>
 <groupdef id="centro.componentsheet">
 	<grid fitparent="1"
 		topleft="player.suiframe.1" top="player.suiframe.2" topright="player.suiframe.3"
@@ -258,10 +262,13 @@
 		bottomleft="player.suiframe.7" bottom="player.suiframe.8" bottomright="player.suiframe.9"
 		regionop="1" move="1"
 	/>
-	<group id="centro.componentsheet.tabs" x="1" y="4" w="-2" h="29" relatw="1" wantfocus="1"/>
+	<group id="centro.componentsheet.tabs" x="1" y="4" w="-51" h="29" relatw="1" wantfocus="1"/>
 	<NStatesButton id="tog.drawer" x="-48" y="5" relatx="1" image="drawer.1." hoverimage="drawer.2." downimage="drawer.3." rectrgn="1" nstates="2" cfgvals="0;1"/>
+	<group id="centro.componentsheet.opencloseframe" x="-24" y="5" w="20" h="20" relatx="1"/>
+<!--
 	<button id="open.rightframe" x="-24" y="5" relatx="1" image="open.right.1" hoverimage="open.right.2" downimage="open.right.3" rectrgn="1" tooltip="Open Side" visible="0"/>
 	<button id="close.rightframe" x="-24" y="5" relatx="1" image="close.right.1" hoverimage="close.right.2" downimage="close.right.3" rectrgn="1" tooltip="Close Side"/>
+-->
 	<group id="centro.componentsheet.content" x="2" y="32" w="-4" h="-33" relatw="1" relath="1" visible="1" wantfocus="1"/>
 </groupdef>
 
