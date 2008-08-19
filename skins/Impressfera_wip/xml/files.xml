@@ -1,3 +1,2 @@
-<include file="player-shade-elements.xml"/>
 <include file="player.xml"/>
 <include file="about.xml"/>
