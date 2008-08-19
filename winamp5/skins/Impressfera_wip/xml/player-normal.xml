@@ -1,4 +1,4 @@
-<include file="player-normal-group.xml"/>
+	Q<include file="player-normal-group.xml"/>
 
 <layout id="normal" background="impf.main" alphabackground="impf.main.alpha">
 	<slider id="seeker.slider" x="117" y="198" h="0" action="seek" visible="0" thumb="impf.transparent"/>
@@ -7,9 +7,20 @@
 
 	<layer image="impf.main.overlay" x="8" y="2" ghost="1"/>
 	<layer id="tribesm" image="tribesm" x="140" y="219" rectrgn="0"/>
+    <AnimatedLayer
+          id="Vis.Animation"
+          x="140" y="220"
+          w="160" h="160"
+          image="player.main.vis"
+          ghost="1"
+         
+         />  
+
+
+<script id="customvis" file="scripts/customvis.maki"/>
 
 	<ModernSongticker id="infosongticker"
-		x="147" y="314" h="16" w="145"
+		x="147" y="314" h="15" w="145"
 		id_layout="main;normal"
 		id_volume="Volume"
 		id_seeker="seeker.slider"
@@ -20,10 +31,21 @@
 		id_rep="Repeat"
 		id_mute="mute"
 		font="Arial"
-		color="255,255,255"
+		color="200,200,200" alpha="150"
+        bold="1" antialias="1"
 	/>
 	<script file="scripts/seeker.maki" param="seeker.bg.1;impf.seeker.map"/>
-
+   <text
+	id="Timer" 
+	display="time"
+	x="198" y="272"
+	w="60" h="43"
+	font="player.font.ticker" fontsize="43" align="left"  
+    
+	 bold="1" antialias="1" shadow="-2"
+  color="255,255,255"
+	timecolonwidth="3"
+  />
 	<button
 		x="327" y="175"
 		action="MINIMIZE" 
@@ -181,4 +203,15 @@
 	/>
 	<layer id="player.main.PLD" image="player.main.PLD" x="83" y="287" ghost="1"/>
 	<script file="scripts/hoverglow.maki" param="PL,player.main.PLD"/>
+<AnimatedLayer
+			id="animatedlayer"
+			x="121" y="159"
+			w="200" h="55"
+			image="impresanim"
+			move="1"
+			start="0"
+			speed="200"
+			autoplay="1"
+			autoreplay="0"
+		/>  
 </layout>
