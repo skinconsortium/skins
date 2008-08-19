@@ -1,12 +1,9 @@
 <include file="player-normal-group.xml"/>
 
 <layout id="normal2" background="impf.main2" alphabackground="impf.main.alpha2">
-	
-	
-
 	<ModernSongticker id="infosongticker"
-		x="215" y="54" h="15" w="130"
-		id_layout="main;normal"
+		x="215" y="53" h="15" w="130"
+		id_layout="main;normal2"
 		id_volume="Volume"
 		id_seeker="seeker.slider"
 		id_prev="Rev"
@@ -20,20 +17,17 @@
         bold="1" antialias="1"
 	/>
 	<text
-	id="Timer" 
-	display="time"
-	x="358" y="52"
-	w="60" h="23"
-	font="player.font.ticker" fontsize="23" align="left"  
-    
-	 bold="1" antialias="1"
-  color="250,250,250"
-	timecolonwidth="2"
-  />
-  
-
+		id="Timer" 
+		display="time"
+		x="358" y="52"
+		w="60" h="23"
+		font="player.font.ticker" fontsize="23" align="left"  
+		bold="1" antialias="1"
+		color="250,250,250"
+		timecolonwidth="2"
+	/>
 	<button
-		x="327" y="175"
+		x="-23" y="54" relatx="1"
 		action="MINIMIZE" 
 		image="wasabi.frame.button.min.1"
 		hoverimage="wasabi.frame.button.min.2"
@@ -43,14 +37,14 @@
 	/>
 	<button
 		action="SWITCH" param="normal" rectrgn="1"
-		x="30" y="10"
+		x="-36" y="54" relatx="1"
 		image="wasabi.frame.button.menu.1"
 		hoverimage="wasabi.frame.button.menu.2"
 		downimage="wasabi.frame.button.menu.3"
 		tooltip="Switch to shade mode"
 	/>
 	<button
-		x="353" y="175"
+		x="-49" y="54" relatx="1"
 		action="CLOSE" 
 		image="wasabi.frame.button.close.1"
 		hoverimage="wasabi.frame.button.close.2"
@@ -58,7 +52,7 @@
 		rectrgn="1"
 		tooltip="Close Winamp"
 	/>
-
+	
 	<button 
 		id="Stop"
 		x="160" y="48"
@@ -190,4 +184,24 @@
 	/>
 	<layer id="player.main.PLD" image="player.main.PLD" x="440" y="48" w="25" h="23" ghost="1"/>
 	<script file="scripts/hoverglow.maki" param="PL,player.main.PLD"/>
+
+
+	<!-- Volume Buttons and script-->
+	<button id="vol.more"
+		x="400" y="50" w="18" h="18"
+		image="player.main.PL" rectrgn="1"
+		downimage="player.main.PL"
+		activeImage="player.main.PL"
+		hoverImage="player.main.PL"
+		tooltip="Increase Volume"
+	/>
+	<button id="vol.less"
+		x="488" y="50" w="18" h="18"
+		image="player.main.PL" rectrgn="1"
+		downimage="player.main.PL"
+		activeImage="player.main.PL"
+		hoverImage="player.main.PL"
+		tooltip="Decrease Volume"
+	/>
+	<script file="scripts/volumebuttons.maki"/>
 </layout>

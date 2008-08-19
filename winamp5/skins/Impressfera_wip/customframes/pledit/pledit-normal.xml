@@ -56,6 +56,8 @@
 		autoclose="0"
 		param="guid:{45F3F7C1-A6F3-4ee6-A15E-125E92FC3F8D}"
 	/>
+	<!--<layer image="impf.playlistgirl" fitparent="1"/>
+	<TransparentPlaylist fitparent="1" />-->
 </groupdef>
 
 
@@ -63,7 +65,7 @@
 	<group id="player.content.pl.dummy.group" fitparent="1"/>
 </groupdef>
 
-<layout id="normal" minimum_w="354" minimum_h="164" h="164" w="436" linkwidth="shade" appbar="left|top|right|bottom">
+<layout id="normal" minimum_w="275" minimum_h="116" h="116" w="275" linkwidth="shade" appbar="left|top|right|bottom">
 	<Wasabi:StandardFrame:Status
 		x="0" y="0" w="0" h="0" relatw="1" relath="1"
 		content="pledit.content.group"

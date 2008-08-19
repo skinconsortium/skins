@@ -1,4 +1,6 @@
 <elements>
+	<bitmap id="impf.playlistgirl" file="images/playlistgirl.png" gammagroup="Player.Background"/>
+
 	<bitmap id="impf.main" file="images/normal-bg.png" gammagroup="Player.Background"/>
 	<bitmap id="impf.main.alpha" file="images/normal-bg-alpha.png" gammagroup="Player.Background"/>
     <bitmap id="impf.main2" file="images/normal-bg2.png" gammagroup="Player.Background"/>
@@ -10,6 +12,12 @@
 	<bitmap id="impf.seeker.bg" file="images/seeker-bg.png"/>
 	<bitmap id="impf.seeker.bg2" file="images/seeker-bg2.png"/>
 	<bitmap id="impf.seeker.map" file="images/seeker-map.png" gammagroup="Player.Background"/>
+
+	<bitmap id="impf.middle.start" file="images/middle-start.png" gammagroup="Player.Background"/>
+	<bitmap id="impf.middle.end" file="images/middle-end.png" gammagroup="Player.Background"/>
+
+	<bitmap id="impf.impressfera.bg" file="images/impress-bg.png" gammagroup="Player.Background"/>
+	<bitmap id="impf.impressfera.fg" file="images/impress-fg.png" gammagroup="Player.Background"/>
 
 	<bitmap id="impf.transparent" file="images/transparent.png"/> <!-- for fake seeker -->
     <bitmap id="tribesm" file="images/tribesmall.png"/>

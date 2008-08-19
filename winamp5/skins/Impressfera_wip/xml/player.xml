@@ -1,7 +1,4 @@
 <container id="main">
-
 	<include file="player-normal.xml"/>
     <include file="player-normal2.xml"/>
-	<!--<include file="player-shade.xml"/>-->
-
 </container>
