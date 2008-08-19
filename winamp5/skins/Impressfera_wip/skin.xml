@@ -15,7 +15,7 @@
 <include file="xml\colors.xml"/>
 <include file="xml\player-elements.xml"/>
 <include file="standardframe\standardframe-elements.xml" />
-
+<include file="xml/eq.xml"/>
 <include file="xui\xui-files.xml"/>
 <include file="standardframe/statusbar.xml"/>
 <include file="standardframe/standardframe.xml"/>
