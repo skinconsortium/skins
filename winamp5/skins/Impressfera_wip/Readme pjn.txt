@@ -1,23 +1,26 @@
-OK some notes
+yes force DTA or have a script that comes up like in music show that says DTA is off.
 
-Shade mode not resizable
+search XUI is fine  not alot of time 2 days left to hand it to them.
 
+I have a long day tomorrow at work 6am start
 
-I will create sobieski button soon.
-
-playlist we need to find out how i put in an image in the past.
-
-I put in an animation with the words Impressfera but it seems to skip? the png is ok dont know why,, 
- Whats going on. hit F5 if you missed it.
-
-Also I put in a custom vis in the middle tribe symbol- red pulses
-
-still working on EQ and adding buttons.  I will clean it up to make it look good when all the hard stuff is out of the way.
+I worked alot on this tonight but forgot the Browser button and the Vol and EQ on the Main mode
 
 
-Also seeker has to be 360 maybe meeting right center on the top.  the second ring i made darker
-for the underneath layer.
 
-Also he paid me $200 for first part of skin, when ever you give me $ instructions I will send
+Did th New EQ Looks Better!
 
-$225
+Finished Shade Mode! I think.
+
+
+
+
+Everything you did works great and your animation looks way better!
+
+I guess you can do what you want tomorrow.  not much now -- we need to test with other people.
+
+0 0
+. .
+ .
+
+

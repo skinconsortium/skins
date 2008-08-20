@@ -135,6 +135,10 @@
     <bitmap id="player.main.eject" file="images/eject.png" gammagroup="main.buttons"/>
     
 	<bitmap id="player.main.ejectd" file="images/ejectd.png" gammagroup="main.buttons"/>
+     
+	<bitmap id="player.main.eject2" file="images/eject2.png" gammagroup="main.buttons"/>
+    
+	<bitmap id="player.main.ejectd2" file="images/ejectd2.png" gammagroup="main.buttons"/>
 
      <!-- Shuf REP Xfade -->
 
@@ -159,6 +163,7 @@
 
       <!-- ML PL EQ -->
       <bitmap id="player.main.PL" file="images/PL.png" gammagroup="main.buttons"  />
+      <bitmap id="player.main.slider2" file="images/slider2.png" gammagroup="main.buttons"  />
       <bitmap id="player.main.PLd" file="images/PLd.png" gammagroup="main.buttons"  />
       
       <bitmap id="player.main.ML" file="images/ML.png" gammagroup="main.buttons" />
@@ -167,6 +172,19 @@
       <bitmap id="player.main.Eq" file="images/Eq.png" gammagroup="main.buttons" />
       <bitmap id="player.main.Eqd" file="images/Eqd.png" gammagroup="main.buttons"/>
 
+      <bitmap id="player.main.PL2" file="images/PL2.png" gammagroup="main.buttons"  />
+      <bitmap id="player.main.PLd2" file="images/PLd2.png" gammagroup="main.buttons"  />
+      
+      <bitmap id="player.main.ML2" file="images/ML2.png" gammagroup="main.buttons" />
+      <bitmap id="player.main.MLd2" file="images/MLd2.png" gammagroup="main.buttons"/>
+
+      <bitmap id="player.main.Eq2" file="images/Eq2.png" gammagroup="main.buttons" />
+      <bitmap id="player.main.Eqd2" file="images/Eqd2.png" gammagroup="main.buttons"/>
+
+      <bitmap id="player.main.volup" file="images/volsmup.png" gammagroup="main.buttons" />
+      <bitmap id="player.main.volupd" file="images/volsmupd.png" gammagroup="main.buttons"/>
+      <bitmap id="player.main.vold" file="images/volsm.png" gammagroup="main.buttons" />
+      <bitmap id="player.main.voldd" file="images/volsmd.png" gammagroup="main.buttons"/>
        <!-- min close shade -->
        <bitmap id="player.main.close" file="images/close.png" />
 
