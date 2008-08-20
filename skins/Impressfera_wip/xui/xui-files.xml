@@ -1,4 +1,4 @@
 <include file="editbox/editbox.xml"/>
 <include file="historyeditbox/historyeditbox.xml"/>
 <include file="ModernSongticker/ModernSongticker.xml"/>
-<include file="TransparentPlaylist/TransparentPlaylist.xml"/>
+<include file="PlaylistPro/PlaylistPro.xml"/>

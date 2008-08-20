@@ -1,14 +1,18 @@
 <elements>
 	<bitmap id="impf.playlistgirl" file="images/playlistgirl.png" gammagroup="Player.Background"/>
 
-	<bitmap id="impf.main" file="images/normal-bg.png" gammagroup="Player.Background"/>
 	<bitmap id="impf.main.alpha" file="images/normal-bg-alpha.png" gammagroup="Player.Background"/>
-    <bitmap id="impf.main2" file="images/normal-bg2.png" gammagroup="Player.Background"/>
 	<bitmap id="impf.main.alpha2" file="images/normal-bg-alpha2.png" gammagroup="Player.Background"/>
+
+	<bitmap id="impf.bottlecap" file="images/bottlecap.png" gammagroup="Player.Background"/>
+	
 	<bitmap id="impf.main.overlay" file="images/normal-bg-overlay.png" gammagroup="Player.Background"/>
     <truetypefont id="player.font.ticker" file="Tall Films Expanded.ttf"/>
-     <bitmap id="impresanim" file="images/impresani.png"/>
-     <bitmap id="player.main.vis" file="images/custvis.png"/>
+    <bitmap id="impresanim" file="images/impresani.png"/>
+    <bitmap id="player.main.vis" file="images/custvis.png"/>
+
+	<bitmap id="impf.seeker.light" file="images/seeker-light.png"/>
+	<bitmap id="impf.seeker.back" file="images/seekerback.png"/>
 	<bitmap id="impf.seeker.bg" file="images/seeker-bg.png"/>
 	<bitmap id="impf.seeker.bg2" file="images/seeker-bg2.png"/>
 	<bitmap id="impf.seeker.map" file="images/seeker-map.png" gammagroup="Player.Background"/>

@@ -49,13 +49,16 @@
 
 
 <groupdef id="player.content.pl.dummy.group" name="PlaylistDummyGroup">
-	<windowholder
+	<!--<windowholder
 		fitparent="1"
 		noshowcmdbar="1"
 		autoopen="1"
 		autoclose="0"
 		param="guid:{45F3F7C1-A6F3-4ee6-A15E-125E92FC3F8D}"
-	/>
+	/>-->
+	
+	<PlaylistPro fitparent="1"/>
+	
 	<!--<layer image="impf.playlistgirl" fitparent="1"/>
 	<TransparentPlaylist fitparent="1" />-->
 </groupdef>

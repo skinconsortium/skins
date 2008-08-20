@@ -9,8 +9,10 @@
 	<author gaybag="SC">SkinConsortium</author>
 	<email>email@skinconsortium.com</email>
 	<homepage>http://www.skinconsortium.com</homepage>
-	<screenshot>skinpreview.png</screenshot>
+	<screenshot>screenshot.png</screenshot>
 </skininfo>
+
+
 
 <include file="xml\colors.xml"/>
 <include file="xml\player-elements.xml"/>
@@ -23,6 +25,7 @@
 
 <include file="xml\files.xml"/>
 
+<script file="scripts\DTACheck.maki"/>
 
 
 </WasabiXML>
