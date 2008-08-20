@@ -12,6 +12,10 @@
 	<screenshot>screenshot.png</screenshot>
 </skininfo>
 
+<scripts>
+	<script file="scripts\DTACheck.maki"/>
+	<script file="scripts\loadattribs.maki"/>
+</scripts>
 
 
 <include file="xml\colors.xml"/>
@@ -25,7 +29,6 @@
 
 <include file="xml\files.xml"/>
 
-<script file="scripts\DTACheck.maki"/>
 
 
 </WasabiXML>

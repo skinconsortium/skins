@@ -168,6 +168,8 @@
       <!-- ML PL EQ -->
       <bitmap id="player.main.PL" file="images/PL.png" gammagroup="main.buttons"  />
       <bitmap id="player.main.slider2" file="images/slider2.png" gammagroup="main.buttons"  />
+      <bitmap id="player.main.slider2.normal" file="images/slider2-normal.png" gammagroup="main.buttons"  />
+      <bitmap id="player.main.slider2.down" file="images/slider2-down.png" gammagroup="main.buttons"  />
       <bitmap id="player.main.PLd" file="images/PLd.png" gammagroup="main.buttons"  />
       
       <bitmap id="player.main.ML" file="images/ML.png" gammagroup="main.buttons" />

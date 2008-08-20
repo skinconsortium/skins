@@ -40,6 +40,11 @@ myTimer.onTimer(){
 }
 
 volDown.onLeftButtonDown(int x, int y){
+	volOutput = System.getVolume();
+	volOutput-=5;
+	if(volOutput<0) volOutput=0;
+	System.setVolume(volOutput);
+
 	mouseDown0=true;
 	timerDelay = 200;
 	myTimer.setDelay(timerDelay);
@@ -51,6 +56,11 @@ volDown.onLeftButtonUp(int x, int y){
 }
 
 volUp.onLeftButtonDown(int x, int y){
+	volOutput = System.getVolume();
+	volOutput+=5;
+	if(volOutput>255) volOutput=255;
+	System.setVolume(volOutput);
+
 	mouseDown100=true;
 	timerDelay = 200;
 	myTimer.setDelay(timerDelay);
