@@ -1,6 +1,6 @@
 <include file="player-normal-group.xml"/>
 
-<layout id="normal2" background="impf.main2" alphabackground="impf.main.alpha2">
+<layout id="normal2" background="impf.main.alpha2" alphabackground="impf.main.alpha2">
 	<ModernSongticker id="infosongticker"
 		x="215" y="54" h="15" w="130"
 		id_layout="main;normal2"
@@ -13,8 +13,8 @@
 		id_rep="Repeat"
 		id_mute="mute"
 		font="Arial"
-		color="205,205,205"
-        bold="1" antialias="1" fontsize="14"
+		color="215,140,140"
+        antialias="0" fontsize="13"
 	/>
 	<text
 		id="Timer" 
@@ -26,7 +26,7 @@
 		color="205,205,205"
 		timecolonwidth="2"
 	/>
-<slider id="seek" action="SEEK"	x="208" y="45" w="145" h="8" thumb="player.main.slider2" downThumb="player.main.slider2"/>
+	<slider id="seek" action="SEEK"	x="208" y="45" w="145" h="8" thumb="player.main.slider2" downThumb="player.main.slider2" cursor="IDC_HAND"/>
 	<button
 		x="-23" y="54" relatx="1"
 		action="MINIMIZE" 
@@ -96,19 +96,6 @@
 	<layer id="player.main.revd" image="player.main.revd"  x="94" y="51" w="17" h="19" ghost="1"/>
 	<script file="scripts/hoverglow.maki" param="Rev,player.main.revd"/>
 
-	<button 
-		id="Eject"
-		x="205" y="395"
-		action="EJECT"  
-		image="player.main.eject"
-		downimage="player.main.ejectd"
-		rectrgn="1"
-		activeImage="player.main.ejectd"
-		hoverImage="player.main.ejectd"
-		tooltip="Open"
-	/>
-	<layer id="player.main.ejectd" image="player.main.ejectd" x="205" y="395" ghost="1"/>
-	<script file="scripts/hoverglow.maki" param="Eject,player.main.ejectd"/>
 
 	<button 
 		id="Play"
@@ -186,9 +173,10 @@
 
 	<layer id="player.main.PLD2" image="player.main.PLd2" x="440" y="48" w="25" h="23" ghost="1"/>
 	<script file="scripts/hoverglow.maki" param="PL,player.main.PLd2"/>
-<togglebutton id="pref" action="TOGGLE" param="eq" x="465" y="49"  image="player.main.Eq2" downimage="player.main.Eq2" rectrgn="1" activeImage="player.main.Eq2" hoverImage="player.main.Eq2" tooltip="EQ"/>
-<layer id="player.main.Eqd2" image="player.main.Eqd2" x="465" y="49"  ghost="1"/>
-<script file="scripts/hoverglow.maki" param="pref,player.main.EQd2"/>
+	<togglebutton id="pref" action="TOGGLE" param="eq" x="465" y="49"  image="player.main.Eq2" downimage="player.main.Eq2" rectrgn="1" activeImage="player.main.Eq2" hoverImage="player.main.Eq2" tooltip="EQ"/>
+	<layer id="player.main.Eqd2" image="player.main.Eqd2" x="465" y="49"  ghost="1"/>
+	<script file="scripts/hoverglow.maki" param="pref,player.main.EQd2"/>
+
 	<!-- Volume Buttons and script-->
 	<button id="vol.more"
 		x="400" y="51" 
@@ -207,17 +195,21 @@
 		tooltip="Decrease Volume"
 	/>
 	<script file="scripts/volumebuttons.maki"/>
-<button 
-		id="Eject2"
-		x="630" y="49" 
+	
+	
+	
+	
+	<button 
+		id="Eject"
+		x="630" y="48" 
 		action="EJECT"  
-		image="player.main.eject2"
-		downimage="player.main.ejectd2"
+		image="player.main.eject"
+		downimage="player.main.ejectd"
 		rectrgn="1"
-		activeImage="player.main.ejectd2"
-		hoverImage="player.main.ejectd2"
+		activeImage="player.main.ejectd"
+		hoverImage="player.main.ejectd"
 		tooltip="Open"
 	/>
-	<layer id="player.main.ejectd2" image="player.main.ejectd2" x="630" y="49"  ghost="1"/>
-	<script file="scripts/hoverglow.maki" param="Eject2,player.main.ejectd2"/>
+	<layer id="player.main.ejectd" image="player.main.ejectd" x="630" y="48" ghost="1"/>
+	<script file="scripts/hoverglow.maki" param="Eject,player.main.ejectd"/>
 </layout>

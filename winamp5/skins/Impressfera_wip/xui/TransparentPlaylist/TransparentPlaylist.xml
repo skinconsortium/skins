@@ -1,0 +1,8 @@
+<groupdef id="tpl.xui" xuitag="TransparentPlaylist">
+	<list id="tpl.list" 
+		fitparent="1" nocolheader="1"
+	/>
+	<text id="tpl.text.hidden" display="PE_Info" x="0" y="0" h="1" w="1" visible="0" />
+
+	<script file="xui\TransparentPlaylist\TransparentPlaylist.maki"/>
+</groupdef>

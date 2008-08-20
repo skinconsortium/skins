@@ -1,33 +1,27 @@
 <include file="player-normal-group.xml"/>
 
-<layout id="normal" background="impf.main" alphabackground="impf.main.alpha">
-	<slider id="seeker.slider" x="117" y="198" h="0" action="seek" visible="0" thumb="impf.transparent"/>
-	<layer id="seeker.bg.1" x="117" y="198" image="impf.seeker.bg" move="0" tooltip="Seeker" rectrgn="0" cursor="IDC_HAND"/>
-	<layer id="seeker.bg.2" x="117" y="198" image="impf.seeker.bg2" move="0" alpha="50" visible="0" ghost="1"/>
+<layout id="normal" background="impf.main.alpha" alphabackground="impf.main.alpha">
+	<layer x="118" y="202" image="impf.seeker.back"/>
 
+
+	<slider id="seeker.slider" x="118" y="202" h="0" action="seek" visible="0" thumb="impf.transparent"/>
+	<layer id="seeker.bg.1" x="118" y="202" image="impf.seeker.bg" move="0" tooltip="Seeker" rectrgn="0" cursor="IDC_HAND"/>
+	<layer id="seeker.bg.2" x="118" y="202" image="impf.seeker.bg2" move="0" alpha="50" visible="0" ghost="1"/>
+	<layer id="seeker.light" x="118" y="202" image="impf.seeker.light" move="0" ghost="1" alpha="0"/>
+
+	<script file="scripts/seekerlight.maki"/>
+	
 	<!-- Beat animation -->
+	<layer image="impf.bottlecap" x="177" y="2" ghost="1" alpha="100"/>
+	<layer id="beatvis2" image="impf.bottlecap" x="177" y="2" ghost="1" alpha="255"/>
 	<layer image="impf.middle.start" x="142" y="225" ghost="1"/>
 	<layer id="beatvis" image="impf.middle.end" x="142" y="225" ghost="1" alpha="0"/>
 	<script file="scripts/beatvis.maki"/>
 
 	<layer image="impf.main.overlay" x="8" y="2" ghost="1"/>
 
-	
-
-<!--	<layer id="tribesm" image="tribesm" x="140" y="219" rectrgn="0"/>
-
-    <AnimatedLayer
-          id="Vis.Animation"
-          x="140" y="220"
-          w="160" h="160"
-          image="player.main.vis"
-          ghost="1"
-         
-	/>  
-	<script id="customvis" file="scripts/customvis.maki"/>-->
-
 	<ModernSongticker id="infosongticker"
-		x="147" y="315" h="15" w="145"
+		x="147" y="316" h="15" w="145"
 		id_layout="main;normal"
 		id_volume="Volume"
 		id_seeker="seeker.slider"
@@ -38,8 +32,9 @@
 		id_rep="Repeat"
 		id_mute="mute"
 		font="Arial"
-		color="200,200,200" alpha="120"
-        bold="1" antialias="1"
+		fontsize="13"
+		color="200,200,200" alpha="80"
+        antialias="0"
 	/>
 	<script file="scripts/seeker.maki" param="seeker.bg.1;impf.seeker.map"/>
 
