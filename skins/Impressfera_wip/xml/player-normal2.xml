@@ -5,7 +5,7 @@
 		x="215" y="54" h="15" w="130"
 		id_layout="main;normal2"
 		id_volume="Volume"
-		id_seeker="seeker.slider"
+		id_seeker="seek"
 		id_prev="Rev"
 		id_next="Next"
 		id_open="Eject"
@@ -26,7 +26,13 @@
 		color="205,205,205"
 		timecolonwidth="2"
 	/>
-	<slider id="seek" action="SEEK"	x="208" y="45" w="145" h="8" thumb="player.main.slider2" downThumb="player.main.slider2" cursor="IDC_HAND"/>
+	
+	<ProgressGrid
+		x="212" y="48" w="138" h="2"
+		orientation="right"
+		middle="player.main.slider2"
+	/>
+	<slider id="seek" action="SEEK"	x="212" y="45" w="138" h="8" alpha="100" thumb="player.main.slider2.normal" downThumb="player.main.slider2.down" cursor="IDC_HAND"/>
 	<button
 		x="-23" y="54" relatx="1"
 		action="MINIMIZE" 
