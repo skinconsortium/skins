@@ -186,11 +186,17 @@
 
       <bitmap id="player.main.Eq2" file="images/Eq2.png" gammagroup="main.buttons" />
       <bitmap id="player.main.Eqd2" file="images/Eqd2.png" gammagroup="main.buttons"/>
+       <bitmap id="player.main.sobes" file="images/sobes.png" gammagroup="main.buttons" />
+      <bitmap id="player.main.sobes" file="images/sobes1.png" gammagroup="main.buttons"/>
 
       <bitmap id="player.main.volup" file="images/volsmup.png" gammagroup="main.buttons" />
       <bitmap id="player.main.volupd" file="images/volsmupd.png" gammagroup="main.buttons"/>
       <bitmap id="player.main.vold" file="images/volsm.png" gammagroup="main.buttons" />
       <bitmap id="player.main.voldd" file="images/volsmd.png" gammagroup="main.buttons"/>
+      <bitmap id="player.main.vol+" file="images/vol+.png" gammagroup="main.buttons" />
+      <bitmap id="player.main.vol+d" file="images/vol+d.png" gammagroup="main.buttons"/>
+      <bitmap id="player.main.vol-" file="images/vol-.png" gammagroup="main.buttons" />
+      <bitmap id="player.main.vol-d" file="images/vol-d.png" gammagroup="main.buttons"/>
        <!-- min close shade -->
        <bitmap id="player.main.close" file="images/close.png" />
 
