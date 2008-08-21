@@ -1,4 +1,4 @@
 <groupdef id="skin.about.group" w="0" h="0" relatw="1" relath="1" rectrgn="1">
-	<rect fitparent="1" filled="1" color="0,120,0"/>
-	<text y="50" text="About blabla"/>
+	<rect fitparent="1" filled="1" color="0,0,0"/>
+	<layer image="aboutgfx"/>
 </groupdef>
