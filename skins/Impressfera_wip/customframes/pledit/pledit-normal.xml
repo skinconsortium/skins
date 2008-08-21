@@ -68,7 +68,7 @@
 	<group id="player.content.pl.dummy.group" fitparent="1"/>
 </groupdef>
 
-<layout id="normal" minimum_w="275" minimum_h="116" h="116" w="275" linkwidth="shade" appbar="left|top|right|bottom">
+<layout id="normal" minimum_w="275" minimum_h="116" h="116" w="275" appbar="left|top|right|bottom">
 	<Wasabi:StandardFrame:Status
 		x="0" y="0" w="0" h="0" relatw="1" relath="1"
 		content="pledit.content.group"
