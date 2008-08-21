@@ -14,10 +14,10 @@
 	 =================================
 -->
 	<!-- Notifier Definitions -->
-	<color id="notifier.dark" value="35,35,35"/>
-	<color id="notifier.bright" value="255,255,255"/>
-	<color id="notifier.dark.upper" value="35,35,35"/>
-	<color id="notifier.bright.upper" value="255,255,255"/>
+	<color id="notifier.dark" value="220,220,220"/>
+	<color id="notifier.bright" value="120,120,120"/>
+	<color id="notifier.dark.upper" value="220,220,220"/>
+	<color id="notifier.bright.upper" value="120,120,120"/>
 
 
 	<!-- List text color -->
