@@ -9,7 +9,7 @@
 	<layer id="seeker.bg.2" x="118" y="202" image="impf.seeker.bg2" move="0" alpha="50" visible="0" ghost="1"/>
 	<layer id="seeker.light" x="118" y="202" image="impf.seeker.light" move="0" ghost="1" alpha="0"/>
 
-	<script file="scripts/seekerlight.maki"/>
+	<script file="scripts/fadeonhover.maki" param="seeker.light;seeker.bg.1;40"/>
 	
 	<!-- Beat animation -->
 	<layer image="impf.bottlecap" x="177" y="2" ghost="1" alpha="100"/>
@@ -210,7 +210,7 @@
 <layer id="player.main.Eqd" image="player.main.Eqd" x="88" y="323"  ghost="1"/>
 <script file="scripts/hoverglow.maki" param="pref2,player.main.EQd"/>
 	<!-- Startup animation -->
-<button id="vol.more"
+	<button id="vol.more"
 		x="100" y="229"
 		image="player.main.vol+" rectrgn="1"
 		downimage="player.main.vol+d"
@@ -229,5 +229,22 @@
 	<script file="scripts/volumebuttons.maki"/>
 	<layer x="122" y="159" image="impf.impressfera.bg"/>
 	<layer id="startani.fg" x="122" y="159" w="0" h="55" image="impf.impressfera.fg" tile="1"/>
+	<layer id="impress.mouseoverlay" x="122" y="159" w="199" h="55" rectrgn="1" image="impf.impressfera.bg" alpha="0" cursor="IDC_HAND" tooltip="Visit the Impressdera Website"  />
 	<script file="scripts/startup-animation.maki"/>
+	<script file="scripts/browsebutton.maki" param="impress.mouseoverlay;http://www.impressfera.pl/"/>
+	<script file="scripts/fadeonhover.maki" param="impress.mouseoverlay;impress.mouseoverlay;80"/>
+	
+	
+	<button 
+		id="impressweb.but"
+		x="140" y="496"
+		image="player.main.sobes.2"
+		downimage="player.main.sobes.1"
+		rectrgn="1" cursor="IDC_HAND"
+		hoverImage="player.main.sobes.2"
+		tooltip="Visit the Sobieski homepage"  
+	/> 
+	<layer id="impressweb.lay" image="player.main.sobes.1" x="140" y="496" ghost="1"/>
+	<script file="scripts/hoverglow.maki" param="impressweb.but,impressweb.lay"/>
+	<script file="scripts/browsebutton.maki" param="impressweb.but;http://www.vodkasobieski.com/"/>
 </layout>

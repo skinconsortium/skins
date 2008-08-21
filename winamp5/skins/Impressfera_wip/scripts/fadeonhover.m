@@ -1,18 +1,18 @@
 #include <lib/std.mi>
 
 Global Group mainGroup;
-Global Layer light, seeker;
+Global GuiObject light, seeker;
 
 System.onScriptLoaded() {
 	mainGroup = getScriptGroup();
-	light = mainGroup.findObject("seeker.light");
-	seeker = mainGroup.findObject("seeker.bg.1");
+	light = mainGroup.findObject(getToken(getParam(), ";", 0));
+	seeker = mainGroup.findObject(getToken(getParam(), ";", 1));
 }
 
 seeker.onEnterArea(){
 	light.cancelTarget();
-	light.setTargetA(30);
-	light.setTargetSpeed(0.3);
+	light.setTargetA(stringToInteger(getToken(getParam(), ";", 2)));
+	light.setTargetSpeed(0.2);
 	light.gotoTarget();
 }
 seeker.onLeaveArea(){

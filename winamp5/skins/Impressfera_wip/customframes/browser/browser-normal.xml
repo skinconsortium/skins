@@ -3,7 +3,7 @@
 	<Winamp:Browser id="browser.winamp.xui" fitparent="1" home="http://www.vodkasobieski.com/"/>
 </groupdef>
 
-<layout id="normal" minimum_w="275" minimum_h="116" h="116" w="275">
+<layout id="normal" minimum_w="550" minimum_h="232" h="232" w="550">
 	<Wasabi:Standardframe:NoStatus
 		x="0" y="0" w="0" h="0" relatw="1" relath="1"
 		content="browser.content.group"

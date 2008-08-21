@@ -1,4 +1,6 @@
 <elements>
+	<bitmap id="aboutgfx" file="images/about.jpg" gammagroup="Player.Background"/>
+
 	<bitmap id="impf.playlistgirl" file="images/playlistgirl.png" gammagroup="Player.Background"/>
 
 	<bitmap id="impf.main.alpha" file="images/normal-bg-alpha.png" gammagroup="Player.Background"/>
@@ -186,8 +188,9 @@
 
       <bitmap id="player.main.Eq2" file="images/Eq2.png" gammagroup="main.buttons" />
       <bitmap id="player.main.Eqd2" file="images/Eqd2.png" gammagroup="main.buttons"/>
-       <bitmap id="player.main.sobes" file="images/sobes.png" gammagroup="main.buttons" />
-      <bitmap id="player.main.sobes" file="images/sobes1.png" gammagroup="main.buttons"/>
+      
+      <bitmap id="player.main.sobes.1" file="images/sobes.png" gammagroup="main.buttons" />
+      <bitmap id="player.main.sobes.2" file="images/sobes1.png" gammagroup="main.buttons"/>
 
       <bitmap id="player.main.volup" file="images/volsmup.png" gammagroup="main.buttons" />
       <bitmap id="player.main.volupd" file="images/volsmupd.png" gammagroup="main.buttons"/>
