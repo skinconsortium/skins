@@ -2,7 +2,7 @@
 	<truetypefont id="standardframe.title" file="Tall Films Expanded.ttf" allowmapping="0"/>
 
 
-	<color id="wasabi.tooltips.textcolor" value="147,175,185"/>
+	<color id="wasabi.tooltips.textcolor" value="200,200,200"/>
 	<color id="wasabi.button.text" value="180,180,180"/>
 
 	<color id="Shade.SongTicker.Text" value="147,175,185"/>
