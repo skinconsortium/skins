@@ -1,8 +1,9 @@
 <container id="impress.albumart" name="Album Art" default_visible="0" nomenu="1">
 
 <groupdef id="albumart.content.group">
-	<AlbumArt fitparent="1" move="1"/>
+	<AlbumArt id="main.albumart" fitparent="1" move="1"/>
 	<script file="scripts/albumart.maki"/>
+	<script file="scripts/albumcover.maki"/>
 </groupdef>
 
 <layout id="normal" minimum_w="275" minimum_h="116" h="116" w="275">

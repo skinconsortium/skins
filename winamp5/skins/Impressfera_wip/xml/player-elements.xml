@@ -213,5 +213,12 @@
        
 	   <bitmap id="player.main.shaded" file="images/shaded.png" gammagroup="Glass"/>
     
+	<bitmap id="notifier.bg.left" file="images/notifier.png" x="0" y="0" w="13" h="80" gammagroup="n.Notifier.Bg"/>
+	<bitmap id="notifier.bg.center" file="images/notifier.png" x="14" y="0" w="133" h="80" gammagroup="n.Notifier.Bg"/>
+	<bitmap id="notifier.bg.right" file="images/notifier.png" x="148" y="0" w="13" h="80" gammagroup="n.Notifier.Bg"/>
+	<bitmap id="notifier.bg.left.da" file="images/notifier.png" x="0" y="81" w="13" h="80" gammagroup="n.Notifier.Bg"/>
+	<bitmap id="notifier.bg.center.da" file="images/notifier.png" x="14" y="81" w="133" h="80" gammagroup="n.Notifier.Bg"/>
+	<bitmap id="notifier.bg.right.da" file="images/notifier.png" x="148" y="81" w="13" h="80" gammagroup="n.Notifier.Bg"/>
+	<bitmap id="notifier.bg.cover" file="images/notifier.png" x="0" y="162" w="78" h="80" gammagroup="n.Notifier.Bg"/>
 
 </elements>

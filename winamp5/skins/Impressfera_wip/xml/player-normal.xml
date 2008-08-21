@@ -229,7 +229,7 @@
 	<script file="scripts/volumebuttons.maki"/>
 	<layer x="122" y="159" image="impf.impressfera.bg"/>
 	<layer id="startani.fg" x="122" y="159" w="0" h="55" image="impf.impressfera.fg" tile="1"/>
-	<layer id="impress.mouseoverlay" x="122" y="159" w="199" h="55" rectrgn="1" image="impf.impressfera.bg" alpha="0" cursor="IDC_HAND" tooltip="Visit the Impressdera Website"  />
+	<layer id="impress.mouseoverlay" x="122" y="159" w="199" h="55" rectrgn="1" image="impf.impressfera.bg" move="0" alpha="0" cursor="IDC_HAND" tooltip="Visit the Impressdera Website"  />
 	<script file="scripts/startup-animation.maki"/>
 	<script file="scripts/browsebutton.maki" param="impress.mouseoverlay;http://www.impressfera.pl/"/>
 	<script file="scripts/fadeonhover.maki" param="impress.mouseoverlay;impress.mouseoverlay;80"/>

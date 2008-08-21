@@ -1,6 +1,6 @@
 <groupdef id="browser.content.group">
 	<rect fitparent="1" filled="1" color="wasabi.window.background"/>
-	<Winamp:Browser id="browser.winamp.xui" fitparent="1" home="http://www.vodkasobieski.com/"/>
+	<Winamp:Browser id="browser.winamp.xui" fitparent="1" home="http://www.impressfera.pl/"/>
 </groupdef>
 
 <layout id="normal" minimum_w="550" minimum_h="232" h="232" w="550">

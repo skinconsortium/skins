@@ -18,6 +18,7 @@ Internet:	www.skinconsortium.com
 #include <lib/std.mi>
 
 #include attribs/init_browser.m
+#include attribs/init_notifier.m
 
 /*Global Configattribute FontRenderer, findOpenRect;
 Global String FontRenderer_default, findOpenRect_default;
@@ -25,4 +26,5 @@ Global configAttribute skin_attrib;*/
 
 System.onScriptLoaded(){
 	initAttribs_Browser();
+	initAttribs_notifier();
 }
