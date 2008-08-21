@@ -59,7 +59,7 @@
 		tooltip="Minimize"
 	/>
 	<button
-		action="SWITCH" param="normal2" rectrgn="1"
+		action="SWITCH" param="shade" rectrgn="1"
 		x="340" y="175"
 		image="wasabi.frame.button.menu.1"
 		hoverimage="wasabi.frame.button.menu.2"

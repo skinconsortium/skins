@@ -1,9 +1,7 @@
-<include file="player-normal-group.xml"/>
-
-<layout id="normal2" background="impf.main.alpha2" alphabackground="impf.main.alpha2">
+<layout id="shade" background="impf.main.alpha2" alphabackground="impf.main.alpha2">
 	<ModernSongticker id="infosongticker"
 		x="215" y="54" h="15" w="130"
-		id_layout="main;normal2"
+		id_layout="main;shade"
 		id_volume="Volume"
 		id_seeker="seek"
 		id_prev="Rev"
