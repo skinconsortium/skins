@@ -208,7 +208,7 @@ searchResults.onRightClick(Int itemnum){
 	search_rc.addCommand("Move selected to top", 1, 0, 0);
 	search_rc.addCommand("Move selected to bottom", 2, 0, 0);
 	search_rc.addCommand("Move selected after current", 3, 0, 0);
-	search_rc.addCommand("Move selected together", 4, 0, 0);
+	//search_rc.addCommand("Move selected together", 4, 0, 0);
 	search_rc.addSeparator();
 	search_rc.addCommand("Remove selected from playlist", 5, 0, 0);
 	int result = search_rc.popAtMouse();
