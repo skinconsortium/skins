@@ -46,7 +46,7 @@
 		image="wasabi.frame.button.menu.1"
 		hoverimage="wasabi.frame.button.menu.2"
 		downimage="wasabi.frame.button.menu.3"
-		tooltip="Switch to shade mode"
+		tooltip="Switch to normal mode"
 	/>
 	<button
 		x="-49" y="54" relatx="1"
@@ -95,7 +95,7 @@
 		rectrgn="1"
 		activeImage="player.main.revd"
 		hoverImage="player.main.revd"
-		tooltip="Prev Track"
+		tooltip="Previous Track"
 	/>
 	<layer id="player.main.revd" image="player.main.revd"  x="94" y="51" w="17" h="19" ghost="1"/>
 	<script file="scripts/hoverglow.maki" param="Rev,player.main.revd"/>
@@ -110,7 +110,7 @@
 		rectrgn="1"
 		activeImage="player.main.playd"
 		hoverImage="player.main.playd"
-		tooltip="Pause"
+		tooltip="Play"
 	/>
 	<layer id="player.main.playd" image="player.main.playd" w="23" h="25" x="112" y="48" ghost="1"/>
 	<script file="scripts/hoverglow.maki" param="Play,player.main.playd"/>
