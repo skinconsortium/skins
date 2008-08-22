@@ -10,7 +10,7 @@
 	<layer id="seeker.light" x="118" y="202" image="impf.seeker.light" move="0" ghost="1" alpha="0"/>
 
 	<script file="scripts/fadeonhover.maki" param="seeker.light;seeker.bg.1;40"/>
-	
+
 	<!-- Beat animation -->
 	<layer image="impf.bottlecap" x="177" y="2" ghost="1" alpha="100"/>
 	<layer id="beatvis2" image="impf.bottlecap" x="177" y="2" ghost="1" alpha="255"/>
@@ -21,230 +21,236 @@
 	<layer image="impf.main.overlay" x="8" y="2" ghost="1"/>
 
 	<ModernSongticker id="infosongticker"
-		x="147" y="316" h="15" w="145"
-		id_layout="main;normal"
-		id_volume="Volume"
-		id_seeker="seeker.slider"
-		id_prev="Rev"
-		id_next="Next"
-		id_open="Eject"
-		id_shuf="Shuffle"
-		id_rep="Repeat"
-		id_mute="mute"
-		font="Arial"
-		fontsize="13"
-		color="200,200,200" alpha="80"
-        antialias="0"
+	x="147" y="316" h="15" w="145"
+	id_layout="main;normal"
+	id_volume="Volume"
+	id_seeker="seeker.slider"
+	id_prev="Rev"
+	id_next="Next"
+	id_open="Eject"
+	id_shuf="Shuffle"
+	id_rep="Repeat"
+	id_mute="mute"
+	font="Arial"
+	fontsize="13"
+	color="200,200,200" alpha="80"
+	antialias="0"
 	/>
 	<script file="scripts/seeker.maki" param="seeker.bg.1;impf.seeker.map"/>
 
 	<text
-		id="Timer" 
-		display="time"
-		x="198" y="272"
-		w="60" h="43"
-		font="player.font.ticker" fontsize="43" align="left"  
-		bold="1" antialias="1" shadow="-2"
-		color="255,255,255"
-		timecolonwidth="3"
+	id="Timer" 
+	display="time"
+	x="198" y="272"
+	w="60" h="43"
+	font="player.font.ticker" fontsize="43" align="left"  
+	bold="1" antialias="1" shadow="-2"
+	color="255,255,255"
+	timecolonwidth="3"
 	/>
 
 	<button
-		x="353" y="175"
-		action="MINIMIZE" 
-		image="wasabi.frame.button.min.1"
-		hoverimage="wasabi.frame.button.min.2"
-		downimage="wasabi.frame.button.min.3"
-		rectrgn="1"
-		tooltip="Minimize"
+	x="353" y="175"
+	action="MINIMIZE" 
+	image="wasabi.frame.button.min.1"
+	hoverimage="wasabi.frame.button.min.2"
+	downimage="wasabi.frame.button.min.3"
+	rectrgn="1"
+	tooltip="Minimize"
 	/>
 	<button
-		action="SWITCH" param="shade" rectrgn="1"
-		x="340" y="175"
-		image="wasabi.frame.button.menu.1"
-		hoverimage="wasabi.frame.button.menu.2"
-		downimage="wasabi.frame.button.menu.3"
-		tooltip="Switch to shade mode"
+	action="SWITCH" param="shade" rectrgn="1"
+	x="340" y="175"
+	image="wasabi.frame.button.menu.1"
+	hoverimage="wasabi.frame.button.menu.2"
+	downimage="wasabi.frame.button.menu.3"
+	tooltip="Switch to shade mode"
 	/>
 	<button
-		x="327" y="175"
-		action="CLOSE" 
-		image="wasabi.frame.button.close.1"
-		hoverimage="wasabi.frame.button.close.2"
-		downimage="wasabi.frame.button.close.3"
-		rectrgn="1"
-		tooltip="Close Winamp"
+	x="327" y="175"
+	action="CLOSE" 
+	image="wasabi.frame.button.close.1"
+	hoverimage="wasabi.frame.button.close.2"
+	downimage="wasabi.frame.button.close.3"
+	rectrgn="1"
+	tooltip="Close Winamp"
 	/>
 
 	<button 
-		id="Stop"
-		x="315" y="321"
-		action="STOP"  
-		image="player.main.stop"  
-		downimage="player.main.stopd"
-		rectrgn="1"
-		activeImage="player.main.stopd"
-		hoverImage="player.main.stopd"
-		tooltip="Stop"
+	id="Stop"
+	x="315" y="321"
+	action="STOP"  
+	image="player.main.stop"  
+	downimage="player.main.stopd"
+	rectrgn="1"
+	activeImage="player.main.stopd"
+	hoverImage="player.main.stopd"
+	tooltip="Stop"
 	/>
 	<layer id="player.main.stopd" image="player.main.stopd"  x="315" y="321"  ghost="1"/>
 	<script file="scripts/hoverglow.maki" param="Stop,player.main.stopd"/>
 
 	<button 
-		id="Next"
-		x="302" y="355"
-		action="NEXT" 
-		image="player.main.forward"
-		downimage="player.main.forwardd"
-		rectrgn="1"
-		activeImage="player.main.forwardd"
-		hoverImage="player.main.forwardd"
-		tooltip="Next Track"
+	id="Next"
+	x="302" y="355"
+	action="NEXT" 
+	image="player.main.forward"
+	downimage="player.main.forwardd"
+	rectrgn="1"
+	activeImage="player.main.forwardd"
+	hoverImage="player.main.forwardd"
+	tooltip="Next Track"
 	/>
 	<layer id="player.main.forwardd" image="player.main.forwardd" x="302" y="355"  ghost="1"/>
 	<script file="scripts/hoverglow.maki" param="Next,player.main.forwardd"/>
 
 	<button 
-		id="Rev"
-		x="308" y="232"
-		action="PREV"  
-		image="player.main.rev" 
-		downimage="player.main.revd"
-		rectrgn="1"
-		activeImage="player.main.revd"
-		hoverImage="player.main.revd"
-		tooltip="Prev Track"
+	id="Rev"
+	x="308" y="232"
+	action="PREV"  
+	image="player.main.rev" 
+	downimage="player.main.revd"
+	rectrgn="1"
+	activeImage="player.main.revd"
+	hoverImage="player.main.revd"
+	tooltip="Prev Track"
 	/>
 	<layer id="player.main.revd" image="player.main.revd"  x="308" y="232" ghost="1"/>
 	<script file="scripts/hoverglow.maki" param="Rev,player.main.revd"/>
 
 	<button 
-		id="Eject"
-		x="201" y="395"
-		action="EJECT"  
-		image="player.main.eject"
-		downimage="player.main.ejectd"
-		rectrgn="1"
-		activeImage="player.main.ejectd"
-		hoverImage="player.main.ejectd"
-		tooltip="Open"
+	id="Eject"
+	x="201" y="395"
+	action="EJECT"  
+	image="player.main.eject"
+	downimage="player.main.ejectd"
+	rectrgn="1"
+	activeImage="player.main.ejectd"
+	hoverImage="player.main.ejectd"
+	tooltip="Open"
 	/>
 	<layer id="player.main.ejectd" image="player.main.ejectd" x="201" y="395" ghost="1"/>
 	<script file="scripts/hoverglow.maki" param="Eject,player.main.ejectd"/>
 
 	<button 
-		id="Play"
-		x="320" y="253"
-		action="PLAY"
-		image="player.main.play"
-		downimage="player.main.playd"
-		rectrgn="1"
-		activeImage="player.main.playd"
-		hoverImage="player.main.playd"
-		tooltip="Pause"
+	id="Play"
+	x="320" y="253"
+	action="PLAY"
+	image="player.main.play"
+	downimage="player.main.playd"
+	rectrgn="1"
+	activeImage="player.main.playd"
+	hoverImage="player.main.playd"
+	tooltip="Pause"
 	/>
 	<layer id="player.main.playd" image="player.main.playd" x="320" y="253" ghost="1"/>
 	<script file="scripts/hoverglow.maki" param="Play,player.main.playd"/>
-	
+
 	<button 
-		id="Pause"
-		x="322" y="285"
-		action="pause"
-		image="player.main.Pause"
-		downimage="player.main.Paused"
-		rectrgn="1"
-		activeImage="player.main.Paused"
-		hoverImage="player.main.Paused"
-		tooltip="Pause"  
+	id="Pause"
+	x="322" y="285"
+	action="pause"
+	image="player.main.Pause"
+	downimage="player.main.Paused"
+	rectrgn="1"
+	activeImage="player.main.Paused"
+	hoverImage="player.main.Paused"
+	tooltip="Pause"  
 	/> 
 	<layer id="player.main.Paused" image="player.main.Paused" x="322" y="286" ghost="1"/>
 	<script file="scripts/hoverglow.maki" param="Pause,player.main.Paused"/>
 
 	<togglebutton
-		id="Shuffle"
-		x="244" y="400" 
-		image="player.main.s" rectrgn="1" 
-		activeImage="player.main.sd"
-		hoverImage="player.main.sd"
-		tooltip="Shuffle" 
-		cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Shuffle"
+	id="Shuffle"
+	x="244" y="400" 
+	image="player.main.s" rectrgn="1" 
+	activeImage="player.main.s"
+	hoverImage="player.main.s"
+	tooltip="Shuffle" 
+	cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Shuffle"
 	/>
-	<layer id="player.main.sd" image="player.main.sd"  x="244" y="400" ghost="1"/>
+	<layer id="player.main.sd" image="player.main.sd"  x="244" y="401" ghost="1"/>
 	<script file="scripts/hoverglow.maki" param="Shuffle,player.main.sd"/>
-   
+
 	<NStatesButton
-		id="Repeat"
-		x="154" y="400" 
-		image="player.main.r." rectrgn="1"
-		hoverImage="player.main.r."
-		downimage="player.main.rd."
-		font="player.font.ticker"
-		tooltip="Toggle Playlist/Song Repeating"
-		nstates="3" cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Repeat" cfgvals="0;1;-1"
+	id="Repeat"
+	x="154" y="400" 
+	image="player.main.r." rectrgn="1"
+	hoverImage="player.main.r."
+	downimage="player.main.rd."
+	font="player.font.ticker"
+	tooltip="Toggle Playlist/Song Repeating"
+	nstates="3" cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Repeat" cfgvals="0;1;-1"
 	/> 
-	<layer id="player.main.rd" image="player.main.rd.0" x="154" y="400" ghost="1"/>
+	<layer id="player.main.rd" image="player.main.rd.0" x="154" y="401" ghost="1"/>
 	<script file="scripts/hoverglow.maki" param="Repeat,player.main.rd"/>
 
 	<togglebutton
-		id="ML" action="TOGGLE" param="guid:ml"
-		x="86" y="253"
-		image="player.main.ML" rectrgn="1"
-		downimage="player.main.ML"
-		activeImage="player.main.ML"
-		hoverImage="player.main.ML"
-		tooltip="Media Library"
+	id="ML" action="TOGGLE" param="guid:ml"
+	x="86" y="253"
+	image="player.main.ML" rectrgn="1"
+	downimage="player.main.ML"
+	activeImage="player.main.ML"
+	hoverImage="player.main.ML"
+	tooltip="Media Library"
 	/>
 	<layer id="player.main.MLD" image="player.main.MLD" x="86" y="253" ghost="1"/>
 	<script file="scripts/hoverglow.maki" param="ML,player.main.MLD"/>
-	
+
 	<togglebutton id="PL" action="TOGGLE" param="guid:pl"
-		x="83" y="289" 
-		image="player.main.PL" rectrgn="1" downimage="player.main.PL"
-		activeImage="player.main.PL"
-		hoverImage="player.main.PL"
-		tooltip="PlayList"
+	x="83" y="289" 
+	image="player.main.PL" rectrgn="1" downimage="player.main.PL"
+	activeImage="player.main.PL"
+	hoverImage="player.main.PL"
+	tooltip="PlayList"
 	/>
 	<layer id="player.main.PLD" image="player.main.PLD" x="83" y="289" ghost="1"/>
 	<script file="scripts/hoverglow.maki" param="PL,player.main.PLD"/>
-    <togglebutton id="pref2" action="TOGGLE" param="eq" x="88" y="322"  image="player.main.Eq" downimage="player.main.Eq" rectrgn="1" activeImage="player.main.Eq" hoverImage="player.main.Eq" tooltip="EQ"/>
-<layer id="player.main.Eqd" image="player.main.Eqd" x="88" y="323"  ghost="1"/>
-<script file="scripts/hoverglow.maki" param="pref2,player.main.EQd"/>
+	<togglebutton id="pref2" action="TOGGLE" param="eq" x="88" y="322"  image="player.main.Eq" downimage="player.main.Eq" rectrgn="1" activeImage="player.main.Eq" hoverImage="player.main.Eq" tooltip="EQ"/>
+	<layer id="player.main.Eqd" image="player.main.Eqd" x="88" y="323"  ghost="1"/>
+	<script file="scripts/hoverglow.maki" param="pref2,player.main.EQd"/>
 	<!-- Startup animation -->
 	<button id="vol.more"
-		x="100" y="229"
-		image="player.main.vol+" rectrgn="1"
-		downimage="player.main.vol+d"
-		activeImage="player.main.vol+d"
-		hoverImage="player.main.vol+d"
-		tooltip="Increase Volume"
+	x="100" y="229"
+	image="player.main.vol+" rectrgn="1"
+	downimage="player.main.vol+d"
+	activeImage="player.main.vol+d"
+	hoverImage="player.main.vol+d"
+	tooltip="Increase Volume"
 	/>
+	<layer id="vol.more.fade" image="player.main.vol+d" x="100" y="229" ghost="1"/>
+	<script file="scripts/hoverglow.maki" param="vol.more,vol.more.fade"/>
+
 	<button id="vol.less"
-		x="100" y="355"
-		image="player.main.vol-" rectrgn="1"
-		downimage="player.main.vol-d"
-		activeImage="player.main.vol-d"
-		hoverImage="player.main.vol-d"
-		tooltip="Decrease Volume"
+	x="100" y="355"
+	image="player.main.vol-" rectrgn="1"
+	downimage="player.main.vol-d"
+	activeImage="player.main.vol-d"
+	hoverImage="player.main.vol-d"
+	tooltip="Decrease Volume"
 	/>
+	<layer id="vol.less.fade" image="player.main.vol-d" x="100" y="355" ghost="1"/>
+	<script file="scripts/hoverglow.maki" param="vol.less,vol.less.fade"/>
+
 	<script file="scripts/volumebuttons.maki"/>
 	<layer x="122" y="159" image="impf.impressfera.bg"/>
 	<layer id="startani.fg" x="122" y="159" w="0" h="55" image="impf.impressfera.fg" tile="1"/>
-	<layer id="impress.mouseoverlay" x="122" y="159" w="199" h="55" rectrgn="1" image="impf.impressfera.bg" move="0" alpha="0" cursor="IDC_HAND" tooltip="Visit the Impressdera Website"  />
+	<layer id="impress.mouseoverlay" x="122" y="159" w="199" h="55" rectrgn="1" image="impf.impressfera.bg" move="0" alpha="0" cursor="IDC_HAND" tooltip="Visit the Impressfera Website"  />
 	<script file="scripts/startup-animation.maki"/>
 	<script file="scripts/browsebutton.maki" param="impress.mouseoverlay;http://www.impressfera.pl/"/>
 	<script file="scripts/fadeonhover.maki" param="impress.mouseoverlay;impress.mouseoverlay;80"/>
-	
-	
+
+
 	<button 
-		id="impressweb.but"
-		x="140" y="496"
-		image="player.main.sobes.2"
-		downimage="player.main.sobes.1"
-		rectrgn="1" cursor="IDC_HAND"
-		hoverImage="player.main.sobes.2"
-		tooltip="Visit the Sobieski homepage"  
+	id="impressweb.but"
+	x="140" y="496"
+	image="player.main.sobes.2"
+	downimage="player.main.sobes.1"
+	rectrgn="1" cursor="IDC_HAND"
+	hoverImage="player.main.sobes.2"
+	tooltip="Visit the Impressfera Website"  
 	/> 
 	<layer id="impressweb.lay" image="player.main.sobes.1" x="140" y="496" ghost="1"/>
 	<script file="scripts/hoverglow.maki" param="impressweb.but,impressweb.lay"/>
-	<script file="scripts/browsebutton.maki" param="impressweb.but;http://www.vodkasobieski.com/"/>
+	<script file="scripts/browsebutton.maki" param="impressweb.but;http://www.impressfera.pl/"/>
 </layout>

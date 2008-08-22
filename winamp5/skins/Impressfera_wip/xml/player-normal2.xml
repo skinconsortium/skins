@@ -157,25 +157,25 @@
 
 	<togglebutton
 		id="ML" action="TOGGLE" param="guid:ml"
-		x="417" y="48" w="25" h="24"
+		x="417" y="49"
 		image="player.main.ML2" rectrgn="1"
 		downimage="player.main.ML2"
 		activeImage="player.main.ML2"
 		hoverImage="player.main.ML2"
 		tooltip="Media Library"
 	/>
-	<layer id="player.main.MLD2" image="player.main.MLD2" x="417" y="48" w="25" h="24" ghost="1"/>
+	<layer id="player.main.MLD2" image="player.main.MLD2" x="417" y="49" ghost="1"/>
 	<script file="scripts/hoverglow.maki" param="ML,player.main.MLD2"/>
 	
 	<togglebutton id="PL" action="TOGGLE" param="guid:pl"
-		x="440" y="48" w="25" h="23"
+		x="441" y="48"
 		image="player.main.PL2" rectrgn="1" downimage="player.main.PL2"
 		activeImage="player.main.PL2"
 		hoverImage="player.main.PL2"
 		tooltip="PlayList"
 	/>
 
-	<layer id="player.main.PLD2" image="player.main.PLd2" x="440" y="48" w="25" h="23" ghost="1"/>
+	<layer id="player.main.PLD2" image="player.main.PLd2" x="441" y="48" ghost="1"/>
 	<script file="scripts/hoverglow.maki" param="PL,player.main.PLd2"/>
 	<togglebutton id="pref" action="TOGGLE" param="eq" x="465" y="49"  image="player.main.Eq2" downimage="player.main.Eq2" rectrgn="1" activeImage="player.main.Eq2" hoverImage="player.main.Eq2" tooltip="EQ"/>
 	<layer id="player.main.Eqd2" image="player.main.Eqd2" x="465" y="49"  ghost="1"/>
@@ -186,18 +186,22 @@
 		x="400" y="51" 
 		image="player.main.volup" rectrgn="1"
 		downimage="player.main.volupd"
-		activeImage="player.main.volupd"
 		hoverImage="player.main.volupd"
 		tooltip="Increase Volume"
 	/>
+	<layer id="vol.more.fade" image="player.main.volupd" x="400" y="51" ghost="1"/>
+	<script file="scripts/hoverglow.maki" param="vol.more,vol.more.fade"/>
+
 	<button id="vol.less"
 		x="488" y="51"
 		image="player.main.vold" rectrgn="1"
 		downimage="player.main.voldd"
-		activeImage="player.main.voldd"
 		hoverImage="player.main.voldd"
 		tooltip="Decrease Volume"
 	/>
+	<layer id="vol.less.fade" image="player.main.voldd" x="488" y="51" ghost="1"/>
+	<script file="scripts/hoverglow.maki" param="vol.less,vol.less.fade"/>
+
 	<script file="scripts/volumebuttons.maki"/>
 	
 	

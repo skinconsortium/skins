@@ -1,4 +1,10 @@
 <elements>
+
+  <bitmap id="winamp.cover.notfound" file="images/notfoundXXL.png"/> <!-- 120x120 px -->
+  <bitmap id="winamp.cover.notfound.60" file="images/notfound1.png"/> <!-- 60x60 px -->
+  <bitmap id="winamp.cover.notfound.90" file="images/notfound1.png"/> <!-- 90x90 px -->
+
+
 	<bitmap id="aboutgfx" file="images/about.jpg" gammagroup="Player.Background"/>
 
 	<bitmap id="impf.playlistgirl" file="images/playlistgirl.png" gammagroup="Player.Background"/>
