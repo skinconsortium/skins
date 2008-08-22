@@ -113,7 +113,7 @@
 	rectrgn="1"
 	activeImage="player.main.revd"
 	hoverImage="player.main.revd"
-	tooltip="Prev Track"
+	tooltip="Previous Track"
 	/>
 	<layer id="player.main.revd" image="player.main.revd"  x="308" y="232" ghost="1"/>
 	<script file="scripts/hoverglow.maki" param="Rev,player.main.revd"/>
@@ -141,7 +141,7 @@
 	rectrgn="1"
 	activeImage="player.main.playd"
 	hoverImage="player.main.playd"
-	tooltip="Pause"
+	tooltip="Play"
 	/>
 	<layer id="player.main.playd" image="player.main.playd" x="320" y="253" ghost="1"/>
 	<script file="scripts/hoverglow.maki" param="Play,player.main.playd"/>
