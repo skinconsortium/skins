@@ -180,7 +180,8 @@ System.onResume(){
 }
 
 beatGroup.onSetVisible(Boolean onoff){
-	if(onoff == STATUS_PLAYING){
+	//if(onoff == STATUS_PLAYING){
+	if(onoff && System.getStatus() == STATUS_PLAYING){
 		myTimer.start();
 	}
 	else{
