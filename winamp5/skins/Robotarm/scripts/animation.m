@@ -48,7 +48,13 @@ toggleArm ()
 {
 	if (robotArm.isPlaying())
 	{
-		return;
+		int ef = robotArm.getCurFrame();
+		
+		if(robotArm.getDirection()==1)	robotArm.setEndFrame(0);
+		else robotArm.setEndFrame(robotArm.getLength()-1);
+		
+		robotArm.setStartFrame(ef);
+		armIsOut = !armIsOut;
 	}
 
 	if (armIsOut && display.isVisible())
@@ -63,7 +69,10 @@ toggleArm ()
 robotArm.onStop ()
 {
 	int ef = robotArm.getEndFrame();
-	robotArm.setEndFrame(robotArm.getStartFrame());
+
+	if(robotArm.getDirection()==1)	robotArm.setEndFrame(0);
+	else robotArm.setEndFrame(robotArm.getLength()-1);
+
 	robotArm.setStartFrame(ef);
 	armIsOut = !armIsOut;
 
