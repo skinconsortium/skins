@@ -1,36 +1,23 @@
+<groupdef id="robotarm.display">
 
+	<albumart x="5" y="5" h="90" w="90" />
 
+	<songticker x="5" y="100" w="-10" relatw="1" h="20" ticker="scroll" />
 
-
-
-
-
-
-
-
-<groupdef id="DrawerGroup" name="Equalizer">
- 
-
-
-<AnimatedLayer  w="500" h="356" id="animationlayer" image="anivis" move="1" speed="50" autoplay="0" autoreplay="0" sysregion="1"/>
- <button id="animationbutton" x="0" y="0" image="player.main.close" downimage="player.main.closed" activeImage="player.main.closed" hoverImage="player.main.closed" tooltip="EQ and Systems"/>
-
-<layer id="animinfo" x="49" y="0"/> 
-<script id="animbybutton" file="scripts/Noname2.maki" />
 
 </groupdef>
 
+<groupdef id="robotarm.frameset">
+
+	<AnimatedLayer  w="500" h="356" id="animationlayer" image="anivis" move="1" speed="50" autoplay="0" autoreplay="0" sysregion="1"/>
+	<button id="animationbutton" x="0" y="0" image="player.main.close" downimage="player.main.closed" activeImage="player.main.closed" hoverImage="player.main.closed" tooltip="Show/Hide Winamp"/>
+	<group id="robotarm.display" x="67" y="124" w="225" h="120" visible="0" alpha="0"/> 
+	<script file="scripts/animation.maki" />
+
+</groupdef>
 
 <layout id="normal" background="player.main.background" alphabackground="player.main.background" >
 
-
-
-
-  
- 
-
- <group id="DrawerGroup" w="800" h="500" /> 
-
-
+	<group id="robotarm.frameset" w="800" h="500" /> 
 
 </layout>
