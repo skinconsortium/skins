@@ -1,0 +1,10 @@
+C:\Documents and Settings\Administrator.CHUCK-NORRIS\Desktop\ImageEditor\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator.CHUCK-NORRIS\Desktop\ImageEditor\obj\Debug\MusicShowBackgroundCreator.ColorInput.resources
+C:\Documents and Settings\Administrator.CHUCK-NORRIS\Desktop\ImageEditor\obj\Debug\MusicShowBackgroundCreator.GammaInput.resources
+C:\Documents and Settings\Administrator.CHUCK-NORRIS\Desktop\ImageEditor\obj\Debug\MusicShowBackgroundCreator.ImageEdit.resources
+C:\Documents and Settings\Administrator.CHUCK-NORRIS\Desktop\ImageEditor\obj\Debug\MusicShowBackgroundCreator.Parameter.resources
+C:\Documents and Settings\Administrator.CHUCK-NORRIS\Desktop\ImageEditor\obj\Debug\MusicShowBackgroundCreator.ThumbnailControl.resources
+C:\Documents and Settings\Administrator.CHUCK-NORRIS\Desktop\ImageEditor\obj\Debug\MusicShowBackgroundCreator.ImageControl.resources
+C:\Documents and Settings\Administrator.CHUCK-NORRIS\Desktop\ImageEditor\obj\Debug\MusicShowBackgroundCreator.MainForm.resources
+C:\Documents and Settings\Administrator.CHUCK-NORRIS\Desktop\ImageEditor\obj\Debug\MusicShowBackgroundCreator.Resources.resources
+C:\Documents and Settings\Administrator.CHUCK-NORRIS\Desktop\ImageEditor\obj\Debug\MusicShowBackgroundCreator.csproj.GenerateResource.Cache
