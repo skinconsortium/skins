@@ -1,0 +1,32 @@
+------------------------------------------------------------------
+WinampCleaner: Settings
+------------------------------------------------------------------
+
+Use this file to clean your Winamp settings. This will fix most of the problems
+reported by users. If this alone dont work its recommended that you uninstall
+Winamp and then run this cleaner again.
+
+
+------------------------------------------------------------------
+	FAQ
+------------------------------------------------------------------
+Q: What will this do?
+
+A: This will delete the settings for Winamp stored in your User Application Data folder.
+	This means that the following will be lost:
+		- All Winamp settings
+		- User specific plugins
+		- Gen_ff settings (All settings for Moderns Skins)
+		- Bookmarks
+		- Media Libary will be clean (no files deleted ;)
+
+
+
+Q: Why will I need to clean Winamp?
+
+A: This is recommended if one of the following have happend to your Winamp instalation:
+	- Winamp don't want to open
+	- winamp crash (uninstall also recommended)
+	- The skin your using have developed a bug
+	- Winamp takes long after close to open again
+	- Winamp is using to much memory or takes long to open 
