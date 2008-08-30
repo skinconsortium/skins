@@ -135,7 +135,7 @@
 
 	<button id="aboutwinamp.hidden" x="0" y="0" w="0" h="0" relatx="1" relaty="1" action="TOGGLE" param="guid:{D6201408-476A-4308-BF1B-7BACA1124B12}"/>
 
-	<button id="winampbolt" x="-38" y="-49" relatx="1" relaty="1" w="34" h="34" hoverImage="winamp.logo.2" rectrgn="1" tooltip="Multi-Button (right-click for Options)"/>
+	<button id="winampbolt" x="-38" y="-49" w="34" h="34" relatx="1" relaty="1" hoverImage="winamp.logo.2" rectrgn="1" tooltip="Multi-Button (right-click for Options)"/>
 
 	<script file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\scripts\player.maki"/>
 	<script file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\scripts\presetpos.maki"/>

@@ -316,7 +316,7 @@ fakeSB.onRightButtonDown(int x, int y){
 	search_rc.addSeparator();
 	
 	String history = getPublicString("cPro.PlaylistPro.history", "");
-	boolean historyfound;
+	boolean historyfound=false;
 	for(int i=0;i<15;i++){
 		String historyitem = getToken(history, ";", i);
 		if(historyitem==""){
