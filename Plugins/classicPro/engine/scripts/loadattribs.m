@@ -25,9 +25,10 @@ Global Configattribute FontRenderer, findOpenRect;
 Global String FontRenderer_default, findOpenRect_default;
 Global configAttribute skin_attrib;
 
-System.onScriptLoaded()
-{
-	initAttribs_Autoresize();
-	initAttribs_notifier();
+System.onScriptLoaded(){
+
+	//sorted by alphabet
 	initAttribs_Browser();
+	initAttribs_notifier();
+	initAttribs_Autoresize();
 }
