@@ -130,9 +130,9 @@ myTimer.onTimer(){
 		frameLeft=beatLeft/255*myFrames;
 		frameRight=beatRight/255*myFrames;
 
-
-		if (frameLeft>myFrames) frameLeft=myFrames;
-		if (frameRight>myFrames) frameRight=myFrames;
+		// Martin> Frames go from 0 to myFrames-1 !!!
+		if (frameLeft>=myFrames) frameLeft=myFrames-1;
+		if (frameRight>=myFrames) frameRight=myFrames-1;
 
 		if (frameLeft<lastBeatLeft){
 			frameLeft=lastBeatLeft-1;
