@@ -1,8 +1,8 @@
 <groupdef id="robotarm.display">
+ <layer id="back" image="player.main.back" x="0" y="0"  ghost="1" />
+	<albumart x="152" y="47" h="62" w="57" />
 
-	<albumart x="5" y="5" h="90" w="90" />
-
-	<songticker x="5" y="100" w="-10" relatw="1" h="20" ticker="scroll" />
+	<songticker x="7" y="11" w="170"  h="23" color="1,254,251" ticker="scroll" />
 
 
 </groupdef>

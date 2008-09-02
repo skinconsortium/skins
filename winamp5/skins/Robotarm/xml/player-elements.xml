@@ -4,5 +4,6 @@
 <bitmap id="player.main.background" file="player/background.png" gammagroup="Background" />
 <bitmap id="player.main.close" file="player/close.png" gammagroup="Background"/>
 <bitmap id="player.main.closed" file="player/closed.png" gammagroup="Background"/>
+<bitmap id="player.main.back" file="player/back.png" gammagroup="Background"/>
 <bitmap id="anivis" file="player/anivis.png" gammagroup="Background"/>
 	</elements>
