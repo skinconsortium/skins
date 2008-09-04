@@ -29,6 +29,7 @@ Version 1.04 (xxx Aug 2008)
 - Improved: More accurate beatvis & player title center
 - Improved: BrowserPro default options
 - Improved: AlbumArt cd case gfx
+- Improved: Wasabi:Frame now reopens if it was closed by system
 -------------------------------------------------------------
 
 

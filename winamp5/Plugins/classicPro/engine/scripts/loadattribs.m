@@ -17,9 +17,10 @@ Internet:	www.skinconsortium.com
 
 #include <lib/std.mi>
 
-#include ../scripts/attribs/init_browser.m
-#include ../scripts/attribs/init_notifier.m
-#include ../scripts/attribs/init_Autoresize.m
+#include attribs/init_browser.m
+#include attribs/init_notifier.m
+#include attribs/init_Autoresize.m
+#include attribs/init_songticker.m
 
 Global Configattribute FontRenderer, findOpenRect;
 Global String FontRenderer_default, findOpenRect_default;
@@ -30,5 +31,6 @@ System.onScriptLoaded(){
 	//sorted by alphabet
 	initAttribs_Browser();
 	initAttribs_notifier();
+	initAttribs_Songticker();
 	initAttribs_Autoresize();
 }

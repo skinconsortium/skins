@@ -1,9 +1,11 @@
 #include <lib/std.mi>
+#include ../../scripts/attribs/init_songticker.m
 #define fadeTime 0.3
 
 Function updateInfo(String showThis);
 Function showNews(boolean show);
 Function cancelStuff();
+Function updateTickerScrolling();
 
 Global Container mainContainer;
 Global Layout mainLayout;
@@ -23,11 +25,14 @@ System.onScriptLoaded(){
 	info_songticker = mainGroup.findObject("m.st.ticker");
 	info_news = mainGroup.findObject("m.st.news");
 
+	initAttribs_Songticker();
+
 	fade = new Timer;
 	fade.setDelay(300);
 	goBack = new Timer;
 	busyWithSeek=false;
 	cancelNext=false;
+	updateTickerScrolling();
 }
 
 System.onShowLayout(Layout _layout){
@@ -221,4 +226,19 @@ sl_seeker.onLeftButtonUp(int x, int y){
 }
 sl_seeker.onLeftButtonDown(int x, int y){
 	busyWithSeek=true;
+}
+
+
+/* Changing TickerScrolling via Config Attrib */
+
+ScrollingAttribute.onDataChanged(){
+	updateTickerScrolling();
+}
+
+updateTickerScrolling(){
+	if (info_songticker == NULL) return;
+	
+	if (songticker_scrolling_disabled_attrib.getData() == "1") info_songticker.setXMLParam("ticker", "off");
+	if (songticker_style_modern_attrib.getData() == "1") info_songticker.setXMLParam("ticker", "bounce");
+	if (songticker_style_old_attrib.getData() == "1") info_songticker.setXMLParam("ticker", "scroll");
 }
