@@ -1,6 +1,6 @@
 #include <lib/std.mi>
 
-#define rres 20 
+//#define rres 20 
 
 //Function updateTextSizes();
 Function saveResize(int x, int y, int w, int h);
@@ -26,9 +26,11 @@ Global Timer reCheck;
 //Global Layer resize1, resize2, resize3, resize4, resize6, resize7, resize8, resize9;
 Global Layer resize6, resize8, resize9;
 Global Boolean mouseDown, dontResize, checkHeightAgain;
-Global int i, lastKnownW, lastKnownH;
+Global int i, lastKnownW, lastKnownH, rres;
 
 System.onScriptLoaded() {
+	rres=stringToInteger(getParam());
+
 	mainGroup = getScriptGroup();
 	vol_slider = mainGroup.findObject("volume");
 	seek_slider = mainGroup.findObject("seeker");

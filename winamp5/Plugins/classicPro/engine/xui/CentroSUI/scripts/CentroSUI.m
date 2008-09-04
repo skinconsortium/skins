@@ -72,7 +72,7 @@ Global WindowHolder hold_Other, hold_Pl2, hold_vid, hold_avs, hold_ml, hold_vis;
 Global Frame mainFrame, plFrame;
 Global Timer openMainLayout, openDefaultTab, refreshAIOTab, checkVisName;
 Global GuiObject main_Frame;
-Global boolean openLib, openVid, openVis, loaded, open_drawer, skipLoad, mouseDownF1, mouseDownF2, busyWithDrawer, busyWithThisFunction, wasTabTrig;
+Global boolean openLib, openVid, openVis, loaded, open_drawer, skipLoad, mouseDownF1, mouseDownF2, busyWithDrawer, busyWithThisFunction, wasTabTrig, stopResizeRight, openMePlease;
 Global int default_drawer_h, active_tab, tab_openned;
 Global String guid_blacklist, tabNames, closeGUID;
 
@@ -124,7 +124,7 @@ System.onScriptLoaded() {
 
 	drawer = xuiGroup.findObject("centro.multidrawer");
 
-	// Reader for classic vis colors from bitmap (wa5.51)
+	// Reader for albumart gradient
 	Map myMap = new Map;
 	myMap.loadMap("wasabi.list.background");
 	nowPlaying = xuiGroup.findObject("nowplaying.component");
@@ -1289,13 +1289,20 @@ xuiGroup.onAction (String action, String param, int x, int y, int p1, int p2, Gu
 
 //Main Frame code
 xuiGroup.onResize(int x, int y, int w, int h){
+	//debugString("xuiGroup: x="+integerToString(x)+" y="+integerToString(y)+" w="+integerToString(w)+" h="+integerToString(h),9);
 	setDrawer(getPublicInt("cPro.draweropened", 0));
 	
-	if(w<410){
+	//if(w<410){
+	if(w<413){
 		//boolean prevState = ocFrame.isVisible();
 		ocFrame.hide();
 		tog_drawer.setXmlParam("x", "-24");
 		tabsGroup.setXmlParam("w", "-27");
+
+		if(mainFrame.getPosition()!=0){
+			mainFrame.setPosition(0);
+			setPublicInt("cpro.mainframe.sysclose", 1);
+		}
 		
 		//if(prevState) spaceTabs(true);
 	}
@@ -1305,12 +1312,34 @@ xuiGroup.onResize(int x, int y, int w, int h){
 		tabsGroup.setXmlParam("w", "-51");
 	}
 	//spaceTabs(true);
+	//mainFrame.setPosition(mainFrame.getPosition()); //This is done to refresh the hide of the resizer ;)
+
+	/*if(w<413 && mainFrame.getPosition()==0 && ocFrame.isVisible() && getPublicInt("cpro.mainframe.sysclose", 0)==1){
+		setMainFrame(true);
+	}*/
+	if(w>=413 && getPublicInt("cpro.mainframe.sysclose", 0)==1){
+		setMainFrame(true);
+		//openMePlease=true;
+	}
+
 }
 area_left.onResize(int x, int y, int w, int h){
 	setFrame1();
 	spaceTabs(false);
+	
+	//mainFrame.setPosition(mainFrame.getPosition()); //mainframe refresh :(
+	/*if(openMePlease){
+		setMainFrame(true);
+	}*/
 }
+
 area_right.onResize(int x, int y, int w, int h){
+	if(stopResizeRight){
+		stopResizeRight = false;
+		return;
+	}
+	stopResizeRight = true;
+
 	if(w<10){
 		area_right.hide();
 
@@ -1327,15 +1356,27 @@ area_right.onResize(int x, int y, int w, int h){
 		openFrame.hide();
 	}
 	
-	if(w<158){
-		if(mouseDownF1) mainFrame.setPosition(0);
-		else setMainFrame(false);
+	if(w<158 && mainFrame.getPosition()!=0){
+		if(mouseDownF1){
+			setPublicInt("cpro.mainframe.sysclose", 0);
+			mainFrame.setPosition(0);
+		}
+		/*else{
+			setPublicInt("cpro.mainframe.sysclose", 1);
+			mainFrame.setXmlParam("resizable", "0");
+		}*/
 	}
-	
 	setFrame1();
-	//spaceTabs();
+
+	stopResizeRight = false;
+	
+	//mainFrame.setPosition(mainFrame.getPosition()); //mainframe refresh :(
+
 }
+
+
 mainFrame.onLeftButtonDown(int x, int y){
+	setPublicInt("cpro.e1.closeframe.lastpos", mainFrame.getPosition()); //TESTING THIS...CHANGE BACK
 	mainFrame.setXmlParam("resizable", "1");
 	mouseDownF1=true;
 }
@@ -1343,6 +1384,8 @@ mainFrame.onLeftButtonDown(int x, int y){
 mainFrame.onLeftButtonUp(int x, int y){
 	mouseDownF1=false;
 	if(area_right.getWidth()<10) mainFrame.setXmlParam("resizable", "0");
+	else setPublicInt("cpro.e1.closeframe.lastpos", mainFrame.getPosition()); //TESTING THIS...CHANGE BACK
+	
 	mainFrame.setPosition(mainFrame.getPosition()); //This is done to refresh the hide of the resizer ;)
 }
 
@@ -1359,6 +1402,7 @@ openFrame.onLeftClick(){
 }
 
 setMainFrame(boolean open){
+	setPublicInt("cpro.mainframe.sysclose", 0);
 	if(open){
 		int pos = getPublicInt("cpro.e1.closeframe.lastpos", 200);
 		if(pos<158) pos = 158;
@@ -1370,6 +1414,7 @@ setMainFrame(boolean open){
 		mainFrame.setXmlParam("resizable", "0");
 		mainFrame.setPosition(0);
 	}
+	mainFrame.setPosition(mainFrame.getPosition()); //This is done to refresh the hide of the resizer ;)
 }
 
 
