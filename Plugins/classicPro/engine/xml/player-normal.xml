@@ -137,8 +137,8 @@
 
 	<button id="winampbolt" x="-38" y="-49" w="34" h="34" relatx="1" relaty="1" hoverImage="winamp.logo.2" rectrgn="1" tooltip="Multi-Button (right-click for Options)"/>
 
-	<script file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\scripts\player.maki"/>
+	<script file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\scripts\player.maki" param="20"/>
 	<script file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\scripts\presetpos.maki"/>
 	
-	<SC:UpdateSystem x="0" y="0" h="0" w="0" skinname="classicpro" skinversion="1.04" />
+	<SC:UpdateSystem x="0" y="0" h="0" w="0" skinname="classicpro" skinversion="1.03" />
 </layout>
