@@ -4,7 +4,7 @@
 Global Group frameGroup;
 Global Button goBig, goSmall;
 Global Layer topLayer;
-Global boolean doubleClick;
+Global boolean doubleClick, docked;
 
 Global Container player;
 Global Layout normal;
@@ -48,6 +48,8 @@ normal.onScale (Double newscalevalue){
 }
 
 goBig.onLeftClick(){
+	if(docked) return;
+
 	setPublicInt("cPro.playerX", normal.getLeft());
 	setPublicInt("cPro.playerY", normal.getTop());
 	setPublicInt("cPro.playerW", normal.getWidth());
@@ -63,6 +65,8 @@ goBig.onLeftClick(){
 }
 
 goSmall.onLeftClick(){
+	if(docked) return;
+
 	goBig.show();
 	goSmall.hide();
 	frameGroup.resize (getPublicInt("cPro.playerX", 50), getPublicInt("cPro.playerY", 50), getPublicInt("cPro.playerW", 50), getPublicInt("cPro.playerH", 50));
@@ -89,4 +93,17 @@ topLayer.onLeftButtonUp(int x, int y){
 
 topLayer.onLeftButtonDblClk(int x, int y){
 	doubleClick=true;
+}
+
+
+/*
+pjn - martin here is the new stuff ;)
+This is because I dont want the button to work when docked.
+*/
+normal.onDock(){
+	docked=true;
+}
+
+normal.onUndock(){
+	docked=false;
 }
