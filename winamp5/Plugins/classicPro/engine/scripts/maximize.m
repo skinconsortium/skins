@@ -2,8 +2,8 @@
 #include attribs/init_Autoresize.m
 
 Global Group frameGroup;
-Global Button goBig, goSmall;
-Global Layer topLayer;
+Global Button goBig, goSmall, aotBut;
+Global Layer topLayer, aotDoc;
 Global boolean doubleClick, docked;
 
 Global Container player;
@@ -19,6 +19,8 @@ System.onScriptLoaded() {
 	goBig = frameGroup.findObject("main.goBig");
 	goSmall = frameGroup.findObject("main.goSmall");
 	topLayer = frameGroup.findObject("doubleclick");
+	aotBut = frameGroup.findObject("player.aot");
+	aotDoc = frameGroup.findObject("player.aot.docked");
 	doubleClick=false;
 
 	double newscalevalue = normal.getScale();
@@ -95,15 +97,14 @@ topLayer.onLeftButtonDblClk(int x, int y){
 	doubleClick=true;
 }
 
-
-/*
-pjn - martin here is the new stuff ;)
-This is because I dont want the button to work when docked.
-*/
-normal.onDock(){
+normal.onDock(int side){
 	docked=true;
+	aotBut.hide();
+	aotDoc.show();
 }
 
 normal.onUndock(){
 	docked=false;
+	aotDoc.hide();
+	aotBut.show();
 }

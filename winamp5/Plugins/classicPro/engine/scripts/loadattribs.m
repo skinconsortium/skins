@@ -23,7 +23,7 @@ Internet:	www.skinconsortium.com
 #include attribs/init_songticker.m
 
 Global Configattribute FontRenderer, findOpenRect;
-Global String FontRenderer_default, findOpenRect_default;
+Global String findOpenRect_default;
 Global configAttribute skin_attrib;
 
 System.onScriptLoaded(){
@@ -33,4 +33,19 @@ System.onScriptLoaded(){
 	initAttribs_notifier();
 	initAttribs_Songticker();
 	initAttribs_Autoresize();
+	
+
+	// Turn 'find open rect' temporary off
+	findOpenRect = config.getItemByGuid("{280876CF-48C0-40BC-8E86-73CE6BB462E5}").getAttribute("Find open rect");
+	findOpenRect_default = findOpenRect.getData();
+	findOpenRect.setData("0");
+}
+
+System.onScriptUnloading(){
+	findOpenRect.setData(findOpenRect_default);
+}
+
+findOpenRect.onDataChanged(){
+	if (getData() == "0") return;
+	findOpenRect.setData("0");
 }

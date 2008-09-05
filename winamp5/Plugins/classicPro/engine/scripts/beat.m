@@ -2,16 +2,18 @@
 //SLoB - tweaked beatvis vu values cos theyve been crap since 5.31, vu values are at least 50-100 lower than previous values, this gives it a bit of oomph
 #include <lib/std.mi>
 
-#define SENSITIVITY 1.4
+#define DEF_MAX 100
 
 Function ProcessMenuResult(int a);
 Function refreshView();
 Function showGroup(int groupNo);
+Function startTimer();
+
 Global Group frameGroup, beatGroup, promoGroup, b01, b02;
 
 Global AnimatedLayer t01, t02;
 Global Timer myTimer;
-Global int lastBeatLeft,lastBeatRight, myFrames, aniW, beatLeft, beatRight, frameLeft, frameRight;
+Global int lastBeatLeft,lastBeatRight, myFrames, aniW, beatLeft, beatRight, frameLeft, frameRight, run_max;
 Global Boolean showBeat, showPromo, animTypeB, oneSide;
 Global Layer promoPic, mouseTrap, b01layer, b02layer, c01, c02;
 Global Popupmenu selMenu;
@@ -106,29 +108,29 @@ System.onscriptunloading(){
 
 myTimer.onTimer(){
 
-	beatLeft = System.getLeftVuMeter() * SENSITIVITY;
-	beatRight = System.getRightVuMeter() * SENSITIVITY;
+	beatLeft = System.getLeftVuMeter();// * SENSITIVITY;
+	beatRight = System.getRightVuMeter();// * SENSITIVITY;
 	
 	if(oneSide)
 	{
 		beatLeft=(beatLeft+beatRight)/2;
 	}
 	
-	if (beatLeft > 255) beatLeft = 255;
-	if (beatRight > 255) beatRight = 255;
+	if (beatLeft > run_max) run_max = beatLeft;
+	if (beatRight > run_max) run_max = beatRight;
 //debug - add vutrack
 	
 	
 	if(animTypeB){
-		beatLeft=aniW/255*beatLeft;
+		beatLeft=aniW/run_max*beatLeft;
 		b01.setXmlParam("w", integerToString(beatLeft));
 		b01.setXmlParam("x", integerToString(aniW-beatLeft));
-		if(!oneSide) b02.setXmlParam("w", integerToString(aniW/255*beatRight));
+		if(!oneSide) b02.setXmlParam("w", integerToString(aniW/run_max*beatRight));
 	}
 	else
 	{	
-		frameLeft=beatLeft/255*myFrames;
-		frameRight=beatRight/255*myFrames;
+		frameLeft=beatLeft/run_max*myFrames;
+		frameRight=beatRight/run_max*myFrames;
 
 		// Martin> Frames go from 0 to myFrames-1 !!!
 		if (frameLeft>=myFrames) frameLeft=myFrames-1;
@@ -152,6 +154,10 @@ myTimer.onTimer(){
 	}
 }
 
+System.onTitleChange(String newTxt){
+	run_max=DEF_MAX;
+}
+
 System.onStop(){
 	refreshView();
 	myTimer.stop();
@@ -162,7 +168,7 @@ System.onStop(){
 System.onPlay(){
 	refreshView();
 	if(beatGroup.isVisible()){
-		myTimer.start();
+		startTimer();
 	}
 }
 System.onPause(){
@@ -175,14 +181,14 @@ System.onPause(){
 System.onResume(){
 	refreshView();
 	if(beatGroup.isVisible()){
-		myTimer.start();
+		startTimer();
 	}
 }
 
 beatGroup.onSetVisible(Boolean onoff){
 	//if(onoff == STATUS_PLAYING){
 	if(onoff && System.getStatus() == STATUS_PLAYING){
-		myTimer.start();
+		startTimer();
 	}
 	else{
 		myTimer.stop();
@@ -287,4 +293,9 @@ ProcessMenuResult(int a){
 mouseTrap.onLeftButtonDblClk(int x, int y){
 		setPrivateInt(getSkinName(), "beatvis", !getPrivateInt(getSkinName(), "beatvis", 1));
 		refreshView();
+}
+
+startTimer(){
+	run_max=DEF_MAX;
+	myTimer.start();
 }
