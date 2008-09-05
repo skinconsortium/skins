@@ -2,7 +2,7 @@
 //SLoB - tweaked beatvis vu values cos theyve been crap since 5.31, vu values are at least 50-100 lower than previous values, this gives it a bit of oomph
 #include <lib/std.mi>
 
-#define DEF_MAX 100
+#define DEF_MAX 50
 
 Function ProcessMenuResult(int a);
 Function refreshView();
