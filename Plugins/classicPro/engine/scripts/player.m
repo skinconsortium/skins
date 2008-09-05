@@ -159,7 +159,15 @@ gotoGlobal(){
 	int y = getPublicInt("cPro.y", getCurAppTop());
 	int w = getPublicInt("cPro.w", getCurAppWidth());
 	int h = getPublicInt("cPro.h", getCurAppHeight());
-	
+
+	if(getPublicInt("cPro.maximized", 0)==1){
+		double newscalevalue = mylayout.getScale();
+		x=getViewPortLeftfromGuiObject(mylayout);
+		y=getViewPortTopfromGuiObject(mylayout);
+		w=getViewPortWidthfromGuiObject(mylayout)/newscalevalue;
+		h=getViewPortHeightfromGuiObject(mylayout)/newscalevalue;
+	}
+
 	if(w<317) w= 317;
 	if(h<168) h= 168; //why was this w=168??? just change back if any bugs arise
 	
