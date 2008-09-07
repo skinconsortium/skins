@@ -1,0 +1,110 @@
+<elements>
+
+	<!-- Please comment the fonts out if you dont use them!
+	... if you use arial
+	... you dont need this
+	-->
+<!--
+	<truetypefont id="cpro.tracktime.font" file="load.ttf" allowmapping="0"/>
+	<truetypefont id="cpro.songname.font" file="load.ttf" allowmapping="0"/>
+	<truetypefont id="cpro.songinfo2.font" file="load.ttf" allowmapping="0"/>
+	<truetypefont id="cpro.menu.font" file="load.ttf" allowmapping="0"/>
+	<truetypefont id="cpro.tab.font" file="load.ttf" allowmapping="0"/>
+ 	<truetypefont id="cpro.status.font" file="load.ttf" allowmapping="0"/>
+ 	<truetypefont id="cpro.winshade.font" file="load.ttf" allowmapping="0"/>
+-->
+
+	<!-- cPro player colors -->
+	<color id="Menu.Text" value="200,200,200"/>
+	<color id="Playlist.Status.Text" value="255,255,255"/>
+	
+	<color id="Tab.Text.On" value="255,255,255"/>
+	<color id="Tab.Text.Off" value="230,230,230"/>
+	<color id="Tab.Text.Hover" value="255,255,255"/>
+
+	<color id="Tag.Info.Text" value="255,255,255"/>
+	<color id="Player.SongTicker.Text" value="255,255,255"/>
+	<color id="Eq.xfade.Text" value="255,255,255"/>
+	<color id="ComponentTab.Status.Text" value="210,210,210"/>
+	<color id="Browser.MediaMonitor" value="255,255,255"/>
+	<color id="wasabi.tooltips.textcolor" value="230,230,230"/>
+	<color id="wasabi.button.text" value="230,230,230"/>
+
+	<color id="Shade.SongTicker.Text" value="147,175,185"/>
+
+
+<!-- =================================
+	
+		General Color Definitions
+	 =================================
+-->
+	<!-- Notifier Definitions -->
+	<color id="notifier.dark" value="0,0,0"/>
+	<color id="notifier.bright" value="230,230,230"/>
+	<color id="notifier.dark.upper" value="230,230,230"/>
+	<color id="notifier.bright.upper" value="0,0,0"/>
+
+
+	<!-- List text color -->
+	<color id="color.display" value="255,255,255"/>
+	<color id="wasabi.tree.text" value="color.display"/> <!-- Item text color -->
+	<color id="wasabi.list.text" value="color.display"/> <!--lists/trees item foreground (also edit text) -->
+	<color id="wasabi.button.hiliteText" value="color.display"/> <!-- Buttons hilite text color, used by tab windows-->
+
+	
+	<!-- List background color -->
+	<color id="color.display.bg" value="40,40,40"/>
+	<color id="wasabi.list.background" value="color.display.bg"/>	<!--lists/trees item background (also bg for edit) -->
+	<color id="wasabi.border.sunken" value="75,75,75"/> <!-- color of dividers and sunken borders -->
+	<bitmap id="wasabi.tree.background" file="$solid" h="64" w="64" color="40,40,40"/><!-- Tree background bitmap (tile) -->
+	<bitmap id="wasabi.list.background" file="$solid" h="64" w="64" color="40,40,40"/><!-- List background bitmap (tile) -->
+
+	
+	<!-- Background color for components(ML, Pl(sides) & other -->
+	<color id="color.window.bg" value="49,49,49"/>
+	<color id="wasabi.list.column.empty" value="color.window.bg"/> <!-- listview header empty color (beyond the columns -->
+	<color id="wasabi.window.background" value="color.window.bg"/> <!--window background. -	If this color is not defined, a whole container is created in memory to extract a pixel, so specifying it makes skin loading faster -->
+
+	
+	<!-- Text color on the above background for components -->
+	<color id="color.window.txt" value="210,210,210"/>
+	<color id="wasabi.list.text.selected.inactive" value="color.window.txt"/> <!-- listview/treeview selection bar textcolor (inactive) -->
+	<color id="wasabi.list.column.text" value="color.window.txt"/> <!-- listview header text color -->
+	<color id="wasabi.window.text" value="color.window.txt"/> <!--text color within windows -->
+
+	
+	<!-- Text color on the above background for components -->
+	<color id="color.selected.active" value="170,170,170"/>
+	<color id="wasabi.tree.selected" value="color.selected.active"/> <!-- Select item text background color -->
+	<color id="wasabi.tree.hiliteddrop" value="color.selected.active"/> <!-- Drop marker color -->
+	<color id="wasabi.list.text.selected" value="color.selected.active"/> <!--listview/treeview selection bar text color -->
+	<color id="studio.list.item.selected" value="color.selected.active"/>
+	<color id="wasabi.list.text.current" value="color.selected.active"/> <!-- currently playing item in lists -->
+
+	
+	<!-- Selected list text color (active) -->
+	<color id="color.selected.active.bg" value="75,75,75"/>
+	<color id="wasabi.list.text.selected.background" value="color.selected.active.bg"/> <!--listview/treeview selection bar backcolor -->
+	<color id="studio.list.item.focused" value="color.selected.active.bg"/>
+
+	
+	<!-- Selected list text color (inactive) -->
+	<color id="color.selected.inactive.bg" value="65,65,65"/>
+	<color id="wasabi.list.text.selected.background.inactive" value="color.selected.inactive.bg"/> <!-- listview/treeview selectionbar back color (inactive) -->
+
+
+	<!-- Column colors... also see: "wasabi.list.column.text"-->
+	<color id="wasabi.list.column.background" value="65,65,65"/> <!-- listview header background color -->
+	<color id="wasabi.list.column.frame.top" value="75,75,75"/> <!-- listview header frame top color -->
+	<color id="wasabi.list.column.frame.middle" value="55,55,55"/> <!-- listview header frame middle color -->
+	<color id="wasabi.list.column.frame.bottom" value="45,45,45"/> <!-- listview header frame bottom color -->
+
+
+	<!-- These colors is used in plugins for the scrollbar...example: "Album List 2". The ML uses skinned scrollbars since wa5.5 -->
+	<color id="color.scrollbar.old" value="20,21,22"/>
+	<color id="wasabi.scrollbar.foreground" value="color.scrollbar.old"/> <!-- scrollbar foreground color -->
+	<color id="wasabi.scrollbar.background" value="color.scrollbar.old"/> <!-- scrollbar background color -->
+	<color id="wasabi.scrollbar.foreground.inverted" value="color.scrollbar.old"/> <!-- inverse scrollbar foreground color -->
+	<color id="wasabi.scrollbar.background.inverted" value="color.scrollbar.old"/> <!-- inverse scrollbar background color -->
+
+</elements>

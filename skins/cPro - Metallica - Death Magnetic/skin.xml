@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<WasabiXML version="1.34">
+
+<skininfo>
+	<version>1.04</version>
+	<name>cPro - Metallica - Death Magnetic</name>
+	<comment>Skin for the new Metallica Album -Death Magnetic-</comment>
+	<author gaybag="martin.deimos">Martin Poehlmann</author>
+	<email>martin@skinconsortium.com</email>
+	<homepage>http://www.skinconsortium.com</homepage>
+	<screenshot>screenshot.png</screenshot>
+</skininfo>
+	<scripts> <script file="warning.maki" param="@COLORTHEMESPATH@"/> </scripts>
+	<include file="colors.xml"/>
+	<include file="@COLORTHEMESPATH@/../../Plugins/classicPro/engine/load.xml"/>
+	<include file="color-presets.xml"/>
+</WasabiXML>
