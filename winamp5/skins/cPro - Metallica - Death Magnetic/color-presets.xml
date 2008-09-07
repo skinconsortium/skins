@@ -1,0 +1,26 @@
+<!-- Gamma sets -->
+
+<gammaset id="* Default">
+	<gammagroup id="n.Background.Bottom" value="0,0,0"/>
+	<gammagroup id="Frontcover" value="0,0,0"/>
+	<gammagroup id="n.Background.Overlay" value="0,0,0"/>
+	<gammagroup id="n.Background.OverlayLabel" value="0,0,0"/>
+	<gammagroup id="n.beatvis" value="0,0,0"/>
+	<gammagroup id="LED" value="0,0,0"/>
+	<gammagroup id="KnobLED" value="0,0,0"/>
+	<gammagroup id="Buttons" value="0,0,0"/>
+	<gammagroup id="cButtons" value="0,0,0"/>
+	<gammagroup id="BackgroundLabel" value="0,0,0"/>
+	<gammagroup id="FrontcoverLabel" value="0,0,0"/>
+	<gammagroup id="PosLabel" value="0,0,0"/>
+	<gammagroup id="CoverLabel" value="0,0,0"/>
+	<gammagroup id="n.Background.Alt" value="0,0,0"/>
+	<gammagroup id="Thinger icons" value="0,0,0"/>
+	<gammagroup id="ThingerButtons" value="0,0,0"/>
+	<gammagroup id="Thinger" value="0,0,0"/>
+	
+	<gammagroup id="n.Seeker.BG" value="0,0,0"/>	
+	<gammagroup id="n.Seeker.Thumb" value="0,0,0"/>
+	<gammagroup id="n.Vis" value="0,0,0"/>
+	<gammagroup id="n.TooltipCombobox" value="0,0,0"/>
+</gammaset>
