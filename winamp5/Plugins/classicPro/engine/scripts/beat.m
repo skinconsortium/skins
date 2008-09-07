@@ -1,23 +1,25 @@
-//amended by SLoB 2nd August 2008 - fixed vu display if only using left frame animation strip so it uses both left and right vu levels, also should be faster as removed 3 calls to get left vu value
-//SLoB - tweaked beatvis vu values cos theyve been crap since 5.31, vu values are at least 50-100 lower than previous values, this gives it a bit of oomph
 #include <lib/std.mi>
-
+#include <lib/fileio.mi>
+//@SKINPATH@
 #define DEF_MAX 50
 
 Function ProcessMenuResult(int a);
 Function refreshView();
 Function showGroup(int groupNo);
 Function startTimer();
+Function setAnimNo(int i);
+Function setCustomVis(int a);
 
 Global Group frameGroup, beatGroup, promoGroup, b01, b02;
 
 Global AnimatedLayer t01, t02;
 Global Timer myTimer;
-Global int lastBeatLeft,lastBeatRight, myFrames, aniW, beatLeft, beatRight, frameLeft, frameRight, run_max;
-Global Boolean showBeat, showPromo, animTypeB, oneSide;
+Global int lastBeatLeft,lastBeatRight, myFrames, aniW, beatLeft, beatRight, frameLeft, frameRight, run_max, cusno;
+Global Boolean showBeat, showPromo, animTypeB, oneSide, customvis;
 Global Layer promoPic, mouseTrap, b01layer, b02layer, c01, c02;
 Global Popupmenu selMenu;
-//Global Text vutrackTitle;
+Global XmlDoc myDoc;
+Global List cusbeat_names;
 
 System.onScriptLoaded (){
 
@@ -37,18 +39,14 @@ System.onScriptLoaded (){
 	c01 = frameGroup.findObject("beatvisC.left");
 	c02 = frameGroup.findObject("beatvisC.right");
 
-	//dbg
-	//vutrackTitle = frameGroup.findObject("SongTime");
 		
-		
-	myFrames = t01.getLength();
 	
 	myTimer = new Timer;
 	myTimer.setDelay(10);
  
 	///////////////////
 	Map myMap = new Map;
-	myMap.loadMap("beat.left");
+	myMap.loadMap("beat.0.left");
 	aniW=myMap.getWidth();
 
 	beatGroup.setXmlParam("w", integerToString(aniW*2));
@@ -58,58 +56,84 @@ System.onScriptLoaded (){
 	b01layer.setXmlParam("x", integerToString(-aniW));
 	c02.setXmlParam("x", integerToString(aniW));
 	
-	if(b02layer.isInvalid()){
-		oneSide=true;
-	}
+	if(b02layer.isInvalid()) oneSide=true;
 	
-	if(myMap.getHeight()==45){
+	
+	//Custom Vis code
+	myDoc = new XmlDoc;
+	String fullpath = getParam()+"beatvis.xml";
+	myDoc.load (fullpath);
+
+	if(myDoc.exists() && myMap.getHeight()>90){
+		customvis=true;
+		cusbeat_names = new List;
+		myDoc.parser_addCallback("BeatVis/*");
+		myDoc.parser_start();
+		myDoc.parser_destroy();
+		delete myDoc;
+		setCustomVis(getPrivateInt(getSkinName(), "customvis", 0));
+	}
+	else{
+		customvis=false;
+		delete myDoc;
+	}
+
+	
+	if(myMap.getHeight()<=90){
 		animTypeB=true;
 		t01.hide();
 		t02.hide();
+		b01.show();
 		
-		b01.show();
+		if(myMap.getHeight()==90) c01.show();
+		
 		if(oneSide){
 			b01.setXmlParam("x", integerToString(aniW/2));
 		}
 		else{
 			b02.show();
 			b02.setXmlParam("x", integerToString(aniW));
+			if(myMap.getHeight()==90) c02.show();
 		}
 	}
-	else if(myMap.getHeight()==90){
-		animTypeB=true;
-		t01.hide();
-		t02.hide();
-		b01.show();
-		c01.show();
-
-		if(oneSide){
-			b01.setXmlParam("x", integerToString(aniW/2));
-		}
-		else{
-			b02.show();
-			c02.show();
-			b02.setXmlParam("x", integerToString(aniW));
-		}
-
+	else{
+		animTypeB=false;
+		myFrames = t01.getLength();
 	}
-	else animTypeB=false;
 	
 	delete myMap;
- 
+
+
+}
+
+myDoc.parser_onCallback (String xmlpath, String xmltag, list paramname, list paramvalue){
+	if(strlower(xmltag) == "customvis"){
+		for(int i=0; i<paramname.getNumItems(); i++){
+			if(strlower(paramname.enumItem(i))=="name"){
+				cusbeat_names.addItem(paramvalue.enumItem(i));
+			}
+		}
+	}
 }
 
 System.onscriptunloading(){
 	delete myTimer;
 }
 
-//SLoB - test vu values, cos vu values seem to be shite since 5.31 - as suspected not even hitting 175, so we got loads to play with, lets make it more sensitive so we use the whole 0-255
-//vutrackTitle.setText(integertostring(beatLeft));
+setAnimNo(int i){
+	Map myMap = new Map;
+	myMap.loadMap("beat.left");
+	
+	t01.setXmlParam("image", "beat.left#.0");
+	t02.setXmlParam("image", "beat.left#.0");
+	myFrames = t01.getLength();
+
+}
 
 myTimer.onTimer(){
 
-	beatLeft = System.getLeftVuMeter();// * SENSITIVITY;
-	beatRight = System.getRightVuMeter();// * SENSITIVITY;
+	beatLeft = System.getLeftVuMeter();
+	beatRight = System.getRightVuMeter();
 	
 	if(oneSide)
 	{
@@ -118,8 +142,6 @@ myTimer.onTimer(){
 	
 	if (beatLeft > run_max) run_max = beatLeft;
 	if (beatRight > run_max) run_max = beatRight;
-//debug - add vutrack
-	
 	
 	if(animTypeB){
 		beatLeft=aniW/run_max*beatLeft;
@@ -167,113 +189,85 @@ System.onStop(){
 
 System.onPlay(){
 	refreshView();
-	if(beatGroup.isVisible()){
-		startTimer();
-	}
+	if(beatGroup.isVisible()) startTimer();
 }
 System.onPause(){
 	refreshView();
-	if(beatGroup.isVisible()){
-		myTimer.stop();
-	}
+	if(beatGroup.isVisible()) myTimer.stop();
 }
 
 System.onResume(){
 	refreshView();
-	if(beatGroup.isVisible()){
-		startTimer();
-	}
+	if(beatGroup.isVisible()) startTimer();
 }
 
 beatGroup.onSetVisible(Boolean onoff){
-	//if(onoff == STATUS_PLAYING){
-	if(onoff && System.getStatus() == STATUS_PLAYING){
-		startTimer();
-	}
-	else{
-		myTimer.stop();
-	}
+	if(onoff && System.getStatus() == STATUS_PLAYING) startTimer();
+	else myTimer.stop();
 }
 
 frameGroup.onResize(int x, int y, int w, int h){
 
 	if(oneSide){
-		//beatGroup.setXmlParam("x", integerToString(129 + (w-129-167)/2-aniW/2+xtraX));
 		beatGroup.setXmlParam("x", integerToString(143+(w-317)/2-aniW/2));
 		h=aniW;
 	}
 	else{
-		//beatGroup.setXmlParam("x", integerToString(129 + (w-129-167)/2-aniW));
 		beatGroup.setXmlParam("x", integerToString(143+(w-317)/2-aniW));
 		h=aniW*2;
 	}
 
 	
-	if(w>317+h){
-		showBeat=true;
-	}
-	else{
-		showBeat=false;
-	}
+	if(w>317+h)	showBeat=true;
+	else showBeat=false;
 
 	if(w>618){
 		promoPic.setXmlParam("image", "cPro.promo.3");
 		promoPic.resize(0,0,300,45);
-		//mouseTrap.resize(0,0,300,45);
 	}
 	else if(w>517){
 		promoPic.setXmlParam("image", "cPro.promo.2");
 		promoPic.resize(50,0,200,45);
-		//mouseTrap.resize(50,0,200,45);
 	}
 	else{
 		promoPic.setXmlParam("image", "cPro.promo.1");
 		promoPic.resize(150,0,99,45);
-		//mouseTrap.resize(150,0,99,45);
 	}
-	//promoGroup.setXmlParam("x", integerToString(129 + (w-129-167)/2-promoPic.getWidth()/2));
 	promoGroup.setXmlParam("x", integerToString(143+(w-317)/2-promoPic.getWidth()/2));
 	
-	if(w>416){
-		showPromo=true;
-	}
-	else{
-		showPromo=false;
-	}
+	if(w>416) showPromo=true;
+	else showPromo=false;
 
 	refreshView();
 }
 
 refreshView(){
-	if(System.getStatus() == STATUS_STOPPED){
-		showGroup(1);
-	}
-	else if(getPrivateInt(getSkinName(), "beatvis", 1)==0){
-		showGroup(1);
-	}
-	else{
-		showGroup(0);
-	}
+	if(System.getStatus() == STATUS_STOPPED) showGroup(1);
+	else if(getPrivateInt(getSkinName(), "beatvis", 1)==0)	showGroup(1);
+	else showGroup(0);
 }
 
 showGroup(int groupNo){
 	beatGroup.hide();
 	promoGroup.hide();
 
-	if(groupNo == 0 && showBeat){
-		beatGroup.show();
-	}
-	else if(groupNo == 1 && showPromo){
-		promoGroup.show();
-	}
-	else if(showPromo){
-		promoGroup.show();
-	}
+	if(groupNo == 0 && showBeat) beatGroup.show();
+	else if(groupNo == 1 && showPromo) promoGroup.show();
+	else if(showPromo) promoGroup.show();
 }
 
 mouseTrap.onRightButtonup(int x, int y){
 	selMenu = new PopupMenu;
 	selMenu.addCommand("Show Beat vis", 1, getPrivateInt(getSkinName(), "beatvis", 1), 0);
+
+	if(customvis){
+		selMenu.addSeparator();
+		for(int i=0;i<cusbeat_names.getNumItems(); i++){
+			selMenu.addCommand(cusbeat_names.enumItem(i), 100+i, 0, 0);
+	
+		}
+		selMenu.checkCommand(100+getPrivateInt(getSkinName(), "customvis", 0), 1);
+	}
 
 	ProcessMenuResult(selMenu.popAtMouse());
 	Complete;
@@ -282,17 +276,42 @@ mouseTrap.onRightButtonup(int x, int y){
 }
 
 ProcessMenuResult(int a){
-	if(a<0)return;
+	if(a<0) return;
 
-	if(a>=1){
+	if(a>=1 && a<100){
 		setPrivateInt(getSkinName(), "beatvis", !getPrivateInt(getSkinName(), "beatvis", 1));
 		refreshView();
 	}
+	else if(a>=100 && customvis){
+		setCustomVis(a-100);
+	}
+}
+
+setCustomVis(int a){
+	if(a>=cusbeat_names.getNumItems()) a=0;
+	t01.setXmlParam("image", "beat."+integerToString(a)+".left");
+	if(!oneSide) t02.setXmlParam("image", "beat."+integerToString(a)+".right");
+	myFrames = t01.getLength();
+	
+	setPrivateInt(getSkinName(), "customvis", a);
 }
 
 mouseTrap.onLeftButtonDblClk(int x, int y){
-		setPrivateInt(getSkinName(), "beatvis", !getPrivateInt(getSkinName(), "beatvis", 1));
-		refreshView();
+	if(customvis){
+		if(getPrivateInt(getSkinName(), "beatvis", 1)){
+			int u = getPrivateInt(getSkinName(), "customvis", 0)+1;
+
+			if(u==cusbeat_names.getNumItems()){
+				u=0;
+				setPrivateInt(getSkinName(), "beatvis", 0);
+			}
+			setCustomVis(u);
+		}
+		else setPrivateInt(getSkinName(), "beatvis", 1);
+	}
+	else setPrivateInt(getSkinName(), "beatvis", !getPrivateInt(getSkinName(), "beatvis", 1));
+	
+	refreshView();
 }
 
 startTimer(){

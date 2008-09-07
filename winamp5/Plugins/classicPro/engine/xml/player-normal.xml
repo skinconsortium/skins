@@ -32,7 +32,7 @@
 	<layer id="doubleclick" x="0" y="0" w="0" h="27" relatw="1" wantfocus="1"/>
 
 	<group id="cpro.screen" x="0" y="0" w="0" h="92" relatw="1"/>
-	<script file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\scripts\beat.maki"/>
+	<script file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\scripts\beat.maki" param="@SKINPATH@"/>
 
 
 
@@ -124,8 +124,9 @@
 
 	<button x="6" y="3" action="SYSMENU" image="menu.1"	hoverImage="menu.2"	downImage="menu.3" rectrgn="1" tooltip="Main Menu"/>
 
-	<NStatesButton  x="-111" y="3" relatx="1" image="aot.1." hoverimage="aot.2." downimage="aot.3." rectrgn="1" cfgattrib="{280876CF-48C0-40BC-8E86-73CE6BB462E5};Always on top" nstates="2" tooltip="Toggle Always on Top" cfgvals="0;1"/>
-
+	<NStatesButton id="player.aot" x="-111" y="3" relatx="1" image="aot.1." hoverimage="aot.2." downimage="aot.3." rectrgn="1" cfgattrib="{280876CF-48C0-40BC-8E86-73CE6BB462E5};Always on top" nstates="2" tooltip="Toggle Always on top" cfgvals="0;1"/>
+	<layer id="player.aot.docked" x="-111" y="3" relatx="1" image="aot.1.1" visible="0" ghost="1"/>
+	
 	<button x="-84" relatx="1" y="3" id="player.button.minimize" action="MINIMIZE" image="min.1" hoverImage="min.2" downImage="min.3" rectrgn="1" tooltip="Minimize Winamp"/>
 	<button x="-64" relatx="1" y="3" id="main.goSmall" image="ismax.1" hoverImage="ismax.2" downImage="ismax.3" rectrgn="1" tooltip="Restore Winamp"/>
 	<button x="-64" relatx="1" y="3" id="main.goBig" image="gomax.1" hoverImage="gomax.2" downImage="gomax.3" rectrgn="1" tooltip="Maximize Winamp"/>
