@@ -292,7 +292,7 @@
 		bottomleft="player.plframe.7" bottom="player.plframe.8" bottomright="player.plframe.9"
 		regionop="1" move="1"
 	/>
-	<PlaylistPro id="wdh.playlist1" x="1" y="3" h="-21" w="-2" relath="1" relatw="1"/>
+	<PlaylistPro id="centro.windowholder.playlist1" x="1" y="3" h="-21" w="-2" relath="1" relatw="1"/>
 	<!--<windowholder id="wdh.playlist1" x="1" y="3" h="-21" w="-2" relath="1" relatw="1" autofocus="0" wantfocus="0" autoclose="1" autoopen="1" autoavailable="1" visible="1" hold="guid:{45f3f7c1-a6f3-4ee6-a15e-125e92fc3f8d}"/>-->
 	<group id="centro.playlist.bottombuttons" x="1" y="-18" w="-1" relaty="1" relatw="1"/>
 </groupdef>

@@ -525,4 +525,18 @@
 	<bitmap id="browser.button.go.normal" file="" gammagroup="_"/>
 	<bitmap id="browser.button.search.normal" file="" gammagroup="_"/>
 
+	<bitmap id="browser.fullpng" file="browser.png"/>
+
+	<bitmap id="browser.button.scraper2.normal" file="browser.png" x="222" y="0" h="18" w="20" gammagroup="_"/>
+	<bitmap id="browser.button.scraper2.hover" file="browser.png" x="222" y="19" h="18" w="20" gammagroup="_"/>
+	<bitmap id="browser.button.scraper2.down" file="browser.png" x="222" y="38" h="18" w="20" gammagroup="_"/>
+
+	<bitmap id="browser.button.dlds2.normal" file="browser.png" x="243" y="0" h="18" w="20" gammagroup="_"/>
+	<bitmap id="browser.button.dlds2.hover" file="browser.png" x="243" y="19" h="18" w="20" gammagroup="_"/>
+	<bitmap id="browser.button.dlds2.down" file="browser.png" x="243" y="38" h="18" w="20" gammagroup="_"/>
+
+	<bitmap id="browser.button.settings2.normal" file="browser.png" x="264" y="0" h="18" w="20" gammagroup="_"/>
+	<bitmap id="browser.button.settings2.hover" file="browser.png" x="264" y="19" h="18" w="20" gammagroup="_"/>
+	<bitmap id="browser.button.settings2.down" file="browser.png" x="264" y="38" h="18" w="20" gammagroup="_"/>
+
 </elements>
