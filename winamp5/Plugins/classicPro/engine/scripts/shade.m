@@ -8,11 +8,11 @@ Function saveResize(int x, int y, int w, int h);
 
 Global Group mainGroup, gr_Vis, gr_Vol, gr_seektick, gr_seektick1, gr_seektick2;
 Global GuiObject progressbar;
-Global Layer vol_bg, resize6;
+Global Layer vol_bg, resize6, aotDoc;
 Global Slider vol_sl;
 Global Boolean mouseDown;
 Global Vis shadeVis;
-Global Button mlMenu1, mlMenu2;
+Global Button mlMenu1, mlMenu2, aotBut;
 Global int i, lastKnownW;
 Global Timer reCheck;
 Global Boolean dontResize;
@@ -43,6 +43,8 @@ System.onScriptLoaded() {
 	progressbar = mainGroup.findObject("progressbar");
 	mlMenu1 = mainGroup.findObject("shade.mlmenu.visible");
 	mlMenu2 = mainGroup.findObject("shade.mlmenu.fake");
+	aotDoc = mainGroup.findObject("shade.aot.docked");
+	aotBut = mainGroup.findObject("shade.aot");
 
 	if(getStatus()==STATUS_STOPPED){
 		progressbar.hide();
@@ -70,6 +72,9 @@ System.onScriptLoaded() {
 	
 	reCheck = new Timer;
 	reCheck.setDelay(10);
+	
+	double newscalevalue = shade.getScale();
+	shade.setXmlParam("maximum_w", integerToString(getViewPortWidthfromGuiObject(shade)/newscalevalue));
 }
 System.onScriptUnloading() {
 	saveGlobal();
@@ -216,4 +221,14 @@ reCheck.onTimer(){
 saveResize(int x, int y, int w, int h){
 	if(w<317) w=317;
 	shade.resize(x,y,w,h);
+}
+
+shade.onDock(int side){
+	aotBut.hide();
+	aotDoc.show();
+}
+
+shade.onUndock(){
+	aotDoc.hide();
+	aotBut.show();
 }

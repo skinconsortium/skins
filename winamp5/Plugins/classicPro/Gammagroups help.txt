@@ -1,5 +1,5 @@
 -------------------------------------------------------------------------
-Internal Gammagroups in ClassicPro (last updated for Cpro 1.03)
+Internal Gammagroups in ClassicPro (last updated for Cpro 1.04)
 -------------------------------------------------------------------------
 
 
@@ -8,6 +8,7 @@ Internal Gammagroups in ClassicPro (last updated for Cpro 1.03)
 n.Background.Bottom
 n.Background.Alt
 n.Background.Overlay
+n.Color.ListBg		<<new
 n.Vis
 n.Text.SongInfo
 n.Text.SongTime
