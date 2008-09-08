@@ -5,6 +5,7 @@
 	<bitmap id="about.gfx.slob" file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\image\mugshot-slob.png"/>
 	<bitmap id="about.gfx.etrance" file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\image\mugshot-etrance.png"/>
 	<bitmap id="paypal.donate" file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\image\donate.png"/>
+	<bitmap id="about.hbd" file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\image\hbd.png"/>
 </elements>
 
 <groupdef id="cpro.about.xui" xuitag="cPro:About">
@@ -36,34 +37,34 @@
 <groupdef id="skin.about.credits">
 	<cPro:About id="about.1"
 		x="0" y="0" visible="0"
-		about_name="Pieter Nieuwoudt" about_age="8;1;1986" about_alias="pjn123"
+		about_name="Pieter Nieuwoudt" about_alias="pjn123" about_age="8;1;1986"
 		about_country="SOUTH-AFRICA" about_image="about.gfx.pjn"
 		credits="Credits:\n - Main Coder\n - Design and Layout\n - About animations"
 	/>
 	<cPro:About id="about.2"
 		x="0" y="0" visible="0"
-		about_name="Martin Poehlmann" about_age="10;9;1987" about_alias="martin.deimos"
+		about_name="Martin Poehlmann" about_alias="martin.deimos" about_age="10;9;1987"
 		about_country="GERMANY"	about_image="about.gfx.martin"
 		credits="Credits:\n - Widgets\n - Browser\n - Tag Viewer\n - Website construction"
 	/>
 
 	<cPro:About id="about.3"
 		x="0" y="0" visible="0"
-		about_name="Ralph Barber" about_age="22;2;1967" about_alias="QuadHelix"
+		about_name="Ralph Barber" about_alias="QuadHelix" about_age="22;2;1967"
 		about_country="USA"	about_image="about.gfx.quad"
 		credits="Credits:\n - General graphics and promotions\n - Website uploads"
 	/>
 
 	<cPro:About id="about.4"
 		x="0" y="0" visible="0"
-		about_name="Kev Jaques" about_age="11;9;1967" about_alias="SLoB"
+		about_name="Kev Jaques" about_alias="SLoB" about_age="11;9;1967"
 		about_country="UNITED KINGDOM"	about_image="about.gfx.slob"
 		credits="Credits:\n - AlbumArt with reflection widget\n - Help and suggestions\n - Better About animations"
 	/>
 	
 	<cPro:About id="about.5"
 		x="0" y="0" visible="0"
-		about_name="Egor Petrov" about_age="7;9;1988" about_alias="E-Trance"
+		about_name="Egor Petrov" about_alias="E-Trance" about_age="7;9;1988"
 		about_country="RUSSIA"	about_image="about.gfx.etrance"
 		credits="Credits:\n - Widget engine co-developer\n - Suggestions ;)"
 	/>
@@ -73,10 +74,13 @@
 
 <groupdef id="skin.about.group" w="0" h="0" relatw="1" relath="1" rectrgn="1">
 	<rect fitparent="1" filled="1" color="250,250,255"/>
-	<layer fitparent="1" image="about.gfx"/>
+	<layer id="about.gfx4ani" fitparent="1" image="about.gfx"/>
+	<text id="hbd.message" x="0" y="50" w="0" relatw="1" align="center" fontsize="40" visible="0" color="0,0,0" bolt="1"/>
+	<text id="hbd.message2" x="0" y="80" w="0" relatw="1" align="center" fontsize="40" visible="0" color="0,0,0" bolt="1"/>
 
 	<layer fitparent="1" id="animationscreen" image="about.gfx" ghost="1" visible="0"/>
 	<layer fitparent="1" id="about.layer" image="about.gfx" ghost="1"/>
+
 
 	<group id="skin.about.credits" fitparent="1"/>
 	<button id="donate" x="-60" y="-38" relatx="1" relaty="1" image="paypal.donate" alpha="160" cursor="IDC_HAND" tooltip="If you like ClassicPro and would like thank us for our hard work, please click here to donate ;)"/>

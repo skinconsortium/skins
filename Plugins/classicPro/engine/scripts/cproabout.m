@@ -4,8 +4,8 @@ Function int getBirtday_Day(int day, int month);
 Function String getBirtday_String(int day, int month, int year);
 
 Global Group XUIGroup;
-Global Text name, age, alias, country, credits;
-Global Layer mugshot;
+Global Text name, age, alias, country, credits, birthday;
+Global Layer mugshot, anibg;
 
 System.onScriptLoaded(){
 	XUIGroup = getScriptGroup();
@@ -34,6 +34,18 @@ System.onSetXuiParam(String param, String value) {
 		//debugInt(System.getDateDoy(System.getDate()));
 		//debugInt(calc_age);
 		//debugInt(getBirtday_Day(stringToInteger(getToken(value, ";", 0)), stringToInteger(getToken(value, ";", 1))));
+
+		if(getBirtday_Day(stringToInteger(getToken(value, ";", 0)), stringToInteger(getToken(value, ";", 1)))==System.getDateDoy(System.getDate())){
+			birthday = XUIGroup.getParent().getParent().findObject("hbd.message");
+			birthday.setText("Happy Birthday");
+			birthday.show();
+			birthday = XUIGroup.getParent().getParent().findObject("hbd.message2");
+			birthday.setText(name.getText()+" ("+alias.getText()+" ) "+"!!!");
+			birthday.show();
+			
+			anibg = XUIGroup.getParent().getParent().findObject("about.gfx4ani");
+			anibg.setXmlParam("image", "about.hbd");
+		}
 	}
 	else if(strlower(param) == "about_alias"){
 		alias.setText(value);
