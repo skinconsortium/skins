@@ -1,6 +1,5 @@
 #include <lib/std.mi>
 #include <lib/fileio.mi>
-//@SKINPATH@
 #define DEF_MAX 50
 
 Function ProcessMenuResult(int a);
@@ -61,9 +60,10 @@ System.onScriptLoaded (){
 	
 	//Custom Vis code
 	myDoc = new XmlDoc;
-	String fullpath = getParam()+"beatvis.xml";
+	String fullpath = getParam()+"classicpro.xml";
 	myDoc.load (fullpath);
-
+	
+	// If we include more stuff in the classicpro.xml at a later stage the parser must set a boolean = true to know that the xml was for this
 	if(myDoc.exists() && myMap.getHeight()>90){
 		customvis=true;
 		cusbeat_names = new List;

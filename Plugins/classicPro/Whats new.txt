@@ -1,5 +1,5 @@
 -------------------------------------------------------------
-Version 1.04 (xxx Aug 2008)
+Version 1.04 (xxx Sep 2008)
 -------------------------------------------------------------
 - New: PlaylistPro (build in search) WIP!!!!!!
 - New: Now warns you if you dont have the minimum Winamp version installed
@@ -9,6 +9,8 @@ Version 1.04 (xxx Aug 2008)
 - New: Double-Click the stereo indicator to go to the preferences
 - New: No compression used for bundled skin (speed up + smaller installer)
 - New: Open/Close side button now hides when the side cant open
+- New: Now possible to use more than one beatvis in your skin
+- New: Default frame gfx for skins (use combobox gfx)
 - Fixed: Possible shade mode that goes invisible
 - Fixed: Shademode don’t remember previous position if you switch to new cPro skin
 - Fixed: Video preview shows under player when AOT is enabled
@@ -24,12 +26,16 @@ Version 1.04 (xxx Aug 2008)
 - Fixed: Sui area dont use 2pixels of the sui area
 - Fixed: BrowserPro doesnt update if you open the browser tab.
 - Fixed: Closing a drawer/sideview component via mainmenu
-- Improved: Beat vis optimization
+- Improved: Major Beat vis optimization. More responsive on all files
 - Improved: Tagviewer now doesn't update the info if not visible
 - Improved: More accurate beatvis & player title center
 - Improved: BrowserPro default options
 - Improved: AlbumArt cd case gfx
 - Improved: Wasabi:Frame now reopens if it was closed by system
+- Improved: Maximize/restore button is now disabled if skin is docked
+- Improved: Always on top button when skin is docked
+- Improved: Component handling load speed on start
+- Improved: Now makes sure skin is maximized on load if enabled
 -------------------------------------------------------------
 
 

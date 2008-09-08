@@ -1,6 +1,5 @@
 #include <lib/std.mi>
 #include <lib/pldir.mi>
-//#include "lib/std.mi"
 
 #define VIDEO_GUID "{F0816D7B-FFFC-4343-80F2-E8199AA15CC3}"
 #define VIS_GUID "{0000000A-000C-0010-FF7B-01014263450C}"
@@ -67,13 +66,13 @@ Global Text visName, plText1, plText2;
 
 Global ToggleButton tog_library, tog_video, tog_avs, tog_Browser, tog_Playlist, tog_Other, tog_NowPlay, tog_drawer;
 Global GuiObject tog_library1, tog_video1, tog_avs1, tog_Browser1, tog_Playlist1, tog_Other1, tog_Widget1, tog_fake1, guihold_Pl2;
-Global WindowHolder hold_Other, hold_Pl2, hold_vid, hold_avs, hold_ml, hold_vis;
+Global WindowHolder hold_Other, hold_Pl1, hold_Pl2, hold_vid, hold_avs, hold_ml;
 
 Global Frame mainFrame, plFrame;
-Global Timer openMainLayout, openDefaultTab, refreshAIOTab, checkVisName;
+Global Timer openMainLayout, openDefaultTab, refreshAIOTab, checkVisName, ssWinHol;
 Global GuiObject main_Frame;
-Global boolean openLib, openVid, openVis, loaded, open_drawer, skipLoad, mouseDownF1, mouseDownF2, busyWithDrawer, busyWithThisFunction, wasTabTrig, stopResizeRight, openMePlease;
-Global int default_drawer_h, active_tab, tab_openned;
+Global boolean openLib, openVid, openVis, loaded, open_drawer, skipLoad, mouseDownF1, mouseDownF2, busyWithDrawer, busyWithThisFunction, wasTabTrig, stopResizeRight, openMePlease, delayStart;
+Global int default_drawer_h, active_tab, tab_openned, delayStartTab;
 Global String guid_blacklist, tabNames, closeGUID;
 
 
@@ -94,6 +93,9 @@ Global GuiObject customObj;
 CODE_MARTIN end
 
 System.onScriptLoaded() {
+	delayStart=true;
+	delayStartTab=0;
+
 	player = getContainer("main");
 	normal = player.getLayout("normal");
 
@@ -149,11 +151,32 @@ System.onScriptLoaded() {
 ///////////////////////
 	xuiBrowser = xuiGroup.findObject("cpro.browser");
 	browserGroup = xuiGroup.findObject("cpro.browser");
-	
+
 	tempbutton = browserGroup.findObject("browser.navigate");
 	tempbutton.setXmlParam("text", "Go");
 	tempbutton = browserGroup.findObject("search.go");
 	tempbutton.setXmlParam("text", "Search");
+	
+	Map myMap = new Map;
+	myMap.loadMap("browser.fullpng");
+	
+	if(myMap.getWidth()>=284){
+		tempbutton = browserGroup.findObject("browser.scraper").findObject("browser.dlds.settings");
+		tempbutton.setXmlParam("icon_id", "browser.button.settings2");
+		
+		tempbutton = browserGroup.findObject("dlds.mode").findObject("scraper.switch");
+		tempbutton.setXmlParam("icon_id", "browser.button.scraper2");
+		tempbutton = browserGroup.findObject("dlds.mode").findObject("dlds.switch");
+		tempbutton.setXmlParam("icon_id", "browser.button.dlds2");
+
+		tempbutton = browserGroup.findObject("scraper.mode").findObject("scraper.switch");
+		tempbutton.setXmlParam("icon_id", "browser.button.scraper2");
+		tempbutton = browserGroup.findObject("scraper.mode").findObject("dlds.switch");
+		tempbutton.setXmlParam("icon_id", "browser.button.dlds2");
+
+	}
+	delete myMap;
+
 //////////////////
 
 	
@@ -171,6 +194,7 @@ System.onScriptLoaded() {
 	area_right_pl = xuiGroup.findObject("centro.playlist.component"); 
 	area_mini = xuiGroup.findObject("centro.playlist.directory");
 
+	hold_Pl1 = xuiGroup.findObject("centro.windowholder.playlist1");
 	hold_Pl2 = xuiGroup.findObject("centro.windowholder.playlist2");
 	guihold_Pl2 = xuiGroup.findObject("centro.windowholder.playlist2");
 	hold_vid = xuiGroup.findObject("centro.windowholder.video");
@@ -217,7 +241,9 @@ System.onScriptLoaded() {
 	refreshAIOTab.setDelay(myDelay);
 	checkVisName = new Timer;
 	checkVisName.setDelay(500);
-
+	ssWinHol = new Timer;
+	ssWinHol.setDelay(66);
+	
 	//Saved Settings
 	openMini(getPublicInt("cPro.lastMini", 0));
 	setDrawer(getPublicInt("cPro.draweropened", 0));
@@ -229,6 +255,7 @@ System.onscriptunloading(){
 	delete openDefaultTab;
 	delete refreshAIOTab;
 	delete checkVisName;
+	delete ssWinHol;
 }
 
 xuiGroup.onSetVisible(boolean onOff){
@@ -236,6 +263,7 @@ xuiGroup.onSetVisible(boolean onOff){
 		int pageNo = getPublicInt("cPro.lastComponentPage", 0);
 		if(pageNo==5) pageNo=0;
 		openTabNo(pageNo);
+		ssWinHol.start();
 		skipLoad=false;
 	}
 	
@@ -397,7 +425,6 @@ spaceTabs(boolean important){
 	for(int i=1;i<=6;i++){
 		tab_SetX(i, tab_GetX(i-1)+tab_GetW(i-1)*tab_isVisible(i-1));
 	}
-	//debugstring(integerToString(area_left.getWidth()-oc),9);
 }
 
 System.onSetXuiParam(String param, String value) {
@@ -529,8 +556,11 @@ System.onGetCancelComponent(String guid, boolean goingvisible){
 				hold_Other.setXMLParam("hold", "@all@");
 			}
 			refreshAIOTab.start();
+			return false;
 		}
 		spaceTabs(true);
+		
+		if(delayStart) return true; //dont try to open component because its not visible yet!
 		return false;
 	}
 	else{
@@ -547,7 +577,7 @@ refreshAIOTab.onTimer(){
 
 openDefaultTab.onTimer(){
 	openDefaultTab.stop();
-	debugString(closeGUID,9);
+	//debugString(closeGUID,9);
 
 	if(closeGUID == PL_GUID){ //PL
 		if(mainFrame.getPosition()!=0){
@@ -628,6 +658,12 @@ updateTabButtonStates(){
 }
 
 openTabNo(int tabNo){
+	if(delayStart && tabNo!=5){
+		delayStartTab=tabNo;
+		return;
+	}
+	else if(delayStart) delayStartTab=tabNo;
+
 	if(busyWithThisFunction) return;
 	busyWithThisFunction=true;
 	
@@ -1481,3 +1517,20 @@ tab_Other.onSetVisible(boolean onOff){
 tab_Widget.onSetVisible(boolean onOff){
 	debugString("tab_Widget="+integerToString(onOff),9);
 }*/
+
+ssWinHol.onTimer(){
+	delayStart=false;
+	ssWinHol.stop();
+	
+	openTabNo(delayStartTab);
+
+	//hold_ml.show();
+	/*hold_Pl1.show();
+	hold_Pl2.show();
+	hold_vid.show();
+	System.hideNamedWindow(VIDEO_GUID);
+	
+	openTabNo(active_tab);*/
+	
+	
+}

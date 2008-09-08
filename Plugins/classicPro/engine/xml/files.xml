@@ -1,7 +1,8 @@
+<include file="window-overrides.xml"/>
 <include file="internal-colors.xml"/>
 <include file="notifier.xml"/>
 <include file="player-elements.xml"/>
 <include file="player-shade-elements.xml"/>
 <include file="player.xml"/>
-<include file="window-overrides.xml"/>
+<include file="standardframe.xml"/>
 <include file="about.xml"/>
