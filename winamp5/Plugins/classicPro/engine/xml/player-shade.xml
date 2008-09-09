@@ -80,4 +80,6 @@
 	<button x="-24" relatx="1" y="3" action="CLOSE" image="s.close.1" hoverImage="s.close.2" downImage="s.close.3" rectrgn="1" tooltip="Exit Winamp"/>
 
 	<script file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\scripts\shade.maki"/>
+
+	<group id="cpro.shade.overlay" fitparent="1" sysregion="1"/>
 </layout>
