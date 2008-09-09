@@ -19,7 +19,7 @@ Global GuiObject line1, line2, line3, BGCol, CDBoxFade;
 Global Timer delayMyResize;
 Global int xs, ys, ws, hs;
 Global int xc, yc, wc, hc;
-Global layer lyrFx, lyrFxFG;
+Global layer lyrFx, lyrFxFG, CDBoxFade2;
 global double dblSmidge;
 Global int reflectionheight;
 
@@ -42,6 +42,13 @@ System.onScriptLoaded(){
 	
 	BGCol = XUIGroup.findObject("sc.nowplaying.bg");
 	CDBoxFade = XUIGroup.findObject("cdbox.fg.fademask");
+	CDBoxFade2 = XUIGroup.findObject("cdbox.fg.fademask2");
+
+	if (!CDBoxFade2.isInvalid())
+	{
+		CDBoxFade.hide();
+		CDBoxFade2.show();
+	}
 	
 	delayMyResize = new Timer;
 	delayMyResize.setDelay(100);
