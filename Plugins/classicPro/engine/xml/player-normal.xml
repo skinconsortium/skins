@@ -140,6 +140,8 @@
 
 	<script file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\scripts\player.maki" param="20"/>
 	<script file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\scripts\presetpos.maki"/>
+
+	<group id="cpro.normal.overlay" fitparent="1" sysregion="1"/>
 	
 	<SC:UpdateSystem x="0" y="0" h="0" w="0" skinname="classicpro" skinversion="1.03" />
 </layout>
