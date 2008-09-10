@@ -1,7 +1,7 @@
 -------------------------------------------------------------
 Version 1.04 (xxx Sep 2008)
 -------------------------------------------------------------
-- New: PlaylistPro (build in search) WIP!!!!!!
+- New: PlaylistPro, quick search your playlist!
 - New: Now warns you if you dont have the minimum Winamp version installed
 - New: Inner frame slider/divider now hides when its closed
 - New: Language pack compatible. See http://cpro.skinconsortium.com
@@ -36,6 +36,7 @@ Version 1.04 (xxx Sep 2008)
 - Improved: Always on top button when skin is docked
 - Improved: Component handling load speed on start
 - Improved: Now makes sure skin is maximized on load if enabled
+- Improved: Better ColorTheme support!
 -------------------------------------------------------------
 
 

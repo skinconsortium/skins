@@ -24,8 +24,8 @@ System.onSetXuiParam(String param, String value) {
 	else if(strlower(param) == "about_age"){
 		int calc_age = 1899+System.getDateYear(System.getDate())-stringToInteger(getToken(value, ";", 2));
 
-		/*boolean skikeljaar;
-		if(System.getDateYear(System.getDate())%4==0) skikeljaar=true;*/
+		/*boolean skrikeljaar;
+		if(System.getDateYear(System.getDate())%4==0) skrikeljaar=true;*/
 		
 		if(getBirtday_Day(stringToInteger(getToken(value, ";", 0)), stringToInteger(getToken(value, ";", 1)))<=System.getDateDoy(System.getDate())){
 			calc_age++;
@@ -40,7 +40,7 @@ System.onSetXuiParam(String param, String value) {
 			birthday.setText("Happy Birthday");
 			birthday.show();
 			birthday = XUIGroup.getParent().getParent().findObject("hbd.message2");
-			birthday.setText(name.getText()+" ("+alias.getText()+" ) "+"!!!");
+			birthday.setText(name.getText()+"!!!");
 			birthday.show();
 			
 			anibg = XUIGroup.getParent().getParent().findObject("about.gfx4ani");

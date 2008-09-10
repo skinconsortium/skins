@@ -31,11 +31,13 @@ System.onScriptLoaded() {
 		goBig.show();
 		goSmall.hide();
 		frameGroup.setXmlParam("lockminmax", "0");
+		normal.setXmlParam("move", "1");
 	}
 	else{
 		goBig.hide();
 		goSmall.show();
 		frameGroup.setXmlParam("lockminmax", "1");
+		normal.setXmlParam("move", "0");
 	}
 }
 
@@ -59,6 +61,8 @@ goBig.onLeftClick(){
 	goBig.hide();
 	goSmall.show();
 	
+	normal.setXmlParam("move", "0");
+	
 	double newscalevalue = normal.getScale();
 	normal.resize(getViewPortLeftfromGuiObject(normal), getViewPortTopfromGuiObject(normal), getViewPortWidthfromGuiObject(normal)/newscalevalue, getViewPortHeightfromGuiObject(normal)/newscalevalue);
 
@@ -74,6 +78,7 @@ goSmall.onLeftClick(){
 	frameGroup.resize (getPublicInt("cPro.playerX", 50), getPublicInt("cPro.playerY", 50), getPublicInt("cPro.playerW", 50), getPublicInt("cPro.playerH", 50));
 	setPublicInt("cPro.maximized", 0);
 	frameGroup.setXmlParam("lockminmax", "0");
+	normal.setXmlParam("move", "1");
 }
 
 topLayer.onLeftButtonUp(int x, int y){

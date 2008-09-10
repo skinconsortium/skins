@@ -1,5 +1,5 @@
 /*
-PlaylistPro build 004
+PlaylistPro build 005
 by pjn123 (www.skinconsortium.com)
 */
 
@@ -67,7 +67,7 @@ System.onScriptUnLoading() {
 }
 
 refreshActiveCheck.onTimer(){
-	if(!System.isAppActive() || System.isMinimized()) results_layout.hide();
+	if((!System.isAppActive() || System.isMinimized()) && results_layout.isVisible() ) results_layout.hide();
 }
 
 results_layout.onSetVisible(boolean onOff){
@@ -92,12 +92,12 @@ searchButton.onLeftClick(){
 }
 
 resizeResults(int items){
-	results_layout.setTargetX(results_layout.getLeft());
+	/*results_layout.setTargetX(results_layout.getLeft());
 	results_layout.setTargetY(results_layout.getTop());
 	results_layout.setTargetW(results_layout.getWidth());
 	results_layout.setTargetH(500);
 	results_layout.setTargetSpeed(1);
-	results_layout.gotoTarget();
+	results_layout.gotoTarget();*/
 
 	//items++; //temp add one extra for info... xx items found
 	if(items>20) items=20;
@@ -190,12 +190,13 @@ doSearch(String input){
 	else if(itemsfound<=500){
 		searchNews.setText(System.translate("Items found: ") +integerToString(itemsfound));
 	}
-	resizeResults(itemsfound);
+
+	if(!results_layout.isVisible()) results_layout.show();
 
 	// Fix if always on top is enabled.. it just refresh the ontop ;)
 	results_layout.setXmlParam("ontop", "1");
 
-	results_layout.show();
+	resizeResults(itemsfound);
 }
 
 searchResults.onDoubleClick(Int itemnum){

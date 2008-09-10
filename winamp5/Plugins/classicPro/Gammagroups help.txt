@@ -8,7 +8,6 @@ Internal Gammagroups in ClassicPro (last updated for Cpro 1.04)
 n.Background.Bottom
 n.Background.Alt
 n.Background.Overlay
-n.Color.ListBg		<<new
 n.Vis
 n.Text.SongInfo
 n.Text.SongTime
@@ -20,8 +19,10 @@ n.Seeker.Thumb
 n.Volume.BG
 n.Volume.Thumb
 
-
-
+n.SuiFrame		<<new
+n.beatvis		<<new
+n.Color.ListBg		<<new
+n.Button		<<new
 
 :::::::::::::::::::::::::
 
