@@ -487,6 +487,7 @@ System.onOpenUrl(string url){
 }
 
 System.onGetCancelComponent(String guid, boolean goingvisible){
+	//debugstring(guid,9);
 	// Check to see if this component is on the blacklist, and if it is, it will open in its own window or just close it...
 	for(int i=0;i<10;i++){
 		if(getToken(guid_blacklist, ";", i)== guid){
@@ -565,6 +566,9 @@ System.onGetCancelComponent(String guid, boolean goingvisible){
 	}
 	else{
 		closeGUID = guid;
+		
+		if(delayStart) return false; //somehow if this is here then the if you close with vid tab last open it wont timmy on start
+		
 		openDefaultTab.start();
 		return true;
 	}
@@ -578,6 +582,7 @@ refreshAIOTab.onTimer(){
 openDefaultTab.onTimer(){
 	openDefaultTab.stop();
 	//debugString(closeGUID,9);
+	//debugstring("openDefaultTab.onTimer()",9);
 
 	if(closeGUID == PL_GUID){ //PL
 		if(mainFrame.getPosition()!=0){
@@ -663,6 +668,7 @@ openTabNo(int tabNo){
 		return;
 	}
 	else if(delayStart) delayStartTab=tabNo;
+	//debugstring("openTabNo()="+integerToString(tabNo),9);
 
 	if(busyWithThisFunction) return;
 	busyWithThisFunction=true;
