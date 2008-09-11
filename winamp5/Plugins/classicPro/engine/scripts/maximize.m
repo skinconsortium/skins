@@ -23,9 +23,12 @@ System.onScriptLoaded() {
 	aotDoc = frameGroup.findObject("player.aot.docked");
 	doubleClick=false;
 
-	double newscalevalue = normal.getScale();
+	/*double newscalevalue = normal.getScale();
 	normal.setXmlParam("maximum_w", integerToString(getViewPortWidthfromGuiObject(normal)/newscalevalue));
-	normal.setXmlParam("maximum_h", integerToString(getViewPortHeightfromGuiObject(normal)/newscalevalue));
+	normal.setXmlParam("maximum_h", integerToString(getViewPortHeightfromGuiObject(normal)/newscalevalue));*/
+	normal.setXmlParam("maximum_w", integerToString(System.getMonitorWidth()));
+	normal.setXmlParam("maximum_h", integerToString(System.getMonitorHeight()));
+
 	
 	if(getPublicInt("cPro.maximized", 0)==0){
 		goBig.show();

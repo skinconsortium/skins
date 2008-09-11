@@ -27,11 +27,11 @@
 </groupdef>
 
 <groupdef id="about.6">
-	<text x="20" y="50" text="Special thanks to..." fontsize="26" color="255,255,255" shadowcolor="0,0,0" shadowx="1" shadowy="1" font="Tahoma"/>
+	<text x="20" y="40" text="Special thanks to..." fontsize="26" color="255,255,255" shadowcolor="0,0,0" shadowx="1" shadowy="1" font="Tahoma"/>
 	<group id="about.6.names" x="50" y="40" h="320"/>
 </groupdef>
 <groupdef id="about.6.names">
-	<text fitparent="1" ghost="1" text="- iron2000 (made the first cPro skin!)\n- Veroka (helped with implementing ColorTheme support)\n- Zarko Jovic (helped with implementing ColorTheme support)\n- Wilian and Veroka (creating a template for cpro skins)\n- TheElusiveMelon (ClassicPro clock)\n- and1945 (beta testing and spreading the word ;)\n- fille1000 (widgets and skins ;)\n- leechbite (widgets and skins ;)\n- Wildrose-Wally (helped with publising)\n- Koogle (always full of new ideas)\n- Paparazzi (ideas and testing)\n- Taber Buhl (Original Big Bento gfx)\n- Benski (Winamp gen_ff developments)\n- Winamp Development team\n- MerTcaN (beta testing ;)\n- mynameisnobody (beta testing ;)\n- osmosis (beta testing ;)" color="255,255,255" shadowcolor="0,0,0" shadowx="1" shadowy="1" font="Tahoma"/>
+	<text fitparent="1" ghost="1" text="- iron2000 (made the first cPro skin!)\n- Veroka (helped with implementing ColorTheme support)\n- Zarko Jovic (helped with implementing ColorTheme support)\n- Wilian and Veroka (creating a template for cpro skins)\n- TheElusiveMelon (ClassicPro clock)\n- and1945 (beta testing and spreading the word ;)\n- fille1000 (widgets and skins ;)\n- leechbite (widgets and skins ;)\n- Wildrose-Wally (helped with publising)\n- Koogle (always full of new ideas)\n- Paparazzi (ideas and testing)\n- Taber Buhl (Original Big Bento gfx)\n- Benski (Winamp gen_ff developments)\n- Winamp Development team\n- MerTcaN (beta testing ;)\n- mynameisnobody (beta testing ;)\n- osmosis (beta testing ;)\n- pouldam (beta testing 8)" color="255,255,255" shadowcolor="0,0,0" shadowx="1" shadowy="1" font="Tahoma"/>
 </groupdef>
 
 <groupdef id="skin.about.credits">
@@ -59,7 +59,7 @@
 		x="0" y="0" visible="0"
 		about_name="Kev Jaques" about_alias="SLoB" about_age="11;9;1967"
 		about_country="UNITED KINGDOM"	about_image="about.gfx.slob"
-		credits="Credits:\n - AlbumArt with reflection widget\n - Help and suggestions\n - Better About animations"
+		credits="Credits:\n - AlbumArt with reflection tab\n - Help and suggestions\n - ColorTheme development"
 	/>
 	
 	<cPro:About id="about.5"
