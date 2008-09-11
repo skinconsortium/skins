@@ -45,6 +45,8 @@ Global ConfigAttribute notifier_holdtime_attrib;
 Global ConfigAttribute notifier_hideinfullscreen_attrib;
 Global ConfigAttribute notifier_windowshade_attrib;
 
+Global ConfigAttribute notifier_opennowplaying_attrib;
+
 Global ConfigAttribute notifier_fdout_alpha;
 Global ConfigAttribute notifier_fdout_hslide;
 Global ConfigAttribute notifier_fdout_vslide;
@@ -86,6 +88,8 @@ initAttribs_notifier()
 
 	addMenuSeparator(custom_page_notifier);
 	notifier_hideinfullscreen_attrib = custom_page_notifier.newAttribute("Disable in fullscreen", "1");
+	addMenuSeparator(custom_page_notifier);
+	notifier_opennowplaying_attrib = custom_page_notifier.newAttribute("Open Now Playing on Click", "1");
 
 	notifier_fadeintime_attrib = custom_page_nonexposed.newAttribute("Notifications fade in time", "1000");
 	notifier_fadeouttime_attrib = custom_page_nonexposed.newAttribute("Notifications fade out time", "5000");
@@ -104,9 +108,11 @@ initAttribs_notifier()
 	notifier_loc_monitor_attrib = custom_page_notifier_loc.newAttribute("Relative to Monitor", "0");
 
 // Notifications > Fade...
-	notifier_fdout_alpha = custom_page_notifier_fdout.newAttribute("Alpha Fade ", "1");
+	notifier_fdout_alpha = custom_page_notifier_fdout.newAttribute("Alpha Fade ", "1"); 
 	notifier_fdout_vslide = custom_page_notifier_fdout.newAttribute("Vertical Slide ", "0");
 	notifier_fdout_hslide = custom_page_notifier_fdout.newAttribute("Horizontal Slide ", "0");
+
+	// Martin> We need a additional spacer for the last 3 attribs, so we won't cross withe the 3 below in studio.xnf
 
 	notifier_fdin_alpha = custom_page_notifier_fdin.newAttribute("Alpha Fade", "1");
 	notifier_fdin_vslide = custom_page_notifier_fdin.newAttribute("Vertical Slide", "0");
