@@ -20,6 +20,7 @@ Function deleteSkinPos(int itemnum);
 Global GuiList skinlist;
 Global Button skinswitch;
 Global Popupmenu myMenu;
+Global Boolean msgbox_open = false;
 
 System.onScriptLoaded ()
 {
@@ -114,7 +115,7 @@ skinswitch.onLeftClick ()
 	myMenu.addCommand("Remove selected skin from list", 2, 0, 0);
 	myMenu.addSeparator();
 	myMenu.addCommand("Clear all skins from list", 3, 0, 0);
-	myMenu.addCommand("Get more ClassicPro skins", 4, 0, 1);
+	myMenu.addCommand("Get more ClassicPro skins", 4, 0, 0);
 
 	int a = myMenu.popAtXY(clientToScreenX(skinswitch.getLeft()), clientToScreenY(skinswitch.getTop() + skinswitch.getHeight()));
 	delete myMenu;
@@ -126,7 +127,11 @@ skinswitch.onLeftClick ()
 		deleteSkinPos(skinlist.getItemFocused());
 	}
 	else if(a==3){
-		int b = messageBox("Are you sure you want to remove all skins from the list?\n\nTo add a ClassicPro skin to this list again, just load the skin again.", "", 4, "");
+		if(msgbox_open) return;
+		msgbox_open = true;
+		int b = messageBox("Are you sure you want to remove all skins from the list?\n\nTo add a ClassicPro skin to this list again, just load the skin again.", "ClassicPro", 4, "");
+		msgbox_open = false;
+
 		if(b==4){
 			int n = skinlist.getNumItems();
 			
@@ -137,6 +142,7 @@ skinswitch.onLeftClick ()
 		}
 	}
 	else if(a==4){
+		System.navigateUrl("http://www.skinconsortium.com/index.php?page=Downloads&typeID=4");
 		//add opentab to sui system.. then goto browser.... TODO
 	}
 }

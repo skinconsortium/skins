@@ -31,10 +31,11 @@ Function getArtist();
 
 Global Container notifier_container;
 Global Layout notifier_layout;
-Global Timer notifier_timer;
+Global Timer notifier_timer, notifier_settingshelp;
 Global String last_autotitle, last_autopis;
 
 Global Boolean b_tohide = 0;
+Global Boolean msgbox_open = false;
 
 // ------------------------------------------------------------------------------
 // init
@@ -49,6 +50,7 @@ System.onScriptLoaded() {
 // ------------------------------------------------------------------------------
 System.onScriptUnloading() {
 	delete notifier_timer;
+	delete notifier_settingshelp;
 }
 
 // ------------------------------------------------------------------------------
@@ -227,8 +229,9 @@ notifier_timer.onTimer() {
 // ------------------------------------------------------------------------------
 notifier_layout.onLeftButtonDown(int x, int y) {
 	if(getPublicInt("cPro.asknotifier", 1)){
-		int l = System.messageBox("Do you want to disable song notifications?\n\nThis message won't appear again.\nTo manually disable it later go to 'Options >> Notifier'", "ClassicPro", 12, "");
-		if(l==4) notifier_never_attrib.setData("1");
+		notifier_settingshelp= new Timer;
+		notifier_settingshelp.setDelay(100);
+		notifier_settingshelp.start();
 		return;
 	}
 	notifier_timer.stop();
@@ -242,6 +245,16 @@ notifier_layout.onLeftButtonDown(int x, int y) {
 		if (artist == "") return;
 		System.navigateUrlBrowser("http://client.winamp.com/nowplaying/artist/?artistName=" + artist);	
 	}
+}
+
+notifier_settingshelp.onTimer(){
+	notifier_settingshelp.stop();
+	if(msgbox_open) return;
+	msgbox_open = true;
+	int l = System.messageBox("Do you want to disable song notifications?\n\nThis message won't appear again.\nTo manually disable it later go to 'Options >> Notifier'", "ClassicPro", 12, "");
+	msgbox_open = false;
+	if(l==4) notifier_never_attrib.setData("1");
+	setPublicInt("cPro.asknotifier", 0);
 }
 
 String getArtist ()
