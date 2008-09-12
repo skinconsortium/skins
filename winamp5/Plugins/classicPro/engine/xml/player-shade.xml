@@ -6,6 +6,8 @@
 	<layer x="90" y="0" w="-280" relatw="1" regionop="1" image="shade.bg.2" wantfocus="1" ghost="1"/>
 	<layer x="-191" y="0" relatx="1" regionop="1" image="shade.bg.3" wantfocus="1" ghost="1"/>
 
+	<group id="cpro.shade.overlay" fitparent="1" sysregion="1"/>
+
 	<!-- Overlay -->
 	<layer x="0" y="0" image="shade.o.bg.1" wantfocus="1" ghost="1"/>
 	<layer x="90" y="0" w="-280" relatw="1" image="shade.o.bg.2" wantfocus="1" ghost="1"/>
