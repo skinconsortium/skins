@@ -1,7 +1,7 @@
 -------------------------------------------------------------
-Version 1.04 (xxx Sep 2008)
+Version 1.04 (12 Sep 2008)
 -------------------------------------------------------------
-- New: PlaylistPro, quick search your playlist!
+- New: PlaylistPro, quick search your playlist! (Optional install)
 - New: Now warns you if you dont have the minimum Winamp version installed
 - New: Inner frame slider/divider now hides when its closed
 - New: Language pack compatible. See http://cpro.skinconsortium.com
@@ -11,6 +11,8 @@ Version 1.04 (xxx Sep 2008)
 - New: Open/Close side button now hides when the side cant open
 - New: Now possible to use more than one beatvis in your skin
 - New: Default frame gfx for skins (use combobox gfx)
+- New: Collapse to bottom (See Options >> Window Sizing)
+- New: Extended suiframe.png for skinners (optional, see cPro - Bento)
 - Fixed: Possible shade mode that goes invisible
 - Fixed: Shademode don’t remember previous position if you switch to new cPro skin
 - Fixed: Video preview shows under player when AOT is enabled
@@ -26,6 +28,8 @@ Version 1.04 (xxx Sep 2008)
 - Fixed: Sui area dont use 2pixels of the sui area
 - Fixed: BrowserPro doesnt update if you open the browser tab.
 - Fixed: Closing a drawer/sideview component via mainmenu
+- Fixed: Possible to have more than one messagebox open in skinlist- 
+- Fixed: Drawer component alignments
 - Improved: Major Beat vis optimization. More responsive on all files
 - Improved: Tagviewer now doesn't update the info if not visible
 - Improved: More accurate beatvis & player title center
@@ -37,6 +41,8 @@ Version 1.04 (xxx Sep 2008)
 - Improved: Component handling load speed on start
 - Improved: Now makes sure skin is maximized on load if enabled
 - Improved: Better ColorTheme support!
+- Improved: If notifier is clicked it will now ask once if you want to disable it
+- Improved: Enabled the "Get more skins" menu option in the skin list
 -------------------------------------------------------------
 
 

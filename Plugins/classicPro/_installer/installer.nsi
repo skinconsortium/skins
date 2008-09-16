@@ -93,7 +93,7 @@ FunctionEnd
 ;Installer Sections
 
 
-Section "ClassicPro plugin" cproFiles
+Section "ClassicPro Engine" cproFiles
 
 	!ifdef WINAMP_AUTOINSTALL
 	  Call MakeSureIGotWinamp
@@ -187,9 +187,7 @@ Section "ClassicPro plugin" cproFiles
   File "${SOURCEPATH}\engine\xui\Ratings\*.maki"
 
   SetOutPath $INSTDIR\Plugins\classicPro\engine\xui\PlaylistPro
-  File "${SOURCEPATH}\engine\xui\PlaylistPro\*.xml"
-  File "${SOURCEPATH}\engine\xui\PlaylistPro\*.m"
-  File "${SOURCEPATH}\engine\xui\PlaylistPro\*.maki"
+  File "${SOURCEPATH}\engine\xui\PlaylistPro\alt\*.xml"
 
   SetOutPath $INSTDIR\Plugins\classicPro\engine\xui\ModernSongticker
   File "${SOURCEPATH}\engine\xui\ModernSongticker\*.xml"
@@ -209,6 +207,15 @@ Section "ClassicPro plugin" cproFiles
   WriteUninstaller "$INSTDIR\Uninstall ClassicPro.exe"
 
 SectionEnd
+
+SectionGroup "Component" cprocustom
+	Section "Playlist Search" cPlaylistPro
+		SetOutPath $INSTDIR\Plugins\classicPro\engine\xui\PlaylistPro
+		File "${SOURCEPATH}\engine\xui\PlaylistPro\*.xml"
+		File "${SOURCEPATH}\engine\xui\PlaylistPro\*.m"
+		File "${SOURCEPATH}\engine\xui\PlaylistPro\*.maki"
+	SectionEnd
+SectionGroupEnd
 
 SectionGroup "Widgets" WidgetsSection
 Section "BrowserPro" wBrowserPro

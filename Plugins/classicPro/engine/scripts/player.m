@@ -1,4 +1,5 @@
 #include <lib/std.mi>
+#include attribs/init_Autoresize.m
 
 //#define rres 20 
 
@@ -29,6 +30,8 @@ Global Boolean mouseDown, dontResize, checkHeightAgain, docked;
 Global int i, lastKnownW, lastKnownH, rres;
 
 System.onScriptLoaded() {
+	initAttribs_Autoresize();
+
 	rres=stringToInteger(getParam());
 
 	mainGroup = getScriptGroup();
@@ -143,7 +146,8 @@ System.onScriptLoaded() {
 	//updateTextSizes();
 }
 System.onScriptUnloading(){
-	saveGlobal();
+	if(getPublicInt("cPro.lastmode", 0)==0) saveGlobal(); //0=normal ; 1=shade
+	
 	setPrivateInt(getSkinName(), "muted", mute_but.getCurCfgVal());
 	setPublicInt("cPro.firstlayout", 0);
 	delete reCheck;
@@ -169,23 +173,42 @@ gotoGlobal(){
 		h=getViewPortHeightfromGuiObject(mylayout)/newscalevalue;
 	}
 
+	
 	if(w<317) w= 317;
 	if(h<168) h= 168; //why was this w=168??? just change back if any bugs arise
+	
+	if(getPublicInt("cPro.saveby", 0)==1 && collapse_bottom_attrib.getData() == "1"){
+		y-=h-23;
+	}
+
+	//Winshade -> Normal : Bottom of screen
+	if(y>=System.getViewportHeight()-23) y=System.getViewportHeight()-h;
+
+
+	//just incase... you never know :P
+	if(x<0) x= 0;
+	if(y<0) y= 0;
+	if(x>System.getMonitorWidth()) x= 0;
+	if(y>System.getViewportHeight()) y= 0;
+
+
 	
 	//debugstring("resize to: "+integerToString(x)+", "+integerToString(y)+", "+integerToString(w)+", "+integerToString(h), 9);
 	if(checkHeightAgain) mylayout.resize(mylayout.getLeft(),mylayout.getTop(),lastKnownW,h);
 	else mylayout.resize(x,y,w,h);
-}	
-saveGlobal(){
+}
 
+saveGlobal(){
 	if(main.getCurLayout() == mylayout){
 		setPublicInt("cPro.x", mainGroup.getLeft());
 		setPublicInt("cPro.y", mainGroup.getTop());
 		setPublicInt("cPro.w", lastKnownW);
 	}
 	setPublicInt("cPro.h", lastKnownH);
-	//debugstring("save done: "+integerToString( mainGroup.getLeft())+", "+integerToString(mainGroup.getTop())+", "+integerToString(lastKnownW)+", "+integerToString(lastKnownH), 9);
+	setPublicInt("cPro.saveby", 0); //0=normal ; 1=shade
+
 }
+
 /* dont think i need this... removed for 1.04!
 System.onCreateLayout(Layout _layout){
 	if(_layout==mylayout){
@@ -193,6 +216,7 @@ System.onCreateLayout(Layout _layout){
 		//debugstring("a  == "+integerToString(getPublicInt("cPro.w", getCurAppWidth())), 9);
 	}
 }*/
+
 System.onShowLayout(Layout _layout){
 	if(dontResize){
 		if(getPrivateInt(getSkinName(), "muted", 0)==1){
@@ -206,17 +230,29 @@ System.onShowLayout(Layout _layout){
 
 	}
 
-	if(_layout==mylayout && !dontResize && getPublicInt("cPro.firstlayout", 0)==0){
+	/*if(_layout==mylayout && !dontResize && getPublicInt("cPro.firstlayout", 0)==0){
 		setPublicInt("cPro.firstlayout", 1);
 		reCheck.start();
 		dontResize=true;
 	}
-	else if(_layout==mylayout && !checkHeightAgain && !dontResize){
+	else if(_layout==mylayout && !dontResize && !checkHeightAgain ){
 		checkHeightAgain=true;
 		reCheck.start();
 		dontResize=true;
 	}
+	else */
+	if(_layout==mylayout){
+		setPublicInt("cPro.lastmode", 0); //0=normal ; 1=shade
+		reCheck.start();
+	}
 }
+System.onHideLayout(Layout _layout){
+	if(_layout==mylayout){
+			saveGlobal();
+	}
+}
+
+
 reCheck.onTimer(){
 		reCheck.stop();
 		gotoGlobal();
