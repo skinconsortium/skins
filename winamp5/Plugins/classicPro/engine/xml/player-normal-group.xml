@@ -19,7 +19,6 @@
 	<layer id="beatvisC.right" x="0" y="0" h="45" relatx="0" image="beat.right.c" tile="1" visible="0"/>
 	<group id="beatvisB.left" x="0" y="0" w="0" h="45" visible="0"/>
 	<group id="beatvisB.right" x="150" y="0" w="0" h="45" visible="0"/>
-	<!-- SLoB - added vis overlay-->
 	<layer id="beat.overlay" x="0" y="0" h="45" relatx="0" image="beatvis.overlay" tile="1" ghost="1"/>
 </groupdef>
 <groupdef id="beatpromo">
@@ -145,7 +144,7 @@
 		tooltip="Open presets"
 	/>
 
-	<script file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\scripts\eq.maki"/>
+	<script file="@COLORTHEMESPATH@/../../Plugins/classicPro/engine/scripts/eq.maki"/>
 </groupdef>
 
 <groupdef id="drawer.tagviewer.bottomleft" h="27">
@@ -237,12 +236,11 @@
 
 
 <groupdef id="drawer.savedpl">
-	<group id="drawer.tagviewer.bottomleft" x="0" y="-27" w="-6" relaty="1" relatw="1"/>
 	<PlaylistDirectory x="2" y="2" w="-4" h="-21" relatw="1" relath="1" antialias="0"/>
 </groupdef>
 
 <groupdef id="drawer.avs">
-	<windowholder x="3" y="5" w="-6" h="-24" relatw="1" relath="1" autofocus="1" wantfocus="0" autoclose="1" autoopen="1" autoavailable="1" visible="1" hold="guid:{0000000A-000C-0010-FF7B-01014263450C}"/>
+	<windowholder x="2" y="2" w="-4" h="-21" relatw="1" relath="1" autofocus="1" wantfocus="0" autoclose="1" autoopen="1" autoavailable="1" visible="1" hold="guid:{0000000A-000C-0010-FF7B-01014263450C}"/>
 	<button	x="1" y="-18" relaty="1" image="component.avs.opt.1" hoverImage="component.avs.opt.2" downImage="component.avs.opt.3" action="VIS_Menu" tooltip="Configure Visualizer"/>
 	<button	x="33" y="-18" relaty="1" image="component.avs.prev.1" hoverImage="component.avs.prev.2" downImage="component.avs.prev.3" action="VIS_Prev" tooltip="Previous Visualization Preset"/>
 	<togglebutton x="64" y="-18" relaty="1" image="component.avs.ran.1" hoverImage="component.avs.ran.2" downImage="component.avs.ran.3" activeimage="component.avs.ran.4" tooltip="Randomly change Visualization Presets"	cfgattrib="{0000000A-000C-0010-FF7B-01014263450C};Random"/>
@@ -287,9 +285,8 @@
 </groupdef>
 
 <groupdef id="drawer.skinchooser">
-    <group id="drawer.tagviewer.bottomleft" x="0" y="-27" w="-6" relaty="1" relatw="1"/>
     <List id="skinlist" x="2" y="2" w="-4" h="-21" relatw="1" relath="1" antialias="0" 
-        numcolumns="2" columnwidths="-1;-1" columnlabels="Name;Type"
+        numcolumns="2" columnwidths="-1;-1" columnlabels="Name;Type" 
     />
     <button    id="switch" x="-64" y="-18" relatx="1" relaty="1"
         image="component.menu2.1"
@@ -301,10 +298,14 @@
 </groupdef>
 
 <groupdef id="centro.multidrawer">
-	<grid fitparent="1"
+	<grid id="centro.gadget.grid" fitparent="1"
 		topleft="player.gframe.1" top="player.gframe.2" topright="player.gframe.3"
 		left="player.gframe.4" middle="player.gframe.5" right="player.gframe.6"
 		bottomleft="player.gframe.7" bottom="player.gframe.8" bottomright="player.gframe.9"
+		regionop="1" move="1"
+	/>
+	<grid id="centro.gadget.grid2" fitparent="1" visible="0"
+		topleft="player.gframe.1.alt" top="player.gframe.2.alt" topright="player.gframe.3.alt"
 		regionop="1" move="1"
 	/>
 	<group id="drawer.equalizer" fitparent="1" visible="0"/>

@@ -9,9 +9,9 @@ Global Group myGroup;
 Global Group drawer_equalizer, drawer_savedpl, drawer_tagviewer, drawer_avs, drawer_ct, drawer_skinchooser;
 Global PopUpMenu popMenu, widgetmenu;
 Global Button but_drawerGoto;
-Global GuiObject cpro_sui;
+Global GuiObject cpro_sui, gad_Grid, gad_Grid2;
 Global Layer ct_fakeLayer;
-Global Boolean gotThemes, mouse_but_drawerGoto;
+Global Boolean gotThemes, mouse_but_drawerGoto, cuseqbg;
 
 Global ComponentBucket dummyBuck;
 Global GuiObject customObj;
@@ -28,6 +28,8 @@ System.onScriptLoaded() {
 	drawer_ct = myGroup.findObject("drawer.colortheme");
 	drawer_skinchooser = myGroup.findObject("drawer.skinchooser");
 	ct_fakeLayer = myGroup.findObject("drawer.ct.fakelayer");
+	gad_Grid = myGroup.findObject("centro.gadget.grid");
+	gad_Grid2 = myGroup.findObject("centro.gadget.grid2");
 	
 	cpro_sui = getContainer("main").getLayout("normal").findObject("cpro.sui");
 
@@ -36,6 +38,12 @@ System.onScriptLoaded() {
 
 	gotThemes = ct_fakeLayer.isInvalid();
 	//if(!ct_fakeLayer.isInvalid()) gotThemes=true;
+
+	Map myMap = new Map;
+	myMap.loadMap("read.suiframe.png");
+	if(myMap.getWidth()>=272) cuseqbg=true;
+	else  cuseqbg=false;
+	delete myMap;
 
 	//Saved Settings
 	openDrawer(getPublicInt("cPro.lastDrawer", 0));
@@ -96,6 +104,17 @@ openDrawer(int drawerNo){
 	drawer_ct.hide();
 	drawer_skinchooser.hide();
 	customObj.hide();
+
+	if(cuseqbg){
+		if(drawerNo==0){
+			gad_Grid.hide();
+			gad_Grid2.show();
+		}
+		else{
+			gad_Grid2.hide();
+			gad_Grid.show();
+		}
+	}
 
 	if(drawerNo==1) drawer_tagviewer.show();
 	else if(drawerNo==2) drawer_savedpl.show();

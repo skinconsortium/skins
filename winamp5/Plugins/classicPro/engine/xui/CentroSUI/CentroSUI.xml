@@ -218,7 +218,7 @@
 		tooltip="Select Widget"
 	/>-->
 	
-	<SC:NowPlaying id="nowplaying.component" x="1" y="1" w="-2" relatw="1" h="-2" relath="1" dropshadowcdcase="1" reflectionheightpercentage="50"/>
+	<SC:NowPlaying id="nowplaying.component" x="1" y="1" w="-2" relatw="1" h="-2" relath="1" dropshadowcdcase="1" reflectionheightpercentage="80"/>
 </groupdef>
 
 <groupdef id="centro.tabdivider">
@@ -256,7 +256,7 @@
 	<button id="close.rightframe" x="0" y="0" image="close.right.1" hoverimage="close.right.2" downimage="close.right.3" rectrgn="1" tooltip="Close Side"/>
 </groupdef>
 <groupdef id="centro.componentsheet">
-	<grid fitparent="1"
+	<grid id="centro.componentsheet.grid" fitparent="1"
 		topleft="player.suiframe.1" top="player.suiframe.2" topright="player.suiframe.3"
 		left="player.suiframe.4" middle="player.suiframe.5" right="player.suiframe.6"
 		bottomleft="player.suiframe.7" bottom="player.suiframe.8" bottomright="player.suiframe.9"
@@ -322,7 +322,7 @@
 
 <!--include file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\widgets\widgets.xml"/--> <!-- WIDGETS -->
 <groupdef id="centro.playlist.directory">
-	<grid fitparent="1" move="1"
+	<grid id="centro.gadget.grid" fitparent="1" move="1"
 		topleft="player.gframe.1" top="player.gframe.2" topright="player.gframe.3"
 		left="player.gframe.4" middle="player.gframe.5" right="player.gframe.6"
 		bottomleft="player.gframe.7" bottom="player.gframe.8" bottomright="player.gframe.9"

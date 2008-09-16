@@ -373,6 +373,11 @@
 	<bitmap id="player.suiframe.7" file="suiframe.png" x="0" y="55" w="4" h="27" gammagroup="n.SuiFrame"/>
 	<bitmap id="player.suiframe.8" file="suiframe.png" x="5" y="55" w="10" h="27" gammagroup="n.SuiFrame"/>
 	<bitmap id="player.suiframe.9" file="suiframe.png" x="16" y="55" w="4" h="27" gammagroup="n.SuiFrame"/>
+	<bitmap id="player.suiframe.7.alt" file="suiframe.png" x="0" y="83" w="4" h="4" gammagroup="n.SuiFrame"/>
+	<bitmap id="player.suiframe.8.alt" file="suiframe.png" x="5" y="83" w="10" h="4" gammagroup="n.SuiFrame"/>
+	<bitmap id="player.suiframe.9.alt" file="suiframe.png" x="16" y="83" w="4" h="4" gammagroup="n.SuiFrame"/>
+
+	<bitmap id="read.suiframe.png" file="suiframe.png"/> <!-- Used to read the suiframe width-->
 
 	<!-- Playlist frame-->
 	<bitmap id="player.plframe.1" file="suiframe.png" x="23" y="0" w="6" h="10" gammagroup="n.SuiFrame"/>
@@ -395,6 +400,11 @@
 	<bitmap id="player.gframe.7" file="suiframe.png" x="50" y="32" w="6" h="27" gammagroup="n.SuiFrame"/>
 	<bitmap id="player.gframe.8" file="suiframe.png" x="57" y="32" w="10" h="27" gammagroup="n.SuiFrame"/>
 	<bitmap id="player.gframe.9" file="suiframe.png" x="68" y="32" w="6" h="27" gammagroup="n.SuiFrame"/>
+
+	<bitmap id="player.gframe.1.alt" file="suiframe.png" x="248" y="0" w="6" h="119" gammagroup="n.SuiFrame"/>
+	<bitmap id="player.gframe.2.alt" file="suiframe.png" x="255" y="0" w="10" h="119" gammagroup="n.SuiFrame"/>
+	<bitmap id="player.gframe.3.alt" file="suiframe.png" x="266" y="0" w="6" h="119" gammagroup="n.SuiFrame"/>
+
 	<bitmap id="player.gframe.7.alt" file="suiframe.png" x="0" y="93" w="247" h="27" gammagroup="n.SuiFrame"/>
 
 	<!-- Tab buttons-->

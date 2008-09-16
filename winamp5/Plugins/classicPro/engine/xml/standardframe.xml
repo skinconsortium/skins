@@ -28,8 +28,8 @@
 		bottomright="wasabi.dropdownlist.list.bottom.right"
 		sysregion="1" move="1"
 	/>
-	<rect x="3" y="18" w="-6" h="-22" relatw="1" relath="1" color="wasabi.list.background" alpha="100" filled="1"/>
-	<rect x="4" y="19" w="-8" h="-24" relatw="1" relath="1" color="wasabi.window.background" filled="1"/>
+	<rect x="3" y="18" w="-6" h="-22" relatw="1" relath="1" color="wasabi.window.background" filled="1"/>
+	<rect x="4" y="19" w="-8" h="-24" relatw="1" relath="1" color="wasabi.list.background" filled="1"/>
 
 	<!-- Window resizers -->
 	<layer x="0" y="17" w="6" h="-27" relath="1" resize="left"/>
@@ -42,12 +42,12 @@
 	<layer x="-10" y="-10" w="10" h="10" relatx="1" relaty="1" resize="bottomright"/>
 
 	<!-- Window title -->
-	<text x="11" y="2" w="-29" h="14" relatw="1" default=":componentname" bold="0" antialias="1" align="center" fontsize="14" forceuppercase="1" color="255,255,255" alpha="220" move="1"/>
+	<text x="11" y="2" w="-29" h="14" relatw="1" default=":componentname" bold="0" antialias="1" align="center" fontsize="14" forceuppercase="1" color="wasabi.text.color" alpha="220" move="1"/>
 
-	<text x="-20" y="2" w="18" relatx="1" default="x" bold="1" align="center" antialias="1" fontsize="14" ghost="1" color="255,255,255" alpha="220"/>
+	<text x="-20" y="2" w="18" relatx="1" default="x" bold="1" align="center" antialias="1" fontsize="14" ghost="1" color="wasabi.text.color" alpha="220"/>
 	<button x="-20" y="2" w="18" h="16" relatx="1" action="CLOSE" tooltip="Close Window" rectrgn="1" cursor="IDC_HAND"/>
 
-	<text x="2" y="2" w="18" default="~" bold="1" align="center" antialias="1" fontsize="14" ghost="1" color="255,255,255" alpha="220"/>
+	<text x="2" y="2" w="18" default="~" bold="1" align="center" antialias="1" fontsize="14" ghost="1" color="wasabi.text.color" alpha="220"/>
 	<button x="2" y="2" w="18" h="16" action="SYSMENU" tooltip="Main Menu" rectrgn="1" cursor="IDC_HAND"/>
 </groupdef>
 

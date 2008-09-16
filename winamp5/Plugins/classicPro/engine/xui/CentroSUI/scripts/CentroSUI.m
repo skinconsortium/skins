@@ -32,6 +32,8 @@ Function updateTabButtonStates();
 Function updateTabShow();
 Function setTabSubMenuResult(int sel);
 Function setMainFrame(boolean open);
+Function setCompStatus(boolean onOff);
+Function updateCompStatus();
 
 // new dynamic tabs (dynamic size, custom position, hideable..will show again when system trigger it ;)
 Function tab_SetText(int tab, int limit);
@@ -65,13 +67,13 @@ Global Button but_miniGoto, closeFrame, openFrame;
 Global Text visName, plText1, plText2;
 
 Global ToggleButton tog_library, tog_video, tog_avs, tog_Browser, tog_Playlist, tog_Other, tog_NowPlay, tog_drawer;
-Global GuiObject tog_library1, tog_video1, tog_avs1, tog_Browser1, tog_Playlist1, tog_Other1, tog_Widget1, tog_fake1, guihold_Pl2;
-Global WindowHolder hold_Other, hold_Pl1, hold_Pl2, hold_vid, hold_avs, hold_ml;
+Global GuiObject tog_library1, tog_video1, tog_avs1, tog_Browser1, tog_Playlist1, tog_Other1, tog_Widget1, tog_fake1, guihold_Pl2, compGrid;
+Global WindowHolder hold_Other, hold_Pl2, hold_vid, hold_avs, hold_ml;//, hold_Pl1;
 
 Global Frame mainFrame, plFrame;
 Global Timer openMainLayout, openDefaultTab, refreshAIOTab, checkVisName, ssWinHol;
 Global GuiObject main_Frame;
-Global boolean openLib, openVid, openVis, loaded, open_drawer, skipLoad, mouseDownF1, mouseDownF2, busyWithDrawer, busyWithThisFunction, wasTabTrig, stopResizeRight, openMePlease, delayStart;
+Global boolean openLib, openVid, openVis, loaded, open_drawer, skipLoad, mouseDownF1, mouseDownF2, busyWithDrawer, busyWithThisFunction, wasTabTrig, stopResizeRight, openMePlease, delayStart, cuseqbg;
 Global int default_drawer_h, active_tab, tab_openned, delayStartTab;
 Global String guid_blacklist, tabNames, closeGUID;
 
@@ -125,6 +127,13 @@ System.onScriptLoaded() {
 	tabDivider = xuiGroup.findObject("centro.tabdivider");
 
 	drawer = xuiGroup.findObject("centro.multidrawer");
+	
+	compGrid = xuiGroup.findObject("centro.componentsheet.grid");
+	Map myMap = new Map;
+	myMap.loadMap("read.suiframe.png");
+	if(myMap.getWidth()>=272) cuseqbg=true;
+	else  cuseqbg=false;
+	delete myMap;
 
 	// Reader for albumart gradient
 	Map myMap = new Map;
@@ -194,7 +203,7 @@ System.onScriptLoaded() {
 	area_right_pl = xuiGroup.findObject("centro.playlist.component"); 
 	area_mini = xuiGroup.findObject("centro.playlist.directory");
 
-	hold_Pl1 = xuiGroup.findObject("centro.windowholder.playlist1");
+	//hold_Pl1 = xuiGroup.findObject("centro.windowholder.playlist1");
 	hold_Pl2 = xuiGroup.findObject("centro.windowholder.playlist2");
 	guihold_Pl2 = xuiGroup.findObject("centro.windowholder.playlist2");
 	hold_vid = xuiGroup.findObject("centro.windowholder.video");
@@ -746,6 +755,7 @@ openTabNo(int tabNo){
 	updateTabShow();
 	busyWithThisFunction=false;
 	spaceTabs(true);
+	updateCompStatus();
 }
 
 checkVisName.onTimer(){
@@ -1289,9 +1299,33 @@ refreshComponentButtons(){
 			hold_avs.setXmlParam("h", "-4");
 			visRectBg.setXmlParam("h", "-4");
 			tabbut_avs.hide();
-	}		
+	}
+	updateCompStatus();
+}
+updateCompStatus(){
+	if(tab_openned==0) setCompStatus(false);
+	else if(tab_openned==1) setCompStatus(getPublicInt("ClassicPro.1.vidbuttons", 1)==1);
+	else if(tab_openned==2) setCompStatus(getPublicInt("ClassicPro.1.avsbuttons", 1)==1);
+	else if(tab_openned==3) setCompStatus(false);
+	else if(tab_openned==4) setCompStatus(getPublicInt("ClassicPro.1.plbuttons", 1)==1);
+	else if(tab_openned==5) setCompStatus(true);
+	else if(tab_openned==6) setCompStatus(false); //true l8r when widget.... martin read here ;)
 }
 
+setCompStatus(boolean onOff){
+	if(cuseqbg){
+		if(onOff){
+			compGrid.setXmlParam("bottomleft", "player.suiframe.7");
+			compGrid.setXmlParam("bottom", "player.suiframe.8");
+			compGrid.setXmlParam("bottomright", "player.suiframe.9");
+		}
+		else{
+			compGrid.setXmlParam("bottomleft", "player.suiframe.7.alt");
+			compGrid.setXmlParam("bottom", "player.suiframe.8.alt");
+			compGrid.setXmlParam("bottomright", "player.suiframe.9.alt");
+		}
+	}
+}
 
 
 xuiGroup.onAction (String action, String param, int x, int y, int p1, int p2, GuiObject source)

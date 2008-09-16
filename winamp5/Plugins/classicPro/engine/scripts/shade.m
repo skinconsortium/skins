@@ -1,4 +1,5 @@
 #include <lib/std.mi>
+#include attribs/init_Autoresize.m
 
 #define rres 20 
 
@@ -24,6 +25,8 @@ Global Layout shade;
 Global Togglebutton mute_but;
 
 System.onScriptLoaded() {
+	initAttribs_Autoresize();
+
 	mainGroup = getScriptGroup();
 
 	main = System.getContainer("main");
@@ -77,7 +80,7 @@ System.onScriptLoaded() {
 	shade.setXmlParam("maximum_w", integerToString(getViewPortWidthfromGuiObject(shade)/newscalevalue));
 }
 System.onScriptUnloading() {
-	saveGlobal();
+	if(getPublicInt("cPro.lastmode", 0)==1) saveGlobal(); //0=normal ; 1=shade
 	setPublicInt("cPro.firstlayout", 0);
 	setPrivateInt(getSkinName(), "muted", mute_but.getCurCfgVal());
 	delete reCheck;
@@ -182,10 +185,23 @@ gotoGlobal(){
 	int y = getPublicInt("cPro.y", getCurAppTop());
 	int w = getPublicInt("cPro.w", getCurAppWidth());
 	int h = 23;
+
+	//just incase... you never know :P
+	if(x<0) x= 0;
+	if(y<0) y= 0;
+	if(x>System.getMonitorWidth()) x= 0;
+	if(y>System.getViewportHeight()) y= 0;
 	
 	if(w<317) w= 317;
 	
-	//debugstring("resize to: "+integerToString(x)+", "+integerToString(y)+", "+integerToString(w)+", "+integerToString(h), 9);
+	//Winshade -> Normal : Bottom of screen
+	if(getPublicInt("cPro.saveby", 0)==0 && collapse_bottom_attrib.getData() == "1"){
+		//debugstring("pre (shade): "+integerToString(x)+", "+integerToString(y)+", "+integerToString(w)+", "+integerToString(h), 9);
+		y=y+getPublicInt("cPro.h", getCurAppHeight())-23;
+	}
+
+	
+	//debugstring("resize to (shade): "+integerToString(x)+", "+integerToString(y)+", "+integerToString(w)+", "+integerToString(h), 9);
 	shade.resize(x,y,w,h);
 }
 saveGlobal(){
@@ -193,16 +209,26 @@ saveGlobal(){
 		setPublicInt("cPro.x", shade.getLeft());
 		setPublicInt("cPro.y", shade.getTop());
 		setPublicInt("cPro.w", lastKnownW);
+		setPublicInt("cPro.saveby", 1); //0=normal ; 1=shade
 	}
 }
 shade.onResize(int x, int y, int w, int h){
 	lastKnownW = w;
 }
 System.onShowLayout(Layout _layout){
-	if(_layout==shade && !dontResize && getPublicInt("cPro.firstlayout", 0)==0){
+	/*if(_layout==shade && !dontResize && getPublicInt("cPro.firstlayout", 0)==0){
 		setPublicInt("cPro.firstlayout", 1);
 		reCheck.start();
 		dontResize=true;
+	}*/
+	if(_layout==shade ){
+		setPublicInt("cPro.lastmode", 1); //0=normal ; 1=shade
+		reCheck.start();
+	}
+}
+System.onHideLayout(Layout _layout){
+	if(_layout==shade){
+		saveGlobal();
 	}
 }
 
