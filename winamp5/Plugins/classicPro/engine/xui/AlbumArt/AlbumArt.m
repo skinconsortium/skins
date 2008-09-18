@@ -1,6 +1,7 @@
 #include <lib/std.mi>
 
 Function refreshCover();
+Function String getMyPath();
 
 Global Group XUIGroup;
 Global GuiObject albumart;
@@ -35,7 +36,7 @@ albumart.onRightButtonUp(int x, int y){
 		albumart.setXmlParam("notfoundimage", getXmlParam("notfoundimage"));
 	}
 	else if (result == 3){
-		System.navigateUrl(getPath(getPlayItemMetaDataString("filename")));
+		System.navigateUrl(getMyPath());
 	}
 
 	delete popMenu;
@@ -43,7 +44,7 @@ albumart.onRightButtonUp(int x, int y){
 }
 
 albumart.onLeftButtonDblClk (int x, int y){
-	System.navigateUrl(getPath(getPlayItemMetaDataString("filename")));
+	System.navigateUrl(getMyPath());
 }
 
 System.onTitleChange (String newtitle){
@@ -70,4 +71,13 @@ refreshCover(){
 
 lookagain.onTimer(){
 	refreshCover();
+}
+
+String getMyPath() {
+	String bs = strleft("\ ",1);
+	String output = "";
+
+	if(System.strleft(System.getPlayItemString(),6) == "cda://") output = System.strmid(System.getPlayItemString(), 6, 1)+":"+bs;
+	else output= getPath(getPlayItemMetaDataString("filename"));
+	return output;
 }

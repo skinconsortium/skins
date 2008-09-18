@@ -189,8 +189,8 @@ gotoGlobal(){
 	//just incase... you never know :P
 	if(x<0) x= 0;
 	if(y<0) y= 0;
-	if(x>System.getMonitorWidth()) x= 0;
-	if(y>System.getViewportHeight()) y= 0;
+	/*if(x>System.getMonitorWidth()) x= 0;
+	if(y>System.getViewportHeight()) y= 0;*/ //dont work with multi mon setup
 	
 	if(w<317) w= 317;
 	
