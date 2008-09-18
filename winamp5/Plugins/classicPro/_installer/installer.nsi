@@ -208,7 +208,7 @@ Section "ClassicPro Engine" cproFiles
 
 SectionEnd
 
-SectionGroup "Component" cprocustom
+SectionGroup "Components" cprocustom
 	Section "Playlist Search" cPlaylistPro
 		SetOutPath $INSTDIR\Plugins\classicPro\engine\xui\PlaylistPro
 		File "${SOURCEPATH}\engine\xui\PlaylistPro\*.xml"
