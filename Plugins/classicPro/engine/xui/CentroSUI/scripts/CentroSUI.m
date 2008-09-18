@@ -73,7 +73,7 @@ Global WindowHolder hold_Other, hold_Pl2, hold_vid, hold_avs, hold_ml;//, hold_P
 Global Frame mainFrame, plFrame;
 Global Timer openMainLayout, openDefaultTab, refreshAIOTab, checkVisName, ssWinHol;
 Global GuiObject main_Frame;
-Global boolean openLib, openVid, openVis, loaded, open_drawer, skipLoad, mouseDownF1, mouseDownF2, busyWithDrawer, busyWithThisFunction, wasTabTrig, stopResizeRight, openMePlease, delayStart, cuseqbg;
+Global boolean openLib, openVid, openVis, loaded, open_drawer, skipLoad, mouseDownF1, mouseDownF2, busyWithDrawer, busyWithThisFunction, wasTabTrig, stopResizeRight, openMePlease, delayStart, cuseqbg, ml_installed;
 Global int default_drawer_h, active_tab, tab_openned, delayStartTab;
 Global String guid_blacklist, tabNames, closeGUID;
 
@@ -156,8 +156,9 @@ System.onScriptLoaded() {
 
 	plText1 = xuiGroup.findObject("centro.playlist.pltext1");
 	plText2 = xuiGroup.findObject("centro.playlist.pltext2");
+	
+	ml_installed = stringToInteger(getParam());
 
-///////////////////////
 	xuiBrowser = xuiGroup.findObject("cpro.browser");
 	browserGroup = xuiGroup.findObject("cpro.browser");
 
@@ -628,8 +629,14 @@ openDefaultTab.onTimer(){
 
 updateTabShow(){
 
-	if(getPublicInt("cPro.tab.onoff.0", 1)==1 || active_tab==0) tog_library1.show();
-	else tog_library1.hide();
+	if(ml_installed){
+		if(getPublicInt("cPro.tab.onoff.0", 1)==1 || active_tab==0) tog_library1.show();
+		else tog_library1.hide();
+	}
+	else{
+		if(active_tab==0) tog_library1.show();
+		else tog_library1.hide();
+	}
 
 	if(getPublicInt("cPro.tab.onoff.1", 1)==1 || active_tab==1) tog_video1.show();
 	else tog_video1.hide();
@@ -1137,7 +1144,8 @@ initTabSubMenu(){
 	tabMenu = new PopUpMenu;
 	tabMenu.addCommand(TAB_TABSELECT, -1, 0, 1);
 	tabMenu.addSeparator();
-	tabMenu.addCommand("Media Library", 100, getPublicInt("cPro.tab.onoff.0", 1), 0);
+	if(ml_installed) tabMenu.addCommand("Media Library", 100, getPublicInt("cPro.tab.onoff.0", 1), 0);
+	else  tabMenu.addCommand("Media Library", 100, 0, 1);
 	tabMenu.addCommand("Video", 101, getPublicInt("cPro.tab.onoff.1", 1), 0);
 	tabMenu.addCommand("Visualization", 102, getPublicInt("cPro.tab.onoff.2", 1), 0);
 	tabMenu.addCommand("Browser", 103, getPublicInt("cPro.tab.onoff.3", 1), 0);

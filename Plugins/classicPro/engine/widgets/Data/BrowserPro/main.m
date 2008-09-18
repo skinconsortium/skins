@@ -186,6 +186,10 @@ surfSelected(){
 	cpro_sui = getContainer("main").getLayout("normal").findObject("cpro.sui");
 	String myUrl = loaded_P_Url.enumItem(loaded_P_Names.findItem(getPublicString("ClassicPro.BrowserPro", "0")));
 	gotoBrowserUrl(prepareCustomUrl(myUrl));
+	
+	
+	//testing download
+	//System.downloadMedia("", "C:/", false, false);
 }
 
 System.onTitleChange(String newtitle){

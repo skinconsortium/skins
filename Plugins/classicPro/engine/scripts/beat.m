@@ -21,7 +21,6 @@ Global XmlDoc myDoc;
 Global List cusbeat_names;
 
 System.onScriptLoaded (){
-
 	frameGroup = getScriptGroup ();
 	
 	beatGroup = frameGroup.findObject("beatvis");
@@ -256,6 +255,24 @@ showGroup(int groupNo){
 	else if(showPromo) promoGroup.show();
 }
 
+mouseTrap.onLeftButtonDblClk(int x, int y){
+	if(customvis){
+		if(getPrivateInt(getSkinName(), "beatvis", 1)){
+			int u = getPrivateInt(getSkinName(), "customvis", 0)+1;
+
+			if(u==cusbeat_names.getNumItems()){
+				u=0;
+				setPrivateInt(getSkinName(), "beatvis", 0);
+			}
+			setCustomVis(u);
+		}
+		else setPrivateInt(getSkinName(), "beatvis", 1);
+	}
+	else setPrivateInt(getSkinName(), "beatvis", !getPrivateInt(getSkinName(), "beatvis", 1));
+	
+	refreshView();
+}
+
 mouseTrap.onRightButtonup(int x, int y){
 	selMenu = new PopupMenu;
 	selMenu.addCommand("Show Beat vis", 1, getPrivateInt(getSkinName(), "beatvis", 1), 0);
@@ -288,6 +305,7 @@ ProcessMenuResult(int a){
 }
 
 setCustomVis(int a){
+	debugString("setCustomVis=" + integerToString(a),9);
 	if(a>=cusbeat_names.getNumItems()) a=0;
 	t01.setXmlParam("image", "beat."+integerToString(a)+".left");
 	if(!oneSide) t02.setXmlParam("image", "beat."+integerToString(a)+".right");
@@ -296,23 +314,7 @@ setCustomVis(int a){
 	setPrivateInt(getSkinName(), "customvis", a);
 }
 
-mouseTrap.onLeftButtonDblClk(int x, int y){
-	if(customvis){
-		if(getPrivateInt(getSkinName(), "beatvis", 1)){
-			int u = getPrivateInt(getSkinName(), "customvis", 0)+1;
 
-			if(u==cusbeat_names.getNumItems()){
-				u=0;
-				setPrivateInt(getSkinName(), "beatvis", 0);
-			}
-			setCustomVis(u);
-		}
-		else setPrivateInt(getSkinName(), "beatvis", 1);
-	}
-	else setPrivateInt(getSkinName(), "beatvis", !getPrivateInt(getSkinName(), "beatvis", 1));
-	
-	refreshView();
-}
 
 startTimer(){
 	run_max=DEF_MAX;
