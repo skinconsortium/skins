@@ -1,5 +1,5 @@
 -------------------------------------------------------------
-Version 1.04 (12 Sep 2008)
+Version 1.04 (18 Sep 2008)
 -------------------------------------------------------------
 - New: PlaylistPro, quick search your playlist! (Optional install)
 - New: Now warns you if you dont have the minimum Winamp version installed
@@ -30,6 +30,9 @@ Version 1.04 (12 Sep 2008)
 - Fixed: Closing a drawer/sideview component via mainmenu
 - Fixed: Possible to have more than one messagebox open in skinlist- 
 - Fixed: Drawer component alignments
+- Fixed: If you didn't have the media library installed the tab was still visible
+- Fixed: Open folder dont work on audio cd's
+- Fixed: Error messages in BrowserPro when file is in root directory or audio cd
 - Improved: Major Beat vis optimization. More responsive on all files
 - Improved: Tagviewer now doesn't update the info if not visible
 - Improved: More accurate beatvis & player title center

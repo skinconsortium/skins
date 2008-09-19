@@ -19,11 +19,11 @@
   Name "ClassicPro© v1.04"
   
   ;RELEASE  
-  ;OutFile "ClassicPro_1.04.exe"
+  OutFile "ClassicPro_1.04.exe"
 
   ;BETA STAGE  
   !define /date DATE "%Y-%m-%d"
-  OutFile "ClassicPro_1.04_(${DATE}).exe"
+  ;OutFile "ClassicPro_1.04_(${DATE}).exe"
 
 	; The default installation directory
 	InstallDir $PROGRAMFILES\Winamp
@@ -243,14 +243,18 @@ SectionGroupEnd
 
   ;Language strings
   LangString DESC_cproFiles ${LANG_ENGLISH} "This will install all the files that ClassicPro needs to work."
-  LangString DESC_wBrowserPro ${LANG_ENGLISH} "BrowserPro is a widget that will enable your browser to auto navigate to pupular websites and explore the playing directory."
+  LangString DESC_wBrowserPro ${LANG_ENGLISH} "BrowserPro is a widget that will enable your browser to auto navigate to popular websites and explore the playing directory."
   LangString DESC_Widget ${LANG_ENGLISH} "ClassicPro skins support widgets and here you'll find some of them that we decided to bundle with this installer."
+  LangString DESC_cprocustom ${LANG_ENGLISH} "Optional components for ClassicPro."
+  LangString DESC_cPlaylistPro ${LANG_ENGLISH} "Add a search box above your playlist for easy searches in your playlist."
 
   ;Assign language strings to sections
   !insertmacro MUI_FUNCTION_DESCRIPTION_BEGIN
     !insertmacro MUI_DESCRIPTION_TEXT ${cproFiles} $(DESC_cproFiles)
     !insertmacro MUI_DESCRIPTION_TEXT ${wBrowserPro} $(DESC_wBrowserPro)
     !insertmacro MUI_DESCRIPTION_TEXT ${WidgetsSection} $(DESC_Widget)
+    !insertmacro MUI_DESCRIPTION_TEXT ${cprocustom} $(DESC_cprocustom)
+    !insertmacro MUI_DESCRIPTION_TEXT ${cPlaylistPro} $(DESC_cPlaylistPro)
   !insertmacro MUI_FUNCTION_DESCRIPTION_END
 
 ;--------------------------------
