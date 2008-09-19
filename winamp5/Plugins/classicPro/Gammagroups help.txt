@@ -1,28 +1,31 @@
 -------------------------------------------------------------------------
-Internal Gammagroups in ClassicPro (last updated for Cpro 1.04)
+Internal Gammagroups in ClassicPro (last updated for cPro v1.04)
 -------------------------------------------------------------------------
 
 
 ::Normal Mode::
 
-n.Background.Bottom
 n.Background.Alt
+n.Background.Bottom
 n.Background.Overlay
-n.Vis
-n.Text.SongInfo
-n.Text.SongTime
-n.Scrollbars.Gfx
-n.TooltipCombobox
+n.Beatvis
+n.Button
+n.Button.Top
+n.Color.ListBg
 n.Notifier.Bg
+n.Promo
+n.Scrollbars.Gfx
 n.Seeker.BG
 n.Seeker.Thumb
+n.SuiFrame
+n.Text.SongInfo
+n.Text.SongInfo
+n.Text.SongTime
+n.TooltipCombobox
+n.Vis
 n.Volume.BG
 n.Volume.Thumb
 
-n.SuiFrame		<<new
-n.beatvis		<<new
-n.Color.ListBg		<<new
-n.Button		<<new
 
 :::::::::::::::::::::::::
 

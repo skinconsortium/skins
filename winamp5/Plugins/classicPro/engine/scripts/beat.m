@@ -71,6 +71,7 @@ System.onScriptLoaded (){
 		myDoc.parser_destroy();
 		delete myDoc;
 		setCustomVis(getPrivateInt(getSkinName(), "customvis", 0));
+		mouseTrap.setXmlParam("tooltip", "Right-Click for more animations");
 	}
 	else{
 		customvis=false;

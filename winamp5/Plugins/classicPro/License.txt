@@ -38,7 +38,7 @@ classicpro@skinconsortium.com
 Wasabi Coders:
 - pjn123 (main coder)
 - martin.deimos (browser, notifier, misc, widget Co-Developer)
-- SLoB (albumart reflection)
+- SLoB (Colortheme development, AlbumArt Reflection, Help)
 - E-Trance (widget Co-Developer)
 - TheElusiveMelon (ClassicPro clock)
 
@@ -62,6 +62,7 @@ Special thanks to...
 - MerTcaN (beta testing ;)
 - mynameisnobody (beta testing ;)
 - osmosis (beta testing ;)
+- pouldam (beta testing 8)
 ------------------------------------------------------------------
 
 
