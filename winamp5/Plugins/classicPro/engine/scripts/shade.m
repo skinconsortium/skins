@@ -11,7 +11,7 @@ Global Group mainGroup, gr_Vis, gr_Vol, gr_seektick, gr_seektick1, gr_seektick2;
 Global GuiObject progressbar;
 Global Layer vol_bg, resize6, aotDoc;
 Global Slider vol_sl;
-Global Boolean mouseDown;
+Global Boolean mouseDown, docked;
 Global Vis shadeVis;
 Global Button mlMenu1, mlMenu2, aotBut;
 Global int i, lastKnownW;
@@ -181,6 +181,7 @@ resize6.onMouseMove(int x, int y){
 }
 
 gotoGlobal(){
+	if(docked) return;
 	int x = getPublicInt("cPro.x", getCurAppLeft());
 	int y = getPublicInt("cPro.y", getCurAppTop());
 	int w = getPublicInt("cPro.w", getCurAppWidth());
@@ -245,16 +246,19 @@ reCheck.onTimer(){
 }
 
 saveResize(int x, int y, int w, int h){
+	if(docked) return;
 	if(w<317) w=317;
 	shade.resize(x,y,w,h);
 }
 
 shade.onDock(int side){
+	docked=true;
 	aotBut.hide();
 	aotDoc.show();
 }
 
 shade.onUndock(){
+	docked=false;
 	aotDoc.hide();
 	aotBut.show();
 }

@@ -160,6 +160,7 @@ myLayout.onResize(int x, int y, int w, int h){
 
 gotoGlobal(){
 	if(docked) return;
+
 	int x = getPublicInt("cPro.x", getCurAppLeft());
 	int y = getPublicInt("cPro.y", getCurAppTop());
 	int w = getPublicInt("cPro.w", getCurAppWidth());
@@ -254,8 +255,8 @@ System.onHideLayout(Layout _layout){
 
 
 reCheck.onTimer(){
-		reCheck.stop();
-		gotoGlobal();
+	reCheck.stop();
+	gotoGlobal();
 }
 
 /*tracktimer.onTextChanged(String newtxt){
@@ -390,6 +391,7 @@ resize9.onMouseMove(int x, int y){
 
 
 saveResize(int x, int y, int w, int h){
+	if(docked) return;
 	if(getPublicInt("cPro.maximized", 0)==1) return;
 	
 	if(w<317) w=317;
