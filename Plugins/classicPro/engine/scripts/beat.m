@@ -306,7 +306,7 @@ ProcessMenuResult(int a){
 }
 
 setCustomVis(int a){
-	debugString("setCustomVis=" + integerToString(a),9);
+	//debugString("setCustomVis=" + integerToString(a),9);
 	if(a>=cusbeat_names.getNumItems()) a=0;
 	t01.setXmlParam("image", "beat."+integerToString(a)+".left");
 	if(!oneSide) t02.setXmlParam("image", "beat."+integerToString(a)+".right");

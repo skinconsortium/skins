@@ -90,9 +90,9 @@ brw.onDocumentComplete (String url)
 
 		// Display the messagebox
 		int i_upd = messageBox(
-			"A new version of this skin is available!\n\n" 
+			"A new version of ClassicPro is available!\n\n" 
 			+ msg
-			+ "\n\nDo you like to download this version?"
+			+ "\n\nWould you like to download this version?"
 			, "New Version Available", 12, "");
 
 		if (i_upd == 4)				// if user clicks YES, we'll start downloading
