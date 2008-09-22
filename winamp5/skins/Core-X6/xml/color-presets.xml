@@ -1,0 +1,6 @@
+<gammaset id="Default">
+	<gammagroup id="NonChangeable"		value="0,0,0"		gray="0" boost="0" />
+	<gammagroup id="ColorBackgrounds"	value="0,0,0"		gray="0" boost="0" />
+	<gammagroup id="PlasticBackgrounds"	value="0,0,0"		gray="0" boost="0" />
+	<gammagroup id="Lights"				value="0,0,0"		gray="0" boost="0" />
+</gammaset>

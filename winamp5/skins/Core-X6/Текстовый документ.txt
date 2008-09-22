@@ -1,0 +1,419 @@
+Now we have to make winamp to understand our images. That is done using <bitmap/> tags. All declared elements are contained inside <elements></elements> tags.
+
+Let's make the special file for elements. Make a new file: "xml/player_elements.xml".
+
+Now we'll add the background bitmap to the file. Write <elements> tags and include a <bitmap/> tag. You may see the parameters in the reference. the path is relative to the ''skins folder''.
+
+When it is finished, something like that should appear in the file. The coordinates are easy to get using marks, black mask (mentioned above), selection and info window in photoshop:
+
+ <elements>
+ 	<bitmap id="player.normal.background.bitmap" file="player/background.png" x="33" y="5" w="436" h="349"/>
+ </elements>
+
+Now we have to mention this file somewhere in the skin, so go to the "xml/player.xml" file and add inclusion to the very beginning of it, using <include/> tag. You should be able to do it already. Just don't forget that this path is relative to the parent file. So do we get the same result?:
+
+ <include file="player_elements.xml"/>
+
+Now when we have the background, we don't need standard frame. It is too dark. Let's change it. Look in the reference to the layout. There's a parameter, called "background". Just the thing we need. Let's add it. The value is the id of the bitmap you want for background:
+
+ background="player.normal.background.bitmap"
+
+Also, the width and height (minimal, default, maximum) of the layout has changed (the new ones are the same as width and height of the bitmap). We need to change these parameters too. 
+
+ default_w="436"
+ default_h="349"
+ minimal_w="436"
+ minimal_h="349"
+ maximum_w="436"
+ maximum_h="349"
+
+And we don't need the frame anymore. We have a '''background''' so let's get rid of these lines.
+
+Our background has a shadow. It will not be visible if alpha mode is disabled, but if it is enabled we will not see it too, as alpha mode works for windows with parameter "desktopalpha" set to 1.
+
+ desktopalpha="1"
+
+The whole change should look like this:
+
+ 	<layout
+ 		id="normal"
+ 		default_w="436"
+ 		default_h="349"
+ 		minimal_w="436"
+ 		minimal_h="349"
+ 		maximum_w="436"
+ 		maximum_h="349"
+ 		background="player.normal.background.bitmap"
+ 		desktopalpha="1"
+ 		droptarget="pldr"
+ 	>
+
+Press F5 and look at the result.
+
+Now we are to add the buttons. Let's begin with minizize/switch/close buttons on top-left.
+
+First of all, we need to add special bitmaps to the skin. That will be plastik button and a light for each button.
+
+I suggest making the following preparations: Open plastic.png into photoshop. Add a layer below. Make it some not used color (like 255;0;255) by pressing Alt+Delete after selecting the color. Now Open Select->Color Range... in main menu and select every pixel with that color. Now inverse selection (Shift+Ctrl+I) and press Ctrl+Delete. You can see the borders of all elements clearly now. (Just don't save the file or make a copy).
+
+Select the plastic button, move cursor to the left-top corner of selection and see its coordinates.
+
+Add the object to the elements list (player-elements.png). By the way, it's good to make comments, so write before:
+
+ <NoWiki><!-- Minimize/Close/Shade buttons bitmaps --></NoWiki>
+
+Now add the bitmap. You know how to do it. (Don't forget to put it into the <Elements> tags, not below)
+
+We should do the same steps with the lights upon the buttons. Open lights.png and do the steps above. You may find it strange how much space does contain information.
+
+Add the bitmaps (there are ''three'' of them now, because though the buttons share backgrounds, every button should have its own image). The hotkeys Ctrl+C and Ctrl+V may come handy here as you will have to copy the same text and change coordinates and parts of ids. Keep in mind that every id should be different. That's why I use such long ids. I got the following picture in the end:
+
+ <bitmap id="player.normal.closegroup.background.bitmap" file="player/plastic.png" x="351" y="6" w="61" h="18"/>
+ <bitmap id="player.normal.shade.light.bitmap" file="player/lights.png" x="360" y="9" w="16" h="15"/>
+ <bitmap id="player.normal.minimize.light.bitmap" file="player/lights.png" x="376" y="7" w="16" h="14"/>
+ <bitmap id="player.normal.close.light.bitmap" file="player/lights.png" x="392" y="4" w="16" h="17"/>
+
+But you may have got another because of different ids or different widths or heights.
+
+Now change to my variant not to get into problems in future. And I suggest you do it every time when your variant is OK too, but has such diffences from mine. If you get something very different, then try rereading or redoing the stuff and finding why before going on.
+
+The next step may seem strange, it will do nothing, but you will not have to do much work in future.
+
+You may see from the reference, that the bitmaps has a "gammagroup" parameter. It works something like that. You sort your bitmaps and colors to different groups, called gammagroups, that are used to create color theme. A color theme is a set of changes to every gammagroup so that the elements in this group look differently (adding or removing rgb components to some extent). We will make some groups now, though we will not add any themes.
+
+Add this gammagroup parameter to every bitmap. The value is the name of the group. I called mine: "NonChangeable"; "Color backgrounds"; "Plastic backgrounds"; "Lights". NonChangeable is not used, but it will be used for glass effects layers and others.
+
+This is what I got in this file:
+
+ <elements>
+ 	<bitmap id="player.normal.background.bitmap" file="player/background.png" x="33" y="5" w="436" h="349" gammagroup="ColorBackgrounds"/>
+
+ 	<NoWiki><!-- Minimize/Shade/Close buttons' bitmaps --></NoWiki>
+ 	<bitmap id="player.normal.closegroup.background.bitmap" file="player/plastic.png" x="351" y="6" w="61" h="18" gammagroup="PlasticBackgrounds"/>
+ 	<bitmap id="player.normal.shade.light.bitmap" file="player/lights.png" x="360" y="9" w="16" h="15" gammagroup="Lights"/>
+ 	<bitmap id="player.normal.minimize.light.bitmap" file="player/lights.png" x="376" y="7" w="16" h="14" gammagroup="Lights"/>
+ 	<bitmap id="player.normal.close.light.bitmap" file="player/lights.png" x="392" y="4" w="16" h="17" gammagroup="Lights"/>
+ </elements>
+
+Now we have to declaare our gammagroups. This is done using the special containing object, called <gammaset>. It should be placed inside the skin before any declarations. It contains every gammagroup as a tag with it's changes as values. It has its name as a parameter (id). So let's make the new file, name it "xml/color-presets.xml" and put <gammaset> tag into it. This is our first and main theme, so it will be called default:
+
+ <gammaset id="Default">
+
+ </gammaset>
+
+Every gammagroup should be mentioned between these tags. This is do by <gammagroup> tag. All parameters are zero, because we don't want to change anything in the default group. 
+
+ 	<gammagroup id="NonChangeable" value="0,0,0" gray="0" boost="0" />
+
+You may make experiments though. Values can be from -4096 to 4096), gray (1,2) makes bitmaps loose colors. Boost makes everything white and other meaning of values. Add other three gammagroups. You should get something like that:
+
+ <gammaset id="Default">
+ 	<gammagroup id="NonChangeable" value="0,0,0" gray="0" boost="0" />
+ 	<gammagroup id="ColorBackgrounds" value="0,0,0"	gray="0" boost="0" />
+ 	<gammagroup id="PlasticBackgrounds" value="0,0,0" gray="0" boost="0" />
+ 	<gammagroup id="Lights"	value="0,0,0" gray="0" boost="0" />
+ </gammaset>
+
+Include this file into skin.xml before including player.xml. Press F5, then Right-Click on Main Window=>Options=>Color Themes=>. You should be able to see default theme checked there now.
+
+== Making the objects ==
+
+Now, when the required elements are ready, we will have to put some objects on the skin. Groups of objects can be used in Winamp skins. There are different ways to use them:
+* some people prefer to put objects directly into the layout;
+* some prefer to put them into one group, then to put it into the layout;
+* some prefer to make several groups and put them into the layout. We will use the second variant.
+
+We will use the second variant, and will add some groups as equlizer and cover panels later.
+
+Let's organize the group first. It should be declared and used in the skin. There are special tags for both operations. "GroupDef" is used to define the content of the group, "Group" is used to define the place of the group. We have to define the group first. It can be done anywhere in the skin before it is used, after the declaration of everything used inside the group (elements; groups, used inside the group) and not inside anything, save for the skin itself, of course. The best place to put the group definition is just after the inclusion of "elements" file into the "xml/player.xml". But the group will contain a lot of objects and may be long. As far as we are going to have at least two modes in the skin: normal and shade (stick) mode, the file is going to be long, so let's create one more file for definements for normal mode of main window.
+
+Make xml/player_normal.xml file and include it after the inclusion of "xml/player_normal.xml" file.
+
+ <include file="player_elements.xml"/>
+ <include file="player_normal.xml"/>
+
+We will define the group now. Open the newly created file and make the "groupdef" tags (opening and closing, as this is a containing object). Look  through parameters in the reference. You will need only one in this case - "id", for it is used when including the group to recognize it. Let's have this id: "player.normal.group". When you're finished with the task, you will get the following text:
+
+ <groupdef id="player.normal.group">
+
+ </groupdef>
+
+Now when there's a group we need, it's time to add it to our layout. Open player.xml file. Add a group inside layout. It's "id" should be equivalent to the id of the defined group. You can place the group wherever you want on the skin. "w" and "h" are optional, and have some default values. But this may lead to errors in your skin if some element inside the group goes outside the boundaries. It wouldn't be visible. This group should probably cover all the opaque part of the background. So we have to find outit's coordinates. As you can see from the picture, you should just take the coordinates of the opaque background in the image, substract coordinates of the layout (see coordinates of the background bitmap) and you will get what you need:
+
+ X3 = X1 - X2
+ Y3 = Y1 - Y2
+
+Width and height can be taken from the image. So you should get 287px width, 277px height. 182px from left corner of the image, 5px from top corner of the image. Counting the coordinates, we will get the results:
+
+ X: 182px-33px=149px;
+ Y:5px-5px=0px.
+
+This 0px was expected as we don't have panels on top, and 149px is the width of Cover panel.
+
+This is what you get in player.xml file:
+
+ <layout
+ 	id="normal"
+ 	...
+ >
+ 	<group
+ 		id="player.normal.group"
+ 		x="149" y="0"
+ 		w="287" h="277"
+ 	/>
+ </layout>
+
+==Adding objects to groups==
+
+The next step is to add some objects (buttons and their backgrounds) to the group. Most common element to use when adding a simple image to the layout is "layer". As you can see from the reference, it has such a parameter as image, and it has all the parameters of GUI-Objects as it is GUI-Object. Let's add the layer for background of the buttons. As before we need to get the coordinates of it, but it is simplier now. Look at the picture above. We know the coordinates of the bitmap in the image file (X1,Y1) , of the group relative to the layout (X2,Y2) and of the layout(X3,Y3) relative to the image file (background bitmap coordinates) from the player_elemets.xml file and the code above.  We can count coordinates, relative to the group(X4,Y4):
+
+ X4=X1-X2-X3
+ Y4=Y1-Y2-Y3
+
+'''Attention: The coordinates here have nothing to do with the coordinates above so X1 here is the X of the background bitmap, and X1 above was X of the group'''
+
+By the way, we know the coordinates of the group, relative to the image file from the previous actions. They are (X2+X3,Y2+Y3), so if you remember the values, you can use them here instead of last two values in equations.
+
+ X4=351-182=169;
+ Y4=6-5=1.
+
+Include the layer to the definition of the group, you know all of the parameters, as the last (width and height) are the same as of the bitmap, others are not important (default) in this case:
+
+ <layer
+ 	id="closegroup.background"
+ 	x="169" y="1"
+ 	w="61" h="18"
+	image="player.normal.closegroup.background.bitmap"
+ />
+
+Now let's add the buttons. You must know how to do that already if you have made a "TSS" skin, though we will do our buttons, not standard now. The coordinates are counted the same way, substracting the same values, as the group is the same, so the relative position is the same.
+
+If you've used the values as they are in this tutorial, then you must get a strange value at one point. It is less than Zero. This means some error in getting position of bitmaps at one point or another before. To be exact, that was the top value of the background image. It should have been "4" instead of "5"and height should have been 1px larger, because the bottom value was correct. But we will leave everything as it is as we will loose one almost totally transparent pixel and this example will show that values below zero are OK as coordinates. This works not only for "X" and "Y", but also for width and height, though you will not see such objects in this case. As mentioned before, any content of the group outside its boundaries will not be visible. Thus in this example you will write y="-1" and the bitmap of the button will show just from the top of the group from its second row pixels.
+
+Buttons have same parameters as Wasabi:Buttons, but as far as they have special bitmaps, you may add such parameters (non are required) as image, downimage, hoverimage and activeimage as you can see from reference. We will use only image for now. Tooltip is a good parameter, always use them. It makes the interface much more friendly.
+
+The last parameter I want to stress you to is "rectrgn". That parameter shows if the button reacts to the mouse on top the opaque parts of the "image" bitmap (value="0") or to boundary rectangle (value="1"). The first is useful if the button has some special shape, and only that shape should be pressed. The second is useful when some part of the "image" bitmap is transparent, but the full area should be used as a button (one example is when the button has no or totally transparent "image" bitmap).
+
+'''Attention: None bitmaps are required, but it is strongly recommended to use at least "image" parameter. You may make a transparent bitmap, put its id as a value and get the same result. The difference is that some versions of Winamp require "image" parameter and you will get some strange "image not found" or "magic pink" images on top the button.'''
+
+Actions for the buttons should be "Switch", "Minimize" and "Close". Some actions require special parameters. Here "switch" require the layout to swich to. This special parameter can be added by the "param" parameter of the button.
+
+To make the process easier, you can make one button, copy it and change "id", "action", coordinates,"image","tooltip". Only one word should be changed in "Image" value if you made the same ids as are in this tutorial. You will get the following result:
+
+ <button
+ 	id="shade"
+ 	x="178" y="4"
+ 	w="16" h="14"
+ 	action="Switch" param="shade"
+ 	image="player.normal.shade.light.bitmap"
+ 	tooltip="Shade Mode"
+ 	rectrgn="1"
+ />
+ <button
+ 	id="minimize"
+ 	x="194" y="2"
+ 	w="16" h="14"
+ 	action="Minimize"
+ 	image="player.normal.minimize.light.bitmap"
+ 	tooltip="Minimize"
+ 	rectrgn="1"
+ />
+ <button
+ 	id="close"
+ 	x="210" y="-1"
+ 	w="16" h="14"
+ 	action="close"
+ 	image="player.normal.close.light.bitmap"
+ 	tooltip="Close"
+ 	rectrgn="1"
+ />
+
+Press F5 and see the result.
+
+== Grouping objects==
+
+You can see, that these objects we've made just now have much in common, they are one group of objects, so it will have sence to make them one and the same group, different from the others. In this case, it will just structure our skin, in future it may give us other possibilities. For example, group is an object, so it can have its own parameters. When changing a group, we will affect all objects in it at the same time.
+
+We have four objects in our layout. From their coordinates (minimal X and Y and maximum X+Width, Y+Height) we can see that our group should be something like this:
+
+ <group
+ 	id="close.group"
+ 	x="169" y="-1"
+ 	w="61" h="21"
+ />
+
+This is what the group should like in the layout. I didn't spend much time on this subject, as you should already know how to make the groups. What is important here is Height and Width. X and Y were taken from the minimum values, as said before. As for Width and Height, these values were taken from the object with highest X + Width or Y + Height value (lower-right border), and X and Y was substracted to get lenghts instead of coordinates.
+
+The process of defining the group is easy too. You just need to define a group, put all the objects into it, compare the coordinates of the new group and parent group (or layout as in previous chapter) and substract the difference from the coordinates.
+
+'''Important: Don't forget that you should define a group before using'''
+
+The result is the following (player_normal.xml):
+ <groupdef id="close.group">
+ 	<layer
+ 		id="closegroup.background"
+ 		x="0" y="2"
+ 		w="61" h="18"
+		image="player.normal.closegroup.background.bitmap"
+ 	/>
+	 <button
+		id="shade"
+		x="9" y="5"
+		w="16" h="14"
+		action="Switch" param="shade"
+		image="player.normal.shade.light.bitmap"
+		tooltip="Shade Mode"
+		rectrgn="1"
+	 />
+	 <button
+		id="minimize"
+		x="25" y="3"
+		w="16" h="14"
+		action="Minimize"
+		image="player.normal.minimize.light.bitmap"
+		tooltip="Minimize"
+		rectrgn="1"
+	 />
+	 <button
+		id="close"
+		x="41" y="0"
+		w="16" h="14"
+		action="close"
+		image="player.normal.close.light.bitmap"
+		tooltip="Close"
+		rectrgn="1"
+	 />
+ </groupdef>
+
+ <groupdef id="player.normal.group">
+ 	<group
+ 		id="close.group"
+ 		x="169" y="-1"
+ 		w="61" h="21"
+ 	/>
+</groupdef>
+
+There's no difference in behaviour of the skin, but when your skin becomes  larger with lots of objects, the structure becomes very handy. Moreover, you can put the same "id" to two objects in ''different'' groups if it is nessesary. As for now, the structure of the skin is the following:
+
+- container "main"
+-- layout "normal"
+--- group "player.normal.group"
+---- group "close.group"
+----- layer "closegroup.background"
+------ button "shade"
+------ button "minimize"
+------ button "close"
+
+To see more advantages of the group, change its coordinates (for example to (120,70)) and the buttons will move to the other part of the skin. Comment the group and it will dissappear, you just need to comment one object instead of four. Or you may set width to 30 and you will see half the buttons. This may be used when making panels.
+
+Now when you've played with the group, change everything back.
+
+==Making own objects==
+
+Making own objects is really a very simple task. In fact all new objects are just groups with specified tag. The tag is called "xuitag". You can find in the reference. When it is specified you gain a new way to insert the group into your skin. The two most useful points in own objects are the following. The first is that some can be found in the internet and in other skins. Just include them to your "skin.xml" and use. These are premade objects. The second good point is that you can forward the new object's parameters to one of it's subobjects using "embed_xui" tag. Thus you may change parameters of one of subobjects of every object you use. It will look something like that:
+
+ <groupdef id="Example" xuitag="My:ImageSpecifiedButton" embed_xui="button">
+ 	<NoWiki><!--OtherContests--></NoWiki>
+ 	<button
+ 		id="button"
+ 		image="image1"
+ 		fitparent="1"
+	/>
+ 	<NoWiki><!--OtherContents--></NoWiki>
+ </groupdef>
+
+ <My:ImageSpecifiedButton
+ 	id="player.normal.something"
+ 	x="0" y="10"
+ 	w="10" h="10"
+ 	action="play"
+ 	tooltip="play"
+ 	rectrgn="1"
+ />
+
+In this case the new object is a simple button, but its image is specified, so when we write the code, there's no need to write image="image1" in every case. The object can be useful if the skin has many buttons with the same image. "fitparent" means that the button will cover the whole area of the group, as the parameters of a new object go to group, not to button, and if winamp doesn't find such group parameter, it goes to subobject. So coordinates will go to group and "action" will go to button.
+
+Let's make some example. We have some very similar buttons in the skin, that are supposed to toggle lcd screen in future. Let's do them as our own objects.
+
+Now we can make our object. As an object is something common, is usually made to use everywhere, it is preferable to make a special xml file for every object. So make a folder "xui" inside your skin folder if you haven't made it earlier and "ToggleLCDButton" inside this folder, so that the path is /xui/toggle_lcd_button/. Now make a file toggle_lcd_button.xml inside this folder.
+
+The first thing is defining elements, required for this button (button background and light). As with previous cases, let's find the coordinates of the button. They are 258,80 with width and height of 13px. Open "toggle_lcd_button.xml" and add these two bitmaps. The result should be something like the following (don't forget to make comments from time to time):
+
+ <Nowiki> <!-- 
+ Description:
+ This object is made as a sample button for toggling LCD.
+
+ How to use:
+ Include the folder "toggle_lcd_button" to "@your_skin@/xui/"
+ folder and include the string:
+ 	<include file="xui/toggle_lcd_button"/>
+ to your skin.xml folder before using.
+ Use with <Core-X5:ToggleLCD /> tags.
+ Can use standard button parameters.
+
+ Requirements:
+ The object requires two files in the skin:
+ "player/plastic.png" and "player/lights.png"
+ with the background and foreground images of the button
+ The coordinates should be "258,80" width and height of 13.
+ Or else don't forget to redefine bitmaps below.
+ --> </Nowiki>
+
+ <Elements>
+ 	<bitmap id="player.normal.switch.lcd.background.bitmap" file="player/plastic.png" x="246" y="76" w="13" h="13" gammagroup="PlasticBackgrounds"/>
+ 	<bitmap id="player.normal.switch.lcd.light.bitmap" file="player/lights.png" x="246" y="76" w="13" h="13" gammagroup="PlasticBackgrounds"/>
+ <Element/>
+
+Now when the elements are defined, lets make the object itself as in example before:
+
+ <groupdef id="player.toggle.lcd" xuitag="Core-X6:ToggleLCD" embed_xui="button">
+
+ 	<layer
+ 		id="background"
+ 		image="player.normal.switch.lcd.background.bitmap"
+ 		fitparent="1"
+	/>
+	<button
+ 		id="button"
+ 		image="player.normal.switch.lcd.light.bitmap"
+ 		fitparent="1"
+ 		rectrgn="1"
+	/>
+ </groupdef>
+
+Now when this file is ready, add it to your skin by including it to the "skin.xml" file as the first line:
+
+ 	<include file="xui/toggle_lcd_button"/>
+
+The definition of the objects should go first, just after the definition of the attributes (menu items - see in contests) because they may use them, but before anything else.
+
+==Adding objects to your skin==
+
+The tag is the tag of your new object defined by "xuitag" parameter. The rest is defined as if the object was a standard button because our embed object is a button. So the following code should not seem strange to you :
+
+ 	<Core-X6:ToggleLCD
+ 		id="toggle1"
+ 		x="54" y="81"
+ 		w="13" h="13"
+ 	/>
+	<Core-X6:ToggleLCD
+ 		id="toggle2"
+		x="64" y="71"
+		w="13" h="13"
+	/>
+	<Core-X6:ToggleLCD
+ 		id="toggle3"
+		x="77" y="64"
+		w="13" h="13"
+	/>
+
+Press F5 and see what happens.
+
+As you can see we've made a code once, but used it three times. And if it didn't work as we wanted, we had just to change one part of code, not three.
+
+Расширение изображение (чтобы не налезало)
+Исправление кнопочек (маленьких для переключения LCD -- lights.png и plastic.png)
+LCD фон
+Надпись Core-X6 и Вентиляция
+Предварительный просмотр LCD контента
+Создание заголовка песни

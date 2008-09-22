@@ -1,0 +1,105 @@
+<groupdef id="close.group">
+	<layer
+ 		id="closegroup.background"
+ 		x="0" y="2"
+ 		w="61" h="18"
+		image="player.normal.closegroup.background.bitmap"
+ 	/>
+	<button
+		id="shade"
+		x="9" y="5"
+		w="16" h="14"
+		action="Switch" param="shade"
+		image="player.normal.shade.light.bitmap"
+		tooltip="Shade Mode"
+		rectrgn="1"
+	/>
+	<button
+		id="minimize"
+		x="25" y="3"
+		w="16" h="14"
+		action="Minimize"
+		image="player.normal.minimize.light.bitmap"
+		tooltip="Minimize"
+		rectrgn="1"
+	/>
+	<button
+		id="close"
+		x="41" y="0"
+		w="16" h="14"
+		action="close"
+		image="player.normal.close.light.bitmap"
+		tooltip="Close"
+		rectrgn="1"
+	/>
+</groupdef>
+
+<groupdef id="player.normal.group">
+
+	<group
+		id="close.group"
+		x="169" y="-1"
+		w="61" h="21"
+	/>
+
+	<layer
+		id="Name"
+		x="102" y="26"
+		w="72" h="35"
+		image="player.normal.Core.bitmap"
+	/>
+
+	<group
+		id="player.normal.LCD"
+		x="49" y="71"
+		w="144" h="149"
+	/>
+	
+	<layer
+		id="vent"
+		x="165" y="148"
+		w="52" h="50"
+		image="player.normal.vent.bitmap"
+	/>
+
+	<Core-X6:ToggleLCD
+ 		id="toggle1"
+		x="54" y="81"
+		w="13" h="13"
+	/>
+	<Core-X6:ToggleLCD
+ 		id="toggle2"
+		x="64" y="71"
+		w="13" h="13"
+	/>
+	<Core-X6:ToggleLCD
+ 		id="toggle3"
+		x="77" y="64"
+		w="13" h="13"
+	/>
+
+</groupdef>
+
+<groupdef id="player.normal.LCD">
+	<layer
+		id="background"
+		fitparent="1"
+		image="player.normal.LCD.background.bitmap"
+	/>
+	<layer
+		id="content.1"
+		fitparent="1"
+		image="player.normal.LCD.preview.bitmap"
+	/>
+	<songticker
+		id="ticker"
+		x="12" y="52"
+		w="113" h="20"
+		font="Arial"
+		color="255,224,89"
+		fontsize="16"
+	/>
+
+
+
+</groupdef>

@@ -1,0 +1,101 @@
+<groupdef
+	id="controls.layout"
+>
+
+	<Wasabi:Button
+		id="previous"
+		x="0" y="0"
+		w="40" h="20"
+		text="Prev"
+		action="prev"
+		tooltip="Previous"
+	/>
+	<Wasabi:Button
+		id="pause"
+		x="40" y="0"
+		w="40" h="20"
+		text="Pause"
+		action="Pause"
+		tooltip="Pause"
+	/>
+	<Wasabi:Button
+		id="Play"
+		x="80" y="0"
+		w="40" h="20"
+		text="Play"
+		action="play"
+		tooltip="Play"
+	/>
+	<Wasabi:Button
+		id="stop"
+		x="120" y="0"
+		w="40" h="20"
+		text="Stop"
+		action="stop"
+		tooltip="Play"
+	/>
+	<Wasabi:Button
+		id="next"
+		x="160" y="0"
+		w="40" h="20"
+		text="Next"
+		action="Next"
+		tooltip="Next"
+	/>
+	<Wasabi:Button
+		id="Eject"
+		x="200" y="0"
+		w="40" h="20"
+		text="Open"
+		action="Eject"
+		tooltip="Open"
+	/>
+	<Wasabi:Button
+		id="Minimize"
+		x="-30" y="0"
+		w="30" h="20"
+		relatx="1"
+		text="Min"
+		action="Minimize"
+		tooltip="Minimize"
+	/>
+	<Wasabi:HSlider
+		id="seeker"
+		action="seek"
+		x="5" y="20"
+		w="230" h="10"
+		tooltip="seeker"
+	/>
+	<Slider
+		id="seeker.ghost"
+		action="seek"
+		x="0" y="0"
+		w="0" h="0"
+	/>
+	<script file="controls/controls.maki"/>
+</groupdef>
+
+<container
+	id="controls"
+	name="Controls"
+	default_x="0" default_y="0"
+	default_visible="1"
+>
+
+	<layout
+		id="normal"
+		default_w="290"
+		default_h="52"
+		minimal_w="290"
+		minimal_h="52"
+		droptarget="pldr"
+		appbar="top|bottom"
+	>
+		<Wasabi:StandardFrame:Modal
+			fitparent="1"
+			content="controls.layout"
+		/>
+
+	</layout>
+
+</container>

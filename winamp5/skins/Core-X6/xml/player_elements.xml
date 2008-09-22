@@ -1,0 +1,17 @@
+<elements>
+	<bitmap id="player.normal.background.bitmap" file="player/background.png" x="33" y="5" w="436" h="349" gammagroup="ColorBackgrounds"/>
+
+	<bitmap id="player.normal.Core.bitmap" file="player/plastic.png" x="284" y="31" w="72" h="35" gammagroup="PlasticBackgrounds"/>
+	<bitmap id="player.normal.vent.bitmap" file="player/plastic.png" x="387" y="153" w="52" h="50" gammagroup="PlasticBackgrounds"/>
+
+	<!-- Minimize/Shade/Close buttons' bitmaps -->
+	<bitmap id="player.normal.closegroup.background.bitmap" file="player/plastic.png" x="351" y="6" w="61" h="18" gammagroup="PlasticBackgrounds"/>
+	<bitmap id="player.normal.shade.light.bitmap" file="player/lights.png" x="360" y="9" w="16" h="15" gammagroup="Lights"/>
+	<bitmap id="player.normal.minimize.light.bitmap" file="player/lights.png" x="376" y="7" w="16" h="14" gammagroup="Lights"/>
+	<bitmap id="player.normal.close.light.bitmap" file="player/lights.png" x="392" y="4" w="16" h="17" gammagroup="Lights"/>
+
+	<!-- LCD -->
+	<bitmap id="player.normal.LCD.background.bitmap" file="player/plastic.png" x="231" y="71" w="144" h="149" gammagroup="PlasticBackgrounds"/>
+	<bitmap id="player.normal.LCD.preview.bitmap" file="player/lights.png" x="231" y="71" w="144" h="149" gammagroup="Lights"/>
+
+</elements>
