@@ -1,0 +1,43 @@
+<!-- 
+Description:
+	This object is made as a sample button for toggling LCD.
+How to use:
+	Include the folder "toggle_lcd_button" to "@your_skin@/xui/"
+	folder and include the string:
+ 	<include file="xui/toggle_lcd_button"/>
+	to your skin.xml folder before using.
+	Use with <Core-X5:ToggleLCD /> tags.
+	Can use standard button parameters.
+
+Requirements:
+	The object requires two files in the skin:
+	"player/plastic.png" and "player/lights.png"
+	with the background and foreground images of the button
+	The coordinates should be "258,80" width and height of 13.
+	Or else don't forget to redefine bitmaps below.
+-->
+
+<Elements>
+	<bitmap id="player.normal.switch.lcd.background.bitmap"
+	file="player/plastic.png" x="246" y="56" w="13" h="13"
+	gammagroup="PlasticBackgrounds"/>
+ 	<bitmap id="player.normal.switch.lcd.light.bitmap"
+	file="player/lights.png" x="246" y="56" w="13" h="13"
+	gammagroup="PlasticBackgrounds"/>
+</Elements>
+
+<groupdef id="player.toggle.lcd" xuitag="Core-X6:ToggleLCD" embed_xui="button">
+
+ 	<layer
+ 		id="background"
+ 		image="player.normal.switch.lcd.background.bitmap"
+ 		fitparent="1"
+	/>
+	<button
+ 		id="button"
+ 		image="player.normal.switch.lcd.light.bitmap"
+ 		fitparent="1"
+ 		rectrgn="1"
+	/>
+</groupdef>
+

@@ -1,0 +1,30 @@
+<include file="player_elements.xml"/>
+<include file="player_normal.xml"/>
+
+<container
+	id="main"
+	name="Winamp"
+	default_x="0" default_y="0"
+	default_visible="1"
+>
+
+	<layout
+		id="normal"
+		default_w="436"
+		default_h="349"
+		minimal_w="436"
+		minimal_h="349"
+		maximum_w="436"
+		maximum_h="349"
+		background="player.normal.background.bitmap"
+		desktopalpha="1"
+		droptarget="pldr"
+	>
+		<group
+			id="player.normal.group"
+			x="149" y="0"
+			w="287" h="277"
+		/>
+	</layout>
+
+</container>
