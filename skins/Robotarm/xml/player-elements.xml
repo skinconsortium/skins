@@ -6,4 +6,31 @@
 <bitmap id="player.main.closed" file="player/closed.png" gammagroup="Background"/>
 <bitmap id="player.main.back" file="player/back.png" gammagroup="Background"/>
 <bitmap id="anivis" file="player/anivis.png" gammagroup="Background"/>
+<bitmap id="player.main.play" file="player/play.png" gammagroup="main.buttons"/>
+<!-- PlayButtons -->
+    <bitmap id="player.main.playd" file="player/playd.png" gammagroup="main.buttons"/>
+   
+    <bitmap id="player.main.Pause" file="player/pause.png" gammagroup="main.buttons"/>
+   
+	<bitmap id="player.main.Paused" file="player/paused.png" gammagroup="main.buttons"/>
+    
+	<bitmap id="player.main.stop" file="player/stop.png" gammagroup="main.buttons"/>
+    
+	<bitmap id="player.main.stopd" file="player/stopd.png" gammagroup="main.buttons"/>
+    
+	<bitmap id="player.main.rev" file="player/rev.png" gammagroup="main.buttons"/>
+    
+	<bitmap id="player.main.revd" file="player/revd.png" gammagroup="main.buttons"/>
+    
+	<bitmap id="player.main.forward" file="player/forward.png" gammagroup="main.buttons"/>
+    
+	<bitmap id="player.main.forwardd" file="player/forwardd.png" gammagroup="main.buttons"/>
+    
+    <bitmap id="player.main.eject" file="player/eject.png" gammagroup="main.buttons"/>
+    
+	<bitmap id="player.main.ejectd" file="player/ejectd.png" gammagroup="main.buttons"/>
+     
+	<bitmap id="player.main.eject2" file="player/eject2.png" gammagroup="main.buttons"/>
+    
+	<bitmap id="player.main.ejectd2" file="player/ejectd2.png" gammagroup="main.buttons"/>
 	</elements>
