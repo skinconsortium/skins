@@ -4,6 +4,90 @@
 
 	<songticker x="7" y="11" w="170"  h="23" color="1,254,251" ticker="scroll" />
 
+<button 
+	id="Stop"
+	x="315" y="321"
+	action="STOP"  
+	image="player.main.stop"  
+	downimage="player.main.stopd"
+	rectrgn="1"
+	activeImage="player.main.stopd"
+	hoverImage="player.main.stopd"
+	tooltip="Stop"
+	/>
+	<layer id="player.main.stopd" image="player.main.stopd"  x="315" y="321"  ghost="1"/>
+	<script file="scripts/hoverglow.maki" param="Stop,player.main.stopd"/>
+
+	<button 
+	id="Next"
+	x="110" y="80"
+	action="NEXT" 
+	image="player.main.forward"
+	downimage="player.main.forwardd"
+	rectrgn="1"
+	activeImage="player.main.forwardd"
+	hoverImage="player.main.forwardd"
+	tooltip="Next Track"
+	/>
+	<layer id="player.main.forwardd" image="player.main.forwardd" x="110" y="80" ghost="1"/>
+	<script file="scripts/hoverglow.maki" param="Next,player.main.forwardd"/>
+
+	<button 
+	id="Rev"
+	x="60" y="80"
+	action="PREV"  
+	image="player.main.rev" 
+	downimage="player.main.revd"
+	rectrgn="1"
+	activeImage="player.main.revd"
+	hoverImage="player.main.revd"
+	tooltip="Previous Track"
+	/>
+	<layer id="player.main.revd" image="player.main.revd"  x="60" y="80" ghost="1"/>
+	<script file="scripts/hoverglow.maki" param="Rev,player.main.revd"/>
+
+	<button 
+	id="Eject"
+	x="72" y="96"
+	action="EJECT"  
+	image="player.main.eject"
+	downimage="player.main.ejectd"
+	rectrgn="1"
+	activeImage="player.main.ejectd"
+	hoverImage="player.main.ejectd"
+	tooltip="Open"
+	/>
+	<layer id="player.main.ejectd" image="player.main.ejectd" x="72" y="96" ghost="1"/>
+	<script file="scripts/hoverglow.maki" param="Eject,player.main.ejectd"/>
+
+	<button 
+	id="Play"
+	x="85" y="80"
+	action="PLAY"
+	image="player.main.play"
+	downimage="player.main.playd"
+	rectrgn="1"
+	activeImage="player.main.playd"
+	hoverImage="player.main.playd"
+	tooltip="Play"
+	/>
+	<layer id="player.main.playd" image="player.main.playd" x="85" y="80" ghost="1"/>
+	<script file="scripts/hoverglow.maki" param="Play,player.main.playd"/>
+
+	<button 
+	id="Pause"
+	
+	action="pause"
+	image="player.main.Pause"
+	downimage="player.main.Paused"
+	rectrgn="1"
+	activeImage="player.main.Paused"
+	hoverImage="player.main.Paused"
+	tooltip="Pause"  
+	/> 
+	<layer id="player.main.Paused" image="player.main.Paused"  ghost="1"/>
+	<script file="scripts/hoverglow.maki" param="Pause,player.main.Paused"/>
+<vis id="vis" x="48" y="52" w="98" h="16" bandwidth="thin" colorallbands="63,142,144" colorosc1="63,142,144" colorosc2="63,142,144" colorosc3="63,142,144" colorosc4="63,142,144" colorosc5="63,142,144" colorbandpeak="63,142,144" alpha="200" />
 
 </groupdef>
 
