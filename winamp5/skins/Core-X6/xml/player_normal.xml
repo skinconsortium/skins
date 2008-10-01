@@ -88,7 +88,9 @@
 	/>
 	<layer
 		id="content.1"
-		fitparent="1"
+		x="0" y="0"
+		w="0" h="50"
+		relatw="1" relath="0"
 		image="player.normal.LCD.preview.bitmap"
 	/>
 	<songticker
@@ -98,6 +100,73 @@
 		font="Arial"
 		color="255,224,89"
 		fontsize="16"
+	/>
+
+	<layer
+		id="seek.background"
+		x="11" y="70"
+		w="113" h="3"
+		image="player.normal.LCD.seek.background.bitmap"
+	/>
+	<layer
+		id="seek.progress"
+		x="10" y="70"
+		w="116" h="3"
+		image="player.normal.LCD.seek.progress.bitmap"
+	/>
+
+	<layer
+		id="status.crossfade"
+		x="11" y="73"
+		w="19" h="14"
+		image="player.normal.LCD.crossfade.bitmap"
+	/>
+	<layer
+		id="status.shuffle"
+		x="30" y="73"
+		w="18" h="16"
+		image="player.normal.LCD.shuffle.bitmap"
+	/>
+	<layer
+		id="status.repeat"
+		x="48" y="73"
+		w="18" h="16"
+		image="player.normal.LCD.repeat.bitmap"
+	/>
+	<layer
+		id="status.bitrate"
+		x="66" y="73"
+		w="29" h="16"
+		image="player.normal.LCD.bitrate.bitmap"
+	/>
+
+	<layer
+		id="status.mute"
+		x="11" y="87"
+		w="18" h="13"
+		image="player.normal.LCD.volume.mute.bitmap"
+	/>
+	<layer
+		id="volume.background"
+		x="29" y="90"
+		w="88" h="3"
+		image="player.normal.LCD.volume.background.bitmap"
+	/>
+	<layer
+		id="volume.progress"
+		x="29" y="90"
+		w="87" h="3"
+		image="player.normal.LCD.volume.progress.bitmap"
+	/>
+
+	<text
+		id="timer"
+		display="time"
+		x="14" y="99"
+		w="90" h="18"
+		timecolonwidth="9"
+		font="player.normal.LCD.digits.font"
+		align="right"
 	/>
 
 
