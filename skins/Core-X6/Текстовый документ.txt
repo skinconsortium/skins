@@ -417,3 +417,5 @@ LCD фон
 Надпись Core-X6 и Вентиляция
 Предварительный просмотр LCD контента
 Создание заголовка песни
+Making the Digits
+TODO: Making digit lights independent and more accurate if possible...
