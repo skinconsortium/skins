@@ -113,7 +113,7 @@
 	<button id="eq.set.bot" x="30" y="58" w="25" h="20" rectrgn="1"/>
 
 </groupdef>
-<groupdef id="drawer.equalizer">
+<groupdef id="drawer.equalizer" name="Equalizer">
 	<group id="equalizer.content" x="3" y="1" w="-4" h="100" relatw="1"/>
 	<togglebutton
 		x="1" y="-18" relaty="1"
@@ -220,7 +220,7 @@
 </groupdef>
 
 
-<groupdef id="drawer.tagviewer">
+<groupdef id="drawer.tagviewer" name="Tag Viewer">
 	<group id="drawer.tagviewer.bottomleft" x="0" y="-27" w="-6" relatw="1" relaty="1"/>
 
 	<Wasabi:AlbumArt id="tagviewer.cover" x="6" y="4" w="111" h="111" move="1"/>
@@ -235,11 +235,11 @@
 </groupdef>
 
 
-<groupdef id="drawer.savedpl">
+<groupdef id="drawer.savedpl" name="Saved Playlists">
 	<PlaylistDirectory x="2" y="2" w="-4" h="-21" relatw="1" relath="1" antialias="0"/>
 </groupdef>
 
-<groupdef id="drawer.avs">
+<groupdef id="drawer.avs" name="Visualization">
 	<windowholder x="2" y="2" w="-4" h="-21" relatw="1" relath="1" autofocus="1" wantfocus="0" autoclose="1" autoopen="1" autoavailable="1" visible="1" hold="guid:{0000000A-000C-0010-FF7B-01014263450C}"/>
 	<button	x="1" y="-18" relaty="1" image="component.avs.opt.1" hoverImage="component.avs.opt.2" downImage="component.avs.opt.3" action="VIS_Menu" tooltip="Configure Visualizer"/>
 	<button	x="33" y="-18" relaty="1" image="component.avs.prev.1" hoverImage="component.avs.prev.2" downImage="component.avs.prev.3" action="VIS_Prev" tooltip="Previous Visualization Preset"/>
@@ -247,7 +247,7 @@
 	<button	x="95" y="-18" relaty="1" image="component.avs.next.1" hoverImage="component.avs.next.2" downImage="component.avs.next.3"	action="VIS_Next" tooltip="Next Visualization Preset"/>
 </groupdef>
 
-<groupdef id="drawer.colortheme">
+<groupdef id="drawer.colortheme" name="Color Themes">
 	<layer visible="0" id="drawer.ct.fakelayer" image="component.ct.prev.1" w="0" h="0"/>
 	<ColorThemes:List id="colorthemes"
 		x="2" y="2" w="-4" h="-21" relatw="1" relath="1" antialias="0"
@@ -284,7 +284,7 @@
 	/>
 </groupdef>
 
-<groupdef id="drawer.skinchooser">
+<groupdef id="drawer.skinchooser" name="Skin Chooser">
     <List id="skinlist" x="2" y="2" w="-4" h="-21" relatw="1" relath="1" antialias="0" 
         numcolumns="2" columnwidths="-1;-1" columnlabels="Name;Type" 
     />
