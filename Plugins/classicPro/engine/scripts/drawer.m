@@ -4,9 +4,21 @@ Function openDrawer(int drawerNo);
 Function gotoPrevDrawer();
 Function gotoNextDrawer();
 
+Class Group CProWidget;
+// {
+	Member boolean CProWidget.scrollSkip;
+	Member boolean CProWidget.disabled;
+	Member boolean CProWidget.custombg;
+	Member boolean CProWidget.hideVis;
+// }
+
+#define userWidgetOffset 100
+Global int numUserWidgets = 0;
+Global int numInternalWidgets = 0;
+
 Global Layout myLayout;
 Global Group myGroup;
-Global Group drawer_equalizer, drawer_savedpl, drawer_tagviewer, drawer_avs, drawer_ct, drawer_skinchooser;
+Global CProWidget drawer_equalizer, drawer_savedpl, drawer_tagviewer, drawer_avs, drawer_ct, drawer_skinchooser;
 Global PopUpMenu popMenu, widgetmenu;
 Global Button but_drawerGoto;
 Global GuiObject cpro_sui, gad_Grid, gad_Grid2;
@@ -15,19 +27,42 @@ Global Boolean gotThemes, mouse_but_drawerGoto, cuseqbg;
 
 Global ComponentBucket dummyBuck;
 Global GuiObject customObj;
+Global List internalWidgets;
 
 System.onScriptLoaded() {
+	internalWidgets = new List;
+
 	myLayout = getContainer("main").getLayout("normal");
 
 	myGroup = getScriptGroup();
 	but_drawerGoto = myGroup.findObject("drawer.menulist");
+
 	drawer_equalizer = myGroup.findObject("drawer.equalizer");
+	internalWidgets.addItem(drawer_equalizer);
+
 	drawer_tagviewer = myGroup.findObject("drawer.tagviewer");
-	drawer_savedpl = myGroup.findObject("drawer.savedpl");
+	drawer_tagviewer.custombg = TRUE;
+	internalWidgets.addItem(drawer_tagviewer);
+
 	drawer_avs = myGroup.findObject("drawer.avs");
+	drawer_avs.scrollSkip = TRUE;
+	drawer_avs.hideVis = TRUE;
+	internalWidgets.addItem(drawer_avs);
+	internalWidgets.addItem(drawer_avs);
+
 	drawer_ct = myGroup.findObject("drawer.colortheme");
-	drawer_skinchooser = myGroup.findObject("drawer.skinchooser");
 	ct_fakeLayer = myGroup.findObject("drawer.ct.fakelayer");
+	drawer_ct.disabled = ct_fakeLayer.isInvalid();
+	internalWidgets.addItem(drawer_ct);
+
+	drawer_savedpl = myGroup.findObject("drawer.savedpl");
+	internalWidgets.addItem(drawer_savedpl);
+
+	drawer_skinchooser = myGroup.findObject("drawer.skinchooser");
+	internalWidgets.addItem(drawer_skinchooser);
+
+	numInternalWidgets = internalWidgets.getNumItems();
+
 	gad_Grid = myGroup.findObject("centro.gadget.grid");
 	gad_Grid2 = myGroup.findObject("centro.gadget.grid2");
 	
@@ -36,8 +71,7 @@ System.onScriptLoaded() {
 	dummyBuck = myGroup.findObject("widget.loader");
 	customObj = myGroup.findObject("widget.holder");
 
-	gotThemes = ct_fakeLayer.isInvalid();
-	//if(!ct_fakeLayer.isInvalid()) gotThemes=true;
+	numUserWidgets = dummyBuck.getNumChildren();
 
 	Map myMap = new Map;
 	myMap.loadMap("read.suiframe.png");
@@ -53,30 +87,31 @@ System.onScriptLoaded() {
 but_drawerGoto.onleftClick(){
 	popMenu = new PopUpMenu;
 
-	popMenu.addCommand("Equalizer", 0, 0, 0);
-	popMenu.addCommand("Tag Viewer", 1, 0, 0);
-	popMenu.addCommand("Visualization", 3, 0, 0);
-	popMenu.addCommand("Color Themes", 5, 0, gotThemes);
-	popMenu.addCommand("Saved Playlists", 2, 0, 0);
-	popMenu.addCommand("Skin Chooser", 4, 0, 0);
+	// Faster to load it once!
+	int cur = getPublicInt("cPro.lastDrawer", 0);
+
+	for ( int i = 0; i < numInternalWidgets; i++ )
+	{
+		CProWidget gr = internalWidgets.enumItem(i);
+		popMenu.addCommand(gr.getXMLparam("name"), i, cur == i, gr.disabled);
+	}
 
 	widgetmenu = new PopUpMenu;
 
-	int count = 0;
-	for (int x = 0; x < dummyBuck.getNumChildren(); x++) {//**
+	int x;
+	for (x = 0; x < numUserWidgets; x++) {
 		GuiObject gr = dummyBuck.enumChildren(x);
-		widgetmenu.addCommand(gr.getXMLparam("name"), 100+x, getPublicInt("cPro.lastDrawer", 0) == 100+x, 0);
-		count++;
+		widgetmenu.addCommand(gr.getXMLparam("name"), userWidgetOffset+x, cur == userWidgetOffset+x, 0);
 	}
 
-	if (count == 0) widgetmenu.addCommand("No widgets found for this view!", -1, 0, 1);
+	if (x == 0) widgetmenu.addCommand("No widgets found for this view!", -1, 0, 1);
 	popMenu.addSubMenu(widgetmenu, "Widgets");
 
 
 	popMenu.addSeparator();
 	popMenu.addCommand("Close drawer", -2, 0, 0);//** Item code changed to -2 to support widgets.
 
-	popMenu.checkCommand(getPublicInt("cPro.lastDrawer", 0), 1);
+	//popMenu.checkCommand(getPublicInt("cPro.lastDrawer", 0), 1);
 
 	int result = popMenu.popAtXY(clientToScreenX(but_drawerGoto.getLeft()), clientToScreenY(but_drawerGoto.getTop() + but_drawerGoto.getHeight()));
 
@@ -93,51 +128,69 @@ but_drawerGoto.onleftClick(){
 
 openDrawer(int drawerNo){
 	//Safety check to see if the widgets is still there ;)
-	if(drawerNo>=100){
-		if(dummyBuck.getNumChildren()<drawerNo-99) drawerNo=0;
+	if(drawerNo>=userWidgetOffset){
+		if (drawerNo - userWidgetOffset > dummyBuck.getNumChildren()-1)
+		{
+			drawerNo=0;
+		}
+		
 	}
 
-	drawer_equalizer.hide();
-	drawer_tagviewer.hide();
-	drawer_savedpl.hide();
-	drawer_avs.hide();
-	drawer_ct.hide();
-	drawer_skinchooser.hide();
+	for ( int i = 0; i < numInternalWidgets; i++ )
+	{
+		CProWidget gr = internalWidgets.enumItem(i);
+		gr.hide();
+	}
 	customObj.hide();
 
-	if(cuseqbg){
-		if(drawerNo==0){
-			gad_Grid.hide();
-			gad_Grid2.show();
-		}
-		else{
-			gad_Grid2.hide();
-			gad_Grid.show();
-		}
-	}
+	// We have to show an Internal Widget
+	if (drawerNo < userWidgetOffset)
+	{
+		CProWidget gr = internalWidgets.enumItem(drawerNo);
 
-	if(drawerNo==1) drawer_tagviewer.show();
-	else if(drawerNo==2) drawer_savedpl.show();
-	else if(drawerNo==3){
-		if(getPublicInt("cPro.lastMini", 0)==2){
-			cpro_sui.sendAction ("switch_to_mini", "", 0, 0, 0, 0);
+		if (gr.disabled == TRUE)
+		{
+			drawerNo = 0;
+			gr = internalWidgets.enumItem(drawerNo); // Load Default Widget
 		}
-		if(getPublicInt("cPro.lastComponentPage", 0)==2){
-			cpro_sui.sendAction ("switch_to_tab", "", 0, 0, 0, 0);
+
+		if(cuseqbg){
+			if(gr.custombg){
+				gad_Grid.hide();
+				gad_Grid2.show();
+			}
+			else{
+				gad_Grid2.hide();
+				gad_Grid.show();
+			}
 		}
-		drawer_avs.show();
+
+		if (gr.hideVis == TRUE)
+		{
+			// TODO
+			// it seems that it is a prob that vis is now id=2 and not id=3
+			// I've located the stuff in controsui: ll 550, 661, 723, 1085 -- it is just comparing w/ the id!!!
+			// but ideally we should handle this completely another way!
+			// i would send cpro_sui.sendAction ("release", "vis", 0, 0, 0, 0);
+			// then any widget or centrosui catches this even and should hide 'his' vis group and perform retabbing actions
+			// after this has happened we can open the vis again in the new area
+
+			if(getPublicInt("cPro.lastMini", 0)==2){
+				cpro_sui.sendAction ("switch_to_mini", "", 0, 0, 0, 0);
+			}
+			if(getPublicInt("cPro.lastComponentPage", 0)==2){
+				cpro_sui.sendAction ("switch_to_tab", "", 0, 0, 0, 0);
+			}
+		}
+
+		gr.show();
 	}
-	else if(drawerNo==4) drawer_skinchooser.show();
-	else if(drawerNo==5 && !gotThemes) drawer_ct.show();
-	else if(drawerNo >= 100) {
-		GuiObject gr = dummyBuck.enumChildren(drawerNo-100);
+	else
+	{
+		GuiObject gr = dummyBuck.enumChildren(drawerNo-userWidgetOffset);
 		String id = gr.getXMLparam("userdata");
 		customObj.setXmlParam("groupid", id);
 		customObj.show();
-	}
-	else{
-		drawerNo=0;
-		drawer_equalizer.show();
 	}
 
 	setPublicInt("cPro.lastDrawer", drawerNo);
@@ -154,14 +207,14 @@ but_drawerGoto.onLeaveArea(){
 	mouse_but_drawerGoto=false;
 }
 
-myLayout.onMouseWheelUp(int clicked , int lines){
+myLayout.onMouseWheelDown(int clicked , int lines){
 	if(mouse_but_drawerGoto){
 		gotoNextDrawer();
 		return 1;
 	}
 }
 
-myLayout.onMouseWheelDown(int clicked , int lines){
+myLayout.onMouseWheelUp(int clicked , int lines){
 	if(mouse_but_drawerGoto){
 		gotoPrevDrawer();
 		return 1;
@@ -170,18 +223,50 @@ myLayout.onMouseWheelDown(int clicked , int lines){
 
 gotoPrevDrawer(){
 	int pos = getPublicInt("cPro.lastDrawer", 0);
+
+	if (pos == userWidgetOffset)
+	{
+		pos = numInternalWidgets;
+	}
+	if (pos == 0)
+	{
+		pos = userWidgetOffset + numUserWidgets;
+	}
 	pos--;
+	if (pos < userWidgetOffset)
+	{
+		CProWidget gr = internalWidgets.enumItem(drawerNo);
+		if (gr.scrollSkip || gr.disabled)
+		{
+			setPublicInt("cPro.lastDrawer", pos);
+			gotoPrevDrawer();
+			return;
+		}
+	}
 	
-	if(pos==3) pos--; //we dont toggle to the visualizer because its slows it down & loose focus ;)
-	if(pos==99)	pos=5-gotThemes;
-	if(pos<0) pos=dummyBuck.getNumChildren()+99;
 	openDrawer(pos);
 }
 gotoNextDrawer(){
 	int pos = getPublicInt("cPro.lastDrawer", 0);
+
 	pos++;
-	
-	if(pos==3) pos++; //we dont toggle to the visualizer because its slows it down & loose focus ;)
-	if(pos==6-gotThemes) pos=100;
+	if (pos == userWidgetOffset + numUserWidgets)
+	{
+		pos = 0;
+	}
+	if (pos == numInternalWidgets)
+	{
+		pos = userWidgetOffset;
+	}
+	if (pos < userWidgetOffset)
+	{
+		CProWidget gr = internalWidgets.enumItem(pos);
+		if (gr.scrollSkip || gr.disabled)
+		{
+			setPublicInt("cPro.lastDrawer", pos);
+			gotoNextDrawer();
+			return;
+		}
+	}
 	openDrawer(pos);
 }
