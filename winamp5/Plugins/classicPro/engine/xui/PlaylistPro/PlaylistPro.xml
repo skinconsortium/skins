@@ -28,7 +28,7 @@
 <groupdef id="wasabi.edits" xuitag="Wasabi:EditBox2" embed_xui="wasabi.edit.box" h="20">
 	<rect x="1" y="1" w="-2" h="-2" relatw="1" relath="1" filled="1" color="wasabi.list.background"/>
 	<button id="pl.search.edit.rect" x="1" y="1" w="-1" h="-2" relatw="1" relath="1" rectrgn="1" tooltip="Click to search the playlist (Right-Click for search history)" cursor="IDC_IBEAM"/>
-	<text id="pl.search.edit.searchhelp" x="1" y="1" w="-2" h="-2" relatw="1" relath="1" italic="1" antialias="0" color="wasabi.list.text" text="Search in Playlist" ghost="1"/>
+	<text id="pl.search.edit.searchhelp" x="1" y="1" w="-2" h="-2" relatw="1" relath="1" italic="1" antialias="1" color="wasabi.list.text" text="Search in Playlist" ghost="1"/>
 	<edit id="wasabi.edit.box" x="1" y="1" w="-18" h="-2" relatw="1" relath="1" autoselect="1" visible="0"/>
 	<text id="pl.search.edit.clear.text" x="-16" y="0" w="15" h="15" relatx="1" text="x" color="wasabi.list.text" visible="0"/>
 	<button id="pl.search.edit.clear" x="-16" y="2" w="15" h="15" relatx="1" rectrgn="1" cursor="IDC_HAND" tooltip="Clear Search" visible="0"/>
