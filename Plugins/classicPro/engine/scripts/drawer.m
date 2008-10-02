@@ -48,7 +48,7 @@ System.onScriptLoaded() {
 	drawer_avs.scrollSkip = TRUE;
 	drawer_avs.hideVis = TRUE;
 	internalWidgets.addItem(drawer_avs);
-	internalWidgets.addItem(drawer_avs);
+	//internalWidgets.addItem(drawer_avs);
 
 	drawer_ct = myGroup.findObject("drawer.colortheme");
 	ct_fakeLayer = myGroup.findObject("drawer.ct.fakelayer");
@@ -94,6 +94,7 @@ but_drawerGoto.onleftClick(){
 	{
 		CProWidget gr = internalWidgets.enumItem(i);
 		popMenu.addCommand(gr.getXMLparam("name"), i, cur == i, gr.disabled);
+	//debugString("popMenu "+integerToSTring(i)+" " +gr.getXMLparam("name"),9);
 	}
 
 	widgetmenu = new PopUpMenu;
@@ -135,7 +136,7 @@ openDrawer(int drawerNo){
 		}
 		
 	}
-
+	
 	for ( int i = 0; i < numInternalWidgets; i++ )
 	{
 		CProWidget gr = internalWidgets.enumItem(i);
@@ -150,22 +151,23 @@ openDrawer(int drawerNo){
 
 		if (gr.disabled == TRUE)
 		{
-			drawerNo = 0;
+		debugString("checkpoint 10",9);
+		drawerNo = 0;
 			gr = internalWidgets.enumItem(drawerNo); // Load Default Widget
 		}
 
 		if(cuseqbg){
-			if(gr.custombg){
+		if(gr.custombg){
 				gad_Grid.hide();
 				gad_Grid2.show();
 			}
 			else{
 				gad_Grid2.hide();
 				gad_Grid.show();
-			}
+		}
 		}
 
-		if (gr.hideVis == TRUE)
+		/*if (gr.hideVis == TRUE)
 		{
 			// TODO
 			// it seems that it is a prob that vis is now id=2 and not id=3
@@ -181,7 +183,20 @@ openDrawer(int drawerNo){
 			if(getPublicInt("cPro.lastComponentPage", 0)==2){
 				cpro_sui.sendAction ("switch_to_tab", "", 0, 0, 0, 0);
 			}
-		}
+			
+			pjn: just changed the centrosui stuff from 3 to 2.
+			Current method works great and if the above is implemented it wont improve anything since the drawer and centrosui is 
+			still very dependant on each other either way.
+			
+			Centro still needs to know what drawer is openned because it must see where the vis plugin is trying to open..
+			so the above might not be so easy.. but just had a quick look tbh.
+			
+			-----
+			tbh would like to have a centro v2 thats integrate the drawer and make use of the internal widgets to load the drawers like eq for example.
+			Then the drawer can register itself as a guid owner so if its openned and that guid comes along the sui system leave the call.
+			Then add a new xui thats just for tabs with on the fly creating and nice animated moves... and support right click menu's...
+			then we'll have a real winner ;)
+		}*/
 
 		gr.show();
 	}
@@ -189,8 +204,11 @@ openDrawer(int drawerNo){
 	{
 		GuiObject gr = dummyBuck.enumChildren(drawerNo-userWidgetOffset);
 		String id = gr.getXMLparam("userdata");
-		customObj.setXmlParam("groupid", id);
-		customObj.show();
+		if(id!="centro.widgets.browserpro1") customObj.setXmlParam("groupid", id);
+		else  debugString("timmy!",9);
+
+		if(id!="centro.widgets.browserpro1") customObj.show();
+		else  debugString("timmy!",9);
 	}
 
 	setPublicInt("cPro.lastDrawer", drawerNo);
@@ -207,6 +225,12 @@ but_drawerGoto.onLeaveArea(){
 	mouse_but_drawerGoto=false;
 }
 
+myLayout.onMouseWheelUp(int clicked , int lines){
+	if(mouse_but_drawerGoto){
+		gotoPrevDrawer();
+		return 1;
+	}
+}
 myLayout.onMouseWheelDown(int clicked , int lines){
 	if(mouse_but_drawerGoto){
 		gotoNextDrawer();
@@ -214,14 +238,9 @@ myLayout.onMouseWheelDown(int clicked , int lines){
 	}
 }
 
-myLayout.onMouseWheelUp(int clicked , int lines){
-	if(mouse_but_drawerGoto){
-		gotoPrevDrawer();
-		return 1;
-	}
-}
 
-gotoPrevDrawer(){
+
+gotoPrevDrawer(){ //wheelup
 	int pos = getPublicInt("cPro.lastDrawer", 0);
 
 	if (pos == userWidgetOffset)
@@ -235,7 +254,7 @@ gotoPrevDrawer(){
 	pos--;
 	if (pos < userWidgetOffset)
 	{
-		CProWidget gr = internalWidgets.enumItem(drawerNo);
+		CProWidget gr = internalWidgets.enumItem(pos);
 		if (gr.scrollSkip || gr.disabled)
 		{
 			setPublicInt("cPro.lastDrawer", pos);
@@ -243,10 +262,9 @@ gotoPrevDrawer(){
 			return;
 		}
 	}
-	
 	openDrawer(pos);
 }
-gotoNextDrawer(){
+gotoNextDrawer(){ //wheelDown
 	int pos = getPublicInt("cPro.lastDrawer", 0);
 
 	pos++;
@@ -258,6 +276,7 @@ gotoNextDrawer(){
 	{
 		pos = userWidgetOffset;
 	}
+
 	if (pos < userWidgetOffset)
 	{
 		CProWidget gr = internalWidgets.enumItem(pos);

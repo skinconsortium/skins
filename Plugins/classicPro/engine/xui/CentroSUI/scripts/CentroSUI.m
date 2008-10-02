@@ -547,7 +547,7 @@ System.onGetCancelComponent(String guid, boolean goingvisible){
 			if(getPublicInt("cPro.lastMini", 0)==2 && area_mini.isVisible()){
 				//do nothing
 			}
-			else if(getPublicInt("cPro.lastDrawer", 0)==3 && open_drawer){
+			else if(getPublicInt("cPro.lastDrawer", 0)==2 && open_drawer){
 				//do nothing
 			}
 			else if(active_tab!=2){
@@ -608,7 +608,7 @@ openDefaultTab.onTimer(){
 		}
 	}
 	else if(closeGUID == VIS_GUID){
-		if(getPublicInt("cPro.lastDrawer", 0)==3 && open_drawer){
+		if(getPublicInt("cPro.lastDrawer", 0)==2 && open_drawer){
 			drawer.sendAction ("switch_to_drawer", "", 0, 0, 0, 0);
 			return;
 		}
@@ -720,7 +720,7 @@ openTabNo(int tabNo){
 		if(getPublicInt("cPro.lastMini", 0)==2){
 			openMini(0);
 		}
-		if(getPublicInt("cPro.lastDrawer", 0)==3){
+		if(getPublicInt("cPro.lastDrawer", 0)==2){
 			drawer.sendAction ("switch_to_drawer", "", 0, 0, 0, 0); //close drawer vis
 		}	
 		tab_avs.show();
@@ -1082,7 +1082,7 @@ openMini(int miniNo){
 		if(getPublicInt("cPro.lastComponentPage", 0)==2){
 			openTabNo(0);
 		}
-		if(getPublicInt("cPro.lastDrawer", 0)==3){
+		if(getPublicInt("cPro.lastDrawer", 0)==2){
 				drawer.sendAction ("switch_to_drawer", "", 0, 0, 0, 0); //close drawer vis
 		}
 
