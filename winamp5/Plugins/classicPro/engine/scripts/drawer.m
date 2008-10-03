@@ -94,7 +94,6 @@ but_drawerGoto.onleftClick(){
 	{
 		CProWidget gr = internalWidgets.enumItem(i);
 		popMenu.addCommand(gr.getXMLparam("name"), i, cur == i, gr.disabled);
-	//debugString("popMenu "+integerToSTring(i)+" " +gr.getXMLparam("name"),9);
 	}
 
 	widgetmenu = new PopUpMenu;
@@ -151,7 +150,6 @@ openDrawer(int drawerNo){
 
 		if (gr.disabled == TRUE)
 		{
-		debugString("checkpoint 10",9);
 		drawerNo = 0;
 			gr = internalWidgets.enumItem(drawerNo); // Load Default Widget
 		}
@@ -204,11 +202,8 @@ openDrawer(int drawerNo){
 	{
 		GuiObject gr = dummyBuck.enumChildren(drawerNo-userWidgetOffset);
 		String id = gr.getXMLparam("userdata");
-		if(id!="centro.widgets.browserpro1") customObj.setXmlParam("groupid", id);
-		else  debugString("timmy!",9);
-
-		if(id!="centro.widgets.browserpro1") customObj.show();
-		else  debugString("timmy!",9);
+		customObj.setXmlParam("groupid", id);
+		customObj.show();
 	}
 
 	setPublicInt("cPro.lastDrawer", drawerNo);
@@ -238,7 +233,10 @@ myLayout.onMouseWheelDown(int clicked , int lines){
 	}
 }
 
-
+System.onKeyDown(String key){
+	if(key=="f7") gotoPrevDrawer();
+	else if(key=="f8") gotoNextDrawer();
+}
 
 gotoPrevDrawer(){ //wheelup
 	int pos = getPublicInt("cPro.lastDrawer", 0);
@@ -262,6 +260,7 @@ gotoPrevDrawer(){ //wheelup
 			return;
 		}
 	}
+
 	openDrawer(pos);
 }
 gotoNextDrawer(){ //wheelDown
