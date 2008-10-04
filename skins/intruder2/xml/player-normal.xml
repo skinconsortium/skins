@@ -1,0 +1,64 @@
+
+
+
+
+
+
+
+
+
+<layout id="normal" background="player.main.background" 
+alphabackground="player.main.background" >
+
+ 
+
+
+<AnimatedLayer 
+     x="30" y="10" 
+     w="387" h="493"
+    
+     id="animationlayer"       
+     image="anim"                 
+     move="1"                  
+	 speed="80"              
+     autoplay="1"             
+     autoreplay="1"           
+	 sysregion="1" ghost="1"
+       />
+ <layer id="pumpkin" image="player.main.pumpkin"   x="56" y="400" />
+<AnimatedLayer
+          id="Vis.Animation"
+          x="56" y="400"
+          w="332" h="287"
+          image="player.main.vis"
+          ghost="1" alpha="0"
+		  
+         
+         />  
+
+
+<script id="customvis" file="scripts/customvis.maki"/>
+
+
+
+<button 
+ id="shade"
+ x="25" y="460" 
+ action="SWITCH" param="normalc" 
+ image="ml"
+ downimage="ml"
+ hoverimage="ml"
+ rectrgn="1"
+ tooltip="Turn to Back"
+/>
+
+
+
+
+  
+ 
+
+ 
+
+
+</layout>
