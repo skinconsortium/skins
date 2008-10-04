@@ -1,0 +1,16 @@
+<elements>
+
+
+<bitmap id="player.main.background" file="player/background.png" gammagroup="Background" />
+<bitmap id="player.main.pumpkin" file="player/pumpkin.png" gammagroup="Background" />
+<bitmap id="player.main.pumpkin2" file="player/pumpkin2.png" gammagroup="Background" />
+<bitmap id="anim" file="player/ani.png" gammagroup="Background" />
+<bitmap id="player.main.vis" file="player/anim.png" gammagroup="Background" />
+<bitmap id="eq" file="player/eqamp.png" gammagroup="Background" />
+<bitmap id="eqd" file="player/eqampd.png" gammagroup="Background" />
+<bitmap id="eq2" file="player/eq2.png" gammagroup="Background" />
+<bitmap id="eq2d" file="player/eq2d.png" gammagroup="Background" />
+<bitmap id="ml" file="player/ml.png" gammagroup="Background" />
+<bitmap id="ml2" file="player/ml2.png" gammagroup="Background" />
+<bitmap id="mld" file="player/mld.png" gammagroup="Background" />
+	</elements>
