@@ -14,7 +14,7 @@
      autoreplay="1"           
 	 sysregion="1" ghost="1"
        />
- <layer id="pumpkin" image="player.main.pumpkin2"   x="56" y="400" />
+ <layer id="pumpkin" image="player.main.pumpkin2"  sysregion="1" x="56" y="400" />
 
 	<togglebutton
 	  id="eqonoff"
@@ -198,7 +198,7 @@
       tooltip="Repeat"
       cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Repeat"
     />
-<togglebutton
+<!--togglebutton
       id="Shuffle"
       x="70" y="200"
       image="shuf" rectrgn="1"
@@ -220,7 +220,7 @@
       hoverImage="xd"
       tooltip="Crossfade"
       cfgattrib="{FC3EAF78-C66E-4ED2-A0AA-1494DFCC13FF};Enable crossfading"
-    />
+    /-->
 
 
     <togglebutton
@@ -235,9 +235,44 @@
     />
 
 
+	 <togglebutton
+	  	id="30sec"
+		x="108" y="508"
+		 rectrgn="1"
+		image="ml"
+		  hoverImage="ml"
+		  downImage="mld"
+		  activeImage="mld"
+		tooltip="Crossfade"
+	/>
+	
+	 <togglebutton
+	  	id="60sec"
+		x="108" y="533"
+		 rectrgn="1"
+		image="ml"
+		  hoverImage="ml"
+		  downImage="mld"
+		  activeImage="mld"
+		tooltip="Crossfade"
+	/>
+	
+	 <togglebutton
+	  	id="90sec"
+		x="108" y="559"
+		 rectrgn="1"
+		image="ml"
+		  hoverImage="ml"
+		  downImage="mld"
+		  activeImage="mld"
+		tooltip="Crossfade"
+	/>
+    
+	<script file="scripts/scare.maki"/>
+	
 <button 
  id="shade"
- x="257" y="173" 
+ x="257" y="173" sysregion="1"
  action="SWITCH" param="normal" 
  image="front"
  downimage="frontd"
@@ -302,7 +337,7 @@ x="293" y="443"
 />
 
 <button 
- id="shade"
+ id="shade" sysregion="1"
  x="25" y="460" 
  action="SWITCH" param="normal" 
  image="ml"
