@@ -15,7 +15,11 @@
 >
   <include file="xml/player.xml"/>
   
-
+<include file="xml/system-colors.xml"/>
+  
+  
+  <include file="xml/system-elements.xml"/>
+  <include file="xml/standardframe.xml"/>
   
   
    <include file="xml/gamma-presets.xml"/>

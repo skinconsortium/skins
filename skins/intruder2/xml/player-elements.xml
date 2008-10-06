@@ -1,6 +1,6 @@
 <elements>
 
-
+<truetypefont id="player.font.ticker" file="player/CARS.ttf"/>
 <bitmap id="player.main.background" file="player/background.png" gammagroup="Background" />
 <bitmap id="player.main.pumpkin" file="player/pumpkin.png" gammagroup="Background" />
 <bitmap id="player.main.pumpkin2" file="player/pumpkin2.png" gammagroup="Background" />
@@ -13,4 +13,18 @@
 <bitmap id="ml" file="player/ml.png" gammagroup="Background" />
 <bitmap id="ml2" file="player/ml2.png" gammagroup="Background" />
 <bitmap id="mld" file="player/mld.png" gammagroup="Background" />
+<bitmap id="player.main.play" file="player/play.png" gammagroup="Glass"/>
+
+<bitmap id="player.main.playd" file="player/playd.png" gammagroup="Glass"/>
+<bitmap id="player.main.playds" file="player/playd.png" gammagroup="Glass"/>
+<bitmap id="player.main.Pause" file="player/pause.png" gammagroup="Glass"/>
+<bitmap id="player.main.Paused" file="player/paused.png" gammagroup="Glass"/>
+<bitmap id="player.main.stop" file="player/stop.png" gammagroup="Glass"/>
+<bitmap id="player.main.stopd" file="player/stopd.png" gammagroup="Glass"/>
+<bitmap id="player.main.rev" file="player/rev.png" gammagroup="Glass"/>
+<bitmap id="player.main.revd" file="player/revd.png" gammagroup="Glass"/>
+<bitmap id="player.main.forward" file="player/forward.png" gammagroup="Glass"/>
+<bitmap id="player.main.forwardd" file="player/forwardd.png" gammagroup="Glass"/>
+<bitmap id="player.main.eject" file="player/eject.png" gammagroup="Glass"/>
+<bitmap id="player.main.ejectd" file="player/ejectd.png" gammagroup="Glass"/>
 	</elements>
