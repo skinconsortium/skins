@@ -1,0 +1,149 @@
+<elements>
+  <bitmap id="blank" file="window/blank.png"/>
+</elements>
+
+
+<groupdef id="mybutton.normal">
+  <grid
+    id="button.normal.grid"
+    x="0" y="0"
+    w="0" h="0"
+    relatw="1" relath="1"
+    topleft="wasabi.button.top.left"
+    top="wasabi.button.top"
+    topright="wasabi.button.top.right"
+    left="wasabi.button.left"
+    middle="wasabi.button.center"
+    right="wasabi.button.right"
+    bottomleft="wasabi.button.bottom.left"
+    bottom="wasabi.button.bottom"
+    bottomright="wasabi.button.bottom.right"
+  />
+  <text
+     id="button.normal.text"
+     x="0" y="4"
+     w="0" h="11"
+     relatw="1"
+     default=""
+     align="center"
+     color="wasabi.button.text"
+     font="wasabi.button.font"
+     fontsize="13"
+  />
+</groupdef>
+
+<groupdef id="mybutton.pressed">
+  <grid
+    id="button.pressed.grid"
+    x="0" y="0"
+    w="0" h="0"
+    relatw="1" relath="1"
+    topleft="wasabi.button.pressed.top.left"
+    top="wasabi.button.pressed.top"
+    topright="wasabi.button.pressed.top.right"
+    left="wasabi.button.pressed.left"
+    middle="wasabi.button.pressed.center"
+    right="wasabi.button.pressed.right"
+    bottomleft="wasabi.button.pressed.bottom.left"
+    bottom="wasabi.button.pressed.bottom"
+    bottomright="wasabi.button.pressed.bottom.right"
+  />
+  <text
+     id="button.pressed.text"
+     x="0" y="5"
+     w="0" h="11"
+     relatw="1"
+     default=""
+     align="center"
+     color="wasabi.button.text"
+     font="wasabi.button.font"
+     fontsize="13"
+  />
+</groupdef>
+
+<groupdef id="mytogglebutton" xuitag="mytogglebutton" embed_xui="mybutton" w="40" h="20">
+  <group id="mybutton.normal"
+    x="0" y="0"
+    w="0" h="0"
+    relatw="1" relath="1"
+  />
+  <group id="mybutton.pressed"
+    x="0" y="0"
+    w="0" h="0"
+    relatw="1" relath="1"
+  />
+  <hideobject target="mybutton.pressed"/>
+
+  <togglebutton id="mybutton" 
+    x="0" y="0"
+    w="0" h="0"
+    relatw="1" relath="1"
+    image="blank" downimage="blank" activeimage="blank" alpha="1"
+    tooltip="test"
+  />
+  <script id="mytogglebutton.script" file="scripts/mytogglebutton.maki"/>
+</groupdef>
+
+
+<!-- ********** Tabsheet Replacement ************ -->
+
+<groupdef id="wasabi.tabsheet.button.selected.group" h="20" autowidthsource="text">
+
+  <Layer x="0" y="0" w="0" h="0" relatw="1" relath="1" renderbasetexture="1" />
+
+  <Grid x="0" y="0" w="0" h="0" relatw="1" relath="1"
+        topleft =  "wasabi.tabsheet.button.topleft"
+        top =      "wasabi.tabsheet.button.top"
+        topright = "wasabi.tabsheet.button.topright"
+        left =     "wasabi.tabsheet.button.left"
+        right =    "wasabi.tabsheet.button.right"
+  />
+
+  <text
+    id="text" ticker="1"
+    default="Active Tab" 
+    x="5" y="6"
+    w="-13" relatw="1" h="13"
+    font="player.font.title" fontsize="13"
+    color="wasabi.text.color"
+   />
+
+  <Layer id="mousetrap" x="0" y="0" w="0" h="0" relatw="1" relath="1" />
+
+</groupdef>
+
+<groupdef id="wasabi.tabsheet.button.unselected.group" h="20" autowidthsource="text">
+
+  <Layer x="0" y="0" w="0" h="0" relatw="1" relath="1" renderbasetexture="1" />
+
+  <Grid x="0" y="3" w="0" h="-3" relatw="1" relath="1"
+        topleft =  "wasabi.tabsheet.button.shade.topleft"
+        top =      "wasabi.tabsheet.button.shade.top"
+        topright = "wasabi.tabsheet.button.shade.topright"
+        left =     "wasabi.tabsheet.button.shade.left"
+        middle =   "wasabi.tabsheet.button.shade.middle"
+        right =    "wasabi.tabsheet.button.shade.right"
+  />
+
+  <!--Grid x="0" y="3" w="0" h="-3" relatw="1" relath="1"
+        topleft =  "wasabi.tabsheet.button.topleft"
+        top =      "wasabi.tabsheet.button.top"
+        topright = "wasabi.tabsheet.button.topright"
+        left =     "wasabi.tabsheet.button.left"
+        right =    "wasabi.tabsheet.button.right"
+  /-->
+
+  <Layer x="0" y="-2" relaty="1" w="0" relatw="1" h="2" image="wasabi.tabsheet.button.bottom" />
+
+  <text
+    id="text" ticker="1"
+    default="Inactive Tab" 
+    x="5" y="9"
+    w="-13" relatw="1" h="14"
+    font="player.font.title" fontsize="13" alpha="160"
+    color="wasabi.text.color"
+   />
+
+  <Layer id="mousetrap" x="0" y="0" w="0" h="0" relatw="1" relath="1" />
+
+</groupdef>

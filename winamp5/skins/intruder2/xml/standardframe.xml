@@ -1,0 +1,108 @@
+<elements>
+
+ <bitmap id="wasabi.frame.basetexture" file="window/background.png" gammagroup="Backgrounds" />
+  <elementalias id="component.basetexture" target="wasabi.frame.basetexture" />
+  <elementalias id="studio.basetexture" target="wasabi.frame.basetexture" />
+
+  <bitmap id="component.top.left" file="window/standardframe.png" x="0" y="0" w="27" h="27" gammagroup="background" />
+  <bitmap id="component.top.middle" file="window/standardframe.png" x="27" y="0" w="142" h="19" gammagroup="background" />
+  <bitmap id="component.top.right" file="window/standardframe.png" x="169" y="0" w="27" h="27" gammagroup="background" />
+  <bitmap id="component.left" file="window/standardframe.png" x="0" y="27" w="19" h="56" gammagroup="background" />
+  <bitmap id="component.right" file="window/standardframe.png" x="177" y="27" w="19" h="56" gammagroup="background" />
+  <bitmap id="component.bottom.left" file="window/standardframe.png" x="0" y="83" w="30" h="27" gammagroup="background" />
+  <bitmap id="component.bottom.middle" file="window/standardframe.png" x="30" y="92" w="137" h="18" gammagroup="background" />
+  <bitmap id="component.bottom.right" file="window/standardframe.png" x="167" y="83" w="29" h="27" gammagroup="background" />
+
+  <bitmap id="component.region.top.left" file="window/regions.png" x="0" y="0" w="5" h="5"/>
+  <bitmap id="component.region.top.right" file="window/regions.png" x="191" y="0" w="5" h="5"/>
+  <bitmap id="component.region.bottom.left" file="window/regions.png" x="0" y="105" w="5" h="5"/>
+  <bitmap id="component.region.bottom.right" file="window/regions.png" x="191" y="105" w="5" h="5"/>
+
+  <bitmap id="component.closebutton" file="window/closebutton.png" 
+	x="0" y="0" w="12" h="12" gammagroup="GlassButtons"/>
+  <bitmap id="component.closebutton.pressed" file="window/closebutton.png" 
+	x="0" y="12" w="12" h="12" gammagroup="GlassButtons"/>
+
+</elements>
+
+
+<groupdef id="wasabi.frame.layout">
+  <layer id="region.top.left" image="component.region.top.left" x="0" y="0" sysregion="-2"/>
+  <layer id="region.top.right" image="component.region.top.right" x="-5" y="0" relatx="1" sysregion="-2"/>
+  <layer id="region.bottom.left" image="component.region.bottom.left" x="0" y="-5" relaty="1" sysregion="-2"/>
+  <layer id="region.bottom.right" image="component.region.bottom.right" x="-5" y="-5"  relatx="1" relaty="1" sysregion="-2"/>
+
+  <layer id="left" x="0" y="27" w="19" h="-54" relath="1" image="component.left"  resize="left"/>
+  <layer id="right" x="-19" y="27" w="19" h="-54" relatx="1" relath="1" image="component.right" resize="right"/>
+
+  <layer id="top.left" x="0" y="0" image="component.top.left" resize="topleft"/>
+  <layer id="top.middle" x="27" y="0" w="-54" h="19" relatw="1" image="component.top.middle"/>
+  <layer id="top.right" x="-27" y="0" relatx="1" image="component.top.right" resize="topright"/>
+
+  <layer id="bottom.left" x="0" y="-27" relaty="1" image="component.bottom.left" resize="bottomleft"/>
+  <layer id="bottom.middle" x="30" y="-18" w="-59" h="18" relaty="1" relatw="1" tile="1" image="component.bottom.middle" resize="bottom"/>
+  <layer id="bottom.right" x="-29" y="-27" relaty="1" relatx="1" image="component.bottom.right" resize="bottomright"/>
+
+ <button id="close"
+	x="-12" y="3" relatx="1"
+	action="CLOSE"
+	 image="membut"
+ downimage="membutd" 
+ activeImage="membutd"
+  hoverImage="membutd"
+	tooltip="Close"
+ />
+
+ <text id="titlebar" ghost="1" x="30" y="-3" h="18" w="-60" relatw="1"
+	default=":componentname"
+	font="player.font.ticker" 
+	align="center" fontsize="20"  color="231,138,17" doborder="0" border="0" 
+ />
+
+
+ <LayoutStatus id="sysmenu.status" bg="0" x="5" y="3" w="14" h="9" includeonly="{system}" />
+ <hideobject target="sysmenu.status"/>
+
+ <Wasabi:TitleBar id="wasabi.titlebar" x="22" y="2" w="-42" h="11" relatw="1" />
+ <hideobject target="wasabi.titlebar"/>
+
+ </groupdef>
+
+
+<!-- Wasabi:StandardFrame:Status  -->
+
+<groupdef id="wasabi.standardframe.statusbar" background="wasabi.frame.basetexture" sysregion="1" xuitag="Wasabi:StandardFrame:Status">
+
+ <group id="wasabi.frame.layout" x="0" y="0" w="0" relatw="1" h="0" relath="1"/>
+
+ <LayoutStatus id="standardframe.layoutstatus" x="30" y="-17" relaty="1" w="-60" relatw="1" h="15" exclude="{system}" />
+ <script id="standardframe.script" file="scripts/standardframe.maki" param="19,16,-38,-34,0,0,1,1" />
+
+</groupdef>
+
+
+<!-- Wasabi:StandardFrame:NoStatus -->
+
+<groupdef id="wasabi.standardframe.nostatusbar" background="wasabi.frame.basetexture" sysregion="1" xuitag="Wasabi:StandardFrame:NoStatus">
+
+ <group id="wasabi.frame.layout" x="0" y="0" w="0" h="0" relatw="1" relath="1"/>
+
+ <script id="standardframe.script" file="scripts/standardframe.maki" param="19,16,-38,-34,0,0,1,1" />
+
+</groupdef>
+
+
+<!-- Wasabi:StandardFrame:Modal -->
+
+<groupdef id="wasabi.standardframe.modal" inherit_group="wasabi.standardframe.nostatusbar" sysregion="1" xuitag="Wasabi:StandardFrame:Modal">
+  <hideobject target="sysmenu;sysmenu.inactive"/>
+  <sendparams target="wasabi.titlebar" x="4" w="-24" relatw="1" />
+  <sendparams target="window.top.left;window.top;window.top.right;window.left;window.right;window.bottom.left.top;window.bottom.left;window.bottom.left.bottom;window.bottom.top;window.bottom;window.bottom.bottom;window.bottom.right.top;window.bottom.right;window.bottom.right.bottom" resize="0" />
+</groupdef>
+
+
+<!-- Wasabi:StandardFrame:Static -->
+
+<groupdef id="wasabi.standardframe.static" inherit_group="wasabi.standardframe.nostatusbar" sysregion="1" xuitag="Wasabi:StandardFrame:Static">
+  <sendparams target="window.top.left;window.top;window.top.right;window.left;window.right;window.bottom.left.top;window.bottom.left;window.bottom.left.bottom;window.bottom.top;window.bottom;window.bottom.bottom;window.bottom.right.top;window.bottom.right;window.bottom.right.bottom" resize="0" />
+</groupdef>
