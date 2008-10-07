@@ -268,7 +268,7 @@
 		tooltip="Crossfade"
 	/>
     
-	<script file="scripts/scare.maki"/>
+	<script file="scripts/scare.maki" param="@SKINPATH@scream9.wav"/>
 	
 <button 
  id="shade"
