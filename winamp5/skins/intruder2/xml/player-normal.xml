@@ -22,15 +22,15 @@
 	 speed="80"              
      autoplay="1"             
      autoreplay="1"           
-	 sysregion="1" ghost="1"
+	 sysregion="1"
        />
- <layer id="pumpkin" image="player.main.pumpkin"  sysregion="1" x="56" y="400" />
+ <layer id="pumpkin" image="player.main.pumpkin"  sysregion="1" x="56" y="400" move="1"/>
 <AnimatedLayer
           id="Vis.Animation"
           x="56" y="400"
           w="332" h="287"
           image="player.main.vis"
-          ghost="1" alpha="0"
+          alpha="0"  move="1"
 		  
          
          />  
