@@ -25,7 +25,9 @@
    <include file="xml/gamma-presets.xml"/>
   
    
-  
+  	<scripts>		
+		<script file="scripts/DTACheck.maki"/>
+	</scripts>
    
 
  </WinampAbstractionLayer>
