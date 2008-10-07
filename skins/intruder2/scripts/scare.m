@@ -1,15 +1,20 @@
 //*** scare scripts ***
 
 #include <lib/std.mi>
+#include <lib/config.mi>
 
 function string pathToURL(string path);
 
 global layout mainnormal,scarelayout;
 global button timer30,timer60,timer90;
+global layer scarelayer;
 
-global timer scaretimer, loadtimer;
+global timer scaretimer, loadtimer, offtimer;
 
 global string scaremusic;
+
+Global ConfigAttribute attrRepeat;
+global string lastconfig;
 
 System.onScriptLoaded() {
 	scaremusic = pathToURL(getParam());
@@ -17,6 +22,8 @@ System.onScriptLoaded() {
 	mainnormal = getContainer("main").getLayout("normalc");
 	
 	scarelayout = getContainer("scare").getLayout("normal");
+	scarelayer = scarelayout.findobject("scare.layer");
+	scarelayer.hide();
 	scarelayout.hide();
 	scarelayout.resize(0,0,getMonitorWidth(),getMonitorHeight());
 	
@@ -24,11 +31,17 @@ System.onScriptLoaded() {
 	timer60 = mainnormal.findObject("60sec");
 	timer90 = mainnormal.findObject("90sec");
 	
+	configItem item = Config.getItem("Playlist editor");
+	attrRepeat = item.getAttribute("repeat");
+	
 	scaretimer = new timer;
 	
 	loadtimer = new timer;
-	loadtimer.setdelay(100);
+	loadtimer.setdelay(500);
 	loadtimer.start();
+	
+	offtimer = new timer;
+	offtimer.setdelay(4000);
 }
 
 loadtimer.onTimer() {
@@ -40,6 +53,7 @@ loadtimer.onTimer() {
 system.onScriptUnloading() {
 	delete scaretimer;
 	delete loadtimer;
+	delete offtimer;
 }
 
 string pathToURL(string path) {
@@ -113,16 +127,32 @@ scaretimer.onTimer() {
 	
 	scarelayout.resize(0,0,getMonitorWidth(),getMonitorHeight());
 	scarelayout.show();
+	scarelayer.show();
 	
+	lastconfig = attrRepeat.getData();
+	attrRepeat.setData("0");
 	playfile(scaremusic);
+	
+	offtimer.start();
 }
 
 System.onKeyDown(string key) {
 	if (!scarelayout.isVisible()) return;
 
 	if (key=="esc") {
+		scarelayer.hide();
 		scarelayout.hide();
-		stop();
+		system.stop();
+		attrRepeat.setData(lastconfig);
 	}
 	
+}
+
+offtimer.ontimer() {
+	stop();
+	
+	scarelayer.hide();
+	scarelayout.hide();
+	system.stop();
+	attrRepeat.setData(lastconfig);
 }
