@@ -26,5 +26,7 @@
 			w="287" h="277"
 		/>
 	</layout>
-
+	<scripts>
+		<script id="main" file="maki/main.maki"/>
+	</scripts>
 </container>

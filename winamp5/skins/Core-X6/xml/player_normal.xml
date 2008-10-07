@@ -86,13 +86,176 @@
 		fitparent="1"
 		image="player.normal.LCD.background.bitmap"
 	/>
-	<layer
-		id="content.1"
-		x="0" y="0"
-		w="0" h="50"
-		relatw="1" relath="0"
-		image="player.normal.LCD.preview.bitmap"
+
+	<animatedlayer
+		id="vis1"
+		x="11" y="6"
+		w="6" h="44"
+		image="player.normal.LCD.visanimation.bitmap"
+		framewidth ="6"
+		autoplay="0"
 	/>
+	<animatedlayer
+		id="vis2"
+		x="17" y="6"
+		w="6" h="44"
+		image="player.normal.LCD.visanimation.bitmap"
+		framewidth ="6"
+		autoplay="0"
+	/>
+	<animatedlayer
+		id="vis3"
+		x="23" y="6"
+		w="6" h="44"
+		image="player.normal.LCD.visanimation.bitmap"
+		framewidth ="6"
+		autoplay="0"
+	/>
+	<animatedlayer
+		id="vis4"
+		x="29" y="6"
+		w="6" h="44"
+		image="player.normal.LCD.visanimation.bitmap"
+		framewidth ="6"
+		autoplay="0"
+	/>
+	<animatedlayer
+		id="vis5"
+		x="35" y="6"
+		w="6" h="44"
+		image="player.normal.LCD.visanimation.bitmap"
+		framewidth ="6"
+		autoplay="0"
+	/>
+	<animatedlayer
+		id="vis6"
+		x="41" y="6"
+		w="6" h="44"
+		image="player.normal.LCD.visanimation.bitmap"
+		framewidth ="6"
+		autoplay="0"
+	/>
+	<animatedlayer
+		id="vis7"
+		x="47" y="6"
+		w="6" h="44"
+		image="player.normal.LCD.visanimation.bitmap"
+		framewidth ="6"
+		autoplay="0"
+	/>
+	<animatedlayer
+		id="vis8"
+		x="53" y="6"
+		w="6" h="44"
+		image="player.normal.LCD.visanimation.bitmap"
+		framewidth ="6"
+		autoplay="0"
+	/>
+	<animatedlayer
+		id="vis9"
+		x="59" y="6"
+		w="6" h="44"
+		image="player.normal.LCD.visanimation.bitmap"
+		framewidth ="6"
+		autoplay="0"
+	/>
+	<animatedlayer
+		id="vis10"
+		x="65" y="6"
+		w="6" h="44"
+		image="player.normal.LCD.visanimation.bitmap"
+		framewidth ="6"
+		autoplay="0"
+	/>
+	<animatedlayer
+		id="vis11"
+		x="71" y="6"
+		w="6" h="44"
+		image="player.normal.LCD.visanimation.bitmap"
+		framewidth ="6"
+		autoplay="0"
+	/>
+	<animatedlayer
+		id="vis12"
+		x="77" y="6"
+		w="6" h="44"
+		image="player.normal.LCD.visanimation.bitmap"
+		framewidth ="6"
+		autoplay="0"
+	/>
+	<animatedlayer
+		id="vis13"
+		x="83" y="6"
+		w="6" h="44"
+		image="player.normal.LCD.visanimation.bitmap"
+		framewidth ="6"
+		autoplay="0"
+	/>
+	<animatedlayer
+		id="vis14"
+		x="89" y="6"
+		w="6" h="44"
+		image="player.normal.LCD.visanimation.bitmap"
+		framewidth ="6"
+		autoplay="0"
+	/>
+	<animatedlayer
+		id="vis15"
+		x="95" y="6"
+		w="6" h="44"
+		image="player.normal.LCD.visanimation.bitmap"
+		framewidth ="6"
+		autoplay="0"
+	/>
+	<animatedlayer
+		id="vis16"
+		x="101" y="6"
+		w="6" h="44"
+		image="player.normal.LCD.visanimation.bitmap"
+		framewidth ="6"
+		autoplay="0"
+	/>
+	<animatedlayer
+		id="vis17"
+		x="107" y="6"
+		w="6" h="44"
+		image="player.normal.LCD.visanimation.bitmap"
+		framewidth ="6"
+		autoplay="0"
+	/>
+	<animatedlayer
+		id="vis18"
+		x="113" y="6"
+		w="6" h="44"
+		image="player.normal.LCD.visanimation.bitmap"
+		framewidth ="6"
+		autoplay="0"
+	/>
+	<animatedlayer
+		id="vis19"
+		x="119" y="6"
+		w="6" h="44"
+		image="player.normal.LCD.visanimation.bitmap"
+		framewidth ="6"
+		autoplay="0"
+	/>
+	<animatedlayer
+		id="vis20"
+		x="125" y="6"
+		w="6" h="44"
+		image="player.normal.LCD.visanimation.bitmap"
+		framewidth ="6"
+		autoplay="0"
+	/>
+	<animatedlayer
+		id="vis21"
+		x="131" y="3"
+		w="6" h="44"
+		image="player.normal.LCD.visanimation.bitmap"
+		framewidth ="6"
+		autoplay="0"
+	/>
+
 	<songticker
 		id="ticker"
 		x="12" y="52"
@@ -107,12 +270,14 @@
 		x="11" y="70"
 		w="113" h="3"
 		image="player.normal.LCD.seek.background.bitmap"
+		move="0"
 	/>
 	<layer
 		id="seek.progress"
 		x="10" y="70"
 		w="116" h="3"
 		image="player.normal.LCD.seek.progress.bitmap"
+		move="0"
 	/>
 
 	<layer
@@ -151,12 +316,14 @@
 		x="29" y="90"
 		w="88" h="3"
 		image="player.normal.LCD.volume.background.bitmap"
+		move="0"
 	/>
 	<layer
 		id="volume.progress"
 		x="29" y="90"
-		w="87" h="3"
+		w="86" h="3"
 		image="player.normal.LCD.volume.progress.bitmap"
+		move="0"
 	/>
 
 	<text
@@ -169,6 +336,6 @@
 		align="right"
 	/>
 
-
+	<script id="seek.script" file="maki/seeknvolbyregion.maki"/>
 
 </groupdef>
