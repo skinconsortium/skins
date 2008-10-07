@@ -12,7 +12,7 @@
     <screenshot>skinshot.png</screenshot>
   
   </skininfo>
->
+<include file="xml/scare.xml"/>
   <include file="xml/player.xml"/>
   
 <include file="xml/system-colors.xml"/>
