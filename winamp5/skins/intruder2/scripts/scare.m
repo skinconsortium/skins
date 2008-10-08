@@ -2,8 +2,7 @@
 
 #include <lib/std.mi>
 #include <lib/config.mi>
-
-function string pathToURL(string path);
+#include <lib/pldir.mi>
 
 global layout mainnormal,scarelayout;
 global button timer30,timer60,timer90;
@@ -13,11 +12,11 @@ global timer scaretimer, loadtimer, offtimer;
 
 global string scaremusic;
 
-Global ConfigAttribute attrRepeat;
-global string lastconfig;
+Global ConfigAttribute attrRepeat, attrXfade;
+global string lastconfig, lastxfade;
 
 System.onScriptLoaded() {
-	scaremusic = pathToURL(getParam());
+	scaremusic = getParam();
 	
 	mainnormal = getContainer("main").getLayout("normalc");
 	
@@ -33,6 +32,9 @@ System.onScriptLoaded() {
 	
 	configItem item = Config.getItem("Playlist editor");
 	attrRepeat = item.getAttribute("repeat");
+	
+	item =  Config.getItemByGUID("{FC3EAF78-C66E-4ED2-A0AA-1494DFCC13FF}");
+	attrXfade = item.getAttribute("Enable crossfading");
 	
 	scaretimer = new timer;
 	
@@ -56,35 +58,6 @@ system.onScriptUnloading() {
 	delete offtimer;
 }
 
-string pathToURL(string path) {
-	int c, len = strlen(path);
-	string ret = "", char;
-
-	
-	c=0;
-	while (c < len) {
-		char = strmid(path,c,1);
-		if (char==chr(92)) {
-			ret = ret + chr(47);
-			c ++;
-		} else if (char==":") { //for ":/"
-			ret = ret + ":";
-			c ++;
-			
-			char = strmid(path,c,1);
-			if (char==chr(92)) {
-				ret = ret + chr(47) + chr(47);
-				c ++;
-			}
-		} else {
-			ret = ret + char;
-			c++;
-		}
-	}
-	
-	return ret;
-}
-
 timer30.onActivate(int on) {
 	if (!on) { scaretimer.stop(); return; }
 	
@@ -94,6 +67,8 @@ timer30.onActivate(int on) {
 	
 	scaretimer.setDelay(30000);
 	scaretimer.start();
+	
+	scarelayer.show();
 }
 
 timer60.onActivate(int on) {
@@ -105,6 +80,8 @@ timer60.onActivate(int on) {
 	
 	scaretimer.setDelay(60000);
 	scaretimer.start();
+	
+	scarelayer.show();
 }
 
 timer90.onActivate(int on) {
@@ -116,6 +93,8 @@ timer90.onActivate(int on) {
 	
 	scaretimer.setDelay(90000);
 	scaretimer.start();
+	
+	scarelayer.show();
 }
 
 scaretimer.onTimer() {
@@ -130,8 +109,10 @@ scaretimer.onTimer() {
 	scarelayer.show();
 	
 	lastconfig = attrRepeat.getData();
+	lastxfade = attrXfade.getData();
 	attrRepeat.setData("0");
-	playfile(scaremusic);
+	PlEdit.enqueueFile(scaremusic);				 // adds and plays scare.wav
+	PlEdit.playTrack(PlEdit.getNumTracks()-1);
 	
 	offtimer.start();
 }
@@ -140,12 +121,13 @@ System.onKeyDown(string key) {
 	if (!scarelayout.isVisible()) return;
 
 	if (key=="esc") {
-		scarelayer.hide();
-		scarelayout.hide();
-		system.stop();
-		attrRepeat.setData(lastconfig);
+		offtimer.ontimer();
 	}
 	
+}
+
+System.onTitleChange(string newtitle) {
+	if (offtimer.isRunning()) stop();
 }
 
 offtimer.ontimer() {
@@ -154,5 +136,7 @@ offtimer.ontimer() {
 	scarelayer.hide();
 	scarelayout.hide();
 	system.stop();
+	PlEdit.removeTrack(PlEdit.getNumTracks()-1); // removes scare.wav
 	attrRepeat.setData(lastconfig);
+	attrXfade.setData(lastxfade);
 }
