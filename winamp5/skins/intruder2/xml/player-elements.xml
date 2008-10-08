@@ -14,7 +14,17 @@
 <bitmap id="ml2" file="player/ml2.png" gammagroup="Background" />
 <bitmap id="mld" file="player/mld.png" gammagroup="Background" />
 <bitmap id="player.main.play" file="player/play.png" gammagroup="Glass"/>
-
+<bitmap id="radio" file="player/radio.png" gammagroup="Glass"/>
+<bitmap id="radiod" file="player/radiod.png" gammagroup="Glass"/>
+<bitmap id="player.IncVolUp" file="player/volup.png" gammagroup="Glass"/>
+<bitmap id="player.IncVolDown" file="player/volupd.png" gammagroup="Glass"/>
+<bitmap id="player.DecVolUp" file="player/vold.png" gammagroup="Glass"/>
+<bitmap id="player.DecVolDown" file="player/voldd.png" gammagroup="Glass"/>
+<bitmap id="seekerback" file="player/seekerback.png" gammagroup="Glass"/>
+<bitmap id="seek" file="player/seek.png" gammagroup="Glass"/>
+<bitmap id="seekd" file="player/seekd.png" gammagroup="Glass"/>
+<bitmap id="turn" file="player/turn.png" gammagroup="Glass"/>
+<bitmap id="turnd" file="player/turnd.png" gammagroup="Glass"/>
 <bitmap id="player.main.playd" file="player/playd.png" gammagroup="Glass"/>
 <bitmap id="player.main.playds" file="player/playd.png" gammagroup="Glass"/>
 <bitmap id="player.main.Pause" file="player/pause.png" gammagroup="Glass"/>

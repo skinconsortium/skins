@@ -40,18 +40,19 @@
 
 
 
+
+</groupdef>
+<groupdef id="main.control.buttons" name="Cbuttons">
 <button 
  id="shade"
- x="25" y="460" sysregion="1"
+ x="375" y="135" sysregion="1"
  action="SWITCH" param="normalc" 
- image="ml"
- downimage="ml"
- hoverimage="ml"
+  image="turn"
+ downimage="turnd"
+ hoverimage="turnd"
  rectrgn="1"
  tooltip="Turn to Back"
 />
-</groupdef>
-<groupdef id="main.control.buttons" name="Cbuttons">
 <button 
   id="Minimize"
  x="58" y="26"
@@ -162,7 +163,7 @@ downimage="player.main.playd"
 <layer id="player.main.playd" image="player.main.playd" x="212" y="197" ghost="1"/>
 
 	<text
-	id="songticker.text" ticker="1"
+	id="SongTicker" ticker="1"
      display="songname" default=""
 	x="110" y="10" 
 	w="224" h="35"  antialias="1"
@@ -172,18 +173,59 @@ downimage="player.main.playd"
 	<text
 	id="Timer" 
 	display="time"
-	x="203" y="40" 
+	x="197" y="40" 
 	w="60" h="30" bold="1"
-	font="player.font.ticker" fontsize="28" align="left"  
+	font="player.font.ticker" fontsize="35" align="left"  
     color="221,136,26"
 	 
   
 	timecolonwidth="5"
   />	
-  
+  <Text
+	id="InfoText"
+    default=""
+	x="110" y="10" 
+	w="224" h="35"  antialias="1"
+	font="player.font.ticker" fontsize="25" align="center" 
+	color="221,136,26" visible="0"
+		
+  />
 <script file="scripts/hoverglow.maki" param="Play,player.main.playd"/>
 
+<button
+      id="VolUp"
+      x="243" y="32"  rectrgn="1"
+image="player.IncVolUp"
+     hoverimage="player.IncVolDown"
+      downImage="player.IncVolDown"
+      
+   />
+    <button
+      id="VolDown"
+      x="115" y="34" rectrgn="1"
+image="player.DecVolUp"
+       hoverimage="player.DecVolDown"
+      downImage="player.DecVolDown"
+      
+    />
+  <script file="scripts/autorepeatvolumebuttons.maki"/>
 
+	/>
+ <button id="radio_rock"
+        	 x="185" y="119" 
+          	 image="radio"
+          	 downImage="radiod"
+			 hoverimage="radiod"
+          	 activeImage="radiod"
+         	/>
+<script id="radio" file="scripts/radio.maki"/>
+<layer id="seekerb" image="seekerback" x="170" y="245" sysregion="1" />
+<slider id="seek"
+		action="SEEK"
+		x="170" y="240" w="110" h="15"
+		thumb="seek"
+		downThumb="seekd" 
+	/>
 </groupdef>
 <layout id="normal" background="player.main.background" 
 alphabackground="player.main.background" >

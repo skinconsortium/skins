@@ -15,7 +15,16 @@
 	 sysregion="1" ghost="1"
        />
  <layer id="pumpkin" image="player.main.pumpkin2"  sysregion="1" x="56" y="400" />
-
+<button 
+ id="shade"
+ x="375" y="535" sysregion="1"
+ action="SWITCH" param="normal" 
+  image="turn"
+ downimage="turnd"
+ hoverimage="turnd"
+ rectrgn="1"
+ tooltip="Turn to Front"
+/>
 	<togglebutton
 	  id="eqonoff"
 	  action="EQ_TOGGLE"
@@ -336,15 +345,7 @@ x="293" y="443"
  tooltip="PlayList"
 />
 
-<button 
- id="shade" sysregion="1"
- x="25" y="460" 
- action="SWITCH" param="normal" 
- image="ml"
- downimage="ml"
- hoverimage="ml"
- rectrgn="1"
- tooltip="Front"
-/>
+
+
 
 </layout>
