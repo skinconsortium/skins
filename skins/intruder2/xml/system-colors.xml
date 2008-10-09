@@ -9,6 +9,13 @@
 
 <elements>
 
+	<!-- Notifier Definitions -->
+	<color id="notifier.dark" value="35,35,35"/>
+	<color id="notifier.bright" value="255,255,255"/>
+	<color id="notifier.dark.upper" value="35,35,35"/>
+	<color id="notifier.bright.upper" value="255,255,255"/>
+
+
   <!-- Warp custom colors -->
   <color id="font.generic" value="0,0,0" gammagroup="Text"/>
   <color id="font.songticker" value="255,255,255" gammagroup="Text_songticker"/>

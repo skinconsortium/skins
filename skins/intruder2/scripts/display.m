@@ -38,6 +38,7 @@ system.onScriptLoaded() {
 	cbuttons = parentLayout.findObject("rev");
 	cbuttons = parentLayout.findObject("eject");
 	cbuttons = parentLayout.findObject("play");
+	cbuttons = parentLayout.findObject("Pause");
 }
 
 cbuttonobj.onEnterArea() {
