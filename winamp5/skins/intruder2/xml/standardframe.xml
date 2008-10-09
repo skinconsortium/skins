@@ -46,16 +46,16 @@
  <button id="close"
 	x="-12" y="3" relatx="1"
 	action="CLOSE"
-	 image="membut"
- downimage="membutd" 
- activeImage="membutd"
-  hoverImage="membutd"
-	tooltip="Close"
+	 image="player.main.close"
+ downimage="player.main.closed" 
+ activeImage="player.main.closed"
+  hoverImage="player.main.closed"
+	
  />
 
  <text id="titlebar" ghost="1" x="30" y="-3" h="18" w="-60" relatw="1"
 	default=":componentname"
-	font="player.font.ticker" 
+	font="player.font.ticker" antialias="1" bold="2"
 	align="center" fontsize="20"  color="231,138,17" doborder="0" border="0" 
  />
 

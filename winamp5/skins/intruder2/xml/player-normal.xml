@@ -25,18 +25,7 @@
 	 sysregion="1"
        />
  <layer id="pumpkin" image="player.main.pumpkin"  sysregion="1" x="56" y="400" move="1"/>
-<AnimatedLayer
-          id="Vis.Animation"
-          x="56" y="400"
-          w="332" h="287"
-          image="player.main.vis"
-          alpha="0"  move="1"
-		  
-         
-         />  
 
-
-<script id="customvis" file="scripts/customvis.maki"/>
 
 
 
@@ -53,27 +42,7 @@
  rectrgn="1"
  tooltip="Turn to Back"
 />
-<button 
-  id="Minimize"
- x="58" y="26"
- action="MINIMIZE" 
- image="player.main.min"
- downimage="player.main.mind"
- hoverimage="player.main.mind"
- rectrgn="1"
- tooltip="Minimize"
-/>
 
-<button 
- id="Close"
- x="41" y="25"
- action="CLOSE" 
-  image="player.main.close"
- downimage="player.main.closed"
- hoverimage="player.main.closed"
-rectrgn="1"
- tooltip="Terminate"
-/>
 <button 
  id="normal2"
  action="SWITCH" param="normal2" rectrgn="1"
@@ -106,13 +75,10 @@ rectrgn="1"
     rectrgn="1"
  activeImage="player.main.stopd"
  hoverImage="player.main.stopd"
- tooltip="Stop"
+ 
  
 />
-<!--layer id="player.main.stopd" image="player.main.stopd" x="272" y="195" ghost="1"/>
 
-	
-<script file="scripts/hoverglow.maki" param="Stop,player.main.stopd"/-->
 <button 
  id="Next"
  x="242" y="196"
@@ -122,12 +88,10 @@ image="player.main.forward"
     rectrgn="1"
  activeImage="player.main.forwardd"
  hoverImage="player.main.forwardd"
- tooltip="Next Track"
+ 
  
 />
-<!--layer id="player.main.forwardd" image="player.main.forwardd"  x="242" y="196" ghost="1"/>
 
-<script file="scripts/hoverglow.maki" param="Next,player.main.forwardd"/-->
 <button 
  id="Rev"
   x="181" y="197"
@@ -137,13 +101,10 @@ image="player.main.rev"
     rectrgn="1"
  activeImage="player.main.revd"
  hoverImage="player.main.revd"
- tooltip="Prev Track"
+ 
  
 />
-<!--layer id="player.main.revd" image="player.main.revd"   x="181" y="197" ghost="1"/>
 
-	
-<script file="scripts/hoverglow.maki" param="Rev,player.main.revd"/-->
 <button 
  id="Eject"
  x="158" y="194"
@@ -153,13 +114,10 @@ image="player.main.rev"
     rectrgn="1"
  activeImage="player.main.ejectd"
  hoverImage="player.main.ejectd"
- tooltip="Get Song"
+ 
  
 />
-<!--layer id="player.main.ejectd" image="player.main.ejectd" x="158" y="194" ghost="1"/>
 
-	
-<script file="scripts/hoverglow.maki" param="Eject,player.main.ejectd"/-->
 <button 
  id="Play"
  x="212" y="197"
@@ -169,17 +127,16 @@ downimage="player.main.playd"
     rectrgn="1"
  activeImage="player.main.playd"
  hoverImage="player.main.playd"
- tooltip="Pause"
+ 
  
 />
-<!--layer id="player.main.playd" image="player.main.playd" x="212" y="197" ghost="1"/>
-<script file="scripts/hoverglow.maki" param="Play,player.main.playd"/-->
+
 
 	<text
 	id="SongTicker" ticker="1"
      display="songname" default=""
-	x="110" y="10" 
-	w="224" h="35"  antialias="1"
+	x="103" y="20" 
+	w="240" h="25"  antialias="1"
 	font="player.font.ticker" fontsize="25" align="center" 
 	color="221,136,26"
    />
@@ -188,7 +145,7 @@ downimage="player.main.playd"
 	display="time"
 	x="197" y="40" 
 	w="60" h="30" bold="1"
-	font="player.font.ticker" fontsize="35" align="left"  
+	font="player.font.ticker" fontsize="30" align="left"  
     color="221,136,26"
 	 
   
@@ -197,8 +154,8 @@ downimage="player.main.playd"
   <Text
 	id="InfoText"
     default=""
-	x="110" y="10" 
-	w="224" h="35"  antialias="1"
+	x="110" y="20" 
+	w="224" h="25"  antialias="1"
 	font="player.font.ticker" fontsize="25" align="center" 
 	color="221,136,26" visible="0"
 		
@@ -239,6 +196,27 @@ image="player.DecVolUp"
 		thumb="seek"
 		downThumb="seekd" 
 	/>
+<button 
+  id="Minimize"
+ x="310" y="16"
+ action="MINIMIZE" 
+ image="player.main.min"
+ downimage="player.main.mind"
+ hoverimage="player.main.mind"
+ rectrgn="1"
+ tooltip="Minimize"
+/>
+
+<button 
+ id="Close"
+ x="320" y="16"
+ action="CLOSE" 
+  image="player.main.close"
+ downimage="player.main.closed"
+ hoverimage="player.main.closed"
+rectrgn="1"
+ tooltip="Terminate"
+/>
 </groupdef>
 
 <layout id="normal" background="player.main.background" alphabackground="player.main.background" >
