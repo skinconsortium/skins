@@ -1,6 +1,6 @@
 
 
-<WinampAbstractionLayer version="0.8">
+<WinampAbstractionLayer version="1.0">
 
 <skininfo>
     <version>1.0</version>
@@ -12,22 +12,24 @@
     <screenshot>skinshot.png</screenshot>
   
   </skininfo>
-<include file="xml/scare.xml"/>
-  <include file="xml/player.xml"/>
-  
-<include file="xml/system-colors.xml"/>
-  
-  
-  <include file="xml/system-elements.xml"/>
-  <include file="xml/standardframe.xml"/>
-  
-  
-   <include file="xml/gamma-presets.xml"/>
-  
-   
-  	<scripts>		
+
+	<scripts>
+		<script file="scripts\loadattribs.maki"/>
+	</scripts>
+
+	<include file="xml/scare.xml"/>
+	<include file="xui/xui-files.xml"/>
+	<include file="xml/player.xml"/>
+	
+	<include file="xml/system-elements.xml"/>
+	<include file="xml/system-colors.xml"/>
+	
+	<include file="xml/notifier.xml"/>
+	<include file="xml/standardframe.xml"/>
+	<include file="xml/gamma-presets.xml"/>
+
+	<scripts>		
 		<script file="scripts/DTACheck.maki"/>
 	</scripts>
-   
 
- </WinampAbstractionLayer>
+</WinampAbstractionLayer>
