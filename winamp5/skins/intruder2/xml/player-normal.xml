@@ -84,6 +84,19 @@ rectrgn="1"
  tooltip="ON FIRE"
  />
 
+<AnimatedLayer 
+     x="240" y="130"
+     w="71" h="90"
+    
+     id="anim.button"       
+     image="anim.button"                 
+     move="1"                  
+	 speed="80"              
+     autoplay="1"             
+     autoreplay="1"
+     visible="0"/>
+
+
 <button 
  id="Stop"
  x="272" y="195"
@@ -96,10 +109,10 @@ rectrgn="1"
  tooltip="Stop"
  
 />
-<layer id="player.main.stopd" image="player.main.stopd" x="272" y="195" ghost="1"/>
+<!--layer id="player.main.stopd" image="player.main.stopd" x="272" y="195" ghost="1"/>
 
 	
-<script file="scripts/hoverglow.maki" param="Stop,player.main.stopd"/>
+<script file="scripts/hoverglow.maki" param="Stop,player.main.stopd"/-->
 <button 
  id="Next"
  x="242" y="196"
@@ -112,10 +125,9 @@ image="player.main.forward"
  tooltip="Next Track"
  
 />
-<layer id="player.main.forwardd" image="player.main.forwardd"  x="242" y="196" ghost="1"/>
+<!--layer id="player.main.forwardd" image="player.main.forwardd"  x="242" y="196" ghost="1"/>
 
-	
-<script file="scripts/hoverglow.maki" param="Next,player.main.forwardd"/>
+<script file="scripts/hoverglow.maki" param="Next,player.main.forwardd"/-->
 <button 
  id="Rev"
   x="181" y="197"
@@ -128,10 +140,10 @@ image="player.main.rev"
  tooltip="Prev Track"
  
 />
-<layer id="player.main.revd" image="player.main.revd"   x="181" y="197" ghost="1"/>
+<!--layer id="player.main.revd" image="player.main.revd"   x="181" y="197" ghost="1"/>
 
 	
-<script file="scripts/hoverglow.maki" param="Rev,player.main.revd"/>
+<script file="scripts/hoverglow.maki" param="Rev,player.main.revd"/-->
 <button 
  id="Eject"
  x="158" y="194"
@@ -144,10 +156,10 @@ image="player.main.rev"
  tooltip="Get Song"
  
 />
-<layer id="player.main.ejectd" image="player.main.ejectd" x="158" y="194" ghost="1"/>
+<!--layer id="player.main.ejectd" image="player.main.ejectd" x="158" y="194" ghost="1"/>
 
 	
-<script file="scripts/hoverglow.maki" param="Eject,player.main.ejectd"/>
+<script file="scripts/hoverglow.maki" param="Eject,player.main.ejectd"/-->
 <button 
  id="Play"
  x="212" y="197"
@@ -160,7 +172,8 @@ downimage="player.main.playd"
  tooltip="Pause"
  
 />
-<layer id="player.main.playd" image="player.main.playd" x="212" y="197" ghost="1"/>
+<!--layer id="player.main.playd" image="player.main.playd" x="212" y="197" ghost="1"/>
+<script file="scripts/hoverglow.maki" param="Play,player.main.playd"/-->
 
 	<text
 	id="SongTicker" ticker="1"
@@ -190,7 +203,7 @@ downimage="player.main.playd"
 	color="221,136,26" visible="0"
 		
   />
-<script file="scripts/hoverglow.maki" param="Play,player.main.playd"/>
+
 
 <button
       id="VolUp"
@@ -227,12 +240,12 @@ image="player.DecVolUp"
 		downThumb="seekd" 
 	/>
 </groupdef>
-<layout id="normal" background="player.main.background" 
-alphabackground="player.main.background" >
+
+<layout id="normal" background="player.main.background" alphabackground="player.main.background" >
 
   
- <group id="main.display.content" w="600" h="800"/>
-<group id="main.control.buttons" y="400" w="500" h="400" visible="0"/>
- <script id="display" file="scripts/display.maki" />
+	<group id="main.display.content" w="600" h="800"/>
+	<group id="main.control.buttons" y="400" w="500" h="400" visible="0"/>
+	<script id="display" file="scripts/display.maki" />
 
 </layout>
