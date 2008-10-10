@@ -123,8 +123,8 @@
 	color="221,136,26"
 	/>-->
 	<ModernSongticker
-		x="103" y="24" 
-		w="240" h="25"  antialias="1" fontsize="25" align="center"
+		x="107" y="24" 
+		w="235" h="25"  antialias="1" fontsize="25" align="center"
 		font="player.font.ticker" color="221,136,26"
 		id_layout="main;normal"
 		id_volume="Volume"
@@ -137,7 +137,7 @@
 	<text
 	id="Timer" 
 	display="time"
-	x="197" y="40" 
+	x="200" y="40" 
 	w="60" h="30" bold="1"
 	font="player.font.ticker" fontsize="30" align="left"  
 	color="221,136,26"
@@ -182,10 +182,10 @@
 	activeImage="radiod" cursor="IDC_HAND"
 	/>
 	<script id="radio" file="scripts/radio.maki"/>
-	<layer id="seekerb" image="seekerback" x="170" y="245" sysregion="1" />
+	<layer id="seekerb" image="seekerback" x="165" y="165" sysregion="1" />
 	<slider id="seek"
 	action="SEEK"
-	x="170" y="240" w="110" h="15"
+	x="165" y="160" w="110" h="15"
 	thumb="seek"
 	downThumb="seekd" cursor="IDC_HAND"
 	/>

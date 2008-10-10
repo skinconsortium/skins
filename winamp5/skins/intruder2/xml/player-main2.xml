@@ -246,7 +246,7 @@
 
 	 <togglebutton
 	  	id="30sec"
-		x="108" y="508"
+		x="103" y="508"
 		 rectrgn="1"
 		image="ml"
 		  hoverImage="mld"
@@ -257,7 +257,7 @@
 	
 	 <togglebutton
 	  	id="60sec"
-		x="108" y="533"
+		x="103" y="533"
 		 rectrgn="1"
 		image="ml"
 		  hoverImage="mld"
@@ -268,7 +268,7 @@
 	
 	 <togglebutton
 	  	id="90sec"
-		x="108" y="559"
+		x="103" y="559"
 		 rectrgn="1"
 		image="ml"
 		  hoverImage="mld"
@@ -303,7 +303,7 @@
 
 <togglebutton
  id="AVS"  action="TOGGLE" param="guid:avs"
-x="293" y="443"
+x="287" y="443"
   
   image="ml"
 	  hoverImage="mld"
