@@ -30,7 +30,7 @@ Function checkPref(int bypassfs);
 Function getArtist();
 
 Global Container notifier_container;
-Global Layout notifier_layout;
+Global Layout notifier_layout,scarelayout;
 Global Timer notifier_timer, notifier_settingshelp;
 Global String last_autotitle, last_autopis;
 
@@ -43,6 +43,8 @@ Global Boolean msgbox_open = false;
 System.onScriptLoaded() {
 	initAttribs_notifier();
 	notifier_timer = new Timer;
+	
+	scarelayout = getContainer("scare").getLayout("normal");
 }
 
 // ------------------------------------------------------------------------------
@@ -295,6 +297,8 @@ createNotifier() {
 
 // ------------------------------------------------------------------------------
 showNotifier(int w) {
+	if (scarelayout.isVisible()) return;
+	
 	DebugString(IntegerToString(w), 0);
 	b_tohide = 0;
 	int x; int y;

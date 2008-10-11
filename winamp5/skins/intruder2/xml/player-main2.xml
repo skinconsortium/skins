@@ -207,29 +207,6 @@
       tooltip="Repeat"
       cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Repeat"
     />
-<!--togglebutton
-      id="Shuffle"
-      x="70" y="200"
-      image="shuf" rectrgn="1"
-     
-      activeImage="shufd"
-      hoverImage="shufd"
-      tooltip="Shuffle"
-      cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Shuffle"
-      
-    />
-
-
-    <togglebutton
-      id="Crossfade"
-      x="52" y="195"
-     image="x" rectrgn="1"
-     
-      activeImage="xd"
-      hoverImage="xd"
-      tooltip="Crossfade"
-      cfgattrib="{FC3EAF78-C66E-4ED2-A0AA-1494DFCC13FF};Enable crossfading"
-    /-->
 
 
     <togglebutton
@@ -276,8 +253,41 @@
 		  activeImage="mld"
 		tooltip="Crossfade"
 	/>
+	
+	<togglebutton
+		id="button.scare1"
+		x="125" y="508"
+		rectrgn="1"
+		image="player.main.scarebutton1.down"
+		hoverImage="player.main.scarebutton1"
+		downImage="player.main.scarebutton1.down"
+		activeImage="player.main.scarebutton1"
+		tooltip="Scare 1"
+	/>
+	
+	<togglebutton
+		id="button.scare2"
+		x="125" y="533"
+		rectrgn="1"
+		image="player.main.scarebutton2.down"
+		hoverImage="player.main.scarebutton2"
+		downImage="player.main.scarebutton2.down"
+		activeImage="player.main.scarebutton2"
+		tooltip="Scare 2"
+	/>
+	
+	<togglebutton
+		id="button.scare3"
+		x="125" y="559"
+		rectrgn="1"
+		image="player.main.scarebutton3.down"
+		hoverImage="player.main.scarebutton3"
+		downImage="player.main.scarebutton3.down"
+		activeImage="player.main.scarebutton3"
+		tooltip="Scare 3"
+	/>
     
-	<script file="scripts/scare.maki" param="@SKINPATH@scream9.wav"/>
+	<script file="scripts/scare.maki" param="@SKINPATH@player"/>
 	
 <button 
  id="shade"

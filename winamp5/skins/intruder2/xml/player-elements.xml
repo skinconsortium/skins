@@ -43,4 +43,12 @@
 <bitmap id="player.main.eject" file="player/eject.png" gammagroup="Glass"/>
 <bitmap id="player.main.ejectd" file="player/ejectd.png" gammagroup="Glass"/>
 
+<bitmap id="player.main.scarebutton1" file="player/scarebutton1.png" x="0" y="0" w="18" h="21" gammagroup="Glass"/>
+<bitmap id="player.main.scarebutton2" file="player/scarebutton2.png" x="0" y="0" w="16" h="21" gammagroup="Glass"/>
+<bitmap id="player.main.scarebutton3" file="player/scarebutton3.png" x="0" y="0" w="17" h="21" gammagroup="Glass"/>
+
+<bitmap id="player.main.scarebutton1.down" file="player/scarebutton1.png" x="0" y="21" w="18" h="21" gammagroup="Glass"/>
+<bitmap id="player.main.scarebutton2.down" file="player/scarebutton2.png" x="0" y="21" w="16" h="21" gammagroup="Glass"/>
+<bitmap id="player.main.scarebutton3.down" file="player/scarebutton3.png" x="0" y="21" w="17" h="21" gammagroup="Glass"/>
+
 	</elements>
