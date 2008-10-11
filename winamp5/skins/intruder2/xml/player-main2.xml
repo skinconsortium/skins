@@ -229,7 +229,7 @@
 		  hoverImage="mld"
 		  downImage="mld"
 		  activeImage="mld"
-		tooltip="Crossfade"
+		tooltip="Scare in 30 sec"
 	/>
 	
 	 <togglebutton
@@ -240,7 +240,7 @@
 		  hoverImage="mld"
 		  downImage="mld"
 		  activeImage="mld"
-		tooltip="Crossfade"
+		tooltip="Scare in 60 sec"
 	/>
 	
 	 <togglebutton
@@ -251,7 +251,7 @@
 		  hoverImage="mld"
 		  downImage="mld"
 		  activeImage="mld"
-		tooltip="Crossfade"
+		tooltip="Scare in 90 sec"
 	/>
 	
 	<togglebutton

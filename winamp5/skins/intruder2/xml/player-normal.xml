@@ -106,11 +106,11 @@
 	id="Pause"
 	x="212" y="197"
 	action="PAUSE" alpha="200"
-	image="player.main.play"
-	downimage="player.main.playd"
+	image="player.main.pause"
+	downimage="player.main.paused"
 	rectrgn="1"
-	activeImage="player.main.playd"
-	hoverImage="player.main.playd"
+	activeImage="player.main.paused"
+	hoverImage="player.main.paused"
 	/>
 	<script file="scripts/sc_PlayPause.maki" param="Play;Pause"/>
 	
