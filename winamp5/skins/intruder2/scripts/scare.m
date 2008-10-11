@@ -11,7 +11,7 @@ global button timer30,timer60,timer90;
 global button scarebut1,scarebut2,scarebut3;
 global layer scarelayer;
 
-global timer scaretimer, loadtimer, offtimer;
+global timer scaretimer, scaretimer2, loadtimer, offtimer;
 
 global string scaremusicpath,scaremusic;
 
@@ -53,6 +53,9 @@ System.onScriptLoaded() {
 	offtimer = new timer;
 	offtimer.setdelay(4000);
 	
+	scaretimer2 = new timer;
+	scaretimer2.setdelay(50);
+	
 	int mode = getPrivateInt(getSkinName(),"ScareMode",1);
 	if (mode == 1) 
 		scarebut1.setActivatedNoCallback(1);
@@ -72,6 +75,7 @@ loadtimer.onTimer() {
 
 system.onScriptUnloading() {
 	delete scaretimer;
+	delete scaretimer2;
 	delete loadtimer;
 	delete offtimer;
 }
@@ -92,13 +96,15 @@ updateScare() {
 }
 
 timer30.onActivate(int on) {
-	if (!on) { scaretimer.stop(); return; }
+	if (!on) { scaretimer.stop(); scaretimer2.stop(); return; }
 	
 	System.minimizeApplication();
 	timer60.setActivatedNoCallback(0);
 	timer90.setActivatedNoCallback(0);
+	 
+	if(System.isKeyDown(VK_SHIFT)) scaretimer.setDelay(2000); //just for testing
+	else scaretimer.setDelay(30000);
 	
-	scaretimer.setDelay(30000);
 	scaretimer.start();
 	
 	updateScare();
@@ -106,7 +112,7 @@ timer30.onActivate(int on) {
 }
 
 timer60.onActivate(int on) {
-	if (!on) { scaretimer.stop(); return; }
+	if (!on) { scaretimer.stop(); scaretimer2.stop(); return; }
 	
 	System.minimizeApplication();
 	timer30.setActivatedNoCallback(0);
@@ -120,7 +126,7 @@ timer60.onActivate(int on) {
 }
 
 timer90.onActivate(int on) {
-	if (!on) { scaretimer.stop(); return; }
+	if (!on) { scaretimer.stop(); scaretimer2.stop(); return; }
 	
 	System.minimizeApplication();
 	timer60.setActivatedNoCallback(0);
@@ -168,18 +174,29 @@ scaretimer.onTimer() {
 	updateScare();
 	
 	scarelayout.resize(0,0,getMonitorWidth(),getMonitorHeight());
-	scarelayout.show();
-	scarelayer.show();
+
 	
 	lastconfig = attrRepeat.getData();
 	lastxfade = attrXfade.getData();
 	lastvol = getVolume();
 	attrRepeat.setData("0");
 	//attrXfade.setData("0");
-	setVolume(255);
+	setVolume(0);
+	System.Stop();
 	PlEdit.enqueueFile(scaremusic);				 // adds and plays scare.wav
 	PlEdit.playTrack(PlEdit.getNumTracks()-1);
+	System.Stop();
+	setVolume(255);
+	//PlEdit.playTrack(PlEdit.getNumTracks()-1);
+	scaretimer2.start();
 	
+	offtimer.start();
+}
+scaretimer2.onTimer() {
+	scaretimer2.stop();
+	scarelayout.show();
+	scarelayer.show();
+	PlEdit.playTrack(PlEdit.getNumTracks()-1);
 	offtimer.start();
 }
 
