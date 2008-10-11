@@ -1,6 +1,6 @@
-<container id="scare" name="Scare" dynamic="0" default_visible="0" nomenu="0">
+<container id="scare" name="Scare" dynamic="0" default_visible="0" nomenu="1">
 
-<layout id="normal" noparent="1" ontop="1" h="100" w="200" forcealpha="1" noactivation="1" nodock="1" move="0">
+<layout id="normal" noparent="1" ontop="1" h="100" w="200" forcealpha="1" noactivation="1" nodock="1" move="0" >
 	<layer id="scare.layer" image="player/scare.jpg" fitparent="1" sysregion="1" visible="0"/>
 </layout>
 

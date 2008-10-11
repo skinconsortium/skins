@@ -86,13 +86,13 @@ updateScare() {
 	
 	if (mode == 1) {
 		scarelayer.setXMLParam("image","player/scare.jpg");
-		scaremusic = scaremusicpath + "\scream9.wav";
+		scaremusic = scaremusicpath + "\mode1.xml";
 	} else if (mode == 2) {
 		scarelayer.setXMLParam("image","player/scare2.jpg");
-		scaremusic = scaremusicpath + "\Evil Laugh.wav";
+		scaremusic = scaremusicpath + "\mode2.xml";
 	} else {
 		scarelayer.setXMLParam("image","player/scare3.jpg");
-		scaremusic = scaremusicpath + "\Psycho 02.wav";
+		scaremusic = scaremusicpath + "\mode3.xml";
 	} 
 }
 
@@ -186,20 +186,22 @@ scaretimer.onTimer() {
 	//attrXfade.setData("0");
 	
 	setVolume(0);
-	System.Stop();
 	PlEdit.enqueueFile(scaremusic);				 // adds and plays scare.wav
+	//PlEdit.playTrack(PlEdit.getNumTracks()-1);
+	System.Stop();
 
 	setVolume(255);
 
 	scaretimer2.start();
-	scarelayout.show();
-	scarelayer.show();
 }
 
 scaretimer2.onTimer() {
 	scaretimer2.stop();
 	
 	PlEdit.playTrack(PlEdit.getNumTracks()-1);
+	scarelayout.show();
+	scarelayer.show();
+
 	offtimer.start();
 }
 
@@ -212,9 +214,9 @@ System.onKeyDown(string key) {
 	
 }
 
-System.onTitleChange(string newtitle) {
+/*System.onTitleChange(string newtitle) {
 	if (offtimer.isRunning()) stop();
-}
+}*/
 
 offtimer.ontimer() {
 	stop();
