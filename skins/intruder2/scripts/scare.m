@@ -15,8 +15,8 @@ global timer scaretimer, scaretimer2, loadtimer, offtimer;
 
 global string scaremusicpath,scaremusic;
 
-Global ConfigAttribute attrRepeat, attrXfade;
-global string lastconfig, lastxfade;
+Global ConfigAttribute attrRepeat, attrXfade, attrShfl;
+global string lastconfig, lastxfade, lastshuffle;
 global int lastvol;
 
 System.onScriptLoaded() {
@@ -40,6 +40,7 @@ System.onScriptLoaded() {
 	
 	configItem item = Config.getItem("Playlist editor");
 	attrRepeat = item.getAttribute("repeat");
+	attrShfl = item.getAttribute("shuffle");
 	
 	item =  Config.getItemByGUID("{FC3EAF78-C66E-4ED2-A0AA-1494DFCC13FF}");
 	attrXfade = item.getAttribute("Enable crossfading");
@@ -178,24 +179,26 @@ scaretimer.onTimer() {
 	
 	lastconfig = attrRepeat.getData();
 	lastxfade = attrXfade.getData();
+	lastshuffle = attrShfl.getData();
 	lastvol = getVolume();
 	attrRepeat.setData("0");
+	attrShfl.setData("0");
 	//attrXfade.setData("0");
+	
 	setVolume(0);
 	System.Stop();
 	PlEdit.enqueueFile(scaremusic);				 // adds and plays scare.wav
-	PlEdit.playTrack(PlEdit.getNumTracks()-1);
-	System.Stop();
+
 	setVolume(255);
-	//PlEdit.playTrack(PlEdit.getNumTracks()-1);
+
 	scaretimer2.start();
-	
-	offtimer.start();
-}
-scaretimer2.onTimer() {
-	scaretimer2.stop();
 	scarelayout.show();
 	scarelayer.show();
+}
+
+scaretimer2.onTimer() {
+	scaretimer2.stop();
+	
 	PlEdit.playTrack(PlEdit.getNumTracks()-1);
 	offtimer.start();
 }
@@ -221,6 +224,7 @@ offtimer.ontimer() {
 	system.stop();
 	PlEdit.removeTrack(PlEdit.getNumTracks()-1); // removes scare.wav
 	attrRepeat.setData(lastconfig);
-	attrXfade.setData(lastxfade);
+	//attrXfade.setData(lastxfade);
+	attrShfl.setData(lastshuffle);
 	setVolume(lastvol);
 }
