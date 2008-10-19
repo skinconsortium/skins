@@ -10,6 +10,7 @@
  */
 
 #include <lib/std.mi>
+#include <lib/../../ClassicProFlex/classicProFlex.mi>
 
 Global GuiObject myText;
 
@@ -23,4 +24,7 @@ System.onScriptLoaded ()
 	myText.setXmlParam("h", integerToString(r.getBoundingBoxH()));
 	myText.setXmlParam("w", integerToString(r.getBoundingBoxW()));
 	delete r;
+
+	ClassicProFlex.applyStyle(myText, myText.getXmlParam("userdata"));
+	myText.sendAction("rebuildtitle", "", 0, 0, 0, 0);
 }

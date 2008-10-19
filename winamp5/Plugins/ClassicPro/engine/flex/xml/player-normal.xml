@@ -139,7 +139,8 @@
 		display="TIME"
 		sysregion="1"
 		valign="top"
-		alpha="255"
+		alpha="253"
+		userdata="normal.time"
 	/>
 	<script
 		file="@WINAMPPATH@\Plugins\classicPro\engine\flex\scripts\text.maki"
@@ -150,7 +151,8 @@
 		x="0" y="0" h="30" w="90"
 		id="songticker"
 		sysregion="1"
-		alpha="255"
+		alpha="253"
+		userdata="normal.songticker"
 	/>
 	<script
 		file="@WINAMPPATH@\Plugins\classicPro\engine\flex\scripts\text.maki"
