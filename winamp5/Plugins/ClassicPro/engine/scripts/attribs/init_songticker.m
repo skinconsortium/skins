@@ -19,7 +19,7 @@ Depending Files:
 #error This script can only be compiled as a #include
 #endif
 
-#include "../../../scripts/attribs/gen_pageguids.m"
+#include "gen_pageguids.m"
 
 Function initAttribs_Songticker();
 
