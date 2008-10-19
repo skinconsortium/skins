@@ -1,6 +1,0 @@
-<groupdef id="sc.FadeText" xuitag="SC:FadeText">
-	<text id="FadeText.2" fitparent="1" color="wasabi.list.text"/>
-	<text id="FadeText.1" fitparent="1" color="wasabi.list.text"/>
-
-	<script file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\xui\FadeText\FadeText.maki"/>
-</groupdef>
