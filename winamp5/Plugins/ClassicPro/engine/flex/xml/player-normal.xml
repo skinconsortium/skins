@@ -1,0 +1,179 @@
+
+
+<layout id="normal" background="cpro.flex.player.normal.bg" alphabackground="cpro.flex.player.normal.bg.alpha">
+
+	<!-- CButtons -->
+
+	<button
+		id="cbutton.prev"
+		x="0" y="0"
+		action="PREV"
+		image="cpro.flex.player.normal.prev"
+		downImage="cpro.flex.player.normal.prev.down"
+		hoverImage="cpro.flex.player.normal.prev.hover"
+		tooltip="Previous"
+		alpha="253"
+	/>
+	<layer id="cbutton.prev.glow" fitparent="1" ghost="1" image="cpro.flex.player.normal.prev.glow" alpha="0"/>
+
+	<button
+		x="0" y="0"
+		id="cbutton.play"
+		action="PLAY"
+		image="cpro.flex.player.normal.play"
+		downImage="cpro.flex.player.normal.play.down"
+		hoverImage="cpro.flex.player.normal.play.hover"
+		tooltip="Play"
+		alpha="253"
+	/>
+	<layer id="cbutton.play.glow" fitparent="1" ghost="1" image="cpro.flex.player.normal.play.glow" alpha="0"/>
+
+	<button
+		id="cbutton.pause"
+		x="0" y="0"
+		action="PAUSE"
+		image="cpro.flex.player.normal.pause"
+		downImage="cpro.flex.player.normal.pause.down"
+		hoverImage="cpro.flex.player.normal.pause.hover"
+		tooltip="Pause"
+		alpha="253"
+	/>
+	<layer id="cbutton.pause.glow" fitparent="1" ghost="1" image="cpro.flex.player.normal.pause.glow" alpha="0"/>
+
+	<script
+		file="@WINAMPPATH@\Plugins\classicPro\engine\flex\scripts\playpause.maki"
+	/>
+
+	<button
+		id="cbutton.stop"
+		x="0" y="0"
+		action="STOP"
+		image="cpro.flex.player.normal.stop"
+		downImage="cpro.flex.player.normal.stop.down"
+		hoverImage="cpro.flex.player.normal.stop.hover"
+		tooltip="Stop"
+		alpha="253"
+	/>
+	<layer id="cbutton.stop.glow" fitparent="1" ghost="1" image="cpro.flex.player.normal.stop.glow" alpha="0"/>
+
+	<button
+		id="cbutton.next"
+		x="0" y="0"
+		action="NEXT"
+		image="cpro.flex.player.normal.next"
+		downImage="cpro.flex.player.normal.next.down"
+		hoverImage="cpro.flex.player.normal.next.hover"
+		tooltip="Next"
+		alpha="253"
+	/>
+	<layer id="cbutton.next.glow" fitparent="1" ghost="1" image="cpro.flex.player.normal.next.glow" alpha="0"/>
+
+	<script file="@WINAMPPATH@\Plugins\classicPro\engine\flex\scripts\glow.maki" />
+
+	<button
+		x="0" y="0"
+		action="EJECT"
+		image="cpro.flex.player.normal.open"
+		downImage="cpro.flex.player.normal.open.down"
+		hoverImage="cpro.flex.player.normal.open.hover"
+		tooltip="Open file(s)"
+		alpha="253"
+	/>
+
+	<!-- Seek -->
+
+	<layer x="0" y="0" id="seek.fillbar" image="cpro.flex.player.normal.seek.fillbar" tooltip="Seek" rectrgn="0" move="0"/>
+	<script
+		file="@WINAMPPATH@\Plugins\classicPro\engine\flex\scripts\seekbar.maki"
+		param="seek.fillbar,cpro.flex.player.normal.seek.fillbar.map"
+	/>
+
+	<!-- Volume -->
+
+	<layer x="0" y="0" id="volume.fillbar" image="cpro.flex.player.normal.volume.fillbar" tooltip="Volume" rectrgn="0" move="0"/>
+	<script
+		file="@WINAMPPATH@\Plugins\classicPro\engine\flex\scripts\volumebar.maki"
+		param="volume.fillbar,cpro.flex.player.normal.volume.fillbar.map"
+	/>
+
+	<!-- Component buttons -->
+	<button
+		id="pl"
+		action="TOGGLE" param="guid:pl"
+		x="0" y="0"
+		image="cpro.flex.player.normal.pl"
+		downImage="cpro.flex.player.normal.pl.down"
+		hoverImage="cpro.flex.player.normal.pl.hover"
+		activeImage="cpro.flex.player.normal.pl.active"
+		tooltip="Playlist Editor"
+		alpha="253"
+	/>
+	<button
+		id="ml"
+		action="TOGGLE" param="guid:ml"
+		x="0" y="0"
+		image="cpro.flex.player.normal.ml"
+		downImage="cpro.flex.player.normal.ml.down"
+		hoverImage="cpro.flex.player.normal.ml.hover"
+		activeImage="cpro.flex.player.normal.ml.active"
+		tooltip="Media Library"
+		alpha="253"
+	/>
+	<button
+		id="eq"
+		action="TOGGLE" param="eq"
+		x="0" y="0"
+		image="cpro.flex.player.normal.eq"
+		downImage="cpro.flex.player.normal.eq.down"
+		hoverImage="cpro.flex.player.normal.eq.hover"
+		activeImage="cpro.flex.player.normal.eq.active"
+		tooltip="Equalizer"
+		alpha="253"
+	/>
+
+	<!-- Display Stuff -->
+
+	<text
+		x="0" y="0" h="30" w="90"
+		id="time"
+		display="TIME"
+		sysregion="1"
+		valign="top"
+		alpha="255"
+	/>
+	<script
+		file="@WINAMPPATH@\Plugins\classicPro\engine\flex\scripts\text.maki"
+		param="time,cpro.flex.player.normal.time.region"
+	/>
+	
+	<SongTicker
+		x="0" y="0" h="30" w="90"
+		id="songticker"
+		sysregion="1"
+		alpha="255"
+	/>
+	<script
+		file="@WINAMPPATH@\Plugins\classicPro\engine\flex\scripts\text.maki"
+		param="songticker,cpro.flex.player.normal.songticker.region"
+	/>
+	<!-- Sysbuttons -->
+	<button
+		x="0" y="0"
+		action="MINIMIZE"
+		image="cpro.flex.player.normal.minimize"
+		hoverImage="cpro.flex.player.normal.minimize.hover"
+		downImage="cpro.flex.player.normal.minimize.down"
+		tooltip="Minimize Winamp"
+		alpha="253"
+	/>
+	<button
+		x="0" y="0"
+		action="EXIT"
+		image="cpro.flex.player.normal.close"
+		hoverImage="cpro.flex.player.normal.close.hover"
+		downImage="cpro.flex.player.normal.close.down"
+		tooltip="Exit Winamp"
+		alpha="253"
+	/>
+
+</layout>
