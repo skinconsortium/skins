@@ -1,4 +1,0 @@
-<groupdef id="Wasabi.AlbumArt" xuitag="Wasabi:AlbumArt" embed_xui="main.albumart">
-	<AlbumArt id="main.albumart" fitparent="1" notfoundimage="cover.notfound" wantfocus="1"/>
-	<script file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\xui\AlbumArt\AlbumArt.maki"/>
-</groupdef>
