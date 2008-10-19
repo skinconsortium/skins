@@ -71,6 +71,7 @@
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\flex\scripts\glow.maki" />
 
 	<button
+		id="cbutton.open"
 		x="0" y="0"
 		action="EJECT"
 		image="cpro.flex.player.normal.open"
@@ -149,15 +150,31 @@
 	
 	<SongTicker
 		x="0" y="0" h="30" w="90"
-		id="songticker"
+		id="m.st.ticker"
+		sysregion="1"
+		alpha="253"
+		userdata="normal.songticker"
+	/>
+	<text
+		x="0" y="0" h="30" w="90"
+		id="m.st.news"
 		sysregion="1"
 		alpha="253"
 		userdata="normal.songticker"
 	/>
 	<script
-		file="@WINAMPPATH@\Plugins\classicPro\engine\flex\scripts\text.maki"
-		param="songticker,cpro.flex.player.normal.songticker.region"
+		file="@WINAMPPATH@\Plugins\classicPro\engine\xui\ModernSongticker\ModernSongticker.maki" 
+		param="main;normal;id_volume;id_seeker;cbutton.prev;cbutton.next;cbutton.open;id_shuf;id_rep;id_mute"
 	/>
+	<script
+		file="@WINAMPPATH@\Plugins\classicPro\engine\flex\scripts\text.maki"
+		param="m.st.ticker,cpro.flex.player.normal.songticker.region"
+	/>
+	<script
+		file="@WINAMPPATH@\Plugins\classicPro\engine\flex\scripts\text.maki"
+		param="m.st.news,cpro.flex.player.normal.songticker.region"
+	/>
+	
 	<!-- Sysbuttons -->
 	<button
 		x="0" y="0"

@@ -36,9 +36,25 @@ System.onScriptLoaded(){
 }
 
 System.onShowLayout(Layout _layout){
-	mainContainer = getContainer(getToken(def_Layout, ";", 0));
-	mainLayout = mainContainer.getLayout(getToken(def_Layout, ";", 1));
+	if(getParam()!=""){
+		mainContainer = getContainer(getToken(getParam(), ";", 0));
+		mainLayout = mainContainer.getLayout(getToken(getParam(), ";", 1));
+	}
+	else{
+		mainContainer = getContainer(getToken(def_Layout, ";", 0));
+		mainLayout = mainContainer.getLayout(getToken(def_Layout, ";", 1));
+	}
 	if(mainLayout==_layout){
+		if(getParam()!=""){
+			def_Volume = getToken(getParam(), ";", 2);
+			def_Seeker = getToken(getParam(), ";", 3);
+			def_Prev = getToken(getParam(), ";", 4);
+			def_Next = getToken(getParam(), ";", 5);
+			def_Open = getToken(getParam(), ";", 6);
+			def_Shuf = getToken(getParam(), ";", 7);
+			def_Rep = getToken(getParam(), ";", 8);
+			def_Mute = getToken(getParam(), ";", 9);
+		}
 		sl_volume = mainLayout.findObject(def_Volume);
 		sl_seeker = mainLayout.findObject(def_Seeker);
 		prev = mainLayout.findObject(def_Prev);
@@ -56,6 +72,7 @@ System.onscriptunloading(){
 }
 
 System.onSetXuiParam(String param, String value) {
+	if(getParam()!="") return;
 	if(strlower(param) == "id_layout"){
 		def_Layout = value;
 	}

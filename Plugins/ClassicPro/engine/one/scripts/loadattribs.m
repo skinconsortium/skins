@@ -20,7 +20,7 @@ Internet:	www.skinconsortium.com
 #include attribs/init_browser.m
 #include ../../scripts/attribs/init_notifier.m
 #include attribs/init_Autoresize.m
-#include attribs/init_songticker.m
+#include ../../scripts/attribs/init_songticker.m
 
 Global Configattribute FontRenderer, findOpenRect;
 Global String findOpenRect_default;
