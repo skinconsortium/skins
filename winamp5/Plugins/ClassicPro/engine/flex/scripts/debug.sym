@@ -20,20 +20,27 @@ var# |                Class |                                    What
 0010 |               String |                                        s
 0011 |               String |                                  "DEBUG"
 0012 |                  Int |                                        s
-0013 |       ClassicProFlex |                           ClassicProFlex*
-0014 |            GuiObject |                                   myText
-0015 |               String |                                      ","
-0016 |               Region |                                        r
-0017 |               String |                                      "x"
-0018 |               String |                                      "y"
-0019 |               String |                                      "h"
-001A |               String |                                      "w"
-001B |               String |                               "userdata"
-001C |               String |                           "rebuildtitle"
+0013 |                 Text |                                  sysinfo
+0014 |            GuiObject |                               songticker
+0015 |               Layout |                                   parent
+0016 |                Timer |                                infoTimer
+0017 |               String |                                      ";"
+0018 |                  Int |                                      666
+0019 |               String |                                   action
+001A |               String |                                    param
+001B |                  Int |                                        x
+001C |                  Int |                                        y
+001D |                  Int |                                       p1
+001E |                  Int |                                       p2
+001F |            GuiObject |                                   source
+0020 |               String |                                "sysinfo"
 -- Events Table ------------------------------------------------------
 var# |         Code Pointer |                                    What 
 ----------------------------------------------------------------------
 0000 |                 0153 |                                      S.o
+0000 |                 020E |                                      S.o
+0015 |                 0237 |                                      p.o
+0016 |                 02C1 |                                      i.o
 -- User Functions Table ----------------------------------------------
                Code Pointer |                                    What 
 ----------------------------------------------------------------------

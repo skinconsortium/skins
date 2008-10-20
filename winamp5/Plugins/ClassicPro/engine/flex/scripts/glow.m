@@ -15,9 +15,11 @@
 Function GlowObject newGlowObject(String id);
 
 Global GlowObject stop, play, pause, prev, next;
+Global layout parent;
 
 System.onScriptLoaded ()
 {
+	parent = getScriptGroup().getParentLayout();
 	stop = newGlowObject("cbutton.stop");
 	play = newGlowObject("cbutton.play");
 	pause = newGlowObject("cbutton.pause");
@@ -31,4 +33,48 @@ GlowObject newGlowObject(String id)
 	GlowObject_setFadeInSpeed(go, ClassicProFlex.appearance_getGlowButtonFadeInSpeed());
 	GlowObject_setFadeOutSpeed(go, ClassicProFlex.appearance_getGlowButtonFadeOutSpeed());
 	return go;
+}
+
+GlowObject.onLeftButtonDown (int x, int y)
+{
+	String tickertext = "";
+	if (GlowObject == prev)
+	{
+		tickertext = System.getString("winamp.playback", 0);
+	}
+	else if (GlowObject == play)
+	{
+		if (getStatus() == -1)
+		{
+			tickertext = System.getString("winamp.playback", 6);
+		}
+		else if (getStatus() == 0)
+		{
+			tickertext = System.getString("winamp.playback", 1);
+		}
+		else
+		{
+			tickertext = System.getString("winamp.playback", 7);
+		}
+	}
+	else if (GlowObject == pause)
+	{
+		if (getStatus() == -1)
+		{
+			tickertext = System.getString("winamp.playback", 6);
+		}
+		else
+		{
+			tickertext = System.getString("winamp.playback", 2);
+		}
+	}
+	else if (GlowObject == stop)
+	{
+		tickertext = System.getString("winamp.playback", 3);
+	}
+	else if (GlowObject == next)
+	{
+		tickertext = System.getString("winamp.playback", 4);
+	}
+	parent.sendAction("sysinfo", tickertext, 0,0,0,0);
 }
