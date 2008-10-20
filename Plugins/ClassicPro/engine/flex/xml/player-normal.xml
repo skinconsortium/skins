@@ -11,7 +11,8 @@
 		image="cpro.flex.player.normal.prev"
 		downImage="cpro.flex.player.normal.prev.down"
 		hoverImage="cpro.flex.player.normal.prev.hover"
-		tooltip="Previous"
+		tooltip="@winamp.playback#0"
+		translate="2"
 		alpha="253"
 	/>
 	<layer id="cbutton.prev.glow" fitparent="1" ghost="1" image="cpro.flex.player.normal.prev.glow" alpha="0"/>
@@ -23,7 +24,8 @@
 		image="cpro.flex.player.normal.play"
 		downImage="cpro.flex.player.normal.play.down"
 		hoverImage="cpro.flex.player.normal.play.hover"
-		tooltip="Play"
+		tooltip="@winamp.playback#1"
+		translate="2"
 		alpha="253"
 	/>
 	<layer id="cbutton.play.glow" fitparent="1" ghost="1" image="cpro.flex.player.normal.play.glow" alpha="0"/>
@@ -35,7 +37,8 @@
 		image="cpro.flex.player.normal.pause"
 		downImage="cpro.flex.player.normal.pause.down"
 		hoverImage="cpro.flex.player.normal.pause.hover"
-		tooltip="Pause"
+		tooltip="@winamp.playback#2"
+		translate="2"
 		alpha="253"
 	/>
 	<layer id="cbutton.pause.glow" fitparent="1" ghost="1" image="cpro.flex.player.normal.pause.glow" alpha="0"/>
@@ -51,7 +54,8 @@
 		image="cpro.flex.player.normal.stop"
 		downImage="cpro.flex.player.normal.stop.down"
 		hoverImage="cpro.flex.player.normal.stop.hover"
-		tooltip="Stop"
+		tooltip="@winamp.playback#3"
+		translate="2"
 		alpha="253"
 	/>
 	<layer id="cbutton.stop.glow" fitparent="1" ghost="1" image="cpro.flex.player.normal.stop.glow" alpha="0"/>
@@ -63,7 +67,8 @@
 		image="cpro.flex.player.normal.next"
 		downImage="cpro.flex.player.normal.next.down"
 		hoverImage="cpro.flex.player.normal.next.hover"
-		tooltip="Next"
+		tooltip="@winamp.playback#4"
+		translate="2"
 		alpha="253"
 	/>
 	<layer id="cbutton.next.glow" fitparent="1" ghost="1" image="cpro.flex.player.normal.next.glow" alpha="0"/>
@@ -77,7 +82,8 @@
 		image="cpro.flex.player.normal.open"
 		downImage="cpro.flex.player.normal.open.down"
 		hoverImage="cpro.flex.player.normal.open.hover"
-		tooltip="Open file(s)"
+		tooltip="@winamp.playback#5"
+		translate="2"
 		alpha="253"
 	/>
 
@@ -138,8 +144,6 @@
 		x="0" y="0" h="30" w="90"
 		id="time"
 		display="TIME"
-		sysregion="1"
-		valign="top"
 		alpha="253"
 		userdata="normal.time"
 	/>
@@ -150,31 +154,29 @@
 	
 	<SongTicker
 		x="0" y="0" h="30" w="90"
-		id="m.st.ticker"
-		sysregion="1"
+		id="songticker"
 		alpha="253"
 		userdata="normal.songticker"
 	/>
-	<text
+
+	<script
+		file="@WINAMPPATH@\Plugins\classicPro\engine\flex\scripts\text.maki"
+		param="songticker,cpro.flex.player.normal.songticker.region"
+	/>
+
+	<Text
 		x="0" y="0" h="30" w="90"
-		id="m.st.news"
-		sysregion="1"
+		id="sysinfo"
 		alpha="253"
+		visible="0"
 		userdata="normal.songticker"
 	/>
-	<script
-		file="@WINAMPPATH@\Plugins\classicPro\engine\xui\ModernSongticker\ModernSongticker.maki" 
-		param="main;normal;id_volume;id_seeker;cbutton.prev;cbutton.next;cbutton.open;id_shuf;id_rep;id_mute"
-	/>
+
 	<script
 		file="@WINAMPPATH@\Plugins\classicPro\engine\flex\scripts\text.maki"
-		param="m.st.ticker,cpro.flex.player.normal.songticker.region"
+		param="sysinfo,cpro.flex.player.normal.songticker.region"
 	/>
-	<script
-		file="@WINAMPPATH@\Plugins\classicPro\engine\flex\scripts\text.maki"
-		param="m.st.news,cpro.flex.player.normal.songticker.region"
-	/>
-	
+
 	<!-- Sysbuttons -->
 	<button
 		x="0" y="0"
@@ -193,6 +195,11 @@
 		downImage="cpro.flex.player.normal.close.down"
 		tooltip="Exit Winamp"
 		alpha="253"
+	/>
+
+	<script
+		file="@WINAMPPATH@\Plugins\classicPro\engine\flex\scripts\ipc.maki"
+		param="songticker;sysinfo"
 	/>
 
 </layout>
