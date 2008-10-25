@@ -75,7 +75,7 @@
  <groupdef id="wasabi.standardframe.statusbar" xuitag="Wasabi:StandardFrame:Status">
 	<group id="wasabi.frame.layout" fitparent="1"/>
 	<LayoutStatus id="standardframe.layoutstatus" x="13" y="-33" relaty="1" w="-30" relatw="1" h="20" exclude="{system}" />
-	<script id="standardframe.script" file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\scripts\standardframe.maki" param="4,19,-8,-24,0,0,1,1" />
+	<script id="standardframe.script" file="@WINAMPPATH@\Plugins\classicPro\engine\one\scripts\standardframe.maki" param="4,19,-8,-24,0,0,1,1" />
 </groupdef>
 
 
@@ -87,7 +87,7 @@
 
 <groupdef id="wasabi.standardframe.nostatusbar" xuitag="Wasabi:StandardFrame:NoStatus">
 	<group id="wasabi.frame.layout" fitparent="1"/>
-	<script id="standardframe.script" file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\scripts\standardframe.maki" param="4,19,-8,-24,0,0,1,1" />
+	<script id="standardframe.script" file="@WINAMPPATH@\Plugins\classicPro\engine\one\scripts\standardframe.maki" param="4,19,-8,-24,0,0,1,1" />
 </groupdef>
 
 

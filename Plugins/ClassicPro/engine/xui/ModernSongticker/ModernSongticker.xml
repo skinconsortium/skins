@@ -12,5 +12,5 @@
 		color="Player.SongTicker.Text" fontsize="16" valign="top" antialias="0"
 	/>
 	
-	<script file="@WINAMPPATH@\Plugins\classicPro\engine\xui\ModernSongticker\ModernSongticker.maki"/>
+	<script file="@WINAMPPATH@\Plugins\classicPro\engine\xui\ModernSongticker\ModernSongticker.maki" param=""/>
 </groupdef>
