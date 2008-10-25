@@ -3,12 +3,13 @@
 Function openDrawer(int drawerNo);
 Function gotoPrevDrawer();
 Function gotoNextDrawer();
+Function setDrawerBG(int mode); //0=normal, 1=tagview, 2=neweq
 
 Class Group CProWidget;
 // {
 	Member boolean CProWidget.scrollSkip;
 	Member boolean CProWidget.disabled;
-	Member boolean CProWidget.custombg;
+	Member int CProWidget.custombg;
 	Member boolean CProWidget.hideVis;
 // }
 
@@ -21,7 +22,7 @@ Global Group myGroup;
 Global CProWidget drawer_equalizer, drawer_savedpl, drawer_tagviewer, drawer_avs, drawer_ct, drawer_skinchooser;
 Global PopUpMenu popMenu, widgetmenu;
 Global Button but_drawerGoto;
-Global GuiObject cpro_sui, gad_Grid, gad_Grid2;
+Global GuiObject cpro_sui, gad_Grid, gad_GridEQ;
 Global Layer ct_fakeLayer;
 Global Boolean gotThemes, mouse_but_drawerGoto, cuseqbg;
 
@@ -38,10 +39,11 @@ System.onScriptLoaded() {
 	but_drawerGoto = myGroup.findObject("drawer.menulist");
 
 	drawer_equalizer = myGroup.findObject("drawer.equalizer");
+	drawer_equalizer.custombg = 2;
 	internalWidgets.addItem(drawer_equalizer);
 
 	drawer_tagviewer = myGroup.findObject("drawer.tagviewer");
-	drawer_tagviewer.custombg = TRUE;
+	drawer_tagviewer.custombg = 1;
 	internalWidgets.addItem(drawer_tagviewer);
 
 	drawer_avs = myGroup.findObject("drawer.avs");
@@ -64,7 +66,7 @@ System.onScriptLoaded() {
 	numInternalWidgets = internalWidgets.getNumItems();
 
 	gad_Grid = myGroup.findObject("centro.gadget.grid");
-	gad_Grid2 = myGroup.findObject("centro.gadget.grid2");
+	gad_GridEQ = myGroup.findObject("centro.gadget.grid.eq");
 	
 	cpro_sui = getContainer("main").getLayout("normal").findObject("cpro.sui");
 
@@ -154,8 +156,9 @@ openDrawer(int drawerNo){
 			gr = internalWidgets.enumItem(drawerNo); // Load Default Widget
 		}
 
-		if(cuseqbg){
-		if(gr.custombg){
+		setDrawerBG(gr.custombg);
+		/*if(cuseqbg){
+		if(gr.custombg==0){
 				gad_Grid.hide();
 				gad_Grid2.show();
 			}
@@ -163,7 +166,7 @@ openDrawer(int drawerNo){
 				gad_Grid2.hide();
 				gad_Grid.show();
 		}
-		}
+		}*/
 
 		/*if (gr.hideVis == TRUE)
 		{
@@ -200,6 +203,7 @@ openDrawer(int drawerNo){
 	}
 	else
 	{
+		setDrawerBG(0); //martin.. this must be custom set by widget
 		GuiObject gr = dummyBuck.enumChildren(drawerNo-userWidgetOffset);
 		String id = gr.getXMLparam("userdata");
 		customObj.setXmlParam("groupid", id);
@@ -287,4 +291,25 @@ gotoNextDrawer(){ //wheelDown
 		}
 	}
 	openDrawer(pos);
+}
+
+setDrawerBG(int mode){
+	if(mode==0){
+		gad_GridEQ.hide();
+		gad_Grid.setXmlParam("bottomleft", "player.gframe.7");
+		gad_Grid.show();
+	}
+	else if(mode==1){
+		gad_GridEQ.hide();
+		gad_Grid.setXmlParam("bottomleft", "player.gframe.7.alt");
+		gad_Grid.show();
+	}
+	else if(mode==2){
+		if(!cuseqbg){
+			setDrawerBG(0);
+			return;
+		}
+		gad_Grid.hide();
+		gad_GridEQ.show();
+	}
 }

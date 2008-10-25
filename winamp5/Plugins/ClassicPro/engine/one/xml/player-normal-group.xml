@@ -221,7 +221,7 @@
 
 
 <groupdef id="drawer.tagviewer" name="Tag Viewer">
-	<group id="drawer.tagviewer.bottomleft" x="0" y="-27" w="-6" relatw="1" relaty="1"/>
+	<!--<group id="drawer.tagviewer.bottomleft" x="0" y="-27" w="-6" relatw="1" relaty="1"/>-->
 
 	<Wasabi:AlbumArt id="tagviewer.cover" x="6" y="4" w="111" h="111" move="1"/>
 	<group id="info.component.infodisplay" x="130" y="4" w="-132" h="-8" relatw="1" relath="1"/>
@@ -304,7 +304,7 @@
 		bottomleft="player.gframe.7" bottom="player.gframe.8" bottomright="player.gframe.9"
 		regionop="1" move="1"
 	/>
-	<grid id="centro.gadget.grid2" fitparent="1" visible="0"
+	<grid id="centro.gadget.grid.eq" fitparent="1" visible="0"
 		topleft="player.gframe.1.alt" top="player.gframe.2.alt" topright="player.gframe.3.alt"
 		regionop="1" move="1"
 	/>
