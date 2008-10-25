@@ -177,6 +177,11 @@
 		param="sysinfo,cpro.flex.player.normal.songticker.region"
 	/>
 
+	<script
+		file="@WINAMPPATH@\Plugins\classicPro\engine\flex\scripts\songticker.maki"
+		param="songticker;sysinfo"
+	/>
+
 	<!-- Sysbuttons -->
 	<button
 		x="0" y="0"
@@ -195,11 +200,6 @@
 		downImage="cpro.flex.player.normal.close.down"
 		tooltip="Exit Winamp"
 		alpha="253"
-	/>
-
-	<script
-		file="@WINAMPPATH@\Plugins\classicPro\engine\flex\scripts\ipc.maki"
-		param="songticker;sysinfo"
 	/>
 
 </layout>
