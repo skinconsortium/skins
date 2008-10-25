@@ -20,30 +20,46 @@ var# |                Class |                                    What
 0010 |               String |                                        s
 0011 |               String |                                  "DEBUG"
 0012 |                  Int |                                        s
-0013 |                 Text |                                  sysinfo
-0014 |            GuiObject |                               songticker
-0015 |               Layout |                                   parent
-0016 |                Timer |                                infoTimer
-0017 |               String |                                      ";"
-0018 |                  Int |                                      666
-0019 |               String |                                   action
-001A |               String |                                    param
-001B |                  Int |                                        x
-001C |                  Int |                                        y
-001D |                  Int |                                       p1
-001E |                  Int |                                       p2
-001F |            GuiObject |                                   source
-0020 |               String |                                "sysinfo"
+0013 |                  Int |                                  message
+0014 |                  Int |                                       i0
+0015 |                  Int |                                       i1
+0016 |                  Int |                                       i2
+0017 |               String |                                       s0
+0018 |               String |                                       s1
+0019 |            GuiObject |                                      obj
+001A |               Layout |                             parentLayout
+001B |               String |                                   action
+001C |               String |                                    param
+001D |                  Int |                                  message
+001E |                  Int |                                        y
+001F |                  Int |                                       p1
+0020 |                  Int |                                       p2
+0021 |            GuiObject |                                   source
+0022 |                 Text |                                  sysinfo
+0023 |            GuiObject |                               songticker
+0024 |                Timer |                                infoTimer
+0025 |               String |                                      ";"
+0026 |                  Int |                                      666
+0027 |                  Int |                                      msg
+0028 |                  Int |                                       i0
+0029 |                  Int |                                       i1
+002A |                  Int |                                       i2
+002B |               String |                                       s0
+002C |               String |                                       s1
+002D |            GuiObject |                                      obj
+002E |                  Int |                                     0000
 -- Events Table ------------------------------------------------------
 var# |         Code Pointer |                                    What 
 ----------------------------------------------------------------------
-0000 |                 0153 |                                      S.o
-0000 |                 020E |                                      S.o
-0015 |                 0237 |                                      p.o
-0016 |                 02C1 |                                      i.o
+001A |                 019A |                                      p.o
+0000 |                 01FC |                                      S.o
+0000 |                 02A5 |                                      S.o
+0024 |                 034E |                                      i.o
 -- User Functions Table ----------------------------------------------
                Code Pointer |                                    What 
 ----------------------------------------------------------------------
                        0000 |                             versionCheck
                        00F2 |                                    debug
                        011D |                                 debugInt
+                       017C |                           initDispatcher
+                       02CE |                                onMessage

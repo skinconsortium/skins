@@ -11,15 +11,16 @@
 #include <lib/std.mi>
 #include <lib/com/glowobject.m>
 #include <lib/../../ClassicProFlex/classicProFlex.mi>
+#include dispatch_ifc.m
+#include dispatch_codes.m
 
 Function GlowObject newGlowObject(String id);
 
 Global GlowObject stop, play, pause, prev, next;
-Global layout parent;
 
 System.onScriptLoaded ()
 {
-	parent = getScriptGroup().getParentLayout();
+	initDispatcher();
 	stop = newGlowObject("cbutton.stop");
 	play = newGlowObject("cbutton.play");
 	pause = newGlowObject("cbutton.pause");
@@ -76,5 +77,5 @@ GlowObject.onLeftButtonDown (int x, int y)
 	{
 		tickertext = System.getString("winamp.playback", 4);
 	}
-	parent.sendAction("sysinfo", tickertext, 0,0,0,0);
+	sendMessageS(SHOW_SYSINFO, tickertext);
 }
