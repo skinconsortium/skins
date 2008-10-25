@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ClassicPro::Flex version="0.5">
+	<Appearance>
+		<ButtonGlow fadeInSpeed="0.3" fadeOutSpeed="0.5"/>
+		<PlayPauseButton normal="1" shade="0"/>
+	</Appearance>
+	<TextSettings>
+		<Style id="normal.time"
+			font="player.normal.font.time"
+			fontsize="18"
+			align="center"
+			bold="0"
+			italic="0"
+			antialiasing="1"
+			valign="top"
+		/>
+		<Style id="normal.songticker"
+			font="player.normal.font.songticker"
+			fontsize="18"
+			align="center"
+			bold="0"
+			italic="0"
+			antialiasing="1"
+			valign="top"
+		/>
+	</TextSettings>
+</ClassicPro::Flex>
