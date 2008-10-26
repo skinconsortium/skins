@@ -89,7 +89,7 @@
 
 	<!-- Seek -->
 
-	<layer x="0" y="0" id="seek.fillbar" image="cpro.flex.player.normal.seek.fillbar" tooltip="Seek" rectrgn="0" move="0"/>
+	<layer x="0" y="0" id="seek.fillbar" image="cpro.flex.player.normal.seek.fillbar" translate="2" tooltip="@winamp.playback#20" rectrgn="0" move="0"/>
 	<script
 		file="@WINAMPPATH@\Plugins\classicPro\engine\flex\scripts\seekbar.maki"
 		param="seek.fillbar,cpro.flex.player.normal.seek.fillbar.map"
@@ -97,7 +97,7 @@
 
 	<!-- Volume -->
 
-	<layer x="0" y="0" id="volume.fillbar" image="cpro.flex.player.normal.volume.fillbar" tooltip="Volume" rectrgn="0" move="0"/>
+	<layer x="0" y="0" id="volume.fillbar" image="cpro.flex.player.normal.volume.fillbar" translate="2" tooltip="@winamp.playback#10" rectrgn="0" move="0"/>
 	<script
 		file="@WINAMPPATH@\Plugins\classicPro\engine\flex\scripts\volumebar.maki"
 		param="volume.fillbar,cpro.flex.player.normal.volume.fillbar.map"

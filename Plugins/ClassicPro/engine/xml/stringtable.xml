@@ -1,8 +1,14 @@
-<!-- Browser String Table -->
+<!-- 
+
+Winamp playback string resources
+version: 0.1
+date: 2008/10/26
+
+-->
 
 <StringTable id="winamp.playback">
 
-	<!-- cbutton tooltips, songticker messages -->
+	<!-- cbuttons -->
 	<StringEntry id="0"		string="Previous Track"/>
 	<StringEntry id="1"		string="Start Playback"/>
 	<StringEntry id="2"		string="Pause Playback"/>
@@ -11,4 +17,16 @@
 	<StringEntry id="5"		string="Open file(s)"/>
 	<StringEntry id="6"		string="Resume Playback"/>
 	<StringEntry id="7"		string="Restart Playback"/>
+
+	<!-- volume -->
+	<StringEntry id="10"	string="Volume"/>
+	<StringEntry id="11"	string="Mute Volume"/>
+	<StringEntry id="12"	string="Turn Volume On"/>
+	<StringEntry id="13"	string="Mute: 0n"/>
+	<StringEntry id="14"	string="Mute: 0ff"/>
+	<StringEntry id="15"	string="Volume: "/>		<!-- songticker message pre -->
+	<StringEntry id="16"	string="%"/>			<!-- songticker message post -->
+
+	<!-- seek -->
+	<StringEntry id="20"	string="Seeker"/>
 </StringTable>

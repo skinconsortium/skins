@@ -20,46 +20,93 @@ var# |                Class |                                    What
 0010 |               String |                                        s
 0011 |               String |                                  "DEBUG"
 0012 |                  Int |                                        s
-0013 |                  Int |                                  message
-0014 |                  Int |                                       i0
-0015 |                  Int |                                       i1
-0016 |                  Int |                                       i2
-0017 |               String |                                       s0
-0018 |               String |                                       s1
-0019 |            GuiObject |                                      obj
-001A |               Layout |                             parentLayout
-001B |               String |                                   action
-001C |               String |                                    param
-001D |                  Int |                                  message
-001E |                  Int |                                        y
-001F |                  Int |                                       p1
-0020 |                  Int |                                       p2
-0021 |            GuiObject |                                   source
-0022 |                 Text |                                  sysinfo
-0023 |            GuiObject |                               songticker
-0024 |                Timer |                                infoTimer
-0025 |               String |                                      ";"
-0026 |                  Int |                                      666
-0027 |                  Int |                                      msg
-0028 |                  Int |                                       i0
-0029 |                  Int |                                       i1
-002A |                  Int |                                       i2
-002B |               String |                                       s0
-002C |               String |                                       s1
-002D |            GuiObject |                                      obj
-002E |                  Int |                                     0000
+0013 |                Layer |                                  FillBar[]
+0014 |               String |                                "fillmap"
+0015 |               String |                                    "pos"
+0016 |               String |                                "reverse"
+0017 |               String |                               "dragable"
+0018 |               String |                               "dragging"
+0019 |                Layer |                                        l
+001A |               String |                                 bitmapID
+001B |              FillBar |                                       fb
+001C |              FillBar |                                       fb
+001D |               String |                                 bitmapID
+001E |              FillBar |                                       fb
+001F |                  Map |                                      tmp
+0020 |              FillBar |                                       fb
+0021 |                  Int |                                threshold
+0022 |                  Int |                                        x
+0023 |                  Int |                                        y
+0024 |                  Int |                                        x
+0025 |                  Int |                                        y
+0026 |                  Int |                                mouseLeft
+0027 |                  Int |                                 mouseTop
+0028 |                  Int |                                 position
+0029 |                  Int |                                   update
+002A |                  Int |                                        x
+002B |                  Int |                                        y
+002C |                  Int |                                mouseLeft
+002D |                  Int |                                 mouseTop
+002E |                  Int |                                 position
+002F |                  Int |                                   update
+0030 |              FillBar |                                       fb
+0031 |                  Int |                                      pos
+0032 |              FillBar |                                       fb
+0033 |                  Int |                                      pos
+0034 |               Layout |                             parentLayout
+0035 |                  Int |                                  message
+0036 |                  Int |                                       i0
+0037 |                  Int |                                       i1
+0038 |                  Int |                                       i2
+0039 |               String |                                       s0
+003A |               String |                                       s1
+003B |            GuiObject |                                      obj
+003C |                  Int |                                  message
+003D |                  Int |                                       i0
+003E |            GuiObject |                                      obj
+003F |                  Int |                                  message
+0040 |               String |                                       s0
+0041 |            GuiObject |                                      obj
+0042 |                  Int |                                  message
+0043 |            GuiObject |                                      obj
+0044 |              FillBar |                                volumeBar
+0045 |               String |                                      ","
+0046 |                Layer |                                      tmp
+0047 |                  Int |                                   newvol
+0048 |                  Int |                                     0000
+0049 |               String |                        "winamp.playback"
+004A |                  Int |                                       15
+004B |                  Int |                                      255
+004C |                  Int |                                      100
+004D |                  Int |                                       16
+004E |              FillBar |                                       fb
+004F |                  Int |                                      pos
+0050 |              FillBar |                                       fb
+0051 |                  Int |                                      pos
 -- Events Table ------------------------------------------------------
 var# |         Code Pointer |                                    What 
 ----------------------------------------------------------------------
-001A |                 019A |                                      p.o
-0000 |                 01FC |                                      S.o
-0000 |                 02A5 |                                      S.o
-0024 |                 034E |                                      i.o
+0013 |                 02A5 |                                      F.o
+0013 |                 02F6 |                                      F.o
+0013 |                 03F3 |                                      F.o
+0000 |                 067B |                                      S.o
+0000 |                 072C |                                      S.o
+0000 |                 074D |                                      S.o
 -- User Functions Table ----------------------------------------------
                Code Pointer |                                    What 
 ----------------------------------------------------------------------
                        0000 |                             versionCheck
                        00F2 |                                    debug
                        011D |                                 debugInt
-                       017C |                           initDispatcher
-                       02CE |                                onMessage
+                       0153 |                        FillBar_construct
+                       01BC |                           FillBar_setMap
+                       0228 |                         FillBar_destruct
+                       0250 |                      FillBar_setPosition
+                       07CB |                           FillBar_onDrag
+                       07F2 |                        FillBar_onEndDrag
+                       0542 |                           initDispatcher
+                       0560 |                              sendMessage
+                       05B8 |                             sendMessageI
+                       05FD |                             sendMessageS
+                       0642 |                             sendMessageO
+                       FFFFFFFF |                             updateVolume

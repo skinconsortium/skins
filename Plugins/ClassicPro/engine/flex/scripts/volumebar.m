@@ -1,7 +1,7 @@
 /**
  * volumebar.m
  *
- * Manages custom volume fillbar.
+ * Manages custom volume fillbar and related volume stuff.
  *
  * @package	com.skinconsortium.cpro.flex
  * @author	mpdeimos
@@ -11,6 +11,7 @@
 
 #include <lib/std.mi>
 #include <lib/com/fillbar.m>
+#include dispatch_codes.m
 
 Function updateVolume();
 
@@ -18,6 +19,7 @@ Global FillBar volumeBar;
 
 System.onScriptLoaded ()
 {
+	initDispatcher();
 	Layer tmp = getScriptGroup().findObject(getToken(getParam(), ",", 0));
 	volumeBar = FillBar_construct(tmp, getToken(getParam(), ",", 1));
 	volumeBar.dragable = TRUE;
@@ -33,6 +35,7 @@ System.onScriptUnloading ()
 System.onVolumeChanged (int newvol)
 {
 	FillBar_setPosition(volumeBar, newvol);
+	SendMessageS(SHOW_SYSINFO, getString("winamp.playback", 15) + integerToString(newvol/255*100) + getString("winamp.playback", 16));
 }
 
 /*
