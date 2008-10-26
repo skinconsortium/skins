@@ -11,7 +11,6 @@
 #include <lib/std.mi>
 #include <lib/com/glowobject.m>
 #include <lib/../../ClassicProFlex/classicProFlex.mi>
-#include dispatch_ifc.m
 #include dispatch_codes.m
 
 Function GlowObject newGlowObject(String id);
