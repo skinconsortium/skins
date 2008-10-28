@@ -1,0 +1,41 @@
+<groupdef id="player.toggle.button" xuitag="Core-X6:ToggleButton" embed_xui="background">
+	<togglebutton
+		id="background"
+		fitparent="1"
+	/>
+	<layer
+		id="down"
+		fitparent="1"
+		ghost="1"
+		alpha="0"
+	/>
+	<layer
+		id="light"
+		fitparent="1"
+		ghost="1"
+		alpha="150"
+	/>
+
+	<script id="player.toggle.button.script" file="xui/light_toggle_button.maki"/>
+</groupdef>
+
+<groupdef id="player.button" xuitag="Core-X6:Button" embed_xui="background">
+	<button
+		id="background"
+		fitparent="1"
+	/>
+	<layer
+		id="down"
+		fitparent="1"
+		ghost="1"
+		alpha="0"
+	/>
+	<layer
+		id="light"
+		fitparent="1"
+		ghost="1"
+		alpha="150"
+	/>
+
+	<script id="player.toggle.button.script" file="xui/light_toggle_button.maki"/>
+</groupdef>

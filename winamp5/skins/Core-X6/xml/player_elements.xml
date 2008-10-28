@@ -33,4 +33,32 @@
 	<bitmap id="player.normal.LCD.digits.bitmap" file="player/digits.png" x="0" y="0" w="238" h="52" gammagroup="Lights"/>
 	<bitmapfont id="player.normal.LCD.digits.font" file="player.normal.LCD.digits.bitmap" charwidth="15" charheight="26" hspacing="0" vspacing="0"/>
 
+	<!-- Toggle Buttons -->
+	<bitmap id="player.normal.toggle.background.bitmap" file="player/plastic.png" x="208" y="235" w="21" h="21" gammagroup="PlasticBackgrounds"/>
+	<bitmap id="player.normal.toggle.background.down.bitmap" file="player/plastic.png" x="258" y="235" w="21" h="21" gammagroup="PlasticBackgrounds"/>
+
+	<bitmap id="player.normal.toggle.repeat.light.bitmap" file="player/lights.png" x="208" y="235" w="21" h="21" gammagroup="Lights"/>
+	<bitmap id="player.normal.toggle.shuffle.light.bitmap" file="player/lights.png" x="212" y="262" w="21" h="21" gammagroup="Lights"/>
+	<bitmap id="player.normal.toggle.crossfade.light.bitmap" file="player/lights.png" x="223" y="289" w="21" h="21" gammagroup="Lights"/>
+	<bitmap id="player.normal.toggle.pledit.light.bitmap" file="player/lights.png" x="239" y="310" w="21" h="21" gammagroup="Lights"/>
+	<bitmap id="player.normal.toggle.ml.light.bitmap" file="player/lights.png" x="260" y="328" w="21" h="21" gammagroup="Lights"/>
+
+	<!-- Playback Buttons -->
+	<bitmap id="player.normal.play.background.bitmap" file="player/plastic.png" x="449" y="13" w="63" h="63" gammagroup="PlasticBackgrounds"/>
+	<bitmap id="player.normal.play.background.down.bitmap" file="player/plastic.png" x="539" y="13" w="63" h="63" gammagroup="PlasticBackgrounds"/>
+	<bitmap id="player.normal.play.light.bitmap" file="player/lights.png" x="449" y="13" w="63" h="63" gammagroup="Lights"/>
+	<bitmap id="player.normal.play.glowlight.bitmap" file="player/lights.png" x="539" y="13" w="63" h="63" gammagroup="Lights"/>
+	
+	<bitmap id="player.normal.stop.background.bitmap" file="player/plastic.png" x="450" y="75" w="47" h="48" gammagroup="PlasticBackgrounds"/>
+	<bitmap id="player.normal.stop.background.down.bitmap" file="player/plastic.png" x="540" y="75" w="47" h="48" gammagroup="PlasticBackgrounds"/>
+	<bitmap id="player.normal.stop.light.bitmap" file="player/lights.png" x="450" y="75" w="47" h="48" gammagroup="Lights"/>
+
+	<bitmap id="player.normal.next.background.bitmap" file="player/plastic.png" x="432" y="115" w="51" h="32" gammagroup="PlasticBackgrounds"/>
+	<bitmap id="player.normal.next.background.down.bitmap" file="player/plastic.png" x="522" y="115" w="51" h="32" gammagroup="PlasticBackgrounds"/>
+	<bitmap id="player.normal.next.light.bitmap" file="player/lights.png" x="432" y="115" w="51" h="32" gammagroup="Lights"/>
+
+	<bitmap id="player.normal.previous.background.bitmap" file="player/plastic.png" x="426" y="137" w="37" h="28" gammagroup="PlasticBackgrounds"/>
+	<bitmap id="player.normal.previous.background.down.bitmap" file="player/plastic.png" x="516" y="137" w="37" h="28" gammagroup="PlasticBackgrounds"/>
+	<bitmap id="player.normal.previous.light.bitmap" file="player/lights.png" x="426" y="137" w="37" h="28" gammagroup="Lights"/>
+
 </elements>

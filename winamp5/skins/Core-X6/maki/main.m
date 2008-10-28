@@ -1,4 +1,5 @@
 #include </lib/std.mi>
+#include </lib/config.mi>
 
 //Declare vis animated layers
 Global AnimatedLayer lyrVis1;
@@ -22,13 +23,27 @@ Global AnimatedLayer lyrVis18;
 Global AnimatedLayer lyrVis19;
 Global AnimatedLayer lyrVis20;
 Global AnimatedLayer lyrVis21;
-Global Text Ticker;
+Global GuiObject Ticker;
+
+Global Button btnMNCrossfade, btnMNShuffle, btnMNRepeat;
+
+Global Layer LCDCrossfade;
+Global Layer LCDShuffle;
+Global Layer LCDRepeat;
+Global Layer LCDMute;
+
+Global Button btnMNPlay;
+Global Layer lyrMNPlayDown, lyrMNPlayLight;
 
 Global Timer tmrVis;
+Global Timer tmrPlay2Pause;
 
 Global Int PrevValues1, PrevValues2, PrevValues3, PrevValues4, PrevValues5, PrevValues6, PrevValues7;
 Global Int PrevValues8, PrevValues9, PrevValues10, PrevValues11, PrevValues12, PrevValues13, PrevValues14;
 Global Int PrevValues15, PrevValues16, PrevValues17, PrevValues18, PrevValues19, PrevValues20, PrevValues21;
+
+#include "play2pause.m"
+#include "songinfo.m"
 
 function SetVisFrame (animatedlayer vislayer, int Length, int BandStart, int BandStop, int PrevValue, int Offset);
 
@@ -38,7 +53,6 @@ System.onScriptLoaded() {
 	Layout lytMainNormal = cntMain.GetLayout("normal");
 	Group grpPlayerNormal = lytMainNormal.GetObject("player.normal.group");
 	Group grpLCD = grpPlayerNormal.GetObject("player.normal.LCD");
-	
 	// Getting vis layers
 	lyrVis1 = grpLCD.getObject("vis1");
 	lyrVis2 = grpLCD.getObject("vis2");
@@ -61,12 +75,30 @@ System.onScriptLoaded() {
 	lyrVis19 = grpLCD.getObject("vis19");
 	lyrVis20 = grpLCD.getObject("vis20");
 	lyrVis21 = grpLCD.getObject("vis21");
+
 	Ticker = grpLCD.getObject("ticker");
+
+	btnMNPlay = grpPlayerNormal.getObject("play2pause");
+	lyrMNPlayDown = grpPlayerNormal.getObject("play2pause.pressed");
+	lyrMNPlayLight = grpPlayerNormal.getObject("play2pause.light");
+	tmrPlay2Pause = new Timer;
+	
+	btnMNCrossfade = grpPlayerNormal.getObject("crossfade");
+	btnMNShuffle = grpPlayerNormal.getObject("shuffle");
+	btnMNRepeat = grpPlayerNormal.getObject("repeat");
+
+	LCDCrossfade = grpLCD.getObject("status.crossfade");
+	LCDShuffle = grpLCD.getObject("status.shuffle");
+	LCDRepeat = grpLCD.getObject("status.repeat");
 
 	tmrVis = new Timer;
 	tmrVis.SetDelay(30);
 	tmrVis.Start();
 	tmrVis.OnTimer();
+
+	play2pauseOnLoaded();
+	songinfoOnLoaded();
+
 }
 
 tmrVis.OnTimer(){
@@ -80,17 +112,17 @@ tmrVis.OnTimer(){
 	PrevValues8 = SetVisFrame(lyrVis8, 14, 25, 27, PrevValues8, 0);
 	PrevValues9 = SetVisFrame(lyrVis9, 14, 28, 31, PrevValues9, 0);
 	PrevValues10 = SetVisFrame(lyrVis10, 14, 32, 34, PrevValues10, 0);
-	PrevValues11 = SetVisFrame(lyrVis11, 15, 35, 38, PrevValues1, 0);
-	PrevValues12 = SetVisFrame(lyrVis12, 15, 39, 41, PrevValues2, 0);
-	PrevValues13 = SetVisFrame(lyrVis13, 15, 42, 45, PrevValues3, 0);
-	PrevValues14 = SetVisFrame(lyrVis14, 15, 46, 49, PrevValues4, 0);
-	PrevValues15 = SetVisFrame(lyrVis15, 15, 50, 52, PrevValues5, 0);
-	PrevValues16 = SetVisFrame(lyrVis16, 15, 53, 56, PrevValues6, 0);
-	PrevValues17 = SetVisFrame(lyrVis17, 15, 57, 59, PrevValues7, 0);
-	PrevValues18 = SetVisFrame(lyrVis18, 15, 60, 63, PrevValues8, 0);
-	PrevValues19 = SetVisFrame(lyrVis19, 14, 64, 67, PrevValues9, 0);
-	PrevValues20 = SetVisFrame(lyrVis20, 13, 68, 71, PrevValues10, 0);
-	PrevValues21 = SetVisFrame(lyrVis21, 10, 72, 75, PrevValues10, -1);
+	PrevValues11 = SetVisFrame(lyrVis11, 15, 35, 38, PrevValues11, 0);
+	PrevValues12 = SetVisFrame(lyrVis12, 15, 39, 41, PrevValues12, 0);
+	PrevValues13 = SetVisFrame(lyrVis13, 15, 42, 45, PrevValues13, 0);
+	PrevValues14 = SetVisFrame(lyrVis14, 15, 46, 48, PrevValues14, 0);
+	PrevValues15 = SetVisFrame(lyrVis15, 15, 49, 51, PrevValues15, 0);
+	PrevValues16 = SetVisFrame(lyrVis16, 15, 52, 54, PrevValues16, 0);
+	PrevValues17 = SetVisFrame(lyrVis17, 15, 55, 57, PrevValues17, 0);
+	PrevValues18 = SetVisFrame(lyrVis18, 15, 58, 60, PrevValues18, 0);
+	PrevValues19 = SetVisFrame(lyrVis19, 14, 61, 64, PrevValues19, 0);
+	PrevValues20 = SetVisFrame(lyrVis20, 13, 65, 67, PrevValues20, 0);
+	PrevValues21 = SetVisFrame(lyrVis21, 10, 68, 70, PrevValues21, -1);
 }
 
 SetVisFrame(animatedlayer vislayer, int Length, int BandStart, int BandStop, int PrevValue, int Offset) {
@@ -111,9 +143,7 @@ SetVisFrame(animatedlayer vislayer, int Length, int BandStart, int BandStop, int
 	return PrevValue;
 }
 
-System.OnPlay(){
-}
-
 System.onScriptUnLoading() {
 	Delete tmrVis;
+	Delete tmrPlay2Pause;
 }
