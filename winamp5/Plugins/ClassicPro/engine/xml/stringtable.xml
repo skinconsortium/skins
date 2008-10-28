@@ -24,9 +24,9 @@ date: 2008/10/26
 	<StringEntry id="12"	string="Turn Volume On"/>
 	<StringEntry id="13"	string="Mute: 0n"/>
 	<StringEntry id="14"	string="Mute: 0ff"/>
-	<StringEntry id="15"	string="Volume: "/>		<!-- songticker message pre -->
-	<StringEntry id="16"	string="%"/>			<!-- songticker message post -->
+	<StringEntry id="15"	string="Volume"/> <!-- Songticker Message -->
 
 	<!-- seek -->
 	<StringEntry id="20"	string="Seeker"/>
+	<StringEntry id="21"	string="Seek"/> <!-- Songticker Message -->
 </StringTable>

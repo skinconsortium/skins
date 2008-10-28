@@ -35,7 +35,7 @@ System.onScriptUnloading ()
 System.onVolumeChanged (int newvol)
 {
 	FillBar_setPosition(volumeBar, newvol);
-	SendMessageS(SHOW_SYSINFO, getString("winamp.playback", 15) + integerToString(newvol/255*100) + getString("winamp.playback", 16));
+	SendMessageS(SHOW_SYSINFO, getString("winamp.playback", 15) + ": " + integerToString(newvol/255*100) + "%");
 }
 
 /*
