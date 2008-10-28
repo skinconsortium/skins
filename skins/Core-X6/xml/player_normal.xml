@@ -78,6 +78,118 @@
 		w="13" h="13"
 	/>
 
+	<Core-X6:ToggleButton
+		id="repeat"
+		x="26" y="120"
+		w="21" h="21"
+		image="player.normal.toggle.background.bitmap"
+		dimage="player.normal.toggle.background.down.bitmap"
+		foreimage="player.normal.toggle.repeat.light.bitmap"
+		cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Repeat"
+		cfgval="2"
+		ttip="Repeat"
+	/>
+	<Core-X6:ToggleButton
+		id="shuffle"
+		x="30" y="147"
+		w="21" h="21"
+		image="player.normal.toggle.background.bitmap"
+		dimage="player.normal.toggle.background.down.bitmap"
+		foreimage="player.normal.toggle.shuffle.light.bitmap"
+		cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Shuffle"
+		cfgval="1"
+		ttip="Shuffle"
+	/>
+	<Core-X6:ToggleButton
+		id="crossfade"
+		x="41" y="174"
+		w="21" h="21"
+		image="player.normal.toggle.background.bitmap"
+		dimage="player.normal.toggle.background.down.bitmap"
+		foreimage="player.normal.toggle.crossfade.light.bitmap"
+		cfgattrib="{FC3EAF78-C66E-4ED2-A0AA-1494DFCC13FF};Enable crossfading"
+		cfgval="1"
+		ttip="Enable crossfading"
+	/>
+	<Core-X6:Button
+		id="pledit"
+		x="57" y="195"
+		w="21" h="21"
+		image="player.normal.toggle.background.bitmap"
+		dimage="player.normal.toggle.background.down.bitmap"
+		foreimage="player.normal.toggle.pledit.light.bitmap"
+		action="toggle" param="guid:pl"
+		ttip="Playlist Editor"
+	/>
+	<Core-X6:Button
+		id="pledit"
+		x="78" y="213"
+		w="21" h="21"
+		image="player.normal.toggle.background.bitmap"
+		dimage="player.normal.toggle.background.down.bitmap"
+		foreimage="player.normal.toggle.ml.light.bitmap"
+		action="toggle" param="guid:ml"
+		ttip="Media Library"
+	/>
+
+	<Button
+		id="play2pause"
+		x="217" y="8"
+		w="63" h="63"
+		image="player.normal.play.background.bitmap"
+		tooltip="Play"
+	/>
+	<Layer
+		id="play2pause.pressed"
+		x="217" y="8"
+		w="63" h="63"
+		image="player.normal.play.background.down.bitmap"
+		alpha="0"
+		ghost="1"
+	/>
+	<Layer
+		id="play2pause.light"
+		x="217" y="8"
+		w="63" h="63"
+		image="player.normal.play.light.bitmap"
+		ghost="1"
+	/>
+
+	<Core-X6:Button
+		id="stop"
+		x="218" y="70"
+		w="47" h="48"
+		noactivate = "1"
+		image="player.normal.stop.background.bitmap"
+		dimage="player.normal.stop.background.down.bitmap"
+		foreimage = "player.normal.stop.light.bitmap"
+		action="Stop"
+		ttip="Stop"
+	/>
+
+	<Core-X6:Button
+		id="next"
+		x="200" y="110"
+		w="51" h="32"
+		noactivate = "1"
+		image="player.normal.next.background.bitmap"
+		dimage="player.normal.next.background.down.bitmap"
+		foreimage = "player.normal.next.light.bitmap"
+		action="NEXT"
+		ttip="Next"
+	/>
+	<Core-X6:Button
+		id="previous"
+		x="194" y="132"
+		w="37" h="28"
+		noactivate = "1"
+		image="player.normal.previous.background.bitmap"
+		dimage="player.normal.previous.background.down.bitmap"
+		foreimage = "player.normal.previous.light.bitmap"
+		action="PREV"
+		ttip="Previous"
+	/>
+
 </groupdef>
 
 <groupdef id="player.normal.LCD">
@@ -285,18 +397,21 @@
 		x="11" y="73"
 		w="19" h="14"
 		image="player.normal.LCD.crossfade.bitmap"
+		alpha="155"
 	/>
 	<layer
 		id="status.shuffle"
 		x="30" y="73"
 		w="18" h="16"
 		image="player.normal.LCD.shuffle.bitmap"
+		alpha="155"
 	/>
 	<layer
 		id="status.repeat"
 		x="48" y="73"
 		w="18" h="16"
 		image="player.normal.LCD.repeat.bitmap"
+		alpha="155"
 	/>
 	<layer
 		id="status.bitrate"

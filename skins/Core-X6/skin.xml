@@ -11,6 +11,7 @@
 	</skininfo>
 	
 	<include file="xui/toggle_lcd_button/toggle_lcd_button.xml"/>
+	<include file="xui/light_toggle_button.xml"/>
 	<include file="xml/color-presets.xml"/>
 	<include file="xml/player.xml"/>
 	<include file="Controls/controls.xml"/>
