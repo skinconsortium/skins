@@ -53,45 +53,49 @@ var# |                Class |                                    What
 0031 |                  Int |                                      pos
 0032 |              FillBar |                                       fb
 0033 |                  Int |                                      pos
-0034 |               Layout |                             parentLayout
-0035 |                  Int |                                  message
-0036 |                  Int |                                       i0
-0037 |                  Int |                                       i1
-0038 |                  Int |                                       i2
-0039 |               String |                                       s0
-003A |               String |                                       s1
-003B |            GuiObject |                                      obj
-003C |                  Int |                                  message
-003D |                  Int |                                       i0
-003E |            GuiObject |                                      obj
-003F |                  Int |                                  message
-0040 |               String |                                       s0
-0041 |            GuiObject |                                      obj
-0042 |                  Int |                                  message
-0043 |            GuiObject |                                      obj
-0044 |              FillBar |                                volumeBar
-0045 |               String |                                      ","
-0046 |                Layer |                                      tmp
-0047 |                  Int |                                   newvol
-0048 |                  Int |                                     0000
-0049 |               String |                        "winamp.playback"
-004A |                  Int |                                       15
-004B |                  Int |                                      255
-004C |                  Int |                                      100
-004D |                  Int |                                       16
-004E |              FillBar |                                       fb
-004F |                  Int |                                      pos
-0050 |              FillBar |                                       fb
-0051 |                  Int |                                      pos
+0034 |            GuiObject |                               dispatcher
+0035 |            GuiObject |                                       go
+0036 |                  Int |                                  message
+0037 |                  Int |                                       i0
+0038 |                  Int |                                       i1
+0039 |                  Int |                                       i2
+003A |               String |                                       s0
+003B |               String |                                       s1
+003C |            GuiObject |                                      obj
+003D |                  Int |                                  message
+003E |                  Int |                                       i0
+003F |            GuiObject |                                      obj
+0040 |                  Int |                                  message
+0041 |               String |                                       s0
+0042 |            GuiObject |                                      obj
+0043 |                  Int |                                  message
+0044 |            GuiObject |                                      obj
+0045 |                  Int |                                 messagej
+0046 |            GuiObject |                                      obj
+0047 |              FillBar |                                volumeBar
+0048 |               String |                                      ","
+0049 |                Layer |                                      tmp
+004A |                  Int |                                   newvol
+004B |                  Int |                                     0000
+004C |               String |                        "winamp.playback"
+004D |                  Int |                                       15
+004E |               String |                                     ": "
+004F |                  Int |                                      255
+0050 |                  Int |                                      100
+0051 |               String |                                      "%"
+0052 |              FillBar |                                       fb
+0053 |                  Int |                                      pos
+0054 |              FillBar |                                       fb
+0055 |                  Int |                                      pos
 -- Events Table ------------------------------------------------------
 var# |         Code Pointer |                                    What 
 ----------------------------------------------------------------------
 0013 |                 02A5 |                                      F.o
 0013 |                 02F6 |                                      F.o
 0013 |                 03F3 |                                      F.o
-0000 |                 067B |                                      S.o
-0000 |                 072C |                                      S.o
-0000 |                 074D |                                      S.o
+0000 |                 06D2 |                                      S.o
+0000 |                 0783 |                                      S.o
+0000 |                 07A4 |                                      S.o
 -- User Functions Table ----------------------------------------------
                Code Pointer |                                    What 
 ----------------------------------------------------------------------
@@ -102,11 +106,13 @@ var# |         Code Pointer |                                    What
                        01BC |                           FillBar_setMap
                        0228 |                         FillBar_destruct
                        0250 |                      FillBar_setPosition
-                       07CB |                           FillBar_onDrag
-                       07F2 |                        FillBar_onEndDrag
+                       0818 |                           FillBar_onDrag
+                       083F |                        FillBar_onEndDrag
                        0542 |                           initDispatcher
-                       0560 |                              sendMessage
-                       05B8 |                             sendMessageI
-                       05FD |                             sendMessageS
-                       0642 |                             sendMessageO
+                       0560 |                            setDispatcher
+                       0577 |                              sendMessage
+                       05CF |                             sendMessageI
+                       0614 |                             sendMessageS
+                       0659 |                             sendMessageO
+                       0692 |                             sendMessageV
                        FFFFFFFF |                             updateVolume

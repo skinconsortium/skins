@@ -11,6 +11,7 @@
 
 #include <lib/std.mi>
 #include <lib/com/fillbar.m>
+#include dispatch_codes.m
 
 Function updateSeek();
 
@@ -19,6 +20,8 @@ Global Timer seekTimer;
 
 System.onScriptLoaded ()
 {
+	initDispatcher();
+
 	Layer tmp = getScriptGroup().findObject(getToken(getParam(), ",", 0));
 	seekBar = FillBar_construct(tmp, getToken(getParam(), ",", 1));
 	seekBar.dragable = TRUE;
@@ -68,6 +71,15 @@ boolean FillBar_onDrag(Fillbar fb, int pos)
 	if (getStatus() == STATUS_STOPPED)
 	{
 		return FALSE;
+	}
+
+	Float f;
+	f = pos;
+	f = f / 255 * 100;
+	Float len = getPlayItemLength();
+	if (len != 0) {
+		int np = len * f / 100;
+		SendMessageS(SHOW_SYSINFO, getString("winamp.playback", 21) + ": " + integerToTime(np) + "/" + integerToTime(len) + " (" + integerToString(f) + "%)");
 	}
 	
 	return TRUE; 

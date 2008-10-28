@@ -194,7 +194,7 @@
 	/>
 	<button
 		x="0" y="0"
-		action="EXIT"
+		action="CLOSE"
 		image="cpro.flex.player.normal.close"
 		hoverImage="cpro.flex.player.normal.close.hover"
 		downImage="cpro.flex.player.normal.close.down"
