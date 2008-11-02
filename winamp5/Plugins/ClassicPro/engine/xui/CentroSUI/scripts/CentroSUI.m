@@ -11,6 +11,12 @@
 #define PL_GUID "{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D}"
 #define JTF_GUID "{5F8D8373-EAA7-4390-B5AB-402E86A5F9DD}"
 
+//Previous xui params... now slowly making bringing the drawer into the centro core
+#define GUID_BLACKLIST "{D6201408-476A-4308-BF1B-7BACA1124B12};{5F8D8373-EAA7-4390-B5AB-402E86A5F9DD};{00000000-0000-0000-0000-000000000000}"
+#define DEF_DRAWER_H 119
+#define DRAWER_VIS_ID 6
+#define DRAWER_PL_ID 4
+
 #define DEFAULT_TAB_ORDER "0;1;2;3;4;5;6"
 #define TAB_STATSUSBAR_HIDE "Hide Component Buttons for this tab"
 #define TAB_STATSUSBAR_SHOW "Show Component Buttons for this tab"
@@ -51,7 +57,7 @@ Function setFrame2(int pos, int h);
 
 Global Group xuiGroup, tab_library, tab_video, tab_avs, tab_Browser, tab_Playlist, tab_Other, tab_Widget, drawer, mainTabsheet;
 Global Group area_left, area_right, area_mini, area_right_pl, ocFrame, tabsGroup;
-Global Group mini_Cover, mini_Video, mini_AVS, mini_SavedPL;
+Global Group mini_Cover, mini_Video, mini_AVS, mini_SavedPL, mini_TagView;
 Global Group tabbut_vid, tabbut_avs, tabbut_pl, browserGroup;
 
 Global Container player;
@@ -74,8 +80,8 @@ Global Frame mainFrame, plFrame;
 Global Timer openMainLayout, openDefaultTab, refreshAIOTab, checkVisName, ssWinHol;
 Global GuiObject main_Frame;
 Global boolean openLib, openVid, openVis, loaded, open_drawer, skipLoad, mouseDownF1, mouseDownF2, busyWithDrawer, busyWithThisFunction, wasTabTrig, stopResizeRight, openMePlease, delayStart, cuseqbg, ml_installed;
-Global int default_drawer_h, active_tab, tab_openned, delayStartTab;
-Global String guid_blacklist, tabNames, closeGUID;
+Global int active_tab, tab_openned, delayStartTab;
+Global String tabNames, closeGUID;
 
 
 //dynamic tabs
@@ -153,6 +159,7 @@ System.onScriptLoaded() {
 	mini_Video = xuiGroup.findObject("centro.playlist.directory.vid");
 	mini_AVS = xuiGroup.findObject("centro.playlist.directory.vis");
 	mini_SavedPL = xuiGroup.findObject("centro.playlist.directory.spl");
+	mini_TagView = xuiGroup.findObject("centro.playlist.directory.tag");
 
 	plText1 = xuiGroup.findObject("centro.playlist.pltext1");
 	plText2 = xuiGroup.findObject("centro.playlist.pltext2");
@@ -234,9 +241,7 @@ System.onScriptLoaded() {
 	customObj = xuiGroup.findObject("widget.holder.mini");
 	CODE_MARTIN end
 		
-	default_drawer_h = 150;
 	open_drawer=false;
-	guid_blacklist=="";
 	skipLoad=true;
 
 	hold_Other = xuiGroup.findObject("centro.windowholder.other");
@@ -441,19 +446,19 @@ System.onSetXuiParam(String param, String value) {
 	if(strlower(param) == "enable_drawer"){
 		setDrawer(stringToInteger(value));
 	}
-	else if(strlower(param) == "drawer_h"){
+	/*else if(strlower(param) == "drawer_h"){
 		default_drawer_h = stringToInteger(value);
 		setDrawer(open_drawer);
-	}
-	else if(strlower(param) == "guid_blacklist"){
+	}*/
+	/*else if(strlower(param) == "guid_blacklist"){
 		guid_blacklist = value;
-	}
+	}*/
 }
 setDrawer(boolean onOff){
 	busyWithDrawer=true;
 	boolean dontSave = false;
 
-	if(xuiGroup.getHeight()<default_drawer_h+90){ //0 = first load... not drawn yet
+	if(xuiGroup.getHeight()<DEF_DRAWER_H+90){ //0 = first load... not drawn yet
 		onOff=false;
 		dontSave=true;
 	}
@@ -461,16 +466,16 @@ setDrawer(boolean onOff){
 	//drawer = xuiGroup.findObject("centro.multidrawer");
 	if(onOff){
 		drawer.show();
-		drawer.setXmlParam("y", integerToString(default_drawer_h*-1));
-		drawer.setXmlParam("h", integerToString(default_drawer_h));
-		mainTabsheet.setXmlParam("h", integerToString(default_drawer_h*-1-4));
+		//drawer.setXmlParam("y", integerToString(default_drawer_h*-1));
+		//drawer.setXmlParam("h", integerToString(default_drawer_h));
+		mainTabsheet.setXmlParam("h", integerToString(DEF_DRAWER_H*-1-4));
 		tog_drawer.setXmlParam("tooltip", "Close drawer");
 		open_drawer=true;
 	}
 	else{
 		drawer.hide();
-		drawer.setXmlParam("y", "0");
-		drawer.setXmlParam("h", "0");
+		//drawer.setXmlParam("y", "0");
+		//drawer.setXmlParam("h", "0");
 		mainTabsheet.setXmlParam("h", "0");
 		open_drawer=false;
 		tog_drawer.setXmlParam("tooltip", "Open drawer");
@@ -500,10 +505,10 @@ System.onGetCancelComponent(String guid, boolean goingvisible){
 	//debugstring(guid,9);
 	// Check to see if this component is on the blacklist, and if it is, it will open in its own window or just close it...
 	for(int i=0;i<10;i++){
-		if(getToken(guid_blacklist, ";", i)== guid){
+		if(getToken(GUID_BLACKLIST, ";", i)== guid){
 			return false;
 		}
-		else if(getToken(guid_blacklist, ";", i)== ""){
+		else if(getToken(GUID_BLACKLIST, ";", i)== ""){
 			break;
 		}
 	}
@@ -520,7 +525,10 @@ System.onGetCancelComponent(String guid, boolean goingvisible){
 		}
 		
 		if(guid == PL_GUID){ //Playlist
-			if(mainFrame.getPosition()==0){
+			if(getPublicInt("cPro.lastDrawer", 0)==DRAWER_PL_ID && open_drawer){
+				//do nothing
+			}
+			else if(mainFrame.getPosition()==0){
 				hold_Pl2.setXmlParam("autoopen", "0");
 				openTabNo(4);
 				hold_Pl2.setXmlParam("autoopen", "1");
@@ -547,7 +555,7 @@ System.onGetCancelComponent(String guid, boolean goingvisible){
 			if(getPublicInt("cPro.lastMini", 0)==2 && area_mini.isVisible()){
 				//do nothing
 			}
-			else if(getPublicInt("cPro.lastDrawer", 0)==2 && open_drawer){
+			else if(getPublicInt("cPro.lastDrawer", 0)==DRAWER_VIS_ID && open_drawer){
 				//do nothing
 			}
 			else if(active_tab!=2){
@@ -595,7 +603,10 @@ openDefaultTab.onTimer(){
 	//debugstring("openDefaultTab.onTimer()",9);
 
 	if(closeGUID == PL_GUID){ //PL
-		if(mainFrame.getPosition()!=0){
+		if(getPublicInt("cPro.lastDrawer", 0)==DRAWER_PL_ID && open_drawer){
+			drawer.sendAction ("switch_to_drawer", "", 0, 0, 0, 0);
+		}
+		else if(mainFrame.getPosition()!=0){
 			//mainFrame.setPosition(0);
 			setMainFrame(false);
 			return;
@@ -608,7 +619,7 @@ openDefaultTab.onTimer(){
 		}
 	}
 	else if(closeGUID == VIS_GUID){
-		if(getPublicInt("cPro.lastDrawer", 0)==2 && open_drawer){
+		if(getPublicInt("cPro.lastDrawer", 0)==DRAWER_VIS_ID && open_drawer){
 			drawer.sendAction ("switch_to_drawer", "", 0, 0, 0, 0);
 			return;
 		}
@@ -720,7 +731,7 @@ openTabNo(int tabNo){
 		if(getPublicInt("cPro.lastMini", 0)==2){
 			openMini(0);
 		}
-		if(getPublicInt("cPro.lastDrawer", 0)==2){
+		if(getPublicInt("cPro.lastDrawer", 0)==DRAWER_VIS_ID){
 			drawer.sendAction ("switch_to_drawer", "", 0, 0, 0, 0); //close drawer vis
 		}	
 		tab_avs.show();
@@ -733,6 +744,8 @@ openTabNo(int tabNo){
 	}
 	else if(tabNo==4){
 		if(mainFrame.getPosition()!=0) setMainFrame(false); //if not closed.. close sideview
+		if(getPublicInt("cPro.lastDrawer", 0)==DRAWER_PL_ID && open_drawer)	drawer.sendAction ("switch_to_drawer", "", 0, 0, 0, 0);
+
 		tab_Playlist.show();
 		tog_Playlist.setActivated(1);
 	}
@@ -1000,6 +1013,7 @@ tog_NowPlay.onLeftClick(){
 
 area_right.onSetVisible(boolean onOff){
 	if(onOff && getPublicInt("cPro.lastComponentPage", 0)==4 && !skipLoad) openTabNo(0); //dont want two playlist hey?
+	if(getPublicInt("cPro.lastDrawer", 0)==DRAWER_PL_ID && open_drawer)	drawer.sendAction ("switch_to_drawer", "", 0, 0, 0, 0);
 	//spaceTabs();
 }
 
@@ -1022,23 +1036,26 @@ but_miniGoto.onleftClick(){
 	popMenu = new PopUpMenu;
 
 	popMenu.addCommand("Album Art", 0, mini_Cover.isVisible(), 0);
+	popMenu.addCommand("Tag Viewer", 4, mini_TagView.isVisible(), 0);
+	popMenu.addCommand("Saved Playlists", 3, mini_SavedPL.isVisible(), 0);
+	popMenu.addSeparator();
 	popMenu.addCommand("Video", 1, mini_Video.isVisible(), 0);
 	popMenu.addCommand("Visualization", 2, mini_AVS.isVisible(), 0);
-	popMenu.addCommand("Saved Playlists", 3, mini_SavedPL.isVisible(), 0);
+	popMenu.addSeparator();
 
 	//** Widgets code start
-	PopUpMenu widgetmenu;
-	widgetmenu = new PopUpMenu;
+	//PopUpMenu widgetmenu;
+	//widgetmenu = new PopUpMenu;
 
 	int count = 0;
 	for (int x = 0; x < dummyBuck.getNumChildren(); x++) {//**
 		GuiObject gr = dummyBuck.enumChildren(x);
-		widgetmenu.addCommand(gr.getXMLparam("name"), 100+x, getPublicInt("cPro.lastMini", 0) == 100+x, 0);
+		popMenu.addCommand(gr.getXMLparam("name"), 100+x, getPublicInt("cPro.lastMini", 0) == 100+x, 0);
 		count++;
 	}
 
-	if (count == 0) widgetmenu.addCommand("No widgets found for this view!", -1, 0, 1);
-	popMenu.addSubMenu(widgetmenu, "Widgets");
+	if (count == 0) popMenu.addCommand("No widgets found for this view!", -1, 0, 1);
+	//popMenu.addSubMenu(widgetmenu, "Widgets");
 	//** Widgets code end
 
 	popMenu.checkCommand(getPublicInt("cPro.lastMini", 0), 1);
@@ -1049,7 +1066,7 @@ but_miniGoto.onleftClick(){
 		openMini(result);
 	}
 	delete popMenu;
-	delete widgetmenu;//** Widgets code
+	//delete widgetmenu;//** Widgets code
 	complete;
 }
 
@@ -1063,6 +1080,7 @@ openMini(int miniNo){
 	mini_Video.hide();
 	mini_AVS.hide();
 	mini_SavedPL.hide();
+	mini_TagView.hide();
 
 	//** Widgets code start
 	customObj.hide();
@@ -1082,7 +1100,7 @@ openMini(int miniNo){
 		if(getPublicInt("cPro.lastComponentPage", 0)==2){
 			openTabNo(0);
 		}
-		if(getPublicInt("cPro.lastDrawer", 0)==2){
+		if(getPublicInt("cPro.lastDrawer", 0)==DRAWER_VIS_ID){
 				drawer.sendAction ("switch_to_drawer", "", 0, 0, 0, 0); //close drawer vis
 		}
 
@@ -1090,6 +1108,10 @@ openMini(int miniNo){
 	}
 	else if(miniNo==3){
 		mini_SavedPL.show();
+	}
+	else if(miniNo==4){
+		drawer.sendAction ("release", "TAG", 0, 0, 0, 0);
+		mini_TagView.show();
 	}
  
 	//** Widgets code start
@@ -1368,6 +1390,23 @@ xuiGroup.onAction (String action, String param, int x, int y, int p1, int p2, Gu
 	else if (strlower(action) == "sideview_onoff"){
 		if(x==1) setMainFrame(true);
 		else setMainFrame(false);
+	}
+	else if (strlower(action) == "release"){
+		if(param=="VIS"){
+			if(getPublicInt("cPro.lastMini", 0)==2) openMini(0);
+			if(getPublicInt("cPro.lastComponentPage", 0)==2) openTabNo(0);
+		}
+		else if(param=="PL"){
+			if(getPublicInt("cPro.lastComponentPage", 0)==4) openTabNo(0);
+			if(mainFrame.getPosition()!=0) setMainFrame(false);
+		}
+		else if(param=="VID"){
+			if(getPublicInt("cPro.lastMini", 0)==1) openMini(0);
+			if(getPublicInt("cPro.lastComponentPage", 0)==1) openTabNo(0);
+		}
+		else if(param=="TAG"){
+			if(getPublicInt("cPro.lastMini", 0)==4) openMini(0);
+		}
 	}
 }
 

@@ -1,5 +1,5 @@
 <groupdef id="modsic.suiarea">
-	<Centro:SUI id="cpro.sui" fitparent="1" drawer_h="119" guid_blacklist="{D6201408-476A-4308-BF1B-7BACA1124B12};{5F8D8373-EAA7-4390-B5AB-402E86A5F9DD};{00000000-0000-0000-0000-000000000000}"/>
+	<Centro:SUI id="cpro.sui" fitparent="1"/>
 </groupdef>
 
 
@@ -219,18 +219,21 @@
 		shift="-2" link="Click to Show More Information" label="Disc:"/>
 </groupdef>
 
+<groupdef id="info.component.infodisplay.holder">
+	<group id="info.component.infodisplay" x="130" y="4" w="-132" h="-8" relatw="1" relath="1"/>
+</groupdef>
 
 <groupdef id="drawer.tagviewer" name="Tag Viewer">
 	<!--<group id="drawer.tagviewer.bottomleft" x="0" y="-27" w="-6" relatw="1" relaty="1"/>-->
 
 	<Wasabi:AlbumArt id="tagviewer.cover" x="6" y="4" w="111" h="111" move="1"/>
-	<group id="info.component.infodisplay" x="130" y="4" w="-132" h="-8" relatw="1" relath="1"/>
-    <button id="tagviewmenu" x="-64" y="-18" relatx="1" relaty="1"
-        image="component.menu2.1"
-        hoverImage="component.menu2.2"
-        downImage="component.menu2.3"
-        tooltip="Tag Viewer Options"
-    />
+	<group id="info.component.infodisplay.holder" x="0" y="0" w="0" h="-15" relatw="1" relath="1"/>
+	<button id="tagviewmenu" x="-64" y="-18" relatx="1" relaty="1"
+		image="component.menu2.1"
+		hoverImage="component.menu2.2"
+		downImage="component.menu2.3"
+		tooltip="Tag Viewer Options"
+	/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\one\scripts\tagviewer.maki" param="6"/>
 </groupdef>
 
@@ -239,12 +242,12 @@
 	<PlaylistDirectory x="2" y="2" w="-4" h="-21" relatw="1" relath="1" antialias="0"/>
 </groupdef>
 
-<groupdef id="drawer.avs" name="Visualization">
-	<windowholder x="2" y="2" w="-4" h="-21" relatw="1" relath="1" autofocus="1" wantfocus="0" autoclose="1" autoopen="1" autoavailable="1" visible="1" hold="guid:{0000000A-000C-0010-FF7B-01014263450C}"/>
+<groupdef id="drawer.avs" inherit_group="centro.playlist.directory.vis" name="Visualization">
+	<!--<windowholder x="2" y="2" w="-4" h="-21" relatw="1" relath="1" autofocus="1" wantfocus="0" autoclose="1" autoopen="1" autoavailable="1" visible="1" hold="guid:{0000000A-000C-0010-FF7B-01014263450C}"/>
 	<button	x="1" y="-18" relaty="1" image="component.avs.opt.1" hoverImage="component.avs.opt.2" downImage="component.avs.opt.3" action="VIS_Menu" tooltip="Configure Visualizer"/>
 	<button	x="33" y="-18" relaty="1" image="component.avs.prev.1" hoverImage="component.avs.prev.2" downImage="component.avs.prev.3" action="VIS_Prev" tooltip="Previous Visualization Preset"/>
 	<togglebutton x="64" y="-18" relaty="1" image="component.avs.ran.1" hoverImage="component.avs.ran.2" downImage="component.avs.ran.3" activeimage="component.avs.ran.4" tooltip="Randomly change Visualization Presets"	cfgattrib="{0000000A-000C-0010-FF7B-01014263450C};Random"/>
-	<button	x="95" y="-18" relaty="1" image="component.avs.next.1" hoverImage="component.avs.next.2" downImage="component.avs.next.3"	action="VIS_Next" tooltip="Next Visualization Preset"/>
+	<button	x="95" y="-18" relaty="1" image="component.avs.next.1" hoverImage="component.avs.next.2" downImage="component.avs.next.3"	action="VIS_Next" tooltip="Next Visualization Preset"/>-->
 </groupdef>
 
 <groupdef id="drawer.colortheme" name="Color Themes">
@@ -284,6 +287,7 @@
 	/>
 </groupdef>
 
+<!--
 <groupdef id="drawer.skinchooser" name="Skin Chooser">
     <List id="skinlist" x="2" y="2" w="-4" h="-21" relatw="1" relath="1" antialias="0" 
         numcolumns="2" columnwidths="-1;-1" columnlabels="Name;Type" 
@@ -296,6 +300,22 @@
     />
     <script file="@WINAMPPATH@\Plugins\classicPro\engine\one\scripts\skinlist.maki" param="@SKINPATH@"/>
 </groupdef>
+-->
+
+<groupdef id="drawer.playlist" name="Playlist">
+	<PlaylistPro id="centro.windowholder.playlist1" x="1" y="1" h="-19" w="-2" relath="1" relatw="1"/>
+	<group id="centro.playlist.bottombuttons" x="1" y="-18" w="-1" relaty="1" relatw="1"/>
+    <text id="centro.playlist.pltext2" ticker="1" display="PE_Info" x="126" y="-16" h="13" w="-192" relaty="1" relatw="1" align="center" fontsize="13" antialias="0" color="Playlist.Status.Text" font="cpro.status.font" move="1"/>
+	<button id="tagviewmenu" x="-64" y="-18" relatx="1" relaty="1" action="PE_List" image="component.menu2.1" hoverImage="component.menu2.2" downImage="component.menu2.3" tooltip="Manage Playlist"/>
+</groupdef>
+
+<groupdef id="drawer.video" inherit_group="centro.playlist.directory.vid" name="Video">
+	<!--<group id="centro.playlist.directory.vid" x="0" y="0" w="0" h="0" relatw="1" relath="1"/>-->
+	<!--<windowholder x="3" y="3" w="-6" h="-22" relatw="1" relath="1" autofocus="1" wantfocus="0" autoclose="1" autoopen="1" autoavailable="1" visible="1" hold="guid:{F0816D7B-FFFC-4343-80F2-E8199AA15CC3}"/>
+	<text display="VID_Info" move="1" x="34" y="-17" relaty="1" h="13" w="-70" relatw="1" align="center" color="Playlist.Status.Text" font="cpro.status.font"/>
+	<button x="1" y="-18" relaty="1" action="VID_Misc" image="component.menu.1" hoverimage="component.menu.2" downimage="component.menu.3" tooltip="Video Options"/>-->
+</groupdef>
+
 
 <groupdef id="centro.multidrawer">
 	<grid id="centro.gadget.grid" fitparent="1"
@@ -313,7 +333,9 @@
 	<group id="drawer.savedpl" fitparent="1" visible="0"/>
 	<group id="drawer.avs" fitparent="1" visible="0"/>
 	<group id="drawer.colortheme" fitparent="1" visible="0"/>
-	<group id="drawer.skinchooser" fitparent="1" visible="0"/>
+	<!--<group id="drawer.skinchooser" fitparent="1" visible="0"/>-->
+	<group id="drawer.playlist" fitparent="1" visible="0"/>
+	<group id="drawer.video" fitparent="1" visible="0"/>
 
 	<!-- This one is the dummyloader -->
 	<componentbucket id="widget.loader" x="0" y="0" h="20" w="20" wndtype="centro.widgets.drawer" visible="0" />

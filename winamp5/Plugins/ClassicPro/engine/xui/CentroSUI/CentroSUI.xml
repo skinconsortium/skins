@@ -273,8 +273,8 @@
 </groupdef>
 
 <groupdef id="centro.components">
-	<group id="centro.componentsheet" x="0" y="0" w="0" h="-200" relatw="1" relath="1"/>
-	<group id="centro.multidrawer" x="0" y="-200" w="0" h="200" relaty="1" relatw="1" wantfocus="1" visible="0"/>
+	<group id="centro.componentsheet" x="0" y="0" w="0" h="0" relatw="1" relath="1"/>
+	<group id="centro.multidrawer" x="0" y="-120" w="0" h="119" relaty="1" relatw="1" wantfocus="1" visible="0"/>
 </groupdef>
 
 <groupdef id="centro.playlist.bottombuttons">
@@ -282,8 +282,6 @@
 	<button x="32" y="0" image="component.pl.rem.1" hoverImage="component.pl.rem.2" downImage="component.pl.rem.3" action="PE_Rem" tooltip="Remove Files from Playlist"/>
 	<button x="63" y="0" image="component.pl.sel.1" hoverImage="component.pl.sel.2" downImage="component.pl.sel.3" action="PE_Sel" tooltip="Select Files from Playlist"/>
 	<button	x="94" y="0" image="component.pl.misc.1" hoverImage="component.pl.misc.2" downImage="component.pl.misc.3" action="PE_Misc" tooltip="Misc Actions"/>
-	<text id="centro.playlist.pltext2" ticker="1" display="PE_Info" x="126" y="2" h="13" w="-159" relatw="1" align="center" fontsize="13" antialias="0" color="Playlist.Status.Text" font="cpro.status.font" move="1"/>
-	<button x="-33" y="0" relatx="1" image="component.pl.man.1" hoverImage="component.pl.man.2" downImage="component.pl.man.3" action="PE_List" tooltip="Manage Playlist"/>
 </groupdef>
 <groupdef id="centro.playlist.component">
 	<grid fitparent="1"
@@ -294,7 +292,10 @@
 	/>
 	<PlaylistPro id="centro.windowholder.playlist1" x="1" y="3" h="-21" w="-2" relath="1" relatw="1"/>
 	<!--<windowholder id="wdh.playlist1" x="1" y="3" h="-21" w="-2" relath="1" relatw="1" autofocus="0" wantfocus="0" autoclose="1" autoopen="1" autoavailable="1" visible="1" hold="guid:{45f3f7c1-a6f3-4ee6-a15e-125e92fc3f8d}"/>-->
+
 	<group id="centro.playlist.bottombuttons" x="1" y="-18" w="-1" relaty="1" relatw="1"/>
+	<text id="centro.playlist.pltext2" ticker="1" display="PE_Info" x="126" y="-16" h="13" w="-159" relaty="1" relatw="1" align="center" fontsize="13" antialias="0" color="Playlist.Status.Text" font="cpro.status.font" move="1"/>
+	<button x="-33" y="-18" relatx="1" relaty="1" image="component.pl.man.1" hoverImage="component.pl.man.2" downImage="component.pl.man.3" action="PE_List" tooltip="Manage Playlist"/>
 </groupdef>
 
 
@@ -319,6 +320,8 @@
 <groupdef id="centro.playlist.directory.spl">
 	<PlaylistDirectory x="1" y="2" w="-2" h="-21" relatw="1" relath="1" antialias="0"/>
 </groupdef>
+<groupdef id="centro.playlist.directory.tag" inherit_group="drawer.tagviewer">
+</groupdef>
 
 <!--include file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\widgets\widgets.xml"/--> <!-- WIDGETS -->
 <groupdef id="centro.playlist.directory">
@@ -331,6 +334,7 @@
 	<group id="centro.playlist.directory.vid" fitparent="1" visible="0"/>
 	<group id="centro.playlist.directory.vis" fitparent="1" visible="0"/>
 	<group id="centro.playlist.directory.spl" fitparent="1" visible="0"/>
+	<group id="centro.playlist.directory.tag" fitparent="1" visible="0"/>
     
 	<!-- This one is the dummyloader -->
 	<componentbucket id="widget.loader.mini" x="0" y="0" h="20" w="20" wndtype="centro.widgets.mini" visible="0" />
