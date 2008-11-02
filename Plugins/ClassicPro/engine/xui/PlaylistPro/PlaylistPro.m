@@ -361,7 +361,7 @@ main_layout.onResize(int x, int y, int w, int h){
 frameGroup.onResize(int x, int y, int w, int h){
 	if(results_layout.isVisible()) clearSearchBox();
 	
-	if(h<100){
+	if(h<102){
 		topbar.hide();
 		plwh.setXmlParam("y", "0");
 		plwh.setXmlParam("h", "0");

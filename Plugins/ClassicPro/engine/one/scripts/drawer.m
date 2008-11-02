@@ -5,13 +5,14 @@ Function gotoPrevDrawer();
 Function gotoNextDrawer();
 Function setDrawerBG(int mode); //0=normal, 1=tagview, 2=neweq
 
+/* CPro Widget */
 Class Group CProWidget;
-// {
-	Member boolean CProWidget.scrollSkip;
-	Member boolean CProWidget.disabled;
-	Member int CProWidget.custombg;
-	Member boolean CProWidget.hideVis;
-// }
+Member boolean CProWidget.scrollSkip;
+Member boolean CProWidget.disabled;
+Member int CProWidget.custombg;
+Member boolean CProWidget.hideVis;
+Member boolean CProWidget.hidePL;
+Member boolean CProWidget.addSep;
 
 #define userWidgetOffset 100
 Global int numUserWidgets = 0;
@@ -19,7 +20,7 @@ Global int numInternalWidgets = 0;
 
 Global Layout myLayout;
 Global Group myGroup;
-Global CProWidget drawer_equalizer, drawer_savedpl, drawer_tagviewer, drawer_avs, drawer_ct, drawer_skinchooser;
+Global CProWidget drawer_equalizer, drawer_pl, drawer_vid, drawer_savedpl, drawer_tagviewer, drawer_avs, drawer_ct, drawer_skinchooser;
 Global PopUpMenu popMenu, widgetmenu;
 Global Button but_drawerGoto;
 Global GuiObject cpro_sui, gad_Grid, gad_GridEQ;
@@ -37,31 +38,44 @@ System.onScriptLoaded() {
 
 	myGroup = getScriptGroup();
 	but_drawerGoto = myGroup.findObject("drawer.menulist");
+	ct_fakeLayer = myGroup.findObject("drawer.ct.fakelayer"); //used to detect if skin have colorthemes
 
+
+	/*	ClassicPro Components */
 	drawer_equalizer = myGroup.findObject("drawer.equalizer");
 	drawer_equalizer.custombg = 2;
-	internalWidgets.addItem(drawer_equalizer);
-
 	drawer_tagviewer = myGroup.findObject("drawer.tagviewer");
 	drawer_tagviewer.custombg = 1;
-	internalWidgets.addItem(drawer_tagviewer);
-
-	drawer_avs = myGroup.findObject("drawer.avs");
-	drawer_avs.scrollSkip = TRUE;
-	drawer_avs.hideVis = TRUE;
-	internalWidgets.addItem(drawer_avs);
-	//internalWidgets.addItem(drawer_avs);
-
-	drawer_ct = myGroup.findObject("drawer.colortheme");
-	ct_fakeLayer = myGroup.findObject("drawer.ct.fakelayer");
-	drawer_ct.disabled = ct_fakeLayer.isInvalid();
-	internalWidgets.addItem(drawer_ct);
-
 	drawer_savedpl = myGroup.findObject("drawer.savedpl");
+	drawer_ct = myGroup.findObject("drawer.colortheme");
+	drawer_ct.disabled = ct_fakeLayer.isInvalid();
+	drawer_ct.addSep = true;
+	internalWidgets.addItem(drawer_equalizer);
+	internalWidgets.addItem(drawer_tagviewer);
 	internalWidgets.addItem(drawer_savedpl);
+	internalWidgets.addItem(drawer_ct);
+	/*	end	*/
+	
+	
+	
+	/*	Winamp Components */
+	drawer_pl = myGroup.findObject("drawer.playlist");
+	drawer_pl.scrollSkip = true;
+	drawer_vid = myGroup.findObject("drawer.video");
+	drawer_vid.scrollSkip = true;
+	drawer_avs = myGroup.findObject("drawer.avs");
+	drawer_avs.scrollSkip = true;
+	drawer_avs.hideVis = true;
+	internalWidgets.addItem(drawer_pl);
+	internalWidgets.addItem(drawer_vid);
+	internalWidgets.addItem(drawer_avs);
+	/*	end	*/
 
-	drawer_skinchooser = myGroup.findObject("drawer.skinchooser");
-	internalWidgets.addItem(drawer_skinchooser);
+
+
+
+	/*drawer_skinchooser = myGroup.findObject("drawer.skinchooser");
+	internalWidgets.addItem(drawer_skinchooser);*/
 
 	numInternalWidgets = internalWidgets.getNumItems();
 
@@ -96,18 +110,21 @@ but_drawerGoto.onleftClick(){
 	{
 		CProWidget gr = internalWidgets.enumItem(i);
 		popMenu.addCommand(gr.getXMLparam("name"), i, cur == i, gr.disabled);
+		if(gr.addSep) popMenu.addSeparator();
 	}
+	popMenu.addSeparator();
 
-	widgetmenu = new PopUpMenu;
+	//widgetmenu = new PopUpMenu;
 
 	int x;
 	for (x = 0; x < numUserWidgets; x++) {
 		GuiObject gr = dummyBuck.enumChildren(x);
-		widgetmenu.addCommand(gr.getXMLparam("name"), userWidgetOffset+x, cur == userWidgetOffset+x, 0);
+		//widgetmenu.addCommand(gr.getXMLparam("name"), userWidgetOffset+x, cur == userWidgetOffset+x, 0);
+		popMenu.addCommand(gr.getXMLparam("name"), userWidgetOffset+x, cur == userWidgetOffset+x, 0);
 	}
 
 	if (x == 0) widgetmenu.addCommand("No widgets found for this view!", -1, 0, 1);
-	popMenu.addSubMenu(widgetmenu, "Widgets");
+	//popMenu.addSubMenu(widgetmenu, "Widgets");
 
 
 	popMenu.addSeparator();
@@ -150,54 +167,26 @@ openDrawer(int drawerNo){
 	{
 		CProWidget gr = internalWidgets.enumItem(drawerNo);
 
-		if (gr.disabled == TRUE)
+		if (gr.disabled == true)
 		{
 		drawerNo = 0;
 			gr = internalWidgets.enumItem(drawerNo); // Load Default Widget
 		}
 
 		setDrawerBG(gr.custombg);
-		/*if(cuseqbg){
-		if(gr.custombg==0){
-				gad_Grid.hide();
-				gad_Grid2.show();
-			}
-			else{
-				gad_Grid2.hide();
-				gad_Grid.show();
+
+		if(gr.getXMLparam("name")=="Visualization"){
+			cpro_sui.sendAction ("release", "VIS", 0, 0, 0, 0);
 		}
-		}*/
-
-		/*if (gr.hideVis == TRUE)
-		{
-			// TODO
-			// it seems that it is a prob that vis is now id=2 and not id=3
-			// I've located the stuff in controsui: ll 550, 661, 723, 1085 -- it is just comparing w/ the id!!!
-			// but ideally we should handle this completely another way!
-			// i would send cpro_sui.sendAction ("release", "vis", 0, 0, 0, 0);
-			// then any widget or centrosui catches this even and should hide 'his' vis group and perform retabbing actions
-			// after this has happened we can open the vis again in the new area
-
-			if(getPublicInt("cPro.lastMini", 0)==2){
-				cpro_sui.sendAction ("switch_to_mini", "", 0, 0, 0, 0);
-			}
-			if(getPublicInt("cPro.lastComponentPage", 0)==2){
-				cpro_sui.sendAction ("switch_to_tab", "", 0, 0, 0, 0);
-			}
-			
-			pjn: just changed the centrosui stuff from 3 to 2.
-			Current method works great and if the above is implemented it wont improve anything since the drawer and centrosui is 
-			still very dependant on each other either way.
-			
-			Centro still needs to know what drawer is openned because it must see where the vis plugin is trying to open..
-			so the above might not be so easy.. but just had a quick look tbh.
-			
-			-----
-			tbh would like to have a centro v2 thats integrate the drawer and make use of the internal widgets to load the drawers like eq for example.
-			Then the drawer can register itself as a guid owner so if its openned and that guid comes along the sui system leave the call.
-			Then add a new xui thats just for tabs with on the fly creating and nice animated moves... and support right click menu's...
-			then we'll have a real winner ;)
-		}*/
+		else if (gr.getXMLparam("name")=="Playlist"){
+			cpro_sui.sendAction ("release", "PL", 0, 0, 0, 0);
+		}
+		else if (gr.getXMLparam("name")=="Video"){
+			cpro_sui.sendAction ("release", "VID", 0, 0, 0, 0);
+		}
+		else if (gr.getXMLparam("name")=="Tag Viewer"){
+			cpro_sui.sendAction ("release", "TAG", 0, 0, 0, 0);
+		}
 
 		gr.show();
 	}
@@ -215,6 +204,9 @@ openDrawer(int drawerNo){
 
 myGroup.onAction (String action, String param, int x, int y, int p1, int p2, GuiObject source){
 	if (strlower(action) == "switch_to_drawer") openDrawer(x);
+	if (strlower(action) == "release"){
+		if(param=="TAG") if(getPublicInt("cPro.lastDrawer", 0)==1) openDrawer(0);
+	}
 }
 
 but_drawerGoto.onEnterArea(){

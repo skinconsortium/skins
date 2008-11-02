@@ -16,6 +16,7 @@ Internet:	www.skinconsortium.com
 
 // #define DEBUG
 #define FILE_NAME "fileinfo.m"
+#define MINI_TAG_H_CHANGE 150
 #include <lib/debug.m>
 
 Function loadFileInfo();
@@ -224,13 +225,20 @@ loadFileInfo ()
 {
 	if(!scriptGroup.isVisible()) return;
 
-	if(getPublicInt("ClassicPro.tagviewer.1", 1)){
-		g_cover.show();
-		tagsGroup.setXmlParam("x", "130");
-		tagsGroup.setXmlParam("w", "-132");
+	if(scriptGroup.getHeight() < MINI_TAG_H_CHANGE || !getPublicInt("ClassicPro.tagviewer.1", 1)){
+		if(getPublicInt("ClassicPro.tagviewer.1", 1) && scriptGroup.getWidth() >= 210){
+			g_cover.show();
+			tagsGroup.setXmlParam("x", "130");
+			tagsGroup.setXmlParam("w", "-132");
+		}
+		else{
+			g_cover.hide();
+			tagsGroup.setXmlParam("x", "4");
+			tagsGroup.setXmlParam("w", "-6");
+		}
 	}
 	else{
-		g_cover.hide();
+		g_cover.show();
 		tagsGroup.setXmlParam("x", "4");
 		tagsGroup.setXmlParam("w", "-6");
 	}
@@ -266,6 +274,7 @@ loadFileInfo ()
 	stationLink = "";
 
 	Boolean _cycle = getPublicInt("ClassicPro.tagviewer.100", 1);
+	
 	Boolean _rating = getPublicInt("ClassicPro.tagviewer.19", 1);
 
 	// empty cycle list
@@ -997,10 +1006,52 @@ optionsButton.onLeftClick ()
 	if(a>0){
 		setPublicInt("ClassicPro.tagviewer."+integerToString(a), !getPublicInt("ClassicPro.tagviewer."+integerToString(a), 1));
 	}
+	if(a==1) scriptGroup.onResize(0,0,scriptGroup.getWidth(),scriptGroup.getHeight());
 	loadFileInfo();
 
 }
 
 scriptGroup.onSetVisible(boolean onOff){
-	if(onOff) loadFileInfo();
+	if(onOff){
+		scriptGroup.onResize(0,0,scriptGroup.getWidth(),scriptGroup.getHeight());
+		loadFileInfo();
+	}
+}
+
+
+scriptGroup.onResize(int x, int y, int w, int h){
+	if(h<119) h=119;
+
+	if(h<MINI_TAG_H_CHANGE || !getPublicInt("ClassicPro.tagviewer.1", 1)){
+		boolean updateMe = false;
+		
+		if(w<210 && g_cover.isVisible()) updateMe = true;
+		else if(g_cover.isVisible() != getPublicInt("ClassicPro.tagviewer.1", 1)) updateMe = true;
+		
+		//g_cover.setXmlParam("y", integerToString(h/2-119/2+4));
+		tagsGroup.setXmlParam("y", integerToString(h/2-119/2+4));
+		
+		if(tagsGroup.getXmlParam("relaty")!="0"){
+			g_cover.setXmlParam("w", "111");
+			g_cover.setXmlParam("relatw", "0");
+			g_cover.setXmlParam("h", "-8");
+			g_cover.setXmlParam("relath", "1");
+			tagsGroup.setXmlParam("relaty", "0");
+			updateMe = true;
+		}
+		
+		if(updateMe) loadFileInfo();
+	}
+	else if(tagsGroup.getXmlParam("relaty")!="1"){
+		g_cover.setXmlParam("y", "4");
+		g_cover.setXmlParam("w", "0");
+		g_cover.setXmlParam("relatw", "1");
+		g_cover.setXmlParam("h", "-120");
+		g_cover.setXmlParam("relath", "1");
+
+		tagsGroup.setXmlParam("relaty", "1");
+		tagsGroup.setXmlParam("y", "-100");
+		tagsGroup.setXmlParam("y", "-100");
+		loadFileInfo();
+	}
 }
