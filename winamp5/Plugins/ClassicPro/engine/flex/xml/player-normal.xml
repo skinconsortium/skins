@@ -2,6 +2,13 @@
 
 <layout id="normal" background="cpro.flex.player.normal.bg" alphabackground="cpro.flex.player.normal.bg.alpha">
 
+	<!-- Background Overlays -->
+
+	<layer id="bg.overlay1" x="0" y="0" image="cpro.flex.player.normal.bg.overlay1" alpha="253" sysregion="1"/>
+	<layer id="bg.overlay2" x="0" y="0" image="cpro.flex.player.normal.bg.overlay2" alpha="253" sysregion="1"/>
+
+	<layer id="display" x="0" y="0" image="cpro.flex.player.normal.display" alpha="253" sysregion="1"/>
+
 	<!-- CButtons -->
 
 	<button
@@ -15,7 +22,7 @@
 		translate="2"
 		alpha="253"
 	/>
-	<layer id="cbutton.prev.glow" fitparent="1" ghost="1" image="cpro.flex.player.normal.prev.glow" alpha="0"/>
+	<layer id="cbutton.prev.glow" x="0" y="0" ghost="1" image="cpro.flex.player.normal.prev.glow" alpha="0"/>
 
 	<button
 		x="0" y="0"
@@ -28,7 +35,7 @@
 		translate="2"
 		alpha="253"
 	/>
-	<layer id="cbutton.play.glow" fitparent="1" ghost="1" image="cpro.flex.player.normal.play.glow" alpha="0"/>
+	<layer id="cbutton.play.glow" x="0" y="0" ghost="1" image="cpro.flex.player.normal.play.glow" alpha="0"/>
 
 	<button
 		id="cbutton.pause"
@@ -41,7 +48,7 @@
 		translate="2"
 		alpha="253"
 	/>
-	<layer id="cbutton.pause.glow" fitparent="1" ghost="1" image="cpro.flex.player.normal.pause.glow" alpha="0"/>
+	<layer id="cbutton.pause.glow" x="0" y="0" ghost="1" image="cpro.flex.player.normal.pause.glow" alpha="0"/>
 
 	<script
 		file="@WINAMPPATH@\Plugins\classicPro\engine\flex\scripts\playpause.maki"
@@ -58,7 +65,7 @@
 		translate="2"
 		alpha="253"
 	/>
-	<layer id="cbutton.stop.glow" fitparent="1" ghost="1" image="cpro.flex.player.normal.stop.glow" alpha="0"/>
+	<layer id="cbutton.stop.glow" x="0" y="0" ghost="1" image="cpro.flex.player.normal.stop.glow" alpha="0"/>
 
 	<button
 		id="cbutton.next"
@@ -71,7 +78,7 @@
 		translate="2"
 		alpha="253"
 	/>
-	<layer id="cbutton.next.glow" fitparent="1" ghost="1" image="cpro.flex.player.normal.next.glow" alpha="0"/>
+	<layer id="cbutton.next.glow" x="0" y="0" ghost="1" image="cpro.flex.player.normal.next.glow" alpha="0"/>
 
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\flex\scripts\glow.maki" />
 
@@ -201,5 +208,7 @@
 		tooltip="Exit Winamp"
 		alpha="253"
 	/>
+
+	<layer id="ghost" x="0" y="0" image="cpro.flex.player.normal.ghost" alpha="253" sysregion="1" ghost="1"/>
 
 </layout>

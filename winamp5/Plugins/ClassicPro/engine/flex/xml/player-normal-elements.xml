@@ -1,8 +1,15 @@
 <elements>
 	<!-- Background -->
-	<bitmap id="cpro.flex.player.normal.bg.alpha" file="player/normal/background-alpha.png" gammagroup="player.normal.background"/>
 	<bitmap id="cpro.flex.player.normal.bg" file="player/normal/background.png" gammagroup="player.normal.background"/>
+	<bitmap id="cpro.flex.player.normal.bg.alpha" file="player/normal/background-alpha.png" gammagroup="player.normal.background"/>
+	<bitmap id="cpro.flex.player.normal.bg.overlay1" file="player/normal/background-overlay1.png" gammagroup="player.normal.background.overlay1"/>
+	<bitmap id="cpro.flex.player.normal.bg.overlay2" file="player/normal/background-overlay2.png" gammagroup="player.normal.background.overlay2"/>
 
+	<!-- Display -->
+
+	<bitmap id="cpro.flex.player.normal.display" file="player/normal/display.png" gammagroup="player.normal.display"/>
+	<bitmap id="cpro.flex.player.normal.ghost" file="player/normal/ghost.png" gammagroup="player.normal.ghost"/>
+	
 	<!-- CButtons -->
 	<bitmap id="cpro.flex.player.normal.open" file="player/normal/cbutton-open.png" gammagroup="player.normal.cbuttons"/>
 	<bitmap id="cpro.flex.player.normal.open.hover" file="player/normal/cbutton-open-hover.png" gammagroup="player.normal.cbuttons"/>
