@@ -16,13 +16,20 @@ Global GuiObject myText;
 
 System.onScriptLoaded ()
 {
-	myText = getScriptGroup().findObject(getToken(getParam(), ",", 0));
+	myText = getScriptGroup().findObject(getToken(getParam(), ";", 0));
 	Region r = new Region;
-	r.loadFromBitmap(getToken(getParam(), ",", 1));
-	myText.setXmlParam("x", integerToString(r.getBoundingBoxX()));
-	myText.setXmlParam("y", integerToString(r.getBoundingBoxY()));
-	myText.setXmlParam("h", integerToString(r.getBoundingBoxH()));
-	myText.setXmlParam("w", integerToString(r.getBoundingBoxW()));
+	r.loadFromBitmap(getToken(getParam(), ";", 1));
+
+	//if (r.getBoundingBoxW() > 0)
+	{
+		myText.setXmlParam("x", integerToString(r.getBoundingBoxX()));
+		myText.setXmlParam("y", integerToString(r.getBoundingBoxY()));
+		myText.setXmlParam("h", integerToString(r.getBoundingBoxH()));
+		myText.setXmlParam("w", integerToString(r.getBoundingBoxW()));
+		
+		myText.show();
+	}
+
 	delete r;
 
 	ClassicProFlex.applyStyle(myText, myText.getXmlParam("userdata"));

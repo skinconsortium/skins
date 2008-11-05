@@ -8,6 +8,8 @@
 	<!-- Display -->
 
 	<bitmap id="cpro.flex.player.normal.display" file="player/normal/display.png" gammagroup="player.normal.display"/>
+	<bitmap id="cpro.flex.player.normal.display.overlay" file="player/normal/display-overlay.png" gammagroup="player.normal.display.overlay"/>
+	<bitmap id="cpro.flex.player.normal.display.mask" file="player/normal/display-mask.png" gammagroup="player.normal.display"/>
 	<bitmap id="cpro.flex.player.normal.ghost" file="player/normal/ghost.png" gammagroup="player.normal.ghost"/>
 	
 	<!-- CButtons -->
@@ -73,4 +75,8 @@
 	<!-- Text Stuff -->
 	<bitmap id="cpro.flex.player.normal.time.region" file="player/normal/time-region.png" />
 	<bitmap id="cpro.flex.player.normal.songticker.region" file="player/normal/songticker-region.png" />
+
+	<!-- AlbumArt -->
+	<bitmap id="cpro.flex.player.normal.albumart.region" file="player/normal/albumart-region.png" />
+
 </elements>
