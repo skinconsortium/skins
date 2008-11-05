@@ -497,7 +497,9 @@ drawer.onSetVisible(boolean onOff){
 }
 
 System.onOpenUrl(string url){
-	//openTabNo(3);
+	openTabNo(3);
+	updateTabButtonStates();
+	xuiBrowser.sendAction ("openurl", url, 0, 0, 0, 0);
 	return 1;
 }
 
@@ -1013,7 +1015,7 @@ tog_NowPlay.onLeftClick(){
 
 area_right.onSetVisible(boolean onOff){
 	if(onOff && getPublicInt("cPro.lastComponentPage", 0)==4 && !skipLoad) openTabNo(0); //dont want two playlist hey?
-	if(getPublicInt("cPro.lastDrawer", 0)==DRAWER_PL_ID && open_drawer)	drawer.sendAction ("switch_to_drawer", "", 0, 0, 0, 0);
+	if(getPublicInt("cPro.lastDrawer", 0)==DRAWER_PL_ID) drawer.sendAction ("switch_to_drawer", "", 0, 0, 0, 0);
 	//spaceTabs();
 }
 

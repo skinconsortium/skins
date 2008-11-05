@@ -4,7 +4,7 @@
 ; Define Sourcedirectory here
 
 ; source path of pjn123
-!define SOURCEPATH "C:\Program Files\Winamp\Plugins\classicPro\"
+!define SOURCEPATH "C:\Program Files\Winamp\Plugins\ClassicPro\"
 
 
 ;--------------------------------
@@ -16,14 +16,14 @@
 ;General
 
   ;Name and file
-  Name "ClassicPro© v1.04"
+  Name "ClassicPro© v1.05"
   
   ;RELEASE  
-  OutFile "ClassicPro_1.04.exe"
+  ;OutFile "ClassicPro_1.05.exe"
 
   ;BETA STAGE  
   !define /date DATE "%Y-%m-%d"
-  ;OutFile "ClassicPro_1.04_(${DATE}).exe"
+  OutFile "ClassicPro_1.05_(${DATE}).exe"
 
 	; The default installation directory
 	InstallDir $PROGRAMFILES\Winamp
@@ -101,10 +101,10 @@ Section "ClassicPro Engine" cproFiles
 
   SectionIn RO    ; required
 
-  SetOutPath $INSTDIR\Plugins\classicPro
+  SetOutPath $INSTDIR\Plugins\ClassicPro
   File "${SOURCEPATH}\*.txt"
 
-  SetOutPath $INSTDIR\Plugins\classicPro\_installer
+  SetOutPath $INSTDIR\Plugins\ClassicPro\_installer
   File "${SOURCEPATH}\_installer\*.nsi"
   File "${SOURCEPATH}\_installer\icon.ico"
   File "${SOURCEPATH}\_installer\widget.ico"
@@ -112,89 +112,102 @@ Section "ClassicPro Engine" cproFiles
   File "${SOURCEPATH}\_installer\header.bmp"
   File "${SOURCEPATH}\_installer\win.bmp"
   
-  SetOutPath $INSTDIR\Plugins\classicPro\engine
+  SetOutPath $INSTDIR\Plugins\ClassicPro\engine
   File "${SOURCEPATH}\engine\*.xml"
 
-  SetOutPath $INSTDIR\Plugins\classicPro\engine\scripts
+  SetOutPath $INSTDIR\Plugins\ClassicPro\engine\scripts
   File "${SOURCEPATH}\engine\scripts\*.m"
   File "${SOURCEPATH}\engine\scripts\*.maki"
 
-  SetOutPath $INSTDIR\Plugins\classicPro\engine\scripts\attribs
+  SetOutPath $INSTDIR\Plugins\ClassicPro\engine\scripts\attribs
   File "${SOURCEPATH}\engine\scripts\attribs\*.m"
 
-  SetOutPath $INSTDIR\Plugins\classicPro\engine\xml
+  SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xml
   File "${SOURCEPATH}\engine\xml\*.xml"
 
-  SetOutPath $INSTDIR\Plugins\classicPro\engine\image
+  SetOutPath $INSTDIR\Plugins\ClassicPro\engine\image
   File "${SOURCEPATH}\engine\image\*.png"
 
-  SetOutPath $INSTDIR\Plugins\classicPro\engine\homepage
-  File "${SOURCEPATH}\engine\homepage\*.htm"
+  ;SetOutPath $INSTDIR\Plugins\ClassicPro\engine\homepage
+  ;File "${SOURCEPATH}\engine\homepage\*.htm"
 
-  SetOutPath $INSTDIR\Plugins\classicPro\engine\xui
+  SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui
   File "${SOURCEPATH}\engine\xui\*.xml"
 
-  SetOutPath $INSTDIR\Plugins\classicPro\engine\xui\CentroSUI
+  SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\CentroSUI
   File "${SOURCEPATH}\engine\xui\CentroSUI\*.xml"
   File "${SOURCEPATH}\engine\xui\CentroSUI\*.png"
 
-  SetOutPath $INSTDIR\Plugins\classicPro\engine\xui\CentroSUI\scripts
+  SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\CentroSUI\scripts
   File "${SOURCEPATH}\engine\xui\CentroSUI\scripts\*.m"
   File "${SOURCEPATH}\engine\xui\CentroSUI\scripts\*.maki"
 
-  SetOutPath $INSTDIR\Plugins\classicPro\engine\xui\updateSystem
+  SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\updateSystem
   File "${SOURCEPATH}\engine\xui\updateSystem\*.xml"
   File "${SOURCEPATH}\engine\xui\updateSystem\*.m"
   File "${SOURCEPATH}\engine\xui\updateSystem\*.maki"
 
-  SetOutPath $INSTDIR\Plugins\classicPro\engine\xui\editbox
+  SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\editbox
   File "${SOURCEPATH}\engine\xui\editbox\*.xml"
 
-  SetOutPath $INSTDIR\Plugins\classicPro\engine\xui\historyeditbox
+  SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\historyeditbox
   File "${SOURCEPATH}\engine\xui\historyeditbox\*.xml"
   File "${SOURCEPATH}\engine\xui\historyeditbox\*.m"
   File "${SOURCEPATH}\engine\xui\historyeditbox\*.maki"
 
-  SetOutPath $INSTDIR\Plugins\classicPro\engine\xui\SC-ProgressGrid
+  SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\SC-ProgressGrid
   File "${SOURCEPATH}\engine\xui\SC-ProgressGrid\*.xml"
   File "${SOURCEPATH}\engine\xui\SC-ProgressGrid\*.m"
   File "${SOURCEPATH}\engine\xui\SC-ProgressGrid\*.maki"
 
-  SetOutPath $INSTDIR\Plugins\classicPro\engine\xui\NowPlaying
+  SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\NowPlaying
   File "${SOURCEPATH}\engine\xui\NowPlaying\*.xml"
   File "${SOURCEPATH}\engine\xui\NowPlaying\*.m"
   File "${SOURCEPATH}\engine\xui\NowPlaying\*.maki"
   File "${SOURCEPATH}\engine\xui\NowPlaying\*.png"
 
-  SetOutPath $INSTDIR\Plugins\classicPro\engine\xui\FadeText
+  SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\FadeText
   File "${SOURCEPATH}\engine\xui\FadeText\*.xml"
   File "${SOURCEPATH}\engine\xui\FadeText\*.m"
   File "${SOURCEPATH}\engine\xui\FadeText\*.maki"
 
-  SetOutPath $INSTDIR\Plugins\classicPro\engine\xui\AlbumArt
+  SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\AlbumArt
   File "${SOURCEPATH}\engine\xui\AlbumArt\*.xml"
   File "${SOURCEPATH}\engine\xui\AlbumArt\*.m"
   File "${SOURCEPATH}\engine\xui\AlbumArt\*.maki"
 
-  SetOutPath $INSTDIR\Plugins\classicPro\engine\xui\SC-Channels
+  SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\SC-Channels
   File "${SOURCEPATH}\engine\xui\SC-Channels\*.xml"
   File "${SOURCEPATH}\engine\xui\SC-Channels\*.m"
   File "${SOURCEPATH}\engine\xui\SC-Channels\*.maki"
 
-  SetOutPath $INSTDIR\Plugins\classicPro\engine\xui\Ratings
+  SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\Ratings
   File "${SOURCEPATH}\engine\xui\Ratings\*.xml"
   File "${SOURCEPATH}\engine\xui\Ratings\*.m"
   File "${SOURCEPATH}\engine\xui\Ratings\*.maki"
 
-  SetOutPath $INSTDIR\Plugins\classicPro\engine\xui\PlaylistPro
+  SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\PlaylistPro
   File "${SOURCEPATH}\engine\xui\PlaylistPro\alt\*.xml"
 
-  SetOutPath $INSTDIR\Plugins\classicPro\engine\xui\ModernSongticker
+  SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\ModernSongticker
   File "${SOURCEPATH}\engine\xui\ModernSongticker\*.xml"
   File "${SOURCEPATH}\engine\xui\ModernSongticker\*.txt"
   File "${SOURCEPATH}\engine\xui\ModernSongticker\*.m"
   File "${SOURCEPATH}\engine\xui\ModernSongticker\*.maki"
 
+	; ======= cPro::One =======
+  SetOutPath $INSTDIR\Plugins\ClassicPro\engine\one\scripts
+  File "${SOURCEPATH}\engine\one\scripts\*.m"
+  File "${SOURCEPATH}\engine\one\scripts\*.maki"
+
+  SetOutPath $INSTDIR\Plugins\ClassicPro\engine\one\scripts\attribs
+  File "${SOURCEPATH}\engine\one\scripts\attribs\*.m"
+
+  SetOutPath $INSTDIR\Plugins\ClassicPro\engine\one\xml
+  File "${SOURCEPATH}\engine\one\xml\*.xml"
+ 
+  
+  
 
   SetOutPath "$INSTDIR\Skins"
   File "C:\Program Files\Winamp\Skins\cPro__Bento.wal"
@@ -210,7 +223,7 @@ SectionEnd
 
 SectionGroup "Components" cprocustom
 	Section "Playlist Search" cPlaylistPro
-		SetOutPath $INSTDIR\Plugins\classicPro\engine\xui\PlaylistPro
+		SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\PlaylistPro
 		File "${SOURCEPATH}\engine\xui\PlaylistPro\*.xml"
 		File "${SOURCEPATH}\engine\xui\PlaylistPro\*.m"
 		File "${SOURCEPATH}\engine\xui\PlaylistPro\*.maki"
@@ -220,19 +233,19 @@ SectionGroupEnd
 SectionGroup "Widgets" WidgetsSection
 Section "BrowserPro" wBrowserPro
 
-	SetOutPath "$INSTDIR\Plugins\classicPro\engine\widgets\Load"
+	SetOutPath "$INSTDIR\Plugins\ClassicPro\engine\widgets\Load"
 	File "${SOURCEPATH}\engine\widgets\Load\browserpro.xml"
  
-	SetOutPath "$INSTDIR\Plugins\classicPro\engine\widgets\Data\BrowserPro"
+	SetOutPath "$INSTDIR\Plugins\ClassicPro\engine\widgets\Data\BrowserPro"
 	File "${SOURCEPATH}\engine\widgets\Data\BrowserPro\*.m"
 	File "${SOURCEPATH}\engine\widgets\Data\BrowserPro\*.maki"
 	File "${SOURCEPATH}\engine\widgets\Data\BrowserPro\*.xml"
 	File "${SOURCEPATH}\engine\widgets\Data\BrowserPro\*.mi"
 
-	SetOutPath "$INSTDIR\Plugins\classicPro\engine\widgets\Data\BrowserPro\icons"
+	SetOutPath "$INSTDIR\Plugins\ClassicPro\engine\widgets\Data\BrowserPro\icons"
 	File "${SOURCEPATH}\engine\widgets\Data\BrowserPro\icons\*.png"
 
-	SetOutPath "$INSTDIR\Plugins\classicPro\engine\widgets"
+	SetOutPath "$INSTDIR\Plugins\ClassicPro\engine\widgets"
 	File /nonfatal "${SOURCEPATH}\engine\widgets\cpro-widget-BrowserPro.nsi"
 
 SectionEnd
@@ -262,7 +275,7 @@ SectionGroupEnd
 
 Section "Uninstall"
 
-  RMDir /r "$INSTDIR\Plugins\classicPro"
+  RMDir /r "$INSTDIR\Plugins\ClassicPro"
 
 SectionEnd
 
