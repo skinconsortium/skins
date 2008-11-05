@@ -22,8 +22,8 @@ System.onScriptLoaded ()
 {
 	initDispatcher();
 
-	Layer tmp = getScriptGroup().findObject(getToken(getParam(), ",", 0));
-	seekBar = FillBar_construct(tmp, getToken(getParam(), ",", 1));
+	Layer tmp = getScriptGroup().findObject(getToken(getParam(), ";", 0));
+	seekBar = FillBar_construct(tmp, getToken(getParam(), ";", 1));
 	seekBar.dragable = TRUE;
 
 	seekTimer = new Timer;

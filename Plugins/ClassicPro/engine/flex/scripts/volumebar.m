@@ -20,8 +20,8 @@ Global FillBar volumeBar;
 System.onScriptLoaded ()
 {
 	initDispatcher();
-	Layer tmp = getScriptGroup().findObject(getToken(getParam(), ",", 0));
-	volumeBar = FillBar_construct(tmp, getToken(getParam(), ",", 1));
+	Layer tmp = getScriptGroup().findObject(getToken(getParam(), ";", 0));
+	volumeBar = FillBar_construct(tmp, getToken(getParam(), ";", 1));
 	volumeBar.dragable = TRUE;
 
 	FillBar_setPosition(volumeBar, System.getVolume());

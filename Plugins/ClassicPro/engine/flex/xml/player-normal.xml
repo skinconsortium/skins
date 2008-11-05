@@ -10,6 +10,13 @@
 	<layer id="display" x="0" y="0" image="cpro.flex.player.normal.display" alpha="253" sysregion="1"/>
 	<layer id="display.overlay" x="0" y="0" image="cpro.flex.player.normal.display.overlay" alpha="253" sysregion="1"/>
 
+	<!-- AlbumArt -->
+	<AlbumArt id="albumart" visible="0" />
+	<script
+		file="@WINAMPPATH@\Plugins\classicPro\engine\flex\scripts\albumart.maki"
+		param="albumart;cpro.flex.player.normal.albumart.region"
+	/>
+
 	<!-- CButtons -->
 
 	<button
@@ -100,7 +107,7 @@
 	<layer x="0" y="0" id="seek.fillbar" image="cpro.flex.player.normal.seek.fillbar" translate="2" tooltip="@winamp.playback#20" rectrgn="0" move="0"/>
 	<script
 		file="@WINAMPPATH@\Plugins\classicPro\engine\flex\scripts\seekbar.maki"
-		param="seek.fillbar,cpro.flex.player.normal.seek.fillbar.map"
+		param="seek.fillbar;cpro.flex.player.normal.seek.fillbar.map"
 	/>
 
 	<!-- Volume -->
@@ -108,7 +115,7 @@
 	<layer x="0" y="0" id="volume.fillbar" image="cpro.flex.player.normal.volume.fillbar" translate="2" tooltip="@winamp.playback#10" rectrgn="0" move="0"/>
 	<script
 		file="@WINAMPPATH@\Plugins\classicPro\engine\flex\scripts\volumebar.maki"
-		param="volume.fillbar,cpro.flex.player.normal.volume.fillbar.map"
+		param="volume.fillbar;cpro.flex.player.normal.volume.fillbar.map"
 	/>
 
 	<!-- Component buttons -->
@@ -188,12 +195,6 @@
 	<script
 		file="@WINAMPPATH@\Plugins\classicPro\engine\flex\scripts\songticker.maki"
 		param="songticker;sysinfo"
-	/>
-
-	<AlbumArt id="albumart" visible="0" />
-	<script
-		file="@WINAMPPATH@\Plugins\classicPro\engine\flex\scripts\albumart.maki"
-		param="albumart;cpro.flex.player.normal.albumart.region"
 	/>
 
 	<!-- Sysbuttons -->
