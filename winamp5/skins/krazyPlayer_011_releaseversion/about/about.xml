@@ -1,0 +1,76 @@
+
+<elements>
+  	<bitmap id="about.bg" file="about/aboutpage.jpg" />
+  	<bitmap id="about.logo" file="about/aboutpage_textpanels.png" />
+	<bitmap id="about.beatvis" file="about/aboutPage_beatvis.png" />
+	
+	<bitmap id="about.pp.n" file="about/ppbutton.png" w="109" h="35"/>
+	<bitmap id="about.pp.h" file="about/ppbutton_hover.png" w="109" h="35"/>
+	<bitmap id="about.pp.d" file="about/ppbutton_down.png" w="109" h="35"/>
+	
+
+</elements>
+
+<groupdef id="skin.about.group" w="0" h="0" relatw="1" relath="1" rectrgn="1">
+	<rect fitparent="1" color="110,119,134" filled="1" />
+	<layer
+		x="0" y="0"
+		w="0" relatw="1"
+		h="321"
+		image="about.bg"
+	/>
+
+	<layer
+		id="about.beatvis"
+		x="103" y="126"
+		w="174" h="130"    
+		image="about.beatvis"
+		alpha="255"
+	/>
+
+	<layer
+		id="about.logo"
+		x="0" y="0"
+		w="0" relatw="1"
+		h="321"
+		image="about.logo"
+		alpha="220"
+	/>
+
+	<!-- URLS -->
+	<!-- left side -->
+	<SC:HyperLinkButton id="url1" x="24" y="190" w="130" h="22" text="skinconsortium.com" tooltip="Visit Skin Consortium - (Opens in new window)" url="http://www.skinconsortium.com/" />
+	
+	<SC:HyperLinkButton id="url2" x="24" y="229" w="130" h="22" text="The Elusive Melon" tooltip="Visit The Elusive Melon - (Opens in new window)" url="http://forums.skinconsortium.com/profile.php?userid=31" />
+	
+	<SC:HyperLinkButton id="url3" x="24" y="253" w="130" h="22" text="SLoB" tooltip="Visit SLoB - (Opens in new window)" url="http://slob.org.uk/" />
+	
+	<SC:HyperLinkButton id="url4" x="24" y="277" w="130" h="22" text="martin.deimos" tooltip="Visit martin.deimos - (Opens in new window)" url="http://martin-deimos.deviantart.com/" />
+	
+	
+	<!-- right side -->
+	<SC:HyperLinkButton id="url1" x="225" y="190" w="130" h="22" text="timsilva.com" tooltip="Visit Tim Silva - (Opens in new window)" url="http://www.timsilva.com/" />
+	
+	<SC:HyperLinkButton id="url1" x="225" y="214" w="130" h="22" text="krazytim.deviantart.com" tooltip="Visit krazytim - (Opens in new window)" url="http://krazytim.deviantart.com/" />
+	
+	<SC:HyperLinkButton id="url4" x="225" y="253" w="130" h="22" text="xdreamer(Merz Manuel)" tooltip="Visit xdreamer - (Opens in new window)" url="http://www.xdreams.ch/" />
+   
+   
+  
+	<button id="donate" x="136" y="287" relaty="0" image="about.pp.n" hoverImage="about.pp.h" downImage="about.pp.d" />
+	<script file="about/donate.maki" param="KrazyPlayer"/>
+
+<guiobject fitparent="1" ghost="1"/>
+
+</groupdef>
+
+<container id="about.skin" name="About KrazyPlayer" default_x="354" default_y="0" default_visible="0">
+	<layout id="normal" minimum_w="408" minimum_h="366" h="366" w="408" maximum_w="408" maximum_h="366">
+		<Wasabi:Standardframe:NoStatus
+		    x="0" y="0" w="0" h="0" relatw="1" relath="1"
+		    content="skin.about.group"
+		    padtitleleft="10"
+		    padtitleright="12"
+		  />
+	</layout>
+</container>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<WasabiXML version="1.31">
+
+	<skininfo>
+		<version>1.0</version>
+		<name>KrazyPlayer</name>
+		<comment>Gfx by krazyTim, coding by Martin Poehlmann, TheElusiveMelon and SLoB</comment>
+		<author>Skin Consortium</author>
+		<email>email@skinconsortium.de</email>
+		<homepage>http://www.skinconsortium.com</homepage>
+		<screenshot>screenshot.png</screenshot>
+	</skininfo>
+
+	<include file="XML/elements.xml"/>
+	<include file="XML/system-colors.xml"/>
+	<include file="XUI/xui.xml"/>
+	<include file="updateSystem/updateSystem.xml"/>
+	<include file="XML/standardframe.xml"/>
+	<include file="XML/main.xml"/>
+	<include file="XML/eq.xml"/>
+	<include file="XML/pledit.xml"/>
+	<include file="XML/ml.xml"/>
+	<include file="XML/video.xml"/>
+	<include file="XML/vis.xml"/>
+	<include file="XML/notifier.xml"/>
+	<include file="colorchanger/colorchanger.xml"/>
+	<include file="HyperLinkButton/HyperLinkButton.xml" />
+	<include file="about/about.xml"/>
+
+
+	<scripts>		
+		<script id="scripts.colorchanger" file="Scripts/colorchanger.maki"/>
+		<script id="scripts.loadeffect" file="Scripts/loadeffect.maki"/>	
+	</scripts>
+
+
+</WasabiXML>

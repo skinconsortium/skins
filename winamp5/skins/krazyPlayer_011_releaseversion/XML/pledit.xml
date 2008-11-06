@@ -1,0 +1,129 @@
+
+
+<groupdef id="pledit.buttons" relatw="1" w="0" h="21">
+
+	<grid 
+		x="0" y="0" h="35" w="0" relatw="1" regionop="1" move="1"
+		left="wasabi.frame2.bottom.left"
+		middle="wasabi.frame2.bottom"
+		right="wasabi.frame2.bottom.right"
+	/>
+
+  <button
+    id="pl.add"
+    action="PE_Add"
+    x="10" y="8"
+    image="pledit.button.normal"
+    downImage="pledit.button.down"
+    hoverImage="pledit.button.hover"
+    tooltip="Add Files to Playlist"
+  />
+
+  <button
+    id="pl.rem"
+    action="PE_Rem"
+    x="46" y="8"
+    image="pledit.button.normal"
+    downImage="pledit.button.down"
+    hoverImage="pledit.button.hover"
+    tooltip="Remove Files from Playlist"
+  />
+
+  <button
+    id="pl.sel"
+    action="PE_Sel"
+    x="82" y="8"
+    image="pledit.button.normal"
+    downImage="pledit.button.down"
+    hoverImage="pledit.button.hover"
+    tooltip="Select"
+  />
+
+  <button
+    id="pl.misc"
+    action="PE_Misc"
+    x="118" y="8"
+    image="pledit.button.normal"
+    downImage="pledit.button.down"
+    hoverImage="pledit.button.hover"
+    tooltip="Misc"
+  />
+
+  <grid
+	x="154" y="8" h="17" w="-200" relatw="1"
+	left="pledit.display.left"
+	middle="pledit.display.middle"
+	right="pledit.display.right"
+  />
+
+  <Text x="156" y="8" h="17" w="-204" relatw="1"
+	fontsize="14" antialias="1" bold="1" font="m_font" align="center"
+	color="color.display" ticker="1"
+	display="PE_Info"
+  />
+
+  <button
+    id="pl.list"
+    action="PE_List"
+    x="-44" y="8"
+    relatx="1"
+    image="pledit.button.normal"
+    downImage="pledit.button.down"
+    hoverImage="pledit.button.hover"
+    tooltip="Manage Playlist"
+  />
+
+  <layer x="10" y="8" image="pledit.button.text.left" ghost="1" />
+  
+  <!-- SLoB RGB -->
+  <layer id="plrightRGBBase" x="-44" relatx="1" y="8" image="pledit.button.text.right.RGB.Base" ghost="1" alpha="255"/>
+  
+  <layer id="plright" x="-44" relatx="1" y="8" image="pledit.button.text.right" ghost="1" alpha="255"/>
+  
+  <layer id="plright.RGB.Blue" x="-44" relatx="1" y="8" image="pledit.button.text.right.RGB.Blue" ghost="1" alpha="0"/>
+  <layer id="plright.RGB.Green" x="-44" relatx="1" y="8" image="pledit.button.text.right.RGB.Green" ghost="1" alpha="0"/>
+  <layer id="plright.RGB.Red" x="-44" relatx="1" y="8" image="pledit.button.text.right.RGB.Red" ghost="1" alpha="0"/>
+  
+
+	<layer id="plleftRGBBase" x="10" y="8" image="pledit.button.text.left.RGB.Base" ghost="1" alpha="255"/>
+	<layer id="plleft" x="10" y="8" image="pledit.button.text.left" ghost="1" alpha="255"/>
+	<layer id="plleft.RGB.Blue" x="10" y="8" image="pledit.button.text.left.RGB.Blue" ghost="1" alpha="0"/>
+	<layer id="plleft.RGB.Green" x="10" y="8" image="pledit.button.text.left.RGB.Green" ghost="1" alpha="0"/>
+	<layer id="plleft.RGB.Red" x="10" y="8" image="pledit.button.text.left.RGB.Red" ghost="1" alpha="0"/>
+
+
+</groupdef>
+
+<groupdef id="player.content.pl.dummy.group" name="PlaylistDummyGroup" relatw="1" relath="1" w="0" h="0">
+  <component
+    fitparent="1"
+	h="-20" relath="1"
+    noshowcmdbar="1"
+    autoopen="1"
+    autoclose="0"
+    param="guid:{45F3F7C1-A6F3-4ee6-A15E-125E92FC3F8D}"
+  />
+</groupdef>
+
+<container id="Pledit" name="Playlist Editor" dynamic="0" component="guid:{45F3F7C1-A6F3-4ee6-A15E-125E92FC3F8D}" default_x="488" default_y="4" default_visible="1">
+<layout id="normal" minimum_w="268" minimum_h="164" h="337" w="268" appbar="left|top|right|bottom">
+  <Wasabi:StandardFrame:NoStatus
+    x="0" y="0" w="0" h="0" relatw="1" relath="1"
+    content="player.content.pl.dummy.group"
+    padtitleleft="10"
+    padtitleright="12"
+  />
+
+	<group id="pledit.buttons" x="0" y="-35" h="35" w="0" relaty="1" relatw="1" regionop="1"/>
+
+	<layer x="0" y="8" w="8" h="-16" relath="1" rectrgn="1" resize="left" />
+	<layer x="-8" relatx="1" y="8" w="8" h="-16" relath="1" rectrgn="1" resize="right" />
+
+	<layer x="0" y="-8" relaty="1" w="8" h="8" rectrgn="1" resize="bottomleft" />
+	<layer x="8" y="-8" relaty="1" w="-16" relatw="1" h="8" rectrgn="1" resize="bottom" />
+	<layer x="-8" relatx="1" y="-8" relaty="1" w="8" h="8" rectrgn="1" resize="bottomright" />
+
+	<SC:UpdateSystem x="0" y="0" h="0" w="0" skinname="krazyplayer" skinversion="1.01" />
+</layout>
+
+</container>

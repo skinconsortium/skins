@@ -1,0 +1,490 @@
+
+<groupdef id="drawer_left">
+
+<layer id="m_bottomleft" image="m_bottomleft" x="0" y="7" sysegion="1"/>
+
+	<!-- SC:RGB - SLoB -->
+	<layer id="m_lcd_left_RGB_Base" image="m_lcd_bottomleft_RGB_Base" x="6" y="0" rectrgn="1" ghost="1"/>
+	<layer id="m_lcd_left_RGB_Blue" image="m_lcd_bottomleft_RGB_Blue" x="6" y="0" rectrgn="1" ghost="1"/>
+	<layer id="m_lcd_left_RGB_Green" image="m_lcd_bottomleft_RGB_Green" x="6" y="0" rectrgn="1" ghost="1"/>
+	<layer id="m_lcd_left_RGB_Red" image="m_lcd_bottomleft_RGB_Red" x="6" y="0" rectrgn="1" ghost="1"/>
+	
+	<!-- original blue to toggle for RGB -->
+	<layer id="RGBToggle_m_lcd_bottomleft" image="m_lcd_bottomleft" x="6" y="0" rectrgn="1" alpha="0"/>
+	
+	<!-- too much colour saturation underneath rgb layers so reduce overall transparency and stick on top -->
+	<layer id="m_lcd_left" image="m_lcd_bottomleft_RGB_Glow" x="6" y="0" alpha="0" rectrgn="1"/>
+
+</groupdef>
+
+<groupdef id="drawer_right">
+
+<layer id="m_bottomright" image="m_bottomright" x="5" y="7" sysegion="1"/>
+
+	<!-- SC:RGB - SLoB -->
+	<layer id="m_lcd_right_RGB_Base" image="m_lcd_bottomright_RGB_Base" x="0" y="0" rectrgn="1" ghost="1"/>
+	<layer id="m_lcd_right_RGB_Blue" image="m_lcd_bottomright_RGB_Blue" x="0" y="0" rectrgn="1" alpha="0" ghost="1"/>
+	<layer id="m_lcd_right_RGB_Green" image="m_lcd_bottomright_RGB_Green" x="0" y="0" rectrgn="1" alpha="0" ghost="1"/>
+	<layer id="m_lcd_right_RGB_Red" image="m_lcd_bottomright_RGB_Red" x="0" y="0" rectrgn="1" alpha="0" ghost="1"/>
+	
+	<!-- original blue to toggle for RGB -->
+	<layer id="RGBToggle_m_lcd_bottomright" image="m_lcd_bottomright" x="0" y="0" rectrgn="1" alpha="0"/>
+	
+	<!-- too much colour saturation underneath ALL rgb layers so reduce overall transparency and stick here -->
+	<layer id="m_lcd_right" image="m_lcd_bottomright_RGB_Glow" x="0" y="0" alpha="0" rectrgn="1"/>
+	
+</groupdef>
+
+<groupdef id="LCD">
+
+<layer id="m_white_sur" image="m_whitesurround" x="0" y="0"/>
+
+	
+	<!-- SC:RGB - SLoB -->
+	<layer id="m_lcd_RGB_Base" image="m_lcd_RGB_Base" x="20" y="18"/>
+
+	<layer id="m_lcd_RGB_Blue" image="m_lcd_RGB_Blue" x="20" y="18"/>
+	<layer id="m_lcd_RGB_Green" image="m_lcd_RGB_Green" x="20" y="18"/>
+	<layer id="m_lcd_RGB_Red" image="m_lcd_RGB_Red" x="20" y="18"/>
+
+	<!-- original blue to toggle for RGB -->
+	<layer id="RGBToggle_m_lcd" image="m_lcd" x="20" y="18" alpha="0"/>
+
+	
+	<!-- SC:RGB - SLoB -->
+	<layer id="m_black_sur_RGB_Base" image="m_blacksurround_RGB_Base" x="6" y="4" ghost="1"/>
+	<layer id="m_black_sur_RGB_Blue" image="m_blacksurround_RGB_Blue" x="6" y="4" ghost="1"/>
+	<layer id="m_black_sur_RGB_Green" image="m_blacksurround_RGB_Green" x="6" y="4" ghost="1"/>
+	<layer id="m_black_sur_RGB_Red" image="m_blacksurround_RGB_Red" x="6" y="4" ghost="1"/>
+
+	<!-- original blue to toggle for RGB -->
+	<layer id="RGBToggle_m_black_sur" image="m_blacksurround" x="6" y="4" ghost="1" alpha="0"/>
+	
+	<!-- SLoB rimlights vis -->
+	<layer id="m_blacksurround_rimlights_glow" image="m_blacksurround_rimlights_glow" x="12" y="-16" ghost="1" alpha="0"/>
+	
+
+	<layer id="m_seek_bg" image="m_seek_bg" x="37" y="54" alpha="90"/>
+	<layer id="m_vol_bg" image="m_vol_bg" x="115" y="54" alpha="90"/>
+
+	<layer id="m_vis_left" image="m_vis_left" x="50" y="74" w="14" h="44" alpha="80"/>
+	<layer id="m_vis_right" image="m_vis_right" x="122" y="74" w="14" h="44" alpha="80"/>
+
+</groupdef>
+
+<groupdef id="main_vis_grp" background="m_vis_raster" drawbackground="0">
+
+	<vis id="main.vis"
+		fitparent="1"
+		bandwidth="thin"
+		oscstyle="lines"
+		colorallbands="255,255,255"
+		colorbandpeak="255,255,255"
+		colorosc1="255,255,255"
+		colorosc2="255,255,255"
+		colorosc3="255,255,255"
+		colorosc4="255,255,255"
+		colorosc5="255,255,255"
+		alpha="150"
+		ghost="1"
+	/>
+
+	<vis id="main.vis2"
+		fitparent="1"
+		bandwidth="thin"
+		oscstyle="lines"
+		colorallbands="255,255,255"
+		colorbandpeak="255,255,255"
+		colorosc1="255,255,255"
+		colorosc2="255,255,255"
+		colorosc3="255,255,255"
+		colorosc4="255,255,255"
+		colorosc5="255,255,255"
+		alpha="150"
+		ghost="1"
+		flipv="1"
+		mode="2"
+	/>
+
+</groupdef>
+
+<!-- thanks pjn123 -->
+<groupdef id="main.timelineVis" background="m_vis_raster" drawbackground="0">
+	<AnimatedLayer id="timeline.vis.25" x="0" y="0" w="1" h="50" image="timeline.animation" autoplay="0" autoreplay="1" ghost="1" alpha="220"/>
+	<AnimatedLayer id="timeline.vis.24" x="2" y="0" w="1" h="50" image="timeline.animation" autoplay="0" autoreplay="1" ghost="1" alpha="220"/>
+	<AnimatedLayer id="timeline.vis.23" x="4" y="0" w="1" h="50" image="timeline.animation" autoplay="0" autoreplay="1" ghost="1" alpha="220"/>
+	<AnimatedLayer id="timeline.vis.22" x="6" y="0" w="1" h="50" image="timeline.animation" autoplay="0" autoreplay="1" ghost="1" alpha="220"/>
+	<AnimatedLayer id="timeline.vis.21" x="8" y="0" w="1" h="50" image="timeline.animation" autoplay="0" autoreplay="1" ghost="1" alpha="220"/>
+	<AnimatedLayer id="timeline.vis.20" x="10" y="0" w="1" h="50" image="timeline.animation" autoplay="0" autoreplay="1" ghost="1" alpha="220"/>
+	<AnimatedLayer id="timeline.vis.19" x="12" y="0" w="1" h="50" image="timeline.animation" autoplay="0" autoreplay="1" ghost="1" alpha="220"/>
+	<AnimatedLayer id="timeline.vis.18" x="14" y="0" w="1" h="50" image="timeline.animation" autoplay="0" autoreplay="1" ghost="1" alpha="220"/>
+	<AnimatedLayer id="timeline.vis.17" x="16" y="0" w="1" h="50" image="timeline.animation" autoplay="0" autoreplay="1" ghost="1" alpha="220"/>
+	<AnimatedLayer id="timeline.vis.16" x="18" y="0" w="1" h="50" image="timeline.animation" autoplay="0" autoreplay="1" ghost="1" alpha="220"/>
+	<AnimatedLayer id="timeline.vis.15" x="20" y="0" w="1" h="50" image="timeline.animation" autoplay="0" autoreplay="1" ghost="1" alpha="220"/>
+	<AnimatedLayer id="timeline.vis.14" x="22" y="0" w="1" h="50" image="timeline.animation" autoplay="0" autoreplay="1" ghost="1" alpha="220"/>
+	<AnimatedLayer id="timeline.vis.13" x="24" y="0" w="1" h="50" image="timeline.animation" autoplay="0" autoreplay="1" ghost="1" alpha="220"/>
+	<AnimatedLayer id="timeline.vis.12" x="26" y="0" w="1" h="50" image="timeline.animation" autoplay="0" autoreplay="1" ghost="1" alpha="220"/>
+	<AnimatedLayer id="timeline.vis.11" x="28" y="0" w="1" h="50" image="timeline.animation" autoplay="0" autoreplay="1" ghost="1" alpha="220"/>
+	<AnimatedLayer id="timeline.vis.10" x="30" y="0" w="1" h="50" image="timeline.animation" autoplay="0" autoreplay="1" ghost="1" alpha="220"/>
+	<AnimatedLayer id="timeline.vis.9" x="32" y="0" w="1" h="50" image="timeline.animation" autoplay="0" autoreplay="1" ghost="1" alpha="220"/>
+	<AnimatedLayer id="timeline.vis.8" x="34" y="0" w="1" h="50" image="timeline.animation" autoplay="0" autoreplay="1" ghost="1" alpha="220"/>
+	<AnimatedLayer id="timeline.vis.7" x="36" y="0" w="1" h="50" image="timeline.animation" autoplay="0" autoreplay="1" ghost="1" alpha="220"/>
+	<AnimatedLayer id="timeline.vis.6" x="38" y="0" w="1" h="50" image="timeline.animation" autoplay="0" autoreplay="1" ghost="1" alpha="220"/>
+	<AnimatedLayer id="timeline.vis.5" x="40" y="0" w="1" h="50" image="timeline.animation" autoplay="0" autoreplay="1" ghost="1" alpha="220"/>
+	<AnimatedLayer id="timeline.vis.4" x="42" y="0" w="1" h="50" image="timeline.animation" autoplay="0" autoreplay="1" ghost="1" alpha="220"/>
+	<AnimatedLayer id="timeline.vis.3" x="44" y="0" w="1" h="50" image="timeline.animation" autoplay="0" autoreplay="1" ghost="1" alpha="220"/>
+	<AnimatedLayer id="timeline.vis.2" x="46" y="0" w="1" h="50" image="timeline.animation" autoplay="0" autoreplay="1" ghost="1" alpha="220"/>
+	<AnimatedLayer id="timeline.vis.1" x="48" y="0" w="1" h="50" image="timeline.animation" autoplay="0" autoreplay="1" ghost="1" alpha="220"/>
+	<script file="scripts/timeline.maki"/>
+</groupdef>
+
+
+<groupdef id="main_group">
+
+<layer id="m_dummybg" image="m_dummybg" x="0" y="0" sysregion="1"/>
+
+<!-- SC:RGB - SLoB -->
+<layer id="m_background_TopLight_RGB_Blue" image="m_background_TopLight_RGB_Blue" x="109" y="9" ghost="1"/>
+<layer id="m_background_TopLight_RGB_Green" image="m_background_TopLight_RGB_Green" x="109" y="9" ghost="1"/>
+<layer id="m_background_TopLight_RGB_Red" image="m_background_TopLight_RGB_Red" x="109" y="9" ghost="1"/>
+
+<!-- original blue to toggle for RGB -->
+<layer id="RGBToggle_m_dummybg" image="RGBToggle_m_dummybg" x="0" y="0" sysregion="1" alpha="0" ghost="1"/>
+
+
+<group id="LCD" x="36" y="27" w="200" h="300"/>
+
+<!-- SLoB RGB ON XUI - That SLoB Geezer rocks ;) -->
+	<SCXUIButton:SCButton 
+		id="next" 
+		action="NEXT" 
+		x="151" y="263"
+		bgImage="m_next_nm" 
+		ShImage="m_next_nm"
+		noImage="m_next_nm"
+		hoImage="m_next_ov"
+		hoRGBBlueImage="m_next_ov_RGB_Blue"
+		hoRGBGreenImage="m_next_ov_RGB_Green"
+		hoRGBRedImage="m_next_ov_RGB_Red"
+		doImage="m_next_dn"
+		icImage="m_next_nm"
+		tooltip="Next"
+	/>
+	<SCXUIButton:SCButton 
+		id="stop" 
+		action="STOP" 
+		x="135" y="274"
+		bgImage="m_stop_nm" 
+		ShImage="m_stop_nm"
+		noImage="m_stop_nm"
+		hoImage="m_stop_ov"
+		hoRGBBlueImage="m_stop_ov_RGB_Blue"
+		hoRGBGreenImage="m_stop_ov_RGB_Green"
+		hoRGBRedImage="m_stop_ov_RGB_Red"		
+		doImage="m_stop_dn"
+		icImage="m_stop_nm"
+		tooltip="Stop"
+	/>
+	<SCXUIButton:SCButton 
+		id="play" 
+		action="PLAY" 
+		x="107" y="280"
+		bgImage="m_play_nm" 
+		ShImage="m_play_nm"
+		noImage="m_play_nm"
+		hoImage="makemeblank"
+		hoRGBBlueImage="m_play_ov_RGB_Blue"
+		hoRGBGreenImage="m_play_ov_RGB_Green"
+		hoRGBRedImage="m_play_ov_RGB_Red"
+		doImage="m_play_dn"
+		icImage="m_play_nm"
+		tooltip="Play"
+	/>
+	<!-- m_play_ov-->
+	<SCXUIButton:SCButton 
+		id="pause" 
+		action="PAUSE" 
+		x="78" y="275"
+		bgImage="m_pause_nm" 
+		ShImage="m_pause_nm"
+		noImage="m_pause_nm"
+		hoImage="m_pause_ov"
+		hoRGBBlueImage="m_pause_ov_RGB_Blue"
+		hoRGBGreenImage="m_pause_ov_RGB_Green"
+		hoRGBRedImage="m_pause_ov_RGB_Red"
+		doImage="m_pause_dn"
+		icImage="m_pause_nm"
+		tooltip="Pause"
+	/>
+	<SCXUIButton:SCButton 
+		id="prev" 
+		action="PREV" 
+		x="61" y="263"
+		bgImage="m_prev_nm" 
+		ShImage="m_prev_nm"
+		noImage="m_prev_nm"
+		hoImage="m_prev_ov"
+		hoRGBBlueImage="m_prev_ov_RGB_Blue"
+		hoRGBGreenImage="m_prev_ov_RGB_Green"
+		hoRGBRedImage="m_prev_ov_RGB_Red"
+		doImage="m_prev_dn"
+		icImage="m_prev_nm"
+		tooltip="Prev"
+	/>
+
+	<!-- SC:RGB - SLoB -->
+	<layer id="m_cbutton_RGB_Blue" x="78" y="280" w="102" h="30" image="m_cbutton_RGB_Blue" alpha="0" ghost="1"/>
+	<layer id="m_cbutton_RGB_Green" x="78" y="280" w="102" h="30" image="m_cbutton_RGB_Green" alpha="0" ghost="1"/>
+	<layer id="m_cbutton_RGB_Red" x="78" y="280" w="102" h="30" image="m_cbutton_RGB_Red" alpha="0" ghost="1"/>
+	
+	<!-- original blue to toggle for RGB -->
+	<layer id="RGBToggle_m_cbutton_RGB_Blue" x="78" y="280" w="102" h="30" image="m_cbutton_RGB_Blue" alpha="0" ghost="1"/>
+	
+	<SCXUITEXT:SCClock
+		id="scclock"  
+		color="font_colour" 
+		x="88" y="75" 
+		w="80" h="15" 
+		font="m_font" 
+		fontsize="20" 
+		timecolonwidth="8" 
+		antialias="1" 
+		align="center" 
+		timeroffstyle="2"
+		tooltip="Right Click: Clock Options"
+		alpha="180"
+	/>
+
+	<SCXUISlider:SCSlider
+		id="vol_slider"
+		map="m_vol_map"
+		x="151" y="81"
+		image="m_vol_bg"
+		alpha="128"
+		action="volume"
+		tooltip="Volume"
+	/>
+
+	<SCXUISlider:SCSlider
+		id="seek_slider"
+		map="m_seek_map"
+		x="73" y="81"
+		image="m_seek_bg"
+		alpha="128"
+		action="seek"
+		tooltip="Seek"
+	/>
+	<!-- SLoB mask to stop vol, seek being hit within the white bottom buttons -->
+	
+	<layer id="compbuttonmask"
+		x="89" y="178"
+		w="80" h="65"
+		image="compbuttonundermask"
+		alpha="0"
+		move="0"
+		rectrgn="0"
+	/>
+	
+
+	<layer id="albumArtOutline"
+		x="102" y="91"
+		h="54" w="54"
+		image="m_lcd_albumartoutline"
+		alpha="155"
+		
+	/>
+	
+	<AlbumArt
+		id="albumArt"
+		notfoundImage="m_lcd_Logo2"
+		x="104" y="93" h="50" w="50"
+	/>
+
+	<group id="main_vis_grp" x="105" y="93" h="50" w="50" visible="0" />
+	<group id="main.timelineVis" x="105" y="93" h="50" w="50" visible="0" />
+	<guiobject id="mousetrap.vis" x="105" y="93" h="50" w="50" rectrgn="1"/>
+
+	<script file="scripts/vis.maki" />
+
+	<GlowButton
+		id="tg.pl"
+		action="TOGGLE" param="guid:pl"
+		x="89" y="182"
+		image="m_lcd_pl"
+		glowImage="m_lcd_pl_h"
+		xtooltip="Toggle Playlist Editor"
+	/>
+	<button
+		id="tg.pl.g" ghost="1"
+		action="TOGGLE" param="guid:pl"
+		x="89" y="182"
+		image="m_lcd_pl0"
+		activeImage="m_lcd_pl1"
+	/>
+
+	<GlowButton
+		id="tg.ml"
+		action="TOGGLE" param="guid:ml"
+		x="133" y="182"
+		image="m_lcd_ml"
+		glowImage="m_lcd_ml_h"
+		xtooltip="Toggle Media Library"
+	/>
+	<button
+		id="tg.pl.g" ghost="1"
+		action="TOGGLE" param="guid:ml"
+		x="133" y="182"
+		image="m_lcd_ml0"
+		activeImage="m_lcd_ml1"
+	/>
+
+	<GlowButton
+		id="xTraMenu"
+		x="118" y="197"
+		image="m_lcd_+"
+		glowImage="m_lcd_+_h"
+		xtooltip="Configuration Menu"
+	/>
+	<script file="scripts/xtramenu.maki" param="xTraMenu" />
+
+	<GlowButton
+		id="minimize"
+		action="MINIMIZE" 
+		x="95" y="207"
+		image="m_lcd_-"
+		glowImage="m_lcd_-_h"
+		xtooltip="Minimize Winamp"
+	/>
+
+	<GlowButton
+		id="close"
+		action="CLOSE" 
+		x="144" y="207"
+		image="m_lcd_x"
+		glowImage="m_lcd_x_h"
+		xtooltip="Close Winamp"
+	/>
+
+	<GlowButton
+		id="tg.vis"
+		action="TOGGLE" param="guid:avs"
+		x="102" y="217"
+		image="m_lcd_v"
+		glowImage="m_lcd_v_h"
+		xtooltip="Toggle Visualizer"
+	/>
+	<button
+		id="tg.vis.g" ghost="1"
+		action="TOGGLE" param="guid:avs"
+		x="102" y="217"
+		image="m_lcd_v0"
+		activeImage="m_lcd_v1"
+	/>
+
+	<GlowButton
+		id="tg.q"
+		action="TOGGLE" param="eqrgb"
+		x="133" y="217"
+		image="m_lcd_q"
+		glowImage="m_lcd_q_h"
+		xtooltip="Toggle Equalizer"
+	/>
+	<button
+		id="tg.q.g" ghost="1"
+		action="TOGGLE" param="eqrgb"
+		x="133" y="217"
+		image="m_lcd_q0"
+		activeImage="m_lcd_q1"
+	/>
+	
+	<togglebutton
+		id="shuffle" ghost="1"
+		x="113" y="240"
+		w="1" h="1"
+		image="makemeblank"
+		cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Shuffle"
+	/>
+	
+	<NStatesButton
+		id="repeat"
+		nstates="3"
+		x="113" y="240"
+		w="1" h="1"		
+		image="makemeblank"		
+		cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Repeat" 
+		cfgvals="0;1;-1"
+	/> 
+	
+
+<Songticker id="songticker.r" ticker="scroll"
+	x="84" y="151" color="font_colour" align="center" w="91" h="20" tooltip="Song Title"
+	font="m_font" fontsize="12" antialias="1" rightclickaction="trackmenu" bold="1"
+	dblclickaction="trackinfo" alpha="180"
+/>
+
+<Text id="songticker" valign="top"
+	x="84" y="151" color="font_colour" align="center" w="91" h="20" tooltip="Song Title"
+	font="m_font" fontsize="12" antialias="1" rightclickaction="trackmenu" bold="1"
+	dblclickaction="trackinfo" alpha="180" visible="0"
+/>
+
+<Text id="bitrate"
+	x="123" y="161" color="font_colour" align="right" w="25" h="20" tooltip="Song Title"
+	font="m_font" fontsize="12" antialias="1" bold="1" alpha="120"
+/>
+
+<Text text="kbps"
+	x="141" y="161" color="font_colour" align="right" w="30" h="20" tooltip="Song Title"
+	font="m_font" fontsize="12" antialias="1" bold="0" alpha="120"
+/>
+<!-- debug -->
+<!--Text id="dbg"
+	x="141" y="171" default="rbvu" color="255,255,255" align="right" w="30" h="20" tooltip="Song Title"
+	font="m_font" fontsize="16" antialias="1" bold="1" alpha="255"
+/-->
+
+
+<Text id="monster" text=""
+	x="83" y="161" color="font_colour" align="left" w="50" h="20" tooltip="Song Title"
+	font="m_font" fontsize="12" antialias="1" bold="1" alpha="120"
+	rectrgn="1" dblclickaction="WA5:Prefs" dblclickparam="42"
+/>
+
+<script file="scripts/songinfo.maki"/>
+
+</groupdef>
+
+<!-- SLoB - LCD LOAD EFFECT ALSO COPES WITH RGB -->
+<groupdef id="RGBlogo">
+
+	<layer id="m_lcd_Logo_RGB_Base" image="m_lcd_Logo_RGB_Base" x="56" y="45" alpha="255" ghost="1"/>
+	<layer id="m_lcd_Logo_RGB_Blue" image="m_lcd_Logo_RGB_Blue" x="56" y="45" alpha="0" ghost="1"/>
+	<layer id="m_lcd_Logo_RGB_Green" image="m_lcd_Logo_RGB_Green" x="56" y="45" alpha="0" ghost="1"/>
+	<layer id="m_lcd_Logo_RGB_Red" image="m_lcd_Logo_RGB_Red" x="56" y="45" alpha="0" ghost="1"/>
+
+	<layer id="RGBToggle_lcdNormal" image="m_lcd_Logo" x="56" y="45" alpha="0" ghost="1"/>
+
+</groupdef>
+
+<container id="main" name="Main" default_x="220" default_y="0" default_visible="1">
+
+<layout id="normal" desktopalpha="1" background="m_background" alphabackground="m_background" snapadjustbottom = "17" >
+
+<layer id="m_shadow" image="m_shadow" x="-1" y="-2" alpha="0"/>
+
+<!-- moved in load effect to this position
+group id="drawer_left"  x="6" y="145" w="300" h="200"/>
+<group id="drawer_right"  x="169" y="145" w="300" h="200"/
+-->
+<group id="drawer_left"  x="36" y="115" w="300" h="200"/>
+<group id="drawer_right"  x="139" y="115" w="300" h="200"/>
+
+<group id="main_group" x="5" y="0" w="300" h="350"/>
+
+<group id="RGBlogo" x="5" y="0" w="300" h="350"/>
+
+<script file="Scripts/info.maki"/>
+<script id="main" file="Scripts/main.maki"/>
+</layout>
+
+</container>

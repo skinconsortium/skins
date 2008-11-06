@@ -1,0 +1,725 @@
+
+
+<groupdef id="eq.buttons" relatw="1" w="0" h="21">
+
+	<grid 
+		x="0" y="0" h="35" w="0" relatw="1" regionop="1" move="1"
+		left="wasabi.frame2.bottom.left"
+		middle="wasabi.frame2.bottom"
+		right="wasabi.frame2.bottom.right"
+	/>
+
+  <button
+    action="EQ_TOGGLE"
+    x="10" y="8"
+    image="eq.button.on.normal"
+    downImage="eq.button.on.down"
+    hoverImage="eq.button.on.hover"
+    tooltip="EQ on/off"
+  />
+  <!-- SLoB RGB button active image changed if rgb onoff-->
+  <button
+	id="BTNEQ"
+    action="EQ_TOGGLE"
+    x="10" y="8"
+    image="eq.button.on0"
+    activeImage="eq.button.on1"
+    ghost="1"
+  />
+	<layer
+		id="eq.button.on1.RGB.Blue"
+		x="10" y="8"
+		image="eq.button.on.RGB.Blue"		
+		ghost="1"
+		alpha="0"
+	/>
+	<layer
+		id="eq.button.on1.RGB.Green"
+		x="10" y="8"
+		image="eq.button.on.RGB.Green"		
+		ghost="1"
+		alpha="0"
+	/>
+	<layer
+		id="eq.button.on1.RGB.Red"
+		x="10" y="8"
+		image="eq.button.on.RGB.Red"
+		ghost="1"
+		alpha="0"
+	/>
+
+	<layer
+	id="eqonbuttonmask"
+    x="10" y="8"
+    image="eq.button.on.normal"
+	ghost="1"
+	alpha="255"
+	/>
+	
+	<layer
+	id="eqonbuttonmasktxt"
+    x="10" y="8"
+    image="eq.button.on0"
+	ghost="1"
+	alpha="255"
+	/>	
+  
+  <!-- SLoB RGB -->
+  <togglebutton
+	id="actualeqauto"
+    action="EQ_AUTO"
+    x="46" y="8"
+    image="eq.button.auto.normal"
+    downImage="eq.button.auto.down"
+    hoverImage="eq.button.auto.hover"
+    tooltip="EQ auto"
+  />
+	<togglebutton
+		id="BTNAUTO"
+		action="EQ_AUTO"
+		x="46" y="8"
+		image="eq.button.auto0"
+		activeImage="eq.button.auto1"
+		ghost="1"
+	/>	
+	<layer
+		id="BTNAUTO.RGB.Blue"
+		x="46" y="8"
+		image="eq.button.auto.RGB.Blue"		
+		ghost="1"
+		alpha="0"
+	/>
+	<layer
+		id="BTNAUTO.RGB.Green"
+		x="46" y="8"
+		image="eq.button.auto.RGB.Green"		
+		ghost="1"
+		alpha="0"
+	/>
+	<layer
+		id="BTNAUTO.RGB.Red"
+		x="46" y="8"
+		image="eq.button.auto.RGB.Red"		
+		ghost="1"
+		alpha="0"
+	/>
+	
+	<layer
+	id="eqautobuttonmask"
+    x="46" y="8"
+    image="eq.button.auto.normal"
+	ghost="1"
+	alpha="255"
+	/>
+	
+	<layer
+	id="eqautobuttonmasktxt"
+    x="46" y="8"
+    image="eq.button.auto0"
+	ghost="1"
+	alpha="255"
+	/>
+	
+
+  <grid
+	x="86" y="8" h="17" w="-157" relatw="1" ghost="1"
+	left="pledit.display.left"
+	middle="pledit.display.middle"
+	right="pledit.display.right"
+  />
+
+	<EQVis id="eq_spline" x="88" y="10" h="13" w="107" ghost="1"
+		COLORBOTTOM="156,156,156"
+		COLORMIDDLE="156,156,156"
+		COLORTOP="156,156,156"
+		COLORPREAMP="106,106,106"
+	/>
+
+  <button
+    x="-69" y="8"
+    relatx="1"
+	action="MENU" param="presets"
+    image="eq.button.pres.normal"
+    downImage="eq.button.pres.down"
+    hoverImage="eq.button.pres.hover"
+    tooltip="Open presets"
+  />
+
+	<!-- SLoB RGB -->
+  	<layer
+		id="eq.button.pres1.base"
+		x="-69" y="8"
+		relatx="1"
+		image="eq.button.pres0" ghost="1"
+		alpha="255"
+	/>
+	<layer
+		id="eq.button.pres1.RGB.Blue"
+		x="-69" y="8"
+		relatx="1"
+		image="eq.button.pres1.RGB.Blue" ghost="1"
+		alpha="255"
+	/>
+	<layer
+		id="eq.button.pres1.RGB.Green"
+		x="-69" y="8"
+		relatx="1"
+		image="eq.button.pres1.RGB.Green" ghost="1"
+		alpha="0"
+	/>
+	<layer
+		id="eq.button.pres1.RGB.Red"
+		x="-69" y="8"
+		relatx="1"
+		image="eq.button.pres1.RGB.Red" ghost="1"
+		alpha="0"
+	/>
+	<layer
+		id="eq.button.pres1.blue"
+		x="-69" y="8"
+		relatx="1"
+		image="eq.button.pres1" ghost="1"
+		alpha="255"
+	/>
+
+</groupdef>
+
+<groupdef id="player.content.eq.dummy.group" name="PlaylistDummyGroup" relatw="1" relath="1" w="0" h="0">
+
+		<layer image="eq.bg" />
+
+		<!-- SLoB RGB -->
+
+		<layer
+			id="balRGBBlue"
+			x="42" y="8" 
+			h="5" w="146"
+			image="eq.slider.eq.inner.rgb.blue.horizontal"
+			ghost="1"
+			alpha="255"			
+		/>
+		<layer
+			id="balRGBGreen"
+			x="42" y="8" 
+			h="5" w="146"
+			image="eq.slider.eq.inner.rgb.green.horizontal"
+			ghost="1"
+			alpha="255"			
+		/>
+		<layer
+			id="balRGBRed"
+			x="42" y="8" 
+			h="5" w="146"
+			image="eq.slider.eq.inner.rgb.red.horizontal"
+			ghost="1"
+			alpha="255"			
+		/>
+		
+		<layer
+			id="balblue"
+			x="42" y="8" 
+			h="5" w="146"
+			image="eq.slider.eq.inner.blue.horizontal"
+			ghost="1"
+			alpha="255"			
+		/>
+		
+		<PanBar
+			x="40" y="3" h="14" w="150"
+			thumb="eq.slider.normal"
+			hoverthumb="eq.slider.hover"
+			downthumb="eq.slider.down"
+		/>
+
+		
+		
+		<layer
+			id="eqpreblue"
+			x="13" y="26" 
+			h="68" w="5"
+			image="eq.slider.eq.inner.rgb.blue"
+			ghost="1"
+			alpha="255"			
+		/>
+		<layer
+			id="eqpregreen"
+			x="13" y="26" 
+			h="68" w="5"
+			image="eq.slider.eq.inner.rgb.green"
+			ghost="1"
+			alpha="255"			
+		/>
+		<layer
+			id="eqprered"
+			x="13" y="26" 
+			h="68" w="5"
+			image="eq.slider.eq.inner.rgb.red"
+			ghost="1"
+			alpha="255"			
+		/>
+		<layer
+			id="eqpre"
+			x="13" y="26" 
+			h="68" w="5"
+			image="eq.slider.eq.inner.blue"
+			ghost="1"
+			alpha="255"			
+		/>
+		
+		<EQPreAmp
+			x="9" y="25" h="68" w="13"
+			thumb="eq.slider.normal"
+			hoverthumb="eq.slider.hover"
+			downthumb="eq.slider.down"
+			orientation="vertical"
+		/>
+
+		<layer
+			id="eq1b"
+			x="42" y="26" 
+			h="68" w="5"
+			image="eq.slider.eq.inner.rgb.blue"
+			ghost="1"
+			alpha="255"
+		/>
+		<layer
+			id="eq1g"
+			x="42" y="26" 
+			h="68" w="5"
+			image="eq.slider.eq.inner.rgb.green"
+			ghost="1"
+			alpha="255"
+		/>
+		<layer
+			id="eq1r"
+			x="42" y="26" 
+			h="68" w="5"
+			image="eq.slider.eq.inner.rgb.red"
+			ghost="1"
+			alpha="255"
+		/>
+		
+		<layer
+			id="eq1"
+			x="42" y="26" 
+			h="68" w="5"
+			image="eq.slider.eq.inner.blue"
+			ghost="1"
+			alpha="255"
+		/>
+		<EqBand
+			band="1"
+			x="38" y="25" h="68" w="13"
+			thumb="eq.slider.normal"
+			hoverthumb="eq.slider.hover"
+			downthumb="eq.slider.down"
+			orientation="vertical"
+		/>
+
+		
+		
+		<layer
+			id="eq2b"
+			x="62" y="26" 
+			h="68" w="5"
+			image="eq.slider.eq.inner.rgb.blue"
+			ghost="1"
+			alpha="255"
+		/>
+		<layer
+			id="eq2g"
+			x="62" y="26" 
+			h="68" w="5"
+			image="eq.slider.eq.inner.rgb.green"
+			ghost="1"
+			alpha="255"
+		/>
+		<layer
+			id="eq2r"
+			x="62" y="26" 
+			h="68" w="5"
+			image="eq.slider.eq.inner.rgb.red"
+			ghost="1"
+			alpha="255"
+		/>
+		<layer
+			id="eq2"
+			x="62" y="26" 
+			h="68" w="5"
+			image="eq.slider.eq.inner.blue"
+			ghost="1"
+			alpha="255"
+		/>
+		<EqBand
+			band="2"
+			x="58" y="25" h="68" w="13"
+			thumb="eq.slider.normal"
+			hoverthumb="eq.slider.hover"
+			downthumb="eq.slider.down"
+			orientation="vertical"
+		/>
+
+		
+		
+		<layer
+			id="eq3b"
+			x="82" y="26" 
+			h="68" w="5"
+			image="eq.slider.eq.inner.rgb.blue"
+			ghost="1"
+			alpha="255"
+		/>
+		<layer
+			id="eq3g"
+			x="82" y="26" 
+			h="68" w="5"
+			image="eq.slider.eq.inner.rgb.green"
+			ghost="1"
+			alpha="255"
+		/>
+		<layer
+			id="eq3r"
+			x="82" y="26" 
+			h="68" w="5"
+			image="eq.slider.eq.inner.rgb.red"
+			ghost="1"
+			alpha="255"
+		/>
+		<layer
+			id="eq3"
+			x="82" y="26" 
+			h="68" w="5"
+			image="eq.slider.eq.inner.blue"
+			ghost="1"
+			alpha="255"
+		/>
+		<EqBand
+			band="3"
+			x="78" y="25" h="68" w="13"
+			thumb="eq.slider.normal"
+			hoverthumb="eq.slider.hover"
+			downthumb="eq.slider.down"
+			orientation="vertical"
+		/>
+
+		
+		<layer
+			id="eq4b"
+			x="102" y="26" 
+			h="68" w="5"
+			image="eq.slider.eq.inner.rgb.blue"
+			ghost="1"
+			alpha="255"
+		/>
+		<layer
+			id="eq4g"
+			x="102" y="26" 
+			h="68" w="5"
+			image="eq.slider.eq.inner.rgb.green"
+			ghost="1"
+			alpha="255"
+		/>
+		<layer
+			id="eq4r"
+			x="102" y="26" 
+			h="68" w="5"
+			image="eq.slider.eq.inner.rgb.red"
+			ghost="1"
+			alpha="255"
+		/>
+		<layer
+			id="eq4"
+			x="102" y="26" 
+			h="68" w="5"
+			image="eq.slider.eq.inner.blue"
+			ghost="1"
+			alpha="255"
+		/>
+		<EqBand
+			band="4"
+			x="98" y="25" h="68" w="13"
+			thumb="eq.slider.normal"
+			hoverthumb="eq.slider.hover"
+			downthumb="eq.slider.down"
+			orientation="vertical"
+		/>
+
+
+		
+		<layer
+			id="eq5b"
+			x="122" y="26" 
+			h="68" w="5"
+			image="eq.slider.eq.inner.rgb.blue"
+			ghost="1"
+			alpha="255"
+		/>
+		<layer
+			id="eq5g"
+			x="122" y="26" 
+			h="68" w="5"
+			image="eq.slider.eq.inner.rgb.green"
+			ghost="1"
+			alpha="255"
+		/>
+		<layer
+			id="eq5r"
+			x="122" y="26" 
+			h="68" w="5"
+			image="eq.slider.eq.inner.rgb.red"
+			ghost="1"
+			alpha="255"
+		/>
+		<layer
+			id="eq5"
+			x="122" y="26" 
+			h="68" w="5"
+			image="eq.slider.eq.inner.blue"
+			ghost="1"
+			alpha="255"
+		/>
+		<EqBand
+			band="5"
+			x="118" y="25" h="68" w="13"
+			thumb="eq.slider.normal"
+			hoverthumb="eq.slider.hover"
+			downthumb="eq.slider.down"
+			orientation="vertical"
+		/>
+
+		
+		<layer
+			id="eq6b"
+			x="142" y="26" 
+			h="68" w="5"
+			image="eq.slider.eq.inner.rgb.blue"
+			ghost="1"
+			alpha="255"
+		/>
+		<layer
+			id="eq6g"
+			x="142" y="26" 
+			h="68" w="5"
+			image="eq.slider.eq.inner.rgb.green"
+			ghost="1"
+			alpha="255"
+		/>
+		<layer
+			id="eq6r"
+			x="142" y="26" 
+			h="68" w="5"
+			image="eq.slider.eq.inner.rgb.red"
+			ghost="1"
+			alpha="255"
+		/>
+		<layer
+			id="eq6"
+			x="142" y="26" 
+			h="68" w="5"
+			image="eq.slider.eq.inner.blue"
+			ghost="1"
+			alpha="255"
+		/>
+		<EqBand
+			band="6"
+			x="138" y="25" h="68" w="13"
+			thumb="eq.slider.normal"
+			hoverthumb="eq.slider.hover"
+			downthumb="eq.slider.down"
+			orientation="vertical"
+		/>
+
+		
+		
+		<layer
+			id="eq7b"
+			x="162" y="26" 
+			h="68" w="5"
+			image="eq.slider.eq.inner.rgb.blue"
+			ghost="1"
+			alpha="255"
+		/>
+		<layer
+			id="eq7g"
+			x="162" y="26" 
+			h="68" w="5"
+			image="eq.slider.eq.inner.rgb.green"
+			ghost="1"
+			alpha="255"
+		/>
+		<layer
+			id="eq7r"
+			x="162" y="26" 
+			h="68" w="5"
+			image="eq.slider.eq.inner.rgb.red"
+			ghost="1"
+			alpha="255"
+		/>
+		<layer
+			id="eq7"
+			x="162" y="26" 
+			h="68" w="5"
+			image="eq.slider.eq.inner.blue"
+			ghost="1"
+			alpha="255"
+		/>
+		<EqBand
+			band="7"
+			x="158" y="25" h="68" w="13"
+			thumb="eq.slider.normal"
+			hoverthumb="eq.slider.hover"
+			downthumb="eq.slider.down"
+			orientation="vertical"
+		/>
+
+		
+		
+		<layer
+			id="eq8b"
+			x="182" y="26" 
+			h="68" w="5"
+			image="eq.slider.eq.inner.rgb.blue"
+			ghost="1"
+			alpha="255"
+		/>
+		<layer
+			id="eq8g"
+			x="182" y="26" 
+			h="68" w="5"
+			image="eq.slider.eq.inner.rgb.green"
+			ghost="1"
+			alpha="255"
+		/>
+		<layer
+			id="eq8r"
+			x="182" y="26" 
+			h="68" w="5"
+			image="eq.slider.eq.inner.rgb.red"
+			ghost="1"
+			alpha="255"
+		/>
+		<layer
+			id="eq8"
+			x="182" y="26" 
+			h="68" w="5"
+			image="eq.slider.eq.inner.blue"
+			ghost="1"
+			alpha="255"
+		/>
+		<EqBand
+			band="8"
+			x="178" y="25" h="68" w="13"
+			thumb="eq.slider.normal"
+			hoverthumb="eq.slider.hover"
+			downthumb="eq.slider.down"
+			orientation="vertical"
+		/>
+
+		
+		
+		<layer
+			id="eq9b"
+			x="202" y="26" 
+			h="68" w="5"
+			image="eq.slider.eq.inner.rgb.blue"
+			ghost="1"
+			alpha="255"
+		/>
+		<layer
+			id="eq9g"
+			x="202" y="26" 
+			h="68" w="5"
+			image="eq.slider.eq.inner.rgb.green"
+			ghost="1"
+			alpha="255"
+		/>
+		<layer
+			id="eq9r"
+			x="202" y="26" 
+			h="68" w="5"
+			image="eq.slider.eq.inner.rgb.red"
+			ghost="1"
+			alpha="255"
+		/>
+		<layer
+			id="eq9"
+			x="202" y="26" 
+			h="68" w="5"
+			image="eq.slider.eq.inner.blue"
+			ghost="1"
+			alpha="255"
+		/>
+		<EqBand
+			band="9"
+			x="198" y="25" h="68" w="13"
+			thumb="eq.slider.normal"
+			hoverthumb="eq.slider.hover"
+			downthumb="eq.slider.down"
+			orientation="vertical"
+		/>
+
+		
+		<layer
+			id="eq10b"
+			x="222" y="26" 
+			h="68" w="5"
+			image="eq.slider.eq.inner.rgb.blue"
+			ghost="1"
+			alpha="255"
+		/>
+		<layer
+			id="eq10g"
+			x="222" y="26" 
+			h="68" w="5"
+			image="eq.slider.eq.inner.rgb.green"
+			ghost="1"
+			alpha="255"
+		/>
+		<layer
+			id="eq10r"
+			x="222" y="26" 
+			h="68" w="5"
+			image="eq.slider.eq.inner.rgb.red"
+			ghost="1"
+			alpha="255"
+		/>
+		<layer
+			id="eq10"
+			x="222" y="26" 
+			h="68" w="5"
+			image="eq.slider.eq.inner.blue"
+			ghost="1"
+			alpha="255"
+		/>
+		<EqBand
+			band="10"
+			x="218" y="25" h="68" w="13"
+			thumb="eq.slider.normal"
+			hoverthumb="eq.slider.hover"
+			downthumb="eq.slider.down"
+			orientation="vertical"
+		/>
+
+</groupdef>
+
+<container id="eqrgb" name="Equalizer" default_x="354" default_y="0" default_visible="0">
+<layout id="eqnormalrgb" minimum_w="268" minimum_h="164" h="164" w="268" maximum_w="268" maximum_h="164">
+  <Wasabi:Standardframe:Modal
+    x="0" y="0" w="0" h="0" relatw="1" relath="1"
+    content="player.content.eq.dummy.group"
+    padtitleleft="10"
+    padtitleright="12"
+  />
+
+	<group id="eq.buttons" x="0" y="-35" h="35" w="0" relaty="1" relatw="1" regionop="1"/>
+
+	<layer x="0" y="8" w="8" h="-16" relath="1" rectrgn="1" resize="left" />
+	<layer x="-8" relatx="1" y="8" w="8" h="-16" relath="1" rectrgn="1" resize="right" />
+
+	<layer x="0" y="-8" relaty="1" w="8" h="8" rectrgn="1" resize="bottomleft" />
+	<layer x="8" y="-8" relaty="1" w="-16" relatw="1" h="8" rectrgn="1" resize="bottom" />
+	<layer x="-8" relatx="1" y="-8" relaty="1" w="8" h="8" rectrgn="1" resize="bottomright" />
+	<script id="script.eqrgb" file="Scripts/eq.maki"/>
+</layout>
+
+</container>

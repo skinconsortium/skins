@@ -1,0 +1,10 @@
+<groupdef id="sc.updatesystem.xuidef" xuitag="SC:UpdateSystem">
+
+	<browser
+		id="brw"
+		fitparent="1"
+	/>
+
+	<script file="updateSystem/updateSystem.maki" />
+
+</groupdef>
