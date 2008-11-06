@@ -82,5 +82,6 @@
 
 	<!-- ClassicVis -->
 	<bitmap id="cpro.flex.player.normal.classicvis.region" file="player/normal/classicvis-region.png" />
+	<bitmap id="cpro.flex.player.normal.classicvis.colors" file="player/normal/classicvis-colors.png" />
 
 </elements>
