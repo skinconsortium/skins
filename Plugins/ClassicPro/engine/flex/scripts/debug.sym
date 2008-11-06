@@ -20,13 +20,14 @@ var# |                Class |                                    What
 0010 |               String |                                        s
 0011 |               String |                                  "DEBUG"
 0012 |                  Int |                                        s
-0013 |               Layout |                                   parent
-0014 |               Region |                                        r
-0015 |                  Map |                                        m
-0016 |               String |                         "snapadjustleft"
-0017 |               String |                          "snapadjusttop"
-0018 |               String |                        "snapadjustright"
-0019 |               String |                       "snapadjustbottom"
+0013 |            GuiObject |                                    myVis
+0014 |              Boolean |                                   active
+0015 |               String |                                      ";"
+0016 |               Region |                                        r
+0017 |               String |                                      "x"
+0018 |               String |                                      "y"
+0019 |               String |                                      "h"
+001A |               String |                                      "w"
 -- Events Table ------------------------------------------------------
 var# |         Code Pointer |                                    What 
 ----------------------------------------------------------------------

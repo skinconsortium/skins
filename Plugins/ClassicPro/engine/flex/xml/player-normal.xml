@@ -22,6 +22,13 @@
 		param="albumart;cpro.flex.player.normal.albumart.region"
 	/>
 
+	<!-- Visualizer -->
+	<vis id="classcvis" visible="0" />
+	<script
+		file="@WINAMPPATH@\Plugins\classicPro\engine\flex\scripts\classicvis.maki"
+		param="classcvis;cpro.flex.player.normal.classicvis.region"
+	/>
+
 	<!-- CButtons -->
 
 	<button
