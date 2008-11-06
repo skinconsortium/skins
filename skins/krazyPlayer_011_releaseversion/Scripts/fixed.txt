@@ -1,0 +1,7 @@
+-fixed vis mode attrib not set properly
+-fixed zip file of old files
+-increased subtle brightness of under vis bars overlay in about page
+
+
+-this build is release candidate version 1 - please check for bugs, last minute fixes
+

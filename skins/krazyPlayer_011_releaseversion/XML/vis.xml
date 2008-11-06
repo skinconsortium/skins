@@ -1,0 +1,148 @@
+
+<groupdef id="avs.buttons" relatw="1" w="0" h="21">
+
+	<grid 
+		x="0" y="0" h="35" w="0" relatw="1" regionop="1" move="1"
+		left="wasabi.frame2.bottom.left"
+		middle="wasabi.frame2.bottom"
+		right="wasabi.frame2.bottom.right"
+	/>
+
+  <button
+    id="pl.add"
+    action="VIS_FS"
+    x="10" y="8"
+    image="pledit.button.normal"
+    downImage="pledit.button.down"
+    hoverImage="pledit.button.hover"
+    tooltip="Fullscreen"
+  />
+
+  <button
+    id="pl.rem"
+    action="VIS_Prev"
+    x="46" y="8"
+    image="pledit.button.normal"
+    downImage="pledit.button.down"
+    hoverImage="pledit.button.hover"
+    tooltip="Previous Visualization"
+  />
+
+  <button
+    id="pl.sel"
+    action="VIS_Next"
+    x="82" y="8"
+    image="pledit.button.normal"
+    downImage="pledit.button.down"
+    hoverImage="pledit.button.hover"
+    tooltip="Next Visualization"
+  />
+
+  <togglebutton
+    id="pl.misc"
+	cfgattrib="{0000000A-000C-0010-FF7B-01014263450C};Random"
+    x="118" y="8"
+    image="pledit.button.normal"
+    downImage="pledit.button.down"
+    hoverImage="pledit.button.hover"
+    tooltip="Toggle Random Visualization"
+  />
+
+  <togglebutton
+    id="pl.misc" ghost="1"
+	cfgattrib="{0000000A-000C-0010-FF7B-01014263450C};Random"
+    x="118" y="8"
+    image="pledit.button.normal"
+    activeImage="pledit.button.down"
+    tooltip="Toggle Random Visualization"
+  />
+
+  <grid
+	x="154" y="8" h="17" w="-200" relatw="1" ghost="1"
+	left="pledit.display.left"
+	middle="pledit.display.middle"
+	right="pledit.display.right"
+  />
+
+  <button
+    id="pl.list"
+    action="Vis_Menu"
+    x="-44" y="8"
+    relatx="1"
+    image="pledit.button.normal"
+    downImage="pledit.button.down"
+    hoverImage="pledit.button.hover"
+    tooltip="Options"
+  />
+
+  <!--layer x="10" y="8" image="vis.button.text.left" ghost="1" />
+  <layer x="-44" relatx="1" y="8" image="video.button.text.right" ghost="1" /-->
+  
+  	<!-- SLoB RGB -->
+	<layer id="visleft.RGB.Base" x="10" y="8" image="vis.button.text.left.RGB.Base" ghost="1" alpha="255"/>
+	<layer id="visleft" x="10" y="8" image="vis.button.text.left" ghost="1" alpha="255"/>
+	<layer id="visleft.RGB.Blue" x="10" y="8" image="vis.button.text.left.RGB.Blue" ghost="1"  alpha="0"/>
+	<layer id="visleft.RGB.Green" x="10" y="8" image="vis.button.text.left.RGB.Green" ghost="1" alpha="0" />
+	<layer id="visleft.RGB.Red" x="10" y="8" image="vis.button.text.left.RGB.Red" ghost="1"  alpha="0"/>
+
+	<layer id="visright.RGB.Base" x="-44" relatx="1" y="8" image="vis.button.text.right.RGB.Base" ghost="1" alpha="255" />
+	<layer id="visright" x="-44" relatx="1" y="8" image="vis.button.text.right" ghost="1" alpha="255" />
+	<layer id="visright.RGB.Blue" x="-44" relatx="1" y="8" image="vis.button.text.right.RGB.Blue" ghost="1" alpha="0" />
+	<layer id="visright.RGB.Green" x="-44" relatx="1" y="8" image="vis.button.text.right.RGB.Green" ghost="1" alpha="0" />
+	<layer id="visright.RGB.Red" x="-44" relatx="1" y="8" image="vis.button.text.right.RGB.Red" ghost="1" alpha="0" />
+
+	
+	<layer id="visrnd.RGB.Base" x="116" y="8" image="vis.button.rnd.RGB.Base" ghost="1" alpha="255" />
+	<layer id="visrnd" x="116" y="8" image="vis.button.rnd" ghost="1" alpha="255" />
+	<layer id="visrnd.RGB.Blue" x="116" y="8" image="vis.button.rnd.RGB.Blue" ghost="1" alpha="0" />
+	<layer id="visrnd.RGB.Green" x="116" y="8" image="vis.button.rnd.RGB.Green" ghost="1" alpha="0" />
+	<layer id="visrnd.RGB.Red" x="116" y="8" image="vis.button.rnd.RGB.Red" ghost="1" alpha="0" />
+	
+	
+	
+	
+	<!-- SLoB mask out for rnd config attribute-->
+	<layer
+		id="visrnd.RGB.Button.Enabled"
+		x="118" y="8"
+		image="pledit.button.normal"
+		 ghost="1" alpha="0"
+	/>
+
+	<layer id="visrnd.RGB.Enabled" x="116" y="8" image="vis.button.rnd.RGB.Base" ghost="1" alpha="0" />
+
+</groupdef>
+
+<groupdef id="player.content.avs.dummy.group" name="AVSDummyGroup" relatw="1" relath="1" w="0" h="0">
+  <component
+    fitparent="1"
+	h="-20" relath="1"
+    noshowcmdbar="1"
+    autoopen="1"
+    autoclose="1"
+    param="{0000000A-000C-0010-FF7B-01014263450C}"
+  />
+</groupdef>
+
+<container id="AVS" name="Visualizations" dynamic="0" component="guid:{0000000A-000C-0010-FF7B-01014263450C}" default_visible="0" default_x="0" default_y="0" default_w="354">
+
+<layout id="normal" minimum_w="268" minimum_h="164" h="164" w="436" appbar="left|top|right|bottom">
+  <Wasabi:StandardFrame:NoStatus
+    x="0" y="0" w="0" h="0" relatw="1" relath="1"
+    content="player.content.avs.dummy.group"
+    padtitleleft="10"
+    padtitleright="12"
+  />
+
+	<group id="avs.buttons" x="0" y="-35" h="35" w="0" relaty="1" relatw="1" regionop="1"/>
+
+	<layer x="0" y="8" w="8" h="-16" relath="1" rectrgn="1" resize="left" />
+	<layer x="-8" relatx="1" y="8" w="8" h="-16" relath="1" rectrgn="1" resize="right" />
+
+	<layer x="0" y="-8" relaty="1" w="8" h="8" rectrgn="1" resize="bottomleft" />
+	<layer x="8" y="-8" relaty="1" w="-16" relatw="1" h="8" rectrgn="1" resize="bottom" />
+	<layer x="-8" relatx="1" y="-8" relaty="1" w="8" h="8" rectrgn="1" resize="bottomright" />
+
+</layout>
+
+</container>

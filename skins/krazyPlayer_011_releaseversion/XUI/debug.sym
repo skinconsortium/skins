@@ -1,0 +1,51 @@
+-- Variables Table ---------------------------------------------------
+var# |                Class |                                    What 
+----------------------------------------------------------------------
+0000 |               System |                                   System*
+0001 |                  Int |                                     NULL
+0002 |                  Int |                     __deprecated_runtime
+0003 |               Double |                                        v
+0004 |                  Int |                                        2
+0005 |                  Int |                                    65535
+0006 |                  Int |                                        1
+0007 |               String |                           "runtimecheck"
+0008 |                  Int |                                        0
+0009 |                  Int |                                     last
+000A |                  Int |                                      now
+000B |                  Int |                                     5000
+000C |               String |                  "This script requires "
+000D |               String |        "Winamp 5.51 (skin version 1.31)"
+000E |               String |                                  "Error"
+000F |               String |                                       ""
+0010 |               String |                                        s
+0011 |               String |                                  "DEBUG"
+0012 |                  Int |                                        s
+0013 |               Button |                                        b
+0014 |                Layer |                                        l
+0015 |               String |                          "normal.button"
+0016 |               String |                            "button.glow"
+0017 |               String |                                    param
+0018 |               String |                                    value
+0019 |               String |                              "glowimage"
+001A |               String |                                  "image"
+001B |               String |                               "xtooltip"
+001C |               String |                                "tooltip"
+001D |                  Int |                                      255
+001E |               Double |                                      0.3
+001F |            GuiObject |                                        o
+0020 |                Float |                                    speed
+0021 |                  Int |                                      val
+-- Events Table ------------------------------------------------------
+var# |         Code Pointer |                                    What 
+----------------------------------------------------------------------
+0000 |                 0153 |                    System.onScriptLoaded
+0000 |                 01A3 |                     System.onSetXuiParam
+0013 |                 022A |                            b.onEnterArea
+0013 |                 025D |                            b.onLeaveArea
+-- User Functions Table ----------------------------------------------
+               Code Pointer |                                    What 
+----------------------------------------------------------------------
+                       0000 |                             versionCheck
+                       00F2 |                                    debug
+                       011D |                                 debugInt
+                       0288 |                                     fade

@@ -1,0 +1,29 @@
+<script>
+var background = document.getElementById("bg");
+var r = Math.round(Math.random()*255);
+var b = Math.round(Math.random()*100);
+var g = Math.round(Math.random()*255);
+var nextr = Math.round(Math.random()*255);
+var nextb = Math.round(Math.random()*100);
+var nextg = Math.round(Math.random()*255);
+color = "rgb("+r+","+g+","+b+")";
+window.document.body.style.backgroundColor = color;
+function nextFrame() {
+	if (r>nextr) {r=r-1;}
+	if (r<nextr) {r++;}	
+	if (b>nextb) {b=b-1;}
+	if (b<nextb) {b++;}		
+	if (g>nextg) {g=g-1;}
+	if (g<nextg) {g++;}
+	if (r==nextr){if (g==nextg){if (b==nextb){
+	nextr = Math.round(Math.random()*255);
+	nextb = Math.round(Math.random()*255);
+	nextg = Math.round(Math.random()*255);	
+	}}}
+	color = "rgb("+r+","+g+","+b+")";
+	window.document.body.style.backgroundColor = color;
+	setTimeout("nextFrame()",50);
+}
+nextFrame();
+
+</script>

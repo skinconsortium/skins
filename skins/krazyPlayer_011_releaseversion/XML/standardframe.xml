@@ -1,0 +1,194 @@
+<!-- =======================================================================================================
+
+  This group serves as a template for all the Wasabi:StandardFrame objects
+
+======================================================================================================== -->
+
+<groupdef id="wasabi.frame.layout">
+
+	<layer x="0" y="0" h="3" w="3" image="wasabi.frame1.region.top.left" regionop="-2" />
+	<layer x="-3" relatx="1" y="0" h="3" w="3" image="wasabi.frame1.region.top.right" regionop="-2" />
+	<layer x="0" y="-3" relaty="1" h="3" w="3" image="wasabi.frame1.region.bottom.left" regionop="-2" />
+	<layer x="-3" relatx="1" y="-3" relaty="1" h="3" w="3" image="wasabi.frame1.region.bottom.right" regionop="-2" />
+
+	<grid 
+		fitparent="1" regionop="1"
+		topleft="wasabi.frame1.top.left"
+		top="wasabi.frame1.top"
+		topright="wasabi.frame1.top.right"
+		left="wasabi.frame1.left"
+		middle="wasabi.frame1.center"
+		right="wasabi.frame1.right"
+		bottomleft="wasabi.frame1.bottom.left"
+		bottom="wasabi.frame1.bottom"
+		bottomright="wasabi.frame1.bottom.right"
+	/>
+	
+	<layer fitparent="1" rectrgn="1" move="1" />
+
+	<layer x="0" y="0" w="8" h="8" rectrgn="1" resize="topleft" />
+	<layer x="8" y="0" w="-16" relatw="1" h="4" rectrgn="1" resize="top" />
+	<layer x="-8" relatx="1" y="0" w="8" h="8" rectrgn="1" resize="topright" />
+
+	<layer x="0" y="8" w="8" h="-16" relath="1" rectrgn="1" resize="left" />
+	<layer x="-8" relatx="1" y="8" w="8" h="-16" relath="1" rectrgn="1" resize="right" />
+
+	<layer x="0" y="-8" relaty="1" w="8" h="8" rectrgn="1" resize="bottomleft" />
+	<layer x="8" y="-8" relaty="1" w="-16" relatw="1" h="8" rectrgn="1" resize="bottom" />
+	<layer x="-8" relatx="1" y="-8" relaty="1" w="8" h="8" rectrgn="1" resize="bottomright" />
+
+	<layer id="window.resize.disabler" fitparent="1" rectrgn="1" move="1" visible="0"/>
+
+	<!-- RGB SLoB -->
+	<!-- possible to fade rgb text to nothing, so show white text 
+	need to position/do something to stop that horrible mishmash text effect
+	-->
+	
+	<!-- dont mess with these texts man, theyr in this order for a reason 
+	prevent unreadability if sliders dropped down
+	-->
+	<!--Text
+		id="backgroundtitle" default=":componentname"
+		x="29" y="6" ghost="1"
+		w="-64" h="16"
+		relatw="1"
+		font="m_font"
+		fontsize="16" bold="0"
+		align="center"
+		antialias="1"
+		color="180,180,180"
+	/-->
+
+
+	<Text
+		id="titlebar" default="@COMPONENTNAME@"
+		x="29" y="6" ghost="1"
+		w="-64" h="16"
+		relatw="1"
+		font="m_font"
+		fontsize="14" bold="1"
+		align="center"
+		antialias="1"
+		color="color.button"
+	/>
+	
+	<!-- default color 7,106,218 -->
+	<!--text id="componentname" x="32" y="7" w="-64" h="14" relatw="1" fontsize="14" antialias="1" bold="1" font="m_font" align="center" default="@COMPONENTNAME@" ghost="1" color="wasabi.titlebar.color"  forceuppercase="0"  /-->
+
+
+	<!-- RGB SLoB -->
+	<layer id="close.RGB_Blue"
+		x="-31" relatx="1" y="5" h="16" w="18" rectrgn="1"		
+		Image="wasabi.frame1.close.RGB_Blue" alpha="0" ghost="1" visible="1"
+	/>
+	<layer id="close.RGB_Green"
+		x="-31" relatx="1" y="5" h="16" w="18" rectrgn="1"		
+		Image="wasabi.frame1.close.RGB_Green" alpha="0" ghost="1" visible="1"
+	/>
+	<layer id="close.RGB_Red"
+		x="-31" relatx="1" y="5" h="16" w="18" rectrgn="1"		
+		Image="wasabi.frame1.close.RGB_Red" alpha="0" ghost="1" visible="1"
+	/>
+
+	<layer id="close.RGB_Blue.h"
+		x="-31" relatx="1" y="5" h="16" w="18" rectrgn="1"		
+		Image="wasabi.frame1.close.RGB_Blue.h" alpha="0" ghost="1" visible="0"
+	/>
+	<layer id="close.RGB_Green.h"
+		x="-31" relatx="1" y="5" h="16" w="18" rectrgn="1"		
+		Image="wasabi.frame1.close.RGB_Green.h" alpha="0" ghost="1" visible="0"
+	/>
+	<layer id="close.RGB_Red.h"
+		x="-31" relatx="1" y="5" h="16" w="18" rectrgn="1"		
+		Image="wasabi.frame1.close.RGB_Red.h" alpha="0" ghost="1" visible="0"
+	/>
+	
+	<!-- RGB TOGGLE -->
+	<layer id="RGBToggle_wasabi.frame1.close"
+		x="-31" relatx="1" y="5" h="16" w="18" rectrgn="1"		
+		Image="RGBToggle_wasabi.frame1.close" alpha="0" ghost="1" visible="1"
+	/>
+	<layer id="RGBToggle_wasabi.frame1.close.h"
+		x="-31" relatx="1" y="5" h="16" w="18" rectrgn="1"		
+		Image="RGBToggle_wasabi.frame1.close.h" alpha="0" ghost="1" visible="0"
+	/>
+
+	<button 
+		id="close.button"
+		x="-30" relatx="1" y="6" h="16" w="18" rectrgn="1"
+		action="CLOSE"
+		tooltip="Close Window"
+	/>
+
+   <LayoutStatus id="sysmenu.status" bg="0" x="5" y="2" h="13" w="15" includeonly="{system}" />
+   <hideobject target="sysmenu.status"/>
+
+ </groupdef>
+
+
+
+
+<!-- =======================================================================================================
+
+  <Wasabi:StandardFrame:Status /> implementation
+
+======================================================================================================== -->
+
+ <groupdef id="wasabi.standardframe.statusbar" background="wasabi.frame.basetexture" sysregion="1" xuitag="Wasabi:StandardFrame:Status">
+
+  <group id="wasabi.frame.layout" x="0" y="0" w="0" relatw="1" h="0" relath="1"/>
+
+  <LayoutStatus id="standardframe.layoutstatus" x="14" y="-33" relaty="1" w="-28" relatw="1" h="18" exclude="{system}" />
+  <script id="standardframe.script" file="Scripts/standardframe.maki" param="14,32,-28,-65,0,0,1,1" />
+
+</groupdef>
+
+
+
+
+<!-- =======================================================================================================
+
+  <Wasabi:StandardFrame:NoStatus /> implementation
+
+======================================================================================================== -->
+
+<groupdef id="wasabi.standardframe.nostatusbar" background="wasabi.frame.basetexture" sysregion="1" xuitag="Wasabi:StandardFrame:NoStatus">
+
+  <group id="wasabi.frame.layout" x="0" y="0" w="0" h="0" relatw="1" relath="1"/>
+
+  <script id="standardframe.script" file="Scripts/standardframe.maki" param="14,32,-28,-47,0,0,1,1" />
+
+</groupdef>
+
+
+
+
+
+<!-- =======================================================================================================
+
+  <Wasabi:StandardFrame:Modal /> implementation
+
+======================================================================================================== -->
+
+<groupdef id="wasabi.standardframe.modal" inherit_group="wasabi.standardframe.nostatusbar" background="wasabi.frame.basetexture" sysregion="1" xuitag="Wasabi:StandardFrame:Modal">
+  <sendparams target="window.resize.disabler" visible="1" />
+  <sendparams target="player.resizer.bottomright" visible="0" />
+</groupdef>
+
+
+<!-- =======================================================================================================
+
+  <Wasabi:StandardFrame:Static /> implementation
+
+======================================================================================================== -->
+
+<groupdef id="wasabi.standardframe.static" inherit_group="wasabi.standardframe.nostatusbar" background="wasabi.frame.basetexture" sysregion="1" xuitag="Wasabi:StandardFrame:Static">
+  <sendparams target="window.resize.disabler" visible="1" />
+  <sendparams target="player.resizer.bottomright" visible="0" />
+</groupdef>
+
+<groupdef id="skin.about.group" w="0" h="0" relatw="1" relath="1" rectrgn="1">
+
+	<layer image="Images/Window/aboutPage.jpg"/>
+
+</groupdef>

@@ -1,0 +1,469 @@
+<elements>
+
+<!-- new additions -->
+<bitmap id="makemeblank" file="about/blank.png"/>
+<bitmap id="timeline.animation" file="Images/Main/timeline.png"/>
+<bitmap id="compbuttonundermask" file="Images/Main/compbuttonsundermask.png"/>
+
+
+	<bitmap id="winamp.cover.notfound" file="Images/Main/logo.png" gammagroup="DisplayText"/>
+	<bitmap id="winamp.cover.notfound.60" file="Images/Main/logo.png" gammagroup="DisplayText"/>
+	<bitmap id="winamp.cover.notfound.90" file="Images/Main/logo.png" gammagroup="DisplayText"/>
+	<bitmap id="winamp.cover.notfound.84" file="Images/Main/logo.png" x="0" y="0" h="84" w="84" gammagroup="DisplayText"/>
+	<bitmap id="winamp.cover.notfound.50" file="Images/Main/logo.png" x="0" y="158" h="50" w="50" gammagroup="DisplayText"/>
+	<bitmap id="winamp.cover.notfound.70" file="Images/Main/logo.png" x="0" y="84" h="70" w="70" gammagroup="DisplayText"/>
+	<bitmap id="winamp.cover.shoutcast" file="Images/Main/logo.png" x="0" y="0" h="84" w="84" />
+	<bitmap id="winamp.cover.aolradio" file="Images/Main/logo.png" x="0" y="0" h="84" w="84" />
+
+	
+
+
+<!-- Main Window: Metal -->
+
+<bitmap id="m_background" file="Images/Main/m_background1.png" gammagroup="metal"/>
+<bitmap id="m_dummybg" file="Images/Main/m_background.png" gammagroup="metal"/>
+
+<bitmap id="RGBToggle_m_dummybg" file="Images/Main/m_background_RGBTOGGLE.png" gammagroup="metal"/>
+
+<!-- SC:RGB - SLoB -->
+<bitmap id="m_background_TopLight_RGB_Red" file="Images/Main/m_toplight_RGB_Red.png" gammagroup="metal"/>
+<bitmap id="m_background_TopLight_RGB_Green" file="Images/Main/m_toplight_RGB_Green.png" gammagroup="metal"/>
+<bitmap id="m_background_TopLight_RGB_Blue" file="Images/Main/m_toplight_RGB_Blue.png" gammagroup="metal"/>
+
+
+<bitmap id="m_bottomright" file="Images/Main/m_bottomright.png" gammagroup="metal"/>
+<bitmap id="m_bottomleft" file="Images/Main/m_bottomleft.png" gammagroup="metal"/>
+
+<bitmap id="m_blacksurround" file="Images/Main/m_blacksurround.png" gammagroup="metal"/>
+<bitmap id="m_whitesurround" file="Images/Main/m_whitesurround.png" gammagroup="surround"/>
+
+<!-- SC:RGB - SLoB -->
+<bitmap id="m_blacksurround_RGB_Base" file="Images/Main/m_blacksurround_RGB_Base.png" gammagroup="metal"/>
+
+<bitmap id="m_blacksurround_RGB_Red" file="Images/Main/m_blacksurround_RGB_Red.png" gammagroup="metal"/>
+<bitmap id="m_blacksurround_RGB_Green" file="Images/Main/m_blacksurround_RGB_Green.png" gammagroup="metal"/>
+<bitmap id="m_blacksurround_RGB_Blue" file="Images/Main/m_blacksurround_RGB_Blue.png" gammagroup="metal"/>
+
+<!-- rimlight glow vis -->
+<bitmap id="m_blacksurround_rimlights_glow" file="Images/Main/m_rimlightglows.png"/>
+
+<!-- Main Window: Shadow -->
+<bitmap id="m_shadow" file="Images/Main/m_shadow.png"/>
+
+<!-- Main Window: LCD -->
+
+<!-- SC:RGB - SLoB -->
+<bitmap id="m_lcd_bottomright" file="Images/Main/m_bottomright_blue.png" gammagroup="lcd"/>
+
+<bitmap id="m_lcd_bottomright_RGB_Base" file="Images/Main/m_bottomright_RGB_Base.png" gammagroup="lcd"/>
+<bitmap id="m_lcd_bottomright_RGB_Red" file="Images/Main/m_bottomright_RGB_Red.png" gammagroup="lcd"/>
+<bitmap id="m_lcd_bottomright_RGB_Green" file="Images/Main/m_bottomright_RGB_Green.png" gammagroup="lcd"/>
+<bitmap id="m_lcd_bottomright_RGB_Blue" file="Images/Main/m_bottomright_RGB_Blue.png" gammagroup="lcd"/>
+<bitmap id="m_lcd_bottomright_RGB_Glow" file="Images/Main/m_bottomright_RGB_Glow.png" gammagroup="lcd"/>
+
+
+<bitmap id="m_lcd_bottomleft" file="Images/Main/m_bottomleft_blue.png" gammagroup="lcd"/>
+
+<bitmap id="m_lcd_bottomleft_RGB_Base" file="Images/Main/m_bottomleft_RGB_Base.png" gammagroup="lcd"/>
+<bitmap id="m_lcd_bottomleft_RGB_Red" file="Images/Main/m_bottomleft_RGB_Red.png" gammagroup="lcd"/>
+<bitmap id="m_lcd_bottomleft_RGB_Green" file="Images/Main/m_bottomleft_RGB_Green.png" gammagroup="lcd"/>
+<bitmap id="m_lcd_bottomleft_RGB_Blue" file="Images/Main/m_bottomleft_RGB_Blue.png" gammagroup="lcd"/>
+<bitmap id="m_lcd_bottomleft_RGB_Glow" file="Images/Main/m_bottomleft_RGB_Glow.png" gammagroup="lcd"/>
+
+
+<bitmap id="m_lcd_bottomright_med" file="Images/Main/m_bottomright_blue_med.png" gammagroup="lcd"/>
+<bitmap id="m_lcd_bottomleft_med" file="Images/Main/m_bottomleft_blue_med.png" gammagroup="lcd"/>
+<bitmap id="m_lcd" file="Images/Main/m_lcd.png" gammagroup="lcd"/>
+
+<bitmap id="m_lcd_albumartoutline" file="Images/Main/m_lcd_albumartoutline.png"/>
+
+
+
+<!-- SC:RGB - SLoB -->
+<bitmap id="m_lcd_RGB_Base" file="Images/Main/m_lcd_RGB_Base.png" gammagroup="lcd"/>
+<bitmap id="m_lcd_RGB_Red" file="Images/Main/m_lcd_RGB_Red.png" gammagroup="lcd"/>
+<bitmap id="m_lcd_RGB_Green" file="Images/Main/m_lcd_RGB_Green.png" gammagroup="lcd"/>
+<bitmap id="m_lcd_RGB_Blue" file="Images/Main/m_lcd_RGB_Blue.png" gammagroup="lcd"/>
+
+<!-- SC:RGB - SLoB LCD LOGO -->
+<bitmap id="m_lcd_Logo" file="Images/Main/logo/m_lcd_logo_RGBTOGGLE.png" gammagroup="lcd"/>
+<bitmap id="m_lcd_Logo2" file="Images/Main/logo2.png" gammagroup="lcd"/>
+
+<bitmap id="m_lcd_Logo_RGB_Base" file="Images/Main/logo/m_lcd_Logo_RGB_Base.png"/>
+<bitmap id="m_lcd_Logo_RGB_Red" file="Images/Main/logo/m_lcd_Logo_RGB_Red.png" />
+<bitmap id="m_lcd_Logo_RGB_Green" file="Images/Main/logo/m_lcd_Logo_RGB_Green.png" />
+<bitmap id="m_lcd_Logo_RGB_Blue" file="Images/Main/logo/m_lcd_Logo_RGB_Blue.png" />
+
+
+<bitmap id="m_vol_bg" file="Images/Main/m_volume.png"/>
+
+<bitmap id="m_vol_map" file="Images/Main/m_slider_map.png"/>
+<bitmap id="m_seek_map" file="Images/Main/m_slider_map.png"/>
+
+<bitmap id="m_seek_bg" file="Images/Main/m_seek.png"/>
+
+<bitmap id="m_vis_left" file="Images/Main/m_vis_left.png"/>
+<bitmap id="m_vis_right" file="Images/Main/m_vis_right.png"/>
+
+<bitmap id="m_vis_raster" file="Images/Main/visRaster.png" />
+
+<!-- Main Window: LCD Buttons -->
+<bitmap id="m_lcd_pl" file="Images/Main/display.png" x="0" y="0" h="21" w="37" gammagroup="lcd"/>
+<bitmap id="m_lcd_pl_h" file="Images/Main/display.png" x="37" y="0" h="21" w="37" gammagroup="lcd"/>
+<bitmap id="m_lcd_pl0" file="Images/Main/display.png" x="74" y="0" h="21" w="37" gammagroup="lcd"/>
+<bitmap id="m_lcd_pl1" file="Images/Main/display.png" x="111" y="0" h="21" w="37" gammagroup="lcd"/>
+
+<bitmap id="m_lcd_ml" file="Images/Main/display.png" x="0" y="21" h="21" w="37" gammagroup="lcd"/>
+<bitmap id="m_lcd_ml_h" file="Images/Main/display.png" x="37" y="21" h="21" w="37" gammagroup="lcd"/>
+<bitmap id="m_lcd_ml0" file="Images/Main/display.png" x="74" y="21" h="21" w="37" gammagroup="lcd"/>
+<bitmap id="m_lcd_ml1" file="Images/Main/display.png" x="111" y="21" h="21" w="37" gammagroup="lcd"/>
+
+<bitmap id="m_lcd_+" file="Images/Main/display.png" x="0" y="42" h="17" w="23" gammagroup="lcd"/>
+<bitmap id="m_lcd_+_h" file="Images/Main/display.png" x="23" y="42" h="17" w="23" gammagroup="lcd"/>
+
+<bitmap id="m_lcd_-" file="Images/Main/display.png" x="0" y="59" h="12" w="20" gammagroup="lcd"/>
+<bitmap id="m_lcd_-_h" file="Images/Main/display.png" x="40" y="59" h="12" w="20" gammagroup="lcd"/>
+<bitmap id="m_lcd_x" file="Images/Main/display.png" x="20" y="59" h="12" w="20" gammagroup="lcd"/>
+<bitmap id="m_lcd_x_h" file="Images/Main/display.png" x="60" y="59" h="12" w="20" gammagroup="lcd"/>
+
+<bitmap id="m_lcd_v" file="Images/Main/display.png" x="0" y="71" h="26" w="24" gammagroup="lcd"/>
+<bitmap id="m_lcd_v_h" file="Images/Main/display.png" x="24" y="71" h="26" w="24" gammagroup="lcd"/>
+<bitmap id="m_lcd_v0" file="Images/Main/display.png" x="48" y="71" h="26" w="24" gammagroup="lcd"/>
+<bitmap id="m_lcd_v1" file="Images/Main/display.png" x="72" y="71" h="26" w="24" gammagroup="lcd"/>
+
+<bitmap id="m_lcd_q" file="Images/Main/display.png" x="0" y="97" h="26" w="24" gammagroup="lcd"/>
+<bitmap id="m_lcd_q_h" file="Images/Main/display.png" x="24" y="97" h="26" w="24" gammagroup="lcd"/>
+<bitmap id="m_lcd_q0" file="Images/Main/display.png" x="48" y="97" h="26" w="24" gammagroup="lcd"/>
+<bitmap id="m_lcd_q1" file="Images/Main/display.png" x="72" y="97" h="26" w="24" gammagroup="lcd"/>
+
+<!-- Main Window: Font -->
+
+<truetypefont id="m_font" file="Images/tahoma.ttf" gammagroup="font"/>
+
+<!-- Colour Definitions -->
+<color id="font_colour" value="0,0,0" gammagroup="font"/>
+
+<!-- Main Window: C Buttons -->
+
+<!-- SC:RGB - SLoB -->
+<bitmap id="m_cbutton_RGB_Red" file="Images/Main/m_cbutton_RGB_Red.png"/>
+<bitmap id="m_cbutton_RGB_Green" file="Images/Main/m_cbutton_RGB_Green.png"/>
+<bitmap id="m_cbutton_RGB_Blue" file="Images/Main/m_cbutton_RGB_Blue.png"/>
+
+
+<bitmap id="m_next_nm" file="Images/Main/m_next_nm.png" gammagroup="buttons"/>
+<bitmap id="m_next_dn" file="Images/Main/m_next_dn.png" gammagroup="buttons"/>
+<bitmap id="m_next_ov" file="Images/Main/m_next_ov.png" gammagroup="buttons"/>
+
+<!-- SLoB RGB GLOW on XUI Buttons - tim owes me a drink ;) -->
+<bitmap id="m_next_ov_RGB_Blue" file="Images/Main/m_next_ov_RGB_Blue.png" gammagroup="buttons"/>
+<bitmap id="m_next_ov_RGB_Green" file="Images/Main/m_next_ov_RGB_Green.png" gammagroup="buttons"/>
+<bitmap id="m_next_ov_RGB_Red" file="Images/Main/m_next_ov_RGB_Red.png" gammagroup="buttons"/>
+
+<bitmap id="m_stop_nm" file="Images/Main/m_stop_nm.png" gammagroup="buttons"/>
+<bitmap id="m_stop_dn" file="Images/Main/m_stop_dn.png" gammagroup="buttons"/>
+<bitmap id="m_stop_ov" file="Images/Main/m_stop_ov.png" gammagroup="buttons"/>
+
+<!-- SLoB RGB GLOW on XUI Buttons - tim owes me a drink ;) -->
+<bitmap id="m_stop_ov_RGB_Blue" file="Images/Main/m_stop_ov_RGB_Blue.png" gammagroup="buttons"/>
+<bitmap id="m_stop_ov_RGB_Green" file="Images/Main/m_stop_ov_RGB_Green.png" gammagroup="buttons"/>
+<bitmap id="m_stop_ov_RGB_Red" file="Images/Main/m_stop_ov_RGB_Red.png" gammagroup="buttons"/>
+
+<bitmap id="m_play_nm" file="Images/Main/m_play_nm.png" gammagroup="buttons"/>
+<bitmap id="m_play_dn" file="Images/Main/m_play_dn.png" gammagroup="buttons"/>
+<bitmap id="m_play_ov" file="Images/Main/m_play_ov.png" gammagroup="buttons"/>
+
+<!-- SLoB RGB GLOW on XUI Buttons - tim owes me a drink ;) -->
+<bitmap id="m_play_ov_RGB_Blue" file="Images/Main/m_play_ov_RGB_Blue.png" gammagroup="buttons"/>
+<bitmap id="m_play_ov_RGB_Green" file="Images/Main/m_play_ov_RGB_Green.png" gammagroup="buttons"/>
+<bitmap id="m_play_ov_RGB_Red" file="Images/Main/m_play_ov_RGB_Red.png" gammagroup="buttons"/>
+
+
+<bitmap id="m_pause_nm" file="Images/Main/m_pause_nm.png" gammagroup="buttons"/>
+<bitmap id="m_pause_dn" file="Images/Main/m_pause_dn.png" gammagroup="buttons"/>
+<bitmap id="m_pause_ov" file="Images/Main/m_pause_ov.png" gammagroup="buttons"/>
+
+<!-- SLoB RGB GLOW on XUI Buttons - tim owes me a drink ;) -->
+<bitmap id="m_pause_ov_RGB_Blue" file="Images/Main/m_pause_ov_RGB_Blue.png" gammagroup="buttons"/>
+<bitmap id="m_pause_ov_RGB_Green" file="Images/Main/m_pause_ov_RGB_Green.png" gammagroup="buttons"/>
+<bitmap id="m_pause_ov_RGB_Red" file="Images/Main/m_pause_ov_RGB_Red.png" gammagroup="buttons"/>
+
+<bitmap id="m_prev_nm" file="Images/Main/m_prev_nm.png" gammagroup="buttons"/>
+<bitmap id="m_prev_dn" file="Images/Main/m_prev_dn.png" gammagroup="buttons"/>
+<bitmap id="m_prev_ov" file="Images/Main/m_prev_ov.png" gammagroup="buttons"/>
+
+<!-- SLoB RGB GLOW on XUI Buttons - tim owes me a drink ;) -->
+<bitmap id="m_prev_ov_RGB_Blue" file="Images/Main/m_prev_ov_RGB_Blue.png" gammagroup="buttons"/>
+<bitmap id="m_prev_ov_RGB_Green" file="Images/Main/m_prev_ov_RGB_Green.png" gammagroup="buttons"/>
+<bitmap id="m_prev_ov_RGB_Red" file="Images/Main/m_prev_ov_RGB_Red.png" gammagroup="buttons"/>
+
+<!-- Wasabi Stuff -->
+
+<!-- Scrollbars (on List, Tree, etc...) -->
+	<bitmap id="wasabi.scrollbar.vertical.button" file="Images/window/scrollbars.png" x="20" y="0" h="31" w="13" gammagroup="PlayerButton"/>
+	<bitmap id="wasabi.scrollbar.vertical.button.hover" file="Images/window/scrollbars.png" x="20" y="0" h="31" w="13" gammagroup="PlayerButton"/>
+	<bitmap id="wasabi.scrollbar.vertical.button.pressed" file="Images/window/scrollbars.png" x="40" y="0" h="31" w="13" gammagroup="PlayerButton"/>
+
+	<bitmap id="wasabi.scrollbar.vertical.left" file="Images/window/scrollbars.png" x="60" y="0" h="14" w="13" gammagroup="PlayerButton"/>
+	<bitmap id="wasabi.scrollbar.vertical.left.hover" file="Images/window/scrollbars.png" x="60" y="0" h="14" w="13" gammagroup="PlayerButton"/>
+	<bitmap id="wasabi.scrollbar.vertical.left.pressed" file="Images/window/scrollbars.png" x="80" y="0" h="14" w="13" gammagroup="PlayerButton"/>
+
+	<bitmap id="wasabi.scrollbar.vertical.right" file="Images/window/scrollbars.png" x="60" y="26" h="14" w="13" gammagroup="PlayerButton"/>
+	<bitmap id="wasabi.scrollbar.vertical.right.hover" file="Images/window/scrollbars.png" x="60" y="26" h="14" w="13" gammagroup="PlayerButton"/>
+	<bitmap id="wasabi.scrollbar.vertical.right.pressed" file="Images/window/scrollbars.png" x="80" y="26" h="14" w="13" gammagroup="PlayerButton"/>
+
+	<bitmap id="wasabi.scrollbar.vertical.background" file="Images/window/scrollbars.png" x="0" y="0" w="13" h="17" gammagroup="ScrollBarTrack"/>
+	<bitmap id="wasabi.scrollbar.vertical.background.top" file="Images/window/scrollbars.png" x="0" y="0" w="13" h="17" gammagroup="ScrollBarTrack"/>
+	<bitmap id="wasabi.scrollbar.vertical.background.middle" file="Images/window/scrollbars.png" x="0" y="0" w="13" h="17" gammagroup="ScrollBarTrack"/>
+	<bitmap id="wasabi.scrollbar.vertical.background.bottom" file="Images/window/scrollbars.png" x="0" y="0" w="13" h="17" gammagroup="ScrollBarTrack"/>
+
+	<bitmap id="wasabi.scrollbar.horizontal.button" file="Images/window/scrollbars.png" x="12" y="70" h="13" w="31" gammagroup="PlayerButton"/>
+	<bitmap id="wasabi.scrollbar.horizontal.button.hover" file="Images/window/scrollbars.png" x="12" y="70" h="13" w="31" gammagroup="PlayerButton"/>
+	<bitmap id="wasabi.scrollbar.horizontal.button.pressed" file="Images/window/scrollbars.png" x="12" y="90" h="13" w="31" gammagroup="PlayerButton"/>
+
+	<bitmap id="wasabi.scrollbar.horizontal.left" file="Images/window/scrollbars.png" x="0" y="110" h="13" w="14" gammagroup="PlayerButton"/>
+	<bitmap id="wasabi.scrollbar.horizontal.left.hover" file="Images/window/scrollbars.png" x="0" y="110" h="13" w="14" gammagroup="PlayerButton"/>
+	<bitmap id="wasabi.scrollbar.horizontal.left.pressed" file="Images/window/scrollbars.png" x="0" y="130" h="13" w="14" gammagroup="PlayerButton"/>
+
+	<bitmap id="wasabi.scrollbar.horizontal.right" file="Images/window/scrollbars.png" x="26" y="110" h="13" w="14" gammagroup="PlayerButton"/>
+	<bitmap id="wasabi.scrollbar.horizontal.right.hover" file="Images/window/scrollbars.png" x="26" y="110" h="13" w="14" gammagroup="PlayerButton"/>
+	<bitmap id="wasabi.scrollbar.horizontal.right.pressed" file="Images/window/scrollbars.png" x="26" y="130" h="13" w="14" gammagroup="PlayerButton"/>
+
+	<bitmap id="wasabi.scrollbar.horizontal.background" file="Images/window/scrollbars.png" x="18" y="50" w="17" h="13" gammagroup="ScrollBarTrack"/>
+	<bitmap id="wasabi.scrollbar.horizontal.background.top" file="Images/window/scrollbars.png" x="18" y="50" w="17" h="13" gammagroup="ScrollBarTrack"/>
+	<bitmap id="wasabi.scrollbar.horizontal.background.middle" file="Images/window/scrollbars.png" x="18" y="50" w="17" h="13" gammagroup="ScrollBarTrack"/>
+	<bitmap id="wasabi.scrollbar.horizontal.background.bottom" file="Images/window/scrollbars.png" x="18" y="50" w="17" h="13" gammagroup="ScrollBarTrack"/>
+
+<!-- Generic Button -->
+	<bitmap id="wasabi.button.label.arrow.up" file="Images/window/window-elements.png" x="137" y="75" h="4" w="7" gammagroup="PlayerButton"/>
+	<bitmap id="wasabi.button.label.arrow.down" file="Images/window/window-elements.png" x="137" y="86" h="6" w="7" gammagroup="PlayerButton"/>
+	<bitmap id="wasabi.button.label.arrow.left" file="Images/window/window-elements.png" x="133" y="79" h="7" w="4" gammagroup="PlayerButton"/>
+	<bitmap id="wasabi.button.label.arrow.right" file="Images/window/window-elements.png" x="144" y="79" h="7" w="4" gammagroup="PlayerButton"/>
+	<bitmap id="wasabi.button.label.ellipses" file="Images/window/window-elements.png" x="138" y="92" h="1" w="5" gammagroup="PlayerButton"/>
+
+	<bitmap id="wasabi.button.top.left" file="Images/window/window-elements.png" x="0" y="134" h="4" w="4" gammagroup="PlayerButton"/>
+	<bitmap id="wasabi.button.top" file="Images/window/window-elements.png" x="4" y="134" h="4" w="25" gammagroup="PlayerButton"/>
+	<bitmap id="wasabi.button.top.right" file="Images/window/window-elements.png" x="29" y="134" h="4" w="4" gammagroup="PlayerButton"/>
+	<bitmap id="wasabi.button.left" file="Images/window/window-elements.png" x="0" y="138" h="10" w="4" gammagroup="PlayerButton"/>
+	<bitmap id="wasabi.button.middle" file="Images/window/window-elements.png" x="4" y="138" h="10" w="25" gammagroup="PlayerButton"/>
+	<bitmap id="wasabi.button.right" file="Images/window/window-elements.png" x="29" y="138" h="10" w="4" gammagroup="PlayerButton"/>
+	<bitmap id="wasabi.button.bottom.left" file="Images/window/window-elements.png" x="0" y="148" h="4" w="4" gammagroup="PlayerButton"/>
+	<bitmap id="wasabi.button.bottom" file="Images/window/window-elements.png" x="4" y="148" h="4" w="25" gammagroup="PlayerButton"/>
+	<bitmap id="wasabi.button.bottom.right" file="Images/window/window-elements.png" x="29" y="148" h="4" w="4" gammagroup="PlayerButton"/>
+
+	<bitmap id="wasabi.button.pressed.top.left" file="Images/window/window-elements.png" x="66" y="134" h="4" w="4" gammagroup="PlayerButton"/>
+	<bitmap id="wasabi.button.pressed.top" file="Images/window/window-elements.png" x="70" y="134" h="4" w="25" gammagroup="PlayerButton"/>
+	<bitmap id="wasabi.button.pressed.top.right" file="Images/window/window-elements.png" x="95" y="134" h="4" w="4" gammagroup="PlayerButton"/>
+	<bitmap id="wasabi.button.pressed.left" file="Images/window/window-elements.png" x="66" y="138" h="10" w="4" gammagroup="PlayerButton"/>
+	<bitmap id="wasabi.button.pressed.middle" file="Images/window/window-elements.png" x="70" y="138" h="10" w="25" gammagroup="PlayerButton"/>
+	<bitmap id="wasabi.button.pressed.right" file="Images/window/window-elements.png" x="95" y="138" h="10" w="4" gammagroup="PlayerButton"/>
+	<bitmap id="wasabi.button.pressed.bottom.left" file="Images/window/window-elements.png" x="66" y="148" h="4" w="4" gammagroup="PlayerButton"/>
+	<bitmap id="wasabi.button.pressed.bottom" file="Images/window/window-elements.png" x="70" y="148" h="4" w="25" gammagroup="PlayerButton"/>
+	<bitmap id="wasabi.button.pressed.bottom.right" file="Images/window/window-elements.png" x="95" y="148" h="4" w="4" gammagroup="PlayerButton"/>
+
+	<bitmap id="wasabi.scrollbar.vertical.grip" file="Images/window/scrollgrips.png" x="0" y="0" h="8" w="6" gammagroup="PlayerButton"/>
+	<bitmap id="wasabi.scrollbar.horizontal.grip" file="Images/window/scrollgrips.png" x="7" y="0" h="6" w="8" gammagroup="PlayerButton"/>
+
+<!-- Object Frame-->
+	<bitmap id="wasabi.objectframe.top.left" file="Images/window/window-elements.png" x="0" y="114" h="1" w="1" gammagroup="PlayerDisplay"/>
+	<bitmap id="wasabi.objectframe.top" file="Images/window/window-elements.png" x="1" y="114" h="1" w="17" gammagroup="PlayerDisplay"/>
+	<bitmap id="wasabi.objectframe.top.right" file="Images/window/window-elements.png" x="18" y="114" h="1" w="1" gammagroup="PlayerDisplay"/>
+	<bitmap id="wasabi.objectframe.left" file="Images/window/window-elements.png" x="0" y="115" h="17" w="1" gammagroup="PlayerDisplay"/>
+	<bitmap id="wasabi.objectframe.center" file="Images/window/window-elements.png" x="1" y="115" h="17" w="17" gammagroup="PlayerDisplay"/>
+	<bitmap id="wasabi.objectframe.right" file="Images/window/window-elements.png" x="18" y="115" h="17" w="1" gammagroup="PlayerDisplay"/>
+	<bitmap id="wasabi.objectframe.bottom.left" file="Images/window/window-elements.png" x="0" y="132" h="1" w="1" gammagroup="PlayerDisplay"/>
+	<bitmap id="wasabi.objectframe.bottom" file="Images/window/window-elements.png" x="1" y="132" h="1" w="17" gammagroup="PlayerDisplay"/>
+	<bitmap id="wasabi.objectframe.bottom.right" file="Images/window/window-elements.png" x="18" y="132" h="1" w="1" gammagroup="PlayerDisplay"/>
+
+<!-- Standard Configuration Widgets -->
+	 <bitmap id="wasabi.button.checkbox" file="Images/window/window-elements.png" x="79" y="77" h="7" w="7" gammagroup="PlayerDisplay"/>
+	 <bitmap id="wasabi.button.checkbox.pressed" file="Images/window/window-elements.png" x="58" y="77" h="7" w="7" gammagroup="DisplayText"/>
+
+	 <bitmap id="wasabi.button.checkbox.xbox" file="Images/window/window-elements.png" x="79" y="77" h="7" w="7" gammagroup="PlayerDisplay"/>
+	 <bitmap id="wasabi.button.checkbox.xbox.pressed" file="Images/window/window-elements.png" x="65" y="77" h="7" w="7" gammagroup="DisplayText"/>
+
+	 <bitmap id="wasabi.button.radio.background" file="Images/window/window-elements.png" x="58" y="66" h="11" w="11" gammagroup="PlayerDisplay"/>
+	 <bitmap id="wasabi.button.radio.background.display" file="Images/window/window-elements.png" x="69" y="66" h="9" w="9" gammagroup="PlayerDisplay"/>
+	 <bitmap id="wasabi.button.radio" file="Images/window/window-elements.png" x="79" y="77" h="7" w="7" gammagroup="PlayerDisplay"/>
+	 <bitmap id="wasabi.button.radio.pressed" file="Images/window/window-elements.png" x="72" y="77" h="7" w="7" gammagroup="DisplayText"/>
+
+<!-- Frame windows -->
+	<bitmap id="wasabi.framewnd.verticaldivider" file="Images/window/window-elements.png" x="124" y="53" h="65" w="8" gammagroup="Frame_Borders"/>
+	<bitmap id="wasabi.framewnd.verticalgrabber" file="Images/window/window-elements.png" x="115" y="53" h="65" w="8" gammagroup="Frame_Borders"/>
+	<bitmap id="wasabi.framewnd.horizontaldivider" file="Images/window/window-elements.png" x="40" y="97" h="8" w="65" gammagroup="Frame_Borders"/>
+	<bitmap id="wasabi.framewnd.horizontalgrabber" file="Images/window/window-elements.png" x="40" y="106" h="8" w="65" gammagroup="Frame_Borders"/>
+	<bitmap id="wasabi.framewnd.windowshade" file="Images/window/framewnd-windowshade.png" gammagroup="Frame_Borders"/>
+
+	<bitmap id="wasabi.frame.divider.arrow.up" file="Images/window/window-elements.png" x="64" y="124" h="4" w="7" gammagroup="Frame_Borders"/>
+	<bitmap id="wasabi.frame.divider.arrow.down" file="Images/window/window-elements.png" x="64" y="128" h="4" w="7" gammagroup="Frame_Borders"/>
+
+<!-- Combo Box List-->
+	<bitmap id="wasabi.dropdownlist.list.top.left" file="Images/window/window-elements.png" x="40" y="124" h="1" w="1"/>
+	<bitmap id="wasabi.dropdownlist.list.top" file="Images/window/window-elements.png" x="41" y="124" h="1" w="10"/>
+	<bitmap id="wasabi.dropdownlist.list.top.right" file="Images/window/window-elements.png" x="51" y="124" h="1" w="1"/>
+	<bitmap id="wasabi.dropdownlist.list.left" file="Images/window/window-elements.png" x="40" y="125" h="8" w="1"/>
+	<bitmap id="wasabi.dropdownlist.list.center" file="Images/window/window-elements.png" x="41" y="125" h="8" w="10" gammagroup="PlayerDisplay"/>
+	<bitmap id="wasabi.dropdownlist.list.right" file="Images/window/window-elements.png" x="51" y="125" h="8" w="1"/>
+	<bitmap id="wasabi.dropdownlist.list.bottom.left" file="Images/window/window-elements.png" x="40" y="133" h="1" w="1"/>
+	<bitmap id="wasabi.dropdownlist.list.bottom" file="Images/window/window-elements.png" x="41" y="133" h="1" w="10"/>
+	<bitmap id="wasabi.dropdownlist.list.bottom.right" file="Images/window/window-elements.png" x="51" y="133" h="1" w="1"/>
+
+
+<!-- Standard Frame -->
+
+	<bitmap id="wasabi.frame1.top.left" file="Images/window/frame1.png" x="0" y="0" h="32" w="32"/>
+	<bitmap id="wasabi.frame1.top" file="Images/window/frame1.png" x="32" y="0" h="32" w="54"/>
+	<bitmap id="wasabi.frame1.top.right" file="Images/window/frame1.png" x="86" y="0" h="32" w="32"/>
+	<bitmap id="wasabi.frame1.left" file="Images/window/frame1.png" x="0" y="32" h="90" w="32"/>
+	<bitmap id="wasabi.frame1.center" file="Images/window/frame1.png" x="32" y="32" h="90" w="54" />
+	<bitmap id="wasabi.frame1.right" file="Images/window/frame1.png" x="86" y="32" h="90" w="32"/>
+	<bitmap id="wasabi.frame1.bottom.left" file="Images/window/frame1.png" x="0" y="122" h="15" w="32"/>
+	<bitmap id="wasabi.frame1.bottom" file="Images/window/frame1.png" x="32" y="122" h="15" w="54"/>
+	<bitmap id="wasabi.frame1.bottom.right" file="Images/window/frame1.png" x="86" y="122" h="15" w="32"/>
+
+	<bitmap id="wasabi.frame2.bottom.left" file="Images/window/frame1.png" x="0" y="137" h="35" w="32"/>
+	<bitmap id="wasabi.frame2.bottom" file="Images/window/frame1.png" x="32" y="137" h="35" w="54"/>
+	<bitmap id="wasabi.frame2.bottom.right" file="Images/window/frame1.png" x="86" y="137" h="35" w="32"/>
+
+	<bitmap id="wasabi.basetexture" file="Images/window/frame1.png" x="32" y="32" h="90" w="54" />
+	<bitmap id="wasabi.frame.basetexture" file="Images/window/frame1.png" x="32" y="32" h="90" w="54" />
+
+	<bitmap id="wasabi.frame1.region.top.left" file="Images/window/region.png" x="0" y="0" h="3" w="3"/>
+	<bitmap id="wasabi.frame1.region.top.right" file="Images/window/region.png" x="2" y="0" h="3" w="3"/>
+	<bitmap id="wasabi.frame1.region.bottom.left" file="Images/window/region.png" x="0" y="2" h="3" w="3"/>
+	<bitmap id="wasabi.frame1.region.bottom.right" file="Images/window/region.png" x="2" y="2" h="3" w="3"/>
+
+	<bitmap id="wasabi.frame1.close.base" file="Images/window/close.png" />
+	<!-- SC:RGB - SLoB -->
+	<bitmap id="wasabi.frame1.close.RGB_Red" file="Images/window/close_RGB_Red.png" />
+	<bitmap id="wasabi.frame1.close.RGB_Green" file="Images/window/close_RGB_Green.png" />
+	<bitmap id="wasabi.frame1.close.RGB_Blue" file="Images/window/close_RGB_Blue.png" />
+	<bitmap id="RGBToggle_wasabi.frame1.close" file="Images/window/close_RGBTOGGLE.png" />
+
+	<bitmap id="wasabi.frame1.close.RGB_Red.h" file="Images/window/close_RGB_Red_h.png" />
+	<bitmap id="wasabi.frame1.close.RGB_Green.h" file="Images/window/close_RGB_Green_h.png" />
+	<bitmap id="wasabi.frame1.close.RGB_Blue.h" file="Images/window/close_RGB_Blue_h.png" />
+	<bitmap id="RGBToggle_wasabi.frame1.close.h" file="Images/window/close_RGBTOGGLE_h.png" />
+
+	<bitmap id="wasabi.frame.inner" file="Images/window/frame1.png" x="20" y="40" h="1" w="1"/>
+	
+<!-- Generic Sliders -->
+	<bitmap id="wasabi.slider.horizontal.left" file="Images/window/window-elements.png" x="106" y="149" h="8" w="8" gammagroup="Sliders Backgrounds"/>
+	<bitmap id="wasabi.slider.horizontal.middle" file="Images/window/window-elements.png" x="115" y="149" h="8" w="10" gammagroup="Sliders Backgrounds"/>
+	<bitmap id="wasabi.slider.horizontal.right" file="Images/window/window-elements.png" x="126" y="149" h="8" w="8" gammagroup="Sliders Backgrounds"/>
+
+<!-- Pledit Buttons -->
+
+	<bitmap id="pledit.button.normal" file="Images/window/pledit-btns.png" x="0" y="0" h="17" w="34"/>
+	<bitmap id="pledit.button.hover" file="Images/window/pledit-btns.png" x="36" y="0" h="17" w="34"/>
+	<bitmap id="pledit.button.down" file="Images/window/pledit-btns.png" x="72" y="0" h="17" w="34"/>
+  
+	<!-- SLoB RGB -->
+	<bitmap id="pledit.button.text.left" file="Images/window/pledit-btns.png" x="0" y="17" h="17" w="140"/>
+	<bitmap id="pledit.button.text.left.RGB.Base" file="Images/window/pledit-btns.png" x="0" y="35" h="17" w="140"/>
+	<bitmap id="pledit.button.text.left.RGB.Red" file="Images/window/pledit-btns.png" x="0" y="93" h="17" w="140"/>
+	<bitmap id="pledit.button.text.left.RGB.Green" file="Images/window/pledit-btns.png" x="0" y="73" h="17" w="140"/>
+	<bitmap id="pledit.button.text.left.RGB.Blue" file="Images/window/pledit-btns.png" x="0" y="54" h="17" w="140"/>
+	
+	<bitmap id="pledit.button.text.right" file="Images/window/pledit-btns.png" x="148" y="17" h="17" w="34"/>
+	<bitmap id="pledit.button.text.right.RGB.Base" file="Images/window/pledit-btns.png" x="148" y="35" h="17" w="34"/>
+	<bitmap id="pledit.button.text.right.RGB.Red" file="Images/window/pledit-btns.png" x="148" y="93" h="17" w="34"/>
+	<bitmap id="pledit.button.text.right.RGB.Green" file="Images/window/pledit-btns.png" x="148" y="73" h="17" w="34"/>
+	<bitmap id="pledit.button.text.right.RGB.Blue" file="Images/window/pledit-btns.png" x="148" y="54" h="17" w="34"/>
+
+	<bitmap id="pledit.display.left" file="Images/window/pledit-btns.png" x="108" y="0" h="17" w="10"/>
+	<bitmap id="pledit.display.middle" file="Images/window/pledit-btns.png" x="118" y="0" h="17" w="35"/>
+	<bitmap id="pledit.display.right" file="Images/window/pledit-btns.png" x="153" y="0" h="17" w="10"/>
+
+<!-- Video Buttons -->
+	<!-- SLoB RGB -->
+	<bitmap id="video.button.text.left" file="Images/window/video-btns.png" x="0" y="0" h="17" w="140"/>
+	<bitmap id="video.button.text.left.RGB.Base" file="Images/window/video-btns-RGB_Base.png" x="0" y="0" h="17" w="140"/>
+	<bitmap id="video.button.text.left.RGB.Red" file="Images/window/video-btns-RGB_Red.png" x="0" y="0" h="17" w="140"/>
+	<bitmap id="video.button.text.left.RGB.Green" file="Images/window/video-btns-RGB_Green.png" x="0" y="0" h="17" w="140"/>
+	<bitmap id="video.button.text.left.RGB.Blue" file="Images/window/video-btns-RGB_Blue.png" x="0" y="0" h="17" w="140"/>
+	
+	<bitmap id="video.button.text.right" file="Images/window/video-btns.png" x="0" y="17" h="17" w="34"/>
+	<bitmap id="video.button.text.right.RGB.Base" file="Images/window/video-btns-RGB_Base.png" x="0" y="17" h="17" w="34"/>
+	<bitmap id="video.button.text.right.RGB.Red" file="Images/window/video-btns-RGB_Red.png" x="0" y="17" h="17" w="34"/>
+	<bitmap id="video.button.text.right.RGB.Green" file="Images/window/video-btns-RGB_Green.png" x="0" y="17" h="17" w="34"/>
+	<bitmap id="video.button.text.right.RGB.Blue" file="Images/window/video-btns-RGB_Blue.png" x="0" y="17" h="17" w="34"/>
+	
+	<bitmap id="vis.button.text.left" file="Images/window/video-btns.png" x="0" y="34" h="17" w="106"/>	
+	<bitmap id="vis.button.text.left.RGB.Base" file="Images/window/video-btns-RGB_Base.png" x="0" y="34" h="17" w="106"/>
+	<bitmap id="vis.button.text.left.RGB.Red" file="Images/window/video-btns-RGB_Red.png" x="0" y="34" h="17" w="106"/>
+	<bitmap id="vis.button.text.left.RGB.Green" file="Images/window/video-btns-RGB_Green.png" x="0" y="34" h="17" w="106"/>
+	<bitmap id="vis.button.text.left.RGB.Blue" file="Images/window/video-btns-RGB_Blue.png" x="0" y="34" h="17" w="106"/>
+	
+	<bitmap id="vis.button.text.right" file="Images/window/video-btns.png" x="0" y="17" h="17" w="34"/>	
+	<bitmap id="vis.button.text.right.RGB.Base" file="Images/window/video-btns-RGB_Base.png" x="0" y="17" h="17" w="34"/>
+	<bitmap id="vis.button.text.right.RGB.Red" file="Images/window/video-btns-RGB_Red.png" x="0" y="17" h="17" w="34"/>
+	<bitmap id="vis.button.text.right.RGB.Green" file="Images/window/video-btns-RGB_Green.png" x="0" y="17" h="17" w="34"/>
+	<bitmap id="vis.button.text.right.RGB.Blue" file="Images/window/video-btns-RGB_Blue.png" x="0" y="17" h="17" w="34"/>
+	
+	<bitmap id="vis.button.rnd" file="Images/window/video-btns.png" x="106" y="34" h="17" w="34"/>
+	<bitmap id="vis.button.rnd.RGB.Base" file="Images/window/video-btns-RGB_Base.png" x="106" y="34" h="17" w="34"/>
+	<bitmap id="vis.button.rnd.RGB.Red" file="Images/window/video-btns-RGB_Red.png" x="106" y="34" h="17" w="34"/>
+	<bitmap id="vis.button.rnd.RGB.Green" file="Images/window/video-btns-RGB_Green.png" x="106" y="34" h="17" w="34"/>
+	<bitmap id="vis.button.rnd.RGB.Blue" file="Images/window/video-btns-RGB_Blue.png" x="106" y="34" h="17" w="34"/>
+	
+	<bitmap id="vis.button.rnd0" file="Images/window/video-btns.png" x="106" y="17" h="17" w="34"/>
+	<bitmap id="vis.button.rnd1" file="Images/window/video-btns.png" x="106" y="34" h="17" w="34"/>
+
+<!-- EQ Buttons -->
+
+	<bitmap id="eq.button.on.normal" file="Images/window/eq.png" x="0" y="0" h="17" w="34"/>
+	<bitmap id="eq.button.on.hover" file="Images/window/eq.png" x="0" y="17" h="17" w="34"/>
+	<bitmap id="eq.button.on.down" file="Images/window/eq.png" x="0" y="34" h="17" w="34"/>
+	<bitmap id="eq.button.on1" file="Images/window/eq.png" x="0" y="51" h="17" w="34"/>
+	<bitmap id="eq.button.on0" file="Images/window/eq.png" x="0" y="68" h="17" w="34"/>
+	<!-- SLoB RGB -->
+	<bitmap id="eq.button.on.RGB.Blue" file="Images/window/eq.png" x="0" y="85" h="17" w="34"/>
+	<bitmap id="eq.button.on.RGB.Green" file="Images/window/eq.png" x="0" y="103" h="17" w="34"/>
+	<bitmap id="eq.button.on.RGB.Red" file="Images/window/eq.png" x="0" y="122" h="17" w="34"/>
+
+	<bitmap id="eq.button.auto.normal" file="Images/window/eq.png" x="34" y="0" h="17" w="38"/>
+	<bitmap id="eq.button.auto.hover" file="Images/window/eq.png" x="34" y="17" h="17" w="38"/>
+	<bitmap id="eq.button.auto.down" file="Images/window/eq.png" x="34" y="34" h="17" w="38"/>
+	<bitmap id="eq.button.auto1" file="Images/window/eq.png" x="34" y="51" h="17" w="38"/>
+	<bitmap id="eq.button.auto0" file="Images/window/eq.png" x="34" y="68" h="17" w="38"/>
+	<!-- SLoB RGB -->
+	<bitmap id="eq.button.auto.RGB.Blue" file="Images/window/eq.png" x="34" y="85" h="17" w="38"/>
+	<bitmap id="eq.button.auto.RGB.Green" file="Images/window/eq.png" x="34" y="103" h="17" w="38"/>
+	<bitmap id="eq.button.auto.RGB.Red" file="Images/window/eq.png" x="34" y="122" h="17" w="38"/>
+	
+	
+
+	<bitmap id="eq.button.pres.normal" file="Images/window/eq.png" x="72" y="0" h="17" w="59"/>
+	<bitmap id="eq.button.pres.hover" file="Images/window/eq.png" x="72" y="17" h="17" w="59"/>
+	<bitmap id="eq.button.pres.down" file="Images/window/eq.png" x="72" y="34" h="17" w="59"/>
+	<bitmap id="eq.button.pres1" file="Images/window/eq.png" x="72" y="51" h="17" w="59"/>
+	<bitmap id="eq.button.pres0" file="Images/window/eq.png" x="72" y="68" h="17" w="59"/>
+	
+	<!-- SLoB RGB -->
+	<bitmap id="eq.button.pres1.RGB.Blue" file="Images/window/eq.png" x="72" y="85" h="17" w="59"/>
+	<bitmap id="eq.button.pres1.RGB.Green" file="Images/window/eq.png" x="72" y="103" h="17" w="59"/>
+	<bitmap id="eq.button.pres1.RGB.Red" file="Images/window/eq.png" x="72" y="122" h="17" w="59"/>
+
+	<bitmap id="eq.bg" file="Images/window/eqbg.png" />
+
+	<bitmap id="eq.slider.normal" file="Images/window/eqslider.png" x="0" y="0" h="14" w="13"/>
+	<bitmap id="eq.slider.hover" file="Images/window/eqslider.png" x="13" y="0" h="14" w="13"/>
+	<bitmap id="eq.slider.down" file="Images/window/eqslider.png" x="26" y="0" h="14" w="13"/>
+	
+	<!-- SLoB eq fills and RGB -->
+	<bitmap id="eq.slider.eq.map" file="Images/Main/eq/slider-eq-map.png"/>
+	<bitmap id="eq.slider.eq.inner.blue" file="Images/Main/eq/slidercolour_blue.png"/>
+	<bitmap id="eq.slider.eq.inner.blue.horizontal" file="Images/Main/eq/slidercolour_blue_horizontal.png"/>
+	<bitmap id="eq.slider.eq.inner.rgb.red.horizontal" file="Images/Main/eq/slidercolour_RGB_Red_horizontal.png"/>
+	<bitmap id="eq.slider.eq.inner.rgb.green.horizontal" file="Images/Main/eq/slidercolour_RGB_Green_horizontal.png"/>
+	<bitmap id="eq.slider.eq.inner.rgb.blue.horizontal" file="Images/Main/eq/slidercolour_RGB_Blue_horizontal.png"/>
+	
+	<bitmap id="eq.slider.eq.inner.rgb.blue" file="Images/Main/eq/slidercolour_RGB_Blue.png"/>
+	<bitmap id="eq.slider.eq.inner.rgb.green" file="Images/Main/eq/slidercolour_RGB_Green.png"/>
+	<bitmap id="eq.slider.eq.inner.rgb.red" file="Images/Main/eq/slidercolour_RGB_Red.png"/>
+
+</elements>
+
+<!-- Colour Definitions -->
+<color id="font_colour" value="0,0,0" gammagroup="font"/>

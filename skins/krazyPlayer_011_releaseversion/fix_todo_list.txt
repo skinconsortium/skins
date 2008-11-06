@@ -1,0 +1,13 @@
+reported by mk3
+script failure press left mousebutton
+
+guru meditation #001C.00180383.2 Null object called
+
+scripts/vis.maki
+
+
+--------------------------------------------
+
+1c=
+main.vis2
+restructured vis script, should not get guru error

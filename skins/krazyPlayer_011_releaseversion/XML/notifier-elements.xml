@@ -1,0 +1,20 @@
+<elements>
+
+	<bitmap id="notifier.bg.left" file="Images/window/notifier.png" x="0" y="95" w="20" h="95" gammagroup="NotifierBackground"/>
+	<bitmap id="notifier.bg.center" file="Images/window/notifier.png" x="20" y="95" w="197" h="95" gammagroup="NotifierBackground"/>
+	<bitmap id="notifier.bg.right" file="Images/window/notifier.png" x="217" y="95" w="20" h="95" gammagroup="NotifierBackground"/>
+
+	<bitmap id="notifier.bg.left.da" file="Images/window/notifier.png" x="0" y="0" w="20" h="95" gammagroup="NotifierBackground"/>
+	<bitmap id="notifier.bg.center.da" file="Images/window/notifier.png" x="13" y="0" w="197" h="95" gammagroup="NotifierBackground"/>
+	<bitmap id="notifier.bg.right.da" file="Images/window/notifier.png" x="217" y="0" w="20" h="95" gammagroup="NotifierBackground"/>
+
+
+	<color id="notifier.dark" value="255,255,255" gammagroup="NotifierTextShadow" />
+	<color id="notifier.bright" value="0,0,0" gammagroup="NotifierText" />
+
+	<color id="notifier.dark.upper" value="0,0,0" gammagroup="NotifierUpperText" />
+	<color id="notifier.bright.upper" value="255,255,255" gammagroup="NotifierUpperTextShadow" />
+
+
+</elements>
+
