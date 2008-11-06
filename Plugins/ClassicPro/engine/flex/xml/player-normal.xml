@@ -1,4 +1,11 @@
-
+<groupdef id="classcvis.group">
+	<vis id="classicvis" gammagroup="player.normal.classicvis"/>
+	<layer id="mousetrap" rectrgn="1" />
+	<script
+		file="@WINAMPPATH@\Plugins\classicPro\engine\flex\scripts\classicvis.maki"
+		param="cpro.flex.player.normal.classicvis.region;cpro.flex.player.normal.classicvis.colors"
+	/>
+</groupdef>
 
 <layout id="normal" background="cpro.flex.player.normal.bg" alphabackground="cpro.flex.player.normal.bg.alpha">
 
@@ -23,11 +30,7 @@
 	/>
 
 	<!-- Visualizer -->
-	<vis id="classcvis" visible="0" />
-	<script
-		file="@WINAMPPATH@\Plugins\classicPro\engine\flex\scripts\classicvis.maki"
-		param="classcvis;cpro.flex.player.normal.classicvis.region"
-	/>
+	<group id="classcvis.group" visible="0" fitparent="1" alpha="253"/>
 
 	<!-- CButtons -->
 
