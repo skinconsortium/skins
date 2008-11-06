@@ -80,4 +80,7 @@
 	<!-- AlbumArt -->
 	<bitmap id="cpro.flex.player.normal.albumart.region" file="player/normal/albumart-region.png" />
 
+	<!-- ClassicVis -->
+	<bitmap id="cpro.flex.player.normal.classicvis.region" file="player/normal/classicvis-region.png" />
+
 </elements>
