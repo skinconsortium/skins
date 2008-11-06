@@ -1,0 +1,139 @@
+<elements>
+
+	<!-- First Main skin to fully implement main colour themes into cPro 1.04 - SLoB
+		see color presets file and groups for examples of how you can do this for your own skins
+	-->
+
+	<!-- Please comment the fonts out if you dont use them!
+	... if you use arial
+	... you dont need this
+	-->
+
+	<!--
+	<truetypefont id="cpro.tracktime.font" file="font.ttf" allowmapping="0"/>
+	<truetypefont id="cpro.songname.font" file="font.ttf" allowmapping="0"/>
+	<truetypefont id="cpro.songinfo2.font" file="font.ttf" allowmapping="0"/>
+	<truetypefont id="cpro.menu.font" file="font.ttf" allowmapping="0"/>
+	<truetypefont id="cpro.tab.font" file="font.ttf" allowmapping="0"/>
+ 	<truetypefont id="cpro.status.font" file="font.ttf" allowmapping="0"/>
+ 	<truetypefont id="cpro.winshade.font" file="font.ttf" allowmapping="0"/>
+	-->
+	<bitmap id="bitmapfont.player.songticker" file="songtickerfont.png" x="0" y="0" h="63" w="320" gammagroup="n.Text.SongInfo"/>
+  <bitmapfont id="cpro.songname.font" file="bitmapfont.player.songticker" charwidth="10" charheight="21" hspacing="-1" vspacing="0"/>
+ 
+ 	<bitmap id="bitmapfont.shade.songticker" file="shadetickerfont.png" x="0" y="0" h="63" w="320" gammagroup="n.Text.SongInfo"/>
+  <bitmapfont id="cpro.winshade.font" file="bitmapfont.shade.songticker" charwidth="5" charheight="21" hspacing="-1" vspacing="0"/>
+  
+  	<!-- Custom Fademask - old method is used if this one is not specified -->
+
+ 	<bitmap id="sc.cdbox.gradient" file="$gradient" mode="linear" gradient_x1="0" gradient_y1="0" gradient_x2="0" gradient_y2="1" points="0.0=8,73,0,0;1.0=8,73,0,255" gammagroup="n.Color.ListBg" h="1024" w="64"/>
+  
+  <!-- beat vizzes -new 1.04 custom - see classicpro.xml for corresponding visnames -->
+  
+	<bitmap id="beat.0.left" file="beat_left.png" gammagroup="n.beatvis"/>
+	<bitmap id="beat.1.left" file="beat_left2.png" gammagroup="n.beatvis"/>
+	<bitmap id="beat.2.left" file="beat_left3.png" gammagroup="n.beatvis"/>
+	<bitmap id="beat.3.left" file="beat_left4.png" gammagroup="n.beatvis"/>
+	<bitmap id="beat.4.left" file="beat_left5.png" gammagroup="n.beatvis"/>
+	<bitmap id="beat.5.left" file="beat_left6.png" gammagroup="n.beatvis"/>
+
+  
+	<!-- cPro player colors -->
+	<color id="Menu.Text" value="199,201,207"/> <!--  -->
+	<color id="Playlist.Status.Text" value="60,60,60" gammagroup="n.Background.Bottom"/> <!-- ONLY IN WIDGET AREA NOT MAIN PL -->
+	
+	<color id="Tab.Text.On" value="255,255,255" gammagroup="n.Button"/>
+	<color id="Tab.Text.Off" value="85,85,85" gammagroup="n.SuiFrame"/>
+	<color id="Tab.Text.Hover" value="155,155,155" gammagroup="n.Background.Bottom"/>
+
+	<color id="Tag.Info.Text" value="20,20,20" gammagroup="n.SuiFrame"/>
+	<color id="Player.SongTicker.Text" value="255,255,255" gammagroup="n.Text.SongTime"/>
+	<color id="Eq.xfade.Text" value="255,255,255" gammagroup="n.Background.Overlay"/>
+	<color id="ComponentTab.Status.Text" value="50,50,50" gammagroup="n.Background.Bottom"/> <!-- 76,76,76 -->
+	<color id="Browser.MediaMonitor" value="173,173,173" gammagroup="n.Background.Bottom"/>
+	<color id="wasabi.tooltips.textcolor" value="0,0,0"/>
+	<color id="wasabi.button.text" value="30,30,30" gammagroup="n.Button"/>
+
+	<color id="Shade.SongTicker.Text" value="242,229,214" gammagroup="n.Text.SongInfo"/>
+
+
+	<!-- Notifier Definitions -->
+	<color id="notifier.dark" value="40,40,40" gammagroup="n.Color.ListBg"/>
+	<color id="notifier.bright" value="190,190,190" gammagroup="n.Color.ListBg"/>
+	<color id="notifier.dark.upper" value="188,253,170" gammagroup="n.Color.ListBg"/>
+	<color id="notifier.bright.upper" value="0,0,0" gammagroup="n.Color.ListBg"/>
+	
+
+
+<!--
+								=================================
+									System Color Definitions
+								=================================
+-->
+
+
+	<!-- List: Normal Text Color -->
+	<color id="color.display" value="245,245,245" gammagroup="n.Color.List"/>
+	<color id="wasabi.tree.text" value="color.display" gammagroup="n.Color.List"/> <!-- Item text color -->
+	<color id="wasabi.list.text" value="color.display" gammagroup="n.Color.List"/> <!--lists/trees item foreground (also edit text) -->
+	<color id="wasabi.button.hiliteText" value="color.display" gammagroup="n.Color.List"/> <!-- Buttons hilite text color, used by tab windows-->
+
+
+	<!--  List: Selected Text Color -->
+	<!-- pjn add new gg here ::ADDED::-->
+	<color id="color.selected.active" value="89,140,80" /> <!-- 14,93,1 93,57,1 -->
+	<color id="wasabi.tree.selected" value="color.selected.active" gammagroup="n.Color.ListSel"/> <!-- Select item text background color -->
+	<color id="wasabi.tree.hiliteddrop" value="color.selected.active" gammagroup="n.Color.ListSel"/> <!-- Drop marker color -->
+	<color id="wasabi.list.text.selected.inactive" value="color.selected.active" gammagroup="n.Color.ListSel"/> <!-- listview/treeview selection bar textcolor (inactive) -->
+	<color id="wasabi.list.text.selected" value="color.selected.active" gammagroup="n.Color.ListSel" /> <!--listview/treeview selection bar text color -->
+	<color id="studio.list.item.selected" value="color.selected.active" gammagroup="n.Color.ListSel"/>
+
+
+	<!--  List: Playing item -->
+	<!-- pjn add new gg here ::ADDED::-->
+	<color id="wasabi.list.text.current" value="108,173,90" gammagroup="n.Color.ListCur"/> <!-- currently playing item in lists -->
+
+
+	<!-- List: Background Color -->
+	<color id="color.display.bg" value="8,73,0"/>
+	<color id="wasabi.list.background" value="color.display.bg" gammagroup="n.Color.ListBg"/>
+	<color id="wasabi.border.sunken" value="170,170,170" gammagroup="n.SuiFrame"/>
+	<bitmap id="wasabi.tree.background" file="$solid" h="64" w="64" color="8,73,0" gammagroup="n.Color.ListBg"/>
+	<bitmap id="wasabi.list.background" file="$solid" h="64" w="64" color="8,73,0" gammagroup="n.Color.ListBg"/>
+
+	
+	<!-- Component: Background Color -->
+	<color id="color.window.bg" value="214,214,214" gammagroup="n.SuiFrame"/>
+	<color id="wasabi.list.column.empty" value="color.window.bg" gammagroup="n.SuiFrame"/>
+	<color id="wasabi.window.background" value="color.window.bg" gammagroup="n.SuiFrame"/>
+
+	
+	<!-- Component: Text: On component bg & On column -->
+	<color id="wasabi.list.column.text" value="20,20,20" gammagroup="n.SuiFrame"/>
+	<color id="wasabi.window.text" value="40,40,40" gammagroup="n.SuiFrame"/>
+
+
+	<!-- Text: Selected Text Background-->
+	<!-- pjn add new gg here-->
+	<color id="color.selected.active.bg" value="18,83,0"/><!-- 159,191,150 last 200,158,113 use this for ct list --> 
+	<color id="wasabi.list.text.selected.background" value="29,81,40" gammagroup="n.Color.ListSelBg"/> <!--listview/treeview selection bar backcolor -->
+	<color id="studio.list.item.focused" value="color.selected.active.bg" gammagroup="n.Color.ListSelBg"/>
+	<color id="wasabi.list.text.selected.background.inactive" value="color.selected.active.bg" gammagroup="n.Color.ListSelBg"/> <!-- listview/treeview selectionbar back color (inactive) -->
+
+
+	<!-- Column colors... also see: "wasabi.list.column.text" & "wasabi.list.column.empty" -->
+	<color id="wasabi.list.column.background" value="200,200,200" gammagroup="n.SuiFrame"/> <!--82,46,0 listview header background color -->
+	<color id="wasabi.list.column.frame.top" value="255,255,255" gammagroup="n.SuiFrame"/> <!-- 168,150,127 listview header frame top color -->
+	<color id="wasabi.list.column.frame.middle" value="100,100,100" gammagroup="n.SuiFrame"/> <!-- 64,46,23 listview header frame middle color -->
+	<color id="wasabi.list.column.frame.bottom" value="0,0,0" gammagroup="n.SuiFrame"/> <!-- 41,23,0 listview header frame bottom color -->
+
+
+
+	<!-- These colors is used in plugins for the scrollbar...example: "Album List 2". The ML uses skinned scrollbars since wa5.5 -->
+	<color id="color.scrollbar.old" value="18,83,0" gammagroup="n.Color.ListBg"/> <!--10,30,14  28,164,1 164,94,1 -->
+	<color id="wasabi.scrollbar.foreground" value="color.scrollbar.old" gammagroup="n.Color.ListBg"/> <!-- scrollbar foreground color -->
+	<color id="wasabi.scrollbar.background" value="18,83,0" gammagroup="n.Color.ListBg"/> <!-- scrollbar background color doesnt do anything in cpro -->
+	<color id="wasabi.scrollbar.foreground.inverted" value="color.scrollbar.old" gammagroup="n.Color.ListBg"/> <!-- inverse scrollbar foreground color -->
+	<color id="wasabi.scrollbar.background.inverted" value="color.scrollbar.old" gammagroup="n.Color.ListBg"/> <!-- inverse scrollbar background color -->
+
+</elements>

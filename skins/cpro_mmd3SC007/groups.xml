@@ -1,0 +1,54 @@
+<!-- 
+	Custom Groups can be added to your skin, some may require maki to fully complemtent the feature you are trying to add.
+	If you have any questions on adding custom things to your cPro skin please visit www.skinconsortium.com
+	
+	Thanks
+	SLoB on behalf of SkinConsortium
+	http://slob.org.uk/
+
+-->
+
+<elements>
+	<bitmap id="player.led.on" file="led_on.png" x="0" y="0" h="14" w="14" gammagroup="LED"/>
+	<bitmap id="player.led.off" file="$solid" x="0" y="0" h="14" w="14" alpha="0" gammagroup="_"/>
+	<bitmap id="player.normal.overlay.bottomright" file="underlay-br.png" gammagroup="n.SuiFrame"/>
+	<bitmap id="player.shade.overlay.right" file="shade-right.png" gammagroup="n.SuiFrame"/>
+	<bitmap id="player.shade.overlay.left" file="mainframe_title.png" gammagroup="n.Background.Alt"/>
+	
+	
+	<bitmap id="player.shade.overlay.leftend.1" file="shade_overlay_le.png" x="0" y="0" w="91" h="23" gammagroup="s.SuiFrame"/>
+	<bitmap id="player.shade.overlay.leftend.2" file="shade_overlay_le.png" x="92" y="0" w="10" h="23" gammagroup="s.SuiFrame"/>
+	<bitmap id="player.shade.overlay.leftend.3" file="shade_overlay_le.png" x="103" y="0" w="63" h="23" gammagroup="s.SuiFrame"/>
+	
+</elements>
+
+<groupdef id="cpro.normal.overlay">
+	<ToggleButton
+		id="RepeatLed"
+		x="-51" y="-38" h="14" w="14"
+		relatx="1" relaty="1"
+		activeimage="player.led.on"
+		image="player.led.off"
+		ghost="1"
+		cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Repeat"
+	/>
+
+	<ToggleButton
+		id="ShuffleLed"
+		x="-111" y="-38" h="14" w="14"
+		relatx="1" relaty="1"
+		activeimage="player.led.on"
+		image="player.led.off"
+		ghost="1"
+		cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Shuffle"
+	/>
+</groupdef>
+
+<groupdef id="cpro.normal.underlay">
+	<layer x="-160" y="-51" relatx="1" relaty="1" ghost="1" image="player.normal.overlay.bottomright"/>
+</groupdef>
+
+<groupdef id="cpro.shade.underlay">
+	<layer x="-98" y="14" relatx="1" ghost="1" image="player.shade.overlay.right"/>
+	<layer x="15" y="-1" w="85" h="23" ghost="1" image="player.shade.overlay.left"/>
+</groupdef>
