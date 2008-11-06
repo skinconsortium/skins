@@ -2,6 +2,7 @@
 	<!-- Background -->
 	<bitmap id="cpro.flex.player.normal.bg" file="player/normal/background.png" gammagroup="player.normal.background"/>
 	<bitmap id="cpro.flex.player.normal.bg.alpha" file="player/normal/background-alpha.png" gammagroup="player.normal.background"/>
+	<bitmap id="cpro.flex.player.normal.bg.snap" file="player/normal/background-snap.png"/>
 	<bitmap id="cpro.flex.player.normal.bg.overlay1" file="player/normal/background-overlay1.png" gammagroup="player.normal.background.overlay1"/>
 	<bitmap id="cpro.flex.player.normal.bg.overlay2" file="player/normal/background-overlay2.png" gammagroup="player.normal.background.overlay2"/>
 
