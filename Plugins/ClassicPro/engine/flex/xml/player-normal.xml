@@ -2,6 +2,11 @@
 
 <layout id="normal" background="cpro.flex.player.normal.bg" alphabackground="cpro.flex.player.normal.bg.alpha">
 
+	<script
+		file="@WINAMPPATH@\Plugins\classicPro\engine\flex\scripts\snapadjust.maki"
+		param="cpro.flex.player.normal.bg.snap"
+	/>
+
 	<!-- Background Overlays -->
 
 	<layer id="bg.overlay1" x="0" y="0" image="cpro.flex.player.normal.bg.overlay1" alpha="253" sysregion="1"/>
@@ -172,6 +177,7 @@
 		id="songticker"
 		alpha="253"
 		userdata="normal.songticker"
+		rightclickaction="trackmenu" dblclickaction="trackinfo"
 	/>
 
 	<script
@@ -185,6 +191,7 @@
 		alpha="253"
 		visible="0"
 		userdata="normal.songticker"
+		ghost="1"
 	/>
 
 	<script
