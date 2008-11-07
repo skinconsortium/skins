@@ -18,10 +18,7 @@
 <container id="main" name="Main Window">
 
 <groupdef id="allstuff">
-<Cpro:Tab id="haha1" x="0" y="0" tabtext="Library"/>
-
 	<script file="CproTab.maki"/>
-
 </groupdef>
 
 
