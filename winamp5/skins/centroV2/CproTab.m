@@ -1,11 +1,13 @@
 #include <lib/std.mi>
 
-Global Group myGroup, tab123, workWithTab;
+Class Group CProTabButton;
+
+Global Group myGroup, workWithTab;
+Global CProTabButton tab123;
 
 System.onScriptLoaded() {
 	myGroup = getScriptGroup();
-	
-	
+
 	int createNtabs = 5;
 	
 	//how to create them
@@ -22,4 +24,8 @@ System.onScriptLoaded() {
 		myGroup.enumObject(i).setXmlParam("x", integerToString(myGroup.enumObject(i-1).getGuiX() + myGroup.enumObject(i-1).getWidth()));
 	}
 
+}
+
+CProTabButton.onresize(int x, int y, int w, int h){
+	//debug("xyz");
 }
