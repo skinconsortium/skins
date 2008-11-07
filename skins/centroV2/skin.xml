@@ -14,7 +14,7 @@
 </skininfo>
 
 <include file="player-elements.xml"/>
-<include file="CentroTab.xml"/>
+<include file="CproTab.xml"/>
 <container id="main" name="Main Window">
 
 <groupdef id="allstuff">

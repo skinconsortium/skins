@@ -9,5 +9,4 @@ System.onScriptLoaded() {
 	tab123.setXmlParam("y", "50");
 	tab123.setXmlParam("tabtext", "VideoHaha");
 	tab123.init(myGroup);
-
 }
