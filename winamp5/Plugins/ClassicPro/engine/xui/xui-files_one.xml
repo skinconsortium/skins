@@ -1,8 +1,7 @@
 <include file="FadeText/FadeText.xml"/>
 <include file="NowPlaying/NowPlaying.xml"/>
 
-
-
+<include file="WasabiButton/WasabiButton.xml"/>
 <include file="SC-ProgressGrid/SC-ProgressGrid.xml"/>
 <include file="AlbumArt/AlbumArt.xml"/>
 <include file="SC-Channels/sc-channels.xml"/>
