@@ -1,34 +1,38 @@
 <?xml version="1" encoding="UTF-8" standalone="yes"?>
 
-<!--<WasabiXML version="1.2">-->
 <WasabiXML version="1.34">
+	<skininfo>
+		<version>1</version>
+		<name>test skin</name>
+		<comment>Skin full of bugs</comment>
+		<author gaybag="sc">SkinConsortium</author>
+		<email>email@skinconsortium.com</email>
+		<homepage>www.skinconsortium.com</homepage>
+		<screenshot></screenshot>
+	</skininfo>
 
-<skininfo>
-<version>1</version>
-<name>BUG AMP</name>
-<comment>Skin full of bugs</comment>
-<author gaybag="pjn123">Pieter</author>
-<email></email>
-<homepage></homepage>
-<screenshot></screenshot>
-</skininfo>
-
-<include file="player-elements.xml"/>
-<include file="CproTab.xml"/>
-<container id="main" name="Main Window">
-
-<groupdef id="allstuff">
-	<script file="CproTab.maki"/>
-</groupdef>
+	<include file="player-elements.xml"/>
+	<include file="CproTabButton.xml"/>
 
 
+	<container id="main" name="Main Window">
 
-<layout id="normal" minimum_w="602" minimum_h="337" maximum_w="800" maximum_h="600" rectrgn="1">
-  <wasabi:StandardFrame:Status fitparent="1" content="allstuff" wantfocus="1" />
-  <sendparams target="window.titlebar.title" default="List color bug (Winamp5 build 2225)"/>
-</layout>
-</container>
+		<groupdef id="cprotabs.buttons">
+			<!--
+			All the Tab Buttons are created in this group
+			So dont place any objects in this group!
+			 -->
+		</groupdef>
 
+		<groupdef id="allstuff">
+			<group id="cprotabs.buttons" x="5" y="5" w="-5" h="50" relatw="1"/>
+			<rect id="moveicon" x="2" y="5" w="5" h="29" alpha="150" filled="1" visible="0"/>
+			<script file="CproTabs.maki"/>
+		</groupdef>
 
-
+		<layout id="normal" minimum_w="50" minimum_h="50" rectrgn="1">
+		  <wasabi:StandardFrame:Status fitparent="1" content="allstuff" wantfocus="1" />
+		  <sendparams target="window.titlebar.title" default="CProTabs work in progress"/>
+		</layout>
+	</container>
 </WasabiXML>
