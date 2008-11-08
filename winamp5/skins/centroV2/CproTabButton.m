@@ -1,13 +1,15 @@
 #include <lib/std.mi>
 
 Function buttonState(int mode);  //1=activated , 2=normal , 3=hover
+Function updateName(int mode);  //0=full , 1=3chars , 2=1char
 
 Global Group myGroup, myParent;
 Global ToggleButton myButton;
 Global Text myText;
 Global GuiObject myGrid;
-Global int downX, tab_id;
+Global int downX, tab_id, nameMode;
 Global boolean tabMouseDown, wasActive, tabMoveSend;
+Global String tabFullName;
 
 System.onScriptLoaded() {
 	myGroup = getScriptGroup();
@@ -16,15 +18,20 @@ System.onScriptLoaded() {
 	myGrid = myGroup.findObject("cpro.tab.grid");
 	myText = myGroup.findObject("cpro.tab.text");
 	tabMoveSend=false;
+	nameMode=0;
 }
 
 System.onSetXuiParam(String param, String value) {
 	if(strlower(param) == "tabtext"){
-		myText.setText(value);
-		myGroup.setXmlParam("w", integerToString(myText.getAutoWidth()+14));
+		tabFullName=value;
+		updateName(nameMode);
 	}
 	else if(strlower(param) == "tab_id"){
 		tab_id = stringToInteger(value);
+	}
+	else if(strlower(param) == "viewmode"){
+		nameMode=stringToInteger(value);
+		updateName(nameMode);
 	}
 }
 
@@ -46,6 +53,19 @@ buttonState(int mode){
 		myText.setXmlParam("y", "7");
 		myText.setXmlParam("color", "Tab.Text.Hover");
 	}
+}
+
+updateName(int mode){
+	if(mode==0){
+		myText.setText(tabFullName);
+	}
+	else if(mode==1){
+		myText.setText(strLeft(tabFullName,3));
+	}
+	else{
+		myText.setText(strLeft(tabFullName,1));
+	}
+	myGroup.setXmlParam("w", integerToString(myText.getAutoWidth()+14));
 }
 
 myButton.onActivate(boolean onOff){
