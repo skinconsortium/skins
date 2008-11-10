@@ -42,21 +42,21 @@ Function setCompStatus(boolean onOff);
 Function updateCompStatus();
 
 // new dynamic tabs (dynamic size, custom position, hideable..will show again when system trigger it ;)
-Function tab_SetText(int tab, int limit);
+/*Function tab_SetText(int tab, int limit);
 Function tab_SetX(int tab, int x);
 Function int tab_GetX(int tab);
 Function int tab_GetW(int tab);
 Function int tab_isVisible(int tab);
 Function setDividerX(int x1);
 Function int tab_GetTotalW();
-Function moveTab(int tab, int newpos);
+Function moveTab(int tab, int newpos);*/
 Function String replaceString(string baseString, string toreplace, string replacedby);
 
 Function setFrame1();
 Function setFrame2(int pos, int h);
 
 Global Group xuiGroup, tab_library, tab_video, tab_avs, tab_Browser, tab_Playlist, tab_Other, tab_Widget, drawer, mainTabsheet;
-Global Group area_left, area_right, area_mini, area_right_pl, ocFrame, tabsGroup;
+Global Group area_left, area_right, area_mini, area_right_pl, ocFrame;//, CproTabs;
 Global Group mini_Cover, mini_Video, mini_AVS, mini_SavedPL, mini_TagView;
 Global Group tabbut_vid, tabbut_avs, tabbut_pl, browserGroup;
 
@@ -66,20 +66,22 @@ Global PopUpMenu popMenu, tabMenu;
 
 Global Browser xuiBrowser;
 
-Global GuiObject visRectBg, tempbutton, nowPlaying;
+Global GuiObject visRectBg, tempbutton, nowPlaying, CproTabs;
 
 Global Button but_miniGoto, closeFrame, openFrame;
 
 Global Text visName, plText1, plText2;
 
-Global ToggleButton tog_library, tog_video, tog_avs, tog_Browser, tog_Playlist, tog_Other, tog_NowPlay, tog_drawer;
-Global GuiObject tog_library1, tog_video1, tog_avs1, tog_Browser1, tog_Playlist1, tog_Other1, tog_Widget1, tog_fake1, guihold_Pl2, compGrid;
+//Global ToggleButton tog_library, tog_video, tog_avs, tog_Browser, tog_Playlist, tog_Other, tog_NowPlay, tog_drawer;
+Global ToggleButton tog_drawer;
+//Global GuiObject tog_library1, tog_video1, tog_avs1, tog_Browser1, tog_Playlist1, tog_Other1, tog_Widget1, tog_fake1, guihold_Pl2, compGrid;
+Global GuiObject tog_fake1, guihold_Pl2, compGrid;
 Global WindowHolder hold_Other, hold_Pl2, hold_vid, hold_avs, hold_ml;//, hold_Pl1;
 
 Global Frame mainFrame, plFrame;
 Global Timer openMainLayout, openDefaultTab, refreshAIOTab, checkVisName, ssWinHol;
 Global GuiObject main_Frame;
-Global boolean openLib, openVid, openVis, loaded, open_drawer, skipLoad, mouseDownF1, mouseDownF2, busyWithDrawer, busyWithThisFunction, wasTabTrig, stopResizeRight, openMePlease, delayStart, cuseqbg, ml_installed;
+Global boolean dontTabCall, openLib, openVid, openVis, loaded, open_drawer, skipLoad, mouseDownF1, mouseDownF2, busyWithDrawer, busyWithThisFunction, wasTabTrig, stopResizeRight, openMePlease, delayStart, cuseqbg, ml_installed;
 Global int active_tab, tab_openned, delayStartTab;
 Global String tabNames, closeGUID;
 
@@ -101,6 +103,7 @@ Global GuiObject customObj;
 CODE_MARTIN end
 
 System.onScriptLoaded() {
+	dontTabCall=false;
 	delayStart=true;
 	delayStartTab=0;
 
@@ -123,7 +126,7 @@ System.onScriptLoaded() {
 	plFrame = xuiGroup.findObject("centro.plframe");
 
 	ocFrame = xuiGroup.findObject("centro.componentsheet.opencloseframe");
-	tabsGroup = xuiGroup.findObject("centro.componentsheet.tabs");
+	CproTabs = xuiGroup.findObject("Cpro.tabs");
 	
 	visName = xuiGroup.findObject("centro.visname");
 	
@@ -220,7 +223,7 @@ System.onScriptLoaded() {
 	
 	visRectBg = xuiGroup.findObject("centro.windowholder.visualization.bg");
 
-	tog_library = xuiGroup.findObject("centro.tabtog.0");
+	/*tog_library = xuiGroup.findObject("centro.tabtog.0");
 	tog_video = xuiGroup.findObject("centro.tabtog.1");
 	tog_avs = xuiGroup.findObject("centro.tabtog.2");
 	tog_Browser = xuiGroup.findObject("centro.tabtog.3");
@@ -234,7 +237,7 @@ System.onScriptLoaded() {
 	tog_Browser1 = xuiGroup.findObject("centro.tabtog.3");
 	tog_Playlist1 = xuiGroup.findObject("centro.tabtog.4");
 	tog_Other1 = xuiGroup.findObject("centro.tabtog.5");
-	tog_Widget1 = xuiGroup.findObject("centro.tabtog.6");
+	tog_Widget1 = xuiGroup.findObject("centro.tabtog.6");*/
 
 	CODE_MARTIN start
 	dummyBuck = xuiGroup.findObject("widget.loader.mini");
@@ -288,10 +291,10 @@ xuiGroup.onSetVisible(boolean onOff){
 		area_right.hide();
 	}
 	
-	spaceTabs(true); //true because this is important check.. so dont mind if this is double check.... else it wont show correct on skin start
+	//spaceTabs(true); //true because this is important check.. so dont mind if this is double check.... else it wont show correct on skin start
 }
 
-tab_SetText(int tab, int limit){
+/*tab_SetText(int tab, int limit){
 	tog_fake1 = xuiGroup.findObject("centro.tabtog." + getToken(getPublicString("cPro.tabOrder", DEFAULT_TAB_ORDER), ";", tab));
 
 	int tokenNo = stringToInteger(getToken(getPublicString("cPro.tabOrder", DEFAULT_TAB_ORDER), ";", tab));
@@ -390,7 +393,7 @@ moveTab(int tab, int newpos){
 	z = replaceString(z, ";x", "");
 	setPublicString("cPro.tabOrder", z);
 	spaceTabs(true); //width wasnt change so need it to be true to force update ;)
-}
+}*/
 String replaceString(string baseString, string toreplace, string replacedby) {
 	if (toreplace == "") return baseString;
 	string sf1 = strupper(baseString);
@@ -407,7 +410,7 @@ String replaceString(string baseString, string toreplace, string replacedby) {
 }
 
 
-spaceTabs(boolean important){
+/*spaceTabs(boolean important){
 	if(!xuiGroup.isVisible()) return;
 	//area_left
 	int oc = 50;
@@ -440,7 +443,7 @@ spaceTabs(boolean important){
 	for(int i=1;i<=6;i++){
 		tab_SetX(i, tab_GetX(i-1)+tab_GetW(i-1)*tab_isVisible(i-1));
 	}
-}
+}*/
 
 System.onSetXuiParam(String param, String value) {
 	if(strlower(param) == "enable_drawer"){
@@ -497,8 +500,8 @@ drawer.onSetVisible(boolean onOff){
 }
 
 System.onOpenUrl(string url){
-	openTabNo(3);
-	updateTabButtonStates();
+	openTabNo(4);
+	//updateTabButtonStates();
 	xuiBrowser.sendAction ("openurl", url, 0, 0, 0, 0);
 	return 1;
 }
@@ -532,7 +535,7 @@ System.onGetCancelComponent(String guid, boolean goingvisible){
 			}
 			else if(mainFrame.getPosition()==0){
 				hold_Pl2.setXmlParam("autoopen", "0");
-				openTabNo(4);
+				openTabNo(1);
 				hold_Pl2.setXmlParam("autoopen", "1");
 			}
 		}
@@ -547,9 +550,9 @@ System.onGetCancelComponent(String guid, boolean goingvisible){
 			if(setPublicInt("cPro.lastMini", 0)==1 && area_mini.isVisible()){
 				//do nothing
 			}
-			else if(active_tab!=1){
+			else if(active_tab!=2){
 				hold_vid.setXmlParam("autoopen", "0");
-				openTabNo(1);
+				openTabNo(2);
 				hold_vid.setXmlParam("autoopen", "1");
 			}
 		}
@@ -560,9 +563,9 @@ System.onGetCancelComponent(String guid, boolean goingvisible){
 			else if(getPublicInt("cPro.lastDrawer", 0)==DRAWER_VIS_ID && open_drawer){
 				//do nothing
 			}
-			else if(active_tab!=2){
+			else if(active_tab!=3){
 				hold_avs.setXmlParam("autoopen", "0");
-				openTabNo(2);
+				openTabNo(3);
 				hold_avs.setXmlParam("autoopen", "1");
 			}
 		}
@@ -579,7 +582,7 @@ System.onGetCancelComponent(String guid, boolean goingvisible){
 			refreshAIOTab.start();
 			return false;
 		}
-		spaceTabs(true);
+		//spaceTabs(true);
 		
 		if(delayStart) return true; //dont try to open component because its not visible yet!
 		return false;
@@ -595,7 +598,7 @@ System.onGetCancelComponent(String guid, boolean goingvisible){
 }
 
 refreshAIOTab.onTimer(){
-	spaceTabs(true);
+	//spaceTabs(true);
 	refreshAIOTab.stop();
 }
 
@@ -632,15 +635,15 @@ openDefaultTab.onTimer(){
 	}
 
 	if(active_tab==0){
-		openTabNo(1);
+		openTabNo(2);//vid
 	}
 	else{
-		openTabNo(0);
+		openTabNo(0);//ml
 	}
-	spaceTabs(true);
+	//spaceTabs(true);
 }
 
-updateTabShow(){
+/*updateTabShow(){
 
 	if(ml_installed){
 		if(getPublicInt("cPro.tab.onoff.0", 1)==1 || active_tab==0) tog_library1.show();
@@ -670,9 +673,9 @@ updateTabShow(){
 	else tog_Other1.hide();
 	
 	spaceTabs(true);	//true because when user hides it the width wasnt change since last check
-}
+}*/
 
-updateTabButtonStates(){
+/*updateTabButtonStates(){
 	tog_library.setActivated(0);
 	tog_video.setActivated(0);
 	tog_avs.setActivated(0);
@@ -689,7 +692,7 @@ updateTabButtonStates(){
 	else if(active_tab==6) tog_NowPlay.setActivated(1);
 	else tog_library.setActivated(1);
 
-}
+}*/
 
 openTabNo(int tabNo){
 	if(delayStart && tabNo!=5){
@@ -715,10 +718,18 @@ openTabNo(int tabNo){
 		tab_Widget.hide();
 	}
 	
-	updateTabButtonStates();
+	//updateTabButtonStates();
 	tab_openned = tabNo;
 	
+
 	if(tabNo==1){
+		if(mainFrame.getPosition()!=0) setMainFrame(false); //if not closed.. close sideview
+		if(getPublicInt("cPro.lastDrawer", 0)==DRAWER_PL_ID && open_drawer)	drawer.sendAction ("switch_to_drawer", "", 0, 0, 0, 0);
+
+		tab_Playlist.show();
+		//tog_Playlist.setActivated(1);
+	}
+	else if(tabNo==2){
 		if(getPublicInt("cPro.lastMini", 0)==1){
 			openMini(0);
 		}
@@ -727,9 +738,9 @@ openTabNo(int tabNo){
 		preview_layout.hide();
 
 		tab_video.show();
-		tog_video.setActivated(1);
+		//tog_video.setActivated(1);
 	}
-	else if(tabNo==2){
+	else if(tabNo==3){
 		if(getPublicInt("cPro.lastMini", 0)==2){
 			openMini(0);
 		}
@@ -737,47 +748,42 @@ openTabNo(int tabNo){
 			drawer.sendAction ("switch_to_drawer", "", 0, 0, 0, 0); //close drawer vis
 		}	
 		tab_avs.show();
-		tog_avs.setActivated(1);
+		//tog_avs.setActivated(1);
 		checkVisName.start();
 	}
-	else if(tabNo==3){
-		tab_Browser.show();
-		tog_Browser.setActivated(1);
-	}
 	else if(tabNo==4){
-		if(mainFrame.getPosition()!=0) setMainFrame(false); //if not closed.. close sideview
-		if(getPublicInt("cPro.lastDrawer", 0)==DRAWER_PL_ID && open_drawer)	drawer.sendAction ("switch_to_drawer", "", 0, 0, 0, 0);
-
-		tab_Playlist.show();
-		tog_Playlist.setActivated(1);
+		tab_Browser.show();
+		//tog_Browser.setActivated(1);
 	}
 	else if(tabNo==5){
 		tab_Other.show();
-		tog_Other.setActivated(1);
-		tog_Other1.show();
+		//tog_Other.setActivated(1);
+		//tog_Other1.show();
 	}
-	else if(tabNo==6){
+	/*else if(tabNo==6){
 		tab_Widget.show();
-		tog_NowPlay.setActivated(1);
-		tog_Widget1.show();
-	}
+		//tog_NowPlay.setActivated(1);
+		//tog_Widget1.show();
+	}*/
 	else{
 		tab_library.show();
-		tog_library.setActivated(1);
-		//pjn123 add show tab?
+		//tog_library.setActivated(1);
 	}
 	
-	if(tabNo!=5){
-		tog_Other1.hide();
-	}
+	/*if(tabNo!=5){
+		//tog_Other1.hide();
+	}*/
 	
 	if(tabNo!=-1){
 		setPublicInt("cPro.lastComponentPage", tabNo);
 	}
-	updateTabShow();
+	//updateTabShow();
 	busyWithThisFunction=false;
-	spaceTabs(true);
+	//spaceTabs(true);
 	updateCompStatus();
+	
+	if(!dontTabCall) CproTabs.sendAction("select_tab", "", tabNo, 0, 0, 0);
+	else dontTabCall=false;
 }
 
 checkVisName.onTimer(){
@@ -803,7 +809,7 @@ openMainLayout.onTimer(){
 	tog_Other.setActivated(0);
 
 */
-tog_library.onLeftButtonDown(int x, int y){
+/*tog_library.onLeftButtonDown(int x, int y){
 	tabMouseDown=true;
 	mmove=false;
 	downX=x;
@@ -976,7 +982,7 @@ tog_Other.onMouseMove(int x, int y){
 		tabDivider.show();
 		setDividerX(x-tab_GetX(0));
 	}
-}
+}*/
 
 
 // add other tab!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -984,7 +990,7 @@ tog_Other.onMouseMove(int x, int y){
 /* --------------
 */
 
-tog_library.onLeftClick(){
+/*tog_library.onLeftClick(){
 	if(!mmove) openTabNo(0);
 	updateTabButtonStates();
 }
@@ -1011,10 +1017,10 @@ tog_Other.onLeftClick(){
 tog_NowPlay.onLeftClick(){
 	if(!mmove) openTabNo(6);
 	updateTabButtonStates();
-}
+}*/
 
 area_right.onSetVisible(boolean onOff){
-	if(onOff && getPublicInt("cPro.lastComponentPage", 0)==4 && !skipLoad) openTabNo(0); //dont want two playlist hey?
+	if(onOff && getPublicInt("cPro.lastComponentPage", 0)==1 && !skipLoad) openTabNo(0); //dont want two playlist hey?
 	if(getPublicInt("cPro.lastDrawer", 0)==DRAWER_PL_ID) drawer.sendAction ("switch_to_drawer", "", 0, 0, 0, 0);
 	//spaceTabs();
 }
@@ -1093,13 +1099,13 @@ openMini(int miniNo){
 		mini_Cover.show();
 	}
 	else if(miniNo==1){
-		if(getPublicInt("cPro.lastComponentPage", 0)==1){
+		if(getPublicInt("cPro.lastComponentPage", 0)==2){
 			openTabNo(0);
 		}
 		mini_Video.show();
 	}
 	else if(miniNo==2){
-		if(getPublicInt("cPro.lastComponentPage", 0)==2){
+		if(getPublicInt("cPro.lastComponentPage", 0)==3){
 			openTabNo(0);
 		}
 		if(getPublicInt("cPro.lastDrawer", 0)==DRAWER_VIS_ID){
@@ -1133,7 +1139,7 @@ openMini(int miniNo){
 /*
 Preview Tip Code
 */
-tog_video.onEnterArea(){
+/*tog_video.onEnterArea(){
 	waitForPreview.start();
 }
 tog_video.onLeaveArea(){
@@ -1158,12 +1164,12 @@ waitForPreview.onTimer(){
 		preview_layout.setXmlParam("ontop", "1");
 	}
 	waitForPreview.stop();
-}
+}*/
 
 /*
 Toggle component buttons
 */
-initTabSubMenu(){
+/*initTabSubMenu(){
 	tabMouseDown=false;
 	tabMenu = new PopUpMenu;
 	tabMenu.addCommand(TAB_TABSELECT, -1, 0, 1);
@@ -1299,7 +1305,7 @@ tog_other.onRightButtonUp(int x, int y){
 	refreshComponentButtons();
 	updateTabShow();
 	complete;
-}
+}*/
 
 
 
@@ -1363,17 +1369,21 @@ setCompStatus(boolean onOff){
 xuiGroup.onAction (String action, String param, int x, int y, int p1, int p2, GuiObject source)
 {
 	// Switch to new tab
-	if (strlower(action) == "switch_to_tab"){
+	if (strlower(action) == "switch_to_tab"){ //used by other script to show tab holder & select tab
+		openTabNo(x);
+	}
+	else if (strlower(action) == "show_tab"){ //used by the tabs to show tab holder
+		dontTabCall=true;
 		openTabNo(x);
 	}
 	else if (strlower(action) == "browser_url"){
-		openTabNo(3);
-		updateTabButtonStates();
+		openTabNo(4);
+		//updateTabButtonStates();
 		xuiBrowser.sendAction ("openurl", param, 0, 0, 0, 0);
 	}
 	else if (strlower(action) == "browser_search"){
-		openTabNo(3);
-		updateTabButtonStates();
+		openTabNo(4);
+		//updateTabButtonStates();
 		xuiBrowser.sendAction ("search", param, 0, 0, 0, 0);
 	}
 	else if (strlower(action) == "drawer_onoff"){
@@ -1396,15 +1406,15 @@ xuiGroup.onAction (String action, String param, int x, int y, int p1, int p2, Gu
 	else if (strlower(action) == "release"){
 		if(param=="VIS"){
 			if(getPublicInt("cPro.lastMini", 0)==2) openMini(0);
-			if(getPublicInt("cPro.lastComponentPage", 0)==2) openTabNo(0);
+			if(getPublicInt("cPro.lastComponentPage", 0)==3) openTabNo(0);
 		}
 		else if(param=="PL"){
-			if(getPublicInt("cPro.lastComponentPage", 0)==4) openTabNo(0);
+			if(getPublicInt("cPro.lastComponentPage", 0)==1) openTabNo(0);
 			if(mainFrame.getPosition()!=0) setMainFrame(false);
 		}
 		else if(param=="VID"){
 			if(getPublicInt("cPro.lastMini", 0)==1) openMini(0);
-			if(getPublicInt("cPro.lastComponentPage", 0)==1) openTabNo(0);
+			if(getPublicInt("cPro.lastComponentPage", 0)==2) openTabNo(0);
 		}
 		else if(param=="TAG"){
 			if(getPublicInt("cPro.lastMini", 0)==4) openMini(0);
@@ -1422,7 +1432,7 @@ xuiGroup.onResize(int x, int y, int w, int h){
 		//boolean prevState = ocFrame.isVisible();
 		ocFrame.hide();
 		tog_drawer.setXmlParam("x", "-24");
-		tabsGroup.setXmlParam("w", "-27");
+		CproTabs.setXmlParam("w", "-27");
 
 		if(mainFrame.getPosition()!=0){
 			mainFrame.setPosition(0);
@@ -1434,7 +1444,7 @@ xuiGroup.onResize(int x, int y, int w, int h){
 	else{
 		tog_drawer.setXmlParam("x", "-48");
 		ocFrame.show();
-		tabsGroup.setXmlParam("w", "-51");
+		CproTabs.setXmlParam("w", "-51");
 	}
 	//spaceTabs(true);
 	//mainFrame.setPosition(mainFrame.getPosition()); //This is done to refresh the hide of the resizer ;)
@@ -1450,7 +1460,7 @@ xuiGroup.onResize(int x, int y, int w, int h){
 }
 area_left.onResize(int x, int y, int w, int h){
 	setFrame1();
-	spaceTabs(false);
+	//spaceTabs(false);
 	
 	//mainFrame.setPosition(mainFrame.getPosition()); //mainframe refresh :(
 	/*if(openMePlease){

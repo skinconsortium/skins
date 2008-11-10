@@ -171,6 +171,11 @@ Section "ClassicPro Engine" cproFiles
   File "${SOURCEPATH}\engine\xui\FadeText\*.m"
   File "${SOURCEPATH}\engine\xui\FadeText\*.maki"
 
+  SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\WasabiButton
+  File "${SOURCEPATH}\engine\xui\WasabiButton\*.xml"
+  File "${SOURCEPATH}\engine\xui\WasabiButton\*.m"
+  File "${SOURCEPATH}\engine\xui\WasabiButton\*.maki"
+
   SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\AlbumArt
   File "${SOURCEPATH}\engine\xui\AlbumArt\*.xml"
   File "${SOURCEPATH}\engine\xui\AlbumArt\*.m"
