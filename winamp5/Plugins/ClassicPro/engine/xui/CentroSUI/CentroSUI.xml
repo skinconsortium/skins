@@ -262,7 +262,9 @@
 		bottomleft="player.suiframe.7" bottom="player.suiframe.8" bottomright="player.suiframe.9"
 		regionop="1" move="1"
 	/>
-	<group id="centro.componentsheet.tabs" x="1" y="4" w="-51" h="29" relatw="1" wantfocus="1"/>
+	<!--<group id="centro.componentsheet.tabs" x="1" y="4" w="-51" h="29" relatw="1" wantfocus="1"/>-->
+	<Cpro:Tabs id="Cpro.tabs" x="0" y="0" h="29" w="-50" relatw="1"/>
+
 	<NStatesButton id="tog.drawer" x="-48" y="5" relatx="1" image="drawer.1." hoverimage="drawer.2." downimage="drawer.3." rectrgn="1" nstates="2" cfgvals="0;1"/>
 	<group id="centro.componentsheet.opencloseframe" x="-24" y="5" w="20" h="20" relatx="1"/>
 <!--

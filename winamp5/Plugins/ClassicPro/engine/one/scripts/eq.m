@@ -59,7 +59,7 @@ xFadeRead.onSetPosition(int newpos){
 
 myGroup.onResize(int x, int y, int w, int h){
 	x=w/2-188.5;
-	if(x<0)x=0;
+	if(x<9)x=9;
 	eq_content.setXmlParam("x", integerToString(x+2));
 }
 
