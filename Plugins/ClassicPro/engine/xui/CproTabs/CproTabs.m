@@ -33,10 +33,10 @@ System.onScriptLoaded() {
 	activeTab = -1;
 
 
-	numOfTabs = 6+2; //5internal + 2widgets // @martin: add the number of widgets found here (replace the +2 ;)
-	widgetTabNames = "CoverFlow;BrowserPro"; // @martin: read the names in here
+	numOfTabs = 6+4; //5internal + 2widgets // @martin: add the number of widgets found here (replace the +2 ;)
+	widgetTabNames = "CoverFlow;BrowserPro;Lyrics;RotateVis"; // @martin: read the names in here
 
-	tabOrder = "0;1;2;3;4;5;100;101";	//read this in via publicString later
+	tabOrder = "0;1;2;3;4;5;100;101;102;103";	//read this in via publicString later
 	/*
 	ToDo - Check to see if there changes in no of widgets...
 	Then fix the "tabOrder"
