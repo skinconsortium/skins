@@ -2,7 +2,8 @@
 
 #define INTERNALTABNAMES "Media Library;Playlist;Video;Visualization;Browser;@ALL@"
 
-Class Group CProTabButton;
+Class Group CProTabGroup;
+Class Button CProTabButton;
 
 Function refresh_X();
 Function refresh_W();
@@ -12,11 +13,14 @@ Function int tabID_to_groupNo(int tabId);
 Function int getTabX(int tabNo);
 
 Global Group myGroup, tg, workWithTab;
-Global CProTabButton tab123;
+Global CProTabGroup tab123;
+Global CProTabButton but123;
 Global GuiObject moveIcon, CproSUI;
-Global int numOfTabs, maxW, activeTab;
-Global boolean maxW_Set, allTabsMaxView; //set this disabled when you add a new tab
+Global int numOfTabs, maxW, activeTab, downX;
+Global boolean maxW_Set, allTabsMaxView, tabMouseDown, tabMoveSend; //set this disabled when you add a new tab
 Global String widgetTabNames, tabOrder;
+
+Global Button test;
 
 System.onScriptLoaded() {
 	myGroup = getScriptGroup();
@@ -44,6 +48,7 @@ System.onScriptLoaded() {
 		String output_TabName = "error";
 		
 		tab123 = System.newGroup("cpro.tab");
+			
 		tab123.setXmlParam("tab_id", integerToString(tabId));
 		
 		if(tabId<6){ //InternalTabs
@@ -56,6 +61,9 @@ System.onScriptLoaded() {
 		tab123.setXmlParam("tabtext", output_TabName);
 		tab123.init(tg);
 		tab123.show();
+		
+		but123 = tg.enumObject(i).findObject("cpro.tab.button");
+		//but123.setXmlParam("text","x");
 	}
 	
 	
@@ -67,10 +75,38 @@ System.onScriptLoaded() {
 
 }
 
-CProTabButton.onresize(int x, int y, int w, int h){
+CProTabGroup.onresize(int x, int y, int w, int h){
 	//debug("xyz");
 }
 
+CProTabButton.onLeftButtonDown(int x, int y){
+	downX=x;
+	tabMouseDown=true;
+	tabMoveSend=false;
+}
+CProTabButton.onLeftButtonUp(int x, int y){
+	if(tabMouseDown){
+		tabMouseDown=false;
+		if(tabMoveSend){
+			moveIcon.hide();
+			//myParent.sendAction("move_tab_now", "", tab_id, 0, 0, 0);
+		}
+	}
+}
+CProTabButton.onMouseMove(int x, int y){
+	if(tabMouseDown){
+		//int x = System.getMousePosX();
+		if((downX  >= x+4 || downX <= x-4) && !tabMoveSend){
+			tabMoveSend=true;
+			moveIcon.show();
+		}
+		
+		if(tabMoveSend){
+			moveIcon.setXmlParam("x",integerToString(x));
+		}
+	}
+
+}
 
 tg.onAction(String action, String param, int x, int y, int p1, int p2, GuiObject source){
 	if(strlower(action) == "open_tab"){
@@ -85,6 +121,7 @@ tg.onAction(String action, String param, int x, int y, int p1, int p2, GuiObject
 	else if(strlower(action) == "move_tab"){
 		//debug("This tab wants to move: " + integerToString(x));
 		moveIcon.show();
+		//test = tg.enumObject(tabID_to_groupNo(activeTab)).findObject("cpro.tab.button");
 	}
 	else if(strlower(action) == "move_tab_now"){
 		moveIcon.hide();
