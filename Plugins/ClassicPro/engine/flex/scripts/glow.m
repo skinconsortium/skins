@@ -13,25 +13,51 @@
 #include <lib/../../ClassicProFlex/classicProFlex.mi>
 #include dispatch_codes.m
 
-Function GlowObject newGlowObject(String id);
+Function GlowObject newGlowObject(GlowObject go, GlowLayer gl, String id);
 
 Global GlowObject stop, play, pause, prev, next;
+Global GlowLayer stop_gl, play_gl, pause_gl, prev_gl, next_gl;
+Global int glowType;
 
 System.onScriptLoaded ()
 {
 	initDispatcher();
-	stop = newGlowObject("cbutton.stop");
-	play = newGlowObject("cbutton.play");
-	pause = newGlowObject("cbutton.pause");
-	prev = newGlowObject("cbutton.prev");
-	next = newGlowObject("cbutton.next");
+
+	String type = strlower(ClassicProFlex.appearance_getGlowButtonType());
+	if (type == "hold")
+	{
+		glowType = GLOW_TYPE_HOLD;
+	}
+	else if (type == "bounce")
+	{
+		glowType = GLOW_TYPE_BOUNCE;
+	}
+	else if (type == "flash")
+	{
+		glowType = GLOW_TYPE_FLASH;
+	}
+
+	stop = newGlowObject(stop, stop_gl, "cbutton.stop");
+	play = newGlowObject(play, play_gl, "cbutton.play");
+	pause = newGlowObject(pause, pause_gl, "cbutton.pause");
+	prev = newGlowObject(prev, prev_gl, "cbutton.prev");
+	next = newGlowObject(next, next_gl, "cbutton.next");
+
+	stop_gl = stop.glow;
+	play_gl = play.glow;
+	pause_gl = pause.glow;
+	prev_gl = prev.glow;
+	next_gl = next.glow;
 }
 
-GlowObject newGlowObject(String id)
+GlowObject newGlowObject(GlowObject go, GlowLayer gl, String id)
 {
-	GlowObject go = GlowObject_construct(getScriptGroup().findObject(id), getScriptGroup().findObject(id+".glow"));
+	go = getScriptGroup().findObject(id);
+	gl = getScriptGroup().findObject(id+".glow");
+	GlowObject go = GlowObject_construct(go, gl);
 	GlowObject_setFadeInSpeed(go, ClassicProFlex.appearance_getGlowButtonFadeInSpeed());
 	GlowObject_setFadeOutSpeed(go, ClassicProFlex.appearance_getGlowButtonFadeOutSpeed());
+	GlowObject_setGlowType(go, glowType);
 	return go;
 }
 
