@@ -1,14 +1,17 @@
 -------------------------------------------------------------
-Version 1.05 (8 Nov 2008)
+Version 1.05 (18 Nov 2008)
 -------------------------------------------------------------
 - New: Major Widget Engine Improvements! Download new widgets (http://cpro.skinconsortium.com)
+- New: BrowserPro v2.0 widget bundled (now have its own tab!)
 - New: Playlist and Video can now be openned in drawer
 - New: TagViewer can now also open in the mini area
 - Improved: More miscellaneous optimizations for faster skin load
 - Improved: Drawer/Mini area menu
 - Improved: WasabiButtons now use the hover image
+- Improved: Cleaned SUI code and separated the tab code
 - Fixed: Generate HTML playlist did nothing
 - Fixed: TagViewer bottomleft gfx didn't hide the normal drawer bottomleft gfx
+- Fixed: Equalizer gfx overlap
 - Removed: Skin Chooser - This will be availible as an optional widget
 -------------------------------------------------------------
 
