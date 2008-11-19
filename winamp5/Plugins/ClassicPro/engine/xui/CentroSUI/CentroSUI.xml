@@ -138,10 +138,24 @@
 	<windowholder id="centro.windowholder.visualization" x="1" y="1" w="-2" relatw="1" h="-27" relath="1"  autofocus="1" wantfocus="0" autoclose="1" autoopen="1" autoavailable="0" visible="1" hold="guid:{0000000A-000C-0010-FF7B-01014263450C}"/>
 	<group id="centro.visualization.buttons" x="1" y="-24" w="-2" relatw="1" h="22" relaty="1" visible="0"/>
 </groupdef>
+
+
+
+
+
+
+
 <groupdef id="centro.browser" name="Browser">
 	<rect color="wasabi.window.background" filled="1" x="1" y="1" w="-2" relatw="1" h="-4" relath="1"/>
-	<Winamp:Browser id="cpro.browser" x="0" y="1" w="0" relatw="1" h="-4" relath="1" home="http://cpro.skinconsortium.com/browser.php"/>
+	<Winamp:Browser id="cpro.browser" x="0" y="1" w="0" relatw="1" h="-4" relath="1" home="http://cpro.skinconsortium.com/browser.php" visible="0"/>
+
+	<group id="cpro.widget.browserpro" fitparent="1"/>
+
 </groupdef>
+
+
+
+
 <groupdef id="centro.playlist2.buttons">
 	<Button action="PE_Add"
 		x="4" y="1" rectrgn="1"
