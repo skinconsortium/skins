@@ -1,5 +1,5 @@
 #include <lib/std.mi>
-#include <lib/cprowidget.mi>
+#include "../../cprowidget.mi"
 #include <lib/pldir.mi>
 #include <lib/fileio.mi>
 #include <lib/application.mi>
@@ -34,6 +34,8 @@ Global GuiObject browserXUI, fakeSB;
 Global Browser myBrowser;
 Global Layer ddlMouseT, ddlIcon;
 
+Global Timer focus_callback;
+
 System.onScriptLoaded(){
 	setPublicInt("ClassicPro.BrowserPro.loaded", 1);
 	initWidget();
@@ -51,7 +53,9 @@ System.onScriptLoaded(){
 	myBrowser = myGroup.findObject("browserpro.browser");
 	ddlMouseT = myGroup.findObject("browserpro.ddl.mousetrap");
 	ddlIcon = myGroup.findObject("browserpro.ddl.icon");
-	
+
+	focus_callback = new Timer;
+	focus_callback.setDelay(200);
 
 	myList.setIconWidth(16);
 	myList.setShowIcons(1);
@@ -71,6 +75,8 @@ System.onScriptUnloading (){
 	myGroup.hide();
 	delete loaded_P_Names;
 	delete loaded_P_Url;
+	focus_callback.stop();
+	delete focus_callback;
 }
 
 
@@ -148,7 +154,21 @@ ddlOpenClose(){
 	
 		results_layout.show();
 		resizeResults(loaded_P_Names.getNumItems());
-		results_layout.setXmlParam("ontop", "1");
+		results_layout.setXmlParam("ontop", "1"); //dunno
+		results_layout.setfocus();
+		focus_callback.start();
+	}
+}
+
+focus_callback.onTimer ()
+{
+	if (!results_layout.isActive())
+	{
+		focus_callback.stop();
+		if (!results_layout) return;
+		results_layout.hide();
+		//searchlist = NULL;
+		//searchlist_layout = NULL;
 	}
 }
 
