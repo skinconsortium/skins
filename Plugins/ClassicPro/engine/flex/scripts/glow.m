@@ -15,8 +15,8 @@
 
 Function GlowObject newGlowObject(GlowObject go, GlowLayer gl, String id);
 
-Global GlowObject stop, play, pause, prev, next;
-Global GlowLayer stop_gl, play_gl, pause_gl, prev_gl, next_gl;
+Global GlowObject stop, play, pause, prev, next, open;
+Global GlowLayer stop_gl, play_gl, pause_gl, prev_gl, next_gl, open_gl;
 Global int glowType;
 
 System.onScriptLoaded ()
@@ -42,12 +42,14 @@ System.onScriptLoaded ()
 	pause = newGlowObject(pause, pause_gl, "cbutton.pause");
 	prev = newGlowObject(prev, prev_gl, "cbutton.prev");
 	next = newGlowObject(next, next_gl, "cbutton.next");
+	open = newGlowObject(open, open_gl, "cbutton.open");
 
 	stop_gl = stop.glow;
 	play_gl = play.glow;
 	pause_gl = pause.glow;
 	prev_gl = prev.glow;
 	next_gl = next.glow;
+	open_gl = open.glow;
 }
 
 GlowObject newGlowObject(GlowObject go, GlowLayer gl, String id)
@@ -101,6 +103,10 @@ GlowObject.onLeftButtonDown (int x, int y)
 	else if (GlowObject == next)
 	{
 		tickertext = System.getString("winamp.playback", 4);
+	}
+	else if (GlowObject == open)
+	{
+		tickertext = System.getString("winamp.playback", 5);
 	}
 	sendMessageS(SHOW_SYSINFO, tickertext);
 }

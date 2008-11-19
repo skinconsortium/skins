@@ -116,6 +116,7 @@
 		translate="2"
 		alpha="253"
 	/>
+	<layer id="cbutton.open.glow" x="0" y="0" ghost="1" image="cpro.flex.player.normal.open.glow" alpha="0"/>
 
 	<!-- Seek -->
 

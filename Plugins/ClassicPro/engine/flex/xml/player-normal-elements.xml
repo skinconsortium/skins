@@ -17,6 +17,7 @@
 	<bitmap id="cpro.flex.player.normal.open" file="player/normal/cbutton-open.png" gammagroup="player.normal.cbuttons"/>
 	<bitmap id="cpro.flex.player.normal.open.hover" file="player/normal/cbutton-open-hover.png" gammagroup="player.normal.cbuttons"/>
 	<bitmap id="cpro.flex.player.normal.open.down" file="player/normal/cbutton-open-down.png" gammagroup="player.normal.cbuttons"/>
+	<bitmap id="cpro.flex.player.normal.open.glow" file="player/normal/cbutton-open-glow.png" gammagroup="player.normal.cbuttons.glow"/>
 
 	<bitmap id="cpro.flex.player.normal.prev" file="player/normal/cbutton-previous.png" gammagroup="player.normal.cbuttons"/>
 	<bitmap id="cpro.flex.player.normal.prev.hover" file="player/normal/cbutton-previous-hover.png" gammagroup="player.normal.cbuttons"/>
