@@ -227,10 +227,15 @@ onMessage(int message, int i0, int i1, int i2, String s0, String s1, GuiObject o
 		{
 			int newPos = i0 - t.lastX + t.getGuiX();
 
-			if (newPos < 0 || newPos > tabHolder.getWidth() - t.w)
+			if (newPos < 0)
 			{
-				return;
+				newPos = 0;
 			}
+			else if (newPos > tabHolder.getWidth() - t.w)
+			{
+				newPos = tabHolder.getWidth() - t.w;
+			}
+			
 			
 		
 			t.lastX = i0;	
