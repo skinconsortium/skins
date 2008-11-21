@@ -1,0 +1,41 @@
+<!-- ===================================================================================================
+
+	<Wasabi:fileSelect /> implementation
+
+	wasabi interface by Martin Poehlmann aka Deimos - martin@skinconsortium.com
+	www.skinconsortium.com - www.martin.deimos.de.vu
+
+	html interface by Rohan Prabhu aka rohan2kool - rohan2kool@gmail.com
+
+    Available parameters :
+
+      - All params for Editbox
+      - All params for Group
+
+
+      - getonlypath="1" if you only want to get the filepath
+
+==================================================================================================== -->
+
+<groupdef id="fileSelectLine" xuitag="Wasabi:fileSelect" embed_xui="filename">
+
+    <wasabi:Editbox
+     id="filename"
+     x="0" y="0" relatw="1" 
+     w="-50" relath="1" h="0"
+    />
+
+    <wasabi:Button
+     id="select" text="Browse"
+     x="-50" y="0" relatx="1" 
+     w="50" relath="1" h="0"
+    />
+
+    <browser
+     id="filebrowse"
+     x="0" y="0"
+     w="0" h="0"
+     scrollbars="never"
+    />
+    <script id="fselect.browser" param="file:///@SKINPATH@xui/fileSelect/fselect.maki" file="xui/fileSelect/script.maki"/>
+</groupdef>

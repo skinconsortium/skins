@@ -1,0 +1,206 @@
+
+
+<gammaset id=".default">
+</gammaset>
+
+
+
+
+
+<gammaset id="Electristorm">
+	
+  <gammagroup id="glass" value="1696, 3168, 3456" gray="0" boost="0" />
+  <gammagroup id="Scrollbar Buttons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Tree Color" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="ButtonText" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="ListBackground" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="listText" value="0,500,0" gray="0" boost="0" />
+   
+	
+ 
+	</gammaset>
+<gammaset id="Prphaze">
+	<gammagroup id="background" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="backgrounds" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="glass" value="3456, 3296, 1696" gray="0" boost="0" />
+  <gammagroup id="Scrollbar Buttons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Tree Color" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="ButtonText" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="ListBackground" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="listText" value="0,500,0" gray="0" boost="0" />
+   
+	
+
+	</gammaset>
+<gammaset id="Matrix">
+	<gammagroup id="background" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="backgrounds" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="glass" value="1568, 2784, -4096" gray="2" boost="0" />
+  <gammagroup id="Scrollbar Buttons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Tree Color" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="ButtonText" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="ListBackground" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="listText" value="0,500,0" gray="0" boost="0" />
+   
+	
+
+	</gammaset>
+<gammaset id="UmRed">
+	<gammagroup id="background" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="backgrounds" value="0,0,0" gray="0" boost="0" />
+   <gammagroup id="glass"   value="1184, -4000, -4000" gray="1" boost="0" />
+  <gammagroup id="Scrollbar Buttons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Tree Color" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="ButtonText" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="ListBackground" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="listText" value="0,500,0" gray="0" boost="0" />
+   
+	
+ 
+	</gammaset>
+<gammaset id="Magentadream">
+	<gammagroup id="background" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="backgrounds" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="glass" value="2784, -4096, 704" gray="2" boost="0" />
+  <gammagroup id="Scrollbar Buttons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Tree Color" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="ButtonText" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="ListBackground" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="listText" value="0,500,0" gray="0" boost="0" />
+   
+	
+
+	</gammaset>
+<gammaset id="Lagoon">
+	<gammagroup id="background" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="backgrounds" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="glass" value="-4096, 352, 2784" gray="2" boost="0" />
+  <gammagroup id="Scrollbar Buttons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Tree Color" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="ButtonText" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="ListBackground" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="listText" value="0,500,0" gray="0" boost="0" />
+   
+	
+	</gammaset>
+<gammaset id="Tealxs">
+	<gammagroup id="background" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="backgrounds" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="glass" value="-4096, 2592, 2784" gray="2" boost="0" />
+  <gammagroup id="Scrollbar Buttons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Tree Color" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="ButtonText" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="ListBackground" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="listText" value="0,500,0" gray="0" boost="0" />
+   
+	
+
+	</gammaset>
+<gammaset id="Burnt">
+	<gammagroup id="background" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="backgrounds" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="glass" value="2784, -160, -4096" gray="2" boost="0" />
+  <gammagroup id="Scrollbar Buttons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Tree Color" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="ButtonText" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="ListBackground" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="listText" value="0,500,0" gray="0" boost="0" />
+   
+	
+
+	</gammaset>
+
+
+<gammaset id="LostColor">
+	<gammagroup id="background" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="backgrounds" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="glass" value="3552, 3392, 3712" gray="2" boost="0" />
+  <gammagroup id="Scrollbar Buttons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Tree Color" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="ButtonText" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="ListBackground" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="listText" value="0,500,0" gray="0" boost="0" />
+   
+	
+
+	</gammaset>
+<gammaset id="NightVision">
+	<gammagroup id="background" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="backgrounds" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="glass"   value="128, 2720, 1344" gray="2" boost="0" />
+  <gammagroup id="Scrollbar Buttons" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="Tree Color" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="ButtonText" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="ListBackground" value="0,0,0" gray="0" boost="0" />
+  <gammagroup id="listText" value="0,500,0" gray="0" boost="0" />
+   
+	</gammaset>
+
+	
+
+<gammaset id="red">
+ <gammagroup id="glass"   value="1280, -2944, -2944" gray="0" boost="0" />
+</gammaset>
+
+<gammaset id="orange">
+ <gammagroup id="glass"    value="1280, -1568, -2944" gray="0" boost="0" />
+</gammaset>
+
+
+<gammaset id="orangeyellow">
+ <gammagroup id="glass"   value="1280, -736, -2944" gray="0" boost="0" />
+</gammaset>
+
+<gammaset id="yellow">
+ <gammagroup id="glass"    value="1280, 416, -2944" gray="0" boost="0" />
+</gammaset>
+
+<gammaset id="yellowgreen">
+ <gammagroup id="glass"  value="-96, 1280, -2944" gray="0" boost="0" />
+</gammaset>
+
+<gammaset id="lime">
+ <gammagroup id="glass"    value="-928, 1280, -2944" gray="0" boost="0" />
+</gammaset>
+
+
+<gammaset id="green">
+ <gammagroup id="glass"   value="-3520, -1344, -3424" gray="0" boost="0" />
+</gammaset>
+
+<gammaset id="greenblue">
+ <gammagroup id="glass"   value="-3232, -128, -896"  gray="0" boost="0" />
+</gammaset>
+
+<gammaset id="ltblue">
+ <gammagroup id="glass"  value="-3232, -736, -128"  gray="0" boost="0" />
+</gammaset>
+
+<gammaset id="blue">
+ <gammagroup id="glass"     value="-3232, -2624, -128" gray="0" boost="0" />
+</gammaset>
+
+
+<gammaset id="bluepurp">
+ <gammagroup id="glass"   value="-2624, -3232, -128" gray="0" boost="0" />
+</gammaset>
+
+<gammaset id="purple">
+ <gammagroup id="glass"    value="-1216, -3232, -128"  gray="0" boost="0" />
+</gammaset>
+
+<gammaset id="magenta">
+ <gammagroup id="glass"  value="-128, -3232, -128" gray="0" boost="0" />
+</gammaset>
+
+<gammaset id="pink">
+ <gammagroup id="glass"   value="2624, -2592, 1088"  gray="0" boost="0" />
+</gammaset>
+
+
+<gammaset id="pinkred">
+ <gammagroup id="glass"   value="2784, -2720, -1504" gray="0" boost="0" />
+</gammaset>
+
+
+

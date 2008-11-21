@@ -1,0 +1,7 @@
+<container id="focus" name="focus" nomenu="1" default_visible="1">
+	<layout id="normal" desktopalpha="1" minimum_w="100" minimum_h="100"
+	 	ontop="0" forcealpha="1" noactivation="1" nodock="1" move="0">
+		<layer id="focus.bg" fitparent="1" image="focus.bg" sysregion="1" move="0" alpha="220"/>
+		<layer x="-20" y="-20" w="20" h="20" relatx="1" relaty="1" rectrgn="1" resize="bottomright"/>
+	</layout>
+</container>
