@@ -5,6 +5,7 @@ Version 1.05 (18 Nov 2008)
 - New: BrowserPro v2.0 widget bundled (now have its own tab!)
 - New: Playlist and Video can now be openned in drawer
 - New: TagViewer can now also open in the mini area
+- New: Shade mode quick Playlist now have repeat and shuffle too
 - Improved: More miscellaneous optimizations for faster skin load
 - Improved: Drawer/Mini area menu
 - Improved: WasabiButtons now use the hover image
