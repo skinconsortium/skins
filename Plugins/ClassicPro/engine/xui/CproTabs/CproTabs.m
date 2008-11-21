@@ -226,9 +226,16 @@ onMessage(int message, int i0, int i1, int i2, String s0, String s1, GuiObject o
 		if (t.moving)
 		{
 			int newPos = i0 - t.lastX + t.getGuiX();
+
+			if (newPos < 0 || newPos > tabHolder.getWidth() - t.w)
+			{
+				return;
+			}
 			
-			t.setXmlParam("x", integerToString(newPos));
+		
 			t.lastX = i0;	
+
+			t.setXmlParam("x", integerToString(newPos));
 
 			Tab left = t.left;
 			if (left != null)
