@@ -1,0 +1,50 @@
+<container id="config" name="Image Changer" dynamic="0" default_visible="0">
+
+<groupdef id="config.content" w="0" h="0" relatw="1" relath="1">
+	<layer image="studio.BaseTexture" fitparent="1" sysregion="1"/>
+	<rect id="bkground.temp" fitparent="1" color="5,5,5" filled="1"/>  <!-- temp object -->
+ 
+  <layer x="0" y="0" image="player.main.background.default1"/>
+ 
+	
+		
+	<Wasabi:RadioGroup id="config.bg" />
+	<wasabi:checkbox id="config.bg.default"
+		text="Default Background" radioid="config.bg" radioval="0"
+		x="27" y="80" w="150" h="20"/>
+	<wasabi:checkbox id="config.bg.image"
+		text="Custom Image:" radioid="config.bg" radioval="1"
+		x="26" y="126" w="150" h="20"/>
+	<Wasabi:fileSelect x="40" y="145" w="-77" h="20" relatw="1"/>
+	<wasabi:checkbox id="config.bg.wallpaper"
+		text="Desktop Wallpaper" radioid="config.bg" radioval="2"
+		x="217" y="79" w="150" h="20"/>
+		
+	<wasabi:checkbox id="config.bg.tile"
+		text="Desktop Zoom" 
+		x="217" y="102" w="150" h="20"/>
+
+		 <togglebutton id="browe"
+		 x="120" y="172" 
+		 action="TOGGLE" param="browser"
+        image="getb1" 
+		downimage="getb"
+		hoverimage="getb"
+		rectrgn="1"
+		tooltip="Music Show Site"/>
+
+      <script file="scripts\config.maki"/>
+
+</groupdef>
+
+<layout id="normal" background="player.main.background.blank" alphabackground="player.main.background.blank"
+	x="0" y="0" w="400" h="250"  minimum_w="400" minimum_h="250" maximum_w="400" maximum_h="250">
+	
+	<Wasabi:StandardFrame:NoStatus
+		x="0" y="0" w="0" h="0" relatw="1" relath="1"
+		content="config.content"
+	/>
+
+</layout>
+
+</container>

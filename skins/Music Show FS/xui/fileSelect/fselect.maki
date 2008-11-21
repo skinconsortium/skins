@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://wwww.w3.org/1999/xhtml" lang="en" xml:lang="en">
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+  <script type="text/javascript">
+  <!--
+	function checkFile() {
+		var name = document.getElementById('fselect').value;
+
+		document.location.replace("fseldum.maki?add={__" + name);
+	}
+	function load() {
+		document.getElementById('fselect').click(); //martin.deimos, no browser window is needed! fileselect box opens on siteloading
+	}
+  //-->
+  </script>
+ </head>
+
+ <body onload="load()">
+  <input type="file" id="fselect" onchange="checkFile()" />
+ </body>
+</html>
