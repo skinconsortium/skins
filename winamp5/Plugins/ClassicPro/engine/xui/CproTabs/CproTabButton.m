@@ -1,132 +1,116 @@
+/**
+ * ClassicProTabButton.m
+ *
+ * Tab Button handling including moveable tabs
+ *
+ * @package	com.skinconsortium.cpro.one
+ * @author	mpdeimos
+ * @date	2008/11/21
+ */
+
 #include <lib/std.mi>
 
-Function buttonState(int mode);  //1=activated , 2=normal , 3=hover
-Function updateName(int mode);  //0=full , 1=3chars , 2=1char
+#include dispatch_codes.m
 
-Global Group myGroup, myParent;
-Global ToggleButton myButton;
-Global Text myText;
-Global GuiObject myGrid;
-Global int downX, tab_id, nameMode;
-Global boolean tabMouseDown, wasActive, tabMoveSend;
-Global String tabFullName;
+Function setButtonState(int mode);
 
-System.onScriptLoaded() {
-	myGroup = getScriptGroup();
-	myParent = myGroup.getParent();
-	myButton = myGroup.findObject("cpro.tab.button");
-	myGrid = myGroup.findObject("cpro.tab.grid");
-	myText = myGroup.findObject("cpro.tab.text");
-	tabMoveSend=false;
-	nameMode=0;
+Global ToggleButton trigger;
+Global Group parent;
+Global GuiObject grid;
+Global Text label;
+Global boolean wasActive;
+Global int dx;
+
+System.onScriptLoaded ()
+{
+	setDispatcher(getScriptGroup().getParent());
+
+	trigger = getScriptGroup().findObject("cpro.tab.button");
+	label = getScriptGroup().findObject("cpro.tab.text");
+	grid = getScriptGroup().findObject("cpro.tab.grid");
+	parent = getScriptGroup();
 }
 
-System.onSetXuiParam(String param, String value) {
-	if(strlower(param) == "tabtext"){
-		tabFullName=value;
-		updateName(nameMode);
-	}
-	else if(strlower(param) == "tab_id"){
-		tab_id = stringToInteger(value);
-	}
-	else if(strlower(param) == "viewmode"){
-		nameMode=stringToInteger(value);
-		updateName(nameMode);
-	}
-	else if(strlower(param) == "activate"){
-		myButton.setActivated(stringToInteger(value));
-	}
+trigger.onLeftButtonDown (int x, int y)
+{
+	wasActive = getActivated();
+	dx = x;
+
+	sendMessage(ON_LEFT_BUTTON_DOWN, x, x, 0, "", "", parent);
 }
 
-
-buttonState(int mode){
-	myGrid.setXmlParam("topleft", "wasabi.tabsheet.button.left."+integerToString(mode));
-	myGrid.setXmlParam("top", "wasabi.tabsheet.button.center."+integerToString(mode));
-	myGrid.setXmlParam("topright", "wasabi.tabsheet.button.right."+integerToString(mode));
-	myText.setXmlParam("color", "");
-
-	if(mode==1){
-		myText.setXmlParam("y", "6");
-		myText.setXmlParam("color", "Tab.Text.On");
-	}
-	else if(mode==2){
-		myText.setXmlParam("color", "Tab.Text.Off");
-		myText.setXmlParam("y", "7");
-	}
-	else{
-		myText.setXmlParam("y", "7");
-		myText.setXmlParam("color", "Tab.Text.Hover");
-	}
+trigger.onMouseMove (int x, int y)
+{
+	sendMessage(ON_MOUSE_MOVE, x, x, 0, "", "", parent);
 }
 
-updateName(int mode){
-	if(mode==0){
-		myText.setText(tabFullName);
+trigger.onLeftButtonUp (int x, int y)
+{
+	dx -= x;
+	if (dx < 5 && dx > -5)
+	{
+		setActivated(1);
+		sendMessageO(ON_TAB_ACTIVATED, parent);
 	}
-	else if(mode==1){
-		myText.setText(strLeft(tabFullName,3));
+	else
+	{
+		setActivated(wasActive);
 	}
-	else{
-		myText.setText(strLeft(tabFullName,1));
-	}
-	myGroup.setXmlParam("w", integerToString(myText.getAutoWidth()+14));
+	
+	
+	sendMessage(ON_LEFT_BUTTON_UP, x, x, 0, "", "", parent);
 }
 
-myButton.onActivate(boolean onOff){
-	if(onOff){
-		buttonState(1);
+trigger.onActivate (boolean onOff)
+{
+	if (onOff)
+	{
+		setButtonState(1);
 	}
-	else{
-		buttonState(2);
-	}
-}
-myButton.onLeftClick(){
-	int x = System.getMousePosX();
-	if(downX < x+4 && downX > x-4){
-		myButton.setActivated(true);
-		myParent.sendAction("open_tab", "", tab_id, 0, 0, 0);
-	}
-	else{
-		myButton.setActivated(wasActive);
-		//myParent.sendAction("move_tab", "", tab_id, 0, 0, 0);
-		//debug(integertostring(downX) + " "+integertostring(System.getMousePosX()));
+	else
+	{
+		setButtonState(2);
 	}
 }
 
-/*testing*/
-myButton.onRightClick(){
-	myButton.setActivated(false);
-}
-/*testing*/
-
-myButton.onEnterArea(){
-	if(!myButton.getActivated()) buttonState(3);
-}
-myButton.onLeaveArea(){
-	if(!myButton.getActivated()) buttonState(2);
+trigger.onEnterArea()
+{
+	if (!trigger.getActivated())
+		setButtonState(3);
 }
 
-myButton.onLeftButtonDown(int x, int y){
-	tabMouseDown=true;
-	tabMoveSend=false;
-	wasActive=myButton.getActivated();
-	downX=System.getMousePosX();
+trigger.onLeaveArea()
+{
+	if (!trigger.getActivated())
+		setButtonState(2);
 }
-myButton.onLeftButtonUp(int x, int y){
-	if(tabMouseDown){
-		tabMouseDown=false;
-		if(tabMoveSend){
-			myParent.sendAction("move_tab_now", "", tab_id, 0, 0, 0);
-		}
+
+setButtonState (int mode)
+{
+	grid.setXmlParam("topleft", "wasabi.tabsheet.button.left."+integerToString(mode));
+	grid.setXmlParam("top", "wasabi.tabsheet.button.center."+integerToString(mode));
+	grid.setXmlParam("topright", "wasabi.tabsheet.button.right."+integerToString(mode));
+	label.setXmlParam("color", "");
+
+	if (mode == 1)
+	{
+		label.setXmlParam("y", "6");
+		label.setXmlParam("color", "Tab.Text.On");
+	}
+	else if (mode == 2)
+	{
+		label.setXmlParam("color", "Tab.Text.Off");
+		label.setXmlParam("y", "7");
+	}
+	else
+	{
+		label.setXmlParam("y", "7");
+		label.setXmlParam("color", "Tab.Text.Hover");
 	}
 }
-myButton.onMouseMove(int x, int y){
-	if(tabMouseDown && !tabMoveSend){
-		int x = System.getMousePosX();
-		if(downX >= x+4 || downX <= x-4){
-			tabMoveSend=true;
-			myParent.sendAction("move_tab", "", tab_id, 0, 0, 0);
-		}
-	}
 
+label.onTextChanged (String newtxt)
+{
+	trigger.setXmlParam("tooltip", newtxt);
+	sendMessageO(ON_TAB_TEXT_UPDATED, parent);
 }

@@ -3,4 +3,4 @@
 	<text id="cpro.tab.text" default=" " x="7" y="7" w="-14" relatw="1" h="14" font="cpro.tab.font" bold="1" fontsize="14" color="Tab.Text.Off" alpha="253"/>
 	<togglebutton id="cpro.tab.button" fitparent="1" rectrgn="1"/>
 	<script file="@WINAMPPATH@\Plugins\ClassicPro\engine\xui\CproTabs\CproTabButton.maki" />
-</groupdef>
+</groupdef>z

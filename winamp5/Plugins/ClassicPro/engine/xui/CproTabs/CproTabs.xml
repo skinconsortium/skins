@@ -9,6 +9,5 @@
 
 <groupdef id="cprotabs.xui" xuitag="Cpro:Tabs">
 	<group id="cprotabs.buttons" x="5" y="4" w="-5" h="50" relatw="1"/>
-	<rect id="moveicon" x="2" y="5" w="5" h="29" alpha="150" filled="1" visible="0"/>
 	<script file="@WINAMPPATH@\Plugins\ClassicPro\engine\xui\CproTabs\CproTabs.maki" />
 </groupdef>

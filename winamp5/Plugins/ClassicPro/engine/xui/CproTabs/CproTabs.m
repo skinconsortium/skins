@@ -1,210 +1,336 @@
+/**
+ * tabs.m
+ *
+ * @author mpdeimos
+ * @date 08/11/11
+ * @version 0.1
+ */
+
 #include <lib/std.mi>
+#define DISPATCH
+#include dispatch_codes.m
 
-#define INTERNALTABNAMES "Media Library;Playlist;Video;Visualization;Browser;@ALL@"
+Class GuiObject Tab;
+// {
+	Member Int Tab.mid;
+	Member Int Tab.w;
+	Member Int Tab.maxW;
+	Member Int Tab.lastX;
+	Member Int Tab.initX;
+	Member Int Tab.pos;
+	Member Boolean Tab.moving;
+	member Int Tab.ID; //TODO: use a tring identifier instead!
 
-Class Group CProTabGroup;
-Class Button CProTabButton;
-
-Function refresh_X();
-Function refresh_W();
-Function int getTabsW();
-Function setMaxTabW(); //
-Function int tabID_to_groupNo(int tabId);
-Function int getTabX(int tabNo);
-
-Global Group myGroup, tg, workWithTab;
-Global CProTabGroup tab123;
-Global CProTabButton but123;
-Global GuiObject moveIcon, CproSUI;
-Global int numOfTabs, maxW, activeTab, downX;
-Global boolean maxW_Set, allTabsMaxView, tabMouseDown, tabMoveSend; //set this disabled when you add a new tab
-Global String widgetTabNames, tabOrder;
-
-Global Button test;
-
-System.onScriptLoaded() {
-	myGroup = getScriptGroup();
-	tg = myGroup.findObject("cprotabs.buttons");
-	moveIcon = myGroup.findObject("moveicon");
-	CproSUI = myGroup.getParent().getParent().getParent().getParent();
-
-	maxW_Set=false;
-	allTabsMaxView=false;
-	activeTab = -1;
+	//Stimulating a dubled linked list
+	Member GuiObject Tab.left;
+	Member GuiObject Tab.right;
+// }
 
 
-	numOfTabs = 6+4; //5internal + 2widgets // @martin: add the number of widgets found here (replace the +2 ;)
-	widgetTabNames = "CoverFlow;BrowserPro;Lyrics;RotateVis"; // @martin: read the names in here
+Function moveLeft (Tab t);
+Function moveRight (Tab t);
+Function moveTo (Tab g, int x);
+Function updateTabWidth(Tab t);
+Function alignFull(Tab t);
+Function alignByResize();
 
-	tabOrder = "0;1;2;3;4;5;100;101;102;103";	//read this in via publicString later
-	/*
-	ToDo - Check to see if there changes in no of widgets...
-	Then fix the "tabOrder"
-	*/
+Global Tab firstTab, lastTab;
+Global ToggleButton lastActive;
+Global Group tabHolder, CproSUI;
+Global int totalTabWidth;
 
-	//how to create them
-	for(int i=0;i<numOfTabs;i++){
-		int tabId = stringToInteger(getToken(tabOrder,";", i));
-		String output_TabName = "error";
+Global boolean aligned;
+
+System.onScriptLoaded ()
+{
+	tabHolder = getScriptGroup().findObject("cprotabs.buttons");
+	setDispatcher(tabHolder);
+
+	CproSUI = getScriptGroup().getParent().getParent().getParent().getParent();
+
+	List internalNames = new List;
+	internalNames.addItem("Media Library");
+	internalNames.addItem("Playlist");
+	internalNames.addItem("Video");
+	internalNames.addItem("Visualization");
+	internalNames.addItem("Browser");
+	internalNames.addItem("@ALL@");
+	/*names.addItem("Some Widget");
+	names.addItem("Another Widget");
+	names.addItem("Yet Another Widget");*/
+
+	int initPos = 0;
+
+	GuiObject pre = NULL;
+
+	for ( int i = 0; i < internalNames.getNumItems(); i++ )
+	{
+		Tab tabI = newGroup("cpro.tab");
+		tabI.setXmlParam("x", integerToString(totalTabWidth));
+		tabI.setXmlParam("userdata", integerToString(i));
+		tabI.setXmlParam("y", "0");
+		//tabI.setXmlParam("h", "30");
+		tabI.pos = i;
+		tabI.left = pre;
+		tabI.right = NULL;
+		tabI.ID = i; //TODO!
+		if (pre != NULL)
+		{
+			Tab l = pre;
+			l.right = tabI;	
+		}
+		tabI.init(tabHolder);
+		text t = tabI.findObject("cpro.tab.text");
+		t.setXmlParam("text", internalNames.enumItem(i));
+		updateTabWidth(tabI);
+		totalTabWidth += tabI.w; // use dispatcher
+		pre = tabI;
+	}
+	aligned = true;
+	lastActive = firstTab = tabHolder.enumObject(0);
+	lastActive.setActivated(1);
+	lastTab = pre;
+
+}
+
+tabHolder.onResize (int x, int y, int w, int h)
+{
+	if (w <= 0)
+	{
+		return;
+	}
+	
+
+	if (w < totalTabWidth)
+	{
+		aligned = false;
+		alignByResize();
+	}
+	else if (!aligned)
+	{		
+		alignFull(firstTab);
+		aligned = true;
+	}
+}
+
+
+onMessage(int message, int i0, int i1, int i2, String s0, String s1, GuiObject obj)
+{
+	Tab t = obj;
+
+	if (message == ON_LEFT_BUTTON_DOWN)
+	{
+		if (t.isGoingToTarget())
+			return SUCCESS;
+
+		t.lastX = i0;
+		t.initX = t.getGuiX();
+		t.bringToFront();
+		t.moving = true;
+
+		return SUCCESS;
+	}
+	if (message == ON_LEFT_BUTTON_UP)
+	{
+		if (t.moving)
+		{
+			moveTo(t, t.initX);
+		}
 		
-		tab123 = System.newGroup("cpro.tab");
+		t.moving = false;
+
+		return SUCCESS;
+	}
+	else if (message == ON_MOUSE_MOVE)
+	{
+		if (t.moving)
+		{
+			int newPos = i0 - t.lastX + t.getGuiX();
 			
-		tab123.setXmlParam("tab_id", integerToString(tabId));
-		
-		if(tabId<6){ //InternalTabs
-			output_TabName = getToken(INTERNALTABNAMES,";", tabId);
+			t.setXmlParam("x", integerToString(newPos));
+			t.lastX = i0;	
+
+			Tab left = t.left;
+			if (left != null)
+			{
+				if (newPos < left.mid + left.getGuiX() && !left.isGoingToTarget())
+				{
+					moveLeft(t);
+					return SUCCESS;
+				}
+			}
+			Tab right = t.right;
+			if (right != null)
+			{
+				if (newPos > right.mid + right.getGuiX() - t.getGuiW() && !right.isGoingToTarget())
+				{
+					moveRight(t);
+				}
+			}
+
+			return SUCCESS;
+
 		}
-		else if(tabId>=100){
-			output_TabName = getToken(widgetTabNames,";", tabId-100);
-		}
-		
-		tab123.setXmlParam("tabtext", output_TabName);
-		tab123.init(tg);
-		tab123.show();
-		
-		but123 = tg.enumObject(i).findObject("cpro.tab.button");
-		//but123.setXmlParam("text","x");
+	}
+	else if (message == ON_TAB_ACTIVATED)
+	{
+		lastActive.setActivated(0);
+		CproSUI.sendAction ("show_tab", "", t.ID, 0, 0, 0);
+		lastActive = t;
 	}
 	
-	
-	//how to work with them
-	/*for(int i=1;i<numOfTabs;i++){
-		tg.enumObject(i).setXmlParam("x", integerToString(tg.enumObject(i-1).getGuiX() + tg.enumObject(i-1).getWidth()));
+	// TODO
+	/*else if (message == SET_TAB_W)
+	{
+		updateTabWidth (t);
+		
+		return SUCCESS;
 	}*/
-	refresh_X();
-
 }
 
-CProTabGroup.onresize(int x, int y, int w, int h){
-	//debug("xyz");
-}
+moveLeft (Tab t)
+{
+	Tab left = t.left;
+	Tab left2 = left.left;
+	Tab right = t.right;
 
-CProTabButton.onLeftButtonDown(int x, int y){
-	downX=x;
-	tabMouseDown=true;
-	tabMoveSend=false;
-}
-CProTabButton.onLeftButtonUp(int x, int y){
-	if(tabMouseDown){
-		tabMouseDown=false;
-		if(tabMoveSend){
-			moveIcon.hide();
-			//myParent.sendAction("move_tab_now", "", tab_id, 0, 0, 0);
-		}
+	// Visual Moving
+	int x = left.getGuiX();
+	moveTo(left, x + t.w);
+	t.initX = x;
+
+	// Logical moving
+	if (left2 != NULL)
+	{
+		left2.right = t;
 	}
-}
-CProTabButton.onMouseMove(int x, int y){
-	if(tabMouseDown){
-		//int x = System.getMousePosX();
-		if((downX  >= x+4 || downX <= x-4) && !tabMoveSend){
-			tabMoveSend=true;
-			moveIcon.show();
-		}
-		
-		if(tabMoveSend){
-			moveIcon.setXmlParam("x",integerToString(x));
-		}
-	}
-
-}
-
-tg.onAction(String action, String param, int x, int y, int p1, int p2, GuiObject source){
-	if(strlower(action) == "open_tab"){
-		/*for(int i=1;i<numOfTabs;i++){
-			//tg.enumObject(i).setXmlParam("x", integerToString(tg.enumObject(i-1).getGuiX() + tg.enumObject(i-1).getWidth()));
-		}*/
-		if(activeTab>-1 && activeTab!=x) tg.enumObject(tabID_to_groupNo(activeTab)).setXmlParam("activate", "0");
-		activeTab = x;
-		//*** pass action on to sui engine here!!!!!
-		CproSUI.sendAction ("show_tab", "", x, 0, 0, 0);
-	}
-	else if(strlower(action) == "move_tab"){
-		//debug("This tab wants to move: " + integerToString(x));
-		moveIcon.show();
-		//test = tg.enumObject(tabID_to_groupNo(activeTab)).findObject("cpro.tab.button");
-	}
-	else if(strlower(action) == "move_tab_now"){
-		moveIcon.hide();
-		//debug("This tab wants to move to position of the indicator now: " + integerToString(x));
-	}
-}
-
-myGroup.onAction(String action, String param, int x, int y, int p1, int p2, GuiObject source){
-	if(strlower(action) == "select_tab"){
-		if(activeTab!=x){
-			if(activeTab>-1) tg.enumObject(tabID_to_groupNo(activeTab)).setXmlParam("activate", "0");
-			tg.enumObject(tabID_to_groupNo(x)).setXmlParam("activate", "1");
-		}
-		activeTab = x;
-	}
-}
-
-
-refresh_X(){
-	for(int i=1;i<numOfTabs;i++){
-		tg.enumObject(i).setXmlParam("x", integerToString(tg.enumObject(i-1).getGuiX() + tg.enumObject(i-1).getWidth()));
-	}
-
-}
-
-refresh_W(){
-	int w = tg.getWidth();
-	
-	if(maxW_Set && maxW<w && allTabsMaxView) return;	// Dont do calculations if theres enough space
-
-	for(int i=0;i<numOfTabs;i++){
-		tg.enumObject(i).setXmlParam("viewmode", "0");
-		allTabsMaxView=true;
+	else
+	{
+		firstTab = t;
 	}
 	
+	t.left = left2;
+
+	left.right = right;
+	if (right != NULL)
+	{
+		right.left = left;		
+	}
+	else
+	{
+		lastTab = left;
+	}
+	
+
+	left.left = t;
+	t.right = left;
+}
+
+moveRight (Tab t)
+{
+	Tab left = t.left;
+	Tab right = t.right;
+	Tab right2 = right.right;
+
+	// Visual Moving
+	int x = right.getGuiX();
+	moveTo(right, t.initX);
+	t.initX += right.w;
+
+	// Logical moving
+	if (right2 != NULL)
+	{
+		right2.left = t;
+	}
+	else
+	{
+		lastTab = t;
+	}
+	t.right = right2;
+
+	right.left = left;
+	if (left != NULL)
+	{
+		left.right = right;		
+	}
+	else
+	{
+		firstTab = right;
+	}
+	
+
+	right.right = t;
+	t.left = right;
+}
+moveTo (Tab g, int x)
+{
+	g.cancelTarget();
+	g.setTargetX(x);
+	g.setTargetW(g.w);
+	g.setTargetSpeed(0.4);
+	g.gotoTarget();
+}
+
+/**
+ * Call this one everytime the tab text has changed. also aligns the tabs to the right
+ */
+updateTabWidth (Tab t)
+{
+	//totalTabWidth -= t.w;
+	t.w = t.findObject("cpro.tab.text").getAutoWidth() +14;
+	//totalTabWidth += t.w;
+	t.maxW = t.w;
+	t.mid = t.w/2;
+	t.setXmlParam("w", integerToString(t.w));
 	/*
-	Set the maxW of the tabs so that we dont do all these calculations when there is enough space 
-	We know the max space now because the above for loop changed all the tabs to their longest view mode
-	*/
-	if(!maxW_Set){
-		maxW = getTabsW();
-		maxW_Set=true;
+
+	if (sg.getWidth() < totalTabWidth)
+	{
+		//alignByResize();
 	}
-	
-	boolean width_Okay = false;
-	
-	for(int a=1; a<3; a++){
-		for(int b=numOfTabs-1; b>=0; b--){
-			if(getTabsW()>w){
-				tg.enumObject(b).setXmlParam("viewmode", integerToString(a));
-				allTabsMaxView=false;
-			}
-			else{
-				width_Okay = true;
-				break;
-			}
-		}
-		if(width_Okay) break;
-	}
-	refresh_X();
-}
-tg.onResize(int x, int y, int w, int h){
-	refresh_W();
+	else
+	{
+		//align(t.right);	
+	}*/
 }
 
-int getTabsW(){
-	int w = 0;
-	for(int i=0;i<numOfTabs;i++){
-		w += tg.enumObject(i).getWidth();
-	}
-	return w;
+/**
+ * Recursiv align of right hand side buttons
+ */
+alignFull (Tab t)
+{
+	if (t == NULL)
+		return;
+
+	t.w = t.maxW;
+	t.mid = t.maxW/2;
+	t.setXmlParam("w", integerToString(t.maxW));
+
+	Tab right = t.right;
+	if (right == NULL)
+		return;
+	right.setXmlParam("x", integerToString(t.maxW + t.getGuiX()));
+	alignFull (right);
 }
 
-int tabID_to_groupNo(int tabId){
-	String searchFor = integerToString(tabId);
+/**
+ * Resizes tabs so we do not run out of space
+ */
+alignByResize ()
+{
+	Tab t = firstTab;
+
+	float ratio = tabHolder.getWidth()/totalTabWidth;
+	int x = 0;
+
+	while (t != NULL)
+	{
+		t.w = t.maxW*ratio;
+		t.mid = t.w/2;
+		t.setXmlParam("x", integerToString(x));
+		t.setXmlParam("w", integerToString(t.w));
+		x+=t.w;
+		t = t.right;
+	}
 	
-	for(int i=0;i<numOfTabs;i++){
-		if(getToken(tabOrder,";", i)==searchFor) return i;
-		
-	}
-	debug("Error: 101");
-	return 999; //should not happen!
-}
-
-getTabX(int tabNo){
 }
