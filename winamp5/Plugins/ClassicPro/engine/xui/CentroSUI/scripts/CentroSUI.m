@@ -69,6 +69,10 @@ Global Browser xuiBrowser;
 Global Group tabbut_vid, tabbut_avs, tabbut_pl;
 Global Group tab_library, tab_video, tab_avs, tab_Browser, tab_Playlist, tab_Other;
 
+// ID/IDS converting stuff
+Function String tabIDtoIDS(int id);
+Function int tabIDStoID(String ids);
+
 
 System.onScriptLoaded(){
 	dontTabCall=false;

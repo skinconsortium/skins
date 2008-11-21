@@ -1,6 +1,8 @@
 /**
  * tabs.m
  *
+ * Attention: the ID values for internal tabs are saved in studio.xnf incremented by one!
+ *
  * @author mpdeimos
  * @date 08/11/11
  * @version 0.1
@@ -19,13 +21,14 @@ Class GuiObject Tab;
 	Member Int Tab.initX;
 	Member Int Tab.pos;
 	Member Boolean Tab.moving;
-	member Int Tab.ID; //TODO: use a tring identifier instead!
+	Member Boolean Tab.isInternal;
+	Member Int Tab.ID;
+	Member String Tab.IDS;
 
-	//Stimulating a dubled linked list
+	//Stimulating a doubled linked list
 	Member GuiObject Tab.left;
 	Member GuiObject Tab.right;
 // }
-
 
 Function moveLeft (Tab t);
 Function moveRight (Tab t);
@@ -36,18 +39,20 @@ Function alignByResize();
 
 Global Tab firstTab, lastTab;
 Global ToggleButton lastActive;
-Global Group tabHolder, CproSUI;
+Global Group sg, tabHolder, CproSUI;
 Global int totalTabWidth;
 
 Global boolean aligned;
 
 System.onScriptLoaded ()
 {
-	tabHolder = getScriptGroup().findObject("cprotabs.buttons");
+	sg = getScriptGroup();
+	tabHolder = sg.findObject("cprotabs.buttons");
 	setDispatcher(tabHolder);
 
 	CproSUI = getScriptGroup().getParent().getParent().getParent().getParent();
 
+	//TODO> use stringtables
 	List internalNames = new List;
 	internalNames.addItem("Media Library");
 	internalNames.addItem("Playlist");
@@ -55,43 +60,118 @@ System.onScriptLoaded ()
 	internalNames.addItem("Visualization");
 	internalNames.addItem("Browser");
 	internalNames.addItem("@ALL@");
-	/*names.addItem("Some Widget");
-	names.addItem("Another Widget");
-	names.addItem("Yet Another Widget");*/
 
+	/** Create ordered list of all saved tabs */
+
+	Bitlist isInternal = new BitList;
+	List orderedTabs = new List;
+
+	int n = getPrivateInt("ClassicPro", "TabOrder_nItems", 0);
+	if (n == 0) // First start, we need to init!
+	{
+		isInternal.setSize(internalNames.getNumItems());
+		for ( int i = 0; i < internalNames.getNumItems(); i++ )
+		{
+			isInternal.setItem(i, true);
+			orderedTabs.addItem(i);
+		}
+	}
+	else
+	{
+		isInternal.setSize(n);
+		for ( int i = 0; i < n; i++ )
+		{
+			String ids = getPrivateString("ClassicPro", "TabOrder_item_" + integerToString(i), "");
+			int id = stringToInteger(ids);
+			if (id)
+			{
+				isInternal.setItem(i, true);
+				orderedTabs.addItem(id-1);
+			}
+			else
+			{
+				isInternal.setItem(i, false);
+				orderedTabs.addItem(ids);
+			}
+		}
+	}
+	
+
+	/** Bring ordered tabs into action */
+	
 	int initPos = 0;
 
 	GuiObject pre = NULL;
 
-	for ( int i = 0; i < internalNames.getNumItems(); i++ )
+	for ( int i = 0; i < orderedTabs.getNumItems(); i++ )
 	{
 		Tab tabI = newGroup("cpro.tab");
 		tabI.setXmlParam("x", integerToString(totalTabWidth));
-		tabI.setXmlParam("userdata", integerToString(i));
 		tabI.setXmlParam("y", "0");
-		//tabI.setXmlParam("h", "30");
+
+		if (isInternal.getItem(i)) // internal tab?
+		{
+			tabI.ID = orderedTabs.enumItem(i); //?
+			//debugInt(orderedTabs.enumItem(i));
+			tabI.isInternal = true;
+		}
+		else
+		{
+			tabI.isInternal = false;
+		}
+	
 		tabI.pos = i;
 		tabI.left = pre;
 		tabI.right = NULL;
-		tabI.ID = i; //TODO!
+
 		if (pre != NULL)
 		{
 			Tab l = pre;
 			l.right = tabI;	
 		}
 		tabI.init(tabHolder);
+
 		text t = tabI.findObject("cpro.tab.text");
-		t.setXmlParam("text", internalNames.enumItem(i));
+		if (tabI.isInternal)
+		{
+			t.setXmlParam("text", internalNames.enumItem(tabI.ID));	
+		}
 		updateTabWidth(tabI);
 		totalTabWidth += tabI.w; // use dispatcher
 		pre = tabI;
 	}
 	aligned = true;
 	lastActive = firstTab = tabHolder.enumObject(0);
-	lastActive.setActivated(1);
 	lastTab = pre;
 
+	delete internalNames;
+	delete isInternal;
 }
+
+System.onScriptUnloading ()
+{
+	/** save tab order */
+	Tab t = firstTab;
+	Int n;
+	while (t != NULL)
+	{
+		if (t.isInternal)
+		{
+			setPrivateInt("ClassicPro", "TabOrder_item_" + integerToString(n), t.ID+1);
+			//debugInt(t.ID);
+		}
+		else
+		{
+			setPrivateString("ClassicPro", "TabOrder_item_" + integerToString(n), t.IDS);
+		}
+		
+		n++;
+		t = t.right;
+	}
+
+	setPrivateInt("ClassicPro", "TabOrder_nItems", n);
+}
+
 
 tabHolder.onResize (int x, int y, int w, int h)
 {
@@ -333,4 +413,29 @@ alignByResize ()
 		t = t.right;
 	}
 	
+}
+
+sg.onAction (String action, String param, Int x, int y, int p1, int p2, GuiObject source)
+{
+	if(strlower(action) == "select_tab")
+	{
+		Tab t = lastActive;
+		//if(t.ID != x)
+		{
+			lastActive.setActivated(0);
+			t = firstTab;
+			while (t != NULL)
+			{
+				if (t.ID == x)
+				{
+					lastActive = t;
+					lastActive.setActivated(1);
+					break;
+				}
+				
+				t = t.right;
+			}
+			
+		}
+	}
 }
