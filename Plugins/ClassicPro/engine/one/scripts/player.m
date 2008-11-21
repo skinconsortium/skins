@@ -1,5 +1,8 @@
 #include <lib/std.mi>
+#include <lib/config.mi>
+#include <lib/pldir.mi>
 #include attribs/init_Autoresize.m
+#include "../../scripts/lib/quickPlaylist.mi"
 
 //#define rres 20 
 
@@ -17,7 +20,7 @@ Global GuiObject progressbar, seekBg;
 Global Vis mainVis;
 Global Text tracktimer, trackTitle;
 Global GuiObject infodisplay, vol_images;
-Global Button bolt, fakeAbout;
+Global Button bolt, fakeAbout, changeTheme;
 Global Popupmenu selMenu;
 
 //MuteButton
@@ -51,6 +54,7 @@ System.onScriptLoaded() {
 	infodisplay = mainGroup.findObject("infosongticker");
 	bolt = mainGroup.findObject("winampbolt");
 	fakeAbout = mainGroup.findObject("aboutwinamp.hidden");
+	changeTheme = mainGroup.findObject("Cpro.theme.next");
 
 	bgLeftRead = mainGroup.findObject("read.bg.left");
 	bgTopRead = mainGroup.findObject("read.bg.top");
@@ -341,13 +345,22 @@ bolt.onLeftClick(){
 	else if(a==1){
 		System.navigateUrl(getPath(getPlayItemMetaDataString("filename")));
 	}
+	else if(a==2){
+		popQuickPlaylist(40, false);
+	}
+	else if(a==3){
+		changeTheme.leftClick();
+	}
+	
 }
 bolt.onRightButtonUp(int x, int y){
 	selMenu = new PopupMenu;
 	selMenu.addCommand("Multi-Button Action:", -1, 0, 1);
 	selMenu.addSeparator();
 	selMenu.addCommand("Open About Winamp", 0, 0, 0);
-	selMenu.addCommand("Open Folder", 1, 0, 0);
+	selMenu.addCommand("Explore Folder", 1, 0, 0);
+	selMenu.addCommand("Show Quick Playlist", 2, 0, 0);
+	selMenu.addCommand("Change Color Theme", 3, 0, 0);
 	selMenu.checkCommand(getPublicInt("cPro.multibutton", 0), 1);
 	
 	int a = selMenu.popAtMouse();

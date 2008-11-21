@@ -282,6 +282,7 @@
 	/>
 
 	<button
+		id="Cpro.theme.next"
 		action="colorthemes_next"
 		action_target="colorthemes"
 		x="64" y="-18" relaty="1"
