@@ -235,10 +235,10 @@ onMessage(int message, int i0, int i1, int i2, String s0, String s1, GuiObject o
 			{
 				newPos = tabHolder.getWidth() - t.w;
 			}
-			
-			
-		
-			t.lastX = i0;	
+			else
+			{
+				t.lastX = i0;	
+			}
 
 			t.setXmlParam("x", integerToString(newPos));
 
