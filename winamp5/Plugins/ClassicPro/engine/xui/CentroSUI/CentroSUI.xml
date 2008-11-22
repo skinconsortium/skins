@@ -209,28 +209,7 @@
 	<windowholder id="centro.windowholder.other" x="1" y="1" w="-2" relatw="1" h="-2" relath="1"  autofocus="0" wantfocus="0" autoclose="1" autoopen="1" autoavailable="0" visible="1" hold="@all@"/>
 </groupdef>
 <groupdef id="centro.widget" name="Widget">
-
-	<!--
-	@martin - widget stuff can go here... the "Configure this widget" button is just temp.. the widget developer can use that to trigger a menu but that button will be in the widget itself...
-	The "Select Widget" is the one where you choose the widget... Also check the other widget code....added a little check to see if the group is still there (if widget was uninstalled)
-	-->
-
-	<!--<Button
-		x="-52" y="-23" relatx="1" relaty="1" rectrgn="1"
-		image="video.button.cfg.normal"
-		hoverImage="video.button.cfg.hover"
-		downImage="video.button.cfg.down"
-		tooltip="Configure this widget"
-	/>
-	<Button
-		x="-27" y="-23" relatx="1" relaty="1" rectrgn="1"
-		image="vis.button.presets.normal"
-		hoverImage="vis.button.presets.hover"
-		downImage="vis.button.presets.down"
-		tooltip="Select Widget"
-	/>-->
-	
-	<SC:NowPlaying id="nowplaying.component" x="1" y="1" w="-2" relatw="1" h="-2" relath="1" dropshadowcdcase="1" reflectionheightpercentage="80"/>
+	<CustomObject id="widget.holder" fitparent="1" />
 </groupdef>
 
 <groupdef id="centro.tabdivider">

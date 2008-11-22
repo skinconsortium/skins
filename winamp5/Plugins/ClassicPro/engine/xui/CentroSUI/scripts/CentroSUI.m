@@ -15,12 +15,14 @@
 #define DRAWER_PL_ID 4
 #define DRAWER_VID_ID 5
 #define DRAWER_VIS_ID 6
+#define WIDGET_TAB_ID -666
 #define myDelay 10
 
 // Functions used
 Function openMainLayoutNow();
 Function setDrawer(boolean onOff);
 Function openTabNo(int tabNo);
+Function openWidgetIDS(String ids);
 Function openMini(int miniNo);
 Function refreshComponentButtons();
 Function setMainFrame(boolean open);
@@ -67,11 +69,8 @@ Global GuiObject guihold_Pl2, compGrid;
 Global GuiObject visRectBg, CproTabs;
 Global Browser xuiBrowser;
 Global Group tabbut_vid, tabbut_avs, tabbut_pl;
-Global Group tab_library, tab_video, tab_avs, tab_Browser, tab_Playlist, tab_Other;
-
-// ID/IDS converting stuff
-Function String tabIDtoIDS(int id);
-Function int tabIDStoID(String ids);
+Global Group tab_library, tab_video, tab_avs, tab_Browser, tab_Playlist, tab_Other, tab_Widget;
+Global GuiObject widgetHolder;
 
 
 System.onScriptLoaded(){
@@ -117,6 +116,8 @@ System.onScriptLoaded(){
 	tab_Browser = xuiGroup.findObject("centro.browser");
 	tab_Playlist = xuiGroup.findObject("centro.playlist2");
 	tab_Other = xuiGroup.findObject("centro.other");
+	tab_Widget = xuiGroup.findObject("centro.widget");
+	widgetHolder = tab_Widget.findObject("widget.holder");
 	tog_drawer = xuiGroup.findObject("tog.drawer");
 	area_left = xuiGroup.findObject("centro.components");
 	area_right = xuiGroup.findObject("centro.playlist1");
@@ -184,6 +185,7 @@ System.onScriptLoaded(){
 	//Saved Settings
 	openMini(getPublicInt("cPro.lastMini", 0));
 	setDrawer(getPublicInt("cPro.draweropened", 0));
+	openWidgetIDS(getPublicString("cPro.lastMainWidgetIDS", ""));
 	refreshComponentButtons();
 }
 System.onscriptunloading(){
@@ -383,6 +385,12 @@ openDefaultTab.onTimer(){
 	}
 }
 
+openWidgetIDS (String ids)
+{
+	setPublicString("cPro.lastMainWidgetIDS", ids);
+	widgetHolder.setXmlParam("groupid", ids);
+}
+
 openTabNo(int tabNo){
 	if(delayStart && tabNo!=5){
 		delayStartTab=tabNo;
@@ -404,6 +412,7 @@ openTabNo(int tabNo){
 		tab_Browser.hide();
 		tab_Playlist.hide();
 		tab_Other.hide();
+		tab_Widget.hide();
 	}
 	
 	tab_openned = tabNo;
@@ -439,9 +448,15 @@ openTabNo(int tabNo){
 	else if(tabNo==5){
 		tab_Other.show();
 	}
-	else{
+	else if(tabNO==WIDGET_TAB_ID)
+	{
+		tab_Widget.show();
+	}
+	else
+	{
 		tab_library.show();
 	}
+	
 	
 	if(tabNo!=-1){
 		setPublicInt("cPro.lastComponentPage", tabNo);
@@ -449,7 +464,17 @@ openTabNo(int tabNo){
 	busyWithThisFunction=false;
 	updateCompStatus();
 	
-	if(!dontTabCall) CproTabs.sendAction("select_tab", "", tabNo, 0, 0, 0);
+	if (!dontTabCall)
+	{
+		if (tabNo==WIDGET_TAB_ID)
+		{
+			CproTabs.sendAction("select_tab", widgetHolder.getXmlParam("groupid"), tabNo, 0, 0, 0);
+		}
+		else
+		{
+			CproTabs.sendAction("select_tab", "", tabNo, 0, 0, 0);	
+		}
+	}
 	else dontTabCall=false;
 }
 
@@ -628,10 +653,14 @@ setCompStatus(boolean onOff){
 
 xuiGroup.onAction (String action, String param, int x, int y, int p1, int p2, GuiObject source){
 	if (strlower(action) == "switch_to_tab"){ //used by other script to show tab holder & select tab
+		if (x == WIDGET_TAB_ID)
+			openWidgetIDS(param);
 		openTabNo(x);
 	}
 	else if (strlower(action) == "show_tab"){ //used by the tabs to show tab holder
 		dontTabCall=true;
+		if (x == WIDGET_TAB_ID)
+			openWidgetIDS(param);
 		openTabNo(x);
 	}
 	else if (strlower(action) == "browser_url"){
