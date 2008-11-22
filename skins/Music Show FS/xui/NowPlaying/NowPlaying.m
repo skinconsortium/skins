@@ -256,7 +256,7 @@ setAllTags(){
 			myartist = getToken(getPlayItemDisplayTitle(), "- ",  0);
 		}
 	}
-	line2.setXmlParam("text", "by " + myartist);
+	line2.setXmlParam("text", "by " + strupper(myartist));
 	
 	String mytitle = System.getPlayItemMetaDataString("TITLE");
 	if(mytitle==""){

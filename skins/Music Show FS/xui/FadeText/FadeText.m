@@ -30,6 +30,9 @@ System.onSetXuiParam(String param, String value) {
 	else if(strlower(param) == "fgcolor"){
 		text1.setXmlParam("color", value);
 		text2.setXmlParam("color", value);
+	} else {
+		text1.setXmlParam(param, value);
+		text2.setXmlParam(param, value);
 	}
 }
 
