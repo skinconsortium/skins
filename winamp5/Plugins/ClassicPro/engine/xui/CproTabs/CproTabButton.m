@@ -70,6 +70,11 @@ trigger.onLeftButtonUp (int x, int y)
 	sendMessage(ON_LEFT_BUTTON_UP, x, x, 0, "", "", parent);
 }
 
+trigger.onRightButtonUp (int x, int y)
+{
+	sendMessage(ON_RIGHT_BUTTON_UP, x, clientToScreenX(trigger.getLeft()), clientToScreenY(trigger.getTop()+26), "", "", parent);
+}
+
 trigger.onActivate (boolean onOff)
 {
 	if (onOff)

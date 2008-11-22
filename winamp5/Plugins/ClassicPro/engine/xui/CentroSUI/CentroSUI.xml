@@ -287,7 +287,7 @@
 	<!--<windowholder id="wdh.playlist1" x="1" y="3" h="-21" w="-2" relath="1" relatw="1" autofocus="0" wantfocus="0" autoclose="1" autoopen="1" autoavailable="1" visible="1" hold="guid:{45f3f7c1-a6f3-4ee6-a15e-125e92fc3f8d}"/>-->
 
 	<group id="centro.playlist.bottombuttons" x="1" y="-18" w="-1" relaty="1" relatw="1"/>
-	<text id="centro.playlist.pltext2" ticker="1" display="PE_Info" x="126" y="-16" h="13" w="-159" relaty="1" relatw="1" align="center" fontsize="13" antialias="0" color="Playlist.Status.Text" font="cpro.status.font" move="1"/>
+	<text id="centro.playlist.pltext2" ticker="1" display="PE_Info" x="126" y="-16" h="13" w="-159" relaty="1" relatw="1" align="center" fontsize="13" antialias="1" color="Playlist.Status.Text" font="cpro.status.font" move="1"/>
 	<button x="-33" y="-18" relatx="1" relaty="1" image="component.pl.man.1" hoverImage="component.pl.man.2" downImage="component.pl.man.3" action="PE_List" tooltip="Manage Playlist"/>
 </groupdef>
 
