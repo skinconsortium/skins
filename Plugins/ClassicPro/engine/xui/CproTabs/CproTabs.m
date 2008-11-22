@@ -41,13 +41,15 @@ Global Tab firstTab, lastTab;
 Global ToggleButton lastActive;
 Global Group sg, tabHolder, CproSUI;
 Global int totalTabWidth;
-
+Global ComponentBucket widgetLoader;
 Global boolean aligned;
 
 System.onScriptLoaded ()
 {
 	sg = getScriptGroup();
 	tabHolder = sg.findObject("cprotabs.buttons");
+	widgetLoader = sg.findObject("widget.loader");
+
 	setDispatcher(tabHolder);
 
 	CproSUI = getScriptGroup().getParent().getParent().getParent().getParent();
@@ -65,8 +67,14 @@ System.onScriptLoaded ()
 
 	Bitlist isInternal = new BitList;
 	List orderedTabs = new List;
+	List widgetNames = new List;
+	Bitlist passedWidgets = new BitList;
+	Bitlist skipWidget = new BitList;
+	passedWidgets.setSize(widgetLoader.getNumChildren());
+	// TODO maybe remove some lists :P
 
 	int n = getPrivateInt("ClassicPro", "TabOrder_nItems", 0);
+	skipWidget.setSize(n);
 	if (n == 0) // First start, we need to init!
 	{
 		isInternal.setSize(internalNames.getNumItems());
@@ -74,6 +82,14 @@ System.onScriptLoaded ()
 		{
 			isInternal.setItem(i, true);
 			orderedTabs.addItem(i);
+		}
+
+		for (int i = 0; i < widgetLoader.getNumChildren(); i++)
+		{
+			isInternal.setItem(internalNames.getNumItems()+i, false);
+			GuiObject d = widgetLoader.enumChildren(i);
+			orderedTabs.addItem(d.getXmlParam("userdata"));
+			widgetNames.addItem(d.getXMLparam("name"));
 		}
 	}
 	else
@@ -90,62 +106,108 @@ System.onScriptLoaded ()
 			}
 			else
 			{
-				isInternal.setItem(i, false);
-				orderedTabs.addItem(ids);
+				// IMPORTANT! We need to check if the widget has been removed
+				if (!isInternal.getItem(i))
+				{
+					boolean found = false;
+					for ( int j = 0; j < widgetLoader.getNumChildren(); j++ )
+					{
+						GuiObject d = widgetLoader.enumChildren(j);
+						if (d.getXmlParam("userdata") == ids)
+						{
+							passedWidgets.setItem(j, true); // Mark this widget to be inited
+							widgetNames.addItem(d.getXMLparam("name"));
+							isInternal.setItem(i, false);
+							orderedTabs.addItem(ids);
+							found = true;
+							break;
+						}
+					}
+					if (!found)// this means the widget must have been deleted!
+					{
+						skipWidget.setItem(i, true);
+						orderedTabs.addItem(NULL);
+					}
+				}
+			}
+		}
+
+		/** One last thing to do is that there might have been new widgets installed since last engine load */
+		for ( int i = 0; i < passedWidgets.getSize(); i++ )
+		{
+			if (!passedWidgets.getItem(i))
+			{
+				isInternal.setSize(isInternal.getSize()+1);
+				isInternal.setItem(isInternal.getSize()-1, false);
+				GuiObject d = widgetLoader.enumChildren(i);
+				orderedTabs.addItem(d.getXmlParam("userdata"));
+				widgetNames.addItem(d.getXMLparam("name"));			
 			}
 		}
 	}
-	
+
 
 	/** Bring ordered tabs into action */
 	
 	int initPos = 0;
-
 	GuiObject pre = NULL;
 
 	for ( int i = 0; i < orderedTabs.getNumItems(); i++ )
 	{
-		Tab tabI = newGroup("cpro.tab");
-		tabI.setXmlParam("x", integerToString(totalTabWidth));
-		tabI.setXmlParam("y", "0");
+		if (!skipWidget.getItem(i))
+		{			
+			Tab tabI = newGroup("cpro.tab");
+			tabI.setXmlParam("x", integerToString(totalTabWidth));
+			tabI.setXmlParam("y", "0");
 
-		if (isInternal.getItem(i)) // internal tab?
-		{
-			tabI.ID = orderedTabs.enumItem(i); //?
-			//debugInt(orderedTabs.enumItem(i));
-			tabI.isInternal = true;
-		}
-		else
-		{
-			tabI.isInternal = false;
-		}
-	
-		tabI.pos = i;
-		tabI.left = pre;
-		tabI.right = NULL;
+			if (isInternal.getItem(i)) // internal tab?
+			{
+				tabI.ID = orderedTabs.enumItem(i);
+				tabI.isInternal = true;
+			}
+			else
+			{
+				tabI.IDS = orderedTabs.enumItem(i);
+				tabI.isInternal = false;
+			}
+		
+			tabI.pos = i;
+			tabI.left = pre;
+			tabI.right = NULL;
 
-		if (pre != NULL)
-		{
-			Tab l = pre;
-			l.right = tabI;	
-		}
-		tabI.init(tabHolder);
+			if (pre != NULL)
+			{
+				Tab l = pre;
+				l.right = tabI;	
+			}
+			tabI.init(tabHolder);
 
-		text t = tabI.findObject("cpro.tab.text");
-		if (tabI.isInternal)
-		{
-			t.setXmlParam("text", internalNames.enumItem(tabI.ID));	
-		}
-		updateTabWidth(tabI);
-		totalTabWidth += tabI.w; // use dispatcher
-		pre = tabI;
+			text t = tabI.findObject("cpro.tab.text");
+			if (tabI.isInternal)
+			{
+				t.setXmlParam("text", internalNames.enumItem(tabI.ID));	
+			}
+			else
+			{
+				t.setXmlParam("text", widgetNames.enumItem(0));
+				widgetNames.removeItem(0);
+			}
+			
+			updateTabWidth(tabI);
+			totalTabWidth += tabI.w; // use dispatcher
+			pre = tabI;
+		}	
 	}
+
 	aligned = true;
 	lastActive = firstTab = tabHolder.enumObject(0);
 	lastTab = pre;
 
 	delete internalNames;
 	delete isInternal;
+	delete widgetNames;
+	delete skipWidget;
+	delete passedWidgets;
 }
 
 System.onScriptUnloading ()
