@@ -18,7 +18,7 @@ Global ToggleButton trigger;
 Global Group parent;
 Global GuiObject grid;
 Global Text label;
-Global boolean wasActive;
+Global boolean wasActive, movingTab, mouseDown;
 Global int dx;
 
 System.onScriptLoaded ()
@@ -33,6 +33,7 @@ System.onScriptLoaded ()
 
 trigger.onLeftButtonDown (int x, int y)
 {
+	mouseDown=true;
 	wasActive = getActivated();
 	dx = x;
 
@@ -41,23 +42,31 @@ trigger.onLeftButtonDown (int x, int y)
 
 trigger.onMouseMove (int x, int y)
 {
-	sendMessage(ON_MOUSE_MOVE, x, x, 0, "", "", parent);
+	if(mouseDown){
+		sendMessage(ON_MOUSE_MOVE, x, x, 0, "", "", parent);
+
+		if(!movingTab){
+			if (dx > x+4 || dx < x-4){
+				movingTab=true;
+			}
+		}
+	}
 }
 
 trigger.onLeftButtonUp (int x, int y)
 {
-	dx -= x;
-	if (dx < 5 && dx > -5)
+	mouseDown=false;
+	if (!movingTab)
 	{
 		setActivated(1);
-		sendMessageO(ON_TAB_ACTIVATED, parent);
+		if(!wasActive) sendMessageO(ON_TAB_ACTIVATED, parent);
 	}
 	else
 	{
 		setActivated(wasActive);
 	}
 	
-	
+	movingTab=false;
 	sendMessage(ON_LEFT_BUTTON_UP, x, x, 0, "", "", parent);
 }
 
