@@ -12,6 +12,9 @@
 #define DISPATCH
 #include dispatch_codes.m
 
+//#define DEBUG
+#define debugTabs //
+
 Class GuiObject Tab;
 // {
 	Member Int Tab.mid;
@@ -24,6 +27,7 @@ Class GuiObject Tab;
 	Member Boolean Tab.isInternal;
 	Member Int Tab.ID;
 	Member String Tab.IDS;
+	Member boolean Tab.removed;
 
 	//Stimulating a doubled linked list
 	Member GuiObject Tab.left;
@@ -36,16 +40,26 @@ Function moveLeft (Tab t);
 Function moveRight (Tab t);
 Function moveTo (Tab g, int x);
 Function updateTabWidth(Tab t);
+Function forceAlign(Tab t);
+Function align(Tab t); // uses one of the two methods below
 Function alignFull(Tab t);
 Function alignByResize();
+Function removeTab(Tab t);
+Function closeTab(tab t);
 
-Global Tab firstTab, lastTab;
+#ifdef DEBUG
+Function debugTab (Tab t);
+Function debugTabs ();
+#endif
+
+Global Tab firstTab, lastTab, lastActiveT;
 Global ToggleButton lastActive;
 Global Group sg, tabHolder, CproSUI;
 Global int totalTabWidth;
 Global ComponentBucket widgetLoader;
 Global boolean aligned;
 Global PopUpMenu popMenu;
+Global List hiddenTabs;
 
 System.onScriptLoaded ()
 {
@@ -69,6 +83,7 @@ System.onScriptLoaded ()
 	/** Create ordered list of all saved tabs */
 
 	Bitlist isInternal = new BitList;
+	hiddenTabs = new List;
 	List orderedTabs = new List;
 	List widgetNames = new List;
 	Bitlist passedWidgets = new BitList;
@@ -175,16 +190,31 @@ System.onScriptLoaded ()
 				tabI.IDS = orderedTabs.enumItem(i);
 				tabI.isInternal = false;
 			}
-		
-			tabI.pos = i;
-			tabI.left = pre;
-			tabI.right = NULL;
 
-			if (pre != NULL)
+			Boolean hideTab = ((getPublicInt("Cpro.One.TabAutoClose."+integerToString(tabI.ID), 0) || tabI.ID == 5)
+					&& (tabI.ID != getPublicInt("cPro.lastComponentPage", 0)));
+
+			if (!hideTab)
 			{
-				Tab l = pre;
-				l.right = tabI;	
+				tabI.pos = i;
+				tabI.left = pre;
+
+				if (pre != NULL)
+				{
+					Tab l = pre;
+					l.right = tabI;	
+				}
+				pre = tabI;
+				tabI.right = NULL;
 			}
+			else
+			{
+				tabI.setXmlParam("visible", "0");
+				hiddenTabs.addItem(tabI);
+				tabI.removed = true;
+			}
+			
+
 			tabI.init(tabHolder);
 
 			text t = tabI.findObject("cpro.tab.text");
@@ -199,14 +229,27 @@ System.onScriptLoaded ()
 			}
 			
 			updateTabWidth(tabI);
-			totalTabWidth += tabI.w; // use dispatcher
-			pre = tabI;
+			if (!hideTab)
+			{
+				totalTabWidth += tabI.w;				
+			}
+
 		}	
 	}
 
 	aligned = true;
-	lastActive = firstTab = tabHolder.enumObject(0);
 	lastTab = pre;
+	Tab t = pre;
+
+	while (t.left != null)
+	{
+		t = t.left;
+	}
+	
+	lastActive = lastActiveT = NULL;
+	firstTab = t;
+
+	debugTabs();
 
 	delete internalNames;
 	delete isInternal;
@@ -225,7 +268,6 @@ System.onScriptUnloading ()
 		if (t.isInternal)
 		{
 			setPrivateInt("ClassicPro", "TabOrder_item_" + integerToString(n), t.ID+1);
-			//debugInt(t.ID);
 		}
 		else
 		{
@@ -237,6 +279,39 @@ System.onScriptUnloading ()
 	}
 
 	setPrivateInt("ClassicPro", "TabOrder_nItems", n);
+
+	/** save hidden tabs (we just concat the lists for now!)*/
+	//TODO move to extra list in studio.xnf
+
+	//n = 0;
+
+	for ( int i = 0; i < hiddenTabs.getNumItems(); i++ )
+	{
+		t = hiddenTabs.enumItem(i);
+		/*if (t.isInternal)
+		{
+			setPrivateInt("ClassicPro", "TabOrder_hiddenItem_" + integerToString(n), t.ID+1);
+		}
+		else
+		{
+			setPrivateString("ClassicPro", "TabOrder_hiddenItem_" + integerToString(n), t.IDS);
+		}*/
+		if (t.isInternal)
+		{
+			setPrivateInt("ClassicPro", "TabOrder_item_" + integerToString(n), t.ID+1);
+		}
+		else
+		{
+			setPrivateString("ClassicPro", "TabOrder_item_" + integerToString(n), t.IDS);
+		}
+		
+		n++;
+	}
+
+	//setPrivateInt("ClassicPro", "TabOrder_nHiddenItems", n);
+	setPrivateInt("ClassicPro", "TabOrder_nItems", n);
+
+	delete hiddenTabs;
 }
 
 
@@ -247,17 +322,7 @@ tabHolder.onResize (int x, int y, int w, int h)
 		return;
 	}
 	
-
-	if (w < totalTabWidth)
-	{
-		aligned = false;
-		alignByResize();
-	}
-	else if (!aligned)
-	{		
-		alignFull(firstTab);
-		aligned = true;
-	}
+	align(firstTab);
 }
 
 
@@ -282,6 +347,7 @@ onMessage(int message, int i0, int i1, int i2, String s0, String s1, GuiObject o
 		if (t.moving)
 		{
 			moveTo(t, t.initX);
+			debugTabs();
 		}
 		
 		t.moving = false;
@@ -333,9 +399,10 @@ onMessage(int message, int i0, int i1, int i2, String s0, String s1, GuiObject o
 	}
 	else if (message == ON_TAB_ACTIVATED)
 	{
-		lastActive.setActivated(0);
+		closeTab(lastActiveT);
 		CproSUI.sendAction ("show_tab", t.IDS, t.ID, 0, 0, 0);
-		lastActive = t;
+		lastActive = lastActiveT = t;
+		t.moving = false;
 	}
 	else if (message == ON_RIGHT_BUTTON_UP)
 	{
@@ -354,6 +421,48 @@ onMessage(int message, int i0, int i1, int i2, String s0, String s1, GuiObject o
 
 		// The MediaLibrary tab must hide when its not installed (v1.04 already had this).. 
 		//but forgot to not use MLIB as the default fallback tab when a tab close :P... will add this before 1.1 in centrosui
+
+#ifdef DEBUG
+
+		popMenu.addSeparator();
+
+		if (t.left != NULL)
+		{
+			Tab d = t.left;
+			popMenu.addCommand("LeftTab: " + d.findObject("cpro.tab.text").getXmlParam("text"), -1, 0, 1);
+		}
+		else
+		{
+			popMenu.addCommand("LeftTab: " + "~", -1, 0, 1);
+		}
+
+		if (t.right != NULL)
+		{
+			Tab d = t.right;
+			popMenu.addCommand("RightTab: " + d.findObject("cpro.tab.text").getXmlParam("text"), -1, 0, 1);
+		}
+		else
+		{
+			popMenu.addCommand("RightTab: " + "~", -1, 0, 1);
+		}
+
+		popMenu.addSeparator();
+
+		Tab d = firstTab;
+		popMenu.addCommand("FirstTab: " + d.findObject("cpro.tab.text").getXmlParam("text"), -1, 0, 1);
+		d = lastTab;
+		popMenu.addCommand("LastTab: " + d.findObject("cpro.tab.text").getXmlParam("text"), -1, 0, 1);
+
+		popMenu.addSeparator();
+
+		for ( int i = 0; i < hiddenTabs.getNumItems(); i++ )
+		{
+			d = hiddenTabs.enumItem(i);
+			popMenu.addCommand("Hidden: " + d.findObject("cpro.tab.text").getXmlParam("text"), -1, 0, 1);
+		}
+		
+
+#endif
 				
 		int result = popMenu.popAtXY(i1,i2);
 		delete popMenu;
@@ -368,6 +477,11 @@ onMessage(int message, int i0, int i1, int i2, String s0, String s1, GuiObject o
 			else if(result == 1)
 			{
 				setPublicInt("Cpro.One.TabAutoClose."+integerToString(tabID), !getPublicInt("Cpro.One.TabAutoClose."+integerToString(tabID), 0));
+				ToggleButton tg = t;
+				if (!tg.getActivated() && getPublicInt("Cpro.One.TabAutoClose."+integerToString(tabID), 0))
+				{
+					removeTab(t);
+				}
 			}
 		}
 		complete;
@@ -418,6 +532,8 @@ moveLeft (Tab t)
 
 	left.left = t;
 	t.right = left;
+
+	debugTabs();
 }
 
 moveRight (Tab t)
@@ -455,6 +571,8 @@ moveRight (Tab t)
 
 	right.right = t;
 	t.left = right;
+
+	debugTabs();
 }
 
 moveTo (Tab g, int x)
@@ -464,6 +582,48 @@ moveTo (Tab g, int x)
 	g.setTargetW(g.w);
 	g.setTargetSpeed(0.4);
 	g.gotoTarget();
+}
+
+removeTab(Tab t)
+{
+	if (t.removed)
+	{
+		return;
+	}
+
+	t.removed = true;
+	
+	t.hide();
+	totalTabWidth -= t.maxW;
+
+	Tab d = t.left;
+	if (d != null)
+	{
+		d.right = t.right;
+	}
+	else
+	{
+		firstTab = t.right;
+	}
+
+	d = t.right;
+	if (d != null)
+	{
+		d.left = t.left;
+		d.setXmlParam("x", integerToString(t.getGuiX()));
+		forceAlign(d);
+	}
+	else
+	{
+		lastTab = t.left;
+	}
+	
+
+	//TODO align if tabs are not all visible!
+
+	hiddenTabs.addItem(t);
+
+	debugTabs();
 }
 
 /**
@@ -487,6 +647,26 @@ updateTabWidth (Tab t)
 	{
 		//align(t.right);	
 	}*/
+}
+
+forceAlign (Tab t)
+{
+	aligned = false;
+	align(t);
+}
+
+align(Tab t)
+{
+	if (tabHolder.getWidth() < totalTabWidth)
+	{
+		aligned = false;
+		alignByResize();
+	}
+	else if (!aligned)
+	{		
+		alignFull(firstTab);
+		aligned = true;
+	}
 }
 
 /**
@@ -527,30 +707,109 @@ alignByResize ()
 		x+=t.w;
 		t = t.right;
 	}
-	
+}
+
+closeTab (tab t)
+{
+	if (lastActive)
+	{
+		lastActive.setActivated(0);
+		if (getPublicInt("Cpro.One.TabAutoClose."+integerToString(t.ID), 0) || lastActiveT.ID == 5)
+		{
+			removeTab(t);
+		}
+	}
 }
 
 sg.onAction (String action, String param, Int x, int y, int p1, int p2, GuiObject source)
 {
 	if(strlower(action) == "select_tab")
 	{
-		Tab t = lastActive;
+		Tab t;
+		boolean found = false;
 		//if(t.ID != x)
 		{
-			lastActive.setActivated(0);
+			closeTab(lastActiveT);
 			t = firstTab;
 			while (t != NULL)
 			{
 				if (t.ID == x && ((x == WIDGET_TAB_ID && param == t.IDS) || x != WIDGET_TAB_ID))
 				{
-					lastActive = t;
+					lastActive = lastActiveT = t;
 					lastActive.setActivated(1);
+					found = true;
 					break;
 				}
 				
 				t = t.right;
 			}
-			
 		}
+
+		if (!found)
+		{
+			for ( int i = 0; i < hiddenTabs.getNumItems(); i++ )
+			{
+				t = hiddenTabs.enumItem(i);
+				if (t.ID == x && ((x == WIDGET_TAB_ID && param == t.IDS) || x != WIDGET_TAB_ID))
+				{
+					lastActive = lastActiveT = t;
+					lastActive.setActivated(1);
+
+					t.left = lastTab;
+					lastTab.right = t;
+					t.right = null;
+
+					t.setXmlParam("x", integerToString(lastTab.getGuiX() + lastTab.w));
+					t.show();
+					t.removed = false;
+
+					lastTab = t;
+
+					totalTabWidth += t.maxW;
+					forceAlign(firstTab);
+
+					hiddenTabs.removeItem(i);
+					break;
+				}			
+			}
+		}
+		
+	}
+	debugTabs();
+}
+
+#ifdef DEBUG
+
+debugTabs()
+{
+	Tab t = firstTab;
+	while (t != null)
+	{
+		debugTab(t);
+		t = t.right;
 	}
 }
+
+debugTab (Tab t)
+{
+	if (t.left != NULL)
+	{
+		Tab d = t.left;
+		t.findObject("l").setXmlParam("text", (d.findObject("cpro.tab.text").getXmlParam("text")));
+	}
+	else
+	{
+		t.findObject("l").setXmlParam("text", "~");
+	}
+
+	if (t.right != NULL)
+	{
+		Tab d = t.right;
+		t.findObject("r").setXmlParam("text", (d.findObject("cpro.tab.text").getXmlParam("text")));
+	}
+	else
+	{
+		t.findObject("r").setXmlParam("text", "~");
+	}
+}
+#endif
