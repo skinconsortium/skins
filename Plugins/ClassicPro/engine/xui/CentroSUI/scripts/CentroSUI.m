@@ -594,7 +594,7 @@ openMini(int miniNo){
 
 
 refreshComponentButtons(){
-	if(getPublicInt("ClassicPro.1.plbuttons", 1)){
+	if(getPublicInt("Cpro.One.TabStatus.1", 1)){
 			guihold_Pl2.setXmlParam("h", "-27");
 			tabbut_pl.show();
 	}
@@ -603,7 +603,7 @@ refreshComponentButtons(){
 			tabbut_pl.hide();
 	}
 
-	if(getPublicInt("ClassicPro.1.vidbuttons", 1)){
+	if(getPublicInt("Cpro.One.TabStatus.2", 1)){
 			hold_vid.setXmlParam("h", "-27");
 			tabbut_vid.show();
 	}
@@ -612,7 +612,7 @@ refreshComponentButtons(){
 			tabbut_vid.hide();
 	}
 	
-	if(getPublicInt("ClassicPro.1.avsbuttons", 1)){
+	if(getPublicInt("Cpro.One.TabStatus.3", 1)){
 			hold_avs.setXmlParam("h", "-27");
 			visRectBg.setXmlParam("h", "-27");
 			tabbut_avs.show();
@@ -627,12 +627,10 @@ refreshComponentButtons(){
 
 updateCompStatus(){
 	if(tab_openned==0) setCompStatus(false);
-	else if(tab_openned==1) setCompStatus(getPublicInt("ClassicPro.1.vidbuttons", 1)==1);
-	else if(tab_openned==2) setCompStatus(getPublicInt("ClassicPro.1.avsbuttons", 1)==1);
-	else if(tab_openned==3) setCompStatus(false);
-	else if(tab_openned==4) setCompStatus(getPublicInt("ClassicPro.1.plbuttons", 1)==1);
-	else if(tab_openned==5) setCompStatus(true);
-	else if(tab_openned==6) setCompStatus(false); //true l8r when widget.... martin read here ;)
+	else if(tab_openned==4) setCompStatus(false);
+	else if(tab_openned==5) setCompStatus(false);
+	else if(tab_openned==WIDGET_TAB_ID) setCompStatus(false); // @martin read from widget before final release!!! ... widgets must choose if it want status... cant toggle it though!
+	else setCompStatus(getPublicInt("Cpro.One.TabStatus."+integerToString(tab_openned), 1));
 }
 
 setCompStatus(boolean onOff){
@@ -662,6 +660,9 @@ xuiGroup.onAction (String action, String param, int x, int y, int p1, int p2, Gu
 		if (x == WIDGET_TAB_ID)
 			openWidgetIDS(param);
 		openTabNo(x);
+	}
+	else if (strlower(action) == "refresh_tab_status"){ //used by the tabs to show tab holder
+		refreshComponentButtons();
 	}
 	else if (strlower(action) == "browser_url"){
 		openTabNo(4);

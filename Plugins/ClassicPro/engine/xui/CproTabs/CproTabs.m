@@ -45,6 +45,7 @@ Global Group sg, tabHolder, CproSUI;
 Global int totalTabWidth;
 Global ComponentBucket widgetLoader;
 Global boolean aligned;
+Global PopUpMenu popMenu;
 
 System.onScriptLoaded ()
 {
@@ -336,7 +337,42 @@ onMessage(int message, int i0, int i1, int i2, String s0, String s1, GuiObject o
 		CproSUI.sendAction ("show_tab", t.IDS, t.ID, 0, 0, 0);
 		lastActive = t;
 	}
-	
+	else if (message == ON_RIGHT_BUTTON_UP)
+	{
+		int tabID = t.ID;
+		popMenu = new PopUpMenu;
+		
+		if(tabID==0 || tabID==4 || tabID==5 || tabID==WIDGET_TAB_ID) popMenu.addCommand("Show Status Bar", 0, 0, 1);
+		else popMenu.addCommand("Show Status Bar", 0, getPublicInt("Cpro.One.TabStatus."+integerToString(tabID), 1), 0);
+		
+		if(tabID==5) popMenu.addCommand("Auto Close Tab", 1, 1, 1);
+		else if(tabID==WIDGET_TAB_ID) popMenu.addCommand("Auto Close Tab", 1, 0, 1);
+		else popMenu.addCommand("Auto Close Tab", 1, getPublicInt("Cpro.One.TabAutoClose."+integerToString(tabID), 0), 0);
+		// @martin here is the publicint set.. hide tab if int == 1... remember widgets cant hide... 
+		//not going to add the previous submenu where you can enable things again..
+		// must just add Web Browser to the View list in winamp now so that when its hidden the user can still open it via that  menu
+
+		// The MediaLibrary tab must hide when its not installed (v1.04 already had this).. 
+		//but forgot to not use MLIB as the default fallback tab when a tab close :P... will add this before 1.1 in centrosui
+				
+		int result = popMenu.popAtXY(i1,i2);
+		delete popMenu;
+		
+		if(result!=-1)
+		{
+			if(result == 0)
+			{
+				setPublicInt("Cpro.One.TabStatus."+integerToString(tabID),!getPublicInt("Cpro.One.TabStatus."+integerToString(tabID), 1));
+				CproSUI.sendAction ("refresh_tab_status", "", 0, 0, 0, 0);
+			}
+			else if(result == 1)
+			{
+				setPublicInt("Cpro.One.TabAutoClose."+integerToString(tabID), !getPublicInt("Cpro.One.TabAutoClose."+integerToString(tabID), 0));
+			}
+		}
+		complete;
+	}
+		
 	// TODO
 	/*else if (message == SET_TAB_W)
 	{
