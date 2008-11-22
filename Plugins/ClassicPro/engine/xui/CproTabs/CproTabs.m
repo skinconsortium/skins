@@ -30,6 +30,8 @@ Class GuiObject Tab;
 	Member GuiObject Tab.right;
 // }
 
+#define WIDGET_TAB_ID -666
+
 Function moveLeft (Tab t);
 Function moveRight (Tab t);
 Function moveTo (Tab g, int x);
@@ -163,10 +165,12 @@ System.onScriptLoaded ()
 			if (isInternal.getItem(i)) // internal tab?
 			{
 				tabI.ID = orderedTabs.enumItem(i);
+				tabI.IDS = "";
 				tabI.isInternal = true;
 			}
 			else
 			{
+				tabI.ID = WIDGET_TAB_ID;
 				tabI.IDS = orderedTabs.enumItem(i);
 				tabI.isInternal = false;
 			}
@@ -329,7 +333,7 @@ onMessage(int message, int i0, int i1, int i2, String s0, String s1, GuiObject o
 	else if (message == ON_TAB_ACTIVATED)
 	{
 		lastActive.setActivated(0);
-		CproSUI.sendAction ("show_tab", "", t.ID, 0, 0, 0);
+		CproSUI.sendAction ("show_tab", t.IDS, t.ID, 0, 0, 0);
 		lastActive = t;
 	}
 	
@@ -416,6 +420,7 @@ moveRight (Tab t)
 	right.right = t;
 	t.left = right;
 }
+
 moveTo (Tab g, int x)
 {
 	g.cancelTarget();
@@ -500,7 +505,7 @@ sg.onAction (String action, String param, Int x, int y, int p1, int p2, GuiObjec
 			t = firstTab;
 			while (t != NULL)
 			{
-				if (t.ID == x)
+				if (t.ID == x && ((x == WIDGET_TAB_ID && param == t.IDS) || x != WIDGET_TAB_ID))
 				{
 					lastActive = t;
 					lastActive.setActivated(1);

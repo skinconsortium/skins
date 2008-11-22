@@ -62,9 +62,7 @@
 
 
 
-<groupdef id="cpro.widget.browserpro" name="BrowserPro">
-	<!--<rect color="wasabi.window.background" filled="1" fitparent="1"/>-->
-	<!--<rect color="255,0,0" filled="1" fitparent="1"/>-->
+<groupdef id="centro.widgets.browserpro">
 
 	<Button id="browser.back"
 		x="4" h="26" w="21" y="2" rectrgn="1"
