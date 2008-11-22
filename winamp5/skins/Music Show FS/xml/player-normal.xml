@@ -58,46 +58,14 @@
 	<layer id="player.main.forwardd" image="player.main.forwardd" x="128" y="0"  ghost="1"/>
 	<script file="scripts/hoverglow.maki" param="Next,player.main.forwardd"/>
 
-	<layer id="SeekAnim" image="player.seekbk"  x="0" y="70" move="0" rectrgn="0" tooltip="Seek"/>
-	<script id="seek" file="scripts/seekbyregion.maki"/>
-	
-	<slider id="seek2"
-			action="SEEK"
-			x="0" y="70" w="134" h="35"
-			thumb="player.main.songpos" 
-			downThumb="player.main.songpos" 
-		/>
+	<layer id="volback" image="volback" x="20" y="50" ghost="1"/>
+	<layer id="VolumeAnim" image="dominator.normal.Volume"  alpha="120" x="20" y="50" move="0" rectrgn="0" tooltip="Volume"/>
+	<script id="VolumeScr" file="scripts/volumebyregion.maki"/>
 </groupdef>
 
-<groupdef id="player.main.cms" name="Close Min Switch" w="0" h="0" relatw="1" relath="1">
-	
-	<button 
-		id="Minimize"
-		x="-137" y="20" relatx="1"
-		action="minimize" 
-		image="player.main.close"
-		downimage="player.main.closemin"
-		hoverimage="player.main.closemin"
-		rectrgn="1"
-		tooltip="Minimize"
-		/>
-	<button 
-		id="Close"
-		x="-95" y="20" relatx="1"
-		action="CLOSE" 
-		image="player.main.close"
-		downimage="player.main.closed"
-		hoverimage="player.main.closed"
-		rectrgn="1"
-		tooltip="Close"
-		/>
-		
-	
-	<script file="scripts/centerobject.maki" param="player.cbuttons,1,0"/>
-		
-	<layer id="volback" image="volback" x="537" y="396" ghost="1"/>
+<groupdef id="player.main.vis" w="118" h="80">
 
-	<vis id="main.vis" x="90" y="311"
+	<vis id="main.vis" x="0" y="0"
 		w="126" h="25" colorbandpeak="162,193,204"
 		colorband1="182,197,202"
 		colorband2="174,188,193"
@@ -125,7 +93,7 @@
 		gammagroup="glass" 
            />
 		
-	<vis id="main.vis.refl" x="90" y="336"
+	<vis id="main.vis.refl" x="0" y="25"
 		w="126" h="25" colorbandpeak="162,193,204"
 		colorband1="182,197,202"
 		colorband2="174,188,193"
@@ -150,55 +118,68 @@
 		colorosc5="245,255,255" bandwidth="thin"
 		shadow="1" shadowcolor="0,0,0" flipv="2"
 		 alpha="35"
-		gammagroup="glass" 
-        
-            />
-	<layer id="main.vis.mousetrap"
-		x="90" y="296" w="118" h="80" rectrgn="1" ghost="0"/>
+		gammagroup="glass" />
+		
+	<layer id="main.vis.mousetrap"	x="0" y="0" w="118" h="80" rectrgn="1" ghost="0"/>
 		
 	<script file="scripts/visualizer.maki" />
+</groupdef>
 
-	 <SC:NowPlaying 
-		x="150" y="61"
-       w="-300" h="-80" relatw="1" relath="1"
+<groupdef id="player.main.seeker" w="20" h="29" relatw="2">
+	<layer id="SeekAnim" image="player.seekbk"  x="6" y="0" move="0" rectrgn="0" tooltip="Seek"/>
+	<script id="seek" file="scripts/seekbyregion.maki"/>
+	
+	<slider id="seek2"
+			action="SEEK"
+			x="0" y="0" w="134" h="29"
+			thumb="player.main.songpos" 
+			downThumb="player.main.songpos" 
+		/>
+
+</groupdef>
+
+<groupdef id="player.main.cms" name="Close Min Switch" w="0" h="0" relatw="1" relath="1">
+	
+	<button 
+		id="Minimize"
+		x="-137" y="20" relatx="1"
+		action="minimize" 
+		image="player.main.close"
+		downimage="player.main.closemin"
+		hoverimage="player.main.closemin"
+		rectrgn="1"
+		tooltip="Minimize"
+		/>
+	<button 
+		id="Close"
+		x="-95" y="20" relatx="1"
+		action="CLOSE" 
+		image="player.main.close"
+		downimage="player.main.closed"
+		hoverimage="player.main.closed"
+		rectrgn="1"
+		tooltip="Close"
+		/>
+		
+	<SC:NowPlaying 
+		x="20" y="10" relatx="2" relaty="2"
+		w="60" h="90" relatw="2" relath="2"
 		bgcolor="100,178,120"	
 		reflectiontransparency="55"
 		reflectionheightpercentage="100"
 		dropshadowcdcase="1" alpha="255"
 		showsongrating="1"
-	/>
-
-	<text
-		id="Timer" 
-		display="time"
-		x="348" y="124" 
-		w="100" h="20" 
-		font="arial"
-		alpha="200"
-		fontsize="22" align="left"  
-		bold="1"
-		color="255,255,255"
+		/>
 		
-		timecolonwidth="7"/>
+	
+	 
+	
+	<group id="player.main.vis" x="10" y="60" w="118" h="80" relatx="2" relaty="2"/>
 
-	<text
-		id="SongTicker" ticker="1"
-		display="" default=""
-		x="560" y="375"
-		w="80" h="20" 
-		font="arial" fontsize="17" align="center" color="255,255,255"
-		
-		bold="1" antialias="1" /> 
-
-
-	<layer id="VolumeAnim" image="dominator.normal.Volume"  ALPHA="120" x="537" y="396" move="0" rectrgn="0"
+	<group id="player.main.seeker" x="75" y="60" w="20" h="29" relatx="2" relaty="2" relatw="2"/>
 	
-	tooltip="Volume"/>
-	
-	
-	<script id="VolumeScr" file="scripts/volumebyregion.maki"/>
-	
-	<group id="player.cbuttons" x="0" y="-200" relaty="1" w="160" h="165"/>
+	<group id="player.cbuttons" x="0" y="-80" relaty="1" w="160" h="165"/>
+	<script file="scripts/centerobject.maki" param="player.cbuttons,1,0"/>
 		
 	<script file="scripts/DTACheck.maki"/>
 </groupdef>
