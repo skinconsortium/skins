@@ -1,8 +1,0 @@
-<groupdef id="sc.FadeText" xuitag="SC:FadeText">
-	<text id="FadeText.2" fitparent="1" color="0,0,0"/>
-	<text id="FadeText.1" fitparent="1" color="0,0,0"/>
-
-	<!-- SLoB - the below cpro path might be the end one but not in this demo, add link to this path for now -->
-	<script file="xui\FadeText\FadeText.maki"/>
-	<!--script file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\xui\FadeText\FadeText.maki"/-->
-</groupdef>
