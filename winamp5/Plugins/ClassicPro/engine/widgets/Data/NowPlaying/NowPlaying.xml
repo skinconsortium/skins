@@ -63,20 +63,17 @@
 </groupdef>
 
 <groupdef id="sc.nowplaying.cdbox.reflection.mask" move="1">
-
-	<layer
+	<!--<layer
 		id="cdbox.fg.fademask2"
 		fitparent="1"
 		ghost="1"
-		alpha="255"
 		image="sc.cdbox.gradient"
 		visible="0"
-	/>
+	/>-->
 	<gradient 
 		id="cdbox.fg.fademask"
 		fitparent="1"
 		ghost="1"
-		alpha="255"
 		mode="linear" gradient_x1="0" gradient_y1="0" gradient_x2="0" gradient_y2="1" points="0.0=128,128,128,0;1.0=128,128,128,255" gammagroup="n.Color.ListBg"
 	/>
 </groupdef>
