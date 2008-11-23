@@ -6,7 +6,6 @@
 #include "convert_address.mi"
 
 Function resizeResults(int items);
-//Function refreshStuff();
 Function addProvider(list paramname, list paramvalue);
 Function String replaceString(string baseString, string toreplace, string replacedby);
 Function int searchInListForItem(String input);
@@ -46,7 +45,6 @@ System.onScriptLoaded(){
 	myGroup = getScriptGroup();
 	myList = results_layout.findObject("BrowserPro.list");
 	ddBoxText = myGroup.findObject("browserpro.ddl.text");
-	///enabledSwitch = myGroup.findObject("bp.onoff");
 	menuOptions = myGroup.findObject("cpro.widget.browserpro.options");
 	dropListButton = myGroup.findObject("dropdownlist.button");
 	fakeSB = myGroup.findObject("browserpro.ddlist");
@@ -55,12 +53,11 @@ System.onScriptLoaded(){
 	ddlIcon = myGroup.findObject("browserpro.ddl.icon");
 
 	focus_callback = new Timer;
-	focus_callback.setDelay(200);
+	focus_callback.setDelay(100);
 
 	myList.setIconWidth(16);
 	myList.setShowIcons(1);
 	sourceNo=0;
-	//enabledSwitch.setActivated(getPublicInt("ClassicPro.BrowserPro.enabled", 0));
 }
 
 myGroup.onSetVisible(boolean onOff){
@@ -73,9 +70,9 @@ myGroup.onSetVisible(boolean onOff){
 System.onScriptUnloading (){
 	setPublicInt("ClassicPro.BrowserPro.loaded", 0);
 	myGroup.hide();
+	focus_callback.stop();
 	delete loaded_P_Names;
 	delete loaded_P_Url;
-	focus_callback.stop();
 	delete focus_callback;
 }
 
@@ -150,7 +147,6 @@ ddlOpenClose(){
 		results_layout.setXmlParam("x", integerToString(fakeSB.clientToScreenX(fakeSB.getLeft())));
 		results_layout.setXmlParam("y", integerToString(fakeSB.clientToScreenY(fakeSB.getTop() + fakeSB.getHeight())));
 		results_layout.setXmlParam("w", integerToString(fakeSB.getWidth()));
-
 	
 		results_layout.show();
 		resizeResults(loaded_P_Names.getNumItems());
@@ -167,8 +163,6 @@ focus_callback.onTimer ()
 		focus_callback.stop();
 		if (!results_layout) return;
 		results_layout.hide();
-		//searchlist = NULL;
-		//searchlist_layout = NULL;
 	}
 }
 
@@ -206,8 +200,4 @@ updateDDList(){
 	ddBoxText.setText(getPublicString("ClassicPro.BrowserPro", "0"));
 	String iconsID = loaded_P_Icons.enumItem(loaded_P_Names.findItem(getPublicString("ClassicPro.BrowserPro", "0")));
 	ddlIcon.setXmlParam("image", iconsID);
-}
-
-results_layout.onKillFocus(){
-	debug("asdas");
 }
