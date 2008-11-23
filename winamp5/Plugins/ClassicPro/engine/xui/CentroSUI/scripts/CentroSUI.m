@@ -140,13 +140,6 @@ System.onScriptLoaded(){
 	else  cuseqbg=false;
 	delete myMap;
 
-	// Reader for albumart gradient (remove later... just keep here to see what code was used)... this will be done inside the widget from v1.1
-	/*Map myMap = new Map;
-	myMap.loadMap("wasabi.list.background");
-	nowPlaying = xuiGroup.findObject("nowplaying.component");
-	nowPlaying.setXmlParam("bgcolor", integerToString(myMap.getARGBValue(0,0,2))+","+integerToString(myMap.getARGBValue(0,0,1))+","+integerToString(myMap.getARGBValue(0,0,0)));
-	delete myMap;*/
-
 	// Fix Winamp:Browser for Cpro!
 	GuiObject tempbutton;
 	Group browserGroup = xuiGroup.findObject("cpro.browser");

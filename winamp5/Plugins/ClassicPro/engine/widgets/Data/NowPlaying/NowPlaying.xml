@@ -1,8 +1,8 @@
 <elements>
-	<bitmap id="sc.cdbox.bg" file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\xui\NowPlaying\cdbox-bg_drop.png"/>
-	<bitmap id="sc.cdbox.fg" file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\xui\NowPlaying\cdbox-fg.png"/>
-	<bitmap id="sc.cdbox.bg.ref" file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\xui\NowPlaying\cdbox-bg-reflection.png"/>
-	<bitmap id="sc.cdbox.ref" file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\xui\NowPlaying\blank.png"/>
+	<bitmap id="sc.cdbox.bg" file="@WINAMPPATH@\Plugins\classicPro\engine\widgets\Data\NowPlaying\cdbox-bg_drop.png"/>
+	<bitmap id="sc.cdbox.fg" file="@WINAMPPATH@\Plugins\classicPro\engine\widgets\Data\NowPlaying\cdbox-fg.png"/>
+	<bitmap id="sc.cdbox.bg.ref" file="@WINAMPPATH@\Plugins\classicPro\engine\widgets\Data\NowPlaying\cdbox-bg-reflection.png"/>
+	<bitmap id="sc.cdbox.ref" file="@WINAMPPATH@\Plugins\classicPro\engine\widgets\Data\NowPlaying\blank.png"/>
 </elements>
 
 <groupdef id="sc.nowplaying.ratings">
@@ -17,7 +17,7 @@
 	<button id="rate.4" x="60" y="0" w="21" h="0" relatx="2" relatw="2" relath="1" rectrgn="1" cursor="IDC_HAND"/>
 	<button id="rate.5" x="80" y="0" w="21" h="0" relatx="2" relatw="2" relath="1" rectrgn="1" cursor="IDC_HAND"/>
 
-	<script file="@WINAMPPATH@\Plugins\classicPro\engine\xui\NowPlaying\ratings.maki"/>
+	<script file="@WINAMPPATH@\Plugins\classicPro\engine\widgets\Data\NowPlaying\ratings.maki"/>
 </groupdef>
 
 
@@ -34,15 +34,15 @@
 	<group id="sc.nowplaying.ratings" x="0" y="63" w="62" h="14"/>
 
 
-	<script file="@WINAMPPATH@\Plugins\classicPro\engine\xui\NowPlaying\NowPlaying.maki"/>
-	<script file="@WINAMPPATH@\Plugins\classicPro\engine\xui\NowPlaying\albumart.maki"/>
+	<script file="@WINAMPPATH@\Plugins\classicPro\engine\widgets\Data\NowPlaying\NowPlaying.maki"/>
+	<script file="@WINAMPPATH@\Plugins\classicPro\engine\widgets\Data\NowPlaying\albumart.maki"/>
 </groupdef>
 
 <groupdef id="sc.nowplaying.cdbox.holder.top">
 	<group id="sc.nowplaying.cdbox" fitparent="1"/>
 </groupdef>
 <groupdef id="sc.nowplaying.cdbox.holder.bottom">
-	<group id="sc.nowplaying.cdbox.reflection" fitparent="1"/>
+	<group id="sc.nowplaying.cdbox.reflection" x="0" y="0" w="0" h="50" relatw="1"/>
 	<group id="sc.nowplaying.cdbox.reflection.mask" fitparent="1"/>
 </groupdef>
 
@@ -59,7 +59,7 @@
 <groupdef id="sc.nowplaying.cdbox.reflection" move="1">
 	<layer id="bgref" image="sc.cdbox.bg.ref" fitparent="1" />
 	<AlbumArt id="main.albumart.reflection" x="12" y="4" w="85" h="93" notfoundimage="cover.notfound" relatx="2" relaty="2" relatw="2" relath="2" wantfocus="0" stretched="1"/>
-	<layer id="cdbox.fg.reflection" fitparent="1" image="sc.cdbox.fg" ghost="1" alpha="100"/>
+	<layer id="cdbox.fg.reflection" fitparent="1" image="sc.cdbox.fg" ghost="1" alpha="175"/>
 </groupdef>
 
 <groupdef id="sc.nowplaying.cdbox.reflection.mask" move="1">
