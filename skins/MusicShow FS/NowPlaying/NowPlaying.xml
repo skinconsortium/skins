@@ -1,0 +1,76 @@
+<elements>
+	<bitmap id="sc.cdbox.bg" file="NowPlaying\cdbox-bg_drop.png"/>
+	<bitmap id="sc.cdbox.fg" file="NowPlaying\cdbox-fg.png"/>
+	<bitmap id="sc.cdbox.bg.ref" file="NowPlaying\cdbox-bg-reflection.png"/>
+	<bitmap id="sc.cdbox.ref" file="NowPlaying\blank.png"/>
+</elements>
+
+<groupdef id="sc.nowplaying.ratings">
+	<text id="rate.line.1" x="0" y="-5" w="65" h="20" color="wasabi.list.text" fontsize="40" text="*****" alpha="140" valign="top"/>
+	<text id="rate.line.2" x="0" y="-5" w="65" h="20" color="wasabi.list.text" fontsize="40" text="" valign="top"/>
+	<text id="rate.line.3" x="0" y="-5" w="65" h="20" color="wasabi.list.text.selected" fontsize="40" text="" alpha="150" valign="top"/>
+	
+	<!-- Copied from sc:ratings.. also based on that xui... thisone is just text based-->
+	<button id="rate.1" x="0" y="0" w="21" h="0" relatw="2" relath="1" rectrgn="1" cursor="IDC_HAND"/>
+	<button id="rate.2" x="20" y="0" w="21" h="0" relatx="2" relatw="2" relath="1" rectrgn="1" cursor="IDC_HAND"/>
+	<button id="rate.3" x="40" y="0" w="21" h="0" relatx="2" relatw="2" relath="1" rectrgn="1" cursor="IDC_HAND"/>
+	<button id="rate.4" x="60" y="0" w="21" h="0" relatx="2" relatw="2" relath="1" rectrgn="1" cursor="IDC_HAND"/>
+	<button id="rate.5" x="80" y="0" w="21" h="0" relatx="2" relatw="2" relath="1" rectrgn="1" cursor="IDC_HAND"/>
+
+	<script file="NowPlaying\ratings.maki"/>
+</groupdef>
+
+
+<groupdef id="sc.nowplaying" xuitag="SC:NowPlaying">
+	<rect id="sc.nowplaying.bg" fitparent="1" color="255,255,255" filled="1" move="1" alpha="0"/>
+
+	<SC:FadeText id="sc.nowplaying.line3" x="100" y="5" w="0" h="20" relatw="1" fgcolor="0,0,0" align="center" fontsize="44" alpha="200"/>
+	<SC:FadeText id="sc.nowplaying.line2" x="0" y="25" w="0" h="20" relatw="1" fgcolor="0,0,0" align="center" fontsize="24" alpha="225"/>
+	<SC:FadeText id="sc.nowplaying.line1" x="0" y="44" w="0" h="24" relatw="1" fgcolor="0,0,0" align="center" fontsize="30"/>
+
+	<group id="sc.nowplaying.cdbox.holder" x="5" y="78" w="-5" h="-78" relatw="1" relath="1"/>
+	
+	<group id="sc.nowplaying.ratings" x="0" y="72" w="68" h="28"/>
+
+
+	<script file="NowPlaying\NowPlaying.maki"/>
+	<script file="NowPlaying\albumart.maki"/>
+</groupdef>
+
+<groupdef id="sc.nowplaying.cdbox.holder.top">
+	<group id="sc.nowplaying.cdbox" fitparent="1"/>
+</groupdef>
+<groupdef id="sc.nowplaying.cdbox.holder.bottom">
+	<group id="sc.nowplaying.cdbox.reflection" fitparent="1"/>
+	<group id="sc.nowplaying.cdbox.reflection.mask" fitparent="1"/>
+</groupdef>
+
+<groupdef id="sc.nowplaying.cdbox.holder">
+	<group id="sc.nowplaying.cdbox.holder.top" x="0" y="0" w="50" h="50"/>
+	<group id="sc.nowplaying.cdbox.holder.bottom" x="0" y="0" w="50" h="50"/>
+</groupdef>
+
+<groupdef id="sc.nowplaying.cdbox" background="sc.cdbox.bg" move="1">
+	<AlbumArt id="main.albumart" x="12" y="4" w="85" h="93" relatx="2" relaty="2" relatw="2" relath="2" notfoundimage="cover.notfound" wantfocus="1" stretched="1" move="0"/>
+	<layer fitparent="1" image="sc.cdbox.fg" ghost="1" alpha="175" move="0"/>
+</groupdef>
+
+<groupdef id="sc.nowplaying.cdbox.reflection" move="1">
+	<layer id="bgref" image="sc.cdbox.bg.ref" fitparent="1" move="0"/>
+	<AlbumArt id="main.albumart.reflection" x="12" y="4" w="85" h="93" notfoundimage="cover.notfound" relatx="2" relaty="2" relatw="2" relath="2" wantfocus="0" stretched="1" move="0"/>
+	<layer id="cdbox.fg.reflection" fitparent="1" image="sc.cdbox.fg" ghost="1" alpha="100" move="0"/>
+</groupdef>
+
+<groupdef id="sc.nowplaying.cdbox.reflection.mask" move="1">
+	<gradient
+		id="cdbox.fg.fademask"
+		fitparent="1"
+		gradient_x2="0"
+		points="0.0=0,0,0,0;1.0=0,0,0,255"
+		ghost="1"
+		alpha="0"
+		gammagroup="background"
+		move="0"
+	/>
+	<layer fitparent="1" move="0" image="main.bg"/>
+</groupdef>

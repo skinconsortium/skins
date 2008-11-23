@@ -1,0 +1,25 @@
+<!-- 
+******************************************************
+	customBG.xml
+	by leechbite.com
+	
+	lifted off KameleonDUI for custom background XUI
+******************************************************
+-->
+
+<!--*************************************************************
+
+  CustomBG - displays the customizable background
+  
+************************************************************* -->
+
+<groupdef id="xui.custom.bkground" xuitag="CustomBG" w="0" h="0" relatw="1" relath="1">
+
+	<rect id="bgcolor" 
+		x="0" y="0" w="0" h="0" relatw="1" relath="1" ghost="1"
+		color="0,0,0" filled="1"/>
+	<layer id="bgimage" x="0" y="0" w="0" h="0" relatw="1" relath="1" alpha="255" image="" ghost="1"/>
+	<customobject id="bgGroup" groupid="" x="0" y="0" w="0" h="0" relatw="1" relath="1" ghost="1"/>
+
+	<script id="script.xui.bkground" file="xui\CustomBG\customBG.maki"/>
+</groupdef>
