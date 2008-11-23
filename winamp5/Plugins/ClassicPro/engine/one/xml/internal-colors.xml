@@ -16,4 +16,7 @@
 	<elementalias id="wasabi.scrollbar.background" target="wasabi.scrollbar.background"/>
 	<elementalias id="wasabi.scrollbar.foreground.inverted" target="wasabi.scrollbar.background"/>
 	<elementalias id="wasabi.scrollbar.background.inverted" target="wasabi.scrollbar.background"/>
+
+	<!-- Temp Fix for 5.541 -->
+	<elementalias id="color.display.bg" target="wasabi.list.background"/>
 </elements>
