@@ -16,14 +16,14 @@
 ;General
 
   ;Name and file
-  Name "ClassicPro© v1.05"
+  Name "ClassicPro© v1.1"
   
   ;RELEASE  
-  ;OutFile "ClassicPro_1.05.exe"
+  ;OutFile "ClassicPro_1.1.exe"
 
   ;BETA STAGE  
   !define /date DATE "%Y-%m-%d"
-  OutFile "ClassicPro_1.05_(${DATE}).exe"
+  OutFile "ClassicPro_1.1_(${DATE}).exe"
 
 	; The default installation directory
 	InstallDir $PROGRAMFILES\Winamp
@@ -136,11 +136,15 @@ Section "ClassicPro Engine" cproFiles
 
   SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\CentroSUI
   File "${SOURCEPATH}\engine\xui\CentroSUI\*.xml"
-  File "${SOURCEPATH}\engine\xui\CentroSUI\*.png"
 
   SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\CentroSUI\scripts
   File "${SOURCEPATH}\engine\xui\CentroSUI\scripts\*.m"
   File "${SOURCEPATH}\engine\xui\CentroSUI\scripts\*.maki"
+
+  SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\CproTabs
+  File "${SOURCEPATH}\engine\xui\CproTabs\*.xml"
+  File "${SOURCEPATH}\engine\xui\CproTabs\*.m"
+  File "${SOURCEPATH}\engine\xui\CproTabs\*.maki"
 
   SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\updateSystem
   File "${SOURCEPATH}\engine\xui\updateSystem\*.xml"
@@ -159,12 +163,6 @@ Section "ClassicPro Engine" cproFiles
   File "${SOURCEPATH}\engine\xui\SC-ProgressGrid\*.xml"
   File "${SOURCEPATH}\engine\xui\SC-ProgressGrid\*.m"
   File "${SOURCEPATH}\engine\xui\SC-ProgressGrid\*.maki"
-
-  SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\NowPlaying
-  File "${SOURCEPATH}\engine\xui\NowPlaying\*.xml"
-  File "${SOURCEPATH}\engine\xui\NowPlaying\*.m"
-  File "${SOURCEPATH}\engine\xui\NowPlaying\*.maki"
-  File "${SOURCEPATH}\engine\xui\NowPlaying\*.png"
 
   SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\FadeText
   File "${SOURCEPATH}\engine\xui\FadeText\*.xml"
@@ -236,7 +234,7 @@ SectionGroup "Components" cprocustom
 SectionGroupEnd
 
 SectionGroup "Widgets" WidgetsSection
-Section "BrowserPro" wBrowserPro
+Section "BrowserPro v2.0" wBrowserPro
 
 	SetOutPath "$INSTDIR\Plugins\ClassicPro\engine\widgets\Load"
 	File "${SOURCEPATH}\engine\widgets\Load\browserpro.xml"
@@ -254,6 +252,19 @@ Section "BrowserPro" wBrowserPro
 	File /nonfatal "${SOURCEPATH}\engine\widgets\cpro-widget-BrowserPro.nsi"
 
 SectionEnd
+
+Section "AlbumArt v1.1" wAlbumArt
+	SetOutPath "$INSTDIR\Plugins\ClassicPro\engine\widgets\Load"
+	File "${SOURCEPATH}\engine\widgets\Load\nowplaying.xml"
+
+	SetOutPath "$INSTDIR\Plugins\ClassicPro\engine\widgets\Data\NowPlaying"
+	File "${SOURCEPATH}\engine\widgets\Data\NowPlaying\*.xml"
+	File "${SOURCEPATH}\engine\widgets\Data\NowPlaying\*.m"
+	File "${SOURCEPATH}\engine\widgets\Data\NowPlaying\*.maki"
+	File "${SOURCEPATH}\engine\widgets\Data\NowPlaying\*.png"
+SectionEnd
+
+
 SectionGroupEnd
 
 ;--------------------------------
@@ -262,6 +273,7 @@ SectionGroupEnd
   ;Language strings
   LangString DESC_cproFiles ${LANG_ENGLISH} "This will install all the files that ClassicPro needs to work."
   LangString DESC_wBrowserPro ${LANG_ENGLISH} "BrowserPro is a widget that will enable your browser to auto navigate to popular websites and explore the playing directory."
+  LangString DESC_wAlbumArt ${LANG_ENGLISH} "AlbumArt is a widget that shows a big cd cover and information about the playing file."
   LangString DESC_Widget ${LANG_ENGLISH} "ClassicPro skins support widgets and here you'll find some of them that we decided to bundle with this installer."
   LangString DESC_cprocustom ${LANG_ENGLISH} "Optional components for ClassicPro."
   LangString DESC_cPlaylistPro ${LANG_ENGLISH} "Add a search box above your playlist for easy searches in your playlist."
@@ -270,6 +282,7 @@ SectionGroupEnd
   !insertmacro MUI_FUNCTION_DESCRIPTION_BEGIN
     !insertmacro MUI_DESCRIPTION_TEXT ${cproFiles} $(DESC_cproFiles)
     !insertmacro MUI_DESCRIPTION_TEXT ${wBrowserPro} $(DESC_wBrowserPro)
+    !insertmacro MUI_DESCRIPTION_TEXT ${wAlbumArt} $(DESC_wAlbumArt)
     !insertmacro MUI_DESCRIPTION_TEXT ${WidgetsSection} $(DESC_Widget)
     !insertmacro MUI_DESCRIPTION_TEXT ${cprocustom} $(DESC_cprocustom)
     !insertmacro MUI_DESCRIPTION_TEXT ${cPlaylistPro} $(DESC_cPlaylistPro)

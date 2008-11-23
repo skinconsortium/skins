@@ -1,6 +1,4 @@
 <include file="FadeText/FadeText.xml"/>
-<include file="NowPlaying/NowPlaying.xml"/>
-
 <include file="WasabiButton/WasabiButton.xml"/>
 <include file="SC-ProgressGrid/SC-ProgressGrid.xml"/>
 <include file="AlbumArt/AlbumArt.xml"/>
@@ -9,8 +7,6 @@
 <include file="historyeditbox/historyeditbox.xml"/>
 <include file="editbox/editbox.xml"/>
 <include file="PlaylistPro/PlaylistPro.xml"/>
-
-
 <include file="CproTabs/CproTabs.xml"/>
 <include file="CentroSUI/CentroSUI.xml"/>
 <include file="ModernSongticker/ModernSongticker.xml"/>
