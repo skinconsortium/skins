@@ -19,7 +19,7 @@ Global GuiObject line1, line2, line3, BGCol, CDBoxFade;
 Global Timer delayMyResize;
 Global int xs, ys, ws, hs;
 Global int xc, yc, wc, hc;
-Global layer lyrFx, lyrFxFG, CDBoxFade2;
+Global layer lyrFx, lyrFxFG; //, CDBoxFade2;
 global double dblSmidge;
 Global int reflectionheight;
 
@@ -42,13 +42,13 @@ System.onScriptLoaded(){
 	
 	BGCol = XUIGroup.findObject("sc.nowplaying.bg");
 	CDBoxFade = XUIGroup.findObject("cdbox.fg.fademask");
-	CDBoxFade2 = XUIGroup.findObject("cdbox.fg.fademask2");
+	//CDBoxFade2 = XUIGroup.findObject("cdbox.fg.fademask2");
 
-	if (!CDBoxFade2.isInvalid())
+	/*if (!CDBoxFade2.isInvalid())
 	{
 		CDBoxFade.hide();
 		CDBoxFade2.show();
-	}
+	}*/
 
 	// Reader for albumart gradient (remove later... just keep here to see what code was used)... this will be done inside the widget from v1.1
 	Map myMap = new Map;
