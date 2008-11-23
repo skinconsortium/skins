@@ -1,0 +1,7 @@
+<container id="Message" name="Color and Opacity " default_x="165" default_y="107" default_visible="0">
+
+   <include file="Message-normal.xml"/>
+
+</container>
+
+<script id="FirstScr" file="scripts/firsttime.maki"/>
