@@ -9,6 +9,6 @@
 
 <groupdef id="cprotabs.xui" xuitag="Cpro:Tabs">
 	<componentbucket id="widget.loader" x="0" y="0" h="20" w="20" wndtype="centro.widgets.main" visible="0" />
-	<group id="cprotabs.buttons" x="5" y="4" w="-5" h="50" relatw="1"/>
+	<group id="cprotabs.buttons" x="4" y="4" w="-4" h="29" relatw="1"/>
 	<script file="@WINAMPPATH@\Plugins\ClassicPro\engine\xui\CproTabs\CproTabs.maki" />
 </groupdef>

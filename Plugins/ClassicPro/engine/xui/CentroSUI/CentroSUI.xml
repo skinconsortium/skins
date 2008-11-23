@@ -1,137 +1,37 @@
-<!--<include file="elements.xml"/>
+<!--
+::One - Library Tab
 -->
-<container id="preview" name="Preview" dynamic="1" default_visible="0"  nomenu="1" nofocusapponclose="1">
-	<layout id="normal" noparent="1" ontop="1" h="200" w="200" noactivation="1" nodock="1" move="0">
-		<grid fitparent="1" sysregion="1" topleft="wasabi.tooltip.top.left" top="wasabi.tooltip.top" topright="wasabi.tooltip.top.right" left="wasabi.tooltip.left" middle="wasabi.tooltip.center" right="wasabi.tooltip.right" bottomleft="wasabi.tooltip.bottom.left" bottom="wasabi.tooltip.bottom" bottomright="wasabi.tooltip.bottom.right"/>
-		<windowholder 	id="preview1_1" visible="0" x="2" y="2" w="-4" h="-4" relatw="1" relath="1" autofocus="0" wantfocus="0" autoclose="1" autoopen="1" hold="guid:{F0816D7B-FFFC-4343-80F2-E8199AA15CC3}"/>
-		<layer 			id="preview1_2" x="2" y="2" visible="0" image="tabpreview"/>
-	</layout>
-</container>
-
-
-
-<!-- START of TabButton XUI-->
-<groupdef id="centro.tabsheet.button.selected.group" h="29" autowidthsource="centro.text.act">
-  <grid x="0" y="0" w="-1" h="0" relatw="1" relath="1" topleft="wasabi.tabsheet.button.left.1" top="wasabi.tabsheet.button.center.1" topright = "wasabi.tabsheet.button.right.1"/>
-  <text id="centro.text.act" default=" " x="7" y="6" w="-14" relatw="1" h="14" font="cpro.tab.font" bold="1" fontsize="14" color="Tab.Text.On"/>
-  <layer id="mousetrap" x="0" y="0" w="0" h="0" relatw="1" relath="1" />
-</groupdef>
-<groupdef id="centro.tabsheet.button.unselected.group" h="29" autowidthsource="centro.text.inact">
-  <grid id="centro.unselected.grid" x="0" y="0" w="-1" h="0" relatw="1" relath="1" topleft="wasabi.tabsheet.button.left.2" top="wasabi.tabsheet.button.center.2" topright="wasabi.tabsheet.button.right.2"/>
-  <text id="centro.text.inact" default=" " x="7" y="7" w="-14" relatw="1" h="14" font="cpro.tab.font" bold="1" fontsize="14" color="Tab.Text.Off"/>
-  <text id="centro.text.inact.hover" default=" " x="7" y="7" w="-14" relatw="1" h="14" font="cpro.tab.font" bold="1" fontsize="14" color="Tab.Text.Hover" visible="0"/>
-  <!--<layer x="0" y="-2" relaty="1" w="0" relatw="1" h="2" image="wasabi.tabsheet.button.bottom"/>-->
-  <layer id="mousetrap" fitparent="1"/>
-</groupdef>
-<groupdef id="centro.toggleTab" xuitag="Centro:Tab" embed_xui="centro.tabtoggle" h="29" autowidthsource="centro.tabsheet.button.selected.group">
-
-	<group id="centro.tabsheet.button.unselected.group" x="0" y="0" visible="0"/>
-	<group id="centro.tabsheet.button.selected.group" x="0" y="0" visible="0"/>
-	<togglebutton id="centro.tabtoggle" fitparent="1" rectrgn="1" x="0" y="0" w="0" h="0" relath="1"/>
-	<script file="@WINAMPPATH@\Plugins\classicPro\engine\xui\CentroSUI\scripts\CentroTab.maki"/>
-</groupdef>
-<!-- END of TabButton XUI-->
-
-
-
-
 <groupdef id="centro.library" name="Library">
 	<windowholder id="centro.windowholder.library" x="1" y="1" w="-2" relatw="1" h="-4" relath="1" autofocus="1" wantfocus="0" autoclose="1" autoopen="1" autoavailable="1" visible="1" hold="guid:{6B0EDF80-C9A5-11D3-9F26-00C04F39FFC6}"/>
 </groupdef>
+
+<!--
+::One - Video Tab
+-->
 <groupdef id="centro.video.buttons">
-	<Button action="VID_FS"	x="4" y="1" rectrgn="1" image="video.button.fullscreen.normal" hoverImage="video.button.fullscreen.hover" downImage="video.button.fullscreen.down" tooltip="Fullscreen"/>
-	<Button action="VID_1X"	x="29" y="1" rectrgn="1" image="video.button.1x.normal" hoverImage="video.button.1x.hover" downImage="video.button.1x.down" tooltip="Normal Size"/>
-
-	<Button action="VID_2X"
-		x="54" y="1" rectrgn="1"
-		image="video.button.2x.normal"
-		hoverImage="video.button.2x.hover"
-		downImage="video.button.2x.down"
-		tooltip="Double Size"
-	/>
-
-	<Button action="VID_TV"
-		x="80" y="1" rectrgn="1"
-		image="video.button.itv.normal"
-		hoverImage="video.button.itv.hover"
-		downImage="video.button.itv.down"
-		tooltip="Internet TV"
-	/>
-
-	<Button action="VID_Misc"
-		x="-27" y="1" relatx="1" rectrgn="1"
-		image="video.button.cfg.normal"
-		hoverImage="video.button.cfg.hover"
-		downImage="video.button.cfg.down"
-		tooltip="Video Options"
-	/>
-
-	<text id="info" display="VID_Info" ticker="1"
-		x="105" y="4" w="-135" relatw="1"
-		align="center" valign="top" color="ComponentTab.Status.Text" font="cpro.status.font" move="1"
-	/>
-
+	<button action="VID_FS"	x="4" y="1" rectrgn="1" image="video.button.fullscreen.normal" hoverImage="video.button.fullscreen.hover" downImage="video.button.fullscreen.down" tooltip="Fullscreen"/>
+	<button action="VID_1X"	x="29" y="1" rectrgn="1" image="video.button.1x.normal" hoverImage="video.button.1x.hover" downImage="video.button.1x.down" tooltip="Normal Size"/>
+	<button action="VID_2X" x="54" y="1" rectrgn="1" image="video.button.2x.normal" hoverImage="video.button.2x.hover" downImage="video.button.2x.down" tooltip="Double Size"/>
+	<button action="VID_TV" x="80" y="1" rectrgn="1" image="video.button.itv.normal" hoverImage="video.button.itv.hover" downImage="video.button.itv.down" tooltip="Internet TV"/>
+	<button action="VID_Misc" x="-27" y="1" relatx="1" rectrgn="1" image="video.button.cfg.normal" hoverImage="video.button.cfg.hover" downImage="video.button.cfg.down" tooltip="Video Options"/>
+	<text id="info" display="VID_Info" ticker="1" x="105" y="4" w="-135" relatw="1" align="center" valign="top" color="ComponentTab.Status.Text" font="cpro.status.font" move="1"/>
 </groupdef>
 <groupdef id="centro.video" name="Video">
 	<windowholder id="centro.windowholder.video" x="1" y="1" w="-2" relatw="1" h="-27" relath="1" autofocus="1" wantfocus="0" autoclose="1" autoopen="1" autoavailable="1" visible="1" hold="guid:{F0816D7B-FFFC-4343-80F2-E8199AA15CC3}"/>
 	<group id="centro.video.buttons" x="1" y="-24" w="-2" relatw="1" h="22" relaty="1" visible="0"/>
 </groupdef>
+
+<!--
+::One - Visualization Tab
+-->
 <groupdef id="centro.visualization.buttons">
-	<Button action="VIS_FS"
-		x="4" y="1" rectrgn="1"
-		image="video.button.fullscreen.normal"
-		hoverImage="video.button.fullscreen.hover"
-		downImage="video.button.fullscreen.down"
-		tooltip="Fullscreen"
-	/>
-
-	<Button action="VIS_Prev"
-		x="29" y="1" rectrgn="1"
-		image="vis.button.prev.normal"
-		hoverImage="vis.button.prev.hover"
-		downImage="vis.button.prev.down"
-		tooltip="Previous Visualization Preset"
-	/>
-
-	<Button action="VIS_Next"
-		x="51" y="1" rectrgn="1"
-		image="vis.button.next.normal"
-		hoverImage="vis.button.next.hover"
-		downImage="vis.button.next.down"
-		tooltip="Next Visualization Preset"
-	/>
-
-	<ToggleButton id="vis.random"
-		x="74" y="1" rectrgn="1"
-		image="vis.button.random.normal"
-		hoverImage="vis.button.random.hover"
-		downImage="vis.button.random.down"
-		ActiveImage="vis.button.random.active"
-		tooltip="Randomly change Visualization Presets"
-		cfgattrib="{0000000A-000C-0010-FF7B-01014263450C};Random"
-	/>
-
-	<Button action="VIS_Menu"
-		x="-52" y="1" relatx="1" rectrgn="1"
-		image="vis.button.presets.normal"
-		hoverImage="vis.button.presets.hover"
-		downImage="vis.button.presets.down"
-		tooltip="Presets"
-	/>
-
-	<Button action="VIS_Cfg"
-		x="-27" y="1" relatx="1" rectrgn="1"
-		image="video.button.cfg.normal"
-		hoverImage="video.button.cfg.hover"
-		downImage="video.button.cfg.down"
-		tooltip="Preset Editor / Options"
-	/>
-	
-	<!-- action="WA5:Prefs" param="33" -->
-	<text id="centro.visname" ticker="1"
-		x="105" y="4" h="13" w="-163" relatw="1" dblclickaction="WA5:Prefs" dblclickparam="33"
-		align="center" color="ComponentTab.Status.Text" font="cpro.status.font" move="1"
-	/>
+	<button action="VIS_FS" x="4" y="1" rectrgn="1" image="video.button.fullscreen.normal" hoverImage="video.button.fullscreen.hover" downImage="video.button.fullscreen.down" tooltip="Fullscreen"/>
+	<button action="VIS_Prev" x="29" y="1" rectrgn="1" image="vis.button.prev.normal" hoverImage="vis.button.prev.hover" downImage="vis.button.prev.down" tooltip="Previous Visualization Preset"/>
+	<button action="VIS_Next" x="51" y="1" rectrgn="1" image="vis.button.next.normal" hoverImage="vis.button.next.hover" downImage="vis.button.next.down" tooltip="Next Visualization Preset"/>
+	<togglebutton id="vis.random" x="74" y="1" rectrgn="1" image="vis.button.random.normal" hoverImage="vis.button.random.hover" downImage="vis.button.random.down" ActiveImage="vis.button.random.active" tooltip="Randomly change Visualization Presets" cfgattrib="{0000000A-000C-0010-FF7B-01014263450C};Random"/>
+	<button action="VIS_Menu" x="-52" y="1" relatx="1" rectrgn="1" image="vis.button.presets.normal" hoverImage="vis.button.presets.hover" downImage="vis.button.presets.down" tooltip="Presets"/>
+	<button action="VIS_Cfg" x="-27" y="1" relatx="1" rectrgn="1" image="video.button.cfg.normal" hoverImage="video.button.cfg.hover" downImage="video.button.cfg.down" tooltip="Preset Editor / Options"/>
+	<text id="centro.visname" ticker="1" x="105" y="4" h="13" w="-163" relatw="1" dblclickaction="WA5:Prefs" dblclickparam="33" align="center" color="ComponentTab.Status.Text" font="cpro.status.font" move="1"/>
 </groupdef>
 <groupdef id="centro.visualization" name="Visualization">
 	<rect id="centro.windowholder.visualization.bg" x="1" y="1" w="-2" relatw="1" h="-27" relath="1" color="0,0,0" filled="1"/>
@@ -139,99 +39,49 @@
 	<group id="centro.visualization.buttons" x="1" y="-24" w="-2" relatw="1" h="22" relaty="1" visible="0"/>
 </groupdef>
 
-
-
-
-
-
-
+<!-- 
+::One - Browser Tab
+-->
 <groupdef id="centro.browser" name="Browser">
 	<rect color="wasabi.window.background" filled="1" x="1" y="1" w="-2" relatw="1" h="-4" relath="1"/>
 	<Winamp:Browser id="cpro.browser" x="0" y="1" w="0" relatw="1" h="-4" relath="1" home="http://cpro.skinconsortium.com/browser.php" visible="1"/>
-
 </groupdef>
 
-
-
-
+<!--
+::One - Playlist Tab
+-->
 <groupdef id="centro.playlist2.buttons">
-	<Button action="PE_Add"
-		x="4" y="1" rectrgn="1"
-		image="pl2.add.1"
-		hoverImage="pl2.add.2"
-		downImage="pl2.add.3"
-		tooltip="Add Files to Playlist"
-	/>
-
-	<Button action="PE_Rem"
-		x="29" y="1" rectrgn="1"
-		image="pl2.rem.1"
-		hoverImage="pl2.rem.2"
-		downImage="pl2.rem.3"
-		tooltip="Remove Files from Playlist"
-	/>
-
-	<Button action="PE_Sel"
-		x="54" y="1" rectrgn="1"
-		image="pl2.sel.1"
-		hoverImage="pl2.sel.2"
-		downImage="pl2.sel.3"
-		tooltip="Select Files from Playlist"
-	/>
-
-	<Button action="PE_Misc"
-		x="80" y="1" rectrgn="1"
-		image="pl2.misc.1"
-		hoverImage="pl2.misc.2"
-		downImage="pl2.misc.3"
-		tooltip="Misc Actions"
-	/>
-
-	<Button action="PE_List"
-		x="-27" y="1" relatx="1" rectrgn="1"
-		image="pl2.man.1"
-		hoverImage="pl2.man.2"
-		downImage="pl2.man.3"
-		tooltip="Manage Playlist"
-	/>
-
-	<text id="centro.playlist.pltext1" display="PE_Info" ticker="1"
-		x="105" y="4" h="13" w="-135" relatw="1"
-		align="center" color="ComponentTab.Status.Text" font="cpro.status.font" move="1"
-	/>
+	<button action="PE_Add"	x="4" y="1" rectrgn="1" image="pl2.add.1" hoverImage="pl2.add.2" downImage="pl2.add.3" tooltip="Add Files to Playlist"/>
+	<button action="PE_Rem" x="29" y="1" rectrgn="1" image="pl2.rem.1" hoverImage="pl2.rem.2" downImage="pl2.rem.3" tooltip="Remove Files from Playlist"/>
+	<button action="PE_Sel" x="54" y="1" rectrgn="1" image="pl2.sel.1" hoverImage="pl2.sel.2" downImage="pl2.sel.3" tooltip="Select Files from Playlist"/>
+	<button action="PE_Misc" x="80" y="1" rectrgn="1" image="pl2.misc.1" hoverImage="pl2.misc.2" downImage="pl2.misc.3" tooltip="Misc Actions"/>
+	<button action="PE_List" x="-27" y="1" relatx="1" rectrgn="1" image="pl2.man.1" hoverImage="pl2.man.2" downImage="pl2.man.3" tooltip="Manage Playlist"/>
+	<text id="centro.playlist.pltext1" display="PE_Info" ticker="1" x="105" y="4" h="13" w="-135" relatw="1" align="center" color="ComponentTab.Status.Text" font="cpro.status.font" move="1"/>
 </groupdef>
 <groupdef id="centro.playlist2" name="Playlist">
 	<PlaylistPro id="centro.windowholder.playlist2" x="1" y="1" w="-2" relatw="1" h="-4" relath="1"/>
-	<!--<windowholder id="centro.windowholder.playlist2" x="1" y="1" w="-2" relatw="1" h="-4" relath="1" autofocus="0" wantfocus="0" autoclose="1" autoopen="1" autoavailable="1" visible="1" hold="guid:{45f3f7c1-a6f3-4ee6-a15e-125e92fc3f8d}"/>-->
 	<group id="centro.playlist2.buttons" x="1" y="-24" w="-2" relatw="1" h="22" relaty="1" visible="0"/>
 </groupdef>
+
+<!--
+::One - Plugins Tab
+-->
 <groupdef id="centro.other" name="Plugins">
 	<windowholder id="centro.windowholder.other" x="1" y="1" w="-2" relatw="1" h="-2" relath="1"  autofocus="0" wantfocus="0" autoclose="1" autoopen="1" autoavailable="0" visible="1" hold="@all@"/>
 </groupdef>
+
+<!--
+::One - Widgets Tab
+-->
 <groupdef id="centro.widget" name="Widget">
 	<CustomObject id="widget.holder" fitparent="1" />
 </groupdef>
 
-<groupdef id="centro.tabdivider">
-	<!-- Here is the tab divider when moved -->
-	<rect x="0" y="0" w="5" h="27" filled="1" color="Tab.Text.off" alpha="100" ghost="1"/>
-	<rect x="1" y="1" w="3" h="25" filled="1" color="Tab.Text.On" alpha="100" ghost="1"/>
-	<rect x="2" y="2" w="1" h="23" filled="1" color="Tab.Text.hover" alpha="100" ghost="1"/>
-</groupdef>
 
-<groupdef id="centro.componentsheet.tabs">
-	<Layer fitparent="1" move="1" wantfocus="1"/>
-	<Centro:Tab id="centro.tabtog.0" x="2" y="0" tabtext="Media Library" visible="0"/>
-	<Centro:Tab id="centro.tabtog.1" x="2" y="0" tabtext="Video" visible="0"/>
-	<Centro:Tab id="centro.tabtog.2" x="2" y="0" tabtext="Visualization" visible="0"/>
-	<Centro:Tab id="centro.tabtog.3" x="2" y="0" tabtext="Browser" visible="0"/>
-	<Centro:Tab id="centro.tabtog.4" x="2" y="0" tabtext="Playlist" visible="0"/>
-	<Centro:Tab id="centro.tabtog.5" x="2" y="0" tabtext="Plugins" visible="0"/>
-	<Centro:Tab id="centro.tabtog.6" x="2" y="0" tabtext="Widget" visible="0"/>
 
-	<group id="centro.tabdivider" x="0" y="1" w="5" h="27" visible="0" ghost="1"/>
-</groupdef>
-
+<!--
+::One - Main Area (Groups + Buttons)
+-->
 <groupdef id="centro.componentsheet.content">
 	<group id="centro.library" x="0" y="0" w="0" h="0" relatw="1" relath="1" visible="0" wantfocus="1"/>
 	<group id="centro.video" x="0" y="0" w="0" h="0" relatw="1" relath="1" visible="0" wantfocus="1"/>
@@ -241,7 +91,6 @@
 	<group id="centro.other" x="0" y="0" w="0" h="0" relatw="1" relath="1" visible="0" wantfocus="1"/>
 	<group id="centro.widget" x="0" y="0" w="0" h="0" relatw="1" relath="1" visible="0" wantfocus="1"/>
 </groupdef>
-
 <groupdef id="centro.componentsheet.opencloseframe">
 	<button id="open.rightframe" x="0" y="0" image="open.right.1" hoverimage="open.right.2" downimage="open.right.3" rectrgn="1" tooltip="Open Side" visible="0"/>
 	<button id="close.rightframe" x="0" y="0" image="close.right.1" hoverimage="close.right.2" downimage="close.right.3" rectrgn="1" tooltip="Close Side"/>
@@ -253,23 +102,20 @@
 		bottomleft="player.suiframe.7" bottom="player.suiframe.8" bottomright="player.suiframe.9"
 		regionop="1" move="1"
 	/>
-	<!--<group id="centro.componentsheet.tabs" x="1" y="4" w="-51" h="29" relatw="1" wantfocus="1"/>-->
-	<Cpro:Tabs id="Cpro.tabs" x="0" y="0" h="29" w="-50" relatw="1"/>
-
+	<Cpro:Tabs id="Cpro.tabs" x="0" y="0" h="33" w="-50" relatw="1"/>
 	<NStatesButton id="tog.drawer" x="-48" y="5" relatx="1" image="drawer.1." hoverimage="drawer.2." downimage="drawer.3." rectrgn="1" nstates="2" cfgvals="0;1"/>
 	<group id="centro.componentsheet.opencloseframe" x="-24" y="5" w="20" h="20" relatx="1"/>
-<!--
-	<button id="open.rightframe" x="-24" y="5" relatx="1" image="open.right.1" hoverimage="open.right.2" downimage="open.right.3" rectrgn="1" tooltip="Open Side" visible="0"/>
-	<button id="close.rightframe" x="-24" y="5" relatx="1" image="close.right.1" hoverimage="close.right.2" downimage="close.right.3" rectrgn="1" tooltip="Close Side"/>
--->
 	<group id="centro.componentsheet.content" x="2" y="32" w="-4" h="-33" relatw="1" relath="1" visible="1" wantfocus="1"/>
 </groupdef>
-
 <groupdef id="centro.components">
 	<group id="centro.componentsheet" x="0" y="0" w="0" h="0" relatw="1" relath="1"/>
 	<group id="centro.multidrawer" x="0" y="-120" w="0" h="119" relaty="1" relatw="1" wantfocus="1" visible="0"/>
 </groupdef>
 
+
+<!--
+::One - Right Area
+-->
 <groupdef id="centro.playlist.bottombuttons">
 	<button x="0" y="0" image="component.pl.add.1" hoverImage="component.pl.add.2" downImage="component.pl.add.3" action="PE_Add" tooltip="Add Files to Playlist"/>
 	<button x="32" y="0" image="component.pl.rem.1" hoverImage="component.pl.rem.2" downImage="component.pl.rem.3" action="PE_Rem" tooltip="Remove Files from Playlist"/>
@@ -284,7 +130,6 @@
 		regionop="1" move="1"
 	/>
 	<PlaylistPro id="centro.windowholder.playlist1" x="1" y="3" h="-21" w="-2" relath="1" relatw="1"/>
-	<!--<windowholder id="wdh.playlist1" x="1" y="3" h="-21" w="-2" relath="1" relatw="1" autofocus="0" wantfocus="0" autoclose="1" autoopen="1" autoavailable="1" visible="1" hold="guid:{45f3f7c1-a6f3-4ee6-a15e-125e92fc3f8d}"/>-->
 
 	<group id="centro.playlist.bottombuttons" x="1" y="-18" w="-1" relaty="1" relatw="1"/>
 	<text id="centro.playlist.pltext2" ticker="1" display="PE_Info" x="126" y="-16" h="13" w="-159" relaty="1" relatw="1" align="center" fontsize="13" antialias="1" color="Playlist.Status.Text" font="cpro.status.font" move="1"/>
@@ -293,7 +138,7 @@
 
 
 <!-- 
-:::::::::::: Mini Area
+::One -  Mini Area
 -->
 <groupdef id="centro.playlist.directory.cov">
 	<Wasabi:AlbumArt x="2" y="2" w="-4" h="-21" relatw="1" relath="1" move="1"/>
@@ -315,8 +160,6 @@
 </groupdef>
 <groupdef id="centro.playlist.directory.tag" inherit_group="drawer.tagviewer">
 </groupdef>
-
-<!--include file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\widgets\widgets.xml"/--> <!-- WIDGETS -->
 <groupdef id="centro.playlist.directory">
 	<grid id="centro.gadget.grid" fitparent="1" move="1"
 		topleft="player.gframe.1" top="player.gframe.2" topright="player.gframe.3"
@@ -329,21 +172,19 @@
 	<group id="centro.playlist.directory.spl" fitparent="1" visible="0"/>
 	<group id="centro.playlist.directory.tag" fitparent="1" visible="0"/>
     
-	<!-- This one is the dummyloader -->
-	<componentbucket id="widget.loader.mini" x="0" y="0" h="20" w="20" wndtype="centro.widgets.mini" visible="0" />
+	<componentbucket id="widget.loader.mini" x="0" y="0" h="20" w="20" wndtype="centro.widgets.mini" visible="0"/>
 	<customobject id="widget.holder.mini" fitparent="1" visible="0" /> <!-- this one holds our widgets -->
-	<!--include file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\widgets\widgets-groups.xml"/--> <!-- WIDGETS GROUPS -->
 
 	<button id="comp.goto" x="-33" y="-18" relatx="1" relaty="1" image="component.goto.1" hoverimage="component.goto.2" downimage="component.goto.3" tooltip="Select Mini view"/>
 </groupdef>
-<!-- END -->
 
 
+<!-- 
+::One -  Implement Objects
+-->
 <groupdef id="centro.playlist1" name="Playlist">
 	<Wasabi:Frame id="centro.plframe" fitparent="1" from="top" orientation="h" top="centro.playlist.directory" bottom="centro.playlist.component" minwidth="1" maxwidth="-50" height="10" jump="0"/>
 </groupdef>
-
-
 <groupdef id="centro.main" xuitag="Centro:SUI" h="100">
 	<Wasabi:Frame id="centro.mainframe" x="0" y="0" w="0" h="0" relatw="1" relath="1" left="centro.components" right="centro.playlist1" orientation="vertical" from="right" minwidth="158" width="200" jump="none" maxwidth="-255"/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\xui\CentroSUI\scripts\CentroSUI.maki" param="@HAVE_LIBRARY@"/>
