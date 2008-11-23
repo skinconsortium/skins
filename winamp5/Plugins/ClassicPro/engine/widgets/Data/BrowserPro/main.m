@@ -32,6 +32,7 @@ Global PopUpMenu popMenu;
 Global GuiObject browserXUI, fakeSB;
 Global Browser myBrowser;
 Global Layer ddlMouseT, ddlIcon;
+Global Button bback, bffwd, brefresh, bstop;
 
 Global Timer focus_callback;
 
@@ -51,6 +52,10 @@ System.onScriptLoaded(){
 	myBrowser = myGroup.findObject("browserpro.browser");
 	ddlMouseT = myGroup.findObject("browserpro.ddl.mousetrap");
 	ddlIcon = myGroup.findObject("browserpro.ddl.icon");
+	bback = myGroup.findObject("browser.back");
+	bffwd = myGroup.findObject("browser.fwd");
+	brefresh = myGroup.findObject("browser.refresh");
+	bstop = myGroup.findObject("browser.stop");
 
 	focus_callback = new Timer;
 	focus_callback.setDelay(100);
@@ -200,4 +205,22 @@ updateDDList(){
 	ddBoxText.setText(getPublicString("ClassicPro.BrowserPro", "0"));
 	String iconsID = loaded_P_Icons.enumItem(loaded_P_Names.findItem(getPublicString("ClassicPro.BrowserPro", "0")));
 	ddlIcon.setXmlParam("image", iconsID);
+}
+
+
+//----------------------------------------------------------------------------------------------------------------
+// Browser main controls.
+//----------------------------------------------------------------------------------------------------------------
+
+bback.onLeftClick(){
+	myBrowser.back();
+}
+bffwd.onLeftClick(){
+	myBrowser.forward();
+}
+brefresh.onLeftClick(){
+	surfSelected();
+}
+bstop.onLeftClick(){
+	myBrowser.stop();
 }
