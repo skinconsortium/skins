@@ -30,7 +30,6 @@
 <groupdef id="browserpro.ddlist">
 	<rect x="19" y="1" w="-39" h="-2" relatw="1" relath="1" filled="1" color="wasabi.list.background"/>
 	<layer id="browserpro.ddl.icon" x="0" y="1" w="16" h="16"/>
-
 	<text 
 		id="browserpro.ddl.text"
 		x="22" y="1"
@@ -49,60 +48,50 @@
 </groupdef>
 
 <groupdef id="browserpro.ddlist.group">
-
 	<grid x="0" y="0" h="22" w="0" relatw="1"
 		left="browser.editframe.left"
 		middle="browser.editframe.center"
 		right="browser.editframe.right"
 	/>
-
 	<group id="browserpro.ddlist" x="4" h="18" w="-7" relatw="1" y="2" navbuttons="0" wantfocus="0" antialias="0" maxitems="10"/>
-
 </groupdef>
 
 
 
 <groupdef id="centro.widgets.browserpro">
+	<rect color="wasabi.window.background" filled="1" x="1" y="1" w="-2" h="-2" relath="1" relatw="1"/>
 
 	<Button id="browser.back"
-		x="4" h="26" w="21" y="2" rectrgn="1"
+		x="4" h="27" w="21" y="2" rectrgn="1"
 		image="browser.button.back.normal"
 		hoverImage="browser.button.back.hover"
 		downImage="browser.button.back.down"
 		tooltip="Go Back"
 	/>
 	<Button id="browser.fwd"
-		x="25" h="26" w="21" y="2" rectrgn="1"
+		x="25" h="27" w="21" y="2" rectrgn="1"
 		image="browser.button.forth.normal"
 		hoverImage="browser.button.forth.hover"
 		downImage="browser.button.forth.down"
 		tooltip="Go Forward"
 	/>
 	<Button id="browser.refresh"
-		x="46" h="26" w="21" y="2" rectrgn="1"
+		x="46" h="27" w="21" y="2" rectrgn="1"
 		image="browser.button.reload.normal"
 		hoverImage="browser.button.reload.hover"
 		downImage="browser.button.reload.down"
 		tooltip="Reload Page"
 	/>
 	<Button id="browser.stop"
-		x="69" h="26" w="21" y="2" rectrgn="1"
+		x="67" h="27" w="21" y="2" rectrgn="1"
 		image="browser.button.stop.normal"
 		hoverImage="browser.button.stop.hover"
 		downImage="browser.button.stop.down"
 		tooltip="Cancel Loading"
 	/>
 
-	<rect color="0,0,255" filled="1" x="1" y="29" w="-2" h="-31" relath="1" relatw="1"/>
-	<Browser id="browserpro.browser" x="1" y="29" w="-2" h="-31" relath="1" relatw="1" url="C:/"/>
-	<group id="browserpro.ddlist.group" x="95" y="3" h="22" w="-125" relatw="1" />
+	<Browser id="browserpro.browser" x="1" y="30" w="-2" h="-33" relath="1" relatw="1" url="C:/"/>
+	<group id="browserpro.ddlist.group" x="95" y="4" h="22" w="-99" relatw="1" />
 
-	<Button id="cpro.widget.browserpro.options"
-		x="-25" h="26" w="21" y="2" rectrgn="1" relatx="1"
-		image="browser.button.links.normal"
-		hoverImage="browser.button.links.hover"
-		downImage="browser.button.links.down"
-		tooltip="Quick Links"
-	/>
-	<script file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\widgets\Data\BrowserPro\main.maki"/>
+	<script file="@WINAMPPATH@\Plugins\ClassicPro\engine\widgets\Data\BrowserPro\main.maki"/>
 </groupdef>
