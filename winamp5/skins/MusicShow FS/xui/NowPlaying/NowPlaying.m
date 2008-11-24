@@ -14,8 +14,8 @@ Function setAllTags();
 Function resizeToThis(int x, int y, int w, int h);
 Function FadeGroup(Group FadeGrp, Int AlphaValue);
 
-Global Group XUIGroup, cdbox, cdboxref, cdboxHolder, cdboxrefmask, ratings;
-Global GuiObject line1, line2, line3, BGCol, CDBoxFade;
+Global Group XUIGroup, cdbox, cdboxref, cdboxHolder, ratings, BGCol;
+Global GuiObject line1, line2, line3, BFColRect;
 Global int xs, ys, ws, hs;
 Global int xc, yc, wc, hc;
 Global layer lyrFx, lyrFxFG;
@@ -28,7 +28,7 @@ System.onScriptLoaded(){
 	ratings = XUIGroup.findObject("sc.nowplaying.ratings");
 	cdbox = XUIGroup.findObject("sc.nowplaying.cdbox");
 	cdboxref = XUIGroup.findObject("sc.nowplaying.cdbox.reflection"); 
-	cdboxrefmask = XUIGroup.findObject("sc.nowplaying.cdbox.reflection.mask");
+	cdboxref.hide();
 	
 	cdboxHolder = XUIGroup.findObject("sc.nowplaying.cdbox.holder");
 	lyrFx = XUIGroup.findObject("main.albumart.reflection");
@@ -37,15 +37,15 @@ System.onScriptLoaded(){
 	line2 = XUIGroup.findObject("sc.nowplaying.line2");
 	line3 = XUIGroup.findObject("sc.nowplaying.line3");
 	
-	BGCol = XUIGroup.findObject("sc.nowplaying.bg");
-	CDBoxFade = XUIGroup.findObject("cdbox.fg.fademask");
+	BGCol = XUIGroup.findObject("sc.nowplaying.bg.ref");
+	BFColRect = BGCol.getObject("sc.nowplaying.bg.ref.base");
+	//CDBoxFade = XUIGroup.findObject("cdbox.fg.fademask");
 	
-
 	lyrFx.fx_setBgFx(0);
   	lyrFx.fx_setWrap(0);
   	lyrFx.fx_setBilinear(1);
-	lyrFx.fx_setAlphaMode(0);
-  	lyrFx.fx_setGridSize(1,1);
+	lyrFx.fx_setAlphaMode(1);
+  	lyrFx.fx_setGridSize(8,8);
   	lyrFx.fx_setRect(1);
 	lyrFx.fx_setClear(0); //left as zero as cover is a static image and we dont need to redraw
   	lyrFx.fx_setLocalized(1);
@@ -54,19 +54,16 @@ System.onScriptLoaded(){
 	lyrFxFG.fx_setBgFx(0);
   	lyrFxFG.fx_setWrap(0);
   	lyrFxFG.fx_setBilinear(1);
-	lyrFxFG.fx_setAlphaMode(0);
-  	lyrFxFG.fx_setGridSize(1,1);
+	lyrFxFG.fx_setAlphaMode(1);
+  	lyrFxFG.fx_setGridSize(8,8);
   	lyrFxFG.fx_setRect(1);
 	lyrFxFG.fx_setClear(0); //left as zero as cover sheen is a static image and we dont need to redraw
   	lyrFxFG.fx_setLocalized(1);
   	lyrFxFG.fx_setRealtime(0);
 	
   	dblSmidge = 0;
-	//default half height - remove ability to resize for the now
-	reflectionheight=50;
-	//cdboxHolder.Resize(0, 0, 190, 190);
 	
-		
+	reflectionheight=50;
 }
 
 system.onScriptUnloading()
@@ -80,22 +77,12 @@ System.onSetXuiParam(String param, String value)
 	if(strlower(param) == "bgcolor")
 	{
 		string sbgcol = strlower(value);
-		BGCol.setXMLParam("color", sbgcol);
-		//CDBoxFade.setXMLParam("points", "0.0=" + sbgcol + ",0;1.0=" + sbgcol + ",255");
-		//gradient fade to mask the reflection from image to background ie fade it to nothing
-		
-		//this looks good on both dark and light backgrounds
-		CDBoxFade.setXMLParam("points", "0.0=" + sbgcol + ",0;1.0=" + sbgcol + ",255"); //slob org
-		
-		//hmm pieters extra points looks ok on light bgs but not dark ones
-		//CDBoxFade.setXMLParam("points", "0.0=" + sbgcol + ",0;0.3=" + sbgcol + ",128;0.9=" + sbgcol + ",250;1.0=" + sbgcol + ",255"); //add pieters extra points
-		
-		
+		BFColRect.setXMLParam("color", sbgcol);
 	}
 	else if(strlower(param) == "reflectiontransparency")
 	{
 		string sreftrans = strlower(value);
-		cdboxref.setXMLParam("alpha", sreftrans);		
+		cdboxref.setXMLParam("alpha", sreftrans);
 	}
 	//just default for the now is needed
 	else if(strlower(param) == "reflectionheightpercentage")
@@ -145,6 +132,20 @@ lyrFxFG.fx_onGetPixelY(double r, double d, double x, double y)
 	return -y-dblSmidge;
 }
 
+lyrFx.fx_onGetPixelA(double r, double d, double x, double y)
+{
+	double ret = 1-(y+1)*0.67;
+	if (ret < 0) ret = 0;
+	return ret;
+}
+
+lyrFxFG.fx_onGetPixelA(double r, double d, double x, double y)
+{
+	double ret = 1-(y+1)*0.67;
+	if (ret < 0) ret = 0;
+	return ret;
+}
+
 XUIGroup.onSetVisible(boolean onOff)
 {
 	if(onOff) 
@@ -182,14 +183,14 @@ resizeToThis(int x, int y, int w, int h)
 	if(w<h*529/488){
 		w1 = w;
 		h1 = w1*488/529;
-		x1 = w/2 - w1/2;		
-		y1 = h/2 - h1/2;
+		x1 = (w-w1)/2;
+		y1 = (h-h1)/2;
 	}
 	else{
 		h1 = h;
-		y1 = h/2 - h1/2;
+		y1 = (h-h1)/2;
 		w1 = h1*529/488;
-		x1 = w/2 - w1/2;
+		x1 = (w-w1)/2;
 	}
 
 	cdbox.setXmlParam("x", integerToString(x1));
@@ -202,28 +203,21 @@ resizeToThis(int x, int y, int w, int h)
 	cdboxref.setXmlParam("w", integerToString(w1));
 	//dont want to resize the reflection, just the mask, otherwise album art resizes width due to no stretch param till 5.54
 	cdboxref.setXmlParam("h", integerToString(h1*(reflectionheight/100)));
+	
+	BGCol.setXmlParam("x", integerToString(x1));
+	BGCol.setXmlParam("y", integerToString(y1+h1));
+	BGCol.setXmlParam("w", integerToString(w1));
+	BGCol.setXmlParam("h", integerToString(h1*(reflectionheight/100)));
 
-	cdboxrefmask.setXmlParam("x", integerToString(x1));
+	/*cdboxrefmask.setXmlParam("x", integerToString(x1));
 	cdboxrefmask.setXmlParam("y", integerToString(y1+h1));
 	cdboxrefmask.setXmlParam("w", integerToString(w1));
-	cdboxrefmask.setXmlParam("h", integerToString(h1*(reflectionheight/100)));
-	
-	//see if the album art reflection will play ball and resize properly even if no proper support till 5.54
-			
-	//lyrFx.setXmlParam("w", integerToString(w1)); //seems to screw it all up, do not set the width, album art completely borks all coords
-	/*lyrFx.setXmlParam("h", integerToString(h1)); //can only set the height - we need it to still be full height so the reflection looks correct
-	lyrFx.setXmlParam("x", "12"); //seems static as per org setting
-	
-	//replace y coord, this is pretty much there, some album art covers are few pixels different, this seems to be pretty much there with most
-	lyrFx.setXmlParam("y", integertostring(((290-h1)/2)-49)); //290 is the offset for cd to reflection
-	//we can add back in custom reflection height at some point, just wanted to get this working really
-	*/
+	cdboxrefmask.setXmlParam("h", integerToString(h1*(reflectionheight/100)));*/
+
 				
 	lyrFx.fx_update();
 	lyrFxFG.fx_update();
-	//debug
-	//line2.setXmlParam("text", "  cdrefy=" + integertostring(cdrefy) + "newy=" + integertostring(((290-cdrefy)/2)-49) );
-	
+
 }
 
 System.onTitleChange(String newTitle)
@@ -273,6 +267,8 @@ setAllTags(){
 	lyrFxFG.fx_setEnabled(1);
 	lyrFx.fx_restart();
 	lyrFxFG.fx_restart();
+	
+	if (!cdboxref.isVisible()) cdboxref.show();
 	
 	//for fading the album in
 	//FadeGroup(cdboxHolder, 255);

@@ -37,7 +37,7 @@ System.onScriptLoaded() {
 	//focusbg.hide();
 	//focus.resize(0,0, getMonitorWidth(), getMonitorHeight());
 	
-	//main.resize(0,0, getMonitorWidth(), getMonitorHeight());
+	main.resize(0,0, getMonitorWidth(), getMonitorHeight());
 	
 	//delayfocus = new timer;
 	//delayfocus.setDelay(50);

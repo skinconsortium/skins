@@ -63,10 +63,10 @@
 	<script id="VolumeScr" file="scripts/volumebyregion.maki"/>
 </groupdef>
 
-<groupdef id="player.main.vis" w="118" h="80">
+<groupdef id="player.main.vis">
 
-	<vis id="main.vis" x="0" y="0"
-		w="126" h="25" colorbandpeak="162,193,204"
+	<vis id="main.vis"  x="0" y="0"
+		w="0" h="50" relatw="1" relath="2" colorbandpeak="162,193,204"
 		colorband1="182,197,202"
 		colorband2="174,188,193"
 		colorband3="178,192,197"
@@ -93,8 +93,8 @@
 		gammagroup="glass" 
            />
 		
-	<vis id="main.vis.refl" x="0" y="25"
-		w="126" h="25" colorbandpeak="162,193,204"
+	<vis id="main.vis.refl" x="0" y="50" relaty="2"
+		w="0" h="50" relatw="1" relath="2" colorbandpeak="162,193,204"
 		colorband1="182,197,202"
 		colorband2="174,188,193"
 		colorband3="178,192,197"
@@ -120,7 +120,7 @@
 		 alpha="35"
 		gammagroup="glass" />
 		
-	<layer id="main.vis.mousetrap"	x="0" y="0" w="118" h="80" rectrgn="1" ghost="0"/>
+	<layer id="main.vis.mousetrap" fitparent="1" rectrgn="1" ghost="0"/>
 		
 	<script file="scripts/visualizer.maki" />
 </groupdef>
@@ -163,18 +163,15 @@
 		
 	<SC:NowPlaying 
 		x="20" y="10" relatx="2" relaty="2"
-		w="60" h="90" relatw="2" relath="2"
-		bgcolor="100,178,120"	
-		reflectiontransparency="55"
-		reflectionheightpercentage="100"
+		w="60" h="85" relatw="2" relath="2"
+		bgcolor="128,128,128"	
+		reflectiontransparency="128"
+		reflectionheightpercentage="70"
 		dropshadowcdcase="1" alpha="255"
 		showsongrating="1"
 		/>
-		
-	
-	 
-	
-	<group id="player.main.vis" x="10" y="60" w="118" h="80" relatx="2" relaty="2"/>
+
+	<group id="player.main.vis" x="10" y="60" w="15" h="15" relatx="2" relaty="2" relatw="2" relath="2"/>
 
 	<group id="player.main.seeker" x="75" y="60" w="20" h="29" relatx="2" relaty="2" relatw="2"/>
 	
@@ -208,7 +205,7 @@
 </groupdef>
 
 <layout id="normal" background="player.main.background.blank" alphabackground="player.main.background.blank"
-	minimum_h="400" minimum_w="600" maximum_h="3864" maximum_w="3152" move="1" >
+	minimum_h="480" minimum_w="640" maximum_h="3864" maximum_w="3152" move="1" >
 
 	<layer id="bg.base" x="0" y="0" w="0" h="0" relatw="1" relath="1" image="player.main.background.blank" move="1"/>
 	
