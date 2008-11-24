@@ -1,4 +1,4 @@
-<groupdef id="player.cbuttons" w="160" h="65">
+<groupdef id="player.cbuttons" w="260" h="95">
 
 	<button 
 		id="Rev"
@@ -15,7 +15,7 @@
 	
 	<button 
 		id="Eject"
-		x="32" y="0"
+		x="42" y="0"
 		action="EJECT"  alpha="200"
 		image="player.main.eject"
 		downimage="player.main.ejectd"
@@ -23,18 +23,18 @@
 		activeImage="player.main.ejectd"
 		hoverImage="player.main.ejectd"
 		tooltip="Get Song"/>
-	<layer id="player.main.ejectd" image="player.main.ejectd" x="32" y="0" ghost="1"/>
+	<layer id="player.main.ejectd" image="player.main.ejectd" x="42" y="0" ghost="1"/>
 	<script file="scripts/hoverglow.maki" param="Eject,player.main.ejectd"/>
 
-	<button id="play.button" x="64" y="0"  action="PLAY" image="player.main.playd" hoverImage="player.main.playd" downImage="player.main.playd" tooltip="Play"/>
-	<button id="pause.button" x="64" y="0"  action="PAUSE" image="player.main.Pause" hoverImage="player.main.Paused" downImage="player.main.play" tooltip="Pause"/>
+	<button id="play.button" x="82" y="0"  action="PLAY" image="player.main.playd" hoverImage="player.main.playd" downImage="player.main.playd" tooltip="Play"/>
+	<button id="pause.button" x="82" y="0"  action="PAUSE" image="player.main.Pause" hoverImage="player.main.Paused" downImage="player.main.play" tooltip="Pause"/>
 	<script file="scripts/sc_PlayPause.maki" param="play.button;pause.button"/>
-	<layer id="player.main.playd" image="player.main.playd"  x="64" y="0" ghost="1"/>
+	<layer id="player.main.playd" image="player.main.playd"  x="82" y="0" ghost="1"/>
 	<script file="scripts/hoverglow.maki" param="play.button,player.main.playd"/>
 	
 	<button 
 		id="Stop"
-		x="96" y="0"
+		x="122" y="0"
 		action="STOP"  
 		image="player.main.stop"  
 		downimage="player.main.stopd"
@@ -42,12 +42,12 @@
 		activeImage="player.main.stopd"
 		hoverImage="player.main.stopd"
 		tooltip="Stop"/>
-	<layer id="player.main.stopd" image="player.main.stopd" x="96" y="0"  ghost="1"/>
+	<layer id="player.main.stopd" image="player.main.stopd" x="122" y="0"  ghost="1"/>
 	<script file="scripts/hoverglow.maki" param="Stop,player.main.stopd"/>
 	
 	<button 
 		id="Next"
-		x="128" y="0"
+		x="162" y="0"
 		action="NEXT"  alpha="200"
 		image="player.main.forward"
 		downimage="player.main.forwardd"
@@ -55,11 +55,11 @@
 		activeImage="player.main.forwardd"
 		hoverImage="player.main.forwardd"
 		tooltip="Next Track"/>
-	<layer id="player.main.forwardd" image="player.main.forwardd" x="128" y="0"  ghost="1"/>
+	<layer id="player.main.forwardd" image="player.main.forwardd" x="162" y="0"  ghost="1"/>
 	<script file="scripts/hoverglow.maki" param="Next,player.main.forwardd"/>
 
-	<layer id="volback" image="volback" x="20" y="50" ghost="1"/>
-	<layer id="VolumeAnim" image="dominator.normal.Volume"  alpha="120" x="20" y="50" move="0" rectrgn="0" tooltip="Volume"/>
+	<layer id="volback" image="volback" x="20" y="70" ghost="1"/>
+	<layer id="VolumeAnim" image="dominator.normal.Volume"  alpha="120" x="20" y="70" move="0" rectrgn="0" tooltip="Volume"/>
 	<script id="VolumeScr" file="scripts/volumebyregion.maki"/>
 </groupdef>
 
@@ -125,13 +125,13 @@
 	<script file="scripts/visualizer.maki" />
 </groupdef>
 
-<groupdef id="player.main.seeker" w="20" h="29" relatw="2">
+<groupdef id="player.main.seeker" w="200" h="49" relatw="2">
 	<layer id="SeekAnim" image="player.seekbk"  x="6" y="0" move="0" rectrgn="0" tooltip="Seek"/>
 	<script id="seek" file="scripts/seekbyregion.maki"/>
 	
 	<slider id="seek2"
 			action="SEEK"
-			x="0" y="0" w="134" h="29"
+			x="0" y="9" w="200" h="29"
 			thumb="player.main.songpos" 
 			downThumb="player.main.songpos" 
 		/>
@@ -175,7 +175,7 @@
 
 	<group id="player.main.seeker" x="75" y="60" w="20" h="29" relatx="2" relaty="2" relatw="2"/>
 	
-	<group id="player.cbuttons" x="0" y="-80" relaty="1" w="160" h="165"/>
+	<group id="player.cbuttons" x="0" y="-100" relaty="1" w="230" h="165"/>
 	<script file="scripts/centerobject.maki" param="player.cbuttons,1,0"/>
 		
 	<script file="scripts/DTACheck.maki"/>
