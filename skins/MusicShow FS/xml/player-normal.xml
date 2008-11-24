@@ -173,7 +173,7 @@
 
 	<group id="player.main.vis" x="10" y="60" w="15" h="15" relatx="2" relaty="2" relatw="2" relath="2"/>
 
-	<group id="player.main.seeker" x="75" y="60" w="20" h="29" relatx="2" relaty="2" relatw="2"/>
+	<group id="player.main.seeker" x="75" y="64" w="20" h="29" relatx="2" relaty="2" relatw="2"/>
 	
 	<group id="player.cbuttons" x="0" y="-100" relaty="1" w="230" h="165"/>
 	<script file="scripts/centerobject.maki" param="player.cbuttons,1,0"/>
