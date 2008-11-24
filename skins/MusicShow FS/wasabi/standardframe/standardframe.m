@@ -38,7 +38,7 @@ Global String x, y, w, h, rx, ry, rw, rh;
 Global Button Sysmenu, Close;
 Global GuiObject mousetrap;
 Global Boolean bypass, r_bypass;
-Global timer sync, delay, delayclose, delayfocus;
+Global timer sync, delay, delayclose;
 Global Resizer left, right, bottomright, bottom, bottomleft;
 Global Layer top, topleft, topright;
 Global Text comptitle, comptitle_na, comptitle_dummy;
@@ -109,32 +109,13 @@ System.onScriptLoaded()
 		delayclose.setDelay(1);
 	}
 	
-	if (!delayfocus) {
-		delayfocus = new Timer;
-		delayfocus.setDelay(100);
-	}
-	
 	layout mainlay = getContainer("main").getLayout("normal");
-	buttonFocus = mainlay.findObject("main.button.focus");
+	//buttonFocus = mainlay.findObject("main.button.focus");
 	
-	if (comp_layout.isVisible()) buttonFocus.onActivate(buttonFocus.getActivated());
+	//if (comp_layout.isVisible()) buttonFocus.onActivate(buttonFocus.getActivated());
 		
 
 
-}
-
-buttonFocus.onActivate(int on) {
-	if (on) {
-		delayfocus.start();
-	}
-
-}
-
-delayfocus.onTimer() {
-	stop();
-	
-	if (frame_layout) frame_layout.setFocus();
-	if (comp_layout) comp_layout.setFocus();
 }
 
 System.onScriptUnloading ()
@@ -148,7 +129,6 @@ System.onScriptUnloading ()
 	delete delay;
 	
 	delete delayclose;
-	delete delayfocus;
 }
 
 
