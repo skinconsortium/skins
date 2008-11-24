@@ -14,7 +14,7 @@
 #define CUSTOM_PAGE_NONEXPOSED "{E9C2D926-53CA-400f-9A4D-85E31755A4CF}"
 
 Global group scriptGroup;
-Global layer bgImage;
+Global layer bgImage, bgImageRef;
 Global guiObject bgColor, bgGroup;
 
 Global configAttribute bkground_image_attrib;
@@ -29,13 +29,19 @@ System.onScriptLoaded() {
   bgImage = scriptGroup.getObject("bgImage");
   bgColor = scriptGroup.getObject("bgColor");
   bgGroup = scriptGroup.getObject("bgGroup");
-
-  /*bgColor.setXMLParam("color", getPrivateString(getSkinName(),"Config slider.red","0")+","+
-  		getPrivateString(getSkinName(),"Config slider.green","0")+","+
-  		getPrivateString(getSkinName(),"Config slider.blue","0"));*/
+  bgImageRef = scriptGroup.getObject("bgimage.ref");
   
+	bgImageRef.fx_setBgFx(0);
+	bgImageRef.fx_setWrap(0);
+	bgImageRef.fx_setBilinear(1);
+	bgImageRef.fx_setAlphaMode(0);
+	bgImageRef.fx_setGridSize(1,1);
+	bgImageRef.fx_setRect(1);
+	bgImageRef.fx_setClear(0); //left as zero as cover is a static image and we dont need to redraw
+	bgImageRef.fx_setLocalized(1);
+	bgImageRef.fx_setRealtime(0);
+ 
   bkground_image_attrib.onDataChanged();
-  //bkground_image_attrib.setData("GROUP:bkground.group.redflame");
 }
 
 System.onScriptUnloading() {
@@ -52,20 +58,37 @@ bkground_image_attrib.onDataChanged() {
   if (strtemp!="") bkDataEntry2 = strright(strtemp, strlen(strtemp)-strsearch(strtemp, ":")-1);
 
   if (strLeft(bkData,5)=="IMAGE") {
+	bgImageRef.fx_setEnabled(0);
+	  
     bgColor.hide();
     bgGroup.hide();    bgGroup.setXMLParam("groupid", "");
     bgImage.show();    bgImage.setXMLParam("image", bkDataEntry1);
+    bgImageRef.show();    bgImageRef.setXMLParam("image", bkDataEntry1);
     if (bkDataEntry2=="") bkDataEntry2="0";
+    bkDataEntry2 = "0";
     bgImage.setXMLParam("tile", bkDataEntry2);
+    bgImageRef.setXMLParam("tile", bkDataEntry2);
+    
+    bgImageRef.fx_setEnabled(1);
+	bgImageRef.fx_restart();
+	
   } else if (strLeft(bkData,3)=="RGB") {
     bgColor.show();
     bgGroup.hide();    bgGroup.setXMLParam("groupid", "");
     bgImage.hide();
+    bgImageRef.hide();
     bgColor.setXMLParam("color", bkDataEntry1);
   } else if (strLeft(bkData,5)=="GROUP") {
     bgColor.hide();
     bgImage.hide();
+    bgImageRef.hide();
     bgGroup.show();
     bgGroup.setXMLParam("groupid", bkDataEntry1);
   }
 }
+
+bgImageRef.fx_onGetPixelY(double r, double d, double x, double y) {
+	return -y;
+}
+
+

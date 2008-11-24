@@ -18,7 +18,18 @@
 	<rect id="bgcolor" 
 		x="0" y="0" w="0" h="0" relatw="1" relath="1" ghost="1"
 		color="0,0,0" filled="1"/>
-	<layer id="bgimage" x="0" y="0" w="0" h="0" relatw="1" relath="1" alpha="255" image="" ghost="1"/>
+	<layer id="bgimage" x="0" y="0" w="0" h="60" relatw="1" relath="2" alpha="255" image="" ghost="1"/>
+	<layer id="bgimage.ref" x="0" y="60" w="0" h="40" relaty="2" relatw="1" relath="2" alpha="255" image="" ghost="1"/>
+	
+	<gradient
+		id="bg.fademask"
+		x="0" y="60" w="0" h="45" relaty="2" relatw="1" relath="2"
+		gradient_x2="0"
+		points="0.0=0,0,0,100;0.3=0,0,0,0;1.0=128,128,128,128"
+		ghost="1"
+		alpha="255"
+	/>
+	
 	<customobject id="bgGroup" groupid="" x="0" y="0" w="0" h="0" relatw="1" relath="1" ghost="1"/>
 
 	<script id="script.xui.bkground" file="xui\CustomBG\customBG.maki"/>

@@ -188,7 +188,6 @@
 	<group id="player.cbuttons" x="0" y="-100" relaty="1" w="212" h="165"/>
 	<script file="scripts/centerobject.maki" param="player.cbuttons,1,0"/>
 		
-	<script file="scripts/DTACheck.maki"/>
 </groupdef>
 
 <groupdef id="player.main.pl" w="290" h="180">
@@ -214,7 +213,7 @@
 		
 </groupdef>
 
-<layout id="normal" background="player.main.background.blank" alphabackground="player.main.background.blank"
+<layout id="normal" background="player.main.background.blank" alphabackground="player.main.background.blank" desktopalpha="0"
 	minimum_h="480" minimum_w="640" maximum_h="3864" maximum_w="3152" move="1" >
 
 	<layer id="bg.base" x="0" y="0" w="0" h="0" relatw="1" relath="1" image="player.main.background.blank" move="1"/>
