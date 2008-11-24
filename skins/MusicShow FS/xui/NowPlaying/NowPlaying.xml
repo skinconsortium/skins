@@ -34,7 +34,7 @@
 	<text
 		id="Timer" 
 		display="time"
-		x="0" y="75" w="0" h="20" relatw="1"
+		x="0" y="76" w="0" h="20" relatw="1"
 		font="arial"
 		alpha="200"
 		fontsize="26" align="center"  
@@ -47,8 +47,10 @@
 
 <groupdef id="sc.nowplaying.cdbox.holder">
 	<group id="sc.nowplaying.cdbox" x="20" y="20" w="300" h="300"/>
-	<group id="sc.nowplaying.cdbox.reflection" x="20" y="310" w="300" h="300" alpha="255"/>
-	<group id="sc.nowplaying.cdbox.reflection.mask" x="20" y="310" w="0" h="0"/>
+	<group id="sc.nowplaying.bg.ref" x="20" y="310" w="300" h="300"/>
+	<group id="sc.nowplaying.cdbox.reflection" x="20" y="310" w="300" h="300"/>
+	
+	
 </groupdef>
 
 <groupdef id="sc.nowplaying.cdbox" background="sc.cdbox.bg" move="1">
@@ -56,19 +58,12 @@
 	<layer fitparent="1" image="sc.cdbox.fg" ghost="1" />
 </groupdef>
 
-<groupdef id="sc.nowplaying.cdbox.reflection" move="1" >
-	<layer id="bgref" image="sc.cdbox.bg.ref" fitparent="1"  y="-10"/>
-	<AlbumArt id="main.albumart.reflection" x="12" y="-3" w="85" h="98" alpha="255" relatx="2" relaty="2" relatw="2" relath="2" wantfocus="0" stretched="0"/>
-	<layer id="cdbox.fg.reflection"  fitparent="1" y="-10" image="sc.cdbox.fg" ghost="1" alpha="175"/>
+<groupdef id="sc.nowplaying.bg.ref">
+	<rect id="sc.nowplaying.bg.ref.base" x="3" y="3" w="94" h="94" relatx="2" relaty="2" relatw="2" relath="2" color="0,0,0" alpha="0" filled="1"/>
 </groupdef>
 
-<groupdef id="sc.nowplaying.cdbox.reflection.mask" move="1">
-	<gradient
-		id="cdbox.fg.fademask"
-		 w="0" h="0"
-		gradient_x2="0"
-		points="0.0=128,128,128,0;1.0=128,128,128,255"
-		ghost="1"
-		alpha="255"
-	/>
+<groupdef id="sc.nowplaying.cdbox.reflection" move="1" >
+	<layer id="bgref" image="sc.cdbox.bg.ref" fitparent="1"/>
+	<AlbumArt id="main.albumart.reflection" x="12" y="4" w="85" h="93" alpha="255" relatx="2" relaty="2" relatw="2" relath="2" wantfocus="0" stretched="1"/>
+	<layer id="cdbox.fg.reflection" fitparent="1" image="sc.cdbox.fg" ghost="1" alpha="255"/>
 </groupdef>
