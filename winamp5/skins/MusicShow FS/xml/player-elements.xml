@@ -3,6 +3,10 @@
 <bitmap id="focus.bg" file="player/focus-bg.png"  />
 
 <truetypefont id="player.font.bankgothic" file="player/font-bankgothic.ttf"/>
+<bitmap id="bitmapfont.timer" file="player/timerfont.png"/>
+<bitmapfont id="player.font.timer" file="bitmapfont.timer" charwidth="40" charheight="75" hspacing="-10" vspacing="0"/>
+
+
 <bitmap id="player.main.background.blank" file="player/background-blank.png" gammagroup="Background" />
 <bitmap id="player.main.background.noalpha" file="player/background-noalpha.png" gammagroup="Background" />
 <bitmap id="player.main.background" file="player/background.png" gammagroup="Background" />
