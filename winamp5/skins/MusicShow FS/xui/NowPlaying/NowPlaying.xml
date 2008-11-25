@@ -12,7 +12,7 @@
 <groupdef id="sc.nowplaying.ratings">
 
 	<Wasabi:Ratings
-		x="0" y="0" w="78" h="14"
+		x="0" y="0" w="150" h="22"
 		image_nostar="ratings.nostar"
 		image_star="ratings.star"
 		image_hoverstar="ratings.hover"
@@ -29,7 +29,7 @@
 
 	<group id="sc.nowplaying.cdbox.holder" x="5" y="90" w="-5" h="-90" relatw="1" relath="1"/>
 	
-	<group id="sc.nowplaying.ratings" x="0" y="65" w="78" h="14"/>
+	<group id="sc.nowplaying.ratings" x="0" y="68" w="150" h="22"/>
 
 	<script file="xui\NowPlaying\NowPlaying.maki"/>
 	<script file="xui\NowPlaying\albumart.maki"/>
