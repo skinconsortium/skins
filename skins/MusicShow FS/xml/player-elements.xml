@@ -173,4 +173,9 @@
 <bitmap id="shadevol2" file="player/shadevol2.png" gammagroup="Glass"/>
 <bitmap id="shadevol2d" file="player/shadevol2d.png" gammagroup="Glass"/>
 <bitmap id="shadevolover" file="player/shadevolover.png" gammagroup="Glass"/>
+
+<bitmap id="player.button.page.left" file="player/button-page-left.png" gammagroup="Glass"/>
+<bitmap id="player.button.page.left.down" file="player/button-page-left-down.png" gammagroup="Glass"/>
+<bitmap id="player.button.page.right" file="player/button-page-right.png" gammagroup="Glass"/>
+<bitmap id="player.button.page.right.down" file="player/button-page-right-down.png" gammagroup="Glass"/>
 	</elements>
