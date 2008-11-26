@@ -25,27 +25,18 @@ Global layer vismousetrap;
 System.onScriptLoaded() {
 	
 	main = getContainer("main").getLayout("normal");
-	//focus = getContainer("focus").getLayout("normal");
-	
-	//buttonFocus = main.findObject("main.button.focus");
 	
 	buttonPL = main.findObject("main.pl");
 	mainPL = main.findObject("player.main.pl");
 	if (getPrivateInt(getSkinName(),"MainPLVisible",0) == 1) mainPL.show();
-	
-	//focusbg = focus.findObject("focus.bg");
-	//focusbg.hide();
-	//focus.resize(0,0, getMonitorWidth(), getMonitorHeight());
+
 	
 	main.resize(0,0, getMonitorWidth(), getMonitorHeight());
-	
-	//delayfocus = new timer;
-	//delayfocus.setDelay(50);
-	
+
 }
 
 System.onScriptUnloading() {
-	//delete delayfocus;
+	
 }
 
 buttonPL.onLeftClick() {
@@ -56,29 +47,3 @@ buttonPL.onLeftClick() {
 	else
 		mainPL.hide();
 }
-/*
-buttonFocus.onActivate(int on) {
-	if (on) {
-		focusbg.show();
-
-		focus.setScale(1.0);
-		focus.resize(0,0, getMonitorWidth(), getMonitorHeight());
-		
-		
-		delayfocus.start();
-
-	} else {
-		focusbg.hide();
-	}
-
-}
-
-delayfocus.onTimer() {
-	stop();
-	main.setFocus();
-}
-
-focusbg.onLeftButtonDown(int x, int y) {
-	buttonFocus.setActivated(0);
-}
-*/

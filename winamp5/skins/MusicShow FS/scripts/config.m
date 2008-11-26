@@ -17,7 +17,7 @@ Global group scriptGroup;
 
 Global configAttribute bkground_image_attrib;
 
-Global checkbox bgdef, bgimage, bgwall, bgtile;
+Global checkbox bgdef, bgimage, bgwall;
 
 Global edit imagefname;
 
@@ -32,7 +32,7 @@ System.onScriptLoaded() {
   bgdef = scriptGroup.findObject("config.bg.default");
   bgimage = scriptGroup.findObject("config.bg.image");
   bgwall = scriptGroup.findObject("config.bg.wallpaper");
-  bgtile = scriptGroup.findObject("config.bg.tile");
+  //bgtile = scriptGroup.findObject("config.bg.tile");
 
   imagefname = scriptGroup.findObject("filename");
   
@@ -72,7 +72,8 @@ bgimage.onToggle(int on) {
 	
 	filecheck.load(imagefname.getText());
 	if (filecheck.exists()) {
-		bkground_image_attrib.setData("IMAGE:"+imagefname.getText()+";"+integerToString(bgtile.isChecked()));
+		//bkground_image_attrib.setData("IMAGE:"+imagefname.getText()+";"+integerToString(bgtile.isChecked()));
+		bkground_image_attrib.setData("IMAGE:"+imagefname.getText()+";0");
 	}
 	
 	delete filecheck;
@@ -92,10 +93,12 @@ imagefname.onEditUpdate() {
 bgwall.onToggle(int on) {
 	if (!on) return;
 	
-	bkground_image_attrib.setData("IMAGE:player.main.background.wallpaper;"+integerToString(bgtile.isChecked()));
+	//bkground_image_attrib.setData("IMAGE:player.main.background.wallpaper;"+integerToString(bgtile.isChecked()));
+	bkground_image_attrib.setData("IMAGE:player.main.background.wallpaper;0");
 }
 
+/*
 bgtile.onToggle(int on) {
 	if (bgimage.isChecked()) bgimage.onToggle(1);
 	else if (bgwall.isChecked()) bgwall.onToggle(1);
-}
+}*/

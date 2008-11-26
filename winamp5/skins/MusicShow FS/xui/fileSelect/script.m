@@ -46,12 +46,17 @@ System.onScriptLoaded() {
 	str_url = getParam();
 	
 	gone = 1;
+	
+	fileout.setText(getPrivateString(getSkinName(),"lastfname", ""));
 }
 
 System.onScriptUnLoading() {
+	setPrivateString(getSkinName(),"lastfname", fileout.getText());
+	
 	select = NULL;
 	fselect = NULL;
 	fileout = NULL;
+
 }
 
 System.onSetXUIParam(string param, string value) {

@@ -185,8 +185,7 @@
 
 	<group id="player.main.seeker" x="75" y="63" w="20" h="25" relatx="2" relaty="2" relatw="2" relath="2"/>
 	
-	<group id="player.cbuttons" x="0" y="-100" relaty="1" w="212" h="165"/>
-	<script file="scripts/centerobject.maki" param="player.cbuttons,1,0"/>
+	
 		
 </groupdef>
 
@@ -213,21 +212,37 @@
 		
 </groupdef>
 
+<groupdef id="player.pagescroller">
+	<button id="player.button.page.left"
+		x="20" y="0"
+		image="player.button.page.left"
+		downimage="player.button.page.left.down"
+		rectrgn="1"/>
+		
+	<button id="player.button.page.right"
+		x="-72" y="0" relatx="1"
+		image="player.button.page.right"
+		downimage="player.button.page.right.down"
+		rectrgn="1"/>
+</groupdef>
+
 <layout id="normal" background="player.main.background.blank" alphabackground="player.main.background.blank" desktopalpha="0"
 	minimum_h="480" minimum_w="640" maximum_h="3864" maximum_w="3152" move="1" >
 
-	<!--layer id="bg.base" x="0" y="0" w="0" h="0" relatw="1" relath="1" image="player.main.background.blank" move="1"/-->
-	
 	<layer id="bg.noalpha" x="0" y="0" w="0" h="0" relatw="1" relath="1" image="player.main.background.noalpha" sysregion="1" move="1"/>
-	<!--script file="scripts\hideshow-attrib.maki" 
-		param="bg.noalpha,hide,{9149C445-3C30-4E04-8433-5A518ED0FDDE};Enable desktop alpha=0"/-->
 	
 	<CustomBG x="0" y="0" w="0" h="0" relatw="1" relath="1"/>
 
 	<group id="player.main.cms" x="0" y="0" w="0" h="0" relatw="1" relath="1" />
 	<group id="player.main.pl" 
 		x="240" y="340" w="290" h="180" visible="0"/> 
-		
+	
+	<group id="player.cbuttons" x="0" y="-100" relaty="1" w="212" h="165"/>
+	<script file="scripts/centerobject.maki" param="player.cbuttons,1,0"/>
+	
+	<group id="player.pagescroller" x="0" y="0" w="0" h="59" relatw="1"/>
+	<script file="scripts/centerobject.maki" param="player.pagescroller,0,1"/>
+	
 	<layer image="player.main.background.noalpha" x="-20" y="-20" relatx="1" relaty="1" w="20" h="20" resize="bottomright"/>
 
 </layout>

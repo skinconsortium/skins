@@ -20,9 +20,9 @@
 		text="Desktop Wallpaper" radioid="config.bg" radioval="2"
 		x="217" y="79" w="150" h="20"/>
 		
-	<wasabi:checkbox id="config.bg.tile"
+	<!--wasabi:checkbox id="config.bg.tile"
 		text="Desktop Zoom" 
-		x="217" y="102" w="150" h="20"/>
+		x="217" y="102" w="150" h="20"/-->
 
 		 <togglebutton id="browe"
 		 x="120" y="172" 
