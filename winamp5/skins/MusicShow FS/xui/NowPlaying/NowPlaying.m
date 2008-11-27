@@ -199,13 +199,13 @@ resizeToThis(int x, int y, int w, int h)
 	cdbox.setXmlParam("h", integerToString(h1));
 	
 	cdboxref.setXmlParam("x", integerToString(x1));
-	cdboxref.setXmlParam("y", integerToString(y1+h1));
+	cdboxref.setXmlParam("y", integerToString(y1+h1*0.96));
 	cdboxref.setXmlParam("w", integerToString(w1));
 	//dont want to resize the reflection, just the mask, otherwise album art resizes width due to no stretch param till 5.54
 	cdboxref.setXmlParam("h", integerToString(h1*(reflectionheight/100)));
 	
 	BGCol.setXmlParam("x", integerToString(x1));
-	BGCol.setXmlParam("y", integerToString(y1+h1));
+	BGCol.setXmlParam("y", integerToString(y1+h1*0.96));
 	BGCol.setXmlParam("w", integerToString(w1));
 	BGCol.setXmlParam("h", integerToString(h1*(reflectionheight/100)));
 

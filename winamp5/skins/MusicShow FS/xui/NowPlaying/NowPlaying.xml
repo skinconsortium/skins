@@ -39,8 +39,7 @@
 	<group id="sc.nowplaying.cdbox" x="20" y="20" w="300" h="300"/>
 	<group id="sc.nowplaying.bg.ref" x="20" y="310" w="300" h="300"/>
 	<group id="sc.nowplaying.cdbox.reflection" x="20" y="310" w="300" h="300"/>
-	
-	
+
 </groupdef>
 
 <groupdef id="sc.nowplaying.cdbox" background="sc.cdbox.bg" move="1">
