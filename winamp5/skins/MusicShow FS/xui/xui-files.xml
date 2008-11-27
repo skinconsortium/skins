@@ -4,3 +4,4 @@
 <include file="fileSelect/fileSelect.xml"/>
 <include file="CustomBG/customBG.xml"/>
 <include file="playlistPlus/playlistPlus.xml"/>
+<include file="CoverFlow/coverFlow.xml"/>

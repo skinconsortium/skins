@@ -22,9 +22,7 @@
 		
 </elements>
 
-<container id="main" name="Main Window">
-
-<groupdef id="cover.flow">
+<groupdef id="cover.flow" xuitag="CoverFlow">
 
 	<AlbumArt id="aa.prev2" x="0" y="50" h="60" w="60" valign="bottom"/>	
 	<AlbumArt id="aa.prev1" x="70" y="30" h="100" w="100" valign="bottom"/>
@@ -34,23 +32,5 @@
 	<AlbumArt id="aa.next1" x="350" y="30" h="100" w="100" valign="bottom"/>
 	<AlbumArt id="aa.next2" x="460" y="50" h="60" w="60" valign="bottom"/>
 
-	<script file="scripts/coverflow.maki" />
-
+	<script file="xui/CoverFlow/scripts/coverflow.maki" />
 </groupdef>
-
-	<layout id="normal" minimum_w="540" minimum_h="200" maximum_w="540" maximum_h="200">
-		
-		<layer image="main.bg" regionop="1" />
-
-		<layer image="main.shader" />
-
-		<group id="cover.flow" x="10" y="5" w="520" h="195" />
-
-		<SongTicker x="50" w="440" y="-17" relaty="1" h="16" fontsize="14" align="center" ticker="scroll" alpha="180"/>
-
-		<Wasabi:Button id="close" x="-20" relatx="1" y="5" h="15" w="15" text="X" action="CLOSE" />
-		<Wasabi:Button id="min" x="-40" relatx="1" y="5" h="15" w="15" text="-" action="MINIMIZE" />
-
-	</layout>
-
-</container>
