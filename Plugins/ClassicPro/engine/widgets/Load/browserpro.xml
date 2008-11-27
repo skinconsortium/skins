@@ -1,4 +1,4 @@
-<groupdef id="centro.widgets.browserpro.dummy.main" name="BrowserPro" userdata="centro.widgets.browserpro" windowtype="centro.widgets.main" />
+<groupdef id="centro.widgets.browserpro.dummy.main" name="BrowserPro" userdata="centro.widgets.browserpro;0" windowtype="centro.widgets.main" />
 
 <include file="..\Data\BrowserPro\icons.xml"/>
 

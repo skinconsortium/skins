@@ -58,7 +58,7 @@ Global Button closeFrame, openFrame;
 Global Group area_left, area_right, area_mini, area_right_pl, ocFrame;//, CproTabs;
 
 // Component Handling
-Global int delayStartTab;
+Global int delayStartTab, widgetStatus;
 Global boolean dontTabCall, skipLoad, busyWithThisFunction, wasTabTrig, delayStart, ml_installed;
 Global String closeGUID;
 Global int active_tab, tab_openned, delayStartTab;
@@ -78,6 +78,7 @@ System.onScriptLoaded(){
 	delayStart=true;
 	
 	delayStartTab = 0;
+	widgetStatus = 0;
 	tab_openned = -1;
 	active_tab = getPublicInt("cPro.lastComponentPage", 0);
 	ml_installed = stringToInteger(getParam());
@@ -320,7 +321,6 @@ System.onGetCancelComponent(String guid, boolean goingvisible){
 				hold_Other.show();
 				hold_Other.setXMLParam("hold", "@all@");
 			}
-			refreshAIOTab.start();
 			return false;
 		}
 		
@@ -339,6 +339,7 @@ System.onGetCancelComponent(String guid, boolean goingvisible){
 
 refreshAIOTab.onTimer(){
 	refreshAIOTab.stop();
+	CproTabs.sendAction("update_tabname", hold_Other.getComponentName(), 5, 0, 0, 0);
 }
 
 openDefaultTab.onTimer(){
@@ -440,6 +441,7 @@ openTabNo(int tabNo){
 	}
 	else if(tabNo==5){
 		tab_Other.show();
+		refreshAIOTab.start();
 	}
 	else if(tabNO==WIDGET_TAB_ID)
 	{
@@ -578,7 +580,10 @@ openMini(int miniNo){
 	}
 	else if(miniNo >= 100) {
 		GuiObject gr = dummyBuck.enumChildren(miniNo-100);
-		String id = gr.getXMLparam("userdata");
+		String id = getToken(gr.getXmlParam("userdata"), ";", 0);
+		
+		// @pjn - add background change here! V1.1
+		
 		customObj.setXmlParam("groupid", id);
 		customObj.show();
 	}
@@ -622,7 +627,7 @@ updateCompStatus(){
 	if(tab_openned==0) setCompStatus(false);
 	else if(tab_openned==4) setCompStatus(false);
 	else if(tab_openned==5) setCompStatus(false);
-	else if(tab_openned==WIDGET_TAB_ID) setCompStatus(false); // @martin read from widget before final release!!! ... widgets must choose if it want status... cant toggle it though!
+	else if(tab_openned==WIDGET_TAB_ID) setCompStatus(widgetStatus);
 	else setCompStatus(getPublicInt("Cpro.One.TabStatus."+integerToString(tab_openned), 1));
 }
 
@@ -699,6 +704,11 @@ xuiGroup.onAction (String action, String param, int x, int y, int p1, int p2, Gu
 			if(getPublicInt("cPro.lastMini", 0)==4) openMini(0);
 		}
 	}
+	else if(strlower(action) == "widget_statusbar"){
+		widgetStatus=x;
+		updateCompStatus();
+	}
+
 }
 
 //Main Frame code

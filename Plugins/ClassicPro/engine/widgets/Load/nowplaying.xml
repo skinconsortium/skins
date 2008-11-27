@@ -1,4 +1,4 @@
-<groupdef id="centro.widgets.nowplaying.dummy.main" name="Now Playing" userdata="centro.widgets.nowplaying" windowtype="centro.widgets.main" />
+<groupdef id="centro.widgets.nowplaying.dummy.main" name="Now Playing" userdata="centro.widgets.nowplaying;0" windowtype="centro.widgets.main" />
 
 <include file="..\Data\NowPlaying\NowPlaying.xml"/>
 <groupdef id="centro.widgets.nowplaying">
