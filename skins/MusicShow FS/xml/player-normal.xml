@@ -189,12 +189,17 @@
 		
 </groupdef>
 
-<groupdef id="player.main.pl" w="290" h="180">
-	<playlistPlus id="main.pl" 
+<groupdef id="player.main.pl.coverflow">
+	<CoverFlow fitparent="1"/>
+</groupdef>
+
+<groupdef id="player.main.pl">
+	<!--playlistPlus id="main.pl" 
 			x="27" y="0" w="212" h="180"
 			font="player.font.bankgothic" fontsize="14" linespacing="-2" color="255,255,255"
 			playcolor="150,150,255" selcolor="50,50,50" selbgcolor="200,200,200" selalpha="150"
 			showslider="0" slidercolor="255,255,255" slideralpha="200"/>
+
 	<button id="main.bl.button.add"
 			x="5" y="140"
 			image="player.main.pl.button.add"
@@ -208,7 +213,11 @@
 			downimage="player.main.pl.button.menu"
 			hoverimage="player.main.pl.button.menu.hover"
 			action="PE_LIST" rectrgn="1"
-			tooltip="Manage Playlist"/>
+			tooltip="Manage Playlist"/-->
+			
+	<group id="player.main.pl.coverflow" 
+		x="20" y="10" relatx="2" relaty="2"
+		w="60" h="85" relatw="2" relath="2"/>
 		
 </groupdef>
 
@@ -233,15 +242,16 @@
 	
 	<CustomBG x="0" y="0" w="0" h="0" relatw="1" relath="1"/>
 
-	<group id="player.main.cms" x="0" y="0" w="0" h="0" relatw="1" relath="1" />
-	<group id="player.main.pl" 
-		x="240" y="340" w="290" h="180" visible="0"/> 
+	<group id="player.main.cms" x="0" y="0" w="0" h="0" relatw="1" relath="1"/>
+	<group id="player.main.pl" 	x="0" y="0" w="0" h="0" relatw="1" relath="1" visible="0"/>
 	
 	<group id="player.cbuttons" x="0" y="-100" relaty="1" w="212" h="165"/>
 	<script file="scripts/centerobject.maki" param="player.cbuttons,1,0"/>
 	
 	<group id="player.pagescroller" x="0" y="0" w="0" h="59" relatw="1"/>
 	<script file="scripts/centerobject.maki" param="player.pagescroller,0,1"/>
+	
+	<script file="scripts/pagescroll.maki"/>
 	
 	<layer image="player.main.background.noalpha" x="-20" y="-20" relatx="1" relaty="1" w="20" h="20" resize="bottomright"/>
 
