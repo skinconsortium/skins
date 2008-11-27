@@ -28,6 +28,7 @@ Class GuiObject Tab;
 	Member Int Tab.ID;
 	Member String Tab.IDS;
 	Member boolean Tab.removed;
+	Member boolean Tab.statusbar;
 
 	//Stimulating a doubled linked list
 	Member GuiObject Tab.left;
@@ -57,12 +58,14 @@ Global ToggleButton lastActive;
 Global Group sg, tabHolder, CproSUI;
 Global int totalTabWidth;
 Global ComponentBucket widgetLoader;
-Global boolean aligned;
+Global boolean aligned, testtesttest; // @martin: remove this when done ;)
 Global PopUpMenu popMenu;
 Global List hiddenTabs;
 
 System.onScriptLoaded ()
 {
+	testtesttest=false; // @martin: remove this when done ;)
+	
 	sg = getScriptGroup();
 	tabHolder = sg.findObject("cprotabs.buttons");
 	widgetLoader = sg.findObject("widget.loader");
@@ -73,12 +76,12 @@ System.onScriptLoaded ()
 
 	//TODO> use stringtables
 	List internalNames = new List;
-	internalNames.addItem("Media Library");
-	internalNames.addItem("Playlist");
-	internalNames.addItem("Video");
-	internalNames.addItem("Visualization");
-	internalNames.addItem("Browser");
-	internalNames.addItem("@ALL@");
+	internalNames.addItem("Media Library");		//0
+	internalNames.addItem("Playlist");			//1
+	internalNames.addItem("Video");				//2
+	internalNames.addItem("Visualization");		//3
+	internalNames.addItem("Browser");			//4
+	internalNames.addItem("@ALL@");				//5
 
 	/** Create ordered list of all saved tabs */
 
@@ -106,7 +109,7 @@ System.onScriptLoaded ()
 		{
 			isInternal.setItem(internalNames.getNumItems()+i, false);
 			GuiObject d = widgetLoader.enumChildren(i);
-			orderedTabs.addItem(d.getXmlParam("userdata"));
+			orderedTabs.addItem(getToken(d.getXmlParam("userdata"), ";", 0));
 			widgetNames.addItem(d.getXMLparam("name"));
 		}
 	}
@@ -131,7 +134,7 @@ System.onScriptLoaded ()
 					for ( int j = 0; j < widgetLoader.getNumChildren(); j++ )
 					{
 						GuiObject d = widgetLoader.enumChildren(j);
-						if (d.getXmlParam("userdata") == ids)
+						if (getToken(d.getXmlParam("userdata"), ";", 0) == ids)
 						{
 							passedWidgets.setItem(j, true); // Mark this widget to be inited
 							widgetNames.addItem(d.getXMLparam("name"));
@@ -158,8 +161,8 @@ System.onScriptLoaded ()
 				isInternal.setSize(isInternal.getSize()+1);
 				isInternal.setItem(isInternal.getSize()-1, false);
 				GuiObject d = widgetLoader.enumChildren(i);
-				orderedTabs.addItem(d.getXmlParam("userdata"));
-				widgetNames.addItem(d.getXMLparam("name"));			
+				orderedTabs.addItem(getToken(d.getXmlParam("userdata"), ";", 0));
+				widgetNames.addItem(d.getXMLparam("name"));
 			}
 		}
 	}
@@ -189,6 +192,10 @@ System.onScriptLoaded ()
 				tabI.ID = WIDGET_TAB_ID;
 				tabI.IDS = orderedTabs.enumItem(i);
 				tabI.isInternal = false;
+				
+				tabI.statusbar = testtesttest;		// @martin: statusbar onOff set (only used for widgets)
+				testtesttest=!testtesttest;
+				
 			}
 
 			Boolean hideTab = ((getPublicInt("Cpro.One.TabAutoClose."+integerToString(tabI.ID), 0) || tabI.ID == 5)
@@ -401,6 +408,10 @@ onMessage(int message, int i0, int i1, int i2, String s0, String s1, GuiObject o
 	{
 		closeTab(lastActiveT);
 		CproSUI.sendAction ("show_tab", t.IDS, t.ID, 0, 0, 0);
+		
+		if(t.ID==WIDGET_TAB_ID){
+			CproSUI.sendAction ("widget_statusbar", "", t.statusbar, 0, 0, 0);
+		}
 		lastActive = lastActiveT = t;
 		t.moving = false;
 	}
@@ -774,6 +785,14 @@ sg.onAction (String action, String param, Int x, int y, int p1, int p2, GuiObjec
 			}
 		}
 		
+		if(t.ID==WIDGET_TAB_ID)
+		{
+			CproSUI.sendAction ("widget_statusbar", "", t.statusbar, 0, 0, 0);
+		}
+	}
+	else if(strlower(action) == "update_tabname")
+	{
+		// @martin: update the tab name here!!!! (atm just used for the 3rd Party plugins)
 	}
 	debugTabs();
 }
