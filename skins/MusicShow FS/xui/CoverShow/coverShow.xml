@@ -1,0 +1,36 @@
+<groupdef id="cover.flow.prev2">
+	<AlbumArt id="aa.prev2" x="0" y="0" h="60" w="60" streched="1"/>
+	<AlbumArt id="aa.prev2.ref" x="0" y="50" h="60" w="60" streched="1"/>
+</groupdef>
+
+<groupdef id="cover.flow.prev1">
+	<AlbumArt id="aa.prev1" x="0" y="0" h="60" w="60" streched="1"/>
+	<AlbumArt id="aa.prev1.ref" x="0" y="50" h="60" w="60" streched="1"/>
+</groupdef>
+
+<groupdef id="cover.flow.curr">
+	<AlbumArt id="aa.curr" x="0" y="0" h="60" w="60" streched="1"/>
+	<AlbumArt id="aa.curr.ref" x="0" y="50" h="60" w="60" streched="1"/>
+</groupdef>
+
+<groupdef id="cover.flow.next1">
+	<AlbumArt id="aa.next1" x="0" y="0" h="60" w="60" streched="1"/>
+	<AlbumArt id="aa.next1.ref" x="0" y="50" h="60" w="60" streched="1"/>
+</groupdef>
+
+<groupdef id="cover.flow.next2">
+	<AlbumArt id="aa.next2" x="0" y="0" h="60" w="60" streched="1"/>
+	<AlbumArt id="aa.next2.ref" x="0" y="50" h="60" w="60" streched="1"/>
+</groupdef>
+
+
+<groupdef id="cover.flow" xuitag="CoverShow">
+
+	<group id="cover.flow.prev2" x="0" y="50" h="60" w="60"/>	
+	<group id="cover.flow.prev1" x="70" y="30" h="100" w="100"/>
+	<group id="cover.flow.curr" x="180" y="0" h="160" w="160"/>
+	<group id="cover.flow.next1" x="350" y="30" h="100" w="100"/>
+	<group id="cover.flow.next2" x="460" y="50" h="60" w="60"/>
+
+	<script file="xui/CoverShow/scripts/covershow.maki" />
+</groupdef>
