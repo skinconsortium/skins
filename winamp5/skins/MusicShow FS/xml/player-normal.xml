@@ -1,4 +1,4 @@
-<groupdef id="player.cbuttons" w="212" h="95">
+<groupdef id="player.cbuttons" w="227" h="95">
 
 	<button 
 		id="Rev"
@@ -14,46 +14,46 @@
 	
 	<button 
 		id="Eject"
-		x="42" y="0"
+		x="45" y="0"
 		action="EJECT"  alpha="200"
 		image="player.main.eject"
 		downimage="player.main.ejectd"
 		rectrgn="1"
 		hoverImage="player.main.eject"
 		tooltip="Get Song"/>
-	<layer id="player.main.ejectd" image="player.main.ejectd" x="42" y="0" ghost="1"/>
+	<layer id="player.main.ejectd" image="player.main.ejectd" x="45" y="0" ghost="1"/>
 	<script file="scripts/hoverglow.maki" param="Eject,player.main.ejectd"/>
 
-	<button id="play.button" x="82" y="0"  action="PLAY" image="player.main.play" hoverImage="player.main.play" downImage="player.main.playd" tooltip="Play"/>
-	<button id="pause.button" x="82" y="0"  action="PAUSE" image="player.main.Pause" hoverImage="player.main.Pause" downImage="player.main.Paused" tooltip="Pause"/>
+	<button id="play.button" x="88" y="0"  action="PLAY" image="player.main.play" hoverImage="player.main.play" downImage="player.main.playd" tooltip="Play"/>
+	<button id="pause.button" x="88" y="0"  action="PAUSE" image="player.main.Pause" hoverImage="player.main.Pause" downImage="player.main.Paused" tooltip="Pause"/>
 	<script file="scripts/sc_PlayPause.maki" param="play.button;pause.button"/>
-	<layer id="player.main.playd" image="player.main.playd"  x="82" y="0" ghost="1"/>
+	<layer id="player.main.playd" image="player.main.playd"  x="88" y="0" ghost="1"/>
 	<script file="scripts/hoverglow.maki" param="play.button,player.main.playd"/>
-	<layer id="player.main.Paused" image="player.main.Paused"  x="82" y="0" ghost="1"/>
+	<layer id="player.main.Paused" image="player.main.Paused"  x="88" y="0" ghost="1"/>
 	<script file="scripts/hoverglow.maki" param="pause.button,player.main.Paused"/>
 	
 	<button 
 		id="Stop"
-		x="122" y="0"
+		x="131" y="0"
 		action="STOP"  
 		image="player.main.stop"  
 		downimage="player.main.stopd"
 		rectrgn="1"
 		hoverImage="player.main.stop"
 		tooltip="Stop"/>
-	<layer id="player.main.stopd" image="player.main.stopd" x="122" y="0"  ghost="1"/>
+	<layer id="player.main.stopd" image="player.main.stopd" x="131" y="0"  ghost="1"/>
 	<script file="scripts/hoverglow.maki" param="Stop,player.main.stopd"/>
 	
 	<button 
 		id="Next"
-		x="162" y="0"
+		x="174" y="0"
 		action="NEXT"  alpha="200"
 		image="player.main.forward"
 		downimage="player.main.forwardd"
 		rectrgn="1"
 		hoverImage="player.main.forward"
 		tooltip="Next Track"/>
-	<layer id="player.main.forwardd" image="player.main.forwardd" x="162" y="0"  ghost="1"/>
+	<layer id="player.main.forwardd" image="player.main.forwardd" x="174" y="0"  ghost="1"/>
 	<script file="scripts/hoverglow.maki" param="Next,player.main.forwardd"/>
 
 	<layer id="volback" image="volback" x="20" y="70" ghost="1"/>
@@ -249,7 +249,7 @@
 		rectrgn="1"/>
 </groupdef>
 
-<layout id="normal" background="player.main.background.blank" alphabackground="player.main.background.blank" desktopalpha="0"
+<layout id="normal" desktopalpha="0"
 	minimum_h="480" minimum_w="640" maximum_h="3864" maximum_w="3152" move="1" >
 
 	<layer id="bg.noalpha" x="0" y="0" w="0" h="0" relatw="1" relath="1" image="player.main.background.noalpha" sysregion="1" move="1"/>
@@ -260,7 +260,7 @@
 	<group id="player.main.pl" 	x="0" y="0" w="100" h="0" relatx="2" relatw="2" relath="1" visible="0"/>
 	<group id="player.main.config" 	x="0" y="0" w="100" h="0" relatx="2" relatw="2" relath="1" visible="0"/>
 	
-	<group id="player.cbuttons" x="0" y="-100" relaty="1" w="212" h="165"/>
+	<group id="player.cbuttons" x="0" y="-100" relaty="1" w="227" h="165"/>
 	<script file="scripts/centerobject.maki" param="player.cbuttons,1,0"/>
 	
 	<group id="player.pagescroller" x="0" y="0" w="0" h="59" relatw="1"/>
