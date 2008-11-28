@@ -150,27 +150,6 @@
 
 <groupdef id="player.main.cms" name="Close Min Switch" w="0" h="0" relatw="1" relath="1">
 	
-	<button 
-		id="Minimize"
-		x="-137" y="20" relatx="1"
-		action="minimize" 
-		image="player.main.close"
-		downimage="player.main.closemin"
-		hoverimage="player.main.closemin"
-		rectrgn="1"
-		tooltip="Minimize"
-		/>
-	<button 
-		id="Close"
-		x="-95" y="20" relatx="1"
-		action="CLOSE" 
-		image="player.main.close"
-		downimage="player.main.closed"
-		hoverimage="player.main.closed"
-		rectrgn="1"
-		tooltip="Close"
-		/>
-		
 	<SC:NowPlaying 
 		x="20" y="10" relatx="2" relaty="2"
 		w="60" h="85" relatw="2" relath="2"
@@ -190,12 +169,12 @@
 </groupdef>
 
 <groupdef id="player.main.pl.coverflow">
-	<CoverFlow fitparent="1"/>
+	<CoverShow fitparent="1"/>
 </groupdef>
 
 <groupdef id="player.main.pl">
 	<text id="test"
-		text="CoverFlow"
+		text="CoverShow"
 		x="20" y="20" w="80" h="20" relatx="2" relaty="2" relatw="2" relath="2"
 		font="Arial" fontsize="46" bold="1"
 		color="255,255,255" alpha="80"/>
@@ -220,9 +199,9 @@
 			action="PE_LIST" rectrgn="1"
 			tooltip="Manage Playlist"/-->
 			
-	<!--group id="player.main.pl.coverflow" 
+	<group id="player.main.pl.coverflow" 
 		x="20" y="10" relatx="2" relaty="2"
-		w="60" h="85" relatw="2" relath="2"/-->
+		w="60" h="85" relatw="2" relath="2"/>
 		
 </groupdef>
 
@@ -249,6 +228,29 @@
 		rectrgn="1"/>
 </groupdef>
 
+<groupdef id="player.main.pbuttons">
+	<button 
+		id="Minimize"
+		x="-137" y="20" relatx="1"
+		action="minimize" 
+		image="player.main.close"
+		downimage="player.main.closemin"
+		hoverimage="player.main.closemin"
+		rectrgn="1"
+		tooltip="Minimize"
+		/>
+	<button 
+		id="Close"
+		x="-95" y="20" relatx="1"
+		action="CLOSE" 
+		image="player.main.close"
+		downimage="player.main.closed"
+		hoverimage="player.main.closed"
+		rectrgn="1"
+		tooltip="Close"
+		/>
+</groupdef>
+
 <layout id="normal" desktopalpha="0"
 	minimum_h="480" minimum_w="640" maximum_h="3864" maximum_w="3152" move="1" >
 
@@ -262,6 +264,8 @@
 	
 	<group id="player.cbuttons" x="0" y="-100" relaty="1" w="227" h="165"/>
 	<script file="scripts/centerobject.maki" param="player.cbuttons,1,0"/>
+	
+	<group id="player.main.pbuttons" x="0" y="0" w="100" h="0" relatx="2" relatw="2" relath="1"/>
 	
 	<group id="player.pagescroller" x="0" y="0" w="0" h="59" relatw="1"/>
 	<script file="scripts/centerobject.maki" param="player.pagescroller,0,1"/>
