@@ -30,7 +30,7 @@ Class Layer AlbumCover;
 
 global group scriptGroup;
 
-Global group gprev2, gprev1, gcurr, gnext1, gnext2;
+Global group gprev3, gprev2, gprev1, gcurr, gnext1, gnext2, gnext3;
 Global AlbumCover prev2, prev1, curr, next1, next2;
 
 Global float currPos = 0, aaWidth;
@@ -39,11 +39,13 @@ global int scw, sch, eyeDist;
 System.onScriptLoaded () {
 	scriptGroup = getScriptGroup();
 
+	gprev3 = scriptGroup.getObject("cover.flow.prev3");
 	gprev2 = scriptGroup.getObject("cover.flow.prev2");
 	gprev1 = scriptGroup.getObject("cover.flow.prev1");
 	gcurr = scriptGroup.getObject("cover.flow.curr");
 	gnext1 = scriptGroup.getObject("cover.flow.next1");
 	gnext2 = scriptGroup.getObject("cover.flow.next2");
+	gnext3 = scriptGroup.getObject("cover.flow.next3");
 	
 	prev2 = gprev2.getObject("aa.prev2");
 	prev1 = gprev1.getObject("aa.prev1");
@@ -80,8 +82,8 @@ scriptGroup.onResize(int x, int y, int w, int h) {
 	scw = w;
 	sch	= h;
 	
-	eyeDist = h/2;
-	aaWidth = w/4;
+	eyeDist = w*1.5;
+	aaWidth = w/3;
 	
 	updateDim();
 }
@@ -98,6 +100,11 @@ update () {
 	int cur = PlEdit.getCurrentIndex();
 	int max = PlEdit.getNumTracks();
 
+	if (cur > 2)  {
+		updateCover(gprev3, PlEdit.getFileName(cur-3));
+		gprev3.show();
+	}
+	
 	if (cur > 1)  {
 		updateCover(gprev2, PlEdit.getFileName(cur-2));
 		gprev2.show();
@@ -112,6 +119,12 @@ update () {
 	
 	updateCover(gcurr, PlEdit.getFileName(cur));
 	
+	if (cur < max-3) {
+		updateCover(gnext3, PlEdit.getFileName(cur+3));
+		gnext3.show();
+	}
+	else gnext1.hide();
+	
 	if (cur < max-2) {
 		updateCover(gnext2, PlEdit.getFileName(cur+2));
 		gnext2.show();
@@ -124,6 +137,8 @@ update () {
 	}
 	else gnext1.hide();
 	
+	
+	
 	currPos = cur;
 	/*prev1sd.fx_setEnabled(0);
 	prev1sd.fx_setEnabled(1);
@@ -131,17 +146,25 @@ update () {
 }
 
 updateDim() {
-	
+	setAAgroupToPos(gprev3, -3);
 	setAAgroupToPos(gprev2, -2);
 	setAAgroupToPos(gprev1, -1);
-	//setAAgroupToPos(gcurr, 0);
+	setAAgroupToPos(gcurr, 0);
+	setAAgroupToPos(gnext1, 1);
+	setAAgroupToPos(gnext2, 2);
+	setAAgroupToPos(gnext3, 3);
 }
 
 setAAgroupToPos(group g, float pos) {
 	int xmid = scw/2;
-	int x1 = pos*aaWidth;
-	int y1 = x1;
+	int y1 = pos*aaWidth*2;
+	int x1 = (pos-0.5)*aaWidth;
+	//if (pos < 0) x1 = x1-aaWidth/4;
+	//if (pos > 0) x1 = x1+aaWidth/4;
+	
 	if (y1 < 0) y1 = -y1;
+	
+	if ((y1+eyeDist) == 0) return;
 	
 	double rat = eyeDist/(y1+eyeDist);
 	int xp = x1*rat;
@@ -149,7 +172,7 @@ setAAgroupToPos(group g, float pos) {
 	int w = aaWidth*rat;
 
 	int h = w*1.667;
-	int yp = (sch - h)/2;
+	int yp = (sch - w)/2;
 
 	g.setXMLParam("x",integerToString(xmid+xp));
 	g.setXMLParam("y",integerToString(yp));
