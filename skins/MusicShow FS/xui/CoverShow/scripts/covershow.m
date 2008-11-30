@@ -13,15 +13,15 @@
 \********************************************************/
 
 
-/***** modified by leechbite.com ******/
+/***** greatly modified by leechbite.com :D ******/
 
 
 #include <lib/std.mi>
 #include <lib/pldir.mi>
 
 function update();
-function updateDim();
-function updateCover(group g, string source);
+function updateDim(float offPos);
+function updateCover(group g, int index);
 function setAAgroupToPos(group g, float pos);
 
 #define NUMCOVERS = 2;
@@ -30,11 +30,15 @@ Class Layer AlbumCover;
 
 global group scriptGroup;
 
+global PlEdit PeListener;
+
 Global group gprev3, gprev2, gprev1, gcurr, gnext1, gnext2, gnext3;
-Global AlbumCover prev2, prev1, curr, next1, next2;
+global AlbumCover aaref;
 
 Global float currPos = 0, aaWidth;
 global int scw, sch, eyeDist;
+
+global timer delayRefresh, scrollAnim;
 
 System.onScriptLoaded () {
 	scriptGroup = getScriptGroup();
@@ -47,35 +51,37 @@ System.onScriptLoaded () {
 	gnext2 = scriptGroup.getObject("cover.flow.next2");
 	gnext3 = scriptGroup.getObject("cover.flow.next3");
 	
-	prev2 = gprev2.getObject("aa.prev2");
-	prev1 = gprev1.getObject("aa.prev1");
-	curr = gcurr.getObject("aa.curr");
-	next1 = gnext1.getObject("aa.next1");
-	next2 = gnext2.getObject("aa.next2");
-
-	/*prev1sd.fx_setBgFx(1);
-	prev1sd.fx_setGridSize(2,2);
-	prev1sd.fx_setRealtime(1);
-	prev1sd.fx_setRect(1);
-	prev1sd.fx_setWrap(0);
-	prev1sd.fx_setSpeed(1000000);
-	prev1sd.fx_setEnabled(0);
-	prev1sd.fx_setAlphaMode(1);
-	prev1sd.fx_setBilinear(1);*/
+	delayRefresh = new Timer;
+	delayRefresh.setDelay(50);
 	
-	update();
+	scrollAnim = new Timer;
+	scrollAnim.setDelay(33);
 	
-	eyeDist = 100;
-	aaWidth = 80;
-	
+	currPos = getPrivateInt(getSkinName(),"PLTopTrack",5);
+		
 	scriptGroup.onResize(0,0,scriptGroup.getWidth(),scriptGroup.getHeight()); // sets 3D variables;
 	
+	PeListener = new PlEdit;
+	update();
 
 }
 
-System.onTitleChange (String newtitle) {
+system.onScriptUnloading() {
+	delete delayRefresh;
+	delete scrollAnim;
+}
+
+PeListener.onPleditModified () {
+	if (!delayRefresh.isRunning()) delayRefresh.start();
+}
+
+// delay needed otherwise it will update like crazy on PL change.
+delayRefresh.onTimer() {
+	stop();
+	
+	currPos = 5;
+	
 	update();
-	//updateDim();
 }
 
 scriptGroup.onResize(int x, int y, int w, int h) {
@@ -83,96 +89,98 @@ scriptGroup.onResize(int x, int y, int w, int h) {
 	sch	= h;
 	
 	eyeDist = w*1.5;
-	aaWidth = w/3;
+	aaWidth = w*0.3;
 	
-	updateDim();
+	if (!scriptGroup.isVisible()) return;
+	
+	updateDim(0);
 }
 
-updateCover(group g, string source) {
-	layer aa = g.getObject("aa");
-	layer aaref = g.getObject("aa.ref");
-	
-	aa.setXmlParam("source", source);
-	aaref.setXmlParam("source", source);
-}
-
-update () {
-	int cur = PlEdit.getCurrentIndex();
+updateCover(group g, int index) {
 	int max = PlEdit.getNumTracks();
-
-	if (cur > 2)  {
-		updateCover(gprev3, PlEdit.getFileName(cur-3));
-		gprev3.show();
-	}
 	
-	if (cur > 1)  {
-		updateCover(gprev2, PlEdit.getFileName(cur-2));
-		gprev2.show();
-	}
-	else gprev2.hide();
-
-	if (cur > 0) {
-		updateCover(gprev1, PlEdit.getFileName(cur-1));
-		gprev1.show();
-	}
-	else prev1.hide();
+	if (index < 0 || index >= max) { g.hide(); return; }
 	
-	updateCover(gcurr, PlEdit.getFileName(cur));
+	layer aa = g.getObject("aa");
+	aaref = g.getObject("aa.ref");
 	
-	if (cur < max-3) {
-		updateCover(gnext3, PlEdit.getFileName(cur+3));
-		gnext3.show();
-	}
-	else gnext1.hide();
+	string fname = PlEdit.getFileName(index);
+	aa.setXmlParam("source", fname);
+	aaref.setXmlParam("source", fname);
 	
-	if (cur < max-2) {
-		updateCover(gnext2, PlEdit.getFileName(cur+2));
-		gnext2.show();
-	}
-	else gnext2.hide();
-
-	if (cur < max-1) {
-		updateCover(gnext1, PlEdit.getFileName(cur+1));
-		gnext1.show();
-	}
-	else gnext1.hide();
+	g.show();
 	
+	aaref.fx_setEnabled(0);
 	
-	
-	currPos = cur;
-	/*prev1sd.fx_setEnabled(0);
-	prev1sd.fx_setEnabled(1);
-	prev1sd.fx_restart();*/
+	aaref.fx_setBgFx(0);
+  	aaref.fx_setWrap(0);
+  	aaref.fx_setBilinear(1);
+	aaref.fx_setAlphaMode(1);
+  	aaref.fx_setGridSize(10,10);
+  	aaref.fx_setRect(1);
+	aaref.fx_setClear(0);
+  	aaref.fx_setLocalized(1);
+  	aaref.fx_setRealtime(0);
+  	
+  	aaref.fx_setEnabled(1);
+  	aaref.fx_restart();
 }
 
-updateDim() {
-	setAAgroupToPos(gprev3, -3);
-	setAAgroupToPos(gprev2, -2);
-	setAAgroupToPos(gprev1, -1);
-	setAAgroupToPos(gcurr, 0);
-	setAAgroupToPos(gnext1, 1);
-	setAAgroupToPos(gnext2, 2);
-	setAAgroupToPos(gnext3, 3);
+AlbumCover.fx_onGetPixelY(double r, double d, double x, double y) {
+	return -y;
+}
+
+AlbumCover.fx_onGetPixelA(double r, double d, double x, double y) {
+	double ret = 0.35-y*0.65; // simplified, original: (2-(1+y)*1.3)*0.5;
+	if (ret < 0) ret = 0;
+	return ret;
+}
+
+update() {
+	int cur = currPos;
+	if (currPos - cur > 0.5) cur++;
+
+	updateCover(gprev3, cur-3);
+	updateCover(gprev2, cur-2);
+	updateCover(gprev1, cur-1);
+	updateCover(gcurr, cur);
+	updateCover(gnext1, cur+1);
+	updateCover(gnext2, cur+2);
+	updateCover(gnext3, cur+3);
+}
+
+updateDim(float offPos) {
+	
+	
+	setAAgroupToPos(gprev3, offPos-3);
+	setAAgroupToPos(gprev2, offPos-2);
+	setAAgroupToPos(gprev1, offPos-1);
+	setAAgroupToPos(gcurr, offPos);
+	setAAgroupToPos(gnext1, offPos+1);
+	setAAgroupToPos(gnext2, offPos+2);
+	setAAgroupToPos(gnext3, offPos+3);
 }
 
 setAAgroupToPos(group g, float pos) {
 	int xmid = scw/2;
-	int y1 = pos*aaWidth*2;
-	int x1 = (pos-0.5)*aaWidth;
-	//if (pos < 0) x1 = x1-aaWidth/4;
-	//if (pos > 0) x1 = x1+aaWidth/4;
+	int ymid = sch/2;
 	
+	if (eyeDist == 0) return;
+
+	//*** sets 3D location of cover	
+	int x1 = (pos*1.3-0.5)*aaWidth;
+	int y1 = pos*aaWidth*3;
+	int z1 = 0.3*aaWidth;
 	if (y1 < 0) y1 = -y1;
 	
-	if ((y1+eyeDist) == 0) return;
-	
+	//*** calculates 3D coordinates to view plane
 	double rat = eyeDist/(y1+eyeDist);
 	int xp = x1*rat;
-		
 	int w = aaWidth*rat;
-
 	int h = w*1.667;
-	int yp = (sch - w)/2;
+	
+	int yp = z1*rat;
+	yp = ymid*1.1 + yp - w;
 
 	g.setXMLParam("x",integerToString(xmid+xp));
 	g.setXMLParam("y",integerToString(yp));
@@ -181,30 +189,45 @@ setAAgroupToPos(group g, float pos) {
 }
 
 /*
-Global double dblSmidge;
-prev1sd.fx_onGetPixelX(double r, double d, double x, double y)
-{
-	return x;
-}
-prev1sd.fx_onGetPixelY(double r, double d, double x, double y)
-{
-	if (y < 0)
-	{
-		return y;
+// **** animation scripts
+scrollAnim.onTimer() {
+	int currtoppix = (pltoptrack*texth + pltopMod);
+	int targetpix = targetPLTop*texth;
+	int speed;
+	
+	speed = (targetpix-currtoppix)*0.2;
+	if (speed < 0) speed = -speed;
+	
+	if (speed > scrollSpeed) speed = scrollSpeed;
+	if (noSlow) speed = scrollSpeed;
+
+	if (speed < 1) speed = 1;
+		
+	if (scrollDir == SCROLL_UP) {
+		
+		
+		pltoptrack = currtoppix+speed;
+		if (targetpix <= pltoptrack) {
+			pltoptrack = targetpix;
+			stop();
+		}
 	}
 	
-	return -y+dblSmidge;
+	if (scrollDir == SCROLL_DOWN) {
+		//if (speed > -1) speed = -1;
+		
+		pltoptrack = currtoppix-speed;
+		if (targetpix >= pltoptrack) {
+			pltoptrack = targetpix;
+			stop();
+		}
+	}
+	
+	pltopMod = pltoptrack % texth;
+	pltoptrack = pltoptrack / texth;
+	
+	refreshPL();
+	
 }
 
-prev1sd.fx_onGetPixelA(double r, double d, double x, double y)
-{
-	if (y < 0)
-	{
-		return 0+dblSmidge;
-	}
-	else
-	{
-		return (1-y+dblSmidge)*0.7;
-	}
-}
 */
