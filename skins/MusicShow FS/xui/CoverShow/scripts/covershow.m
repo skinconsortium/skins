@@ -24,7 +24,10 @@ function updateDim(float offPos);
 function updateCover(group g, int index);
 function setAAgroupToPos(group g, float pos);
 
-#define NUMCOVERS = 2;
+#define SCROLL_UP 1
+#define SCROLL_DOWN 2
+#define EYE_DIST_RATIO 1.5
+#define AA_WIDTH_RATIO 0.3
 
 Class Layer AlbumCover;
 
@@ -35,10 +38,13 @@ global PlEdit PeListener;
 Global group gprev3, gprev2, gprev1, gcurr, gnext1, gnext2, gnext3;
 global AlbumCover aaref;
 
-Global float currPos = 0, aaWidth;
+global float currPos = 0, aaWidth;
+global int lastPos = -1, scrollDir = SCROLL_DOWN;
 global int scw, sch, eyeDist;
+global int numPLItems, targetPos;
 
 global timer delayRefresh, scrollAnim;
+global timer animtest;
 
 System.onScriptLoaded () {
 	scriptGroup = getScriptGroup();
@@ -57,13 +63,34 @@ System.onScriptLoaded () {
 	scrollAnim = new Timer;
 	scrollAnim.setDelay(33);
 	
+	animTest =  new Timer;
+	animTest.setDelay(2000);
+
 	currPos = getPrivateInt(getSkinName(),"PLTopTrack",5);
+	numPLItems = PlEdit.getNumTracks();
 		
 	scriptGroup.onResize(0,0,scriptGroup.getWidth(),scriptGroup.getHeight()); // sets 3D variables;
 	
 	PeListener = new PlEdit;
 	update();
+}
 
+system.onPlay() {
+	animTest.start();
+}
+
+system.onStop() {
+	animTest.stop();
+}
+
+animTest.onTimer() {
+	if (scrollAnim.isRunning()) return;
+	
+	if (currPos < (numPLItems+1)) {
+		targetPos = currPos + 1;
+		scrollDir = SCROLL_UP;
+		scrollAnim.start();
+	} else stop();
 }
 
 system.onScriptUnloading() {
@@ -73,23 +100,31 @@ system.onScriptUnloading() {
 
 PeListener.onPleditModified () {
 	if (!delayRefresh.isRunning()) delayRefresh.start();
+
 }
 
 // delay needed otherwise it will update like crazy on PL change.
 delayRefresh.onTimer() {
 	stop();
 	
-	currPos = 5;
+	currPos = 0;
+	numPLItems = PlEdit.getNumTracks();
 	
 	update();
+}
+
+scriptGroup.onSetVisible(int on) { 
+	if (!on) return;
+	
+	scriptGroup.onResize(0,0,scriptGroup.getWidth(),scriptGroup.getHeight()); 
 }
 
 scriptGroup.onResize(int x, int y, int w, int h) {
 	scw = w;
 	sch	= h;
 	
-	eyeDist = w*1.5;
-	aaWidth = w*0.3;
+	eyeDist = w*EYE_DIST_RATIO;
+	aaWidth = w*AA_WIDTH_RATIO;
 	
 	if (!scriptGroup.isVisible()) return;
 	
@@ -97,9 +132,9 @@ scriptGroup.onResize(int x, int y, int w, int h) {
 }
 
 updateCover(group g, int index) {
-	int max = PlEdit.getNumTracks();
+	if (!scriptGroup.isVisible()) return;
 	
-	if (index < 0 || index >= max) { g.hide(); return; }
+	if (index < 0 || index >= numPLItems) { g.hide(); return; }
 	
 	layer aa = g.getObject("aa");
 	aaref = g.getObject("aa.ref");
@@ -139,6 +174,15 @@ AlbumCover.fx_onGetPixelA(double r, double d, double x, double y) {
 update() {
 	int cur = currPos;
 	if (currPos - cur > 0.5) cur++;
+	
+	float offs = cur - currPos;
+	updateDim(offs);
+	
+	//debug(floattostring(offs,2));
+	
+	if (lastPos == cur) return;
+	
+	
 
 	updateCover(gprev3, cur-3);
 	updateCover(gprev2, cur-2);
@@ -147,11 +191,13 @@ update() {
 	updateCover(gnext1, cur+1);
 	updateCover(gnext2, cur+2);
 	updateCover(gnext3, cur+3);
+	
+	lastPos = cur;
+	
+	
 }
 
 updateDim(float offPos) {
-	
-	
 	setAAgroupToPos(gprev3, offPos-3);
 	setAAgroupToPos(gprev2, offPos-2);
 	setAAgroupToPos(gprev1, offPos-1);
@@ -188,46 +234,35 @@ setAAgroupToPos(group g, float pos) {
 	g.setXMLParam("h",integerToString(h));
 }
 
-/*
+
 // **** animation scripts
 scrollAnim.onTimer() {
-	int currtoppix = (pltoptrack*texth + pltopMod);
-	int targetpix = targetPLTop*texth;
-	int speed;
+	//int targetpix = targetPos;
+	float speed;
 	
-	speed = (targetpix-currtoppix)*0.2;
+	speed = (targetPos-currPos)*0.05;
 	if (speed < 0) speed = -speed;
 	
-	if (speed > scrollSpeed) speed = scrollSpeed;
-	if (noSlow) speed = scrollSpeed;
+	//if (speed > scrollSpeed) speed = scrollSpeed;
+	//if (noSlow) speed = scrollSpeed;
 
-	if (speed < 1) speed = 1;
+	if (speed < 0.05) speed = 0.05;
 		
 	if (scrollDir == SCROLL_UP) {
-		
-		
-		pltoptrack = currtoppix+speed;
-		if (targetpix <= pltoptrack) {
-			pltoptrack = targetpix;
+		currPos = currPos + speed;
+		if (currPos >= targetPos) {
+			currPos = targetPos;
 			stop();
 		}
-	}
-	
-	if (scrollDir == SCROLL_DOWN) {
-		//if (speed > -1) speed = -1;
-		
-		pltoptrack = currtoppix-speed;
-		if (targetpix >= pltoptrack) {
-			pltoptrack = targetpix;
+	} else if (scrollDir == SCROLL_DOWN) {
+		currPos = currPos - speed;
+		if (currPos <= targetPos) {
+			currPos = targetPos;
 			stop();
 		}
-	}
-	
-	pltopMod = pltoptrack % texth;
-	pltoptrack = pltoptrack / texth;
-	
-	refreshPL();
-	
+	} else stop();
+
+	update();
+
 }
 
-*/
