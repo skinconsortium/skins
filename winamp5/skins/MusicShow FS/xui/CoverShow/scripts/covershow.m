@@ -20,14 +20,20 @@
 #include <lib/pldir.mi>
 
 function update();
+function updatePartial();
 function updateDim(float offPos);
 function updateCover(group g, int index);
 function setAAgroupToPos(group g, float pos);
+function group getAAgroup(int index);
 
 #define SCROLL_UP 1
 #define SCROLL_DOWN 2
 #define EYE_DIST_RATIO 1.5
 #define AA_WIDTH_RATIO 0.3
+
+// midpoint = numcovers/2 + 1
+#define NUMCOVERS 7
+#define MIDPOINT 4
 
 Class Layer AlbumCover;
 
@@ -35,44 +41,55 @@ global group scriptGroup;
 
 global PlEdit PeListener;
 
-Global group gprev3, gprev2, gprev1, gcurr, gnext1, gnext2, gnext3;
+Global group gaa1, gaa2, gaa3, gaa4, gaa5, gaa6, gaa7;
 global AlbumCover aaref;
+global int aamidpoint = 4; // sets the current albumart midpoint
 
 global float currPos = 0, aaWidth;
 global int lastPos = -1, scrollDir = SCROLL_DOWN;
 global int scw, sch, eyeDist;
 global int numPLItems, targetPos;
 
-global timer delayRefresh, scrollAnim;
+global int mousePressed, lastX, lastX2, lastpltop, lastmove, lasttime, origtime;
+
+global timer delayRefresh, scrollAnim, delayOnLoad;
 global timer animtest;
+
+global layer mousetrap;
 
 System.onScriptLoaded () {
 	scriptGroup = getScriptGroup();
 
-	gprev3 = scriptGroup.getObject("cover.flow.prev3");
-	gprev2 = scriptGroup.getObject("cover.flow.prev2");
-	gprev1 = scriptGroup.getObject("cover.flow.prev1");
-	gcurr = scriptGroup.getObject("cover.flow.curr");
-	gnext1 = scriptGroup.getObject("cover.flow.next1");
-	gnext2 = scriptGroup.getObject("cover.flow.next2");
-	gnext3 = scriptGroup.getObject("cover.flow.next3");
+	gaa1 = scriptGroup.getObject("cover.flow.aa1");
+	gaa2 = scriptGroup.getObject("cover.flow.aa2");
+	gaa3 = scriptGroup.getObject("cover.flow.aa3");
+	gaa4 = scriptGroup.getObject("cover.flow.aa4");
+	gaa5 = scriptGroup.getObject("cover.flow.aa5");
+	gaa6 = scriptGroup.getObject("cover.flow.aa6");
+	gaa7 = scriptGroup.getObject("cover.flow.aa7");
 	
 	delayRefresh = new Timer;
 	delayRefresh.setDelay(50);
 	
 	scrollAnim = new Timer;
-	scrollAnim.setDelay(33);
+	scrollAnim.setDelay(50);
 	
 	animTest =  new Timer;
 	animTest.setDelay(2000);
 
 	currPos = getPrivateInt(getSkinName(),"PLTopTrack",5);
+	aamidpoint = MIDPOINT;
 	numPLItems = PlEdit.getNumTracks();
 		
 	scriptGroup.onResize(0,0,scriptGroup.getWidth(),scriptGroup.getHeight()); // sets 3D variables;
 	
 	PeListener = new PlEdit;
 	update();
+	
+	//delayOnLoad = new Timer;
+	//delayRefresh.setDelay(50);
+	
+	mousetrap = scriptGroup.getObject("mousetrap");
 }
 
 system.onPlay() {
@@ -87,7 +104,7 @@ animTest.onTimer() {
 	if (scrollAnim.isRunning()) return;
 	
 	if (currPos < (numPLItems+1)) {
-		targetPos = currPos + 1;
+		targetPos = currPos + 5;
 		scrollDir = SCROLL_UP;
 		scrollAnim.start();
 	} else stop();
@@ -116,6 +133,8 @@ delayRefresh.onTimer() {
 scriptGroup.onSetVisible(int on) { 
 	if (!on) return;
 	
+	lastpos = -1;
+	update();
 	scriptGroup.onResize(0,0,scriptGroup.getWidth(),scriptGroup.getHeight()); 
 }
 
@@ -133,6 +152,7 @@ scriptGroup.onResize(int x, int y, int w, int h) {
 
 updateCover(group g, int index) {
 	if (!scriptGroup.isVisible()) return;
+	if (!g) return;
 	
 	if (index < 0 || index >= numPLItems) { g.hide(); return; }
 	
@@ -171,40 +191,85 @@ AlbumCover.fx_onGetPixelA(double r, double d, double x, double y) {
 	return ret;
 }
 
+group getAAgroup(int index) {
+	index = aamidpoint-MIDPOINT+index;
+	if (index > NUMCOVERS) index = index - NUMCOVERS;
+	if (index < 1) index = NUMCOVERS + index;
+	
+	if (index == 1) return gaa1;
+	else if (index == 2) return gaa2;
+	else if (index == 3) return gaa3;
+	else if (index == 4) return gaa4;
+	else if (index == 5) return gaa5;
+	else if (index == 6) return gaa6;
+	else if (index == 7) return gaa7;
+	else return NULL;
+}
+
 update() {
 	int cur = currPos;
 	if (currPos - cur > 0.5) cur++;
 	
 	float offs = cur - currPos;
 	updateDim(offs);
-	
-	//debug(floattostring(offs,2));
-	
-	if (lastPos == cur) return;
-	
-	
 
-	updateCover(gprev3, cur-3);
-	updateCover(gprev2, cur-2);
-	updateCover(gprev1, cur-1);
-	updateCover(gcurr, cur);
-	updateCover(gnext1, cur+1);
-	updateCover(gnext2, cur+2);
-	updateCover(gnext3, cur+3);
+	updateCover(getAAgroup(1), cur-3);
+	updateCover(getAAgroup(2), cur-2);
+	updateCover(getAAgroup(3), cur-1);
+	updateCover(getAAgroup(4), cur);
+	updateCover(getAAgroup(5), cur+1);
+	updateCover(getAAgroup(6), cur+2);
+	updateCover(getAAgroup(7), cur+3);
 	
 	lastPos = cur;
+}
+
+updatePartial() {
+	int cur = currPos;
+	group gg1, ggmid, gglast;
+	if (currPos - cur > 0.5) cur++;
+	
+	float offs = cur - currPos;
 	
 	
+	if ((cur - lastPos) == 1) {
+		aamidpoint++;
+		if (aamidpoint > NUMCOVERS) aamidpoint = 1;
+		
+		ggmid = getAAgroup(MIDPOINT);
+		gglast = getAAgroup(NUMCOVERS);
+		
+		updateCover(gglast, cur+3);
+		gglast.bringToBack();
+		ggmid.bringToFront();
+	} else if ((cur - lastPos) == -1) {
+		aamidpoint--;
+		if (aamidpoint < 1) aamidpoint =NUMCOVERS;
+		
+		gg1 = getAAgroup(1);
+		ggmid = getAAgroup(MIDPOINT);
+		
+		updateCover(gg1, cur-3);
+		gg1.bringToBack();
+		ggmid.bringToFront();
+	} else if (lastPos == cur) {
+		updateDim(offs);
+		return;
+	}
+
+	updateDim(offs);
+	
+	lastPos = cur;
 }
 
 updateDim(float offPos) {
-	setAAgroupToPos(gprev3, offPos-3);
-	setAAgroupToPos(gprev2, offPos-2);
-	setAAgroupToPos(gprev1, offPos-1);
-	setAAgroupToPos(gcurr, offPos);
-	setAAgroupToPos(gnext1, offPos+1);
-	setAAgroupToPos(gnext2, offPos+2);
-	setAAgroupToPos(gnext3, offPos+3);
+	setAAgroupToPos(getAAgroup(1), offPos-3);
+	setAAgroupToPos(getAAgroup(2), offPos-2);
+	setAAgroupToPos(getAAgroup(3), offPos-1);
+	setAAgroupToPos(getAAgroup(4), offPos);
+	setAAgroupToPos(getAAgroup(5), offPos+1);
+	setAAgroupToPos(getAAgroup(6), offPos+2);
+	setAAgroupToPos(getAAgroup(7), offPos+3);
 }
 
 setAAgroupToPos(group g, float pos) {
@@ -262,7 +327,114 @@ scrollAnim.onTimer() {
 		}
 	} else stop();
 
-	update();
-
+	updatePartial();
 }
+
+
+mousetrap.onLeftButtonDblClk(int x, int y) {
+/*
+	lastpltop = pltoptrack;
+	
+	int sel = (y - mouseTrap.getTop()) / texth;
+	currSel = sel + lastpltop;
+	
+	if (currSel >= pledit.getNumTracks()) currSel = pledit.getNumTracks()-1;
+	
+	refreshPL();
+	
+	PlEdit.playTrack(currSel);
+
+	complete;*/
+	
+}
+
+mousetrap.onLeftButtonDown(int x, int y) {
+	mousePressed = 1;
+	if (scrollAnim.isRunning()) scrollAnim.stop();
+	
+	lastX = getMousePosX();
+	lastX2 = lastX;
+	lastmove = 0;
+	
+	lastpltop = currPos;
+	lasttime = getTimeOfDay();
+	origtime = lasttime;
+	
+	int sel = x - mouseTrap.getTop();
+	//currPos = (sel + lastpltop) / 10;
+	//if (currPos >= pledit.getNumTracks()) currSel = pledit.getNumTracks()-1;
+	
+	//refreshPL();
+	
+}
+
+mousetrap.onMouseMove(int x, int y) {
+	if (!mousePressed) return;
+	
+	float move = lastX - getMousePosX();
+	
+	if ((move < 3) && (move > -3)) { lastmove = 0; return; }
+
+	//int lasttop = currPos;
+	
+	int numtracks = pledit.getNumTracks();
+	
+	int newpltop = lastpltop + move / 50;
+	//pltopMod = (lastpltop + move) % 10;
+	
+	/*if ((newpltop + numlines) >= (numtracks + 5)) { newpltop = numtracks - numlines + 4; pltopMod = texth;}
+	if (newpltop < -4) { newpltop = -4; pltopMod = -texth;}
+	if (numtracks < numlines) { newpltop = 0; pltopMod = 0; }*/
+	currPos = lastpltop + move / 50;
+	
+	/*int timediff = getTimeofDay()-lasttime;
+	lasttime = getTimeOfDay();
+	
+	if (timediff <= 0) timediff = 1;
+	lastmove = (lastX2 - getMousePosY()) * 100 / timediff;
+	lastX2 = getMousePosX();*/
+	
+	update();
+}
+
+mousetrap.onLeftButtonUp(int x, int y) {
+	return;
+	/*
+	mousePressed = 0;
+	
+	refreshPL();
+	
+	int numtracks = pledit.getNumTracks();
+
+	if (scrollAnim.isRunning()) return;
+	
+	if (lastmove > texth) {
+		targetPLTop = pltoptrack + lastmove/texth;
+		
+		if ((targetPLTop + numlines) >= (numtracks + 5)) { targetPLTop = numtracks - numlines + 4;}
+		if (targetPLTop < -4) { targetPLTop = -4;}
+		if (numtracks < numlines) { targetPLTop = 0; pltopMod = 0; }
+			
+		noSlow = 0;
+		scrollSpeed = lastmove*0.1;
+		if (scrollSpeed < 1) scrollSpeed = 1;
+		scrollDir = SCROLL_UP;
+		scrollAnim.start();
+	}
+	if (lastmove < (-texth)) {
+		targetPLTop = pltoptrack + lastmove/texth;
+		
+		if ((targetPLTop + numlines) >= (numtracks + 5)) { targetPLTop = numtracks - numlines + 4;}
+		if (targetPLTop < -4) { targetPLTop = -4;}
+		if (numtracks < numlines) { targetPLTop = 0; pltopMod = 0; }
+		
+		noSlow = 0;
+		scrollSpeed = -lastmove*0.1;
+		if (scrollSpeed < 1) scrollSpeed = 1;
+		scrollDir = SCROLL_DOWN;
+		scrollAnim.start();
+	}
+	*/
+}
+
 
