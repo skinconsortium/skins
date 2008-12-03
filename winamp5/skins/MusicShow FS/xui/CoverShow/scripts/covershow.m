@@ -50,7 +50,8 @@ global int lastPos = -1, scrollDir = SCROLL_DOWN;
 global int scw, sch, eyeDist;
 global int numPLItems, targetPos;
 
-global int mousePressed, lastX, lastX2, lastpltop, lastmove, lasttime, origtime;
+global int mousePressed, lastX, lastX2,  lasttime, origtime, noSlow;
+global float lastplpos, lastmove, scrollSpeed;
 
 global timer delayRefresh, scrollAnim, delayOnLoad;
 global timer animtest;
@@ -91,7 +92,7 @@ System.onScriptLoaded () {
 	
 	mousetrap = scriptGroup.getObject("mousetrap");
 }
-
+/*
 system.onPlay() {
 	animTest.start();
 }
@@ -109,7 +110,7 @@ animTest.onTimer() {
 		scrollAnim.start();
 	} else stop();
 }
-
+*/
 system.onScriptUnloading() {
 	delete delayRefresh;
 	delete scrollAnim;
@@ -308,10 +309,10 @@ scrollAnim.onTimer() {
 	speed = (targetPos-currPos)*0.05;
 	if (speed < 0) speed = -speed;
 	
-	//if (speed > scrollSpeed) speed = scrollSpeed;
-	//if (noSlow) speed = scrollSpeed;
+	if (speed > scrollSpeed) speed = scrollSpeed;
+	if (noSlow) speed = scrollSpeed;
 
-	if (speed < 0.05) speed = 0.05;
+	if (speed < 0.07) speed = 0.07;
 		
 	if (scrollDir == SCROLL_UP) {
 		currPos = currPos + speed;
@@ -333,10 +334,10 @@ scrollAnim.onTimer() {
 
 mousetrap.onLeftButtonDblClk(int x, int y) {
 /*
-	lastpltop = pltoptrack;
+	lastplpos = pltoptrack;
 	
 	int sel = (y - mouseTrap.getTop()) / texth;
-	currSel = sel + lastpltop;
+	currSel = sel + lastplpos;
 	
 	if (currSel >= pledit.getNumTracks()) currSel = pledit.getNumTracks()-1;
 	
@@ -356,16 +357,11 @@ mousetrap.onLeftButtonDown(int x, int y) {
 	lastX2 = lastX;
 	lastmove = 0;
 	
-	lastpltop = currPos;
+	lastplpos = currPos;
 	lasttime = getTimeOfDay();
 	origtime = lasttime;
 	
 	int sel = x - mouseTrap.getTop();
-	//currPos = (sel + lastpltop) / 10;
-	//if (currPos >= pledit.getNumTracks()) currSel = pledit.getNumTracks()-1;
-	
-	//refreshPL();
-	
 }
 
 mousetrap.onMouseMove(int x, int y) {
@@ -379,62 +375,63 @@ mousetrap.onMouseMove(int x, int y) {
 	
 	int numtracks = pledit.getNumTracks();
 	
-	int newpltop = lastpltop + move / 50;
-	//pltopMod = (lastpltop + move) % 10;
+	float newpos = lastplpos + move / 200;
+
+	if (newpos < -0.5) newpos = -0.5;
+	if (newpos > (numtracks-0.5)) newpos = numtracks-0.5;
 	
-	/*if ((newpltop + numlines) >= (numtracks + 5)) { newpltop = numtracks - numlines + 4; pltopMod = texth;}
-	if (newpltop < -4) { newpltop = -4; pltopMod = -texth;}
-	if (numtracks < numlines) { newpltop = 0; pltopMod = 0; }*/
-	currPos = lastpltop + move / 50;
+	currPos = newpos;
 	
-	/*int timediff = getTimeofDay()-lasttime;
+	int timediff = getTimeofDay()-lasttime;
 	lasttime = getTimeOfDay();
 	
 	if (timediff <= 0) timediff = 1;
-	lastmove = (lastX2 - getMousePosY()) * 100 / timediff;
-	lastX2 = getMousePosX();*/
+	lastmove = (lastX2 - getMousePosX()) / timediff;
+	lastX2 = getMousePosX();
 	
-	update();
+	updatePartial();
 }
 
 mousetrap.onLeftButtonUp(int x, int y) {
-	return;
-	/*
 	mousePressed = 0;
 	
-	refreshPL();
+	updatePartial();
 	
 	int numtracks = pledit.getNumTracks();
 
 	if (scrollAnim.isRunning()) return;
 	
-	if (lastmove > texth) {
-		targetPLTop = pltoptrack + lastmove/texth;
+	if (lastmove >= 0) {
+		float tp = currPos + lastmove;
+		targetPos = tp;
+		if (tp - targetPos > 0.5 && targetPos < numtracks-1) targetPos++;
 		
-		if ((targetPLTop + numlines) >= (numtracks + 5)) { targetPLTop = numtracks - numlines + 4;}
-		if (targetPLTop < -4) { targetPLTop = -4;}
-		if (numtracks < numlines) { targetPLTop = 0; pltopMod = 0; }
+		if (targetPos >= numtracks) targetPos = numtracks - 1;
+		if (targetPos < 0) targetPos = 0;
 			
 		noSlow = 0;
-		scrollSpeed = lastmove*0.1;
-		if (scrollSpeed < 1) scrollSpeed = 1;
-		scrollDir = SCROLL_UP;
-		scrollAnim.start();
-	}
-	if (lastmove < (-texth)) {
-		targetPLTop = pltoptrack + lastmove/texth;
+		scrollSpeed = lastmove;
+		if (scrollSpeed < 0.07) scrollSpeed = 0.07;
+	} else {
+		float tp = currPos + lastmove;
+		targetPos = tp;
+		if (tp - targetPos > 0.5 && targetPos > 1) targetPos++;
 		
-		if ((targetPLTop + numlines) >= (numtracks + 5)) { targetPLTop = numtracks - numlines + 4;}
-		if (targetPLTop < -4) { targetPLTop = -4;}
-		if (numtracks < numlines) { targetPLTop = 0; pltopMod = 0; }
-		
+		if (targetPos >= numtracks) targetPos = numtracks - 1;
+		if (targetPos < 0) targetPos = 0;
+			
 		noSlow = 0;
-		scrollSpeed = -lastmove*0.1;
-		if (scrollSpeed < 1) scrollSpeed = 1;
-		scrollDir = SCROLL_DOWN;
-		scrollAnim.start();
+		scrollSpeed = -lastmove;
+		if (scrollSpeed < 0.07) scrollSpeed = 0.07;
 	}
-	*/
+	
+	if (targetPos > currPos) 
+		scrollDir = SCROLL_UP;
+	else
+		scrollDir = SCROLL_DOWN;
+	scrollAnim.start();
+
+
 }
 
 
