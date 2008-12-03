@@ -1,4 +1,9 @@
 <elements>
 	<truetypefont id="player.normal.font.time" file="trebuc.ttf" allowmapping="0"/>
 	<truetypefont id="player.normal.font.songticker" file="trebuc.ttf" allowmapping="0"/>
+
+	<color id="notifier.dark" value="0,0,0"/>
+	<color id="notifier.bright" value="230,230,230"/>
+	<color id="notifier.dark.upper" value="230,230,230"/>
+	<color id="notifier.bright.upper" value="0,0,0"/>
 </elements>

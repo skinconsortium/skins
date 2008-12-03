@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <ClassicPro::Flex version="0.5">
 	<Appearance>
-		<ButtonGlow fadeInSpeed="0.3" fadeOutSpeed="0.5" type="flash"/>
+		<ButtonGlow fadeInSpeed="0.3" fadeOutSpeed="0.5" type="hold"/>
 		<PlayPauseButton normal="1" shade="0"/>
 	</Appearance>
 	<TextSettings>
