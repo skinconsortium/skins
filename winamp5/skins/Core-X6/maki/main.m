@@ -27,6 +27,7 @@ Global GuiObject Ticker;
 
 Global Button btnMNCrossfade, btnMNShuffle, btnMNRepeat;
 
+Global Layer PNBackground;
 Global Layer LCDCrossfade;
 Global Layer LCDShuffle;
 Global Layer LCDRepeat;
@@ -42,6 +43,8 @@ Global Int PrevValues1, PrevValues2, PrevValues3, PrevValues4, PrevValues5, Prev
 Global Int PrevValues8, PrevValues9, PrevValues10, PrevValues11, PrevValues12, PrevValues13, PrevValues14;
 Global Int PrevValues15, PrevValues16, PrevValues17, PrevValues18, PrevValues19, PrevValues20, PrevValues21;
 
+Global ConfigAttribute cattrDA;
+
 #include "play2pause.m"
 #include "songinfo.m"
 
@@ -53,6 +56,9 @@ System.onScriptLoaded() {
 	Layout lytMainNormal = cntMain.GetLayout("normal");
 	Group grpPlayerNormal = lytMainNormal.GetObject("player.normal.group");
 	Group grpLCD = grpPlayerNormal.GetObject("player.normal.LCD");
+
+	PNBackground = lytMainNormal.getObject("background");
+	
 	// Getting vis layers
 	lyrVis1 = grpLCD.getObject("vis1");
 	lyrVis2 = grpLCD.getObject("vis2");
@@ -76,6 +82,9 @@ System.onScriptLoaded() {
 	lyrVis20 = grpLCD.getObject("vis20");
 	lyrVis21 = grpLCD.getObject("vis21");
 
+	ConfigItem cfgDA = Config.getItemByGuid("{9149C445-3C30-4E04-8433-5A518ED0FDDE}");
+	cattrDA = cfgDA.getAttribute("Enable desktop alpha");
+
 	Ticker = grpLCD.getObject("ticker");
 
 	btnMNPlay = grpPlayerNormal.getObject("play2pause");
@@ -96,9 +105,27 @@ System.onScriptLoaded() {
 	tmrVis.Start();
 	tmrVis.OnTimer();
 
+	if (cattrDA.getData() == "1")
+	{
+		PNBackground.setXMLparam("image","player.normal.background.bitmap");
+	}
+	
+
 	play2pauseOnLoaded();
 	songinfoOnLoaded();
 
+}
+
+cattrDA.OnDataChanged()
+{
+	if (cattrDA.getData() == "0")
+	{
+		PNBackground.setXMLparam("image","player.normal.background.noalpha.bitmap");
+	}
+	if (cattrDA.getData() == "1")
+	{
+		PNBackground.setXMLparam("image","player.normal.background.bitmap");
+	}
 }
 
 tmrVis.OnTimer(){
@@ -122,7 +149,7 @@ tmrVis.OnTimer(){
 	PrevValues18 = SetVisFrame(lyrVis18, 15, 58, 60, PrevValues18, 0);
 	PrevValues19 = SetVisFrame(lyrVis19, 14, 61, 64, PrevValues19, 0);
 	PrevValues20 = SetVisFrame(lyrVis20, 13, 65, 67, PrevValues20, 0);
-	PrevValues21 = SetVisFrame(lyrVis21, 10, 68, 70, PrevValues21, -1);
+	PrevValues21 = SetVisFrame(lyrVis21, 11, 68, 70, PrevValues21, 0);
 }
 
 SetVisFrame(animatedlayer vislayer, int Length, int BandStart, int BandStop, int PrevValue, int Offset) {

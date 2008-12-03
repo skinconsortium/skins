@@ -16,10 +16,28 @@
 		minimal_h="349"
 		maximum_w="436"
 		maximum_h="349"
-		background="player.normal.background.bitmap"
 		desktopalpha="1"
 		droptarget="pldr"
 	>
+		<group
+			id="player.normal.drawer.cover"
+			x="153" y="50"
+			w="209" h="138"
+		/>
+		<layer
+			id="background"
+			x="0" y="0"
+			w="436"
+			h="255"
+			image="player.normal.background.noalpha.bitmap"
+			sysregion="1"
+		/>
+		<layer
+			id="coveralpha"
+			x="163" y="54"
+			w="38" h="82"
+			image="player.normal.alphaline.cover.bitmap"
+		/>
 		<group
 			id="player.normal.group"
 			x="149" y="0"
