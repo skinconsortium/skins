@@ -1,16 +1,23 @@
-<gammaset id="*Default">
+<gammaset id="Default">
 	<gammagroup id="player.normal.background"			value="0,0,0" gray="0" boost="0" />
 	<gammagroup id="player.normal.background.overlay1"	value="0,0,0" gray="0" boost="0" />
 	<gammagroup id="player.normal.background.overlay2"	value="0,0,0" gray="0" boost="0" />
 	<gammagroup id="player.normal.display"				value="0,0,0" gray="0" boost="0" />
 	<gammagroup id="player.normal.display.overlay"		value="0,0,0" gray="0" boost="0" />
+	<gammagroup id="player.normal.display.elements"		value="0,0,0" gray="0" boost="0" />
 	<gammagroup id="player.normal.ghost"				value="0,0,0" gray="0" boost="0" />
 	<gammagroup id="player.normal.cbuttons"				value="0,0,0" gray="0" boost="0" />
 	<gammagroup id="player.normal.cbuttons.glow"		value="0,0,0" gray="0" boost="0" />
+	<gammagroup id="player.normal.pbuttons"				value="0,0,0" gray="0" boost="0" />
+	<gammagroup id="player.normal.pbuttons.glow"		value="0,0,0" gray="0" boost="0" />
+	<gammagroup id="player.normal.mute"					value="0,0,0" gray="0" boost="0" />
+	<gammagroup id="player.normal.mute.glow"			value="0,0,0" gray="0" boost="0" />
 	<gammagroup id="player.normal.sysbuttons"			value="0,0,0" gray="0" boost="0" />
 	<gammagroup id="player.normal.sysbuttons.glow"		value="0,0,0" gray="0" boost="0" />
 	<gammagroup id="player.normal.compbuttons"			value="0,0,0" gray="0" boost="0" />
 	<gammagroup id="player.normal.compbuttons.glow"		value="0,0,0" gray="0" boost="0" />
 	<gammagroup id="player.normal.seek.fillbar"			value="0,0,0" gray="0" boost="0" />
 	<gammagroup id="player.normal.volume.fillbar"		value="0,0,0" gray="0" boost="0" />
+
+	<gammagroup id="notifier.background"				value="0,0,0" gray="0" boost="0" />
 </gammaset>	

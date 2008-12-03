@@ -1,11 +1,11 @@
 /**
  * glow.m
  *
- * adds glow to all Button Objects in this scripts parent group.
+ * adds glow to all buttons, handles songticker messages.
  *
  * @package	com.skinconsortium.cpro.flex
  * @author	mpdeimos
- * @date	18/10/01
+ * @date	08/10/01
  */
 
 #include <lib/std.mi>
@@ -15,8 +15,8 @@
 
 Function GlowObject newGlowObject(GlowObject go, GlowLayer gl, String id);
 
-Global GlowObject stop, play, pause, prev, next, open;
-Global GlowLayer stop_gl, play_gl, pause_gl, prev_gl, next_gl, open_gl;
+Global GlowObject stop, play, pause, prev, next, open, shuffle, repeat, mute;
+Global GlowLayer stop_gl, play_gl, pause_gl, prev_gl, next_gl, open_gl, shuffle_gl, repeat_gl, mute_gl;
 Global int glowType;
 
 System.onScriptLoaded ()
@@ -43,6 +43,9 @@ System.onScriptLoaded ()
 	prev = newGlowObject(prev, prev_gl, "cbutton.prev");
 	next = newGlowObject(next, next_gl, "cbutton.next");
 	open = newGlowObject(open, open_gl, "cbutton.open");
+	shuffle = newGlowObject(open, open_gl, "pbutton.shuffle");
+	repeat = newGlowObject(open, open_gl, "pbutton.repeat");
+	mute = newGlowObject(open, open_gl, "volume.mute");
 
 	stop_gl = stop.glow;
 	play_gl = play.glow;
@@ -50,6 +53,9 @@ System.onScriptLoaded ()
 	prev_gl = prev.glow;
 	next_gl = next.glow;
 	open_gl = open.glow;
+	shuffle_gl = shuffle.glow;
+	repeat_gl = repeat.glow;
+	mute_gl = mute.glow;
 }
 
 GlowObject newGlowObject(GlowObject go, GlowLayer gl, String id)
@@ -108,5 +114,74 @@ GlowObject.onLeftButtonDown (int x, int y)
 	{
 		tickertext = System.getString("winamp.playback", 5);
 	}
-	sendMessageS(SHOW_SYSINFO, tickertext);
+	else if (GlowObject == shuffle)
+	{
+		ToggleButton tgb = GlowObject;
+		if (tgb.getCurCfgVal() == 0)
+		{
+			tickertext = System.getString("winamp.playback", 31);
+		}
+		else
+		{
+			tickertext = System.getString("winamp.playback", 32);
+		}
+	}
+	else if (GlowObject == repeat)
+	{
+		ToggleButton tgb = GlowObject;
+		if (tgb.getCurCfgVal() == 0)
+		{
+			tickertext = System.getString("winamp.playback", 34);
+		}
+		else if (tgb.getCurCfgVal() == 1)
+		{
+			tickertext = System.getString("winamp.playback", 35);
+		}
+		else
+		{
+			tickertext = System.getString("winamp.playback", 36);
+		}
+	}	
+	if (tickertext != "")
+	{
+		sendMessageS(SHOW_SYSINFO, tickertext);	
+	}
+}
+
+GlowObject.onLeftButtonUp (int x, int y)
+{
+	String tickertext = "";
+	if (GlowObject == shuffle)
+	{
+		ToggleButton tgb = GlowObject;
+		if (tgb.getCurCfgVal() == 0)
+		{
+			tickertext = System.getString("winamp.playback", 31);
+		}
+		else
+		{
+			tickertext = System.getString("winamp.playback", 32);
+		}
+	}
+	else if (GlowObject == repeat)
+	{
+		ToggleButton tgb = GlowObject;
+		if (tgb.getCurCfgVal() == 0)
+		{
+			tickertext = System.getString("winamp.playback", 34);
+		}
+		else if (tgb.getCurCfgVal() == 1)
+		{
+			tickertext = System.getString("winamp.playback", 35);
+		}
+		else
+		{
+			tickertext = System.getString("winamp.playback", 36);
+		}
+	}
+
+	if (tickertext != "")
+	{
+		sendMessageS(SHOW_SYSINFO, tickertext);	
+	}
 }

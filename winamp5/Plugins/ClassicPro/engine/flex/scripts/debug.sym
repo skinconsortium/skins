@@ -72,38 +72,59 @@ var# |                Class |                                    What
 0044 |           GlowObject |                                     prev
 0045 |           GlowObject |                                     next
 0046 |           GlowObject |                                     open
-0047 |            GlowLayer |                                  stop_gl
-0048 |            GlowLayer |                                  play_gl
-0049 |            GlowLayer |                                 pause_gl
-004A |            GlowLayer |                                  prev_gl
-004B |            GlowLayer |                                  next_gl
-004C |            GlowLayer |                                  open_gl
-004D |                  Int |                                 glowType
-004E |               String |                                     type
-004F |               String |                                   "hold"
-0050 |               String |                                 "bounce"
-0051 |               String |                                  "flash"
-0052 |               String |                           "cbutton.stop"
-0053 |               String |                           "cbutton.play"
-0054 |               String |                          "cbutton.pause"
-0055 |               String |                           "cbutton.prev"
-0056 |               String |                           "cbutton.next"
-0057 |               String |                           "cbutton.open"
-0058 |           GlowObject |                                       go
-0059 |            GlowLayer |                                       gl
-005A |               String |                                       id
-005B |               String |                                  ".glow"
-005C |           GlowObject |                                       go
-005D |                  Int |                                        x
-005E |                  Int |                                        y
-005F |               String |                               tickertext
-0060 |               String |                        "winamp.playback"
-0061 |                  Int |                                        6
-0062 |                  Int |                                        7
-0063 |                  Int |                                        3
-0064 |                  Int |                                        4
-0065 |                  Int |                                        5
-0066 |                  Int |                                     0000
+0047 |           GlowObject |                                  shuffle
+0048 |           GlowObject |                                   repeat
+0049 |           GlowObject |                                     mute
+004A |            GlowLayer |                                  stop_gl
+004B |            GlowLayer |                                  play_gl
+004C |            GlowLayer |                                 pause_gl
+004D |            GlowLayer |                                  prev_gl
+004E |            GlowLayer |                                  next_gl
+004F |            GlowLayer |                                  open_gl
+0050 |            GlowLayer |                               shuffle_gl
+0051 |            GlowLayer |                                repeat_gl
+0052 |            GlowLayer |                                  mute_gl
+0053 |                  Int |                                 glowType
+0054 |               String |                                     type
+0055 |               String |                                   "hold"
+0056 |               String |                                 "bounce"
+0057 |               String |                                  "flash"
+0058 |               String |                           "cbutton.stop"
+0059 |               String |                           "cbutton.play"
+005A |               String |                          "cbutton.pause"
+005B |               String |                           "cbutton.prev"
+005C |               String |                           "cbutton.next"
+005D |               String |                           "cbutton.open"
+005E |               String |                        "pbutton.shuffle"
+005F |               String |                         "pbutton.repeat"
+0060 |               String |                            "volume.mute"
+0061 |           GlowObject |                                       go
+0062 |            GlowLayer |                                       gl
+0063 |               String |                                       id
+0064 |               String |                                  ".glow"
+0065 |           GlowObject |                                       go
+0066 |                  Int |                                        x
+0067 |                  Int |                                        y
+0068 |               String |                               tickertext
+0069 |               String |                        "winamp.playback"
+006A |                  Int |                                        6
+006B |                  Int |                                        7
+006C |                  Int |                                        3
+006D |                  Int |                                        4
+006E |                  Int |                                        5
+006F |         ToggleButton |                                      tgb
+0070 |                  Int |                                       31
+0071 |                  Int |                                       32
+0072 |         ToggleButton |                                      tgb
+0073 |                  Int |                                       34
+0074 |                  Int |                                       35
+0075 |                  Int |                                       36
+0076 |                  Int |                                     0000
+0077 |                  Int |                                        x
+0078 |                  Int |                                        y
+0079 |               String |                               tickertext
+007A |         ToggleButton |                                      tgb
+007B |         ToggleButton |                                      tgb
 -- Events Table ------------------------------------------------------
 var# |         Code Pointer |                                    What 
 ----------------------------------------------------------------------
@@ -112,7 +133,8 @@ var# |         Code Pointer |                                    What
 0013 |                 03EB |                                      G.o
 0015 |                 0598 |                                      G.o
 0000 |                 07C8 |                                      S.o
-0015 |                 0A32 |                                      G.o
+0015 |                 0AC5 |                                      G.o
+0015 |                 0DF8 |                                      G.o
 -- User Functions Table ----------------------------------------------
                Code Pointer |                                    What 
 ----------------------------------------------------------------------
@@ -131,4 +153,4 @@ var# |         Code Pointer |                                    What
                        070A |                             sendMessageS
                        074F |                             sendMessageO
                        0788 |                             sendMessageV
-                       0985 |                            newGlowObject
+                       0A18 |                            newGlowObject
