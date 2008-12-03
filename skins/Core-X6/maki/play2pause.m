@@ -1,5 +1,7 @@
 function play2pauseOnLoaded();
 
+#define PRESSSPEED 0.25
+
 play2pauseOnLoaded()
 {
 	tmrPlay2Pause.SetDelay(1000);
@@ -29,12 +31,12 @@ btnMNPlay.OnLeftButtonDown(int x, int y)
 	lyrMNPlayDown.SetTargetA(255);
 	lyrMNPlayDown.SetTargetX(Stringtointeger(GetXMLParam("X")));
 	lyrMNPlayDown.SetTargetY(Stringtointeger(GetXMLParam("Y")));
-	lyrMNPlayDown.SetTargetSpeed(0.3);
+	lyrMNPlayDown.SetTargetSpeed(PRESSSPEED);
 	lyrMNPlayDown.GoToTarget();
 	lyrMNPlayLight.SetTargetA(150);
 	lyrMNPlayLight.SetTargetX(Stringtointeger(GetXMLParam("X")));
 	lyrMNPlayLight.SetTargetY(Stringtointeger(GetXMLParam("Y")));
-	lyrMNPlayLight.SetTargetSpeed(0.3);
+	lyrMNPlayLight.SetTargetSpeed(PRESSSPEED);
 	lyrMNPlayLight.GoToTarget();
 }
 
@@ -43,12 +45,12 @@ btnMNPlay.OnLeftButtonUp(int x, int y)
 	lyrMNPlayDown.SetTargetA(0);
 	lyrMNPlayDown.SetTargetX(Stringtointeger(GetXMLParam("X")));
 	lyrMNPlayDown.SetTargetY(Stringtointeger(GetXMLParam("Y")));
-	lyrMNPlayDown.SetTargetSpeed(0.3);
+	lyrMNPlayDown.SetTargetSpeed(PRESSSPEED);
 	lyrMNPlayDown.GoToTarget();
 	lyrMNPlayLight.SetTargetA(255);
 	lyrMNPlayLight.SetTargetX(Stringtointeger(GetXMLParam("X")));
 	lyrMNPlayLight.SetTargetY(Stringtointeger(GetXMLParam("Y")));
-	lyrMNPlayLight.SetTargetSpeed(0.3);
+	lyrMNPlayLight.SetTargetSpeed(PRESSSPEED);
 	lyrMNPlayLight.GoToTarget();
 }
 

@@ -1,6 +1,10 @@
 #include </lib/std.mi>
 #include </lib/config.mi>
 
+// Change PRESSSPEED to change the animation speed
+
+#define PRESSSPEED 0.25
+
 Global Button Background;
 Global Layer Foreground;
 Global Layer DImage;
@@ -46,21 +50,21 @@ System.onSetXuiParam(String param, String value)
 Background.onLeftButtonDown(int x, int y)
 {
 	DImage.setTargetA(255);
-	DImage.setTargetSpeed(0.3);
+	DImage.setTargetSpeed(PRESSSPEED);
 	Foreground.setTargetA(Lightness/2);
-	Foreground.setTargetSpeed(0.3);
+	Foreground.setTargetSpeed(PRESSSPEED);
 	DImage.goToTarget();
 	Foreground.goToTarget();
 }
 Background.onLeftButtonUp(int x, int y)
 {
 	DImage.setTargetA(0);
-	DImage.setTargetSpeed(0.3);
+	DImage.setTargetSpeed(PRESSSPEED);
 	DImage.goToTarget();
 	if (noactivate)
 	{
 		Foreground.setTargetA(Lightness);
-		Foreground.setTargetSpeed(0.3);
+		Foreground.setTargetSpeed(PRESSSPEED);
 		Foreground.goToTarget();		
 	}
 }
@@ -71,7 +75,7 @@ Background.onActivate(int activated){
 	{
 		Lightness = 150 + (activated*155);
 		Foreground.setTargetA(Lightness);
-		Foreground.setTargetSpeed(0.3);
+		Foreground.setTargetSpeed(PRESSSPEED);
 		Foreground.goToTarget();		
 	}
 }

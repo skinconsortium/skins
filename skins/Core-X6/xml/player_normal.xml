@@ -62,20 +62,32 @@
 		image="player.normal.vent.bitmap"
 	/>
 
-	<Core-X6:ToggleLCD
+	<Core-X6:Button
  		id="toggle1"
 		x="54" y="81"
 		w="13" h="13"
+		image="player.normal.switch.lcd.background.bitmap"
+		dimage="player.normal.switch.lcd.background.bitmap"
+		foreimage="player.normal.switch.lcd.light.bitmap"
+		ttip="LCD screen 1"
 	/>
-	<Core-X6:ToggleLCD
+	<Core-X6:Button
  		id="toggle2"
 		x="64" y="71"
 		w="13" h="13"
+		image="player.normal.switch.lcd.background.bitmap"
+		dimage="player.normal.switch.lcd.background.bitmap"
+		foreimage="player.normal.switch.lcd.light.bitmap"
+		ttip="LCD screen 2"
 	/>
-	<Core-X6:ToggleLCD
+	<Core-X6:Button
  		id="toggle3"
 		x="77" y="64"
 		w="13" h="13"
+		image="player.normal.switch.lcd.background.bitmap"
+		dimage="player.normal.switch.lcd.background.bitmap"
+		foreimage="player.normal.switch.lcd.light.bitmap"
+		ttip="LCD screen 3"
 	/>
 
 	<Core-X6:ToggleButton
@@ -361,7 +373,7 @@
 	/>
 	<animatedlayer
 		id="vis21"
-		x="131" y="3"
+		x="131" y="6"
 		w="6" h="44"
 		image="player.normal.LCD.visanimation.bitmap"
 		framewidth ="6"
@@ -420,6 +432,17 @@
 		image="player.normal.LCD.bitrate.bitmap"
 	/>
 
+	<text
+		id="bitrate"
+		display="SONGBITRATE"
+		x="93" y="74"
+		w="22" h="11"
+		font="Arial"
+		color="255,224,89"
+		align="left"
+		fontsize="10"
+	/>	
+
 	<layer
 		id="status.mute"
 		x="11" y="87"
@@ -453,4 +476,29 @@
 
 	<script id="seek.script" file="maki/seeknvolbyregion.maki"/>
 
+</groupdef>
+
+<groupdef id="player.normal.drawer.cover">
+	<layer
+		id="base"
+		x="12" y="1"
+		w="189" h="125"
+		image="player.normal.cover.base"
+		sysregion="1"
+	/>
+	<layer
+		id="button"
+		x="0" y="0"
+		w="52" h="90"
+		image="player.normal.cover.button"
+		ghost="1"
+	/>
+	<layer
+		id="button.noalpha"
+		x="0" y="0"
+		w="52" h="90"
+		image="player.normal.cover.button.noalpha"
+		sysregion="1"
+		move="0"
+	/>
 </groupdef>
