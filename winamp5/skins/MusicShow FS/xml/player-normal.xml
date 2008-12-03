@@ -87,7 +87,7 @@
 		colorosc4="227,241,246"
 		colorosc5="245,255,255"
 		shadow="1" shadowcolor="0,0,0" bandwidth="thin"
-		 alpha="100"
+		 alpha="150"
 		gammagroup="glass" 
            />
 		
@@ -115,7 +115,7 @@
 		colorosc4="227,241,246"
 		colorosc5="245,255,255" bandwidth="thin"
 		shadow="1" shadowcolor="0,0,0" flipv="2"
-		 alpha="35"
+		 alpha="55"
 		gammagroup="glass" />
 		
 	<layer id="main.vis.mousetrap" fitparent="1" rectrgn="1" ghost="0"/>
@@ -151,8 +151,8 @@
 <groupdef id="player.main.cms" name="Close Min Switch" w="0" h="0" relatw="1" relath="1">
 	
 	<SC:NowPlaying 
-		x="20" y="10" relatx="2" relaty="2"
-		w="60" h="85" relatw="2" relath="2"
+		x="25" y="15" relatx="2" relaty="2"
+		w="50" h="75" relatw="2" relath="2"
 		bgcolor="128,128,128"	
 		reflectiontransparency="128"
 		reflectionheightpercentage="70"
