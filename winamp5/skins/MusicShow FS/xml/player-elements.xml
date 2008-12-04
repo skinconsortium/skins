@@ -13,7 +13,7 @@
 <bitmap id="player.main.background2" file="player/background2.png" gammagroup="Background" />
 <bitmap id="player.main.background3" file="player/background3.png" gammagroup="Background" />
 
-<bitmap id="player.main.background.default" file="player/defaultbg.png" gammagroup="Background" />
+<bitmap id="player.main.background.default" file="player/defaultbg.jpg" gammagroup="Background" />
 <bitmap id="player.main.background.default1" file="player/defaultbg1.png" gammagroup="Background" />
 <bitmap id="player.main.background.wallpaper" file="$wallpaper" />
 

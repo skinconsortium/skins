@@ -1,19 +1,12 @@
-/********************************************************\
-**  Filename:	coverflow.m				**
-**  Version:	1.0					**
-**  Date:	20. Nov. 2007 - 15:25			**
-**********************************************************
-**  Type:	winamp.wasabi/maki			**
-**  Project:	Cover Flow				**
-**********************************************************
-**  Author:	Martin Poehlmann aka Deimos		**
-**  E-Mail:	martin@skinconsortium.com		**
-**  Internet:	http://www.skinconsortium.com		**
-**		http://home.cs.tum.edu/~poehlman	**
-\********************************************************/
 
 
-/***** greatly modified by leechbite.com :D ******/
+/***** 
+
+XUI Object: CoverShow
+
+by leechbite.com
+
+******/
 
 
 #include <lib/std.mi>
@@ -45,29 +38,32 @@ Global group gaa1, gaa2, gaa3, gaa4, gaa5, gaa6, gaa7;
 global AlbumCover aaref;
 global int aamidpoint = 4; // sets the current albumart midpoint
 
+global group infoGr;
+
 global float currPos = 0, aaWidth;
 global int lastPos = -1, scrollDir = SCROLL_DOWN;
-global int scw, sch, eyeDist;
+global int scw, sch, eyeDist, sensitivity;
 global int numPLItems, targetPos;
 
 global int mousePressed, lastX, lastX2,  lasttime, origtime, noSlow;
 global float lastplpos, lastmove, scrollSpeed;
 
 global timer delayRefresh, scrollAnim, delayOnLoad;
-global timer animtest;
 
 global layer mousetrap;
 
 System.onScriptLoaded () {
 	scriptGroup = getScriptGroup();
 
-	gaa1 = scriptGroup.getObject("cover.flow.aa1");
-	gaa2 = scriptGroup.getObject("cover.flow.aa2");
-	gaa3 = scriptGroup.getObject("cover.flow.aa3");
-	gaa4 = scriptGroup.getObject("cover.flow.aa4");
-	gaa5 = scriptGroup.getObject("cover.flow.aa5");
-	gaa6 = scriptGroup.getObject("cover.flow.aa6");
-	gaa7 = scriptGroup.getObject("cover.flow.aa7");
+	gaa1 = scriptGroup.findObject("cover.show.aa1");
+	gaa2 = scriptGroup.findObject("cover.show.aa2");
+	gaa3 = scriptGroup.findObject("cover.show.aa3");
+	gaa4 = scriptGroup.findObject("cover.show.aa4");
+	gaa5 = scriptGroup.findObject("cover.show.aa5");
+	gaa6 = scriptGroup.findObject("cover.show.aa6");
+	gaa7 = scriptGroup.findObject("cover.show.aa7");
+	
+	infoGr = scriptGroup.getObject("cover.show.info");
 	
 	delayRefresh = new Timer;
 	delayRefresh.setDelay(50);
@@ -75,9 +71,6 @@ System.onScriptLoaded () {
 	scrollAnim = new Timer;
 	scrollAnim.setDelay(50);
 	
-	animTest =  new Timer;
-	animTest.setDelay(2000);
-
 	currPos = getPrivateInt(getSkinName(),"PLTopTrack",5);
 	aamidpoint = MIDPOINT;
 	numPLItems = PlEdit.getNumTracks();
@@ -88,29 +81,11 @@ System.onScriptLoaded () {
 	update();
 	
 	//delayOnLoad = new Timer;
-	//delayRefresh.setDelay(50);
+	//delayOnLoad.setDelay(50);
 	
 	mousetrap = scriptGroup.getObject("mousetrap");
 }
-/*
-system.onPlay() {
-	animTest.start();
-}
 
-system.onStop() {
-	animTest.stop();
-}
-
-animTest.onTimer() {
-	if (scrollAnim.isRunning()) return;
-	
-	if (currPos < (numPLItems+1)) {
-		targetPos = currPos + 5;
-		scrollDir = SCROLL_UP;
-		scrollAnim.start();
-	} else stop();
-}
-*/
 system.onScriptUnloading() {
 	delete delayRefresh;
 	delete scrollAnim;
@@ -146,9 +121,15 @@ scriptGroup.onResize(int x, int y, int w, int h) {
 	eyeDist = w*EYE_DIST_RATIO;
 	aaWidth = w*AA_WIDTH_RATIO;
 	
+	sensitivity = w / 5;
+	
 	if (!scriptGroup.isVisible()) return;
 	
 	updateDim(0);
+	
+	group gmid = getAAgroup(4);
+	
+	infoGr.setXMLParam("y", integerToString(gmid.getGuiY()+gmid.getHeight()*0.6));
 }
 
 updateCover(group g, int index) {
@@ -243,6 +224,7 @@ updatePartial() {
 		updateCover(gglast, cur+3);
 		gglast.bringToBack();
 		ggmid.bringToFront();
+
 	} else if ((cur - lastPos) == -1) {
 		aamidpoint--;
 		if (aamidpoint < 1) aamidpoint =NUMCOVERS;
@@ -253,6 +235,7 @@ updatePartial() {
 		updateCover(gg1, cur-3);
 		gg1.bringToBack();
 		ggmid.bringToFront();
+
 	} else if (lastPos == cur) {
 		updateDim(offs);
 		return;
@@ -298,6 +281,7 @@ setAAgroupToPos(group g, float pos) {
 	g.setXMLParam("y",integerToString(yp));
 	g.setXMLParam("w",integerToString(w));
 	g.setXMLParam("h",integerToString(h));
+
 }
 
 
@@ -375,7 +359,7 @@ mousetrap.onMouseMove(int x, int y) {
 	
 	int numtracks = pledit.getNumTracks();
 	
-	float newpos = lastplpos + move / 200;
+	float newpos = lastplpos + move / sensitivity;
 
 	if (newpos < -0.5) newpos = -0.5;
 	if (newpos > (numtracks-0.5)) newpos = numtracks-0.5;
@@ -386,7 +370,7 @@ mousetrap.onMouseMove(int x, int y) {
 	lasttime = getTimeOfDay();
 	
 	if (timediff <= 0) timediff = 1;
-	lastmove = (lastX2 - getMousePosX()) / timediff;
+	lastmove = (lastX2 - getMousePosX()) * 200 / (sensitivity*timediff);
 	lastX2 = getMousePosX();
 	
 	updatePartial();
