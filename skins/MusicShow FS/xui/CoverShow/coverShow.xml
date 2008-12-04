@@ -1,28 +1,53 @@
 
-<groupdef id="cover.flow.group">
+<groupdef id="cover.show.group">
 	<AlbumArt id="aa" x="0" y="0" h="60" w="0" relatw="1" relath="2" stretched="1"/>
 	<AlbumArt id="aa.ref" x="0" y="60" h="40" w="0" relaty="2" relatw="1" relath="2" stretched="1" alpha="90"/>
 </groupdef>
 
-<groupdef id="cover.flow.aa1" inherit_group="cover.flow.group"/>
-<groupdef id="cover.flow.aa2" inherit_group="cover.flow.group"/>
-<groupdef id="cover.flow.aa3" inherit_group="cover.flow.group"/>
-<groupdef id="cover.flow.aa4" inherit_group="cover.flow.group"/>
-<groupdef id="cover.flow.aa5" inherit_group="cover.flow.group"/>
-<groupdef id="cover.flow.aa6" inherit_group="cover.flow.group"/>
-<groupdef id="cover.flow.aa7" inherit_group="cover.flow.group"/>
+<groupdef id="cover.show.aa1" inherit_group="cover.show.group"/>
+<groupdef id="cover.show.aa2" inherit_group="cover.show.group"/>
+<groupdef id="cover.show.aa3" inherit_group="cover.show.group"/>
+<groupdef id="cover.show.aa4" inherit_group="cover.show.group"/>
+<groupdef id="cover.show.aa5" inherit_group="cover.show.group"/>
+<groupdef id="cover.show.aa6" inherit_group="cover.show.group"/>
+<groupdef id="cover.show.aa7" inherit_group="cover.show.group"/>
 
-<groupdef id="cover.flow" xuitag="CoverShow">
+<groupdef id="cover.show.info">
+	<text id="info.title" 
+		x="0" y="0" w="-50" h="25" relatw="1"
+		text="Title"
+		font="player.font.ticker" fontsize="30" bold="1"/>
+	<text id="info.artist" 
+		x="0" y="20" w="-50" h="25" relatw="1"
+		text="Artist"
+		font="player.font.ticker" fontsize="25" bold="0"/>
+	<text id="info.tracklen" 
+		x="-50" y="0" w="50" h="25" relatx="1"
+		text="1:00" align="right"
+		font="player.font.ticker" fontsize="25" bold="0"/>
+	<text id="info.plindex" 
+		x="-50" y="20" w="50" h="25" relatx="1"
+		text="1/1" align="right"
+		font="player.font.ticker" fontsize="25" bold="0"/>
+</groupdef>
 
-	<group id="cover.flow.aa1" x="0" y="50" h="60" w="60" visible="0"/>
-	<group id="cover.flow.aa7" x="0" y="50" h="60" w="60" visible="0"/>
-	<group id="cover.flow.aa2" x="0" y="50" h="60" w="60" visible="0"/>
-	<group id="cover.flow.aa6" x="0" y="50" h="60" w="60" visible="0"/>
-	<group id="cover.flow.aa3" x="0" y="50" h="60" w="60" visible="0"/>
-	<group id="cover.flow.aa5" x="0" y="50" h="60" w="60" visible="0"/>
-	<group id="cover.flow.aa4" x="0" y="50" h="60" w="60" visible="0"/>
+<groupdef id="cover.show.aa">
+	<group id="cover.show.aa1" x="0" y="50" h="60" w="60" visible="0"/>
+	<group id="cover.show.aa7" x="0" y="50" h="60" w="60" visible="0"/>
+	<group id="cover.show.aa2" x="0" y="50" h="60" w="60" visible="0"/>
+	<group id="cover.show.aa6" x="0" y="50" h="60" w="60" visible="0"/>
+	<group id="cover.show.aa3" x="0" y="50" h="60" w="60" visible="0"/>
+	<group id="cover.show.aa5" x="0" y="50" h="60" w="60" visible="0"/>
+	<group id="cover.show.aa4" x="0" y="50" h="60" w="60" visible="0"/>
+</groupdef>
+
+<groupdef id="cover.show" xuitag="CoverShow">
+
+	<group id="cover.show.aa" fitparent="1"/>
 	
 	<layer id="mousetrap" x="0" y="20" w="0" h="60" relatw="1" relaty="2" relath="2" rectrgn="1" move="0" cursor="IDC_HAND"/>
+	
+	<group id="cover.show.info" x="30" y="0" w="40" h="0" relatx="2" relatw="2" relath="1"/>
 
 	<script file="xui/CoverShow/scripts/covershow.maki" />
 </groupdef>
