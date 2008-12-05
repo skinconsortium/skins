@@ -19,6 +19,8 @@ function updateCover(group g, int index);
 function setAAgroupToPos(group g, float pos);
 function group getAAgroup(int index);
 
+function updateInfo(int index);
+
 #define SCROLL_UP 1
 #define SCROLL_DOWN 2
 #define EYE_DIST_RATIO 1.5
@@ -39,6 +41,8 @@ global AlbumCover aaref;
 global int aamidpoint = 4; // sets the current albumart midpoint
 
 global group infoGr;
+global text infoTitle, infoArtist, infoAlbum, infoTracklen, infoPLindex;
+global layer infoRatingBase, infoRating, infoRatingHover;
 
 global float currPos = 0, aaWidth;
 global int lastPos = -1, scrollDir = SCROLL_DOWN;
@@ -64,6 +68,14 @@ System.onScriptLoaded () {
 	gaa7 = scriptGroup.findObject("cover.show.aa7");
 	
 	infoGr = scriptGroup.getObject("cover.show.info");
+	infoTitle = infoGr.getObject("info.title");
+	infoArtist = infoGr.getObject("info.artist");
+	infoAlbum = infoGr.getObject("info.album");
+	infoTracklen = infoGr.getObject("info.tracklen");
+	infoPLindex = infoGr.getObject("info.plindex");
+	infoRatingBase = infoGr.getObject("info.ratings.base");
+	infoRating = infoGr.getObject("info.ratings");
+	infoRatingHover = infoGr.getObject("info.ratings.hover");
 	
 	delayRefresh = new Timer;
 	delayRefresh.setDelay(50);
@@ -203,6 +215,8 @@ update() {
 	updateCover(getAAgroup(6), cur+2);
 	updateCover(getAAgroup(7), cur+3);
 	
+	updateInfo(cur);
+	
 	lastPos = cur;
 }
 
@@ -236,12 +250,17 @@ updatePartial() {
 		gg1.bringToBack();
 		ggmid.bringToFront();
 
-	} else if (lastPos == cur) {
-		updateDim(offs);
-		return;
+	} else {
+		// *** this part needs to be reviewed.
+		if (lastPos == cur) {
+			updateDim(offs);
+			//update();
+			return;
+		}
 	}
 
 	updateDim(offs);
+	updateInfo(cur);
 	
 	lastPos = cur;
 }
@@ -370,7 +389,7 @@ mousetrap.onMouseMove(int x, int y) {
 	lasttime = getTimeOfDay();
 	
 	if (timediff <= 0) timediff = 1;
-	lastmove = (lastX2 - getMousePosX()) * 200 / (sensitivity*timediff);
+	lastmove = (lastX2 - getMousePosX()) * 300 / (sensitivity*timediff);
 	lastX2 = getMousePosX();
 	
 	updatePartial();
@@ -418,4 +437,29 @@ mousetrap.onLeftButtonUp(int x, int y) {
 
 }
 
+
+// ***** info scripts *****
+
+updateInfo(int index) {
+	string artist = PlEdit.getMetaData(index, "artist");
+	string songtitle = PlEdit.getMetaData(index, "title");
+	string album = PlEdit.getMetaData(index, "album");
+	string year = PlEdit.getMetaData(index, "year");
+	
+	if (artist == "") artist = "no artist";
+	if (songtitle == "") songtitle = "no title";
+	if (year != "") album = album + " (" + year + ")";
+	
+	infoTitle.setText(songtitle);
+	infoArtist.setText(artist);
+	infoalbum.setText(album);
+	infoTracklen.setText(PlEdit.getLength(index));
+	infoPLindex.setText(integerTostring(index)+"/"+integerToString(PlEdit.getNumTracks()));
+	
+	infoRating.setXMLParam("w", integerToString(PlEdit.getRating(index)*100/5));
+	/*infoRatingBase = infoGr.getObject("info.ratings.base");
+	infoRating = infoGr.getObject("info.ratings");
+	infoRatingHover*/
+	
+}
 
