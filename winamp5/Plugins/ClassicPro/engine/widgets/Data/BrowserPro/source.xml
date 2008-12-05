@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <WasabiXML>
 	<BrowserPro>
+		<sourceitem name="SongBook Lyrics" comment="Shows the lyrics for the current playing song. Very big database." url="http://www.songbook.me/tmp/lyrics.php?artist=%ARTIST%%AND%title=%TITLE%" icon="icon.lyricplugin"/>
+		<sourceitem name="SongBook Lyrics (local debug)" comment="Shows the lyrics for the current playing song. Very big database." url="http://localhost/songbook.me/tmp/lyrics.php?artist=%ARTIST%%AND%title=%TITLE%" icon="icon.lyricplugin"/>
 		<sourceitem name="Discogs (Artist)" comment="Search Discogs for this artist." url="http://www.discogs.com/artist/%ARTIST%" icon="icon.discogs"/>
 		<sourceitem name="Explorer View" comment="This will browse to the folder of the current playing item." url="%PATH%/" icon="icon.explorer"/>
 		<sourceitem name="Foxytunes (Artist)" comment="Foxytunes shows you information about the playing artist." url="http://www.foxytunes.com/artist/%ARTIST%" icon="icon.foxytunes"/>
