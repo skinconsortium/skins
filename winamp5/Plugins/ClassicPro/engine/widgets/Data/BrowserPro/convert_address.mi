@@ -17,13 +17,13 @@ String prepareCustomUrl(String input){
 	}
 	input = replaceString(input, "%PATH%", getMyPath());
 	input = replaceString(input, "%FILENAME%", removePath(getPlayItemMetaDataString("filename")));
-	input = replaceString(input, "%ARTIST%", getPlayItemMetaDataString("artist"));
-	input = replaceString(input, "%TITLE%", getPlayItemMetaDataString("title"));
-	input = replaceString(input, "%ALBUM%", getPlayItemMetaDataString("album"));
-	input = replaceString(input, "%GENRE%", getPlayItemMetaDataString("genre"));
-	input = replaceString(input, "%ALBUMARTIST%", getPlayItemMetaDataString("albumartist"));
-	input = replaceString(input, "%YEAR%", getPlayItemMetaDataString("year"));
-	input = replaceString(input, "%COMPOSER%", getPlayItemMetaDataString("composer"));
+	input = replaceString(input, "%ARTIST%", urlEncode(getPlayItemMetaDataString("artist")));
+	input = replaceString(input, "%TITLE%", urlEncode(getPlayItemMetaDataString("title")));
+	input = replaceString(input, "%ALBUM%", urlEncode(getPlayItemMetaDataString("album")));
+	input = replaceString(input, "%GENRE%", urlEncode(getPlayItemMetaDataString("genre")));
+	input = replaceString(input, "%ALBUMARTIST%", urlEncode(getPlayItemMetaDataString("albumartist")));
+	input = replaceString(input, "%YEAR%", urlEncode(getPlayItemMetaDataString("year")));
+	input = replaceString(input, "%COMPOSER%", urlEncode(getPlayItemMetaDataString("composer")));
 	String change = input;
 	input = replaceString(input, "%COLOR:LBG%", getColorHex("wasabi.list.background"));
 	input = replaceString(input, "%COLOR:LTXT%", getColorHex("wasabi.list.text"));
