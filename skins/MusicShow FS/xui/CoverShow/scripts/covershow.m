@@ -41,15 +41,16 @@ global AlbumCover aaref;
 global int aamidpoint = 4; // sets the current albumart midpoint
 
 global group infoGr;
-global text infoTitle, infoArtist, infoAlbum, infoTracklen, infoPLindex;
-global layer infoRatingBase, infoRating, infoRatingHover;
+global text infoTitle, infoAlbum;
+global guiObject infoRatingBase, infoRating, infoRatingHover;
+global int onMouseOver;
 
 global float currPos = 0, aaWidth;
 global int lastPos = -1, scrollDir = SCROLL_DOWN;
 global int scw, sch, eyeDist, sensitivity;
 global int numPLItems, targetPos;
 
-global int mousePressed, lastX, lastX2,  lasttime, origtime, noSlow;
+global int mousePressed, lastX, lastX2,  lasttime, origtime, noSlow, mousemoved;
 global float lastplpos, lastmove, scrollSpeed;
 
 global timer delayRefresh, scrollAnim, delayOnLoad;
@@ -69,10 +70,7 @@ System.onScriptLoaded () {
 	
 	infoGr = scriptGroup.getObject("cover.show.info");
 	infoTitle = infoGr.getObject("info.title");
-	infoArtist = infoGr.getObject("info.artist");
 	infoAlbum = infoGr.getObject("info.album");
-	infoTracklen = infoGr.getObject("info.tracklen");
-	infoPLindex = infoGr.getObject("info.plindex");
 	infoRatingBase = infoGr.getObject("info.ratings.base");
 	infoRating = infoGr.getObject("info.ratings");
 	infoRatingHover = infoGr.getObject("info.ratings.hover");
@@ -252,9 +250,9 @@ updatePartial() {
 
 	} else {
 		// *** this part needs to be reviewed.
-		if (lastPos == cur) {
-			updateDim(offs);
-			//update();
+		if (lastPos != cur) {
+			//updateDim(offs);
+			update();
 			return;
 		}
 	}
@@ -336,20 +334,38 @@ scrollAnim.onTimer() {
 
 
 mousetrap.onLeftButtonDblClk(int x, int y) {
-/*
-	lastplpos = pltoptrack;
+	int playtrack = TRUE;
 	
-	int sel = (y - mouseTrap.getTop()) / texth;
-	currSel = sel + lastplpos;
+	group g1 = getAAgroup(1);
+	group g2 = getAAgroup(2);
+	group g3 = getAAgroup(3);
+	group g4 = getAAgroup(4);
+	group g5 = getAAgroup(5);
+	group g6 = getAAgroup(6);
+	group g7 = getAAgroup(7);
 	
-	if (currSel >= pledit.getNumTracks()) currSel = pledit.getNumTracks()-1;
+	int cur = currPos;
+	if (currPos - cur > 0.5) cur++;
 	
-	refreshPL();
+	if (g3.isMouseOverRect() && g3.isVisible()) targetPos = cur - 1;
+	else if (g5.isMouseOverRect() && g5.isVisible()) targetPos = cur + 1;
+	else if (g2.isMouseOverRect() && g2.isVisible()) targetPos = cur - 2;
+	else if (g6.isMouseOverRect() && g6.isVisible()) targetPos = cur + 2;
+	else if (g1.isMouseOverRect() && g1.isVisible()) targetPos = cur - 3;
+	else if (g7.isMouseOverRect() && g7.isVisible()) targetPos = cur + 3;
+	else if (g4.isMouseOverRect() && g4.isVisible()) targetPos = cur;
+	else { targetPos = cur; playtrack = FALSE; }
 	
-	PlEdit.playTrack(currSel);
+	scrollSpeed = 0.2;
+	noSlow = 1;
+	
+	if (playtrack) PlEdit.playTrack(targetPos);
 
-	complete;*/
-	
+	if (targetPos > currPos) 
+		scrollDir = SCROLL_UP;
+	else
+		scrollDir = SCROLL_DOWN;
+	scrollAnim.start();
 }
 
 mousetrap.onLeftButtonDown(int x, int y) {
@@ -359,6 +375,8 @@ mousetrap.onLeftButtonDown(int x, int y) {
 	lastX = getMousePosX();
 	lastX2 = lastX;
 	lastmove = 0;
+	
+	mousemoved = FALSE;
 	
 	lastplpos = currPos;
 	lasttime = getTimeOfDay();
@@ -372,7 +390,9 @@ mousetrap.onMouseMove(int x, int y) {
 	
 	float move = lastX - getMousePosX();
 	
-	if ((move < 3) && (move > -3)) { lastmove = 0; return; }
+	if ((move < 5) && (move > -5)) { lastmove = 0; return; }
+	
+	mousemoved = TRUE;
 
 	//int lasttop = currPos;
 	
@@ -404,28 +424,52 @@ mousetrap.onLeftButtonUp(int x, int y) {
 
 	if (scrollAnim.isRunning()) return;
 	
-	if (lastmove >= 0) {
-		float tp = currPos + lastmove;
-		targetPos = tp;
-		if (tp - targetPos > 0.5 && targetPos < numtracks-1) targetPos++;
+	if (!mousemoved) { // if mouse has not moved, just bring clicked cover to front
+		group g1 = getAAgroup(1);
+		group g2 = getAAgroup(2);
+		group g3 = getAAgroup(3);
+		group g5 = getAAgroup(5);
+		group g6 = getAAgroup(6);
+		group g7 = getAAgroup(7);
 		
-		if (targetPos >= numtracks) targetPos = numtracks - 1;
-		if (targetPos < 0) targetPos = 0;
-			
-		noSlow = 0;
-		scrollSpeed = lastmove;
-		if (scrollSpeed < 0.07) scrollSpeed = 0.07;
+		int cur = currPos;
+		if (currPos - cur > 0.5) cur++;
+		
+		if (g3.isMouseOverRect() && g3.isVisible()) targetPos = cur - 1;
+		else if (g5.isMouseOverRect() && g5.isVisible()) targetPos = cur + 1;
+		else if (g2.isMouseOverRect() && g2.isVisible()) targetPos = cur - 2;
+		else if (g6.isMouseOverRect() && g6.isVisible()) targetPos = cur + 2;
+		else if (g1.isMouseOverRect() && g1.isVisible()) targetPos = cur - 3;
+		else if (g7.isMouseOverRect() && g7.isVisible()) targetPos = cur + 3;
+		else targetPos = cur;
+		
+		scrollSpeed = 0.2;
+		noSlow = 1;
 	} else {
-		float tp = currPos + lastmove;
-		targetPos = tp;
-		if (tp - targetPos > 0.5 && targetPos > 1) targetPos++;
-		
-		if (targetPos >= numtracks) targetPos = numtracks - 1;
-		if (targetPos < 0) targetPos = 0;
+	
+		if (lastmove >= 0) {
+			float tp = currPos + lastmove;
+			targetPos = tp;
+			if (tp - targetPos > 0.5 && targetPos < numtracks-1) targetPos++;
 			
-		noSlow = 0;
-		scrollSpeed = -lastmove;
-		if (scrollSpeed < 0.07) scrollSpeed = 0.07;
+			if (targetPos >= numtracks) targetPos = numtracks - 1;
+			if (targetPos < 0) targetPos = 0;
+				
+			noSlow = 0;
+			scrollSpeed = lastmove;
+			if (scrollSpeed < 0.07) scrollSpeed = 0.07;
+		} else {
+			float tp = currPos + lastmove;
+			targetPos = tp;
+			if (tp - targetPos > 0.5 && targetPos > 1) targetPos++;
+			
+			if (targetPos >= numtracks) targetPos = numtracks - 1;
+			if (targetPos < 0) targetPos = 0;
+				
+			noSlow = 0;
+			scrollSpeed = -lastmove;
+			if (scrollSpeed < 0.07) scrollSpeed = 0.07;
+		}
 	}
 	
 	if (targetPos > currPos) 
@@ -440,26 +484,58 @@ mousetrap.onLeftButtonUp(int x, int y) {
 
 // ***** info scripts *****
 
+infoGr.onResize(int x, int y, int w, int h) {
+	string newx = integerToString((w-100)/2);
+	
+	infoRating.setXMLParam("x", newx);
+	infoRatingBase.setXMLParam("x", newx);
+	infoRatingHover.setXMLParam("x", newx);
+}
+
 updateInfo(int index) {
-	string artist = PlEdit.getMetaData(index, "artist");
-	string songtitle = PlEdit.getMetaData(index, "title");
+	string songtitle = PlEdit.getTitle(index);
 	string album = PlEdit.getMetaData(index, "album");
 	string year = PlEdit.getMetaData(index, "year");
 	
-	if (artist == "") artist = "no artist";
 	if (songtitle == "") songtitle = "no title";
 	if (year != "") album = album + " (" + year + ")";
 	
-	infoTitle.setText(songtitle);
-	infoArtist.setText(artist);
+	infoTitle.setText(integerToString(index)+". "+songtitle);
 	infoalbum.setText(album);
-	infoTracklen.setText(PlEdit.getLength(index));
-	infoPLindex.setText(integerTostring(index)+"/"+integerToString(PlEdit.getNumTracks()));
 	
 	infoRating.setXMLParam("w", integerToString(PlEdit.getRating(index)*100/5));
-	/*infoRatingBase = infoGr.getObject("info.ratings.base");
-	infoRating = infoGr.getObject("info.ratings");
-	infoRatingHover*/
-	
 }
+
+infoRatingBase.onMouseMove(int x, int y) {
+	if (!onMouseOver) return;
+	
+	int neww = (x-getLeft()) / 20 + 1;
+	if (neww > 5) neww = 5;
+	if (neww < 0) neww = 0;
+	
+	infoRatingHover.setXMLParam("w", integerToString(neww * 20));
+}
+
+infoRatingBase.onLeftButtonUp(int x, int y) {
+	int neww = (x-getLeft()) / 20 + 1;
+	if (neww > 5) neww = 5;
+	if (neww < 0) neww = 0;
+	
+	int cur = currPos;
+	if (currPos - cur > 0.5) cur++;
+
+	PlEdit.setRating(cur, neww);
+	infoRating.setXMLParam("w", integerToString(neww * 20));
+}
+
+infoRatingBase.onEnterArea() {
+	onMouseOver = TRUE;
+}
+
+infoRatingBase.onLeaveArea() {
+	onMouseOver = FALSE;
+	infoRatingHover.setXMLParam("w", "0");
+}
+
+
 

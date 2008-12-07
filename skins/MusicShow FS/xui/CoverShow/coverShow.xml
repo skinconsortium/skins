@@ -19,32 +19,20 @@
 
 <groupdef id="cover.show.info">
 	<text id="info.title" 
-		x="0" y="0" w="-60" h="25" relatw="1"
-		text="Title"
-		font="player.font.ticker" fontsize="20" bold="1"/>
-	<text id="info.artist" 
-		x="0" y="17" w="-65" h="25" relatw="1"
-		text="Artist"
-		font="player.font.ticker" fontsize="20" bold="0"/>
+		x="0" y="0" w="0" h="25" relatw="1"
+		text="Title" align="center" alpha="200" ghost="1"
+		font="Arial" fontsize="20" bold="1"/>
 	<text id="info.album" 
-		x="0" y="34" w="-60" h="25" relatw="1"
-		text="Artist"
-		font="player.font.ticker" fontsize="20" bold="0"/>
-	<text id="info.tracklen" 
-		x="-60" y="0" w="60" h="25" relatx="1"
-		text="1:00" align="right"
-		font="player.font.ticker" fontsize="20" bold="0"/>
-	<text id="info.plindex" 
-		x="-70" y="17" w="70" h="25" relatx="1"
-		text="1/1" align="right"
-		font="player.font.ticker" fontsize="20" bold="0"/>
+		x="0" y="16" w="0" h="25" relatw="1"
+		text="Album" align="center" alpha="160" ghost="1"
+		font="Arial" fontsize="20" bold="0"/>
 		
 	<layer id="info.ratings.base"
-		x="-100" y="37" relatx="1" image="covershow.ratings.nostar" rectrgn="1" cursor="IDC_HAND"/>
+		x="0" y="38" image="covershow.ratings.nostar" rectrgn="1" cursor="IDC_HAND" move="0"/>
 	<layer id="info.ratings"
-		x="-100" y="37" relatx="1" tile="1" image="covershow.ratings.star" ghost="1"/>
+		x="0" y="38" w="0" tile="1" image="covershow.ratings.star" ghost="1"/>
 	<layer id="info.ratings.hover"
-		x="-100" y="37" w="0" relatx="1" tile="1" image="covershow.ratings.hover" ghost="1"/>
+		x="0" y="38" w="0" tile="1" image="covershow.ratings.hover" ghost="1"/>
 </groupdef>
 
 <groupdef id="cover.show.aa">
@@ -63,7 +51,7 @@
 	
 	<layer id="mousetrap" x="0" y="20" w="0" h="60" relatw="1" relaty="2" relath="2" rectrgn="1" move="0" cursor="IDC_HAND"/>
 	
-	<group id="cover.show.info" x="25" y="0" w="50" h="0" relatx="2" relatw="2" relath="1"/>
+	<group id="cover.show.info" x="10" y="0" w="80" h="0" relatx="2" relatw="2" relath="1"/>
 
 	<script file="xui/CoverShow/scripts/covershow.maki" />
 </groupdef>
