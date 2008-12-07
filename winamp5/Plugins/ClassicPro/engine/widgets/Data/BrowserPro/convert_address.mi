@@ -5,6 +5,9 @@
 Function String prepareCustomUrl(String input);
 Function String replaceString(string baseString, string toreplace, string replacedby);
 Function String getMyPath();
+Function String getColorHex(string colorID);
+Function String decToHex(int i);
+Global Boolean onCTChangeReload;
 
 String prepareCustomUrl(String input){
 	String change = "";
@@ -21,6 +24,25 @@ String prepareCustomUrl(String input){
 	input = replaceString(input, "%ALBUMARTIST%", getPlayItemMetaDataString("albumartist"));
 	input = replaceString(input, "%YEAR%", getPlayItemMetaDataString("year"));
 	input = replaceString(input, "%COMPOSER%", getPlayItemMetaDataString("composer"));
+	String change = input;
+	input = replaceString(input, "%COLOR:LBG%", getColorHex("wasabi.list.background"));
+	input = replaceString(input, "%COLOR:LTXT%", getColorHex("wasabi.list.text"));
+
+	if (change == input)
+	{
+		onCTChangeReload = false;
+	}
+	else
+	{
+		onCTChangeReload = true;
+	}
+	
+	// maybe we need to do some urldecode stuff!
+	/*change = "";
+	while(change!=input){
+		change = input;
+		input = replaceString(input, " ", "%20");
+	}*/
 	return input;
 }
 
@@ -46,4 +68,87 @@ String getMyPath() {
 	else if(System.strRight(getPath(getPlayItemMetaDataString("filename")),2)==":"+bs) output= System.strleft(getPlayItemMetaDataString("filename"),2);
 	else output= getPath(getPlayItemMetaDataString("filename"));
 	return output;
+}
+
+String getColorHex(String colorID)
+{
+	Color c = ColorMgr.getColor(colorID);
+	String ret = "";
+
+	if (c.getRedWithGamma() < 16)
+	{
+		ret += "0";	
+	}
+	ret += decToHex(c.getRedWithGamma());
+	if (c.getGreenWithGamma() < 16)
+	{
+		ret += "0";	
+	}
+	ret += decToHex(c.getGreenWithGamma());
+	if (c.getBlueWithGamma() < 16)
+	{
+		ret += "0";	
+	}
+	ret += decToHex(c.getBlueWithGamma());
+
+	//debug( integerToString(c.getRedWithGamma()) + "," + integerToString(c.getGreenWithGamma()) + "," + integerToString(c.getBlueWithGamma()) + "\n"
+	//       + ret);
+
+	return ret;
+}
+
+String decToHex(int dec)
+{
+	List hexDigits = new List;
+	hexDigits.addItem("0");
+	hexDigits.addItem("1");
+	hexDigits.addItem("2");
+	hexDigits.addItem("3");
+	hexDigits.addItem("4");
+	hexDigits.addItem("5");
+	hexDigits.addItem("6");
+	hexDigits.addItem("7");
+	hexDigits.addItem("8");
+	hexDigits.addItem("9");
+	hexDigits.addItem("A");
+	hexDigits.addItem("B");
+	hexDigits.addItem("C");
+	hexDigits.addItem("D");
+	hexDigits.addItem("E");
+	hexDigits.addItem("F");
+
+	String res = "";
+	int i = 0;
+	while (dec > 15)
+	{
+		//hexgen
+		int code1 = dec / 16;
+		int code2 = dec - code1 * 16; 
+		String decToHex = hexDigits.enumItem(code2);
+		//end hexgen
+
+		res = decToHex + res; 
+
+		// evaluate dec each time to
+		// pass the while loop condition
+		dec = dec / 16; 
+
+		i++;
+	} 
+
+	// store the last value 
+	// skiped due to loop condition
+	// for dec < 15
+
+	//hexgen
+	int code1 = dec / 16;
+	int code2 = dec - code1 * 16; 
+	String decToHex = hexDigits.enumItem(code2);
+	//end hexgen
+
+	res = decToHex + res; 
+
+	delete hexDigits;
+
+	return res;
 }
