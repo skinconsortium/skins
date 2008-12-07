@@ -3,6 +3,7 @@
 #include <lib/pldir.mi>
 #include <lib/fileio.mi>
 #include <lib/application.mi>
+#include <lib/colormgr.mi>
 #include "convert_address.mi"
 
 Function resizeResults(int items);
@@ -34,6 +35,8 @@ Global Browser myBrowser;
 Global Layer ddlMouseT, ddlIcon;
 Global Button bback, bffwd, brefresh, bstop;
 
+Global ColorMgr cm;
+
 Global Timer focus_callback;
 
 System.onScriptLoaded(){
@@ -60,6 +63,8 @@ System.onScriptLoaded(){
 	focus_callback = new Timer;
 	focus_callback.setDelay(100);
 
+	cm = new ColorMgr;
+
 	myList.setIconWidth(16);
 	myList.setShowIcons(1);
 	sourceNo=0;
@@ -72,6 +77,14 @@ myGroup.onSetVisible(boolean onOff){
 	}
 }
 
+cm.onColorThemeChanged(String newtheme)
+{
+	if (onCTChangeReload)
+	{
+		surfSelected();
+	}
+}
+
 System.onScriptUnloading (){
 	setPublicInt("ClassicPro.BrowserPro.loaded", 0);
 	myGroup.hide();
@@ -79,6 +92,7 @@ System.onScriptUnloading (){
 	delete loaded_P_Names;
 	delete loaded_P_Url;
 	delete focus_callback;
+	delete cm;
 }
 
 
