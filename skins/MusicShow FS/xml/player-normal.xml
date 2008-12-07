@@ -211,7 +211,14 @@
 		x="20" y="20" w="80" h="20" relatx="2" relaty="2" relatw="2" relath="2"
 		font="Arial" fontsize="46" bold="1"
 		color="255,255,255" alpha="80"/>
-		
+<layer x="100" y="200" image="player.main.background.default2"/>
+		<wasabi:checkbox id="config.bg.image"
+		text="Custom Image:" radioid="config.bg" radioval="1"
+		x="26" y="126" w="150" h="20"/>
+	<Wasabi:fileSelect x="40" y="145" w="-77" h="20" relatw="1"/>
+	<wasabi:checkbox id="config.bg.wallpaper"
+		text="Desktop Wallpaper" radioid="config.bg" radioval="2"
+		x="217" y="79" w="150" h="20"/>
 </groupdef>
 
 <groupdef id="player.pagescroller">

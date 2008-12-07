@@ -15,6 +15,7 @@
 
 <bitmap id="player.main.background.default" file="player/defaultbg.jpg" gammagroup="Background" />
 <bitmap id="player.main.background.default1" file="player/defaultbg1.png" gammagroup="Background" />
+<bitmap id="player.main.background.default2" file="player/defaultbg2.png" gammagroup="Background" />
 <bitmap id="player.main.background.wallpaper" file="$wallpaper" />
 
 <bitmap id="player.main.backgroundover" file="player/backgroundover.png"  />
