@@ -56,9 +56,10 @@
 	<layer id="player.main.forwardd" image="player.main.forwardd" x="174" y="0"  ghost="1"/>
 	<script file="scripts/hoverglow.maki" param="Next,player.main.forwardd"/>
 
-	<layer id="volback" image="volback" x="20" y="70" ghost="1"/>
-	<layer id="VolumeAnim" image="dominator.normal.Volume"  alpha="120" x="20" y="70" move="0" rectrgn="0" tooltip="Volume"/>
-	<script id="VolumeScr" file="scripts/volumebyregion.maki"/>
+	<layer id="volback" image="volback" x="20" y="70" w="170" move="0" rectrgn="1"/>
+	<layer id="VolumeAnim" image="dominator.normal.Volume" tile="1" ghost="1" alpha="200" x="20" y="70" w="0" rectrgn="0" tooltip="Volume"/>
+	<script file="scripts/volumeslider.maki" param="VolumeAnim,volback,horizontal"/>
+	<!--script id="VolumeScr" file="scripts/volumebyregion.maki"/-->
 </groupdef>
 
 <groupdef id="player.main.vis">
@@ -170,14 +171,14 @@
 
 <groupdef id="player.main.pl.coverflow">
 	<CoverShow fitparent="1"/>
+	
+	<button id="SwitchToList" x="10" y="10" relatx="2" relaty="2"
+		image="player.main.gen.button"
+		downimage="player.main.gen.button.down"
+		hoverimage="player.main.gen.button.hover"/>
 </groupdef>
 
 <groupdef id="player.main.pl">
-	<text id="test"
-		text="CoverShow"
-		x="20" y="20" w="80" h="20" relatx="2" relaty="2" relatw="2" relath="2"
-		font="Arial" fontsize="46" bold="1"
-		color="255,255,255" alpha="80"/>
 	<!--playlistPlus id="main.pl" 
 			x="27" y="0" w="212" h="180"
 			font="player.font.bankgothic" fontsize="14" linespacing="-2" color="255,255,255"
@@ -202,6 +203,9 @@
 	<group id="player.main.pl.coverflow" 
 		x="20" y="10" relatx="2" relaty="2"
 		w="60" h="90" relatw="2" relath="2"/>
+		
+
+		
 		
 </groupdef>
 

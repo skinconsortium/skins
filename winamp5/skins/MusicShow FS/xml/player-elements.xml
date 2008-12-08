@@ -25,6 +25,10 @@
 <bitmap id="player.main.pl.button.menu" file="player/mainPL-buttons.png" x="16" y="0" w="16" h="16"/>
 <bitmap id="player.main.pl.button.menu.hover" file="player/mainPL-buttons.png" x="16" y="16" w="16" h="16"/>
 
+<bitmap id="player.main.gen.button" file="player/button-gen.png" x="0" y="0" w="90" h="30" gammagroup="glass"/>
+<bitmap id="player.main.gen.button.hover" file="player/button-gen.png" x="0" y="30" w="90" h="30" gammagroup="glass"/>
+<bitmap id="player.main.gen.button.down" file="player/button-gen.png" x="0" y="60" w="90" h="30" gammagroup="glass"/>
+
 <bitmap id="volpos" file="player/volpos.png" gammagroup="Glass"/>
 <bitmap id="imagesel" file="player/imagesel.png" />
 <bitmap id="anivis2" file="player/anivis.png" gammagroup="Glass"/>
