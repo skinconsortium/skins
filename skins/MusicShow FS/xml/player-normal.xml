@@ -169,13 +169,46 @@
 		
 </groupdef>
 
-<groupdef id="player.main.pl.coverflow">
-	<CoverShow fitparent="1"/>
-	
-	<button id="SwitchToList" x="10" y="10" relatx="2" relaty="2"
+<groupdef id="player.main.pl.coverflow.buttons">
+	<button id="SwitchToList.button" x="0" y="0" 
 		image="player.main.gen.button"
 		downimage="player.main.gen.button.down"
 		hoverimage="player.main.gen.button.hover"/>
+		
+	<text id="SwitchToList.text" x="0" y="0" w="90" h="30"
+		text="LIST" align="center" ghost="1"
+		font="Arial" fontsize="18" bold="1"
+		color="255,255,255" alpha="128"/>
+		
+	<button id="shuffle.button" x="110" y="0" 
+		image="player.main.gen.button"
+		downimage="player.main.gen.button.down"
+		hoverimage="player.main.gen.button.hover"/>
+		
+	<text id="shuffle.text" x="110" y="0" w="90" h="30"
+		text="SHUFFLE" align="center" ghost="1"
+		font="Arial" fontsize="18" bold="1"
+		color="255,255,255" alpha="128"/>
+		
+	<button id="repeat.button" x="220" y="0" 
+		image="player.main.gen.button"
+		downimage="player.main.gen.button.down"
+		hoverimage="player.main.gen.button.hover"/>
+		
+	<text id="repeat.text" x="220" y="0" w="90" h="30"
+		text="REPEAT" align="center" ghost="1"
+		font="Arial" fontsize="18" bold="1"
+		color="255,255,255" alpha="128"/>
+		
+	
+</groupdef>
+
+<groupdef id="player.main.pl.coverflow">
+	<CoverShow fitparent="1"/>
+	
+	<group id="player.main.pl.coverflow.buttons" x="10" y="15" relaty="2" w="310" h="30"/>
+	<script file="scripts/centerobject.maki" param="player.main.pl.coverflow.buttons,1,0"/>
+		
 </groupdef>
 
 <groupdef id="player.main.pl">
