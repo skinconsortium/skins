@@ -175,29 +175,41 @@
 		downimage="player.main.gen.button.down"
 		hoverimage="player.main.gen.button.hover"/>
 		
-	<text id="SwitchToList.text" x="0" y="0" w="90" h="30"
-		text="LIST" align="center" ghost="1"
+	<layer id="SwitchToList.icon" x="5" y="0"
+		image="player.main.icon.list" ghost="1"/>
+	<text id="SwitchToList.text" x="35" y="0" w="90" h="30"
+		text="LIST" align="left" ghost="1"
 		font="Arial" fontsize="18" bold="1"
 		color="255,255,255" alpha="128"/>
 		
+	<layer id="shuffle.icon" x="115" y="0"
+		image="player.main.icon.shuffle" ghost="1"/>
 	<button id="shuffle.button" x="110" y="0" 
 		image="player.main.gen.button"
 		downimage="player.main.gen.button.down"
 		hoverimage="player.main.gen.button.hover"/>
-		
-	<text id="shuffle.text" x="110" y="0" w="90" h="30"
+	<text id="shuffle.text" x="138" y="0" w="55" h="20"
 		text="SHUFFLE" align="center" ghost="1"
-		font="Arial" fontsize="18" bold="1"
+		font="Arial" fontsize="16" bold="1"
+		color="255,255,255" alpha="128"/>
+	<text id="shuffle.text.ind" x="138" y="12" w="50" h="20"
+		text="OFF" align="center" ghost="1"
+		font="Arial" fontsize="16" bold="1"
 		color="255,255,255" alpha="128"/>
 		
+	<layer id="repeat.icon" x="225" y="0"
+		image="player.main.icon.repeat" ghost="1"/>
 	<button id="repeat.button" x="220" y="0" 
 		image="player.main.gen.button"
 		downimage="player.main.gen.button.down"
 		hoverimage="player.main.gen.button.hover"/>
-		
-	<text id="repeat.text" x="220" y="0" w="90" h="30"
+	<text id="repeat.text" x="250" y="0" w="50" h="20"
 		text="REPEAT" align="center" ghost="1"
-		font="Arial" fontsize="18" bold="1"
+		font="Arial" fontsize="16" bold="1"
+		color="255,255,255" alpha="128"/>
+	<text id="repeat.text.ind" x="250" y="12" w="50" h="20"
+		text="OFF" align="center" ghost="1"
+		font="Arial" fontsize="16" bold="1"
 		color="255,255,255" alpha="128"/>
 		
 	

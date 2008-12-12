@@ -29,6 +29,11 @@
 <bitmap id="player.main.gen.button.hover" file="player/button-gen.png" x="0" y="30" w="90" h="30" gammagroup="glass"/>
 <bitmap id="player.main.gen.button.down" file="player/button-gen.png" x="0" y="60" w="90" h="30" gammagroup="glass"/>
 
+<bitmap id="player.main.icon.list" file="player/button-icons.png" x="0" y="0" w="30" h="30" gammagroup="buttonLabel"/>
+<bitmap id="player.main.icon.cover" file="player/button-icons.png" x="30" y="0" w="30" h="30" gammagroup="buttonLabel"/>
+<bitmap id="player.main.icon.shuffle" file="player/button-icons.png" x="60" y="0" w="30" h="30" gammagroup="buttonLabel"/>
+<bitmap id="player.main.icon.repeat" file="player/button-icons.png" x="90" y="0" w="30" h="30" gammagroup="buttonLabel"/>
+
 <bitmap id="volpos" file="player/volpos.png" gammagroup="Glass"/>
 <bitmap id="imagesel" file="player/imagesel.png" />
 <bitmap id="anivis2" file="player/anivis.png" gammagroup="Glass"/>
@@ -36,8 +41,6 @@
 <bitmap id="animbutd" file="player/animbutd.png" />
 <bitmap id="volback" file="player/volback.png" />
  <bitmap id="dominator.normal.Volume" file="player/Volume.png" gammagroup="glass" />
-  <bitmap id="dominator.normal.SliderMap" file="player/SliderMap.png"/>
-  <bitmap id="dominator.normal.SliderMap2" file="player/SliderMap2.png"/>
 <bitmap id="membut" file="player/membut.png" gammagroup="Glass"/>
 <bitmap id="mem1" file="player/mem1.png" gammagroup="Background"/>
 <bitmap id="mem1d" file="player/mem1d.png" gammagroup="Background"/>
@@ -76,9 +79,7 @@
 <bitmap id="togglebutton" file="player/main.png" gammagroup="Glass"/>
 <bitmap id="TBactive" file="player/mains.png" gammagroup="Glass"/>
 <bitmap id="TBdown" file="player/mains.png" gammagroup="Glass"/>
-<bitmap id="player.map.seek" file="player/SliderMap3.png"/>
-      
- <bitmap id="player.map.seek2" file="player/SliderMap4.png"/>
+
 <bitmap id="player.over" file="player/over.png"/>
 <bitmap id="player.seekbk" file="player/songp.png"/>
 <bitmap id="player.over2" file="player/over2.png"/>
