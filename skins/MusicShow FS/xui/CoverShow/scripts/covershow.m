@@ -356,16 +356,9 @@ mousetrap.onLeftButtonDblClk(int x, int y) {
 	else if (g4.isMouseOverRect() && g4.isVisible()) targetPos = cur;
 	else { targetPos = cur; playtrack = FALSE; }
 	
-	scrollSpeed = 0.2;
-	noSlow = 1;
-	
+
 	if (playtrack) PlEdit.playTrack(targetPos);
 
-	if (targetPos > currPos) 
-		scrollDir = SCROLL_UP;
-	else
-		scrollDir = SCROLL_DOWN;
-	scrollAnim.start();
 }
 
 mousetrap.onLeftButtonDown(int x, int y) {
@@ -476,9 +469,7 @@ mousetrap.onLeftButtonUp(int x, int y) {
 		scrollDir = SCROLL_UP;
 	else
 		scrollDir = SCROLL_DOWN;
-	scrollAnim.start();
-
-
+	if (!scrollAnim.isRunning()) scrollAnim.start();
 }
 
 
