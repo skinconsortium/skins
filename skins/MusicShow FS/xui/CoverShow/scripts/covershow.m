@@ -81,7 +81,7 @@ System.onScriptLoaded () {
 	scrollAnim = new Timer;
 	scrollAnim.setDelay(50);
 	
-	currPos = getPrivateInt(getSkinName(),"PLTopTrack",5);
+	currPos = getPrivateInt(getSkinName(),"PLTopTrack",0);
 	aamidpoint = MIDPOINT;
 	numPLItems = PlEdit.getNumTracks();
 		
@@ -117,9 +117,10 @@ delayRefresh.onTimer() {
 }
 
 scriptGroup.onSetVisible(int on) { 
-	if (!on) return;
+	if (!on) { scrollAnim.stop(); return; }
 	
 	lastpos = -1;
+	currPos = getPrivateInt(getSkinName(),"PLTopTrack",0);
 	update();
 	scriptGroup.onResize(0,0,scriptGroup.getWidth(),scriptGroup.getHeight()); 
 }
@@ -319,12 +320,14 @@ scrollAnim.onTimer() {
 		currPos = currPos + speed;
 		if (currPos >= targetPos) {
 			currPos = targetPos;
+			setPrivateInt(getSkinName(),"PLTopTrack",currPos);
 			stop();
 		}
 	} else if (scrollDir == SCROLL_DOWN) {
 		currPos = currPos - speed;
 		if (currPos <= targetPos) {
 			currPos = targetPos;
+			setPrivateInt(getSkinName(),"PLTopTrack",currPos);
 			stop();
 		}
 	} else stop();

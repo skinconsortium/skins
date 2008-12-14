@@ -311,7 +311,7 @@
 			
 	<group id="player.main.pl.coverflow" 
 		x="20" y="10" relatx="2" relaty="2"
-		w="60" h="80" relatw="2" relath="2"/>
+		w="60" h="90" relatw="2" relath="2"/>
 		
 	<group id="player.main.pl.list" 
 		x="20" y="10" relatx="2" relaty="2"
