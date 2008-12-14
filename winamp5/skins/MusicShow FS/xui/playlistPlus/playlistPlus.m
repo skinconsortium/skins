@@ -102,7 +102,10 @@ scriptGroup.onResize(int x, int y, int w, int h) {
 }
 
 scriptGroup.onSetVisible(int on) {
-	if (on) refreshPL();
+	if (on) {
+		pltoptrack = getPrivateInt(getSkinName(),"PLTopTrack",0);
+		refreshPL();
+	}
 }
 
 

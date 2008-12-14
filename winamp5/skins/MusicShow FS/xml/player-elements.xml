@@ -41,11 +41,16 @@
 <bitmap id="player.main.gen.button2" file="player/button-gen.png" x="0" y="0" w="90" h="30" gammagroup="glass"/>
 <bitmap id="player.main.gen.button.hover2" file="player/button-gen.png" x="0" y="30" w="90" h="30" gammagroup="glass"/>
 <bitmap id="player.main.gen.button.down2" file="player/button-gen.png" x="0" y="60" w="90" h="30" gammagroup="glass"/>
+<!-- ****** -->
 
 <bitmap id="player.main.icon.list" file="player/button-icons.png" x="0" y="0" w="30" h="30" gammagroup="buttonLabel"/>
 <bitmap id="player.main.icon.cover" file="player/button-icons.png" x="30" y="0" w="30" h="30" gammagroup="buttonLabel"/>
 <bitmap id="player.main.icon.shuffle" file="player/button-icons.png" x="60" y="0" w="30" h="30" gammagroup="buttonLabel"/>
 <bitmap id="player.main.icon.repeat" file="player/button-icons.png" x="90" y="0" w="30" h="30" gammagroup="buttonLabel"/>
+
+<bitmap id="player.pl.selector.left" file="player/pl-selector.png" x="0" y="0" w="10" h="30" gammagroup="glass"/>
+<bitmap id="player.pl.selector.mid" file="player/pl-selector.png" x="10" y="30" w="10" h="30" gammagroup="glass"/>
+<bitmap id="player.pl.selector.right" file="player/pl-selector.png" x="20" y="60" w="70" h="30" gammagroup="glass"/>
 
 <bitmap id="volpos" file="player/volpos.png" gammagroup="Glass"/>
 <bitmap id="imagesel" file="player/imagesel.png" />
