@@ -236,9 +236,9 @@ System.onScriptLoaded ()
 			}
 			
 			updateTabWidth(tabI);
-			if (!hideTab)
+			if (hideTab)
 			{
-				totalTabWidth += tabI.w;				
+				totalTabWidth -= tabI.w;				
 			}
 
 		}	
@@ -638,26 +638,17 @@ removeTab(Tab t)
 }
 
 /**
- * Call this one everytime the tab text has changed. also aligns the tabs to the right
+ * Call this one everytime the tab text has changed.
  */
 updateTabWidth (Tab t)
 {
-	//totalTabWidth -= t.w;
+	//debugInt(t.isvisible());
+	totalTabWidth -= t.maxW;
 	t.w = t.findObject("cpro.tab.text").getAutoWidth() +14;
-	//totalTabWidth += t.w;
 	t.maxW = t.w;
+	totalTabWidth += t.maxW;
 	t.mid = t.w/2;
 	t.setXmlParam("w", integerToString(t.w));
-	/*
-
-	if (sg.getWidth() < totalTabWidth)
-	{
-		//alignByResize();
-	}
-	else
-	{
-		//align(t.right);	
-	}*/
 }
 
 forceAlign (Tab t)
@@ -791,8 +782,32 @@ sg.onAction (String action, String param, Int x, int y, int p1, int p2, GuiObjec
 		}
 	}
 	else if(strlower(action) == "update_tabname")
-	{
-		// @martin: update the tab name here!!!! (atm just used for the 3rd Party plugins)
+	{			
+		Tab tabI = firstTab;
+		while (tabI != null)
+		{
+			if (tabI.isInternal)
+			{
+				if (tabI.ID == x)
+				{
+					text t = tabI.findObject("cpro.tab.text");
+					t.setXmlParam("text", param);
+					int oldTotalTabWidth = totalTabWidth;
+					updateTabWidth(tabI);
+
+					if (sg.getWidth() < totalTabWidth || sg.getWidth() < oldTotalTabWidth)
+					{
+						alignByResize();
+					}
+					else
+					{
+						align(tabI);	
+					}
+					return;
+				}
+			}
+			tabI = tabI.right;
+		}	
 	}
 	debugTabs();
 }
