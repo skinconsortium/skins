@@ -25,22 +25,22 @@
 <bitmap id="player.main.pl.button.menu" file="player/mainPL-buttons.png" x="16" y="0" w="16" h="16"/>
 <bitmap id="player.main.pl.button.menu.hover" file="player/mainPL-buttons.png" x="16" y="16" w="16" h="16"/>
 
-<bitmap id="player.main.gen.button" file="player/button-gen.png" x="0" y="0" w="90" h="30" gammagroup="glass"/>
-<bitmap id="player.main.gen.button.hover" file="player/button-gen.png" x="0" y="30" w="90" h="30" gammagroup="glass"/>
-<bitmap id="player.main.gen.button.down" file="player/button-gen.png" x="0" y="60" w="90" h="30" gammagroup="glass"/>
+<bitmap id="player.main.gen.button" file="gfx/graphics.png" x="229" y="2" w="90" h="30" gammagroup="glass"/> <!--exported-->
+<bitmap id="player.main.gen.button.hover" file="gfx/graphics.png" x="229" y="33" w="90" h="30" gammagroup="glass"/> <!--exported-->
+<bitmap id="player.main.gen.button.down" file="gfx/graphics.png" x="229" y="64" w="90" h="30" gammagroup="glass"/> <!--exported-->
 
 <!-- the following is used for nstatesbutton -->
-<bitmap id="player.main.gen.button0" file="player/button-gen.png" x="0" y="0" w="90" h="30" gammagroup="glass"/>
-<bitmap id="player.main.gen.button.hover0" file="player/button-gen.png" x="0" y="30" w="90" h="30" gammagroup="glass"/>
-<bitmap id="player.main.gen.button.down0" file="player/button-gen.png" x="0" y="60" w="90" h="30" gammagroup="glass"/>
+<bitmap id="player.main.gen.button0" file="gfx/graphics.png" x="229" y="2" w="90" h="30" gammagroup="glass"/> <!--exported-->
+<bitmap id="player.main.gen.button.hover0" file="gfx/graphics.png" x="229" y="33" w="90" h="30" gammagroup="glass"/> <!--exported-->
+<bitmap id="player.main.gen.button.down0" file="gfx/graphics.png" x="229" y="64" w="90" h="30" gammagroup="glass"/> <!--exported-->
 
-<bitmap id="player.main.gen.button1" file="player/button-gen.png" x="0" y="0" w="90" h="30" gammagroup="glass"/>
-<bitmap id="player.main.gen.button.hover1" file="player/button-gen.png" x="0" y="30" w="90" h="30" gammagroup="glass"/>
-<bitmap id="player.main.gen.button.down1" file="player/button-gen.png" x="0" y="60" w="90" h="30" gammagroup="glass"/>
+<bitmap id="player.main.gen.button1" file="gfx/graphics.png" x="229" y="2" w="90" h="30" gammagroup="glass"/> <!--exported-->
+<bitmap id="player.main.gen.button.hover1" file="gfx/graphics.png" x="229" y="33" w="90" h="30" gammagroup="glass"/> <!--exported-->
+<bitmap id="player.main.gen.button.down1" file="gfx/graphics.png" x="229" y="64" w="90" h="30" gammagroup="glass"/> <!--exported-->
 
-<bitmap id="player.main.gen.button2" file="player/button-gen.png" x="0" y="0" w="90" h="30" gammagroup="glass"/>
-<bitmap id="player.main.gen.button.hover2" file="player/button-gen.png" x="0" y="30" w="90" h="30" gammagroup="glass"/>
-<bitmap id="player.main.gen.button.down2" file="player/button-gen.png" x="0" y="60" w="90" h="30" gammagroup="glass"/>
+<bitmap id="player.main.gen.button2" file="gfx/graphics.png" x="229" y="2" w="90" h="30" gammagroup="glass"/> <!--exported-->
+<bitmap id="player.main.gen.button.hover2" file="gfx/graphics.png" x="229" y="33" w="90" h="30" gammagroup="glass"/> <!--exported-->
+<bitmap id="player.main.gen.button.down2" file="gfx/graphics.png" x="229" y="64" w="90" h="30" gammagroup="glass"/> <!--exported-->
 <!-- ****** -->
 
 <bitmap id="player.main.icon.list" file="player/button-icons.png" x="0" y="0" w="30" h="30" gammagroup="buttonLabel"/>
