@@ -320,6 +320,7 @@ System.onGetCancelComponent(String guid, boolean goingvisible){
 				hold_Other.setXMLParam("hold", "");
 				hold_Other.show();
 				hold_Other.setXMLParam("hold", "@all@");
+				refreshAIOTab.start();
 			}
 			return false;
 		}
