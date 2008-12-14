@@ -193,7 +193,7 @@ System.onscriptunloading(){
 xuiGroup.onSetVisible(boolean onOff){
 	if(skipLoad && 	!wasTabTrig){
 		int pageNo = getPublicInt("cPro.lastComponentPage", 0);
-		if(pageNo==5) pageNo=0;
+		//if(pageNo==5) pageNo=0;
 		openTabNo(pageNo);
 		ssWinHol.start();
 		skipLoad=false;
@@ -251,6 +251,8 @@ System.onOpenUrl(string url){
 }
 
 System.onGetCancelComponent(String guid, boolean goingvisible){
+	debugString(guid,9);
+
 	// Check to see if this component is on the blacklist, and if it is, it will open in its own window or just close it...
 	for(int i=0;i<10;i++){
 		if(getToken(GUID_BLACKLIST, ";", i)== guid){
