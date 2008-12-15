@@ -21,7 +21,8 @@ global layout parentLayout;
 Global group scriptGroup;
 
 global text dummy;
-global guiobject selector, plslider;
+global guiobject plslider;
+global group selector;
 global layer mousetrap;
 global string xuiparams = "";
 global int currNumLines, currMaxLines, linespace, pltopMod;
@@ -43,7 +44,7 @@ System.onScriptLoaded() {
 	scriptGroup = getScriptGroup();
 	parentLayout = scriptGroup.getParentLayout();
 	dummy = scriptGroup.getObject("dummy");
-	selector = scriptGroup.getObject("selector");
+	selector = scriptGroup.getObject("xui.playlistplus.selector");
 	plslider = scriptGroup.getObject("plslider");
 	
 	pltoptrack = getPrivateInt(getSkinName(),"PLTopTrack",0);
@@ -137,7 +138,7 @@ refreshPL() {
 		else
 			plsliderh = scriptGroup.getHeight();
 			
-		if (plsliderh < 7) plsliderh = 7;
+		if (plsliderh < 20) plsliderh = 20;
 		if (plsliderh > scriptGroup.getHeight()) plsliderh = scriptGroup.getHeight();
 		
 		plslider.setXMLParam("h", integertostring(plsliderh));
@@ -723,9 +724,11 @@ System.onSetXuiParam(String param, String value) {
 	} else if (param=="selcolor") {
 		selcolor = value;
 	} else if (param=="selbgcolor") {
-		selector.setXMLParam("color",value);
+		guiobject sel = selector.getObject("selector");
+		if (sel) sel.setXMLParam("color",value);
 	} else if (param=="selalpha") {
-		selector.setXMLParam("alpha",value);
+		guiobject sel = selector.getObject("selector");
+		if (sel) sel.setXMLParam("alpha",value);
 	} else if (param=="playcolor") {
 		playcolor = value;
 	} else if (param=="color") {

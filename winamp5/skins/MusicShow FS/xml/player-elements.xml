@@ -49,8 +49,8 @@
 <bitmap id="player.main.icon.repeat" file="player/button-icons.png" x="90" y="0" w="30" h="30" gammagroup="buttonLabel"/>
 
 <bitmap id="player.pl.selector.left" file="player/pl-selector.png" x="0" y="0" w="10" h="30" gammagroup="glass"/>
-<bitmap id="player.pl.selector.mid" file="player/pl-selector.png" x="10" y="30" w="10" h="30" gammagroup="glass"/>
-<bitmap id="player.pl.selector.right" file="player/pl-selector.png" x="20" y="60" w="70" h="30" gammagroup="glass"/>
+<bitmap id="player.pl.selector.middle" file="player/pl-selector.png" x="10" y="0" w="10" h="30" gammagroup="glass"/>
+<bitmap id="player.pl.selector.right" file="player/pl-selector.png" x="20" y="0" w="70" h="30" gammagroup="glass"/>
 
 <bitmap id="volpos" file="player/volpos.png" gammagroup="Glass"/>
 <bitmap id="imagesel" file="player/imagesel.png" />

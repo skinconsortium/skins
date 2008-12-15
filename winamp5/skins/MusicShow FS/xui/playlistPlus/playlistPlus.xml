@@ -7,9 +7,12 @@
 ******************************************************
 -->
 
+<groupdef id="xui.playlistplus.selector">
+	<rect id="selector" fitparent="1" filled="1" color="0,0,0" alpha="255"/>
+</groupdef>
 
 <groupdef id="xui.playlistplus" xuitag="PlaylistPlus">
-	<rect id="selector" x="0" y="0" w="0" relatw="1" h="10" filled="1" color="0,0,0" alpha="255" visible="0"/>
+	<group id="xui.playlistplus.selector" x="0" y="0" w="0" relatw="1" h="10" alpha="255" visible="0"/>
 	
 	<rect id="plslider" x="-8" y="0" w="8" relatx="1" h="10" filled="1" color="0,0,0" alpha="255" visible="1" ghost="0" move="0"/>
 	
