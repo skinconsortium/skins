@@ -277,12 +277,20 @@
 	<script file="scripts/shufflerepeat.maki"/>
 </groupdef>
 
+<!-- override group definition -->
+<groupdef id="xui.playlistplus.selector">
+	<grid id="selector" fitparent="1"
+		left="player.pl.selector.left"
+		middle="player.pl.selector.middle"
+		right="player.pl.selector.right"/>
+</groupdef>
+
 <groupdef id="player.main.pl.list">
 	<playlistPlus id="main.pl" 
 			x="130" y="10" w="-130" h="80" relatx="0" relaty="2" relatw="1" relath="2"
 			font="Arial" fontsize="25" linespacing="-10" color="255,255,255" alpha="200"
-			playcolor="255,200,0" selcolor="50,50,50" selbgcolor="200,200,200" selalpha="150"
-			showslider="0" slidercolor="255,255,255" slideralpha="200"/>
+			playcolor="255,200,0" selcolor="255,255,255" selbgcolor="200,200,200" selalpha="255"
+			showslider="1" slidercolor="255,255,255" slideralpha="128"/>
 	<group id="player.main.pl.list.buttons" x="0" y="0" w="90" h="130"/>
 	<script file="scripts/centerobject.maki" param="player.main.pl.list.buttons,0,1"/>
 </groupdef>
@@ -327,7 +335,7 @@
 		x="20" y="20" w="80" h="20" relatx="2" relaty="2" relatw="2" relath="2"
 		font="Arial" fontsize="46" bold="1"
 		color="255,255,255" alpha="80"/>
-<layer x="100" y="200" image="player.main.background.default2"/>
+	<layer x="100" y="200" image="player.main.background.default2"/>
 		<wasabi:checkbox id="config.bg.image"
 		text="Custom Image:" radioid="config.bg" radioval="1"
 		x="26" y="126" w="150" h="20"/>
