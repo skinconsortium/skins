@@ -23,6 +23,11 @@ System.onScriptLoaded() {
 	
 	covershow = scriptGroup.getObject("player.main.pl.coverflow");
 	plplus = scriptGroup.getObject("player.main.pl.list");
+	
+	if (getPrivateInt(getSkinName(), "CoverShow", 1) == 0) {
+		plplus.show();
+		covershow.hide();
+	}
 }
 
 System.onScriptUnloading() {
@@ -32,9 +37,13 @@ System.onScriptUnloading() {
 buttonSwitchToList.onLeftClick() {
 	plplus.show();
 	covershow.hide();
+	
+	setPrivateInt(getSkinName(), "CoverShow", 0);
 }
 
 buttonSwitchToCover.onLeftClick() {
 	plplus.hide();
 	covershow.show();
+	
+	setPrivateInt(getSkinName(), "CoverShow", 1);
 }
