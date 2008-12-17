@@ -104,6 +104,7 @@ scriptGroup.onResize(int x, int y, int w, int h) {
 
 scriptGroup.onSetVisible(int on) {
 	if (on) {
+		currSel = getPrivateInt(getSkinName(),"PLCurrSel",0);
 		pltoptrack = getPrivateInt(getSkinName(),"PLTopTrack",0);
 		refreshPL();
 	}
@@ -278,6 +279,7 @@ refreshPL() {
 		// *** set private int only if list is not animating
 		
 		setPrivateInt(getSkinName(),"PLTopTrack",pltoptrack);
+		setPrivateInt(getSkinName(),"PLCurrSel",currSel);
 	}
 }
 
@@ -538,7 +540,8 @@ system.onKeyDown(string key) {
 		return;
 	}
 	
-	
+	setPrivateInt(getSkinName(),"PLTopTrack",pltoptrack);
+	setPrivateInt(getSkinName(),"PLCurrSel",currSel);
 }
 
 parentLayout.onAction(String action, String param, Int x, int y, int p1, int p2, GuiObject source) {
