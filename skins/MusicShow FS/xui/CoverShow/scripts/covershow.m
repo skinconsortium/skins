@@ -81,7 +81,7 @@ System.onScriptLoaded () {
 	scrollAnim = new Timer;
 	scrollAnim.setDelay(50);
 	
-	currPos = getPrivateInt(getSkinName(),"PLTopTrack",0);
+	currPos = getPrivateInt(getSkinName(),"PLCurrSel",0);
 	aamidpoint = MIDPOINT;
 	numPLItems = PlEdit.getNumTracks();
 		
@@ -120,7 +120,7 @@ scriptGroup.onSetVisible(int on) {
 	if (!on) { scrollAnim.stop(); return; }
 	
 	lastpos = -1;
-	currPos = getPrivateInt(getSkinName(),"PLTopTrack",0);
+	currPos = getPrivateInt(getSkinName(),"PLCurrSel",0);
 	update();
 	scriptGroup.onResize(0,0,scriptGroup.getWidth(),scriptGroup.getHeight()); 
 }
@@ -320,14 +320,20 @@ scrollAnim.onTimer() {
 		currPos = currPos + speed;
 		if (currPos >= targetPos) {
 			currPos = targetPos;
-			setPrivateInt(getSkinName(),"PLTopTrack",currPos);
+			int newPLTop = currPos - 3;
+			if (newPLTop < 0) newPLTop = 0;
+			setPrivateInt(getSkinName(),"PLCurrSel",currPos);
+			setPrivateInt(getSkinName(),"PLTopTrack",newPLTop);
 			stop();
 		}
 	} else if (scrollDir == SCROLL_DOWN) {
 		currPos = currPos - speed;
 		if (currPos <= targetPos) {
 			currPos = targetPos;
-			setPrivateInt(getSkinName(),"PLTopTrack",currPos);
+			int newPLTop = currPos - 3;
+			if (newPLTop < 0) newPLTop = 0;
+			setPrivateInt(getSkinName(),"PLCurrSel",currPos);
+			setPrivateInt(getSkinName(),"PLTopTrack",newPLTop);
 			stop();
 		}
 	} else stop();
@@ -475,6 +481,64 @@ mousetrap.onLeftButtonUp(int x, int y) {
 	if (!scrollAnim.isRunning()) scrollAnim.start();
 }
 
+system.onKeyDown(string key) {
+		return;
+	//if (!parentLayout.isActive()) return;
+	if (!scriptGroup.isVisible()) return;
+	if (delayOnLoad.isRunning()) return;
+	
+	key = strlower(key);
+	
+	int cur = currPos;
+	if (currPos - cur > 0.5) cur++;
+
+	if (key == "left") {
+		targetPos = cur - 1;
+		
+		scrollSpeed = 0.2;
+		noSlow = 1;
+		scrollDir = SCROLL_UP;
+
+		if (!scrollAnim.isRunning()) scrollAnim.start();
+		complete;
+		
+	} else if (key == "down") {
+		
+		complete;
+	} else if (key == "pgup") {
+		
+		
+		complete;
+		
+	} else if (key == "pgdn") {
+		
+		
+		complete;
+	} else if (key == "home") {
+		
+		
+		complete;
+	} else if (key == "end") {
+		
+		
+		complete;
+	} else if (key == "return") {
+		
+		
+		
+		
+		complete;
+	} else if (key == "del") {
+		if (scrollAnim.isRunning()) scrollAnim.stop();
+		//pledit.removeTrack(currSel);
+		
+		complete;
+	} else {
+		//dummy.settext(key);
+		return;
+	}
+
+}
 
 // ***** info scripts *****
 
@@ -494,7 +558,7 @@ updateInfo(int index) {
 	if (songtitle == "") songtitle = "no title";
 	if (year != "") album = album + " (" + year + ")";
 	
-	infoTitle.setText(integerToString(index)+". "+songtitle);
+	infoTitle.setText(integerToString(index+1)+". "+songtitle);
 	infoalbum.setText(album);
 	
 	infoRating.setXMLParam("w", integerToString(PlEdit.getRating(index)*100/5));
