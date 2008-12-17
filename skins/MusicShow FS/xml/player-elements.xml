@@ -47,10 +47,15 @@
 <bitmap id="player.main.icon.cover" file="player/button-icons.png" x="30" y="0" w="30" h="30" gammagroup="buttonLabel"/>
 <bitmap id="player.main.icon.shuffle" file="player/button-icons.png" x="60" y="0" w="30" h="30" gammagroup="buttonLabel"/>
 <bitmap id="player.main.icon.repeat" file="player/button-icons.png" x="90" y="0" w="30" h="30" gammagroup="buttonLabel"/>
+<bitmap id="player.main.icon.delete" file="player/button-icons.png" x="120" y="0" w="30" h="30" gammagroup="buttonLabel"/>
+<bitmap id="player.main.icon.menu" file="player/button-icons.png" x="150" y="0" w="30" h="30" gammagroup="buttonLabel"/>
+<bitmap id="player.main.icon.add" file="player/button-icons.png" x="180" y="0" w="30" h="30" gammagroup="buttonLabel"/>
+<bitmap id="player.main.icon.up" file="player/button-icons.png" x="210" y="0" w="30" h="30" gammagroup="buttonLabel"/>
+<bitmap id="player.main.icon.down" file="player/button-icons.png" x="240" y="0" w="30" h="30" gammagroup="buttonLabel"/>
 
-<bitmap id="player.pl.selector.left" file="player/pl-selector.png" x="0" y="0" w="10" h="30" gammagroup="glass"/>
-<bitmap id="player.pl.selector.middle" file="player/pl-selector.png" x="10" y="0" w="10" h="30" gammagroup="glass"/>
-<bitmap id="player.pl.selector.right" file="player/pl-selector.png" x="20" y="0" w="70" h="30" gammagroup="glass"/>
+<bitmap id="player.pl.selector.left" file="player/pl-selector.png" x="0" y="0" w="10" h="35" gammagroup="glass"/>
+<bitmap id="player.pl.selector.middle" file="player/pl-selector.png" x="10" y="0" w="70" h="35" gammagroup="glass"/>
+<bitmap id="player.pl.selector.right" file="player/pl-selector.png" x="80" y="0" w="10" h="35" gammagroup="glass"/>
 
 <bitmap id="volpos" file="player/volpos.png" gammagroup="Glass"/>
 <bitmap id="imagesel" file="player/imagesel.png" />

@@ -531,21 +531,6 @@ system.onKeyDown(string key) {
 	} else if (key == "del") {
 		if (scrollAnim.isRunning()) scrollAnim.stop();
 		pledit.removeTrack(currSel);
-		/*
-		if (currSel >= pledit.getNumTracks()) currSel = pledit.getNumTracks()-1;
-		
-		if (currSel < pltoptrack) {
-			pltoptrack = currSel;
-			pltopMod = 0;
-		}
-		
-		if ((currSel - pltoptrack + 2) > numlines) {
-			pltoptrack = currSel-numlines+2;
-			pltopMod = 0;
-		}
-		
-		if (scrollAnim.isRunning()) scrollAnim.stop();
-		refreshPL();*/
 		
 		complete;
 	} else {
@@ -554,6 +539,11 @@ system.onKeyDown(string key) {
 	}
 	
 	
+}
+
+parentLayout.onAction(String action, String param, Int x, int y, int p1, int p2, GuiObject source) {
+	action = strupper(action);
+	if (action=="PLDELETE") system.onKeyDown("del");
 }
 
 mousetrap.onLeftButtonDblClk(int x, int y) {
