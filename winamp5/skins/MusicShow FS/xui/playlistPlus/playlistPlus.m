@@ -387,8 +387,8 @@ plslider.onLeftButtonUp(int x, int y) {
 }
 
 parentLayout.onMouseWheelUp(int clicked , int lines) {
-	if (!scriptGroup.isVisible()) return 0;
-	if (!mousetrap.isMouseOverRect()) return 0;
+	if (!scriptGroup.isVisible()) return;
+	if (!mousetrap.isMouseOverRect()) return;
 	
 	pltoptrack = pltoptrack - lines;
 	pltopMod = 0;
