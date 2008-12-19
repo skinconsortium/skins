@@ -33,6 +33,7 @@ function updateInfo(int index);
 Class Layer AlbumCover;
 
 global group scriptGroup;
+global layout parentLayout;
 
 global PlEdit PeListener;
 
@@ -59,6 +60,7 @@ global layer mousetrap;
 
 System.onScriptLoaded () {
 	scriptGroup = getScriptGroup();
+	parentLayout = scriptGroup.getParentLayout();
 
 	gaa1 = scriptGroup.findObject("cover.show.aa1");
 	gaa2 = scriptGroup.findObject("cover.show.aa2");
@@ -482,18 +484,29 @@ mousetrap.onLeftButtonUp(int x, int y) {
 }
 
 system.onKeyDown(string key) {
-		return;
-	//if (!parentLayout.isActive()) return;
+	if (!parentLayout.isActive()) return;
 	if (!scriptGroup.isVisible()) return;
-	if (delayOnLoad.isRunning()) return;
 	
 	key = strlower(key);
+	int numtracks = pledit.getNumTracks();
 	
 	int cur = currPos;
 	if (currPos - cur > 0.5) cur++;
 
 	if (key == "left") {
 		targetPos = cur - 1;
+		if (targetPos < 0) targetPos = 0;
+		
+		scrollSpeed = 0.2;
+		noSlow = 1;
+		scrollDir = SCROLL_DOWN;
+
+		if (!scrollAnim.isRunning()) scrollAnim.start();
+		complete;
+		
+	} else if (key == "right") {
+		targetPos = cur + 1;
+		if (targetPos >= numtracks) targetPos = numtracks - 1;
 		
 		scrollSpeed = 0.2;
 		noSlow = 1;
@@ -501,36 +514,49 @@ system.onKeyDown(string key) {
 
 		if (!scrollAnim.isRunning()) scrollAnim.start();
 		complete;
-		
-	} else if (key == "down") {
-		
-		complete;
 	} else if (key == "pgup") {
+		targetPos = cur - 4;
+		if (targetPos < 0) targetPos = 0;
 		
-		
+		scrollSpeed = 0.2;
+		noSlow = 1;
+		scrollDir = SCROLL_DOWN;
+
+		if (!scrollAnim.isRunning()) scrollAnim.start();
 		complete;
 		
 	} else if (key == "pgdn") {
+		targetPos = cur + 4;
+		if (targetPos >= numtracks) targetPos = numtracks - 1;
 		
+		scrollSpeed = 0.2;
+		noSlow = 1;
+		scrollDir = SCROLL_UP;
+
+		if (!scrollAnim.isRunning()) scrollAnim.start();
 		
 		complete;
 	} else if (key == "home") {
+		currPos = 0;
+		scrollAnim.stop();
 		
-		
+		update();
 		complete;
 	} else if (key == "end") {
+		currPos = numtracks - 1;
+		scrollAnim.stop();
 		
-		
+		update();
 		complete;
+
 	} else if (key == "return") {
-		
-		
-		
-		
-		complete;
-	} else if (key == "del") {
-		if (scrollAnim.isRunning()) scrollAnim.stop();
-		//pledit.removeTrack(currSel);
+		if (scrollAnim.isRunning()) {
+			currPos = targetPos;	
+			scrollAnim.stop();
+			
+			update();
+		} else
+			pledit.playTrack(cur);
 		
 		complete;
 	} else {
@@ -538,6 +564,42 @@ system.onKeyDown(string key) {
 		return;
 	}
 
+}
+
+parentLayout.onMouseWheelUp(int clicked , int lines) {
+	if (!scriptGroup.isVisible()) return;
+	if (!mousetrap.isMouseOverRect()) return;
+
+	int cur = currPos;
+	if (currPos - cur > 0.5) cur++;
+	
+	targetPos = cur - lines;
+	if (targetPos<0) targetPos = 0;
+
+	scrollSpeed = 0.2;
+	noSlow = 1;
+	scrollDir = SCROLL_DOWN;
+	
+	if (!scrollAnim.isRunning()) scrollAnim.start();
+	return 1;
+}
+
+parentLayout.onMouseWheelDown(int clicked , int lines) {
+	if (!scriptGroup.isVisible()) return 0;
+	if (!mousetrap.isMouseOverRect()) return 0;
+
+	int cur = currPos;
+	if (currPos - cur > 0.5) cur++;
+	
+	targetPos = cur + lines;
+	if (targetPos>=pledit.getNumTracks()) targetPos = pledit.getNumTracks() - 1;
+	scrollSpeed = 0.2;
+	noSlow = 1;
+	scrollDir = SCROLL_UP;
+	
+	if (!scrollAnim.isRunning()) scrollAnim.start();
+	
+	return 1;
 }
 
 // ***** info scripts *****
