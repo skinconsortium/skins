@@ -565,10 +565,10 @@ system.onKeyDown(string key) {
 	}
 
 }
-
+/*
 parentLayout.onMouseWheelUp(int clicked , int lines) {
-	if (!scriptGroup.isVisible()) return;
-	if (!mousetrap.isMouseOverRect()) return;
+	if (!scriptGroup.isVisible()) return 0;
+	if (!mousetrap.isMouseOverRect()) return 0;
 
 	int cur = currPos;
 	if (currPos - cur > 0.5) cur++;
@@ -601,7 +601,7 @@ parentLayout.onMouseWheelDown(int clicked , int lines) {
 	
 	return 1;
 }
-
+*/
 // ***** info scripts *****
 
 infoGr.onResize(int x, int y, int w, int h) {

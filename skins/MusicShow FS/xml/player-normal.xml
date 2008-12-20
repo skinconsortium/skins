@@ -297,15 +297,47 @@
 		text="DELETE" align="left" ghost="1"
 		font="Arial" fontsize="18" bold="1"
 		color="255,255,255" alpha="128"/>
+	
+	<button id="up.button" x="0" y="250" 
+		image="player.main.gen.button"
+		downimage="player.main.gen.button.down"
+		hoverimage="player.main.gen.button.hover"
+		action="PLMOVEUP" action_target="normal" rectrgn="1"/>
+	<layer id="menu.icon" x="3" y="250"
+		image="player.main.icon.up" ghost="1"/>
+	<text id="menu.text" x="29" y="250" w="50" h="20"
+		text="MOVE" align="center" ghost="1"
+		font="Arial" fontsize="16" bold="1"
+		color="255,255,255" alpha="128"/>
+	<text id="menu.text" x="29" y="262" w="50" h="20"
+		text="UP" align="center" ghost="1"
+		font="Arial" fontsize="16" bold="1"
+		color="255,255,255" alpha="128"/>
 		
-	<button id="menu.button" x="0" y="250" 
+	<button id="down.button" x="0" y="300" 
+		image="player.main.gen.button"
+		downimage="player.main.gen.button.down"
+		hoverimage="player.main.gen.button.hover"
+		action="PLMOVEDOWN" action_target="normal" rectrgn="1"/>
+	<layer id="menu.icon" x="3" y="300"
+		image="player.main.icon.down" ghost="1"/>
+	<text id="menu.text" x="30" y="300" w="50" h="20"
+		text="MOVE" align="center" ghost="1"
+		font="Arial" fontsize="16" bold="1"
+		color="255,255,255" alpha="128"/>	
+	<text id="menu.text" x="30" y="312" w="50" h="20"
+		text="DOWN" align="center" ghost="1"
+		font="Arial" fontsize="16" bold="1"
+		color="255,255,255" alpha="128"/>
+	
+	<button id="menu.button" x="0" y="350" 
 		image="player.main.gen.button"
 		downimage="player.main.gen.button.down"
 		hoverimage="player.main.gen.button.hover"
 		action="PE_LIST" rectrgn="1"/>
-	<layer id="menu.icon" x="5" y="250"
+	<layer id="menu.icon" x="5" y="350"
 		image="player.main.icon.menu" ghost="1"/>
-	<text id="menu.text" x="33" y="250" w="90" h="30"
+	<text id="menu.text" x="33" y="350" w="90" h="30"
 		text="MENU" align="left" ghost="1"
 		font="Arial" fontsize="18" bold="1"
 		color="255,255,255" alpha="128"/>
@@ -325,7 +357,7 @@
 			font="Arial" fontsize="25" linespacing="-10" color="255,255,255" alpha="200"
 			playcolor="255,200,0" selcolor="255,255,255" selbgcolor="200,200,200" selalpha="255"
 			showslider="1" slidercolor="255,255,255" slideralpha="128"/>
-	<group id="player.main.pl.list.buttons" x="0" y="0" w="90" h="280"/>
+	<group id="player.main.pl.list.buttons" x="0" y="0" w="90" h="380"/>
 	<script file="scripts/centerobject.maki" param="player.main.pl.list.buttons,0,1"/>
 </groupdef>
 
