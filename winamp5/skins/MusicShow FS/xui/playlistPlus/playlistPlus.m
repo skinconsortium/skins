@@ -387,8 +387,8 @@ plslider.onLeftButtonUp(int x, int y) {
 }
 
 parentLayout.onMouseWheelUp(int clicked , int lines) {
-	if (!scriptGroup.isVisible()) return;
-	if (!mousetrap.isMouseOverRect()) return;
+	if (!scriptGroup.isVisible()) return 0;
+	if (!mousetrap.isMouseOverRect()) return 0;
 	
 	pltoptrack = pltoptrack - lines;
 	pltopMod = 0;
@@ -547,6 +547,20 @@ system.onKeyDown(string key) {
 parentLayout.onAction(String action, String param, Int x, int y, int p1, int p2, GuiObject source) {
 	action = strupper(action);
 	if (action=="PLDELETE") system.onKeyDown("del");
+	if (action=="PLMOVEUP") { 
+		if (currSel==0) return;
+		currSel--;
+		if (pltoptrack > currSel) pltoptrack = currSel;
+		PlEdit.moveDown(currSel+1);
+	}
+	if (action=="PLMOVEDOWN")  { 
+		if (currSel>=pledit.getNumTracks()) return;
+		currSel++;
+		
+		if ((currSel - pltoptrack + 1) >= numlines) pltoptrack = currSel - numlines + 2;
+		
+		PlEdit.moveUp(currSel-1);
+	}
 }
 
 mousetrap.onLeftButtonDblClk(int x, int y) {
