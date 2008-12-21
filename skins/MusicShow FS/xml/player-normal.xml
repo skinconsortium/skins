@@ -375,20 +375,31 @@
 	<script file="scripts/playlistpage.maki"/>
 </groupdef>
 
+<groupdef id="player.main.config.content">
+	<layer x="0" y="0" image="player.main.background.default2" ghost="1"/>
+	
+	<togglebutton id="config.button.default" x="215" y="126" 
+		image="player.main.config.button"
+		downimage="player.main.config.button.down"
+		hoverimage="player.main.config.button.hover"
+		activeimage="player.main.config.button.active" rectrgn="1"/>
+		
+	<togglebutton id="config.button.desktop" x="215" y="150" 
+		image="player.main.config.button"
+		downimage="player.main.config.button.down"
+		hoverimage="player.main.config.button.hover"
+		activeimage="player.main.config.button.active" rectrgn="1"/>
+		
+	<togglebutton id="config.button.choose" x="215" y="174" 
+		image="player.main.config.button"
+		downimage="player.main.config.button.down"
+		hoverimage="player.main.config.button.hover"
+		activeimage="player.main.config.button.active" rectrgn="1"/>
+</groupdef>
+
 <groupdef id="player.main.config">
-	<text id="test"
-		text="Config"
-		x="20" y="20" w="80" h="20" relatx="2" relaty="2" relatw="2" relath="2"
-		font="Arial" fontsize="46" bold="1"
-		color="255,255,255" alpha="80"/>
-	<layer x="100" y="200" image="player.main.background.default2"/>
-		<wasabi:checkbox id="config.bg.image"
-		text="Custom Image:" radioid="config.bg" radioval="1"
-		x="26" y="126" w="150" h="20"/>
-	<Wasabi:fileSelect x="40" y="145" w="-77" h="20" relatw="1"/>
-	<wasabi:checkbox id="config.bg.wallpaper"
-		text="Desktop Wallpaper" radioid="config.bg" radioval="2"
-		x="217" y="79" w="150" h="20"/>
+	<group id="player.main.config.content" x="0" y="0" w="600" h="600"/>
+	<script file="scripts/centerobject.maki" param="player.main.config.content,1,1"/>
 </groupdef>
 
 <groupdef id="player.pagescroller">

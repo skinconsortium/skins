@@ -62,6 +62,7 @@ System.onScriptLoaded() {
 	scrollAnim = new Timer;
 	scrollAnim.setDelay(33);
 
+	setPrivateInt(getSkinName(),"WheelReturn",0);
 }
 
 System.onScriptUnloading() {
@@ -387,8 +388,12 @@ plslider.onLeftButtonUp(int x, int y) {
 }
 
 parentLayout.onMouseWheelUp(int clicked , int lines) {
-	if (!scriptGroup.isVisible()) return 0;
-	if (!mousetrap.isMouseOverRect()) return 0;
+	sendAction("PLSCROLLUP", "", 0, 0, clicked, lines);
+	
+	int ret = getPrivateInt(getSkinName(),"WheelReturn",0);
+	
+	if (!scriptGroup.isVisible()) return ret;
+	if (!mousetrap.isMouseOverRect()) return ret;
 	
 	pltoptrack = pltoptrack - lines;
 	pltopMod = 0;
@@ -397,14 +402,17 @@ parentLayout.onMouseWheelUp(int clicked , int lines) {
 	
 	if (scrollAnim.isRunning()) scrollAnim.stop();
 	refreshPL();
-		
 	
 	return 1;
 }
 
 parentLayout.onMouseWheelDown(int clicked , int lines) {
-	if (!scriptGroup.isVisible()) return 0;
-	if (!mousetrap.isMouseOverRect()) return 0;
+	sendAction("PLSCROLLDOWN", "", 0, 0, clicked, lines);
+	
+	int ret = getPrivateInt(getSkinName(),"WheelReturn",0);
+	
+	if (!scriptGroup.isVisible()) return ret;
+	if (!mousetrap.isMouseOverRect()) return ret;
 	
 	pltoptrack = pltoptrack + lines;
 	pltopMod = 0;
