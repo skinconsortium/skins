@@ -565,43 +565,47 @@ system.onKeyDown(string key) {
 	}
 
 }
-/*
-parentLayout.onMouseWheelUp(int clicked , int lines) {
-	if (!scriptGroup.isVisible()) return 0;
-	if (!mousetrap.isMouseOverRect()) return 0;
 
-	int cur = currPos;
-	if (currPos - cur > 0.5) cur++;
-	
-	targetPos = cur - lines;
-	if (targetPos<0) targetPos = 0;
-
-	scrollSpeed = 0.2;
-	noSlow = 1;
-	scrollDir = SCROLL_DOWN;
-	
-	if (!scrollAnim.isRunning()) scrollAnim.start();
-	return 1;
+// the following is used to avoid conflict between PL+ and CoverShow
+mouseTrap.onEnterArea() {
+	setPrivateInt(getSkinName(),"WheelReturn",1);
 }
 
-parentLayout.onMouseWheelDown(int clicked , int lines) {
+mouseTrap.onLeaveArea() {
+	setPrivateInt(getSkinName(),"WheelReturn",0);
+}
+
+parentLayout.onAction(String action, String param, Int x, int y, int clicked, int lines, GuiObject source) {
 	if (!scriptGroup.isVisible()) return 0;
 	if (!mousetrap.isMouseOverRect()) return 0;
+	
+	if (action=="PLSCROLLUP") {
+		int cur = currPos;
+		if (currPos - cur > 0.5) cur++;
+		
+		targetPos = cur - lines;
+		if (targetPos<0) targetPos = 0;
+	
+		scrollSpeed = 0.2;
+		noSlow = 1;
+		scrollDir = SCROLL_DOWN;
+		
+		if (!scrollAnim.isRunning()) scrollAnim.start();
+	} else if (action=="PLSCROLLDOWN") {
+		int cur = currPos;
+		if (currPos - cur > 0.5) cur++;
+		
+		targetPos = cur + lines;
+		if (targetPos>=pledit.getNumTracks()) targetPos = pledit.getNumTracks() - 1;
+		scrollSpeed = 0.2;
+		noSlow = 1;
+		scrollDir = SCROLL_UP;
+		
+		if (!scrollAnim.isRunning()) scrollAnim.start();
+	}
 
-	int cur = currPos;
-	if (currPos - cur > 0.5) cur++;
-	
-	targetPos = cur + lines;
-	if (targetPos>=pledit.getNumTracks()) targetPos = pledit.getNumTracks() - 1;
-	scrollSpeed = 0.2;
-	noSlow = 1;
-	scrollDir = SCROLL_UP;
-	
-	if (!scrollAnim.isRunning()) scrollAnim.start();
-	
-	return 1;
 }
-*/
+
 // ***** info scripts *****
 
 infoGr.onResize(int x, int y, int w, int h) {

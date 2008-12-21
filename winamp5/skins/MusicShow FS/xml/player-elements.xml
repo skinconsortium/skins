@@ -57,6 +57,13 @@
 <bitmap id="player.pl.selector.middle" file="player/pl-selector.png" x="10" y="0" w="70" h="35" gammagroup="glass"/>
 <bitmap id="player.pl.selector.right" file="player/pl-selector.png" x="80" y="0" w="10" h="35" gammagroup="glass"/>
 
+<!-- **** config elements ***** -->
+<bitmap id="player.main.config.button" file="player/button-config.png" x="0" y="0" w="132" h="20" gammagroup="configbutton"/>
+<bitmap id="player.main.config.button.hover" file="player/button-config.png" x="0" y="20" w="132" h="20" gammagroup="configbutton"/>
+<bitmap id="player.main.config.button.active" file="player/button-config.png" x="0" y="40" w="132" h="20" gammagroup="configbutton"/>
+<bitmap id="player.main.config.button.down" file="player/button-config.png" x="0" y="60" w="132" h="20" gammagroup="configbutton"/>
+<!-- ******* -->
+
 <bitmap id="volpos" file="player/volpos.png" gammagroup="Glass"/>
 <bitmap id="imagesel" file="player/imagesel.png" />
 <bitmap id="anivis2" file="player/anivis.png" gammagroup="Glass"/>
