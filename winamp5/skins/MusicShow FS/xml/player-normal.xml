@@ -378,28 +378,42 @@
 <groupdef id="player.main.config.content">
 	<layer x="0" y="0" image="player.main.background.default2" ghost="1"/>
 	
-	<togglebutton id="config.button.default" x="215" y="126" 
+	<togglebutton id="config.button.default" x="215" y="126"
 		image="player.main.config.button"
 		downimage="player.main.config.button.down"
 		hoverimage="player.main.config.button.hover"
 		activeimage="player.main.config.button.active" rectrgn="1"/>
 		
-	<togglebutton id="config.button.desktop" x="215" y="150" 
+	<togglebutton id="config.button.desktop" x="215" y="150"
 		image="player.main.config.button"
 		downimage="player.main.config.button.down"
 		hoverimage="player.main.config.button.hover"
 		activeimage="player.main.config.button.active" rectrgn="1"/>
 		
-	<togglebutton id="config.button.choose" x="215" y="174" 
+	<togglebutton id="config.button.choose" x="215" y="174"
 		image="player.main.config.button"
 		downimage="player.main.config.button.down"
 		hoverimage="player.main.config.button.hover"
 		activeimage="player.main.config.button.active" rectrgn="1"/>
+		
+	<rect x="130" y="200" w="70" h="50" filled="0" color="255,255,255" alpha="128" ghost="1"/>
+	<rect x="220" y="200" w="70" h="50" filled="0" color="255,255,255" alpha="128" ghost="1"/>
+	<rect x="310" y="200" w="70" h="50" filled="0" color="255,255,255" alpha="128" ghost="1"/>
+	<rect x="400" y="200" w="70" h="50" filled="0" color="255,255,255" alpha="128" ghost="1"/>
+	
+	<layer id="config.currbg1" x="131" y="201" w="68" h="48" image="" move="0" rectrgn="1"/>
+	<layer id="config.currbg2" x="221" y="201" w="68" h="48" image="" move="0" rectrgn="1"/>
+	<layer id="config.currbg3" x="311" y="201" w="68" h="48" image="" move="0" rectrgn="1"/>
+	<layer id="config.currbg4" x="401" y="201" w="68" h="48" image="" move="0" rectrgn="1"/>
 </groupdef>
 
 <groupdef id="player.main.config">
 	<group id="player.main.config.content" x="0" y="0" w="600" h="600"/>
 	<script file="scripts/centerobject.maki" param="player.main.config.content,1,1"/>
+	
+	<Wasabi:fileSelect x="0" y="0" w="200" h="1"/>
+	
+	<script file="scripts\config.maki"/>
 </groupdef>
 
 <groupdef id="player.pagescroller">

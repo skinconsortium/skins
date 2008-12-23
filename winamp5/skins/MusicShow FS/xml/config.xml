@@ -33,7 +33,7 @@
 		rectrgn="1"
 		tooltip="Music Show Site"/>
 
-      <script file="scripts\config.maki"/>
+      <!--script file="scripts\config.maki"/-->
 
 </groupdef>
 

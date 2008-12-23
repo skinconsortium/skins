@@ -17,9 +17,15 @@ Global group scriptGroup;
 
 Global configAttribute bkground_image_attrib;
 
-Global checkbox bgdef, bgimage, bgwall;
+Global togglebutton bgdef, bgimage, bgwall;
 
 Global edit imagefname;
+Global button browseButton;
+
+class layer currbgClass;
+Global currbgClass currbg1, currbg2, currbg3, currbg4;
+
+Global int noaddcurrbg;
 
 System.onScriptLoaded() {
   
@@ -29,12 +35,17 @@ System.onScriptLoaded() {
 
   scriptGroup = getScriptGroup();
   
-  bgdef = scriptGroup.findObject("config.bg.default");
-  bgimage = scriptGroup.findObject("config.bg.image");
-  bgwall = scriptGroup.findObject("config.bg.wallpaper");
-  //bgtile = scriptGroup.findObject("config.bg.tile");
+  bgdef = scriptGroup.findObject("config.button.default");
+  bgimage = scriptGroup.findObject("config.button.choose");
+  bgwall = scriptGroup.findObject("config.button.desktop");
 
   imagefname = scriptGroup.findObject("filename");
+  browseButton = scriptGroup.findObject("select");
+  
+  currbg1 = scriptGroup.findObject("config.currbg1");
+  currbg2 = scriptGroup.findObject("config.currbg2");
+  currbg3 = scriptGroup.findObject("config.currbg3");
+  currbg4 = scriptGroup.findObject("config.currbg4");
   
   string bkData = strupper(bkground_image_attrib.getData());
   string strtemp = "", bkDataEntry1 = "", bkDataEntry2 = "";
@@ -45,14 +56,22 @@ System.onScriptLoaded() {
 
   if (strLeft(bkData,5)=="IMAGE") {
    	if (bkDataEntry1==strupper("player.main.background.default"))
-   	  bgdef.setChecked(1);
+   	  bgdef.setActivated(1);
    	else if (bkDataEntry1==strupper("player.main.background.wallpaper"))
-   	  bgwall.setChecked(1);
+   	  bgwall.setActivated(1);
    	else {
+	  noaddcurrbg = 1;
+	  bgimage.setActivated(1);
 	  imagefname.setText(bkDataEntry1);
+	  noaddcurrbg = 0;
     }
    	  
   }
+  
+  currbg1.setXMLParam("image",getPrivateString("MusicShow","currbg1",""));
+  currbg2.setXMLParam("image",getPrivateString("MusicShow","currbg2",""));
+  currbg3.setXMLParam("image",getPrivateString("MusicShow","currbg3",""));
+  currbg4.setXMLParam("image",getPrivateString("MusicShow","currbg4",""));
 }
 
 System.onScriptUnloading() {
@@ -60,45 +79,84 @@ System.onScriptUnloading() {
 }
 
 bgdef.onToggle(int on) {
-	if (!on) return;
+	if (!on) {
+		bgdef.setActivatedNoCallback(1);
+	}
 	
 	bkground_image_attrib.setData("IMAGE:player.main.background.default;1");
+	
+	bgimage.setActivatedNoCallback(0);
+	bgwall.setActivatedNoCallback(0);
 }
 
 bgimage.onToggle(int on) {
-	if (!on) return;
+	if (!on) {
+		bgimage.setActivatedNoCallback(1);
+	}
+	
+	browseButton.leftClick();
+	
+	/*file filecheck = new File;
+	
+	filecheck.load(imagefname.getText());
+	if (filecheck.exists()) {
+		bkground_image_attrib.setData("IMAGE:"+imagefname.getText()+";0");
+	}
+	
+	delete filecheck;*/
+	
+	//bgdef.setActivatedNoCallback(0);
+	//bgwall.setActivatedNoCallback(0);
+}
+
+imagefname.onEditUpdate() {
+	bgwall.setActivatedNoCallback(0);
+	bgimage.setActivatedNoCallback(1);
+	bgdef.setActivatedNoCallback(0);
 	
 	file filecheck = new File;
 	
 	filecheck.load(imagefname.getText());
 	if (filecheck.exists()) {
-		//bkground_image_attrib.setData("IMAGE:"+imagefname.getText()+";"+integerToString(bgtile.isChecked()));
 		bkground_image_attrib.setData("IMAGE:"+imagefname.getText()+";0");
+		if (!noaddcurrbg) {
+			string bg1 = getPrivateString("MusicShow","currbg1","");
+			string bg2 = getPrivateString("MusicShow","currbg2","");
+			string bg3 = getPrivateString("MusicShow","currbg3","");
+			
+			setPrivateString("MusicShow","currbg4",bg3);
+			setPrivateString("MusicShow","currbg3",bg2);
+			setPrivateString("MusicShow","currbg2",bg1);
+			setPrivateString("MusicShow","currbg1",imagefname.getText());
+			
+			currbg1.setXMLParam("image",getPrivateString("MusicShow","currbg1",""));
+			currbg2.setXMLParam("image",getPrivateString("MusicShow","currbg2",""));
+			currbg3.setXMLParam("image",getPrivateString("MusicShow","currbg3",""));
+			currbg4.setXMLParam("image",getPrivateString("MusicShow","currbg4",""));
+		}
 	}
 	
 	delete filecheck;
 }
 
-imagefname.onEditUpdate() {
-	if (bgimage.isChecked()) 
-		bgimage.onToggle(1);
-	else {
-		bgdef.setChecked(0);
-		bgimage.setChecked(1);
-		bgwall.setChecked(0);
-		bgimage.onToggle(1);
-	}
+currbgClass.onLeftButtonDown(int x, int y) {
+	string img = getXMLParam("image");
+	if (img=="") return;
+	
+	bkground_image_attrib.setData("IMAGE:"+img+";0");
+	
+	bgwall.setActivatedNoCallback(0);
+	bgimage.setActivatedNoCallback(1);
+	bgdef.setActivatedNoCallback(0);
 }
 
 bgwall.onToggle(int on) {
-	if (!on) return;
+	if (!on) {
+		bgwall.setActivatedNoCallback(1);
+	}
 	
-	//bkground_image_attrib.setData("IMAGE:player.main.background.wallpaper;"+integerToString(bgtile.isChecked()));
 	bkground_image_attrib.setData("IMAGE:player.main.background.wallpaper;0");
+	
+	bgimage.setActivatedNoCallback(0);
+	bgdef.setActivatedNoCallback(0);
 }
-
-/*
-bgtile.onToggle(int on) {
-	if (bgimage.isChecked()) bgimage.onToggle(1);
-	else if (bgwall.isChecked()) bgwall.onToggle(1);
-}*/
