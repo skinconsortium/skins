@@ -1,0 +1,318 @@
+
+
+
+
+<elements>
+	
+    
+   
+    
+
+	
+	
+</elements>
+
+
+
+
+
+<groupdef id="eq.content.group">
+	
+<button 
+ id="Close"
+ x="170" y="4" h="12" w="30"
+ action="CLOSE" 
+  image="player.main.close"
+ downimage="player.main.closed"
+ hoverimage="player.main.closed"
+rectrgn="1"
+ tooltip="Terminate"
+/>
+
+	<togglebutton
+	  id="eqonoff"
+	  action="EQ_TOGGLE"
+	  x="28" y="74"
+	  image="oneq"
+	  hoverImage="oneqd"
+	  downImage="oneqd"
+	  activeImage="oneqd"
+	  tooltip="Equalizer On/Off"
+	/>
+
+<layer id="oneqd" image="oneqd" x="28" y="74" ghost="1"/>
+
+	
+<script file="scripts/hoverglow.maki" param="eqonoff,oneqd"/>
+	<togglebutton
+	  id="auto"
+	  action="EQ_AUTO"
+	  x="177" y="60"
+	 image="oneq"
+	  hoverImage="oneqd"
+	  downImage="oneqd"
+	  activeImage="oneqd"
+	  tooltip="Equalizer Automatic Processing"
+	/>
+  <layer id="one" image="oneqd"  x="177" y="60" ghost="1"/>
+<script file="scripts/hoverglow.maki" param="auto,one"/>
+	
+
+<togglebutton
+      id="Presets"
+      action="MENU" param="presets" 
+      x="177" y="87"
+      image="oneq"
+	  hoverImage="oneqd"
+	  downImage="oneqd"
+	  activeImage="oneqd" 
+	  tooltip="Equalizer Presets"
+    />
+<layer id="one1" image="oneqd"  x="177" y="87" ghost="1"/>
+<script file="scripts/hoverglow.maki" param="Presets,one1"/>
+<slider
+			id="EQPreamp"
+			action="EQ_BAND" param="preamp"
+			x="50" y="57"
+			w="6" h="48"
+			orientation="vertical"
+			thumb="player.main.eqthumb"
+			downthumb="player.main.eqthumbd"
+			
+	/>
+	<layer id="EQBar1" image="equalizer.bar" x="134" y="69"   />
+	<slider
+			id="EQBar1"
+			action="EQ_BAND" param="1"
+			x="71" y="57"
+			w="6" h="48"
+			orientation="vertical"
+			thumb="player.main.eqthumb"
+			downthumb="player.main.eqthumbd"
+			
+	/>
+	<layer id="EQBar2" image="equalizer.bar" x="146" y="69"  />
+	<slider
+			id="EQBar2"
+			action="EQ_BAND" param="2"
+			x="81" y="57"
+			w="6" h="48"
+			orientation="vertical"
+			thumb="player.main.eqthumb"
+			downthumb="player.main.eqthumbd"
+	/>
+	<layer id="EQBar3" image="equalizer.bar" x="158" y="69"  />
+	<slider
+			id="EQBar3"
+			action="EQ_BAND" param="3"
+			x="91" y="57"
+			w="6" h="48"
+			orientation="vertical"
+			thumb="player.main.eqthumb"
+			downthumb="player.main.eqthumbd"
+			
+	/>
+	<layer id="EQBar4" image="equalizer.bar" x="170" y="69"  />
+	<slider
+			id="EQBar4"
+			action="EQ_BAND" param="4"
+			x="101" y="57"
+			w="6" h="48"
+			orientation="vertical"
+			thumb="player.main.eqthumb"
+			downthumb="player.main.eqthumbd"
+	/>
+	<layer id="EQBar5" image="equalizer.bar" x="182" y="70"   />
+	<slider
+			id="EQBar5"
+			action="EQ_BAND" param="5"
+			x="111" y="57"
+			w="6" h="48"
+			orientation="vertical"
+			thumb="player.main.eqthumb"
+			downthumb="player.main.eqthumbd"
+	/>
+	<layer id="EQBar6" image="equalizer.bar" x="194" y="70"    />
+	<slider
+			id="EQBar6"
+			action="EQ_BAND" param="6"
+			x="121" y="57"
+			w="6" h="48"
+			orientation="vertical"
+			thumb="player.main.eqthumb"
+			downthumb="player.main.eqthumbd"
+	/>
+	<layer id="EQBar7" image="equalizer.bar" x="206" y="70"   />
+	<slider
+			id="EQBar7"
+			action="EQ_BAND" param="7"
+			x="131" y="57"
+			w="6" h="48"
+			orientation="vertical"
+			thumb="player.main.eqthumb"
+			downthumb="player.main.eqthumbd"
+	/>
+	<layer id="EQBar8" image="equalizer.bar" x="218" y="71"   />
+	<slider
+			id="EQBar8"
+			action="EQ_BAND" param="8"
+			x="141" y="57"
+			w="6" h="48"
+			orientation="vertical"
+			thumb="player.main.eqthumb"
+			downthumb="player.main.eqthumbd"
+	/>
+	<layer id="EQBar9" image="equalizer.bar" x="230" y="71"    />
+	<slider 
+			id="EQBar9"
+			action="EQ_BAND" param="9"
+			x="151" y="57"
+			w="6" h="48"
+			orientation="vertical"
+			thumb="player.main.eqthumb"
+			downthumb="player.main.eqthumbd"
+	/>
+	<layer id="EQBar10" image="equalizer.bar" x="242" y="71"  />
+<slider
+			id="EQBar10"
+			action="EQ_BAND" param="10"
+			x="161" y="57"
+			w="6" h="48"
+			orientation="vertical"
+			thumb="player.main.eqthumb"
+			downthumb="player.main.eqthumbd"
+	/>
+<togglebutton
+ id="ML"  action="TOGGLE" param="guid:ml"
+ x="28" y="24"
+
+  image="oneq"
+	  hoverImage="oneqd"
+	  downImage="oneqd"
+	  activeImage="oneqd"
+ tooltip="Media Library"
+/>
+<layer id="player.main.ML" image="oneqd"  x="28" y="24"
+  ghost="1"/>
+
+	
+<script file="scripts/hoverglow.maki" param="ML,player.main.ML"/>
+<togglebutton
+ id="PL"  action="TOGGLE" param="guid:pl"
+ x="52" y="24"
+
+
+ image="oneq"
+	  hoverImage="oneqd"
+	  downImage="oneqd"
+	  activeImage="oneqd"
+ tooltip="PlayList"
+/>
+
+	<layer id="player.main.PL" image="oneqd"  x="52" y="24"
+  ghost="1"/>
+
+	
+<script file="scripts/hoverglow.maki" param="PL,player.main.PL"/>
+
+<togglebutton
+ id="AVS"  action="TOGGLE" param="guid:avs"
+ x="76" y="24"
+
+  image="oneq"
+	  hoverImage="oneqd"
+	  downImage="oneqd"
+	  activeImage="oneqd"
+ 
+ tooltip="AVS"
+ />		
+<layer id="player.main.AVS" image="oneqd"  x="76" y="24"
+  ghost="1"/>
+
+	
+<script file="scripts/hoverglow.maki" param="AVS,player.main.AVS"/>
+<togglebutton 
+ id="vid1" action="TOGGLE" param="guid:{F0816D7B-FFFC-4343-80F2-E8199AA15CC3}"
+
+x="100" y="24"
+  image="oneq"
+	  hoverImage="oneqd"
+	  downImage="oneqd"
+	  activeImage="oneqd"
+ tooltip="Video"
+/>
+<layer id="player.main.vid" image="oneqd"  x="100" y="24"
+  ghost="1"/>
+
+	
+<script file="scripts/hoverglow.maki" param="vid1,player.main.vid"/>
+ <togglebutton
+      id="Shuffle"
+      x="125" y="24"
+ image="oneq"
+	  hoverImage="oneqd"
+	  downImage="oneqd"
+	  activeImage="oneqd"
+      cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Shuffle"
+        tooltip="Shuffle"
+    />
+<layer id="player.main.s" image="oneqd"   x="125" y="24"
+  ghost="1"/>
+
+	
+<script file="scripts/hoverglow.maki" param="Shuffle,player.main.s"/>
+   
+ <togglebutton
+      id="Crossfade"
+     x="176" y="24"
+     image="oneq"
+	  hoverImage="oneqd"
+	  downImage="oneqd"
+	  activeImage="oneqd"
+      tooltip="Crossfade"
+      cfgattrib="{FC3EAF78-C66E-4ED2-A0AA-1494DFCC13FF};Enable crossfading"
+    />
+
+<layer id="player.main.x" image="oneqd"  x="176" y="24"
+  ghost="1"/>
+
+	
+<script file="scripts/hoverglow.maki" param="Crossfade,player.main.x"/>
+
+    <togglebutton
+      id="Repeat"
+     
+      x="150" y="24" 
+    image="oneq"
+	  hoverImage="oneqd"
+	  downImage="oneqd"
+	  activeImage="oneqd"
+   
+      tooltip="Repeat"
+      cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Repeat"
+    /> 
+<layer id="player.main.r" image="onegd"  x="150" y="24" 
+  ghost="1"/>
+
+	
+<script file="scripts/hoverglow.maki" param="Repeat,player.main.r"/>-->
+</groupdef>
+
+<container id="eq" name="Equalizer" default_x="0" default_y="0" default_visible="0">
+  <layout id="normal2" background="player.main.background2"  alphabackground="player.main.background2" owner="main,normal">
+ 
+
+  
+	<group id="eq.content.group" />
+	
+
+	
+	
+
+
+	
+
+
+</layout> 
+
+</container>
