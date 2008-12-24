@@ -292,10 +292,12 @@ setAAgroupToPos(group g, float pos) {
 	double rat = eyeDist/(y1+eyeDist);
 	int xp = x1*rat;
 	int w = aaWidth*rat;
-	int h = w*1.667;
+	int h = w*5/3; //*1.667;
 	
-	int yp = z1*rat;
-	yp = ymid*1.1 + yp - w;
+	//int yp = z1*rat;
+	//yp = ymid*1.1 + yp - w;
+	//int yp = z1*rat;
+	int yp = ymid*11/10 + z1*rat - w;
 
 	g.setXMLParam("x",integerToString(xmid+xp));
 	g.setXMLParam("y",integerToString(yp));
