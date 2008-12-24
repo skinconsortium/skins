@@ -1,0 +1,129 @@
+-- Variables Table ---------------------------------------------------
+var# |                Class |                                    What 
+----------------------------------------------------------------------
+0000 |               System |                                   System*
+0001 |                  Int |                                     NULL
+0002 |                  Int |                     __deprecated_runtime
+0003 |               Double |                                        v
+0004 |                  Int |                                        2
+0005 |                  Int |                                    65535
+0006 |                  Int |                                        1
+0007 |               String |                           "runtimecheck"
+0008 |                  Int |                                        0
+0009 |                  Int |                                     last
+000A |                  Int |                                      now
+000B |                  Int |                                     5000
+000C |               String |                  "This script requires "
+000D |               String |        "Winamp 5.54 (skin version 1.34)"
+000E |               String |                                  "Error"
+000F |               String |                                       ""
+0010 |               String |                                        s
+0011 |               String |                                  "DEBUG"
+0012 |                  Int |                                        s
+0013 |               String |                               baseString
+0014 |               String |                                toreplace
+0015 |               String |                               replacedby
+0016 |               String |                                      sf1
+0017 |               String |                                      sf2
+0018 |                  Int |                                        i
+0019 |               String |                                     left
+001A |               String |                                    right
+001B |               String |                               baseString
+001C |               String |                                toreplace
+001D |                  Int |                                        i
+001E |               String |                                     left
+001F |               String |                                    right
+0020 |               String |                               baseString
+0021 |               String |                                   filled
+0022 |               String |                                   anchor
+0023 |                  Int |                                        i
+0024 |               String |                                     left
+0025 |               String |                                    right
+0026 |               String |                                      str
+0027 |               String |                                   substr
+0028 |                  Int |                                        n
+0029 |                  Int |                                        i
+002A |                  Int |                                      666
+002B |                  Int |                                        r
+002C |              Browser |                                      brw
+002D |               String |                             str_skinname
+002E |               String |                              str_version
+002F |               String |                                      url
+0030 |                  Int |                                    ready
+0031 |              Boolean |                                     done
+0032 |                Timer |                                 tmr_fill
+0033 |                  Map |                                 map_fill
+0034 |                Layer |                                   l_fill
+0035 |                Layer |                                    l_txt
+0036 |            Container |                                c_updater
+0037 |               Layout |                                l_updater
+0038 |                  Int |                                 finished
+0039 |                  Int |                                   mappos
+003A |               Button |                               btn_cancel
+003B |               Button |                               btn_donate
+003C |               String |                      "Check for Updates"
+003D |               String |                       "sc.updatemanager"
+003E |               String |                                 "normal"
+003F |               String |                                    "brw"
+0040 |               String |                               "progress"
+0041 |               String |                                    "txt"
+0042 |               String |                                 "cancel"
+0043 |               String |                                 "donate"
+0044 |               String |                                      ";"
+0045 |               String |          "sc.updatemanager.progress.map"
+0046 |                  Int |                                       20
+0047 |                  Int |                                      200
+0048 |               String | "http://www.skinconsortium.com/updatemanager/updateSystem.php"
+0049 |               String |          "?noheaderquit=1&q=check&skin="
+004A |               String |                              "&version="
+004B |               String |                            "about:blank"
+004C |               String |                                  "image"
+004D |               String |                "sc.updatemanager.txt.na"
+004E |                  Int |                                     2000
+004F |               String |                                      url
+0050 |               String |                                      "?"
+0051 |               String |                                    query
+0052 |               String |                                 "avmsg="
+0053 |               String |                "sc.updatemanager.txt.av"
+0054 |               String |                                  "ghost"
+0055 |               String |                                      "1"
+0056 |               String |                                      "&"
+0057 |               String |                                      msg
+0058 |               String |                                      "="
+0059 |               String |                                    "%20"
+005A |               String |                                      " "
+005B |               String |                                    "%40"
+005C |               String |                                     "\n"
+005D |               String | "A new version of this skin is available!\n\n"
+005E |               String | "\n\nDo you like to download this version?"
+005F |               String |                  "New Version Available"
+0060 |                  Int |                                       12
+0061 |                  Int |                                    i_upd
+0062 |                  Int |                                        4
+0063 |               String |                           "?q=get&skin="
+0064 |               String |                                dl_invoke
+0065 |               String |                                "blank=1"
+0066 |               String |                           "notavailable"
+0067 |                  Int |                                        5
+0068 |               String | "https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=donate%40skinconsortium%2ecom&item_name=SkinConsortium%20Donation&item_number=%3e%20for%20skin%3a%20"
+0069 |               String | "&no_shipping=1&no_note=1&cn=Optional%20Message&tax=0&currency_code=EUR&lc=GB&bn=PP%2dDonationsBF&charset=UTF%2d8"
+-- Events Table ------------------------------------------------------
+var# |         Code Pointer |                                    What 
+----------------------------------------------------------------------
+0000 |                 05BC |                    System.onScriptLoaded
+0000 |                 0793 |                 System.onScriptUnloading
+0032 |                 07B6 |                         tmr_fill.onTimer
+002C |                 08EE |                   brw.onDocumentComplete
+003A |                 0C1C |                   btn_cancel.onLeftClick
+003B |                 0C38 |                   btn_donate.onLeftClick
+-- User Functions Table ----------------------------------------------
+               Code Pointer |                                    What 
+----------------------------------------------------------------------
+                       0000 |                             versionCheck
+                       00F2 |                                    debug
+                       011D |                                 debugInt
+                       0153 |                            replaceString
+                       02A5 |                                cutString
+                       03BE |                         fillStringBefore
+                       04BB |                           countSubString
+                       0BBF |                           shutdownScript
