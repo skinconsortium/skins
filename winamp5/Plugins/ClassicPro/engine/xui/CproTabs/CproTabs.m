@@ -359,12 +359,16 @@ onMessage(int message, int i0, int i1, int i2, String s0, String s1, GuiObject o
 		
 		t.moving = false;
 
+		t.hide();
+		t.show(); //so we update hover state
+
 		return SUCCESS;
 	}
 	else if (message == ON_MOUSE_MOVE)
 	{
 		if (t.moving)
 		{
+		t.bringToFront();
 			int newPos = i0 - t.lastX + t.getGuiX();
 
 			if (newPos < 0)
