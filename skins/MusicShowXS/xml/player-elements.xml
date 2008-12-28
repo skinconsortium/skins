@@ -62,6 +62,9 @@
 <bitmap id="player.main.config.button.hover" file="player/button-config.png" x="0" y="20" w="132" h="20" gammagroup="configbutton"/>
 <bitmap id="player.main.config.button.active" file="player/button-config.png" x="0" y="40" w="132" h="20" gammagroup="configbutton"/>
 <bitmap id="player.main.config.button.down" file="player/button-config.png" x="0" y="60" w="132" h="20" gammagroup="configbutton"/>
+
+<bitmap id="player.main.config.eqslider" file="player/eq-slider.png" x="0" y="0" w="15" h="18" gammagroup="eqbutton"/>
+<bitmap id="player.main.config.eqslider.hover" file="player/eq-slider.png" x="0" y="18" w="15" h="18" gammagroup="eqbutton"/>
 <!-- ******* -->
 
 <bitmap id="volpos" file="player/volpos.png" gammagroup="Glass"/>
