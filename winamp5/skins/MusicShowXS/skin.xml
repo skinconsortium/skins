@@ -22,9 +22,9 @@
 	<include file="wasabi/wasabi.xml"/>
 	<include file="xml/player.xml"/>
 	<include file="xml/vis.xml"/>
-	<include file="xml/config.xml"/>
+	<!--include file="xml/config.xml"/-->
 	<!--include file="xml/online.xml" /-->
-	<!--include file="xml/eq.xml"/-->
+	<include file="xml/eq.xml"/>
 	<!--include file="updatemanager/updatemanager.xml"/-->
 	<include file="xml/gamma-presets.xml"/>
 	<include file="windowmodebutton/windowmodebutton.xml"/>
