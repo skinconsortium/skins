@@ -406,6 +406,35 @@
 	<layer id="config.currbg3" x="311" y="201" w="68" h="48" image="" move="0" rectrgn="1"/>
 	<layer id="config.currbg4" x="401" y="201" w="68" h="48" image="" move="0" rectrgn="1"/>
 	
+	<togglebutton
+		id="eqonoff"
+		action="EQ_TOGGLE"
+		x="110" y="270" rectrgn="1"
+		image="player.main.config.eqbutton"
+		hoverImage="player.main.config.eqbutton.hover"
+		downImage="player.main.config.eqbutton.down"
+		activeImage="player.main.config.eqbutton.hover"
+		tooltip="Equalizer On/Off"/>
+		
+	<togglebutton
+		id="auto"
+	  	action="EQ_AUTO"
+		x="134" y="270" rectrgn="1"
+		image="player.main.config.eqbutton"
+		hoverImage="player.main.config.eqbutton.hover"
+		downImage="player.main.config.eqbutton.down"
+		activeImage="player.main.config.eqbutton.hover"
+		tooltip="Equalizer Automatic Processing"/>
+		
+	<button
+		id="Presets"
+		action="MENU" param="presets" 
+		x="159" y="270" rectrgn="1"
+		image="player.main.config.eqbutton"
+		hoverImage="player.main.config.eqbutton.hover"
+		downImage="player.main.config.eqbutton.down"
+		tooltip="Equalizer Presets"/>
+	
 	<slider
 			id="EQPreamp"
 			action="EQ_BAND" param="preamp"
@@ -530,7 +559,7 @@
 	<group id="player.main.config.content" x="0" y="0" w="600" h="430"/>
 	<script file="scripts/centerobject.maki" param="player.main.config.content,1,1"/>
 	
-	<Wasabi:fileSelect x="0" y="0" w="200" h="1"/>
+	<Wasabi:fileSelect x="0" y="-10" w="200" h="10"/>
 	
 	<script file="scripts\config.maki"/>
 </groupdef>
