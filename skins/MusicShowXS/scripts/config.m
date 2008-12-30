@@ -90,34 +90,24 @@ bgdef.onToggle(int on) {
 }
 
 bgimage.onToggle(int on) {
-	if (!on) {
-		bgimage.setActivatedNoCallback(1);
-	}
+
+	bgimage.setActivatedNoCallback(0);
+
 	
 	browseButton.leftClick();
-	
-	/*file filecheck = new File;
-	
-	filecheck.load(imagefname.getText());
-	if (filecheck.exists()) {
-		bkground_image_attrib.setData("IMAGE:"+imagefname.getText()+";0");
-	}
-	
-	delete filecheck;*/
-	
-	//bgdef.setActivatedNoCallback(0);
-	//bgwall.setActivatedNoCallback(0);
+
 }
 
 imagefname.onEditUpdate() {
-	bgwall.setActivatedNoCallback(0);
-	bgimage.setActivatedNoCallback(1);
-	bgdef.setActivatedNoCallback(0);
 	
 	file filecheck = new File;
 	
 	filecheck.load(imagefname.getText());
 	if (filecheck.exists()) {
+		bgwall.setActivatedNoCallback(0);
+		bgimage.setActivatedNoCallback(1);
+		bgdef.setActivatedNoCallback(0);
+		
 		bkground_image_attrib.setData("IMAGE:"+imagefname.getText()+";0");
 		if (!noaddcurrbg) {
 			string bg1 = getPrivateString("MusicShow","currbg1","");

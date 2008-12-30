@@ -21,9 +21,11 @@
 	<text id="info.title" 
 		x="0" y="0" w="0" h="25" relatw="1"
 		text="Title" align="center" alpha="200" ghost="1"
+		color="color.plist"
 		font="Arial" fontsize="20" bold="1"/>
 	<text id="info.album" 
 		x="0" y="16" w="0" h="25" relatw="1"
+		color="color.plist"
 		text="Album" align="center" alpha="160" ghost="1"
 		font="Arial" fontsize="20" bold="0"/>
 		
