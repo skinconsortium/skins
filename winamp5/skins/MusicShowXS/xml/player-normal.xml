@@ -56,8 +56,8 @@
 	<layer id="player.main.forwardd" image="player.main.forwardd" x="174" y="0"  ghost="1"/>
 	<script file="scripts/hoverglow.maki" param="Next,player.main.forwardd"/>
 
-	<layer id="volback" image="volback" x="20" y="70" w="170" move="0" rectrgn="1"/>
-	<layer id="VolumeAnim" image="dominator.normal.Volume" tile="1" ghost="1" alpha="200" x="20" y="70" w="0" rectrgn="0" tooltip="Volume"/>
+	<layer id="volback" image="vol.back" x="20" y="70" w="170" move="0" rectrgn="1"/>
+	<layer id="VolumeAnim" image="vol.pos" tile="1" ghost="1" alpha="200" x="20" y="70" w="0" rectrgn="0" tooltip="Volume"/>
 	<script file="scripts/volumeslider.maki" param="VolumeAnim,volback,horizontal"/>
 </groupdef>
 
@@ -174,7 +174,7 @@
 	<text id="SwitchToList.text" x="35" y="0" w="90" h="30"
 		text="LIST" align="left" ghost="1"
 		font="Arial" fontsize="18" bold="1"
-		color="255,255,255" alpha="128"/>
+		color="color.button.label" alpha="128"/>
 		
 	<layer id="shuffle.icon" x="115" y="0"
 		image="player.main.icon.shuffle" ghost="1"/>
@@ -187,11 +187,11 @@
 	<text id="shuffle.text" x="138" y="0" w="55" h="20"
 		text="SHUFFLE" align="center" ghost="1"
 		font="Arial" fontsize="16" bold="1"
-		color="255,255,255" alpha="128"/>
+		color="color.button.label" alpha="128"/>
 	<text id="shuffle.text.ind" x="138" y="12" w="50" h="20"
 		text="OFF" align="center" ghost="1"
 		font="Arial" fontsize="16" bold="1"
-		color="255,255,255" alpha="128"/>
+		color="color.button.label" alpha="128"/>
 		
 	<layer id="repeat.icon" x="225" y="0"
 		image="player.main.icon.repeat" ghost="1"/>
@@ -207,11 +207,11 @@
 	<text id="repeat.text" x="250" y="0" w="50" h="20"
 		text="REPEAT" align="center" ghost="1"
 		font="Arial" fontsize="16" bold="1"
-		color="255,255,255" alpha="128"/>
+		color="color.button.label" alpha="128"/>
 	<text id="repeat.text.ind" x="250" y="12" w="50" h="20"
 		text="OFF" align="center" ghost="1"
 		font="Arial" fontsize="16" bold="1"
-		color="255,255,255" alpha="128"/>
+		color="color.button.label" alpha="128"/>
 		
 	<script file="scripts/shufflerepeat.maki"/>
 </groupdef>
@@ -234,7 +234,7 @@
 	<text id="SwitchToCover.text" x="33" y="0" w="90" h="30"
 		text="COVER" align="left" ghost="1"
 		font="Arial" fontsize="18" bold="1"
-		color="255,255,255" alpha="128"/>
+		color="color.button.label" alpha="128"/>
 		
 	<layer id="shuffle.icon" x="5" y="50"
 		image="player.main.icon.shuffle" ghost="1"/>
@@ -247,11 +247,11 @@
 	<text id="shuffle.text" x="28" y="50" w="55" h="20"
 		text="SHUFFLE" align="center" ghost="1"
 		font="Arial" fontsize="16" bold="1"
-		color="255,255,255" alpha="128"/>
+		color="color.button.label" alpha="128"/>
 	<text id="shuffle.text.ind" x="28" y="62" w="50" h="20"
 		text="OFF" align="center" ghost="1"
 		font="Arial" fontsize="16" bold="1"
-		color="255,255,255" alpha="128"/>
+		color="color.button.label" alpha="128"/>
 		
 	<layer id="repeat.icon" x="5" y="100"
 		image="player.main.icon.repeat" ghost="1"/>
@@ -266,11 +266,11 @@
 	<text id="repeat.text" x="30" y="100" w="50" h="20"
 		text="REPEAT" align="center" ghost="1"
 		font="Arial" fontsize="16" bold="1"
-		color="255,255,255" alpha="128"/>
+		color="color.button.label" alpha="128"/>
 	<text id="repeat.text.ind" x="30" y="112" w="50" h="20"
 		text="OFF" align="center" ghost="1"
 		font="Arial" fontsize="16" bold="1"
-		color="255,255,255" alpha="128"/>
+		color="color.button.label" alpha="128"/>
 		
 	<script file="scripts/shufflerepeat.maki"/>
 	
@@ -284,7 +284,7 @@
 	<text id="delete.text" x="35" y="150" w="90" h="30"
 		text="ADD" align="left" ghost="1"
 		font="Arial" fontsize="18" bold="1"
-		color="255,255,255" alpha="128"/>
+		color="color.button.label" alpha="128"/>
 		
 	<button id="delete.button" x="0" y="200" 
 		image="player.main.gen.button"
@@ -296,7 +296,7 @@
 	<text id="delete.text" x="30" y="200" w="90" h="30"
 		text="DELETE" align="left" ghost="1"
 		font="Arial" fontsize="18" bold="1"
-		color="255,255,255" alpha="128"/>
+		color="color.button.label" alpha="128"/>
 	
 	<button id="up.button" x="0" y="250" 
 		image="player.main.gen.button"
@@ -308,11 +308,11 @@
 	<text id="menu.text" x="29" y="250" w="50" h="20"
 		text="MOVE" align="center" ghost="1"
 		font="Arial" fontsize="16" bold="1"
-		color="255,255,255" alpha="128"/>
+		color="color.button.label" alpha="128"/>
 	<text id="menu.text" x="29" y="262" w="50" h="20"
 		text="UP" align="center" ghost="1"
 		font="Arial" fontsize="16" bold="1"
-		color="255,255,255" alpha="128"/>
+		color="color.button.label" alpha="128"/>
 		
 	<button id="down.button" x="0" y="300" 
 		image="player.main.gen.button"
@@ -324,11 +324,11 @@
 	<text id="menu.text" x="30" y="300" w="50" h="20"
 		text="MOVE" align="center" ghost="1"
 		font="Arial" fontsize="16" bold="1"
-		color="255,255,255" alpha="128"/>	
+		color="color.button.label" alpha="128"/>	
 	<text id="menu.text" x="30" y="312" w="50" h="20"
 		text="DOWN" align="center" ghost="1"
 		font="Arial" fontsize="16" bold="1"
-		color="255,255,255" alpha="128"/>
+		color="color.button.label" alpha="128"/>
 	
 	<button id="menu.button" x="0" y="350" 
 		image="player.main.gen.button"
@@ -340,7 +340,7 @@
 	<text id="menu.text" x="33" y="350" w="90" h="30"
 		text="MENU" align="left" ghost="1"
 		font="Arial" fontsize="18" bold="1"
-		color="255,255,255" alpha="128"/>
+		color="color.button.label" alpha="128"/>
 </groupdef>
 
 <!-- override group definition -->
@@ -354,9 +354,9 @@
 <groupdef id="player.main.pl.list">
 	<playlistPlus id="main.pl" 
 			x="130" y="10" w="-130" h="80" relatx="0" relaty="2" relatw="1" relath="2"
-			font="Arial" fontsize="25" linespacing="-10" color="255,255,255" alpha="200"
-			playcolor="255,200,0" selcolor="255,255,255" selbgcolor="200,200,200" selalpha="255"
-			showslider="1" slidercolor="255,255,255" slideralpha="128"/>
+			font="Arial" fontsize="25" linespacing="-10" color="color.plist" alpha="200"
+			playcolor="wasabi.list.text.current" selcolor="color.plist" selbgcolor="200,200,200" selalpha="255"
+			showslider="1" slidercolor="color.plist" slideralpha="128"/>
 	<group id="player.main.pl.list.buttons" x="0" y="0" w="90" h="380"/>
 	<script file="scripts/centerobject.maki" param="player.main.pl.list.buttons,0,1"/>
 </groupdef>
@@ -376,7 +376,7 @@
 </groupdef>
 
 <groupdef id="player.main.config.content">
-	<layer x="0" y="0" image="player.main.background.default2" ghost="1"/>
+	<layer x="0" y="0" image="player.main.background.config" ghost="1"/>
 	
 	<togglebutton id="config.button.default" x="215" y="126"
 		image="player.main.config.button"

@@ -171,6 +171,12 @@ cdboxHolder.onResize(int x, int y, int w, int h)
 	resizeToThis(xs, ys, ws, hs);
 }
 
+cdboxHolder.onSetVisible(int on) {
+	if (on) {
+		cdboxHolder.onResize(getLeft(), getTop(), getWidth(), getHeight());
+	}
+}
+
 resizeToThis(int x, int y, int w, int h)
 {
 	//this has to be here, if below this value then album art resizes itself stupid, do not alter this value - SLoB

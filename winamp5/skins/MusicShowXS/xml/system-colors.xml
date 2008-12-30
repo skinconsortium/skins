@@ -9,14 +9,10 @@
 
 <elements>
 
-  <!-- Warp custom colors -->
-  <color id="font.generic" value="0,0,0" gammagroup="Text"/>
-  <color id="font.songticker" value="255,255,255" gammagroup="Text_songticker"/>
-  <color id="font.timer" value="0,0,0" gammagroup="Text_timer"/>
-  <color id="player.font.ticker" value="0,0,0" gammagroup="glass"/>
- 
-  <color id="font.display" value="143,217,255" gammagroup="glass"/>
-  <color id="font.clock" value="127,127,127" gammagroup="Clock_Text"/>
+  <!-- Custom colors -->
+  <color id="color.nowplaying" value="200,200,200" gammagroup="generalText"/>
+  <color id="color.button.label" value="255,255,255" gammagroup="buttonLabel"/>
+  <color id="color.plist" value="255,255,255" gammagroup="playlist"/>
 
   <!-- wasabi colors -->
   <color id="wasabi.text.color" value="255,255,255" gammagroup="Text"/>
@@ -32,7 +28,7 @@
   <color id="studio.list.item.selected" value="50,50,50" gammagroup="ListSelBackground"/>
   <color id="studio.list.item.focused" value="50,50,50" gammagroup="ListSelBackground"/>
 
-  <color id="wasabi.list.text.current" value="145,214,255" gammagroup="glass"/> <!-- currently playing item in lists -->
+  <color id="wasabi.list.text.current" value="145,214,255" gammagroup="playList.current"/> <!-- currently playing item in lists -->
   <color id="wasabi.list.text.selected.inactive" value="10,10,10" gammagroup="ListTextSelected"/> <!-- listview/treeview selection bar textcolor (inactive) -->
   <color id="wasabi.list.text.selected.background.inactive" value="10,13,20" gammagroup="ListSelBackground"/> <!-- listview/treeview selectionbar back color (inactive) -->
 

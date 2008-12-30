@@ -9,13 +9,9 @@
 
 <bitmap id="player.main.background.blank" file="player/background-blank.png" gammagroup="Background" />
 <bitmap id="player.main.background.noalpha" file="player/background-noalpha.png" gammagroup="Background" />
-<bitmap id="player.main.background" file="player/background.png" gammagroup="Background" />
-<bitmap id="player.main.background2" file="player/background2.png" gammagroup="Background" />
-<bitmap id="player.main.background3" file="player/background3.png" gammagroup="Background" />
 
 <bitmap id="player.main.background.default" file="player/defaultbg.jpg" gammagroup="Background" />
-<bitmap id="player.main.background.default1" file="player/defaultbg1.png" gammagroup="Background" />
-<bitmap id="player.main.background.default2" file="player/defaultbg2.png" gammagroup="Background" />
+<bitmap id="player.main.background.config" file="player/config-bg.png" gammagroup="Background" />
 <bitmap id="player.main.background.wallpaper" file="$wallpaper" />
 
 <bitmap id="player.main.backgroundover" file="player/backgroundover.png"  />
@@ -53,9 +49,9 @@
 <bitmap id="player.main.icon.up" file="player/button-icons.png" x="210" y="0" w="30" h="30" gammagroup="buttonLabel"/>
 <bitmap id="player.main.icon.down" file="player/button-icons.png" x="240" y="0" w="30" h="30" gammagroup="buttonLabel"/>
 
-<bitmap id="player.pl.selector.left" file="player/pl-selector.png" x="0" y="0" w="10" h="35" gammagroup="glass"/>
-<bitmap id="player.pl.selector.middle" file="player/pl-selector.png" x="10" y="0" w="70" h="35" gammagroup="glass"/>
-<bitmap id="player.pl.selector.right" file="player/pl-selector.png" x="80" y="0" w="10" h="35" gammagroup="glass"/>
+<bitmap id="player.pl.selector.left" file="gfx/graphics.png" x="388" y="1" w="10" h="35" gammagroup="glass"/> <!--exported--> 
+<bitmap id="player.pl.selector.middle" file="gfx/graphics.png" x="399" y="1" w="70" h="35" gammagroup="glass"/> <!--exported-->
+<bitmap id="player.pl.selector.right" file="gfx/graphics.png" x="470" y="1" w="10" h="35" gammagroup="glass"/> <!--exported-->
 
 <!-- **** config elements ***** -->
 <bitmap id="player.main.config.button" file="player/button-config.png" x="0" y="0" w="132" h="20" gammagroup="configbutton"/>
@@ -71,58 +67,8 @@
 <bitmap id="player.main.config.eqbutton.hover" file="player/eq-buttons.png" x="0" y="28" w="15" h="14" gammagroup="eqbutton"/>
 <!-- ******* -->
 
-<bitmap id="volpos" file="player/volpos.png" gammagroup="Glass"/>
-<bitmap id="imagesel" file="player/imagesel.png" />
-<bitmap id="anivis2" file="player/anivis.png" gammagroup="Glass"/>
-<bitmap id="animbut" file="player/animbut.png" />
-<bitmap id="animbutd" file="player/animbutd.png" />
-<bitmap id="volback" file="player/volback.png" />
- <bitmap id="dominator.normal.Volume" file="player/Volume.png" gammagroup="glass" />
-<bitmap id="membut" file="player/membut.png" gammagroup="Glass"/>
-<bitmap id="mem1" file="player/mem1.png" gammagroup="Background"/>
-<bitmap id="mem1d" file="player/mem1d.png" gammagroup="Background"/>
-<bitmap id="mem2" file="player/mem2.png" gammagroup="Background"/>
-<bitmap id="mem2d" file="player/mem2d.png" gammagroup="Background"/>
-<bitmap id="membutd" file="player/membutd.png" gammagroup="Glass"/>
-<bitmap id="anivis" file="player/anivis.png" gammagroup="Glass"/>
-<bitmap id="getb" file="player/getb1.png" gammagroup="Glass"/>
-<bitmap id="getb1" file="player/getb.png" gammagroup="Glass"/>
-<bitmap id="anivis3" file="player/playanim.png" gammagroup="Glass"/>
-<bitmap id="800mode" file="player/800mode.png" gammagroup="Glass"/>
-<bitmap id="glass" file="player/glass.png" />
-<bitmap id="backbase" file="player/backbase.png" gammagroup="Background"/>
-<bitmap id="armour" file="player/armour.png" gammagroup="Glass"/>
-<bitmap id="eqover" file="player/eqover.png" gammagroup="Background"/>
-
-<bitmap id="armourd" file="player/armourd.png" gammagroup="Glass"/>
-<bitmap id="player.main.PL" file="player/PL.png" gammagroup="Glass"  />
-<bitmap id="player.main.PLd" file="player/PLd.png" gammagroup="Glass"  />
-<bitmap id="player.main.PLds" file="player/PLds.png" gammagroup="Glass"  />
-<bitmap id="player.main.ML" file="player/ML.png" gammagroup="Glass" />
-<bitmap id="player.main.MLd" file="player/MLd.png" gammagroup="Glass"/>
-<bitmap id="player.main.MLds" file="player/MLds.png" gammagroup="Glass"/>
-
-<bitmap id="smallbut" file="player/smallbut.png" gammagroup="Glass"/>
-<bitmap id="smallbutd" file="player/smallbutd.png" gammagroup="Glass"/>
-<bitmap id="player.main.MLover" file="player/MLover.png" gammagroup="Glass"/>
-
-<bitmap id="player.main.vbut" file="player/vbutton.png" gammagroup="Glass"/>
-<bitmap id="player.main.vbutd" file="player/vbuttond.png" gammagroup="Glass"/>
-<bitmap id="player.main.vid" file="player/vid.png" gammagroup="Glass"/>
-<bitmap id="player.main.vidd" file="player/vidd.png" gammagroup="Glass"/>
-<bitmap id="player.main.colortheme" file="player/colotheme.png" gammagroup="Glass"/>
-<bitmap id="player.main.avs" file="player/avs.png" gammagroup="Glass"/>
-<bitmap id="player.main.avsd" file="player/avsd.png" gammagroup="Glass"/>
-<bitmap id="togglebutton" file="player/main.png" gammagroup="Glass"/>
-<bitmap id="TBactive" file="player/mains.png" gammagroup="Glass"/>
-<bitmap id="TBdown" file="player/mains.png" gammagroup="Glass"/>
-
-<bitmap id="player.over" file="player/over.png"/>
-<bitmap id="player.seekbk" file="player/songp.png"/>
-<bitmap id="player.over2" file="player/over2.png"/>
-<bitmap id="player.over3" file="player/over3.png" gammagroup="Glass"/>
-<bitmap id="player.membutton" file="player/membutton.png" gammagroup="Background"/>
-<bitmap id="player.membuttond" file="player/membuttond.png" gammagroup="Background"/>
+<bitmap id="vol.back" file="player/volback.png" />
+<bitmap id="vol.pos" file="player/Volume.png" gammagroup="glass" />
 
 <bitmap id="oneq" file="eq/oneq.png" gammagroup="Glass"/>
 <bitmap id="oneqd" file="eq/oneqd.png" gammagroup="Glass"/>
@@ -140,6 +86,7 @@
 <bitmap id="player.main.eqbuttondd" file="player/eqbuttondd.png" />
 <bitmap id="player.main.songpos" file="player/songpos.png" gammagroup="Glass"/>
 <bitmap id="player.main.songposd" file="player/songposd.png" gammagroup="Glass"/>
+<bitmap id="player.seekbk" file="player/songp.png" gammagroup="Glass"/>
 <bitmap id="player.main.visanimbigr" file="player/vis.png"  gammagroup="vis"/> 
 <bitmap id="player.main.animbut" file="player/animbut.png" gammagroup="Background" />
 <bitmap id="player.main.animbutd" file="player/animbutd.png" gammagroup="Background" />
@@ -160,23 +107,6 @@
 <bitmap id="my.music.pic" file="pics/1.png" />
 <bitmap id="my.video.pic" file="pics/2.png" />
 <bitmap id="my.audioCd.pic" file="pics/3.png" />
-<bitmap id="player.main.mind" file="player/mind.png" gammagroup="Glass"/>
-<bitmap id="player.main.shade" file="player/shade.png" gammagroup="Glass"/>
-<bitmap id="player.main.shaded" file="player/shaded.png" gammagroup="Glass"/>
-
-<bitmap id="player.main.x" file="player/xfade.png" gammagroup="Glass"/>
-<bitmap id="player.main.xd" file="player/xfaded.png" gammagroup="Glass"/>
-<bitmap id="player.main.xds" file="player/xfadeds.png" gammagroup="Glass"/>
-
-
-<bitmap id="player.main.r" file="player/repeat.png" gammagroup="Glass"/>
-<bitmap id="player.main.rd" file="player/repeatd.png" gammagroup="Glass"/>
-<bitmap id="player.main.rds" file="player/repeatds.png" gammagroup="Glass"/>
-<bitmap id="player.main.s" file="player/shuf.png" gammagroup="Glass"/>
-<bitmap id="player.main.x" file="player/xfade.png" gammagroup="Glass"/>
-<bitmap id="player.main.xd" file="player/xfaded.png" gammagroup="Glass"/>
-<bitmap id="player.main.sd" file="player/shufd.png" gammagroup="Glass"/>
-<bitmap id="player.main.sds" file="player/shufds.png" gammagroup="Glass"/>
 
 <bitmap id="player.main.play" file="player/play.png" gammagroup="Glass"/>
 <bitmap id="player.eqthumb" file="player/eqthumb2.png" gammagroup="Glass"/>
@@ -199,26 +129,8 @@
 <bitmap id="player.main.eject" file="player/eject.png" gammagroup="Glass"/>
 <bitmap id="player.main.ejectd" file="player/ejectd.png" gammagroup="Glass"/>
 
-<bitmap id="shadeover" file="player/shadeover.png" gammagroup="Glass"/>
-<bitmap id="player.main.shadebackground" file="player/shadebackground.png" gammagroup="Background" />
-<bitmap id="player.main.shadebackgroundover" file="player/shadebackgroundover.png" gammagroup="Backover" />
-<bitmap id="shadeplay" file="player/shadeplay.png" gammagroup="Glass"/>
-<bitmap id="shadeplayd" file="player/shadeplayd.png" gammagroup="Glass"/>
-<bitmap id="shadesong" file="player/shadesong.png" gammagroup="Background"/>
-<bitmap id="shadesongd" file="player/shadesongd.png" gammagroup="Background"/>
-<bitmap id="shademl" file="player/shademl.png" gammagroup="Glass"/>
-<bitmap id="shademld" file="player/shademld.png" gammagroup="Glass"/>
-<bitmap id="shadeon" file="player/shadeon.png" gammagroup="Glass"/>
-<bitmap id="shadeond" file="player/shadeond.png" gammagroup="Glass"/>
-<bitmap id="shadecover" file="player/shadecover.png" gammagroup="Glass"/>
-<bitmap id="shadevol" file="player/shadevol.png" gammagroup="Glass"/>
- <bitmap id="shadevold" file="player/shadevold.png" gammagroup="Glass"/>
-<bitmap id="shadevol2" file="player/shadevol2.png" gammagroup="Glass"/>
-<bitmap id="shadevol2d" file="player/shadevol2d.png" gammagroup="Glass"/>
-<bitmap id="shadevolover" file="player/shadevolover.png" gammagroup="Glass"/>
-
-<bitmap id="player.button.page.left" file="player/button-page-left.png" gammagroup="Glass"/>
-<bitmap id="player.button.page.left.down" file="player/button-page-left-down.png" gammagroup="Glass"/>
-<bitmap id="player.button.page.right" file="player/button-page-right.png" gammagroup="Glass"/>
-<bitmap id="player.button.page.right.down" file="player/button-page-right-down.png" gammagroup="Glass"/>
-	</elements>
+<bitmap id="player.button.page.left" file="gfx/graphics.png" x="1" y="1" w="54" h="63" gammagroup="Glass"/>  <!--exported-->
+<bitmap id="player.button.page.left.down" file="gfx/graphics.png" x="57" y="1" w="54" h="63" gammagroup="Glass"/>  <!--exported-->
+<bitmap id="player.button.page.right" file="gfx/graphics.png" x="169" y="1" w="54" h="63" gammagroup="Glass"/>  <!--exported-->
+<bitmap id="player.button.page.right.down" file="gfx/graphics.png" x="113" y="1" w="54" h="63" gammagroup="Glass"/>  <!--exported-->
+</elements>
