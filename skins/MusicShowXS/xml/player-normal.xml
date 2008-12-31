@@ -438,7 +438,7 @@
 	<slider
 			id="EQPreamp"
 			action="EQ_BAND" param="preamp"
-			x="134" y="297"
+			x="186" y="297"
 			w="15" h="101"
 			orientation="vertical" rectrgn="1"
 			thumb="player.main.config.eqslider"
@@ -449,7 +449,7 @@
 	<slider
 			id="EQBar1"
 			action="EQ_BAND" param="1"
-			x="185" y="297"
+			x="225" y="297"
 			w="15" h="101"
 			orientation="vertical" rectrgn="1"
 			thumb="player.main.config.eqslider"
@@ -460,7 +460,7 @@
 	<slider
 			id="EQBar2"
 			action="EQ_BAND" param="2"
-			x="207" y="297"
+			x="247" y="297"
 			w="15" h="101"
 			orientation="vertical" rectrgn="1"
 			thumb="player.main.config.eqslider"
@@ -471,7 +471,7 @@
 	<slider
 			id="EQBar3"
 			action="EQ_BAND" param="3"
-			x="229" y="297"
+			x="269" y="297"
 			w="15" h="101"
 			orientation="vertical" rectrgn="1"
 			thumb="player.main.config.eqslider"
@@ -482,7 +482,7 @@
 	<slider
 			id="EQBar4"
 			action="EQ_BAND" param="4"
-			x="251" y="297"
+			x="291" y="297"
 			w="15" h="101"
 			orientation="vertical" rectrgn="1"
 			thumb="player.main.config.eqslider"
@@ -493,7 +493,7 @@
 	<slider
 			id="EQBar5"
 			action="EQ_BAND" param="5"
-			x="273" y="297"
+			x="313" y="297"
 			w="15" h="101"
 			orientation="vertical" rectrgn="1"
 			thumb="player.main.config.eqslider"
@@ -504,7 +504,7 @@
 	<slider
 			id="EQBar6"
 			action="EQ_BAND" param="6"
-			x="295" y="297"
+			x="335" y="297"
 			w="15" h="101"
 			orientation="vertical" rectrgn="1"
 			thumb="player.main.config.eqslider"
@@ -515,7 +515,7 @@
 	<slider
 			id="EQBar7"
 			action="EQ_BAND" param="7"
-			x="317" y="297"
+			x="357" y="297"
 			w="15" h="101"
 			orientation="vertical" rectrgn="1"
 			thumb="player.main.config.eqslider"
@@ -526,7 +526,7 @@
 	<slider
 			id="EQBar8"
 			action="EQ_BAND" param="8"
-			x="339" y="297"
+			x="379" y="297"
 			w="15" h="101"
 			orientation="vertical" rectrgn="1"
 			thumb="player.main.config.eqslider"
@@ -536,7 +536,7 @@
 	<slider
 			id="EQBar9"
 			action="EQ_BAND" param="9"
-			x="361" y="297"
+			x="401" y="297"
 			w="15" h="101"
 			orientation="vertical" rectrgn="1"
 			thumb="player.main.config.eqslider"
@@ -546,7 +546,7 @@
 	<slider
 			id="EQBar10"
 			action="EQ_BAND" param="10"
-			x="383" y="297"
+			x="423" y="297"
 			w="15" h="101"
 			orientation="vertical" rectrgn="1"
 			thumb="player.main.config.eqslider"
