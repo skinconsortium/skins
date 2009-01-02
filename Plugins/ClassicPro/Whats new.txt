@@ -1,5 +1,5 @@
 -------------------------------------------------------------
-Version 1.1 (24 Nov 2008)
+Version 1.1 (1 Jan 2009)
 -------------------------------------------------------------
 - New: Major Widget Engine Improvements! Download new widgets (http://cpro.skinconsortium.com)
 - New: New Ultra Modern Tabs with animation!
