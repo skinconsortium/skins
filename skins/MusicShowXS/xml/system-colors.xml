@@ -13,6 +13,8 @@
   <color id="color.nowplaying" value="200,200,200" gammagroup="generalText"/>
   <color id="color.button.label" value="255,255,255" gammagroup="buttonLabel"/>
   <color id="color.plist" value="255,255,255" gammagroup="playlist"/>
+  
+  <color id="color.eq.txt" value="172,239,39" gammagroup="eqbutton"/>
 
   <!-- wasabi colors -->
   <color id="wasabi.text.color" value="255,255,255" gammagroup="Text"/>
