@@ -409,7 +409,7 @@
 	<togglebutton
 		id="eqonoff"
 		action="EQ_TOGGLE"
-		x="110" y="270" rectrgn="1"
+		x="106" y="296" rectrgn="1"
 		image="player.main.config.eqbutton"
 		hoverImage="player.main.config.eqbutton.hover"
 		downImage="player.main.config.eqbutton.down"
@@ -419,7 +419,7 @@
 	<togglebutton
 		id="auto"
 	  	action="EQ_AUTO"
-		x="134" y="270" rectrgn="1"
+		x="106" y="316" rectrgn="1"
 		image="player.main.config.eqbutton"
 		hoverImage="player.main.config.eqbutton.hover"
 		downImage="player.main.config.eqbutton.down"
@@ -429,7 +429,7 @@
 	<button
 		id="Presets"
 		action="MENU" param="presets" 
-		x="159" y="270" rectrgn="1"
+		x="106" y="336 " rectrgn="1"
 		image="player.main.config.eqbutton"
 		hoverImage="player.main.config.eqbutton.hover"
 		downImage="player.main.config.eqbutton.down"
@@ -553,6 +553,30 @@
 			downthumb="player.main.config.eqslider.hover"
 			hoverthumb="player.main.config.eqslider.hover"
 	/>
+	
+	<slider id="bal.slider"
+		action="PAN" x="102" y="382" w="70" h="15" rectrgn="1"
+			thumb="player.main.config.eqslider"
+			downthumb="player.main.config.eqslider.hover"
+			hoverthumb="player.main.config.eqslider.hover"/>
+			
+	<slider id="xfade.slider"
+			x="460" y="317" w="15" h="81" rectrgn="1"
+			orientation="vertical" 
+			thumb="player.main.config.eqslider"
+			downthumb="player.main.config.eqslider.hover"
+			hoverthumb="player.main.config.eqslider.hover"
+			cfgattrib="{F1239F09-8CC6-4081-8519-C2AE99FCB14C};Crossfade time"
+			low="0" high="20"/>
+			
+	<text id="eq.xfade.txt"
+		text="0.0s"
+		x="447" y="302" w="45" h="15" alpha="255"
+		antialias="1" bold="0" ghost="1"
+		fontsize="12" align="center" valign="top"
+		font="arial"
+		color="color.eq.txt"/>
+	<script file="scripts/text-to-attrib.maki" param="eq.xfade.txt,{F1239F09-8CC6-4081-8519-C2AE99FCB14C};Crossfade time,, sec"/>
 </groupdef>
 
 <groupdef id="player.main.config">

@@ -62,9 +62,9 @@
 <bitmap id="player.main.config.eqslider" file="player/eq-slider.png" x="0" y="0" w="15" h="15" gammagroup="eqbutton"/>
 <bitmap id="player.main.config.eqslider.hover" file="player/eq-slider.png" x="0" y="15" w="15" h="15" gammagroup="eqbutton"/>
 
-<bitmap id="player.main.config.eqbutton" file="player/eq-buttons.png" x="0" y="0" w="15" h="14" gammagroup="eqbutton"/>
-<bitmap id="player.main.config.eqbutton.down" file="player/eq-buttons.png" x="0" y="14" w="15" h="14" gammagroup="eqbutton"/>
-<bitmap id="player.main.config.eqbutton.hover" file="player/eq-buttons.png" x="0" y="28" w="15" h="14" gammagroup="eqbutton"/>
+<bitmap id="player.main.config.eqbutton" file="player/eq-buttons.png" x="0" y="0" w="59" h="13" gammagroup="eqbutton"/>
+<bitmap id="player.main.config.eqbutton.down" file="player/eq-buttons.png" x="0" y="13" w="59" h="13" gammagroup="eqbutton"/>
+<bitmap id="player.main.config.eqbutton.hover" file="player/eq-buttons.png" x="0" y="26" w="59" h="13" gammagroup="eqbutton"/>
 <!-- ******* -->
 
 <bitmap id="vol.back" file="player/volback.png" />
