@@ -697,6 +697,8 @@ alignFull (Tab t)
 /**
  * Resizes tabs so we do not run out of space
  */
+ 
+/* OLD CODE
 alignByResize ()
 {
 	Tab t = firstTab;
@@ -708,6 +710,37 @@ alignByResize ()
 	{
 		t.w = t.maxW*ratio;
 		t.mid = t.w/2;
+		
+		t.setXmlParam("x", integerToString(x));
+		t.setXmlParam("w", integerToString(t.w));
+		x+=t.w;
+		t = t.right;
+	}
+}*/
+alignByResize ()
+{
+	Tab t = firstTab;
+	
+	/*
+	Martin... please replace this peice of code...if possible... just used to count how many visible tabs are there... theres probably a better way to detect ;)
+	*/
+	int tabCountTemp = 0;
+	while (t != NULL)	{
+		tabCountTemp++;
+		t = t.right;
+	}
+	t = firstTab;
+	
+	float ratio = (tabHolder.getWidth()-tabCountTemp*20)/(totalTabWidth-tabCountTemp*20);
+	if(ratio<0) ratio=0;
+
+	int x = 0;
+
+	while (t != NULL)
+	{
+		t.w = (t.maxW-20)*ratio+20;
+		t.mid = t.w/2;
+		
 		t.setXmlParam("x", integerToString(x));
 		t.setXmlParam("w", integerToString(t.w));
 		x+=t.w;
