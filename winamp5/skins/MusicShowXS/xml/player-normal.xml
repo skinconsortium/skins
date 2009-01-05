@@ -588,6 +588,23 @@
 	<script file="scripts\config.maki"/>
 </groupdef>
 
+<groupdef id="player.main.vis.content">
+	<rect id="vis.base"
+		fitparent="1"
+		color="0,0,0" filled="1" ghost="1"/>
+
+	<windowholder id="wndhlr.vid" x="1" y="1" w="-2" relatw="1" h="-2" relath="1" 
+		autoclose="1" autoopen="1" autoavailable="0" visible="0" hold="guid:{F0816D7B-FFFC-4343-80F2-E8199AA15CC3}"/>
+	<windowholder id="wndhlr.avs" x="1" y="1" w="-2" relatw="1" h="-2" relath="1" autofocus="0"
+		autoclose="1" autoopen="1" autoavailable="0" visible="0" hold="guid:avs"/>
+</groupdef>
+
+<groupdef id="player.main.vis">
+	<group id="player.main.vis.content"
+		x="100" y="70" w="-200" h="-220" relatw="1" relath="1"/>
+
+</groupdef>
+
 <groupdef id="player.pagescroller">
 	<button id="player.button.page.left"
 		x="20" y="0"
@@ -634,6 +651,7 @@
 
 	<group id="player.main.cms" x="0" y="0" w="100" h="0" relatx="2" relatw="2" relath="1"/>
 	<group id="player.main.pl" 	x="0" y="0" w="100" h="0" relatx="2" relatw="2" relath="1" visible="0"/>
+	<group id="player.main.vis" x="0" y="0" w="100" h="0" relatx="2" relatw="2" relath="1" visible="0"/>
 	<group id="player.main.config" 	x="0" y="0" w="100" h="0" relatx="2" relatw="2" relath="1" visible="0"/>
 	
 	<group id="player.cbuttons" x="0" y="-100" relaty="1" w="227" h="165"/>
@@ -644,7 +662,7 @@
 	<group id="player.pagescroller" x="0" y="0" w="0" h="59" relatw="1"/>
 	<script file="scripts/centerobject.maki" param="player.pagescroller,0,1"/>
 	
-	<script file="scripts/pagescroll.maki" param="player.main.cms,player.main.pl,player.main.config"/>
+	<script file="scripts/pagescroll.maki" param="player.main.cms,player.main.pl,player.main.vis,player.main.config"/>
 	
 	<layer image="player.main.background.noalpha" x="-20" y="-20" relatx="1" relaty="1" w="20" h="20" resize="bottomright"/>
 
