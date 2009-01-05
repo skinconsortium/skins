@@ -14,6 +14,9 @@
 #define AVS_GUID "{0000000A-000C-0010-FF7B-01014263450C}"
 #define SKINTWEAKS_CFGPAGE "{0542AFA4-48D9-4c9f-8900-5739D52C114F}"
 
+#define OPENVID 1
+#define OPENAVS 2
+
 Global layout main; 
 
 Global button buttonPL;
@@ -26,8 +29,8 @@ Global configAttribute xfade, xfadetime, PSOVC;
 
 Global group VISGroup;
 Global WindowHolder AVSHolder, VideoHolder;
-Global int localOpen, openAVS;
-Global timer delayVisShow, delayClearLocalOpen;
+Global int localOpen, openVIDAVS;
+Global timer delayVisShow, delayClearLocalOpen, delayRequestPageSwitch;
 
 //global timer delayfocus;
 
@@ -52,12 +55,15 @@ System.onScriptLoaded() {
 	VideoHolder = VISGroup.findObject("wndhlr.vid");
 	
 	delayVisShow = new Timer;
-	delayVisShow.setDelay(1000);
+	delayVisShow.setDelay(1500);
 	
 	delayClearLocalOpen = new Timer;
 	delayClearLocalOpen.setDelay(1000);
 	localOpen = 0;
-	openAVS = 1;
+	openVIDAVS = 0;
+	
+	delayRequestPageSwitch = new Timer;
+	delayRequestPageSwitch.setDelay(500);
 	
 	configGroup = Config.getItem(SKINTWEAKS_CFGPAGE);
     if (configGroup) {
@@ -70,6 +76,8 @@ System.onScriptLoaded() {
 
 System.onScriptUnloading() {
 	delete delayVisShow;
+	delete delayClearLocalOpen;
+	delete delayRequestPageSwitch;
 	
 	if (PSOVC) PSOVC.setData("0");
 }
@@ -84,9 +92,9 @@ buttonPL.onLeftClick() {
 }
 
 // ***** AVS/Video Control Scripts
-VISGroup.onSetVisible(int on) {
+/*VISGroup.onSetVisible(int on) {
 	if (on) delayVisShow.start();
-}
+}*/
 
 system.onGetCancelComponent(String curguid, boolean goingvisible) {
 	if (!goingvisible) return FALSE;
@@ -94,16 +102,16 @@ system.onGetCancelComponent(String curguid, boolean goingvisible) {
 	if (curguid == VID_GUID) {
 		if (localOpen) return FALSE;
 		else {
-			main.sendAction("REQUESTSWITCHPAGE", "", 0,0,2,0); // switches to page 3
-			openAVS = 0;
+			delayRequestPageSwitch.start();
+			openVIDAVS = OPENVID;
 			return TRUE;
 		}
 	}
 	if (curguid == AVS_GUID) {
 		if (localOpen) return FALSE;
 		else {
-			main.sendAction("REQUESTSWITCHPAGE", "", 0,0,2,0);
-			openAVS = 1;
+			delayRequestPageSwitch.start();
+			openVIDAVS = OPENAVS;
 			return TRUE;
 		}
 	}
@@ -114,26 +122,33 @@ system.onGetCancelComponent(String curguid, boolean goingvisible) {
 
 main.onAction(String action, String param, Int x, int y, int p1, int p2, GuiObject source) {
 	action = strupper(action);
-	param = strupper(param);
+
 	if (action=="SWITCHPAGE") {
-		if (param!="player.main.vis") {
-			AVSHolder.hide();
-			VideoHolder.hide();
+		AVSHolder.hide();
+		VideoHolder.hide();
+		if (param=="player.main.vis") {
+			delayVisShow.start();
 		}
 	}
+}
+
+delayRequestPageSwitch.onTimer() {
+	stop();
+	
+	main.sendAction("REQUESTSWITCHPAGE", "", 0,0,2,0);  // switches to page 3
 }
 
 delayVisShow.onTimer() {
 	stop();
 	
 	localOpen = 1;
-	if (isVideo() || !openAVS)
+	if ((isVideo() && openVIDAVS==0) || openVIDAVS == OPENVID)
 		VideoHolder.show();
 	else
 		AVSHolder.show();
 	delayClearLocalOpen.start();
 	
-	openAVS = 1;
+	openVIDAVS = 0;
 }
 
 delayClearLocalOpen.onTimer() {
