@@ -1,0 +1,21 @@
+/**
+ * Tagging
+ *
+ * DFL-Tags -> XML io
+ *
+ * @author mpdeimos
+ */
+
+(empty)
+	empty field (is null) is used to define dummy elements that have no assigned XML Tag.
+
+flat
+	applys for grouping elements like Panel or GroupBox.
+	this will not create a new XML node and insert all subelements in this items parent node.
+
+node:%s
+	applys for grouping elements like Panel or GroupBox.
+	will create/search within the given node %s
+
+value
+	creates a <name_of_panel>text_of_panel</name_of_panel> node
