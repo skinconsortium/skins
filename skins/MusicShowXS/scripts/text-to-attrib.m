@@ -3,6 +3,8 @@
   text-to-attrib.m
   by Leechbite
 
+  modified, now displays OFF if attrib is 0.
+  
   general purpose script to display a config attrib on a
   Text object.
   
@@ -37,5 +39,10 @@ System.onScriptLoaded() {
 }
 
 attrib.onDataChanged() {
-	if (textobj) textobj.setText(prefix+getData()+suffix);
+	if (!textobj) return;
+	
+	if (getData()!="0")
+		textobj.setText(prefix+getData()+suffix);
+	else
+		textobj.setText("OFF");
 }
