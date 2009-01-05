@@ -94,7 +94,14 @@ scriptGroup.onAction(String action, String param, Int x, int y, int p1, int p2, 
 	action = strupper(action);
 
 	if (action=="REQUESTSWITCHPAGE") {
-		currGroup = scriptGroup.getObject(getToken(pageList, ",", currPage));
+		string currGroupID = getToken(pageList, ",", currPage);
+		currGroup = scriptGroup.getObject(currGroupID);
+		if (currPage == p1) {
+			scriptGroup.sendAction("SWITCHPAGE", currGroupID, 0,0,0,0);
+			
+			return;
+		}		
+
 		currPage = p1;
 		string nextGroupID = getToken(pageList, ",", currPage);
 		
