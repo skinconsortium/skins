@@ -1,10 +1,12 @@
 /**
- * Tagging
- *
- * DFL-Tags -> XML io
+ * DFL-Tags <-> XML io.
+ * A quick guid for linking GUI elements to XML nodes via DFL tags.
  *
  * @author mpdeimos
  */
+
+general notes:
+	- you can suffix the name attribute with an underscore. This is useful if the name should hold a D keyword like "version" or "package".
 
 (empty)
 	empty field (is null) is used to define dummy elements that have no assigned XML Tag.
@@ -15,7 +17,31 @@ flat
 
 node:%s
 	applys for grouping elements like Panel or GroupBox.
-	will create/search within the given node %s
+	will create/search within the given node %s.
+	You can also load more than one node at once separating them by "/":
+	tag="TagA/TagB" will create/search the content of <TagA><TagB>content</TagB></TagA>
 
 value
 	creates a <name_of_panel>text_of_panel</name_of_panel> node
+
+blob
+	applys for multiline editboxes.
+	fills the editbox with raw xml of all tags that appear in the parent xml node.
+
+blob:%s
+	applys for multiline editboxes.
+	fills the editbox with raw xml of all <%s /> tags that appear in the parent xml node.
+
+attrib
+	corresponds to the attribute name_of_control of the parent xml node.
+	the attribute value holds the text of this control.
+	useful for editboxes and dropdownboxes.
+
+attrib-bool
+	applys for checkboxes.
+	adds a boolean attrib to a xml tag. The xml tag is the same one as specified in one of the parent grouping elements.
+	<tag_of_parent name_of_control="0|1"/>
+
+attrib-radio:%attrib=%value
+	applys for radioboxes.
+	reads/writes the attribute %attrib="%value" to the parent xml node if the radiobox is checked.

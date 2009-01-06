@@ -1,14 +1,14 @@
 module xmlio;
 
-import dfl.treeview;
 import paneltree.PanelTree;
 import paneltree.PanelNode;
-import dfl.control;
+import dfl.all;
 
+import Text = tango.text.Util;
 import tango.text.xml.Document;
 import tango.text.xml.DocPrinter;
 import tango.io.File;
-import tango.io.Stdout;
+debug import tango.io.Stdout;
 
 /** Singleton Class - use getInstance() */
 public class XmlIO
@@ -21,54 +21,51 @@ public class XmlIO
 	
 	private Doc[] docs;
 	
-	private this() {}
+	static this()
+	{
+		instance = new XmlIO;
+	}
 	
 	public:
 	
-	static XmlIO get()
+	static void linkPanelTree(PanelTree* nodes)
 	{
-		if (instance is null)
-			instance = new XmlIO;
-			
-		return instance;
+		instance.nodes = nodes;
 	}
 	
-	void linkPanelTree(PanelTree* nodes)
+	static void populateControls(char[] path)
 	{
-		this.nodes = nodes;
-	}
-	
-	void populateControls(char[] path)
-	{
-		populate(path);
+		instance.populate(path);
 	}
 
-	void saveControls(char[] path)
+	static void saveControls(char[] path)
 	{
 		auto print = new DocPrinter!(char);
-		foreach(doc;docs)
+		foreach(doc;instance.docs)
 		{
-			Stdout(print(doc)).newline;
+			debug Stdout(print(doc)).newline;
 		}
 		
-		populate(path, false);
+		instance.populate(path, false);
 	}
 	
 	private void populate(char[] path, bool read = true)
 	{
-		Stdout("-- populate start").newline;
+		debug Stdout("-- populate start").newline;
 		
 		if (read)
 			docs.length = 0;
 			
 		char[] pos = "+";
 		
+		int i = 0;
+		
 		foreach(treenode; nodes.getTree.nodes)
 		{
 			PanelNode curNode = cast(PanelNode)treenode;
 			if (curNode.panel.tag is null)
 				continue;
-			Stdout(pos ~ curNode.text).newline;
+			debug Stdout(pos ~ curNode.text).newline;
 			
 			// open file
 			//@ TODO add exists check
@@ -92,7 +89,7 @@ public class XmlIO
 			}
 			else
 			{
-				doc = docs[0];
+				doc = docs[i++];
 			}
 
 			Control c = cast(Control)curNode.panel;
@@ -104,13 +101,13 @@ public class XmlIO
 				docs.length = docs.length+1;
 				docs[$-1] = doc;
 			}
-			Stdout("- file output").newline;
+			debug Stdout("- file output").newline;
 			auto print = new DocPrinter!(char);
-			Stdout(print(doc)).newline;
+			debug Stdout(print(doc)).newline;
 			if (!read)
 				xml.write(cast(char[])print(doc));
 		}
-		Stdout("-- populate stop").newline;
+		debug Stdout("-- populate stop").newline;
 	}
 	
 	private:
@@ -120,7 +117,7 @@ public class XmlIO
 		char[] content;
 		auto printer = new DocPrinter!(char);
 		printer.print (node, (char[][] s...){foreach(t; s) content ~= t;});
-		Stdout(content).newline;
+		debug Stdout(content).newline;
 		return content;
 	}
 	
@@ -131,8 +128,15 @@ public class XmlIO
 		
 		depth ~= "+";
 		char[] tag = panel.tag.toString;
+		char[] panelName = panel.name;
+		
+		// remove the leading underscore if neccessary
+		if (panelName.length && panelName[0] == '_')
+		{
+			panelName = panelName[1..$];
+		}
 
-		Stdout(depth ~ tag ~ " | curnode: " ~ node.name).newline;
+		debug Stdout(depth ~ tag ~ " | curnode: " ~ node.name).newline;
 		
 		Node next = node;
 
@@ -140,9 +144,9 @@ public class XmlIO
 		{
 			foreach (n;node.children())
 			{
-				Stdout(n.name ~ " - " ~ panel.name).newline;
+				debug Stdout(n.name ~ " - " ~ panelName).newline;
 				
-				if (n.name == panel.name)
+				if (n.name == panelName)
 				{
 					//mixin assign!((panel.text), (n.value), read);
 					if (read)
@@ -164,15 +168,101 @@ public class XmlIO
 						// Now we can savely set the value :)
 						n.value = panel.text;
 					}
-						
-					Stdout(panel.name ~ " : "~ n.value ~ " - " ~ panel.text).newline;
 
+					debug Stdout(panelName ~ " : "~ n.value ~ " - " ~ panel.text).newline;
+					
 					return;
 				}
 			}
-			node.element(null, panel.name, panel.text);
+			node.element(null, panelName, panel.text);
 		}
-		if (tag[0..4] == "blob")
+		else if (tag == "attrib")
+		{	
+			if (read)
+			{
+				auto q = node.query.attribute(panelName);
+				
+				if (!q.count)
+				{
+					//attrib hasn't been found :( - let's create it :)
+					node.attribute(null, panel.name, panel.text);
+					return;
+				}
+				
+				foreach(attr;q)
+				{
+					panel.text = attr.value;
+				}
+			}
+			else
+			{
+				foreach(attr;node.query.attribute(panelName))
+				{
+					attr.value = panel.text;
+				}
+			}
+		}
+		else if (tag == "attrib-bool")
+		{
+			auto checkbox = cast(CheckBox*)panel;	
+			if (read)
+			{
+				auto q = node.query.attribute(panelName);
+				
+				if (!q.count)
+				{
+					//attrib hasn't been found :( - let's create it :)
+					node.attribute(null, checkbox.name, (checkbox.checked ? "1" : "0"));
+					return;
+				}
+				
+				foreach(attr;q)
+				{
+					checkbox.checked = !(attr.value == "" || attr.value == "0");
+				}
+			}
+			else
+			{
+				foreach(attr;node.query.attribute(panelName))
+				{
+					if (checkbox.checked)
+						attr.value = "1";
+					else
+						attr.value = "0";
+				}
+			}
+		}
+		else if (tag.length >= 13 && tag[0..13] == "attrib-radio:")
+		{
+			auto checkbox = cast(RadioButton*)panel;
+			char[] attribName = tag[13..Text.locate(tag,'=')];
+			char[] attribValue = tag[Text.locate(tag,'=')+1..$];
+			if (read)
+			{
+				auto q = node.query.attribute(attribName);
+				
+				if (!q.count && checkbox.checked)
+				{
+					//attrib hasn't been found :( - let's create it :)
+					node.attribute(null, attribName, attribValue);
+					return;
+				}
+				
+				foreach(attr;q)
+				{
+					checkbox.checked = attr.value == attribValue;
+				}
+			}
+			else
+			{
+				if (checkbox.checked)
+					foreach(attr;node.query.attribute(attribName))
+					{
+						attr.value = attribValue;
+					}
+			}
+		}
+		else if (tag[0..4] == "blob")
 		{
 			char[] buf;
 			if (tag.length < 5) 			//no query attached
@@ -217,15 +307,15 @@ public class XmlIO
 		}
 		else if (tag.length >= 5 && tag[0..5] == "node:")
 		{
-			foreach (n;node.children())
+			foreach(level;Text.patterns(tag[5..$], "/"))
 			{
-				if (n.name() == tag[5..$])
-				{
-					node = n;
-					goto populate;
-				}
+				auto query = node.query[level];
+				
+				if (!query.count)
+					node.element(null, level);
+				else 
+					node = query.nodes[0];
 			}
-			node.element(null, tag[5..$]); 
 		}
 		populate:
 		foreach(panel; panel.controls)

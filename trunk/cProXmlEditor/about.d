@@ -37,7 +37,7 @@ class About: dfl.form.Form
 		btnClose.click ~= &closeAboutWnd;
 		link.cursor = Cursors.hand;
 		link.click ~= &openLink;
-		label2.text = "version " ~ VERSION ~" - "~ DATE;
+		label2.text = "version " ~ VERSION ~" build "~ buildstamp_char ~" - "~ DATE;
 	}
 	
 	private void closeAboutWnd(Control c, EventArgs ea)
@@ -101,7 +101,7 @@ class About: dfl.form.Form
 		label6 = new dfl.label.Label();
 		label6.name = "label6";
 		label6.dock = dfl.all.DockStyle.TOP;
-		label6.text = "\\&copy; 2008-2009 Skin Consortium";
+		label6.text = "\&copy; 2008-2009 Skin Consortium";
 		label6.textAlign = dfl.all.ContentAlignment.BOTTOM_CENTER;
 		label6.bounds = dfl.all.Rect(0, 152, 282, 24);
 		label6.parent = this;

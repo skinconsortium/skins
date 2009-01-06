@@ -174,7 +174,7 @@ class Skinfo: dfl.panel.Panel
 		name.parent = skinInformation;
 		//~DFL dfl.textbox.TextBox=_version
 		_version = new dfl.textbox.TextBox();
-		_version.name = "version";
+		_version.name = "_version";
 		_version.tag = new dfl.all.StringObject("value");
 		_version.bounds = dfl.all.Rect(112, 43, 280, 23);
 		_version.parent = skinInformation;
@@ -192,9 +192,9 @@ class Skinfo: dfl.panel.Panel
 		textBox15.dock = dfl.all.DockStyle.FILL;
 		textBox15.tag = new dfl.all.StringObject("blob:include");
 		textBox15.multiline = true;
+		textBox15.readOnly = true;
 		textBox15.bounds = dfl.all.Rect(8, 19, 384, 69);
 		textBox15.parent = groupBox9;
-		textBox15.readOnly = true;
 		//~Entice Designer 0.8.5.02 code ends here.
 	}
 }

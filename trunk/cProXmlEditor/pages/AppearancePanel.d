@@ -7,21 +7,28 @@ module pages.AppearancePanel;
 */
 
 import dfl.all;
-
+import global;
 
 class AppearancePanel: dfl.panel.Panel
 {
 	// Do not modify or move this block of variables.
 	//~Entice Designer variables begin here.
-	dfl.groupbox.GroupBox groupBox2;
+	dfl.groupbox.GroupBox playPause;
 	dfl.button.CheckBox checkBox2;
-	dfl.button.CheckBox checkBox3;
-	dfl.button.CheckBox checkBox5;
-	dfl.groupbox.GroupBox groupBox3;
+	dfl.button.CheckBox normal;
+	dfl.button.CheckBox shade;
+	dfl.groupbox.GroupBox buttonGlow;
+	dfl.groupbox.GroupBox glowType;
 	dfl.button.RadioButton radioButton1;
 	dfl.button.RadioButton radioButton2;
 	dfl.button.RadioButton radioButton3;
 	dfl.button.RadioButton radioButton4;
+	dfl.panel.Panel panel1;
+	dfl.panel.Panel spacer;
+	dfl.groupbox.GroupBox fadeIn;
+	dfl.combobox.ComboBox fadeInSpeed;
+	dfl.groupbox.GroupBox fadeOut;
+	dfl.combobox.ComboBox fadeOutSpeed;
 	//~Entice Designer variables end here.
 	
 	
@@ -30,6 +37,11 @@ class AppearancePanel: dfl.panel.Panel
 		initializeAppearancePanel();
 		
 		//@  Other AppearancePanel initialization code here.
+	/+	auto _buttonGlow = cast(ScrollableControl)buttonGlow;
+		_buttonGlow.dockPadding.all = PADDING;+/
+		panel1.dockPadding.left = 10;
+		fadeInSpeed.items.addRange(["0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0"]);
+		fadeOutSpeed.items.addRange(["0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0"]);
 		
 	}
 	
@@ -41,70 +53,132 @@ class AppearancePanel: dfl.panel.Panel
 		//~DFL Panel
 		name = "AppearancePanel";
 		foreColor = dfl.all.Color(50, 255, 0);
+		tag = new dfl.all.StringObject("node:ClassicPro");
 		bounds = dfl.all.Rect(0, 0, 384, 336);
-		//~DFL dfl.groupbox.GroupBox=groupBox2
-		groupBox2 = new dfl.groupbox.GroupBox();
-		groupBox2.name = "groupBox2";
-		groupBox2.dock = dfl.all.DockStyle.TOP;
-		groupBox2.text = "Combined Play && Pause Button";
-		groupBox2.bounds = dfl.all.Rect(0, 0, 384, 64);
-		groupBox2.parent = this;
+		//~DFL dfl.groupbox.GroupBox=playPause
+		playPause = new dfl.groupbox.GroupBox();
+		playPause.name = "playPause";
+		playPause.dock = dfl.all.DockStyle.TOP;
+		playPause.tag = new dfl.all.StringObject("node:Appearance/PlayPauseButton");
+		playPause.text = "Combined Play && Pause Button";
+		playPause.bounds = dfl.all.Rect(0, 0, 384, 64);
+		playPause.parent = this;
 		//~DFL dfl.button.CheckBox=checkBox2
 		checkBox2 = new dfl.button.CheckBox();
 		checkBox2.name = "checkBox2";
 		checkBox2.text = "normal layout";
 		checkBox2.bounds = dfl.all.Rect(-240, -237, 368, 23);
-		checkBox2.parent = groupBox2;
-		//~DFL dfl.button.CheckBox=checkBox3
-		checkBox3 = new dfl.button.CheckBox();
-		checkBox3.name = "checkBox3";
-		checkBox3.dock = dfl.all.DockStyle.TOP;
-		checkBox3.text = "normal layout";
-		checkBox3.bounds = dfl.all.Rect(8, 19, 368, 16);
-		checkBox3.parent = groupBox2;
-		//~DFL dfl.button.CheckBox=checkBox5
-		checkBox5 = new dfl.button.CheckBox();
-		checkBox5.name = "checkBox5";
-		checkBox5.dock = dfl.all.DockStyle.TOP;
-		checkBox5.text = "shade layout";
-		checkBox5.bounds = dfl.all.Rect(8, 35, 368, 23);
-		checkBox5.parent = groupBox2;
-		//~DFL dfl.groupbox.GroupBox=groupBox3
-		groupBox3 = new dfl.groupbox.GroupBox();
-		groupBox3.name = "groupBox3";
-		groupBox3.dock = dfl.all.DockStyle.TOP;
-		groupBox3.text = "Button Glow";
-		groupBox3.bounds = dfl.all.Rect(0, 64, 384, 116);
-		groupBox3.parent = this;
+		checkBox2.parent = playPause;
+		//~DFL dfl.button.CheckBox=normal
+		normal = new dfl.button.CheckBox();
+		normal.name = "normal";
+		normal.dock = dfl.all.DockStyle.TOP;
+		normal.tag = new dfl.all.StringObject("attrib-bool");
+		normal.text = "normal layout";
+		normal.bounds = dfl.all.Rect(8, 19, 368, 16);
+		normal.parent = playPause;
+		//~DFL dfl.button.CheckBox=shade
+		shade = new dfl.button.CheckBox();
+		shade.name = "shade";
+		shade.dock = dfl.all.DockStyle.TOP;
+		shade.tag = new dfl.all.StringObject("attrib-bool");
+		shade.text = "shade layout";
+		shade.bounds = dfl.all.Rect(8, 35, 368, 23);
+		shade.parent = playPause;
+		//~DFL dfl.panel.Panel=spacer
+		spacer = new dfl.panel.Panel();
+		spacer.name = "spacer";
+		spacer.dock = dfl.all.DockStyle.TOP;
+		spacer.bounds = dfl.all.Rect(0, 124, 400, 6);
+		spacer.parent = this;
+		//~DFL dfl.groupbox.GroupBox=buttonGlow
+		buttonGlow = new dfl.groupbox.GroupBox();
+		buttonGlow.name = "buttonGlow";
+		buttonGlow.dock = dfl.all.DockStyle.TOP;
+		buttonGlow.tag = new dfl.all.StringObject("node:Appearance/ButtonGlow");
+		buttonGlow.text = "Button Glow";
+		buttonGlow.bounds = dfl.all.Rect(0, 64, 384, 140);
+		buttonGlow.parent = this;
+		//~DFL dfl.groupbox.GroupBox=glowType
+		glowType = new dfl.groupbox.GroupBox();
+		glowType.name = "glowType";
+		glowType.dock = dfl.all.DockStyle.LEFT;
+		glowType.tag = new dfl.all.StringObject("flat");
+		glowType.text = "Glow Type";
+		glowType.bounds = dfl.all.Rect(8, 19, 180, 113);
+		glowType.parent = buttonGlow;
 		//~DFL dfl.button.RadioButton=radioButton1
 		radioButton1 = new dfl.button.RadioButton();
 		radioButton1.name = "radioButton1";
 		radioButton1.dock = dfl.all.DockStyle.TOP;
-		radioButton1.enabled = false;
+		radioButton1.tag = new dfl.all.StringObject("attrib-radio:type=off");
 		radioButton1.text = "Off";
-		radioButton1.bounds = dfl.all.Rect(8, 19, 368, 23);
-		radioButton1.parent = groupBox3;
+		radioButton1.checkState = dfl.all.CheckState.CHECKED;
+		radioButton1.bounds = dfl.all.Rect(8, 19, 164, 23);
+		radioButton1.parent = glowType;
 		//~DFL dfl.button.RadioButton=radioButton2
 		radioButton2 = new dfl.button.RadioButton();
 		radioButton2.name = "radioButton2";
 		radioButton2.dock = dfl.all.DockStyle.TOP;
+		radioButton2.tag = new dfl.all.StringObject("attrib-radio:type=hold");
 		radioButton2.text = "Hold";
-		radioButton2.bounds = dfl.all.Rect(8, 42, 368, 23);
-		radioButton2.parent = groupBox3;
+		radioButton2.bounds = dfl.all.Rect(8, 42, 164, 23);
+		radioButton2.parent = glowType;
 		//~DFL dfl.button.RadioButton=radioButton3
 		radioButton3 = new dfl.button.RadioButton();
 		radioButton3.name = "radioButton3";
 		radioButton3.dock = dfl.all.DockStyle.TOP;
+		radioButton3.tag = new dfl.all.StringObject("attrib-radio:type=bounce");
 		radioButton3.text = "Bounce";
-		radioButton3.bounds = dfl.all.Rect(8, 65, 368, 23);
-		radioButton3.parent = groupBox3;
+		radioButton3.bounds = dfl.all.Rect(8, 65, 164, 23);
+		radioButton3.parent = glowType;
 		//~DFL dfl.button.RadioButton=radioButton4
 		radioButton4 = new dfl.button.RadioButton();
 		radioButton4.name = "radioButton4";
 		radioButton4.dock = dfl.all.DockStyle.TOP;
+		radioButton4.tag = new dfl.all.StringObject("attrib-radio:type=flash");
 		radioButton4.text = "Flash";
-		radioButton4.bounds = dfl.all.Rect(8, 88, 368, 23);
-		radioButton4.parent = groupBox3;
+		radioButton4.bounds = dfl.all.Rect(8, 88, 164, 23);
+		radioButton4.parent = glowType;
+		//~DFL dfl.panel.Panel=panel1
+		panel1 = new dfl.panel.Panel();
+		panel1.name = "panel1";
+		panel1.dock = dfl.all.DockStyle.FILL;
+		panel1.tag = new dfl.all.StringObject("flat");
+		panel1.bounds = dfl.all.Rect(188, 19, 188, 113);
+		panel1.parent = buttonGlow;
+		//~DFL dfl.groupbox.GroupBox=fadeIn
+		fadeIn = new dfl.groupbox.GroupBox();
+		fadeIn.name = "fadeIn";
+		fadeIn.dock = dfl.all.DockStyle.TOP;
+		fadeIn.tag = new dfl.all.StringObject("flat");
+		fadeIn.text = "Fade-in Speed (in milliseconds)";
+		fadeIn.bounds = dfl.all.Rect(0, 0, 188, 52);
+		fadeIn.parent = panel1;
+		//~DFL dfl.combobox.ComboBox=fadeInSpeed
+		fadeInSpeed = new dfl.combobox.ComboBox();
+		fadeInSpeed.name = "fadeInSpeed";
+		fadeInSpeed.dock = dfl.all.DockStyle.TOP;
+		fadeInSpeed.tag = new dfl.all.StringObject("attrib");
+		fadeInSpeed.text = "0.3";
+		fadeInSpeed.bounds = dfl.all.Rect(8, 19, 172, 21);
+		fadeInSpeed.parent = fadeIn;
+		//~DFL dfl.groupbox.GroupBox=fadeOut
+		fadeOut = new dfl.groupbox.GroupBox();
+		fadeOut.name = "fadeOut";
+		fadeOut.dock = dfl.all.DockStyle.BOTTOM;
+		fadeOut.tag = new dfl.all.StringObject("flat");
+		fadeOut.text = "Fade-out Speed (in milliseconds)";
+		fadeOut.bounds = dfl.all.Rect(0, 61, 188, 52);
+		fadeOut.parent = panel1;
+		//~DFL dfl.combobox.ComboBox=fadeOutSpeed
+		fadeOutSpeed = new dfl.combobox.ComboBox();
+		fadeOutSpeed.name = "fadeOutSpeed";
+		fadeOutSpeed.dock = dfl.all.DockStyle.TOP;
+		fadeOutSpeed.tag = new dfl.all.StringObject("attrib");
+		fadeOutSpeed.text = "0.3";
+		fadeOutSpeed.bounds = dfl.all.Rect(8, 19, 172, 21);
+		fadeOutSpeed.parent = fadeOut;
 		//~Entice Designer 0.8.5.02 code ends here.
 	}
 }

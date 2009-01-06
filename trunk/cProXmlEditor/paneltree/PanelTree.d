@@ -7,7 +7,6 @@
 module paneltree.PanelTree;
  
 import dfl.all;
-import tango.io.Stdout;
 import paneltree.PanelNode;
 
 public class PanelTree: Panel

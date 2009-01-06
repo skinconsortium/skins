@@ -80,14 +80,14 @@ class MainWnd: dfl.form.Form
 		myTree.dock = dfl.control.DockStyle.FILL;
 		myTree.parent = this;
 		
-		XmlIO.get.linkPanelTree(&myTree);
+		XmlIO.linkPanelTree(&myTree);
 
 		PanelNode skinXmlRoot = new PanelNode("skin.xml", "Skin Definition File", new Skinfo);
 		myTree.addNode(skinXmlRoot);
 		
-		PanelNode flexXmlRoot = new PanelNode("flex.xml", "Appearance", new AppearancePanel);
+		PanelNode flexXmlRoot = new PanelNode("classicpro.xml", "Appearance", new AppearancePanel);
 		myTree.addNode(flexXmlRoot);
-		myTree.addNode(new PanelNode("test", "Test", new TestPanel), flexXmlRoot);
+		myTree.addNode(new PanelNode("Text Styles", "Text Styles", new TestPanel), flexXmlRoot);
 		
 		PanelNode colorsXmlRoot = new PanelNode("colors.xml", "Skin Colors", new ColorsPanel);
 		myTree.addNode(colorsXmlRoot);
@@ -188,7 +188,7 @@ class MainWnd: dfl.form.Form
 			MenuItem mi = cast(MenuItem)sender;
 			currentPath = mi.text;
 			viewingTemplate = false;
-			XmlIO.get.populateControls(currentPath);
+			XmlIO.populateControls(currentPath);
 			statusText.text = "editing: " ~ currentPath;
 		}
 		
@@ -201,7 +201,9 @@ class MainWnd: dfl.form.Form
 			fd.showNewFolderButton = false;
 			auto res = fd.showDialog(this);
 			char[] normalizedPath = normalize(fd.selectedPath);
-			tango.io.Stdout.Stdout(normalizedPath).newline;
+			
+			debug tango.io.Stdout.Stdout(normalizedPath).newline;
+			
 			if (res !is dfl.base.DialogResult.OK)
 				return;
 				
@@ -256,13 +258,13 @@ class MainWnd: dfl.form.Form
 			
 			currentPath = normalizedPath;
 			viewingTemplate = false;
-			XmlIO.get.populateControls(currentPath);
+			XmlIO.populateControls(currentPath);
 			statusText.text = "editing: " ~ currentPath;
 		}
 		
 		void fileNew(Object sender, EventArgs ea)
 		{
-			XmlIO.get.populateControls(TEMPLATES_PATH);
+			XmlIO.populateControls(TEMPLATES_PATH);
 			viewingTemplate = true;
 			statusText.text = "unsaved project";
 		}
@@ -272,7 +274,7 @@ class MainWnd: dfl.form.Form
 			if (viewingTemplate)
 				fileSaveAs(sender, ea);
 			else
-				XmlIO.get.saveControls(currentPath);
+				XmlIO.saveControls(currentPath);
 		}
 
 		void fileSaveAs(Object sender, EventArgs ea)
@@ -283,7 +285,7 @@ class MainWnd: dfl.form.Form
 			fd.showNewFolderButton = true;
 			auto res = fd.showDialog(this);
 			char[] normalizedPath = normalize(fd.selectedPath);
-			tango.io.Stdout.Stdout(normalizedPath).newline;
+			debug tango.io.Stdout.Stdout(normalizedPath).newline;
 			if (res !is dfl.base.DialogResult.OK)
 				return;
 				
@@ -292,7 +294,7 @@ class MainWnd: dfl.form.Form
 			currentPath = normalizedPath;
 			viewingTemplate = false;
 			
-			XmlIO.get.saveControls(currentPath);
+			XmlIO.saveControls(currentPath);
 			statusText.text = "editing: " ~ currentPath;
 		}
 		
