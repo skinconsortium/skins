@@ -159,7 +159,7 @@ delayClearLocalOpen.onTimer() {
 
 // xfade main control scripts
 xfadetime.onDataChanged() {
-	if (getData()!="0") 
+	if (getData()!="0" && xfade.getData()!="1") 
 		xfade.setData("1");
 	else
 		xfade.setData("0");

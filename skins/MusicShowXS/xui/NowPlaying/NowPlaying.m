@@ -103,7 +103,7 @@ System.onSetXuiParam(String param, String value)
 FadeGroup(Group FadeGrp, Int AlphaValue)
 {	
 	FadeGrp.setTargetA(AlphaValue);
-  	FadeGrp.setTargetSpeed(1.3);
+  	FadeGrp.setTargetSpeed(0.5);
   	FadeGrp.gotoTarget();
 	complete;	
 }
@@ -173,7 +173,10 @@ cdboxHolder.onResize(int x, int y, int w, int h)
 
 cdboxHolder.onSetVisible(int on) {
 	if (on) {
-		cdboxHolder.onResize(getLeft(), getTop(), getWidth(), getHeight());
+		lyrFx.fx_setEnabled(0);
+		lyrFxFG.fx_setEnabled(0);
+		
+		setAllTags();
 	}
 }
 

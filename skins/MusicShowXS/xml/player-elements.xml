@@ -39,15 +39,15 @@
 <bitmap id="player.main.gen.button.down2" file="gfx/graphics.png" x="229" y="64" w="90" h="30" gammagroup="glass"/> <!--exported-->
 <!-- ****** -->
 
-<bitmap id="player.main.icon.list" file="player/button-icons.png" x="0" y="0" w="30" h="30" gammagroup="buttonLabel"/>
-<bitmap id="player.main.icon.cover" file="player/button-icons.png" x="30" y="0" w="30" h="30" gammagroup="buttonLabel"/>
-<bitmap id="player.main.icon.shuffle" file="player/button-icons.png" x="60" y="0" w="30" h="30" gammagroup="buttonLabel"/>
-<bitmap id="player.main.icon.repeat" file="player/button-icons.png" x="90" y="0" w="30" h="30" gammagroup="buttonLabel"/>
-<bitmap id="player.main.icon.delete" file="player/button-icons.png" x="120" y="0" w="30" h="30" gammagroup="buttonLabel"/>
-<bitmap id="player.main.icon.menu" file="player/button-icons.png" x="150" y="0" w="30" h="30" gammagroup="buttonLabel"/>
-<bitmap id="player.main.icon.add" file="player/button-icons.png" x="180" y="0" w="30" h="30" gammagroup="buttonLabel"/>
-<bitmap id="player.main.icon.up" file="player/button-icons.png" x="210" y="0" w="30" h="30" gammagroup="buttonLabel"/>
-<bitmap id="player.main.icon.down" file="player/button-icons.png" x="240" y="0" w="30" h="30" gammagroup="buttonLabel"/>
+<bitmap id="player.main.icon.list" file="gfx/graphics.png" x="210" y="279" w="30" h="30" gammagroup="buttonLabel"/>  <!--exported-->
+<bitmap id="player.main.icon.cover" file="gfx/graphics.png" x="240" y="279" w="30" h="30" gammagroup="buttonLabel"/> <!--exported-->
+<bitmap id="player.main.icon.shuffle" file="gfx/graphics.png" x="270" y="279" w="30" h="30" gammagroup="buttonLabel"/> <!--exported-->
+<bitmap id="player.main.icon.repeat" file="gfx/graphics.png" x="300" y="279" w="30" h="30" gammagroup="buttonLabel"/> <!--exported-->
+<bitmap id="player.main.icon.delete" file="gfx/graphics.png" x="330" y="279" w="30" h="30" gammagroup="buttonLabel"/> <!--exported-->
+<bitmap id="player.main.icon.menu" file="gfx/graphics.png" x="360" y="279" w="30" h="30" gammagroup="buttonLabel"/> <!--exported-->
+<bitmap id="player.main.icon.add" file="gfx/graphics.png" x="390" y="279" w="30" h="30" gammagroup="buttonLabel"/> <!--exported-->
+<bitmap id="player.main.icon.up" file="gfx/graphics.png" x="420" y="279" w="30" h="30" gammagroup="buttonLabel"/> <!--exported-->
+<bitmap id="player.main.icon.down" file="gfx/graphics.png" x="450" y="279" w="30" h="30" gammagroup="buttonLabel"/> <!--exported-->
 
 <bitmap id="player.pl.selector.left" file="gfx/graphics.png" x="388" y="1" w="10" h="35" gammagroup="glass"/> <!--exported--> 
 <bitmap id="player.pl.selector.middle" file="gfx/graphics.png" x="399" y="1" w="70" h="35" gammagroup="glass"/> <!--exported-->
@@ -88,8 +88,6 @@
 <bitmap id="player.main.songposd" file="player/songposd.png" gammagroup="Glass"/>
 <bitmap id="player.seekbk" file="player/songp.png" gammagroup="Glass"/>
 <bitmap id="player.main.visanimbigr" file="player/vis.png"  gammagroup="vis"/> 
-<bitmap id="player.main.animbut" file="player/animbut.png" gammagroup="Background" />
-<bitmap id="player.main.animbutd" file="player/animbutd.png" gammagroup="Background" />
 <bitmap id="player.main.vis" file="player/anivis2.png" gammagroup="glass"/>
 <bitmap id="player.map.vol" file="player/map2.png" gammagroup="Background"/> 
 <bitmap id="player.anim.volume" file="player/volume.png" gammagroup="Background"/>
