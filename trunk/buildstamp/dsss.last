@@ -1,0 +1,5 @@
+[main.d]
+  target	= buildstamp
+  buildflags   += -dc=dmd-win-tango -full -release
+  prebuild	= buildstamp inc
+  postbuild	= robocopy . ./../../bin buildstamp.exe
