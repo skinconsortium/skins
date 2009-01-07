@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path=""/>
-	<classpathentry kind="lib" path="X:/D/tango/import"/>
 	<classpathentry kind="con" path="descent.USER_LIBRARY/Tango"/>
+	<classpathentry kind="lib" path="X:/D/tango/import"/>
 	<classpathentry kind="output" path=""/>
 </classpath>
