@@ -49,6 +49,13 @@
 <bitmap id="player.main.icon.up" file="gfx/graphics.png" x="420" y="279" w="30" h="30" gammagroup="buttonLabel"/> <!--exported-->
 <bitmap id="player.main.icon.down" file="gfx/graphics.png" x="450" y="279" w="30" h="30" gammagroup="buttonLabel"/> <!--exported-->
 
+<bitmap id="player.main.icon.vis.prev" file="gfx/graphics.png" x="210" y="310" w="30" h="30" gammagroup="buttonLabel"/>  <!--exported-->
+<bitmap id="player.main.icon.vis.next" file="gfx/graphics.png" x="240" y="310" w="30" h="30" gammagroup="buttonLabel"/> <!--exported-->
+<bitmap id="player.main.icon.vis.random" file="gfx/graphics.png" x="270" y="310" w="30" h="30" gammagroup="buttonLabel"/> <!--exported-->
+<bitmap id="player.main.icon.vis.menu" file="gfx/graphics.png" x="300" y="310" w="30" h="30" gammagroup="buttonLabel"/> <!--exported-->
+<bitmap id="player.main.icon.vis.fulls" file="gfx/graphics.png" x="330" y="310" w="30" h="30" gammagroup="buttonLabel"/> <!--exported-->
+<bitmap id="player.main.icon.vis.tv" file="gfx/graphics.png" x="360" y="310" w="30" h="30" gammagroup="buttonLabel"/> <!--exported-->
+
 <bitmap id="player.pl.selector.left" file="gfx/graphics.png" x="388" y="1" w="10" h="35" gammagroup="glass"/> <!--exported--> 
 <bitmap id="player.pl.selector.middle" file="gfx/graphics.png" x="399" y="1" w="70" h="35" gammagroup="glass"/> <!--exported-->
 <bitmap id="player.pl.selector.right" file="gfx/graphics.png" x="470" y="1" w="10" h="35" gammagroup="glass"/> <!--exported-->
