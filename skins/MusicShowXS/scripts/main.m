@@ -25,9 +25,11 @@ Global guiobject mainPL;
 Global vis vis1, vis2;
 Global layer vismousetrap;
 
-Global configAttribute xfade, xfadetime, PSOVC;
+Global text avsRandomInd;
 
-Global group VISGroup;
+Global configAttribute xfade, xfadetime, PSOVC, avsRandom;
+
+Global group VISGroup, vidButtons, avsButtons;
 Global WindowHolder AVSHolder, VideoHolder;
 Global int localOpen, openVIDAVS;
 Global timer delayVisShow, delayClearLocalOpen, delayRequestPageSwitch;
@@ -50,9 +52,16 @@ System.onScriptLoaded() {
 	
 	xfadetime.onDataChanged();
 	
+	configGroup = Config.getItemByGuid("{0000000A-000C-0010-FF7B-01014263450C}");
+	if (configGroup) avsRandom = configGroup.getAttribute("Random");
+	
 	VISGroup = main.findObject("player.main.vis");
 	AVSHolder = VISGroup.findObject("wndhlr.avs");
 	VideoHolder = VISGroup.findObject("wndhlr.vid");
+	avsRandomInd = VISGroup.findObject("random.text.ind");
+	vidButtons = VISGroup.findObject("player.main.vid.buttons");
+	avsButtons = VISGroup.findObject("player.main.avs.buttons");
+	avsRandom.onDataChanged();
 	
 	delayVisShow = new Timer;
 	delayVisShow.setDelay(1500);
@@ -92,10 +101,6 @@ buttonPL.onLeftClick() {
 }
 
 // ***** AVS/Video Control Scripts
-/*VISGroup.onSetVisible(int on) {
-	if (on) delayVisShow.start();
-}*/
-
 system.onGetCancelComponent(String curguid, boolean goingvisible) {
 	if (!goingvisible) return FALSE;
 	
@@ -124,6 +129,8 @@ main.onAction(String action, String param, Int x, int y, int p1, int p2, GuiObje
 	action = strupper(action);
 
 	if (action=="SWITCHPAGE") {
+		vidButtons.hide();
+		avsButtons.hide();
 		AVSHolder.hide();
 		VideoHolder.hide();
 		if (param=="player.main.vis") {
@@ -142,10 +149,13 @@ delayVisShow.onTimer() {
 	stop();
 	
 	localOpen = 1;
-	if ((isVideo() && openVIDAVS==0) || openVIDAVS == OPENVID)
+	if ((isVideo() && openVIDAVS==0) || openVIDAVS == OPENVID) {
 		VideoHolder.show();
-	else
+		vidButtons.show();
+	} else {
 		AVSHolder.show();
+		avsButtons.show();
+	}
 	delayClearLocalOpen.start();
 	
 	openVIDAVS = 0;
@@ -157,6 +167,14 @@ delayClearLocalOpen.onTimer() {
 	localOpen = 0;
 }
 
+// avs random text indication script
+avsRandom.onDataChanged() {
+	if (getData()=="0")
+		avsRandomInd.setText("OFF");
+	else
+		avsRandomInd.setText("ON");
+}
+
 // xfade main control scripts
 xfadetime.onDataChanged() {
 	if (getData()!="0" && xfade.getData()!="1") 
@@ -164,3 +182,4 @@ xfadetime.onDataChanged() {
 	else
 		xfade.setData("0");
 }
+

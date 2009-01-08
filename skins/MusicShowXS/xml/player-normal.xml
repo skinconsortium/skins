@@ -173,7 +173,7 @@
 		image="player.main.icon.list" ghost="1"/>
 	<text id="SwitchToList.text" x="35" y="0" w="90" h="30"
 		text="LIST" align="left" ghost="1"
-		font="Arial" fontsize="18" bold="1"
+		font="font.gen.button" fontsize="18" bold="1"
 		color="color.button.label" alpha="128"/>
 		
 	<togglebutton id="shuffle.button" x="110" y="0"
@@ -186,11 +186,11 @@
 		image="player.main.icon.shuffle" ghost="1"/>
 	<text id="shuffle.text" x="138" y="0" w="55" h="20"
 		text="SHUFFLE" align="center" ghost="1"
-		font="Arial" fontsize="16" bold="1"
+		font="font.gen.button" fontsize="16" bold="1"
 		color="color.button.label" alpha="128"/>
 	<text id="shuffle.text.ind" x="138" y="12" w="50" h="20"
 		text="OFF" align="center" ghost="1"
-		font="Arial" fontsize="16" bold="1"
+		font="font.gen.button" fontsize="16" bold="1"
 		color="color.button.label" alpha="128"/>
 		
 	<NStatesButton id="repeat.button" x="220" y="0"
@@ -205,11 +205,11 @@
 		image="player.main.icon.repeat" ghost="1"/>
 	<text id="repeat.text" x="250" y="0" w="50" h="20"
 		text="REPEAT" align="center" ghost="1"
-		font="Arial" fontsize="16" bold="1"
+		font="font.gen.button" fontsize="16" bold="1"
 		color="color.button.label" alpha="128"/>
 	<text id="repeat.text.ind" x="250" y="12" w="50" h="20"
 		text="OFF" align="center" ghost="1"
-		font="Arial" fontsize="16" bold="1"
+		font="font.gen.button" fontsize="16" bold="1"
 		color="color.button.label" alpha="128"/>
 		
 	<script file="scripts/shufflerepeat.maki"/>
@@ -232,7 +232,7 @@
 		image="player.main.icon.cover" ghost="1"/>
 	<text id="SwitchToCover.text" x="33" y="0" w="90" h="30"
 		text="COVER" align="left" ghost="1"
-		font="Arial" fontsize="18" bold="1"
+		font="font.gen.button" fontsize="18" bold="1"
 		color="color.button.label" alpha="128"/>
 		
 	<togglebutton id="shuffle.button" x="0" y="50" rectrgn="1"
@@ -245,11 +245,11 @@
 		image="player.main.icon.shuffle" ghost="1"/>
 	<text id="shuffle.text" x="28" y="50" w="55" h="20"
 		text="SHUFFLE" align="center" ghost="1"
-		font="Arial" fontsize="16" bold="1"
+		font="font.gen.button" fontsize="16" bold="1"
 		color="color.button.label" alpha="128"/>
 	<text id="shuffle.text.ind" x="28" y="62" w="50" h="20"
 		text="OFF" align="center" ghost="1"
-		font="Arial" fontsize="16" bold="1"
+		font="font.gen.button" fontsize="16" bold="1"
 		color="color.button.label" alpha="128"/>
 		
 	<NStatesButton id="repeat.button" x="0" y="100"
@@ -264,11 +264,11 @@
 		image="player.main.icon.repeat" ghost="1"/>
 	<text id="repeat.text" x="30" y="100" w="50" h="20"
 		text="REPEAT" align="center" ghost="1"
-		font="Arial" fontsize="16" bold="1"
+		font="font.gen.button" fontsize="16" bold="1"
 		color="color.button.label" alpha="128"/>
 	<text id="repeat.text.ind" x="30" y="112" w="50" h="20"
 		text="OFF" align="center" ghost="1"
-		font="Arial" fontsize="16" bold="1"
+		font="font.gen.button" fontsize="16" bold="1"
 		color="color.button.label" alpha="128"/>
 		
 	<script file="scripts/shufflerepeat.maki"/>
@@ -282,7 +282,7 @@
 		image="player.main.icon.add" ghost="1"/>
 	<text id="delete.text" x="35" y="150" w="90" h="30"
 		text="ADD" align="left" ghost="1"
-		font="Arial" fontsize="18" bold="1"
+		font="font.gen.button" fontsize="18" bold="1"
 		color="color.button.label" alpha="128"/>
 		
 	<button id="delete.button" x="0" y="200" 
@@ -294,7 +294,7 @@
 		image="player.main.icon.delete" ghost="1"/>
 	<text id="delete.text" x="30" y="200" w="90" h="30"
 		text="DELETE" align="left" ghost="1"
-		font="Arial" fontsize="18" bold="1"
+		font="font.gen.button" fontsize="18" bold="1"
 		color="color.button.label" alpha="128"/>
 	
 	<button id="up.button" x="0" y="250" 
@@ -306,11 +306,11 @@
 		image="player.main.icon.up" ghost="1"/>
 	<text id="menu.text" x="29" y="250" w="50" h="20"
 		text="MOVE" align="center" ghost="1"
-		font="Arial" fontsize="16" bold="1"
+		font="font.gen.button" fontsize="16" bold="1"
 		color="color.button.label" alpha="128"/>
 	<text id="menu.text" x="29" y="262" w="50" h="20"
 		text="UP" align="center" ghost="1"
-		font="Arial" fontsize="16" bold="1"
+		font="font.gen.button" fontsize="16" bold="1"
 		color="color.button.label" alpha="128"/>
 		
 	<button id="down.button" x="0" y="300" 
@@ -322,11 +322,11 @@
 		image="player.main.icon.down" ghost="1"/>
 	<text id="menu.text" x="30" y="300" w="50" h="20"
 		text="MOVE" align="center" ghost="1"
-		font="Arial" fontsize="16" bold="1"
+		font="font.gen.button" fontsize="16" bold="1"
 		color="color.button.label" alpha="128"/>	
 	<text id="menu.text" x="30" y="312" w="50" h="20"
 		text="DOWN" align="center" ghost="1"
-		font="Arial" fontsize="16" bold="1"
+		font="font.gen.button" fontsize="16" bold="1"
 		color="color.button.label" alpha="128"/>
 	
 	<button id="menu.button" x="0" y="350" 
@@ -338,7 +338,7 @@
 		image="player.main.icon.menu" ghost="1"/>
 	<text id="menu.text" x="33" y="350" w="90" h="30"
 		text="MENU" align="left" ghost="1"
-		font="Arial" fontsize="18" bold="1"
+		font="font.gen.button" fontsize="18" bold="1"
 		color="color.button.label" alpha="128"/>
 </groupdef>
 
@@ -597,7 +597,7 @@
 		image="player.main.icon.vis.prev" ghost="1"/>
 	<text id="prev.text" x="30" y="0" w="90" h="30"
 		text="PREV" align="left" ghost="1"
-		font="Arial" fontsize="18" bold="1"
+		font="font.gen.button" fontsize="18" bold="1"
 		color="color.button.label" alpha="128"/>
 		
 	<button id="next.button" x="100" y="0" 
@@ -609,7 +609,88 @@
 		image="player.main.icon.vis.next" ghost="1"/>
 	<text id="next.text" x="130" y="0" w="90" h="30"
 		text="NEXT" align="left" ghost="1"
-		font="Arial" fontsize="18" bold="1"
+		font="font.gen.button" fontsize="18" bold="1"
+		color="color.button.label" alpha="128"/>
+		
+	<togglebutton id="random.button" x="200" y="0" 
+		image="player.main.gen.button"
+		downimage="player.main.gen.button.down"
+		hoverimage="player.main.gen.button.hover" 
+		activeimage="player.main.gen.button" rectrgn="1"
+		cfgattrib="{0000000A-000C-0010-FF7B-01014263450C};Random"/>
+	<layer id="random.icon" x="205" y="0"
+		image="player.main.icon.vis.random" ghost="1"/>
+	<text id="random.text" x="230" y="-5" w="90" h="30"
+		text="RANDOM" align="left" ghost="1"
+		font="font.gen.button" fontsize="16" bold="1"
+		color="color.button.label" alpha="128"/>
+	<text id="random.text.ind" x="230" y="12" w="50" h="20"
+		text="OFF" align="center" ghost="1"
+		font="font.gen.button" fontsize="16" bold="1"
+		color="color.button.label" alpha="128"/>
+		
+	<button id="avsfs.button" x="300" y="0" 
+		image="player.main.gen.button"
+		downimage="player.main.gen.button.down"
+		hoverimage="player.main.gen.button.hover" rectrgn="1"
+		action="VIS_FS"/>
+	<layer id="avsfs.icon" x="305" y="0"
+		image="player.main.icon.vis.fulls" ghost="1"/>
+	<text id="avsfs.text" x="335" y="0" w="90" h="30"
+		text="FULL" align="left" ghost="1"
+		font="font.gen.button" fontsize="18" bold="1"
+		color="color.button.label" alpha="128"/>
+		
+	<button id="avsmenu.button" x="-90" y="0" relatx="1"
+		image="player.main.gen.button"
+		downimage="player.main.gen.button.down"
+		hoverimage="player.main.gen.button.hover" rectrgn="1"
+		action="VIS_MENU"/>
+	<layer id="avsmenu.icon" x="-85" y="0" relatx="1"
+		image="player.main.icon.vis.menu" ghost="1"/>
+	<text id="avsmenu.text" x="-60" y="0" w="90" h="30"  relatx="1"
+		text="MENU" align="left" ghost="1"
+		font="font.gen.button" fontsize="18" bold="1"
+		color="color.button.label" alpha="128"/>
+</groupdef>
+
+<groupdef id="player.main.vid.buttons">
+
+	<button id="avsfs.button" x="0" y="0" 
+		image="player.main.gen.button"
+		downimage="player.main.gen.button.down"
+		hoverimage="player.main.gen.button.hover" rectrgn="1"
+		action="VID_FS"/>
+	<layer id="avsfs.icon" x="5" y="0"
+		image="player.main.icon.vis.fulls" ghost="1"/>
+	<text id="avsfs.text" x="35" y="0" w="90" h="30"
+		text="FULL" align="left" ghost="1"
+		font="font.gen.button" fontsize="18" bold="1"
+		color="color.button.label" alpha="128"/>
+		
+	<button id="tv.button" x="100" y="0" 
+		image="player.main.gen.button"
+		downimage="player.main.gen.button.down"
+		hoverimage="player.main.gen.button.hover" rectrgn="1"
+		action="VID_TV"/>
+	<layer id="tv.icon" x="105" y="0"
+		image="player.main.icon.vis.tv" ghost="1"/>
+	<text id="tv.text" x="140" y="0" w="90" h="30"
+		text="I-TV" align="left" ghost="1"
+		font="font.gen.button" fontsize="18" bold="1"
+		color="color.button.label" alpha="128"/>
+
+		
+	<button id="vidmenu.button" x="-90" y="0" relatx="1"
+		image="player.main.gen.button"
+		downimage="player.main.gen.button.down"
+		hoverimage="player.main.gen.button.hover" rectrgn="1"
+		action="VID_MISC"/>
+	<layer id="vidmenu.icon" x="-85" y="0" relatx="1"
+		image="player.main.icon.vis.menu" ghost="1"/>
+	<text id="vidmenu.text" x="-60" y="0" w="90" h="30"  relatx="1"
+		text="MENU" align="left" ghost="1"
+		font="font.gen.button" fontsize="18" bold="1"
 		color="color.button.label" alpha="128"/>
 </groupdef>
 
@@ -627,10 +708,14 @@
 </groupdef>
 
 <groupdef id="player.main.vis">
-	<group id="player.main.vis.content"
-		x="100" y="70" w="-200" h="-220" relatw="1" relath="1"/>
+	<group id="player.main.avs.buttons" x="100" y="70" w="-200" h="30" relatw="1" visible="0"/>
+	<group id="player.main.vid.buttons" x="100" y="70" w="-200" h="30" relatw="1" visible="0"/>
 
-	<group id="player.main.avs.buttons" x="100" y="-140" w="-200" h="30" relatw="1" relaty="1"/>
+	<group id="player.main.vis.content"
+		x="100" y="110" w="-200" h="-260" relatw="1" relath="1"/>
+
+	<group id="player.main.seeker" x="100" y="-190" w="-200" h="160" relatw="1" relaty="1"/>
+	<sendparams target="Timer" y="50"/>
 </groupdef>
 
 <groupdef id="player.pagescroller">
