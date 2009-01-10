@@ -104,7 +104,7 @@ initLoadFiles(){
 		
 		myDoc = new XmlDoc;
 		
-		String temp = Application.GetApplicationPath()+"\Plugins\classicPro\engine\widgets\Data\BrowserPro\source.xml";
+		String temp = Application.GetApplicationPath()+"\Plugins\ClassicPro\engine\widgets\Data\BrowserPro\source.xml";
 		myDoc.load (temp);
 
 		myDoc.parser_addCallback("WasabiXML/BrowserPro/*");
@@ -187,6 +187,8 @@ focus_callback.onTimer ()
 
 selectSaved(){
 	int i = searchInListForItem(getPublicString("ClassicPro.BrowserPro", "0"));
+	if(getPublicString("ClassicPro.BrowserPro", "0")) setPublicString("ClassicPro.BrowserPro", myList.getItemLabel(0, 0));
+
 	myList.setSelected(i,1);
 	updateDDList();
 }
