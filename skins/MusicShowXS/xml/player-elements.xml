@@ -39,6 +39,9 @@
 <bitmap id="player.main.gen.button.down2" file="gfx/graphics.png" x="229" y="64" w="90" h="30" gammagroup="glass"/> <!--exported-->
 <!-- ****** -->
 
+<!-- **** vis elements **** -->
+<bitmap id="player.main.visanim" file="gfx/graphics.png" x="420" y="45" w="60" h="84" gammagroup="vis"/>  <!--exported-->
+
 <bitmap id="player.main.icon.list" file="gfx/graphics.png" x="210" y="279" w="30" h="30" gammagroup="buttonLabel"/>  <!--exported-->
 <bitmap id="player.main.icon.cover" file="gfx/graphics.png" x="240" y="279" w="30" h="30" gammagroup="buttonLabel"/> <!--exported-->
 <bitmap id="player.main.icon.shuffle" file="gfx/graphics.png" x="270" y="279" w="30" h="30" gammagroup="buttonLabel"/> <!--exported-->
