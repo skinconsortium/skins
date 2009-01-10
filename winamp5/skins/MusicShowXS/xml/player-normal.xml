@@ -61,9 +61,15 @@
 	<script file="scripts/volumeslider.maki" param="VolumeAnim,volback,horizontal"/>
 </groupdef>
 
-<groupdef id="player.main.vis">
+<groupdef id="player.main.nowplayingvis">
 
-	<vis id="main.vis"  x="0" y="0"
+	<VisAnim
+		x="0" y="0"
+		w="0" h="42" relatw="1"
+		image="player.main.visanim"
+		numbars="auto" framewidth="3" frameheight="84"/>
+	/>
+	<!--vis id="main.vis"  x="0" y="0"
 		w="0" h="50" relatw="1" relath="2" colorbandpeak="162,193,204"
 		colorband1="182,197,202"
 		colorband2="174,188,193"
@@ -116,11 +122,11 @@
 		colorosc5="245,255,255" bandwidth="thin"
 		shadow="1" shadowcolor="0,0,0" flipv="2"
 		 alpha="55"
-		gammagroup="glass" />
+		gammagroup="glass" /-->
 		
 	<layer id="main.vis.mousetrap" fitparent="1" rectrgn="1" ghost="0"/>
 		
-	<script file="scripts/visualizer.maki" />
+	<!--script file="scripts/visualizer.maki" /-->
 </groupdef>
 
 <groupdef id="player.main.seeker">
@@ -158,7 +164,7 @@
 		showsongrating="1"
 		/>
 
-	<group id="player.main.vis" x="10" y="60" w="15" h="15" relatx="2" relaty="2" relatw="2" relath="2"/>
+	<group id="player.main.nowplayingvis" x="10" y="60" w="15" h="15" relatx="2" relaty="2" relatw="2" relath="2"/>
 
 	<group id="player.main.seeker" x="75" y="63" w="20" h="25" relatx="2" relaty="2" relatw="2" relath="2"/>
 </groupdef>
