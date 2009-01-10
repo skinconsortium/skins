@@ -127,7 +127,15 @@ System.onStop() {
 
 // Updates Seek as Media Advances
 SongPlayingTimer.onTimer() {
-	setSeekAnim(255 * System.getPosition() / System.getPlayItemLength());
+	if (System.getPlayItemLength() > 0 && System.getPlayItemLength() > System.getPosition())
+	{
+		
+		setSeekAnim(255 * System.getPosition() / System.getPlayItemLength());
+	}
+	else
+	{
+		setSeekAnim(255);
+	}
 }
 
 // Sets the Animation to Correct Region

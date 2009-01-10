@@ -21,7 +21,7 @@
 	>
 		<group
 			id="player.normal.drawer.cover"
-			x="153" y="50"
+			x="3" y="50"
 			w="209" h="138"
 		/>
 		<layer
@@ -36,6 +36,7 @@
 			id="coveralpha"
 			x="163" y="54"
 			w="38" h="82"
+			ghost="1"
 			image="player.normal.alphaline.cover.bitmap"
 		/>
 		<group
@@ -44,7 +45,4 @@
 			w="287" h="277"
 		/>
 	</layout>
-	<scripts>
-		<script id="main" file="maki/main.maki"/>
-	</scripts>
 </container>

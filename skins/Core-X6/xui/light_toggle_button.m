@@ -3,7 +3,7 @@
 
 // Change PRESSSPEED to change the animation speed
 
-#define PRESSSPEED 0.25
+#define PRESSSPEED 0.2
 
 Global Button Background;
 Global Layer Foreground;

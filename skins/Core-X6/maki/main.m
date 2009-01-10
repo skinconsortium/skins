@@ -1,6 +1,13 @@
 #include </lib/std.mi>
 #include </lib/config.mi>
 
+#define WINDOW_ITEMS "{6559CA61-7EB2-4415-A8A9-A2AEEF762B7F}"
+#define OPTIONS_MENU "{1828D28F-78DD-4647-8532-EBA504B8FC04}"
+#define MY_OPT_MENU "{3448EFC7-D134-4F2B-BFA6-B8FC5AB48089}"
+
+// songticker config page
+#define CUSTOM_PAGE_SONGTICKER "{7061FDE0-0E12-11D8-BB41-0050DA442EF3}"
+
 //Declare vis animated layers
 Global AnimatedLayer lyrVis1;
 Global AnimatedLayer lyrVis2;
@@ -25,6 +32,10 @@ Global AnimatedLayer lyrVis20;
 Global AnimatedLayer lyrVis21;
 Global GuiObject Ticker;
 
+Global Group grpCover;
+Global Layer btnCoverButton;
+Global Button btnCoverStar1, btnCoverStar2, btnCoverStar3, btnCoverStar4, btnCoverStar5;
+
 Global Button btnMNCrossfade, btnMNShuffle, btnMNRepeat;
 
 Global Layer PNBackground;
@@ -32,6 +43,7 @@ Global Layer LCDCrossfade;
 Global Layer LCDShuffle;
 Global Layer LCDRepeat;
 Global Layer LCDMute;
+Global Layer CoverMap;
 
 Global Button btnMNPlay;
 Global Layer lyrMNPlayDown, lyrMNPlayLight;
@@ -44,9 +56,12 @@ Global Int PrevValues8, PrevValues9, PrevValues10, PrevValues11, PrevValues12, P
 Global Int PrevValues15, PrevValues16, PrevValues17, PrevValues18, PrevValues19, PrevValues20, PrevValues21;
 
 Global ConfigAttribute cattrDA;
+Global ConfigAttribute cattrAlbumArt;
 
 #include "play2pause.m"
 #include "songinfo.m"
+#include "coverdrawer.m"
+#include "keyboard.m"
 
 function SetVisFrame (animatedlayer vislayer, int Length, int BandStart, int BandStop, int PrevValue, int Offset);
 
@@ -56,6 +71,8 @@ System.onScriptLoaded() {
 	Layout lytMainNormal = cntMain.GetLayout("normal");
 	Group grpPlayerNormal = lytMainNormal.GetObject("player.normal.group");
 	Group grpLCD = grpPlayerNormal.GetObject("player.normal.LCD");
+
+	grpCover = lytMainNormal.GetObject("player.normal.drawer.cover"); // Cover art drawer
 
 	PNBackground = lytMainNormal.getObject("background");
 	
@@ -85,6 +102,9 @@ System.onScriptLoaded() {
 	ConfigItem cfgDA = Config.getItemByGuid("{9149C445-3C30-4E04-8433-5A518ED0FDDE}");
 	cattrDA = cfgDA.getAttribute("Enable desktop alpha");
 
+	ConfigItem cfgWindows = Config.GetItemByGuid(WINDOW_ITEMS); // Toggle Windows menu
+	cattrAlbumArt = cfgWindows.getAttribute("Album Art\tAlt+A");
+
 	Ticker = grpLCD.getObject("ticker");
 
 	btnMNPlay = grpPlayerNormal.getObject("play2pause");
@@ -100,6 +120,16 @@ System.onScriptLoaded() {
 	LCDShuffle = grpLCD.getObject("status.shuffle");
 	LCDRepeat = grpLCD.getObject("status.repeat");
 
+	CoverMap = grpCover.getObject("noalpha.map");
+	btnCoverButton = grpCover.getObject("button");
+	
+	//rating stars
+	btnCoverStar1 = grpCover.getObject("star.1");
+	btnCoverStar2 = grpCover.getObject("star.2");
+	btnCoverStar3 = grpCover.getObject("star.3");
+	btnCoverStar4 = grpCover.getObject("star.4");
+	btnCoverStar5 = grpCover.getObject("star.5");
+
 	tmrVis = new Timer;
 	tmrVis.SetDelay(30);
 	tmrVis.Start();
@@ -108,11 +138,15 @@ System.onScriptLoaded() {
 	if (cattrDA.getData() == "1")
 	{
 		PNBackground.setXMLparam("image","player.normal.background.bitmap");
+		CoverMap.Hide();
+		btnCoverButton.setXMLparam("image","player.normal.cover.button");
 	}
 	
-
+// All included scripts have something to load when skin is loading, so included scripts have @Name@OnLoaded() functions, called below
 	play2pauseOnLoaded();
 	songinfoOnLoaded();
+	coverdrawerOnLoaded();
+	keyboardOnLoaded();
 
 }
 
@@ -121,10 +155,14 @@ cattrDA.OnDataChanged()
 	if (cattrDA.getData() == "0")
 	{
 		PNBackground.setXMLparam("image","player.normal.background.noalpha.bitmap");
+		CoverMap.Show();
+		btnCoverButton.setXMLparam("image","player.normal.cover.button.noalpha");
 	}
 	if (cattrDA.getData() == "1")
 	{
 		PNBackground.setXMLparam("image","player.normal.background.bitmap");
+		CoverMap.Hide();
+		btnCoverButton.setXMLparam("image","player.normal.cover.button");
 	}
 }
 
@@ -168,6 +206,11 @@ SetVisFrame(animatedlayer vislayer, int Length, int BandStart, int BandStop, int
 	If (newFrame < 0) newFrame = 0;
 	vislayer.gotoFrame(newFrame);	
 	return PrevValue;
+}
+
+System.onTitleChange(String newtitle)
+{
+	coverDrawerOnTitleChange(newtitle);
 }
 
 System.onScriptUnLoading() {
