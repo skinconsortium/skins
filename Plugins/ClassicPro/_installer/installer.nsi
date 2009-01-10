@@ -122,17 +122,22 @@ Section "ClassicPro Engine" cproFiles
   SetOutPath $INSTDIR\Plugins\ClassicPro\engine\scripts\attribs
   File "${SOURCEPATH}\engine\scripts\attribs\*.m"
 
+  SetOutPath $INSTDIR\Plugins\ClassicPro\engine\scripts\lib
+  File "${SOURCEPATH}\engine\scripts\lib\*.mi"
+
   SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xml
   File "${SOURCEPATH}\engine\xml\*.xml"
 
   SetOutPath $INSTDIR\Plugins\ClassicPro\engine\image
   File "${SOURCEPATH}\engine\image\*.png"
 
-  ;SetOutPath $INSTDIR\Plugins\ClassicPro\engine\homepage
-  ;File "${SOURCEPATH}\engine\homepage\*.htm"
-
   SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui
   File "${SOURCEPATH}\engine\xui\*.xml"
+
+  SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\AlbumArt
+  File "${SOURCEPATH}\engine\xui\AlbumArt\*.xml"
+  File "${SOURCEPATH}\engine\xui\AlbumArt\*.m"
+  File "${SOURCEPATH}\engine\xui\AlbumArt\*.maki"
 
   SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\CentroSUI
   File "${SOURCEPATH}\engine\xui\CentroSUI\*.xml"
@@ -146,57 +151,53 @@ Section "ClassicPro Engine" cproFiles
   File "${SOURCEPATH}\engine\xui\CproTabs\*.m"
   File "${SOURCEPATH}\engine\xui\CproTabs\*.maki"
 
-  SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\updateSystem
-  File "${SOURCEPATH}\engine\xui\updateSystem\*.xml"
-  File "${SOURCEPATH}\engine\xui\updateSystem\*.m"
-  File "${SOURCEPATH}\engine\xui\updateSystem\*.maki"
-
   SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\editbox
   File "${SOURCEPATH}\engine\xui\editbox\*.xml"
-
-  SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\historyeditbox
-  File "${SOURCEPATH}\engine\xui\historyeditbox\*.xml"
-  File "${SOURCEPATH}\engine\xui\historyeditbox\*.m"
-  File "${SOURCEPATH}\engine\xui\historyeditbox\*.maki"
-
-  SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\SC-ProgressGrid
-  File "${SOURCEPATH}\engine\xui\SC-ProgressGrid\*.xml"
-  File "${SOURCEPATH}\engine\xui\SC-ProgressGrid\*.m"
-  File "${SOURCEPATH}\engine\xui\SC-ProgressGrid\*.maki"
 
   SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\FadeText
   File "${SOURCEPATH}\engine\xui\FadeText\*.xml"
   File "${SOURCEPATH}\engine\xui\FadeText\*.m"
   File "${SOURCEPATH}\engine\xui\FadeText\*.maki"
 
-  SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\WasabiButton
-  File "${SOURCEPATH}\engine\xui\WasabiButton\*.xml"
-  File "${SOURCEPATH}\engine\xui\WasabiButton\*.m"
-  File "${SOURCEPATH}\engine\xui\WasabiButton\*.maki"
-
-  SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\AlbumArt
-  File "${SOURCEPATH}\engine\xui\AlbumArt\*.xml"
-  File "${SOURCEPATH}\engine\xui\AlbumArt\*.m"
-  File "${SOURCEPATH}\engine\xui\AlbumArt\*.maki"
-
-  SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\SC-Channels
-  File "${SOURCEPATH}\engine\xui\SC-Channels\*.xml"
-  File "${SOURCEPATH}\engine\xui\SC-Channels\*.m"
-  File "${SOURCEPATH}\engine\xui\SC-Channels\*.maki"
-
-  SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\Ratings
-  File "${SOURCEPATH}\engine\xui\Ratings\*.xml"
-  File "${SOURCEPATH}\engine\xui\Ratings\*.m"
-  File "${SOURCEPATH}\engine\xui\Ratings\*.maki"
-
-  SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\PlaylistPro
-  File "${SOURCEPATH}\engine\xui\PlaylistPro\alt\*.xml"
+  SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\historyeditbox
+  File "${SOURCEPATH}\engine\xui\historyeditbox\*.xml"
+  File "${SOURCEPATH}\engine\xui\historyeditbox\*.m"
+  File "${SOURCEPATH}\engine\xui\historyeditbox\*.maki"
 
   SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\ModernSongticker
   File "${SOURCEPATH}\engine\xui\ModernSongticker\*.xml"
   File "${SOURCEPATH}\engine\xui\ModernSongticker\*.txt"
   File "${SOURCEPATH}\engine\xui\ModernSongticker\*.m"
   File "${SOURCEPATH}\engine\xui\ModernSongticker\*.maki"
+
+  SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\PlaylistPro
+  File "${SOURCEPATH}\engine\xui\PlaylistPro\alt\*.xml"
+
+  SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\Ratings
+  File "${SOURCEPATH}\engine\xui\Ratings\*.xml"
+  File "${SOURCEPATH}\engine\xui\Ratings\*.m"
+  File "${SOURCEPATH}\engine\xui\Ratings\*.maki"
+
+  SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\SC-Channels
+  File "${SOURCEPATH}\engine\xui\SC-Channels\*.xml"
+  File "${SOURCEPATH}\engine\xui\SC-Channels\*.m"
+  File "${SOURCEPATH}\engine\xui\SC-Channels\*.maki"
+
+  SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\SC-ProgressGrid
+  File "${SOURCEPATH}\engine\xui\SC-ProgressGrid\*.xml"
+  File "${SOURCEPATH}\engine\xui\SC-ProgressGrid\*.m"
+  File "${SOURCEPATH}\engine\xui\SC-ProgressGrid\*.maki"
+
+  SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\updateSystem
+  File "${SOURCEPATH}\engine\xui\updateSystem\*.xml"
+  File "${SOURCEPATH}\engine\xui\updateSystem\*.m"
+  File "${SOURCEPATH}\engine\xui\updateSystem\*.maki"
+
+  SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\WasabiButton
+  File "${SOURCEPATH}\engine\xui\WasabiButton\*.xml"
+  File "${SOURCEPATH}\engine\xui\WasabiButton\*.m"
+  File "${SOURCEPATH}\engine\xui\WasabiButton\*.maki"
+
 
 	; ======= cPro::One =======
   SetOutPath $INSTDIR\Plugins\ClassicPro\engine\one\scripts

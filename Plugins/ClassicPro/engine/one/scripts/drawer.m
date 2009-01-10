@@ -21,7 +21,7 @@ Global int numInternalWidgets = 0;
 Global Layout myLayout;
 Global Group myGroup;
 Global CProWidget drawer_equalizer, drawer_pl, drawer_vid, drawer_savedpl, drawer_tagviewer, drawer_avs, drawer_ct, drawer_skinchooser;
-Global PopUpMenu popMenu, widgetmenu;
+Global PopUpMenu popMenu;//, widgetmenu;
 Global Button but_drawerGoto;
 Global GuiObject cpro_sui, gad_Grid, gad_GridEQ;
 Global Layer ct_fakeLayer;
@@ -123,7 +123,7 @@ but_drawerGoto.onleftClick(){
 		popMenu.addCommand(gr.getXMLparam("name"), userWidgetOffset+x, cur == userWidgetOffset+x, 0);
 	}
 
-	if (x == 0) widgetmenu.addCommand("No widgets found for this view!", -1, 0, 1);
+	if (x == 0) popMenu.addCommand("No widgets found for this view!", -1, 0, 1);
 	//popMenu.addSubMenu(widgetmenu, "Widgets");
 
 
@@ -141,7 +141,7 @@ but_drawerGoto.onleftClick(){
 	}
 
 	delete popMenu;
-	delete widgetmenu;
+	//delete widgetmenu;
 	complete;
 }
 
@@ -237,15 +237,15 @@ System.onKeyDown(String key){
 gotoPrevDrawer(){ //wheelup
 	int pos = getPublicInt("cPro.lastDrawer", 0);
 
-	if (pos == userWidgetOffset)
-	{
-		pos = numInternalWidgets;
-	}
-	if (pos == 0)
-	{
-		pos = userWidgetOffset + numUserWidgets;
+
+	if (pos == userWidgetOffset) pos = numInternalWidgets;
+	if (pos == 0){
+		if(numUserWidgets==0) pos = numInternalWidgets;
+		else pos = userWidgetOffset + numUserWidgets;
 	}
 	pos--;
+
+
 	if (pos < userWidgetOffset)
 	{
 		CProWidget gr = internalWidgets.enumItem(pos);
@@ -263,14 +263,8 @@ gotoNextDrawer(){ //wheelDown
 	int pos = getPublicInt("cPro.lastDrawer", 0);
 
 	pos++;
-	if (pos == userWidgetOffset + numUserWidgets)
-	{
-		pos = 0;
-	}
-	if (pos == numInternalWidgets)
-	{
-		pos = userWidgetOffset;
-	}
+	if (pos == userWidgetOffset + numUserWidgets) pos = 0;
+	if (pos == numInternalWidgets) pos = userWidgetOffset;
 
 	if (pos < userWidgetOffset)
 	{
