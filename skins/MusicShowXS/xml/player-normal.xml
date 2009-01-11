@@ -61,74 +61,6 @@
 	<script file="scripts/volumeslider.maki" param="VolumeAnim,volback,horizontal"/>
 </groupdef>
 
-<groupdef id="player.main.nowplayingvis">
-
-	<VisAnim
-		x="0" y="0"
-		w="0" h="84" relatw="1"
-		image="player.main.visanim"
-		numbars="auto" framewidth="3" frameheight="84" spacer="1"/>
-	/>
-	<!--vis id="main.vis"  x="0" y="0"
-		w="0" h="50" relatw="1" relath="2" colorbandpeak="162,193,204"
-		colorband1="182,197,202"
-		colorband2="174,188,193"
-		colorband3="178,192,197"
-		colorband4="183,197,204"
-		colorband5="188,202,207"
-		colorband6="194,207,212"
-		colorband7="200,213,218"
-		colorband8="206,220,225"
-		colorband9="212,221,231"
-		colorband10="217,231,236"
-		colorband11="222,237,242"
-		colorband12="227,241,246"
-		colorband13="231,245,250"
-		colorband14="236,250,255"
-		colorband15="240,254,255"
-		colorband16="245,255,255"
-		colorosc1="182,197,202"
-		colorosc2="183,197,204"
-		colorosc3="206,220,225"
-		colorosc4="227,241,246"
-		colorosc5="245,255,255"
-		shadow="1" shadowcolor="0,0,0" bandwidth="thin"
-		 alpha="150"
-		gammagroup="glass" 
-           />
-		
-	<vis id="main.vis.refl" x="0" y="50" relaty="2"
-		w="0" h="50" relatw="1" relath="2" colorbandpeak="162,193,204"
-		colorband1="182,197,202"
-		colorband2="174,188,193"
-		colorband3="178,192,197"
-		colorband4="183,197,204"
-		colorband5="188,202,207"
-		colorband6="194,207,212"
-		colorband7="200,213,218"
-		colorband8="206,220,225"
-		colorband9="212,221,231"
-		colorband10="217,231,236"
-		colorband11="222,237,242"
-		colorband12="227,241,246"
-		colorband13="231,245,250"
-		colorband14="236,250,255"
-		colorband15="240,254,255"
-		colorband16="245,255,255"
-		colorosc1="182,197,202"
-		colorosc2="183,197,204"
-		colorosc3="206,220,225"
-		colorosc4="227,241,246"
-		colorosc5="245,255,255" bandwidth="thin"
-		shadow="1" shadowcolor="0,0,0" flipv="2"
-		 alpha="55"
-		gammagroup="glass" /-->
-		
-	<layer id="main.vis.mousetrap" fitparent="1" rectrgn="1" ghost="0"/>
-		
-	<!--script file="scripts/visualizer.maki" /-->
-</groupdef>
-
 <groupdef id="player.main.seeker">
 
 	<text
@@ -153,6 +85,17 @@
 </groupdef>
 
 <groupdef id="player.main.cms" name="Close Min Switch" w="0" h="0" relatw="1" relath="1">
+	<VisAnim
+		x="15" y="57" w="15" h="84" relatx="2" relaty="2" relatw="2"
+		image="player.main.visanim" speed="50"
+		numbars="auto" framewidth="3" frameheight="84" spacer="1"/>
+	/>
+
+	<VisAnim
+		x="70" y="57" w="15" h="84" relatx="2" relaty="2" relatw="2"
+		image="player.main.visanim" speed="50" mirror="1"
+		numbars="auto" framewidth="3" frameheight="84" spacer="1"/>
+	/>
 	
 	<SC:NowPlaying 
 		x="15" y="15" relatx="2" relaty="2"
@@ -164,7 +107,7 @@
 		showsongrating="1"
 		/>
 
-	<group id="player.main.nowplayingvis" x="10" y="60" w="15" h="15" relatx="2" relaty="2" relatw="2" relath="2"/>
+	
 
 	<group id="player.main.seeker" x="75" y="63" w="20" h="25" relatx="2" relaty="2" relatw="2" relath="2"/>
 </groupdef>
