@@ -10,8 +10,9 @@
 #include <lib/std.mi>
 
 global group scriptGroup;
-global int numbarsset, numbars;
-global int animW, animH;
+global int numbarsset, numbars, mirror;
+global int updateAnims;
+global int animW, animH, animSpacer;
 global string animID;
 
 global timer visRefresh;
@@ -19,8 +20,14 @@ global timer visRefresh;
 System.onScriptLoaded() {
 	scriptGroup = getScriptGroup();
 	
+	mirror = 0;
+	numbarsset = 0;
+	animID = "TEST";
+	
+	updateAnims = 1;
+	
 	visRefresh = new Timer;
-	visRefresh.setDelay(50);
+	visRefresh.setDelay(150);
 	visRefresh.start();
 }
 
@@ -33,25 +40,74 @@ System.onSetXuiParam(String param, String value) {
 	if (param=="numbars") {
 		numbarsset = stringToInteger(value);
 		scriptGroup.onResize(0,0,scriptGroup.getWidth(),0);
-	} else if (param="image") {
+	} else if (param=="image") {
 		animID = value;
-	} else if (param="speed") {
+		updateAnims = 1;
+	} else if (param=="speed") {
 		visRefresh.setDelay(stringToInteger(value));
-	} else if (param="framewidth") {
+	} else if (param=="framewidth") {
 		animW = stringToInteger(value);
-	} else if (param="frameheight") {
+		updateAnims = 1;
+	} else if (param=="frameheight") {
 		animH = stringToInteger(value);
+		updateAnims = 1;
+	} else if (param=="spacer") {
+		animSpacer = stringToInteger(value);
+		updateAnims = 1;
+	} else if (param=="mirror") {
+		mirror = stringToInteger(value);
+		updateAnims = 1;
 	}
 }
 
 scriptGroup.onResize(int x, int y, int w, int h) {
 	if (animW <= 0) return;
 	if (numbarsset <= 0)
-		numbars = w / animW;
+		numbars = w / (animW+animSpacer);
 	else
 	 	numbars = numbarsset;
+	updateAnims = 1;
 }
 
 visRefresh.onTimer() {
+	stop();
+	int c;
+	animatedlayer currAnim;
 	
+	//numbars = 1;
+	
+	for (c=0; c<numbars; c++) {
+		currAnim = NULL;
+		currAnim = scriptGroup.getObject("anim"+integertostring(c));
+		if (!currAnim) {
+			currAnim = new animatedlayer;
+			
+			currAnim.setXMLParam("id","anim"+integertostring(c));
+			currAnim.setXMLParam("image",animID);
+			currAnim.setXMLParam("x","0");
+			currAnim.setXMLParam("y","0");
+			currAnim.setXMLParam("w","5");
+			currAnim.setXMLParam("h","5");
+
+			currAnim.init(scriptGroup);
+
+		}	
+		if (updateAnims) {
+			if (!currAnim.isVisible()) currAnim.show();
+			currAnim.setXMLParam("image",animID);
+			currAnim.setXMLParam("x",integerToString((animSpacer+animW)*c));
+			currAnim.setXMLParam("y","0");
+			currAnim.setXMLParam("w",integertostring(animW));
+			currAnim.setXMLParam("h",integertostring(animH));
+		}
+			
+			currAnim.play();
+
+	}
+	
+	currAnim = NULL;
+	currAnim = scriptGroup.getObject("anim"+integertostring(numbars));
+	if (currAnim) currAnim.hide();
+	updateAnims = 0;
+
 }
