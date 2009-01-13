@@ -1,8 +1,3 @@
-<elements>
-	<bitmap id="blank" file="player/background-blank.png"/>
-</elements>
 <groupdef id="xui.visanim" xuitag="VisAnim">
-	<!--animatedlayer id="anim0" image="player.main.background.blank" x="10" y="0" w="5" h="5"/-->
-
 	<script file="xui/VisAnim/visanim.maki" />
 </groupdef>

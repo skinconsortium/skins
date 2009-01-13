@@ -39,6 +39,22 @@
 <bitmap id="player.main.gen.button.down2" file="gfx/graphics.png" x="229" y="64" w="90" h="30" gammagroup="glass"/> <!--exported-->
 <!-- ****** -->
 
+<bitmap id="player.main.button.close" file="gfx/graphics.png" x="1" y="302" w="45" h="20" gammagroup="glass"/> <!--exported-->
+<bitmap id="player.main.button.close.hover" file="gfx/graphics.png" x="1" y="323" w="45" h="20" gammagroup="glass"/> <!--exported-->
+<bitmap id="player.main.button.close.down" file="gfx/graphics.png" x="1" y="344" w="45" h="20" gammagroup="glass"/> <!--exported-->
+
+<bitmap id="player.main.button.min" file="gfx/graphics.png" x="47" y="302" w="45" h="20" gammagroup="glass"/> <!--exported-->
+<bitmap id="player.main.button.min.hover" file="gfx/graphics.png" x="47" y="323" w="45" h="20" gammagroup="glass"/> <!--exported-->
+<bitmap id="player.main.button.min.down" file="gfx/graphics.png" x="47" y="344" w="45" h="20" gammagroup="glass"/> <!--exported-->
+
+<bitmap id="player.main.button.max" file="gfx/graphics.png" x="93" y="302" w="45" h="20" gammagroup="glass"/> <!--exported-->
+<bitmap id="player.main.button.max.hover" file="gfx/graphics.png" x="93" y="323" w="45" h="20" gammagroup="glass"/> <!--exported-->
+<bitmap id="player.main.button.max.down" file="gfx/graphics.png" x="93" y="344" w="45" h="20" gammagroup="glass"/> <!--exported-->
+
+<bitmap id="player.main.button.window" file="gfx/graphics.png" x="139" y="302" w="45" h="20" gammagroup="glass"/> <!--exported-->
+<bitmap id="player.main.button.window.hover" file="gfx/graphics.png" x="139" y="323" w="45" h="20" gammagroup="glass"/> <!--exported-->
+<bitmap id="player.main.button.window.down" file="gfx/graphics.png" x="139" y="344" w="45" h="20" gammagroup="glass"/> <!--exported-->
+
 <!-- **** vis elements **** -->
 <bitmap id="player.main.visanim" file="gfx/graphics.png" x="420" y="45" w="60" h="84" gammagroup="vis"/>  <!--exported-->
 
@@ -104,14 +120,6 @@
 <bitmap id="over" file="player/over.png" gammagroup="Background"/>
 <bitmap id="songinfo" file="player/songinfo.png" gammagroup="Glass"/>
 
-<bitmap id="player.main.close" file="player/close.png" />
-<bitmap id="player.main.closepic" file="player/closepic.png" />
-<bitmap id="player.main.closefocus" file="player/closefocus.png" />
-<bitmap id="player.main.closed" file="player/closed.png" />
-<bitmap id="player.main.closemin" file="player/closemin.png" />
-<bitmap id="player.main.closepl" file="player/closepl.png" />
-<bitmap id="player.main.closestar" file="player/closestar.png" />
-<bitmap id="player.main.min" file="player/min.png" gammagroup="Glass"/>
 <bitmap id="my.music.pic" file="pics/1.png" />
 <bitmap id="my.video.pic" file="pics/2.png" />
 <bitmap id="my.audioCd.pic" file="pics/3.png" />
