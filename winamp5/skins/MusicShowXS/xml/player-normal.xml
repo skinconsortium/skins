@@ -684,21 +684,30 @@
 <groupdef id="player.main.pbuttons">
 	<button 
 		id="Minimize"
-		x="-137" y="20" relatx="1"
+		x="-195" y="20" relatx="1"
 		action="minimize" 
-		image="player.main.close"
-		downimage="player.main.closemin"
-		hoverimage="player.main.closemin"
+		image="player.main.button.min"
+		downimage="player.main.button.min.down"
+		hoverimage="player.main.button.min.hover"
 		rectrgn="1"
 		tooltip="Minimize"
+		/>
+	<button 
+		id="Window"
+		x="-145" y="20" relatx="1"
+		image="player.main.button.window"
+		downimage="player.main.button.window.down"
+		hoverimage="player.main.button.window.hover"
+		rectrgn="1"
+		tooltip="Window"
 		/>
 	<button 
 		id="Close"
 		x="-95" y="20" relatx="1"
 		action="CLOSE" 
-		image="player.main.close"
-		downimage="player.main.closed"
-		hoverimage="player.main.closed"
+		image="player.main.button.close"
+		downimage="player.main.button.close.down"
+		hoverimage="player.main.button.close.hover"
 		rectrgn="1"
 		tooltip="Close"
 		/>
