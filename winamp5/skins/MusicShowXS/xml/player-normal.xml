@@ -681,9 +681,9 @@
 		rectrgn="1"/>
 </groupdef>
 
-<groupdef id="player.main.pbuttons">
+<groupdef id="player.main.pbuttons.full">
 	<button 
-		id="Minimize"
+		id="pbutton.minimize"
 		x="-195" y="20" relatx="1"
 		action="minimize" 
 		image="player.main.button.min"
@@ -693,7 +693,7 @@
 		tooltip="Minimize"
 		/>
 	<button 
-		id="Window"
+		id="pbutton.window"
 		x="-145" y="20" relatx="1"
 		image="player.main.button.window"
 		downimage="player.main.button.window.down"
@@ -702,7 +702,7 @@
 		tooltip="Window"
 		/>
 	<button 
-		id="Close"
+		id="pbutton.close"
 		x="-95" y="20" relatx="1"
 		action="CLOSE" 
 		image="player.main.button.close"
@@ -711,6 +711,42 @@
 		rectrgn="1"
 		tooltip="Close"
 		/>
+</groupdef>
+
+<groupdef id="player.main.pbuttons.window">
+	<button 
+		id="pbutton.minimize"
+		x="-195" y="20" relatx="1"
+		action="minimize" 
+		image="player.main.button.min"
+		downimage="player.main.button.min.down"
+		hoverimage="player.main.button.min.hover"
+		rectrgn="1"
+		tooltip="Minimize"
+		/>
+	<button 
+		id="pbutton.full"
+		x="-145" y="20" relatx="1"
+		image="player.main.button.full"
+		downimage="player.main.button.full.down"
+		hoverimage="player.main.button.full.hover"
+		rectrgn="1"
+		tooltip="Fullscreen"
+		/>
+	<button 
+		id="pbutton.close"
+		x="-95" y="20" relatx="1"
+		action="CLOSE" 
+		image="player.main.button.close"
+		downimage="player.main.button.close.down"
+		hoverimage="player.main.button.close.hover"
+		rectrgn="1"
+		tooltip="Close"
+		/>
+		
+	<layer image="player.main.resizer" x="-35" y="-35" relatx="1" relaty="1" resize="bottomright"/>
+	
+	<rect fitparent="1" filled="0" color="0,0,0" ghost="1"/>
 </groupdef>
 
 <layout id="normal" desktopalpha="0"
@@ -728,13 +764,12 @@
 	<group id="player.cbuttons" x="0" y="-100" relaty="1" w="227" h="165"/>
 	<script file="scripts/centerobject.maki" param="player.cbuttons,1,0"/>
 	
-	<group id="player.main.pbuttons" x="0" y="0" w="100" h="0" relatx="2" relatw="2" relath="1"/>
+	<group id="player.main.pbuttons.full" x="0" y="0" w="0" h="0" relatw="1" relath="1" visible="0"/>
+	<group id="player.main.pbuttons.window" x="0" y="0" w="0" h="0" relatw="1" relath="1"/>
 	
 	<group id="player.pagescroller" x="0" y="0" w="0" h="59" relatw="1"/>
 	<script file="scripts/centerobject.maki" param="player.pagescroller,0,1"/>
 	
 	<script file="scripts/pagescroll.maki" param="player.main.cms,player.main.pl,player.main.vis,player.main.config"/>
-	
-	<layer image="player.main.background.noalpha" x="-20" y="-20" relatx="1" relaty="1" w="20" h="20" resize="bottomright"/>
 
 </layout>

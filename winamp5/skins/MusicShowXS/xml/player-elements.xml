@@ -47,13 +47,15 @@
 <bitmap id="player.main.button.min.hover" file="gfx/graphics.png" x="47" y="323" w="45" h="20" gammagroup="glass"/> <!--exported-->
 <bitmap id="player.main.button.min.down" file="gfx/graphics.png" x="47" y="344" w="45" h="20" gammagroup="glass"/> <!--exported-->
 
-<bitmap id="player.main.button.max" file="gfx/graphics.png" x="93" y="302" w="45" h="20" gammagroup="glass"/> <!--exported-->
-<bitmap id="player.main.button.max.hover" file="gfx/graphics.png" x="93" y="323" w="45" h="20" gammagroup="glass"/> <!--exported-->
-<bitmap id="player.main.button.max.down" file="gfx/graphics.png" x="93" y="344" w="45" h="20" gammagroup="glass"/> <!--exported-->
+<bitmap id="player.main.button.full" file="gfx/graphics.png" x="93" y="302" w="45" h="20" gammagroup="glass"/> <!--exported-->
+<bitmap id="player.main.button.full.hover" file="gfx/graphics.png" x="93" y="323" w="45" h="20" gammagroup="glass"/> <!--exported-->
+<bitmap id="player.main.button.full.down" file="gfx/graphics.png" x="93" y="344" w="45" h="20" gammagroup="glass"/> <!--exported-->
 
 <bitmap id="player.main.button.window" file="gfx/graphics.png" x="139" y="302" w="45" h="20" gammagroup="glass"/> <!--exported-->
 <bitmap id="player.main.button.window.hover" file="gfx/graphics.png" x="139" y="323" w="45" h="20" gammagroup="glass"/> <!--exported-->
 <bitmap id="player.main.button.window.down" file="gfx/graphics.png" x="139" y="344" w="45" h="20" gammagroup="glass"/> <!--exported-->
+
+<bitmap id="player.main.resizer" file="gfx/graphics.png" x="420" y="130" w="30" h="30" gammagroup="glass"/> <!--exported-->
 
 <!-- **** vis elements **** -->
 <bitmap id="player.main.visanim" file="gfx/graphics.png" x="420" y="45" w="60" h="84" gammagroup="vis"/>  <!--exported-->

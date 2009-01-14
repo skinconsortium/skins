@@ -47,6 +47,11 @@ System.onVolumeChanged(int newvol) {
 		volAnim.setXMLParam("w", integerToString(newvol*volTrap.getWidth()/255));
 }
 
+// used on load, somehow volTrap width if 0 at load.
+volTrap.onResize(int x, int y, int w, int h) {
+	System.onVolumeChanged(getVolume());
+}
+
 volTrap.onLeftButtonDown(int x, int y) {
 	volChanging = true;
   
