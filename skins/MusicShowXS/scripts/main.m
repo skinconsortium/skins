@@ -3,7 +3,7 @@
 	main.m
 	by leechbite.com
 	
-	main script. handles focus bg.
+	main script.
 
 *************************************************************/
 
@@ -33,6 +33,10 @@ Global group VISGroup, vidButtons, avsButtons;
 Global WindowHolder AVSHolder, VideoHolder;
 Global int localOpen, openVIDAVS;
 Global timer delayVisShow, delayClearLocalOpen, delayRequestPageSwitch;
+
+Global group pbuttonsWindow, pbuttonsFull;
+Global button buttonWindow, buttonFull;
+Global int nosizesave;
 
 //global timer delayfocus;
 
@@ -79,8 +83,16 @@ System.onScriptLoaded() {
         ConfigAttribute PSOVC = configGroup.getAttribute("Prevent video playback Stop on video window Close");
         if (PSOVC) PSOVC.setData("1");
     }
+    
+    pbuttonsWindow = main.findObject("player.main.pbuttons.window");
+    pbuttonsFull = main.findObject("player.main.pbuttons.full");
+	buttonWindow = pbuttonsFull.getObject("pbutton.window");
+	buttonFull = pbuttonsWindow.getObject("pbutton.full");;
 	
-	main.resize(0,0, getMonitorWidth(), getMonitorHeight());
+	if (getPrivateInt(getSkinName(),"windowmode", 0) == 0) {
+		nosizesave = 1;
+		buttonFull.onLeftClick();
+	}
 }
 
 System.onScriptUnloading() {
@@ -183,3 +195,35 @@ xfadetime.onDataChanged() {
 		xfade.setData("0");
 }
 
+// window/fullscreen controls
+
+buttonWindow.onLeftClick() {
+	pbuttonsWindow.show();
+	pbuttonsFull.hide();
+	
+	int wx = getPrivateInt(getSkinName(),"windowx", 50);
+	int wy = getPrivateInt(getSkinName(),"windowy", 50);
+	int ww = getPrivateInt(getSkinName(),"windoww", 640);
+	int wh = getPrivateInt(getSkinName(),"windowh", 480);
+	setPrivateInt(getSkinName(),"windowmode", 1);
+	
+	main.resize(wx,wy,ww,wh);
+}
+
+buttonFull.onLeftClick() {
+	pbuttonsWindow.hide();
+	pbuttonsFull.show();
+	
+	if (!nosizesave) {
+		setPrivateInt(getSkinName(),"windowx", main.getLeft());
+		setPrivateInt(getSkinName(),"windowy", main.getTop());
+		setPrivateInt(getSkinName(),"windoww", main.getWidth());
+		setPrivateInt(getSkinName(),"windowh", main.getHeight());
+		
+	}
+	
+	setPrivateInt(getSkinName(),"windowmode", 0);
+	nosizesave = 0;
+	
+	main.resize(0,0, getMonitorWidth(), getMonitorHeight());
+}
