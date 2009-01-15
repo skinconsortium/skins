@@ -101,6 +101,7 @@ visRefresh.onTimer() {
 			currAnim.setXMLParam("y","0");
 			currAnim.setXMLParam("w","5");
 			currAnim.setXMLParam("h","5");
+			currAnim.setXMLParam("ghost","1");
 
 			currAnim.init(scriptGroup);
 			updateAnims = 1;

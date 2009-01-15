@@ -57,6 +57,10 @@
 
 <bitmap id="player.main.resizer" file="gfx/graphics.png" x="420" y="130" w="30" h="30" gammagroup="glass"/> <!--exported-->
 
+<bitmap id="player.main.topbar.left" file="gfx/graphics.png" x="1" y="496" w="100" h="30" gammagroup="glass"/> <!--exported-->
+<bitmap id="player.main.topbar.mid" file="gfx/graphics.png" x="102" y="496" w="176" h="30" gammagroup="glass"/> <!--exported-->
+<bitmap id="player.main.topbar.right" file="gfx/graphics.png" x="279" y="496" w="200" h="30" gammagroup="glass"/> <!--exported-->
+
 <!-- **** vis elements **** -->
 <bitmap id="player.main.visanim" file="gfx/graphics.png" x="420" y="45" w="60" h="84" gammagroup="vis"/>  <!--exported-->
 
