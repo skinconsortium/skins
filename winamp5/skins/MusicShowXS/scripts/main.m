@@ -36,6 +36,7 @@ Global timer delayVisShow, delayClearLocalOpen, delayRequestPageSwitch;
 
 Global group pbuttonsWindow, pbuttonsFull;
 Global button buttonWindow, buttonFull;
+Global guiobject topbar;
 Global int nosizesave;
 
 //global timer delayfocus;
@@ -87,7 +88,8 @@ System.onScriptLoaded() {
     pbuttonsWindow = main.findObject("player.main.pbuttons.window");
     pbuttonsFull = main.findObject("player.main.pbuttons.full");
 	buttonWindow = pbuttonsFull.getObject("pbutton.window");
-	buttonFull = pbuttonsWindow.getObject("pbutton.full");;
+	buttonFull = pbuttonsWindow.getObject("pbutton.full");
+	topbar = pbuttonsWindow.getObject("pbutton.topbar");
 	
 	if (getPrivateInt(getSkinName(),"windowmode", 0) == 0) {
 		nosizesave = 1;
@@ -191,7 +193,7 @@ avsRandom.onDataChanged() {
 xfadetime.onDataChanged() {
 	if (getData()!="0" && xfade.getData()!="1") 
 		xfade.setData("1");
-	else
+	if (getData()=="0" && xfade.getData()!="0") 
 		xfade.setData("0");
 }
 
@@ -226,4 +228,8 @@ buttonFull.onLeftClick() {
 	nosizesave = 0;
 	
 	main.resize(0,0, getMonitorWidth(), getMonitorHeight());
+}
+
+topbar.onLeftButtonDblClk(int x, int y) {
+	buttonFull.onLeftClick();
 }
