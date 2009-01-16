@@ -1,0 +1,193 @@
+#include <lib/std.mi>
+#include <lib/cprowidget.mi>
+#include <lib/pldir.mi>
+#include <lib/fileio.mi>
+#include <lib/application.mi>
+#include "convert_address.mi"
+
+Function resizeResults(int items);
+//Function refreshStuff();
+Function addProvider(list paramname, list paramvalue);
+Function String replaceString(string baseString, string toreplace, string replacedby);
+Function int searchInListForItem(String input);
+Function selectSaved();
+Function surfSelected();
+Function initLoadFiles();
+Function updateDDList();
+Function ddlOpenClose();
+
+
+Global Container results_container;
+Global Layout results_layout;
+
+Global Group myGroup;
+Global GuiList myList;
+Global XmlDoc myDoc;
+Global List loaded_P_Names, loaded_P_Url, loaded_P_Icons;
+Global int sourceNo, h_tune;
+Global boolean onetime;
+Global Text ddBoxText;
+Global ToggleButton enabledSwitch;
+Global Button menuOptions, dropListButton;
+Global PopUpMenu popMenu;
+Global GuiObject browserXUI, fakeSB;
+Global Browser myBrowser;
+Global Layer ddlMouseT, ddlIcon;
+
+System.onScriptLoaded(){
+	setPublicInt("ClassicPro.BrowserPro.loaded", 1);
+	initWidget();
+	
+	results_container = newDynamicContainer("browserpro");
+	results_layout = results_container.getLayout("normal");
+
+	myGroup = getScriptGroup();
+	myList = results_layout.findObject("BrowserPro.list");
+	ddBoxText = myGroup.findObject("browserpro.ddl.text");
+	///enabledSwitch = myGroup.findObject("bp.onoff");
+	menuOptions = myGroup.findObject("cpro.widget.browserpro.options");
+	dropListButton = myGroup.findObject("dropdownlist.button");
+	fakeSB = myGroup.findObject("browserpro.ddlist");
+	myBrowser = myGroup.findObject("browserpro.browser");
+	ddlMouseT = myGroup.findObject("browserpro.ddl.mousetrap");
+	ddlIcon = myGroup.findObject("browserpro.ddl.icon");
+	
+
+	myList.setIconWidth(16);
+	myList.setShowIcons(1);
+	sourceNo=0;
+	//enabledSwitch.setActivated(getPublicInt("ClassicPro.BrowserPro.enabled", 0));
+}
+
+myGroup.onSetVisible(boolean onOff){
+	if(onOff){
+		initLoadFiles();
+		surfSelected();
+	}
+}
+
+System.onScriptUnloading (){
+	setPublicInt("ClassicPro.BrowserPro.loaded", 0);
+	myGroup.hide();
+	delete loaded_P_Names;
+	delete loaded_P_Url;
+}
+
+
+initLoadFiles(){
+	if(!onetime){
+		loaded_P_Names = new List;
+		loaded_P_Url = new List;
+		loaded_P_Icons = new List;
+		
+		myDoc = new XmlDoc;
+		
+		String temp = Application.GetApplicationPath()+"\Plugins\classicPro\engine\widgets\Data\BrowserPro\source.xml";
+		myDoc.load (temp);
+
+		myDoc.parser_addCallback("WasabiXML/BrowserPro/*");
+		myDoc.parser_start();
+		myDoc.parser_destroy();
+		delete myDoc;
+
+		selectSaved();
+
+		onetime=true;
+	}
+}
+
+addProvider(list paramname, list paramvalue){
+	myList.addItem("Read error");
+	for(int i=0; i<paramname.getNumItems(); i++){
+		if(strlower(paramname.enumItem(i))=="name"){
+			myList.setItemLabel(sourceNo, paramvalue.enumItem(i));
+		}
+		else if(strlower(paramname.enumItem(i))=="comment"){
+			myList.setSubItem(sourceNo, 1, paramvalue.enumItem(i));
+		}
+		else if(strlower(paramname.enumItem(i))=="url"){
+			loaded_P_Url.addItem(paramvalue.enumItem(i));
+		}
+		else if(strlower(paramname.enumItem(i))=="icon"){
+			myList.setItemIcon(sourceNo, paramvalue.enumItem(i));
+			loaded_P_Icons.addItem(paramvalue.enumItem(i));
+		}		
+	}
+	loaded_P_Names.addItem(myList.getItemLabel(sourceNo, 0));
+	sourceNo++;
+}
+
+myDoc.parser_onCallback (String xmlpath, String xmltag, list paramname, list paramvalue){
+	if(strlower(xmltag) == "sourceitem"){
+		addProvider(paramname, paramvalue);
+	}
+}
+
+resizeResults(int items){
+	if(items>22) items=22;
+	if(items>1) h_tune=24;
+	else h_tune=19;
+
+	results_layout.setXmlParam("h", integerToString(h_tune+items*17));
+}
+
+dropListButton.onLeftClick(){
+	ddlOpenClose();
+}
+ddlMouseT.onLeftButtonUp(int x, int y){
+	ddlOpenClose();
+}
+
+ddlOpenClose(){
+	if(results_layout.isVisible()) results_layout.hide();
+	else{
+		results_layout.setXmlParam("x", integerToString(fakeSB.clientToScreenX(fakeSB.getLeft())));
+		results_layout.setXmlParam("y", integerToString(fakeSB.clientToScreenY(fakeSB.getTop() + fakeSB.getHeight())));
+		results_layout.setXmlParam("w", integerToString(fakeSB.getWidth()));
+
+	
+		results_layout.show();
+		resizeResults(loaded_P_Names.getNumItems());
+		results_layout.setXmlParam("ontop", "1");
+	}
+}
+
+selectSaved(){
+	int i = searchInListForItem(getPublicString("ClassicPro.BrowserPro", "0"));
+	myList.setSelected(i,1);
+	updateDDList();
+}
+searchInListForItem(String input){
+	for(int i=0; i<myList.getNumItems();i++){
+		if(input == myList.getItemLabel(i, 0)) return i;
+	}
+	return 0; //if nothing was found
+}
+surfSelected(){
+	String myUrl = loaded_P_Url.enumItem(loaded_P_Names.findItem(getPublicString("ClassicPro.BrowserPro", "0")));
+	myBrowser.navigateUrl(prepareCustomUrl(myUrl));
+
+	//testing download
+	//System.downloadMedia("", "C:/", false, false);
+}
+System.onTitleChange(String newtitle){
+	if(myGroup.isVisible()){
+		surfSelected();
+	}
+}
+myList.onLeftClick(Int itemnum){
+	setPublicString("ClassicPro.BrowserPro", myList.getItemLabel(itemnum, 0));
+	surfSelected();
+	results_layout.hide();
+	updateDDList();
+}
+
+updateDDList(){
+	ddBoxText.setText(getPublicString("ClassicPro.BrowserPro", "0"));
+	String iconsID = loaded_P_Icons.enumItem(loaded_P_Names.findItem(getPublicString("ClassicPro.BrowserPro", "0")));
+	ddlIcon.setXmlParam("image", iconsID);
+}
+
+results_layout.onKillFocus(){
+	debug("asdas");
+}
