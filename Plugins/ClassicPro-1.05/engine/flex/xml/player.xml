@@ -1,0 +1,4 @@
+<include file="player-normal-elements.xml"/>
+<container id="main" name="Main Window" default_visible="1">
+	<include file="player-normal.xml"/>
+</container>
