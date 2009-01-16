@@ -1,0 +1,3 @@
+<groupdef id="xui.visanim" xuitag="VisAnim">
+	<script file="xui/VisAnim/visanim.maki" />
+</groupdef>
