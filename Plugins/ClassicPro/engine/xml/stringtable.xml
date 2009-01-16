@@ -40,3 +40,13 @@ date: 2008/10/26
 	<StringEntry id="36"	string="Repeat: Track"/> <!-- Songticker Message -->
 
 </StringTable>
+
+<StringTable id="winamp.components">
+
+	<StringEntry id="0"		string="Playlist Editor"/>
+	<StringEntry id="1"		string="Equalizer"/>
+	<StringEntry id="2"		string="Media Library"/>
+	<StringEntry id="3"		string="Visualization"/>
+	<StringEntry id="10"	string="Installed Components"/>
+
+</StringTable>

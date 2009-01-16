@@ -16,6 +16,8 @@
 	<gammagroup id="player.normal.sysbuttons.glow"		value="0,0,0" gray="0" boost="0" />
 	<gammagroup id="player.normal.compbuttons"			value="0,0,0" gray="0" boost="0" />
 	<gammagroup id="player.normal.compbuttons.glow"		value="0,0,0" gray="0" boost="0" />
+	<gammagroup id="player.normal.led.off"				value="0,0,0" gray="0" boost="0" />
+	<gammagroup id="player.normal.led.on"				value="0,0,0" gray="0" boost="0" />
 	<gammagroup id="player.normal.seek.fillbar"			value="0,0,0" gray="0" boost="0" />
 	<gammagroup id="player.normal.volume.fillbar"		value="0,0,0" gray="0" boost="0" />
 

@@ -17,6 +17,8 @@ Function GlowObject newGlowObject(GlowObject go, GlowLayer gl, String id);
 
 Global GlowObject stop, play, pause, prev, next, open, shuffle, repeat, mute;
 Global GlowLayer stop_gl, play_gl, pause_gl, prev_gl, next_gl, open_gl, shuffle_gl, repeat_gl, mute_gl;
+Global GlowObject pled, eq, ml, vs, mn;
+Global GlowLayer pled_gl, eq_gl, ml_gl, vs_gl, mn_gl;
 Global int glowType;
 
 System.onScriptLoaded ()
@@ -36,6 +38,16 @@ System.onScriptLoaded ()
 	{
 		glowType = GLOW_TYPE_FLASH;
 	}
+	else if (type == "off")
+	{
+		return;
+	}
+	else
+	{
+		glowType = GLOW_TYPE_HOLD;
+	}
+	
+	
 
 	stop = newGlowObject(stop, stop_gl, "cbutton.stop");
 	play = newGlowObject(play, play_gl, "cbutton.play");
@@ -43,9 +55,14 @@ System.onScriptLoaded ()
 	prev = newGlowObject(prev, prev_gl, "cbutton.prev");
 	next = newGlowObject(next, next_gl, "cbutton.next");
 	open = newGlowObject(open, open_gl, "cbutton.open");
-	shuffle = newGlowObject(open, open_gl, "pbutton.shuffle");
-	repeat = newGlowObject(open, open_gl, "pbutton.repeat");
-	mute = newGlowObject(open, open_gl, "volume.mute");
+	shuffle = newGlowObject(shuffle, shuffle_gl, "pbutton.shuffle");
+	repeat = newGlowObject(repeat, repeat_gl, "pbutton.repeat");
+	mute = newGlowObject(mute, mute_gl, "volume.mute");
+	pled = newGlowObject(pled, pled_gl, "comp.pl");
+	eq = newGlowObject(eq, eq_gl, "comp.eq");
+	ml = newGlowObject(ml, ml_gl, "comp.ml");
+	vs = newGlowObject(vs, vs_gl, "comp.vis");
+	mn = newGlowObject(mn, mn_gl, "comp.menu");
 
 	stop_gl = stop.glow;
 	play_gl = play.glow;
@@ -56,6 +73,11 @@ System.onScriptLoaded ()
 	shuffle_gl = shuffle.glow;
 	repeat_gl = repeat.glow;
 	mute_gl = mute.glow;
+	pled_gl = pled.glow;
+	eq_gl = eq.glow;
+	ml_gl = ml.glow;
+	vs_gl = vs.glow;
+	mn_gl = mn.glow;
 }
 
 GlowObject newGlowObject(GlowObject go, GlowLayer gl, String id)

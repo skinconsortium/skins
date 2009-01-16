@@ -143,7 +143,7 @@
 		downimage="player.normal.repeat.down"
 		alpha="253" nstates="3"
 		tooltip="@winamp.playback#30"
-		translate="3"
+		translate="2"
 		cfgvals="0;1;-1"
 		cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Repeat"
 	/>
@@ -178,39 +178,102 @@
 	/>
 
 	<!-- Component buttons -->
-	<button
-		id="pl"
+	<NStatesButton
+		id="comp.pl"
 		action="TOGGLE" param="guid:pl"
 		x="0" y="0"
 		image="player.normal.pl"
 		downImage="player.normal.pl.down"
 		hoverImage="player.normal.pl.hover"
-		activeImage="player.normal.pl.active"
-		tooltip="Playlist Editor"
-		alpha="253"
+		alpha="253" nstates="2"
+		tooltip="@winamp.components#0"
+		translate="2"
 	/>
-	<button
-		id="ml"
-		action="TOGGLE" param="guid:ml"
+	<ToggleButton
+		id="comp.pl.led"
+		action="TOGGLE" param="guid:pl"
 		x="0" y="0"
-		image="player.normal.ml"
-		downImage="player.normal.ml.down"
-		hoverImage="player.normal.ml.hover"
-		activeImage="player.normal.ml.active"
-		tooltip="Media Library"
-		alpha="253"
+		image="player.normal.pl.led0"
+		activeImage="player.normal.pl.led1"
+		alpha="253" ghost="1"
 	/>
-	<button
-		id="eq"
+	<layer id="comp.pl.glow" x="0" y="0" ghost="1" image="player.normal.pl.glow" alpha="0"/>
+
+	<NStatesButton
+		id="comp.eq"
 		action="TOGGLE" param="eq"
 		x="0" y="0"
 		image="player.normal.eq"
 		downImage="player.normal.eq.down"
 		hoverImage="player.normal.eq.hover"
-		activeImage="player.normal.eq.active"
-		tooltip="Equalizer"
-		alpha="253"
+		alpha="253" nstates="2"
+		tooltip="@winamp.components#1"
+		translate="2"
 	/>
+	<ToggleButton
+		id="comp.eq.led"
+		action="TOGGLE" param="eq"
+		x="0" y="0"
+		image="player.normal.eq.led0"
+		activeImage="player.normal.eq.led1"
+		alpha="253" ghost="1"
+	/>
+	<layer id="comp.eq.glow" x="0" y="0" ghost="1" image="player.normal.eq.glow" alpha="0"/>
+
+	<NStatesButton
+		id="comp.ml"
+		action="TOGGLE" param="guid:ml"
+		x="0" y="0"
+		image="player.normal.ml"
+		downImage="player.normal.ml.down"
+		hoverImage="player.normal.ml.hover"
+		alpha="253" nstates="2"
+		tooltip="@winamp.components#2"
+		translate="2"
+	/>
+	<ToggleButton
+		id="comp.ml.led"
+		action="TOGGLE" param="guid:ml"
+		x="0" y="0"
+		image="player.normal.ml.led0"
+		activeImage="player.normal.ml.led1"
+		alpha="253" ghost="1"
+	/>
+	<layer id="comp.ml.glow" x="0" y="0" ghost="1" image="player.normal.ml.glow" alpha="0"/>
+
+	<NStatesButton
+		id="comp.vis"
+		action="TOGGLE" param="guid:avs"
+		x="0" y="0"
+		image="player.normal.vis"
+		downImage="player.normal.vis.down"
+		hoverImage="player.normal.vis.hover"
+		alpha="253" nstates="2"
+		tooltip="@winamp.components#3"
+		translate="2"
+	/>
+	<ToggleButton
+		id="comp.vis.led"
+		action="TOGGLE" param="guid:avs"
+		x="0" y="0"
+		image="player.normal.vis.led0"
+		activeImage="player.normal.vis.led1"
+		alpha="253" ghost="1"
+	/>
+	<layer id="comp.vis.glow" x="0" y="0" ghost="1" image="player.normal.vis.glow" alpha="0"/>
+
+	<Button
+		id="comp.menu"
+		action="MENU:WA5:Windows"
+		x="0" y="0"
+		image="player.normal.menu"
+		downImage="player.normal.menu.down"
+		hoverImage="player.normal.menu.hover"
+		alpha="253" nstates="2"
+		tooltip="@winamp.components#10"
+		translate="2"
+	/>
+	<layer id="comp.menu.glow" x="0" y="0" ghost="1" image="player.normal.menu.glow" alpha="0"/>
 
 	<!-- Display Stuff -->
 

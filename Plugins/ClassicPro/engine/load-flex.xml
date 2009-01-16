@@ -5,6 +5,7 @@
 <include file="xml\stringtable.xml"/>
 <include file="flex\xml\gamma.xml"/>
 <include file="flex\xml\player.xml"/>
+<include file="flex\xml\eq.xml"/>
 <include file="flex\xml\misc-elements.xml"/>
 <include file="xml\notifier.xml"/>
 <include file="xml\about.xml"/>
