@@ -1,0 +1,12 @@
+
+
+<!--this defines the container-->
+
+<container id="main" name="Main window">
+
+<!-- layouts to go in the container go here-->
+  <include file="player-normal.xml"/>
+
+</container>
+
+<script id="script.main" file="scripts\main.maki"/>

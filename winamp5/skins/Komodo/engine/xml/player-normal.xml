@@ -1,0 +1,780 @@
+<groupdef id="player.cbuttons" w="227" h="95">
+
+	<button 
+		id="Rev"
+		x="0" y="0"
+		action="PREV"  alpha="200"
+		image="player.main.rev" 
+		downimage="player.main.revd"
+		rectrgn="1"
+		hoverImage="player.main.rev"
+		tooltip="Prev Track"/>
+	<layer id="player.main.revd" image="player.main.revd"  x="0" y="0" ghost="1"/>
+	<script file="scripts/hoverglow.maki" param="Rev,player.main.revd"/>
+	
+	<button 
+		id="Eject"
+		x="45" y="0"
+		action="EJECT"  alpha="200"
+		image="player.main.eject"
+		downimage="player.main.ejectd"
+		rectrgn="1"
+		hoverImage="player.main.eject"
+		tooltip="Get Song"/>
+	<layer id="player.main.ejectd" image="player.main.ejectd" x="45" y="0" ghost="1"/>
+	<script file="scripts/hoverglow.maki" param="Eject,player.main.ejectd"/>
+
+	<button id="play.button" x="88" y="0"  action="PLAY" image="player.main.play" hoverImage="player.main.play" downImage="player.main.playd" tooltip="Play"/>
+	<button id="pause.button" x="88" y="0"  action="PAUSE" image="player.main.Pause" hoverImage="player.main.Pause" downImage="player.main.Paused" tooltip="Pause"/>
+	<script file="scripts/sc_PlayPause.maki" param="play.button;pause.button"/>
+	<layer id="player.main.playd" image="player.main.playd"  x="88" y="0" ghost="1"/>
+	<script file="scripts/hoverglow.maki" param="play.button,player.main.playd"/>
+	<layer id="player.main.Paused" image="player.main.Paused"  x="88" y="0" ghost="1"/>
+	<script file="scripts/hoverglow.maki" param="pause.button,player.main.Paused"/>
+	
+	<button 
+		id="Stop"
+		x="131" y="0"
+		action="STOP"  
+		image="player.main.stop"  
+		downimage="player.main.stopd"
+		rectrgn="1"
+		hoverImage="player.main.stop"
+		tooltip="Stop"/>
+	<layer id="player.main.stopd" image="player.main.stopd" x="131" y="0"  ghost="1"/>
+	<script file="scripts/hoverglow.maki" param="Stop,player.main.stopd"/>
+	
+	<button 
+		id="Next"
+		x="174" y="0"
+		action="NEXT"  alpha="200"
+		image="player.main.forward"
+		downimage="player.main.forwardd"
+		rectrgn="1"
+		hoverImage="player.main.forward"
+		tooltip="Next Track"/>
+	<layer id="player.main.forwardd" image="player.main.forwardd" x="174" y="0"  ghost="1"/>
+	<script file="scripts/hoverglow.maki" param="Next,player.main.forwardd"/>
+
+	<layer id="volback" image="vol.back" x="20" y="70" w="170" move="0" rectrgn="1"/>
+	<layer id="VolumeAnim" image="vol.pos" tile="1" ghost="1" alpha="200" x="20" y="70" w="0" rectrgn="0" tooltip="Volume"/>
+	<script file="scripts/volumeslider.maki" param="VolumeAnim,volback,horizontal"/>
+</groupdef>
+
+<groupdef id="player.main.seeker">
+
+	<text
+		id="Timer" 
+		display="time"
+		x="0" y="-10" w="0" h="100" relatw="1" relath="0"
+		font="player.font.timer"
+		align="right" timecolonwidth="18"/>
+	<layer id="SeekAnim.base" image="player.seekbk" x="0" y="52" w="0" relatw="1" tile="1" move="0" alpha="55"/>
+
+	<layer id="SeekAnim" image="player.seekbk" x="0" y="52" w="0" tile="1" move="0" rectrgn="0" tooltip="Seek"/>
+	
+	<slider id="seek2"
+			action="SEEK"
+			x="0" y="50" w="0" h="29" relatw="1"
+			thumb="player.main.songpos" 
+			downThumb="player.main.songpos" 
+	/>
+	
+	<script file="scripts/seeker.maki" param="seek2,SeekAnim,SeekAnim.base"/>
+
+</groupdef>
+
+<groupdef id="player.main.cms" name="Close Min Switch" w="0" h="0" relatw="1" relath="1">
+	<VisAnim
+		x="15" y="57" w="15" h="84" relatx="2" relaty="2" relatw="2"
+		image="player.main.visanim" speed="50"
+		numbars="auto" framewidth="3" frameheight="84" spacer="1"/>
+	/>
+
+	<VisAnim
+		x="70" y="57" w="15" h="84" relatx="2" relaty="2" relatw="2"
+		image="player.main.visanim" speed="50" mirror="1"
+		numbars="auto" framewidth="3" frameheight="84" spacer="1"/>
+	/>
+	
+	<SC:NowPlaying 
+		x="15" y="15" relatx="2" relaty="2"
+		w="70" h="75" relatw="2" relath="2"
+		bgcolor="128,128,128"	
+		reflectiontransparency="128"
+		reflectionheightpercentage="70"
+		dropshadowcdcase="1" alpha="255"
+		showsongrating="1" move="0"
+		/>
+
+	
+
+	<group id="player.main.seeker" x="75" y="63" w="20" h="25" relatx="2" relaty="2" relatw="2" relath="2"/>
+</groupdef>
+
+<groupdef id="player.main.pl.coverflow.buttons">
+	<button id="SwitchToList.button" x="0" y="0" 
+		image="player.main.gen.button"
+		downimage="player.main.gen.button.down"
+		hoverimage="player.main.gen.button.hover"/>
+		
+	<layer id="SwitchToList.icon" x="5" y="0"
+		image="player.main.icon.list" ghost="1"/>
+	<text id="SwitchToList.text" x="35" y="0" w="90" h="30"
+		text="LIST" align="left" ghost="1"
+		font="font.gen.button" fontsize="18" bold="1"
+		color="color.button.label" alpha="128"/>
+		
+	<togglebutton id="shuffle.button" x="110" y="0"
+		cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Shuffle"
+		image="player.main.gen.button"
+		activeimage="player.main.gen.button"
+		downimage="player.main.gen.button.down"
+		hoverimage="player.main.gen.button.hover"/>
+	<layer id="shuffle.icon" x="115" y="0"
+		image="player.main.icon.shuffle" ghost="1"/>
+	<text id="shuffle.text" x="138" y="0" w="55" h="20"
+		text="SHUFFLE" align="center" ghost="1"
+		font="font.gen.button" fontsize="16" bold="1"
+		color="color.button.label" alpha="128"/>
+	<text id="shuffle.text.ind" x="138" y="12" w="50" h="20"
+		text="OFF" align="center" ghost="1"
+		font="font.gen.button" fontsize="16" bold="1"
+		color="color.button.label" alpha="128"/>
+		
+	<NStatesButton id="repeat.button" x="220" y="0"
+		nstates="3" rectrgn="1"
+		image="player.main.gen.button"
+		activeimage="player.main.gen.button"
+		downimage="player.main.gen.button.down"
+		hoverimage="player.main.gen.button.hover"
+		cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Repeat"
+    	cfgvals="0;1;-1"/>
+	<layer id="repeat.icon" x="225" y="0"
+		image="player.main.icon.repeat" ghost="1"/>
+	<text id="repeat.text" x="250" y="0" w="50" h="20"
+		text="REPEAT" align="center" ghost="1"
+		font="font.gen.button" fontsize="16" bold="1"
+		color="color.button.label" alpha="128"/>
+	<text id="repeat.text.ind" x="250" y="12" w="50" h="20"
+		text="OFF" align="center" ghost="1"
+		font="font.gen.button" fontsize="16" bold="1"
+		color="color.button.label" alpha="128"/>
+		
+	<script file="scripts/shufflerepeat.maki"/>
+</groupdef>
+
+<groupdef id="player.main.pl.coverflow">
+	<CoverShow fitparent="1"/>
+	
+	<group id="player.main.pl.coverflow.buttons" x="10" y="15" relaty="2" w="310" h="30"/>
+	<script file="scripts/centerobject.maki" param="player.main.pl.coverflow.buttons,1,0"/>
+		
+</groupdef>
+
+<groupdef id="player.main.pl.list.buttons">
+	<button id="SwitchToCover.button" x="0" y="0" 
+		image="player.main.gen.button"
+		downimage="player.main.gen.button.down"
+		hoverimage="player.main.gen.button.hover"/>
+	<layer id="SwitchToCover.icon" x="5" y="0"
+		image="player.main.icon.cover" ghost="1"/>
+	<text id="SwitchToCover.text" x="33" y="0" w="90" h="30"
+		text="COVER" align="left" ghost="1"
+		font="font.gen.button" fontsize="18" bold="1"
+		color="color.button.label" alpha="128"/>
+		
+	<togglebutton id="shuffle.button" x="0" y="50" rectrgn="1"
+		cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Shuffle"
+		image="player.main.gen.button"
+		activeimage="player.main.gen.button"
+		downimage="player.main.gen.button.down"
+		hoverimage="player.main.gen.button.hover"/>
+	<layer id="shuffle.icon" x="5" y="50"
+		image="player.main.icon.shuffle" ghost="1"/>
+	<text id="shuffle.text" x="28" y="50" w="55" h="20"
+		text="SHUFFLE" align="center" ghost="1"
+		font="font.gen.button" fontsize="16" bold="1"
+		color="color.button.label" alpha="128"/>
+	<text id="shuffle.text.ind" x="28" y="62" w="50" h="20"
+		text="OFF" align="center" ghost="1"
+		font="font.gen.button" fontsize="16" bold="1"
+		color="color.button.label" alpha="128"/>
+		
+	<NStatesButton id="repeat.button" x="0" y="100"
+		nstates="3" rectrgn="1"
+		image="player.main.gen.button"
+		activeimage="player.main.gen.button"
+		downimage="player.main.gen.button.down"
+		hoverimage="player.main.gen.button.hover"
+		cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Repeat"
+    	cfgvals="0;1;-1"/>
+    <layer id="repeat.icon" x="5" y="100"
+		image="player.main.icon.repeat" ghost="1"/>
+	<text id="repeat.text" x="30" y="100" w="50" h="20"
+		text="REPEAT" align="center" ghost="1"
+		font="font.gen.button" fontsize="16" bold="1"
+		color="color.button.label" alpha="128"/>
+	<text id="repeat.text.ind" x="30" y="112" w="50" h="20"
+		text="OFF" align="center" ghost="1"
+		font="font.gen.button" fontsize="16" bold="1"
+		color="color.button.label" alpha="128"/>
+		
+	<script file="scripts/shufflerepeat.maki"/>
+	
+	<button id="add.button" x="0" y="150" 
+		image="player.main.gen.button"
+		downimage="player.main.gen.button.down"
+		hoverimage="player.main.gen.button.hover" rectrgn="1"
+		action="PE_ADD"/>
+	<layer id="add.icon" x="5" y="150"
+		image="player.main.icon.add" ghost="1"/>
+	<text id="delete.text" x="35" y="150" w="90" h="30"
+		text="ADD" align="left" ghost="1"
+		font="font.gen.button" fontsize="18" bold="1"
+		color="color.button.label" alpha="128"/>
+		
+	<button id="delete.button" x="0" y="200" 
+		image="player.main.gen.button"
+		downimage="player.main.gen.button.down"
+		hoverimage="player.main.gen.button.hover" rectrgn="1"
+		action="PLDELETE" action_target="normal"/>
+	<layer id="delete.icon" x="5" y="200"
+		image="player.main.icon.delete" ghost="1"/>
+	<text id="delete.text" x="30" y="200" w="90" h="30"
+		text="DELETE" align="left" ghost="1"
+		font="font.gen.button" fontsize="18" bold="1"
+		color="color.button.label" alpha="128"/>
+	
+	<button id="up.button" x="0" y="250" 
+		image="player.main.gen.button"
+		downimage="player.main.gen.button.down"
+		hoverimage="player.main.gen.button.hover"
+		action="PLMOVEUP" action_target="normal" rectrgn="1"/>
+	<layer id="menu.icon" x="3" y="250"
+		image="player.main.icon.up" ghost="1"/>
+	<text id="menu.text" x="29" y="250" w="50" h="20"
+		text="MOVE" align="center" ghost="1"
+		font="font.gen.button" fontsize="16" bold="1"
+		color="color.button.label" alpha="128"/>
+	<text id="menu.text" x="29" y="262" w="50" h="20"
+		text="UP" align="center" ghost="1"
+		font="font.gen.button" fontsize="16" bold="1"
+		color="color.button.label" alpha="128"/>
+		
+	<button id="down.button" x="0" y="300" 
+		image="player.main.gen.button"
+		downimage="player.main.gen.button.down"
+		hoverimage="player.main.gen.button.hover"
+		action="PLMOVEDOWN" action_target="normal" rectrgn="1"/>
+	<layer id="menu.icon" x="3" y="300"
+		image="player.main.icon.down" ghost="1"/>
+	<text id="menu.text" x="30" y="300" w="50" h="20"
+		text="MOVE" align="center" ghost="1"
+		font="font.gen.button" fontsize="16" bold="1"
+		color="color.button.label" alpha="128"/>	
+	<text id="menu.text" x="30" y="312" w="50" h="20"
+		text="DOWN" align="center" ghost="1"
+		font="font.gen.button" fontsize="16" bold="1"
+		color="color.button.label" alpha="128"/>
+	
+	<button id="menu.button" x="0" y="350" 
+		image="player.main.gen.button"
+		downimage="player.main.gen.button.down"
+		hoverimage="player.main.gen.button.hover"
+		action="PE_LIST" rectrgn="1"/>
+	<layer id="menu.icon" x="5" y="350"
+		image="player.main.icon.menu" ghost="1"/>
+	<text id="menu.text" x="33" y="350" w="90" h="30"
+		text="MENU" align="left" ghost="1"
+		font="font.gen.button" fontsize="18" bold="1"
+		color="color.button.label" alpha="128"/>
+</groupdef>
+
+<!-- override group definition -->
+<groupdef id="xui.playlistplus.selector">
+	<grid id="selector" fitparent="1"
+		left="player.pl.selector.left"
+		middle="player.pl.selector.middle"
+		right="player.pl.selector.right"/>
+</groupdef>
+
+<groupdef id="player.main.pl.list">
+	<playlistPlus id="main.pl" 
+			x="130" y="10" w="-130" h="80" relatx="0" relaty="2" relatw="1" relath="2"
+			font="Arial" fontsize="25" linespacing="-10" color="color.plist" alpha="200"
+			playcolor="wasabi.list.text.current" selcolor="color.plist" selbgcolor="200,200,200" selalpha="255"
+			showslider="1" slidercolor="color.plist" slideralpha="128"/>
+	<group id="player.main.pl.list.buttons" x="0" y="0" w="90" h="380"/>
+	<script file="scripts/centerobject.maki" param="player.main.pl.list.buttons,0,1"/>
+</groupdef>
+
+<groupdef id="player.main.pl">
+				
+	<group id="player.main.pl.coverflow" 
+		x="20" y="10" relatx="2" relaty="2"
+		w="60" h="90" relatw="2" relath="2"/>
+		
+	<group id="player.main.pl.list" 
+		x="15" y="10" relatx="2" relaty="2"
+		w="70" h="80" relatw="2" relath="2"
+		visible="0"/>
+
+	<script file="scripts/playlistpage.maki"/>
+</groupdef>
+
+<groupdef id="player.main.config.content">
+	<layer x="0" y="0" image="player.main.background.config" ghost="1"/>
+	
+	<togglebutton id="config.button.default" x="215" y="126"
+		image="player.main.config.button"
+		downimage="player.main.config.button.down"
+		hoverimage="player.main.config.button.hover"
+		activeimage="player.main.config.button.active" rectrgn="1"/>
+		
+	<togglebutton id="config.button.desktop" x="215" y="150"
+		image="player.main.config.button"
+		downimage="player.main.config.button.down"
+		hoverimage="player.main.config.button.hover"
+		activeimage="player.main.config.button.active" rectrgn="1"/>
+		
+	<togglebutton id="config.button.choose" x="215" y="174"
+		image="player.main.config.button"
+		downimage="player.main.config.button.down"
+		hoverimage="player.main.config.button.hover"
+		activeimage="player.main.config.button.active" rectrgn="1"/>
+		
+	<rect x="130" y="200" w="70" h="50" filled="0" color="255,255,255" alpha="128" ghost="1"/>
+	<rect x="220" y="200" w="70" h="50" filled="0" color="255,255,255" alpha="128" ghost="1"/>
+	<rect x="310" y="200" w="70" h="50" filled="0" color="255,255,255" alpha="128" ghost="1"/>
+	<rect x="400" y="200" w="70" h="50" filled="0" color="255,255,255" alpha="128" ghost="1"/>
+	
+	<layer id="config.currbg1" x="131" y="201" w="68" h="48" image="" move="0" rectrgn="1"/>
+	<layer id="config.currbg2" x="221" y="201" w="68" h="48" image="" move="0" rectrgn="1"/>
+	<layer id="config.currbg3" x="311" y="201" w="68" h="48" image="" move="0" rectrgn="1"/>
+	<layer id="config.currbg4" x="401" y="201" w="68" h="48" image="" move="0" rectrgn="1"/>
+	
+	<togglebutton
+		id="eqonoff"
+		action="EQ_TOGGLE"
+		x="106" y="296" rectrgn="1"
+		image="player.main.config.eqbutton"
+		hoverImage="player.main.config.eqbutton.hover"
+		downImage="player.main.config.eqbutton.down"
+		activeImage="player.main.config.eqbutton.hover"
+		tooltip="Equalizer On/Off"/>
+		
+	<togglebutton
+		id="auto"
+	  	action="EQ_AUTO"
+		x="106" y="316" rectrgn="1"
+		image="player.main.config.eqbutton"
+		hoverImage="player.main.config.eqbutton.hover"
+		downImage="player.main.config.eqbutton.down"
+		activeImage="player.main.config.eqbutton.hover"
+		tooltip="Equalizer Automatic Processing"/>
+		
+	<button
+		id="Presets"
+		action="MENU" param="presets" 
+		x="106" y="336 " rectrgn="1"
+		image="player.main.config.eqbutton"
+		hoverImage="player.main.config.eqbutton.hover"
+		downImage="player.main.config.eqbutton.down"
+		tooltip="Equalizer Presets"/>
+	
+	<slider
+			id="EQPreamp"
+			action="EQ_BAND" param="preamp"
+			x="186" y="297"
+			w="15" h="101"
+			orientation="vertical" rectrgn="1"
+			thumb="player.main.config.eqslider"
+			downthumb="player.main.config.eqslider.hover"
+			hoverthumb="player.main.config.eqslider.hover"
+			
+	/>
+	<slider
+			id="EQBar1"
+			action="EQ_BAND" param="1"
+			x="225" y="297"
+			w="15" h="101"
+			orientation="vertical" rectrgn="1"
+			thumb="player.main.config.eqslider"
+			downthumb="player.main.config.eqslider.hover"
+			hoverthumb="player.main.config.eqslider.hover"
+			
+	/>
+	<slider
+			id="EQBar2"
+			action="EQ_BAND" param="2"
+			x="247" y="297"
+			w="15" h="101"
+			orientation="vertical" rectrgn="1"
+			thumb="player.main.config.eqslider"
+			downthumb="player.main.config.eqslider.hover"
+			hoverthumb="player.main.config.eqslider.hover"
+			
+	/>
+	<slider
+			id="EQBar3"
+			action="EQ_BAND" param="3"
+			x="269" y="297"
+			w="15" h="101"
+			orientation="vertical" rectrgn="1"
+			thumb="player.main.config.eqslider"
+			downthumb="player.main.config.eqslider.hover"
+			hoverthumb="player.main.config.eqslider.hover"
+			
+	/>
+	<slider
+			id="EQBar4"
+			action="EQ_BAND" param="4"
+			x="291" y="297"
+			w="15" h="101"
+			orientation="vertical" rectrgn="1"
+			thumb="player.main.config.eqslider"
+			downthumb="player.main.config.eqslider.hover"
+			hoverthumb="player.main.config.eqslider.hover"
+			
+	/>
+	<slider
+			id="EQBar5"
+			action="EQ_BAND" param="5"
+			x="313" y="297"
+			w="15" h="101"
+			orientation="vertical" rectrgn="1"
+			thumb="player.main.config.eqslider"
+			downthumb="player.main.config.eqslider.hover"
+			hoverthumb="player.main.config.eqslider.hover"
+			
+	/>
+	<slider
+			id="EQBar6"
+			action="EQ_BAND" param="6"
+			x="335" y="297"
+			w="15" h="101"
+			orientation="vertical" rectrgn="1"
+			thumb="player.main.config.eqslider"
+			downthumb="player.main.config.eqslider.hover"
+			hoverthumb="player.main.config.eqslider.hover"
+			
+	/>
+	<slider
+			id="EQBar7"
+			action="EQ_BAND" param="7"
+			x="357" y="297"
+			w="15" h="101"
+			orientation="vertical" rectrgn="1"
+			thumb="player.main.config.eqslider"
+			downthumb="player.main.config.eqslider.hover"
+			hoverthumb="player.main.config.eqslider.hover"
+			
+	/>
+	<slider
+			id="EQBar8"
+			action="EQ_BAND" param="8"
+			x="379" y="297"
+			w="15" h="101"
+			orientation="vertical" rectrgn="1"
+			thumb="player.main.config.eqslider"
+			downthumb="player.main.config.eqslider.hover"
+			hoverthumb="player.main.config.eqslider.hover"
+	/>
+	<slider
+			id="EQBar9"
+			action="EQ_BAND" param="9"
+			x="401" y="297"
+			w="15" h="101"
+			orientation="vertical" rectrgn="1"
+			thumb="player.main.config.eqslider"
+			downthumb="player.main.config.eqslider.hover"
+			hoverthumb="player.main.config.eqslider.hover"
+	/>
+	<slider
+			id="EQBar10"
+			action="EQ_BAND" param="10"
+			x="423" y="297"
+			w="15" h="101"
+			orientation="vertical" rectrgn="1"
+			thumb="player.main.config.eqslider"
+			downthumb="player.main.config.eqslider.hover"
+			hoverthumb="player.main.config.eqslider.hover"
+	/>
+	
+	<slider id="bal.slider"
+		action="PAN" x="102" y="382" w="70" h="15" rectrgn="1"
+			thumb="player.main.config.eqslider"
+			downthumb="player.main.config.eqslider.hover"
+			hoverthumb="player.main.config.eqslider.hover"/>
+			
+	<slider id="xfade.slider"
+			x="460" y="317" w="15" h="81" rectrgn="1"
+			orientation="vertical" 
+			thumb="player.main.config.eqslider"
+			downthumb="player.main.config.eqslider.hover"
+			hoverthumb="player.main.config.eqslider.hover"
+			cfgattrib="{F1239F09-8CC6-4081-8519-C2AE99FCB14C};Crossfade time"
+			low="0" high="20"/>
+			
+	<text id="eq.xfade.txt"
+		text="0.0s"
+		x="447" y="302" w="45" h="15" alpha="255"
+		antialias="1" bold="0" ghost="1"
+		fontsize="12" align="center" valign="top"
+		font="arial"
+		color="color.eq.txt"/>
+	<script file="scripts/text-to-attrib.maki" param="eq.xfade.txt,{F1239F09-8CC6-4081-8519-C2AE99FCB14C};Crossfade time,, sec"/>
+</groupdef>
+
+<groupdef id="player.main.config">
+	<group id="player.main.config.content" x="0" y="0" w="600" h="430"/>
+	<script file="scripts/centerobject.maki" param="player.main.config.content,1,1"/>
+	
+	<Wasabi:fileSelect x="0" y="-10" w="200" h="10"/>
+	
+	<script file="scripts\config.maki"/>
+</groupdef>
+
+<groupdef id="player.main.avs.buttons">
+	<button id="prev.button" x="0" y="0" 
+		image="player.main.gen.button"
+		downimage="player.main.gen.button.down"
+		hoverimage="player.main.gen.button.hover" rectrgn="1"
+		action="VIS_PREV"/>
+	<layer id="prev.icon" x="5" y="0"
+		image="player.main.icon.vis.prev" ghost="1"/>
+	<text id="prev.text" x="30" y="0" w="90" h="30"
+		text="PREV" align="left" ghost="1"
+		font="font.gen.button" fontsize="18" bold="1"
+		color="color.button.label" alpha="128"/>
+		
+	<button id="next.button" x="100" y="0" 
+		image="player.main.gen.button"
+		downimage="player.main.gen.button.down"
+		hoverimage="player.main.gen.button.hover" rectrgn="1"
+		action="VIS_NEXT"/>
+	<layer id="next.icon" x="105" y="0"
+		image="player.main.icon.vis.next" ghost="1"/>
+	<text id="next.text" x="130" y="0" w="90" h="30"
+		text="NEXT" align="left" ghost="1"
+		font="font.gen.button" fontsize="18" bold="1"
+		color="color.button.label" alpha="128"/>
+		
+	<togglebutton id="random.button" x="200" y="0" 
+		image="player.main.gen.button"
+		downimage="player.main.gen.button.down"
+		hoverimage="player.main.gen.button.hover" 
+		activeimage="player.main.gen.button" rectrgn="1"
+		cfgattrib="{0000000A-000C-0010-FF7B-01014263450C};Random"/>
+	<layer id="random.icon" x="205" y="0"
+		image="player.main.icon.vis.random" ghost="1"/>
+	<text id="random.text" x="230" y="-5" w="90" h="30"
+		text="RANDOM" align="left" ghost="1"
+		font="font.gen.button" fontsize="16" bold="1"
+		color="color.button.label" alpha="128"/>
+	<text id="random.text.ind" x="230" y="12" w="50" h="20"
+		text="OFF" align="center" ghost="1"
+		font="font.gen.button" fontsize="16" bold="1"
+		color="color.button.label" alpha="128"/>
+		
+	<button id="avsfs.button" x="300" y="0" 
+		image="player.main.gen.button"
+		downimage="player.main.gen.button.down"
+		hoverimage="player.main.gen.button.hover" rectrgn="1"
+		action="VIS_FS"/>
+	<layer id="avsfs.icon" x="305" y="0"
+		image="player.main.icon.vis.fulls" ghost="1"/>
+	<text id="avsfs.text" x="335" y="0" w="90" h="30"
+		text="FULL" align="left" ghost="1"
+		font="font.gen.button" fontsize="18" bold="1"
+		color="color.button.label" alpha="128"/>
+		
+	<button id="avsmenu.button" x="-90" y="0" relatx="1"
+		image="player.main.gen.button"
+		downimage="player.main.gen.button.down"
+		hoverimage="player.main.gen.button.hover" rectrgn="1"
+		action="VIS_MENU"/>
+	<layer id="avsmenu.icon" x="-85" y="0" relatx="1"
+		image="player.main.icon.vis.menu" ghost="1"/>
+	<text id="avsmenu.text" x="-60" y="0" w="90" h="30"  relatx="1"
+		text="MENU" align="left" ghost="1"
+		font="font.gen.button" fontsize="18" bold="1"
+		color="color.button.label" alpha="128"/>
+</groupdef>
+
+<groupdef id="player.main.vid.buttons">
+
+	<button id="avsfs.button" x="0" y="0" 
+		image="player.main.gen.button"
+		downimage="player.main.gen.button.down"
+		hoverimage="player.main.gen.button.hover" rectrgn="1"
+		action="VID_FS"/>
+	<layer id="avsfs.icon" x="5" y="0"
+		image="player.main.icon.vis.fulls" ghost="1"/>
+	<text id="avsfs.text" x="35" y="0" w="90" h="30"
+		text="FULL" align="left" ghost="1"
+		font="font.gen.button" fontsize="18" bold="1"
+		color="color.button.label" alpha="128"/>
+		
+	<button id="tv.button" x="100" y="0" 
+		image="player.main.gen.button"
+		downimage="player.main.gen.button.down"
+		hoverimage="player.main.gen.button.hover" rectrgn="1"
+		action="VID_TV"/>
+	<layer id="tv.icon" x="105" y="0"
+		image="player.main.icon.vis.tv" ghost="1"/>
+	<text id="tv.text" x="140" y="0" w="90" h="30"
+		text="I-TV" align="left" ghost="1"
+		font="font.gen.button" fontsize="18" bold="1"
+		color="color.button.label" alpha="128"/>
+
+		
+	<button id="vidmenu.button" x="-90" y="0" relatx="1"
+		image="player.main.gen.button"
+		downimage="player.main.gen.button.down"
+		hoverimage="player.main.gen.button.hover" rectrgn="1"
+		action="VID_MISC"/>
+	<layer id="vidmenu.icon" x="-85" y="0" relatx="1"
+		image="player.main.icon.vis.menu" ghost="1"/>
+	<text id="vidmenu.text" x="-60" y="0" w="90" h="30"  relatx="1"
+		text="MENU" align="left" ghost="1"
+		font="font.gen.button" fontsize="18" bold="1"
+		color="color.button.label" alpha="128"/>
+</groupdef>
+
+<groupdef id="player.main.vis.content">
+	<rect id="vis.base"
+		fitparent="1"
+		color="0,0,0" filled="1" ghost="1"/>
+
+	<windowholder id="wndhlr.vid" x="2" y="2" w="-4" relatw="1" h="-4" relath="1" 
+		autoclose="1" autoopen="1" autoavailable="0" visible="0" hold="guid:{F0816D7B-FFFC-4343-80F2-E8199AA15CC3}"/>
+	<windowholder id="wndhlr.avs" x="2" y="2" w="-4" relatw="1" h="-4" relath="1" autofocus="0"
+		autoclose="1" autoopen="1" autoavailable="0" visible="0" hold="guid:avs"/>
+		
+
+</groupdef>
+
+<groupdef id="player.main.vis">
+	<group id="player.main.avs.buttons" x="100" y="70" w="-200" h="30" relatw="1" visible="0"/>
+	<group id="player.main.vid.buttons" x="100" y="70" w="-200" h="30" relatw="1" visible="0"/>
+
+	<group id="player.main.vis.content"
+		x="100" y="110" w="-200" h="-260" relatw="1" relath="1"/>
+
+	<group id="player.main.seeker" x="100" y="-190" w="-200" h="160" relatw="1" relaty="1"/>
+	<sendparams target="Timer" y="50"/>
+</groupdef>
+
+<groupdef id="player.pagescroller">
+	<button id="player.button.page.left"
+		x="20" y="0"
+		image="player.button.page.left"
+		downimage="player.button.page.left.down"
+		rectrgn="1"/>
+		
+	<button id="player.button.page.right"
+		x="-72" y="0" relatx="1"
+		image="player.button.page.right"
+		downimage="player.button.page.right.down"
+		rectrgn="1"/>
+</groupdef>
+
+<groupdef id="player.main.pbuttons.full">
+	<button 
+		id="pbutton.minimize"
+		x="-195" y="20" relatx="1"
+		action="minimize" 
+		image="player.main.button.min"
+		downimage="player.main.button.min.down"
+		hoverimage="player.main.button.min.hover"
+		rectrgn="1"
+		tooltip="Minimize"
+		/>
+	<button 
+		id="pbutton.window"
+		x="-145" y="20" relatx="1"
+		image="player.main.button.window"
+		downimage="player.main.button.window.down"
+		hoverimage="player.main.button.window.hover"
+		rectrgn="1"
+		tooltip="Window"
+		/>
+	<button 
+		id="pbutton.close"
+		x="-95" y="20" relatx="1"
+		action="CLOSE" 
+		image="player.main.button.close"
+		downimage="player.main.button.close.down"
+		hoverimage="player.main.button.close.hover"
+		rectrgn="1"
+		tooltip="Close"
+		/>
+</groupdef>
+
+<groupdef id="player.main.pbuttons.window">
+	<grid id="pbutton.topbar"
+		x="0" y="0" w="0" h="30" relatw="1" rectrgn="1" move="1"
+		left="player.main.topbar.left"
+		middle="player.main.topbar.mid"
+		right="player.main.topbar.right"/>
+	<button 
+		id="pbutton.minimize"
+		x="-175" y="5" relatx="1"
+		action="minimize" 
+		image="player.main.button.min"
+		downimage="player.main.button.min.down"
+		hoverimage="player.main.button.min.hover"
+		rectrgn="1"
+		tooltip="Minimize"
+		/>
+	<button 
+		id="pbutton.full"
+		x="-125" y="5" relatx="1"
+		image="player.main.button.full"
+		downimage="player.main.button.full.down"
+		hoverimage="player.main.button.full.hover"
+		rectrgn="1"
+		tooltip="Fullscreen"
+		/>
+	<button 
+		id="pbutton.close"
+		x="-75" y="5" relatx="1"
+		action="CLOSE" 
+		image="player.main.button.close"
+		downimage="player.main.button.close.down"
+		hoverimage="player.main.button.close.hover"
+		rectrgn="1"
+		tooltip="Close"
+		/>
+		
+	<layer image="player.main.resizer" x="-35" y="-35" relatx="1" relaty="1" resize="bottomright"/>
+	
+	<rect fitparent="1" filled="0" color="0,0,0" ghost="1"/>
+</groupdef>
+
+<layout id="normal" desktopalpha="0"
+	minimum_h="480" minimum_w="640" maximum_h="3864" maximum_w="3152" move="1" >
+
+	<layer id="bg.noalpha" x="0" y="0" w="0" h="0" relatw="1" relath="1" image="player.main.background.noalpha" sysregion="1" move="0"/>
+	
+	<CustomBG x="0" y="0" w="0" h="0" relatw="1" relath="1"/>
+
+	<group id="player.main.cms" x="0" y="0" w="100" h="0" relatx="2" relatw="2" relath="1"/>
+	<group id="player.main.pl" 	x="0" y="0" w="100" h="0" relatx="2" relatw="2" relath="1" visible="0"/>
+	<group id="player.main.vis" x="0" y="0" w="100" h="0" relatx="2" relatw="2" relath="1" visible="0"/>
+	<group id="player.main.config" 	x="0" y="0" w="100" h="0" relatx="2" relatw="2" relath="1" visible="0"/>
+	
+	<group id="player.cbuttons" x="0" y="-100" relaty="1" w="227" h="165"/>
+	<script file="scripts/centerobject.maki" param="player.cbuttons,1,0"/>
+	
+	<group id="player.main.pbuttons.full" x="0" y="0" w="0" h="0" relatw="1" relath="1" visible="0"/>
+	<group id="player.main.pbuttons.window" x="0" y="0" w="0" h="0" relatw="1" relath="1"/>
+	
+	<group id="player.pagescroller" x="0" y="0" w="0" h="59" relatw="1"/>
+	<script file="scripts/centerobject.maki" param="player.pagescroller,0,1"/>
+	
+	<script file="scripts/pagescroll.maki" param="player.main.cms,player.main.pl,player.main.vis,player.main.config"/>
+
+</layout>
