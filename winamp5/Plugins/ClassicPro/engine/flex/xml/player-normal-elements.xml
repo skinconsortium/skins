@@ -79,18 +79,50 @@
 	<bitmap id="player.normal.minimize.down" file="player/normal/wnd-minimize-down.png" gammagroup="player.normal.sysbuttons"/>
 
 	<!-- Compbuttons -->
-	<bitmap id="player.normal.pl" file="player/normal/comp-pl.png" gammagroup="player.normal.compbuttons"/>
-	<bitmap id="player.normal.pl.hover" file="player/normal/comp-pl-hover.png" gammagroup="player.normal.compbuttons"/>
-	<bitmap id="player.normal.pl.down" file="player/normal/comp-pl-down.png" gammagroup="player.normal.compbuttons"/>
-	<bitmap id="player.normal.pl.active" file="player/normal/comp-pl-active.png" gammagroup="player.normal.compbuttons"/>
-	<bitmap id="player.normal.ml" file="player/normal/comp-ml.png" gammagroup="player.normal.compbuttons"/>
-	<bitmap id="player.normal.ml.hover" file="player/normal/comp-ml-hover.png" gammagroup="player.normal.compbuttons"/>
-	<bitmap id="player.normal.ml.down" file="player/normal/comp-ml-down.png" gammagroup="player.normal.compbuttons"/>
-	<bitmap id="player.normal.ml.active" file="player/normal/comp-ml-active.png" gammagroup="player.normal.compbuttons"/>
-	<bitmap id="player.normal.eq" file="player/normal/comp-eq.png" gammagroup="player.normal.compbuttons"/>
-	<bitmap id="player.normal.eq.hover" file="player/normal/comp-eq-hover.png" gammagroup="player.normal.compbuttons"/>
-	<bitmap id="player.normal.eq.down" file="player/normal/comp-eq-down.png" gammagroup="player.normal.compbuttons"/>
-	<bitmap id="player.normal.eq.active" file="player/normal/comp-eq-active.png" gammagroup="player.normal.compbuttons"/>
+	<bitmap id="player.normal.pl0" file="player/normal/comp-pl-off.png" gammagroup="player.normal.compbuttons"/>
+	<bitmap id="player.normal.pl.hover0" file="player/normal/comp-pl-off-hover.png" gammagroup="player.normal.compbuttons"/>
+	<bitmap id="player.normal.pl.down0" file="player/normal/comp-pl-off-down.png" gammagroup="player.normal.compbuttons"/>
+	<bitmap id="player.normal.pl1" file="player/normal/comp-pl-on.png" gammagroup="player.normal.compbuttons"/>
+	<bitmap id="player.normal.pl.hover1" file="player/normal/comp-pl-on-hover.png" gammagroup="player.normal.compbuttons"/>
+	<bitmap id="player.normal.pl.down1" file="player/normal/comp-pl-on-down.png" gammagroup="player.normal.compbuttons"/>
+	<bitmap id="player.normal.pl.glow" file="player/normal/comp-pl-glow.png" gammagroup="player.normal.compbuttons.glow"/>
+	<bitmap id="player.normal.pl.led0" file="player/normal/comp-pl-off-led.png" gammagroup="player.normal.led.off"/>
+	<bitmap id="player.normal.pl.led1" file="player/normal/comp-pl-on-led.png" gammagroup="player.normal.led.on"/>
+
+	<bitmap id="player.normal.eq0" file="player/normal/comp-eq-off.png" gammagroup="player.normal.compbuttons"/>
+	<bitmap id="player.normal.eq.hover0" file="player/normal/comp-eq-off-hover.png" gammagroup="player.normal.compbuttons"/>
+	<bitmap id="player.normal.eq.down0" file="player/normal/comp-eq-off-down.png" gammagroup="player.normal.compbuttons"/>
+	<bitmap id="player.normal.eq1" file="player/normal/comp-eq-on.png" gammagroup="player.normal.compbuttons"/>
+	<bitmap id="player.normal.eq.hover1" file="player/normal/comp-eq-on-hover.png" gammagroup="player.normal.compbuttons"/>
+	<bitmap id="player.normal.eq.down1" file="player/normal/comp-eq-on-down.png" gammagroup="player.normal.compbuttons"/>
+	<bitmap id="player.normal.eq.glow" file="player/normal/comp-eq-glow.png" gammagroup="player.normal.compbuttons.glow"/>
+	<bitmap id="player.normal.eq.led0" file="player/normal/comp-eq-off-led.png" gammagroup="player.normal.led.off"/>
+	<bitmap id="player.normal.eq.led1" file="player/normal/comp-eq-on-led.png" gammagroup="player.normal.led.on"/>
+
+	<bitmap id="player.normal.ml0" file="player/normal/comp-ml-off.png" gammagroup="player.normal.compbuttons"/>
+	<bitmap id="player.normal.ml.hover0" file="player/normal/comp-ml-off-hover.png" gammagroup="player.normal.compbuttons"/>
+	<bitmap id="player.normal.ml.down0" file="player/normal/comp-ml-off-down.png" gammagroup="player.normal.compbuttons"/>
+	<bitmap id="player.normal.ml1" file="player/normal/comp-ml-on.png" gammagroup="player.normal.compbuttons"/>
+	<bitmap id="player.normal.ml.hover1" file="player/normal/comp-ml-on-hover.png" gammagroup="player.normal.compbuttons"/>
+	<bitmap id="player.normal.ml.down1" file="player/normal/comp-ml-on-down.png" gammagroup="player.normal.compbuttons"/>
+	<bitmap id="player.normal.ml.glow" file="player/normal/comp-ml-glow.png" gammagroup="player.normal.compbuttons.glow"/>
+	<bitmap id="player.normal.ml.led0" file="player/normal/comp-ml-off-led.png" gammagroup="player.normal.led.off"/>
+	<bitmap id="player.normal.ml.led1" file="player/normal/comp-ml-on-led.png" gammagroup="player.normal.led.on"/>
+
+	<bitmap id="player.normal.vis0" file="player/normal/comp-vis-off.png" gammagroup="player.normal.compbuttons"/>
+	<bitmap id="player.normal.vis.hover0" file="player/normal/comp-vis-off-hover.png" gammagroup="player.normal.compbuttons"/>
+	<bitmap id="player.normal.vis.down0" file="player/normal/comp-vis-off-down.png" gammagroup="player.normal.compbuttons"/>
+	<bitmap id="player.normal.vis1" file="player/normal/comp-vis-on.png" gammagroup="player.normal.compbuttons"/>
+	<bitmap id="player.normal.vis.hover1" file="player/normal/comp-vis-on-hover.png" gammagroup="player.normal.compbuttons"/>
+	<bitmap id="player.normal.vis.down1" file="player/normal/comp-vis-on-down.png" gammagroup="player.normal.compbuttons"/>
+	<bitmap id="player.normal.vis.glow" file="player/normal/comp-vis-glow.png" gammagroup="player.normal.compbuttons.glow"/>
+	<bitmap id="player.normal.vis.led0" file="player/normal/comp-vis-off-led.png" gammagroup="player.normal.led.off"/>
+	<bitmap id="player.normal.vis.led1" file="player/normal/comp-vis-on-led.png" gammagroup="player.normal.led.on"/>
+
+	<bitmap id="player.normal.menu" file="player/normal/comp-menu.png" gammagroup="player.normal.compbuttons"/>
+	<bitmap id="player.normal.menu.hover" file="player/normal/comp-menu-hover.png" gammagroup="player.normal.compbuttons"/>
+	<bitmap id="player.normal.menu.down" file="player/normal/comp-menu-down.png" gammagroup="player.normal.compbuttons"/>
+	<bitmap id="player.normal.menu.glow" file="player/normal/comp-menu-glow.png" gammagroup="player.normal.compbuttons.glow"/>
 
 	<!-- Seek -->
 	<bitmap id="player.normal.seek.fillbar" file="player/normal/seek-fillbar.png" gammagroup="player.normal.seek.fillbar"/>
