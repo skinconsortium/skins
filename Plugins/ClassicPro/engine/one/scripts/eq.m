@@ -59,8 +59,8 @@ xFadeRead.onSetPosition(int newpos){
 
 myGroup.onResize(int x, int y, int w, int h){
 	x=w/2-188.5;
-	if(x<0)x=0;
-	eq_content.setXmlParam("x", integerToString(x+2));
+	if(x<8)x=8;
+	eq_content.setXmlParam("x", integerToString(x));
 }
 
 System.onEqFreqChanged (boolean isoonoff){

@@ -1032,6 +1032,7 @@ scriptGroup.onResize(int x, int y, int w, int h){
 		tagsGroup.setXmlParam("y", integerToString(h/2-119/2+4));
 		
 		if(tagsGroup.getXmlParam("relaty")!="0"){
+			g_cover.setXmlParam("x", "6");
 			g_cover.setXmlParam("w", "111");
 			g_cover.setXmlParam("relatw", "0");
 			g_cover.setXmlParam("h", "-8");
@@ -1043,8 +1044,9 @@ scriptGroup.onResize(int x, int y, int w, int h){
 		if(updateMe) loadFileInfo();
 	}
 	else if(tagsGroup.getXmlParam("relaty")!="1"){
+		g_cover.setXmlParam("x", "3");
 		g_cover.setXmlParam("y", "4");
-		g_cover.setXmlParam("w", "0");
+		g_cover.setXmlParam("w", "-6");
 		g_cover.setXmlParam("relatw", "1");
 		g_cover.setXmlParam("h", "-120");
 		g_cover.setXmlParam("relath", "1");

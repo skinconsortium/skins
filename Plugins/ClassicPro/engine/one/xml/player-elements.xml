@@ -154,8 +154,6 @@
 	<bitmap id="vis.overlay1" file="mainframe.png" x="20" y="75" w="108" h="16" gammagroup="n.Background.Bottom"/>
 	<bitmap id="vis.overlay2" file="mainframe_overlay.png" x="20" y="75" w="108" h="16" gammagroup="n.Background.Overlay"/>
 	
-	<bitmap id="tabpreview" file="@WINAMPPATH@\Plugins\classicPro\engine\xui\CentroSUI\tabpreview.png" gammagroup="_"/>
-
 	<!-- Text: SongInfo -->
 	<bitmap id="size.khzkbps" file="songinfo.png" x="111" y="0" w="25" h="15" gammagroup="n.Text.SongInfo"/>
 	<bitmap id="size.kb" file="songinfo.png" x="0" y="16" w="10" h="5" gammagroup="n.Text.SongInfo"/>
