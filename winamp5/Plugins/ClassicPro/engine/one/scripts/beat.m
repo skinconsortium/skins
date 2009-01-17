@@ -67,6 +67,7 @@ System.onScriptLoaded (){
 		customvis=true;
 		cusbeat_names = new List;
 		myDoc.parser_addCallback("BeatVis/*");
+		myDoc.parser_addCallback("ClassicPro/BeatVis*");
 		myDoc.parser_start();
 		myDoc.parser_destroy();
 		delete myDoc;

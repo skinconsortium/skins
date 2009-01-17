@@ -192,10 +192,10 @@ openDrawer(int drawerNo){
 	}
 	else
 	{
-		setDrawerBG(0); //martin.. this must be custom set by widget
 		GuiObject gr = dummyBuck.enumChildren(drawerNo-userWidgetOffset);
-		String id = gr.getXMLparam("userdata");
+		String id = getToken(gr.getXMLparam("userdata"), ";", 0);
 		customObj.setXmlParam("groupid", id);
+		setDrawerBG(stringToInteger(getToken(gr.getXMLparam("userdata"), ";", 1)));
 		customObj.show();
 	}
 
@@ -303,5 +303,8 @@ setDrawerBG(int mode){
 		}
 		gad_Grid.hide();
 		gad_GridEQ.show();
+	}
+	else{
+		debug("Error: Drawer background not found!");
 	}
 }

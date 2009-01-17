@@ -113,8 +113,13 @@
 	<button id="eq.set.bot" x="30" y="58" w="25" h="20" rectrgn="1"/>
 
 </groupdef>
+
+<groupdef id="equalizer.content.holder">
+	<group id="equalizer.content" x="0" y="1" w="377" h="100"/>
+</groupdef>
+
 <groupdef id="drawer.equalizer" name="Equalizer">
-	<group id="equalizer.content" x="3" y="1" w="-4" h="100" relatw="1"/>
+	<group id="equalizer.content.holder" x="2" y="1" w="-4" h="100" relatw="1"/>
 	<togglebutton
 		x="1" y="-18" relaty="1"
 		image="eq.on.1"
@@ -277,6 +282,7 @@
 	/>
 
 	<button
+		id="Cpro.theme.next"
 		action="colorthemes_next"
 		action_target="colorthemes"
 		x="64" y="-18" relaty="1"
