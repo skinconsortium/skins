@@ -9,4 +9,4 @@
 
 </container>
 
-<script id="script.main" file="scripts\main.maki"/>
+<script id="script.main" file="@SKINSPATH@Komodo\engine\scripts\main.maki"/>
