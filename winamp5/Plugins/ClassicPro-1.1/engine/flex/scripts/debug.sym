@@ -1,0 +1,172 @@
+-- Variables Table ---------------------------------------------------
+var# |                Class |                                    What 
+----------------------------------------------------------------------
+0000 |               System |                                   System*
+0001 |                  Int |                                     NULL
+0002 |                  Int |                     __deprecated_runtime
+0003 |               Double |                                        v
+0004 |                  Int |                                        2
+0005 |                  Int |                                    65535
+0006 |                  Int |                                        1
+0007 |               String |                           "runtimecheck"
+0008 |                  Int |                                        0
+0009 |                  Int |                                     last
+000A |                  Int |                                      now
+000B |                  Int |                                     5000
+000C |               String |                  "This script requires "
+000D |               String |        "Winamp 5.54 (skin version 1.34)"
+000E |               String |                                  "Error"
+000F |               String |                                       ""
+0010 |               String |                                        s
+0011 |               String |                                  "DEBUG"
+0012 |                  Int |                                        s
+0013 |            GuiObject |                                GlowLayer[]
+0014 |               String |                                "trigger"
+0015 |            GuiObject |                               GlowObject[]
+0016 |               String |                            "fadeInSpeed"
+0017 |               String |                           "fadeOutSpeed"
+0018 |               String |                               "glowType"
+0019 |               String |                                "glowing"
+001A |               String |                                   "glow"
+001B |           GlowObject |                                  trigger
+001C |            GlowLayer |                                     glow
+001D |           GlowObject |                                       go
+001E |               Double |                                      0.3
+001F |               Double |                                      0.5
+0020 |           GlowObject |                                       go
+0021 |                Float |                                       ms
+0022 |           GlowObject |                                       go
+0023 |                Float |                                       ms
+0024 |           GlowObject |                                       go
+0025 |                  Int |                                 glowType
+0026 |                  Int |                                      255
+0027 |           GlowObject |                                       go
+0028 |              Boolean |                                    onoff
+0029 |       ClassicProFlex |                           ClassicProFlex*
+002A |            GuiObject |                               dispatcher
+002B |            GuiObject |                                       go
+002C |                  Int |                                  message
+002D |                  Int |                                       i0
+002E |                  Int |                                       i1
+002F |                  Int |                                       i2
+0030 |               String |                                       s0
+0031 |               String |                                       s1
+0032 |            GuiObject |                                      obj
+0033 |                  Int |                                  message
+0034 |                  Int |                                       i0
+0035 |            GuiObject |                                      obj
+0036 |                  Int |                                  message
+0037 |                  Int |                                       i0
+0038 |                  Int |                                       i1
+0039 |            GuiObject |                                      obj
+003A |                  Int |                                  message
+003B |               String |                                       s0
+003C |            GuiObject |                                      obj
+003D |                  Int |                                  message
+003E |            GuiObject |                                      obj
+003F |                  Int |                                 messagej
+0040 |            GuiObject |                                      obj
+0041 |           GlowObject |                                     stop
+0042 |           GlowObject |                                     play
+0043 |           GlowObject |                                    pause
+0044 |           GlowObject |                                     prev
+0045 |           GlowObject |                                     next
+0046 |           GlowObject |                                     open
+0047 |           GlowObject |                                  shuffle
+0048 |           GlowObject |                                   repeat
+0049 |           GlowObject |                                     mute
+004A |            GlowLayer |                                  stop_gl
+004B |            GlowLayer |                                  play_gl
+004C |            GlowLayer |                                 pause_gl
+004D |            GlowLayer |                                  prev_gl
+004E |            GlowLayer |                                  next_gl
+004F |            GlowLayer |                                  open_gl
+0050 |            GlowLayer |                               shuffle_gl
+0051 |            GlowLayer |                                repeat_gl
+0052 |            GlowLayer |                                  mute_gl
+0053 |           GlowObject |                                     pled
+0054 |           GlowObject |                                       eq
+0055 |           GlowObject |                                       ml
+0056 |           GlowObject |                                       vs
+0057 |           GlowObject |                                       mn
+0058 |            GlowLayer |                                  pled_gl
+0059 |            GlowLayer |                                    eq_gl
+005A |            GlowLayer |                                    ml_gl
+005B |            GlowLayer |                                    vs_gl
+005C |            GlowLayer |                                    mn_gl
+005D |                  Int |                                 glowType
+005E |               String |                                     type
+005F |               String |                                   "hold"
+0060 |               String |                                 "bounce"
+0061 |               String |                                  "flash"
+0062 |               String |                                    "off"
+0063 |               String |                           "cbutton.stop"
+0064 |               String |                           "cbutton.play"
+0065 |               String |                          "cbutton.pause"
+0066 |               String |                           "cbutton.prev"
+0067 |               String |                           "cbutton.next"
+0068 |               String |                           "cbutton.open"
+0069 |               String |                        "pbutton.shuffle"
+006A |               String |                         "pbutton.repeat"
+006B |               String |                            "volume.mute"
+006C |               String |                                "comp.pl"
+006D |               String |                                "comp.eq"
+006E |               String |                                "comp.ml"
+006F |               String |                               "comp.vis"
+0070 |               String |                              "comp.menu"
+0071 |           GlowObject |                                       go
+0072 |            GlowLayer |                                       gl
+0073 |               String |                                       id
+0074 |               String |                                  ".glow"
+0075 |           GlowObject |                                       go
+0076 |                  Int |                                        x
+0077 |                  Int |                                        y
+0078 |               String |                               tickertext
+0079 |               String |                        "winamp.playback"
+007A |                  Int |                                        6
+007B |                  Int |                                        7
+007C |                  Int |                                        3
+007D |                  Int |                                        4
+007E |                  Int |                                        5
+007F |         ToggleButton |                                      tgb
+0080 |                  Int |                                       31
+0081 |                  Int |                                       32
+0082 |         ToggleButton |                                      tgb
+0083 |                  Int |                                       34
+0084 |                  Int |                                       35
+0085 |                  Int |                                       36
+0086 |                  Int |                                     0000
+0087 |                  Int |                                        x
+0088 |                  Int |                                        y
+0089 |               String |                               tickertext
+008A |         ToggleButton |                                      tgb
+008B |         ToggleButton |                                      tgb
+-- Events Table ------------------------------------------------------
+var# |         Code Pointer |                                    What 
+----------------------------------------------------------------------
+0015 |                 02A1 |                                      G.o
+0015 |                 0339 |                                      G.o
+0013 |                 03EB |                                      G.o
+0015 |                 0598 |                                      G.o
+0000 |                 07C8 |                                      S.o
+0015 |                 0BE6 |                                      G.o
+0015 |                 0F19 |                                      G.o
+-- User Functions Table ----------------------------------------------
+               Code Pointer |                                    What 
+----------------------------------------------------------------------
+                       0000 |                             versionCheck
+                       00F2 |                                    debug
+                       011D |                                 debugInt
+                       0153 |                     GlowObject_construct
+                       022F |                GlowObject_setFadeInSpeed
+                       0255 |               GlowObject_setFadeOutSpeed
+                       027B |                   GlowObject_setGlowType
+                       05EE |                           initDispatcher
+                       060C |                            setDispatcher
+                       0623 |                              sendMessage
+                       067B |                             sendMessageI
+                       06C0 |                            sendMessageI2
+                       070A |                             sendMessageS
+                       074F |                             sendMessageO
+                       0788 |                             sendMessageV
+                       0B39 |                            newGlowObject

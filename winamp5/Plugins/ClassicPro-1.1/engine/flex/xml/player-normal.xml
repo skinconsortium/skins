@@ -1,0 +1,347 @@
+<groupdef id="classcvis.group">
+	<vis id="classicvis" gammagroup="player.normal.classicvis"/>
+	<layer id="mousetrap" rectrgn="1" />
+	<script
+		file="@WINAMPPATH@\Plugins\classicPro\engine\flex\scripts\classicvis.maki"
+		param="player.normal.classicvis.region;player.normal.classicvis.colors"
+	/>
+</groupdef>
+
+<layout id="normal" background="player.normal.bg" alphabackground="player.normal.bg.alpha">
+
+	<script
+		file="@WINAMPPATH@\Plugins\classicPro\engine\flex\scripts\snapadjust.maki"
+		param="player.normal.bg.snap"
+	/>
+
+	<!-- Background Overlays -->
+
+	<layer id="bg.overlay1" x="0" y="0" image="player.normal.bg.overlay1" alpha="253" sysregion="1"/>
+	<layer id="bg.overlay2" x="0" y="0" image="player.normal.bg.overlay2" alpha="253" sysregion="1"/>
+
+	<layer id="display" x="0" y="0" image="player.normal.display" alpha="253" sysregion="1"/>
+	<layer id="display.overlay" x="0" y="0" image="player.normal.display.overlay" alpha="253" sysregion="1"/>
+
+	<!-- AlbumArt -->
+	<AlbumArt id="albumart" visible="0" />
+	<script
+		file="@WINAMPPATH@\Plugins\classicPro\engine\flex\scripts\albumart.maki"
+		param="albumart;player.normal.albumart.region"
+	/>
+
+	<!-- Visualizer -->
+	<group id="classcvis.group" visible="0" fitparent="1" alpha="253"/>
+
+	<!-- Indicators -->
+	<layer id="monster" alpha="253" image="player.normal.indicator.out.na" ghost="1"/>
+	<script file="@WINAMPPATH@\Plugins\classicPro\engine\flex\scripts\songinfo.maki"/>
+
+	<!-- CButtons -->
+
+	<button
+		id="cbutton.prev"
+		x="0" y="0"
+		action="PREV"
+		image="player.normal.prev"
+		downImage="player.normal.prev.down"
+		hoverImage="player.normal.prev.hover"
+		tooltip="@winamp.playback#0"
+		translate="2"
+		alpha="253"
+	/>
+	<layer id="cbutton.prev.glow" x="0" y="0" ghost="1" image="player.normal.prev.glow" alpha="0"/>
+
+	<button
+		x="0" y="0"
+		id="cbutton.play"
+		action="PLAY"
+		image="player.normal.play"
+		downImage="player.normal.play.down"
+		hoverImage="player.normal.play.hover"
+		tooltip="@winamp.playback#1"
+		translate="2"
+		alpha="253"
+	/>
+	<layer id="cbutton.play.glow" x="0" y="0" ghost="1" image="player.normal.play.glow" alpha="0"/>
+
+	<button
+		id="cbutton.pause"
+		x="0" y="0"
+		action="PAUSE"
+		image="player.normal.pause"
+		downImage="player.normal.pause.down"
+		hoverImage="player.normal.pause.hover"
+		tooltip="@winamp.playback#2"
+		translate="2"
+		alpha="253"
+	/>
+	<layer id="cbutton.pause.glow" x="0" y="0" ghost="1" image="player.normal.pause.glow" alpha="0"/>
+
+	<script
+		file="@WINAMPPATH@\Plugins\classicPro\engine\flex\scripts\playpause.maki"
+	/>
+
+	<button
+		id="cbutton.stop"
+		x="0" y="0"
+		action="STOP"
+		image="player.normal.stop"
+		downImage="player.normal.stop.down"
+		hoverImage="player.normal.stop.hover"
+		tooltip="@winamp.playback#3"
+		translate="2"
+		alpha="253"
+	/>
+	<layer id="cbutton.stop.glow" x="0" y="0" ghost="1" image="player.normal.stop.glow" alpha="0"/>
+
+	<button
+		id="cbutton.next"
+		x="0" y="0"
+		action="NEXT"
+		image="player.normal.next"
+		downImage="player.normal.next.down"
+		hoverImage="player.normal.next.hover"
+		tooltip="@winamp.playback#4"
+		translate="2"
+		alpha="253"
+	/>
+	<layer id="cbutton.next.glow" x="0" y="0" ghost="1" image="player.normal.next.glow" alpha="0"/>
+
+	<script file="@WINAMPPATH@\Plugins\classicPro\engine\flex\scripts\glow.maki" />
+
+	<button
+		id="cbutton.open"
+		x="0" y="0"
+		action="EJECT"
+		image="player.normal.open"
+		downImage="player.normal.open.down"
+		hoverImage="player.normal.open.hover"
+		tooltip="@winamp.playback#5"
+		translate="2"
+		alpha="253"
+	/>
+	<layer id="cbutton.open.glow" x="0" y="0" ghost="1" image="player.normal.open.glow" alpha="0"/>
+
+	<!-- pButtons -->
+	<NStatesButton
+		id="pbutton.shuffle"
+		image="player.normal.shuffle"
+		hoverimage="player.normal.shuffle.hover"
+		downimage="player.normal.shuffle.down"
+		alpha="253" nstates="2"
+		tooltip="@winamp.playback#30"
+		translate="2"
+		cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Shuffle"
+	/>
+	<layer id="pbutton.shuffle.glow" x="0" y="0" ghost="1" image="player.normal.shuffle.glow" alpha="0"/>
+
+
+	<NStatesButton
+		id="pbutton.repeat"
+		image="player.normal.repeat"
+		hoverimage="player.normal.repeat.hover"
+		downimage="player.normal.repeat.down"
+		alpha="253" nstates="3"
+		tooltip="@winamp.playback#30"
+		translate="2"
+		cfgvals="0;1;-1"
+		cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Repeat"
+	/>
+	<layer id="pbutton.repeat.glow" x="0" y="0" ghost="1" image="player.normal.repeat.glow" alpha="0"/>
+
+	<!-- Seek -->
+
+	<layer x="0" y="0" id="seek.fillbar" image="player.normal.seek.fillbar" translate="2" tooltip="@winamp.playback#20" rectrgn="0" move="0"/>
+	<script
+		file="@WINAMPPATH@\Plugins\classicPro\engine\flex\scripts\seekbar.maki"
+		param="seek.fillbar;player.normal.seek.fillbar.map"
+	/>
+
+	<!-- Volume -->
+
+	<layer x="0" y="0" id="volume.fillbar" image="player.normal.volume.fillbar" translate="2" tooltip="@winamp.playback#10" rectrgn="0" move="0"/>
+
+	<NStatesButton
+		id="volume.mute"
+		image="player.normal.mute"
+		hoverimage="player.normal.mute.hover"
+		downimage="player.normal.mute.down"
+		alpha="253" nstates="2"
+		tooltip="@winamp.playback#11"
+		translate="2"
+	/>
+	<layer id="volume.mute.glow" x="0" y="0" ghost="1" image="player.normal.mute.glow" alpha="0"/>
+
+	<script
+		file="@WINAMPPATH@\Plugins\classicPro\engine\flex\scripts\volume.maki"
+		param="volume.fillbar;player.normal.volume.fillbar.map;volume.mute"
+	/>
+
+	<!-- Component buttons -->
+	<NStatesButton
+		id="comp.pl"
+		action="TOGGLE" param="guid:pl"
+		x="0" y="0"
+		image="player.normal.pl"
+		downImage="player.normal.pl.down"
+		hoverImage="player.normal.pl.hover"
+		alpha="253" nstates="2"
+		tooltip="@winamp.components#0"
+		translate="2"
+	/>
+	<ToggleButton
+		id="comp.pl.led"
+		action="TOGGLE" param="guid:pl"
+		x="0" y="0"
+		image="player.normal.pl.led0"
+		activeImage="player.normal.pl.led1"
+		alpha="253" ghost="1"
+	/>
+	<layer id="comp.pl.glow" x="0" y="0" ghost="1" image="player.normal.pl.glow" alpha="0"/>
+
+	<NStatesButton
+		id="comp.eq"
+		action="TOGGLE" param="eq"
+		x="0" y="0"
+		image="player.normal.eq"
+		downImage="player.normal.eq.down"
+		hoverImage="player.normal.eq.hover"
+		alpha="253" nstates="2"
+		tooltip="@winamp.components#1"
+		translate="2"
+	/>
+	<ToggleButton
+		id="comp.eq.led"
+		action="TOGGLE" param="eq"
+		x="0" y="0"
+		image="player.normal.eq.led0"
+		activeImage="player.normal.eq.led1"
+		alpha="253" ghost="1"
+	/>
+	<layer id="comp.eq.glow" x="0" y="0" ghost="1" image="player.normal.eq.glow" alpha="0"/>
+
+	<NStatesButton
+		id="comp.ml"
+		action="TOGGLE" param="guid:ml"
+		x="0" y="0"
+		image="player.normal.ml"
+		downImage="player.normal.ml.down"
+		hoverImage="player.normal.ml.hover"
+		alpha="253" nstates="2"
+		tooltip="@winamp.components#2"
+		translate="2"
+	/>
+	<ToggleButton
+		id="comp.ml.led"
+		action="TOGGLE" param="guid:ml"
+		x="0" y="0"
+		image="player.normal.ml.led0"
+		activeImage="player.normal.ml.led1"
+		alpha="253" ghost="1"
+	/>
+	<layer id="comp.ml.glow" x="0" y="0" ghost="1" image="player.normal.ml.glow" alpha="0"/>
+
+	<NStatesButton
+		id="comp.vis"
+		action="TOGGLE" param="guid:avs"
+		x="0" y="0"
+		image="player.normal.vis"
+		downImage="player.normal.vis.down"
+		hoverImage="player.normal.vis.hover"
+		alpha="253" nstates="2"
+		tooltip="@winamp.components#3"
+		translate="2"
+	/>
+	<ToggleButton
+		id="comp.vis.led"
+		action="TOGGLE" param="guid:avs"
+		x="0" y="0"
+		image="player.normal.vis.led0"
+		activeImage="player.normal.vis.led1"
+		alpha="253" ghost="1"
+	/>
+	<layer id="comp.vis.glow" x="0" y="0" ghost="1" image="player.normal.vis.glow" alpha="0"/>
+
+	<Button
+		id="comp.menu"
+		action="MENU:WA5:Windows"
+		x="0" y="0"
+		image="player.normal.menu"
+		downImage="player.normal.menu.down"
+		hoverImage="player.normal.menu.hover"
+		alpha="253" nstates="2"
+		tooltip="@winamp.components#10"
+		translate="2"
+	/>
+	<layer id="comp.menu.glow" x="0" y="0" ghost="1" image="player.normal.menu.glow" alpha="0"/>
+
+	<!-- Display Stuff -->
+
+	<text
+		x="0" y="0" h="30" w="90"
+		id="time"
+		display="TIME"
+		alpha="253"
+		userdata="normal.time"
+	/>
+	<script
+		file="@WINAMPPATH@\Plugins\classicPro\engine\flex\scripts\text.maki"
+		param="time;player.normal.time.region"
+	/>
+	
+	<SongTicker
+		x="0" y="0" h="30" w="90"
+		id="songticker"
+		alpha="253"
+		userdata="normal.songticker"
+		rightclickaction="trackmenu" dblclickaction="trackinfo"
+	/>
+
+	<script
+		file="@WINAMPPATH@\Plugins\classicPro\engine\flex\scripts\text.maki"
+		param="songticker;player.normal.songticker.region"
+	/>
+
+	<Text
+		x="0" y="0" h="30" w="90"
+		id="sysinfo"
+		alpha="253"
+		visible="0"
+		userdata="normal.songticker"
+		ghost="1"
+	/>
+
+	<script
+		file="@WINAMPPATH@\Plugins\classicPro\engine\flex\scripts\text.maki"
+		param="sysinfo;player.normal.songticker.region"
+	/>
+
+	<script
+		file="@WINAMPPATH@\Plugins\classicPro\engine\flex\scripts\songticker.maki"
+		param="songticker;sysinfo"
+	/>
+
+	<!-- Sysbuttons -->
+	<button
+		x="0" y="0"
+		action="MINIMIZE"
+		image="player.normal.minimize"
+		hoverImage="player.normal.minimize.hover"
+		downImage="player.normal.minimize.down"
+		tooltip="Minimize Winamp"
+		alpha="253"
+	/>
+	<button
+		x="0" y="0"
+		action="CLOSE"
+		image="player.normal.close"
+		hoverImage="player.normal.close.hover"
+		downImage="player.normal.close.down"
+		tooltip="Exit Winamp"
+		alpha="253"
+	/>
+
+	<layer id="display.mask" x="0" y="0" image="player.normal.display.mask" alpha="253" ghost="1"/>
+	<layer id="ghost" x="0" y="0" image="player.normal.ghost" alpha="253" sysregion="1" ghost="1"/>
+
+</layout>
