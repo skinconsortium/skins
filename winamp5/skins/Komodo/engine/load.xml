@@ -1,0 +1,16 @@
+<!-- Komodo starting point -->
+
+<scripts>
+	<script id="loadattribs" file="@SKINSPATH@Komodo\engine\scripts\loadattribs.maki"/>
+</scripts>
+
+<include file="xui\xui-files.xml"/>
+<include file="xml\system-elements.xml"/>
+<include file="xml\player-elements.xml"/>
+<include file="wasabi\wasabi.xml"/>
+<include file="xml\player.xml"/>
+
+<!--include file="@SKINSPATH@Komodo\engine\updatemanager\updatemanager.xml"/-->
+<include file="xml\gamma-presets.xml"/>
+
+   

@@ -53,9 +53,9 @@
 			id="CLOSE"
 			x="-57" relatx="1" y="6"
 			rectrgn="1"
-			image="player.main.close"
- downimage="player.main.closed"
- hoverimage="player.main.closed"
+			image="wasabi.frame.button.close"
+			downimage="wasabi.frame.button.close.down"
+			hoverimage="wasabi.frame.button.close.hover"
 			tooltip="Close Window"
 		/>
 
@@ -114,7 +114,7 @@
 
 	<LayoutStatus id="standardframe.layoutstatus" x="12" y="-48" relaty="1" w="-34" relatw="1" h="18" exclude="{system}"/>
 	
-	<script id="standardframe.script" file="wasabi/standardframe/standardframe.maki" param="12,30,-26,-79,0,0,1,1" />
+	<script id="standardframe.script" file="@SKINSPATH@Komodo\engine\wasabi\standardframe\standardframe.maki" param="12,30,-26,-79,0,0,1,1" />
 
 </groupdef>
 
@@ -131,7 +131,7 @@
 
 	<group id="wasabi.frame.dummy" x="0" y="0" w="0" relatw="1" h="-20" relath="1"/>
 
-	<script id="standardframe.script" file="wasabi/standardframe/standardframe.maki" param="12,30,-26,-61,0,0,1,1" />
+	<script id="standardframe.script" file="@SKINSPATH@Komodo\engine\wasabi\standardframe\standardframe.maki" param="12,30,-26,-61,0,0,1,1" />
 
 </groupdef>
 

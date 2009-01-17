@@ -1,7 +1,7 @@
 <elements>
-	<bitmap id="covershow.ratings.nostar" file="xui\CoverShow\ratings-nostar.png"/>
-	<bitmap id="covershow.ratings.star" file="xui\CoverShow\ratings-star.png"/>
-	<bitmap id="covershow.ratings.hover" file="xui\CoverShow\ratings-hover.png"/>
+	<bitmap id="covershow.ratings.nostar" file="@SKINSPATH@Komodo\engine\xui\CoverShow\ratings-nostar.png"/>
+	<bitmap id="covershow.ratings.star" file="@SKINSPATH@Komodo\engine\xui\CoverShow\ratings-star.png"/>
+	<bitmap id="covershow.ratings.hover" file="@SKINSPATH@Komodo\engine\xui\CoverShow\ratings-hover.png"/>
 </elements>
 
 <groupdef id="cover.show.group">
@@ -55,5 +55,5 @@
 	
 	<group id="cover.show.info" x="10" y="0" w="80" h="0" relatx="2" relatw="2" relath="1"/>
 
-	<script file="xui/CoverShow/scripts/covershow.maki" />
+	<script file="@SKINSPATH@Komodo\engine\xui\CoverShow\scripts\covershow.maki" />
 </groupdef>

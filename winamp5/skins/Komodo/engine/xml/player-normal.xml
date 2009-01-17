@@ -10,7 +10,7 @@
 		hoverImage="player.main.rev"
 		tooltip="Prev Track"/>
 	<layer id="player.main.revd" image="player.main.revd"  x="0" y="0" ghost="1"/>
-	<script file="scripts/hoverglow.maki" param="Rev,player.main.revd"/>
+	<script file="@SKINSPATH@Komodo\engine\scripts\hoverglow.maki" param="Rev,player.main.revd"/>
 	
 	<button 
 		id="Eject"
@@ -22,15 +22,15 @@
 		hoverImage="player.main.eject"
 		tooltip="Get Song"/>
 	<layer id="player.main.ejectd" image="player.main.ejectd" x="45" y="0" ghost="1"/>
-	<script file="scripts/hoverglow.maki" param="Eject,player.main.ejectd"/>
+	<script file="@SKINSPATH@Komodo\engine\scripts\hoverglow.maki" param="Eject,player.main.ejectd"/>
 
 	<button id="play.button" x="88" y="0"  action="PLAY" image="player.main.play" hoverImage="player.main.play" downImage="player.main.playd" tooltip="Play"/>
 	<button id="pause.button" x="88" y="0"  action="PAUSE" image="player.main.Pause" hoverImage="player.main.Pause" downImage="player.main.Paused" tooltip="Pause"/>
-	<script file="scripts/sc_PlayPause.maki" param="play.button;pause.button"/>
+	<script file="@SKINSPATH@Komodo\engine\scripts\sc_PlayPause.maki" param="play.button;pause.button"/>
 	<layer id="player.main.playd" image="player.main.playd"  x="88" y="0" ghost="1"/>
-	<script file="scripts/hoverglow.maki" param="play.button,player.main.playd"/>
+	<script file="@SKINSPATH@Komodo\engine\scripts\hoverglow.maki" param="play.button,player.main.playd"/>
 	<layer id="player.main.Paused" image="player.main.Paused"  x="88" y="0" ghost="1"/>
-	<script file="scripts/hoverglow.maki" param="pause.button,player.main.Paused"/>
+	<script file="@SKINSPATH@Komodo\engine\scripts\hoverglow.maki" param="pause.button,player.main.Paused"/>
 	
 	<button 
 		id="Stop"
@@ -42,7 +42,7 @@
 		hoverImage="player.main.stop"
 		tooltip="Stop"/>
 	<layer id="player.main.stopd" image="player.main.stopd" x="131" y="0"  ghost="1"/>
-	<script file="scripts/hoverglow.maki" param="Stop,player.main.stopd"/>
+	<script file="@SKINSPATH@Komodo\engine\scripts\hoverglow.maki" param="Stop,player.main.stopd"/>
 	
 	<button 
 		id="Next"
@@ -54,11 +54,11 @@
 		hoverImage="player.main.forward"
 		tooltip="Next Track"/>
 	<layer id="player.main.forwardd" image="player.main.forwardd" x="174" y="0"  ghost="1"/>
-	<script file="scripts/hoverglow.maki" param="Next,player.main.forwardd"/>
+	<script file="@SKINSPATH@Komodo\engine\scripts\hoverglow.maki" param="Next,player.main.forwardd"/>
 
 	<layer id="volback" image="vol.back" x="20" y="70" w="170" move="0" rectrgn="1"/>
 	<layer id="VolumeAnim" image="vol.pos" tile="1" ghost="1" alpha="200" x="20" y="70" w="0" rectrgn="0" tooltip="Volume"/>
-	<script file="scripts/volumeslider.maki" param="VolumeAnim,volback,horizontal"/>
+	<script file="@SKINSPATH@Komodo\engine\scripts\volumeslider.maki" param="VolumeAnim,volback,horizontal"/>
 </groupdef>
 
 <groupdef id="player.main.seeker">
@@ -80,7 +80,7 @@
 			downThumb="player.main.songpos" 
 	/>
 	
-	<script file="scripts/seeker.maki" param="seek2,SeekAnim,SeekAnim.base"/>
+	<script file="@SKINSPATH@Komodo\engine\scripts\seeker.maki" param="seek2,SeekAnim,SeekAnim.base"/>
 
 </groupdef>
 
@@ -161,14 +161,14 @@
 		font="font.gen.button" fontsize="16" bold="1"
 		color="color.button.label" alpha="128"/>
 		
-	<script file="scripts/shufflerepeat.maki"/>
+	<script file="@SKINSPATH@Komodo\engine\scripts\shufflerepeat.maki"/>
 </groupdef>
 
 <groupdef id="player.main.pl.coverflow">
 	<CoverShow fitparent="1"/>
 	
 	<group id="player.main.pl.coverflow.buttons" x="10" y="15" relaty="2" w="310" h="30"/>
-	<script file="scripts/centerobject.maki" param="player.main.pl.coverflow.buttons,1,0"/>
+	<script file="@SKINSPATH@Komodo\engine\scripts\centerobject.maki" param="player.main.pl.coverflow.buttons,1,0"/>
 		
 </groupdef>
 
@@ -220,7 +220,7 @@
 		font="font.gen.button" fontsize="16" bold="1"
 		color="color.button.label" alpha="128"/>
 		
-	<script file="scripts/shufflerepeat.maki"/>
+	<script file="@SKINSPATH@Komodo\engine\scripts\shufflerepeat.maki"/>
 	
 	<button id="add.button" x="0" y="150" 
 		image="player.main.gen.button"
@@ -306,7 +306,7 @@
 			playcolor="wasabi.list.text.current" selcolor="color.plist" selbgcolor="200,200,200" selalpha="255"
 			showslider="1" slidercolor="color.plist" slideralpha="128"/>
 	<group id="player.main.pl.list.buttons" x="0" y="0" w="90" h="380"/>
-	<script file="scripts/centerobject.maki" param="player.main.pl.list.buttons,0,1"/>
+	<script file="@SKINSPATH@Komodo\engine\scripts\centerobject.maki" param="player.main.pl.list.buttons,0,1"/>
 </groupdef>
 
 <groupdef id="player.main.pl">
@@ -320,7 +320,7 @@
 		w="70" h="80" relatw="2" relath="2"
 		visible="0"/>
 
-	<script file="scripts/playlistpage.maki"/>
+	<script file="@SKINSPATH@Komodo\engine\scripts\playlistpage.maki"/>
 </groupdef>
 
 <groupdef id="player.main.config.content">
@@ -524,16 +524,16 @@
 		fontsize="12" align="center" valign="top"
 		font="arial"
 		color="color.eq.txt"/>
-	<script file="scripts/text-to-attrib.maki" param="eq.xfade.txt,{F1239F09-8CC6-4081-8519-C2AE99FCB14C};Crossfade time,, sec"/>
+	<script file="@SKINSPATH@Komodo\engine\scripts\text-to-attrib.maki" param="eq.xfade.txt,{F1239F09-8CC6-4081-8519-C2AE99FCB14C};Crossfade time,, sec"/>
 </groupdef>
 
 <groupdef id="player.main.config">
 	<group id="player.main.config.content" x="0" y="0" w="600" h="430"/>
-	<script file="scripts/centerobject.maki" param="player.main.config.content,1,1"/>
+	<script file="@SKINSPATH@Komodo\engine\scripts\centerobject.maki" param="player.main.config.content,1,1"/>
 	
 	<Wasabi:fileSelect x="0" y="-10" w="200" h="10"/>
 	
-	<script file="scripts\config.maki"/>
+	<script file="@SKINSPATH@Komodo\engine\scripts\config.maki"/>
 </groupdef>
 
 <groupdef id="player.main.avs.buttons">
@@ -767,14 +767,14 @@
 	<group id="player.main.config" 	x="0" y="0" w="100" h="0" relatx="2" relatw="2" relath="1" visible="0"/>
 	
 	<group id="player.cbuttons" x="0" y="-100" relaty="1" w="227" h="165"/>
-	<script file="scripts/centerobject.maki" param="player.cbuttons,1,0"/>
+	<script file="@SKINSPATH@Komodo\engine\scripts\centerobject.maki" param="player.cbuttons,1,0"/>
 	
 	<group id="player.main.pbuttons.full" x="0" y="0" w="0" h="0" relatw="1" relath="1" visible="0"/>
 	<group id="player.main.pbuttons.window" x="0" y="0" w="0" h="0" relatw="1" relath="1"/>
 	
 	<group id="player.pagescroller" x="0" y="0" w="0" h="59" relatw="1"/>
-	<script file="scripts/centerobject.maki" param="player.pagescroller,0,1"/>
+	<script file="@SKINSPATH@Komodo\engine\scripts\centerobject.maki" param="player.pagescroller,0,1"/>
 	
-	<script file="scripts/pagescroll.maki" param="player.main.cms,player.main.pl,player.main.vis,player.main.config"/>
+	<script file="@SKINSPATH@Komodo\engine\scripts\pagescroll.maki" param="player.main.cms,player.main.pl,player.main.vis,player.main.config"/>
 
 </layout>

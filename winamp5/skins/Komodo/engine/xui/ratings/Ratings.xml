@@ -22,5 +22,5 @@
 	<button id="rate.3" x="40" y="0" w="21" h="0" relatx="2" relatw="2" relath="1" rectrgn="1" cursor="IDC_HAND"/>
 	<button id="rate.4" x="60" y="0" w="21" h="0" relatx="2" relatw="2" relath="1" rectrgn="1" cursor="IDC_HAND"/>
 	<button id="rate.5" x="80" y="0" w="21" h="0" relatx="2" relatw="2" relath="1" rectrgn="1" cursor="IDC_HAND"/>
-	<script file="xui\ratings\Ratings.maki"/>
+	<script file="@SKINSPATH@Komodo\engine\xui\ratings\Ratings.maki"/>
 </groupdef>

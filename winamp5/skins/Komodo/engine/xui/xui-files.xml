@@ -1,8 +1,8 @@
-<include file="ratings/ratings.xml"/>
-<include file="FadeText/FadeText.xml"/>
-<include file="NowPlaying/NowPlaying.xml"/>
-<include file="fileSelect/fileSelect.xml"/>
-<include file="CustomBG/customBG.xml"/>
-<include file="playlistPlus/playlistPlus.xml"/>
-<include file="CoverShow/coverShow.xml"/>
-<include file="VisAnim/visanim.xml"/>
+<include file="ratings\ratings.xml"/>
+<include file="FadeText\FadeText.xml"/>
+<include file="NowPlaying\NowPlaying.xml"/>
+<include file="fileSelect\fileSelect.xml"/>
+<include file="CustomBG\customBG.xml"/>
+<include file="playlistPlus\playlistPlus.xml"/>
+<include file="CoverShow\coverShow.xml"/>
+<include file="VisAnim\visanim.xml"/>

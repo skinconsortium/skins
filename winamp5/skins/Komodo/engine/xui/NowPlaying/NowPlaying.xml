@@ -1,12 +1,12 @@
 <elements>
-	<bitmap id="sc.cdbox.bg" file="xui\NowPlaying\cdbox-bg_drop.png"/>
-	<bitmap id="sc.cdbox.fg" file="xui\NowPlaying\cdbox-fg.png"/>
-	<bitmap id="sc.cdbox.bg.ref" file="xui\NowPlaying\cdbox-bg-reflection.png"/>
-	<bitmap id="sc.cdbox.ref" file="xui\NowPlaying\blank.png"/>
+	<bitmap id="sc.cdbox.bg" file="@SKINSPATH@Komodo\engine\xui\NowPlaying\cdbox-bg_drop.png"/>
+	<bitmap id="sc.cdbox.fg" file="@SKINSPATH@Komodo\engine\xui\NowPlaying\cdbox-fg.png"/>
+	<bitmap id="sc.cdbox.bg.ref" file="@SKINSPATH@Komodo\engine\xui\NowPlaying\cdbox-bg-reflection.png"/>
+	<bitmap id="sc.cdbox.ref" file="@SKINSPATH@Komodo\engine\xui\NowPlaying\blank.png"/>
 	
-	<bitmap id="ratings.nostar" file="xui\NowPlaying\ratings-nostar.png"/>
-	<bitmap id="ratings.star" file="xui\NowPlaying\ratings-star.png"/>
-	<bitmap id="ratings.hover" file="xui\NowPlaying\ratings-hover.png"/>
+	<bitmap id="ratings.nostar" file="@SKINSPATH@Komodo\engine\xui\NowPlaying\ratings-nostar.png"/>
+	<bitmap id="ratings.star" file="@SKINSPATH@Komodo\engine\xui\NowPlaying\ratings-star.png"/>
+	<bitmap id="ratings.hover" file="@SKINSPATH@Komodo\engine\xui\NowPlaying\ratings-hover.png"/>
 </elements>
 
 <groupdef id="sc.nowplaying.ratings">
@@ -31,8 +31,8 @@
 	
 	<group id="sc.nowplaying.ratings" x="0" y="68" w="150" h="22"/>
 
-	<script file="xui\NowPlaying\NowPlaying.maki"/>
-	<script file="xui\NowPlaying\albumart.maki"/>
+	<script file="@SKINSPATH@Komodo\engine\xui\NowPlaying\NowPlaying.maki"/>
+	<script file="@SKINSPATH@Komodo\engine\xui\NowPlaying\albumart.maki"/>
 </groupdef>
 
 <groupdef id="sc.nowplaying.cdbox.holder">

@@ -37,5 +37,5 @@
      w="0" h="0"
      scrollbars="never"
     />
-    <script id="fselect.browser" param="file:///@SKINPATH@xui/fileSelect/fselect.maki" file="xui/fileSelect/script.maki"/>
+    <script id="fselect.browser" param="file:@SKINSPATH@Komodo\engine\xui\fileSelect\fselect.maki" file="@SKINSPATH@Komodo\engine\xui\fileSelect\script.maki"/>
 </groupdef>
