@@ -4,7 +4,8 @@
 ; Define Sourcedirectory here
 
 ; source path of pjn123
-!define SOURCEPATH "C:\Program Files\Winamp\Plugins\ClassicPro\"
+;!define SOURCEPATH "C:\Program Files\Winamp\Plugins\ClassicPro\"
+!define SOURCEPATH "C:\Program Files (x86)\Winamp\Plugins\ClassicPro\"
 
 
 ;--------------------------------
@@ -50,7 +51,7 @@ FunctionEnd
 
 ;--------------------------------
 ;Interface Settings
-  !define MUI_TEXT_WELCOME_INFO_TEXT "This wizard will guide you through the installation of $(^NameDA).$\r$\n$\r$\nIt is recommended that you close Winamp before starting Setup. This will make it possible to update all relevant Winamp files.$\n$\nYou'll at least need Winamp 5.54 for this version of ClassicPro to work!$\r$\n$\r$\n$_CLICK"
+  !define MUI_TEXT_WELCOME_INFO_TEXT "This wizard will guide you through the installation of $(^NameDA).$\r$\n$\r$\nIt is recommended that you close Winamp before starting Setup. This will make it possible to update all relevant Winamp files.$\n$\nYou'll at least need Winamp 5.541 for this version of ClassicPro to work!$\r$\n$\r$\n$_CLICK"
 
   !define MUI_WELCOMEFINISHPAGE_BITMAP "${SOURCEPATH}\_installer\win.bmp"
   !define MUI_UNWELCOMEFINISHPAGE_BITMAP "${SOURCEPATH}\_installer\win.bmp"
@@ -210,7 +211,7 @@ Section "ClassicPro Engine" cproFiles
   
 
   SetOutPath "$INSTDIR\Skins"
-  File "C:\Program Files\Winamp\Skins\cPro__Bento.wal"
+  File "C:\Program Files (x86)\Winamp\Skins\cPro__Bento.wal"
 
   RMDir /r "$INSTDIR\Skins\cPro - Big Bento\" 
   RMDir /r "$INSTDIR\Skins\cPro - Bento\" 

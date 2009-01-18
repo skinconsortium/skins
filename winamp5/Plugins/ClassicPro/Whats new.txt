@@ -5,14 +5,17 @@ Version 1.05 (17 Jan 2009)
 - New: TagViewer can now also open in the mini area
 - New: Shade mode quick Playlist now have repeat and shuffle too
 - New: Added more actions to the MultiAction button (Winamp bolt)
+- New: Song timer will now fade in/out when paused
+- New: Mute button will now blink when mute is enabled
 - Improved: Bundled skin now have a much cleaner colors.xml ;)
 - Improved: More miscellaneous optimizations for faster skin load
 - Improved: Drawer/Mini area menu
 - Improved: WasabiButtons now use the hover image
+- Improved: AlbumArt reflection, cover bigger now
 - Fixed: Generate HTML playlist did nothing
 - Fixed: TagViewer bottomleft gfx didn't hide the normal drawer bottomleft gfx
 - Fixed: Equalizer gfx overlap
-- Removed: Skin Chooser - This will be availible as an optional widget later
+- Removed: Skin Chooser - This will be available as an optional widget later
 -------------------------------------------------------------
 
 -------------------------------------------------------------

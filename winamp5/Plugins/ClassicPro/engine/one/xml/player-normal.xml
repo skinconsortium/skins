@@ -55,9 +55,10 @@
 	<text id="SongTime"
 		x="16" y="37" h="31" w="110"
 		font="player.bitmapfont.nums" timecolonwidth="6" color="Player.SongTicker.Text"
-		display="time" align="left" valign="top" alpha="220" fontsize="30"
+		display="time" align="left" valign="top" alpha="253" fontsize="30"
 	/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\one\scripts\cProClock.maki"/>
+	<script file="@WINAMPPATH@\Plugins\classicPro\engine\one\scripts\pauseblink.maki"/>
 
 	<status	id="status"	x="-165" y="51" relatx="1"	w="24" h="16" stopBitmap="cpro.status.stopped" playBitmap="cpro.status.playing" pauseBitmap="cpro.status.paused"/>
 
@@ -93,6 +94,7 @@
 
 	<Slider	id="Volume" action="volume" x="-109" y="82" h="15" w="97" relatx="1" thumb="volume.thumb.1" hoverThumb="volume.thumb.2" downThumb="volume.thumb.3" tooltip="Volume" cursor="IDC_HAND"/>
 	<NStatesButton id="mute" x="-155" y="72" relatx="1" image="mute.1." hoverimage="mute.2." downimage="mute.3." rectrgn="1" nstates="2" tooltip="Mute Volume"/>
+	<layer id="mute.warning" x="-155" y="72" relatx="1" image="mute.2.1" visible="0" alpha="0" ghost="1"/>
 	
 	<text id="infodisplay" visible="0" alpha="0" x="0" y="0" w="0" h="0"/>
 	<ModernSongticker id="infosongticker"
