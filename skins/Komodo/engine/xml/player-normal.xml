@@ -755,7 +755,7 @@
 </groupdef>
 
 <layout id="normal" desktopalpha="0"
-	minimum_h="480" minimum_w="640" maximum_h="3864" maximum_w="3152" move="1" >
+	minimum_h="480" minimum_w="640" maximum_h="3864" maximum_w="3152" move="0" lockminmax="0">
 
 	<layer id="bg.noalpha" x="0" y="0" w="0" h="0" relatw="1" relath="1" image="player.main.background.noalpha" sysregion="1" move="0"/>
 	

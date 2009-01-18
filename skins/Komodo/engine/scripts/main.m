@@ -210,6 +210,7 @@ buttonWindow.onLeftClick() {
 	setPrivateInt(getSkinName(),"windowmode", 1);
 	
 	main.resize(wx,wy,ww,wh);
+	main.setXMLParam("lockminmax","0");
 }
 
 buttonFull.onLeftClick() {
@@ -228,6 +229,7 @@ buttonFull.onLeftClick() {
 	nosizesave = 0;
 	
 	main.resize(0,0, getMonitorWidth(), getMonitorHeight());
+	main.setXMLParam("lockminmax","1");
 }
 
 topbar.onLeftButtonDblClk(int x, int y) {
