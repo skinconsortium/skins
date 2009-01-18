@@ -188,11 +188,7 @@ gotoGlobal(){
 	int w = getPublicInt("cPro.w", getCurAppWidth());
 	int h = 23;
 
-	//just incase... you never know :P
-	if(x<0) x= 0;
-	if(y<0) y= 0;
-	/*if(x>System.getMonitorWidth()) x= 0;
-	if(y>System.getViewportHeight()) y= 0;*/ //dont work with multi mon setup
+	//removed x,y< 0 as multimonitors can use negative values
 	
 	if(w<317) w= 317;
 	
