@@ -15,6 +15,7 @@ Version 1.05 (17 Jan 2009)
 - Fixed: Generate HTML playlist did nothing
 - Fixed: TagViewer bottomleft gfx didn't hide the normal drawer bottomleft gfx
 - Fixed: Equalizer gfx overlap
+- Fixed: More multi monitor bugs
 - Removed: Skin Chooser - This will be available as an optional widget later
 -------------------------------------------------------------
 
