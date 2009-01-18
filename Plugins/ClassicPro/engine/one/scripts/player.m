@@ -2,7 +2,7 @@
 #include <lib/config.mi>
 #include <lib/pldir.mi>
 #include attribs/init_Autoresize.m
-#include "../../scripts/lib/quickPlaylist.mi"
+#include <lib/quickPlaylist.mi>
 
 //#define rres 20 
 
@@ -205,15 +205,8 @@ gotoGlobal(){
 	//Winshade -> Normal : Bottom of screen
 	if(y>=System.getViewportHeight()-23) y=System.getViewportHeight()-h;
 
+	//removed x < 0 as multiple monitors can contain negative x,y values
 
-	//just incase... you never know :P
-	if(x<0) x= 0;
-	if(y<0) y= 0;
-	/*if(x>System.getMonitorWidth()) x= 0;
-	if(y>System.getViewportHeight()) y= 0;*/ //dont work with multi mon setup
-
-
-	
 	//debugstring("resize to: "+integerToString(x)+", "+integerToString(y)+", "+integerToString(w)+", "+integerToString(h), 9);
 	if(checkHeightAgain) mylayout.resize(mylayout.getLeft(),mylayout.getTop(),lastKnownW,h);
 	else mylayout.resize(x,y,w,h);
