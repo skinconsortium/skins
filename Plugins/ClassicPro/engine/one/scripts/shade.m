@@ -6,6 +6,7 @@
 Function gotoGlobal();
 Function saveGlobal();
 Function saveResize(int x, int y, int w, int h);
+Function updateMax();
 
 Global Group mainGroup, gr_Vis, gr_Vol, gr_seektick, gr_seektick1, gr_seektick2;
 Global GuiObject progressbar;
@@ -76,8 +77,8 @@ System.onScriptLoaded() {
 	reCheck = new Timer;
 	reCheck.setDelay(10);
 	
-	double newscalevalue = shade.getScale();
-	shade.setXmlParam("maximum_w", integerToString(getViewPortWidthfromGuiObject(shade)/newscalevalue));
+	//double newscalevalue = shade.getScale();
+	//shade.setXmlParam("maximum_w", integerToString(getViewPortWidthfromGuiObject(shade)/newscalevalue));
 }
 System.onScriptUnloading() {
 	if(getPublicInt("cPro.lastmode", 0)==1) saveGlobal(); //0=normal ; 1=shade
@@ -248,6 +249,7 @@ reCheck.onTimer(){
 saveResize(int x, int y, int w, int h){
 	if(docked) return;
 	if(w<317) w=317;
+	updateMax();
 	shade.resize(x,y,w,h);
 }
 
@@ -261,4 +263,9 @@ shade.onUndock(){
 	docked=false;
 	aotDoc.hide();
 	aotBut.show();
+}
+
+updateMax(){
+	double newscalevalue = shade.getScale();
+	shade.setXmlParam("maximum_w", integerToString(getViewPortWidthfromGuiObject(shade)/newscalevalue));
 }
