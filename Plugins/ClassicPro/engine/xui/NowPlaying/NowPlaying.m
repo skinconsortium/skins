@@ -19,7 +19,7 @@ Global GuiObject line1, line2, line3, BGCol, CDBoxFade;
 Global Timer delayMyResize;
 Global int xs, ys, ws, hs;
 Global int xc, yc, wc, hc;
-Global layer lyrFx, lyrFxFG, CDBoxFade2;
+Global layer lyrFx, lyrFxFG; //, CDBoxFade2;
 global double dblSmidge;
 Global int reflectionheight;
 
@@ -42,13 +42,19 @@ System.onScriptLoaded(){
 	
 	BGCol = XUIGroup.findObject("sc.nowplaying.bg");
 	CDBoxFade = XUIGroup.findObject("cdbox.fg.fademask");
-	CDBoxFade2 = XUIGroup.findObject("cdbox.fg.fademask2");
+	//CDBoxFade2 = XUIGroup.findObject("cdbox.fg.fademask2");
 
-	if (!CDBoxFade2.isInvalid())
+	/*if (!CDBoxFade2.isInvalid())
 	{
 		CDBoxFade.hide();
 		CDBoxFade2.show();
-	}
+	}*/
+
+	// Reader for albumart gradient (remove later... just keep here to see what code was used)... this will be done inside the widget from v1.1
+	Map myMap = new Map;
+	myMap.loadMap("wasabi.list.background");
+	XUIGroup.setXmlParam("bgcolor", integerToString(myMap.getARGBValue(0,0,2))+","+integerToString(myMap.getARGBValue(0,0,1))+","+integerToString(myMap.getARGBValue(0,0,0)));
+	delete myMap;
 	
 	delayMyResize = new Timer;
 	delayMyResize.setDelay(100);
@@ -95,24 +101,11 @@ System.onSetXuiParam(String param, String value)
 	{
 		string sbgcol = strlower(value);
 		BGCol.setXMLParam("color", sbgcol);
-		//CDBoxFade.setXMLParam("points", "0.0=" + sbgcol + ",0;1.0=" + sbgcol + ",255");
+
 		//gradient fade to mask the reflection from image to background ie fade it to nothing
-		
-		//this looks good on both dark and light backgrounds
-		//CDBoxFade.setXMLParam("points", "0.0=" + sbgcol + ",0;1.0=" + sbgcol + ",255"); //slob org
-		CDBoxFade.setXMLParam("points", "0.0=" + sbgcol + ",175;1.0=" + sbgcol + ",255"); //pjn mix
-		
-		//hmm pieters extra points looks ok on light bgs but not dark ones
-		//CDBoxFade.setXMLParam("points", "0.0=" + sbgcol + ",0;0.3=" + sbgcol + ",128;0.9=" + sbgcol + ",250;1.0=" + sbgcol + ",255"); //add pieters extra points
-		
+		CDBoxFade.setXMLParam("points", "0.0=" + sbgcol + ",50;1.0=" + sbgcol + ",255"); //pjn mix
 		
 	}
-	/*else if(strlower(param) == "reflectiontransparency")
-	{
-		string sreftrans = strlower(value);
-		cdboxref.setXMLParam("alpha", sreftrans);		
-	}*/
-	//just default for the now is needed
 	else if(strlower(param) == "reflectionheightpercentage")
 	{
 		//default to 50
@@ -216,10 +209,17 @@ resizeToThis(int x, int y, int w, int h)
 	cdbox.setXmlParam("w", integerToString(w1));
 	cdbox.setXmlParam("h", integerToString(h1*100/(reflectionheight+100)));
 	
+	/*cdbox_2.setXmlParam("x", integerToString(x1));
+	cdbox_2.setXmlParam("y", integerToString(h1*100/(reflectionheight+100)));
+	cdbox_2.setXmlParam("w", integerToString(w1));
+	cdbox_2.setXmlParam("h", integerToString(h1*reflectionheight/(reflectionheight+100)));*/
+	
 	cdbox_2.setXmlParam("x", integerToString(x1));
 	cdbox_2.setXmlParam("y", integerToString(h1*100/(reflectionheight+100)));
 	cdbox_2.setXmlParam("w", integerToString(w1));
 	cdbox_2.setXmlParam("h", integerToString(h1*reflectionheight/(reflectionheight+100)));
+	
+	cdboxref.setXmlParam("h", integerToString(h1*100/(reflectionheight+100)));
 	
 	lyrFx.fx_update();
 	lyrFxFG.fx_update();

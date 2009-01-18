@@ -6,16 +6,24 @@
 
 //#define rres 20 
 
-//Function updateTextSizes();
+// Function updateTextSizes();
 Function saveResize(int x, int y, int w, int h);
 Function gotoGlobal();
 Function saveGlobal();
+
+// Mute warning
+Function doFade();
+Function stopFade();
+Function startFade();
+Global Boolean direction;
+Global Timer myTimer;
+
 
 Global Group mainGroup;
 Global Container main;
 Global Layout mylayout;
 Global Slider vol_slider, seek_slider;
-Global Layer vol_layer, tt_layer, bgLeft, bgRight, bgTop, bgBottom, bgLeftRead, bgTopRead, vol_layer2;
+Global Layer vol_layer, tt_layer, bgLeft, bgRight, bgTop, bgBottom, bgLeftRead, bgTopRead, vol_layer2, muteWarning;
 Global GuiObject progressbar, seekBg;
 Global Vis mainVis;
 Global Text tracktimer, trackTitle;
@@ -47,6 +55,7 @@ System.onScriptLoaded() {
 	progressbar = mainGroup.findObject("progressbar");
 	seekBg = mainGroup.findObject("progressbar.bg");
 	mute_but = mainGroup.findObject("mute");
+	muteWarning = mainGroup.findObject("mute.warning");
 	mainVis = mainGroup.findObject("main.vis");
 	tt_layer = mainGroup.findObject("hidden.tracktime");
 	tracktimer = mainGroup.findObject("SongTime");
@@ -70,6 +79,10 @@ System.onScriptLoaded() {
 	reCheck = new Timer;
 	reCheck.setDelay(10);
 	
+	myTimer = new Timer;
+	myTimer.setDelay(700);
+
+	
 	//resize1 = mainGroup.findObject("resizer.1");
 	//resize2 = mainGroup.findObject("resizer.2");
 	//resize3 = mainGroup.findObject("resizer.3");
@@ -87,6 +100,7 @@ System.onScriptLoaded() {
 	if(getPrivateInt(getSkinName(), "muted", 0)==1){
 		mute_but.setActivated(true);
 		mute_but.setXmlParam("tooltip", "Turn Volume on");
+		startFade();
 	}
 	
 		
@@ -155,6 +169,7 @@ System.onScriptUnloading(){
 	setPrivateInt(getSkinName(), "muted", mute_but.getCurCfgVal());
 	setPublicInt("cPro.firstlayout", 0);
 	delete reCheck;
+	delete myTimer;
 }
 
 myLayout.onResize(int x, int y, int w, int h){
@@ -307,11 +322,13 @@ mute_but.onToggle(Boolean onoff){
 	if(mute_but.getCurCfgVal()==0){
 		setVolume(getPrivateInt(getSkinName(), "saveVol", 100));
 		mute_but.setXmlParam("tooltip", "Mute Volume");
+		stopFade();
 	}
 	else{
 		setPrivateInt(getSkinName(), "saveVol", getVolume());
 		setVolume(0);
 		mute_but.setXmlParam("tooltip", "Turn Volume on");
+		startFade();
 	}
 	setPrivateInt(getSkinName(), "muted", mute_but.getCurCfgVal());
 }
@@ -420,4 +437,32 @@ mylayout.onDock(int side){
 
 mylayout.onUndock(){
 	docked=false;
+}
+
+//Mute warning
+myTimer.onTimer(){
+	doFade();
+}
+doFade(){
+	if(direction){
+		muteWarning.setTargetA(0);
+	}
+	else{
+		muteWarning.setTargetA(253);
+	}
+	muteWarning.setTargetSpeed(0.6);
+	muteWarning.gotoTarget();
+	direction=!direction;
+}
+startFade(){
+	direction=false;
+	doFade();
+	myTimer.start();
+	muteWarning.show();
+}
+stopFade(){
+	myTimer.stop();
+	muteWarning.cancelTarget();
+	muteWarning.setAlpha(0);
+	muteWarning.hide();
 }
