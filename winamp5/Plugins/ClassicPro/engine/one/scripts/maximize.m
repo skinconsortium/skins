@@ -1,6 +1,8 @@
 #include <lib/std.mi>
 #include attribs/init_Autoresize.m
 
+Function updateMax();
+
 Global Group frameGroup;
 Global Button goBig, goSmall, aotBut;
 Global Layer topLayer, aotDoc;
@@ -25,10 +27,10 @@ System.onScriptLoaded() {
 
 	/*double newscalevalue = normal.getScale();
 	normal.setXmlParam("maximum_w", integerToString(getViewPortWidthfromGuiObject(normal)/newscalevalue));
-	normal.setXmlParam("maximum_h", integerToString(getViewPortHeightfromGuiObject(normal)/newscalevalue));*/
+	normal.setXmlParam("maximum_h", integerToString(getViewPortHeightfromGuiObject(normal)/newscalevalue));
 	normal.setXmlParam("maximum_w", integerToString(System.getMonitorWidth()));
-	normal.setXmlParam("maximum_h", integerToString(System.getMonitorHeight()));
-
+	normal.setXmlParam("maximum_h", integerToString(System.getMonitorHeight()));*/
+	//updateMax();
 	
 	if(getPublicInt("cPro.maximized", 0)==0){
 		goBig.show();
@@ -52,6 +54,7 @@ normal.onScale (Double newscalevalue){
 	if(getPublicInt("cPro.maximized", 0)==1){
 		normal.resize(getViewPortLeftfromGuiObject(normal), getViewPortTopfromGuiObject(normal), getViewPortWidthfromGuiObject(normal)/newscalevalue, getViewPortHeightfromGuiObject(normal)/newscalevalue);
 	}
+	updateMax();
 }
 
 goBig.onLeftClick(){
@@ -65,6 +68,12 @@ goBig.onLeftClick(){
 	goSmall.show();
 	
 	normal.setXmlParam("move", "0");
+	
+	//multi monitor update ;) 
+	/*normal.setXmlParam("maximum_w", integerToString(System.getMonitorWidth()));
+	normal.setXmlParam("maximum_h", integerToString(System.getMonitorHeight()));*/
+	updateMax();
+
 	
 	double newscalevalue = normal.getScale();
 	normal.resize(getViewPortLeftfromGuiObject(normal), getViewPortTopfromGuiObject(normal), getViewPortWidthfromGuiObject(normal)/newscalevalue, getViewPortHeightfromGuiObject(normal)/newscalevalue);
@@ -115,4 +124,10 @@ normal.onUndock(){
 	docked=false;
 	aotDoc.hide();
 	aotBut.show();
+}
+
+updateMax(){
+	double newscalevalue = normal.getScale();
+	normal.setXmlParam("maximum_w", integerToString(getViewPortWidthfromGuiObject(normal)/newscalevalue));
+	normal.setXmlParam("maximum_h", integerToString(getViewPortHeightfromGuiObject(normal)/newscalevalue));
 }

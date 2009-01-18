@@ -10,6 +10,7 @@
 Function saveResize(int x, int y, int w, int h);
 Function gotoGlobal();
 Function saveGlobal();
+Function updateMax();
 
 // Mute warning
 Function doFade();
@@ -427,6 +428,8 @@ saveResize(int x, int y, int w, int h){
 	if(w<317) w=317;
 	if(h<220) h=168;
 	
+	updateMax();
+	
 	myLayout.resize(x,y,w,h);
 }
 
@@ -438,6 +441,13 @@ mylayout.onDock(int side){
 mylayout.onUndock(){
 	docked=false;
 }
+
+updateMax(){
+	double newscalevalue = mylayout.getScale();
+	mylayout.setXmlParam("maximum_w", integerToString(getViewPortWidthfromGuiObject(mylayout)/newscalevalue));
+	mylayout.setXmlParam("maximum_h", integerToString(getViewPortHeightfromGuiObject(mylayout)/newscalevalue));
+}
+
 
 //Mute warning
 myTimer.onTimer(){
