@@ -37,8 +37,6 @@ class AppearancePanel: dfl.panel.Panel
 		initializeAppearancePanel();
 		
 		//@  Other AppearancePanel initialization code here.
-	/+	auto _buttonGlow = cast(ScrollableControl)buttonGlow;
-		_buttonGlow.dockPadding.all = PADDING;+/
 		panel1.dockPadding.left = 10;
 		fadeInSpeed.items.addRange(["0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0"]);
 		fadeOutSpeed.items.addRange(["0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0"]);
