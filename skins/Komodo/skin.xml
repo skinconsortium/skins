@@ -11,6 +11,8 @@
   
  </skininfo>
 
+ 	<script file="warning.maki" param="@SKINSPATH@"/>
+ 	
  	<include file="colors.xml"/>
 	<include file="@SKINSPATH@Komodo\engine\load.xml"/>
 	
