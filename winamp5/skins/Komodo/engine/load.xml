@@ -1,4 +1,5 @@
 <!-- Komodo starting point -->
+<komodoversion version="1.0"/>
 
 <scripts>
 	<script id="loadattribs" file="@SKINSPATH@Komodo\engine\scripts\loadattribs.maki"/>
