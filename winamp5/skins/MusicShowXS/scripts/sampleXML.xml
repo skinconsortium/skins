@@ -1,4 +1,0 @@
-<layer id="wheel.glow" image="main.wheel.glow" x="0" y="0"/>
-<layer id="wheel.trap" x="17" y="10" w="75" h="75" rectgn="1" move="0"/>
-	
-<script file="scripts/hoverglow.maki" param="wheel.trap,wheel.glow"/>
