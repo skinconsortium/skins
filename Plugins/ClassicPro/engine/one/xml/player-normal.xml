@@ -145,7 +145,7 @@
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\one\scripts\player.maki" param="20"/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\one\scripts\presetpos.maki"/>
 	
-	<SC:UpdateSystem x="0" y="0" h="0" w="0" skinname="classicpro" skinversion="1.04" />
+	<SC:UpdateSystem x="0" y="0" h="0" w="0" skinname="classicpro" skinversion="1.05" />
 
 	<group id="cpro.normal.overlay" fitparent="1" sysregion="1"/>
 </layout>

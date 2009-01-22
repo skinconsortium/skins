@@ -14,8 +14,9 @@
 //Previous xui params... now slowly making bringing the drawer into the centro core
 #define GUID_BLACKLIST "{D6201408-476A-4308-BF1B-7BACA1124B12};{5F8D8373-EAA7-4390-B5AB-402E86A5F9DD};{00000000-0000-0000-0000-000000000000}"
 #define DEF_DRAWER_H 119
-#define DRAWER_VIS_ID 6
 #define DRAWER_PL_ID 4
+#define DRAWER_VID_ID 5
+#define DRAWER_VIS_ID 6
 
 #define DEFAULT_TAB_ORDER "0;1;2;3;4;5;6"
 #define TAB_STATSUSBAR_HIDE "Hide Component Buttons for this tab"
@@ -722,6 +723,10 @@ openTabNo(int tabNo){
 		if(getPublicInt("cPro.lastMini", 0)==1){
 			openMini(0);
 		}
+		if(getPublicInt("cPro.lastDrawer", 0)==DRAWER_VID_ID){
+			drawer.sendAction ("switch_to_drawer", "", 0, 0, 0, 0); //close drawer vid
+		}
+
 		//close any video tip
 		waitForPreview.stop();
 		preview_layout.hide();
