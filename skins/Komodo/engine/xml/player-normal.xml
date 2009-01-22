@@ -56,8 +56,8 @@
 	<layer id="player.main.forwardd" image="player.main.forwardd" x="174" y="0"  ghost="1"/>
 	<script file="@SKINSPATH@Komodo\engine\scripts\hoverglow.maki" param="Next,player.main.forwardd"/>
 
-	<layer id="volback" image="vol.back" x="20" y="70" w="170" move="0" rectrgn="1"/>
-	<layer id="VolumeAnim" image="vol.pos" tile="1" ghost="1" alpha="200" x="20" y="70" w="0" rectrgn="0" tooltip="Volume"/>
+	<layer id="volback" image="vol.back" x="25" y="70" w="176" move="0" rectrgn="1"/>
+	<layer id="VolumeAnim" image="vol.pos" tile="1" ghost="1" alpha="200" x="25" y="70" w="0" rectrgn="0" tooltip="Volume"/>
 	<script file="@SKINSPATH@Komodo\engine\scripts\volumeslider.maki" param="VolumeAnim,volback,horizontal"/>
 </groupdef>
 
@@ -75,7 +75,7 @@
 	
 	<slider id="seek2"
 			action="SEEK"
-			x="0" y="50" w="0" h="29" relatw="1"
+			x="0" y="52" w="0" h="37" relatw="1"
 			thumb="player.main.songpos" 
 			downThumb="player.main.songpos" 
 	/>
@@ -85,13 +85,13 @@
 </groupdef>
 
 <groupdef id="player.main.cms" name="Close Min Switch" w="0" h="0" relatw="1" relath="1">
-	<VisAnim
+	<VisAnim id="visanim.left"
 		x="15" y="57" w="15" h="84" relatx="2" relaty="2" relatw="2"
 		image="player.main.visanim" speed="50"
 		numbars="auto" framewidth="3" frameheight="84" spacer="1"/>
 	/>
 
-	<VisAnim
+	<VisAnim id="visanim.right"
 		x="70" y="57" w="15" h="84" relatx="2" relaty="2" relatw="2"
 		image="player.main.visanim" speed="50" mirror="1"
 		numbars="auto" framewidth="3" frameheight="84" spacer="1"/>
@@ -106,8 +106,6 @@
 		dropshadowcdcase="1" alpha="255"
 		showsongrating="1" move="0"
 		/>
-
-	
 
 	<group id="player.main.seeker" x="75" y="63" w="20" h="25" relatx="2" relaty="2" relatw="2" relath="2"/>
 </groupdef>
