@@ -115,7 +115,7 @@
 </groupdef>
 
 <groupdef id="equalizer.content.holder">
-	<group id="equalizer.content" x="0" y="1" w="377" h="100"/>
+	<group id="equalizer.content" x="0" y="0" w="377" h="100"/>
 </groupdef>
 
 <groupdef id="drawer.equalizer" name="Equalizer">
@@ -330,6 +330,7 @@
 		bottomleft="player.gframe.7" bottom="player.gframe.8" bottomright="player.gframe.9"
 		regionop="1" move="1"
 	/>
+	<layer id="tempfix" image="player.gframe.7.alt" visible="0" x="0" y="-27" relaty="1"/>
 	<grid id="centro.gadget.grid.eq" fitparent="1" visible="0"
 		topleft="player.gframe.1.alt" top="player.gframe.2.alt" topright="player.gframe.3.alt"
 		regionop="1" move="1"

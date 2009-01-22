@@ -24,7 +24,7 @@ Global CProWidget drawer_equalizer, drawer_pl, drawer_vid, drawer_savedpl, drawe
 Global PopUpMenu popMenu, widgetmenu;
 Global Button but_drawerGoto;
 Global GuiObject cpro_sui, gad_Grid, gad_GridEQ;
-Global Layer ct_fakeLayer;
+Global Layer ct_fakeLayer, tempfix;
 Global Boolean gotThemes, mouse_but_drawerGoto, cuseqbg;
 
 Global ComponentBucket dummyBuck;
@@ -39,7 +39,7 @@ System.onScriptLoaded() {
 	myGroup = getScriptGroup();
 	but_drawerGoto = myGroup.findObject("drawer.menulist");
 	ct_fakeLayer = myGroup.findObject("drawer.ct.fakelayer"); //used to detect if skin have colorthemes
-
+	tempfix = myGroup.findObject("tempfix");
 
 	/*	ClassicPro Components */
 	drawer_equalizer = myGroup.findObject("drawer.equalizer");
@@ -288,12 +288,14 @@ gotoNextDrawer(){ //wheelDown
 setDrawerBG(int mode){
 	if(mode==0){
 		gad_GridEQ.hide();
-		gad_Grid.setXmlParam("bottomleft", "player.gframe.7");
+		//gad_Grid.setXmlParam("bottomleft", "player.gframe.7");
+		tempfix.hide();
 		gad_Grid.show();
 	}
 	else if(mode==1){
 		gad_GridEQ.hide();
-		gad_Grid.setXmlParam("bottomleft", "player.gframe.7.alt");
+		//gad_Grid.setXmlParam("bottomleft", "player.gframe.7.alt");
+		tempfix.show();
 		gad_Grid.show();
 	}
 	else if(mode==2){
@@ -301,6 +303,7 @@ setDrawerBG(int mode){
 			setDrawerBG(0);
 			return;
 		}
+		tempfix.hide();
 		gad_Grid.hide();
 		gad_GridEQ.show();
 	}
