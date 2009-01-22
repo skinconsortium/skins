@@ -3,9 +3,9 @@
 <bitmap id="focus.bg" file="@SKINSPATH@Komodo\engine\player\focus-bg.png"  />
 <truetypefont id="player.font.ticker" file="@SKINSPATH@Komodo\engine\player\Beware.ttf"/>
 <!--truetypefont id="font.gen.button" file="@SKINSPATH@Komodo\engine\player\font-bankgothic.ttf"/-->
-<bitmap id="bitmapfont.timer" file="@SKINSPATH@Komodo\engine\player\timerfont.png"/>
-<bitmapfont id="player.font.timer" file="bitmapfont.timer" charwidth="40" charheight="75" hspacing="-10" vspacing="0"/>
 
+<bitmap id="bitmapfont.timer" file="graphics.png" x="1" y="384" w="478" h="111" gammagroup="timerfont"/>
+<bitmapfont id="player.font.timer" file="bitmapfont.timer" charwidth="30" charheight="55" hspacing="-10" vspacing="0"/>
 
 <bitmap id="player.main.background.blank" file="@SKINSPATH@Komodo\engine\player\background-blank.png" gammagroup="Background" />
 <bitmap id="player.main.background.noalpha" file="@SKINSPATH@Komodo\engine\player\background-noalpha.png" gammagroup="Background" />
@@ -99,8 +99,10 @@
 <bitmap id="player.main.config.eqbutton.hover" file="@SKINSPATH@Komodo\engine\player\eq-buttons.png" x="0" y="26" w="59" h="13" gammagroup="eqbutton"/>
 <!-- ******* -->
 
-<bitmap id="vol.back" file="@SKINSPATH@Komodo\engine\player\volback.png" />
-<bitmap id="vol.pos" file="@SKINSPATH@Komodo\engine\player\Volume.png" gammagroup="glass" />
+<bitmap id="vol.back" file="graphics.png" x="197" y="201" w="176" h="37" gammagroup="glass" /> <!--exported-->
+<bitmap id="vol.pos" file="graphics.png" x="197" y="239" w="176" h="37" gammagroup="glass" /> <!--exported-->
+<bitmap id="player.seekbk" file="graphics.png" x="378" y="201" w="10" h="37" gammagroup="Glass"/> <!--exported-->
+<bitmap id="player.main.songpos" file="graphics.png" x="377" y="239" w="13" h="37" gammagroup="Glass"/> <!--exported-->
 
 <bitmap id="player.main.eqover" file="@SKINSPATH@Komodo\engine\player\eqover.png" gammagroup="Background"/>
 <bitmap id="player.main.eqbut" file="@SKINSPATH@Komodo\engine\player\eq.png" gammagroup="Background"/>
@@ -112,9 +114,7 @@
 <bitmap id="player.main.eqbutton" file="@SKINSPATH@Komodo\engine\player\eqbutton.png" />
 <bitmap id="player.main.eqbuttond" file="@SKINSPATH@Komodo\engine\player\eqbuttond.png" />
 <bitmap id="player.main.eqbuttondd" file="@SKINSPATH@Komodo\engine\player\eqbuttondd.png" />
-<bitmap id="player.main.songpos" file="@SKINSPATH@Komodo\engine\player\songpos.png" gammagroup="Glass"/>
-<bitmap id="player.main.songposd" file="@SKINSPATH@Komodo\engine\player\songposd.png" gammagroup="Glass"/>
-<bitmap id="player.seekbk" file="@SKINSPATH@Komodo\engine\player\songp.png" gammagroup="Glass"/>
+
 <bitmap id="player.main.visanimbigr" file="@SKINSPATH@Komodo\engine\player\vis.png"  gammagroup="vis"/> 
 <bitmap id="player.main.vis" file="@SKINSPATH@Komodo\engine\player\anivis2.png" gammagroup="glass"/>
 <bitmap id="player.map.vol" file="@SKINSPATH@Komodo\engine\player\map2.png" gammagroup="Background"/> 
