@@ -42,10 +42,26 @@ System.onScriptUnloading() {
 }
 
 scriptGroup.onSetVisible(int on) {
-	if (on)
+	if (on && getStatus() == 1)
 		visRefresh.start();
 	else
 		visRefresh.stop();
+}
+
+system.onPlay() {
+	if (scriptGroup.isVisible()) visRefresh.start();
+}
+
+system.onResume() {
+	if (scriptGroup.isVisible()) visRefresh.start();
+}
+
+system.onPause() {
+	visRefresh.stop();
+}
+
+system.onStop() {
+	visRefresh.stop();
 }
 
 System.onSetXuiParam(String param, String value) {
@@ -86,7 +102,6 @@ visRefresh.onTimer() {
 	int c, numframes = 1, newframe,currframe;
 	animatedlayer currAnim;
 	
-	//numbars = 1;
 	if (animID == "") return;
 	
 	for (c=0; c<numbars; c++) {
