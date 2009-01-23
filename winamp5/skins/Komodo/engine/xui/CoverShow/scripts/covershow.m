@@ -108,6 +108,15 @@ PeListener.onPleditModified () {
 
 }
 
+System.onTitleChange(String newtitle) {
+	
+	if (scrollAnim.isRunning()) return;
+	
+	currPos = PlEdit.getCurrentIndex();
+	setPrivateInt(getSkinName(),"PLCurrSel",currPos);
+	update();
+}
+
 // delay needed otherwise it will update like crazy on PL change.
 delayRefresh.onTimer() {
 	stop();
@@ -541,13 +550,13 @@ system.onKeyDown(string key) {
 	} else if (key == "home") {
 		currPos = 0;
 		scrollAnim.stop();
-		
+		setPrivateInt(getSkinName(),"PLCurrSel",currPos);
 		update();
 		complete;
 	} else if (key == "end") {
 		currPos = numtracks - 1;
 		scrollAnim.stop();
-		
+		setPrivateInt(getSkinName(),"PLCurrSel",currPos);
 		update();
 		complete;
 

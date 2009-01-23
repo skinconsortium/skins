@@ -149,6 +149,8 @@ main.onAction(String action, String param, Int x, int y, int p1, int p2, GuiObje
 		VideoHolder.hide();
 		if (param=="player.main.vis") {
 			delayVisShow.start();
+		} else {
+			if (delayVisShow.isRunning()) delayVisShow.stop();
 		}
 	}
 }
@@ -161,6 +163,8 @@ delayRequestPageSwitch.onTimer() {
 
 delayVisShow.onTimer() {
 	stop();
+	
+	if (!VISGroup.isVisible()) return;
 	
 	localOpen = 1;
 	if ((isVideo() && openVIDAVS==0) || openVIDAVS == OPENVID) {
