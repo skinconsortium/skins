@@ -1,0 +1,62 @@
+<!--
+TUM-Mensa Windows Desktop Gadget
+author:	Martin Poehlmann
+email:	poehlman@cs.tum.edu
+http://www.skinconsortium.com
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+	    <title>Mensaplan München</title>
+	    <script language="javascript" src="js/Main.js" type="text/javascript"></script>
+	    <link href="css/Main.css" rel="stylesheet" type="text/css" />
+    </head>
+	
+<body onload="init()">
+    <g:background id="imgBackground">
+	    <div id="gadget">
+			<span id="date">Heute</span>
+			<img id="prev" class="button" src="images\prev.png"
+				onmouseover="this.style.backgroundImage='url(images/button-bg-hover.png)';"
+				onmouseout="this.style.backgroundImage='url(images/button-bg.png)';"
+				onclick="adjust(-1);"
+				ondblclick="adjust(-1);"
+			/>
+			<img id="next" class="button" src="images\next.png"
+				onmouseover="this.style.backgroundImage='url(images/button-bg-hover.png)';"
+				onmouseout="this.style.backgroundImage='url(images/button-bg.png)';"
+				onclick="adjust(1);"
+				ondblclick="adjust(1);"
+			/>			
+			<div id="content" onmouseover="scrollDown();" onmouseout="scrollDownStop();"><div id="scroller">
+				<div class="meal" id="meal0">
+					<strong class="bold" id="kategorie0">Tagesgericht 1</strong></br>
+					<span id="name0">Pizza Chilli-Con-Carne</span><p class="price"><span id="preis0">1.55</span>€</p>
+				</div>
+				<div class="meal" id="meal1">
+					<strong class="bold" id="kategorie1">Tagesgericht 1</strong></br>
+					<span id="name1">Pizza Chilli-Con-Carne</span><p class="price"><span id="preis1">1.55</span>€</p>
+				</div>
+				<div class="meal" id="meal2">
+					<strong class="bold" id="kategorie2">Tagesgericht 1</strong></br>
+					<span id="name2">Pizza Chilli-Con-Carne</span><p class="price"><span id="preis2">1.55</span>€</p>
+				</div>
+				<div class="meal" id="meal3">
+					<strong class="bold" id="kategorie3">Tagesgericht 1</strong></br>
+					<span id="name3">Pizza Chilli-Con-Carne</span><p class="price"><span id="preis3">1.55</span>€</p>
+				</div>
+				<div class="meal" id="meal4">
+					<strong class="bold" id="kategorie4">Tagesgericht 1</strong></br>
+					<span id="name4">Pizza Chilli-Con-Carne</span><p class="price"><span id="preis4">1.55</span>€</p>
+				</div></div>
+			</div>
+			<img id="refreshBg" src="images\refresh-bg.png" />
+			<img id="refresh" class="button" src="images\refresh.png"
+				onmouseover="this.style.backgroundImage='url(images/button-bg-hover.png)';"
+				onmouseout="this.style.backgroundImage='url(images/button-bg.png)';"
+				onclick="init();"
+				ondblclick="init();"
+			/>	
+		</div>
+	</g:background>
+</body>
+</html>
