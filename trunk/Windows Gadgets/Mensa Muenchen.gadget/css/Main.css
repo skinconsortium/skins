@@ -9,6 +9,10 @@
                 font-size: small;
                 color: rgb(210,210,210);
 		    }
+		    #imgBackground
+		    {
+				border: 0;
+		    }
 		    #gadget
 		    {
 		    	margin: 0;
