@@ -38,8 +38,9 @@ System.onScriptLoaded() {
 		delayVersionCheck = new Timer;
 		delayVersionCheck.setDelay(500);
 		delayVersionCheck.start();
-		
 	}
+	
+	setPrivateString(getSkinName(),"KomodoString",floatToString(KOMODO_VER,2));
 }
 
 delayVersionCheck.onTimer() {
