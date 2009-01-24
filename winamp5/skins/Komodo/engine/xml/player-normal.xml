@@ -1,5 +1,10 @@
-<groupdef id="player.cbuttons" w="227" h="95">
-
+<groupdef id="player.cbuttons" w="227" h="295">
+<text
+		id="Timer" 
+		display="time"
+		x="45" y="-40" w="50" h="100" 
+		font="player.font.timer" rectrgn="1"
+		align="right" timecolonwidth="18"/>
 	<button 
 		id="Rev"
 		x="0" y="0"
@@ -14,46 +19,46 @@
 	
 	<button 
 		id="Eject"
-		x="45" y="0"
+		x="47" y="0"
 		action="EJECT"  alpha="200"
 		image="player.main.eject"
 		downimage="player.main.ejectd"
 		rectrgn="1"
 		hoverImage="player.main.eject"
 		tooltip="Get Song"/>
-	<layer id="player.main.ejectd" image="player.main.ejectd" x="45" y="0" ghost="1"/>
+	<layer id="player.main.ejectd" image="player.main.ejectd" x="47" y="0" ghost="1"/>
 	<script file="@SKINSPATH@Komodo\engine\scripts\hoverglow.maki" param="Eject,player.main.ejectd"/>
 
-	<button id="play.button" x="88" y="0"  action="PLAY" image="player.main.play" hoverImage="player.main.play" downImage="player.main.playd" tooltip="Play"/>
-	<button id="pause.button" x="88" y="0"  action="PAUSE" image="player.main.Pause" hoverImage="player.main.Pause" downImage="player.main.Paused" tooltip="Pause"/>
+	<button id="play.button" x="93" y="0"  action="PLAY" image="player.main.play" hoverImage="player.main.play" downImage="player.main.playd" tooltip="Play"/>
+	<button id="pause.button" x="93" y="0"  action="PAUSE" image="player.main.Pause" hoverImage="player.main.Pause" downImage="player.main.Paused" tooltip="Pause"/>
 	<script file="@SKINSPATH@Komodo\engine\scripts\sc_PlayPause.maki" param="play.button;pause.button"/>
-	<layer id="player.main.playd" image="player.main.playd"  x="88" y="0" ghost="1"/>
+	<layer id="player.main.playd" image="player.main.playd"  x="93" y="0" ghost="1"/>
 	<script file="@SKINSPATH@Komodo\engine\scripts\hoverglow.maki" param="play.button,player.main.playd"/>
-	<layer id="player.main.Paused" image="player.main.Paused"  x="88" y="0" ghost="1"/>
+	<layer id="player.main.Paused" image="player.main.Paused"  x="93" y="0" ghost="1"/>
 	<script file="@SKINSPATH@Komodo\engine\scripts\hoverglow.maki" param="pause.button,player.main.Paused"/>
 	
 	<button 
 		id="Stop"
-		x="131" y="0"
+		x="139" y="0"
 		action="STOP"  
 		image="player.main.stop"  
 		downimage="player.main.stopd"
 		rectrgn="1"
 		hoverImage="player.main.stop"
 		tooltip="Stop"/>
-	<layer id="player.main.stopd" image="player.main.stopd" x="131" y="0"  ghost="1"/>
+	<layer id="player.main.stopd" image="player.main.stopd" x="139" y="0"  ghost="1"/>
 	<script file="@SKINSPATH@Komodo\engine\scripts\hoverglow.maki" param="Stop,player.main.stopd"/>
 	
 	<button 
 		id="Next"
-		x="174" y="0"
+		x="185" y="0"
 		action="NEXT"  alpha="200"
 		image="player.main.forward"
 		downimage="player.main.forwardd"
 		rectrgn="1"
 		hoverImage="player.main.forward"
 		tooltip="Next Track"/>
-	<layer id="player.main.forwardd" image="player.main.forwardd" x="174" y="0"  ghost="1"/>
+	<layer id="player.main.forwardd" image="player.main.forwardd" x="185" y="0"  ghost="1"/>
 	<script file="@SKINSPATH@Komodo\engine\scripts\hoverglow.maki" param="Next,player.main.forwardd"/>
 
 	<layer id="volback" image="vol.back" x="25" y="70" w="176" move="0" rectrgn="1"/>
@@ -86,13 +91,13 @@
 
 <groupdef id="player.main.cms" name="Close Min Switch" w="0" h="0" relatw="1" relath="1">
 	<VisAnim id="visanim.left"
-		x="15" y="57" w="15" h="84" relatx="2" relaty="2" relatw="2"
+		x="10" y="55" w="22" h="84" relatx="2" relaty="2" relatw="2"
 		image="player.main.visanim" speed="50"
 		numbars="auto" framewidth="3" frameheight="84" spacer="1"/>
 	/>
 
 	<VisAnim id="visanim.right"
-		x="70" y="57" w="15" h="84" relatx="2" relaty="2" relatw="2"
+		x="70" y="55" w="22" h="84" relatx="2" relaty="2" relatw="2"
 		image="player.main.visanim" speed="50" mirror="1"
 		numbars="auto" framewidth="3" frameheight="84" spacer="1"/>
 	/>
@@ -764,7 +769,7 @@
 	<group id="player.main.vis" x="0" y="0" w="100" h="0" relatx="2" relatw="2" relath="1" visible="0"/>
 	<group id="player.main.config" 	x="0" y="0" w="100" h="0" relatx="2" relatw="2" relath="1" visible="0"/>
 	
-	<group id="player.cbuttons" x="0" y="-100" relaty="1" w="227" h="165"/>
+	<group id="player.cbuttons" x="0" y="-100" relaty="1" w="235" h="265"/>
 	<script file="@SKINSPATH@Komodo\engine\scripts\centerobject.maki" param="player.cbuttons,1,0"/>
 	
 	<group id="player.main.pbuttons.full" x="0" y="0" w="0" h="0" relatw="1" relath="1" visible="0"/>
