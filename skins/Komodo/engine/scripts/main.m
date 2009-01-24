@@ -28,6 +28,7 @@ Global layer vismousetrap;
 Global text avsRandomInd;
 
 Global configAttribute xfade, xfadetime, PSOVC, avsRandom;
+Global configAttribute attrRepeat, attrShuffle;
 
 Global group VISGroup, vidButtons, avsButtons;
 Global WindowHolder AVSHolder, VideoHolder;
@@ -38,6 +39,15 @@ Global group pbuttonsWindow, pbuttonsFull;
 Global button buttonWindow, buttonFull;
 Global guiobject topbar;
 Global int nosizesave;
+
+Global text titletext;
+Global string newtitle;
+Global int origtitlealpha;
+
+Global text indtext;
+Global timer indtextTimer;
+Global int origindalpha;
+Global button buttNext, buttPrev;
 
 //global timer delayfocus;
 
@@ -54,6 +64,10 @@ System.onScriptLoaded() {
 	
 	configGroup = Config.getItemByGuid("{FC3EAF78-C66E-4ED2-A0AA-1494DFCC13FF}");
 	if (configGroup) xfade = configGroup.getAttribute("Enable crossfading");
+	
+	configItem item = Config.getItem("Playlist editor");
+	attrRepeat = item.getAttribute("repeat");
+	attrShuffle = item.getAttribute("shuffle");
 	
 	xfadetime.onDataChanged();
 	
@@ -91,6 +105,17 @@ System.onScriptLoaded() {
 	buttonFull = pbuttonsWindow.getObject("pbutton.full");
 	topbar = pbuttonsWindow.getObject("pbutton.topbar");
 	
+	titletext = main.findObject("player.main.title");
+	origtitlealpha = titletext.getAlpha();
+	
+	indtext = main.findObject("player.main.indicator");
+	buttNext = main.findObject("next");
+	buttPrev = main.findObject("rev");
+	origindalpha = indtext.getAlpha();
+	indtext.hide();
+	indtextTimer = new Timer;
+	indtextTimer.setDelay(1000);
+	
 	if (getPrivateInt(getSkinName(),"windowmode", 0) == 0) {
 		nosizesave = 1;
 		buttonFull.onLeftClick();
@@ -101,6 +126,7 @@ System.onScriptUnloading() {
 	delete delayVisShow;
 	delete delayClearLocalOpen;
 	delete delayRequestPageSwitch;
+	delete indtextTimer;
 	
 	if (PSOVC) PSOVC.setData("0");
 }
@@ -140,6 +166,7 @@ system.onGetCancelComponent(String curguid, boolean goingvisible) {
 }
 
 main.onAction(String action, String param, Int x, int y, int p1, int p2, GuiObject source) {
+	int videoname = 0;
 	action = strupper(action);
 
 	if (action=="SWITCHPAGE") {
@@ -149,9 +176,24 @@ main.onAction(String action, String param, Int x, int y, int p1, int p2, GuiObje
 		VideoHolder.hide();
 		if (param=="player.main.vis") {
 			delayVisShow.start();
+			
+			if ((isVideo() && openVIDAVS==0) || openVIDAVS == OPENVID) videoname = 1;
 		} else {
 			if (delayVisShow.isRunning()) delayVisShow.stop();
 		}
+		
+		group temp = NULL;
+		temp = main.getObject(param);
+		if (temp) {
+			newtitle = temp.getXMLParam("name");
+			if (videoname) newtitle = "video";
+			if (titletext.isGoingToTarget()) titletext.cancelTarget();
+			titletext.setTargetA(0);
+			titletext.setTargetSpeed(0.5);
+			titletext.gotoTarget();
+		}
+	} else if (action=="INDTEXT") {
+		indtext.setText(Param);
 	}
 }
 
@@ -183,6 +225,63 @@ delayClearLocalOpen.onTimer() {
 	stop();
 	
 	localOpen = 0;
+}
+
+// title text scripts
+titletext.onTargetReached() {
+	if (getAlpha()==0) {
+		setText(newtitle);
+		titletext.setTargetA(origtitlealpha);
+		titletext.gotoTarget();
+	}
+}
+
+// indicator scripts
+system.onVolumeChanged(int newvol) {
+	string newtext = integerToString(newvol*100/255);
+	
+	indtext.setText("Volume: "+newtext+"%");
+}
+
+system.onPlay() { indtext.setText("Play"); }
+system.onStop() { indtext.setText("Stop"); }
+system.onResume() {	indtext.setText("Resume Play"); }
+system.onPause() { indtext.setText("Pause"); }
+buttNext.onLeftClick() { indtext.setText("Next Track"); }
+buttPrev.onLeftClick() { indtext.setText("Previous Track"); }
+
+attrRepeat.onDataChanged() {
+	if (getData()=="1")
+		indtext.setText("Repeat All");
+	else if (getData()=="-1")
+		indtext.setText("Repeat Track");
+	else
+		indtext.setText("Repeat Off");
+}
+
+attrShuffle.onDataChanged() {
+	if (getData()=="1")
+		indtext.setText("Shuffle On");
+	else
+		indtext.setText("Shuffle Off");
+}
+
+indtext.onTextChanged(string newtext) {
+	if (indtext.isGoingToTarget()) indtext.cancelTarget();
+	indtext.setAlpha(origindalpha);
+	indtext.show();
+	indtextTimer.start();
+}
+
+indtextTimer.onTimer() {
+	stop();
+	indtext.setTargetA(0);
+	indtext.setTargetSpeed(1);
+	indtext.gotoTarget();
+}
+
+indtext.onTargetReached() {
+	indtext.hide();
 }
 
 // avs random text indication script
