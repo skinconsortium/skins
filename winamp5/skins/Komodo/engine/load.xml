@@ -6,6 +6,7 @@
 <include file="xui\xui-files.xml"/>
 <include file="xml\system-elements.xml"/>
 <include file="xml\player-elements.xml"/>
+<include file="@SKINPATH@colors.xml"/>
 <include file="wasabi\wasabi.xml"/>
 <include file="xml\player.xml"/>
 

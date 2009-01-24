@@ -9,8 +9,13 @@
 
 <elements>
 
+<!--truetypefont id="player.font.ticker" file="font-bankgothic.ttf"/-->
+<!--truetypefont id="player.font.title" file="font-bankgothic.ttf"/-->
+<!--truetypefont id="font.gen.button" file="font-bankgothic.ttf"/-->
+
   <!-- Custom colors -->
   <color id="color.nowplaying" value="200,200,200" gammagroup="generalText"/>
+  <color id="color.title" value="255,255,255" gammagroup="generalText"/>
   <color id="color.button.label" value="255,255,255" gammagroup="buttonLabel"/>
   <color id="color.plist" value="255,255,255" gammagroup="playlist"/>
   

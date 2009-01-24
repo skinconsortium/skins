@@ -1,10 +1,4 @@
 <groupdef id="player.cbuttons" w="227" h="295">
-<text
-		id="Timer" 
-		display="time"
-		x="45" y="-40" w="50" h="100" 
-		font="player.font.timer" rectrgn="1"
-		align="right" timecolonwidth="18"/>
 	<button 
 		id="Rev"
 		x="0" y="0"
@@ -61,19 +55,27 @@
 	<layer id="player.main.forwardd" image="player.main.forwardd" x="185" y="0"  ghost="1"/>
 	<script file="@SKINSPATH@Komodo\engine\scripts\hoverglow.maki" param="Next,player.main.forwardd"/>
 
-	<layer id="volback" image="vol.back" x="25" y="70" w="176" move="0" rectrgn="1"/>
-	<layer id="VolumeAnim" image="vol.pos" tile="1" ghost="1" alpha="200" x="25" y="70" w="0" rectrgn="0" tooltip="Volume"/>
+</groupdef>
+
+<groupdef id="player.main.vol.content" w="176" h="37">
+	<layer id="volback" image="vol.back" x="0" y="0" w="176" move="0" rectrgn="1"/>
+	<layer id="VolumeAnim" image="vol.pos" tile="1" ghost="1" alpha="200" x="0" y="0" w="0" rectrgn="0" tooltip="Volume"/>
 	<script file="@SKINSPATH@Komodo\engine\scripts\volumeslider.maki" param="VolumeAnim,volback,horizontal"/>
 </groupdef>
 
-<groupdef id="player.main.seeker">
+<groupdef id="player.main.volume" h="37">
+	<group id="player.main.vol.content" x="0" y="0" w="176" h="37"/>
+	<script file="@SKINSPATH@Komodo\engine\scripts\centerobject.maki" param="player.main.vol.content,1,0"/>
+</groupdef>
 
+<groupdef id="player.main.seeker">
 	<text
-		id="Timer" 
+		id="timer" 
 		display="time"
 		x="0" y="-10" w="0" h="100" relatw="1" relath="0"
 		font="player.font.timer"
-		align="right" timecolonwidth="18"/>
+		align="center" timecolonwidth="18"/>
+	
 	<layer id="SeekAnim.base" image="player.seekbk" x="0" y="52" w="0" relatw="1" tile="1" move="0" alpha="55"/>
 
 	<layer id="SeekAnim" image="player.seekbk" x="0" y="52" w="0" tile="1" move="0" rectrgn="0" tooltip="Seek"/>
@@ -86,10 +88,9 @@
 	/>
 	
 	<script file="@SKINSPATH@Komodo\engine\scripts\seeker.maki" param="seek2,SeekAnim,SeekAnim.base"/>
-
 </groupdef>
 
-<groupdef id="player.main.cms" name="Close Min Switch" w="0" h="0" relatw="1" relath="1">
+<groupdef id="player.main.cms" name="now playing" w="0" h="0" relatw="1" relath="1">
 	<VisAnim id="visanim.left"
 		x="10" y="55" w="22" h="84" relatx="2" relaty="2" relatw="2"
 		image="player.main.visanim" speed="50"
@@ -112,7 +113,6 @@
 		showsongrating="1" move="0"
 		/>
 
-	<group id="player.main.seeker" x="75" y="63" w="20" h="25" relatx="2" relaty="2" relatw="2" relath="2"/>
 </groupdef>
 
 <groupdef id="player.main.pl.coverflow.buttons">
@@ -312,7 +312,7 @@
 	<script file="@SKINSPATH@Komodo\engine\scripts\centerobject.maki" param="player.main.pl.list.buttons,0,1"/>
 </groupdef>
 
-<groupdef id="player.main.pl">
+<groupdef id="player.main.pl" name="playlist">
 				
 	<group id="player.main.pl.coverflow" 
 		x="20" y="10" relatx="2" relaty="2"
@@ -530,7 +530,7 @@
 	<script file="@SKINSPATH@Komodo\engine\scripts\text-to-attrib.maki" param="eq.xfade.txt,{F1239F09-8CC6-4081-8519-C2AE99FCB14C};Crossfade time,, sec"/>
 </groupdef>
 
-<groupdef id="player.main.config">
+<groupdef id="player.main.config" name="configuration">
 	<group id="player.main.config.content" x="0" y="0" w="600" h="430"/>
 	<script file="@SKINSPATH@Komodo\engine\scripts\centerobject.maki" param="player.main.config.content,1,1"/>
 	
@@ -659,15 +659,39 @@
 
 </groupdef>
 
-<groupdef id="player.main.vis">
+<!--groupdef id="player.vis.seeker">
+	
+	
+	<layer id="SeekAnim.base" image="player.seekbk" x="0" y="0" w="0" relatw="1" tile="1" move="0" alpha="55"/>
+
+	<layer id="SeekAnim" image="player.seekbk" x="0" y="0" w="0" tile="1" move="0" rectrgn="0" tooltip="Seek"/>
+	
+	<slider id="seek2"
+			action="SEEK"
+			x="0" y="0" w="0" h="37" relatw="1"
+			thumb="player.main.songpos" 
+			downThumb="player.main.songpos" 
+	/>
+	
+	<script file="@SKINSPATH@Komodo\engine\scripts\seeker.maki" param="seek2,SeekAnim,SeekAnim.base"/>
+	
+	<text
+		id="timer" 
+		display="time"
+		x="0" y="50" w="0" h="100" relatw="1" relath="0"
+		font="player.font.timer"
+		align="right" timecolonwidth="18"/>
+</groupdef-->
+
+
+<groupdef id="player.main.vis"  name="visualizations">
 	<group id="player.main.avs.buttons" x="100" y="70" w="-200" h="30" relatw="1" visible="0"/>
 	<group id="player.main.vid.buttons" x="100" y="70" w="-200" h="30" relatw="1" visible="0"/>
 
 	<group id="player.main.vis.content"
 		x="100" y="110" w="-200" h="-260" relatw="1" relath="1"/>
 
-	<group id="player.main.seeker" x="100" y="-190" w="-200" h="160" relatw="1" relaty="1"/>
-	<sendparams target="Timer" y="50"/>
+	<!--group id="player.vis.seeker" x="100" y="-150" w="-200" h="160" relatw="1" relaty="1"/-->
 </groupdef>
 
 <groupdef id="player.pagescroller">
@@ -772,12 +796,23 @@
 	<group id="player.cbuttons" x="0" y="-100" relaty="1" w="235" h="265"/>
 	<script file="@SKINSPATH@Komodo\engine\scripts\centerobject.maki" param="player.cbuttons,1,0"/>
 	
+	<group id="player.main.seeker" x="70" y="-130" w="22" h="100" relatx="2" relaty="1" relatw="2"/>
+	<group id="player.main.volume" x="2" y="-85" w="30" h="37" relatx="2" relaty="1" relatw="2"/>
+	
 	<group id="player.main.pbuttons.full" x="0" y="0" w="0" h="0" relatw="1" relath="1" visible="0"/>
 	<group id="player.main.pbuttons.window" x="0" y="0" w="0" h="0" relatw="1" relath="1"/>
+	
+	<text id="player.main.title" text="now playing" x="0" y="10" w="0" h="20" relatw="1" relath="2"
+		font="player.font.title" fontsize="90" alpha="60" color="color.title" valign="top" ghost="1"/>
+		
+	<text id="player.main.indicator" text="test" x="0" y="40" w="-10" h="20" relatw="1" relath="2"
+		font="player.font.indicator" fontsize="60" alpha="60" color="color.title" align="right" valign="top" ghost="1"/>
 	
 	<group id="player.pagescroller" x="0" y="0" w="0" h="59" relatw="1"/>
 	<script file="@SKINSPATH@Komodo\engine\scripts\centerobject.maki" param="player.pagescroller,0,1"/>
 	
 	<script file="@SKINSPATH@Komodo\engine\scripts\pagescroll.maki" param="player.main.cms,player.main.pl,player.main.vis,player.main.config"/>
+	
+	<include file="@SKINPATH@overrides.xml"/>
 
 </layout>

@@ -1,6 +1,8 @@
 <elements>
 
 <truetypefont id="player.font.ticker" file="@SKINSPATH@Komodo\engine\player\Beware.ttf"/>
+<truetypefont id="player.font.title" file="@SKINSPATH@Komodo\engine\player\Beware.ttf"/>
+<truetypefont id="player.font.indicator" file="@SKINSPATH@Komodo\engine\player\Beware.ttf"/>
 <!--truetypefont id="font.gen.button" file="@SKINSPATH@Komodo\engine\player\font-bankgothic.ttf"/-->
 
 <bitmap id="bitmapfont.timer" file="graphics.png" x="1" y="384" w="478" h="111" gammagroup="timerfont"/>
