@@ -13,7 +13,7 @@
 -->
 
 <groupdef id="Wasabi.Ratings" xuitag="Wasabi:Ratings">
-	<layer id="ratings.nostars" tile="1" w="100" h="0" relatw="2" relath="1"/>
+	<layer id="ratings.nostars" tile="1" w="150" h="0" relatw="2" relath="1"/>
 	<layer id="ratings.stars" tile="1" w="0" h="0" relatw="2" relath="1"/>
 	<layer id="ratings.hoverstars" tile="1" w="0" h="0" relatw="2" relath="1"/>
 	

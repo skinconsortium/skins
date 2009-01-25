@@ -7,6 +7,18 @@
   <bitmapfont id="wasabi.font.default" file="fonts/default-font.png" charwidth="5" charheight="6" hspacing="0" vspacing="0" gammagroup="Display Fonts"/>
   <bitmapfont id="studio.component.statusbar" file="fonts/default-font.png" charwidth="5" charheight="6" hspacing="0" vspacing="0" gammagroup="Display Fonts"/-->
 
+  	<!-- nowplaying/covershow bitmaps -->
+	<bitmap id="sc.cdbox.bg" file="@SKINSPATH@Komodo\engine\xui\NowPlaying\cdbox-bg_drop.png" gammagroup="cdcase"/>
+	<bitmap id="sc.cdbox.fg" file="@SKINSPATH@Komodo\engine\xui\NowPlaying\cdbox-fg.png" gammagroup="cdcase"/>
+	<bitmap id="sc.cdbox.bg.ref" file="@SKINSPATH@Komodo\engine\xui\NowPlaying\cdbox-bg-reflection.png" gammagroup="cdcase"/>
+	<bitmap id="sc.cdbox.ref" file="@SKINSPATH@Komodo\engine\xui\NowPlaying\blank.png" gammagroup="cdcase"/>
+	
+	<bitmap id="ratings.nostar" file="graphics.png" x="1" y="527" w="150" h="22" gammagroup="ratings"/>
+	<bitmap id="ratings.star" file="graphics.png" x="1" y="550" w="150" h="22" gammagroup="ratings"/>
+	<bitmap id="ratings.hover" file="graphics.png" x="1" y="573" w="150" h="22" gammagroup="ratings"/>
+
+	<bitmap id="nocover" file="nocover.png" gammagroup="cdcase"/> 
+  
   <!-- Bitmaps -->
   
    <bitmap id="studio.BaseTexture" file="@SKINSPATH@Komodo\engine\window\background.png" gammagroup="Backgrounds"/>

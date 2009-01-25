@@ -134,5 +134,7 @@
 <bitmap id="player.button.page.left" file="graphics.png" x="1" y="1" w="54" h="63" gammagroup="Glass"/>  
 <bitmap id="player.button.page.left.down" file="graphics.png" x="57" y="1" w="54" h="63" gammagroup="Glass"/>  
 <bitmap id="player.button.page.right" file="graphics.png" x="169" y="1" w="54" h="63" gammagroup="Glass"/>  
-<bitmap id="player.button.page.right.down" file="graphics.png" x="113" y="1" w="54" h="63" gammagroup="Glass"/>  
+<bitmap id="player.button.page.right.down" file="graphics.png" x="113" y="1" w="54" h="63" gammagroup="Glass"/> 
+
+
 </elements>

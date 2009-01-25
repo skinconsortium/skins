@@ -5,8 +5,8 @@
 </elements>
 
 <groupdef id="cover.show.group">
-	<AlbumArt id="aa" x="0" y="0" h="60" w="0" relatw="1" relath="2" stretched="1"/>
-	<AlbumArt id="aa.ref" x="0" y="60" h="40" w="0" relaty="2" relatw="1" relath="2" stretched="1" alpha="90"/>
+	<AlbumArt id="aa" x="0" y="0" h="60" w="0" relatw="1" relath="2" stretched="1" notFoundImage="nocover"/>
+	<AlbumArt id="aa.ref" x="0" y="60" h="40" w="0" relaty="2" relatw="1" relath="2" stretched="1" alpha="90" notFoundImage="nocover"/>
 </groupdef>
 
 <groupdef id="cover.show.aa1" inherit_group="cover.show.group"/>
