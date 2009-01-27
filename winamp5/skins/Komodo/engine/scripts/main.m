@@ -267,6 +267,7 @@ attrShuffle.onDataChanged() {
 }
 
 indtext.onTextChanged(string newtext) {
+	if (newtext=="") return;
 	if (indtext.isGoingToTarget()) indtext.cancelTarget();
 	indtext.setAlpha(origindalpha);
 	indtext.show();
@@ -281,7 +282,10 @@ indtextTimer.onTimer() {
 }
 
 indtext.onTargetReached() {
-	indtext.hide();
+	if (indtext.getAlpha()==0) {
+		indtext.hide();
+		indtext.settext("");
+	}
 }
 
 // avs random text indication script

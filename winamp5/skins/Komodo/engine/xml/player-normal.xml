@@ -805,8 +805,8 @@
 	<text id="player.main.title" text="now playing" x="0" y="10" w="0" h="20" relatw="1" relath="2"
 		font="player.font.title" fontsize="90" alpha="60" color="color.title" valign="top" ghost="1"/>
 		
-	<text id="player.main.indicator" text="test" x="0" y="40" w="-10" h="20" relatw="1" relath="2"
-		font="player.font.indicator" fontsize="60" alpha="60" color="color.title" align="right" valign="top" ghost="1"/>
+	<text id="player.main.indicator" text="test" x="200" y="55" w="-50" h="20" relatw="1" relath="2"
+		font="player.font.indicator" fontsize="60" alpha="60" color="color.title" align="left" valign="top" ghost="1"/>
 	
 	<group id="player.pagescroller" x="0" y="0" w="0" h="59" relatw="1"/>
 	<script file="@SKINSPATH@Komodo\engine\scripts\centerobject.maki" param="player.pagescroller,0,1"/>
