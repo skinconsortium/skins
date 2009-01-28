@@ -12,10 +12,12 @@
 
 #define VID_GUID "{F0816D7B-FFFC-4343-80F2-E8199AA15CC3}"
 #define AVS_GUID "{0000000A-000C-0010-FF7B-01014263450C}"
+#define ML_GUID "{6B0EDF80-C9A5-11D3-9F26-00C04F39FFC6}"
 #define SKINTWEAKS_CFGPAGE "{0542AFA4-48D9-4c9f-8900-5739D52C114F}"
 
 #define OPENVID 1
 #define OPENAVS 2
+#define OPENML 3
 
 Global layout main; 
 
@@ -31,7 +33,7 @@ Global configAttribute xfade, xfadetime, PSOVC, avsRandom;
 Global configAttribute attrRepeat, attrShuffle;
 
 Global group VISGroup, vidButtons, avsButtons;
-Global WindowHolder AVSHolder, VideoHolder;
+Global WindowHolder AVSHolder, VideoHolder, MLHolder;
 Global int localOpen, openVIDAVS;
 Global timer delayVisShow, delayClearLocalOpen, delayRequestPageSwitch;
 
@@ -81,6 +83,8 @@ System.onScriptLoaded() {
 	vidButtons = VISGroup.findObject("player.main.vid.buttons");
 	avsButtons = VISGroup.findObject("player.main.avs.buttons");
 	avsRandom.onDataChanged();
+	
+	MLHolder = main.findObject("wndhlr.ml");
 	
 	delayVisShow = new Timer;
 	delayVisShow.setDelay(1500);
@@ -160,6 +164,14 @@ system.onGetCancelComponent(String curguid, boolean goingvisible) {
 			return TRUE;
 		}
 	}
+	if (curguid == ML_GUID) {
+		if (localOpen) return FALSE;
+		else {
+			delayRequestPageSwitch.start();
+			openVIDAVS = OPENML;
+			return TRUE;
+		}
+	}
 	
 	return FALSE;
 
@@ -174,7 +186,9 @@ main.onAction(String action, String param, Int x, int y, int p1, int p2, GuiObje
 		avsButtons.hide();
 		AVSHolder.hide();
 		VideoHolder.hide();
-		if (param=="player.main.vis") {
+		MLHolder.hide();
+		if (param=="player.main.vis" || param=="player.main.ml") {
+			if (param=="player.main.ml") openVIDAVS = OPENML;
 			delayVisShow.start();
 			
 			if ((isVideo() && openVIDAVS==0) || openVIDAVS == OPENVID) videoname = 1;
@@ -200,16 +214,21 @@ main.onAction(String action, String param, Int x, int y, int p1, int p2, GuiObje
 delayRequestPageSwitch.onTimer() {
 	stop();
 	
-	main.sendAction("REQUESTSWITCHPAGE", "", 0,0,2,0);  // switches to page 3
+	if (openVIDAVS == OPENML)
+		main.sendAction("REQUESTSWITCHPAGE", "", 0,0,3,0);  // switches to page 4
+	else
+		main.sendAction("REQUESTSWITCHPAGE", "", 0,0,2,0);  // switches to page 3
 }
 
 delayVisShow.onTimer() {
 	stop();
 	
-	if (!VISGroup.isVisible()) return;
+	if (!VISGroup.isVisible() && openVIDAVS!=OPENML) return;
 	
 	localOpen = 1;
-	if ((isVideo() && openVIDAVS==0) || openVIDAVS == OPENVID) {
+	if (openVIDAVS == OPENML) {
+		MLHolder.show();
+	} else if ((isVideo() && openVIDAVS==0) || openVIDAVS == OPENVID) {
 		VideoHolder.show();
 		vidButtons.show();
 	} else {

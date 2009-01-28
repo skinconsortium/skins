@@ -57,6 +57,7 @@ dummySlider.onLeftButtonUp(int x, int y) {
     //seekTo(System.getPlayItemLength()*p/w);
     
     SeekChanging = 0;
+    updateSeeker(getPosition());
   }
 }
 
@@ -91,20 +92,17 @@ updateSeeker(int x) {
 
 	w = seekerbase.getWidth()-woff;
 
-	int p = x; //x*w/255; //x - seekerbase.getLeft();
+	int p = x;
 	
-	//if (p > w) p=w;
 	if (p < 0) p=0;
     if (w<0) w = 1;
-    
-	//if (p >= 0) {
 
-		float len = System.getPlayItemLength();
-		int s = (x * len) / w;
-		main.sendAction("INDTEXT", "Seek: " + integerToTime(s) + "/" + integerToTime(len) + " ("+integerToString(p*100/255)+"%)", 0,0,0,0);
-		
-		seeker.setXMLParam("w", integerToString(x*w/255));
-	//}
+	float len = System.getPlayItemLength();
+	int s = (x * len) / w;
+	main.sendAction("INDTEXT", "Seek: " + integerToTime(s) + "/" + integerToTime(len) + " ("+integerToString(p*100/255)+"%)", 0,0,0,0);
+	
+	seeker.setXMLParam("w", integerToString(x*w/255));
+
 }
 
 System.onTitleChange(String newtitle) {

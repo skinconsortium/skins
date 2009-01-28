@@ -694,6 +694,21 @@
 	<!--group id="player.vis.seeker" x="100" y="-150" w="-200" h="160" relatw="1" relaty="1"/-->
 </groupdef>
 
+<groupdef id="player.main.ml.content">
+	<rect id="ml.base"
+		fitparent="1"
+		color="0,0,0" filled="1" ghost="1"/>
+
+	<windowholder id="wndhlr.ml" x="2" y="2" w="-4" relatw="1" h="-4" relath="1" 
+		autoclose="1" autoopen="1" autoavailable="0" visible="0" hold="guid:{6B0EDF80-C9A5-11D3-9F26-00C04F39FFC6}"/>
+</groupdef>
+
+
+<groupdef id="player.main.ml"  name="media library">
+	<group id="player.main.ml.content"
+		x="100" y="110" w="-200" h="-260" relatw="1" relath="1"/>
+</groupdef>
+
 <groupdef id="player.pagescroller">
 	<button id="player.button.page.left"
 		x="20" y="0"
@@ -791,6 +806,7 @@
 	<group id="player.main.cms" x="0" y="0" w="100" h="0" relatx="2" relatw="2" relath="1"/>
 	<group id="player.main.pl" 	x="0" y="0" w="100" h="0" relatx="2" relatw="2" relath="1" visible="0"/>
 	<group id="player.main.vis" x="0" y="0" w="100" h="0" relatx="2" relatw="2" relath="1" visible="0"/>
+	<group id="player.main.ml" x="0" y="0" w="100" h="0" relatx="2" relatw="2" relath="1" visible="0"/>
 	<group id="player.main.config" 	x="0" y="0" w="100" h="0" relatx="2" relatw="2" relath="1" visible="0"/>
 	
 	<group id="player.cbuttons" x="0" y="-100" relaty="1" w="235" h="265"/>
@@ -805,13 +821,13 @@
 	<text id="player.main.title" text="now playing" x="0" y="10" w="0" h="20" relatw="1" relath="2"
 		font="player.font.title" fontsize="90" alpha="60" color="color.title" valign="top" ghost="1"/>
 		
-	<text id="player.main.indicator" text="test" x="200" y="55" w="-50" h="20" relatw="1" relath="2"
-		font="player.font.indicator" fontsize="60" alpha="60" color="color.title" align="left" valign="top" ghost="1"/>
+	<text id="player.main.indicator" text="test" x="0" y="20" w="-10" h="20" relatw="1" relath="2"
+		font="player.font.indicator" fontsize="60" alpha="60" color="color.title" align="right" valign="top" ghost="1"/>
 	
 	<group id="player.pagescroller" x="0" y="0" w="0" h="59" relatw="1"/>
 	<script file="@SKINSPATH@Komodo\engine\scripts\centerobject.maki" param="player.pagescroller,0,1"/>
 	
-	<script file="@SKINSPATH@Komodo\engine\scripts\pagescroll.maki" param="player.main.cms,player.main.pl,player.main.vis,player.main.config"/>
+	<script file="@SKINSPATH@Komodo\engine\scripts\pagescroll.maki" param="player.main.cms,player.main.pl,player.main.vis,player.main.ml,player.main.config"/>
 	
 	<include file="@SKINPATH@overrides.xml"/>
 
