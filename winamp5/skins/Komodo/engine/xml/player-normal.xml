@@ -709,6 +709,20 @@
 		x="100" y="110" w="-200" h="-260" relatw="1" relath="1"/>
 </groupdef>
 
+<groupdef id="player.main.ie.content">
+	<rect id="ie.base"
+		fitparent="1"
+		color="0,0,0" filled="1" ghost="1"/>
+
+	<browser id="main.browser" url="http://komodo.nitrousaudio.com/" x="2" y="2" w="-4" relatw="1" h="-4" relath="1" visible="0" />
+</groupdef>
+
+
+<groupdef id="player.main.ie"  name="online">
+	<group id="player.main.ie.content"
+		x="100" y="110" w="-200" h="-260" relatw="1" relath="1"/>
+</groupdef>
+
 <groupdef id="player.pagescroller">
 	<button id="player.button.page.left"
 		x="20" y="0"
@@ -807,6 +821,7 @@
 	<group id="player.main.pl" 	x="0" y="0" w="100" h="0" relatx="2" relatw="2" relath="1" visible="0"/>
 	<group id="player.main.vis" x="0" y="0" w="100" h="0" relatx="2" relatw="2" relath="1" visible="0"/>
 	<group id="player.main.ml" x="0" y="0" w="100" h="0" relatx="2" relatw="2" relath="1" visible="0"/>
+	<group id="player.main.ie" x="0" y="0" w="100" h="0" relatx="2" relatw="2" relath="1" visible="0"/>
 	<group id="player.main.config" 	x="0" y="0" w="100" h="0" relatx="2" relatw="2" relath="1" visible="0"/>
 	
 	<group id="player.cbuttons" x="0" y="-100" relaty="1" w="235" h="265"/>
@@ -827,7 +842,7 @@
 	<group id="player.pagescroller" x="0" y="0" w="0" h="59" relatw="1"/>
 	<script file="@SKINSPATH@Komodo\engine\scripts\centerobject.maki" param="player.pagescroller,0,1"/>
 	
-	<script file="@SKINSPATH@Komodo\engine\scripts\pagescroll.maki" param="player.main.cms,player.main.pl,player.main.vis,player.main.ml,player.main.config"/>
+	<script file="@SKINSPATH@Komodo\engine\scripts\pagescroll.maki" param="player.main.cms,player.main.pl,player.main.vis,player.main.ml,player.main.ie,player.main.config"/>
 	
 	<include file="@SKINPATH@overrides.xml"/>
 

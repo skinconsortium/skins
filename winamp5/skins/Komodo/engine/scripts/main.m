@@ -18,6 +18,7 @@
 #define OPENVID 1
 #define OPENAVS 2
 #define OPENML 3
+#define OPENIE 4
 
 Global layout main; 
 
@@ -36,6 +37,7 @@ Global group VISGroup, vidButtons, avsButtons;
 Global WindowHolder AVSHolder, VideoHolder, MLHolder;
 Global int localOpen, openVIDAVS;
 Global timer delayVisShow, delayClearLocalOpen, delayRequestPageSwitch;
+Global browser mainBrowser;
 
 Global group pbuttonsWindow, pbuttonsFull;
 Global button buttonWindow, buttonFull;
@@ -85,6 +87,7 @@ System.onScriptLoaded() {
 	avsRandom.onDataChanged();
 	
 	MLHolder = main.findObject("wndhlr.ml");
+	mainBrowser = main.findObject("main.browser");
 	
 	delayVisShow = new Timer;
 	delayVisShow.setDelay(1500);
@@ -187,13 +190,18 @@ main.onAction(String action, String param, Int x, int y, int p1, int p2, GuiObje
 		AVSHolder.hide();
 		VideoHolder.hide();
 		MLHolder.hide();
-		if (param=="player.main.vis" || param=="player.main.ml") {
+		mainBrowser.hide();
+		
+		if (param=="player.main.vis" || param=="player.main.ml" || param=="player.main.ie") {
 			if (param=="player.main.ml") openVIDAVS = OPENML;
+			if (param=="player.main.ie") openVIDAVS = OPENIE;
+			
 			delayVisShow.start();
 			
 			if ((isVideo() && openVIDAVS==0) || openVIDAVS == OPENVID) videoname = 1;
 		} else {
 			if (delayVisShow.isRunning()) delayVisShow.stop();
+			openVIDAVS = -1;
 		}
 		
 		group temp = NULL;
@@ -223,11 +231,15 @@ delayRequestPageSwitch.onTimer() {
 delayVisShow.onTimer() {
 	stop();
 	
-	if (!VISGroup.isVisible() && openVIDAVS!=OPENML) return;
+	if (!VISGroup.isVisible() && openVIDAVS!=OPENML && openVIDAVS!=OPENIE) return;
 	
 	localOpen = 1;
+
 	if (openVIDAVS == OPENML) {
 		MLHolder.show();
+	} else if (openVIDAVS == OPENIE) {
+		mainBrowser.show();
+		
 	} else if ((isVideo() && openVIDAVS==0) || openVIDAVS == OPENVID) {
 		VideoHolder.show();
 		vidButtons.show();
