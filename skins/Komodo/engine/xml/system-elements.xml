@@ -16,6 +16,10 @@
 	<bitmap id="ratings.nostar" file="graphics.png" x="1" y="527" w="150" h="22" gammagroup="ratings"/>
 	<bitmap id="ratings.star" file="graphics.png" x="1" y="550" w="150" h="22" gammagroup="ratings"/>
 	<bitmap id="ratings.hover" file="graphics.png" x="1" y="573" w="150" h="22" gammagroup="ratings"/>
+	
+	<bitmap id="covershow.ratings.star" file="graphics.png" x="152" y="527" w="100" h="15" gammagroup="ratings"/>
+	<bitmap id="covershow.ratings.hover" file="graphics.png" x="152" y="543" w="100" h="15" gammagroup="ratings"/>
+	<bitmap id="covershow.ratings.nostar" file="graphics.png" x="152" y="559" w="100" h="15" gammagroup="ratings"/>
 
 	<bitmap id="nocover" file="nocover.png" gammagroup="cdcase"/> 
   
