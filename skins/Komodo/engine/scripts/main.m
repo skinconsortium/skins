@@ -38,9 +38,11 @@ Global WindowHolder AVSHolder, VideoHolder, MLHolder;
 Global int localOpen, openVIDAVS;
 Global timer delayVisShow, delayClearLocalOpen, delayRequestPageSwitch;
 Global browser mainBrowser;
+Global string homepage;
 
 Global group pbuttonsWindow, pbuttonsFull;
 Global button buttonWindow, buttonFull;
+Global button buttonIEPrev, buttonIENext, buttonIEReload, buttonIEStop, buttonIEHome;
 Global guiobject topbar;
 Global int nosizesave;
 
@@ -88,6 +90,14 @@ System.onScriptLoaded() {
 	
 	MLHolder = main.findObject("wndhlr.ml");
 	mainBrowser = main.findObject("main.browser");
+	
+	buttonIEPrev = main.findObject("ieprev.button");
+	buttonIENext = main.findObject("ienext.button");
+	buttonIEReload = main.findObject("ierefresh.button");
+	buttonIEStop = main.findObject("iestop.button");
+	buttonIEHome = main.findObject("iehome.button");
+	homepage = "http://komodo.nitrousaudio.com/";
+	mainBrowser.navigateURL(homepage);
 	
 	delayVisShow = new Timer;
 	delayVisShow.setDelay(1500);
@@ -194,7 +204,8 @@ main.onAction(String action, String param, Int x, int y, int p1, int p2, GuiObje
 		
 		if (param=="player.main.vis" || param=="player.main.ml" || param=="player.main.ie") {
 			if (param=="player.main.ml") openVIDAVS = OPENML;
-			if (param=="player.main.ie") openVIDAVS = OPENIE;
+			else if (param=="player.main.ie") openVIDAVS = OPENIE;
+			else if (openVIDAVS != OPENVID && openVIDAVS != OPENAVS) openVIDAVS = -1;
 			
 			delayVisShow.start();
 			
@@ -239,7 +250,6 @@ delayVisShow.onTimer() {
 		MLHolder.show();
 	} else if (openVIDAVS == OPENIE) {
 		mainBrowser.show();
-		
 	} else if ((isVideo() && openVIDAVS==0) || openVIDAVS == OPENVID) {
 		VideoHolder.show();
 		vidButtons.show();
@@ -249,7 +259,7 @@ delayVisShow.onTimer() {
 	}
 	delayClearLocalOpen.start();
 	
-	openVIDAVS = 0;
+	openVIDAVS = -1;
 }
 
 delayClearLocalOpen.onTimer() {
@@ -333,6 +343,37 @@ xfadetime.onDataChanged() {
 		xfade.setData("1");
 	if (getData()=="0" && xfade.getData()!="0") 
 		xfade.setData("0");
+}
+
+// browser controls
+buttonIEPrev.onLeftClick() {
+	if (!mainBrowser.isVisible()) return;
+	
+	mainBrowser.back();
+}
+
+buttonIENext.onLeftClick() {
+	if (!mainBrowser.isVisible()) return;
+	
+	mainBrowser.forward();
+}
+
+buttonIEReload.onLeftClick() {
+	if (!mainBrowser.isVisible()) return;
+	
+	mainBrowser.refresh();
+}
+
+buttonIEStop.onLeftClick() {
+	if (!mainBrowser.isVisible()) return;
+	
+	mainBrowser.stop();
+}
+
+buttonIEHome.onLeftClick() {
+	if (!mainBrowser.isVisible()) return;
+	
+	mainBrowser.navigateUrl(homepage);
 }
 
 // window/fullscreen controls
