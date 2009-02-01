@@ -709,16 +709,77 @@
 		x="100" y="110" w="-200" h="-260" relatw="1" relath="1"/>
 </groupdef>
 
+<groupdef id="player.main.ie.buttons">
+
+	<button id="ieprev.button" x="0" y="0" 
+		image="player.main.gen.button"
+		downimage="player.main.gen.button.down"
+		hoverimage="player.main.gen.button.hover" rectrgn="1"/>
+	<layer id="ieprev.icon" x="5" y="0"
+		image="player.main.icon.ie.prev" ghost="1"/>
+	<text id="ieprev.text" x="35" y="0" w="90" h="30"
+		text="BACK" align="left" ghost="1"
+		font="font.gen.button" fontsize="18" bold="1"
+		color="color.button.label" alpha="128"/>
+		
+	<button id="ienext.button" x="100" y="0" 
+		image="player.main.gen.button"
+		downimage="player.main.gen.button.down"
+		hoverimage="player.main.gen.button.hover" rectrgn="1"/>
+	<layer id="ienext.icon" x="105" y="0"
+		image="player.main.icon.ie.next" ghost="1"/>
+	<text id="ienext.text" x="135" y="0" w="90" h="30"
+		text="FWD" align="left" ghost="1"
+		font="font.gen.button" fontsize="18" bold="1"
+		color="color.button.label" alpha="128"/>
+
+	<button id="ierefresh.button" x="200" y="0" 
+		image="player.main.gen.button"
+		downimage="player.main.gen.button.down"
+		hoverimage="player.main.gen.button.hover" rectrgn="1"/>
+	<layer id="ierefresh.icon" x="205" y="0"
+		image="player.main.icon.ie.refresh" ghost="1"/>
+	<text id="ierefresh.text" x="232" y="0" w="55" h="30"
+		text="RELOAD" align="left" ghost="1"
+		font="font.gen.button" fontsize="16" bold="1"
+		color="color.button.label" alpha="128"/>
+		
+	<button id="iestop.button" x="300" y="0" 
+		image="player.main.gen.button"
+		downimage="player.main.gen.button.down"
+		hoverimage="player.main.gen.button.hover" rectrgn="1"/>
+	<layer id="iestop.icon" x="305" y="0"
+		image="player.main.icon.ie.stop" ghost="1"/>
+	<text id="iestop.text" x="335" y="0" w="90" h="30"
+		text="STOP" align="left" ghost="1"
+		font="font.gen.button" fontsize="18" bold="1"
+		color="color.button.label" alpha="128"/>
+		
+	<button id="iehome.button" x="400" y="0" 
+		image="player.main.gen.button"
+		downimage="player.main.gen.button.down"
+		hoverimage="player.main.gen.button.hover" rectrgn="1"/>
+	<layer id="iehome.icon" x="405" y="0"
+		image="player.main.icon.ie.home" ghost="1"/>
+	<text id="iehome.text" x="435" y="0" w="90" h="30"
+		text="HOME" align="left" ghost="1"
+		font="font.gen.button" fontsize="18" bold="1"
+		color="color.button.label" alpha="128"/>
+	
+</groupdef>
+
 <groupdef id="player.main.ie.content">
 	<rect id="ie.base"
 		fitparent="1"
 		color="0,0,0" filled="1" ghost="1"/>
 
-	<browser id="main.browser" url="http://komodo.nitrousaudio.com/" x="2" y="2" w="-4" relatw="1" h="-4" relath="1" visible="0" />
+	<browser id="main.browser" x="2" y="2" w="-4" relatw="1" h="-4" relath="1" visible="0" />
 </groupdef>
 
 
 <groupdef id="player.main.ie"  name="online">
+	<group id="player.main.ie.buttons" x="100" y="70" w="-200" h="30" relatw="1"/>
+
 	<group id="player.main.ie.content"
 		x="100" y="110" w="-200" h="-260" relatw="1" relath="1"/>
 </groupdef>
@@ -771,7 +832,7 @@
 
 <groupdef id="player.main.pbuttons.window">
 	<grid id="pbutton.topbar"
-		x="0" y="0" w="0" h="30" relatw="1" rectrgn="1" move="1"
+		x="0" y="0" w="0" h="30" relatw="1" rectrgn="1" move="1" wantfocus="1"
 		left="player.main.topbar.left"
 		middle="player.main.topbar.mid"
 		right="player.main.topbar.right"/>
@@ -813,7 +874,7 @@
 <layout id="normal" desktopalpha="0"
 	minimum_h="480" minimum_w="640" maximum_h="3864" maximum_w="3152" move="1" lockminmax="0">
 
-	<layer id="bg.noalpha" x="0" y="0" w="0" h="0" relatw="1" relath="1" image="player.main.background.noalpha" sysregion="1" move="0"/>
+	<layer id="bg.noalpha" x="0" y="0" w="0" h="0" relatw="1" relath="1" image="player.main.background.noalpha" sysregion="1" move="0" wantfocus="1"/>
 	
 	<CustomBG x="0" y="0" w="0" h="0" relatw="1" relath="1"/>
 

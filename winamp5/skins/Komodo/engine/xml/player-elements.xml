@@ -82,6 +82,13 @@
 <bitmap id="player.main.icon.vis.fulls" file="graphics.png" x="330" y="310" w="30" h="30" gammagroup="buttonLabel"/> 
 <bitmap id="player.main.icon.vis.tv" file="graphics.png" x="360" y="310" w="30" h="30" gammagroup="buttonLabel"/> 
 
+<bitmap id="player.main.icon.ie.prev" file="graphics.png" x="210" y="341" w="30" h="30" gammagroup="buttonLabel"/>  
+<bitmap id="player.main.icon.ie.next" file="graphics.png" x="240" y="341" w="30" h="30" gammagroup="buttonLabel"/> 
+<bitmap id="player.main.icon.ie.refresh" file="graphics.png" x="270" y="341" w="30" h="30" gammagroup="buttonLabel"/> 
+<bitmap id="player.main.icon.ie.stop" file="graphics.png" x="300" y="341" w="30" h="30" gammagroup="buttonLabel"/>
+<bitmap id="player.main.icon.ie.go" file="graphics.png" x="330" y="341" w="30" h="30" gammagroup="buttonLabel"/>
+<bitmap id="player.main.icon.ie.home" file="graphics.png" x="360" y="341" w="30" h="30" gammagroup="buttonLabel"/>
+
 <bitmap id="player.pl.selector.left" file="graphics.png" x="388" y="1" w="10" h="35" gammagroup="glass"/>  
 <bitmap id="player.pl.selector.middle" file="graphics.png" x="399" y="1" w="70" h="35" gammagroup="glass"/> 
 <bitmap id="player.pl.selector.right" file="graphics.png" x="470" y="1" w="10" h="35" gammagroup="glass"/> 
