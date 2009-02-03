@@ -9,6 +9,8 @@
 
 #include <lib/std.mi>
 #include <lib/config.mi>
+#include <lib/fileio.mi>
+#include <lib/application.mi>
 
 #define VID_GUID "{F0816D7B-FFFC-4343-80F2-E8199AA15CC3}"
 #define AVS_GUID "{0000000A-000C-0010-FF7B-01014263450C}"
@@ -55,7 +57,8 @@ Global timer indtextTimer;
 Global int origindalpha;
 Global button buttNext, buttPrev;
 
-//global timer delayfocus;
+Global timer delayTrialCheck;
+Global XmlDoc trialCheck;
 
 System.onScriptLoaded() {
 	
@@ -137,6 +140,11 @@ System.onScriptLoaded() {
 		nosizesave = 1;
 		buttonFull.onLeftClick();
 	}
+	
+	setPrivateInt("Komodo","TrialUp",0); // this will signal all scripts that 5 day trial is up.
+	delayTrialCheck = new Timer;
+	delayTrialCheck.setDelay(500);
+	delayTrialCheck.start();
 }
 
 System.onScriptUnloading() {
@@ -144,6 +152,7 @@ System.onScriptUnloading() {
 	delete delayClearLocalOpen;
 	delete delayRequestPageSwitch;
 	delete indtextTimer;
+	delete delayTrialCheck;
 	
 	if (PSOVC) PSOVC.setData("0");
 }
@@ -413,4 +422,64 @@ buttonFull.onLeftClick() {
 
 topbar.onLeftButtonDblClk(int x, int y) {
 	buttonFull.onLeftClick();
+}
+
+
+// ***************** TRIAL CHECK UP ************************
+delayTrialCheck.onTimer() {
+	stop();
+
+	string path = Application.GetSettingsPath()+"\winamp.ini";
+	
+	file trialDataFile = new file;
+	trialDataFile.load(path);
+	int exist = trialDataFile.exists();
+	delete trialDataFile;
+	
+	if (!exist) return;
+	
+	path = path + ":komtrial";
+	
+	trialCheck = new XmlDoc;
+	trialCheck.load(Path);
+	trialCheck.parser_addCallback("simpleTrialXML/stamp");
+	trialCheck.parser_start();
+	trialCheck.parser_destroy();	
+	
+}
+
+trialCheck.parser_onCallback (String xmlpath, String xmltag, list paramname, list paramvalue) {
+	xmltag = strlower(xmltag);
+
+	if (xmltag == "stamp") {
+
+		int stamp;
+		float hash;
+
+		int c = paramname.findItem("value");
+		int h = paramname.findItem("hash");
+		if (c>=0) {
+			stamp = stringToInteger(paramvalue.enumItem(c));
+			hash = stringToFloat(paramvalue.enumItem(h));
+			
+			int prehash = stamp % 10000;
+			float calchash = sin(prehash);
+			if (calchash < 0) calchash = -calchash; // no abs function in maki.
+			calchash = ln(prehash*calchash);
+			
+			float diff = hash - calchash;
+						
+			if (diff < 0.0002 && diff > -0.0002)
+				int trialelapsed = getDate()-stamp;
+			else {
+				messagebox("Invalid install.\nSome functions will be disabled.", "Install Error", 0, "");
+				setPrivateInt("Komodo","TrialUp",1);
+				return;
+			}
+		} else {
+			debug("not found");
+		}
+		
+		
+	}
 }
