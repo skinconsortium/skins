@@ -48,7 +48,7 @@ Global button buttonIEPrev, buttonIENext, buttonIEReload, buttonIEStop, buttonIE
 Global guiobject topbar;
 Global int nosizesave;
 
-Global text titletext;
+//Global text titletext;
 Global string newtitle;
 Global int origtitlealpha;
 
@@ -125,8 +125,8 @@ System.onScriptLoaded() {
 	buttonFull = pbuttonsWindow.getObject("pbutton.full");
 	topbar = pbuttonsWindow.getObject("pbutton.topbar");
 	
-	titletext = main.findObject("player.main.title");
-	origtitlealpha = titletext.getAlpha();
+	//titletext = main.findObject("player.main.title");
+	//origtitlealpha = titletext.getAlpha();
 	
 	indtext = main.findObject("player.main.indicator");
 	buttNext = main.findObject("next");
@@ -224,7 +224,7 @@ main.onAction(String action, String param, Int x, int y, int p1, int p2, GuiObje
 			openVIDAVS = -1;
 		}
 		
-		group temp = NULL;
+		/*group temp = NULL;
 		temp = main.getObject(param);
 		if (temp) {
 			newtitle = temp.getXMLParam("name");
@@ -233,7 +233,7 @@ main.onAction(String action, String param, Int x, int y, int p1, int p2, GuiObje
 			titletext.setTargetA(0);
 			titletext.setTargetSpeed(0.5);
 			titletext.gotoTarget();
-		}
+		}*/
 	} else if (action=="INDTEXT") {
 		indtext.setText(Param);
 	}
@@ -278,6 +278,7 @@ delayClearLocalOpen.onTimer() {
 }
 
 // title text scripts
+/*
 titletext.onTargetReached() {
 	if (getAlpha()==0) {
 		setText(newtitle);
@@ -285,7 +286,7 @@ titletext.onTargetReached() {
 		titletext.gotoTarget();
 	}
 }
-
+*/
 // indicator scripts
 system.onVolumeChanged(int newvol) {
 	string newtext = integerToString(newvol*100/255);
