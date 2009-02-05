@@ -17,6 +17,8 @@
 #define ML_GUID "{6B0EDF80-C9A5-11D3-9F26-00C04F39FFC6}"
 #define SKINTWEAKS_CFGPAGE "{0542AFA4-48D9-4c9f-8900-5739D52C114F}"
 
+#define HOMEPAGEURL "http://komodo.nitrousaudio.com/"
+
 #define OPENVID 1
 #define OPENAVS 2
 #define OPENML 3
@@ -35,7 +37,7 @@ Global text avsRandomInd;
 Global configAttribute xfade, xfadetime, PSOVC, avsRandom;
 Global configAttribute attrRepeat, attrShuffle;
 
-Global group VISGroup, vidButtons, avsButtons;
+Global group NowPlayingGroup, VISGroup, vidButtons, avsButtons;
 Global WindowHolder AVSHolder, VideoHolder, MLHolder;
 Global int localOpen, openVIDAVS;
 Global timer delayVisShow, delayClearLocalOpen, delayRequestPageSwitch;
@@ -60,6 +62,9 @@ Global button buttNext, buttPrev;
 Global timer delayTrialCheck;
 Global XmlDoc trialCheck;
 
+Global timer mouseMonitor, firstload;
+Global int lastmousex, lastmousey, returnToMainCntr;
+
 System.onScriptLoaded() {
 	
 	main = getContainer("main").getLayout("normal");
@@ -83,6 +88,7 @@ System.onScriptLoaded() {
 	configGroup = Config.getItemByGuid("{0000000A-000C-0010-FF7B-01014263450C}");
 	if (configGroup) avsRandom = configGroup.getAttribute("Random");
 	
+	NowPlayingGroup = main.findObject("player.main.cms");
 	VISGroup = main.findObject("player.main.vis");
 	AVSHolder = VISGroup.findObject("wndhlr.avs");
 	VideoHolder = VISGroup.findObject("wndhlr.vid");
@@ -99,7 +105,7 @@ System.onScriptLoaded() {
 	buttonIEReload = main.findObject("ierefresh.button");
 	buttonIEStop = main.findObject("iestop.button");
 	buttonIEHome = main.findObject("iehome.button");
-	homepage = "http://komodo.nitrousaudio.com/";
+	homepage = HOMEPAGEURL;
 	mainBrowser.navigateURL(homepage);
 	
 	delayVisShow = new Timer;
@@ -141,10 +147,22 @@ System.onScriptLoaded() {
 		buttonFull.onLeftClick();
 	}
 	
-	setPrivateInt("Komodo","TrialUp",0); // this will signal all scripts that 5 day trial is up.
+	setPrivateInt("Komodo","TUP",0); // this will signal all scripts that 5 day trial is up.
 	delayTrialCheck = new Timer;
 	delayTrialCheck.setDelay(500);
 	delayTrialCheck.start();
+	
+	//returnToMainCntr = 10;
+	//mousemonitor = new Timer;
+	//mousemonitor.setDelay(1000);
+	
+	if (getPrivateInt("Komodo","First Load",1) == 1) {
+		setPrivateInt("Komodo","First Load",0);
+		
+		firstload = new Timer;
+		firstload.setDelay(3000);
+		firstload.start();
+	};
 }
 
 System.onScriptUnloading() {
@@ -153,6 +171,7 @@ System.onScriptUnloading() {
 	delete delayRequestPageSwitch;
 	delete indtextTimer;
 	delete delayTrialCheck;
+	//delete mousemonitor;
 	
 	if (PSOVC) PSOVC.setData("0");
 }
@@ -425,6 +444,42 @@ topbar.onLeftButtonDblClk(int x, int y) {
 	buttonFull.onLeftClick();
 }
 
+firstload.onTimer() {
+	stop();
+	
+	main.sendAction("REQUESTSWITCHPAGE", "", 0,0,4,0);
+}
+
+// **** section disabled for now
+// this monitors mouse activity. 
+/*mousemonitor.onTimer() {
+	int mx = getMousePosX();
+	int my = getMousePosY();
+	
+	if (mx != lastmousex || my != lastmousey && isAppActive()) {
+		lastmousex = mx;
+		lastmousey = my;
+		returnToMainCntr = 10;
+	} else {
+		
+		if (returnToMainCntr <= 0) {
+			
+			returnToMainCntr = 10;
+			if (!NowPlayingGroup.isVisible()) main.sendAction("REQUESTSWITCHPAGE", "", 0,0,0,0);
+		} else {
+			returnToMainCntr--;
+			//indtext.setText("cd: "+integertostring(returnToMainCntr));
+		}
+	}
+}
+
+NowPlayingGroup.onSetVisible(int on) {
+	if (on) 
+		mousemonitor.stop();
+	else {
+		mousemonitor.start();}
+}*/
+
 
 // ***************** TRIAL CHECK UP ************************
 delayTrialCheck.onTimer() {
@@ -437,9 +492,14 @@ delayTrialCheck.onTimer() {
 	int exist = trialDataFile.exists();
 	delete trialDataFile;
 	
-	if (!exist) return;
+	if (!exist) {
+		messagebox("Invalid install, please reinstall.\nSome functions will be disabled.", "Install Error", 0, "");
+		setPrivateInt("Komodo","TUP",1);
+		return;
+	}
 	
 	path = path + ":komtrial";
+	//path = Application.GetSettingsPath()+"\\trial.xml";
 	
 	trialCheck = new XmlDoc;
 	trialCheck.load(Path);
@@ -470,15 +530,37 @@ trialCheck.parser_onCallback (String xmlpath, String xmltag, list paramname, lis
 			
 			float diff = hash - calchash;
 						
-			if (diff < 0.0002 && diff > -0.0002)
-				int trialelapsed = getDate()-stamp;
-			else {
-				messagebox("Invalid install.\nSome functions will be disabled.", "Install Error", 0, "");
-				setPrivateInt("Komodo","TrialUp",1);
+			if (diff < 0.0002 && diff > -0.0002) {
+				int currentDate = getDate();
+				int lastDate = getPrivateInt("Komodo","LTS",0); // LTS = last time stamp
+				if (currentDate < lastDate) currentDate = lastDate; // used if people gets smart and start changing system time
+				setPrivateInt("Komodo","LTS",currentDate);
+				
+				int trialelapsed = (currentDate-stamp)/8640; //24*60*60/10 = 8640
+				int res = 0;
+				if (trialelapsed > 51) {
+					res = messagebox("Trial expired. Some functions will be disabled.\nTo purchase full version click OK.", "Trial Expired",3, "");
+					setPrivateInt("Komodo","TUP",1);
+				} else {
+					int daysleft = 5-trialelapsed/10;
+					// only displays trial notice once-a-day.
+					if (daysleft != getPrivateInt("Komodo","LDL",-1)) { // LDL = last days left
+						res = messagebox(integertostring(daysleft)+" trial days left. \nTo purchase full version click OK.", "Trial Notice",3, "");
+						setPrivateInt("Komodo","LDL",daysleft);
+					}
+					setPrivateInt("Komodo","TUP",1);
+				}
+				
+				if (res == 1) navigateURL(HOMEPAGEURL);
+			} else {
+				messagebox("Invalid install, please reinstall.\nSome functions will be disabled.", "Install Error", 0, "");
+				setPrivateInt("Komodo","TUP",1);
 				return;
 			}
 		} else {
-			debug("not found");
+			messagebox("Invalid install, please reinstall.\nSome functions will be disabled.", "Install Error", 0, "");
+			setPrivateInt("Komodo","TUP",1);
+			return;
 		}
 		
 		

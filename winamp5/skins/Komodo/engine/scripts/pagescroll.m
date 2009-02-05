@@ -94,6 +94,7 @@ scriptGroup.onAction(String action, String param, Int x, int y, int p1, int p2, 
 	action = strupper(action);
 
 	if (action=="REQUESTSWITCHPAGE") {
+		int pagediff = p1-currPage;
 		string currGroupID = getToken(pageList, ",", currPage);
 		currGroup = scriptGroup.getObject(currGroupID);
 		if (currPage == p1) {
@@ -114,12 +115,20 @@ scriptGroup.onAction(String action, String param, Int x, int y, int p1, int p2, 
 		
 		scriptGroup.sendAction("SWITCHPAGE", nextGroupID, 0,0,0,0);
 		
-		nextGroup.setXMLParam("x","100");
+		if (pagediff < 0) pagediff = pagediff + maxPage;
+		if (pagediff <= (maxPage/2)) {
+			nextGroup.setXMLParam("x","100");
+			currGroup.setTargetX(-100);
+			nextGroup.setTargetX(0);
+		} else {
+			nextGroup.setXMLParam("x","-100");
+			currGroup.setTargetX(100);
+			nextGroup.setTargetX(0);
+		}
+
 		nextGroup.show();
 		
-		currGroup.setTargetX(-100);
 		currGroup.setTargetSpeed(1);
-		nextGroup.setTargetX(0);
 		nextGroup.setTargetSpeed(1);
 		
 		currGroup.gotoTarget();
