@@ -140,7 +140,7 @@ System.onScriptLoaded() {
 	indtextTimer = new Timer;
 	indtextTimer.setDelay(1000);
 	
-	setPrivateInt("Komodo","TUP",0); // this will signal all scripts that 5 day trial is up.
+	setPrivateInt("Komodo","TUP",1); // this will signal all scripts that 5 day trial is up.
 	delayTrialCheck = new Timer;
 	delayTrialCheck.setDelay(100);
 	delayTrialCheck.start();
@@ -539,13 +539,13 @@ delayTrialCheck.onTimer() {
 	
 	path = path + ":komtrial";
 	//path = Application.GetSettingsPath()+"\\trial.xml";
-	lockui();
+
 	trialCheck = new XmlDoc;
 	trialCheck.load(Path);
 	trialCheck.parser_addCallback("simpleTrialXML/stamp");
 	trialCheck.parser_start();
 	trialCheck.parser_destroy();	
-	unlockui();
+
 	
 	if (getPrivateInt("Komodo","TUP",0) == 1) {
 		if (pbuttonsFull.isVisible()) {
@@ -563,14 +563,33 @@ trialCheck.parser_onCallback (String xmlpath, String xmltag, list paramname, lis
 	if (xmltag == "stamp") {
 
 		int stamp;
-		float hash;
+		float hash, unhash;
 
 		int c = paramname.findItem("value");
 		int h = paramname.findItem("hash");
+		int u = paramname.findItem("unlock");
+		unhash = -1;
 		if (c>=0) {
 			stamp = stringToInteger(paramvalue.enumItem(c));
 			hash = stringToFloat(paramvalue.enumItem(h));
+			if (u >= 0) unhash = stringToFloat(paramvalue.enumItem(u));
 			
+			int forhash = stamp % 10000;
+			int t = forhash/666;
+			int forhash2 = stamp / 10000;
+			float calcunhash = t * sqrt(forhash+forhash2); // trunctated after 4 digits
+			
+			float diff = unhash - calcunhash;
+			if (diff < 0.0002 && diff > -0.0002 && unhash > 0) { //if matches the unlock code, remove all locks.
+				setPrivateInt("Komodo","TUP",0);
+				
+				if (getPrivateInt("Komodo","FirstLoadUnlocked",1) == 1) {
+					setPrivateInt("Komodo","FirstLoadUnlocked",0);
+					messagebox("All features unlocked.", "Komodo",0, "");
+				}
+				return;
+			}
+					
 			int prehash = stamp % 10000;
 			float calchash = sin(prehash);
 			if (calchash < 0) calchash = -calchash; // no abs function in maki.
@@ -586,6 +605,8 @@ trialCheck.parser_onCallback (String xmlpath, String xmltag, list paramname, lis
 				int lastDate = getPrivateInt("Komodo","LTS",0); // LTS = last time stamp
 				if (currentDate < lastDate) { // used if people gets smart and start changing system time
 					setPrivateInt("Komodo","TSO",lastDate-currentDate); // TSO = time stamp offset
+					
+					
 					currentDate = lastDate;
 				}
 				setPrivateInt("Komodo","LTS",currentDate);
