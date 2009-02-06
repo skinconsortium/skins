@@ -90,7 +90,13 @@ bgdef.onToggle(int on) {
 }
 
 bgimage.onToggle(int on) {
-
+	if (getPrivateInt("Komodo","TUP",0) == 1) {
+		layout main = getContainer("main").getLayout("normal");
+		main.sendAction("TRIALNOTICE", "", 0,0,0,0);
+		bgdef.leftClick();
+		return;
+	}
+	
 	bgimage.setActivatedNoCallback(0);
 
 	
@@ -130,6 +136,13 @@ imagefname.onEditUpdate() {
 }
 
 currbgClass.onLeftButtonDown(int x, int y) {
+	if (getPrivateInt("Komodo","TUP",0) == 1) {
+		layout main = getContainer("main").getLayout("normal");
+		main.sendAction("TRIALNOTICE", "", 0,0,0,0);
+		bgdef.leftClick();
+		return;
+	}
+	
 	string img = getXMLParam("image");
 	if (img=="") return;
 	
@@ -141,6 +154,13 @@ currbgClass.onLeftButtonDown(int x, int y) {
 }
 
 bgwall.onToggle(int on) {
+	if (getPrivateInt("Komodo","TUP",0) == 1) {
+		layout main = getContainer("main").getLayout("normal");
+		main.sendAction("TRIALNOTICE", "", 0,0,0,0);
+		bgdef.leftClick();
+		return;
+	}
+	
 	if (!on) {
 		bgwall.setActivatedNoCallback(1);
 	}

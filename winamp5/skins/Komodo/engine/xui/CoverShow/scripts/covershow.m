@@ -356,6 +356,8 @@ scrollAnim.onTimer() {
 
 
 mousetrap.onLeftButtonDblClk(int x, int y) {
+	if (getPrivateInt("Komodo","TUP",0) == 1) return;
+	
 	int playtrack = TRUE;
 	
 	group g1 = getAAgroup(1);
@@ -384,6 +386,12 @@ mousetrap.onLeftButtonDblClk(int x, int y) {
 }
 
 mousetrap.onLeftButtonDown(int x, int y) {
+	if (getPrivateInt("Komodo","TUP",0) == 1) {
+		layout main = getContainer("main").getLayout("normal");
+		main.sendAction("TRIALNOTICE", "", 0,0,0,0); 
+		return;
+	}
+	
 	mousePressed = 1;
 	if (scrollAnim.isRunning()) scrollAnim.stop();
 	
@@ -401,6 +409,7 @@ mousetrap.onLeftButtonDown(int x, int y) {
 }
 
 mousetrap.onMouseMove(int x, int y) {
+	if (getPrivateInt("Komodo","TUP",0) == 1) return;
 	if (!mousePressed) return;
 	
 	float move = lastX - getMousePosX();
@@ -431,6 +440,7 @@ mousetrap.onMouseMove(int x, int y) {
 }
 
 mousetrap.onLeftButtonUp(int x, int y) {
+	if (getPrivateInt("Komodo","TUP",0) == 1) return;
 	mousePressed = 0;
 	
 	updatePartial();
@@ -495,6 +505,7 @@ mousetrap.onLeftButtonUp(int x, int y) {
 }
 
 system.onKeyDown(string key) {
+	if (getPrivateInt("Komodo","TUP",0) == 1) return;
 	if (!parentLayout.isActive()) return;
 	if (!scriptGroup.isVisible()) return;
 	
@@ -589,6 +600,7 @@ mouseTrap.onLeaveArea() {
 parentLayout.onAction(String action, String param, Int x, int y, int clicked, int lines, GuiObject source) {
 	if (!scriptGroup.isVisible()) return 0;
 	if (!mousetrap.isMouseOverRect()) return 0;
+	if (getPrivateInt("Komodo","TUP",0) == 1) return 0;
 	
 	if (action=="PLSCROLLUP") {
 		int cur = currPos;

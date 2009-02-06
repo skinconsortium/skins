@@ -83,8 +83,6 @@ System.onScriptLoaded() {
 	attrRepeat = item.getAttribute("repeat");
 	attrShuffle = item.getAttribute("shuffle");
 	
-	xfadetime.onDataChanged();
-	
 	configGroup = Config.getItemByGuid("{0000000A-000C-0010-FF7B-01014263450C}");
 	if (configGroup) avsRandom = configGroup.getAttribute("Random");
 	
@@ -142,21 +140,23 @@ System.onScriptLoaded() {
 	indtextTimer = new Timer;
 	indtextTimer.setDelay(1000);
 	
-	if (getPrivateInt(getSkinName(),"windowmode", 0) == 0) {
-		nosizesave = 1;
-		buttonFull.onLeftClick();
-	}
-	
 	setPrivateInt("Komodo","TUP",0); // this will signal all scripts that 5 day trial is up.
 	delayTrialCheck = new Timer;
-	delayTrialCheck.setDelay(500);
+	delayTrialCheck.setDelay(100);
 	delayTrialCheck.start();
 	
 	//returnToMainCntr = 10;
 	//mousemonitor = new Timer;
 	//mousemonitor.setDelay(1000);
 	
+	if (getPrivateInt(getSkinName(),"windowmode", 0) == 0) {
+		nosizesave = 1;
+		buttonFull.onLeftClick();
+	}
+	
 	if (getPrivateInt("Komodo","First Load",1) == 1) {
+		setPrivateInt("Komodo","TSO",0);
+		setPrivateInt("Komodo","LTS",0);
 		setPrivateInt("Komodo","First Load",0);
 		
 		firstload = new Timer;
@@ -255,6 +255,12 @@ main.onAction(String action, String param, Int x, int y, int p1, int p2, GuiObje
 		}*/
 	} else if (action=="INDTEXT") {
 		indtext.setText(Param);
+	} else if (action=="TRIALNOTICE") {
+		lockui();
+		int res = messagebox("Feature requires full version. \nTo purchase full version click OK.", "Trial Notice",3, "");
+		
+		if (res == 1) navigateURL(HOMEPAGEURL);
+		unlockui();
 	}
 }
 
@@ -368,6 +374,7 @@ avsRandom.onDataChanged() {
 
 // xfade main control scripts
 xfadetime.onDataChanged() {
+	return;
 	if (getData()!="0" && xfade.getData()!="1") 
 		xfade.setData("1");
 	if (getData()=="0" && xfade.getData()!="0") 
@@ -419,9 +426,14 @@ buttonWindow.onLeftClick() {
 	
 	main.resize(wx,wy,ww,wh);
 	main.setXMLParam("lockminmax","0");
+	main.setXMLParam("move","1");
 }
 
 buttonFull.onLeftClick() {
+	if (getPrivateInt("Komodo","TUP",0) == 1) {
+		main.sendAction("TRIALNOTICE", "", 0,0,0,0);
+		return;
+	}
 	pbuttonsWindow.hide();
 	pbuttonsFull.show();
 	
@@ -440,6 +452,24 @@ buttonFull.onLeftClick() {
 	main.setXMLParam("lockminmax","1");
 }
 
+main.onResize(int x, int y, int w, int h) {
+	if (!pbuttonsFull.isVisible()) return;
+	
+	if (x!=0 || y!=0 || w!=getMonitorWidth() || h!=getMonitorHeight()) {
+		nosizesave=1;
+		buttonFull.onLeftClick();
+	}
+}
+
+main.onMove() {
+	if (!pbuttonsFull.isVisible()) return;
+	
+	if (main.getLeft()!=0 || main.getTop()!=0) {
+		nosizesave=1;
+		buttonFull.onLeftClick();
+	}
+}
+
 topbar.onLeftButtonDblClk(int x, int y) {
 	buttonFull.onLeftClick();
 }
@@ -448,6 +478,13 @@ firstload.onTimer() {
 	stop();
 	
 	main.sendAction("REQUESTSWITCHPAGE", "", 0,0,4,0);
+	
+	if (pbuttonsFull.isVisible()) {
+		if (main.getLeft()!=0 || main.getTop()!=0) {
+			nosizesave=1;
+			buttonFull.onLeftClick();
+		}
+	}
 }
 
 // **** section disabled for now
@@ -485,6 +522,8 @@ NowPlayingGroup.onSetVisible(int on) {
 delayTrialCheck.onTimer() {
 	stop();
 
+	xfadetime.onDataChanged();
+	
 	string path = Application.GetSettingsPath()+"\winamp.ini";
 	
 	file trialDataFile = new file;
@@ -500,13 +539,22 @@ delayTrialCheck.onTimer() {
 	
 	path = path + ":komtrial";
 	//path = Application.GetSettingsPath()+"\\trial.xml";
-	
+	lockui();
 	trialCheck = new XmlDoc;
 	trialCheck.load(Path);
 	trialCheck.parser_addCallback("simpleTrialXML/stamp");
 	trialCheck.parser_start();
 	trialCheck.parser_destroy();	
+	unlockui();
 	
+	if (getPrivateInt("Komodo","TUP",0) == 1) {
+		if (pbuttonsFull.isVisible()) {
+			buttonWindow.onLeftClick();
+		}
+		togglebutton bgdef = main.findObject("config.button.default");
+		
+		bgdef.leftClick();
+	}
 }
 
 trialCheck.parser_onCallback (String xmlpath, String xmltag, list paramname, list paramvalue) {
@@ -531,35 +579,43 @@ trialCheck.parser_onCallback (String xmlpath, String xmltag, list paramname, lis
 			float diff = hash - calchash;
 						
 			if (diff < 0.0002 && diff > -0.0002) {
+				int stampoffset = getPrivateInt("Komodo","TSO",0);
+				stamp = stamp - stampoffset;
+				
 				int currentDate = getDate();
 				int lastDate = getPrivateInt("Komodo","LTS",0); // LTS = last time stamp
-				if (currentDate < lastDate) currentDate = lastDate; // used if people gets smart and start changing system time
+				if (currentDate < lastDate) { // used if people gets smart and start changing system time
+					setPrivateInt("Komodo","TSO",lastDate-currentDate); // TSO = time stamp offset
+					currentDate = lastDate;
+				}
 				setPrivateInt("Komodo","LTS",currentDate);
 				
-				int trialelapsed = (currentDate-stamp)/8640; //24*60*60/10 = 8640
+				int trialelapsed = (currentDate-stamp)/864; //24*60*60/100 = 864
 				int res = 0;
-				if (trialelapsed > 51) {
-					res = messagebox("Trial expired. Some functions will be disabled.\nTo purchase full version click OK.", "Trial Expired",3, "");
+				if (trialelapsed > 500) {
 					setPrivateInt("Komodo","TUP",1);
+					res = messagebox("Trial expired. Some functions will be disabled.\nTo purchase full version click OK.", "Trial Expired",3, "");
 				} else {
-					int daysleft = 5-trialelapsed/10;
+					int daysleft = trialelapsed/100;
+					daysleft = 5-daysleft;
+					
 					// only displays trial notice once-a-day.
 					if (daysleft != getPrivateInt("Komodo","LDL",-1)) { // LDL = last days left
 						res = messagebox(integertostring(daysleft)+" trial days left. \nTo purchase full version click OK.", "Trial Notice",3, "");
 						setPrivateInt("Komodo","LDL",daysleft);
 					}
-					setPrivateInt("Komodo","TUP",1);
+					setPrivateInt("Komodo","TUP",0);
 				}
 				
 				if (res == 1) navigateURL(HOMEPAGEURL);
 			} else {
-				messagebox("Invalid install, please reinstall.\nSome functions will be disabled.", "Install Error", 0, "");
 				setPrivateInt("Komodo","TUP",1);
+				messagebox("Invalid install, please reinstall.\nSome functions will be disabled.", "Install Error", 0, "");
 				return;
 			}
 		} else {
-			messagebox("Invalid install, please reinstall.\nSome functions will be disabled.", "Install Error", 0, "");
 			setPrivateInt("Komodo","TUP",1);
+			messagebox("Invalid install, please reinstall.\nSome functions will be disabled.", "Install Error", 0, "");
 			return;
 		}
 		
