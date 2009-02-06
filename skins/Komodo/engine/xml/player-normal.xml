@@ -2,7 +2,7 @@
 	<button 
 		id="Rev"
 		x="0" y="0"
-		action="PREV"  alpha="200"
+		action="PREV"
 		image="player.main.rev" 
 		downimage="player.main.revd"
 		rectrgn="1"
@@ -14,7 +14,7 @@
 	<button 
 		id="Eject"
 		x="47" y="0"
-		action="EJECT"  alpha="200"
+		action="EJECT"
 		image="player.main.eject"
 		downimage="player.main.ejectd"
 		rectrgn="1"
@@ -46,7 +46,7 @@
 	<button 
 		id="Next"
 		x="185" y="0"
-		action="NEXT"  alpha="200"
+		action="NEXT"
 		image="player.main.forward"
 		downimage="player.main.forwardd"
 		rectrgn="1"
