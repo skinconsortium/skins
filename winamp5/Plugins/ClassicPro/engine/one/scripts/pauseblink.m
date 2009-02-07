@@ -13,6 +13,7 @@ System.onScriptLoaded() {
 	mainGroup = getScriptGroup();
 	tracktimer = mainGroup.findObject("SongTime");
 
+
 	myTimer = new Timer;
 	myTimer.setDelay(700);
 	
@@ -21,16 +22,14 @@ System.onScriptLoaded() {
 	}
 }
 
+
 System.onScriptUnloading(){
 	delete myTimer;
 }
 
-
-
 myTimer.onTimer(){
 	doFade();
 }
-
 
 System.onStop(){
 	stopFade();
@@ -57,11 +56,13 @@ doFade(){
 	direction=!direction;
 }
 
+
 startFade(){
 	direction=true;
 	doFade();
 	myTimer.start();
 }
+
 
 stopFade(){
 	myTimer.stop();
