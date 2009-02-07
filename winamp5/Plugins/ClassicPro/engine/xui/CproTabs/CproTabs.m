@@ -9,11 +9,16 @@
  */
 
 #include <lib/std.mi>
+#include <lib/config.mi>
+
 #define DISPATCH
 #include dispatch_codes.m
 
 //#define DEBUG
 #define debugTabs //
+
+// this is the page that maps its items to the windows menu (aka View), you can add attribs or more pages (submenus)
+#define CUSTOM_WINDOWSMENU_ITEMS "{6559CA61-7EB2-4415-A8A9-A2AEEF762B7F}"
 
 Class GuiObject Tab;
 // {
@@ -55,16 +60,25 @@ Function debugTabs ();
 
 Global Tab firstTab, lastTab, lastActiveT;
 Global ToggleButton lastActive;
-Global Group sg, tabHolder, CproSUI;
+Global Group sg, tabHolder, CproSUI, CproBrowser;
 Global int totalTabWidth;
 Global ComponentBucket widgetLoader;
-Global boolean aligned, testtesttest; // @martin: remove this when done ;)
+Global boolean aligned, testtesttest, checkedBrowser; // @martin: remove this when done ;)
 Global PopUpMenu popMenu;
 Global List hiddenTabs;
+
+Global ConfigItem custom_windows_page;
+Class ConfigAttribute CproTabAtt;
+	Member Int CproTabAtt.ID;
+	Member String CproTabAtt.IDS;
+
+Global CproTabAtt tabWinAtt;
+Global ConfigAttribute sui_browser_attrib;
 
 System.onScriptLoaded ()
 {
 	testtesttest=false; // @martin: remove this when done ;)
+	checkedBrowser = false;
 	
 	sg = getScriptGroup();
 	tabHolder = sg.findObject("cprotabs.buttons");
@@ -168,8 +182,12 @@ System.onScriptLoaded ()
 	}
 
 
-	/** Bring ordered tabs into action */
+	/** Load Window menu */
+	custom_windows_page = Config.getItem(CUSTOM_WINDOWSMENU_ITEMS);
+	sui_browser_attrib = custom_windows_page.newAttribute("Web Browser\tAlt+X", "0");
 	
+	/** Bring ordered tabs into action */
+
 	int initPos = 0;
 	GuiObject pre = NULL;
 
@@ -189,6 +207,9 @@ System.onScriptLoaded ()
 			}
 			else
 			{
+				tabWinAtt = custom_windows_page.newAttribute(widgetNames.enumItem(0), "0");
+				tabWinAtt.IDS = orderedTabs.enumItem(i);
+
 				tabI.ID = WIDGET_TAB_ID;
 				tabI.IDS = orderedTabs.enumItem(i);
 				tabI.isInternal = false;
@@ -241,7 +262,7 @@ System.onScriptLoaded ()
 				totalTabWidth -= tabI.w;				
 			}
 
-		}	
+		}
 	}
 
 	aligned = true;
@@ -764,6 +785,12 @@ sg.onAction (String action, String param, Int x, int y, int p1, int p2, GuiObjec
 {
 	if(strlower(action) == "select_tab")
 	{
+		if(!checkedBrowser){
+			CproBrowser = getContainer("main").getLayout("normal").findObject("centro.browser");
+			sui_browser_attrib.setData(integerToString(CproBrowser.isVisible()));
+			checkedBrowser=true;
+		}
+
 		Tab t;
 		boolean found = false;
 		//if(t.ID != x)
@@ -847,6 +874,38 @@ sg.onAction (String action, String param, Int x, int y, int p1, int p2, GuiObjec
 		}	
 	}
 	debugTabs();
+}
+
+
+CproTabAtt.onDataChanged(){
+	if(CproTabAtt.getData()=="1")
+	{
+		CproSUI.sendAction ("switch_to_tab", CproTabAtt.IDS, WIDGET_TAB_ID, 0, 0, 0);
+		CproTabAtt.setData("0");
+	}
+}
+
+sui_browser_attrib.onDataChanged(){
+	if(sui_browser_attrib.getData()=="1")
+	{
+		CproSUI.sendAction ("switch_to_tab", "", 4, 0, 0, 0);
+	}
+	else if(sui_browser_attrib.getData()=="0" && CproBrowser.isVisible()){
+		CproSUI.sendAction ("switch_to_tab", "", 0, 0, 0, 0); // remember to add the planned future goto history tab here too! atm is just goto the lib
+	}
+}
+
+CproBrowser.onSetVisible(boolean onOff){
+	if(onOff) sui_browser_attrib.setData("1");
+	else sui_browser_attrib.setData("0");
+}
+System.onKeyDown(String key) {
+	if (key == "alt+x")
+	{
+		if (sui_browser_attrib.getData() == "0") sui_browser_attrib.setData("1");
+		else sui_browser_attrib.setData("0");
+		complete;
+	}
 }
 
 #ifdef DEBUG

@@ -94,6 +94,7 @@
 
 	<Slider	id="Volume" action="volume" x="-109" y="82" h="15" w="97" relatx="1" thumb="volume.thumb.1" hoverThumb="volume.thumb.2" downThumb="volume.thumb.3" tooltip="Volume" cursor="IDC_HAND"/>
 	<NStatesButton id="mute" x="-155" y="72" relatx="1" image="mute.1." hoverimage="mute.2." downimage="mute.3." rectrgn="1" nstates="2" tooltip="Mute Volume"/>
+	<layer id="mute.warning" x="-155" y="72" relatx="1" image="mute.2.1" visible="0" alpha="0" ghost="1"/>
 	
 	<text id="infodisplay" visible="0" alpha="0" x="0" y="0" w="0" h="0"/>
 	<ModernSongticker id="infosongticker"
@@ -144,7 +145,7 @@
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\one\scripts\player.maki" param="20"/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\one\scripts\presetpos.maki"/>
 	
-	<SC:UpdateSystem x="0" y="0" h="0" w="0" skinname="classicpro" skinversion="1.04" />
+	<SC:UpdateSystem x="0" y="0" h="0" w="0" skinname="classicpro" skinversion="1.05" />
 
 	<group id="cpro.normal.overlay" fitparent="1" sysregion="1"/>
 </layout>

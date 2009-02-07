@@ -1,24 +1,36 @@
 -------------------------------------------------------------
-Version 1.1 (1 Jan 2009)
+Version 1.1 (8 Feb 2009)
 -------------------------------------------------------------
 - New: Major Widget Engine Improvements! Download new widgets (http://cpro.skinconsortium.com)
 - New: New Ultra Modern Tabs with animation!
 - New: BrowserPro v2.0 widget bundled (now have its own tab!)
+- Improved: Cleaned SUI code and separated the tab code
+- Improved: Web browser now also have a window menu entry and shortcut
+- Fixed: Generate HTML playlist did nothing
+-------------------------------------------------------------
+
+
+-------------------------------------------------------------
+Version 1.05 (23 Jan 2009)
+-------------------------------------------------------------
 - New: Playlist and Video can now be openned in drawer
 - New: TagViewer can now also open in the mini area
 - New: Shade mode quick Playlist now have repeat and shuffle too
 - New: Added more actions to the MultiAction button (Winamp bolt)
+- New: Song timer will now fade in/out when paused
+- New: Mute button will now blink when mute is enabled
 - Improved: Bundled skin now have a much cleaner colors.xml ;)
 - Improved: More miscellaneous optimizations for faster skin load
 - Improved: Drawer/Mini area menu
 - Improved: WasabiButtons now use the hover image
-- Improved: Cleaned SUI code and separated the tab code
-- Improved: AlbumArt reflection
+- Improved: AlbumArt reflection, cover bigger now
 - Fixed: Generate HTML playlist did nothing
 - Fixed: TagViewer bottomleft gfx didn't hide the normal drawer bottomleft gfx
 - Fixed: Equalizer gfx overlap
-- Removed: Skin Chooser - This will be availible as an optional widget
+- Fixed: More multi monitor bugs!
+- Removed: Skin Chooser - This will be available as an optional widget later
 -------------------------------------------------------------
+
 
 -------------------------------------------------------------
 Version 1.04 (18 Sep 2008)
