@@ -15,7 +15,8 @@
 
 Global group scriptGroup;
 Global layer bgImage, bgImageRef;
-Global guiObject bgColor, bgGroup;
+Global guiObject bgColor, bgGroup, refOverlay;
+Global int noreflect;
 
 Global configAttribute bkground_image_attrib;
 
@@ -30,6 +31,7 @@ System.onScriptLoaded() {
   bgColor = scriptGroup.getObject("bgColor");
   bgGroup = scriptGroup.getObject("bgGroup");
   bgImageRef = scriptGroup.getObject("bgimage.ref");
+  refOverlay = scriptGroup.getObject("bg.fademask");
   
 	bgImageRef.fx_setBgFx(0);
 	bgImageRef.fx_setWrap(0);
@@ -63,7 +65,7 @@ bkground_image_attrib.onDataChanged() {
     bgColor.hide();
     bgGroup.hide();    bgGroup.setXMLParam("groupid", "");
     bgImage.show();    bgImage.setXMLParam("image", bkDataEntry1);
-    bgImageRef.show();    bgImageRef.setXMLParam("image", bkDataEntry1);
+    if (!noreflect) { bgImageRef.show();	bgImageRef.setXMLParam("image", bkDataEntry1); }
     if (bkDataEntry2=="") bkDataEntry2="0";
     bkDataEntry2 = "0";
     bgImage.setXMLParam("tile", bkDataEntry2);
@@ -89,6 +91,22 @@ bkground_image_attrib.onDataChanged() {
 
 bgImageRef.fx_onGetPixelY(double r, double d, double x, double y) {
 	return -y;
+}
+
+System.onSetXuiParam(String param, String value) {
+	param = strlower(param);
+	if (param=="noreflection") {
+		noreflect = stringtointeger(value);
+		if (noreflect) {
+			refOverlay.hide();
+			bgImageRef.hide();
+			bgImage.setXMLParam("h","100");
+		} else {
+			refOverlay.show();
+			bgImage.setXMLParam("h","60");
+			bkground_image_attrib.onDataChanged();
+		}
+	}
 }
 
 

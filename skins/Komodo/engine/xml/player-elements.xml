@@ -108,9 +108,17 @@
 <!-- ******* -->
 
 <bitmap id="vol.back" file="graphics.png" x="197" y="201" w="176" h="37" gammagroup="glass" /> 
-<bitmap id="vol.pos" file="graphics.png" x="197" y="239" w="176" h="37" gammagroup="glass" /> 
-<bitmap id="player.seekbk" file="graphics.png" x="378" y="201" w="10" h="37" gammagroup="Glass"/> 
-<bitmap id="player.main.songpos" file="graphics.png" x="377" y="239" w="13" h="37" gammagroup="Glass"/> 
+<bitmap id="vol.pos" file="graphics.png" x="197" y="239" w="176" h="37" gammagroup="glass" />
+
+<bitmap id="player.seeker.left" file="graphics.png" x="376" y="201" w="15" h="37" gammagroup="Glass"/>
+<bitmap id="player.seeker.mid" file="graphics.png" x="392" y="201" w="50" h="37" gammagroup="Glass"/>
+<bitmap id="player.seeker.right" file="graphics.png" x="443" y="201" w="15" h="37" gammagroup="Glass"/>
+
+<bitmap id="player.seeker.base.left" file="graphics.png" x="376" y="239" w="15" h="37" gammagroup="Glass"/>
+<bitmap id="player.seeker.base.mid" file="graphics.png" x="392" y="239" w="50" h="37" gammagroup="Glass"/>
+<bitmap id="player.seeker.base.right" file="graphics.png" x="443" y="239" w="15" h="37" gammagroup="Glass"/>
+
+<bitmap id="player.seeker.thumb" file="graphics.png" x="460" y="239" w="13" h="37" gammagroup="Glass"/> 
 
 <bitmap id="player.main.eqover" file="@SKINSPATH@Komodo\engine\player\eqover.png" gammagroup="Background"/>
 <bitmap id="player.main.eqbut" file="@SKINSPATH@Komodo\engine\player\eq.png" gammagroup="Background"/>

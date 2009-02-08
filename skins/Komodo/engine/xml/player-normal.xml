@@ -1,4 +1,4 @@
-<groupdef id="player.cbuttons" w="227" h="295">
+<groupdef id="player.cbuttons" w="233" h="295">
 	<button 
 		id="Rev"
 		x="0" y="0"
@@ -76,15 +76,21 @@
 		font="player.font.timer"
 		align="center" timecolonwidth="18"/>
 	
-	<layer id="SeekAnim.base" image="player.seekbk" x="0" y="52" w="0" relatw="1" tile="1" move="0" alpha="55"/>
+	<grid id="SeekAnim.base" x="0" y="52" w="0" h="37" relatw="1" move="0"
+		left="player.seeker.base.left"
+		middle="player.seeker.base.mid"
+		right="player.seeker.base.right"/>
 
-	<layer id="SeekAnim" image="player.seekbk" x="0" y="52" w="0" tile="1" move="0" rectrgn="0" tooltip="Seek"/>
+	<grid id="SeekAnim" x="0" y="52" w="0" h="37" move="0" rectrgn="0" tooltip="Seek"
+		left="player.seeker.left"
+		middle="player.seeker.mid"
+		right="player.seeker.right"/>
 	
 	<slider id="seek2"
 			action="SEEK"
 			x="0" y="52" w="0" h="37" relatw="1"
-			thumb="player.main.songpos" 
-			downThumb="player.main.songpos" 
+			thumb="player.seeker.thumb" 
+			downThumb="player.seeker.thumb" 
 	/>
 	
 	<script file="@SKINSPATH@Komodo\engine\scripts\seeker.maki" param="seek2,SeekAnim,SeekAnim.base"/>
@@ -111,6 +117,7 @@
 		reflectionheightpercentage="70"
 		dropshadowcdcase="1" alpha="255"
 		showsongrating="1" move="0"
+		noreflection="0"
 		/>
 
 </groupdef>
@@ -168,7 +175,7 @@
 </groupdef>
 
 <groupdef id="player.main.pl.coverflow">
-	<CoverShow fitparent="1"/>
+	<CoverShow fitparent="1" noreflection="0"/>
 	
 	<group id="player.main.pl.coverflow.buttons" x="10" y="15" relaty="2" w="310" h="30"/>
 	<script file="@SKINSPATH@Komodo\engine\scripts\centerobject.maki" param="player.main.pl.coverflow.buttons,1,0"/>
@@ -876,7 +883,7 @@
 
 	<layer id="bg.noalpha" x="0" y="0" w="0" h="0" relatw="1" relath="1" image="player.main.background.noalpha" sysregion="1" move="0" wantfocus="1"/>
 	
-	<CustomBG x="0" y="0" w="0" h="0" relatw="1" relath="1"/>
+	<CustomBG x="0" y="0" w="0" h="0" relatw="1" relath="1" noreflection="0"/>
 
 	<group id="player.main.cms" x="0" y="0" w="100" h="0" relatx="2" relatw="2" relath="1"/>
 	<group id="player.main.pl" 	x="0" y="0" w="100" h="0" relatx="2" relatw="2" relath="1" visible="0"/>
@@ -885,7 +892,7 @@
 	<group id="player.main.ie" x="0" y="0" w="100" h="0" relatx="2" relatw="2" relath="1" visible="0"/>
 	<group id="player.main.config" 	x="0" y="0" w="100" h="0" relatx="2" relatw="2" relath="1" visible="0"/>
 	
-	<group id="player.cbuttons" x="0" y="-100" relaty="1" w="235" h="265"/>
+	<group id="player.cbuttons" x="0" y="-100" relaty="1" w="233" h="265"/>
 	<script file="@SKINSPATH@Komodo\engine\scripts\centerobject.maki" param="player.cbuttons,1,0"/>
 	
 	<group id="player.main.seeker" x="70" y="-130" w="22" h="100" relatx="2" relaty="1" relatw="2"/>
