@@ -21,6 +21,9 @@ Global guiObject seeker, seekerBase;
 Global boolean seekChanging = 0;
 Global int w, woff;
 
+Global string origright;
+Global int lastsmallwid;
+
 System.onScriptLoaded() {
   frameGroup = getScriptGroup();
   main = frameGroup.getParentLayout();
@@ -29,6 +32,8 @@ System.onScriptLoaded() {
   dummySlider = frameGroup.getObject(getToken(param,",",0));
   seeker = frameGroup.getObject(getToken(param,",",1));
   seekerbase = frameGroup.getObject(getToken(param,",",2));
+  
+  origright = seeker.getXMLParam("right");
 
   woff = 14;
 }
@@ -85,7 +90,18 @@ dummySlider.onPostedPosition(int newpos) {
 }
 
 seekerbase.onResize(int x, int y, int w, int h) {
+	
 	dummySlider.onsetPosition(dummySlider.getPosition());
+}
+
+seeker.onResize(int x, int y, int w, int h) {
+	if (w < 30 && !lastsmallwid) {
+		setXMLParam("right","");
+		lastsmallwid = 1;
+	} else if (w >= 30 && lastsmallwid) {
+		setXMLParam("right",origright);
+		lastsmallwid = 0;
+	}
 }
 
 updateSeeker(int x) {

@@ -33,7 +33,7 @@
 
 <groupdef id="sc.nowplaying.cdbox" background="sc.cdbox.bg" move="1">
 	<AlbumArt id="main.albumart" x="12" y="4" w="85" h="93" relatx="2" relaty="2" relatw="2" relath="2" wantfocus="1" stretched="1" move="0" notFoundImage="nocover"/>
-	<layer fitparent="1" image="sc.cdbox.fg" ghost="1"  move="0"/>
+	<layer id="cdbox.fg" fitparent="1" image="sc.cdbox.fg" ghost="1"  move="0"/>
 </groupdef>
 
 <groupdef id="sc.nowplaying.bg.ref">
@@ -41,7 +41,7 @@
 </groupdef>
 
 <groupdef id="sc.nowplaying.cdbox.reflection" move="1" >
-	<layer id="bgref" image="sc.cdbox.bg.ref" fitparent="1" move="0"/>
+	<layer id="cdbox.bg.reflection" image="sc.cdbox.bg" fitparent="1" move="0"/>
 	<AlbumArt id="main.albumart.reflection" x="12" y="4" w="85" h="93" alpha="255" relatx="2" relaty="2" relatw="2" relath="2" wantfocus="0" stretched="1" move="0" notFoundImage="nocover"/>
 	<layer id="cdbox.fg.reflection" fitparent="1" image="sc.cdbox.fg" ghost="1" alpha="255" move="0"/>
 </groupdef>

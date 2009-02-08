@@ -8,10 +8,11 @@
   <bitmapfont id="studio.component.statusbar" file="fonts/default-font.png" charwidth="5" charheight="6" hspacing="0" vspacing="0" gammagroup="Display Fonts"/-->
 
   	<!-- nowplaying/covershow bitmaps -->
-	<bitmap id="sc.cdbox.bg" file="@SKINSPATH@Komodo\engine\xui\NowPlaying\cdbox-bg_drop.png" gammagroup="cdcase"/>
+	<bitmap id="sc.cdbox.bg" file="@SKINSPATH@Komodo\engine\xui\NowPlaying\cdbox-bg.png" gammagroup="cdcase"/>
 	<bitmap id="sc.cdbox.fg" file="@SKINSPATH@Komodo\engine\xui\NowPlaying\cdbox-fg.png" gammagroup="cdcase"/>
-	<bitmap id="sc.cdbox.bg.ref" file="@SKINSPATH@Komodo\engine\xui\NowPlaying\cdbox-bg-reflection.png" gammagroup="cdcase"/>
-	<bitmap id="sc.cdbox.ref" file="@SKINSPATH@Komodo\engine\xui\NowPlaying\blank.png" gammagroup="cdcase"/>
+	
+	<bitmap id="sc.cdbox.bg.optional" file="cdbox-bg.png" gammagroup="cdcase"/>
+	<bitmap id="sc.cdbox.fg.optional" file="cdbox-fg.png" gammagroup="cdcase"/>
 	
 	<bitmap id="ratings.nostar" file="graphics.png" x="1" y="527" w="150" h="22" gammagroup="ratings"/>
 	<bitmap id="ratings.star" file="graphics.png" x="1" y="550" w="150" h="22" gammagroup="ratings"/>

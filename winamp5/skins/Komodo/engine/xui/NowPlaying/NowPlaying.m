@@ -14,13 +14,15 @@ Function setAllTags();
 Function resizeToThis(int x, int y, int w, int h);
 Function FadeGroup(Group FadeGrp, Int AlphaValue);
 
+Function checkOptionalGrphx();
+
 Global Group XUIGroup, cdbox, cdboxref, cdboxHolder, ratings, BGCol;
 Global GuiObject line1, line2, line3, BFColRect;
 Global int xs, ys, ws, hs;
 Global int xc, yc, wc, hc;
-Global layer lyrFx, lyrFxFG;
+Global layer lyrFx, lyrFxFG, lyrFxBGRef, cboxfg;
 global double dblSmidge;
-Global int reflectionheight;
+Global int reflectionheight, noreflect;
 
 
 System.onScriptLoaded(){
@@ -33,6 +35,8 @@ System.onScriptLoaded(){
 	cdboxHolder = XUIGroup.findObject("sc.nowplaying.cdbox.holder");
 	lyrFx = XUIGroup.findObject("main.albumart.reflection");
 	lyrFxFG = XUIGroup.findObject("cdbox.fg.reflection");
+	cboxfg = XUIGroup.findObject("cdbox.fg");
+	lyrFxBGRef = XUIGroup.findObject("cdbox.bg.reflection");
 	line1 = XUIGroup.findObject("sc.nowplaying.line1");
 	line2 = XUIGroup.findObject("sc.nowplaying.line2");
 	line3 = XUIGroup.findObject("sc.nowplaying.line3");
@@ -40,6 +44,8 @@ System.onScriptLoaded(){
 	BGCol = XUIGroup.findObject("sc.nowplaying.bg.ref");
 	BFColRect = BGCol.getObject("sc.nowplaying.bg.ref.base");
 	//CDBoxFade = XUIGroup.findObject("cdbox.fg.fademask");
+	
+	checkOptionalGrphx();
 	
 	lyrFx.fx_setBgFx(0);
   	lyrFx.fx_setWrap(0);
@@ -60,6 +66,16 @@ System.onScriptLoaded(){
 	lyrFxFG.fx_setClear(0); //left as zero as cover sheen is a static image and we dont need to redraw
   	lyrFxFG.fx_setLocalized(1);
   	lyrFxFG.fx_setRealtime(0);
+  	
+  	lyrFxBGRef.fx_setBgFx(0);
+  	lyrFxBGRef.fx_setWrap(0);
+  	lyrFxBGRef.fx_setBilinear(1);
+	lyrFxBGRef.fx_setAlphaMode(1);
+  	lyrFxBGRef.fx_setGridSize(8,8);
+  	lyrFxBGRef.fx_setRect(1);
+	lyrFxBGRef.fx_setClear(0); //left as zero as cover sheen is a static image and we dont need to redraw
+  	lyrFxBGRef.fx_setLocalized(1);
+  	lyrFxBGRef.fx_setRealtime(0);
 	
   	dblSmidge = 0;
 	
@@ -71,6 +87,23 @@ system.onScriptUnloading()
 	XUIGroup = NULL;
 }
 
+checkOptionalGrphx() {
+
+	map filecheck = new map;
+	filecheck.loadmap("sc.cdbox.bg.optional");
+	if (filecheck.getWidth() > 64) {
+		cdbox.setXMLParam("background","sc.cdbox.bg.optional");
+		lyrFxBGRef.setXMLParam("image","sc.cdbox.bg.optional");
+	}
+	
+	filecheck.loadmap("sc.cdbox.fg.optional");
+	if (filecheck.getWidth() > 64) {
+		cboxfg.setXMLParam("image","sc.cdbox.fg.optional");
+		lyrFxFG.setXMLParam("image","sc.cdbox.fg.optional");
+	}
+
+	delete filecheck;
+}
 
 System.onSetXuiParam(String param, String value)
 {
@@ -95,6 +128,11 @@ System.onSetXuiParam(String param, String value)
 		else
 		{
 			reflectionheight = stringtointeger(value);
+		}
+	} else if (param=="noreflection") {
+		noreflect = stringtointeger(value);
+		if (noreflect) {
+			cdboxref.hide();
 		}
 	}
 	
@@ -121,13 +159,17 @@ lyrFx.fx_onFrame()
 
 }
 
-//reflection, needs dblSmidge to activate, its on a slow timer without clear as its a static image and doesnt need to be cleared every frame
 lyrFx.fx_onGetPixelY(double r, double d, double x, double y)
 {
 	return -y-dblSmidge;
 }
 
 lyrFxFG.fx_onGetPixelY(double r, double d, double x, double y)
+{
+	return -y-dblSmidge;
+}
+
+lyrFxBGRef.fx_onGetPixelY(double r, double d, double x, double y)
 {
 	return -y-dblSmidge;
 }
@@ -146,12 +188,20 @@ lyrFxFG.fx_onGetPixelA(double r, double d, double x, double y)
 	return ret;
 }
 
+lyrFxBGRef.fx_onGetPixelA(double r, double d, double x, double y)
+{
+	double ret = 1-(y+1)*0.67;
+	if (ret < 0) ret = 0;
+	return ret;
+}
+
 XUIGroup.onSetVisible(boolean onOff)
 {
 	if(onOff) 
 	{
 		lyrFx.fx_setEnabled(1);
 		lyrFxFG.fx_setEnabled(1);
+		lyrFxBGRef.fx_setEnabled(1);
 		
 		setAllTags();	
 	}
@@ -175,6 +225,7 @@ cdboxHolder.onSetVisible(int on) {
 	if (on) {
 		lyrFx.fx_setEnabled(0);
 		lyrFxFG.fx_setEnabled(0);
+		lyrFxBGRef.fx_setEnabled(0);
 		
 		setAllTags();
 	}
@@ -226,6 +277,7 @@ resizeToThis(int x, int y, int w, int h)
 				
 	lyrFx.fx_update();
 	lyrFxFG.fx_update();
+	lyrFxBGRef.fx_update();
 
 }
 
@@ -233,6 +285,7 @@ System.onTitleChange(String newTitle)
 {
 	lyrFx.fx_setEnabled(0);
 	lyrFxFG.fx_setEnabled(0);
+	lyrFxBGRef.fx_setEnabled(0);
 	
 	//could fade the album art in?
 	//cdboxHolder.setAlpha(0);
@@ -274,10 +327,12 @@ setAllTags(){
 	
 	lyrFx.fx_setEnabled(1);
 	lyrFxFG.fx_setEnabled(1);
+	lyrFxBGRef.fx_setEnabled(1);
 	lyrFx.fx_restart();
 	lyrFxFG.fx_restart();
+	lyrFxBGRef.fx_restart();
 	
-	if (!cdboxref.isVisible()) cdboxref.show();
+	if (!cdboxref.isVisible() && !noreflect) cdboxref.show();
 	
 	//for fading the album in
 	//FadeGroup(cdboxHolder, 255);

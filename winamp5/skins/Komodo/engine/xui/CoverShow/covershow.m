@@ -55,6 +55,7 @@ global int mousePressed, lastX, lastX2,  lasttime, origtime, noSlow, mousemoved;
 global float lastplpos, lastmove, scrollSpeed;
 
 global timer delayRefresh, scrollAnim, delayOnLoad;
+global int noreflect;
 
 global layer mousetrap;
 
@@ -169,20 +170,25 @@ updateCover(group g, int index) {
 	
 	g.show();
 	
-	aaref.fx_setEnabled(0);
-	
-	aaref.fx_setBgFx(0);
-  	aaref.fx_setWrap(0);
-  	aaref.fx_setBilinear(1);
-	aaref.fx_setAlphaMode(1);
-  	aaref.fx_setGridSize(10,10);
-  	aaref.fx_setRect(1);
-	aaref.fx_setClear(0);
-  	aaref.fx_setLocalized(1);
-  	aaref.fx_setRealtime(0);
-  	
-  	aaref.fx_setEnabled(1);
-  	aaref.fx_restart();
+	if (!noreflect) {
+		aaref.fx_setEnabled(0);
+		
+		aaref.fx_setBgFx(0);
+	  	aaref.fx_setWrap(0);
+	  	aaref.fx_setBilinear(1);
+		aaref.fx_setAlphaMode(1);
+	  	aaref.fx_setGridSize(10,10);
+	  	aaref.fx_setRect(1);
+		aaref.fx_setClear(0);
+	  	aaref.fx_setLocalized(1);
+	  	aaref.fx_setRealtime(0);
+	  	
+	  	aaref.fx_setEnabled(1);
+	  	aaref.fx_restart();
+	  	if (!aaref.isVisible()) aaref.show();
+  	} else {
+  		if (aaref.isVisible()) aaref.hide();
+	}
 }
 
 AlbumCover.fx_onGetPixelY(double r, double d, double x, double y) {
@@ -627,6 +633,14 @@ parentLayout.onAction(String action, String param, Int x, int y, int clicked, in
 		if (!scrollAnim.isRunning()) scrollAnim.start();
 	}
 
+}
+
+System.onSetXuiParam(String param, String value) {
+	param = strlower(param);
+	if (param=="noreflection") {
+		noreflect = stringtointeger(value);
+		
+	}
 }
 
 // ***** info scripts *****

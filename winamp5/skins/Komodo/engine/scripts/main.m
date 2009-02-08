@@ -430,7 +430,7 @@ buttonWindow.onLeftClick() {
 }
 
 buttonFull.onLeftClick() {
-	if (getPrivateInt("Komodo","TUP",0) == 1) {
+	if (getPrivateInt("Komodo","TUP",0) == 1 && !delayTrialCheck.isRunning()) {
 		main.sendAction("TRIALNOTICE", "", 0,0,0,0);
 		return;
 	}
@@ -599,6 +599,7 @@ trialCheck.parser_onCallback (String xmlpath, String xmltag, list paramname, lis
 						
 			if (diff < 0.0002 && diff > -0.0002) {
 				int stampoffset = getPrivateInt("Komodo","TSO",0);
+				if (stampoffset < 0) stampoffset = 0;
 				stamp = stamp - stampoffset;
 				
 				int currentDate = getDate();

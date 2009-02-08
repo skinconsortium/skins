@@ -49,5 +49,5 @@
 	
 	<group id="cover.show.info" x="10" y="0" w="80" h="0" relatx="2" relatw="2" relath="1"/>
 
-	<script file="@SKINSPATH@Komodo\engine\xui\CoverShow\scripts\covershow.maki" />
+	<script file="@SKINSPATH@Komodo\engine\xui\CoverShow\covershow.maki" />
 </groupdef>
