@@ -63,7 +63,7 @@ Global ToggleButton lastActive;
 Global Group sg, tabHolder, CproSUI, CproBrowser;
 Global int totalTabWidth;
 Global ComponentBucket widgetLoader;
-Global boolean aligned, testtesttest, checkedBrowser; // @martin: remove this when done ;)
+Global boolean aligned, checkedBrowser; // @martin: remove this when done ;)
 Global PopUpMenu popMenu;
 Global List hiddenTabs;
 
@@ -77,7 +77,6 @@ Global ConfigAttribute sui_browser_attrib;
 
 System.onScriptLoaded ()
 {
-	testtesttest=false; // @martin: remove this when done ;)
 	checkedBrowser = false;
 	
 	sg = getScriptGroup();
@@ -123,7 +122,7 @@ System.onScriptLoaded ()
 		{
 			isInternal.setItem(internalNames.getNumItems()+i, false);
 			GuiObject d = widgetLoader.enumChildren(i);
-			orderedTabs.addItem(getToken(d.getXmlParam("userdata"), ";", 0));
+			orderedTabs.addItem(d.getXmlParam("userdata"));
 			widgetNames.addItem(d.getXMLparam("name"));
 		}
 	}
@@ -175,7 +174,7 @@ System.onScriptLoaded ()
 				isInternal.setSize(isInternal.getSize()+1);
 				isInternal.setItem(isInternal.getSize()-1, false);
 				GuiObject d = widgetLoader.enumChildren(i);
-				orderedTabs.addItem(getToken(d.getXmlParam("userdata"), ";", 0));
+				orderedTabs.addItem(d.getXmlParam("userdata"));
 				widgetNames.addItem(d.getXMLparam("name"));
 			}
 		}
@@ -208,15 +207,12 @@ System.onScriptLoaded ()
 			else
 			{
 				tabWinAtt = custom_windows_page.newAttribute(widgetNames.enumItem(0), "0");
-				tabWinAtt.IDS = orderedTabs.enumItem(i);
+				tabWinAtt.IDS = getToken(orderedTabs.enumItem(i), ";", 0);
 
 				tabI.ID = WIDGET_TAB_ID;
-				tabI.IDS = orderedTabs.enumItem(i);
+				tabI.IDS = getToken(orderedTabs.enumItem(i), ";", 0);
+				tabI.statusbar = stringToInteger(getToken(orderedTabs.enumItem(i), ";", 1));
 				tabI.isInternal = false;
-				
-				tabI.statusbar = testtesttest;		// @martin: statusbar onOff set (only used for widgets)
-				testtesttest=!testtesttest;
-				
 			}
 
 			Boolean hideTab = ((getPublicInt("Cpro.One.TabAutoClose."+integerToString(tabI.ID), 0) || tabI.ID == 5)
