@@ -374,7 +374,6 @@ avsRandom.onDataChanged() {
 
 // xfade main control scripts
 xfadetime.onDataChanged() {
-	return;
 	if (getData()!="0" && xfade.getData()!="1") 
 		xfade.setData("1");
 	if (getData()=="0" && xfade.getData()!="0") 
