@@ -24,6 +24,11 @@
 			x="3" y="50"
 			w="209" h="138"
 		/>
+		<group
+			id="player.normal.drawer.eq"
+			x="199" y="133"
+			w="142" h="144"
+		/>
 		<layer
 			id="background"
 			x="0" y="0"
@@ -38,6 +43,13 @@
 			w="38" h="82"
 			ghost="1"
 			image="player.normal.alphaline.cover.bitmap"
+		/>
+		<layer
+			id="eqalpha"
+			x="202" y="214"
+			w="132" h="35"
+			ghost="1"
+			image="player.normal.alphaline.eq.bitmap"
 		/>
 		<group
 			id="player.normal.group"

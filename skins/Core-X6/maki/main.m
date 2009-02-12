@@ -8,6 +8,10 @@
 // songticker config page
 #define CUSTOM_PAGE_SONGTICKER "{7061FDE0-0E12-11D8-BB41-0050DA442EF3}"
 
+
+// MyChange is used by several functions to indicate, the changes are by the script
+Global int MyChange;
+
 //Declare vis animated layers
 Global AnimatedLayer lyrVis1;
 Global AnimatedLayer lyrVis2;
@@ -33,8 +37,11 @@ Global AnimatedLayer lyrVis21;
 Global GuiObject Ticker;
 
 Global Group grpCover;
+Global Group grpEq;
 Global Layer btnCoverButton;
 Global Button btnCoverStar1, btnCoverStar2, btnCoverStar3, btnCoverStar4, btnCoverStar5;
+
+Global Layer lyrEQButton;
 
 Global Button btnMNCrossfade, btnMNShuffle, btnMNRepeat;
 
@@ -48,6 +55,10 @@ Global Layer CoverMap;
 Global Button btnMNPlay;
 Global Layer lyrMNPlayDown, lyrMNPlayLight;
 
+Global Slider sldEqBass;
+Global Slider sldEqMiddle;
+Global Slider sldEqTremble;
+
 Global Timer tmrVis;
 Global Timer tmrPlay2Pause;
 
@@ -57,11 +68,13 @@ Global Int PrevValues15, PrevValues16, PrevValues17, PrevValues18, PrevValues19,
 
 Global ConfigAttribute cattrDA;
 Global ConfigAttribute cattrAlbumArt;
+Global ConfigAttribute cattrEq;
 
 #include "play2pause.m"
 #include "songinfo.m"
 #include "coverdrawer.m"
 #include "keyboard.m"
+#include "eqdrawer.m"
 
 function SetVisFrame (animatedlayer vislayer, int Length, int BandStart, int BandStop, int PrevValue, int Offset);
 
@@ -73,7 +86,7 @@ System.onScriptLoaded() {
 	Group grpLCD = grpPlayerNormal.GetObject("player.normal.LCD");
 
 	grpCover = lytMainNormal.GetObject("player.normal.drawer.cover"); // Cover art drawer
-
+	grpEq = lytMainNormal.GetObject("player.normal.drawer.eq"); // Equalizer drawer
 	PNBackground = lytMainNormal.getObject("background");
 	
 	// Getting vis layers
@@ -104,6 +117,7 @@ System.onScriptLoaded() {
 
 	ConfigItem cfgWindows = Config.GetItemByGuid(WINDOW_ITEMS); // Toggle Windows menu
 	cattrAlbumArt = cfgWindows.getAttribute("Album Art\tAlt+A");
+	cattrEq = cfgWindows.getAttribute("Equalizer\tAlt+G");
 
 	Ticker = grpLCD.getObject("ticker");
 
@@ -122,13 +136,21 @@ System.onScriptLoaded() {
 
 	CoverMap = grpCover.getObject("noalpha.map");
 	btnCoverButton = grpCover.getObject("button");
-	
+
 	//rating stars
 	btnCoverStar1 = grpCover.getObject("star.1");
 	btnCoverStar2 = grpCover.getObject("star.2");
 	btnCoverStar3 = grpCover.getObject("star.3");
 	btnCoverStar4 = grpCover.getObject("star.4");
 	btnCoverStar5 = grpCover.getObject("star.5");
+
+	// Eq declarations
+	lyrEQButton = grpEq.getObject("button"); // Open/Close Button (It is really a layer)
+
+	sldEqBass = grpEq.getObject("bit.bass");
+	sldEqMiddle = grpEq.getObject("bit.mids");
+	sldEqTremble =grpEq.getObject("bit.high");
+
 
 	tmrVis = new Timer;
 	tmrVis.SetDelay(30);
@@ -140,6 +162,7 @@ System.onScriptLoaded() {
 		PNBackground.setXMLparam("image","player.normal.background.bitmap");
 		CoverMap.Hide();
 		btnCoverButton.setXMLparam("image","player.normal.cover.button");
+		lyrEQButton.setXMLparam("image","player.normal.eq.button");
 	}
 	
 // All included scripts have something to load when skin is loading, so included scripts have @Name@OnLoaded() functions, called below
@@ -157,12 +180,14 @@ cattrDA.OnDataChanged()
 		PNBackground.setXMLparam("image","player.normal.background.noalpha.bitmap");
 		CoverMap.Show();
 		btnCoverButton.setXMLparam("image","player.normal.cover.button.noalpha");
+		lyrEQButton.setXMLparam("image","player.normal.eq.button.noalpha");
 	}
 	if (cattrDA.getData() == "1")
 	{
 		PNBackground.setXMLparam("image","player.normal.background.bitmap");
 		CoverMap.Hide();
 		btnCoverButton.setXMLparam("image","player.normal.cover.button");
+		lyrEQButton.setXMLparam("image","player.normal.eq.button");
 	}
 }
 

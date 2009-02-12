@@ -20,4 +20,15 @@ System.onKeyDown(String key)
 		}
 		complete;
 	}
+	if (System.strlower(key) == "alt+g")
+	{
+		if (cattrEq.getData()=="1")
+		{
+			cattrEq.setData("0");
+		} else
+		{
+			cattrEq.setData("1");
+		}
+		complete;
+	}
 }
