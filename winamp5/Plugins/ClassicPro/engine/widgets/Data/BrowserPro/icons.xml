@@ -11,4 +11,5 @@
 	<bitmap id="icon.songfacts" file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\widgets\Data\BrowserPro\icons\songfacts.png"/>
 	<bitmap id="icon.rateyourmusic" file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\widgets\Data\BrowserPro\icons\rateyourmusic.png"/>
 	<bitmap id="icon.discogs" file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\widgets\Data\BrowserPro\icons\discogs.png"/>
+	<bitmap id="icon.songbook.lyrics" file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\widgets\Data\BrowserPro\icons\songbook-lyrics.png"/>
 </elements>
