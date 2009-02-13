@@ -40,7 +40,7 @@ Global ColorMgr cm;
 Global Timer focus_callback;
 
 System.onScriptLoaded(){
-	setPublicInt("ClassicPro.BrowserPro.loaded", 1);
+	//setPublicInt("ClassicPro.BrowserPro.loaded", 1);
 	initWidget();
 	
 	results_container = newDynamicContainer("browserpro");
@@ -86,7 +86,7 @@ cm.onColorThemeChanged(String newtheme)
 }
 
 System.onScriptUnloading (){
-	setPublicInt("ClassicPro.BrowserPro.loaded", 0);
+	//setPublicInt("ClassicPro.BrowserPro.loaded", 0);
 	myGroup.hide();
 	focus_callback.stop();
 	delete loaded_P_Names;
@@ -112,9 +112,9 @@ initLoadFiles(){
 		myDoc.parser_destroy();
 		delete myDoc;
 
-		selectSaved();
-
 		onetime=true;
+
+		selectSaved();
 	}
 }
 
@@ -186,9 +186,9 @@ focus_callback.onTimer ()
 }
 
 selectSaved(){
+	if(!onetime) return;
 	int i = searchInListForItem(getPublicString("ClassicPro.BrowserPro", "0"));
-	if(getPublicString("ClassicPro.BrowserPro", "0")) setPublicString("ClassicPro.BrowserPro", myList.getItemLabel(0, 0));
-
+	//if(getPublicString("ClassicPro.BrowserPro", "0")) setPublicString("ClassicPro.BrowserPro", myList.getItemLabel(0, 0)); //wtf was this???? forgot :P
 	myList.setSelected(i,1);
 	updateDDList();
 }
@@ -196,14 +196,14 @@ searchInListForItem(String input){
 	for(int i=0; i<myList.getNumItems();i++){
 		if(input == myList.getItemLabel(i, 0)) return i;
 	}
-	return 0; //if nothing was found
+	
+	setPublicString("ClassicPro.BrowserPro", myList.getItemLabel(0, 0)); //if nothing was found
+	return 0;
 }
 surfSelected(){
+	if(!onetime) return;
 	String myUrl = loaded_P_Url.enumItem(loaded_P_Names.findItem(getPublicString("ClassicPro.BrowserPro", "0")));
 	myBrowser.navigateUrl(prepareCustomUrl(myUrl));
-
-	//testing download
-	//System.downloadMedia("", "C:/", false, false);
 }
 System.onTitleChange(String newtitle){
 	if(myGroup.isVisible()){
@@ -218,6 +218,7 @@ myList.onLeftClick(Int itemnum){
 }
 
 updateDDList(){
+	if(!onetime) return;
 	ddBoxText.setText(getPublicString("ClassicPro.BrowserPro", "0"));
 	String iconsID = loaded_P_Icons.enumItem(loaded_P_Names.findItem(getPublicString("ClassicPro.BrowserPro", "0")));
 	ddlIcon.setXmlParam("image", iconsID);
