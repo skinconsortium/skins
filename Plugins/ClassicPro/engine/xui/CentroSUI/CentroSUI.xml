@@ -161,7 +161,7 @@
 <groupdef id="centro.playlist.directory.tag" inherit_group="drawer.tagviewer">
 </groupdef>
 <groupdef id="centro.playlist.directory">
-	<grid id="centro.gadget.grid" fitparent="1" move="1"
+	<grid id="centro.mini.grid" fitparent="1" move="1"
 		topleft="player.gframe.1" top="player.gframe.2" topright="player.gframe.3"
 		left="player.gframe.4" middle="player.gframe.5" right="player.gframe.6"
 		bottomleft="player.gframe.7" bottom="player.gframe.8" bottomright="player.gframe.9"

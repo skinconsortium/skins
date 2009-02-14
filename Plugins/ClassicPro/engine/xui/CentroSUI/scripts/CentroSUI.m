@@ -30,6 +30,9 @@ Function setCompStatus(boolean onOff);
 Function updateCompStatus();
 Function setFrame1();
 Function setFrame2(int pos, int h);
+Function gotoPrevMini();
+Function gotoNextMini();
+Function setMiniBG(int mode); //0=normal, 1=tagview
 
 // Main Layout
 Global Container player;
@@ -40,6 +43,8 @@ Global Group xuiGroup;
 Global Group mini_Cover, mini_Video, mini_AVS, mini_SavedPL, mini_TagView;
 Global Button but_miniGoto;
 Global PopUpMenu popMenu;
+Global Boolean mouse_but_miniGoto;
+Global GuiObject gad_Grid;
 
 // Gui Extras
 Global Text plText1, plText2;
@@ -133,6 +138,7 @@ System.onScriptLoaded(){
 	dummyBuck = xuiGroup.findObject("widget.loader.mini");
 	customObj = xuiGroup.findObject("widget.holder.mini");
 	hold_Other = xuiGroup.findObject("centro.windowholder.other");
+	gad_Grid = xuiGroup.findObject("centro.mini.grid");
 
 	// Check to see if the new eq background is used
 	Map myMap = new Map;
@@ -501,11 +507,11 @@ area_mini.onResize(int x, int y, int w, int h){
 	//Hide/Show the area
 	if(w<10){
 		area_mini.hide();
-		if(getPublicInt("cPro.lastMini", 0)==2){openMini(0);}
+		if(getPublicInt("cPro.lastMini", 0)==4){openMini(0);}
 	}
 	else if(h<40){
 		area_mini.hide();
-		if(getPublicInt("cPro.lastMini", 0)==2){openMini(0);}
+		if(getPublicInt("cPro.lastMini", 0)==4){openMini(0);}
 	}
 	else area_mini.show();
 }
@@ -514,12 +520,12 @@ area_mini.onResize(int x, int y, int w, int h){
 but_miniGoto.onleftClick(){
 	popMenu = new PopUpMenu;
 
-	popMenu.addCommand("Album Art", 0, mini_Cover.isVisible(), 0);
-	popMenu.addCommand("Tag Viewer", 4, mini_TagView.isVisible(), 0);
-	popMenu.addCommand("Saved Playlists", 3, mini_SavedPL.isVisible(), 0);
+	popMenu.addCommand("Album Art", 0, 0, 0);
+	popMenu.addCommand("Tag Viewer", 1, 0, 0);
+	popMenu.addCommand("Saved Playlists", 2, 0, 0);
 	popMenu.addSeparator();
-	popMenu.addCommand("Video", 1, mini_Video.isVisible(), 0);
-	popMenu.addCommand("Visualization", 2, mini_AVS.isVisible(), 0);
+	popMenu.addCommand("Video", 3, 0, 0);
+	popMenu.addCommand("Visualization", 4, 0, 0);
 	popMenu.addSeparator();
 
 	int count = 0;
@@ -547,6 +553,7 @@ openMini(int miniNo){
 	if(miniNo>=100){
 		if(dummyBuck.getNumChildren()<miniNo-99) miniNo=0;
 	}
+	int bg = 0;
 
 	mini_Cover.hide();
 	mini_Video.hide();
@@ -558,13 +565,13 @@ openMini(int miniNo){
 	if(miniNo==0){
 		mini_Cover.show();
 	}
-	else if(miniNo==1){
+	else if(miniNo==3){
 		if(getPublicInt("cPro.lastComponentPage", 0)==2){
 			openTabNo(0);
 		}
 		mini_Video.show();
 	}
-	else if(miniNo==2){
+	else if(miniNo==4){
 		if(getPublicInt("cPro.lastComponentPage", 0)==3){
 			openTabNo(0);
 		}
@@ -574,25 +581,97 @@ openMini(int miniNo){
 
 		mini_AVS.show();
 	}
-	else if(miniNo==3){
+	else if(miniNo==2){
 		mini_SavedPL.show();
 	}
-	else if(miniNo==4){
+	else if(miniNo==1){
 		drawer.sendAction ("release", "TAG", 0, 0, 0, 0);
 		mini_TagView.show();
+		bg=1;
 	}
 	else if(miniNo >= 100) {
 		GuiObject gr = dummyBuck.enumChildren(miniNo-100);
 		String id = getToken(gr.getXmlParam("userdata"), ";", 0);
 		
 		// @pjn - add background change here! V1.1
+		bg = stringToInteger(getToken(gr.getXmlParam("userdata"), ";", 1));
 		
 		customObj.setXmlParam("groupid", id);
 		customObj.show();
 	}
 	setPublicInt("cPro.lastMini", miniNo);
+	setMiniBG(bg);
 }
 
+gotoPrevMini(){ //wheelup
+	int pos = getPublicInt("cPro.lastMini", 0);
+
+	if (pos == 0)
+	{
+		if(dummyBuck.getNumChildren()==0) pos = 99+dummyBuck.getNumChildren();
+		else pos = 99+dummyBuck.getNumChildren();
+	}
+	else if (pos == 100)
+	{
+		pos = 2;
+	}
+	else if(pos>=3 && pos<=4) pos = 2;
+	else pos--;
+
+	openMini(pos);
+}
+gotoNextMini(){ //wheelDown
+	int pos = getPublicInt("cPro.lastMini", 0);
+
+	if(pos>=3 && pos<=4) pos = 2;
+
+	if (pos == 2)
+	{
+		if(dummyBuck.getNumChildren()==0) pos = 0;
+		else pos = 100;
+	}
+	else if (pos == 99+dummyBuck.getNumChildren())
+	{
+		pos = 0;
+	}
+	else pos++;
+
+	openMini(pos);
+}
+
+normal.onMouseWheelUp(int clicked , int lines){
+	if(mouse_but_miniGoto){
+		gotoPrevMini();
+		return 1;
+	}
+}
+normal.onMouseWheelDown(int clicked , int lines){
+	if(mouse_but_miniGoto){
+		gotoNextMini();
+		return 1;
+	}
+}
+but_miniGoto.onEnterArea(){
+	mouse_but_miniGoto=true;
+}
+but_miniGoto.onLeaveArea(){
+	mouse_but_miniGoto=false;
+}
+setMiniBG(int mode){
+	if(mode==0){
+		gad_Grid.setXmlParam("bottomleft", "player.gframe.7");
+		//tempfix.hide();
+		//gad_Grid.show();
+	}
+	else if(mode==1){
+		gad_Grid.setXmlParam("bottomleft", "player.gframe.7.alt");
+		//tempfix.show();
+		//gad_Grid.show();
+	}
+	else{
+		debug("Error: Mini background not found!");
+	}
+}
 
 refreshComponentButtons(){
 	if(getPublicInt("Cpro.One.TabStatus.1", 1)){
@@ -692,7 +771,7 @@ xuiGroup.onAction (String action, String param, int x, int y, int p1, int p2, Gu
 	}
 	else if (strlower(action) == "release"){
 		if(param=="VIS"){
-			if(getPublicInt("cPro.lastMini", 0)==2) openMini(0);
+			if(getPublicInt("cPro.lastMini", 0)==4) openMini(0);
 			if(getPublicInt("cPro.lastComponentPage", 0)==3) openTabNo(0);
 		}
 		else if(param=="PL"){
@@ -700,11 +779,11 @@ xuiGroup.onAction (String action, String param, int x, int y, int p1, int p2, Gu
 			if(mainFrame.getPosition()!=0) setMainFrame(false);
 		}
 		else if(param=="VID"){
-			if(getPublicInt("cPro.lastMini", 0)==1) openMini(0);
+			if(getPublicInt("cPro.lastMini", 0)==3) openMini(0);
 			if(getPublicInt("cPro.lastComponentPage", 0)==2) openTabNo(0);
 		}
 		else if(param=="TAG"){
-			if(getPublicInt("cPro.lastMini", 0)==4) openMini(0);
+			if(getPublicInt("cPro.lastMini", 0)==1) openMini(0);
 		}
 	}
 	else if(strlower(action) == "widget_statusbar"){
