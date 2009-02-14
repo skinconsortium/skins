@@ -40,21 +40,21 @@
 <bitmap id="player.main.gen.button.down2" file="graphics.png" x="229" y="64" w="90" h="30" gammagroup="glass"/> 
 <!-- ****** -->
 
-<bitmap id="player.main.button.close" file="graphics.png" x="1" y="302" w="45" h="20" gammagroup="glass"/> 
-<bitmap id="player.main.button.close.hover" file="graphics.png" x="1" y="323" w="45" h="20" gammagroup="glass"/> 
-<bitmap id="player.main.button.close.down" file="graphics.png" x="1" y="344" w="45" h="20" gammagroup="glass"/> 
+<bitmap id="player.main.button.close" file="graphics.png" x="1" y="302" w="45" h="20" gammagroup="pbuttons"/> 
+<bitmap id="player.main.button.close.hover" file="graphics.png" x="1" y="323" w="45" h="20" gammagroup="pbuttons"/> 
+<bitmap id="player.main.button.close.down" file="graphics.png" x="1" y="344" w="45" h="20" gammagroup="pbuttons"/> 
 
-<bitmap id="player.main.button.min" file="graphics.png" x="47" y="302" w="45" h="20" gammagroup="glass"/> 
-<bitmap id="player.main.button.min.hover" file="graphics.png" x="47" y="323" w="45" h="20" gammagroup="glass"/> 
-<bitmap id="player.main.button.min.down" file="graphics.png" x="47" y="344" w="45" h="20" gammagroup="glass"/> 
+<bitmap id="player.main.button.min" file="graphics.png" x="47" y="302" w="45" h="20" gammagroup="pbuttons"/> 
+<bitmap id="player.main.button.min.hover" file="graphics.png" x="47" y="323" w="45" h="20" gammagroup="pbuttons"/> 
+<bitmap id="player.main.button.min.down" file="graphics.png" x="47" y="344" w="45" h="20" gammagroup="pbuttons"/> 
 
-<bitmap id="player.main.button.full" file="graphics.png" x="93" y="302" w="45" h="20" gammagroup="glass"/> 
-<bitmap id="player.main.button.full.hover" file="graphics.png" x="93" y="323" w="45" h="20" gammagroup="glass"/> 
-<bitmap id="player.main.button.full.down" file="graphics.png" x="93" y="344" w="45" h="20" gammagroup="glass"/> 
+<bitmap id="player.main.button.full" file="graphics.png" x="93" y="302" w="45" h="20" gammagroup="pbuttons"/> 
+<bitmap id="player.main.button.full.hover" file="graphics.png" x="93" y="323" w="45" h="20" gammagroup="pbuttons"/> 
+<bitmap id="player.main.button.full.down" file="graphics.png" x="93" y="344" w="45" h="20" gammagroup="pbuttons"/> 
 
-<bitmap id="player.main.button.window" file="graphics.png" x="139" y="302" w="45" h="20" gammagroup="glass"/> 
-<bitmap id="player.main.button.window.hover" file="graphics.png" x="139" y="323" w="45" h="20" gammagroup="glass"/> 
-<bitmap id="player.main.button.window.down" file="graphics.png" x="139" y="344" w="45" h="20" gammagroup="glass"/> 
+<bitmap id="player.main.button.window" file="graphics.png" x="139" y="302" w="45" h="20" gammagroup="pbuttons"/> 
+<bitmap id="player.main.button.window.hover" file="graphics.png" x="139" y="323" w="45" h="20" gammagroup="pbuttons"/> 
+<bitmap id="player.main.button.window.down" file="graphics.png" x="139" y="344" w="45" h="20" gammagroup="pbuttons"/> 
 
 <bitmap id="player.main.resizer" file="graphics.png" x="420" y="130" w="30" h="30" gammagroup="glass"/> 
 
@@ -120,36 +120,36 @@
 
 <bitmap id="player.seeker.thumb" file="graphics.png" x="460" y="239" w="13" h="37" gammagroup="Glass"/> 
 
-<bitmap id="player.main.eqover" file="@SKINSPATH@Komodo\engine\player\eqover.png" gammagroup="Background"/>
+<!--bitmap id="player.main.eqover" file="@SKINSPATH@Komodo\engine\player\eqover.png" gammagroup="Background"/>
 <bitmap id="player.main.eqbut" file="@SKINSPATH@Komodo\engine\player\eq.png" gammagroup="Background"/>
 <bitmap id="player.main.eqbutd" file="@SKINSPATH@Komodo\engine\player\eqd.png" gammagroup="Background"/>
 <bitmap id="player.main.eqbase" file="@SKINSPATH@Komodo\engine\player\eqbase.png" gammagroup="Background"/>
 <bitmap id="player.main.eqbaseover" file="@SKINSPATH@Komodo\engine\player\eqbaseover.png" gammagroup="Backover"/>
 <bitmap id="player.main.eqbutton" file="@SKINSPATH@Komodo\engine\player\eqbutton.png" />
 <bitmap id="player.main.eqbuttond" file="@SKINSPATH@Komodo\engine\player\eqbuttond.png" />
-<bitmap id="player.main.eqbuttondd" file="@SKINSPATH@Komodo\engine\player\eqbuttondd.png" />
+<bitmap id="player.main.eqbuttondd" file="@SKINSPATH@Komodo\engine\player\eqbuttondd.png" /-->
 
 <bitmap id="my.music.pic" file="@SKINSPATH@Komodo\engine\player\waaudio.png" />
 <bitmap id="my.video.pic" file="@SKINSPATH@Komodo\engine\player\wavideo.png" />
 <bitmap id="my.audioCd.pic" file="@SKINSPATH@Komodo\engine\player\wacd.png" />
 
-<bitmap id="player.main.play" file="graphics.png" x="99" y="100" w="48" h="100" gammagroup="Glass"/>
-<bitmap id="player.main.playd" file="graphics.png" x="148" y="100" w="48" h="100" gammagroup="Glass"/>
-<bitmap id="player.main.Pause" file="graphics.png" x="197" y="100" w="48" h="100" gammagroup="Glass"/>
-<bitmap id="player.main.Paused" file="graphics.png" x="246" y="100" w="48" h="100" gammagroup="Glass"/>
-<bitmap id="player.main.stop" file="graphics.png" x="295" y="100" w="48" h="100" gammagroup="Glass"/>
-<bitmap id="player.main.stopd" file="graphics.png" x="344" y="100" w="48" h="100" gammagroup="Glass"/>
-<bitmap id="player.main.rev" file="graphics.png" x="1" y="201" w="48" h="100" gammagroup="Glass"/>
-<bitmap id="player.main.revd" file="graphics.png" x="50" y="201" w="48" h="100" gammagroup="Glass"/>
-<bitmap id="player.main.forward" file="graphics.png" x="99" y="201" w="48" h="100" gammagroup="Glass"/>
-<bitmap id="player.main.forwardd" file="graphics.png" x="148" y="201" w="48" h="100" gammagroup="Glass"/>
-<bitmap id="player.main.eject" file="graphics.png" x="1" y="100" w="48" h="100" gammagroup="Glass"/>
-<bitmap id="player.main.ejectd" file="graphics.png" x="50" y="100" w="48" h="100" gammagroup="Glass"/>
+<bitmap id="player.main.play" file="graphics.png" x="99" y="100" w="48" h="100" gammagroup="cbuttons"/>
+<bitmap id="player.main.playd" file="graphics.png" x="148" y="100" w="48" h="100" gammagroup="cbuttons"/>
+<bitmap id="player.main.Pause" file="graphics.png" x="197" y="100" w="48" h="100" gammagroup="cbuttons"/>
+<bitmap id="player.main.Paused" file="graphics.png" x="246" y="100" w="48" h="100" gammagroup="cbuttons"/>
+<bitmap id="player.main.stop" file="graphics.png" x="295" y="100" w="48" h="100" gammagroup="cbuttons"/>
+<bitmap id="player.main.stopd" file="graphics.png" x="344" y="100" w="48" h="100" gammagroup="cbuttons"/>
+<bitmap id="player.main.rev" file="graphics.png" x="1" y="201" w="48" h="100" gammagroup="cbuttons"/>
+<bitmap id="player.main.revd" file="graphics.png" x="50" y="201" w="48" h="100" gammagroup="cbuttons"/>
+<bitmap id="player.main.forward" file="graphics.png" x="99" y="201" w="48" h="100" gammagroup="cbuttons"/>
+<bitmap id="player.main.forwardd" file="graphics.png" x="148" y="201" w="48" h="100" gammagroup="cbuttons"/>
+<bitmap id="player.main.eject" file="graphics.png" x="1" y="100" w="48" h="100" gammagroup="cbuttons"/>
+<bitmap id="player.main.ejectd" file="graphics.png" x="50" y="100" w="48" h="100" gammagroup="cbuttons"/>
 
-<bitmap id="player.button.page.left" file="graphics.png" x="1" y="1" w="54" h="63" gammagroup="Glass"/>  
-<bitmap id="player.button.page.left.down" file="graphics.png" x="57" y="1" w="54" h="63" gammagroup="Glass"/>  
-<bitmap id="player.button.page.right" file="graphics.png" x="169" y="1" w="54" h="63" gammagroup="Glass"/>  
-<bitmap id="player.button.page.right.down" file="graphics.png" x="113" y="1" w="54" h="63" gammagroup="Glass"/> 
+<bitmap id="player.button.page.left" file="graphics.png" x="1" y="1" w="54" h="63" gammagroup="pagescroll"/>  
+<bitmap id="player.button.page.left.down" file="graphics.png" x="57" y="1" w="54" h="63" gammagroup="pagescroll"/>  
+<bitmap id="player.button.page.right" file="graphics.png" x="169" y="1" w="54" h="63" gammagroup="pagescroll"/>  
+<bitmap id="player.button.page.right.down" file="graphics.png" x="113" y="1" w="54" h="63" gammagroup="pagescroll"/> 
 
 
 </elements>
