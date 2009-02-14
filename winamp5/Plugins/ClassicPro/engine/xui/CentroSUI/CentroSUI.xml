@@ -160,12 +160,20 @@
 </groupdef>
 <groupdef id="centro.playlist.directory.tag" inherit_group="drawer.tagviewer">
 </groupdef>
+
+<groupdef id="centro.bottomleftgrid">
+	<layer id="centro.bottomleftgrid.1" x="0" y="0" image="player.gframe.7"/>
+	<layer id="centro.bottomleftgrid.2" x="6" y="0" w="-6" relatw="1" image="player.gframe.8"/>
+	<layer id="centro.bottomleftgrid.1a" x="0" y="0" image="player.gframe.7.alt" visible="0"/>
+</groupdef>
 <groupdef id="centro.playlist.directory">
-	<grid id="centro.mini.grid" fitparent="1" move="1"
+	<grid id="centro.mini.grid" fitparent="1" h="-27" move="1"
 		topleft="player.gframe.1" top="player.gframe.2" topright="player.gframe.3"
 		left="player.gframe.4" middle="player.gframe.5" right="player.gframe.6"
-		bottomleft="player.gframe.7" bottom="player.gframe.8" bottomright="player.gframe.9"
 	/>
+	<layer x="-6" y="-27" relatx="1" relaty="1" image="player.gframe.9"/>
+	<group id="centro.bottomleftgrid" x="0" y="-27" w="-6" h="27" relaty="1" relatw="1"/>
+
 	<group id="centro.playlist.directory.cov" fitparent="1" visible="0"/>
 	<group id="centro.playlist.directory.vid" fitparent="1" visible="0"/>
 	<group id="centro.playlist.directory.vis" fitparent="1" visible="0"/>

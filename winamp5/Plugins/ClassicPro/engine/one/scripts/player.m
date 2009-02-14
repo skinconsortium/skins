@@ -3,6 +3,7 @@
 #include <lib/pldir.mi>
 #include attribs/init_Autoresize.m
 #include <lib/quickPlaylist.mi>
+#include <lib/fileio.mi>
 
 //#define rres 20 
 
@@ -27,10 +28,11 @@ Global Slider vol_slider, seek_slider;
 Global Layer vol_layer, tt_layer, bgLeft, bgRight, bgTop, bgBottom, bgLeftRead, bgTopRead, vol_layer2, muteWarning;
 Global GuiObject progressbar, seekBg;
 Global Vis mainVis;
-Global Text tracktimer, trackTitle;
-Global GuiObject infodisplay, vol_images;
+Global Text tracktimer, infodisplay;
+Global GuiObject trackTitle, vol_images;
 Global Button bolt, fakeAbout, changeTheme;
 Global Popupmenu selMenu;
+Global XmlDoc myDoc;
 
 //MuteButton
 Global Togglebutton mute_but;
@@ -44,7 +46,7 @@ Global int i, lastKnownW, lastKnownH, rres;
 System.onScriptLoaded() {
 	initAttribs_Autoresize();
 
-	rres=stringToInteger(getParam());
+	rres=20;
 
 	mainGroup = getScriptGroup();
 	vol_slider = mainGroup.findObject("volume");
@@ -60,8 +62,8 @@ System.onScriptLoaded() {
 	mainVis = mainGroup.findObject("main.vis");
 	tt_layer = mainGroup.findObject("hidden.tracktime");
 	tracktimer = mainGroup.findObject("SongTime");
-	trackTitle = mainGroup.findObject("infodisplay");
-	infodisplay = mainGroup.findObject("infosongticker");
+	trackTitle = mainGroup.findObject("infosongticker");
+	infodisplay = mainGroup.findObject("fileinfo.mode.2.text");
 	bolt = mainGroup.findObject("winampbolt");
 	fakeAbout = mainGroup.findObject("aboutwinamp.hidden");
 	changeTheme = mainGroup.findObject("Cpro.theme.next");
@@ -162,7 +164,16 @@ System.onScriptLoaded() {
 		mute_but.setXmlParam("tooltip", "Mute Volume");
 	}
 
-	//updateTextSizes();
+	myDoc = new XmlDoc;
+	String fullpath = getParam()+"ClassicPro.xml";
+	myDoc.load(fullpath);
+	
+	if(myDoc.exists()){
+		myDoc.parser_addCallback("ClassicPro/TextSettings*");
+		myDoc.parser_start();
+		myDoc.parser_destroy();
+	}
+	delete myDoc;
 }
 System.onScriptUnloading(){
 	if(getPublicInt("cPro.lastmode", 0)==0) saveGlobal(); //0=normal ; 1=shade
@@ -171,6 +182,27 @@ System.onScriptUnloading(){
 	setPublicInt("cPro.firstlayout", 0);
 	delete reCheck;
 	delete myTimer;
+}
+
+myDoc.parser_onCallback (String xmlpath, String xmltag, list paramname, list paramvalue){
+	if(strlower(xmltag) == "style"){
+		String busyWith ="";
+		for(int i=0; i<paramname.getNumItems(); i++){
+			if(strlower(paramname.enumItem(i))=="id"){
+				busyWith=paramvalue.enumItem(i);
+			}
+			
+			if(busyWith=="normal.songticker"){
+				trackTitle.setXmlParam(paramname.enumItem(i),paramvalue.enumItem(i));
+			}
+			else if(busyWith=="normal.tracktime"){
+				tracktimer.setXmlParam(paramname.enumItem(i),paramvalue.enumItem(i));
+			}
+			else if(busyWith=="normal.trackinfo"){
+				infodisplay.setXmlParam(paramname.enumItem(i),paramvalue.enumItem(i));
+			}
+		}
+	}
 }
 
 myLayout.onResize(int x, int y, int w, int h){

@@ -81,7 +81,7 @@
 	<button x="-44" relatx="1" y="3" action="SWITCH" param="normal" image="s.mode.1" hoverImage="s.mode.2" downImage="s.mode.3" rectrgn="1" tooltip="Main Mode"/>
 	<button x="-24" relatx="1" y="3" action="CLOSE" image="s.close.1" hoverImage="s.close.2" downImage="s.close.3" rectrgn="1" tooltip="Exit Winamp"/>
 
-	<script file="@WINAMPPATH@\Plugins\classicPro\engine\one\scripts\shade.maki"/>
+	<script file="@WINAMPPATH@\Plugins\classicPro\engine\one\scripts\shade.maki" param="@SKINPATH@"/>
 
 	<group id="cpro.shade.overlay" fitparent="1" sysregion="1"/>
 </layout>

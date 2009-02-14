@@ -64,20 +64,18 @@ System.onScriptLoaded (){
 	
 	// If we include more stuff in the classicpro.xml at a later stage the parser must set a boolean = true to know that the xml was for this
 	if(myDoc.exists() && myMap.getHeight()>90){
-		customvis=true;
 		cusbeat_names = new List;
 		myDoc.parser_addCallback("BeatVis/*");
 		myDoc.parser_addCallback("ClassicPro/BeatVis*");
 		myDoc.parser_start();
 		myDoc.parser_destroy();
-		delete myDoc;
+		if(cusbeat_names.getNumItems()>0) customvis=true;
+		
 		setCustomVis(getPrivateInt(getSkinName(), "customvis", 0));
 		mouseTrap.setXmlParam("tooltip", "Right-Click for more animations");
 	}
-	else{
-		customvis=false;
-		delete myDoc;
-	}
+	else customvis=false;
+	delete myDoc;
 
 	
 	if(myMap.getHeight()<=90){

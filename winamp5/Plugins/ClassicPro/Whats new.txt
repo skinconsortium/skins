@@ -1,13 +1,15 @@
 -------------------------------------------------------------
-Version 1.1 (8 Feb 2009)
+Version 1.1 (15 Feb 2009)
 -------------------------------------------------------------
 - New: Major Widget Engine Improvements! Download new widgets (http://cpro.skinconsortium.com)
 - New: New Ultra Modern Tabs with animation!
 - New: BrowserPro v2.0 widget bundled (now have its own tab!)
+- New: More powerfull ClassicPro.xml for skinners ;)
 - Improved: Cleaned SUI code and separated the tab code
 - Improved: Web browser now also have a window menu entry and shortcut
 - Improved: You can scroll through the mini area too (hover over mini select and mousewheel)
 - Fixed: Generate HTML playlist did nothing
+- Fixed: Faded bottomleft grid for transparent gfx
 -------------------------------------------------------------
 
 

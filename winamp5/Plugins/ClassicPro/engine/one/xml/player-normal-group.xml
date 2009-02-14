@@ -322,15 +322,19 @@
 	<button x="1" y="-18" relaty="1" action="VID_Misc" image="component.menu.1" hoverimage="component.menu.2" downimage="component.menu.3" tooltip="Video Options"/>-->
 </groupdef>
 
-
+<groupdef id="centro.blf">
+	<layer id="centro.blf.1" x="0" y="0" image="player.gframe.7" move="1"/>
+	<layer id="centro.blf.2" x="6" y="0" w="-6" relatw="1" image="player.gframe.8" move="1"/>
+	<layer id="centro.blf.1a" x="0" y="0" image="player.gframe.7.alt" visible="0" move="1"/>
+</groupdef>
 <groupdef id="centro.multidrawer">
-	<grid id="centro.gadget.grid" fitparent="1"
+	<grid id="centro.gadget.grid" fitparent="1" h="-27" move="1"
 		topleft="player.gframe.1" top="player.gframe.2" topright="player.gframe.3"
 		left="player.gframe.4" middle="player.gframe.5" right="player.gframe.6"
-		bottomleft="player.gframe.7" bottom="player.gframe.8" bottomright="player.gframe.9"
-		regionop="1" move="1"
 	/>
-	<layer id="tempfix" image="player.gframe.7.alt" visible="0" x="0" y="-27" relaty="1"/>
+	<layer id="centro.blf.3" x="-6" y="-27" relatx="1" relaty="1" image="player.gframe.9"/>
+	<group id="centro.blf" x="0" y="-27" w="-6" h="27" relaty="1" relatw="1" wantfocus="1"/>
+
 	<grid id="centro.gadget.grid.eq" fitparent="1" visible="0"
 		topleft="player.gframe.1.alt" top="player.gframe.2.alt" topright="player.gframe.3.alt"
 		regionop="1" move="1"
@@ -349,7 +353,7 @@
 	<customobject id="widget.holder" fitparent="1" visible="0" /> <!-- this one holds our widgets -->
 
 	<button id="drawer.menulist" x="-33" y="-18" relatx="1" relaty="1" image="component.goto.1" hoverimage="component.goto.2" downimage="component.goto.3" tooltip="Select Drawer"/>
-	<script file="@WINAMPPATH@\Plugins\classicPro\engine\one\scripts\drawer.maki"/>
+	<script file="@WINAMPPATH@\Plugins\classicPro\engine\one\scripts\drawer.maki"  param="@SKINPATH@"/>
 </groupdef>
 
 
