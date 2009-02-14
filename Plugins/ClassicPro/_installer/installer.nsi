@@ -66,7 +66,7 @@ FunctionEnd
 
 ;--------------------------------
 ;Interface Settings
-  !define MUI_TEXT_WELCOME_INFO_TEXT "This wizard will guide you through the installation of $(^NameDA).$\r$\n$\r$\nIt is recommended that you close Winamp before starting Setup. This will make it possible to update all relevant Winamp files.$\n$\nYou'll at least need Winamp 5.54 for this version of ClassicPro to work!$\r$\n$\r$\n$_CLICK"
+  !define MUI_TEXT_WELCOME_INFO_TEXT "This wizard will guide you through the installation of $(^NameDA).$\r$\n$\r$\nIt is recommended that you close Winamp before starting Setup. This will make it possible to update all relevant Winamp files.$\n$\nYou'll at least need Winamp 5.55 for this version of ClassicPro to work!$\r$\n$\r$\n$_CLICK"
 
 
   !define MUI_WELCOMEFINISHPAGE_BITMAP "${SOURCEPATH}\_installer\win.bmp"
@@ -87,7 +87,9 @@ FunctionEnd
 
 
   !define MUI_ICON "${SOURCEPATH}\_installer\icon.ico"
-  !define MUI_UNICON "${NSISDIR}\Contrib\Graphics\Icons\arrow-uninstall.ico"
+  ;!define MUI_UNICON "${NSISDIR}\Contrib\Graphics\Icons\arrow2-uninstall.ico"
+  !define MUI_UNICON "${SOURCEPATH}\_installer\icon.ico"
+
 
 
 ;--------------------------------
@@ -273,7 +275,7 @@ Section "ClassicPro Engine" cproFiles
 
 
   SetOutPath "$INSTDIR\Skins"
-  File "C:\Program Files (x86)\Winamp\Skins\cPro__Bento.wal"
+  File "C:\Program Files (x86)\Winamp\Skins\Cpro__Bento.wal"
 
 
   RMDir /r "$INSTDIR\Skins\cPro - Big Bento\" 
@@ -404,5 +406,5 @@ FunctionEnd
 
 
 Function LaunchLink
-  ExecShell "" "$INSTDIR\Skins\cPro__Bento.wal"
+  ExecShell "" "$INSTDIR\Skins\Cpro__Bento.wal"
 FunctionEnd

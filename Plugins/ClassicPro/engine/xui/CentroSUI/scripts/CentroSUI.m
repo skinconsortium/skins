@@ -45,6 +45,7 @@ Global Button but_miniGoto;
 Global PopUpMenu popMenu;
 Global Boolean mouse_but_miniGoto;
 Global GuiObject gad_Grid;
+Global Layer gadgrid1, gadgrid1a, gadgrid2;
 
 // Gui Extras
 Global Text plText1, plText2;
@@ -139,6 +140,11 @@ System.onScriptLoaded(){
 	customObj = xuiGroup.findObject("widget.holder.mini");
 	hold_Other = xuiGroup.findObject("centro.windowholder.other");
 	gad_Grid = xuiGroup.findObject("centro.mini.grid");
+	gadgrid1 = xuiGroup.findObject("centro.bottomleftgrid.1");
+	gadgrid1a = xuiGroup.findObject("centro.bottomleftgrid.1a");
+	gadgrid2 = xuiGroup.findObject("centro.bottomleftgrid.2");
+
+
 
 	// Check to see if the new eq background is used
 	Map myMap = new Map;
@@ -642,12 +648,14 @@ gotoNextMini(){ //wheelDown
 normal.onMouseWheelUp(int clicked , int lines){
 	if(mouse_but_miniGoto){
 		gotoPrevMini();
+		complete;
 		return 1;
 	}
 }
 normal.onMouseWheelDown(int clicked , int lines){
 	if(mouse_but_miniGoto){
 		gotoNextMini();
+		complete;
 		return 1;
 	}
 }
@@ -659,14 +667,27 @@ but_miniGoto.onLeaveArea(){
 }
 setMiniBG(int mode){
 	if(mode==0){
-		gad_Grid.setXmlParam("bottomleft", "player.gframe.7");
-		//tempfix.hide();
-		//gad_Grid.show();
+		gadgrid1.show();
+		gadgrid1a.hide();
+		
+		gadgrid2.setXmlParam("x", "6");
+		gadgrid2.setXmlParam("w", "-6");
 	}
 	else if(mode==1){
-		gad_Grid.setXmlParam("bottomleft", "player.gframe.7.alt");
-		//tempfix.show();
-		//gad_Grid.show();
+		if(getPublicInt("cPro.transparentsave", 0)){
+			gadgrid1.hide();
+			gadgrid1a.show();
+
+			gadgrid2.setXmlParam("x", "247");
+			gadgrid2.setXmlParam("w", "-247");
+		}
+		else{
+			gadgrid1.show();
+			gadgrid1a.show();
+			
+			gadgrid2.setXmlParam("x", "6");
+			gadgrid2.setXmlParam("w", "-6");
+		}
 	}
 	else{
 		debug("Error: Mini background not found!");
@@ -790,7 +811,6 @@ xuiGroup.onAction (String action, String param, int x, int y, int p1, int p2, Gu
 		widgetStatus=x;
 		updateCompStatus();
 	}
-
 }
 
 //Main Frame code

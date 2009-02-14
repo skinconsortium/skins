@@ -1,4 +1,5 @@
 #include <lib/std.mi>
+#include <lib/fileio.mi>
 
 Function openDrawer(int drawerNo);
 Function gotoPrevDrawer();
@@ -21,17 +22,32 @@ Global int numInternalWidgets = 0;
 Global Layout myLayout;
 Global Group myGroup;
 Global CProWidget drawer_equalizer, drawer_pl, drawer_vid, drawer_savedpl, drawer_tagviewer, drawer_avs, drawer_ct, drawer_skinchooser;
-Global PopUpMenu popMenu, widgetmenu;
+Global PopUpMenu popMenu;//, widgetmenu;
 Global Button but_drawerGoto;
 Global GuiObject cpro_sui, gad_Grid, gad_GridEQ;
 Global Layer ct_fakeLayer, tempfix;
-Global Boolean gotThemes, mouse_but_drawerGoto, cuseqbg;
+Global Boolean gotThemes, mouse_but_drawerGoto, cuseqbg, transparentSave;
+Global XmlDoc myDoc;
+Global Layer gadgrid1, gadgrid1a, gadgrid2, gadgrid3;
 
 Global ComponentBucket dummyBuck;
 Global GuiObject customObj;
 Global List internalWidgets;
 
 System.onScriptLoaded() {
+	myDoc = new XmlDoc;
+	String fullpath = getParam()+"ClassicPro.xml";
+	myDoc.load(fullpath);
+	transparentSave=false;
+	setPublicInt("cPro.transparentsave", 0);
+ 	if(myDoc.exists()){
+		myDoc.parser_addCallback("ClassicPro");
+		myDoc.parser_start();
+		myDoc.parser_destroy();
+	}
+	delete myDoc;
+
+
 	internalWidgets = new List;
 
 	myLayout = getContainer("main").getLayout("normal");
@@ -40,6 +56,10 @@ System.onScriptLoaded() {
 	but_drawerGoto = myGroup.findObject("drawer.menulist");
 	ct_fakeLayer = myGroup.findObject("drawer.ct.fakelayer"); //used to detect if skin have colorthemes
 	tempfix = myGroup.findObject("tempfix");
+	gadgrid1 = myGroup.findObject("centro.blf.1");
+	gadgrid1a = myGroup.findObject("centro.blf.1a");
+	gadgrid2 = myGroup.findObject("centro.blf.2");
+	gadgrid3 = myGroup.findObject("centro.blf.3");
 
 	/*	ClassicPro Components */
 	drawer_equalizer = myGroup.findObject("drawer.equalizer");
@@ -79,7 +99,7 @@ System.onScriptLoaded() {
 
 	numInternalWidgets = internalWidgets.getNumItems();
 
-	gad_Grid = myGroup.findObject("centro.gadget.grid");
+	//gad_Grid = myGroup.findObject("centro.gadget.grid");
 	gad_GridEQ = myGroup.findObject("centro.gadget.grid.eq");
 	
 	cpro_sui = getContainer("main").getLayout("normal").findObject("cpro.sui");
@@ -99,6 +119,16 @@ System.onScriptLoaded() {
 	openDrawer(getPublicInt("cPro.lastDrawer", 0));
 }
 
+myDoc.parser_onCallback (String xmlpath, String xmltag, list paramname, list paramvalue){
+	String busyWith ="";
+	for(int i=0; i<paramname.getNumItems(); i++){
+		if(paramname.enumItem(i)=="version"){
+			transparentSave=true;
+			setPublicInt("cPro.transparentsave", 1);
+		}
+	}
+}
+
 
 but_drawerGoto.onleftClick(){
 	popMenu = new PopUpMenu;
@@ -113,17 +143,17 @@ but_drawerGoto.onleftClick(){
 		if(gr.addSep) popMenu.addSeparator();
 	}
 	popMenu.addSeparator();
-
+	//debug("abc");
 	//widgetmenu = new PopUpMenu;
 
-	int x;
-	for (x = 0; x < numUserWidgets; x++) {
+	for (int x=0; x < numUserWidgets; x++) {
 		GuiObject gr = dummyBuck.enumChildren(x);
 		//widgetmenu.addCommand(gr.getXMLparam("name"), userWidgetOffset+x, cur == userWidgetOffset+x, 0);
 		popMenu.addCommand(gr.getXMLparam("name"), userWidgetOffset+x, cur == userWidgetOffset+x, 0);
 	}
+	//debug("abc1");
 
-	if (x == 0) widgetmenu.addCommand("No widgets found for this view!", -1, 0, 1);
+	if (numUserWidgets == 0) popMenu.addCommand("No widgets found for this view!", -1, 0, 1);
 	//popMenu.addSubMenu(widgetmenu, "Widgets");
 
 
@@ -131,6 +161,7 @@ but_drawerGoto.onleftClick(){
 	popMenu.addCommand("Close drawer", -2, 0, 0);//** Item code changed to -2 to support widgets.
 
 	//popMenu.checkCommand(getPublicInt("cPro.lastDrawer", 0), 1);
+	//debug("abc2");
 
 	int result = popMenu.popAtXY(clientToScreenX(but_drawerGoto.getLeft()), clientToScreenY(but_drawerGoto.getTop() + but_drawerGoto.getHeight()));
 
@@ -141,7 +172,7 @@ but_drawerGoto.onleftClick(){
 	}
 
 	delete popMenu;
-	delete widgetmenu;
+	//delete widgetmenu;
 	complete;
 }
 
@@ -219,33 +250,30 @@ but_drawerGoto.onLeaveArea(){
 myLayout.onMouseWheelUp(int clicked , int lines){
 	if(mouse_but_drawerGoto){
 		gotoPrevDrawer();
+		complete;
 		return 1;
 	}
 }
 myLayout.onMouseWheelDown(int clicked , int lines){
 	if(mouse_but_drawerGoto){
 		gotoNextDrawer();
+		complete;
 		return 1;
 	}
-}
-
-System.onKeyDown(String key){
-	if(key=="f7") gotoPrevDrawer();
-	else if(key=="f8") gotoNextDrawer();
 }
 
 gotoPrevDrawer(){ //wheelup
 	int pos = getPublicInt("cPro.lastDrawer", 0);
 
-	if (pos == userWidgetOffset)
-	{
-		pos = numInternalWidgets;
+	if (pos == userWidgetOffset){
+		pos = numInternalWidgets-1;
 	}
-	if (pos == 0)
-	{
-		pos = userWidgetOffset + numUserWidgets;
+	else if(pos == 0){
+		if(numUserWidgets==0) pos = numInternalWidgets-1;
+		else pos = userWidgetOffset + numUserWidgets-1;
 	}
-	pos--;
+	else pos--;
+
 	if (pos < userWidgetOffset)
 	{
 		CProWidget gr = internalWidgets.enumItem(pos);
@@ -256,21 +284,20 @@ gotoPrevDrawer(){ //wheelup
 			return;
 		}
 	}
-
 	openDrawer(pos);
 }
+
 gotoNextDrawer(){ //wheelDown
 	int pos = getPublicInt("cPro.lastDrawer", 0);
 
-	pos++;
-	if (pos == userWidgetOffset + numUserWidgets)
-	{
+	if(pos == userWidgetOffset + numUserWidgets -1){
 		pos = 0;
 	}
-	if (pos == numInternalWidgets)
-	{
-		pos = userWidgetOffset;
+	else if(pos == numInternalWidgets-1){
+		if(numUserWidgets==0) pos = 0;
+		else pos = userWidgetOffset;
 	}
+	else pos++;
 
 	if (pos < userWidgetOffset)
 	{
@@ -287,27 +314,46 @@ gotoNextDrawer(){ //wheelDown
 
 setDrawerBG(int mode){
 	if(mode==0){
+		gadgrid1.show();
+		gadgrid2.show();
+		gadgrid3.show();
+
+		gadgrid1a.hide();
 		gad_GridEQ.hide();
-		//gad_Grid.setXmlParam("bottomleft", "player.gframe.7");
-		tempfix.hide();
-		gad_Grid.show();
+	
+		gadgrid2.setXmlParam("x", "6");
+		gadgrid2.setXmlParam("w", "-6");
 	}
 	else if(mode==1){
+		gadgrid1a.show();
+		gadgrid2.show();
+		gadgrid3.show();
+		
 		gad_GridEQ.hide();
-		//gad_Grid.setXmlParam("bottomleft", "player.gframe.7.alt");
-		tempfix.show();
-		gad_Grid.show();
+
+		if(transparentSave){
+			gadgrid1.hide();
+			gadgrid2.setXmlParam("x", "247");
+			gadgrid2.setXmlParam("w", "-247");
+		}
+		else{
+			gadgrid1.show();
+			gadgrid2.setXmlParam("x", "6");
+			gadgrid2.setXmlParam("w", "-6");
+		}
 	}
 	else if(mode==2){
 		if(!cuseqbg){
 			setDrawerBG(0);
 			return;
 		}
-		tempfix.hide();
-		gad_Grid.hide();
+		gadgrid1.hide();
+		gadgrid2.hide();
+		gadgrid1a.hide();
 		gad_GridEQ.show();
+		gadgrid3.hide();
 	}
 	else{
-		debug("Error: Drawer background not found!");
+		debug("Error: Mini background not found!");
 	}
 }

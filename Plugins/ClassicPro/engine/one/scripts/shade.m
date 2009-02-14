@@ -1,5 +1,6 @@
 #include <lib/std.mi>
 #include attribs/init_Autoresize.m
+#include <lib/fileio.mi>
 
 #define rres 20 
 
@@ -18,6 +19,9 @@ Global Button mlMenu1, mlMenu2, aotBut;
 Global int i, lastKnownW;
 Global Timer reCheck;
 Global Boolean dontResize;
+Global XmlDoc myDoc;
+Global Text tracktimer;
+Global GuiObject trackTitle;
 
 Global Container main;
 Global Layout shade;
@@ -49,6 +53,8 @@ System.onScriptLoaded() {
 	mlMenu2 = mainGroup.findObject("shade.mlmenu.fake");
 	aotDoc = mainGroup.findObject("shade.aot.docked");
 	aotBut = mainGroup.findObject("shade.aot");
+	tracktimer = mainGroup.findObject("SongTime");
+	trackTitle = mainGroup.findObject("Songticker");
 
 	if(getStatus()==STATUS_STOPPED){
 		progressbar.hide();
@@ -77,8 +83,16 @@ System.onScriptLoaded() {
 	reCheck = new Timer;
 	reCheck.setDelay(10);
 	
-	//double newscalevalue = shade.getScale();
-	//shade.setXmlParam("maximum_w", integerToString(getViewPortWidthfromGuiObject(shade)/newscalevalue));
+	myDoc = new XmlDoc;
+	String fullpath = getParam()+"ClassicPro.xml";
+	myDoc.load(fullpath);
+	
+	if(myDoc.exists()){
+		myDoc.parser_addCallback("ClassicPro/TextSettings*");
+		myDoc.parser_start();
+		myDoc.parser_destroy();
+	}
+	delete myDoc;
 }
 System.onScriptUnloading() {
 	if(getPublicInt("cPro.lastmode", 0)==1) saveGlobal(); //0=normal ; 1=shade
@@ -86,6 +100,25 @@ System.onScriptUnloading() {
 	setPrivateInt(getSkinName(), "muted", mute_but.getCurCfgVal());
 	delete reCheck;
 }
+
+myDoc.parser_onCallback (String xmlpath, String xmltag, list paramname, list paramvalue){
+	if(strlower(xmltag) == "style"){
+		String busyWith ="";
+		for(int i=0; i<paramname.getNumItems(); i++){
+			if(strlower(paramname.enumItem(i))=="id"){
+				busyWith=paramvalue.enumItem(i);
+			}
+			
+			if(busyWith=="shade.songticker"){
+				trackTitle.setXmlParam(paramname.enumItem(i),paramvalue.enumItem(i));
+			}
+			else if(busyWith=="shade.tracktime"){
+				tracktimer.setXmlParam(paramname.enumItem(i),paramvalue.enumItem(i));
+			}
+		}
+	}
+}
+
 mainGroup.onSetVisible(boolean onOff){
 	if(getPrivateInt(getSkinName(), "muted", 0)==1){
 		mute_but.setActivated(true);
