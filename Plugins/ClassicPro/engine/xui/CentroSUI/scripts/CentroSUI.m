@@ -307,7 +307,7 @@ System.onGetCancelComponent(String guid, boolean goingvisible){
 			}
 		}
 		else if(guid == VIS_GUID){
-			if(getPublicInt("cPro.lastMini", 0)==2 && area_mini.isVisible()){
+			if(getPublicInt("cPro.lastMini", 0)==4 && area_mini.isVisible()){
 				//do nothing
 			}
 			else if(getPublicInt("cPro.lastDrawer", 0)==DRAWER_VIS_ID && open_drawer){
@@ -364,7 +364,7 @@ openDefaultTab.onTimer(){
 		}
 	}
 	else if(closeGUID == VIDEO_GUID){
-		if(getPublicInt("cPro.lastMini", 0)==1){	//video is openned in mini view
+		if(getPublicInt("cPro.lastMini", 0)==3){	//video is openned in mini view
 			openMini(0);
 			return;
 		}
@@ -374,7 +374,7 @@ openDefaultTab.onTimer(){
 			drawer.sendAction ("switch_to_drawer", "", 0, 0, 0, 0);
 			return;
 		}
-		else if(getPublicInt("cPro.lastMini", 0)==2){
+		else if(getPublicInt("cPro.lastMini", 0)==4){
 			openMini(0);
 			return;
 		}
