@@ -66,7 +66,7 @@ System.onScriptLoaded (){
 	if(myDoc.exists() && myMap.getHeight()>90){
 		cusbeat_names = new List;
 		myDoc.parser_addCallback("BeatVis/*");
-		myDoc.parser_addCallback("ClassicPro/BeatVis*");
+		myDoc.parser_addCallback("ClassicPro/Visualization/BeatVis*");
 		myDoc.parser_start();
 		myDoc.parser_destroy();
 		if(cusbeat_names.getNumItems()>0) customvis=true;

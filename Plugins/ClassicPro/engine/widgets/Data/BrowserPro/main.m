@@ -25,7 +25,7 @@ Global GuiList myList;
 Global XmlDoc myDoc;
 Global List loaded_P_Names, loaded_P_Url, loaded_P_Icons;
 Global int sourceNo, h_tune;
-Global boolean onetime;
+Global boolean onetime, continueLoad;
 Global Text ddBoxText;
 Global ToggleButton enabledSwitch;
 Global Button menuOptions, dropListButton;
@@ -73,7 +73,8 @@ System.onScriptLoaded(){
 myGroup.onSetVisible(boolean onOff){
 	if(onOff){
 		initLoadFiles();
-		surfSelected();
+		if(continueLoad) surfSelected();
+		else myGroup.hide();
 	}
 }
 
@@ -103,9 +104,17 @@ initLoadFiles(){
 		loaded_P_Icons = new List;
 		
 		myDoc = new XmlDoc;
-		
-		String temp = Application.GetApplicationPath()+"\Plugins\ClassicPro\engine\widgets\Data\BrowserPro\source.xml";
+		String temp = Application.GetApplicationPath()+"\Plugins\ClassicPro\engine\widgets\Data\BrowserPro\source\_"+strlower(System.getLanguageId())+".xml";
 		myDoc.load (temp);
+		if(!myDoc.exists()) temp = Application.GetApplicationPath()+"\Plugins\ClassicPro\engine\widgets\Data\BrowserPro\source\_en-us.xml";
+		myDoc.load (temp);
+		if(!myDoc.exists()){
+			debug("No source file found! Please make sure you installed ClassicPro correct.");
+			return;
+		}
+		
+		continueLoad=true;
+		
 
 		myDoc.parser_addCallback("WasabiXML/BrowserPro/*");
 		myDoc.parser_start();
@@ -150,7 +159,7 @@ resizeResults(int items){
 	if(items>1) h_tune=24;
 	else h_tune=19;
 
-	results_layout.setXmlParam("h", integerToString(h_tune+items*17));
+	results_layout.setXmlParam("h", integerToString(h_tune+items*17+1));
 }
 
 dropListButton.onLeftClick(){
