@@ -95,6 +95,16 @@ public class XmlIO
 			Control c = cast(Control)curNode.panel;
 
 			recPopulate(&c, pos.dup, doc.root, read);
+			
+			foreach(subtreenode;treenode.nodes)
+			{
+				PanelNode curNode = cast(PanelNode)subtreenode;
+				if (curNode.panel.tag is null)
+					continue;
+				
+				Control c = cast(Control)curNode.panel;
+				recPopulate(&c, pos.dup, doc.root, read);
+			}
 
 			if (read)
 			{

@@ -21,6 +21,8 @@ node:%s
 	You can also load more than one node at once separating them by "/":
 	tag="TagA/TagB" will create/search the content of <TagA><TagB>content</TagB></TagA>
 
+node-id:%tag-%id
+
 value
 	creates a <name_of_panel>text_of_panel</name_of_panel> node
 

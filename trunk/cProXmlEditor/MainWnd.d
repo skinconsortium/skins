@@ -21,6 +21,7 @@ import pages.ColorsPanel;
 import pages.test;
 import pages.Skinfo;
 import pages.CproGeneral;
+import pages.beatvis;
 
 import tango.io.FilePath;
 import tango.util.PathUtil;
@@ -89,6 +90,7 @@ class MainWnd: dfl.form.Form
 		PanelNode flexXmlRoot = new PanelNode("classicpro.xml", "General Options", new CproGeneral);
 		myTree.addNode(flexXmlRoot);
 		myTree.addNode(new PanelNode("Appearance", "Appearance", new AppearancePanel), flexXmlRoot);
+		myTree.addNode(new PanelNode("Visualization", "BeatVis", new BeatVis), flexXmlRoot);
 		myTree.addNode(new PanelNode("Text Styles", "Text Styles", new TestPanel), flexXmlRoot);
 		
 		PanelNode colorsXmlRoot = new PanelNode("colors.xml", "Skin Colors", new ColorsPanel);

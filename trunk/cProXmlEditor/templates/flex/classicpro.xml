@@ -24,4 +24,14 @@
 			valign="top"
 		/>
 	</TextSettings>
+	<Visualization>
+		<BeatVis>
+			<customvis name="Enter your vis name here 1"/>
+			<customvis name="Enter your vis name here 2"/>
+			<customvis name="Enter your vis name here 3"/>
+			<customvis name="Enter your vis name here 4"/>
+			<customvis name="Enter your vis name here 5"/>
+			<customvis name="Enter your vis name here 6"/>
+		</BeatVis>
+	</Visualization>
 </ClassicPro>
