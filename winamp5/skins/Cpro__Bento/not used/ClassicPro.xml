@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ClassicPro version="1.1" engine="one">
+	<TextSettings>
+		<Style id="normal.songticker"
+			bold="2"
+			italic="1"
+			antialias="1"
+		/>
+		<Style id="normal.tracktime"
+			bold="2"
+			italic="1"
+			antialias="1"
+		/>
+		<Style id="normal.trackinfo"
+			bold="2"
+			italic="1"
+			antialias="1"
+		/>
+		<Style id="shade.songticker"
+			bold="2"
+			italic="1"
+			antialias="1"
+		/>
+		<Style id="shade.tracktime"
+			bold="2"
+			italic="1"
+			antialias="1"
+		/>
+	</TextSettings>
+	
+	<BeatVis>
+		<customvis name="Enter your vis name here 1"/>
+		<customvis name="Enter your vis name here 2"/>
+		<customvis name="Enter your vis name here 3"/>
+		<customvis name="Enter your vis name here 4"/>
+		<customvis name="Enter your vis name here 5"/>
+		<customvis name="Enter your vis name here 6"/>
+	</BeatVis>
+</ClassicPro>
