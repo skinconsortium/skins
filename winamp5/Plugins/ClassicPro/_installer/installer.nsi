@@ -307,11 +307,14 @@ Section "BrowserPro v2.0" wBrowserPro
 	File "${SOURCEPATH}\engine\widgets\Load\browserpro.xml"
  
 	SetOutPath "$INSTDIR\Plugins\ClassicPro\engine\widgets\Data\BrowserPro"
+	Delete "${SOURCEPATH}\engine\widgets\Data\BrowserPro\*.xml"
 	File "${SOURCEPATH}\engine\widgets\Data\BrowserPro\*.m"
 	File "${SOURCEPATH}\engine\widgets\Data\BrowserPro\*.maki"
 	File "${SOURCEPATH}\engine\widgets\Data\BrowserPro\*.xml"
 	File "${SOURCEPATH}\engine\widgets\Data\BrowserPro\*.mi"
 
+	SetOutPath "$INSTDIR\Plugins\ClassicPro\engine\widgets\Data\BrowserPro\source"
+	File "${SOURCEPATH}\engine\widgets\Data\BrowserPro\source\*.xml"
 
 	SetOutPath "$INSTDIR\Plugins\ClassicPro\engine\widgets\Data\BrowserPro\icons"
 	File "${SOURCEPATH}\engine\widgets\Data\BrowserPro\icons\*.png"
