@@ -1,0 +1,90 @@
+<elements>
+	<!-- Generic Cpro Colors -->
+	<color id="Menu.Text" value="199,201,207"/>
+	<color id="Tab.Text.On" value="210,210,210"/>
+	<color id="Tab.Text.Off" value="200,200,200"/>
+	<color id="Tab.Text.Hover" value="210,210,210"/>
+	<color id="Tag.Info.Text" value="147,175,185"/>
+	<color id="Player.SongTicker.Text" value="147,175,185"/>
+	<color id="Eq.xfade.Text" value="147,175,185"/>
+	<color id="Browser.MediaMonitor" value="173,173,173"/>
+	<color id="Shade.SongTicker.Text" value="147,175,185"/>
+
+	<color id="Playlist.Status.Text" value="162,193,204"/>
+	<color id="ComponentTab.Status.Text" value="210,210,210"/>
+
+	<color id="wasabi.tooltips.textcolor" value="147,175,185"/>
+	<color id="wasabi.button.text" value="30,30,30"/>
+
+
+
+	
+
+	<!-- Notifier -->
+	<color id="notifier.dark" value="35,35,35"/>
+	<color id="notifier.bright" value="255,255,255"/>
+	<color id="notifier.dark.upper" value="35,35,35"/>
+	<color id="notifier.bright.upper" value="255,255,255"/>
+
+
+
+	
+
+	<!-- Component: Background -->
+	<color id="wasabi.window.background" value="51,55,56"/>
+	<color id="wasabi.border.sunken" value="30,30,30"/>
+
+	<!-- Component: Text -->
+	<color id="wasabi.window.text" value="210,210,210"/>
+
+	<!-- Component: Column -->
+	<color id="wasabi.list.column.text" value="210,210,210"/>
+	<color id="wasabi.list.column.background" value="73,76,77"/>
+	<color id="wasabi.list.column.frame.top" value="100,103,104"/>
+	<color id="wasabi.list.column.frame.middle" value="57,61,62"/>
+	<color id="wasabi.list.column.frame.bottom" value="31,34,35"/>
+
+
+
+	
+
+	<!-- List: Text Color -->
+	<color id="wasabi.list.text" value="147,175,185"/>
+	<color id="wasabi.list.text.alternate" value="147,175,185"/> 
+
+	<!-- List: Background -->
+	<color id="wasabi.list.background" value="8,9,10"/>
+	<color id="wasabi.list.background.alternate" value="13,14,15"/>	
+	<bitmap id="wasabi.list.background" file="$solid" h="64" w="64" color="8,9,10"/>
+
+	<!-- List: Text Color (Selected) -->
+	<color id="wasabi.list.text.selected" value="200,200,200"/>
+	<color id="wasabi.list.text.selected.inactive" value="210,210,210"/>
+	
+	<!-- List: Background (Selected)-->
+	<color id="wasabi.list.text.selected.background" value="49,53,64"/>
+	<color id="wasabi.list.text.selected.background.inactive" value="42,46,57"/>
+
+	<!-- List: Scrollbar OLD (updated/new plugins use scrollbars.png) -->
+	<color id="wasabi.scrollbar.background" value="20,21,22"/>
+
+	<!-- List: Text Color (Now Playing in Playlist Editor) -->
+	<color id="wasabi.list.text.current" value="200,200,200"/>
+
+
+
+	
+
+	<!--
+	These fonts wont be used in this skin (default = Arial)
+	Remember if you want to use custom fonts cut&paste them outside this area ;)
+
+	<truetypefont id="cpro.tracktime.font" file="font.ttf" allowmapping="0"/>
+	<truetypefont id="cpro.songname.font" file="font.ttf" allowmapping="0"/>
+	<truetypefont id="cpro.songinfo2.font" file="font.ttf" allowmapping="0"/>
+	<truetypefont id="cpro.menu.font" file="font.ttf" allowmapping="0"/>
+	<truetypefont id="cpro.tab.font" file="font.ttf" allowmapping="0"/>
+ 	<truetypefont id="cpro.status.font" file="font.ttf" allowmapping="0"/>
+ 	<truetypefont id="cpro.winshade.font" file="font.ttf" allowmapping="0"/>
+	-->
+</elements>
