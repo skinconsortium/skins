@@ -654,13 +654,20 @@
 </groupdef>
 
 <groupdef id="player.main.vis.content">
-	<rect id="vis.base"
-		fitparent="1"
-		color="0,0,0" filled="1" ghost="1"/>
+	<grid id="vis.base" fitparent="1" ghost="1"
+		topleft="player.component.frame.top.left"
+		top="player.component.frame.top.middle"
+		topright="player.component.frame.top.right"
+		left="player.component.frame.left"
+		middle="player.component.frame.middle"
+		right="player.component.frame.right"
+		bottomleft="player.component.frame.bottom.left"
+		bottom="player.component.frame.bottom.middle"
+		bottomright="player.component.frame.bottom.right"/>
 
-	<windowholder id="wndhlr.vid" x="2" y="2" w="-4" relatw="1" h="-4" relath="1" 
+	<windowholder id="wndhlr.vid" x="20" y="20" w="-40" relatw="1" h="-40" relath="1" 
 		autoclose="1" autoopen="1" autoavailable="0" visible="0" hold="guid:{F0816D7B-FFFC-4343-80F2-E8199AA15CC3}"/>
-	<windowholder id="wndhlr.avs" x="2" y="2" w="-4" relatw="1" h="-4" relath="1" autofocus="0"
+	<windowholder id="wndhlr.avs" x="20" y="20" w="-40" relatw="1" h="-40" relath="1" autofocus="0"
 		autoclose="1" autoopen="1" autoavailable="0" visible="0" hold="guid:avs"/>
 		
 
@@ -696,24 +703,32 @@
 	<group id="player.main.vid.buttons" x="100" y="70" w="-200" h="30" relatw="1" visible="0"/>
 
 	<group id="player.main.vis.content"
-		x="100" y="110" w="-200" h="-260" relatw="1" relath="1"/>
+		x="80" y="100" w="-160" h="-220" relatw="1" relath="1"/>
 
 	<!--group id="player.vis.seeker" x="100" y="-150" w="-200" h="160" relatw="1" relaty="1"/-->
 </groupdef>
 
 <groupdef id="player.main.ml.content">
-	<rect id="ml.base"
-		fitparent="1"
-		color="0,0,0" filled="1" ghost="1"/>
+	<grid id="ml.base" fitparent="1" ghost="1"
+		topleft="player.component.frame.top.left"
+		top="player.component.frame.top.middle"
+		topright="player.component.frame.top.right"
+		left="player.component.frame.left"
+		middle="player.component.frame.middle"
+		right="player.component.frame.right"
+		bottomleft="player.component.frame.bottom.left"
+		bottom="player.component.frame.bottom.middle"
+		bottomright="player.component.frame.bottom.right"/>
+		
 
-	<windowholder id="wndhlr.ml" x="2" y="2" w="-4" relatw="1" h="-4" relath="1" 
+	<windowholder id="wndhlr.ml" x="20" y="20" w="-40" relatw="1" h="-40" relath="1" 
 		autoclose="1" autoopen="1" autoavailable="0" visible="0" hold="guid:{6B0EDF80-C9A5-11D3-9F26-00C04F39FFC6}"/>
 </groupdef>
 
 
 <groupdef id="player.main.ml"  name="media library">
 	<group id="player.main.ml.content"
-		x="100" y="110" w="-200" h="-260" relatw="1" relath="1"/>
+		x="80" y="100" w="-160" h="-220" relatw="1" relath="1"/>
 </groupdef>
 
 <groupdef id="player.main.ie.buttons">
@@ -776,11 +791,18 @@
 </groupdef>
 
 <groupdef id="player.main.ie.content">
-	<rect id="ie.base"
-		fitparent="1"
-		color="0,0,0" filled="1" ghost="1"/>
+	<grid id="ie.base" fitparent="1" ghost="1"
+		topleft="player.component.frame.top.left"
+		top="player.component.frame.top.middle"
+		topright="player.component.frame.top.right"
+		left="player.component.frame.left"
+		middle="player.component.frame.middle"
+		right="player.component.frame.right"
+		bottomleft="player.component.frame.bottom.left"
+		bottom="player.component.frame.bottom.middle"
+		bottomright="player.component.frame.bottom.right"/>
 
-	<browser id="main.browser" x="2" y="2" w="-4" relatw="1" h="-4" relath="1" visible="0" />
+	<browser id="main.browser" x="20" y="20" w="-40" relatw="1" h="-40" relath="1" visible="0" />
 </groupdef>
 
 
@@ -788,7 +810,7 @@
 	<group id="player.main.ie.buttons" x="100" y="70" w="-200" h="30" relatw="1"/>
 
 	<group id="player.main.ie.content"
-		x="100" y="110" w="-200" h="-260" relatw="1" relath="1"/>
+		x="80" y="100" w="-160" h="-220" relatw="1" relath="1"/>
 </groupdef>
 
 <groupdef id="player.pagescroller">
@@ -878,19 +900,26 @@
 	<rect fitparent="1" filled="0" color="0,0,0" ghost="1"/>
 </groupdef>
 
+<groupdef id="player.underlay"></groupdef>
+<groupdef id="player.overlay"></groupdef>
+
+<include file="@SKINPATH@overlay.xml"/>
+
 <layout id="normal" desktopalpha="0"
 	minimum_h="480" minimum_w="640" maximum_h="3864" maximum_w="3152" move="1" lockminmax="0">
 
 	<layer id="bg.noalpha" x="0" y="0" w="0" h="0" relatw="1" relath="1" image="player.main.background.noalpha" sysregion="1" move="0" wantfocus="1"/>
 	
 	<CustomBG x="0" y="0" w="0" h="0" relatw="1" relath="1" noreflection="0"/>
+	
+	<group id="player.underlay" fitparent="1"/>
 
 	<group id="player.main.cms" x="0" y="0" w="100" h="0" relatx="2" relatw="2" relath="1"/>
 	<group id="player.main.pl" 	x="0" y="0" w="100" h="0" relatx="2" relatw="2" relath="1" visible="0"/>
 	<group id="player.main.vis" x="0" y="0" w="100" h="0" relatx="2" relatw="2" relath="1" visible="0"/>
 	<group id="player.main.ml" x="0" y="0" w="100" h="0" relatx="2" relatw="2" relath="1" visible="0"/>
 	<group id="player.main.ie" x="0" y="0" w="100" h="0" relatx="2" relatw="2" relath="1" visible="0"/>
-	<group id="player.main.config" 	x="0" y="0" w="100" h="0" relatx="2" relatw="2" relath="1" visible="0"/>
+	<group id="player.main.config" 	x="0" y="0" w="100" h="-40" relatx="2" relatw="2" relath="1" visible="0"/>
 	
 	<group id="player.cbuttons" x="0" y="-100" relaty="1" w="233" h="265"/>
 	<script file="@SKINSPATH@Komodo\engine\scripts\centerobject.maki" param="player.cbuttons,1,0"/>
@@ -912,6 +941,11 @@
 	
 	<script file="@SKINSPATH@Komodo\engine\scripts\pagescroll.maki" param="player.main.cms,player.main.pl,player.main.vis,player.main.ml,player.main.ie,player.main.config"/>
 	
+	<group id="player.overlay" fitparent="1"/>
+	
 	<include file="@SKINPATH@overrides.xml"/>
-
 </layout>
+
+
+
+

@@ -5,7 +5,7 @@
 <truetypefont id="player.font.indicator" file="@SKINSPATH@Komodo\engine\player\Beware.ttf"/>
 <!--truetypefont id="font.gen.button" file="@SKINSPATH@Komodo\engine\player\font-bankgothic.ttf"/-->
 
-<bitmap id="bitmapfont.timer" file="graphics.png" x="1" y="384" w="478" h="111" gammagroup="timerfont"/>
+<bitmap id="bitmapfont.timer" file="graphics.png" x="1" y="324" w="478" h="111" gammagroup="timerfont"/>
 <bitmapfont id="player.font.timer" file="bitmapfont.timer" charwidth="30" charheight="55" hspacing="-10" vspacing="0"/>
 
 <bitmap id="player.main.background.blank" file="@SKINSPATH@Komodo\engine\player\background-blank.png" gammagroup="Background" />
@@ -58,9 +58,9 @@
 
 <bitmap id="player.main.resizer" file="graphics.png" x="420" y="130" w="30" h="30" gammagroup="glass"/> 
 
-<bitmap id="player.main.topbar.left" file="graphics.png" x="1" y="496" w="100" h="30" gammagroup="glass"/> 
-<bitmap id="player.main.topbar.mid" file="graphics.png" x="102" y="496" w="176" h="30" gammagroup="glass"/> 
-<bitmap id="player.main.topbar.right" file="graphics.png" x="279" y="496" w="200" h="30" gammagroup="glass"/> 
+<bitmap id="player.main.topbar.left" file="graphics.png" x="1" y="436" w="100" h="30" gammagroup="glass"/> 
+<bitmap id="player.main.topbar.mid" file="graphics.png" x="102" y="436" w="176" h="30" gammagroup="glass"/> 
+<bitmap id="player.main.topbar.right" file="graphics.png" x="279" y="436" w="200" h="30" gammagroup="glass"/> 
 
 <!-- **** vis elements **** -->
 <bitmap id="player.main.visanim" file="graphics.png" x="420" y="45" w="60" h="84" gammagroup="vis"/>  
@@ -120,15 +120,6 @@
 
 <bitmap id="player.seeker.thumb" file="graphics.png" x="460" y="239" w="13" h="37" gammagroup="Glass"/> 
 
-<!--bitmap id="player.main.eqover" file="@SKINSPATH@Komodo\engine\player\eqover.png" gammagroup="Background"/>
-<bitmap id="player.main.eqbut" file="@SKINSPATH@Komodo\engine\player\eq.png" gammagroup="Background"/>
-<bitmap id="player.main.eqbutd" file="@SKINSPATH@Komodo\engine\player\eqd.png" gammagroup="Background"/>
-<bitmap id="player.main.eqbase" file="@SKINSPATH@Komodo\engine\player\eqbase.png" gammagroup="Background"/>
-<bitmap id="player.main.eqbaseover" file="@SKINSPATH@Komodo\engine\player\eqbaseover.png" gammagroup="Backover"/>
-<bitmap id="player.main.eqbutton" file="@SKINSPATH@Komodo\engine\player\eqbutton.png" />
-<bitmap id="player.main.eqbuttond" file="@SKINSPATH@Komodo\engine\player\eqbuttond.png" />
-<bitmap id="player.main.eqbuttondd" file="@SKINSPATH@Komodo\engine\player\eqbuttondd.png" /-->
-
 <bitmap id="my.music.pic" file="@SKINSPATH@Komodo\engine\player\waaudio.png" />
 <bitmap id="my.video.pic" file="@SKINSPATH@Komodo\engine\player\wavideo.png" />
 <bitmap id="my.audioCd.pic" file="@SKINSPATH@Komodo\engine\player\wacd.png" />
@@ -151,5 +142,14 @@
 <bitmap id="player.button.page.right" file="graphics.png" x="169" y="1" w="54" h="63" gammagroup="pagescroll"/>  
 <bitmap id="player.button.page.right.down" file="graphics.png" x="113" y="1" w="54" h="63" gammagroup="pagescroll"/> 
 
-
+<!-- frame graphics for vid/avs/ml -->
+<bitmap id="player.component.frame.top.left" file="graphics.png" x="273" y="467" w="20" h="20" gammagroup="component.frame"/>
+<bitmap id="player.component.frame.top.middle" file="graphics.png" x="294" y="467" w="50" h="20" gammagroup="component.frame"/>
+<bitmap id="player.component.frame.top.right" file="graphics.png" x="345" y="467" w="20" h="20" gammagroup="component.frame"/>
+<bitmap id="player.component.frame.left" file="graphics.png" x="273" y="488" w="20" h="50" gammagroup="component.frame"/>
+<bitmap id="player.component.frame.middle" file="graphics.png" x="294" y="488" w="50" h="50" gammagroup="component.frame"/>
+<bitmap id="player.component.frame.right" file="graphics.png" x="345" y="488" w="20" h="50" gammagroup="component.frame"/>
+<bitmap id="player.component.frame.bottom.left" file="graphics.png" x="273" y="539" w="20" h="20" gammagroup="component.frame"/>
+<bitmap id="player.component.frame.bottom.middle" file="graphics.png" x="294" y="539" w="50" h="20" gammagroup="component.frame"/>
+<bitmap id="player.component.frame.bottom.right" file="graphics.png" x="345" y="539" w="20" h="20" gammagroup="component.frame"/>
 </elements>
