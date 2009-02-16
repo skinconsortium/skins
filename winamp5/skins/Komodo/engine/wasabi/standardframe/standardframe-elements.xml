@@ -2,54 +2,54 @@
 
 <!-- WASABI:StandardFrame -->
 
-	<bitmap id="wasabi.frame.button.close" file="@SKINSPATH@Komodo\engine\window\button-close.png"/>
-	<bitmap id="wasabi.frame.button.close.down" file="@SKINSPATH@Komodo\engine\window\button-close-down.png"/>
-	<bitmap id="wasabi.frame.button.close.hover" file="@SKINSPATH@Komodo\engine\window\button-close-hover.png"/>
+	<bitmap id="wasabi.frame.button.close" file="@SKINSPATH@Komodo\engine\window\button-close.png" gammagroup="component.frame"/>
+	<bitmap id="wasabi.frame.button.close.down" file="@SKINSPATH@Komodo\engine\window\button-close-down.png" gammagroup="component.frame"/>
+	<bitmap id="wasabi.frame.button.close.hover" file="@SKINSPATH@Komodo\engine\window\button-close-hover.png" gammagroup="component.frame"/>
 
-	<bitmap id="wasabi.frame.topleft" file="@SKINSPATH@Komodo\engine\gfx\standardframe\frame.png" x="0" y="0" h="30" w="10"/>
-	<bitmap id="wasabi.frame.top" file="@SKINSPATH@Komodo\engine\gfx\standardframe\frame.png" x="10" y="0" h="30" w="273"/>
-	<bitmap id="wasabi.frame.topright" file="@SKINSPATH@Komodo\engine\gfx\standardframe\frame.png" x="276" y="0" h="30" w="17"/>
+	<bitmap id="wasabi.frame.topleft" file="@SKINSPATH@Komodo\engine\gfx\standardframe\frame.png" x="0" y="0" h="30" w="10" gammagroup="component.frame"/>
+	<bitmap id="wasabi.frame.top" file="@SKINSPATH@Komodo\engine\gfx\standardframe\frame.png" x="10" y="0" h="30" w="273" gammagroup="component.frame"/>
+	<bitmap id="wasabi.frame.topright" file="@SKINSPATH@Komodo\engine\gfx\standardframe\frame.png" x="276" y="0" h="30" w="17" gammagroup="component.frame"/>
 
-	<bitmap id="wasabi.frame.left" file="@SKINSPATH@Komodo\engine\gfx\standardframe\frame.png" x="0" y="30" h="257" w="10"/>
+	<bitmap id="wasabi.frame.left" file="@SKINSPATH@Komodo\engine\gfx\standardframe\frame.png" x="0" y="30" h="257" w="10" gammagroup="component.frame"/>
 	
 	<!--bitmap id="wasabi.frame.inner" file="@SKINSPATH@Komodo\engine\gfx\standardframe\frame.png" x="10" y="30" h="257" w="268"/-->
 	
-	<bitmap id="wasabi.frame.inner" file="@SKINSPATH@Komodo\engine\gfx\standardframe\innerbg.png" x="0" y="0" h="240" w="262"/>
+	<bitmap id="wasabi.frame.inner" file="@SKINSPATH@Komodo\engine\gfx\standardframe\innerbg.png" x="0" y="0" h="240" w="262" gammagroup="component.frame"/>
 		
 	
-	<bitmap id="wasabi.frame.right" file="@SKINSPATH@Komodo\engine\gfx\standardframe\frame.png" x="276" y="30" h="257" w="17"/>
+	<bitmap id="wasabi.frame.right" file="@SKINSPATH@Komodo\engine\gfx\standardframe\frame.png" x="276" y="30" h="257" w="17" gammagroup="component.frame"/>
 
-	<bitmap id="wasabi.frame.bottomleft" file="@SKINSPATH@Komodo\engine\gfx\standardframe\frame.png" x="0" y="277" h="30" w="10"/>
-	<bitmap id="wasabi.frame.bottom" file="@SKINSPATH@Komodo\engine\gfx\standardframe\frame.png" x="10" y="277" h="30" w="265"/>
-	<bitmap id="wasabi.frame.bottomright" file="@SKINSPATH@Komodo\engine\gfx\standardframe\frame.png" x="276" y="277" h="30" w="17"/>
+	<bitmap id="wasabi.frame.bottomleft" file="@SKINSPATH@Komodo\engine\gfx\standardframe\frame.png" x="0" y="277" h="30" w="10" gammagroup="component.frame"/>
+	<bitmap id="wasabi.frame.bottom" file="@SKINSPATH@Komodo\engine\gfx\standardframe\frame.png" x="10" y="277" h="30" w="265" gammagroup="component.frame"/>
+	<bitmap id="wasabi.frame.bottomright" file="@SKINSPATH@Komodo\engine\gfx\standardframe\frame.png" x="276" y="277" h="30" w="17" gammagroup="component.frame"/>
 
 	
-	<bitmap id="wasabi.frame.topleft.na" file="@SKINSPATH@Komodo\engine\gfx\standardframe\frame_na.png" x="0" y="0" h="30" w="10"/>
-	<bitmap id="wasabi.frame.top.na" file="@SKINSPATH@Komodo\engine\gfx\standardframe\frame_na.png" x="10" y="0" h="30" w="273"/>
-	<bitmap id="wasabi.frame.topright.na" file="@SKINSPATH@Komodo\engine\gfx\standardframe\frame_na.png" x="276" y="0" h="30" w="17"/>
+	<bitmap id="wasabi.frame.topleft.na" file="@SKINSPATH@Komodo\engine\gfx\standardframe\frame_na.png" x="0" y="0" h="30" w="10" gammagroup="component.frame"/>
+	<bitmap id="wasabi.frame.top.na" file="@SKINSPATH@Komodo\engine\gfx\standardframe\frame_na.png" x="10" y="0" h="30" w="273" gammagroup="component.frame"/>
+	<bitmap id="wasabi.frame.topright.na" file="@SKINSPATH@Komodo\engine\gfx\standardframe\frame_na.png" x="276" y="0" h="30" w="17" gammagroup="component.frame"/>
 
-	<bitmap id="wasabi.frame.left.na" file="@SKINSPATH@Komodo\engine\gfx\standardframe\frame_na.png" x="0" y="30" h="257" w="10"/>
+	<bitmap id="wasabi.frame.left.na" file="@SKINSPATH@Komodo\engine\gfx\standardframe\frame_na.png" x="0" y="30" h="257" w="10" gammagroup="component.frame"/>
 	
 	<!--bitmap id="wasabi.frame.inner.na" file="@SKINSPATH@Komodo\engine\gfx\standardframe\frame_na.png" x="10" y="30" h="257" w="268"/-->
 	
-	<bitmap id="wasabi.frame.inner.na" file="@SKINSPATH@Komodo\engine\gfx\standardframe\innerbg.png" x="0" y="0" h="240" w="262"/>
+	<bitmap id="wasabi.frame.inner.na" file="@SKINSPATH@Komodo\engine\gfx\standardframe\innerbg.png" x="0" y="0" h="240" w="262" gammagroup="component.frame"/>
 	
-	<bitmap id="wasabi.frame.right.na" file="@SKINSPATH@Komodo\engine\gfx\standardframe\frame_na.png" x="276" y="30" h="257" w="17"/>
+	<bitmap id="wasabi.frame.right.na" file="@SKINSPATH@Komodo\engine\gfx\standardframe\frame_na.png" x="276" y="30" h="257" w="17" gammagroup="component.frame"/>
 
-	<bitmap id="wasabi.frame.bottomleft.na" file="@SKINSPATH@Komodo\engine\gfx\standardframe\frame_na.png" x="0" y="277" h="30" w="10"/>
-	<bitmap id="wasabi.frame.bottom.na" file="@SKINSPATH@Komodo\engine\gfx\standardframe\frame_na.png" x="10" y="277" h="30" w="265"/>
-	<bitmap id="wasabi.frame.bottomright.na" file="@SKINSPATH@Komodo\engine\gfx\standardframe\frame_na.png" x="276" y="277" h="30" w="17"/>
+	<bitmap id="wasabi.frame.bottomleft.na" file="@SKINSPATH@Komodo\engine\gfx\standardframe\frame_na.png" x="0" y="277" h="30" w="10" gammagroup="component.frame"/>
+	<bitmap id="wasabi.frame.bottom.na" file="@SKINSPATH@Komodo\engine\gfx\standardframe\frame_na.png" x="10" y="277" h="30" w="265" gammagroup="component.frame"/>
+	<bitmap id="wasabi.frame.bottomright.na" file="@SKINSPATH@Komodo\engine\gfx\standardframe\frame_na.png" x="276" y="277" h="30" w="17" gammagroup="component.frame"/>
 
-	<bitmap id="wasabi.frame.dummybg" file="@SKINSPATH@Komodo\engine\gfx\standardframe\window/background.png" x="0" y="0" h="10" w="10"/>
+	<bitmap id="wasabi.frame.dummybg" file="@SKINSPATH@Komodo\engine\gfx\standardframe\window/background.png" x="0" y="0" h="10" w="10" gammagroup="component.frame"/>
 
-	<bitmap id="clear" file="gfx/clear.png"/>
-	<bitmap id="wasabi.basetexture" file="@SKINSPATH@Komodo\engine\gfx\standardframe\window/background.png"/>
-	<bitmap id="wasabi.frame.basetexture" file="@SKINSPATH@Komodo\engine\gfx\standardframe\window/background.png"/>
+	<bitmap id="clear" file="gfx/clear.png" gammagroup="component.frame"/>
+	<bitmap id="wasabi.basetexture" file="@SKINSPATH@Komodo\engine\gfx\standardframe\window/background.png" gammagroup="component.frame"/>
+	<bitmap id="wasabi.frame.basetexture" file="@SKINSPATH@Komodo\engine\gfx\standardframe\window/background.png" gammagroup="component.frame"/>
 	
-	<bitmap id="resizel" file="componentbuttons/resizel.png"/>
-	<bitmap id="resizer" file="componentbuttons/resizer.png"/>
+	<bitmap id="resizel" file="componentbuttons/resizel.png" gammagroup="component.frame"/>
+	<bitmap id="resizer" file="componentbuttons/resizer.png" gammagroup="component.frame"/>
 	
-	<bitmap id="blank" file="componentbuttons/blank.png"/>
+	<bitmap id="blank" file="componentbuttons/blank.png" gammagroup="component.frame"/>
 	
 
 </elements>

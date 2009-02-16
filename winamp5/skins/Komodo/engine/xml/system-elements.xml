@@ -14,13 +14,13 @@
 	<bitmap id="sc.cdbox.bg.optional" file="cdbox-bg.png" gammagroup="cdcase"/>
 	<bitmap id="sc.cdbox.fg.optional" file="cdbox-fg.png" gammagroup="cdcase"/>
 	
-	<bitmap id="ratings.nostar" file="graphics.png" x="1" y="527" w="150" h="22" gammagroup="ratings"/>
-	<bitmap id="ratings.star" file="graphics.png" x="1" y="550" w="150" h="22" gammagroup="ratings"/>
-	<bitmap id="ratings.hover" file="graphics.png" x="1" y="573" w="150" h="22" gammagroup="ratings"/>
+	<bitmap id="ratings.star" file="graphics.png" x="1" y="467" w="150" h="22" gammagroup="ratings"/>
+	<bitmap id="ratings.hover" file="graphics.png" x="1" y="490" w="150" h="22" gammagroup="ratings"/>
+	<bitmap id="ratings.nostar" file="graphics.png" x="1" y="513" w="150" h="22" gammagroup="ratings"/>
 	
-	<bitmap id="covershow.ratings.star" file="graphics.png" x="152" y="527" w="100" h="15" gammagroup="ratings"/>
-	<bitmap id="covershow.ratings.hover" file="graphics.png" x="152" y="543" w="100" h="15" gammagroup="ratings"/>
-	<bitmap id="covershow.ratings.nostar" file="graphics.png" x="152" y="559" w="100" h="15" gammagroup="ratings"/>
+	<bitmap id="covershow.ratings.star" file="graphics.png" x="152" y="467" w="100" h="15" gammagroup="ratings"/>
+	<bitmap id="covershow.ratings.hover" file="graphics.png" x="152" y="483" w="100" h="15" gammagroup="ratings"/>
+	<bitmap id="covershow.ratings.nostar" file="graphics.png" x="152" y="499" w="100" h="15" gammagroup="ratings"/>
 
 	<bitmap id="nocover" file="nocover.png" gammagroup="cdcase"/> 
   
@@ -64,74 +64,63 @@
    <bitmap id="studio.tree.link.tab.top.rightBottom" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="149" y="28" h="14" w="14" gammagroup="Tree Color"/>
    <bitmap id="studio.tree.sort.icon" file="@SKINSPATH@Komodo\engine\window\tree-sort-icon.png" gammagroup="Tree Color"/>
 
-   <!-- Old List & Tree scrollbars -->
-   <bitmap id="studio.scrollbar.horizontal.background" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="58" y="52" h="13" w="41" gammagroup="Backgrounds"/>
-   <bitmap id="studio.scrollbar.horizontal.left" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="40" y="13" h="13" w="17" gammagroup="Buttons"/>
-   <bitmap id="studio.scrollbar.horizontal.left.hilite" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="40" y="26" h="13" w="17" gammagroup="Buttons"/>
-   <bitmap id="studio.scrollbar.horizontal.left.pressed" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="40" y="39" h="13" w="17" gammagroup="Buttons"/>
-   <bitmap id="studio.scrollbar.horizontal.right" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="98" y="13" h="13" w="17" gammagroup="Buttons"/>
-   <bitmap id="studio.scrollbar.horizontal.right.hilite" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="98" y="26" h="13" w="17" gammagroup="Buttons"/>
-   <bitmap id="studio.scrollbar.horizontal.right.pressed" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="98" y="39" h="13" w="17" gammagroup="Buttons"/>
-   <bitmap id="studio.scrollbar.horizontal.button" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="57" y="13" h="13" w="41" gammagroup="Buttons"/>
-   <bitmap id="studio.scrollbar.horizontal.button.hilite" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="57" y="26" h="13" w="41" gammagroup="Buttons"/>
-   <bitmap id="studio.scrollbar.horizontal.button.pressed" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="57" y="39" h="13" w="41" gammagroup="Buttons"/>
-
-   <bitmap id="studio.scrollbar.vertical.background" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="39" y="55" h="41" w="13" gammagroup="Backgrounds"/>
-   <bitmap id="studio.scrollbar.vertical.left" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="0" y="38" h="17" w="13" gammagroup="Buttons"/>
-   <bitmap id="studio.scrollbar.vertical.left.hilite" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="13" y="38" h="17" w="13" gammagroup="Buttons"/>
-   <bitmap id="studio.scrollbar.vertical.left.pressed" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="26" y="38" h="17" w="13" gammagroup="Buttons"/>
-   <bitmap id="studio.scrollbar.vertical.right" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="0" y="96" h="17" w="13" gammagroup="Buttons"/>
-   <bitmap id="studio.scrollbar.vertical.right.hilite" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="13" y="96" h="17" w="13" gammagroup="Buttons"/>
-   <bitmap id="studio.scrollbar.vertical.right.pressed" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="26" y="96" h="17" w="13" gammagroup="Buttons"/>
-   <bitmap id="studio.scrollbar.vertical.button" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="0" y="55" h="41" w="13" gammagroup="Buttons"/>
-   <bitmap id="studio.scrollbar.vertical.button.hilite" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="13" y="55" h="41" w="13" gammagroup="Buttons"/>
-   <bitmap id="studio.scrollbar.vertical.button.pressed" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="26" y="55" h="41" w="13" gammagroup="Buttons"/>
-
-   <!-- NewList & Tree scrollbars -->
-   <bitmap id="wasabi.scrollbar.horizontal.background" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="58" y="52" h="13" w="41" gammagroup="Backgrounds"/>
-
-   <bitmap id="wasabi.scrollbar.horizontal.left" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="40" y="13" h="13" w="17" gammagroup="Buttons"/>
-   <bitmap id="wasabi.scrollbar.horizontal.left.hover" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="40" y="26" h="13" w="17" gammagroup="Buttons"/>
-   <bitmap id="wasabi.scrollbar.horizontal.left.pressed" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="40" y="39" h="13" w="17" gammagroup="Buttons"/>
-   <bitmap id="wasabi.scrollbar.horizontal.right" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="98" y="13" h="13" w="17" gammagroup="Buttons"/>
-   <bitmap id="wasabi.scrollbar.horizontal.right.hover" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="98" y="26" h="13" w="17" gammagroup="Buttons"/>
-   <bitmap id="wasabi.scrollbar.horizontal.right.pressed" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="98" y="39" h="13" w="17" gammagroup="Buttons"/>
-
-   <bitmap id="wasabi.scrollbar.horizontal.button.left" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="57" y="13" h="13" w="3" gammagroup="Buttons"/>
-   <bitmap id="wasabi.scrollbar.horizontal.button.middle" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="60" y="13" h="13" w="35" gammagroup="Buttons"/>
-   <bitmap id="wasabi.scrollbar.horizontal.button.right" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="95" y="13" h="13" w="3" gammagroup="Buttons"/>
-
-   <bitmap id="wasabi.scrollbar.horizontal.button.left.hover" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="57" y="26" h="13" w="3" gammagroup="Buttons"/>
-   <bitmap id="wasabi.scrollbar.horizontal.button.middle.hover" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="60" y="26" h="13" w="35" gammagroup="Scrollbar Buttons"/>
-   <bitmap id="wasabi.scrollbar.horizontal.button.right.hover" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="95" y="26" h="13" w="3" gammagroup="Buttons"/>
-
-   <bitmap id="wasabi.scrollbar.horizontal.button.left.pressed" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="57" y="39" h="13" w="3" gammagroup="Buttons"/>
-   <bitmap id="wasabi.scrollbar.horizontal.button.middle.pressed" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="60" y="39" h="13" w="35" gammagroup="Scrollbar Buttons"/>
-   <bitmap id="wasabi.scrollbar.horizontal.button.right.pressed" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="95" y="39" h="13" w="3" gammagroup="Scrollbar Buttons"/>
-
-
-   <bitmap id="wasabi.scrollbar.vertical.background" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="39" y="55" h="41" w="13" gammagroup="Backgrounds"/>
-
-   <bitmap id="wasabi.scrollbar.vertical.left" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="0" y="38" h="17" w="13" gammagroup="Buttons"/>
-   <bitmap id="wasabi.scrollbar.vertical.left.hover" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="13" y="38" h="17" w="13" gammagroup="Buttons"/>
-   <bitmap id="wasabi.scrollbar.vertical.left.pressed" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="26" y="38" h="17" w="13" gammagroup="Buttons"/>
-
-   <bitmap id="wasabi.scrollbar.vertical.right" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="0" y="96" h="17" w="13" gammagroup="Buttons"/>
-   <bitmap id="wasabi.scrollbar.vertical.right.hover" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="13" y="96" h="17" w="13" gammagroup="Buttons"/>
-   <bitmap id="wasabi.scrollbar.vertical.right.pressed" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="26" y="96" h="17" w="13" gammagroup="Buttons"/>
-
-   <bitmap id="wasabi.scrollbar.vertical.button.top" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="0" y="55" h="3" w="13" gammagroup="Buttons"/>
-   <bitmap id="wasabi.scrollbar.vertical.button.middle" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="0" y="58" h="35" w="13" gammagroup="Buttons"/>
-   <bitmap id="wasabi.scrollbar.vertical.button.bottom" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="0" y="93" h="3" w="13" gammagroup="Buttons"/>
-
-   <bitmap id="wasabi.scrollbar.vertical.button.top.hover" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="13" y="55" h="3" w="13" gammagroup="Buttons"/>
-   <bitmap id="wasabi.scrollbar.vertical.button.middle.hover" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="13" y="58" h="35" w="13" gammagroup="Buttons"/>
-   <bitmap id="wasabi.scrollbar.vertical.button.bottom.hover" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="13" y="93" h="3" w="13" gammagroup="Buttons"/>
-
-   <bitmap id="wasabi.scrollbar.vertical.button.top.pressed" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="26" y="55" h="3" w="13" gammagroup="Buttons"/>
-   <bitmap id="wasabi.scrollbar.vertical.button.middle.pressed" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="26" y="58" h="35" w="13" gammagroup="Scrollbar Buttons"/>
-   <bitmap id="wasabi.scrollbar.vertical.button.bottom.pressed" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="26" y="93" h="3" w="13" gammagroup="Buttons"/>
-
+   <!--bitmap id="wasabi.scrollbar.vertical.grip" file="window/scrollgrips.png" x="0" y="0" h="8" w="6" gammagroup="Wasabi Button"/>
+   <bitmap id="wasabi.scrollbar.horizontal.grip" file="window/scrollgrips.png" x="7" y="0" h="6" w="8" gammagroup="Wasabi Button"/-->
+   
+	<bitmap id="wasabi.scrollbar.vertical.button" file="scrollbars.png" x="1" y="19" h="41" w="13" gammagroup="wasabi.scrollbar"/>
+	<bitmap id="wasabi.scrollbar.vertical.button.hover" file="scrollbars.png" x="15" y="19" h="41" w="13" gammagroup="wasabi.scrollbar"/>
+	<bitmap id="wasabi.scrollbar.vertical.button.pressed" file="scrollbars.png" x="29" y="19" h="41" w="13" gammagroup="wasabi.scrollbar"/>
+	
+	<bitmap id="wasabi.scrollbar.vertical.left" file="scrollbars.png" x="1" y="1" h="17" w="13" gammagroup="wasabi.scrollbar"/>
+	<bitmap id="wasabi.scrollbar.vertical.left.hover" file="scrollbars.png" x="15" y="1" h="17" w="13" gammagroup="wasabi.scrollbar"/>
+	<bitmap id="wasabi.scrollbar.vertical.left.pressed" file="scrollbars.png" x="29" y="1" h="17" w="13" gammagroup="wasabi.scrollbar"/>
+	
+	<bitmap id="wasabi.scrollbar.vertical.right" file="scrollbars.png" x="1" y="61" h="17" w="13" gammagroup="wasabi.scrollbar"/>
+	<bitmap id="wasabi.scrollbar.vertical.right.hover" file="scrollbars.png" x="15" y="61" h="17" w="13" gammagroup="wasabi.scrollbar"/>
+	<bitmap id="wasabi.scrollbar.vertical.right.pressed" file="scrollbars.png" x="29" y="61" h="17" w="13" gammagroup="wasabi.scrollbar"/>
+	
+	<bitmap id="wasabi.scrollbar.vertical.background" file="scrollbars.png" x="43" y="20" w="13" h="17" gammagroup="backgrounds"/>
+	<bitmap id="wasabi.scrollbar.vertical.background.top" file="scrollbars.png" x="43" y="20" w="13" h="17" gammagroup="backgrounds"/>
+	<bitmap id="wasabi.scrollbar.vertical.background.middle" file="scrollbars.png" x="43" y="20" w="13" h="17" gammagroup="backgrounds"/>
+	<bitmap id="wasabi.scrollbar.vertical.background.bottom" file="scrollbars.png" x="43" y="20" w="13" h="17" gammagroup="backgrounds"/>
+	
+	<bitmap id="wasabi.scrollbar.horizontal.button" file="scrollbars.png" x="75" y="1" h="13" w="41" gammagroup="wasabi.scrollbar"/>
+	<bitmap id="wasabi.scrollbar.horizontal.button.hover" file="scrollbars.png" x="75" y="15" h="13" w="41" gammagroup="wasabi.scrollbar"/>
+	<bitmap id="wasabi.scrollbar.horizontal.button.pressed" file="scrollbars.png" x="75" y="29" h="13" w="41" gammagroup="wasabi.scrollbar"/>
+	
+	<bitmap id="wasabi.scrollbar.horizontal.left" file="scrollbars.png" x="57" y="1" h="13" w="17" gammagroup="wasabi.scrollbar"/>
+	<bitmap id="wasabi.scrollbar.horizontal.left.hover" file="scrollbars.png" x="57" y="15" h="13" w="17" gammagroup="wasabi.scrollbar"/>
+	<bitmap id="wasabi.scrollbar.horizontal.left.pressed" file="scrollbars.png" x="57" y="29" h="13" w="17" gammagroup="wasabi.scrollbar"/>
+	
+	<bitmap id="wasabi.scrollbar.horizontal.right" file="scrollbars.png" x="117" y="1" h="13" w="17" gammagroup="wasabi.scrollbar"/>
+	<bitmap id="wasabi.scrollbar.horizontal.right.hover" file="scrollbars.png" x="117" y="15" h="13" w="17" gammagroup="wasabi.scrollbar"/>
+	<bitmap id="wasabi.scrollbar.horizontal.right.pressed" file="scrollbars.png" x="117" y="29" h="13" w="17" gammagroup="wasabi.scrollbar"/>
+	
+	<bitmap id="wasabi.scrollbar.horizontal.background" file="scrollbars.png" x="75" y="43" w="17" h="13" gammagroup="backgrounds"/>
+	<bitmap id="wasabi.scrollbar.horizontal.background.left" file="scrollbars.png" x="75" y="43" w="17" h="13" gammagroup="backgrounds"/>
+	<bitmap id="wasabi.scrollbar.horizontal.background.middle" file="scrollbars.png" x="75" y="43" w="17" h="13" gammagroup="backgrounds"/>
+	<bitmap id="wasabi.scrollbar.horizontal.background.right" file="scrollbars.png" x="75" y="43" w="17" h="13" gammagroup="backgrounds"/>
+	
+<!-- Scrollbars (on List, Tree, etc...) -->
+	<elementalias id="studio.scrollbar.horizontal.left" target="wasabi.scrollbar.horizontal.left"/>
+	<elementalias id="studio.scrollbar.horizontal.left.hilite" target="wasabi.scrollbar.horizontal.left.hover"/>
+	<elementalias id="studio.scrollbar.horizontal.left.pressed" target="wasabi.scrollbar.horizontal.left.pressed"/>
+	<elementalias id="studio.scrollbar.horizontal.right" target="wasabi.scrollbar.horizontal.right"/>
+	<elementalias id="studio.scrollbar.horizontal.right.hilite" target="wasabi.scrollbar.horizontal.right.hover"/>
+	<elementalias id="studio.scrollbar.horizontal.right.pressed" target="wasabi.scrollbar.horizontal.right.pressed"/>
+	<elementalias id="studio.scrollbar.horizontal.button" target="wasabi.scrollbar.horizontal.button"/>
+	<elementalias id="studio.scrollbar.horizontal.button.hilite" target="wasabi.scrollbar.horizontal.button.hover"/>
+	<elementalias id="studio.scrollbar.horizontal.button.pressed" target="wasabi.scrollbar.horizontal.button.pressed"/>
+	<elementalias id="studio.scrollbar.vertical.left" target="wasabi.scrollbar.vertical.left"/>
+	<elementalias id="studio.scrollbar.vertical.left.hilite" target="wasabi.scrollbar.vertical.left.hover"/>
+	<elementalias id="studio.scrollbar.vertical.left.pressed" target="wasabi.scrollbar.vertical.left.pressed"/>
+	<elementalias id="studio.scrollbar.vertical.right" target="wasabi.scrollbar.vertical.right"/>
+	<elementalias id="studio.scrollbar.vertical.right.hilite" target="wasabi.scrollbar.vertical.right.hover"/>
+	<elementalias id="studio.scrollbar.vertical.right.pressed" target="wasabi.scrollbar.vertical.right.pressed"/>
+	<elementalias id="studio.scrollbar.vertical.button" target="wasabi.scrollbar.vertical.button"/>
+	<elementalias id="studio.scrollbar.vertical.button.hilite" target="wasabi.scrollbar.vertical.button.hover"/>
+	<elementalias id="studio.scrollbar.vertical.button.pressed" target="wasabi.scrollbar.vertical.button.pressed"/>
+   
    <!-- labelwnd titles -->
    <bitmap id="studio.label.upperLeft" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="0" y="170" w="2" h="2" gammagroup="Backgrounds"/>
    <bitmap id="studio.label.top" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="2" y="170" w="101" h="2" gammagroup="Backgrounds"/>
@@ -153,27 +142,6 @@
    <bitmap id="wasabi.label.bottom" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="2" y="179" w="101" h="2" gammagroup="Backgrounds"/>
    <bitmap id="wasabi.label.bottom.right" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="103" y="179" w="2" h="2" gammagroup="Backgrounds"/>
    
-   <!-- default button -->
-   <bitmap id="studio.button.upperLeft" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="1" y="135" h="2" w="2" gammagroup="Buttons"/>
-   <bitmap id="studio.button.top" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="4" y="135" h="2" w="25" gammagroup="Buttons"/>
-   <bitmap id="studio.button.upperRight" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="30" y="135" h="2" w="2" gammagroup="Buttons"/>
-   <bitmap id="studio.button.left" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="1" y="138" h="25" w="2" gammagroup="Buttons"/>
-   <bitmap id="studio.button.middle" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="4" y="138" h="25" w="25" gammagroup="Buttons"/>
-   <bitmap id="studio.button.right" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="30" y="138" h="25" w="2" gammagroup="Buttons"/>
-   <bitmap id="studio.button.lowerLeft" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="1" y="164" h="2" w="2" gammagroup="Buttons"/>
-   <bitmap id="studio.button.bottom" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="4" y="164" h="2" w="25" gammagroup="Buttons"/>
-   <bitmap id="studio.button.lowerRight" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="30" y="164 " h="2" w="2" gammagroup="Buttons"/>
-
-   <bitmap id="studio.button.pressed.upperLeft" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="67" y="135" h="2" w="2" gammagroup="Buttons"/>
-   <bitmap id="studio.button.pressed.top" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="70" y="135" h="2" w="25" gammagroup="Buttons"/>
-   <bitmap id="studio.button.pressed.upperRight" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="96" y="135" h="2" w="2" gammagroup="Buttons"/>
-   <bitmap id="studio.button.pressed.left" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="67" y="138" h="25" w="2" gammagroup="Buttons"/>
-   <bitmap id="studio.button.pressed.middle" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="70" y="138" h="25" w="25" gammagroup="Buttons"/>
-   <bitmap id="studio.button.pressed.right" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="96" y="138" h="25" w="2" gammagroup="Buttons"/>
-   <bitmap id="studio.button.pressed.lowerLeft" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="67" y="164" h="2" w="2" gammagroup="Buttons"/>
-   <bitmap id="studio.button.pressed.bottom" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="70" y="164" h="2" w="25" gammagroup="Buttons"/>
-   <bitmap id="studio.button.pressed.lowerRight" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="96" y="164 " h="2" w="2" gammagroup="Buttons"/>
- 
    <!-- Component status bar -->
    <bitmap id="studio.statusbar.left" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="94" y="0" h="12" w="12"/>
    <bitmap id="studio.statusbar.middle" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="107" y="0" h="12" w="12"/>
@@ -316,36 +284,56 @@
    <bitmap id="wasabi.button.label.arrow.right" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="144" y="79" h="7" w="4" gammagroup="ButtonText"/>
    <bitmap id="wasabi.button.label.ellipses" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="138" y="92" h="1" w="5" gammagroup="ButtonText"/>
 
-   <bitmap id="wasabi.button.top.left" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="0" y="134" h="4" w="4" gammagroup="Buttons"/>
-   <bitmap id="wasabi.button.top" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="4" y="134" h="4" w="25" gammagroup="Buttons"/>
-   <bitmap id="wasabi.button.top.right" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="29" y="134" h="4" w="4" gammagroup="Buttons"/>
-   <bitmap id="wasabi.button.left" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="0" y="138" h="25" w="4" gammagroup="Buttons"/>
-   <bitmap id="wasabi.button.center" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="4" y="138" h="25" w="25" gammagroup="Buttons"/>
-   <bitmap id="wasabi.button.right" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="29" y="138" h="25" w="4" gammagroup="Buttons"/>
-   <bitmap id="wasabi.button.bottom.left" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="0" y="163" h="4" w="4" gammagroup="Buttons"/>
-   <bitmap id="wasabi.button.bottom" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="4" y="163" h="4" w="25" gammagroup="Buttons"/>
-   <bitmap id="wasabi.button.bottom.right" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="29" y="163" h="4" w="4" gammagroup="Buttons"/>
+   <bitmap id="wasabi.button.top.left" file="graphics.png" x="152" y="515" h="4" w="4" gammagroup="wasabi.button"/>
+   <bitmap id="wasabi.button.top" file="graphics.png" x="157" y="515" h="4" w="25" gammagroup="wasabi.button"/>
+   <bitmap id="wasabi.button.top.right" file="graphics.png" x="183" y="515" h="4" w="4" gammagroup="wasabi.button"/>
+   <bitmap id="wasabi.button.left" file="graphics.png" x="152" y="520" h="25" w="4" gammagroup="wasabi.button"/>
+   <bitmap id="wasabi.button.middle" file="graphics.png" x="157" y="520" h="25" w="25" gammagroup="wasabi.button"/>
+   <bitmap id="wasabi.button.right" file="graphics.png" x="183" y="520" h="25" w="4" gammagroup="wasabi.button"/>
+   <bitmap id="wasabi.button.bottom.left" file="graphics.png" x="152" y="546" h="4" w="4" gammagroup="wasabi.button"/>
+   <bitmap id="wasabi.button.bottom" file="graphics.png" x="157" y="546" h="4" w="25" gammagroup="wasabi.button"/>
+   <bitmap id="wasabi.button.bottom.right" file="graphics.png" x="183" y="546" h="4" w="4" gammagroup="wasabi.button"/>
    
-   <bitmap id="wasabi.button.hover.top.left" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="33" y="134" h="4" w="4" gammagroup="Buttons"/>
-   <bitmap id="wasabi.button.hover.top" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="37" y="134" h="4" w="25" gammagroup="Buttons"/>
-   <bitmap id="wasabi.button.hover.top.right" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="62" y="134" h="4" w="4" gammagroup="Buttons"/>
-   <bitmap id="wasabi.button.hover.left" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="33" y="138" h="25" w="4" gammagroup="Buttons"/>
-   <bitmap id="wasabi.button.hover.center" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="37" y="138" h="25" w="25" gammagroup="Buttons"/>
-   <bitmap id="wasabi.button.hover.right" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="62" y="138" h="25" w="4" gammagroup="Buttons"/>
-   <bitmap id="wasabi.button.hover.bottom.left" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="33" y="163" h="4" w="4" gammagroup="Buttons"/>
-   <bitmap id="wasabi.button.hover.bottom" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="37" y="163" h="4" w="25" gammagroup="Buttons"/>
-   <bitmap id="wasabi.button.hover.bottom.right" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="62" y="163" h="4" w="4" gammagroup="Buttons"/>
-
-   <bitmap id="wasabi.button.pressed.top.left" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="66" y="134" h="4" w="4" gammagroup="Buttons"/>
-   <bitmap id="wasabi.button.pressed.top" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="70" y="134" h="4" w="25" gammagroup="Buttons"/>
-   <bitmap id="wasabi.button.pressed.top.right" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="95" y="134" h="4" w="4" gammagroup="Buttons"/>
-   <bitmap id="wasabi.button.pressed.left" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="66" y="138" h="25" w="4" gammagroup="Buttons"/>
-   <bitmap id="wasabi.button.pressed.center" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="70" y="138" h="25" w="25" gammagroup="Buttons"/>
-   <bitmap id="wasabi.button.pressed.right" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="95" y="138" h="25" w="4" gammagroup="Buttons"/>
-   <bitmap id="wasabi.button.pressed.bottom.left" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="66" y="163" h="4" w="4" gammagroup="Buttons"/>
-   <bitmap id="wasabi.button.pressed.bottom" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="70" y="163" h="4" w="25" gammagroup="Buttons"/>
-   <bitmap id="wasabi.button.pressed.bottom.right" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="95" y="163" h="4" w="4" gammagroup="Buttons"/>
-
+   <bitmap id="wasabi.button.hover.top.left" file="graphics.png" x="188" y="515" h="4" w="4" gammagroup="wasabi.button"/>
+   <bitmap id="wasabi.button.hover.top" file="graphics.png" x="193" y="515" h="4" w="25" gammagroup="wasabi.button"/>
+   <bitmap id="wasabi.button.hover.top.right" file="graphics.png" x="219" y="515" h="4" w="4" gammagroup="wasabi.button"/>
+   <bitmap id="wasabi.button.hover.left" file="graphics.png" x="188" y="520" h="25" w="4" gammagroup="wasabi.button"/>
+   <bitmap id="wasabi.button.hover.middle" file="graphics.png" x="193" y="520" h="25" w="25" gammagroup="wasabi.button"/>
+   <bitmap id="wasabi.button.hover.right" file="graphics.png" x="219" y="520" h="25" w="4" gammagroup="wasabi.button"/>
+   <bitmap id="wasabi.button.hover.bottom.left" file="graphics.png" x="188" y="546" h="4" w="4" gammagroup="wasabi.button"/>
+   <bitmap id="wasabi.button.hover.bottom" file="graphics.png" x="193" y="546" h="4" w="25" gammagroup="wasabi.button"/>
+   <bitmap id="wasabi.button.hover.bottom.right" file="graphics.png" x="219" y="546" h="4" w="4" gammagroup="wasabi.button"/>
+   
+   <bitmap id="wasabi.button.pressed.top.left" file="graphics.png" x="224" y="515" h="4" w="4" gammagroup="wasabi.button"/>
+   <bitmap id="wasabi.button.pressed.top" file="graphics.png" x="229" y="515" h="4" w="25" gammagroup="wasabi.button"/>
+   <bitmap id="wasabi.button.pressed.top.right" file="graphics.png" x="255" y="515" h="4" w="4" gammagroup="wasabi.button"/>
+   <bitmap id="wasabi.button.pressed.left" file="graphics.png" x="224" y="520" h="25" w="4" gammagroup="wasabi.button"/>
+   <bitmap id="wasabi.button.pressed.middle" file="graphics.png" x="229" y="520" h="25" w="25" gammagroup="wasabi.button"/>
+   <bitmap id="wasabi.button.pressed.right" file="graphics.png" x="255" y="520" h="25" w="4" gammagroup="wasabi.button"/>
+   <bitmap id="wasabi.button.pressed.bottom.left" file="graphics.png" x="224" y="546" h="4" w="4" gammagroup="wasabi.button"/>
+   <bitmap id="wasabi.button.pressed.bottom" file="graphics.png" x="229" y="546" h="4" w="25" gammagroup="wasabi.button"/>
+   <bitmap id="wasabi.button.pressed.bottom.right" file="graphics.png" x="255" y="546" h="4" w="4" gammagroup="wasabi.button"/>
+   
+<!-- default button -->
+  <elementalias id="studio.button.upperLeft" target="wasabi.button.top.left"/>
+  <elementalias id="studio.button.top" target="wasabi.button.top"/>
+  <elementalias id="studio.button.upperRight" target="wasabi.button.top.right"/>
+  <elementalias id="studio.button.left" target="wasabi.button.left"/>
+  <elementalias id="studio.button.middle" target="wasabi.button.middle"/>
+  <elementalias id="studio.button.right" target="wasabi.button.right"/>
+  <elementalias id="studio.button.lowerLeft" target="wasabi.button.bottom.left"/>
+  <elementalias id="studio.button.bottom" target="wasabi.button.bottom"/>
+  <elementalias id="studio.button.lowerRight" target="wasabi.button.bottom.right"/>
+  <elementalias id="studio.button.pressed.upperLeft" target="wasabi.button.pressed.top.left"/>
+  <elementalias id="studio.button.pressed.top" target="wasabi.button.pressed.top"/>
+  <elementalias id="studio.button.pressed.upperRight" target="wasabi.button.pressed.top.right"/>
+  <elementalias id="studio.button.pressed.left" target="wasabi.button.pressed.left"/>
+  <elementalias id="studio.button.pressed.middle" target="wasabi.button.pressed.middle"/>
+  <elementalias id="studio.button.pressed.right" target="wasabi.button.pressed.right"/>
+  <elementalias id="studio.button.pressed.lowerLeft" target="wasabi.button.pressed.bottom.left"/>
+  <elementalias id="studio.button.pressed.bottom" target="wasabi.button.pressed.bottom"/>
+  <elementalias id="studio.button.pressed.lowerRight" target="wasabi.button.pressed.bottom.right"/> 
+  
    <!-- Generic Sliders -->
    
    <bitmap id="wasabi.slider.horizontal.left" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="106" y="149" h="8" w="8" gammagroup="Backgrounds"/>
@@ -377,15 +365,15 @@
 
    <!-- tooltip -->
 
-   <bitmap id="wasabi.tooltip.top.left" file="@SKINSPATH@Komodo\engine\window\tooltips-elements.png" x="0" y="0" h="4" w="4" gammagroup="Glass"/>
-   <bitmap id="wasabi.tooltip.top" file="@SKINSPATH@Komodo\engine\window\tooltips-elements.png" x="4" y="0" h="4" w="8" gammagroup="Glass"/>
-   <bitmap id="wasabi.tooltip.top.right" file="@SKINSPATH@Komodo\engine\window\tooltips-elements.png" x="13" y="0" h="4" w="4" gammagroup="Glass"/>
-   <bitmap id="wasabi.tooltip.left" file="@SKINSPATH@Komodo\engine\window\tooltips-elements.png" x="0" y="4" h="8" w="4" gammagroup="Glass"/>
-   <bitmap id="wasabi.tooltip.center" file="@SKINSPATH@Komodo\engine\window\tooltips-elements.png" x="4" y="4" h="8" w="8" gammagroup="Glass"/>
-   <bitmap id="wasabi.tooltip.right" file="@SKINSPATH@Komodo\engine\window\tooltips-elements.png" x="13" y="4" h="8" w="4" gammagroup="Glass"/>
-   <bitmap id="wasabi.tooltip.bottom.left" file="@SKINSPATH@Komodo\engine\window\tooltips-elements.png" x="0" y="13" h="4" w="4" gammagroup="Glass"/>
-   <bitmap id="wasabi.tooltip.bottom" file="@SKINSPATH@Komodo\engine\window\tooltips-elements.png" x="4" y="13" h="4" w="8" gammagroup="Glass"/>
-   <bitmap id="wasabi.tooltip.bottom.right" file="@SKINSPATH@Komodo\engine\window\tooltips-elements.png" x="13" y="13" h="4" w="4" gammagroup="Glass"/>
+   <bitmap id="wasabi.tooltip.top.left" file="graphics.png" x="253" y="467" h="4" w="4" gammagroup="tooltip"/>
+   <bitmap id="wasabi.tooltip.top" file="graphics.png" x="258" y="467" h="4" w="9" gammagroup="tooltip"/>
+   <bitmap id="wasabi.tooltip.top.right" file="graphics.png" x="268" y="467" h="4" w="4" gammagroup="tooltip"/>
+   <bitmap id="wasabi.tooltip.left" file="graphics.png" x="253" y="472" h="9" w="4" gammagroup="tooltip"/>
+   <bitmap id="wasabi.tooltip.center" file="graphics.png" x="258" y="472" h="9" w="8" gammagroup="tooltip"/>
+   <bitmap id="wasabi.tooltip.right" file="graphics.png" x="268" y="472" h="9" w="4" gammagroup="tooltip"/>
+   <bitmap id="wasabi.tooltip.bottom.left" file="graphics.png" x="253" y="482" h="4" w="4" gammagroup="tooltip"/>
+   <bitmap id="wasabi.tooltip.bottom" file="graphics.png" x="258" y="482" h="4" w="9" gammagroup="tooltip"/>
+   <bitmap id="wasabi.tooltip.bottom.right" file="graphics.png" x="268" y="482" h="4" w="4" gammagroup="tooltip"/>
 
    <!-- tabsheet -->
 

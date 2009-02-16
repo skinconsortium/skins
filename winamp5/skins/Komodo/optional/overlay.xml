@@ -1,0 +1,17 @@
+
+<!-- ****************
+ overlay.xml 
+ 
+ this xml used to define underlay/overlay groups if you need to add more elements into the player.
+ 
+ *********-->
+
+<!-- underlay - elements will be behind other elements -->
+<groupdef id="player.underlay">
+	<text text="under" x="50" y="10" relatx="2" relaty="2"/>
+</groupdef>
+
+<!-- underlay - elements will on top of other elements -->
+<groupdef id="player.overlay">
+	<text text="over" x="50" y="50" relatx="2" relaty="2"/>
+</groupdef>

@@ -23,7 +23,7 @@
 
   <!-- wasabi colors -->
   <color id="wasabi.text.color" value="255,255,255" gammagroup="Text"/>
-  <color id="wasabi.tooltips.textcolor" value="0,0,0" gammagroup="Text" />
+  <color id="wasabi.tooltips.textcolor" value="0,0,0" gammagroup="tooltip.text" />
   <color id="abouttext" value="0,0,0" gammagroup="Text"/>
 
   <!-- Generic Lists -->
@@ -40,7 +40,7 @@
   <color id="wasabi.list.text.selected.background.inactive" value="10,13,20" gammagroup="ListSelBackground"/> <!-- listview/treeview selectionbar back color (inactive) -->
 
   <color id="wasabi.list.column.background" value="204,208,217" gammagroup="Backgrounds"/> <!-- listview header background color -->
-  <color id="wasabi.list.column.text" value="0,0,0" gammagroup="ListColumnText"/> <!-- listview header text color -->
+  <color id="wasabi.list.column.text" value="0,0,0" gammagroup="Backgrounds"/> <!-- listview header text color -->
   <color id="wasabi.list.column.frame.top" value="246,246,248" gammagroup="Backgrounds"/> // listview header frame top color
   <color id="wasabi.list.column.frame.middle" value="142,150,163" gammagroup="Backgrounds"/> // listview header frame middle color
   <color id="wasabi.list.column.frame.bottom" value="0,0,0" gammagroup="Backgrounds"/> // listview header frame bottom color
