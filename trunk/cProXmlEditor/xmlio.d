@@ -272,7 +272,7 @@ public class XmlIO
 					}
 			}
 		}
-		else if (tag[0..4] == "blob")
+		else if (tag.length >= 4 && tag[0..4] == "blob")
 		{
 			char[] buf;
 			if (tag.length < 5) 			//no query attached
@@ -315,6 +315,46 @@ public class XmlIO
 				}
 			}
 		}
+		else if (tag.length >= 11 && tag[0..11] == "attrib-list")
+		{
+			char[] attribTag = tag[12..Text.locate(tag,'>')];
+			char[] attribName = tag[Text.locate(tag,'>')+1..$];
+			
+			ListBox* lb = (cast(dfl.listbox.ListBox*)panel);
+			
+			foreach(n;node.query.child(attribTag))
+			{
+				if (read)
+					foreach(attr;n.query.attribute(attribName))
+					{
+						lb.items.add(attr.value);
+					}
+				else
+				{
+					n.detach;
+				}
+			}
+			//@ TODO maybe do not delete the whole nodes!
+			if (!read)
+			{
+				foreach(itm;lb.items)
+				{
+					node.element(null, attribTag, null).attribute(null, attribName, itm.toString);
+				}
+			}
+
+			/*if (read)
+				panel.text = buf;*/
+			/*else
+			{
+				auto doc = new Doc;
+				doc.parse(panel.text);
+				foreach(nn;doc.root.children)
+				{
+					node.copy(nn);
+				}
+			}*/
+		}		
 		else if (tag.length >= 5 && tag[0..5] == "node:")
 		{
 			foreach(level;Text.patterns(tag[5..$], "/"))

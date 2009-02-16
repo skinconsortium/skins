@@ -15,7 +15,16 @@ class BeatVis: dfl.panel.Panel
 {
 	// Do not modify or move this block of variables.
 	//~Entice Designer variables begin here.
-	dfl.textbox.TextBox textBox1;
+	dfl.listbox.ListBox list;
+	dfl.panel.Panel panel1;
+	dfl.button.Button insertNew;
+	dfl.panel.Panel panel2;
+	dfl.panel.Panel panel3;
+	dfl.button.Button save;
+	dfl.panel.Panel panel4;
+	dfl.button.Button remove;
+	dfl.panel.Panel panel5;
+	dfl.textbox.TextBox edit;
 	//~Entice Designer variables end here.
 	
 	
@@ -25,8 +34,38 @@ class BeatVis: dfl.panel.Panel
 		
 		//@  Other CproGeneral initialization code here.
 		
+		panel1.dockPadding.all = 4;
+		list.selectedValueChanged ~= &onSelectionChanged;
+		save.click ~= &onSaveClicked;
+		insertNew.click ~= &onInsertNewClicked;
+		remove.click ~= &onRemoveClicked;
+		
+	}
+	
+	private void onInsertNewClicked(Object sender, EventArgs ea)
+	{
+		list.items.add(edit.text);
+	}
+	
+	private void onSelectionChanged(Object sender, EventArgs ea)
+	{
+		if (list.selectedIndex < 0) edit.text = "";
+		else edit.text = list.items[list.selectedIndex()].toString;
 	}
 
+	private void onRemoveClicked(Object sender, EventArgs ea)
+	{
+		if (list.selectedIndex < 0) return;
+		list.items.remove(list.selectedItem);
+	}
+
+	private void onSaveClicked(Object sender, EventArgs ea)
+	{
+		int i = list.selectedIndex();
+		if (i < 0) return;
+		list.items.opIndexAssign(edit.text, i);
+		list.selectedIndex = i;
+	}
 	
 	private void initializeCproGeneral()
 	{
@@ -35,15 +74,71 @@ class BeatVis: dfl.panel.Panel
 		//~DFL Panel
 		name = "BeatVis";
 		tag = new dfl.all.StringObject("node:ClassicPro/Visualization/BeatVis");
-		bounds = dfl.all.Rect(0, 0, 448, 336);
-		//~DFL dfl.textbox.TextBox=textBox1
-		textBox1 = new dfl.textbox.TextBox();
-		textBox1.name = "textBox1";
-		textBox1.dock = dfl.all.DockStyle.FILL;
-		textBox1.tag = new dfl.all.StringObject("blob:customvis");
-		textBox1.multiline = true;
-		textBox1.bounds = dfl.all.Rect(0, 0, 448, 336);
-		textBox1.parent = this;
+		bounds = dfl.all.Rect(0, 0, 448, 346);
+		//~DFL dfl.listbox.ListBox=list
+		list = new dfl.listbox.ListBox();
+		list.name = "list";
+		list.dock = dfl.all.DockStyle.TOP;
+		list.tag = new dfl.all.StringObject("attrib-list:customvis>name");
+		list.bounds = dfl.all.Rect(0, 0, 448, 108);
+		list.parent = this;
+		//~DFL dfl.panel.Panel=panel1
+		panel1 = new dfl.panel.Panel();
+		panel1.name = "panel1";
+		panel1.dock = dfl.all.DockStyle.TOP;
+		panel1.bounds = dfl.all.Rect(0, 108, 448, 32);
+		panel1.parent = this;
+		//~DFL dfl.button.Button=insertNew
+		insertNew = new dfl.button.Button();
+		insertNew.name = "insertNew";
+		insertNew.dock = dfl.all.DockStyle.RIGHT;
+		insertNew.text = "New";
+		insertNew.bounds = dfl.all.Rect(373, 0, 75, 32);
+		insertNew.parent = panel1;
+		//~DFL dfl.panel.Panel=panel2
+		panel2 = new dfl.panel.Panel();
+		panel2.name = "panel2";
+		panel2.dock = dfl.all.DockStyle.RIGHT;
+		panel2.bounds = dfl.all.Rect(363, 0, 10, 32);
+		panel2.parent = panel1;
+		//~DFL dfl.panel.Panel=panel3
+		panel3 = new dfl.panel.Panel();
+		panel3.name = "panel3";
+		panel3.dock = dfl.all.DockStyle.RIGHT;
+		panel3.bounds = dfl.all.Rect(0, 0, 10, 32);
+		panel3.parent = panel2;
+		//~DFL dfl.button.Button=save
+		save = new dfl.button.Button();
+		save.name = "save";
+		save.dock = dfl.all.DockStyle.RIGHT;
+		save.text = "Save";
+		save.bounds = dfl.all.Rect(288, 0, 75, 32);
+		save.parent = panel1;
+		//~DFL dfl.panel.Panel=panel4
+		panel4 = new dfl.panel.Panel();
+		panel4.name = "panel4";
+		panel4.dock = dfl.all.DockStyle.RIGHT;
+		panel4.bounds = dfl.all.Rect(278, 0, 10, 32);
+		panel4.parent = panel1;
+		//~DFL dfl.button.Button=remove
+		remove = new dfl.button.Button();
+		remove.name = "remove";
+		remove.dock = dfl.all.DockStyle.LEFT;
+		remove.text = "Remove";
+		remove.bounds = dfl.all.Rect(0, 0, 75, 32);
+		remove.parent = panel1;
+		//~DFL dfl.panel.Panel=panel5
+		panel5 = new dfl.panel.Panel();
+		panel5.name = "panel5";
+		panel5.dock = dfl.all.DockStyle.LEFT;
+		panel5.bounds = dfl.all.Rect(75, 0, 10, 32);
+		panel5.parent = panel1;
+		//~DFL dfl.textbox.TextBox=edit
+		edit = new dfl.textbox.TextBox();
+		edit.name = "edit";
+		edit.dock = dfl.all.DockStyle.FILL;
+		edit.bounds = dfl.all.Rect(85, 0, 193, 32);
+		edit.parent = panel1;
 		//~Entice Designer 0.8.6pre4 code ends here.
 	}
 }

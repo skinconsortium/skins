@@ -7,5 +7,5 @@
 
 module buildstamp;
 
-public const uint buildstamp_uint = 32;
-public const char[] buildstamp_char = "32";
+public const uint buildstamp_uint = 34;
+public const char[] buildstamp_char = "34";

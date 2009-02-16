@@ -21,7 +21,7 @@ node:%s
 	You can also load more than one node at once separating them by "/":
 	tag="TagA/TagB" will create/search the content of <TagA><TagB>content</TagB></TagA>
 
-node-id:%tag-%id
+node>id:%tag-%id
 
 value
 	creates a <name_of_panel>text_of_panel</name_of_panel> node
@@ -47,3 +47,6 @@ attrib-bool
 attrib-radio:%attrib=%value
 	applys for radioboxes.
 	reads/writes the attribute %attrib="%value" to the parent xml node if the radiobox is checked.
+	
+attrib-list:%tag>%attrib
+	applays for list object containing an ObjectCollection items. Will parse stuff and insert it in the list.
