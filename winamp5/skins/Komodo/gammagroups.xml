@@ -1,6 +1,5 @@
-
-
-<gammaset id=".default">
+<gammaset id="Default">
+	<gammagroup id="backgrounds" value="0,0,0" gray="0" boost="0" />
 	<gammagroup id="glass" value="0,0,0" gray="0" boost="0" />
 	<gammagroup id="buttonLabel" value="0,0,0" gray="0" boost="0" />
 	<gammagroup id="timerfont" value="0,0,0" gray="0" boost="0" />
@@ -10,10 +9,14 @@
 	<gammagroup id="pbuttons" value="0,0,0" gray="0" boost="0" />
 	<gammagroup id="pagescroll" value="0,0,0" gray="0" boost="0" />
 	<gammagroup id="vis" value="0,0,0" gray="0" boost="0" />
+	<gammagroup id="wasabi.button" value="0,0,0" gray="0" boost="0" />
+	<gammagroup id="wasabi.scrollbar" value="0,0,0" gray="0" boost="0" />
+	<gammagroup id="tooltip" value="0,0,0" gray="0" boost="0" />
+	<gammagroup id="tooltip.text" value="0,0,0" gray="0" boost="0" />
 	
 	<gammagroup id="Tree Color" value="0,0,0" gray="0" boost="0" />
 	<gammagroup id="ButtonText" value="0,0,0" gray="0" boost="0" />
 	<gammagroup id="ListBackground" value="0,0,0" gray="0" boost="0" />
-	<gammagroup id="listText" value="0,500,0" gray="0" boost="0" />
+	<gammagroup id="listText" value="0,0,0" gray="0" boost="0" />
+	<gammagroup id="playList.current" value="0,0,0" gray="0" boost="0" />
 </gammaset>
-

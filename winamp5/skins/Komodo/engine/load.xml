@@ -11,6 +11,6 @@
 <include file="xml\player.xml"/>
 
 <!--include file="@SKINSPATH@Komodo\engine\updatemanager\updatemanager.xml"/-->
-<include file="xml\gamma-presets.xml"/>
+<include file="@SKINPATH@gammagroups.xml"/>
 
    
