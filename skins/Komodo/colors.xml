@@ -14,30 +14,30 @@
 <!--truetypefont id="font.gen.button" file="font-bankgothic.ttf"/-->
 
   <!-- Custom colors -->
-  <color id="color.nowplaying" value="200,200,200" gammagroup="generalText"/>
-  <color id="color.title" value="255,255,255" gammagroup="generalText"/>
-  <color id="color.button.label" value="255,255,255" gammagroup="buttonLabel"/>
-  <color id="color.plist" value="255,255,255" gammagroup="playlist"/>
+  <color id="color.nowplaying" value="200,200,200" gammagroup="text.nowplaying"/>
+  <color id="color.indicator" value="255,255,255" gammagroup="text.indicator"/>
+  <color id="color.button.label" value="255,255,255" gammagroup="text.buttonlabel"/>
+  <color id="color.plist" value="255,255,255" gammagroup="text.plist"/>
   
-  <color id="color.eq.txt" value="172,239,39" gammagroup="eqbutton"/>
+  <color id="color.eq.txt" value="172,239,39" gammagroup="text.eq"/>
 
   <!-- wasabi colors -->
-  <color id="wasabi.text.color" value="255,255,255" gammagroup="Text"/>
+  <color id="wasabi.text.color" value="255,255,255" gammagroup="wasabi.text"/>
   <color id="wasabi.tooltips.textcolor" value="0,0,0" gammagroup="tooltip.text" />
   <color id="abouttext" value="0,0,0" gammagroup="Text"/>
 
   <!-- Generic Lists -->
-  <color id="wasabi.list.text" value="145,214,255" gammagroup="glass"/> <!--lists/trees item foreground (also edit text) -->
+  <color id="wasabi.list.text" value="145,214,255" gammagroup="wasabi.text"/> <!--lists/trees item foreground (also edit text) -->
   <color id="wasabi.list.background" value="14,2,3" gammagroup="ListBackground"/>  <!--lists/trees item background (also bg for edit) -->
 
   <color id="wasabi.list.text.selected" value="50,50,50" gammagroup="ListTextSelected"/> <!--listview/treeview selection bar text color -->
-  <color id="wasabi.list.text.selected.background" value="145,214,255" gammagroup="glass"/> <!--listview/treeview selection bar backcolor -->
-  <color id="studio.list.item.selected" value="50,50,50" gammagroup="ListSelBackground"/>
-  <color id="studio.list.item.focused" value="50,50,50" gammagroup="ListSelBackground"/>
+  <color id="wasabi.list.text.selected.background" value="110,160,190" gammagroup="ListSelBackground"/> <!--listview/treeview selection bar backcolor -->
+  <color id="studio.list.item.selected" value="50,50,50" gammagroup="ListTextSelected"/>
+  <color id="studio.list.item.focused" value="145,214,255" gammagroup="ListSelBackground"/>
 
-  <color id="wasabi.list.text.current" value="145,214,255" gammagroup="playList.current"/> <!-- currently playing item in lists -->
+  <color id="wasabi.list.text.current" value="145,214,0" gammagroup="playList.current"/> <!-- currently playing item in lists -->
   <color id="wasabi.list.text.selected.inactive" value="10,10,10" gammagroup="ListTextSelected"/> <!-- listview/treeview selection bar textcolor (inactive) -->
-  <color id="wasabi.list.text.selected.background.inactive" value="10,13,20" gammagroup="ListSelBackground"/> <!-- listview/treeview selectionbar back color (inactive) -->
+  <color id="wasabi.list.text.selected.background.inactive" value="70,105,128" gammagroup="ListSelBackground"/> <!-- listview/treeview selectionbar back color (inactive) -->
 
   <color id="wasabi.list.column.background" value="204,208,217" gammagroup="Backgrounds"/> <!-- listview header background color -->
   <color id="wasabi.list.column.text" value="0,0,0" gammagroup="Backgrounds"/> <!-- listview header text color -->
