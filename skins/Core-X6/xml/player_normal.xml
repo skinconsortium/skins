@@ -51,7 +51,7 @@
 
 	<group
 		id="player.normal.LCD"
-		x="49" y="71"
+		x="49" y="66"
 		w="144" h="149"
 	/>
 	
@@ -539,7 +539,18 @@
 		w="23" h="23"
 		image="player.normal.cover.stardark.bitmap"
 	/>
-
+	<layer
+		id="aa.left.border"
+		x="53" y="13"
+		h="100" w="1"
+		image="player.normal.cover.aa.border"
+	/>
+	<layer
+		id="aa.right.border"
+		x="154" y="13"
+		h="100" w="1"
+		image="player.normal.cover.aa.border"
+	/>
 	<AlbumArt
 		id="waaa"
 		x="54" y="13"
@@ -669,11 +680,11 @@
 		move="0"
 	/>
 
-	<layer id="preview"
+<!--	<layer id="preview"
 		fitparent="1"
 		image="player.normal.eq.preview"
 		sysregion="0"
 		alpha="100"
 		ghost="1"
-	/>
+	/>-->
 </groupdef>

@@ -169,6 +169,7 @@ System.onScriptLoaded() {
 	play2pauseOnLoaded();
 	songinfoOnLoaded();
 	coverdrawerOnLoaded();
+	eqdrawerOnLoaded();
 	keyboardOnLoaded();
 
 }
