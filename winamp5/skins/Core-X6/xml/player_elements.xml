@@ -1,4 +1,5 @@
 <elements>
+
 	<bitmap id="player.normal.background.bitmap" file="player/background.png" x="33" y="5" w="436" h="255" gammagroup="ColorBackgrounds"/>
 	<bitmap id="player.normal.background.noalpha.bitmap" file="player/background.png" x="33" y="265" w="436" h="255" gammagroup="ColorBackgrounds"/>
 	<bitmap id="player.normal.alphaline.cover.bitmap" file="player/background.png" x="196" y="59" w="38" h="82" gammagroup="ColorBackgrounds"/>
@@ -79,6 +80,9 @@
 	<bitmap id="player.normal.cover.stardark.bitmap" file="player/drawer_cover.png" x="66" y="199" w="23" h="23" gammagroup="ColorBackgrounds"/>
 	<bitmap id="player.normal.cover.starlight.bitmap" file="player/drawer_cover.png" x="66" y="221" w="23" h="23" gammagroup="ColorBackgrounds"/>
 	<bitmap id="player.normal.cover.noalpha.map" file="player/drawer_cover.png" x="247" y="181" w="43" h="37" />
+
+	<bitmap id="player.normal.cover.aa.border" file="player/drawer_cover.png" x="489" y="70" w="1" h="100" />
+
 
 	<!-- Equalizer drawer -->
 

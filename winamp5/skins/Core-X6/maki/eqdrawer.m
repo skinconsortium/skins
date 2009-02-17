@@ -3,11 +3,11 @@ The script handles the drawer opening/closing as well as transforming
 of 3 Eq bars into 10 by using the 3-d power curves
 **************************************************************/
 
-function coverdrawerOnLoaded();
+function eqdrawerOnLoaded();
 function setEqBars(); // Set Bass, Middle and Tremple according to EQ values
 function setEqualizer(); // Set All Eq values according to Bass, Middle and Tremble values
 
-coverdrawerOnLoaded()
+eqdrawerOnLoaded()
 {
 	if (cattrEq.getData()== "1")
 	{
