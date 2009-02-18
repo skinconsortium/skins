@@ -11,8 +11,8 @@
 <bitmap id="player.main.background.blank" file="@SKINSPATH@Komodo\engine\player\background-blank.png" gammagroup="Background" />
 <bitmap id="player.main.background.noalpha" file="@SKINSPATH@Komodo\engine\player\background-noalpha.png" gammagroup="Background" />
 
-<bitmap id="player.main.background.default" file="defaultbg.jpg" gammagroup="Background" /> <!-- picked up from main folder -->
-<bitmap id="player.main.background.config" file="@SKINSPATH@Komodo\engine\player\config-bg.png" gammagroup="Background" />
+<bitmap id="player.main.background.default" file="defaultbg.jpg" gammagroup="Backgrounds" /> <!-- picked up from main folder -->
+<bitmap id="player.main.background.config" file="@SKINSPATH@Komodo\engine\player\config-bg.png" gammagroup="Backgrounds" />
 <bitmap id="player.main.background.wallpaper" file="$wallpaper" />
 
 <bitmap id="player.main.backgroundover" file="@SKINSPATH@Komodo\engine\player\backgroundover.png"  />
