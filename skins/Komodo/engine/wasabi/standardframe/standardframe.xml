@@ -89,7 +89,7 @@
 	<layer id="bottom" x="0" y="-10" relaty="1" w="-0" relatw="1" h="30" image="wasabi.frame.dummybg" sysregion="-2" />
 
 	<!--layer id="inner" x="20" y="30" relath="1" w="-29" relatw="1" h="-50" image="wasabi.frame.inner" sysregion="1" tile="0"/-->
-<layer id="inner" x="11" y="17" relath="1" w="-30" relatw="1" h="-20" image="wasabi.frame.inner" sysregion="1" tile="0"/>
+	<layer id="inner" x="11" y="17" relath="1" w="-30" relatw="1" h="-20" image="wasabi.frame.inner" sysregion="1" tile="0"/>
 
 	<Wasabi:Text
 		id="wasabi.titlebar" default=":componentname"

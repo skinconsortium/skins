@@ -26,13 +26,13 @@
   
   <!-- Bitmaps -->
   
-   <bitmap id="studio.BaseTexture" file="@SKINSPATH@Komodo\engine\window\background.png" gammagroup="Backgrounds"/>
+   <bitmap id="studio.BaseTexture" file="@SKINSPATH@Komodo\engine\window\background.png" gammagroup="base"/>
   
    <!-- Frame windows -->
-   <bitmap id="studio.framewnd.verticaldivider" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="124" y="53" h="65" w="8" gammagroup="Backgrounds"/>
-   <bitmap id="studio.framewnd.verticalgrabber" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="115" y="53" h="65" w="8" gammagroup="Backgrounds"/>
-   <bitmap id="studio.framewnd.horizontaldivider" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="40" y="97" h="8" w="65" gammagroup="Backgrounds"/>
-   <bitmap id="studio.framewnd.horizontalgrabber" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="40" y="106" h="8" w="65" gammagroup="Backgrounds"/>
+   <bitmap id="studio.framewnd.verticaldivider" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="124" y="53" h="65" w="8" gammagroup="base"/>
+   <bitmap id="studio.framewnd.verticalgrabber" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="115" y="53" h="65" w="8" gammagroup="base"/>
+   <bitmap id="studio.framewnd.horizontaldivider" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="40" y="97" h="8" w="65" gammagroup="base"/>
+   <bitmap id="studio.framewnd.horizontalgrabber" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="40" y="106" h="8" w="65" gammagroup="base"/>
 
    <bitmap id="wasabi.frame.divider.arrow.left" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="56" y="124" h="7" w="4"/>
    <bitmap id="wasabi.frame.divider.arrow.right" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="60" y="124" h="7" w="4"/>
@@ -51,8 +51,8 @@
 
    <!-- Generic Lists and Trees -->
 
-   <bitmap id="studio.list.background" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="1" y="115" h="17" w="17" gammagroup="Backgrounds"/> <!-- List background bitmap (tile) -->
-   <bitmap id="studio.tree.background" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="1" y="115" h="17" w="17" gammagroup="Backgrounds"/> <!-- Tree background bitmap (tile) -->
+   <bitmap id="studio.list.background" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="1" y="115" h="17" w="17" gammagroup="ListBackground"/> <!-- List background bitmap (tile) -->
+   <bitmap id="studio.tree.background" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="1" y="115" h="17" w="17" gammagroup="base"/> <!-- Tree background bitmap (tile) -->
 
    <bitmap id="studio.tree.tab.closed" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="149" y="0" h="14" w="14" gammagroup="Tree Color"/>
    <bitmap id="studio.tree.tab.open" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="135" y="0" h="14" w="14" gammagroup="Tree Color"/>
@@ -79,10 +79,10 @@
 	<bitmap id="wasabi.scrollbar.vertical.right.hover" file="scrollbars.png" x="15" y="61" h="17" w="13" gammagroup="wasabi.scrollbar"/>
 	<bitmap id="wasabi.scrollbar.vertical.right.pressed" file="scrollbars.png" x="29" y="61" h="17" w="13" gammagroup="wasabi.scrollbar"/>
 	
-	<bitmap id="wasabi.scrollbar.vertical.background" file="scrollbars.png" x="43" y="20" w="13" h="17" gammagroup="backgrounds"/>
-	<bitmap id="wasabi.scrollbar.vertical.background.top" file="scrollbars.png" x="43" y="20" w="13" h="17" gammagroup="backgrounds"/>
-	<bitmap id="wasabi.scrollbar.vertical.background.middle" file="scrollbars.png" x="43" y="20" w="13" h="17" gammagroup="backgrounds"/>
-	<bitmap id="wasabi.scrollbar.vertical.background.bottom" file="scrollbars.png" x="43" y="20" w="13" h="17" gammagroup="backgrounds"/>
+	<bitmap id="wasabi.scrollbar.vertical.background" file="scrollbars.png" x="43" y="20" w="13" h="17" gammagroup="base"/>
+	<bitmap id="wasabi.scrollbar.vertical.background.top" file="scrollbars.png" x="43" y="20" w="13" h="17" gammagroup="base"/>
+	<bitmap id="wasabi.scrollbar.vertical.background.middle" file="scrollbars.png" x="43" y="20" w="13" h="17" gammagroup="base"/>
+	<bitmap id="wasabi.scrollbar.vertical.background.bottom" file="scrollbars.png" x="43" y="20" w="13" h="17" gammagroup="base"/>
 	
 	<bitmap id="wasabi.scrollbar.horizontal.button" file="scrollbars.png" x="75" y="1" h="13" w="41" gammagroup="wasabi.scrollbar"/>
 	<bitmap id="wasabi.scrollbar.horizontal.button.hover" file="scrollbars.png" x="75" y="15" h="13" w="41" gammagroup="wasabi.scrollbar"/>
@@ -96,10 +96,10 @@
 	<bitmap id="wasabi.scrollbar.horizontal.right.hover" file="scrollbars.png" x="117" y="15" h="13" w="17" gammagroup="wasabi.scrollbar"/>
 	<bitmap id="wasabi.scrollbar.horizontal.right.pressed" file="scrollbars.png" x="117" y="29" h="13" w="17" gammagroup="wasabi.scrollbar"/>
 	
-	<bitmap id="wasabi.scrollbar.horizontal.background" file="scrollbars.png" x="75" y="43" w="17" h="13" gammagroup="backgrounds"/>
-	<bitmap id="wasabi.scrollbar.horizontal.background.left" file="scrollbars.png" x="75" y="43" w="17" h="13" gammagroup="backgrounds"/>
-	<bitmap id="wasabi.scrollbar.horizontal.background.middle" file="scrollbars.png" x="75" y="43" w="17" h="13" gammagroup="backgrounds"/>
-	<bitmap id="wasabi.scrollbar.horizontal.background.right" file="scrollbars.png" x="75" y="43" w="17" h="13" gammagroup="backgrounds"/>
+	<bitmap id="wasabi.scrollbar.horizontal.background" file="scrollbars.png" x="75" y="43" w="17" h="13" gammagroup="base"/>
+	<bitmap id="wasabi.scrollbar.horizontal.background.left" file="scrollbars.png" x="75" y="43" w="17" h="13" gammagroup="base"/>
+	<bitmap id="wasabi.scrollbar.horizontal.background.middle" file="scrollbars.png" x="75" y="43" w="17" h="13" gammagroup="base"/>
+	<bitmap id="wasabi.scrollbar.horizontal.background.right" file="scrollbars.png" x="75" y="43" w="17" h="13" gammagroup="base"/>
 	
 <!-- Scrollbars (on List, Tree, etc...) -->
 	<elementalias id="studio.scrollbar.horizontal.left" target="wasabi.scrollbar.horizontal.left"/>
@@ -122,25 +122,25 @@
 	<elementalias id="studio.scrollbar.vertical.button.pressed" target="wasabi.scrollbar.vertical.button.pressed"/>
    
    <!-- labelwnd titles -->
-   <bitmap id="studio.label.upperLeft" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="0" y="170" w="2" h="2" gammagroup="Backgrounds"/>
-   <bitmap id="studio.label.top" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="2" y="170" w="101" h="2" gammagroup="Backgrounds"/>
-   <bitmap id="studio.label.upperRight" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="103" y="170" w="2" h="2" gammagroup="Backgrounds"/>
-   <bitmap id="studio.label.left" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="0" y="172" w="2" h="7" gammagroup="Backgrounds"/>
-   <bitmap id="studio.label.middle" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="2" y="172" w="101" h="7" gammagroup="Backgrounds"/>
-   <bitmap id="studio.label.right" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="103" y="172" w="2" h="7" gammagroup="Backgrounds"/>
-   <bitmap id="studio.label.lowerLeft" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="0" y="179" w="2" h="2" gammagroup="Backgrounds"/>
-   <bitmap id="studio.label.bottom" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="2" y="179" w="101" h="2" gammagroup="Backgrounds"/>
-   <bitmap id="studio.label.lowerRight" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="103" y="179" w="2" h="2" gammagroup="Backgrounds"/>
+   <bitmap id="studio.label.upperLeft" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="0" y="170" w="2" h="2" gammagroup="base"/>
+   <bitmap id="studio.label.top" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="2" y="170" w="101" h="2" gammagroup="base"/>
+   <bitmap id="studio.label.upperRight" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="103" y="170" w="2" h="2" gammagroup="base"/>
+   <bitmap id="studio.label.left" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="0" y="172" w="2" h="7" gammagroup="base"/>
+   <bitmap id="studio.label.middle" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="2" y="172" w="101" h="7" gammagroup="base"/>
+   <bitmap id="studio.label.right" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="103" y="172" w="2" h="7" gammagroup="base"/>
+   <bitmap id="studio.label.lowerLeft" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="0" y="179" w="2" h="2" gammagroup="base"/>
+   <bitmap id="studio.label.bottom" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="2" y="179" w="101" h="2" gammagroup="base"/>
+   <bitmap id="studio.label.lowerRight" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="103" y="179" w="2" h="2" gammagroup="base"/>
 
-   <bitmap id="wasabi.label.top.left" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="0" y="170" w="2" h="2" gammagroup="Backgrounds"/>
-   <bitmap id="wasabi.label.top" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="2" y="170" w="101" h="2" gammagroup="Backgrounds"/>
-   <bitmap id="wasabi.label.top.right" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="103" y="170" w="2" h="2" gammagroup="Backgrounds"/>
-   <bitmap id="wasabi.label.left" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="0" y="172" w="2" h="7" gammagroup="Backgrounds"/>
-   <bitmap id="wasabi.label.middle" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="2" y="172" w="101" h="7" gammagroup="Backgrounds"/>
-   <bitmap id="wasabi.label.right" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="103" y="172" w="2" h="7" gammagroup="Backgrounds"/>
-   <bitmap id="wasabi.label.bottom.left" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="0" y="179" w="2" h="2" gammagroup="Backgrounds"/>
-   <bitmap id="wasabi.label.bottom" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="2" y="179" w="101" h="2" gammagroup="Backgrounds"/>
-   <bitmap id="wasabi.label.bottom.right" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="103" y="179" w="2" h="2" gammagroup="Backgrounds"/>
+   <bitmap id="wasabi.label.top.left" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="0" y="170" w="2" h="2" gammagroup="base"/>
+   <bitmap id="wasabi.label.top" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="2" y="170" w="101" h="2" gammagroup="base"/>
+   <bitmap id="wasabi.label.top.right" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="103" y="170" w="2" h="2" gammagroup="base"/>
+   <bitmap id="wasabi.label.left" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="0" y="172" w="2" h="7" gammagroup="base"/>
+   <bitmap id="wasabi.label.middle" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="2" y="172" w="101" h="7" gammagroup="base"/>
+   <bitmap id="wasabi.label.right" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="103" y="172" w="2" h="7" gammagroup="base"/>
+   <bitmap id="wasabi.label.bottom.left" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="0" y="179" w="2" h="2" gammagroup="base"/>
+   <bitmap id="wasabi.label.bottom" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="2" y="179" w="101" h="2" gammagroup="base"/>
+   <bitmap id="wasabi.label.bottom.right" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="103" y="179" w="2" h="2" gammagroup="base"/>
    
    <!-- Component status bar -->
    <bitmap id="studio.statusbar.left" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="94" y="0" h="12" w="12"/>
@@ -159,8 +159,8 @@
    <bitmap id="wasabi.button.checkbox.xbox" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="79" y="77" h="7" w="7" gammagroup="Display"/>
    <bitmap id="wasabi.button.checkbox.xbox.pressed" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="65" y="77" h="7" w="7" gammagroup="Display"/>
 
-   <bitmap id="wasabi.button.radio.background" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="58" y="66" h="11" w="11" gammagroup="Backgrounds"/>
-   <bitmap id="wasabi.button.radio.background.display" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="69" y="66" h="9" w="9" gammagroup="Backgrounds"/>
+   <bitmap id="wasabi.button.radio.background" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="58" y="66" h="11" w="11" gammagroup="base"/>
+   <bitmap id="wasabi.button.radio.background.display" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="69" y="66" h="9" w="9" gammagroup="base"/>
    <bitmap id="wasabi.button.radio" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="79" y="77" h="7" w="7" gammagroup="Display"/>
    <bitmap id="wasabi.button.radio.pressed" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="72" y="77" h="7" w="7" gammagroup="Display"/>
 
@@ -230,27 +230,27 @@
 
    <!-- Panel Bevels -->
    
-   <bitmap id="wasabi.panel.top.left" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="19" y="114" h="2" w="2" gammagroup="Backgrounds"/>
-   <bitmap id="wasabi.panel.top" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="21" y="114" h="2" w="16" gammagroup="Backgrounds"/>
-   <bitmap id="wasabi.panel.top.right" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="37" y="114" h="2" w="2" gammagroup="Backgrounds"/>
-   <bitmap id="wasabi.panel.left" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="19" y="116" h="16" w="2" gammagroup="Backgrounds"/>
-   <bitmap id="wasabi.panel.right" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="37" y="116" h="16" w="2" gammagroup="Backgrounds"/>
-   <bitmap id="wasabi.panel.bottom.left" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="19" y="132" h="2" w="2" gammagroup="Backgrounds"/>
-   <bitmap id="wasabi.panel.bottom" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="21" y="132" h="2" w="16" gammagroup="Backgrounds"/>
-   <bitmap id="wasabi.panel.bottom.right" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="37" y="132" h="2" w="2" gammagroup="Backgrounds"/>
-   <bitmap id="wasabi.panel.tint" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="24" y="119" h="10" w="10" gammagroup="Backgrounds"/>
+   <bitmap id="wasabi.panel.top.left" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="19" y="114" h="2" w="2" gammagroup="base"/>
+   <bitmap id="wasabi.panel.top" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="21" y="114" h="2" w="16" gammagroup="base"/>
+   <bitmap id="wasabi.panel.top.right" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="37" y="114" h="2" w="2" gammagroup="base"/>
+   <bitmap id="wasabi.panel.left" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="19" y="116" h="16" w="2" gammagroup="base"/>
+   <bitmap id="wasabi.panel.right" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="37" y="116" h="16" w="2" gammagroup="base"/>
+   <bitmap id="wasabi.panel.bottom.left" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="19" y="132" h="2" w="2" gammagroup="base"/>
+   <bitmap id="wasabi.panel.bottom" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="21" y="132" h="2" w="16" gammagroup="base"/>
+   <bitmap id="wasabi.panel.bottom.right" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="37" y="132" h="2" w="2" gammagroup="base"/>
+   <bitmap id="wasabi.panel.tint" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="24" y="119" h="10" w="10" gammagroup="base"/>
 
    <!-- Object Frame-->
    
-   <bitmap id="wasabi.objectframe.top.left" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="0" y="114" h="1" w="1" gammagroup="Backgrounds"/>
-   <bitmap id="wasabi.objectframe.top" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="1" y="114" h="1" w="17" gammagroup="Backgrounds"/>
-   <bitmap id="wasabi.objectframe.top.right" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="18" y="114" h="1" w="1" gammagroup="Backgrounds"/>
-   <bitmap id="wasabi.objectframe.left" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="0" y="115" h="17" w="1" gammagroup="Backgrounds"/>
-   <bitmap id="wasabi.objectframe.center" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="1" y="115" h="17" w="17" gammagroup="Display Backgrounds"/>
-   <bitmap id="wasabi.objectframe.right" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="18" y="115" h="17" w="1" gammagroup="Backgrounds"/>
-   <bitmap id="wasabi.objectframe.bottom.left" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="0" y="132" h="1" w="1" gammagroup="Backgrounds"/>
-   <bitmap id="wasabi.objectframe.bottom" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="1" y="132" h="1" w="17" gammagroup="Backgrounds"/>
-   <bitmap id="wasabi.objectframe.bottom.right" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="18" y="132" h="1" w="1" gammagroup="Backgrounds"/>
+   <bitmap id="wasabi.objectframe.top.left" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="0" y="114" h="1" w="1" gammagroup="base"/>
+   <bitmap id="wasabi.objectframe.top" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="1" y="114" h="1" w="17" gammagroup="base"/>
+   <bitmap id="wasabi.objectframe.top.right" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="18" y="114" h="1" w="1" gammagroup="base"/>
+   <bitmap id="wasabi.objectframe.left" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="0" y="115" h="17" w="1" gammagroup="base"/>
+   <bitmap id="wasabi.objectframe.center" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="1" y="115" h="17" w="17" gammagroup="base"/>
+   <bitmap id="wasabi.objectframe.right" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="18" y="115" h="17" w="1" gammagroup="base"/>
+   <bitmap id="wasabi.objectframe.bottom.left" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="0" y="132" h="1" w="1" gammagroup="base"/>
+   <bitmap id="wasabi.objectframe.bottom" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="1" y="132" h="1" w="17" gammagroup="base"/>
+   <bitmap id="wasabi.objectframe.bottom.right" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="18" y="132" h="1" w="1" gammagroup="base"/>
 
    <!-- Combo Box List-->
    
@@ -258,7 +258,7 @@
    <bitmap id="wasabi.dropdownlist.list.top" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="41" y="124" h="1" w="10"/>
    <bitmap id="wasabi.dropdownlist.list.top.right" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="51" y="124" h="1" w="1"/>
    <bitmap id="wasabi.dropdownlist.list.left" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="40" y="125" h="8" w="1"/>
-   <bitmap id="wasabi.dropdownlist.list.center" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="41" y="125" h="8" w="10" gammagroup="Display Backgrounds"/>
+   <bitmap id="wasabi.dropdownlist.list.center" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="41" y="125" h="8" w="10" gammagroup="base"/>
    <bitmap id="wasabi.dropdownlist.list.right" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="51" y="125" h="8" w="1"/>
    <bitmap id="wasabi.dropdownlist.list.bottom.left" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="40" y="133" h="1" w="1"/>
    <bitmap id="wasabi.dropdownlist.list.bottom" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="41" y="133" h="1" w="10"/>
@@ -266,15 +266,15 @@
    
    <!-- Embedded Window -->
    
-   <bitmap id="wasabi.window.top.left" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="0" y="114" h="1" w="1" gammagroup="Backgrounds"/>
-   <bitmap id="wasabi.window.top" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="1" y="114" h="1" w="17" gammagroup="Backgrounds"/>
-   <bitmap id="wasabi.window.top.right" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="18" y="114" h="1" w="1" gammagroup="Backgrounds"/>
-   <bitmap id="wasabi.window.left" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="0" y="115" h="17" w="1" gammagroup="Backgrounds"/>
-   <bitmap id="wasabi.window.center" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="1" y="115" h="17" w="17" gammagroup="Backgrounds"/>
-   <bitmap id="wasabi.window.right" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="18" y="115" h="17" w="1" gammagroup="Backgrounds"/>
-   <bitmap id="wasabi.window.bottom.left" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="0" y="132" h="1" w="1" gammagroup="Backgrounds"/>
-   <bitmap id="wasabi.window.bottom" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="1" y="132" h="1" w="17" gammagroup="Backgrounds"/>
-   <bitmap id="wasabi.window.bottom.right" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="18" y="132" h="1" w="1" gammagroup="Backgrounds"/>
+   <bitmap id="wasabi.window.top.left" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="0" y="114" h="1" w="1" gammagroup="base"/>
+   <bitmap id="wasabi.window.top" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="1" y="114" h="1" w="17" gammagroup="base"/>
+   <bitmap id="wasabi.window.top.right" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="18" y="114" h="1" w="1" gammagroup="base"/>
+   <bitmap id="wasabi.window.left" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="0" y="115" h="17" w="1" gammagroup="base"/>
+   <bitmap id="wasabi.window.center" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="1" y="115" h="17" w="17" gammagroup="base"/>
+   <bitmap id="wasabi.window.right" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="18" y="115" h="17" w="1" gammagroup="base"/>
+   <bitmap id="wasabi.window.bottom.left" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="0" y="132" h="1" w="1" gammagroup="base"/>
+   <bitmap id="wasabi.window.bottom" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="1" y="132" h="1" w="17" gammagroup="base"/>
+   <bitmap id="wasabi.window.bottom.right" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="18" y="132" h="1" w="1" gammagroup="base"/>
 
    <!-- Generic Button -->
    
@@ -336,13 +336,13 @@
   
    <!-- Generic Sliders -->
    
-   <bitmap id="wasabi.slider.horizontal.left" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="106" y="149" h="8" w="8" gammagroup="Backgrounds"/>
-   <bitmap id="wasabi.slider.horizontal.middle" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="115" y="149" h="8" w="10" gammagroup="Backgrounds"/>
-   <bitmap id="wasabi.slider.horizontal.right" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="126" y="149" h="8" w="8" gammagroup="Backgrounds"/>
+   <bitmap id="wasabi.slider.horizontal.left" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="106" y="149" h="8" w="8" gammagroup="base"/>
+   <bitmap id="wasabi.slider.horizontal.middle" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="115" y="149" h="8" w="10" gammagroup="base"/>
+   <bitmap id="wasabi.slider.horizontal.right" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="126" y="149" h="8" w="8" gammagroup="base"/>
    
-   <bitmap id="wasabi.slider.vertical.top" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="138" y="136" h="8" w="8" gammagroup="Backgrounds"/>
-   <bitmap id="wasabi.slider.vertical.middle" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="138" y="145" h="10" w="8" gammagroup="Backgrounds"/>
-   <bitmap id="wasabi.slider.vertical.bottom" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="138" y="156" h="8" w="8" gammagroup="Backgrounds"/>
+   <bitmap id="wasabi.slider.vertical.top" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="138" y="136" h="8" w="8" gammagroup="base"/>
+   <bitmap id="wasabi.slider.vertical.middle" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="138" y="145" h="10" w="8" gammagroup="base"/>
+   <bitmap id="wasabi.slider.vertical.bottom" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="138" y="156" h="8" w="8" gammagroup="base"/>
    
    <bitmap id="wasabi.slider.horizontal.button" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="106" y="136" h="13" w="15" gammagroup="SliderKnobs"/>
    <bitmap id="wasabi.slider.horizontal.button.pressed" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="121" y="136" h="13" w="15" gammagroup="SliderKnobs"/>
@@ -352,16 +352,16 @@
 
    <!-- Generic Group Box -->
 
-   <bitmap id="wasabi.groupbox.top.left" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="116" y="13" h="3" w="3" gammagroup="Backgrounds"/>
-   <bitmap id="wasabi.groupbox.top" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="120" y="13" h="3" w="8" gammagroup="Backgrounds"/>
-   <bitmap id="wasabi.groupbox.top.right" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="129" y="13" h="3" w="3" gammagroup="Backgrounds"/>
+   <bitmap id="wasabi.groupbox.top.left" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="116" y="13" h="3" w="3" gammagroup="base"/>
+   <bitmap id="wasabi.groupbox.top" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="120" y="13" h="3" w="8" gammagroup="base"/>
+   <bitmap id="wasabi.groupbox.top.right" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="129" y="13" h="3" w="3" gammagroup="base"/>
 
-   <bitmap id="wasabi.groupbox.left" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="116" y="17" h="8" w="3" gammagroup="Backgrounds"/>
-   <bitmap id="wasabi.groupbox.right" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="129" y="17" h="8" w="3" gammagroup="Backgrounds"/>
+   <bitmap id="wasabi.groupbox.left" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="116" y="17" h="8" w="3" gammagroup="base"/>
+   <bitmap id="wasabi.groupbox.right" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="129" y="17" h="8" w="3" gammagroup="base"/>
    
-   <bitmap id="wasabi.groupbox.bottom.left" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="116" y="26" h="3" w="3" gammagroup="Backgrounds"/>
-   <bitmap id="wasabi.groupbox.bottom" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="120" y="26" h="3" w="8" gammagroup="Backgrounds"/>
-   <bitmap id="wasabi.groupbox.bottom.right" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="129" y="26" h="3" w="3" gammagroup="Backgrounds"/>
+   <bitmap id="wasabi.groupbox.bottom.left" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="116" y="26" h="3" w="3" gammagroup="base"/>
+   <bitmap id="wasabi.groupbox.bottom" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="120" y="26" h="3" w="8" gammagroup="base"/>
+   <bitmap id="wasabi.groupbox.bottom.right" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="129" y="26" h="3" w="3" gammagroup="base"/>
 
    <!-- tooltip -->
 
@@ -377,17 +377,17 @@
 
    <!-- tabsheet -->
 
-   <bitmap id="wasabi.tabsheet.button.topleft" file="@SKINSPATH@Komodo\engine\window\tabsheet.png" x="0" y="0" w="10" h="10" gammagroup="Backgrounds"/>
-   <bitmap id="wasabi.tabsheet.button.top" file="@SKINSPATH@Komodo\engine\window\tabsheet.png" x="10" y="0" w="46" h="10" gammagroup="Backgrounds" />
-   <bitmap id="wasabi.tabsheet.button.topright" file="@SKINSPATH@Komodo\engine\window\tabsheet.png" x="56" y="0" w="10" h="10" gammagroup="Backgrounds"/>
-   <bitmap id="wasabi.tabsheet.button.left" file="@SKINSPATH@Komodo\engine\window\tabsheet.png" x="0" y="10" w="10" h="15" gammagroup="Backgrounds"/>
-   <bitmap id="wasabi.tabsheet.button.right" file="@SKINSPATH@Komodo\engine\window\tabsheet.png" x="56" y="10" w="10" h="15" gammagroup="Backgrounds"/>
-   <bitmap id="wasabi.tabsheet.button.bottom" file="@SKINSPATH@Komodo\engine\window\tabsheet.png" x="0" y="26" w="66" h="2" gammagroup="Backgrounds"/>
-   <bitmap id="wasabi.tabsheet.button.shade.topleft" file="@SKINSPATH@Komodo\engine\window\tabsheet.png" x="0" y="29" w="10" h="10" gammagroup="Backgrounds"/>
-   <bitmap id="wasabi.tabsheet.button.shade.top" file="@SKINSPATH@Komodo\engine\window\tabsheet.png" x="10" y="29" w="46" h="10" gammagroup="Backgrounds"/>
-   <bitmap id="wasabi.tabsheet.button.shade.topright" file="@SKINSPATH@Komodo\engine\window\tabsheet.png" x="56" y="29" w="10" h="10" gammagroup="Backgrounds"/>
-   <bitmap id="wasabi.tabsheet.button.shade.left" file="@SKINSPATH@Komodo\engine\window\tabsheet.png" x="0" y="39" w="10" h="11" gammagroup="Backgrounds"/>
-   <bitmap id="wasabi.tabsheet.button.shade.middle" file="@SKINSPATH@Komodo\engine\window\tabsheet.png" x="10" y="39" w="46" h="11" gammagroup="Backgrounds"/>
-   <bitmap id="wasabi.tabsheet.button.shade.right" file="@SKINSPATH@Komodo\engine\window\tabsheet.png" x="56" y="39" w="10" h="11" gammagroup="Backgrounds"/>
+   <bitmap id="wasabi.tabsheet.button.topleft" file="@SKINSPATH@Komodo\engine\window\tabsheet.png" x="0" y="0" w="10" h="10" gammagroup="base"/>
+   <bitmap id="wasabi.tabsheet.button.top" file="@SKINSPATH@Komodo\engine\window\tabsheet.png" x="10" y="0" w="46" h="10" gammagroup="base" />
+   <bitmap id="wasabi.tabsheet.button.topright" file="@SKINSPATH@Komodo\engine\window\tabsheet.png" x="56" y="0" w="10" h="10" gammagroup="base"/>
+   <bitmap id="wasabi.tabsheet.button.left" file="@SKINSPATH@Komodo\engine\window\tabsheet.png" x="0" y="10" w="10" h="15" gammagroup="base"/>
+   <bitmap id="wasabi.tabsheet.button.right" file="@SKINSPATH@Komodo\engine\window\tabsheet.png" x="56" y="10" w="10" h="15" gammagroup="base"/>
+   <bitmap id="wasabi.tabsheet.button.bottom" file="@SKINSPATH@Komodo\engine\window\tabsheet.png" x="0" y="26" w="66" h="2" gammagroup="base"/>
+   <bitmap id="wasabi.tabsheet.button.shade.topleft" file="@SKINSPATH@Komodo\engine\window\tabsheet.png" x="0" y="29" w="10" h="10" gammagroup="base"/>
+   <bitmap id="wasabi.tabsheet.button.shade.top" file="@SKINSPATH@Komodo\engine\window\tabsheet.png" x="10" y="29" w="46" h="10" gammagroup="base"/>
+   <bitmap id="wasabi.tabsheet.button.shade.topright" file="@SKINSPATH@Komodo\engine\window\tabsheet.png" x="56" y="29" w="10" h="10" gammagroup="base"/>
+   <bitmap id="wasabi.tabsheet.button.shade.left" file="@SKINSPATH@Komodo\engine\window\tabsheet.png" x="0" y="39" w="10" h="11" gammagroup="base"/>
+   <bitmap id="wasabi.tabsheet.button.shade.middle" file="@SKINSPATH@Komodo\engine\window\tabsheet.png" x="10" y="39" w="46" h="11" gammagroup="base"/>
+   <bitmap id="wasabi.tabsheet.button.shade.right" file="@SKINSPATH@Komodo\engine\window\tabsheet.png" x="56" y="39" w="10" h="11" gammagroup="base"/>
 
 </elements>

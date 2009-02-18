@@ -9,10 +9,13 @@
 	<gammagroup id="pbuttons" value="0,0,0" gray="0" boost="0" />
 	<gammagroup id="pagescroll" value="0,0,0" gray="0" boost="0" />
 	<gammagroup id="vis" value="0,0,0" gray="0" boost="0" />
+	<gammagroup id="base" value="0,0,0" gray="0" boost="0" />
 	<gammagroup id="wasabi.button" value="0,0,0" gray="0" boost="0" />
+	<gammagroup id="wasabi.button.text" value="0,0,0" gray="0" boost="0" />
 	<gammagroup id="wasabi.scrollbar" value="0,0,0" gray="0" boost="0" />
 	<gammagroup id="tooltip" value="0,0,0" gray="0" boost="0" />
 	<gammagroup id="tooltip.text" value="0,0,0" gray="0" boost="0" />
+	<gammagroup id="component.frame" value="0,0,0" gray="0" boost="0" />
 	
 	<gammagroup id="Tree Color" value="0,0,0" gray="0" boost="0" />
 	<gammagroup id="ButtonText" value="0,0,0" gray="0" boost="0" />
