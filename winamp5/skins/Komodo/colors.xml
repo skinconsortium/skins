@@ -28,7 +28,7 @@
 
   <!-- Generic Lists -->
   <color id="wasabi.list.text" value="145,214,255" gammagroup="listText"/> <!--lists/trees item foreground (also edit text) -->
-  <color id="wasabi.list.background" value="14,2,3" gammagroup="ListBackground"/>  <!--lists/trees item background (also bg for edit) -->
+  <color id="wasabi.list.background" value="2,2,3" gammagroup="ListBackground"/>  <!--lists/trees item background (also bg for edit) -->
 
   <color id="wasabi.list.text.selected" value="50,50,50" gammagroup="ListTextSelected"/> <!--listview/treeview selection bar text color -->
   <color id="wasabi.list.text.selected.background" value="110,160,190" gammagroup="ListSelBackground"/> <!--listview/treeview selection bar backcolor -->
