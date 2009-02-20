@@ -8,6 +8,8 @@
 	<gammagroup id="cbuttons" value="0,0,0" gray="0" boost="0" />
 	<gammagroup id="pbuttons" value="0,0,0" gray="0" boost="0" />
 	<gammagroup id="pagescroll" value="0,0,0" gray="0" boost="0" />
+	<gammagroup id="ratings" value="0,0,0" gray="0" boost="0" />
+	<gammagroup id="cdcase" value="0,0,0" gray="0" boost="0" />
 	<gammagroup id="vis" value="0,0,0" gray="0" boost="0" />
 	<gammagroup id="base" value="0,0,0" gray="0" boost="0" />
 	<gammagroup id="wasabi.button" value="0,0,0" gray="0" boost="0" />
@@ -16,8 +18,11 @@
 	<gammagroup id="tooltip" value="0,0,0" gray="0" boost="0" />
 	<gammagroup id="tooltip.text" value="0,0,0" gray="0" boost="0" />
 	<gammagroup id="component.frame" value="0,0,0" gray="0" boost="0" />
+	<gammagroup id="text.nowplaying" value="0,0,0" gray="0" boost="0" />
+	<gammagroup id="text.indicator" value="0,0,0" gray="0" boost="0" />
+	<gammagroup id="text.buttonlabel" value="0,0,0" gray="0" boost="0" />
+	<gammagroup id="text.plist" value="0,0,0" gray="0" boost="0" />
 	
-	<gammagroup id="Tree Color" value="0,0,0" gray="0" boost="0" />
 	<gammagroup id="ButtonText" value="0,0,0" gray="0" boost="0" />
 	<gammagroup id="ListBackground" value="0,0,0" gray="0" boost="0" />
 	<gammagroup id="listText" value="0,0,0" gray="0" boost="0" />
