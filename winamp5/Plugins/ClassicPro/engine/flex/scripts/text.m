@@ -10,7 +10,7 @@
  */
 
 #include <lib/std.mi>
-#include <lib/../../ClassicProFlex/classicProFlex.mi>
+#include <lib/../../../sandbox2/ClassicProFlex/ClassicPro.mi>
 
 Global GuiObject myText;
 
@@ -32,6 +32,6 @@ System.onScriptLoaded ()
 
 	delete r;
 
-	ClassicProFlex.applyStyle(myText, myText.getXmlParam("userdata"));
+	ClassicPro.applyStyle(myText, myText.getXmlParam("userdata"));
 	myText.sendAction("rebuildtitle", "", 0, 0, 0, 0);
 }
