@@ -66,7 +66,7 @@ FunctionEnd
   !define MUI_ABORTWARNING
 
   !define MUI_ICON "${SOURCEPATH}\_installer\icon.ico"
-  !define MUI_UNICON "${NSISDIR}\Contrib\Graphics\Icons\arrow-uninstall.ico"
+  !define MUI_UNICON "${NSISDIR}\Contrib\Graphics\Icons\orange-uninstall.ico"
 
 ;--------------------------------
 ;Pages

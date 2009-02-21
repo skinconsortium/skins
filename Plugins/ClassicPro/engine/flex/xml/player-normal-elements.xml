@@ -142,10 +142,11 @@
 
 	<!-- Text Stuff -->
 	<bitmap id="player.normal.time.region" file="player/normal/time-region.png" />
-	<bitmap id="player.normal.songticker.region" file="player/normal/songticker-region.png" />
+	<bitmap id="player.normal.songticker.region" file="player/normal/songticker-region.png"/>
 
 	<!-- AlbumArt -->
 	<bitmap id="player.normal.albumart.region" file="player/normal/albumart-region.png" />
+	<bitmap id="player.normal.albumart.overlay" file="player/normal/albumart-overlay.png" gammagroup="player.normal.albumart.overlay"/>
 
 	<!-- ClassicVis -->
 	<bitmap id="player.normal.classicvis.region" file="player/normal/classicvis-region.png" />
