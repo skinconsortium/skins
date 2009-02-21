@@ -4,6 +4,7 @@ Version 1.1 (15 Feb 2009)
 - New: Major Widget Engine Improvements! Download new widgets (http://cpro.skinconsortium.com)
 - New: New Ultra Modern Tabs with animation!
 - New: BrowserPro v2.0 widget bundled (now have its own tab!)
+- New: Now fully translateable!
 - New: More powerfull ClassicPro.xml for skinners ;)
 - Improved: Cleaned SUI code and separated the tab code
 - Improved: Web browser now also have a window menu entry and shortcut

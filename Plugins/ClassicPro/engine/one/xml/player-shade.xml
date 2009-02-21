@@ -74,7 +74,7 @@
 	<group id="shade.seekticker" x="223" y="0" w="-414" h="23" relatw="1" move="1" visible="0"/>
 
 
-	<NStatesButton id="shade.aot" x="-91" y="3" relatx="1" image="s.aot.1." hoverimage="s.aot.2." downimage="s.aot.3." rectrgn="1" cfgattrib="{280876CF-48C0-40BC-8E86-73CE6BB462E5};Always on top" nstates="2" tooltip="Toggle Always on Top" cfgvals="0;1"/>
+	<NStatesButton id="shade.aot" x="-91" y="3" relatx="1" image="s.aot.1." hoverimage="s.aot.2." downimage="s.aot.3." rectrgn="1" cfgattrib="{280876CF-48C0-40BC-8E86-73CE6BB462E5};Always on top" nstates="2" tooltip="Toggle Always on top" cfgvals="0;1"/>
 	<layer id="shade.aot.docked" x="-91" y="3" relatx="1" image="s.aot.1.1" visible="0" ghost="1"/>
 
 	<button x="-64" relatx="1" y="3" id="player.button.minimize" action="MINIMIZE" image="s.min.1" hoverImage="s.min.2" downImage="s.min.3" rectrgn="1" tooltip="Minimize Winamp"/>

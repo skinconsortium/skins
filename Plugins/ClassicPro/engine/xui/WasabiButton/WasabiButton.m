@@ -15,6 +15,12 @@ System.onScriptLoaded() {
   isMouseButtonDown = false;
 }
 
+System.onSetXuiParam(String param, String value){
+	if(strlower(param)=="mytooltip"){
+		myButton.setXmlParam("tooltip", value);
+	}
+}
+
 myButton.onEnterArea(){
 	if(isMouseButtonDown){
 		setButtonState(2);

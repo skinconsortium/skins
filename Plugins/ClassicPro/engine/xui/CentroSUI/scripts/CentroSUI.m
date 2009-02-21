@@ -527,8 +527,8 @@ but_miniGoto.onleftClick(){
 	popMenu = new PopUpMenu;
 
 	popMenu.addCommand("Album Art", 0, 0, 0);
-	popMenu.addCommand("Tag Viewer", 1, 0, 0);
-	popMenu.addCommand("Saved Playlists", 2, 0, 0);
+	popMenu.addCommand("File Info", 1, 0, 0);
+	popMenu.addCommand("Stored Playlists", 2, 0, 0);
 	popMenu.addSeparator();
 	popMenu.addCommand("Video", 3, 0, 0);
 	popMenu.addCommand("Visualization", 4, 0, 0);

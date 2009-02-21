@@ -228,7 +228,7 @@
 	<group id="info.component.infodisplay" x="130" y="4" w="-132" h="-8" relatw="1" relath="1"/>
 </groupdef>
 
-<groupdef id="drawer.tagviewer" name="Tag Viewer">
+<groupdef id="drawer.tagviewer" name="File Info">
 	<!--<group id="drawer.tagviewer.bottomleft" x="0" y="-27" w="-6" relatw="1" relaty="1"/>-->
 
 	<Wasabi:AlbumArt id="tagviewer.cover" x="6" y="4" w="111" h="111" move="1"/>
@@ -237,13 +237,13 @@
 		image="component.menu2.1"
 		hoverImage="component.menu2.2"
 		downImage="component.menu2.3"
-		tooltip="Tag Viewer Options"
+		tooltip="File Info Components"
 	/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\one\scripts\tagviewer.maki" param="6"/>
 </groupdef>
 
 
-<groupdef id="drawer.savedpl" name="Saved Playlists">
+<groupdef id="drawer.savedpl" name="Stored Playlists">
 	<PlaylistDirectory x="2" y="2" w="-4" h="-21" relatw="1" relath="1" antialias="0"/>
 </groupdef>
 
