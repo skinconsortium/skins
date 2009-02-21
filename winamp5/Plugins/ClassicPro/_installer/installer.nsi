@@ -8,6 +8,9 @@
 ; source path of pjn123
 !define SOURCEPATH "C:\Program Files (x86)\Winamp\Plugins\ClassicPro\"
 
+; source path of martin.deimos
+;!define SOURCEPATH "C:\Program Files\Winamp\Plugins\ClassicPro\"
+
 
 
 
@@ -327,7 +330,7 @@ Section "BrowserPro v2.0" wBrowserPro
 SectionEnd
 
 
-Section "AlbumArt v1.1" wAlbumArt
+Section "Now Playing v1.1" wAlbumArt
 	SetOutPath "$INSTDIR\Plugins\ClassicPro\engine\widgets\Load"
 	File "${SOURCEPATH}\engine\widgets\Load\nowplaying.xml"
 

@@ -43,7 +43,7 @@
 		w="17" h="-2"
 		relatx="1" relath="1"
 		image="wasabi.button.label.arrow.down"
-		center_image="1" wantfocus="0"
+		center_image="1" wantfocus="0" mytooltip="Select your service"
 	/>
 </groupdef>
 
