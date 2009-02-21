@@ -1,0 +1,79 @@
+/**
+ * ClassicPro Maki Library
+ *
+ * @package	com.skinconsortium.cpro.flex.maki
+ * @author	mpdeimos
+ * @date	09/02/21
+ * @version	0.1
+ */
+
+#ifndef __CLASSICPRO_MI
+#define __CLASSICPRO_MI
+
+extern class @{686FA9C9-5CE5-4d35-8BAF-A0FF1C59E525}@ Object _predecl ClassicPro;
+
+/*
+ * Engine Specific Stuff
+ */
+
+
+/**
+ *
+ * @ret ClassicPro::Flex version of the installed engine
+ */
+extern	float	ClassicPro.getEngineVersion();
+
+/*
+ * Skin Specific Stuff
+ */
+
+
+/**
+ *
+ * @ret ClassicPro::Flex version of this skin
+ */
+extern	float	ClassicPro.getSkinVersion();
+
+/**
+ * applys a style from flex.xml to an GuiObject
+ *
+ * @param  The object to be styles
+ * @param  The styleID defined in flex.xml
+ */
+extern		ClassicPro.applyStyle(GuiObject obj, String styleID);
+
+/*
+ * Appearance
+ */
+
+/**
+ *
+ * @ret if skinner wants to use a combined Play/Pause Button in normal layout
+ */
+extern boolean	ClassicPro.appearance_normal_usePlayPauseButton();
+
+/**
+ *
+ * @ret if skinner wants to use a combined Play/Pause Button in shade layout
+ */
+extern boolean	ClassicPro.appearance_shade_usePlayPauseButton();
+
+/**
+ *
+ * @ret the fade in speed for glowbuttons
+ */
+extern boolean	ClassicPro.appearance_getGlowButtonFadeInSpeed();
+
+/**
+ *
+ * @ret the fade out speed for glowbuttons
+ */
+extern boolean	ClassicPro.appearance_getGlowButtonFadeOutSpeed();
+
+/**
+ *
+ * @ret the fade type of cPro glow buttons
+ */
+extern String	ClassicPro.appearance_getGlowButtonType();
+
+#endif
