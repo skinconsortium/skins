@@ -251,19 +251,19 @@ setAllTags(){
 	String album = System.getPlayItemMetaDataString("ALBUM");
 	if (strLen(year)<4) year="";
 	else year="("+year+")";
-	if(album=="") album="Unknown Album";
+	if(album=="") album=translate("Unknown Album");
 	line1.setXmlParam("text", album +" "+year);
 
 	String myartist = System.getPlayItemMetaDataString("ARTIST");
 	if(myartist==""){
 		if(strsearch(getPlayItemDisplayTitle(), "-")== -1){
-			myartist = "Unknown Artist";
+			myartist = translate("Unknown Artist");
 		}
 		else{
 			myartist = getToken(getPlayItemDisplayTitle(), "- ",  0);
 		}
 	}
-	line2.setXmlParam("text", "by " + myartist);
+	line2.setXmlParam("text",  translate("by") +" " + myartist);
 	
 	String mytitle = System.getPlayItemMetaDataString("TITLE");
 	if(mytitle==""){

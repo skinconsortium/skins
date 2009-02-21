@@ -25,9 +25,9 @@
 
 	<rect id="sc.nowplaying.bg" fitparent="1" color="255,255,255" filled="1" move="1" gammagroup="n.Color.ListBg"/>
 
-	<SC:FadeText id="sc.nowplaying.line3" x="0" y="5" w="0" h="20" relatw="1" fgcolor="0,0,0" align="center" fontsize="20" alpha="200"/>
-	<SC:FadeText id="sc.nowplaying.line2" x="0" y="22" w="0" h="20" relatw="1" fgcolor="0,0,0" align="center" fontsize="16" alpha="225"/>
-	<SC:FadeText id="sc.nowplaying.line1" x="0" y="38" w="0" h="24" relatw="1" fgcolor="0,0,0" align="center" fontsize="24"/>
+	<SC:FadeText id="sc.nowplaying.line3" x="0" y="5" w="0" h="20" relatw="1" fgcolor="0,0,0" align="center" fontsize="20" alpha="200" translate="0"/>
+	<SC:FadeText id="sc.nowplaying.line2" x="0" y="22" w="0" h="20" relatw="1" fgcolor="0,0,0" align="center" fontsize="16" alpha="225" translate="0"/>
+	<SC:FadeText id="sc.nowplaying.line1" x="0" y="38" w="0" h="24" relatw="1" fgcolor="0,0,0" align="center" fontsize="24" translate="0"/>
 
 	<group id="sc.nowplaying.cdbox.holder" x="5" y="78" w="-5" h="-78" relatw="1" relath="1"/>
 	
