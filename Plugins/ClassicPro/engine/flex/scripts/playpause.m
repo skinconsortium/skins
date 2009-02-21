@@ -9,7 +9,7 @@
  */
 
 #include <lib/std.mi>
-#include <lib/../../ClassicProFlex/classicProFlex.mi>
+#include <lib/../../../sandbox2/ClassicProFlex/ClassicPro.mi>
 
 Global GuiObject pause, play;
 Global boolean usePlayPause;
@@ -23,11 +23,11 @@ System.onScriptLoaded ()
 
 	if (getScriptGroup().getParentLayout().getID() == "normal")
 	{
-		usePlayPause = ClassicProFlex.appearance_normal_usePlayPauseButton(); 
+		usePlayPause = ClassicPro.appearance_normal_usePlayPauseButton(); 
 	}
 	else
 	{
-		usePlayPause = ClassicProFlex.appearance_shade_usePlayPauseButton();
+		usePlayPause = ClassicPro.appearance_shade_usePlayPauseButton();
 	}
 
 	if (!usePlayPause)

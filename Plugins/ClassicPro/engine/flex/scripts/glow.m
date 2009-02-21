@@ -10,7 +10,7 @@
 
 #include <lib/std.mi>
 #include <lib/com/glowobject.m>
-#include <lib/../../ClassicProFlex/classicProFlex.mi>
+#include <lib/../../../sandbox2/ClassicProFlex/ClassicPro.mi>
 #include dispatch_codes.m
 
 Function GlowObject newGlowObject(GlowObject go, GlowLayer gl, String id);
@@ -25,7 +25,7 @@ System.onScriptLoaded ()
 {
 	initDispatcher();
 
-	String type = strlower(ClassicProFlex.appearance_getGlowButtonType());
+	String type = strlower(ClassicPro.appearance_getGlowButtonType());
 	if (type == "hold")
 	{
 		glowType = GLOW_TYPE_HOLD;
@@ -85,8 +85,8 @@ GlowObject newGlowObject(GlowObject go, GlowLayer gl, String id)
 	go = getScriptGroup().findObject(id);
 	gl = getScriptGroup().findObject(id+".glow");
 	GlowObject go = GlowObject_construct(go, gl);
-	GlowObject_setFadeInSpeed(go, ClassicProFlex.appearance_getGlowButtonFadeInSpeed());
-	GlowObject_setFadeOutSpeed(go, ClassicProFlex.appearance_getGlowButtonFadeOutSpeed());
+	GlowObject_setFadeInSpeed(go, ClassicPro.appearance_getGlowButtonFadeInSpeed());
+	GlowObject_setFadeOutSpeed(go, ClassicPro.appearance_getGlowButtonFadeOutSpeed());
 	GlowObject_setGlowType(go, glowType);
 	return go;
 }

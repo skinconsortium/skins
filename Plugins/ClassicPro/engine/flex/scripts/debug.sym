@@ -42,7 +42,7 @@ var# |                Class |                                    What
 0026 |                  Int |                                      255
 0027 |           GlowObject |                                       go
 0028 |              Boolean |                                    onoff
-0029 |       ClassicProFlex |                           ClassicProFlex*
+0029 |           ClassicPro |                               ClassicPro*
 002A |            GuiObject |                               dispatcher
 002B |            GuiObject |                                       go
 002C |                  Int |                                  message
