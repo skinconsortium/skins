@@ -3,8 +3,8 @@
 	<script id="loadattribs" file="@SKINSPATH@Komodo\engine\scripts\loadattribs.maki"/>
 </scripts>
 
-<include file="@SKINPATH@colors.xml"/>
 <include file="xml\system-elements.xml"/>
+<include file="@SKINPATH@colors.xml"/>
 <include file="xui\xui-files.xml"/>
 <include file="xml\player-elements.xml"/>
 <include file="wasabi\wasabi.xml"/>
