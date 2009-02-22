@@ -12,7 +12,6 @@
 <bitmap id="player.main.background.noalpha" file="@SKINSPATH@Komodo\engine\player\background-noalpha.png" gammagroup="Background" />
 
 <bitmap id="player.main.background.default" file="defaultbg.jpg" gammagroup="Backgrounds" /> <!-- picked up from main folder -->
-<bitmap id="player.main.background.config" file="@SKINSPATH@Komodo\engine\player\config-bg.png" gammagroup="config.base" />
 <bitmap id="player.main.background.wallpaper" file="$wallpaper" />
 
 <bitmap id="player.main.pl.button.add" file="@SKINSPATH@Komodo\engine\player\mainPL-buttons.png" x="0" y="0" w="16" h="16"/>
@@ -92,6 +91,16 @@
 <bitmap id="player.pl.selector.right" file="graphics.png" x="470" y="1" w="10" h="35" gammagroup="glass"/> 
 
 <!-- **** config elements ***** -->
+<bitmap id="player.main.config.base" file="@SKINSPATH@Komodo\engine\player\config-base.png" gammagroup="config.base"/>
+<bitmap id="player.main.config.bg.base" file="@SKINSPATH@Komodo\engine\player\config-backgrounds-base.png" gammagroup="config.base"/>
+<bitmap id="player.main.config.eq.base" file="@SKINSPATH@Komodo\engine\player\config-eq-base.png" gammagroup="config.base"/>
+
+<bitmap id="player.main.config.tab.items" file="@SKINSPATH@Komodo\engine\player\config-tab-items.png" gammagroup="config.base"/>
+<bitmap id="player.main.config.tab.left" file="@SKINSPATH@Komodo\engine\player\config-tab.png" x="0" y="0" w="18" h="37" gammagroup="config.base"/>
+<bitmap id="player.main.config.tab.middle" file="@SKINSPATH@Komodo\engine\player\config-tab.png" x="18" y="0" w="18" h="37" gammagroup="config.base"/>
+<bitmap id="player.main.config.tab.right" file="@SKINSPATH@Komodo\engine\player\config-tab.png" x="36" y="0" w="18" h="37" gammagroup="config.base"/>
+<bitmap id="player.main.config.tab.base" file="@SKINSPATH@Komodo\engine\player\config-tab.png" x="52" y="0" w="18" h="37" gammagroup="config.base"/>
+
 <bitmap id="player.main.config.button" file="@SKINSPATH@Komodo\engine\player\button-config.png" x="0" y="0" w="132" h="20" gammagroup="config.button"/>
 <bitmap id="player.main.config.button.hover" file="@SKINSPATH@Komodo\engine\player\button-config.png" x="0" y="20" w="132" h="20" gammagroup="config.button"/>
 <bitmap id="player.main.config.button.active" file="@SKINSPATH@Komodo\engine\player\button-config.png" x="0" y="40" w="132" h="20" gammagroup="config.button"/>
