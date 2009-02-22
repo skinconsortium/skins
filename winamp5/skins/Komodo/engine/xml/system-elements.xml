@@ -27,11 +27,6 @@
   <!-- Bitmaps -->
   
    <bitmap id="studio.BaseTexture" file="@SKINSPATH@Komodo\engine\window\background.png" gammagroup="base"/>
-  	<!--bitmap id="wasabi.basetexture" file="@SKINSPATH@Komodo\engine\window\background.png" gammagroup="base"/-->
-	<bitmap id="wasabi.frame.basetexture" file="@SKINSPATH@Komodo\engine\window\background.png" gammagroup="ListBackground"/>
-	<!--bitmap id="wasabi.frame.basetexture" file="$solid" h="10" w="10" color="wasabi.list.background" gammagroup="ListBackground"/-->
-
-
   
    <!-- Frame windows -->
    <bitmap id="studio.framewnd.verticaldivider" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="124" y="53" h="65" w="8" gammagroup="base"/>
@@ -56,18 +51,18 @@
 
    <!-- Generic Lists and Trees -->
 
-   <bitmap id="studio.list.background" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="1" y="115" h="17" w="17" gammagroup="ListBackground"/> <!-- List background bitmap (tile) -->
-   <bitmap id="studio.tree.background" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="1" y="115" h="17" w="17" gammagroup="ListBackground"/> <!-- Tree background bitmap (tile) -->
+   <bitmap id="studio.list.background" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="1" y="115" h="17" w="17" gammagroup="list.Background"/> <!-- List background bitmap (tile) -->
+   <bitmap id="studio.tree.background" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="1" y="115" h="17" w="17" gammagroup="list.Background"/> <!-- Tree background bitmap (tile) -->
 
-   <bitmap id="studio.tree.tab.closed" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="149" y="0" h="14" w="14" gammagroup="listText"/>
-   <bitmap id="studio.tree.tab.open" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="135" y="0" h="14" w="14" gammagroup="listText"/>
-   <bitmap id="studio.tree.link.top.bottom" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="135" y="14" h="14" w="14" gammagroup="listText"/>
-   <bitmap id="studio.tree.link.top.right" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="135" y="42" h="14" w="14" gammagroup="listText"/>
-   <bitmap id="studio.tree.link.top.rightBottom" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="135" y="28" h="14" w="14" gammagroup="listText"/>
-   <bitmap id="studio.tree.link.tab.top.bottom" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="149" y="14" h="14" w="14" gammagroup="listText"/>
-   <bitmap id="studio.tree.link.tab.top.right" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="149" y="42" h="14" w="14" gammagroup="listText"/>
-   <bitmap id="studio.tree.link.tab.top.rightBottom" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="149" y="28" h="14" w="14" gammagroup="listText"/>
-   <bitmap id="studio.tree.sort.icon" file="@SKINSPATH@Komodo\engine\window\tree-sort-icon.png" gammagroup="listText"/>
+   <bitmap id="studio.tree.tab.closed" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="149" y="0" h="14" w="14" gammagroup="list.Text"/>
+   <bitmap id="studio.tree.tab.open" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="135" y="0" h="14" w="14" gammagroup="list.Text"/>
+   <bitmap id="studio.tree.link.top.bottom" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="135" y="14" h="14" w="14" gammagroup="list.Text"/>
+   <bitmap id="studio.tree.link.top.right" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="135" y="42" h="14" w="14" gammagroup="list.Text"/>
+   <bitmap id="studio.tree.link.top.rightBottom" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="135" y="28" h="14" w="14" gammagroup="list.Text"/>
+   <bitmap id="studio.tree.link.tab.top.bottom" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="149" y="14" h="14" w="14" gammagroup="list.Text"/>
+   <bitmap id="studio.tree.link.tab.top.right" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="149" y="42" h="14" w="14" gammagroup="list.Text"/>
+   <bitmap id="studio.tree.link.tab.top.rightBottom" file="@SKINSPATH@Komodo\engine\window\window-elements.png" x="149" y="28" h="14" w="14" gammagroup="list.Text"/>
+   <bitmap id="studio.tree.sort.icon" file="@SKINSPATH@Komodo\engine\window\tree-sort-icon.png" gammagroup="list.Text"/>
 
    <!--bitmap id="wasabi.scrollbar.vertical.grip" file="window/scrollgrips.png" x="0" y="0" h="8" w="6" gammagroup="Wasabi Button"/>
    <bitmap id="wasabi.scrollbar.horizontal.grip" file="window/scrollgrips.png" x="7" y="0" h="6" w="8" gammagroup="Wasabi Button"/-->
