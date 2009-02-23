@@ -14,6 +14,8 @@
 #define CUSTOM_PAGE_NONEXPOSED "{E9C2D926-53CA-400f-9A4D-85E31755A4CF}"
 
 Global group scriptGroup;
+Global group pageBG, pageEQ, pageCT;
+Global button tabBG, tabEQ, tabCT;
 
 Global configAttribute bkground_image_attrib;
 
@@ -34,6 +36,19 @@ System.onScriptLoaded() {
   bkground_image_attrib = custom_page_nonexposed.newAttribute("Glamour Background Image", "IMAGE:player.main.background.default;1");
 
   scriptGroup = getScriptGroup();
+  
+  pageBG = scriptGroup.findObject("player.main.config.backgrounds");
+  pageEQ = scriptGroup.findObject("player.main.config.eq");
+  pageCT = scriptGroup.findObject("player.main.config.ct");
+  tabBG = scriptGroup.findObject("player.main.config.tab.bg");
+  tabEQ = scriptGroup.findObject("player.main.config.tab.eq");
+  tabCT = scriptGroup.findObject("player.main.config.tab.ct");
+  
+  int curpage = getPrivateInt(getSkinName(),"configPage", 0);
+  if (curpage==1) 
+  	tabEQ.onLeftClick();
+  else if (curpage==2)
+    tabCT.onLeftClick();
   
   bgdef = scriptGroup.findObject("config.button.default");
   bgimage = scriptGroup.findObject("config.button.choose");
@@ -77,6 +92,34 @@ System.onScriptLoaded() {
 System.onScriptUnloading() {
   return;
 }
+
+// *** tab switching scripts
+
+tabBG.onLeftClick() {
+	pageBG.show();
+	pageEQ.hide();
+	pageCT.hide();
+	
+	setPrivateInt(getSkinName(),"configPage", 0);
+}
+
+tabEQ.onLeftClick() {
+	pageBG.hide();
+	pageEQ.show();
+	pageCT.hide();
+	
+	setPrivateInt(getSkinName(),"configPage", 1);
+}
+
+tabCT.onLeftClick() {
+	pageBG.hide();
+	pageEQ.hide();
+	pageCT.show();
+	
+	setPrivateInt(getSkinName(),"configPage", 2);
+}
+
+// *** custom background scripts
 
 bgdef.onToggle(int on) {
 	if (!on) {
