@@ -555,14 +555,26 @@
 	<script file="@SKINSPATH@Komodo\engine\scripts\text-to-attrib.maki" param="eq.xfade.txt,{F1239F09-8CC6-4081-8519-C2AE99FCB14C};Crossfade time,, sec"/>
 </groupdef>
 
+<groupdef id="player.main.config.ct">
+	<layer x="0" y="0" w="377" image="player.main.config.tab.base" tile="1" ghost="1"/>
+	<grid x="377" y="0" w="218" h="37" ghost="1"
+		left="player.main.config.tab.left"
+		middle="player.main.config.tab.middle"
+		right="player.main.config.tab.right"/>
+	<layer x="595" y="0" w="-595" relatw="1" image="player.main.config.tab.base" tile="1"  ghost="1"/>
+</groupdef>
+
 <groupdef id="player.main.config.content">
 	<layer x="0" y="0" image="player.main.config.base" ghost="1"/>
 	
 	<layer x="0" y="105" image="player.main.config.tab.items" ghost="1"/>
 	<group id="player.main.config.backgrounds" x="0" y="82" w="600" h="220"/>
 	<group id="player.main.config.eq" x="0" y="82" w="600" h="220" visible="0"/>
+	<group id="player.main.config.ct" x="0" y="82" w="600" h="220" visible="0"/>
 	
-	
+	<button id="player.main.config.tab.bg" x="10" y="82" w="205" h="37" rectrgn="1" cursor="IDC_HAND"/>
+	<button id="player.main.config.tab.eq" x="215" y="82" w="160" h="37" rectrgn="1" cursor="IDC_HAND"/>
+	<button id="player.main.config.tab.ct" x="377" y="82" w="218" h="37" rectrgn="1" cursor="IDC_HAND"/>
 </groupdef>
 
 <groupdef id="player.main.config" name="configuration">
