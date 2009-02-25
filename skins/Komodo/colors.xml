@@ -19,8 +19,6 @@
   <color id="color.button.label" value="255,255,255" gammagroup="genbutton.text"/>
   <color id="color.plist" value="255,255,255" gammagroup="text.plist"/>
   
-  <color id="color.eq.txt" value="172,239,39" gammagroup="text.eq"/>
-
   <!-- wasabi colors -->
   <color id="wasabi.text.color" value="255,255,255" gammagroup="wasabi.text"/>
   <color id="wasabi.tooltips.textcolor" value="0,0,0" gammagroup="tooltip.text" />
@@ -31,6 +29,7 @@
   <color id="wasabi.list.text" value="145,214,255" gammagroup="list.Text"/> <!--lists/trees item foreground (also edit text) -->
   <color id="wasabi.list.background" value="0,0,0" gammagroup="List.Background"/>  <!--lists/trees item background (also bg for edit) -->
   <bitmap id="wasabi.frame.basetexture" file="$solid" h="10" w="10" color="0,0,0" gammagroup="List.Background"/>  <!--this is for other list colors (color editor, etc.) -->
+  <bitmap id="wasabi.list.background" file="$solid" h="10" w="10" color="0,0,0" gammagroup="List.Background"/>  <!--this is for other list colors (color editor, etc.) -->
 
   <color id="wasabi.list.text.selected" value="50,50,50" gammagroup="List.TextSelected"/> <!--listview/treeview selection bar text color -->
   <color id="wasabi.list.text.selected.background" value="110,160,190" gammagroup="List.SelBackground"/> <!--listview/treeview selection bar backcolor -->

@@ -361,10 +361,10 @@
 		hoverimage="player.main.config.button.hover"
 		activeimage="player.main.config.button.active" rectrgn="1"/>
 		
-	<rect x="130" y="150" w="70" h="50" filled="0" color="255,255,255" alpha="128" ghost="1"/>
-	<rect x="220" y="150" w="70" h="50" filled="0" color="255,255,255" alpha="128" ghost="1"/>
-	<rect x="310" y="150" w="70" h="50" filled="0" color="255,255,255" alpha="128" ghost="1"/>
-	<rect x="400" y="150" w="70" h="50" filled="0" color="255,255,255" alpha="128" ghost="1"/>
+	<rect x="130" y="150" w="70" h="50" filled="0" color="color.config.base" alpha="128" ghost="1"/>
+	<rect x="220" y="150" w="70" h="50" filled="0" color="color.config.base" alpha="128" ghost="1"/>
+	<rect x="310" y="150" w="70" h="50" filled="0" color="color.config.base" alpha="128" ghost="1"/>
+	<rect x="400" y="150" w="70" h="50" filled="0" color="color.config.base" alpha="128" ghost="1"/>
 	
 	<layer id="config.currbg1" x="131" y="151" w="68" h="48" image="" move="0" rectrgn="1"/>
 	<layer id="config.currbg2" x="221" y="151" w="68" h="48" image="" move="0" rectrgn="1"/>
@@ -385,7 +385,7 @@
 	<togglebutton
 		id="eqonoff"
 		action="EQ_TOGGLE"
-		x="106" y="296" rectrgn="1"
+		x="106" y="88" rectrgn="1"
 		image="player.main.config.eqbutton"
 		hoverImage="player.main.config.eqbutton.hover"
 		downImage="player.main.config.eqbutton.down"
@@ -395,7 +395,7 @@
 	<togglebutton
 		id="auto"
 	  	action="EQ_AUTO"
-		x="106" y="316" rectrgn="1"
+		x="106" y="108" rectrgn="1"
 		image="player.main.config.eqbutton"
 		hoverImage="player.main.config.eqbutton.hover"
 		downImage="player.main.config.eqbutton.down"
@@ -405,7 +405,7 @@
 	<button
 		id="Presets"
 		action="MENU" param="presets" 
-		x="106" y="336 " rectrgn="1"
+		x="106" y="128 " rectrgn="1"
 		image="player.main.config.eqbutton"
 		hoverImage="player.main.config.eqbutton.hover"
 		downImage="player.main.config.eqbutton.down"
@@ -414,7 +414,7 @@
 	<slider
 			id="EQPreamp"
 			action="EQ_BAND" param="preamp"
-			x="186" y="297"
+			x="186" y="89"
 			w="15" h="101"
 			orientation="vertical" rectrgn="1"
 			thumb="player.main.config.eqslider"
@@ -425,7 +425,7 @@
 	<slider
 			id="EQBar1"
 			action="EQ_BAND" param="1"
-			x="225" y="297"
+			x="225" y="89"
 			w="15" h="101"
 			orientation="vertical" rectrgn="1"
 			thumb="player.main.config.eqslider"
@@ -436,7 +436,7 @@
 	<slider
 			id="EQBar2"
 			action="EQ_BAND" param="2"
-			x="247" y="297"
+			x="247" y="89"
 			w="15" h="101"
 			orientation="vertical" rectrgn="1"
 			thumb="player.main.config.eqslider"
@@ -447,7 +447,7 @@
 	<slider
 			id="EQBar3"
 			action="EQ_BAND" param="3"
-			x="269" y="297"
+			x="269" y="89"
 			w="15" h="101"
 			orientation="vertical" rectrgn="1"
 			thumb="player.main.config.eqslider"
@@ -458,7 +458,7 @@
 	<slider
 			id="EQBar4"
 			action="EQ_BAND" param="4"
-			x="291" y="297"
+			x="291" y="89"
 			w="15" h="101"
 			orientation="vertical" rectrgn="1"
 			thumb="player.main.config.eqslider"
@@ -469,7 +469,7 @@
 	<slider
 			id="EQBar5"
 			action="EQ_BAND" param="5"
-			x="313" y="297"
+			x="313" y="89"
 			w="15" h="101"
 			orientation="vertical" rectrgn="1"
 			thumb="player.main.config.eqslider"
@@ -480,7 +480,7 @@
 	<slider
 			id="EQBar6"
 			action="EQ_BAND" param="6"
-			x="335" y="297"
+			x="335" y="89"
 			w="15" h="101"
 			orientation="vertical" rectrgn="1"
 			thumb="player.main.config.eqslider"
@@ -491,7 +491,7 @@
 	<slider
 			id="EQBar7"
 			action="EQ_BAND" param="7"
-			x="357" y="297"
+			x="357" y="89"
 			w="15" h="101"
 			orientation="vertical" rectrgn="1"
 			thumb="player.main.config.eqslider"
@@ -502,7 +502,7 @@
 	<slider
 			id="EQBar8"
 			action="EQ_BAND" param="8"
-			x="379" y="297"
+			x="379" y="89"
 			w="15" h="101"
 			orientation="vertical" rectrgn="1"
 			thumb="player.main.config.eqslider"
@@ -512,7 +512,7 @@
 	<slider
 			id="EQBar9"
 			action="EQ_BAND" param="9"
-			x="401" y="297"
+			x="401" y="89"
 			w="15" h="101"
 			orientation="vertical" rectrgn="1"
 			thumb="player.main.config.eqslider"
@@ -522,7 +522,7 @@
 	<slider
 			id="EQBar10"
 			action="EQ_BAND" param="10"
-			x="423" y="297"
+			x="423" y="89"
 			w="15" h="101"
 			orientation="vertical" rectrgn="1"
 			thumb="player.main.config.eqslider"
@@ -531,13 +531,13 @@
 	/>
 	
 	<slider id="bal.slider"
-		action="PAN" x="102" y="382" w="70" h="15" rectrgn="1"
+		action="PAN" x="102" y="174" w="70" h="15" rectrgn="1"
 			thumb="player.main.config.eqslider"
 			downthumb="player.main.config.eqslider.hover"
 			hoverthumb="player.main.config.eqslider.hover"/>
 			
 	<slider id="xfade.slider"
-			x="460" y="317" w="15" h="81" rectrgn="1"
+			x="460" y="109" w="15" h="81" rectrgn="1"
 			orientation="vertical" 
 			thumb="player.main.config.eqslider"
 			downthumb="player.main.config.eqslider.hover"
@@ -547,7 +547,7 @@
 			
 	<text id="eq.xfade.txt"
 		text="0.0s"
-		x="447" y="302" w="45" h="15" alpha="255"
+		x="447" y="94" w="45" h="15" alpha="255"
 		antialias="1" bold="0" ghost="1"
 		fontsize="12" align="center" valign="top"
 		font="arial"
@@ -562,6 +562,41 @@
 		middle="player.main.config.tab.middle"
 		right="player.main.config.tab.right"/>
 	<layer x="595" y="0" w="-595" relatw="1" image="player.main.config.tab.base" tile="1"  ghost="1"/>
+	
+	
+	<layer x="460" y="90" image="player.main.config.ct.base"/>
+	<rect x="74" y="53" w="372" h="152" filled="0" color="color.config.base" alpha="128" ghost="1"/>
+	<ColorThemes:List id="config.colorthemes.list" 
+		x="75" y="54" w="370" h="150"
+		nohscroll="1"
+		nocolheader="1"/>
+
+	<button
+		id="button.ct.prev"
+		action="colorthemes_previous"
+		action_target="config.colorthemes.list"
+		image="player.main.config.eqbutton"
+		hoverImage="player.main.config.eqbutton.hover"
+		downImage="player.main.config.eqbutton.down"
+		x="460" y="90" rectrgn="1"/>
+
+	<button
+		id="button.ct.prev"
+		action="colorthemes_switch"
+		action_target="config.colorthemes.list"
+		image="player.main.config.eqbutton"
+		hoverImage="player.main.config.eqbutton.hover"
+		downImage="player.main.config.eqbutton.down"
+		x="460" y="110" rectrgn="1"/>
+		
+	<button
+		id="button.ct.prev"
+		action="colorthemes_next"
+		action_target="config.colorthemes.list"
+		image="player.main.config.eqbutton"
+		hoverImage="player.main.config.eqbutton.hover"
+		downImage="player.main.config.eqbutton.down"
+		x="460" y="130" rectrgn="1"/>
 </groupdef>
 
 <groupdef id="player.main.config.content">
