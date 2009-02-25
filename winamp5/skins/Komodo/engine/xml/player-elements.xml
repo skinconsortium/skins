@@ -94,6 +94,7 @@
 <bitmap id="player.main.config.base" file="@SKINSPATH@Komodo\engine\player\config-base.png" gammagroup="config.base"/>
 <bitmap id="player.main.config.bg.base" file="@SKINSPATH@Komodo\engine\player\config-backgrounds-base.png" gammagroup="config.base"/>
 <bitmap id="player.main.config.eq.base" file="@SKINSPATH@Komodo\engine\player\config-eq-base.png" gammagroup="config.base"/>
+<bitmap id="player.main.config.ct.base" file="@SKINSPATH@Komodo\engine\player\config-ct-base.png" gammagroup="config.base"/>
 
 <bitmap id="player.main.config.tab.items" file="@SKINSPATH@Komodo\engine\player\config-tab-items.png" gammagroup="config.base"/>
 <bitmap id="player.main.config.tab.left" file="@SKINSPATH@Komodo\engine\player\config-tab.png" x="0" y="0" w="18" h="37" gammagroup="config.base"/>

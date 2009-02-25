@@ -1,5 +1,8 @@
 <elements>
 
+	<color id="color.config.base" value="172,239,39" gammagroup="config.base"/>
+	<color id="color.eq.txt" value="172,239,39" gammagroup="config.base"/>
+
   <!-- Fonts -->
   <!--bitmapfont id="studio.component.title" file="fonts/titlebar-font.png" hspacing="-3" vspacing="0" charwidth="10" charheight="11" gammagroup="Titlebar Font"/>
   <bitmapfont id="wasabi.font.button.small" file="fonts/button-font-small.png" hspacing="-1" vspacing="0" charwidth="5" charheight="5"  gammagroup="Button Fonts"/>
