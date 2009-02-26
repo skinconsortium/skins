@@ -1,0 +1,158 @@
+-- Variables Table ---------------------------------------------------
+var# |                Class |                                    What 
+----------------------------------------------------------------------
+0000 |               System |                                   System*
+0001 |                  Int |                                     NULL
+0002 |                  Int |                     __deprecated_runtime
+0003 |               Double |                                        v
+0004 |                  Int |                                        2
+0005 |                  Int |                                    65535
+0006 |                  Int |                                        1
+0007 |               String |                           "runtimecheck"
+0008 |                  Int |                                        0
+0009 |                  Int |                                     last
+000A |                  Int |                                      now
+000B |                  Int |                                     5000
+000C |               String |                  "This script requires "
+000D |               String |        "Winamp 5.54 (skin version 1.34)"
+000E |               String |                                  "Error"
+000F |               String |                                       ""
+0010 |               String |                                        s
+0011 |               String |                                  "DEBUG"
+0012 |                  Int |                                        s
+0013 |             ColorMgr |                                 ColorMgr*
+0014 |              Boolean |                         onCTChangeReload
+0015 |               String |                                    input
+0016 |               String |                                   change
+0017 |               String |                                  "%AND%"
+0018 |               String |                                      "&"
+0019 |               String |                                 "%PATH%"
+001A |               String |                             "%FILENAME%"
+001B |               String |                               "filename"
+001C |               String |                               "%ARTIST%"
+001D |               String |                                 "artist"
+001E |               String |                                "%TITLE%"
+001F |               String |                                  "title"
+0020 |               String |                                "%ALBUM%"
+0021 |               String |                                  "album"
+0022 |               String |                                "%GENRE%"
+0023 |               String |                                  "genre"
+0024 |               String |                          "%ALBUMARTIST%"
+0025 |               String |                            "albumartist"
+0026 |               String |                                 "%YEAR%"
+0027 |               String |                                   "year"
+0028 |               String |                             "%COMPOSER%"
+0029 |               String |                               "composer"
+002A |               String |                                   change
+002B |               String |                            "%COLOR:LBG%"
+002C |               String |                 "wasabi.list.background"
+002D |               String |                           "%COLOR:LTXT%"
+002E |               String |                       "wasabi.list.text"
+002F |               String |                               baseString
+0030 |               String |                                toreplace
+0031 |               String |                               replacedby
+0032 |               String |                                      sf1
+0033 |               String |                                      sf2
+0034 |                  Int |                                        i
+0035 |               String |                                     left
+0036 |               String |                                    right
+0037 |               String |                                     "\ "
+0038 |               String |                                       bs
+0039 |               String |                                   output
+003A |                  Int |                                        6
+003B |               String |                                 "cda://"
+003C |               String |                                      ":"
+003D |               String |                                  colorID
+003E |                Color |                                        c
+003F |               String |                                      ret
+0040 |                  Int |                                       16
+0041 |               String |                                      "0"
+0042 |                  Int |                                      dec
+0043 |                 List |                                hexDigits
+0044 |               String |                                      "1"
+0045 |               String |                                      "2"
+0046 |               String |                                      "3"
+0047 |               String |                                      "4"
+0048 |               String |                                      "5"
+0049 |               String |                                      "6"
+004A |               String |                                      "7"
+004B |               String |                                      "8"
+004C |               String |                                      "9"
+004D |               String |                                      "A"
+004E |               String |                                      "B"
+004F |               String |                                      "C"
+0050 |               String |                                      "D"
+0051 |               String |                                      "E"
+0052 |               String |                                      "F"
+0053 |               String |                                      res
+0054 |                  Int |                                        i
+0055 |                  Int |                                       15
+0056 |                  Int |                                    code1
+0057 |                  Int |                                    code2
+0058 |               String |                                 decToHex
+0059 |                  Int |                                    code1
+005A |                  Int |                                    code2
+005B |               String |                                 decToHex
+005C |              Browser |                                      brw
+005D |                 Edit |                                      msg
+005E |                 Text |                                      txt
+005F |               String |                                  baseurl
+0060 |               String |                                     name
+0061 |                Timer |                                      ref
+0062 |                Group |                                   parent
+0063 |                  Int |                                  curMode
+0064 |                  Int |                                    delay
+0065 |               String |                                    "brw"
+0066 |               String |                               "edit.msg"
+0067 |               String |                                "txt.msg"
+0068 |               String |                    "classicPro_shoutbox"
+0069 |               String |                               "username"
+006A |               String | "http://cpro.skinconsortium.com/services/cpro-shoutbox.php?bg="
+006B |               String |                                  "&txt="
+006C |               String |                                    "&v="
+006D |               String |                                    "0.3"
+006E |               String |                                "refresh"
+006F |                  Int |                                       30
+0070 |                  Int |                                     1000
+0071 |                  Int |                                  newmode
+0072 |               String |                              "Username:"
+0073 |               String |                               "Message:"
+0074 |                  Int |                                        3
+0075 |               String |                               "Seconds:"
+0076 |              Boolean |                                    onoff
+0077 |               String |                                  "&msg="
+0078 |               String |                                 "&name="
+0079 |               String |                               "&artist="
+007A |               String |                                "&title="
+007B |               String |                              "<Options>"
+007C |                  Int |                                        x
+007D |                  Int |                                        y
+007E |            PopupMenu |                                      men
+007F |               String |                           "Let's Shout!"
+0080 |               String |                           "Set Username"
+0081 |               String |                   "Set Refresh-Interval"
+0082 |               String |                        "Reload Shoutbox"
+0083 |                  Int |                                     1001
+0084 |                  Int |                                      res
+-- Events Table ------------------------------------------------------
+var# |         Code Pointer |                                    What 
+----------------------------------------------------------------------
+0000 |                 0953 |                                      S.o
+0062 |                 0B80 |                                      p.o
+0061 |                 0BDF |                                      r.o
+005D |                 0C1C |                                      m.o
+005E |                 0E42 |                                      t.o
+005E |                 0E69 |                                      t.o
+005E |                 0EEC |                                      t.o
+-- User Functions Table ----------------------------------------------
+               Code Pointer |                                    What 
+----------------------------------------------------------------------
+                       0000 |                             versionCheck
+                       00F2 |                                    debug
+                       011D |                                 debugInt
+                       0153 |                         prepareCustomUrl
+                       03C8 |                            replaceString
+                       051A |                                getMyPath
+                       0630 |                              getColorHex
+                       0733 |                                 decToHex
+                       0A94 |                               updateMode
