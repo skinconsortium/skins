@@ -10,7 +10,7 @@
 !define XMLFILENAME "shoutbox.xml"
 !define DATA_FOLDERNAME "Shoutbox"
 !define NSISFILENAME "cpro-widget-Shoutbox.nsi"
-!define WIDGET_VERSION "0.3"
+!define WIDGET_VERSION "0.4"
 !define WIDGET_NAME "Shoutbox"
 
 
