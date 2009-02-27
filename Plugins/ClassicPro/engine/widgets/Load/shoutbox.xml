@@ -4,7 +4,8 @@
 
 	<Browser id="brw" x="1" y="1" w="-2" h="-19" relath="1" relatw="1" url="about:blank"/>
 
-	<wasabi:text id="txt.msg" x="4" w="60" y="-17" relaty="1" text="Message:" h="14" antialias="0"/>
+	<wasabi:text id="txt.msg" x="4" w="60" y="-17" relaty="1" text="Message:" h="14" antialias="0" color="wasabi.window.text" cursor="IDC_HAND"/>
+	<layer id="trap" x="4" w="60" y="-17" relaty="1" h="14" rectrgn="1" cursor="IDC_HAND"/>
 	<wasabi:editbox id="edit.msg" x="60" y="-18" relaty="1" w="-92" relatw="1" h="17" text="Gg" />
 
 	<script file="@WINAMPPATH@\Plugins\ClassicPro\engine\widgets\Data\Shoutbox\shoutbox.maki"/>

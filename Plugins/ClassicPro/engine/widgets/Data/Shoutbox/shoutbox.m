@@ -14,6 +14,7 @@ Function updateMode(int newMode);
 Global Browser brw;
 Global Edit msg;
 Global Text txt;
+Global layer trap;
 
 Global String baseurl;
 Global String name;
@@ -24,7 +25,9 @@ Global Group parent;
 
 Global int curMode, delay;
 
-#define SHOUTBOX_VERSION "0.3"
+Global ColorMgr cm;
+
+#define SHOUTBOX_VERSION "0.4"
 
 #define MODE_USERNAME 1
 #define MODE_CHAT 2
@@ -36,6 +39,7 @@ system.onScriptLoaded ()
 	brw = parent.findObject("brw");
 	msg = parent.findObject("edit.msg");
 	txt = parent.findObject("txt.msg");
+	trap = parent.findObject("trap");
 
 	name = getPrivateString("classicPro_shoutbox", "username", "");
 	if (name == "")
@@ -54,7 +58,16 @@ system.onScriptLoaded ()
 	delay = getPrivateInt("classicPro_shoutbox", "refresh", 30)*1000;
 	if (delay > 0)
 		ref.setDelay(delay);
+
+	cm = new ColorMgr;
 }
+
+cm.oncolorthemechanged(String newtheme)
+{
+	baseurl = "http://cpro.skinconsortium.com/services/cpro-shoutbox.php?bg="+getColorHex("wasabi.list.background")+"&txt="+getColorHex("wasabi.list.text")+"&v="+SHOUTBOX_VERSION;
+	brw.navigateUrl(baseurl);
+}
+
 /*
 Global boolean inited = false;
 init()
@@ -156,28 +169,28 @@ msg.onEnter()
 	}
 }
 
-txt.onEnterArea ()
+trap.onEnterArea ()
 {
-	setText("<Options>");
+	txt.setText("<Options>");
 }
 
-txt.onLeaveArea ()
+trap.onLeaveArea ()
 {
 	if (curMode == MODE_USERNAME)
 	{
-		setText("username:");
+		txt.setText("username:");
 	}
 	else if (curMode == MODE_CHAT)
 	{
-		setText("Message:");
+		txt.setText("Message:");
 	}
 	else if (curMode == MODE_REFRESH)
 	{
-		setText("Seconds:");
+		txt.setText("Seconds:");
 	}
 }
 
-txt.onLeftButtonUp (int x, int y)
+trap.onLeftButtonUp (int x, int y)
 {
 	PopupMenu men = new PopupMenu;
 	men.addCommand("Let's Shout!", MODE_CHAT, curMode == MODE_CHAT, curMode == MODE_CHAT);
