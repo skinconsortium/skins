@@ -6,3 +6,4 @@
 <include file="playlistPlus\playlistPlus.xml"/>
 <include file="CoverShow\coverShow.xml"/>
 <include file="VisAnim\visanim.xml"/>
+<include file="customButton\customButton.xml"/>

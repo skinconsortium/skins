@@ -17,7 +17,7 @@
 #define ML_GUID "{6B0EDF80-C9A5-11D3-9F26-00C04F39FFC6}"
 #define SKINTWEAKS_CFGPAGE "{0542AFA4-48D9-4c9f-8900-5739D52C114F}"
 
-#define HOMEPAGEURL "http://komodo.nitrousaudio.com/"
+#define HOMEPAGEURL "http://www.nitrousaudio.com/k/"
 
 #define OPENVID 1
 #define OPENAVS 2
@@ -32,9 +32,7 @@ Global guiobject mainPL;
 Global vis vis1, vis2;
 Global layer vismousetrap;
 
-Global text avsRandomInd;
-
-Global configAttribute xfade, xfadetime, PSOVC, avsRandom;
+Global configAttribute xfade, xfadetime, PSOVC;
 Global configAttribute attrRepeat, attrShuffle;
 
 Global group NowPlayingGroup, VISGroup, vidButtons, avsButtons;
@@ -83,17 +81,13 @@ System.onScriptLoaded() {
 	attrRepeat = item.getAttribute("repeat");
 	attrShuffle = item.getAttribute("shuffle");
 	
-	configGroup = Config.getItemByGuid("{0000000A-000C-0010-FF7B-01014263450C}");
-	if (configGroup) avsRandom = configGroup.getAttribute("Random");
 	
 	NowPlayingGroup = main.findObject("player.main.cms");
 	VISGroup = main.findObject("player.main.vis");
 	AVSHolder = VISGroup.findObject("wndhlr.avs");
 	VideoHolder = VISGroup.findObject("wndhlr.vid");
-	avsRandomInd = VISGroup.findObject("random.text.ind");
 	vidButtons = VISGroup.findObject("player.main.vid.buttons");
 	avsButtons = VISGroup.findObject("player.main.avs.buttons");
-	avsRandom.onDataChanged();
 	
 	MLHolder = main.findObject("wndhlr.ml");
 	mainBrowser = main.findObject("main.browser");
@@ -362,14 +356,6 @@ indtext.onTargetReached() {
 		indtext.hide();
 		indtext.settext("");
 	}
-}
-
-// avs random text indication script
-avsRandom.onDataChanged() {
-	if (getData()=="0")
-		avsRandomInd.setText("OFF");
-	else
-		avsRandomInd.setText("ON");
 }
 
 // xfade main control scripts

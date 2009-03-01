@@ -20,7 +20,7 @@ System.onScriptLoaded() {
 	
 	buttonSwitchToList = scriptGroup.findObject("SwitchToList.button");
 	buttonSwitchToCover = scriptGroup.findObject("SwitchToCover.button");
-	
+
 	covershow = scriptGroup.getObject("player.main.pl.coverflow");
 	plplus = scriptGroup.getObject("player.main.pl.list");
 	
