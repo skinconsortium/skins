@@ -17,6 +17,8 @@
 	<bitmap id="sc.cdbox.bg.optional" file="cdbox-bg.png" gammagroup="cdcase"/>
 	<bitmap id="sc.cdbox.fg.optional" file="cdbox-fg.png" gammagroup="cdcase"/>
 	
+	<bitmap id="sc.cdbox.shadow" file="cdbox-shadow.png" gammagroup="cdcase"/>
+	
 	<bitmap id="ratings.star" file="graphics.png" x="1" y="467" w="150" h="22" gammagroup="ratings"/>
 	<bitmap id="ratings.hover" file="graphics.png" x="1" y="490" w="150" h="22" gammagroup="ratings"/>
 	<bitmap id="ratings.nostar" file="graphics.png" x="1" y="513" w="150" h="22" gammagroup="ratings"/>

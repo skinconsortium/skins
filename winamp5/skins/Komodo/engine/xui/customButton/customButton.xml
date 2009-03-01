@@ -17,11 +17,11 @@
 	<layer id="xuibutton.icon" x="5" y="0" ghost="1"/>
 	<text id="xuibutton.text1" x="3" y="0" w="84" h="30"
 		text="" align="center" valign="center" ghost="1"
-		font="font.gen.button" fontsize="18" bold="1"
+		font="player.font.button" fontsize="18" bold="1"
 		color="color.button.label" alpha="128"/>
 	<text id="xuibutton.text2" x="3" y="13" w="84" h="18"
 		text="" align="center" valign="center" ghost="1"
-		font="font.gen.button" fontsize="16" bold="1"
+		font="player.font.button" fontsize="16" bold="1"
 		color="color.button.label" alpha="128"/>
 		
 	<script id="script.xui.bkground" file="@SKINSPATH@Komodo\engine\xui\CustomButton\customButton.maki"/>
@@ -36,11 +36,11 @@
 	<layer id="xuibutton.icon" x="5" y="0" ghost="1"/>
 	<text id="xuibutton.text1" x="3" y="0" w="84" h="30"
 		text="" align="center" valign="center" ghost="1"
-		font="font.gen.button" fontsize="18" bold="1"
+		font="player.font.button" fontsize="18" bold="1"
 		color="color.button.label" alpha="128"/>
 	<text id="xuibutton.text2" x="3" y="13" w="84" h="18"
 		text="" align="center" valign="center" ghost="1"
-		font="font.gen.button" fontsize="16" bold="1"
+		font="player.font.button" fontsize="16" bold="1"
 		color="color.button.label" alpha="128"/>
 		
 	<script id="script.xui.bkground" file="@SKINSPATH@Komodo\engine\xui\CustomButton\customButton.maki"/>
@@ -55,11 +55,11 @@
 	<layer id="xuibutton.icon" x="5" y="0" ghost="1"/>
 	<text id="xuibutton.text1" x="3" y="0" w="84" h="30"
 		text="" align="center" valign="center" ghost="1"
-		font="font.gen.button" fontsize="18" bold="1"
+		font="player.font.button" fontsize="18" bold="1"
 		color="color.button.label" alpha="128"/>
 	<text id="xuibutton.text2" x="3" y="13" w="84" h="18"
 		text="" align="center" valign="center" ghost="1"
-		font="font.gen.button" fontsize="16" bold="1"
+		font="player.font.button" fontsize="16" bold="1"
 		color="color.button.label" alpha="128"/>
 		
 	<script id="script.xui.bkground" file="@SKINSPATH@Komodo\engine\xui\CustomButton\customButton.maki"/>

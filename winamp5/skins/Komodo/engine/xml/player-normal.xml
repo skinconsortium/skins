@@ -122,10 +122,9 @@
 		showsongrating="1" move="0"
 		noreflection="0"
 		/>
-
 </groupdef>
 
-<groupdef id="player.main.pl.coverflow.buttons">
+<groupdef id="player.main.pl.coverflow.buttons.main">
 	<CustomButton id="SwitchToList.button" x="0" y="0"
 		label="LIST"
 		icon="player.main.icon.list"/>
@@ -141,16 +140,19 @@
 		nstates="3" 
 		cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Repeat"
     	cfgvals="0;1;-1"/>		
-		
+</groupdef>
+
+<groupdef id="player.main.pl.coverflow.buttons">
+	<group id="player.main.pl.coverflow.buttons.main" x="0" y="0" w="310" h="70"/>
+	<script file="@SKINSPATH@Komodo\engine\scripts\centerobject.maki" param="player.main.pl.coverflow.buttons.main,1,0"/>
 	
+	<group id="playlistswitch.buttons" x="0" y="40" w="0" relatw="1" h="30"/>
 </groupdef>
 
 <groupdef id="player.main.pl.coverflow">
 	<CoverShow fitparent="1" noreflection="0"/>
 	
-	<group id="player.main.pl.coverflow.buttons" x="10" y="15" relaty="2" w="310" h="30"/>
-	<script file="@SKINSPATH@Komodo\engine\scripts\centerobject.maki" param="player.main.pl.coverflow.buttons,1,0"/>
-		
+	<group id="player.main.pl.coverflow.buttons" x="0" y="13" relaty="2" w="0" relatw="1" h="70"/>
 </groupdef>
 
 <groupdef id="player.main.pl.list.buttons">
@@ -200,11 +202,11 @@
 </groupdef>
 
 <groupdef id="player.main.pl.list">
-	<group id="playlistswitch.buttons" x="130" y="0" w="-130" relatw="1"/>
+	<group id="playlistswitch.buttons" x="130" y="0" w="-130" relatw="1" h="30"/>
 
 	<playlistPlus id="main.pl" 
 			x="130" y="40" w="-130" h="-70" relatx="0" relaty="0" relatw="1" relath="1"
-			font="Arial" fontsize="25" linespacing="-10" color="color.plist" alpha="200"
+			font="player.font.pllist" fontsize="25" linespacing="-10" color="color.plist" alpha="200"
 			playcolor="wasabi.list.text.current" selcolor="color.plist" selbgcolor="200,200,200" selalpha="255"
 			showslider="1" slidercolor="color.plist" slideralpha="128"/>
 	<group id="player.main.pl.list.buttons" x="0" y="0" w="90" h="380"/>

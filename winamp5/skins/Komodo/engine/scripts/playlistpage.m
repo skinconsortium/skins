@@ -9,6 +9,7 @@
 
 #include <lib/std.mi>
 
+global layout main;
 global group scriptGroup;
 global button buttonSwitchToCover, buttonSwitchToList;
 global group covershow, plplus;
@@ -16,7 +17,9 @@ global group covershow, plplus;
 global group currGroup, nextGroup;
 
 System.onScriptLoaded() {
+	
 	scriptGroup = getScriptGroup();
+	main = scriptGroup.getParentLayout();
 	
 	buttonSwitchToList = scriptGroup.findObject("SwitchToList.button");
 	buttonSwitchToCover = scriptGroup.findObject("SwitchToCover.button");
@@ -34,6 +37,11 @@ System.onScriptUnloading() {
 	
 }
 
+scriptGroup.onSetVisible(int on) {
+	if (on && (getPrivateInt("Komodo","TUP",0) == 1) && covershow.isVisible())
+		buttonSwitchToList.onLeftClick();
+}
+
 buttonSwitchToList.onLeftClick() {
 	plplus.show();
 	covershow.hide();
@@ -42,6 +50,11 @@ buttonSwitchToList.onLeftClick() {
 }
 
 buttonSwitchToCover.onLeftClick() {
+	if (getPrivateInt("Komodo","TUP",0) == 1) {
+		main.sendAction("TRIALNOTICE", "", 0,0,0,0);
+		return;
+	}
+	
 	plplus.hide();
 	covershow.show();
 	
