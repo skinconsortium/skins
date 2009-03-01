@@ -1,0 +1,66 @@
+<!-- 
+******************************************************
+	customButton.xml
+	by leechbite.com
+	
+	for custom buttons (with icons & text labels)
+******************************************************
+-->
+
+<groupdef id="xui.custom.button" xuitag="CustomButton" embed_xui="xuibutton" w="90" h="30">
+
+	<button id="xuibutton" x="0" y="0" 
+		image="player.main.gen.button"
+		downimage="player.main.gen.button.down"
+		hoverimage="player.main.gen.button.hover"/>
+		
+	<layer id="xuibutton.icon" x="5" y="0" ghost="1"/>
+	<text id="xuibutton.text1" x="3" y="0" w="84" h="30"
+		text="" align="center" valign="center" ghost="1"
+		font="font.gen.button" fontsize="18" bold="1"
+		color="color.button.label" alpha="128"/>
+	<text id="xuibutton.text2" x="3" y="13" w="84" h="18"
+		text="" align="center" valign="center" ghost="1"
+		font="font.gen.button" fontsize="16" bold="1"
+		color="color.button.label" alpha="128"/>
+		
+	<script id="script.xui.bkground" file="@SKINSPATH@Komodo\engine\xui\CustomButton\customButton.maki"/>
+</groupdef>
+
+<groupdef id="xui.custom.togglebutton" xuitag="CustomToggleButton" embed_xui="xuibutton" w="90" h="30">
+	<togglebutton id="xuibutton" x="0" y="0" 
+		image="player.main.gen.button"
+		downimage="player.main.gen.button.down"
+		hoverimage="player.main.gen.button.hover"/>
+		
+	<layer id="xuibutton.icon" x="5" y="0" ghost="1"/>
+	<text id="xuibutton.text1" x="3" y="0" w="84" h="30"
+		text="" align="center" valign="center" ghost="1"
+		font="font.gen.button" fontsize="18" bold="1"
+		color="color.button.label" alpha="128"/>
+	<text id="xuibutton.text2" x="3" y="13" w="84" h="18"
+		text="" align="center" valign="center" ghost="1"
+		font="font.gen.button" fontsize="16" bold="1"
+		color="color.button.label" alpha="128"/>
+		
+	<script id="script.xui.bkground" file="@SKINSPATH@Komodo\engine\xui\CustomButton\customButton.maki"/>
+</groupdef>
+
+<groupdef id="xui.custom.nstatesbutton" xuitag="CustomNStatesButton" embed_xui="xuibutton" w="90" h="30">
+	<NStatesButton id="xuibutton" x="0" y="0" 
+		image="player.main.gen.button"
+		downimage="player.main.gen.button.down"
+		hoverimage="player.main.gen.button.hover"/>
+		
+	<layer id="xuibutton.icon" x="5" y="0" ghost="1"/>
+	<text id="xuibutton.text1" x="3" y="0" w="84" h="30"
+		text="" align="center" valign="center" ghost="1"
+		font="font.gen.button" fontsize="18" bold="1"
+		color="color.button.label" alpha="128"/>
+	<text id="xuibutton.text2" x="3" y="13" w="84" h="18"
+		text="" align="center" valign="center" ghost="1"
+		font="font.gen.button" fontsize="16" bold="1"
+		color="color.button.label" alpha="128"/>
+		
+	<script id="script.xui.bkground" file="@SKINSPATH@Komodo\engine\xui\CustomButton\customButton.maki"/>
+</groupdef>

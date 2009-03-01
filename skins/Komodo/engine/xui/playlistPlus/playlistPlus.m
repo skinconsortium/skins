@@ -149,16 +149,9 @@ refreshPL() {
 		else
 			plslider.setXMLParam("y", "0");
 	}
-	//if (numtracks < numlines) numlines = numtracks;
 	
 	for (c = 0; c <= numlines; c++) {
 		trackc = c+pltoptrack;
-		//if (pltopMod > 0) trackc--;
-		
-		/*lenw = dummy.getAutoWidth();
-		if ((trackc < numtracks) && (trackc >= 0)) {
-			if (strlen(PlEdit.getLength(trackc)) > 4) lenw = lenw * strlen(PlEdit.getLength(trackc)) / 4;
-		}*/
 		
 		
 		temp = NULL;
@@ -217,6 +210,12 @@ refreshPL() {
 			} while (currparam!="");
 		}
 		
+		if (trackc == currSel) {
+			temp.setXMLParam("color",selcolor);
+			templen.setXMLParam("color",selcolor);
+			selector.setXMLParam("y",integertostring(c*texth - pltopMod));
+			selector.show();
+		}
 		
 		if ((c+pltoptrack) == PlEdit.getCurrentIndex ()) {
 			temp.setXMLParam("color",playcolor);
@@ -224,13 +223,6 @@ refreshPL() {
 		} else  {
 			temp.setXMLParam("color",textcolor);
 			templen.setXMLParam("color",textcolor);
-		}
-		
-		if (trackc == currSel) {
-			temp.setXMLParam("color",selcolor);
-			templen.setXMLParam("color",selcolor);
-			selector.setXMLParam("y",integertostring(c*texth - pltopMod));
-			selector.show();
 		}
 
 		temp.setXMLParam("y",integertostring(c*texth - pltopMod));
@@ -580,10 +572,9 @@ mousetrap.onLeftButtonDblClk(int x, int y) {
 	
 	if (currSel >= pledit.getNumTracks()) currSel = pledit.getNumTracks()-1;
 	
-	refreshPL();
-	
-	PlEdit.playTrack(currSel);
 
+	PlEdit.playTrack(currSel);
+	refreshPL();
 	complete;
 	
 }

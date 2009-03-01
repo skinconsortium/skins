@@ -1,3 +1,6 @@
+
+<include file="playlistswitch-buttons.xml"/>
+
 <groupdef id="player.cbuttons" w="233" h="295">
 	<button 
 		id="Rev"
@@ -123,55 +126,23 @@
 </groupdef>
 
 <groupdef id="player.main.pl.coverflow.buttons">
-	<button id="SwitchToList.button" x="0" y="0" 
-		image="player.main.gen.button"
-		downimage="player.main.gen.button.down"
-		hoverimage="player.main.gen.button.hover"/>
-		
-	<layer id="SwitchToList.icon" x="5" y="0"
-		image="player.main.icon.list" ghost="1"/>
-	<text id="SwitchToList.text" x="35" y="0" w="90" h="30"
-		text="LIST" align="left" ghost="1"
-		font="font.gen.button" fontsize="18" bold="1"
-		color="color.button.label" alpha="128"/>
-		
-	<togglebutton id="shuffle.button" x="110" y="0"
+	<CustomButton id="SwitchToList.button" x="0" y="0"
+		label="LIST"
+		icon="player.main.icon.list"/>
+	
+	<CustomToggleButton x="110" y="0"
 		cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Shuffle"
-		image="player.main.gen.button"
-		activeimage="player.main.gen.button"
-		downimage="player.main.gen.button.down"
-		hoverimage="player.main.gen.button.hover"/>
-	<layer id="shuffle.icon" x="115" y="0"
-		image="player.main.icon.shuffle" ghost="1"/>
-	<text id="shuffle.text" x="138" y="0" w="55" h="20"
-		text="SHUFFLE" align="center" ghost="1"
-		font="font.gen.button" fontsize="16" bold="1"
-		color="color.button.label" alpha="128"/>
-	<text id="shuffle.text.ind" x="138" y="12" w="50" h="20"
-		text="OFF" align="center" ghost="1"
-		font="font.gen.button" fontsize="16" bold="1"
-		color="color.button.label" alpha="128"/>
+		label="SHUFFLE" label2="ON" cfglabel2="0=OFF;1=ON"
+		icon="player.main.icon.shuffle"/>
 		
-	<NStatesButton id="repeat.button" x="220" y="0"
-		nstates="3" rectrgn="1"
-		image="player.main.gen.button"
-		activeimage="player.main.gen.button"
-		downimage="player.main.gen.button.down"
-		hoverimage="player.main.gen.button.hover"
+	<CustomNStatesButton x="220" y="0"
+		label="REPEAT" label2="OFF" cfglabel2="0=OFF;1=ALL;-1=TRACK"
+		icon="player.main.icon.repeat"
+		nstates="3" 
 		cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Repeat"
-    	cfgvals="0;1;-1"/>
-	<layer id="repeat.icon" x="225" y="0"
-		image="player.main.icon.repeat" ghost="1"/>
-	<text id="repeat.text" x="250" y="0" w="50" h="20"
-		text="REPEAT" align="center" ghost="1"
-		font="font.gen.button" fontsize="16" bold="1"
-		color="color.button.label" alpha="128"/>
-	<text id="repeat.text.ind" x="250" y="12" w="50" h="20"
-		text="OFF" align="center" ghost="1"
-		font="font.gen.button" fontsize="16" bold="1"
-		color="color.button.label" alpha="128"/>
+    	cfgvals="0;1;-1"/>		
 		
-	<script file="@SKINSPATH@Komodo\engine\scripts\shufflerepeat.maki"/>
+	
 </groupdef>
 
 <groupdef id="player.main.pl.coverflow">
@@ -183,122 +154,41 @@
 </groupdef>
 
 <groupdef id="player.main.pl.list.buttons">
-	<button id="SwitchToCover.button" x="0" y="0" 
-		image="player.main.gen.button"
-		downimage="player.main.gen.button.down"
-		hoverimage="player.main.gen.button.hover"/>
-	<layer id="SwitchToCover.icon" x="5" y="0"
-		image="player.main.icon.cover" ghost="1"/>
-	<text id="SwitchToCover.text" x="33" y="0" w="90" h="30"
-		text="COVER" align="left" ghost="1"
-		font="font.gen.button" fontsize="18" bold="1"
-		color="color.button.label" alpha="128"/>
+	<CustomButton id="SwitchToCover.button" x="0" y="0"
+		label="COVER"
+		icon="player.main.icon.cover"/>
 		
-	<togglebutton id="shuffle.button" x="0" y="50" rectrgn="1"
+	<CustomToggleButton x="0" y="45"
 		cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Shuffle"
-		image="player.main.gen.button"
-		activeimage="player.main.gen.button"
-		downimage="player.main.gen.button.down"
-		hoverimage="player.main.gen.button.hover"/>
-	<layer id="shuffle.icon" x="5" y="50"
-		image="player.main.icon.shuffle" ghost="1"/>
-	<text id="shuffle.text" x="28" y="50" w="55" h="20"
-		text="SHUFFLE" align="center" ghost="1"
-		font="font.gen.button" fontsize="16" bold="1"
-		color="color.button.label" alpha="128"/>
-	<text id="shuffle.text.ind" x="28" y="62" w="50" h="20"
-		text="OFF" align="center" ghost="1"
-		font="font.gen.button" fontsize="16" bold="1"
-		color="color.button.label" alpha="128"/>
+		label="SHUFFLE" label2="ON" cfglabel2="0=OFF;1=ON"
+		icon="player.main.icon.shuffle"/>
 		
-	<NStatesButton id="repeat.button" x="0" y="100"
-		nstates="3" rectrgn="1"
-		image="player.main.gen.button"
-		activeimage="player.main.gen.button"
-		downimage="player.main.gen.button.down"
-		hoverimage="player.main.gen.button.hover"
+	<CustomNStatesButton x="0" y="90"
+		label="REPEAT" label2="OFF" cfglabel2="0=OFF;1=ALL;-1=TRACK"
+		icon="player.main.icon.repeat"
+		nstates="3" 
 		cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Repeat"
-    	cfgvals="0;1;-1"/>
-    <layer id="repeat.icon" x="5" y="100"
-		image="player.main.icon.repeat" ghost="1"/>
-	<text id="repeat.text" x="30" y="100" w="50" h="20"
-		text="REPEAT" align="center" ghost="1"
-		font="font.gen.button" fontsize="16" bold="1"
-		color="color.button.label" alpha="128"/>
-	<text id="repeat.text.ind" x="30" y="112" w="50" h="20"
-		text="OFF" align="center" ghost="1"
-		font="font.gen.button" fontsize="16" bold="1"
-		color="color.button.label" alpha="128"/>
-		
-	<script file="@SKINSPATH@Komodo\engine\scripts\shufflerepeat.maki"/>
+    	cfgvals="0;1;-1"/>	
 	
-	<button id="add.button" x="0" y="150" 
-		image="player.main.gen.button"
-		downimage="player.main.gen.button.down"
-		hoverimage="player.main.gen.button.hover" rectrgn="1"
-		action="PE_ADD"/>
-	<layer id="add.icon" x="5" y="150"
-		image="player.main.icon.add" ghost="1"/>
-	<text id="delete.text" x="35" y="150" w="90" h="30"
-		text="ADD" align="left" ghost="1"
-		font="font.gen.button" fontsize="18" bold="1"
-		color="color.button.label" alpha="128"/>
+	<CustomButton x="0" y="135"
+		action="PE_ADD"	label="ADD"
+		icon="player.main.icon.add"/>
 		
-	<button id="delete.button" x="0" y="200" 
-		image="player.main.gen.button"
-		downimage="player.main.gen.button.down"
-		hoverimage="player.main.gen.button.hover" rectrgn="1"
+	<CustomButton x="0" y="180" 
+		label="DELETE" icon="player.main.icon.delete"
 		action="PLDELETE" action_target="normal"/>
-	<layer id="delete.icon" x="5" y="200"
-		image="player.main.icon.delete" ghost="1"/>
-	<text id="delete.text" x="30" y="200" w="90" h="30"
-		text="DELETE" align="left" ghost="1"
-		font="font.gen.button" fontsize="18" bold="1"
-		color="color.button.label" alpha="128"/>
 	
-	<button id="up.button" x="0" y="250" 
-		image="player.main.gen.button"
-		downimage="player.main.gen.button.down"
-		hoverimage="player.main.gen.button.hover"
-		action="PLMOVEUP" action_target="normal" rectrgn="1"/>
-	<layer id="menu.icon" x="3" y="250"
-		image="player.main.icon.up" ghost="1"/>
-	<text id="menu.text" x="29" y="250" w="50" h="20"
-		text="MOVE" align="center" ghost="1"
-		font="font.gen.button" fontsize="16" bold="1"
-		color="color.button.label" alpha="128"/>
-	<text id="menu.text" x="29" y="262" w="50" h="20"
-		text="UP" align="center" ghost="1"
-		font="font.gen.button" fontsize="16" bold="1"
-		color="color.button.label" alpha="128"/>
-		
-	<button id="down.button" x="0" y="300" 
-		image="player.main.gen.button"
-		downimage="player.main.gen.button.down"
-		hoverimage="player.main.gen.button.hover"
-		action="PLMOVEDOWN" action_target="normal" rectrgn="1"/>
-	<layer id="menu.icon" x="3" y="300"
-		image="player.main.icon.down" ghost="1"/>
-	<text id="menu.text" x="30" y="300" w="50" h="20"
-		text="MOVE" align="center" ghost="1"
-		font="font.gen.button" fontsize="16" bold="1"
-		color="color.button.label" alpha="128"/>	
-	<text id="menu.text" x="30" y="312" w="50" h="20"
-		text="DOWN" align="center" ghost="1"
-		font="font.gen.button" fontsize="16" bold="1"
-		color="color.button.label" alpha="128"/>
+	<CustomButton x="0" y="225" 
+		label="MOVE" label2="UP" icon="player.main.icon.up"
+		action="PLMOVEUP" action_target="normal"/>
+			
+	<CustomButton x="0" y="270" 
+		label="MOVE" label2="DOWN" icon="player.main.icon.down"
+		action="PLMOVEDOWN" action_target="normal"/>
 	
-	<button id="menu.button" x="0" y="350" 
-		image="player.main.gen.button"
-		downimage="player.main.gen.button.down"
-		hoverimage="player.main.gen.button.hover"
-		action="PE_LIST" rectrgn="1"/>
-	<layer id="menu.icon" x="5" y="350"
-		image="player.main.icon.menu" ghost="1"/>
-	<text id="menu.text" x="33" y="350" w="90" h="30"
-		text="MENU" align="left" ghost="1"
-		font="font.gen.button" fontsize="18" bold="1"
-		color="color.button.label" alpha="128"/>
+	<CustomButton x="0" y="315" 
+		label="MENU" icon="player.main.icon.menu"
+		action="PE_LIST"/>
 </groupdef>
 
 <!-- override group definition -->
@@ -310,8 +200,10 @@
 </groupdef>
 
 <groupdef id="player.main.pl.list">
+	<group id="playlistswitch.buttons" x="130" y="0" w="-130" relatw="1"/>
+
 	<playlistPlus id="main.pl" 
-			x="130" y="10" w="-130" h="80" relatx="0" relaty="2" relatw="1" relath="2"
+			x="130" y="40" w="-130" h="-70" relatx="0" relaty="0" relatw="1" relath="1"
 			font="Arial" fontsize="25" linespacing="-10" color="color.plist" alpha="200"
 			playcolor="wasabi.list.text.current" selcolor="color.plist" selbgcolor="200,200,200" selalpha="255"
 			showslider="1" slidercolor="color.plist" slideralpha="128"/>
@@ -320,7 +212,6 @@
 </groupdef>
 
 <groupdef id="player.main.pl" name="playlist">
-				
 	<group id="player.main.pl.coverflow" 
 		x="20" y="10" relatx="2" relaty="2"
 		w="60" h="90" relatw="2" relath="2"/>
@@ -622,110 +513,42 @@
 </groupdef>
 
 <groupdef id="player.main.avs.buttons">
-	<button id="prev.button" x="0" y="0" 
-		image="player.main.gen.button"
-		downimage="player.main.gen.button.down"
-		hoverimage="player.main.gen.button.hover" rectrgn="1"
+	<CustomButton id="prev.button" x="0" y="0" 
+		label="PREV" icon="player.main.icon.vis.prev"
 		action="VIS_PREV"/>
-	<layer id="prev.icon" x="5" y="0"
-		image="player.main.icon.vis.prev" ghost="1"/>
-	<text id="prev.text" x="30" y="0" w="90" h="30"
-		text="PREV" align="left" ghost="1"
-		font="font.gen.button" fontsize="18" bold="1"
-		color="color.button.label" alpha="128"/>
+	
+	<CustomButton id="next.button" x="100" y="0" 
+		label="NEXT" icon="player.main.icon.vis.next"
+		action="VIS_NEXT"/>	
 		
-	<button id="next.button" x="100" y="0" 
-		image="player.main.gen.button"
-		downimage="player.main.gen.button.down"
-		hoverimage="player.main.gen.button.hover" rectrgn="1"
-		action="VIS_NEXT"/>
-	<layer id="next.icon" x="105" y="0"
-		image="player.main.icon.vis.next" ghost="1"/>
-	<text id="next.text" x="130" y="0" w="90" h="30"
-		text="NEXT" align="left" ghost="1"
-		font="font.gen.button" fontsize="18" bold="1"
-		color="color.button.label" alpha="128"/>
-		
-	<togglebutton id="random.button" x="200" y="0" 
-		image="player.main.gen.button"
-		downimage="player.main.gen.button.down"
-		hoverimage="player.main.gen.button.hover" 
-		activeimage="player.main.gen.button" rectrgn="1"
-		cfgattrib="{0000000A-000C-0010-FF7B-01014263450C};Random"/>
-	<layer id="random.icon" x="205" y="0"
-		image="player.main.icon.vis.random" ghost="1"/>
-	<text id="random.text" x="230" y="-5" w="90" h="30"
-		text="RANDOM" align="left" ghost="1"
-		font="font.gen.button" fontsize="16" bold="1"
-		color="color.button.label" alpha="128"/>
-	<text id="random.text.ind" x="230" y="12" w="50" h="20"
-		text="OFF" align="center" ghost="1"
-		font="font.gen.button" fontsize="16" bold="1"
-		color="color.button.label" alpha="128"/>
-		
-	<button id="avsfs.button" x="300" y="0" 
-		image="player.main.gen.button"
-		downimage="player.main.gen.button.down"
-		hoverimage="player.main.gen.button.hover" rectrgn="1"
-		action="VIS_FS"/>
-	<layer id="avsfs.icon" x="305" y="0"
-		image="player.main.icon.vis.fulls" ghost="1"/>
-	<text id="avsfs.text" x="335" y="0" w="90" h="30"
-		text="FULL" align="left" ghost="1"
-		font="font.gen.button" fontsize="18" bold="1"
-		color="color.button.label" alpha="128"/>
-		
-	<button id="avsmenu.button" x="-90" y="0" relatx="1"
-		image="player.main.gen.button"
-		downimage="player.main.gen.button.down"
-		hoverimage="player.main.gen.button.hover" rectrgn="1"
-		action="VIS_MENU"/>
-	<layer id="avsmenu.icon" x="-85" y="0" relatx="1"
-		image="player.main.icon.vis.menu" ghost="1"/>
-	<text id="avsmenu.text" x="-60" y="0" w="90" h="30"  relatx="1"
-		text="MENU" align="left" ghost="1"
-		font="font.gen.button" fontsize="18" bold="1"
-		color="color.button.label" alpha="128"/>
+	<CustomToggleButton id="random.button" x="200" y="0"
+		label="RANDOM" label2="OFF" icon="player.main.icon.vis.random"
+		cfglabel2="0=OFF;1=ON"
+		cfgattrib="{0000000A-000C-0010-FF7B-01014263450C};Random"/>	
+	
+	<CustomButton id="avsfs.button" x="300" y="0" 
+		label="FULL" icon="player.main.icon.vis.fulls"
+		action="VIS_FS"/>	
+	
+	<CustomButton id="avsmenu.button" x="-90" y="0" relatx="1"
+		label="MENU" icon="player.main.icon.vis.menu"
+		action="VIS_MENU"/>	
+	
 </groupdef>
 
 <groupdef id="player.main.vid.buttons">
-
-	<button id="avsfs.button" x="0" y="0" 
-		image="player.main.gen.button"
-		downimage="player.main.gen.button.down"
-		hoverimage="player.main.gen.button.hover" rectrgn="1"
+	<CustomButton id="avsfs.button" x="0" y="0" 
+		label="FULL" icon="player.main.icon.vis.fulls"
 		action="VID_FS"/>
-	<layer id="avsfs.icon" x="5" y="0"
-		image="player.main.icon.vis.fulls" ghost="1"/>
-	<text id="avsfs.text" x="35" y="0" w="90" h="30"
-		text="FULL" align="left" ghost="1"
-		font="font.gen.button" fontsize="18" bold="1"
-		color="color.button.label" alpha="128"/>
 		
-	<button id="tv.button" x="100" y="0" 
-		image="player.main.gen.button"
-		downimage="player.main.gen.button.down"
-		hoverimage="player.main.gen.button.hover" rectrgn="1"
+	<CustomButton id="tv.button" x="100" y="0" 
+		label="I-TV" icon="player.main.icon.vis.tv"
 		action="VID_TV"/>
-	<layer id="tv.icon" x="105" y="0"
-		image="player.main.icon.vis.tv" ghost="1"/>
-	<text id="tv.text" x="140" y="0" w="90" h="30"
-		text="I-TV" align="left" ghost="1"
-		font="font.gen.button" fontsize="18" bold="1"
-		color="color.button.label" alpha="128"/>
-
 		
-	<button id="vidmenu.button" x="-90" y="0" relatx="1"
-		image="player.main.gen.button"
-		downimage="player.main.gen.button.down"
-		hoverimage="player.main.gen.button.hover" rectrgn="1"
+	<CustomButton  id="vidmenu.button" x="-90" y="0" relatx="1"
+		label="MENU" icon="player.main.icon.vis.menu"
 		action="VID_MISC"/>
-	<layer id="vidmenu.icon" x="-85" y="0" relatx="1"
-		image="player.main.icon.vis.menu" ghost="1"/>
-	<text id="vidmenu.text" x="-60" y="0" w="90" h="30"  relatx="1"
-		text="MENU" align="left" ghost="1"
-		font="font.gen.button" fontsize="18" bold="1"
-		color="color.button.label" alpha="128"/>
+		
 </groupdef>
 
 <groupdef id="player.main.vis.content">
@@ -807,62 +630,20 @@
 </groupdef>
 
 <groupdef id="player.main.ie.buttons">
+	<CustomButton id="ieprev.button" x="0" y="0" 
+		label="BACK" icon="player.main.icon.ie.prev"/>
+		
+	<CustomButton id="ienext.button" x="100" y="0" 
+		label="FWD" icon="player.main.icon.ie.next"/>
 
-	<button id="ieprev.button" x="0" y="0" 
-		image="player.main.gen.button"
-		downimage="player.main.gen.button.down"
-		hoverimage="player.main.gen.button.hover" rectrgn="1"/>
-	<layer id="ieprev.icon" x="5" y="0"
-		image="player.main.icon.ie.prev" ghost="1"/>
-	<text id="ieprev.text" x="35" y="0" w="90" h="30"
-		text="BACK" align="left" ghost="1"
-		font="font.gen.button" fontsize="18" bold="1"
-		color="color.button.label" alpha="128"/>
-		
-	<button id="ienext.button" x="100" y="0" 
-		image="player.main.gen.button"
-		downimage="player.main.gen.button.down"
-		hoverimage="player.main.gen.button.hover" rectrgn="1"/>
-	<layer id="ienext.icon" x="105" y="0"
-		image="player.main.icon.ie.next" ghost="1"/>
-	<text id="ienext.text" x="135" y="0" w="90" h="30"
-		text="FWD" align="left" ghost="1"
-		font="font.gen.button" fontsize="18" bold="1"
-		color="color.button.label" alpha="128"/>
-
-	<button id="ierefresh.button" x="200" y="0" 
-		image="player.main.gen.button"
-		downimage="player.main.gen.button.down"
-		hoverimage="player.main.gen.button.hover" rectrgn="1"/>
-	<layer id="ierefresh.icon" x="205" y="0"
-		image="player.main.icon.ie.refresh" ghost="1"/>
-	<text id="ierefresh.text" x="232" y="0" w="55" h="30"
-		text="RELOAD" align="left" ghost="1"
-		font="font.gen.button" fontsize="16" bold="1"
-		color="color.button.label" alpha="128"/>
-		
-	<button id="iestop.button" x="300" y="0" 
-		image="player.main.gen.button"
-		downimage="player.main.gen.button.down"
-		hoverimage="player.main.gen.button.hover" rectrgn="1"/>
-	<layer id="iestop.icon" x="305" y="0"
-		image="player.main.icon.ie.stop" ghost="1"/>
-	<text id="iestop.text" x="335" y="0" w="90" h="30"
-		text="STOP" align="left" ghost="1"
-		font="font.gen.button" fontsize="18" bold="1"
-		color="color.button.label" alpha="128"/>
-		
-	<button id="iehome.button" x="400" y="0" 
-		image="player.main.gen.button"
-		downimage="player.main.gen.button.down"
-		hoverimage="player.main.gen.button.hover" rectrgn="1"/>
-	<layer id="iehome.icon" x="405" y="0"
-		image="player.main.icon.ie.home" ghost="1"/>
-	<text id="iehome.text" x="435" y="0" w="90" h="30"
-		text="HOME" align="left" ghost="1"
-		font="font.gen.button" fontsize="18" bold="1"
-		color="color.button.label" alpha="128"/>
+	<CustomButton id="ierefresh.button" x="200" y="0" 
+		label="RELOAD" icon="player.main.icon.ie.refresh"/>
 	
+	<CustomButton id="iestop.button" x="300" y="0" 
+		label="STOP" icon="player.main.icon.ie.stop"/>	
+	
+	<CustomButton id="iehome.button" x="400" y="0" 
+		label="HOME" icon="player.main.icon.ie.home"/>	
 </groupdef>
 
 <groupdef id="player.main.ie.content">
