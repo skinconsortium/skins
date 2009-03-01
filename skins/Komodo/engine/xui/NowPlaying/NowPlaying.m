@@ -17,7 +17,7 @@ Function FadeGroup(Group FadeGrp, Int AlphaValue);
 Function checkOptionalGrphx();
 
 Global Group XUIGroup, cdbox, cdboxref, cdboxHolder, ratings, BGCol;
-Global GuiObject line1, line2, line3, BFColRect;
+Global GuiObject line1, line2, line3, BFColRect, shadow;
 Global int xs, ys, ws, hs;
 Global int xc, yc, wc, hc;
 Global layer lyrFx, lyrFxFG, lyrFxBGRef, cboxfg;
@@ -29,6 +29,7 @@ System.onScriptLoaded(){
 	XUIGroup = getScriptGroup();
 	ratings = XUIGroup.findObject("sc.nowplaying.ratings");
 	cdbox = XUIGroup.findObject("sc.nowplaying.cdbox");
+	shadow = XUIGroup.findObject("sc.nowplaying.shadow");
 	cdboxref = XUIGroup.findObject("sc.nowplaying.cdbox.reflection"); 
 	cdboxref.hide();
 	
@@ -257,6 +258,11 @@ resizeToThis(int x, int y, int w, int h)
 	cdbox.setXmlParam("y", integerToString(y1));
 	cdbox.setXmlParam("w", integerToString(w1));
 	cdbox.setXmlParam("h", integerToString(h1));
+	
+	shadow.setXmlParam("x", integerToString(x1-w1*0.2));
+	shadow.setXmlParam("y", integerToString(y1+h1/2));
+	shadow.setXmlParam("w", integerToString(w1*1.4));
+	shadow.setXmlParam("h", integerToString(h1));
 	
 	cdboxref.setXmlParam("x", integerToString(x1));
 	cdboxref.setXmlParam("y", integerToString(y1+h1*0.96));
