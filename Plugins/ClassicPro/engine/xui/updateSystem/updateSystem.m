@@ -1,7 +1,7 @@
 /********************************************************\
 **  Filename:	updateSystem.m				**
-**  Version:	3.0					**
-**  Date:	19. Mrz. 2008 - 11:45			**
+**  Version:	3.1					**
+**  Date:	4. Mrt. 2009 - 00:31			**
 **********************************************************
 **  Type:	winamp.wasabi/XUI Object		**
 **  Project:	misc					**
@@ -10,6 +10,7 @@
 **  E-Mail:	martin@skinconsortium.com		**
 **  Internet:	http://www.skinconsortium.com		**
 **		http://home.cs.tum.edu/~poehlman	**
+**		Traffic Reduction update by pjn123		**
 \********************************************************/
 
 
@@ -19,6 +20,8 @@
 
 #define SERVERFILE "http://www.skinconsortium.com/updatemanager/updateSystem.php"
 //define SERVERFILE "http://localhost/updateSystem/updateSystem.php"
+
+Function int getDateStamp();
 
 Global Browser brw;
 
@@ -31,6 +34,15 @@ System.onScriptLoaded ()
 {
 	initAttribs();
 	
+	//Only check for updates once every 5days!!!
+	if(getPublicInt("ClassicPro.update.timestamp", 0)< getDateStamp()-5 || getPublicInt("ClassicPro.update.timestamp", 0)> getDateStamp()){
+		setPublicInt("ClassicPro.update.timestamp", getDateStamp());
+	}
+	else return;
+
+
+	debugint(System.getDateYear(System.getDate())*365 + System.getDateDoy(System.getDate()));
+	
 	if (autoupdate_attrib.getData() == "0") return; // we quit savely
 
 	/*if (!getPrivateInt(getSkinName(), "Check for Updates", 1))
@@ -39,6 +51,11 @@ System.onScriptLoaded ()
 	brw = getScriptgroup().findObject("brw");
 
 	if (ready == 2) brw.navigateUrl(SERVERFILE + "?q=check&skin=" + str_skinname + "&version=" + str_version);
+}
+
+int getDateStamp(){
+	int i = System.getDateYear(System.getDate())*365 + System.getDateDoy(System.getDate());
+	return i;
 }
 
 System.onSetXuiParam (String param, String value)
