@@ -1,0 +1,2 @@
+Linker plug-in
+http://nsis.sourceforge.net/Linker_plug-in
