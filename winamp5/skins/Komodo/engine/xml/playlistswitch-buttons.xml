@@ -1,0 +1,5 @@
+
+<groupdef id="playlistswitch.buttons">
+	<script file="@SKINSPATH@Komodo\engine\scripts\playlistswitch.maki"/>
+</groupdef>
+	
