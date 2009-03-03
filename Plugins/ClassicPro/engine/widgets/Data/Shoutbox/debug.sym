@@ -96,59 +96,66 @@ var# |                Class |                                    What
 005C |              Browser |                                      brw
 005D |                 Edit |                                      msg
 005E |                 Text |                                      txt
-005F |                Layer |                                     trap
-0060 |               String |                                  baseurl
-0061 |               String |                                     name
-0062 |                Timer |                                      ref
-0063 |                Group |                                   parent
-0064 |                  Int |                                  curMode
-0065 |                  Int |                                    delay
-0066 |             ColorMgr |                                       cm
-0067 |               String |                                    "brw"
-0068 |               String |                               "edit.msg"
-0069 |               String |                                "txt.msg"
-006A |               String |                                   "trap"
-006B |               String |                    "classicPro_shoutbox"
-006C |               String |                               "username"
-006D |               String | "http://cpro.skinconsortium.com/services/cpro-shoutbox.php?bg="
-006E |               String |                                  "&txt="
-006F |               String |                                    "&v="
-0070 |               String |                                    "0.4"
-0071 |               String |                                "refresh"
-0072 |                  Int |                                       30
-0073 |                  Int |                                     1000
-0074 |               String |                                 newtheme
-0075 |                  Int |                                  newmode
-0076 |               String |                              "Username:"
-0077 |               String |                               "Message:"
-0078 |                  Int |                                        3
-0079 |               String |                               "Seconds:"
-007A |              Boolean |                                    onoff
-007B |               String |                                  "&msg="
-007C |               String |                                 "&name="
-007D |               String |                               "&artist="
-007E |               String |                                "&title="
-007F |               String |                              "<Options>"
-0080 |                  Int |                                        x
-0081 |                  Int |                                        y
-0082 |            PopupMenu |                                      men
-0083 |               String |                           "Let's Shout!"
-0084 |               String |                           "Set Username"
-0085 |               String |                   "Set Refresh-Interval"
-0086 |               String |                        "Reload Shoutbox"
-0087 |                  Int |                                     1001
-0088 |                  Int |                                      res
+005F |                 Text |                                    chars
+0060 |                Layer |                                     trap
+0061 |               String |                                  baseurl
+0062 |               String |                                     name
+0063 |               String |                                  urlname
+0064 |                Timer |                                      ref
+0065 |                Group |                                   parent
+0066 |                  Int |                                  curMode
+0067 |                  Int |                                    delay
+0068 |             ColorMgr |                                       cm
+0069 |               String |                                    "brw"
+006A |               String |                               "edit.msg"
+006B |               String |                                "txt.msg"
+006C |               String |                              "txt.chars"
+006D |               String |                                   "trap"
+006E |               String |                    "classicPro_shoutbox"
+006F |               String |                               "username"
+0070 |               String |                                 "&name="
+0071 |               String | "http://cpro.skinconsortium.com/services/cpro-shoutbox.php?bg="
+0072 |               String |                                  "&txt="
+0073 |               String |                                    "&v="
+0074 |               String |                                    "0.6"
+0075 |               String |                                "refresh"
+0076 |                  Int |                                       30
+0077 |                  Int |                                     1000
+0078 |               String |                                 newtheme
+0079 |                  Int |                                  newmode
+007A |               String |                              "Username:"
+007B |                  Int |                                       20
+007C |               String |                               "Message:"
+007D |                  Int |                                      200
+007E |                  Int |                                        3
+007F |               String |                               "Refresh:"
+0080 |               String |                                    "sec"
+0081 |              Boolean |                                    onoff
+0082 |               String |                                  "&msg="
+0083 |               String |                               "&artist="
+0084 |               String |                                "&title="
+0085 |               String |                              "<Options>"
+0086 |                  Int |                                        x
+0087 |                  Int |                                        y
+0088 |            PopupMenu |                                      men
+0089 |               String |                           "Let's Shout!"
+008A |               String |                           "Set Username"
+008B |               String |                   "Set Refresh-Interval"
+008C |               String |                        "Reload Shoutbox"
+008D |                  Int |                                     1001
+008E |                  Int |                                      res
 -- Events Table ------------------------------------------------------
 var# |         Code Pointer |                                    What 
 ----------------------------------------------------------------------
 0000 |                 0953 |                                      S.o
-0066 |                 0AB7 |                                      c.o
-0063 |                 0C03 |                                      p.o
-0062 |                 0C62 |                                      r.o
-005D |                 0C9F |                                      m.o
-005F |                 0EC5 |                                      t.o
-005F |                 0EEC |                                      t.o
-005F |                 0F6F |                                      t.o
+0068 |                 0B03 |                                      c.o
+0065 |                 0CCC |                                      p.o
+0064 |                 0D2B |                                      r.o
+005D |                 0D68 |                                      m.o
+005D |                 0E09 |                                      m.o
+0060 |                 106F |                                      t.o
+0060 |                 1096 |                                      t.o
+0060 |                 1119 |                                      t.o
 -- User Functions Table ----------------------------------------------
                Code Pointer |                                    What 
 ----------------------------------------------------------------------
@@ -160,4 +167,4 @@ var# |         Code Pointer |                                    What
                        051A |                                getMyPath
                        0630 |                              getColorHex
                        0733 |                                 decToHex
-                       0B17 |                               updateMode
+                       0B69 |                               updateMode
