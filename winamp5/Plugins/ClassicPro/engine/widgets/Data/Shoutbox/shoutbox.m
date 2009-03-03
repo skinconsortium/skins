@@ -13,11 +13,11 @@ Function updateMode(int newMode);
 
 Global Browser brw;
 Global Edit msg;
-Global Text txt;
+Global Text txt, chars;
 Global layer trap;
 
 Global String baseurl;
-Global String name;
+Global String name, urlname;
 
 Global Timer ref;
 
@@ -27,11 +27,16 @@ Global int curMode, delay;
 
 Global ColorMgr cm;
 
-#define SHOUTBOX_VERSION "0.4"
+#define SHOUTBOX_VERSION "0.6"
 
 #define MODE_USERNAME 1
 #define MODE_CHAT 2
 #define MODE_REFRESH 3
+
+#define MAX_CHARS_CHAT 200
+#define MAX_CHARS_USERNAME 20
+
+#define BASEURL_TEMPLATE "http://cpro.skinconsortium.com/services/cpro-shoutbox.php?bg="+getColorHex("wasabi.list.background")+"&txt="+getColorHex("wasabi.list.text")+"&v="+SHOUTBOX_VERSION+urlname;
 
 system.onScriptLoaded ()
 {
@@ -39,21 +44,27 @@ system.onScriptLoaded ()
 	brw = parent.findObject("brw");
 	msg = parent.findObject("edit.msg");
 	txt = parent.findObject("txt.msg");
+	chars = parent.findObject("txt.chars");
 	trap = parent.findObject("trap");
+
+	baseurl = 
 
 	name = getPrivateString("classicPro_shoutbox", "username", "");
 	if (name == "")
 	{
 		updateMode(MODE_USERNAME);
+		urlname = "";
+
 	}
 	else
 	{
 		updateMode(MODE_CHAT);	
+		urlname =  "&name=" + urlencode(name);
 	}
 
+	baseurl = BASEURL_TEMPLATE;
 	//baseurl = "http://localhost/sc3/classicpro/services/cpro-shoutbox.php?bg="+getColorHex("wasabi.list.background")+"&txt="+getColorHex("wasabi.list.text");
-	baseurl = "http://cpro.skinconsortium.com/services/cpro-shoutbox.php?bg="+getColorHex("wasabi.list.background")+"&txt="+getColorHex("wasabi.list.text")+"&v="+SHOUTBOX_VERSION;
-
+	
 	ref = new Timer;
 	delay = getPrivateInt("classicPro_shoutbox", "refresh", 30)*1000;
 	if (delay > 0)
@@ -64,7 +75,8 @@ system.onScriptLoaded ()
 
 cm.oncolorthemechanged(String newtheme)
 {
-	baseurl = "http://cpro.skinconsortium.com/services/cpro-shoutbox.php?bg="+getColorHex("wasabi.list.background")+"&txt="+getColorHex("wasabi.list.text")+"&v="+SHOUTBOX_VERSION;
+	baseurl = BASEURL_TEMPLATE
+	
 	brw.navigateUrl(baseurl);
 }
 
@@ -83,16 +95,19 @@ updateMode(int newmode)
 	{
 		txt.setText("Username:");
 		msg.setText(getPrivateString("classicPro_shoutbox", "username", ""));
+		chars.setText(integerToString(MAX_CHARS_USERNAME - strlen(msg.getText())));
 	}
 	else if (newMode == MODE_CHAT)
 	{
 		txt.setText("Message:");
 		msg.setText("");
+		chars.setText(integerToString(MAX_CHARS_CHAT - strlen(msg.getText())));
 	}
 	else if (newMode == MODE_REFRESH)
 	{
-		txt.setText("Seconds:");
-		msg.setText(integerToString(getPrivateInt("classicPro_shoutbox", "refresh", 30)));		
+		txt.setText("Refresh:");
+		msg.setText(integerToString(getPrivateInt("classicPro_shoutbox", "refresh", 30)));
+		chars.setText("sec");		
 	}
 	
 	curMode = newMode;
@@ -120,6 +135,18 @@ ref.onTimer ()
 	brw.navigateUrl(baseurl);
 }
 
+msg.onEditUpdate()
+{
+	if (newMode == MODE_USERNAME)
+	{
+		chars.setText(integerToString(MAX_CHARS_USERNAME - strlen(msg.getText())));
+	}
+	else if (newMode == MODE_CHAT)
+	{
+		chars.setText(integerToString(MAX_CHARS_CHAT - strlen(msg.getText())));
+	}	
+}
+
 msg.onEnter()
 {
 	if (getText() == "")
@@ -131,6 +158,10 @@ msg.onEnter()
 	{
 		name = getText();
 		setPrivateString("classicPro_shoutbox", "username", name);
+		
+		urlname =  "&name=" + urlencode(name);	
+		baseurl = BASEURL_TEMPLATE;
+
 		updateMode(MODE_CHAT);
 	}
 	else if (curMode == MODE_CHAT)
@@ -142,7 +173,7 @@ msg.onEnter()
 		}
 		
 		ref.stop();
-		brw.navigateUrl(baseurl + "&msg=" + urlencode(msg.getText()) + "&name=" + urlencode(name) + "&artist=" + urlEncode(getPlayItemMetaDataString("artist")) + "&title=" + urlEncode(getPlayItemMetaDataString("title")));
+		brw.navigateUrl(baseurl + "&msg=" + urlencode(msg.getText()) + "&artist=" + urlEncode(getPlayItemMetaDataString("artist")) + "&title=" + urlEncode(getPlayItemMetaDataString("title")));
 		setText("");
 		if (delay > 0)
 		{
@@ -186,7 +217,7 @@ trap.onLeaveArea ()
 	}
 	else if (curMode == MODE_REFRESH)
 	{
-		txt.setText("Seconds:");
+		txt.setText("Refresh:");
 	}
 }
 
