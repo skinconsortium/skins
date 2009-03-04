@@ -16,12 +16,11 @@ extern class @{686FA9C9-5CE5-4d35-8BAF-A0FF1C59E525}@ Object _predecl ClassicPro
  * Engine Specific Stuff
  */
 
-
 /**
  *
- * @ret ClassicPro::Flex version of the installed engine
+ * @ret ClassicPro version of the installed engine
  */
-extern	float	ClassicPro.getEngineVersion();
+extern	float	ClassicPro.getVersion();
 
 /*
  * Skin Specific Stuff
@@ -30,15 +29,21 @@ extern	float	ClassicPro.getEngineVersion();
 
 /**
  *
- * @ret ClassicPro::Flex version of this skin
+ * @ret ClassicPro eingine name, that is requested by the skin
  */
-extern	float	ClassicPro.getSkinVersion();
+extern	String	ClassicPro.getEngineName();
 
 /**
- * applys a style from flex.xml to an GuiObject
+ *
+ * @ret cpro version required by this skin
+ */
+extern	float	ClassicPro.getRequestedVersion();
+
+/**
+ * applys a style from classicpro.xml to an GuiObject
  *
  * @param  The object to be styles
- * @param  The styleID defined in flex.xml
+ * @param  The styleID defined in classicpro.xml
  */
 extern		ClassicPro.applyStyle(GuiObject obj, String styleID);
 

@@ -36,6 +36,7 @@ private:
   static ClassicProParser* classicProParser;
 public:
   static scriptVar script_vcpu_getEngineVersion(SCRIPT_FUNCTION_PARAMS, ScriptObject *o);
+  static scriptVar script_vcpu_getEngineName(SCRIPT_FUNCTION_PARAMS, ScriptObject *o);
   static scriptVar script_vcpu_getSkinVersion(SCRIPT_FUNCTION_PARAMS, ScriptObject *o);
   static scriptVar script_vcpu_appearance_normal_usePlayPauseButton(SCRIPT_FUNCTION_PARAMS, ScriptObject *o);
   static scriptVar script_vcpu_appearance_shade_usePlayPauseButton(SCRIPT_FUNCTION_PARAMS, ScriptObject *o);

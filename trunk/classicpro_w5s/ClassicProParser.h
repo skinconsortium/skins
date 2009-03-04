@@ -16,6 +16,7 @@ public:
 	~ClassicProParser();
 
 	float skinVersion;
+	const wchar_t* engineName;
 	int appearance_normal_usePlayPauseButton;
 	int appearance_shade_usePlayPauseButton;
 	float appearance_glowButtonFadeInSpeed;

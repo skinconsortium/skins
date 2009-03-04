@@ -12,7 +12,8 @@ static const GUID classicProFlexGuid =
 
 // -- Functions table -------------------------------------
 function_descriptor_struct ClassicProFlexScriptController::exportedFunction[] = {
-	{L"getEngineVersion",						0, (void*)SClassicProFlex::script_vcpu_getEngineVersion },
+	{L"getVersion",								0, (void*)SClassicProFlex::script_vcpu_getEngineVersion },
+	{L"getEngineName",							0, (void*)SClassicProFlex::script_vcpu_getEngineName },
 	{L"getSkinVersion",							0, (void*)SClassicProFlex::script_vcpu_getSkinVersion },
 	{L"appearance_normal_usePlayPauseButton",	0, (void*)SClassicProFlex::script_vcpu_appearance_normal_usePlayPauseButton},
 	{L"appearance_shade_usePlayPauseButton",	0, (void*)SClassicProFlex::script_vcpu_appearance_shade_usePlayPauseButton },
@@ -103,6 +104,16 @@ scriptVar SClassicProFlex::script_vcpu_getEngineVersion(SCRIPT_FUNCTION_PARAMS, 
 	if (classicProFlex)
 	{
 		return MAKE_SCRIPT_FLOAT(CPRO_VERSION);
+	}
+	RETURN_SCRIPT_VOID;
+}
+
+scriptVar SClassicProFlex::script_vcpu_getEngineName(SCRIPT_FUNCTION_PARAMS, ScriptObject *o) {
+	SCRIPT_FUNCTION_INIT;
+	SClassicProFlex *classicProFlex = static_cast<SClassicProFlex *>(o->vcpu_getInterface(classicProFlexGuid));
+	if (classicProFlex)
+	{
+		return MAKE_SCRIPT_STRING(classicProParser->engineName);
 	}
 	RETURN_SCRIPT_VOID;
 }
