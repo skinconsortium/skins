@@ -35,13 +35,11 @@ System.onScriptLoaded ()
 	initAttribs();
 	
 	//Only check for updates once every 5days!!!
-	if(getPublicInt("ClassicPro.update.timestamp", 0)< getDateStamp()-5 || getPublicInt("ClassicPro.update.timestamp", 0)> getDateStamp()){
+	if(getPublicInt("ClassicPro.update.timestamp", 0)< getDateStamp()-4 || getPublicInt("ClassicPro.update.timestamp", 0)> getDateStamp()){
 		setPublicInt("ClassicPro.update.timestamp", getDateStamp());
 	}
 	else return;
 
-
-	debugint(System.getDateYear(System.getDate())*365 + System.getDateDoy(System.getDate()));
 	
 	if (autoupdate_attrib.getData() == "0") return; // we quit savely
 
