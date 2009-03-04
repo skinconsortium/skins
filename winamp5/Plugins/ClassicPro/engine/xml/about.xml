@@ -3,6 +3,7 @@
 	<bitmap id="about.gfx.quad" file="@WINAMPPATH@\Plugins\classicPro\engine\image\mugshot-quad.png"/>
 	<bitmap id="about.gfx.pjn" file="@WINAMPPATH@\Plugins\classicPro\engine\image\mugshot-pjn.png"/>
 	<bitmap id="about.gfx.slob" file="@WINAMPPATH@\Plugins\classicPro\engine\image\mugshot-slob.png"/>
+	<bitmap id="about.gfx.pawel" file="@WINAMPPATH@\Plugins\classicPro\engine\image\mugshot-pawel.png"/>
 	<bitmap id="about.gfx.etrance" file="@WINAMPPATH@\Plugins\classicPro\engine\image\mugshot-etrance.png"/>
 	<bitmap id="paypal.donate" file="@WINAMPPATH@\Plugins\classicPro\engine\image\donate.png"/>
 	<bitmap id="about.hbd" file="@WINAMPPATH@\Plugins\classicPro\engine\image\hbd.png"/>
@@ -26,11 +27,11 @@
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\scripts\cproabout.maki"/>
 </groupdef>
 
-<groupdef id="about.6">
-	<text x="20" y="40" text="Special thanks to..." fontsize="26" color="255,255,255" shadowcolor="0,0,0" shadowx="1" shadowy="1" font="Tahoma"/>
-	<group id="about.6.names" x="50" y="40" h="320"/>
+<groupdef id="about.7">
+	<text x="20" y="30" text="Special thanks to..." fontsize="26" color="255,255,255" shadowcolor="0,0,0" shadowx="1" shadowy="1" font="Tahoma"/>
+	<group id="about.7.names" x="50" y="40" h="320"/>
 </groupdef>
-<groupdef id="about.6.names">
+<groupdef id="about.7.names">
 	<text fitparent="1" ghost="1" text="- iron2000 (made the first cPro skin!)\n- Veroka (helped with implementing ColorTheme support)\n- Zarko Jovic (helped with implementing ColorTheme support)\n- Wilian and Veroka (creating a template for cpro skins)\n- TheElusiveMelon (ClassicPro clock)\n- and1945 (beta testing and spreading the word ;)\n- fille1000 (widgets and skins ;)\n- leechbite (widgets and skins ;)\n- Wildrose-Wally (helped with publising)\n- Koogle (always full of new ideas)\n- Paparazzi (ideas and testing)\n- Taber Buhl (Original Big Bento gfx)\n- Benski (Winamp gen_ff developments)\n- Winamp Development team\n- MerTcaN (beta testing ;)\n- mynameisnobody (beta testing ;)\n- osmosis (beta testing ;)\n- pouldam (beta testing 8)" color="255,255,255" shadowcolor="0,0,0" shadowx="1" shadowy="1" font="Tahoma"/>
 </groupdef>
 
@@ -64,11 +65,18 @@
 	
 	<cPro:About id="about.5"
 		x="0" y="0" visible="0"
+		about_name="Pawel Porwisz" about_alias="pepe" about_age="5;1;1979"
+		about_country="POLAND"	about_image="about.gfx.pawel"
+		credits="Credits:\n- Translator\n- CPro Installer\n- Beta testing"
+	/>
+
+	<cPro:About id="about.6"
+		x="0" y="0" visible="0"
 		about_name="Egor Petrov" about_alias="E-Trance" about_age="7;9;1988"
 		about_country="RUSSIA"	about_image="about.gfx.etrance"
 		credits="Credits:\n - Widget engine co-developer\n - Suggestions ;)"
 	/>
-	<group id="about.6" visible="0" fitparent="1"/>
+	<group id="about.7" visible="0" fitparent="1"/>
 	<layer id="mousetrap" fitparent="1" rectrgn="1" tooltip="Double-Click to toggle the credits on/off (Scroll credits with mousewheel)"/>
 </groupdef>
 

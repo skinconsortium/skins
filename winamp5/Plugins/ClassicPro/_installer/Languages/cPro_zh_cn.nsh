@@ -34,6 +34,10 @@
 		LangString CPro_Caption ${LANG_SIMPCHINESE} "${CPRO_NAME}${CPRO_CRS} v${CPRO_VERSION} Setup"
 	!endif
 	
+; Installation type	
+	LangString CPro_Full ${LANG_SIMPCHINESE} "Full"
+	LangString CPro_Minimal ${LANG_SIMPCHINESE} "Minimal"
+	
 ; Installer sections
 	LangString CProFiles ${LANG_SIMPCHINESE} "ClassicPro Engine"
 	LangString wBrowserPro ${LANG_SIMPCHINESE} "BrowserPro v2.0"
@@ -72,3 +76,17 @@
 	LangString CPro_Account ${LANG_SIMPCHINESE} "Multi-user settings"
 	LangString CPro_No_Account ${LANG_SIMPCHINESE} "No Multi-user settings"
 	LangString CPro_Winamp_Path ${LANG_SIMPCHINESE} "Specifying path to Winamp configuration file..."	
+
+; Close all instances of Winamp
+	LangString CPro_Running_Winamp ${LANG_SIMPCHINESE} "Winamp is running!"
+	LangString CPro_Close_Winamp  ${LANG_SIMPCHINESE} "Before continue, you must close all instances of Winamp!"	
+	LangString CPro_Closing_Winamp ${LANG_SIMPCHINESE} "        Closing Winamp (winamp.exe)..."
+	LangString CPro_No_More_Winamp ${LANG_SIMPCHINESE} "        OK. All instances of Winamp are closed..."  
+	LangString CPro_No_Winamp ${LANG_SIMPCHINESE} "OK. No instances of Winamp is running..."
+	LangString CPro_Check_Winamp ${LANG_SIMPCHINESE} "Checking if Winamp is running..."
+
+; Menu Start
+	LangString CPro_MenuStart1 ${LANG_SIMPCHINESE} "Uninstall ${CPRO_NAME}"
+	LangString CPro_MenuStart2 ${LANG_SIMPCHINESE} "Whats new"
+	LangString CPro_MenuStart3 ${LANG_SIMPCHINESE} "Get more ${CPRO_NAME} skins and widgets!"	
+		

@@ -34,6 +34,10 @@
 		LangString CPro_Caption ${LANG_PORTUGUESE_BRAZILIAN} "${CPRO_NAME}${CPRO_CRS} v${CPRO_VERSION} Setup"
 	!endif
 	
+; Installation type	
+	LangString CPro_Full ${LANG_PORTUGUESE_BRAZILIAN} "Full"
+	LangString CPro_Minimal ${LANG_PORTUGUESE_BRAZILIAN} "Minimal"
+	
 ; Installer sections
 	LangString CProFiles ${LANG_PORTUGUESE_BRAZILIAN} "ClassicPro Engine"
 	LangString wBrowserPro ${LANG_PORTUGUESE_BRAZILIAN} "BrowserPro v2.0"
@@ -72,3 +76,17 @@
 	LangString CPro_Account ${LANG_PORTUGUESE_BRAZILIAN} "Multi-user settings"
 	LangString CPro_No_Account ${LANG_PORTUGUESE_BRAZILIAN} "No Multi-user settings"
 	LangString CPro_Winamp_Path ${LANG_PORTUGUESE_BRAZILIAN} "Specifying path to Winamp configuration file..."	
+
+; Close all instances of Winamp
+	LangString CPro_Running_Winamp ${LANG_PORTUGUESE_BRAZILIAN} "Winamp is running!"
+	LangString CPro_Close_Winamp  ${LANG_PORTUGUESE_BRAZILIAN} "Before continue, you must close all instances of Winamp!"	
+	LangString CPro_Closing_Winamp ${LANG_PORTUGUESE_BRAZILIAN} "        Closing Winamp (winamp.exe)..."
+	LangString CPro_No_More_Winamp ${LANG_PORTUGUESE_BRAZILIAN} "        OK. All instances of Winamp are closed..."  
+	LangString CPro_No_Winamp ${LANG_PORTUGUESE_BRAZILIAN} "OK. No instances of Winamp is running..."
+	LangString CPro_Check_Winamp ${LANG_PORTUGUESE_BRAZILIAN} "Checking if Winamp is running..."
+
+; Menu Start
+	LangString CPro_MenuStart1 ${LANG_PORTUGUESE_BRAZILIAN} "Uninstall ${CPRO_NAME}"
+	LangString CPro_MenuStart2 ${LANG_PORTUGUESE_BRAZILIAN} "Whats new"
+	LangString CPro_MenuStart3 ${LANG_PORTUGUESE_BRAZILIAN} "Get more ${CPRO_NAME} skins and widgets!"	
+		

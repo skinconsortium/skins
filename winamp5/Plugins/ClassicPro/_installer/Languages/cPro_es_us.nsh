@@ -34,6 +34,10 @@
 		LangString CPro_Caption ${LANG_SPANISH_INTERNATIONAL} "${CPRO_NAME}${CPRO_CRS} v${CPRO_VERSION} Setup"
 	!endif
 	
+; Installation type	
+	LangString CPro_Full ${LANG_SPANISH_INTERNATIONAL} "Full"
+	LangString CPro_Minimal ${LANG_SPANISH_INTERNATIONAL} "Minimal"
+	
 ; Installer sections
 	LangString CProFiles ${LANG_SPANISH_INTERNATIONAL} "ClassicPro Engine"
 	LangString wBrowserPro ${LANG_SPANISH_INTERNATIONAL} "BrowserPro v2.0"
@@ -71,4 +75,18 @@
 	LangString CPro_Ini ${LANG_SPANISH_INTERNATIONAL} "Updating the winamp.ini configuration file..."
 	LangString CPro_Account ${LANG_SPANISH_INTERNATIONAL} "Multi-user settings"
 	LangString CPro_No_Account ${LANG_SPANISH_INTERNATIONAL} "No Multi-user settings"
-	LangString CPro_Winamp_Path ${LANG_SPANISH_INTERNATIONAL} "Specifying path to Winamp configuration file..."	
+	LangString CPro_Winamp_Path ${LANG_SPANISH_INTERNATIONAL} "Specifying path to Winamp configuration file..."
+
+; Close all instances of Winamp
+	LangString CPro_Running_Winamp ${LANG_SPANISH_INTERNATIONAL} "Winamp is running!"
+	LangString CPro_Close_Winamp  ${LANG_SPANISH_INTERNATIONAL} "Before continue, you must close all instances of Winamp!"	
+	LangString CPro_Closing_Winamp ${LANG_SPANISH_INTERNATIONAL} "        Closing Winamp (winamp.exe)..."
+	LangString CPro_No_More_Winamp ${LANG_SPANISH_INTERNATIONAL} "        OK. All instances of Winamp are closed..."  
+	LangString CPro_No_Winamp ${LANG_SPANISH_INTERNATIONAL} "OK. No instances of Winamp is running..."
+	LangString CPro_Check_Winamp ${LANG_SPANISH_INTERNATIONAL} "Checking if Winamp is running..."
+
+; Menu Start
+	LangString CPro_MenuStart1 ${LANG_SPANISH_INTERNATIONAL} "Uninstall ${CPRO_NAME}"
+	LangString CPro_MenuStart2 ${LANG_SPANISH_INTERNATIONAL} "Whats new"
+	LangString CPro_MenuStart3 ${LANG_SPANISH_INTERNATIONAL} "Get more ${CPRO_NAME} skins and widgets!"	
+		
