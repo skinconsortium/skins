@@ -1,17 +1,14 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-
+<?xml version="1.0" encoding="UTF-8"?>
 <WinampAbstractionLayer version="1.34">
-	<skininfo>
-		<version>0.1</version>
-		<name>cPro::Flex iFlex</name>
-		<author>Martin Pöhlmann</author>
-		<comment>ClassicPro::Flex Base Skin</comment>
-		<email>martin@skinconsortium.com</email>
-		<screenshot>screenshot.png</screenshot>
-		<homepage>http://www.skinconsortium.com/</homepage>
-	</skininfo>
-
-	<include file="colors.xml"/>
-	<include file="@WINAMPPATH@/Plugins/classicPro/engine/load-flex.xml"/>
-
+  <skininfo>
+    <version>0.4</version>
+    <name>cPro::Flex iFlex</name>
+    <author>Martin Pöhlmann</author>
+    <comment>ClassicPro::Flex Base Skin</comment>
+    <email>martin@skinconsortium.com</email>
+    <screenshot>screenshot.png</screenshot>
+    <homepage>http://www.skinconsortium.com/</homepage>
+  </skininfo>
+  <include file="colors.xml"/>
+  <include file="@WINAMPPATH@/Plugins/classicPro/engine/load-flex.xml"/>
 </WinampAbstractionLayer>
