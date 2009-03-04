@@ -27,9 +27,9 @@ ClassicProParser::ClassicProParser ()
 		XmlParserCallback xpcbAppearance(XmlParserCallback::CPF_CBT_APPEARANCE, this);
 		XmlParserCallback xpcbStyles(XmlParserCallback::CPF_CBT_STYLES, this);
 
-		parser->xmlreader_registerCallback(L"ClassicPro::Flex", &xpcbHead);
-		parser->xmlreader_registerCallback(L"ClassicPro::Flex\fAppearance\f*", &xpcbAppearance);
-		parser->xmlreader_registerCallback(L"ClassicPro::Flex\f*\fStyle", &xpcbStyles);
+		parser->xmlreader_registerCallback(L"ClassicPro", &xpcbHead);
+		parser->xmlreader_registerCallback(L"ClassicPro\fAppearance\f*", &xpcbAppearance);
+		parser->xmlreader_registerCallback(L"ClassicPro\f*\fStyle", &xpcbStyles);
 		parser->xmlreader_open();
 
 		wchar_t filename[1024];
@@ -37,7 +37,7 @@ ClassicProParser::ClassicProParser ()
 		HANDLE file = CreateFileW(filename, GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, NULL, NULL);
 
 		if (file == INVALID_HANDLE_VALUE)
-			MessageBox(0, L"flex.xml file could not be found!", L"ClassicPro::Flex ERROR", 0);
+			MessageBox(0, L"classicpro.xml file could not be found!", L"ClassicPro ERROR", 0);
 
 		char data[1024];
 
@@ -90,6 +90,7 @@ void XmlParserCallback::onStartTag(const wchar_t *xmlpath, const wchar_t *xmltag
 	{
 	case CPF_CBT_HEAD:
 		this->classicProParser->skinVersion = (float)_wtof(params->getItemValue(L"version"));
+		this->classicProParser->engineName = _wcsdup(params->getItemValue(L"engine"));
 		break;
 	case CPF_CBT_APPEARANCE:
 		if (!WCSICMP(xmltag, L"PlayPauseButton"))
