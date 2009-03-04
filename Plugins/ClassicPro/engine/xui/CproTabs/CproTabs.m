@@ -445,7 +445,7 @@ onMessage(int message, int i0, int i1, int i2, String s0, String s1, GuiObject o
 		else popMenu.addCommand("Show Status Bar", 0, getPublicInt("Cpro.One.TabStatus."+integerToString(tabID), 1), 0);
 		
 		if(tabID==5) popMenu.addCommand("Auto Close Tab", 1, 1, 1);
-		else if(tabID==WIDGET_TAB_ID) popMenu.addCommand("Auto Close Tab", 1, 0, 1);
+		//else if(tabID==WIDGET_TAB_ID) popMenu.addCommand("Auto Close Tab", 1, 0, 1);
 		else popMenu.addCommand("Auto Close Tab", 1, getPublicInt("Cpro.One.TabAutoClose."+integerToString(tabID), 0), 0);
 		// @martin here is the publicint set.. hide tab if int == 1... remember widgets cant hide... 
 		//not going to add the previous submenu where you can enable things again..

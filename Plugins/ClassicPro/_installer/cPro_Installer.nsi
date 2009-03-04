@@ -16,15 +16,16 @@
 	!define CPRO_BUILD "0"
 	!define /Date CPRO_DATE "%Y-%m-%d"
 	!define CPRO_BT "http://cpro.skinconsortium.com"
-	!define CPRO_WEB_PAGE "http://cpro.skinconsortium.com/"
+	!define CPRO_WEB_PAGE "http://cpro.skinconsortium.com"
+	!define CPRO_HELP_LINK "http://forums.skinconsortium.com/"
 	!define CPRO_AUTHOR "Skin Consortium"
 	!define CPRO_COMPANY "Skin Consortium"
 	!define CPRO_COPYRIGHT "Copyright (c) 2005-2009"	
 	!define CPRO_UNINSTALLER "Uninstall ClassicPro"	
 	!define CPRO_WINAMP_VERSION "5.55"
-	!define CPRO_WINAMP_SKINS "C:\Program Files\WinampBeta\Skins" ; change to compile properly
-	!define CPRO_WINAMP_SYSTEM "C:\Program Files\WinampBeta\System"	; change to compile properly
-	!define CPRO_OUTFILE_PATH "C:\Users\Pawel\Pulpit"	; change to compile properly	
+	!define CPRO_WINAMP_SKINS "C:\Program Files (x86)\Winamp\Skins" ; change to compile properly
+	!define CPRO_WINAMP_SYSTEM "C:\Program Files (x86)\Winamp\System"	; change to compile properly
+	!define CPRO_OUTFILE_PATH "C:\Users\Pieter\Desktop"	; change to compile properly	
 ;Unselect when release version
 	!define CPRO_BETA "- Beta"
 	
@@ -45,6 +46,9 @@
 	SetCompressor /SOLID lzma
 	Caption "$(CPro_Caption)"
 	BrandingText "${CPRO_BT}"
+
+	InstType $(CPro_Full)     																		   ;1
+	InstType $(CPro_Minimal)
 	
 	ReserveFile "Plugins\Linker.dll"
 	
@@ -241,7 +245,41 @@
 ; Insert function as an installer and uninstaller function.
 	!insertmacro SharedPath ""
 	!insertmacro SharedPath "un."
-		
+	
+!macro SharedWinamp un
+  
+Function ${un}CloseWinamp
+
+	Push $5
+	FindWindow $5 "Winamp v1.x"
+	IntCmp $5 0 NoWinamp
+		DetailPrint "$(CPro_Running_Winamp)"
+		MessageBox MB_OK|MB_ICONEXCLAMATION "$(CPro_Close_Winamp)"  
+		loop:
+			FindWindow $5 "Winamp v1.x"
+			IntCmp $5 0 NoMoreWinampToKill
+			DetailPrint "$(CPro_Closing_Winamp)"			
+				SendMessage $5 16 0 0
+				Sleep 100
+				Goto loop
+			NoMoreWinampToKill:
+				DetailPrint "$(CPro_No_More_Winamp)"
+				GoTo AllKilled
+	NoWinamp:	
+		DetailPrint "$(CPro_No_Winamp)"
+	AllKilled:	
+	Pop $5
+
+FunctionEnd
+
+!macroend
+
+; Insert function as an installer and uninstaller function.
+!insertmacro SharedWinamp ""
+!insertmacro SharedWinamp "un."
+	
+	
+	
 Function .onInit
 
 ;Language
@@ -249,10 +287,10 @@ Function .onInit
    
 	InitPluginsDir
 
-	File /oname=$PLUGINSDIR\splash.bmp "Images\logo.bmp"
-	advsplash::show 1000 600 400 0x04025C $PLUGINSDIR\splash
-	Pop $0 
-	Delete "$PLUGINSDIR\splash.bmp"
+;	File /oname=$PLUGINSDIR\splash.bmp "Images\logo.bmp"
+;	advsplash::show 1000 600 400 0x04025C $PLUGINSDIR\splash
+;	Pop $0 
+;	Delete "$PLUGINSDIR\splash.bmp"
 		
 ; Finish Page  Variables
 	Var /Global Dialog
@@ -271,9 +309,6 @@ Function .onInit
 	File /oname=$PLUGINSDIR\PayPal.bmp "Images\donate.bmp"
 	File /oname=$PLUGINSDIR\Img_Left.bmp "Images\win.bmp"
 	
-	DetailPrint "$(CPro_Winamp_Path)"
-		Call MultiUser_Path
-		
 FunctionEnd
 
 Function onGUIInit
@@ -293,11 +328,9 @@ FunctionEnd
 
 Function .onVerifyInstDir
 
-!ifndef WINAMP_AUTOINSTALL
 	IfFileExists $INSTDIR\Winamp.exe Good
 		Abort
 	Good:
-!endif ; WINAMP_AUTOINSTALL
 
 FunctionEnd
 
@@ -410,13 +443,23 @@ FunctionEnd
 ;#											INSTALLER  SECTIONS 
 ;###########################################################################################
 
+Section "-Pre"
+
+	DetailPrint "$(CPro_Winamp_Path)"
+		Call MultiUser_Path
+
+	DetailPrint "$(CPro_Check_Winamp)"
+		Call CloseWinamp
+		
+SectionEnd
+
 Section "$(CProFiles)" "Sec_CProFiles"
 
 	!ifdef WINAMP_AUTOINSTALL
 		Call MakeSureIGotWinamp
 	!endif
 
-	SectionIn RO
+	SectionIn 1 2 RO
 ;Main directory	
 	SetOutPath $INSTDIR\Plugins\ClassicPro
 		File "..\*.txt"
@@ -527,7 +570,7 @@ Section "$(CProFiles)" "Sec_CProFiles"
 ;		File /nonfatal "..\engine\flex\xml\*.xml"
 
 ;	SetOutPath $INSTDIR\System
-;		File /nonfatal "${CPRO_WINAMP_SYSTEM}\ClassicProFlex.w5s"
+		File /nonfatal "${CPRO_WINAMP_SYSTEM}\ClassicProFlex.w5s"
 
 ;	SetOutPath "$INSTDIR\Skins\cProFlex - iFlex"
 ;		File /nonfatal /r "${CPRO_WINAMP_SKINS}\cProFlex - iFlex\"
@@ -550,7 +593,8 @@ SectionEnd
 SectionGroup "$(CProCustom)" Sec_CProCustom
 
 	Section "$(cPlaylistPro)" Sec_cPlaylistPro
-	
+		
+		SectionIn 1 2 RO	
 		SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\PlaylistPro
 			File "..\engine\xui\PlaylistPro\*.xml"
 			File "..\engine\xui\PlaylistPro\*.m"
@@ -564,6 +608,8 @@ SectionGroup "$(WidgetsSection)" Sec_WidgetsSection
 
 	Section "$(wBrowserPro)" Sec_wBrowserPro
 
+		SectionIn 1
+		
 		SetOutPath "$INSTDIR\Plugins\ClassicPro\engine\widgets\Load"
 			File "..\engine\widgets\Load\browserpro.xml"
  
@@ -585,7 +631,8 @@ SectionGroup "$(WidgetsSection)" Sec_WidgetsSection
 	SectionEnd
 
 	Section "$(wAlbumArt)" Sec_wAlbumArt
-
+	
+		SectionIn 1
 		SetOutPath "$INSTDIR\Plugins\ClassicPro\engine\widgets\Load"
 			File "..\engine\widgets\Load\nowplaying.xml"
 
@@ -599,11 +646,33 @@ SectionGroup "$(WidgetsSection)" Sec_WidgetsSection
 
 SectionGroupEnd
 
-Section "-EndSection"
+Section "-Leave"
+
+; Registry entries
+	WriteRegStr "HKLM" "Software\Microsoft\Windows\CurrentVersion\Uninstall\${CPRO_NAME}" "UninstallString" '"$INSTDIR\${CPRO_UNINSTALLER}.exe"'
+	WriteRegStr "HKLM" "Software\Microsoft\Windows\CurrentVersion\Uninstall\${CPRO_NAME}" "InstallLocation" "$INSTDIR"
+	WriteRegStr "HKLM" "Software\Microsoft\Windows\CurrentVersion\Uninstall\${CPRO_NAME}" "DisplayName" "${CPRO_NAME}${CPRO_CRS} v${CPRO_VERSION}"
+	WriteRegStr "HKLM" "Software\Microsoft\Windows\CurrentVersion\Uninstall\${CPRO_NAME}" "DisplayIcon" "$INSTDIR\Plugins\ClassicPro\_installer\Images\icon.ico" ;"$INSTDIR\Winamp.exe,0"
+	WriteRegStr "HKLM" "Software\Microsoft\Windows\CurrentVersion\Uninstall\${CPRO_NAME}" "DisplayVersion" "${CPRO_VERSION}"
+	WriteRegStr "HKLM" "Software\Microsoft\Windows\CurrentVersion\Uninstall\${CPRO_NAME}" "URLInfoAbout" "${CPRO_WEB_PAGE}"
+	WriteRegStr "HKLM" "Software\Microsoft\Windows\CurrentVersion\Uninstall\${CPRO_NAME}" "HelpLink" ${CPRO_HELP_LINK} 
+	WriteRegStr "HKLM" "Software\Microsoft\Windows\CurrentVersion\Uninstall\${CPRO_NAME}" "Publisher" "${CPRO_COMPANY}"
+	WriteRegDWORD "HKLM" "Software\Microsoft\Windows\CurrentVersion\Uninstall\${CPRO_NAME}" "NoModify" "1"
+	WriteRegDWORD "HKLM" "Software\Microsoft\Windows\CurrentVersion\Uninstall\${CPRO_NAME}" "NoRepair" "1"
+
+; Menu Start entries	
+	SetShellVarContext all
+		CreateDirectory "$SMPROGRAMS\Winamp\${CPRO_NAME}"
+		CreateShortCut "$SMPROGRAMS\Winamp\${CPRO_NAME}\$(CPro_MenuStart1).lnk" "$INSTDIR\${CPRO_UNINSTALLER}.exe"
+		CreateShortCut "$SMPROGRAMS\Winamp\${CPRO_NAME}\$(CPro_MenuStart2).lnk" "$INSTDIR\Plugins\ClassicPro\Whats new.txt"
+		CreateShortCut "$SMPROGRAMS\Winamp\${CPRO_NAME}\$(CPro_MenuStart3).lnk" "${CPRO_WEB_PAGE}"
+	SetShellVarContext current
 
 ;Create uninstaller
 	WriteUninstaller "$INSTDIR\${CPRO_UNINSTALLER}.exe"
-
+	
+	SetAutoClose false
+	
 SectionEnd
 
 ;###########################################################################################
@@ -628,9 +697,12 @@ SectionEnd
 Function un.onInit
 
 	!insertmacro MUI_LANGDLL_DISPLAY
+	
 	DetailPrint "$(CPro_Winamp_Path)"
 		Call un.MultiUser_Path	
 		
+	DetailPrint "$(CPro_Check_Winamp)"
+		Call un.CloseWinamp		
 FunctionEnd
 
 Section "-Un.Uninstall"
@@ -641,6 +713,12 @@ Section "-Un.Uninstall"
 		FlushINI "$MultiPath\winamp.ini"	
 	RMDir /r "$INSTDIR\Plugins\ClassicPro"
 	Delete "$INSTDIR\Skins\cPro__Bento.wal"
+	
+	SetShellVarContext all
+		RMDir /r "$SMPROGRAMS\Winamp\${CPRO_NAME}"
+	SetShellVarContext current
+	
+	DeleteRegKey HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${CPRO_NAME}"	
 	Delete /REBOOTOK "$INSTDIR\${CPRO_UNINSTALLER}.exe"
 	
 SectionEnd
