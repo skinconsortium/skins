@@ -1,4 +1,4 @@
-<!-- ClassicPro v1.1 Official Translation : 22-Feb-2009 -->
+<!-- ClassicPro v1.1 Official Translation : 5-Mar-2009 -->
 <!-- Copy and paste this language strings to wasabi.xml, from Winamp language pack-->
 
 	<!-- Generic -->
@@ -45,18 +45,6 @@
 	<translation from="Explore Folder" to="Happy Explore Folder" />
 	<translation from="Show Quick Playlist" to="Happy Show Quick Playlist" />
 	<translation from="Change Color Theme" to="Happy Change Color Theme" />
-	<!--Widgets :: Skin Chooser -->
-	<translation from="Skin Chooser" to="Happy Skin Chooser" />
-	<translation from="Switch to Skin" to="Happy Switch to Skin" />		
-	<translation from="Switch to selected skin" to="Happy Switch to selected skin" />
-	<translation from="Remove selected skin from list" to="Happy Remove selected skin from list" />
-	<translation from="Clear all skins from list" to="Happy Clear all skins from list" />
-	<translation from="Get more ClassicPro skins" to="Happy Get more ClassicPro skins" />		
-	<translation from="Switch to this skin" to="Happy Switch to this skin" />		
-	<translation from="Remove from list" to="Happy Remove from list" />				
-	<translation from="Type" to="Happy Type" />
-	<translation from="Name" to="Happy Name" />
-	<translation from="Zipped" to="Happy Zipped" />
 	<!--Widgets :: BrowserPro -->
 	<translation from="Select your service" to="Happy Select your service" />
 	<!--Widgets :: Now Playing -->

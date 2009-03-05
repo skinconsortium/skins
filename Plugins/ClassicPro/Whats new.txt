@@ -6,6 +6,7 @@ Version 1.1 (15 Feb 2009)
 - New: BrowserPro v2.0 widget bundled (now have its own tab!)
 - New: Now fully translateable!
 - New: More powerfull ClassicPro.xml for skinners ;)
+- New: Installer is now translated too! 
 - Improved: Cleaned SUI code and separated the tab code
 - Improved: Web browser now also have a window menu entry and shortcut
 - Improved: You can scroll through the mini area too (hover over mini select and mousewheel)
