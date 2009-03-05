@@ -14,6 +14,7 @@
 	!define CPRO_VERSION "1.1"
 	!define CPRO_REVISION "0"
 	!define CPRO_BUILD "0"
+	!define CPRO_PAYPAL_LINK "https://www.paypal.com/uk/cgi-bin/webscr?cmd=_flow&SESSION=lbtyhrWugcvcf_QcrMnTrArKKiT3DcYJbH-_gFqC8-fXZNwJ4ibp2UbTunS&dispatch=5885d80a13c0db1fa798f5a5f5ae42e779d4b5655493f6171509c5b2ec019b86"	
 	!define /Date CPRO_DATE "%Y-%m-%d"
 	!define CPRO_BT "http://cpro.skinconsortium.com"
 	!define CPRO_WEB_PAGE "http://cpro.skinconsortium.com"
@@ -23,9 +24,9 @@
 	!define CPRO_COPYRIGHT "Copyright (c) 2005-2009"	
 	!define CPRO_UNINSTALLER "Uninstall ClassicPro"	
 	!define CPRO_WINAMP_VERSION "5.55"
-	!define CPRO_WINAMP_SKINS "C:\Program Files (x86)\Winamp\Skins" ; change to compile properly
-	!define CPRO_WINAMP_SYSTEM "C:\Program Files (x86)\Winamp\System"	; change to compile properly
-	!define CPRO_OUTFILE_PATH "C:\Users\Pieter\Desktop"	; change to compile properly	
+	!define CPRO_WINAMP_SKINS "C:\Program Files\WinampBeta\Skins" ; change to compile properly
+	!define CPRO_WINAMP_SYSTEM "C:\Program Files\WinampBeta\System"	; change to compile properly
+	!define CPRO_OUTFILE_PATH "C:\Users\Pawel\Pulpit"	; change to compile properly	
 ;Unselect when release version
 	!define CPRO_BETA "- Beta"
 	
@@ -78,12 +79,12 @@
 
 	DirText "$(CPro_DirText)"
 	!define MUI_CUSTOMFUNCTION_GUIINIT onGUIInit
-	!define MUI_LANGDLL_WINDOWTITLE $(Language_Title)
-	!define MUI_LANGDLL_INFO $(Language_Text)
+	!define MUI_LANGDLL_WINDOWTITLE $(CPro_Language_Title)
+	!define MUI_LANGDLL_INFO $(CPro_Language_Text)
 	!define MUI_FINISHPAGE_TITLE_3LINES
 	!define MUI_WELCOMEPAGE_TITLE_3LINES
-	!define MUI_WELCOMEPAGE_TITLE $(Welcome_Title)
-	!define MUI_WELCOMEPAGE_TEXT $(Welcome_Text)
+	!define MUI_WELCOMEPAGE_TITLE $(CPro_Welcome_Title)
+	!define MUI_WELCOMEPAGE_TEXT $(CPro_Welcome_Text)
 	!define MUI_HEADERIMAGE_RIGHT
 	!define MUI_HEADERIMAGE
 	!define MUI_HEADERIMAGE_BITMAP "Images\header.bmp"
@@ -106,8 +107,8 @@
 
 ;Uninstaller pages	
 	!define MUI_WELCOMEPAGE_TITLE_3LINES
-	!define MUI_WELCOMEPAGE_TITLE $(Un_Welcome_Title)
-	!define MUI_WELCOMEPAGE_TEXT $(Un_Welcome_Text)
+	!define MUI_WELCOMEPAGE_TITLE $(CPro_Un_Welcome_Title)
+	!define MUI_WELCOMEPAGE_TEXT $(CPro_Un_Welcome_Text)
 	!insertmacro MUI_UNPAGE_WELCOME
 	!insertmacro MUI_UNPAGE_CONFIRM	
 	!insertmacro MUI_UNPAGE_INSTFILES
@@ -361,7 +362,7 @@ Function CreateFinishPage
 	${NSD_SetImage} $Img_Left $PLUGINSDIR\Img_Left.bmp $Img_Handle_Left
 	
 ;First label
-	${NSD_CreateLabel} 115u 20u 63% 30u "$(FinishPage_1)"
+	${NSD_CreateLabel} 115u 20u 63% 30u "$(CPro_FinishPage_1)"
 	Pop $Label1
 	${NSD_AddStyle} $Label1 ${WS_VISIBLE}|${WS_CHILD}|${WS_CLIPSIBLINGS}
 	CreateFont $Label1_Font "TAHOMA" "14" "700"
@@ -369,7 +370,7 @@ Function CreateFinishPage
     SetCtlColors $Label1 "0x000000" "TRANSPARENT"
 	
 ; Second label
-	${NSD_CreateLabel} 115u 60u 63% 30u "$(FinishPage_2)"
+	${NSD_CreateLabel} 115u 60u 63% 30u "$(CPro_FinishPage_2)"
 	Pop $Label2
 	${NSD_AddStyle} $Label2 ${WS_VISIBLE}|${WS_CHILD}|${WS_CLIPSIBLINGS}
     SetCtlColors $Label2 "0x000000" "TRANSPARENT"	
@@ -384,24 +385,24 @@ Function CreateFinishPage
 	${NSD_OnClick} $Button Button_Click		
 
 ; Third label
-	${NSD_CreateLabel} 160u 100u 50% 30u "$(FinishPage_3)"
+	${NSD_CreateLabel} 160u 100u 50% 30u "$(CPro_FinishPage_3)"
 	Pop $Label3
 	${NSD_AddStyle} $Label3 ${WS_VISIBLE}|${WS_CHILD}|${WS_CLIPSIBLINGS}
     SetCtlColors $Label3 "0x000000" "TRANSPARENT"
 
 ; Fourth label
-	${NSD_CreateLabel} 115u 150u 63% 10u "$(FinishPage_4)"
+	${NSD_CreateLabel} 115u 150u 63% 10u "$(CPro_FinishPage_4)"
 	Pop $Label4
 	${NSD_AddStyle} $Label4 ${WS_VISIBLE}|${WS_CHILD}|${WS_CLIPSIBLINGS}
     SetCtlColors $Label4 "0x000000" "TRANSPARENT"	
 
 ; CheckBox 1
-	${NSD_CreateCheckBox} 115u 160u 65% 10u "$(FinishPage_5)"
+	${NSD_CreateCheckBox} 115u 160u 65% 10u "$(CPro_FinishPage_5)"
 	Pop $CheckBox1
     SetCtlColors $CheckBox1 "0x000000" "0xFFFFFF"
 	
 ; CheckBox 2
-	${NSD_CreateCheckBox} 115u 173u 65% 10u "$(FinishPage_6)"
+	${NSD_CreateCheckBox} 115u 173u 65% 10u "$(CPro_FinishPage_6)"
 	Pop $CheckBox2	
     SetCtlColors $CheckBox2 "0x000000" "0xFFFFFF"	
 	
@@ -409,7 +410,7 @@ Function CreateFinishPage
 	${NSD_Check} $CheckBox2	
 
 	GetDlgItem $R0 $HWNDPARENT 1
-	SendMessage $R0 ${WM_SETTEXT} 0 "STR:$(FinishPage_7)"
+	SendMessage $R0 ${WM_SETTEXT} 0 "STR:$(CPro_FinishPage_7)"
 	
 	nsDialogs::Show
 	${NSD_FreeImage} $Img_Handle_Left
@@ -419,7 +420,7 @@ FunctionEnd
 Function Button_Click
 
 	Pop $0
-	ExecShell "open" "$(FinishPage_8)"
+	ExecShell "open" "${CPro_PayPal_Link}"
 
 FunctionEnd
 
@@ -432,7 +433,7 @@ Function CheckFinishPage
 	
 	${NSD_GetState} $CheckBox2 $Checkbox_State
 	${If} $Checkbox_State = ${BST_CHECKED}
-		ExecShell "open" "$INSTDIR\winamp.exe" ;"$INSTDIR\Skins\cPro__Bento.wal"
+		ExecShell "open" "$INSTDIR\winamp.exe"
 		
 	${EndIf}
 	
@@ -453,11 +454,7 @@ Section "-Pre"
 		
 SectionEnd
 
-Section "$(CProFiles)" "Sec_CProFiles"
-
-	!ifdef WINAMP_AUTOINSTALL
-		Call MakeSureIGotWinamp
-	!endif
+Section "$(CPro_CProFiles)" "CPro_Sec_CProFiles"
 
 	SectionIn 1 2 RO
 ;Main directory	
@@ -570,7 +567,7 @@ Section "$(CProFiles)" "Sec_CProFiles"
 ;		File /nonfatal "..\engine\flex\xml\*.xml"
 
 ;	SetOutPath $INSTDIR\System
-		File /nonfatal "${CPRO_WINAMP_SYSTEM}\ClassicProFlex.w5s"
+;		File /nonfatal "${CPRO_WINAMP_SYSTEM}\ClassicProFlex.w5s"
 
 ;	SetOutPath "$INSTDIR\Skins\cProFlex - iFlex"
 ;		File /nonfatal /r "${CPRO_WINAMP_SKINS}\cProFlex - iFlex\"
@@ -590,9 +587,9 @@ Section "$(CProFiles)" "Sec_CProFiles"
  
 SectionEnd
 
-SectionGroup "$(CProCustom)" Sec_CProCustom
+SectionGroup "$(CPro_CProCustom)" CPro_Sec_CProCustom
 
-	Section "$(cPlaylistPro)" Sec_cPlaylistPro
+	Section "$(CPro_cPlaylistPro)" CPro_Sec_cPlaylistPro
 		
 		SectionIn 1 2 RO	
 		SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\PlaylistPro
@@ -604,9 +601,9 @@ SectionGroup "$(CProCustom)" Sec_CProCustom
 	
 SectionGroupEnd
 
-SectionGroup "$(WidgetsSection)" Sec_WidgetsSection
+SectionGroup "$(CPro_WidgetsSection)" CPro_Sec_WidgetsSection
 
-	Section "$(wBrowserPro)" Sec_wBrowserPro
+	Section "$(CPro_wBrowserPro)" CPro_Sec_wBrowserPro
 
 		SectionIn 1
 		
@@ -630,7 +627,7 @@ SectionGroup "$(WidgetsSection)" Sec_WidgetsSection
 
 	SectionEnd
 
-	Section "$(wAlbumArt)" Sec_wAlbumArt
+	Section "$(CPro_wAlbumArt)" CPro_Sec_wAlbumArt
 	
 		SectionIn 1
 		SetOutPath "$INSTDIR\Plugins\ClassicPro\engine\widgets\Load"
@@ -680,12 +677,12 @@ SectionEnd
 ;###########################################################################################
 
 	!insertmacro MUI_FUNCTION_DESCRIPTION_BEGIN
-		!insertmacro MUI_DESCRIPTION_TEXT ${Sec_CProFiles} $(Desc_CProFiles)
-		!insertmacro MUI_DESCRIPTION_TEXT ${Sec_wBrowserPro} $(Desc_wBrowserPro)
-		!insertmacro MUI_DESCRIPTION_TEXT ${Sec_wAlbumArt} $(Desc_wAlbumArt)
-		!insertmacro MUI_DESCRIPTION_TEXT ${Sec_WidgetsSection} $(Desc_WidgetsSection)
-		!insertmacro MUI_DESCRIPTION_TEXT ${Sec_CProCustom} $(Desc_CProCustom)
-		!insertmacro MUI_DESCRIPTION_TEXT ${Sec_cPlaylistPro} $(Desc_cPlaylistPro)
+		!insertmacro MUI_DESCRIPTION_TEXT ${CPro_Sec_CProFiles} $(CPro_Desc_CProFiles)
+		!insertmacro MUI_DESCRIPTION_TEXT ${CPro_Sec_wBrowserPro} $(CPro_Desc_wBrowserPro)
+		!insertmacro MUI_DESCRIPTION_TEXT ${CPro_Sec_wAlbumArt} $(CPro_Desc_wAlbumArt)
+		!insertmacro MUI_DESCRIPTION_TEXT ${CPro_Sec_WidgetsSection} $(CPro_Desc_WidgetsSection)
+		!insertmacro MUI_DESCRIPTION_TEXT ${CPro_Sec_CProCustom} $(CPro_Desc_CProCustom)
+		!insertmacro MUI_DESCRIPTION_TEXT ${CPro_Sec_cPlaylistPro} $(CPro_Desc_cPlaylistPro)
 	!insertmacro MUI_FUNCTION_DESCRIPTION_END
 
 ;###########################################################################################
