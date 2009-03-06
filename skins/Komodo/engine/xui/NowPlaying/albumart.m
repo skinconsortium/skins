@@ -42,10 +42,12 @@ doMyMenu(int x, int y){
 }
 
 AlbumArt.onLeftButtonDblClk (int x, int y){
-	openMyFolder();
+	doMyMenu(x, y);
+	//openMyFolder();
 }
 AlbumArt2.onLeftButtonDblClk (int x, int y){
-	openMyFolder();
+	doMyMenu(x, y);
+	//openMyFolder();
 }
 openMyFolder(){
 	System.navigateUrl(getPath(getPlayItemMetaDataString("filename")));

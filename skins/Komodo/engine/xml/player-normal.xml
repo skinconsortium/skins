@@ -9,10 +9,9 @@
 		image="player.main.rev" 
 		downimage="player.main.revd"
 		rectrgn="1"
-		hoverImage="player.main.rev"
 		tooltip="Prev Track"/>
-	<layer id="player.main.revd" image="player.main.revd"  x="0" y="0" ghost="1"/>
-	<script file="@SKINSPATH@Komodo\engine\scripts\hoverglow.maki" param="Rev,player.main.revd"/>
+	<!--layer id="player.main.revd" image="player.main.revd"  x="0" y="0" ghost="1"/>
+	<script file="@SKINSPATH@Komodo\engine\scripts\hoverglow.maki" param="Rev,player.main.revd"/-->
 	
 	<button 
 		id="Eject"
@@ -21,18 +20,17 @@
 		image="player.main.eject"
 		downimage="player.main.ejectd"
 		rectrgn="1"
-		hoverImage="player.main.eject"
 		tooltip="Get Song"/>
-	<layer id="player.main.ejectd" image="player.main.ejectd" x="47" y="0" ghost="1"/>
-	<script file="@SKINSPATH@Komodo\engine\scripts\hoverglow.maki" param="Eject,player.main.ejectd"/>
+	<!--layer id="player.main.ejectd" image="player.main.ejectd" x="47" y="0" ghost="1"/>
+	<script file="@SKINSPATH@Komodo\engine\scripts\hoverglow.maki" param="Eject,player.main.ejectd"/-->
 
-	<button id="play.button" x="93" y="0"  action="PLAY" image="player.main.play" hoverImage="player.main.play" downImage="player.main.playd" tooltip="Play"/>
-	<button id="pause.button" x="93" y="0"  action="PAUSE" image="player.main.Pause" hoverImage="player.main.Pause" downImage="player.main.Paused" tooltip="Pause"/>
+	<button id="play.button" x="93" y="0"  action="PLAY" image="player.main.play" downImage="player.main.playd" tooltip="Play"/>
+	<button id="pause.button" x="93" y="0"  action="PAUSE" image="player.main.Pause" downImage="player.main.Paused" tooltip="Pause"/>
 	<script file="@SKINSPATH@Komodo\engine\scripts\sc_PlayPause.maki" param="play.button;pause.button"/>
-	<layer id="player.main.playd" image="player.main.playd"  x="93" y="0" ghost="1"/>
+	<!--layer id="player.main.playd" image="player.main.playd"  x="93" y="0" ghost="1"/>
 	<script file="@SKINSPATH@Komodo\engine\scripts\hoverglow.maki" param="play.button,player.main.playd"/>
 	<layer id="player.main.Paused" image="player.main.Paused"  x="93" y="0" ghost="1"/>
-	<script file="@SKINSPATH@Komodo\engine\scripts\hoverglow.maki" param="pause.button,player.main.Paused"/>
+	<script file="@SKINSPATH@Komodo\engine\scripts\hoverglow.maki" param="pause.button,player.main.Paused"/-->
 	
 	<button 
 		id="Stop"
@@ -41,10 +39,9 @@
 		image="player.main.stop"  
 		downimage="player.main.stopd"
 		rectrgn="1"
-		hoverImage="player.main.stop"
 		tooltip="Stop"/>
-	<layer id="player.main.stopd" image="player.main.stopd" x="139" y="0"  ghost="1"/>
-	<script file="@SKINSPATH@Komodo\engine\scripts\hoverglow.maki" param="Stop,player.main.stopd"/>
+	<!--layer id="player.main.stopd" image="player.main.stopd" x="139" y="0"  ghost="1"/>
+	<script file="@SKINSPATH@Komodo\engine\scripts\hoverglow.maki" param="Stop,player.main.stopd"/-->
 	
 	<button 
 		id="Next"
@@ -53,10 +50,9 @@
 		image="player.main.forward"
 		downimage="player.main.forwardd"
 		rectrgn="1"
-		hoverImage="player.main.forward"
 		tooltip="Next Track"/>
-	<layer id="player.main.forwardd" image="player.main.forwardd" x="185" y="0"  ghost="1"/>
-	<script file="@SKINSPATH@Komodo\engine\scripts\hoverglow.maki" param="Next,player.main.forwardd"/>
+	<!--layer id="player.main.forwardd" image="player.main.forwardd" x="185" y="0"  ghost="1"/>
+	<script file="@SKINSPATH@Komodo\engine\scripts\hoverglow.maki" param="Next,player.main.forwardd"/-->
 
 </groupdef>
 
@@ -101,13 +97,13 @@
 
 <groupdef id="player.main.cms" name="now playing" w="0" h="0" relatw="1" relath="1">
 	<VisAnim id="visanim.left"
-		x="10" y="55" w="22" h="84" relatx="2" relaty="2" relatw="2"
+		x="14" y="55" w="18" h="84" relatx="2" relaty="2" relatw="2"
 		image="player.main.visanim" speed="50"
 		numbars="auto" framewidth="3" frameheight="84" spacer="1"/>
 	/>
 
 	<VisAnim id="visanim.right"
-		x="70" y="55" w="22" h="84" relatx="2" relaty="2" relatw="2"
+		x="70" y="55" w="18" h="84" relatx="2" relaty="2" relatw="2"
 		image="player.main.visanim" speed="50" mirror="1"
 		numbars="auto" framewidth="3" frameheight="84" spacer="1"/>
 	/>
@@ -802,6 +798,7 @@
 	<group id="player.overlay" fitparent="1"/>
 	
 	<include file="@SKINPATH@overrides.xml"/>
+	
 </layout>
 
 
