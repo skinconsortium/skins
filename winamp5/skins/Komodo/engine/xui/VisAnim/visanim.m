@@ -101,12 +101,14 @@ scriptGroup.onResize(int x, int y, int w, int h) {
 visRefresh.onTimer() {
 	int c, numframes = 1, newframe,currframe;
 	animatedlayer currAnim;
+	int numobj = scriptGroup.getNumObjects();
 	
 	if (animID == "") return;
 	
 	for (c=0; c<numbars; c++) {
 		currAnim = NULL;
-		currAnim = scriptGroup.getObject("anim"+integertostring(c));
+		if (c < numobj)
+			currAnim = scriptGroup.enumObject(c);
 		if (!currAnim) {
 			currAnim = new animatedlayer;
 			

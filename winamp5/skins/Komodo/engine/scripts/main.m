@@ -80,8 +80,7 @@ System.onScriptLoaded() {
 	configItem item = Config.getItem("Playlist editor");
 	attrRepeat = item.getAttribute("repeat");
 	attrShuffle = item.getAttribute("shuffle");
-	
-	
+		
 	NowPlayingGroup = main.findObject("player.main.cms");
 	VISGroup = main.findObject("player.main.vis");
 	AVSHolder = VISGroup.findObject("wndhlr.avs");

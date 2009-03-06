@@ -27,7 +27,7 @@
 <groupdef id="sc.nowplaying.cdbox.holder">
 	<group id="sc.nowplaying.cdbox" x="20" y="20" w="300" h="300" move="0"/>
 	
-	<layer id="sc.nowplaying.shadow" image="sc.cdbox.shadow" x="10" y="150" w="300" h="300"/>
+	<layer id="sc.nowplaying.shadow" image="sc.cdbox.shadow" x="10" y="150" w="300" h="300" ghost="1"/>
 	
 	<group id="sc.nowplaying.bg.ref" x="20" y="310" w="300" h="300"/>
 	<group id="sc.nowplaying.cdbox.reflection" x="20" y="310" w="300" h="300"/>
