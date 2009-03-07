@@ -994,6 +994,8 @@ drawerResize.onMouseMove(int x, int y){
 	if(dmr_down){
 		int t = y-xuiGroup.getHeight()-xuiGroup.getTop();
 		if(t<-xuiGroup.getHeight()+120) t=-xuiGroup.getHeight()+120;
+		
+		if(getPublicInt("cPro.lastDrawer", 0)==0) return;
 		setDrawerSizeSave(t);
 	}
 }
