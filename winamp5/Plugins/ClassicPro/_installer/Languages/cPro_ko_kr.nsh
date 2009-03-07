@@ -40,8 +40,8 @@
 	
 ; Installer sections
 	LangString CPro_CProFiles ${LANG_KOREAN} "ClassicPro Engine"
-	LangString CPro_wBrowserPro ${LANG_KOREAN} "BrowserPro v2.0"
-	LangString CPro_wAlbumArt ${LANG_KOREAN} "AlbumArt v1.1"
+	LangString CPro_wBrowserPro ${LANG_KOREAN} "BrowserPro"
+	LangString CPro_wAlbumArt ${LANG_KOREAN} "Now Playing"
 	LangString CPro_WidgetsSection ${LANG_KOREAN} "Widgets"
 	LangString CPro_CProCustom ${LANG_KOREAN} "Components"
 	LangString CPro_cPlaylistPro ${LANG_KOREAN} "Playlist Search"
@@ -49,7 +49,7 @@
 ; Installer sections descriptions	
 	LangString CPro_Desc_CProFiles ${LANG_KOREAN} "This will install all the files that ClassicPro needs to work."
 	LangString CPro_Desc_wBrowserPro ${LANG_KOREAN} "BrowserPro is a widget that will enable your browser to auto navigate to popular websites and explore the playing directory."
-	LangString CPro_Desc_wAlbumArt ${LANG_KOREAN} "AlbumArt is a widget that shows a big cd cover and information about the playing file."
+	LangString CPro_Desc_wAlbumArt ${LANG_KOREAN} "Now Playing is a widget that shows a big cd cover and information about the playing file."
 	LangString CPro_Desc_WidgetsSection ${LANG_KOREAN} "ClassicPro skins support widgets and here you'll find some of them that we decided to bundle with this installer."
 	LangString CPro_Desc_CProCustom ${LANG_KOREAN} "Optional components for ClassicPro."
 	LangString CPro_Desc_cPlaylistPro ${LANG_KOREAN} "Add a search box above your playlist for easy searches in your playlist."
