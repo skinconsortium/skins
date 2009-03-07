@@ -110,7 +110,7 @@
 <groupdef id="centro.components">
 	<group id="centro.componentsheet" x="0" y="0" w="0" h="0" relatw="1" relath="1"/>
 	<group id="centro.multidrawer" x="0" y="-119" w="0" h="119" relaty="1" relatw="1" wantfocus="1" visible="0"/>
-	<rect id="cpro.drawer.resize" x="0" y="-122" w="0" h="6" relaty="1" relatw="1" cursor="IDC_SIZENS" filled="1" alpha="100"/>
+	<layer id="cpro.drawer.resize" x="0" y="-122" w="0" h="6" relaty="1" relatw="1" cursor="IDC_SIZENS" alpha="253" move="0"/>
 </groupdef>
 
 
