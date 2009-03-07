@@ -2,7 +2,7 @@
 
 ; Lang:			Polish
 ; LangID			1045
-; Last udpdated:		24.02.2009
+; Last udpdated:		06.03.2009
 ; Author:			Pawe³ Porwisz
 ; Email:			pawelporwisz@gmail.com
 
@@ -40,8 +40,8 @@
 	
 ; Sekcje instalatora	
 	LangString CPro_CProFiles ${LANG_POLISH} "Silnik ClassicPro"
-	LangString CPro_wBrowserPro ${LANG_POLISH} "Przegl¹darka BrowserPro v2.0"
-	LangString CPro_wAlbumArt ${LANG_POLISH} "Ok³adki albumów AlbumArt v1.1"
+	LangString CPro_wBrowserPro ${LANG_POLISH} "Przegl¹darka BrowserPro"
+	LangString CPro_wAlbumArt ${LANG_POLISH} "Now Playing (Teraz odtwarzane)"
 	LangString CPro_WidgetsSection ${LANG_POLISH} "Wid¿ety"
 	LangString CPro_CProCustom ${LANG_POLISH} "Sk³adniki"
 	LangString CPro_cPlaylistPro ${LANG_POLISH} "Przeszukiwanie listy odtwarzania"
@@ -49,7 +49,7 @@
 ; Opisy sekcji instalatora	
 	LangString CPro_Desc_CProFiles ${LANG_POLISH} "Instalacja wszystkich plików niezbêdnych do pracy ClassicPro."
 	LangString CPro_Desc_wBrowserPro ${LANG_POLISH} "BrowserPro jest wid¿etem umo¿liwiaj¹cym nawigacje do popularnych witryn i katalogu odtwarzanego utworu."
-	LangString CPro_Desc_wAlbumArt ${LANG_POLISH} "AlbumArt jest wid¿etem, który wyœwietla du¿e ok³adki albumów oraz informacje o odtwarzanym utworze."
+	LangString CPro_Desc_wAlbumArt ${LANG_POLISH} "Now Playing jest wid¿etem, który wyœwietla du¿e ok³adki albumów oraz informacje o odtwarzanym utworze."
 	LangString CPro_Desc_WidgetsSection ${LANG_POLISH} "Skórki ClassicPro obs³uguj¹ wid¿ety. Te rozprowadzane z instalatorem ClassicPro, znajdziesz w tej sekcji."
 	LangString CPro_Desc_CProCustom ${LANG_POLISH} "Opcjonalne komponenty dla ClassicPro."
 	LangString CPro_Desc_cPlaylistPro ${LANG_POLISH} "Dodaje pole wyszukiwania nad list¹ odtwarzania, do ³atwego jej przeszukiwania."

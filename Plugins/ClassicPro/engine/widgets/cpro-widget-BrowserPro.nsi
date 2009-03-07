@@ -28,7 +28,7 @@
 	!define CPRO_WIDGET_COMPANY "Skin Consortium"
 	!define CPRO_WIDGET_COPYRIGHT "Copyright (c) 2005-2009"	
 	!define CPRO_WIDGET_UNINSTALLER "Uninstall (${CPRO_WIDGET_NAME})"	
-	!define CPRO_WIDGET_OUTFILE_PATH "C:\Users\Pieter\Desktop"	; change to compile properly	
+	!define CPRO_WIDGET_OUTFILE_PATH "C:\Users\Pawel\Pulpit"	; change to compile properly	
 	
 ;###########################################################################################
 ;#											CONFIGURATION
