@@ -6,11 +6,11 @@
 ;-------------------------------------------------
 ; Change your widget information here
 ;-------------------------------------------------
-!define SOURCEPATH "C:\Program Files (x86)\Winamp\Plugins\classicPro\"
+!define SOURCEPATH "C:\Program Files\Winamp\Plugins\classicPro"
 !define XMLFILENAME "shoutbox.xml"
 !define DATA_FOLDERNAME "Shoutbox"
 !define NSISFILENAME "cpro-widget-Shoutbox.nsi"
-!define WIDGET_VERSION "0.61"
+!define WIDGET_VERSION "0.62"
 !define WIDGET_NAME "Shoutbox"
 
 
