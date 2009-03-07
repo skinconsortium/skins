@@ -8,6 +8,7 @@
 #include <lib/std.mi>
 #include <lib/colormgr.mi>
 #include "../BrowserPro/convert_address.mi"
+#include "../../../lib/ClassicProFile.mi"
 
 Function updateMode(int newMode);
 
@@ -27,7 +28,7 @@ Global int curMode, delay;
 
 Global ColorMgr cm;
 
-#define SHOUTBOX_VERSION "0.6"
+#define SHOUTBOX_VERSION "0.62"
 
 #define MODE_USERNAME 1
 #define MODE_CHAT 2
@@ -71,6 +72,11 @@ system.onScriptLoaded ()
 		ref.setDelay(delay);
 
 	cm = new ColorMgr;
+
+	//debug(brw.messageToJS("hello", "world", 0, 5, 6));
+	/*int h = ClassicProFile.createFile("C:/blah.tzt");
+	ClassicProFile.writeFile(h, "bla\r\nyea");
+	ClassicProFile.closeFile(h);*/
 }
 
 cm.oncolorthemechanged(String newtheme)
@@ -115,6 +121,16 @@ updateMode(int newmode)
 
 parent.onSetVisible (Boolean onoff)
 {
+	if (onoff)
+	{
+		msg.show();
+	}
+	else
+	{
+		msg.hide();
+	}
+	
+	
 	if (onoff && delay > 0)
 	{
 		ref.start();
@@ -245,6 +261,10 @@ trap.onLeftButtonUp (int x, int y)
 
 	complete;
 }
-
-
-
+/*
+brw.messageToMaki(String str1, String str2, int i1, int i2, int i3)
+{
+	debugInt(i3);
+	return "yea";
+}
+*/
