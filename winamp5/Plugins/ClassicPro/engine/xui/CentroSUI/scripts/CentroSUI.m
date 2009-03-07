@@ -993,6 +993,7 @@ drawerResize.onLeftButtonUp(int x, int y){
 drawerResize.onMouseMove(int x, int y){
 	if(dmr_down){
 		int t = y-xuiGroup.getHeight()-xuiGroup.getTop();
+		if(t<-xuiGroup.getHeight()+120) t=-xuiGroup.getHeight()+120;
 		setDrawerSizeSave(t);
 	}
 }
@@ -1006,6 +1007,7 @@ setDrawerSizeSave(int h){
 
 	//these changes will not be saved
 	if(getPublicInt("cPro.lastDrawer", 0)==0) h=-119;
+	//if(getPublicInt("cPro.lastDrawer", 0)==0)  h= xuiGroup.getHeight()-xuiGroup.getTop();
 
 	mainTabsheet.setXmlParam("h", integerToString(h-4));
 	drawer.setXmlParam("y", integerToString(h));
