@@ -28,7 +28,7 @@ Global int curMode, delay;
 
 Global ColorMgr cm;
 
-#define SHOUTBOX_VERSION "0.62"
+#define SHOUTBOX_VERSION "0.63"
 
 #define MODE_USERNAME 1
 #define MODE_CHAT 2
@@ -119,9 +119,22 @@ updateMode(int newmode)
 	curMode = newMode;
 }
 
+parent.onResize (int x, int y, int w, int h)
+{
+	if (h < 1)
+	{
+		msg.hide();
+	}
+	else
+	{
+		msg.show();	
+	}
+}
+
+
 parent.onSetVisible (Boolean onoff)
 {
-	if (onoff)
+	if (onoff && parent.getheight() > 0)
 	{
 		msg.show();
 	}
