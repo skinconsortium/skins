@@ -231,6 +231,8 @@ openDrawer(int drawerNo){
 	}
 
 	setPublicInt("cPro.lastDrawer", drawerNo);
+	cpro_sui.sendAction ("refresh_drawer_h", "", 0, 0, 0, 0);
+	
 }
 
 myGroup.onAction (String action, String param, int x, int y, int p1, int p2, GuiObject source){

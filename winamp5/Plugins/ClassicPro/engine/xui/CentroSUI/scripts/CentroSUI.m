@@ -33,6 +33,7 @@ Function setFrame2(int pos, int h);
 Function gotoPrevMini();
 Function gotoNextMini();
 Function setMiniBG(int mode); //0=normal, 1=tagview
+Function setDrawerSizeSave(int h);
 
 // Main Layout
 Global Container player;
@@ -43,7 +44,7 @@ Global Group xuiGroup;
 Global Group mini_Cover, mini_Video, mini_AVS, mini_SavedPL, mini_TagView;
 Global Button but_miniGoto;
 Global PopUpMenu popMenu;
-Global Boolean mouse_but_miniGoto;
+Global Boolean mouse_but_miniGoto,  dmr_down;
 Global GuiObject gad_Grid;
 Global Layer gadgrid1, gadgrid1a, gadgrid2;
 
@@ -76,7 +77,7 @@ Global GuiObject visRectBg, CproTabs;
 Global Browser xuiBrowser;
 Global Group tabbut_vid, tabbut_avs, tabbut_pl;
 Global Group tab_library, tab_video, tab_avs, tab_Browser, tab_Playlist, tab_Other, tab_Widget;
-Global GuiObject widgetHolder;
+Global GuiObject widgetHolder, drawerResize;
 
 
 System.onScriptLoaded(){
@@ -143,6 +144,7 @@ System.onScriptLoaded(){
 	gadgrid1 = xuiGroup.findObject("centro.bottomleftgrid.1");
 	gadgrid1a = xuiGroup.findObject("centro.bottomleftgrid.1a");
 	gadgrid2 = xuiGroup.findObject("centro.bottomleftgrid.2");
+	drawerResize = xuiGroup.findObject("cpro.drawer.resize");
 
 
 
@@ -220,40 +222,6 @@ System.onSetXuiParam(String param, String value) {
 	if(strlower(param) == "enable_drawer"){
 		setDrawer(stringToInteger(value));
 	}
-}
-setDrawer(boolean onOff){
-	busyWithDrawer=true;
-	boolean dontSave = false;
-
-	if(xuiGroup.getHeight()<DEF_DRAWER_H+90){ //0 = first load... not drawn yet
-		onOff=false;
-		dontSave=true;
-	}
-	if(onOff){
-		drawer.show();
-		mainTabsheet.setXmlParam("h", integerToString(DEF_DRAWER_H*-1-4));
-		tog_drawer.setXmlParam("tooltip", "Close drawer");
-		open_drawer=true;
-	}
-	else{
-		drawer.hide();
-		mainTabsheet.setXmlParam("h", "0");
-		open_drawer=false;
-		tog_drawer.setXmlParam("tooltip", "Open drawer");
-	}
-	tog_drawer.setActivated(open_drawer);
-
-	if(!dontSave){
-		setPublicInt("cPro.draweropened", open_drawer);
-	}
-	busyWithDrawer=false;
-}
-tog_drawer.onToggle(Boolean onoff){
-	setDrawer(onoff);
-}
-
-drawer.onSetVisible(boolean onOff){
-	if(!busyWithDrawer) setDrawer(getPublicInt("cPro.draweropened", 0));
 }
 
 System.onOpenUrl(string url){
@@ -811,6 +779,9 @@ xuiGroup.onAction (String action, String param, int x, int y, int p1, int p2, Gu
 		widgetStatus=x;
 		updateCompStatus();
 	}
+	else if(strlower(action) == "refresh_drawer_h"){
+		setDrawerSizeSave(getPublicInt("ClassicPro.drawer.h", -119));
+	}
 }
 
 //Main Frame code
@@ -960,4 +931,84 @@ ssWinHol.onTimer(){
 	delayStart=false;
 	ssWinHol.stop();
 	openTabNo(delayStartTab);
+}
+
+
+
+
+
+
+
+
+
+setDrawer(boolean onOff){
+	busyWithDrawer=true;
+	boolean dontSave = false;
+
+	//if(xuiGroup.getHeight()<DEF_DRAWER_H+90){ //0 = first load... not drawn yet
+	if(xuiGroup.getHeight()<drawer.getHeight()+90){ //0 = first load... not drawn yet
+		onOff=false;
+		dontSave=true;
+	}
+	if(onOff){
+		drawer.show();
+		drawerResize.show();
+		//mainTabsheet.setXmlParam("h", integerToString(DEF_DRAWER_H*-1-4));
+		setDrawerSizeSave(getPublicInt("ClassicPro.drawer.h", -119));
+		tog_drawer.setXmlParam("tooltip", "Close drawer");
+		open_drawer=true;
+	}
+	else{
+		drawer.hide();
+		drawerResize.hide();
+		mainTabsheet.setXmlParam("h", "0");
+		open_drawer=false;
+		tog_drawer.setXmlParam("tooltip", "Open drawer");
+	}
+	tog_drawer.setActivated(open_drawer);
+
+	if(!dontSave){
+		setPublicInt("cPro.draweropened", open_drawer);
+	}
+	busyWithDrawer=false;
+}
+tog_drawer.onToggle(Boolean onoff){
+	setDrawer(onoff);
+}
+
+drawer.onSetVisible(boolean onOff){
+	if(!busyWithDrawer) setDrawer(getPublicInt("cPro.draweropened", 0));
+}
+
+
+
+
+
+drawerResize.onLeftButtonDown(int x, int y){
+	dmr_down=true;
+}
+drawerResize.onLeftButtonUp(int x, int y){
+	dmr_down=false;
+}
+drawerResize.onMouseMove(int x, int y){
+	if(dmr_down){
+		int t = y-xuiGroup.getHeight()-xuiGroup.getTop();
+		setDrawerSizeSave(t);
+	}
+}
+
+setDrawerSizeSave(int h){
+
+	//these changes will be saved
+	if(h>-119) h=-119;
+	setPublicInt("ClassicPro.drawer.h", h);
+	
+
+	//these changes will not be saved
+	if(getPublicInt("cPro.lastDrawer", 0)==0) h=-119;
+
+	mainTabsheet.setXmlParam("h", integerToString(h-4));
+	drawer.setXmlParam("y", integerToString(h));
+	drawer.setXmlParam("h", integerToString(-h));
+	drawerResize.setXmlParam("y", integerToString(h-4));
 }
