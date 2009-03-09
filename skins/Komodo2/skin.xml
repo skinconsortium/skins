@@ -1,0 +1,18 @@
+<WinampAbstractionLayer version="1.34">
+
+<skininfo>
+    <version>1.0</version>
+    <name>Komodo</name>
+    <comment>Join us WWW.skinconsortium.com</comment>
+    <author>Skin Consortium</author>
+    <email>Quadhelix@skinconsortium.com</email>
+    <homepage>www.skinconsortium.com</homepage>
+    <screenshot>skinshot.png</screenshot>
+  
+ </skininfo>
+
+ 	<script file="warning.maki" param="@SKINSPATH@"/>
+
+	<include file="@SKINSPATH@Komodo\engine\load.xml"/>
+   
+ </WinampAbstractionLayer>

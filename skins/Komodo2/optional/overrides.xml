@@ -1,0 +1,21 @@
+
+<!-- ****************
+ overrides.xml 
+ 
+ this xml used to override/sendparams to the player-normal.xml elements.
+ you could also add more elements into the skin by placing it here. 
+ 
+ below are example. ill be updating below for more elements that will be
+ changeable that wont be affected by the future versions.
+ 
+ *********-->
+
+<!--sendparams target="sc.nowplaying" noreflection="1"/-->
+<!--sendparams target="xui.custom.bkground" noreflection="1"/-->
+<!--sendparams target="cover.show" noreflection="1"/-->
+<!--sendparams target="player.main.volume" x="2" y="-185" w="30" h="37" relatx="2" relaty="1" relatw="2"/-->
+<!--sendparams target="player.button.page.left"
+		x="0" y="20"
+		image="player.button.page.left"
+		downimage="player.button.page.left.down"
+		rectrgn="1"/-->
