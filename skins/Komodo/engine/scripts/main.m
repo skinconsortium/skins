@@ -33,7 +33,7 @@ Global vis vis1, vis2;
 Global layer vismousetrap;
 
 Global configAttribute xfade, xfadetime, PSOVC;
-Global configAttribute attrRepeat, attrShuffle;
+Global configAttribute attrRepeat, attrShuffle, attrAOT;
 
 Global group NowPlayingGroup, VISGroup, vidButtons, avsButtons;
 Global WindowHolder AVSHolder, VideoHolder, MLHolder;
@@ -76,6 +76,9 @@ System.onScriptLoaded() {
 	
 	configGroup = Config.getItemByGuid("{FC3EAF78-C66E-4ED2-A0AA-1494DFCC13FF}");
 	if (configGroup) xfade = configGroup.getAttribute("Enable crossfading");
+	
+	configGroup = Config.getItemByGuid("{280876CF-48C0-40BC-8E86-73CE6BB462E5}");
+	if (configGroup) attrAOT = configGroup.getAttribute("Always on top");
 	
 	configItem item = Config.getItem("Playlist editor");
 	attrRepeat = item.getAttribute("repeat");
@@ -366,6 +369,12 @@ xfadetime.onDataChanged() {
 }
 
 // browser controls
+mainBrowser.onSetVisible(int on) {
+	if (!on) return;
+	
+	buttonIEHome.onLeftClick();
+}
+
 buttonIEPrev.onLeftClick() {
 	if (!mainBrowser.isVisible()) return;
 	
@@ -393,7 +402,13 @@ buttonIEStop.onLeftClick() {
 buttonIEHome.onLeftClick() {
 	if (!mainBrowser.isVisible()) return;
 	
-	mainBrowser.navigateUrl(homepage);
+	String strArtist = System.urlEncode(System.getPlayitemMetaDataString("artist"));
+	String strAlbum = System.urlEncode(System.getPlayitemMetaDataString("album"));
+	String strTitle = System.urlEncode(System.getPlayitemMetaDataString("title"));
+	
+	string currData = "?v="+System.urlEncode(getPrivateString(getSkinName(),"KomodoVersion","1.0")) + "&artist=" + strArtist + "&album=" + strAlbum + "&title=" +strTitle;
+	
+	mainBrowser.navigateUrl(homepage+currData);
 }
 
 // window/fullscreen controls
@@ -411,6 +426,8 @@ buttonWindow.onLeftClick() {
 	main.resize(wx,wy,ww,wh);
 	main.setXMLParam("lockminmax","0");
 	main.setXMLParam("move","1");
+	
+	attrAOT.setData(getPrivateString(getSkinName(),"lastAOT","0"));
 }
 
 buttonFull.onLeftClick() {
@@ -434,6 +451,14 @@ buttonFull.onLeftClick() {
 	
 	main.resize(0,0, getMonitorWidth(), getMonitorHeight());
 	main.setXMLParam("lockminmax","1");
+	
+	attrAOT.setData("1");
+}
+
+attrAOT.onDataChanged() {
+	if (pbuttonsFull.isVisible()) return;
+	
+	setPrivateString(getSkinName(),"lastAOT",getData());
 }
 
 main.onResize(int x, int y, int w, int h) {
