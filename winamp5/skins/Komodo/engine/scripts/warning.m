@@ -36,11 +36,11 @@ System.onScriptLoaded() {
 		System.switchSkin("winamp classic");
 	} else {
 		delayVersionCheck = new Timer;
-		delayVersionCheck.setDelay(500);
+		delayVersionCheck.setDelay(100);
 		delayVersionCheck.start();
 	}
 	
-	setPrivateString(getSkinName(),"KomodoString",floatToString(KOMODO_VER,2));
+	setPrivateString(getSkinName(),"KomodoSkinVersion",floatToString(KOMODO_VER,2));
 }
 
 delayVersionCheck.onTimer() {
@@ -74,6 +74,14 @@ versionCheck.parser_onCallback (String xmlpath, String xmltag, list paramname, l
 				getNewVer = 1;
 			}
 			System.switchSkin("winamp classic");
+		}
+		
+		c = paramname.findItem("version");
+		if (c>=0) {
+			param = paramname.enumItem(c);
+			value = paramvalue.enumItem(c);
+			
+			setPrivateString(getSkinName(),"KomodoVersion",value);
 		}
 	}
 }
