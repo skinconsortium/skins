@@ -1,0 +1,118 @@
+<gammaset id=".default">
+	<gammagroup id="backgrounds" value="0,0,0" gray="0" boost="0" />
+	<gammagroup id="glass" value="0,0,0" gray="0" boost="0" />
+	<gammagroup id="genbutton" value="0,0,0" gray="0" boost="0" />
+	<gammagroup id="genbutton.icon" value="0,0,0" gray="0" boost="0" />
+	<gammagroup id="genbutton.text" value="0,0,0" gray="0" boost="0" />
+	
+	<gammagroup id="config.base" value="0,0,0" gray="0" boost="0" />
+	<gammagroup id="config.button" value="0,0,0" gray="0" boost="0" />
+	<gammagroup id="config.eqbutton" value="0,0,0" gray="0" boost="0" />
+	<gammagroup id="cbuttons" value="0,0,0" gray="0" boost="0" />
+	<gammagroup id="pbuttons" value="0,0,0" gray="0" boost="0" />
+	<gammagroup id="pagescroll" value="0,0,0" gray="0" boost="0" />
+	<gammagroup id="ratings" value="0,0,0" gray="0" boost="0" />
+	<gammagroup id="cdcase" value="0,0,0" gray="0" boost="0" />
+	<gammagroup id="vis" value="0,0,0" gray="0" boost="0" />
+	<gammagroup id="base" value="0,0,0" gray="0" boost="0" />
+	<gammagroup id="wasabi.text" value="0,0,0" gray="0" boost="0" />
+	<gammagroup id="wasabi.button" value="0,0,0" gray="0" boost="0" />
+	<gammagroup id="wasabi.button.text" value="0,0,0" gray="0" boost="0" />
+	<gammagroup id="wasabi.scrollbar" value="0,0,0" gray="0" boost="0" />
+	<gammagroup id="tooltip" value="0,0,0" gray="0" boost="0" />
+	<gammagroup id="tooltip.text" value="0,0,0" gray="0" boost="0" />
+	<gammagroup id="component.frame" value="0,0,0" gray="0" boost="0" />
+	<gammagroup id="text.nowplaying" value="0,0,0" gray="0" boost="0" />
+	<gammagroup id="text.indicator" value="0,0,0" gray="0" boost="0" />
+	<gammagroup id="text.timer" value="0,0,0" gray="0" boost="0" />
+	<gammagroup id="text.plist" value="0,0,0" gray="0" boost="0" />
+	<gammagroup id="volume" value="0,0,0" gray="0" boost="0" />
+	<gammagroup id="seeker" value="0,0,0" gray="0" boost="0" />
+	<gammagroup id="seeker.thumb" value="0,0,0" gray="0" boost="0" />
+	
+	<gammagroup id="column.base" value="0,0,0" gray="0" boost="0" />
+	<gammagroup id="column.text" value="0,0,0" gray="0" boost="0" />
+	<gammagroup id="list.Background" value="0,0,0" gray="0" boost="0" />
+	<gammagroup id="list.Text" value="0,0,0" gray="0" boost="0" />
+	<gammagroup id="list.TextSelected" value="0,0,0" gray="0" boost="0" />
+	<gammagroup id="list.SelBackground" value="0,0,0" gray="0" boost="0" />
+	<gammagroup id="playList.current" value="0,0,0" gray="0" boost="0" />
+</gammaset>
+
+<gammaset id="Golden Blue">
+	<gammagroup id="backgrounds" value="-2516,-1899,880" gray="2" boost="0" />
+	<gammagroup id="glass" value="-4096,-1336,2443" gray="0" boost="0" />
+	<gammagroup id="config.base" value="-4096,1298,2606" gray="2" boost="0" />
+	<gammagroup id="config.button" value="2424,1117,-4096" gray="0" boost="0" />
+	<gammagroup id="config.eqbutton" value="2969,2642,-1735" gray="2" boost="0" />
+	<gammagroup id="cbuttons" value="-4096,-1517,1098" gray="0" boost="0" />
+	<gammagroup id="pbuttons" value="-4096,-2189,1062" gray="0" boost="0" />
+	<gammagroup id="pagescroll" value="-4096,-2934,1135" gray="0" boost="0" />
+	<gammagroup id="ratings" value="1498,554,-4096" gray="2" boost="0" />
+	<gammagroup id="cdcase" value="0,0,0" gray="0" boost="0" />
+	<gammagroup id="vis" value="1879,1662,-4096" gray="2" boost="1" />
+	<gammagroup id="base" value="-4096,-3097,-1426" gray="0" boost="1" />
+	<gammagroup id="volume" value="-4096,-1336,2443" gray="0" boost="0" />
+	<gammagroup id="seeker" value="-4096,-1336,2443" gray="0" boost="0" />
+	<gammagroup id="seeker.thumb" value="-4096,-1336,2443" gray="0" boost="0" />
+	<gammagroup id="wasabi.text" value="1026,608,-4096" gray="2" boost="0" />
+	<gammagroup id="wasabi.button" value="1589,481,-4096" gray="0" boost="0" />
+	<gammagroup id="wasabi.button.text" value="2479,1462,-2171" gray="2" boost="1" />
+	<gammagroup id="wasabi.scrollbar" value="1589,481,-4096" gray="0" boost="0" />
+	<gammagroup id="tooltip" value="-4096,-4096,-2280" gray="2" boost="0" />
+	<gammagroup id="tooltip.text" value="1571,899,-4096" gray="2" boost="1" />
+	<gammagroup id="component.frame" value="-2571,-1608,0" gray="0" boost="0" />
+	<gammagroup id="text.nowplaying" value="-4096,-1081,1770" gray="0" boost="0" />
+	<gammagroup id="text.indicator" value="0,-1227,-4096" gray="0" boost="0" />
+	<gammagroup id="text.timer" value="1189,245,-4096" gray="0" boost="0" />
+	<gammagroup id="text.plist" value="1189,245,-4096" gray="0" boost="0" />
+	<gammagroup id="list.Background" value="-4096,-4096,-1099" gray="0" boost="1" />
+	<gammagroup id="list.Text" value="1425,0,-4096" gray="0" boost="0" />
+	<gammagroup id="list.TextSelected" value="-4096,-3879,0" gray="2" boost="0" />
+	<gammagroup id="list.SelBackground" value="0,-518,-4096" gray="2" boost="0" />
+	<gammagroup id="playList.current" value="-2316,-990,4096" gray="2" boost="1" />
+	<gammagroup id="column.base" value="0,-645,-4096" gray="0" boost="0" />
+	<gammagroup id="column.text" value="-4096,-3152,0" gray="0" boost="1" />
+	<gammagroup id="genbutton" value="-4096,-1608,899" gray="0" boost="0" />
+	<gammagroup id="genbutton.icon" value="1770,1244,-4096" gray="0" boost="0" />
+	<gammagroup id="genbutton.text" value="1770,1244,-4096" gray="0" boost="0" />
+</gammaset>
+
+<gammaset id=" Blue">
+	<gammagroup id="backgrounds" value="-2516,-1899,880" gray="2" boost="0" />
+	<gammagroup id="glass" value="-2848, -2304, -2496" gray="0" boost="0" />
+	<gammagroup id="config.base" value="-4096,1298,2606" gray="2" boost="0" />
+	<gammagroup id="config.button" value="2424,1117,-4096" gray="0" boost="0" />
+	<gammagroup id="config.eqbutton" value="2969,2642,-1735" gray="2" boost="0" />
+	<gammagroup id="cbuttons" value="-2848, -2304, -2496" gray="0" boost="0" />
+	<gammagroup id="pbuttons" value="-4096,-2189,1062" gray="0" boost="0" />
+	<gammagroup id="pagescroll" value="-4096,-2934,1135" gray="0" boost="0" />
+	<gammagroup id="ratings" value="1498,554,-4096" gray="2" boost="0" />
+	<gammagroup id="cdcase" value="0,0,0" gray="0" boost="0" />
+	<gammagroup id="vis" value="-2848, -2304, -2496" gray="0" boost="0" />
+	<gammagroup id="base" value="-4096,-3097,-1426" gray="0" boost="1" />
+	<gammagroup id="volume" value="-2848, -2304, -2496" gray="0" boost="0" />
+	<gammagroup id="seeker" value="-2848, -2304, -2496" gray="0" boost="0" />
+	<gammagroup id="seeker.thumb" value="-2848, -2304, -2496" gray="0" boost="0" />
+	<gammagroup id="wasabi.text" value="1026,608,-4096" gray="2" boost="0" />
+	<gammagroup id="wasabi.button" value="1589,481,-4096" gray="0" boost="0" />
+	<gammagroup id="wasabi.button.text" value="2479,1462,-2171" gray="2" boost="1" />
+	<gammagroup id="wasabi.scrollbar" value="1589,481,-4096" gray="0" boost="0" />
+	<gammagroup id="tooltip" value="-4096,-4096,-2280" gray="2" boost="0" />
+	<gammagroup id="tooltip.text" value="1571,899,-4096" gray="2" boost="1" />
+	<gammagroup id="component.frame" value="-2571,-1608,0" gray="0" boost="0" />
+	<gammagroup id="text.nowplaying" value="-2848, -2304, -2496" gray="0" boost="0" />
+	<gammagroup id="text.indicator" value="-2848, -2304, -2496" gray="0" boost="0" />
+	<gammagroup id="text.timer" value="-2848, -2304, -2496" gray="0" boost="0" />
+	<gammagroup id="text.plist" value="1189,245,-4096" gray="0" boost="0" />
+	<gammagroup id="list.Background" value="-4096,-4096,-1099" gray="0" boost="1" />
+	<gammagroup id="list.Text" value="1425,0,-4096" gray="0" boost="0" />
+	<gammagroup id="list.TextSelected" value="-4096,-3879,0" gray="2" boost="0" />
+	<gammagroup id="list.SelBackground" value="0,-518,-4096" gray="2" boost="0" />
+	<gammagroup id="playList.current" value="-2316,-990,4096" gray="2" boost="1" />
+	<gammagroup id="column.base" value="0,-645,-4096" gray="0" boost="0" />
+	<gammagroup id="column.text" value="-4096,-3152,0" gray="0" boost="1" />
+	<gammagroup id="genbutton" value="-4096,-1608,899" gray="0" boost="0" />
+	<gammagroup id="genbutton.icon" value="1770,1244,-4096" gray="0" boost="0" />
+	<gammagroup id="genbutton.text" value="1770,1244,-4096" gray="0" boost="0" />
+</gammaset>
