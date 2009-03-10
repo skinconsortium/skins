@@ -2,9 +2,9 @@
 
 ; Lang:			PortugueseBR
 ; LangID			1046
-; Last udpdated:		24.02.2009
-; Author:			x
-; Email:			x@x
+; Last udpdated:		09.03.2009
+; Author:			Anderson Silva (candiba)
+; Email:			candiba@gmail.com
 
 ; Notes:
 ; Use ';' or '#' for comments
@@ -18,101 +18,101 @@
 ;###########################################################################################
 
 ; Language selection
-	LangString CPro_Language_Title ${LANG_PORTUGUESE_BRAZILIAN} "Installer language"
-	LangString CPro_Language_Text ${LANG_PORTUGUESE_BRAZILIAN} "Please select a language:"
+	LangString CPro_Language_Title ${LANG_PORTUGUESE_BRAZILIAN} "Idioma do Instalador"
+	LangString CPro_Language_Text ${LANG_PORTUGUESE_BRAZILIAN} "Por favor selecione um idioma:"
 
 ; First Page of Installer
-	LangString CPro_Welcome_Title ${LANG_PORTUGUESE_BRAZILIAN} "Welcome to the $(^NameDA) Setup Wizard"
-	LangString CPro_Welcome_Text ${LANG_PORTUGUESE_BRAZILIAN} "This wizard will guide you through the installation of $(^NameDA).$\r$\n$\r$\nIt is recommended that you close Winamp before starting Setup. This will make it possible to update all relevant Winamp files.$\n$\nYou'll at least need Winamp ${CPRO_WINAMP_VERSION} for this version of ${CPRO_NAME} to work!$\r$\n$\r$\n$_CLICK"
+	LangString CPro_Welcome_Title ${LANG_PORTUGUESE_BRAZILIAN} "Bem-vindo ao Instalador do $(^NameDA)"
+	LangString CPro_Welcome_Text ${LANG_PORTUGUESE_BRAZILIAN} "O Instalador o guiará na instalação do $(^NameDA).$\r$\n$\r$\nÉ recomendado que você feche o Winamp antes de iniciar a instalação. Assim facilitará a possivel atualização de todos os arquivos relevante do Winamp.$\n$\nVocê precisa ter a ultima versão, o Winamp ${CPRO_WINAMP_VERSION} para que o ${CPRO_NAME} trabalhe perfeitamente!$\r$\n$\r$\n$_CLICK"
 
 ; Installer Header
 	!ifdef CPRO_BETA
 ; Beta stage	
-		LangString CPro_Caption ${LANG_PORTUGUESE_BRAZILIAN} "${CPRO_NAME}${CPRO_CRS} v${CPRO_VERSION} ${CPRO_BETA} Setup"
+		LangString CPro_Caption ${LANG_PORTUGUESE_BRAZILIAN} "Instalador do ${CPRO_NAME}${CPRO_CRS} v${CPRO_VERSION} ${CPRO_BETA}"
 	!else
 ; Release
-		LangString CPro_Caption ${LANG_PORTUGUESE_BRAZILIAN} "${CPRO_NAME}${CPRO_CRS} v${CPRO_VERSION} Setup"
+		LangString CPro_Caption ${LANG_PORTUGUESE_BRAZILIAN} "Instalador do ${CPRO_NAME}${CPRO_CRS} v${CPRO_VERSION}"
 	!endif
 	
 ; Installation type	
-	LangString CPro_Full ${LANG_PORTUGUESE_BRAZILIAN} "Full"
-	LangString CPro_Minimal ${LANG_PORTUGUESE_BRAZILIAN} "Minimal"
+	LangString CPro_Full ${LANG_PORTUGUESE_BRAZILIAN} "Completa"
+	LangString CPro_Minimal ${LANG_PORTUGUESE_BRAZILIAN} "Mínima"
 	
 ; Installer sections
 	LangString CPro_CProFiles ${LANG_PORTUGUESE_BRAZILIAN} "ClassicPro Engine"
 	LangString CPro_wBrowserPro ${LANG_PORTUGUESE_BRAZILIAN} "BrowserPro"
-	LangString CPro_wAlbumArt ${LANG_PORTUGUESE_BRAZILIAN} "Now Playing"
+	LangString CPro_wAlbumArt ${LANG_PORTUGUESE_BRAZILIAN} "Reproduzindo Agora"
 	LangString CPro_WidgetsSection ${LANG_PORTUGUESE_BRAZILIAN} "Widgets"
-	LangString CPro_CProCustom ${LANG_PORTUGUESE_BRAZILIAN} "Components"
-	LangString CPro_cPlaylistPro ${LANG_PORTUGUESE_BRAZILIAN} "Playlist Search"
+	LangString CPro_CProCustom ${LANG_PORTUGUESE_BRAZILIAN} "Componentes"
+	LangString CPro_cPlaylistPro ${LANG_PORTUGUESE_BRAZILIAN} "Buscar na Playlist"
 		
 ; Installer sections descriptions	
-	LangString CPro_Desc_CProFiles ${LANG_PORTUGUESE_BRAZILIAN} "This will install all the files that ClassicPro needs to work."
-	LangString CPro_Desc_wBrowserPro ${LANG_PORTUGUESE_BRAZILIAN} "BrowserPro is a widget that will enable your browser to auto navigate to popular websites and explore the playing directory."
-	LangString CPro_Desc_wAlbumArt ${LANG_PORTUGUESE_BRAZILIAN} "Now Playing is a widget that shows a big cd cover and information about the playing file."
-	LangString CPro_Desc_WidgetsSection ${LANG_PORTUGUESE_BRAZILIAN} "ClassicPro skins support widgets and here you'll find some of them that we decided to bundle with this installer."
-	LangString CPro_Desc_CProCustom ${LANG_PORTUGUESE_BRAZILIAN} "Optional components for ClassicPro."
-	LangString CPro_Desc_cPlaylistPro ${LANG_PORTUGUESE_BRAZILIAN} "Add a search box above your playlist for easy searches in your playlist."
+	LangString CPro_Desc_CProFiles ${LANG_PORTUGUESE_BRAZILIAN} "Esta opção instala todos os arquivos necessários do ClassicPro."
+	LangString CPro_Desc_wBrowserPro ${LANG_PORTUGUESE_BRAZILIAN} "BrowserPro é um widget que habilitará seu browser a auto navegar em sites e explorar o diretórios."
+	LangString CPro_Desc_wAlbumArt ${LANG_PORTUGUESE_BRAZILIAN} "Reproduzindo Agora é um widget que mostra capa do cd e informação do arquivo em reprodução."
+	LangString CPro_Desc_WidgetsSection ${LANG_PORTUGUESE_BRAZILIAN} "Skins ClassicPro suporta widgets e aqui você encontrará alguns que estão no pacote."
+	LangString CPro_Desc_CProCustom ${LANG_PORTUGUESE_BRAZILIAN} "Componentes Opcionais para o ClassicPro."
+	LangString CPro_Desc_cPlaylistPro ${LANG_PORTUGUESE_BRAZILIAN} "Adicionar um campo de busca em sua playlist."
 
 ; Direcory Text	
-	LangString CPro_DirText ${LANG_PORTUGUESE_BRAZILIAN} "Please select your Winamp path below (you will be able to proceed when Winamp is detected):"
+	LangString CPro_DirText ${LANG_PORTUGUESE_BRAZILIAN} "Por favor selecione abaixo caminho do Winamp (você poderá continuar quando o Winamp for encontrado):"
 
 ; Finish Page	
-	LangString CPro_FinishPage_1 ${LANG_PORTUGUESE_BRAZILIAN} "${CPRO_NAME}${CPRO_CRS} v${CPRO_VERSION} installation finished"
-	LangString CPro_FinishPage_2 ${LANG_PORTUGUESE_BRAZILIAN} "The setup wizard have finished installing ${CPRO_NAME} v${CPRO_VERSION}. You can now start using ${CPRO_NAME} skins and widgets in Winamp."
-	LangString CPro_FinishPage_3 ${LANG_PORTUGUESE_BRAZILIAN} "If you like ${CPRO_NAME} and would like to help future development of the product please donate to the project."
-	LangString CPro_FinishPage_4 ${LANG_PORTUGUESE_BRAZILIAN} "What do you want to do now?"
-	LangString CPro_FinishPage_5 ${LANG_PORTUGUESE_BRAZILIAN} "Go to our homepage to get more ${CPRO_NAME} skins and widgets"
-	LangString CPro_FinishPage_6 ${LANG_PORTUGUESE_BRAZILIAN} "Open the default ${CPRO_NAME} skin now"
-	LangString CPro_FinishPage_7 ${LANG_PORTUGUESE_BRAZILIAN} "Finish"	
+	LangString CPro_FinishPage_1 ${LANG_PORTUGUESE_BRAZILIAN} "Instalação do ${CPRO_NAME}${CPRO_CRS} v${CPRO_VERSION} finalizada."
+	LangString CPro_FinishPage_2 ${LANG_PORTUGUESE_BRAZILIAN} "O instalador finalizou a instalação do ${CPRO_NAME} v${CPRO_VERSION}. Você pode usar as Skins ${CPRO_NAME} e widgets no Winamp."
+	LangString CPro_FinishPage_3 ${LANG_PORTUGUESE_BRAZILIAN} "Se você gostou do ${CPRO_NAME} e gostaria de ajudar no desenvolvimento futuro do produto por favor faça uma doação."
+	LangString CPro_FinishPage_4 ${LANG_PORTUGUESE_BRAZILIAN} "O que deseja fazer agora?"
+	LangString CPro_FinishPage_5 ${LANG_PORTUGUESE_BRAZILIAN} "Ir para nossa homepage e adquirir mais Skins ${CPRO_NAME} e widgets."
+	LangString CPro_FinishPage_6 ${LANG_PORTUGUESE_BRAZILIAN} "Abrir a Skin ${CPRO_NAME} padrão agora"
+	LangString CPro_FinishPage_7 ${LANG_PORTUGUESE_BRAZILIAN} "Finalzar"	
 	
 ; First Page of Uninstaller
-	LangString CPro_Un_Welcome_Title ${LANG_PORTUGUESE_BRAZILIAN} "Welcome to the $(^NameDA) Uninstall Wizard"
-	LangString CPro_Un_Welcome_Text ${LANG_PORTUGUESE_BRAZILIAN} "This wizard will guide you through the uninstallation of $(^NameDA).$\r$\n$\r$\nBefore starting the uninstallation, make sure ${CPRO_NAME}${CPRO_CRS} v${CPRO_VERSION} is not running.$\r$\n$\r$\n$_CLICK"
+	LangString CPro_Un_Welcome_Title ${LANG_PORTUGUESE_BRAZILIAN} "Bem-vindo ao Desinstalador do $(^NameDA)"
+	LangString CPro_Un_Welcome_Text ${LANG_PORTUGUESE_BRAZILIAN} "O Desinstalador o guiará na desinstalação do $(^NameDA).$\r$\n$\r$\nAntes de iniciar a desinstalação, tenha certeza que o ${CPRO_NAME}${CPRO_CRS} v${CPRO_VERSION} não está em execução.$\r$\n$\r$\n$_CLICK"
 
 ; Installation
-	LangString CPro_Ini ${LANG_PORTUGUESE_BRAZILIAN} "Updating the winamp.ini configuration file..."
-	LangString CPro_Account ${LANG_PORTUGUESE_BRAZILIAN} "Multi-user settings"
-	LangString CPro_No_Account ${LANG_PORTUGUESE_BRAZILIAN} "No Multi-user settings"
-	LangString CPro_Winamp_Path ${LANG_PORTUGUESE_BRAZILIAN} "Specifying path to Winamp configuration file..."	
+	LangString CPro_Ini ${LANG_PORTUGUESE_BRAZILIAN} "Atualizando o winamp.ini arquivo de configuração..."
+	LangString CPro_Account ${LANG_PORTUGUESE_BRAZILIAN} "Configurações Multi-usuário"
+	LangString CPro_No_Account ${LANG_PORTUGUESE_BRAZILIAN} "Sem configurações Multi-usuário"
+	LangString CPro_Winamp_Path ${LANG_PORTUGUESE_BRAZILIAN} "Especificando o caminho do arquivo de configuração do Winamp..."	
 
 ; Close all instances of Winamp
-	LangString CPro_Running_Winamp ${LANG_PORTUGUESE_BRAZILIAN} "Winamp is running!"
-	LangString CPro_Close_Winamp  ${LANG_PORTUGUESE_BRAZILIAN} "Before continue, you must close all instances of Winamp!"	
-	LangString CPro_Closing_Winamp ${LANG_PORTUGUESE_BRAZILIAN} "        Closing Winamp (winamp.exe)..."
-	LangString CPro_No_More_Winamp ${LANG_PORTUGUESE_BRAZILIAN} "        OK. All instances of Winamp are closed..."  
-	LangString CPro_No_Winamp ${LANG_PORTUGUESE_BRAZILIAN} "OK. No instances of Winamp is running..."
-	LangString CPro_Check_Winamp ${LANG_PORTUGUESE_BRAZILIAN} "Checking if Winamp is running..."
+	LangString CPro_Running_Winamp ${LANG_PORTUGUESE_BRAZILIAN} "O Winamp está em execução!"
+	LangString CPro_Close_Winamp  ${LANG_PORTUGUESE_BRAZILIAN} "Antes de continuar, você deve encerrar todas as instâncias do Winamp!"	
+	LangString CPro_Closing_Winamp ${LANG_PORTUGUESE_BRAZILIAN} "        Fechando o Winamp (winamp.exe)..."
+	LangString CPro_No_More_Winamp ${LANG_PORTUGUESE_BRAZILIAN} "        OK. Todas as instâncias do Winamp foram encerradas..."  
+	LangString CPro_No_Winamp ${LANG_PORTUGUESE_BRAZILIAN} "OK. Nenhuma instância do Winamp em execução..."
+	LangString CPro_Check_Winamp ${LANG_PORTUGUESE_BRAZILIAN} "Checando se o Winamp está em execução..."
 
 ; Menu Start
-	LangString CPro_MenuStart1 ${LANG_PORTUGUESE_BRAZILIAN} "Uninstall ${CPRO_NAME}"
-	LangString CPro_MenuStart2 ${LANG_PORTUGUESE_BRAZILIAN} "Whats new"
-	LangString CPro_MenuStart3 ${LANG_PORTUGUESE_BRAZILIAN} "Get more ${CPRO_NAME} skins and widgets!"	
+	LangString CPro_MenuStart1 ${LANG_PORTUGUESE_BRAZILIAN} "Desinstalar ${CPRO_NAME}"
+	LangString CPro_MenuStart2 ${LANG_PORTUGUESE_BRAZILIAN} "Novidades"
+	LangString CPro_MenuStart3 ${LANG_PORTUGUESE_BRAZILIAN} "Baixar Skins ${CPRO_NAME} e widgets!"	
 	
 ; CPro :: Widgets
 
 ; First Page of Installer
-	LangString CPro_Widget_Welcome_Title ${LANG_PORTUGUESE_BRAZILIAN} "Welcome to the $(^NameDA) Setup Wizard"
-	LangString CPro_Widget_Welcome_Text ${LANG_PORTUGUESE_BRAZILIAN} "This wizard will guide you through the installation of $(^NameDA).$\r$\n$\r$\nIt is recommended that you close Winamp before starting Setup. This will make it possible to update all relevant Winamp files.$\n$\nYou'll at least need Winamp ${CPRO_WINAMP_VERSION} and ${CPRO_NAME} ${CPRO_VERSION} for this version of ${CPRO_WIDGET_NAME} to work!$\r$\n$\r$\n$_CLICK"
+	LangString CPro_Widget_Welcome_Title ${LANG_PORTUGUESE_BRAZILIAN} "Bem-vindo ao Instalador do $(^NameDA)"
+	LangString CPro_Widget_Welcome_Text ${LANG_PORTUGUESE_BRAZILIAN} "O Instalador o guiará na instalação do $(^NameDA).$\r$\n$\r$\nÉ recomendado que você feche o Winamp antes de iniciar a instalação. Assim facilitará a possivel atualização de todos os arquivos relevante do Winamp.$\n$\nVocê precisa ter a ultima versão, o Winamp ${CPRO_WINAMP_VERSION} e ${CPRO_NAME} ${CPRO_VERSION} para que esta versão do ${CPRO_WIDGET_NAME} funcione!$\r$\n$\r$\n$_CLICK"
 
-	LangString CPro_Widget_Caption ${LANG_PORTUGUESE_BRAZILIAN} "${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION} Setup"	
-	LangString CPro_Widget_Name_Text ${LANG_PORTUGUESE_BRAZILIAN} "${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION} widget for ClassicPro©"		
+	LangString CPro_Widget_Caption ${LANG_PORTUGUESE_BRAZILIAN} "Instalador do ${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION}"	
+	LangString CPro_Widget_Name_Text ${LANG_PORTUGUESE_BRAZILIAN} "${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION} widget para Skin ClassicPro©"		
 	
 ; First Page of Uninstaller
-	LangString CPro_Widget_Un_Welcome_Title ${LANG_PORTUGUESE_BRAZILIAN} "Welcome to the $(^NameDA) Uninstall Wizard"
-	LangString CPro_Widget_Un_Welcome_Text ${LANG_PORTUGUESE_BRAZILIAN} "This wizard will guide you through the uninstallation of $(^NameDA).$\r$\n$\r$\nBefore starting the uninstallation, make sure ${CPRO_NAME}${CPRO_CRS} v${CPRO_VERSION} is not running.$\r$\n$\r$\n$_CLICK"
+	LangString CPro_Widget_Un_Welcome_Title ${LANG_PORTUGUESE_BRAZILIAN} "Bem-vindo ao Desinstalador do $(^NameDA)"
+	LangString CPro_Widget_Un_Welcome_Text ${LANG_PORTUGUESE_BRAZILIAN} "O Desinstalador o guiará na desinstalação do $(^NameDA).$\r$\n$\r$\nAntes de iniciar a desinstalação, tenha certeza que o ${CPRO_NAME}${CPRO_CRS} v${CPRO_VERSION} não está em execução.$\r$\n$\r$\n$_CLICK"
 	
 ; Installer sections
-	LangString CPro_Widget_Files ${LANG_PORTUGUESE_BRAZILIAN} "${CPRO_WIDGET_NAME} ${CPRO_WIDGET_VERSION} for ${CPRO_NAME}${CPRO_CRS} ${CPRO_VERSION}"
+	LangString CPro_Widget_Files ${LANG_PORTUGUESE_BRAZILIAN} "${CPRO_WIDGET_NAME} ${CPRO_WIDGET_VERSION} para ${CPRO_NAME}${CPRO_CRS} ${CPRO_VERSION}"
 		
 ; Installer sections descriptions	
-	LangString CPro_Widget_Desc_Files ${LANG_PORTUGUESE_BRAZILIAN} "This will install all the files that ${CPRO_WIDGET_NAME} ${CPRO_WIDGET_VERSION} needs to work."
+	LangString CPro_Widget_Desc_Files ${LANG_PORTUGUESE_BRAZILIAN} "Será instalado todo os arquivos necessários para que o ${CPRO_WIDGET_NAME} ${CPRO_WIDGET_VERSION} trabalhe perfeitamente."
 
 ; Finish Page	
-	LangString CPro_Widget_FinishPage_1 ${LANG_PORTUGUESE_BRAZILIAN} "${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION} installation finished"
-	LangString CPro_Widget_FinishPage_2 ${LANG_PORTUGUESE_BRAZILIAN} "The setup wizard have finished installing ${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION}. You can now start using your new ${CPRO_WIDGET_NAME} widget for ${CPRO_NAME} in Winamp."
-	LangString CPro_Widget_FinishPage_3 ${LANG_PORTUGUESE_BRAZILIAN} "If you like ${CPRO_WIDGET_NAME} and would like to help future development of the product please donate to the project."
-	LangString CPro_Widget_FinishPage_4 ${LANG_PORTUGUESE_BRAZILIAN} "What do you want to do now?"
-	LangString CPro_Widget_FinishPage_5 ${LANG_PORTUGUESE_BRAZILIAN} "Go to our homepage to get more ${CPRO_NAME} skins and widgets"
-	LangString CPro_Widget_FinishPage_6 ${LANG_PORTUGUESE_BRAZILIAN} "Open the default ${CPRO_NAME} skin now"
-	LangString CPro_Widget_FinishPage_7 ${LANG_PORTUGUESE_BRAZILIAN} "Finish"		
+	LangString CPro_Widget_FinishPage_1 ${LANG_PORTUGUESE_BRAZILIAN} "Instalação finalizada do ${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION}"
+	LangString CPro_Widget_FinishPage_2 ${LANG_PORTUGUESE_BRAZILIAN} "O Instalador finalizadou a instalaçao do ${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION}. Você pode agora usar o novo widget ${CPRO_WIDGET_NAME} para Skins ${CPRO_NAME} no Winamp."
+	LangString CPro_Widget_FinishPage_3 ${LANG_PORTUGUESE_BRAZILIAN} "Se você gostou do ${CPRO_WIDGET_NAME} ae gostaria de ajudar no desenvolvimento futuro do produto por favor faça uma doação."
+	LangString CPro_Widget_FinishPage_4 ${LANG_PORTUGUESE_BRAZILIAN} "O que deseja fazer agora?"
+	LangString CPro_Widget_FinishPage_5 ${LANG_PORTUGUESE_BRAZILIAN} "Ir para nossa homepage e adquirir mais Skins ${CPRO_NAME} e widgets"
+	LangString CPro_Widget_FinishPage_6 ${LANG_PORTUGUESE_BRAZILIAN} "Abrir Skin ${CPRO_NAME} padrão agora"
+	LangString CPro_Widget_FinishPage_7 ${LANG_PORTUGUESE_BRAZILIAN} "Finalizar"		

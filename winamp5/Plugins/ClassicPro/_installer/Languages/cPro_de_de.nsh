@@ -48,21 +48,21 @@
 		
 ; Installer sections descriptions	
 	LangString CPro_Desc_CProFiles ${LANG_GERMAN} "ClassicPro Kernkomponenten(benötigt)."
-	LangString CPro_Desc_wBrowserPro ${LANG_GERMAN} "Das BrowserPro Widget zeigt Informationen populärer Webseiten zum aktuell abgespielten Titel, oder den aktuellen Ordnerinhalt an."
-	LangString CPro_Desc_wAlbumArt ${LANG_GERMAN} "Das AlbumArt Widget zeigt eine große CD-Cover Ansicht und Tag-Informationen zum aktuell abgespielten Titel an."
+	LangString CPro_Desc_wBrowserPro ${LANG_GERMAN} "zeigt Informationen ausgewählter Webseiten zum aktuellen Titel, oder den akt. Ordnerinhalt an."
+	LangString CPro_Desc_wAlbumArt ${LANG_GERMAN} "zeigt eine große CD-Cover Ansicht und Tag-Informationen zum aktuellen Titel an."
 	LangString CPro_Desc_WidgetsSection ${LANG_GERMAN} "Widgets sind vielseitige Erweiterungen für ClassicPro."
 	LangString CPro_Desc_CProCustom ${LANG_GERMAN} "Optionale Komponenten für ClassicPro."
 	LangString CPro_Desc_cPlaylistPro ${LANG_GERMAN} "Suchfeld für den Playlist Editor zum einfachen durchsuchen der Playlist."
 
 ; Direcory Text	
-	LangString CPro_DirText ${LANG_GERMAN} "Bitte den Winamp Installationsordner angeben (Das Installationsprogramm versucht den korrekten Ordner automatisch zu ermitteln):"
+	LangString CPro_DirText ${LANG_GERMAN} "Bitte den Winamp Installationsordner angeben:$\r$\n(Das Installationsprogramm versucht den korrekten Ordner automatisch zu ermitteln)"
 
 ; Finish Page	
 	LangString CPro_FinishPage_1 ${LANG_GERMAN} "${CPRO_NAME}${CPRO_CRS} v${CPRO_VERSION} Installation beendet"
 	LangString CPro_FinishPage_2 ${LANG_GERMAN} "Die Installation von ${CPRO_NAME} v${CPRO_VERSION} ist abgeschloßen. Sie können nun ${CPRO_NAME} Skins and Widgets mit Winamp verwenden."
 	LangString CPro_FinishPage_3 ${LANG_GERMAN} "Wenn Ihnen ${CPRO_NAME} gefällt und Sie die weitere Entwicklung unterstützen wollen, würden wir uns über eine Spende für unser Projekt freuen."
 	LangString CPro_FinishPage_4 ${LANG_GERMAN} "Wie möchten Sie fortfahren?"
-	LangString CPro_FinishPage_5 ${LANG_GERMAN} "Unsere Homepage besuchen und weitere ${CPRO_NAME} Skins und Widgets finden."
+	LangString CPro_FinishPage_5 ${LANG_GERMAN} "Weitere ${CPRO_NAME} Skins und Widgets finden."
 	LangString CPro_FinishPage_6 ${LANG_GERMAN} "Winamp mit dem Standard ${CPRO_NAME} Skin öffnen."
 	LangString CPro_FinishPage_7 ${LANG_GERMAN} "Beenden"	
 	

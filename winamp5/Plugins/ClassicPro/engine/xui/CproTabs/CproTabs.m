@@ -215,8 +215,11 @@ System.onScriptLoaded ()
 				tabI.isInternal = false;
 			}
 
-			Boolean hideTab = ((getPublicInt("Cpro.One.TabAutoClose."+integerToString(tabI.ID), 0) || tabI.ID == 5)
-					&& (tabI.ID != getPublicInt("cPro.lastComponentPage", 0)));
+			Boolean hideTab;
+			if(tabI.ID==WIDGET_TAB_ID){
+				hideTab = ((getPublicInt("Cpro.One.TabAutoClose."+tabI.IDS, 0)) && !(tabI.IDS==getPublicString("cPro.lastMainWidgetIDS", "") && getPublicInt("cPro.lastComponentPage", 0)==WIDGET_TAB_ID));
+			}
+			else hideTab = ((getPublicInt("Cpro.One.TabAutoClose."+integerToString(tabI.ID), 0) || tabI.ID == 5) && (tabI.ID != getPublicInt("cPro.lastComponentPage", 0)));
 
 			if (!hideTab)
 			{
@@ -439,13 +442,14 @@ onMessage(int message, int i0, int i1, int i2, String s0, String s1, GuiObject o
 	else if (message == ON_RIGHT_BUTTON_UP)
 	{
 		int tabID = t.ID;
+		String widID = t.IDS;
 		popMenu = new PopUpMenu;
 		
 		if(tabID==0 || tabID==4 || tabID==5 || tabID==WIDGET_TAB_ID) popMenu.addCommand("Show Status Bar", 0, 0, 1);
 		else popMenu.addCommand("Show Status Bar", 0, getPublicInt("Cpro.One.TabStatus."+integerToString(tabID), 1), 0);
 		
 		if(tabID==5) popMenu.addCommand("Auto Close Tab", 1, 1, 1);
-		//else if(tabID==WIDGET_TAB_ID) popMenu.addCommand("Auto Close Tab", 1, 0, 1);
+		else if(tabID==WIDGET_TAB_ID) popMenu.addCommand("Auto Close Tab", 1, getPublicInt("Cpro.One.TabAutoClose."+widID, 0), 0);
 		else popMenu.addCommand("Auto Close Tab", 1, getPublicInt("Cpro.One.TabAutoClose."+integerToString(tabID), 0), 0);
 		// @martin here is the publicint set.. hide tab if int == 1... remember widgets cant hide... 
 		//not going to add the previous submenu where you can enable things again..
@@ -508,11 +512,15 @@ onMessage(int message, int i0, int i1, int i2, String s0, String s1, GuiObject o
 			}
 			else if(result == 1)
 			{
-				setPublicInt("Cpro.One.TabAutoClose."+integerToString(tabID), !getPublicInt("Cpro.One.TabAutoClose."+integerToString(tabID), 0));
+				if(tabID==WIDGET_TAB_ID) setPublicInt("Cpro.One.TabAutoClose."+widID, !getPublicInt("Cpro.One.TabAutoClose."+widID, 0));
+				else setPublicInt("Cpro.One.TabAutoClose."+integerToString(tabID), !getPublicInt("Cpro.One.TabAutoClose."+integerToString(tabID), 0));
+				
 				ToggleButton tg = t;
-				if (!tg.getActivated() && getPublicInt("Cpro.One.TabAutoClose."+integerToString(tabID), 0))
-				{
-					removeTab(t);
+	
+				if(!tg.getActivated()){ 
+					if((tabID==WIDGET_TAB_ID && getPublicInt("Cpro.One.TabAutoClose."+widID, 0)) || (tabID!=WIDGET_TAB_ID && getPublicInt("Cpro.One.TabAutoClose."+integerToString(tabID), 0))){
+						removeTab(t);
+					}
 				}
 			}
 		}
@@ -663,7 +671,6 @@ removeTab(Tab t)
  */
 updateTabWidth (Tab t)
 {
-	//debugInt(t.isvisible());
 	totalTabWidth -= t.maxW;
 	t.w = t.findObject("cpro.tab.text").getAutoWidth() +14;
 	t.maxW = t.w;
@@ -767,10 +774,11 @@ alignByResize ()
 
 closeTab (tab t)
 {
+
 	if (lastActive)
 	{
 		lastActive.setActivated(0);
-		if (getPublicInt("Cpro.One.TabAutoClose."+integerToString(t.ID), 0) || lastActiveT.ID == 5)
+		if(lastActiveT.ID == 5 || (getPublicInt("Cpro.One.TabAutoClose."+integerToString(t.ID), 0) && t.ID != WIDGET_TAB_ID) || (t.ID==WIDGET_TAB_ID && getPublicInt("Cpro.One.TabAutoClose."+t.IDS, 0)))
 		{
 			removeTab(t);
 		}

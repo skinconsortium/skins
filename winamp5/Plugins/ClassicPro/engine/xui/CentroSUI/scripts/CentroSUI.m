@@ -720,8 +720,9 @@ setCompStatus(boolean onOff){
 
 xuiGroup.onAction (String action, String param, int x, int y, int p1, int p2, GuiObject source){
 	if (strlower(action) == "switch_to_tab"){ //used by other script to show tab holder & select tab
-		if (x == WIDGET_TAB_ID)
+		if (x == WIDGET_TAB_ID){
 			openWidgetIDS(param);
+		}
 		openTabNo(x);
 	}
 	else if (strlower(action) == "show_tab"){ //used by the tabs to show tab holder
@@ -781,6 +782,7 @@ xuiGroup.onAction (String action, String param, int x, int y, int p1, int p2, Gu
 	}
 	else if(strlower(action) == "refresh_drawer_h"){
 		setDrawerSizeSave(getPublicInt("ClassicPro.drawer.h", -119));
+		setDrawer(getPublicInt("cPro.draweropened", 0));
 	}
 }
 
