@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<WasabiXML>
+	<BrowserPro>
+		<sourceitem name="Letras SongBook" comment="Exibi a letra da música atualmente reproduzida. Grande Banco de Dados." url="http://www.songbook.me/tmp/lyrics.php?bg=%COLOR:LBG%%AND%txt=%COLOR:LTXT%%AND%artist=%ARTIST%%AND%title=%TITLE%" icon="icon.songbook.lyrics"/>
+		<sourceitem name="Letras SongBook (local debug)" comment="Exibi a letra da música atualmente reproduzida. Grande Banco de Dados." url="http://localhost/songbook.me/tmp/lyrics.php?bg=%COLOR:LBG%%AND%txt=%COLOR:LTXT%%AND%artist=%ARTIST%%AND%title=%TITLE%" icon="icon.songbook.lyrics"/>
+		<sourceitem name="Discogs (Artista)" comment="Busca este artista no Discogs." url="http://www.discogs.com/artist/%ARTIST%" icon="icon.discogs"/>
+		<sourceitem name="Explorer View" comment="Explorará à pasta da midia atualmente em reprodução." url="%PATH%/" icon="icon.explorer"/>
+		<sourceitem name="Foxytunes (Artista)" comment="Foxytunes mostra informação sobre o artista em reprodução." url="http://www.foxytunes.com/artist/%ARTIST%" icon="icon.foxytunes"/>
+		<sourceitem name="Google Busca (Som)" comment="Busca no google este som." url="http://www.google.com/search?hl=en%AND%q=%ARTIST% %TITLE%" icon="icon.google"/>
+		<sourceitem name="Lyrics" comment="Exibi a letra da música atualmente reproduzida. Grande banco de dados." url="http://www.lyricsplugin.com/winamp03/plugin/?artist=%ARTIST%%AND%title=%TITLE%" icon="icon.lyricplugin"/>
+		<sourceitem name="Metalstorm (Álbum)" comment="Busca no www.metalstorm.ee este álbum." url="http://www.metalstorm.ee/home/search.php?search_what=%ALBUM%%AND%search_where=album" icon="icon.metalstorm"/>
+		<sourceitem name="Metalstorm (Artista)" comment="Busca no www.metalstorm.ee este artista." url="http://www.metalstorm.ee/home/search.php?search_what=%ARTIST%%AND%search_where=band2" icon="icon.metalstorm"/>
+		<sourceitem name="RateYourMusic (Artista)" comment="Busca no RateYourMusic este artista." url="http://rateyourmusic.com/search?searchterm=%ARTIST%%AND%searchtype=a" icon="icon.rateyourmusic"/>
+		<sourceitem name="Songfacts (Artista)" comment="Busca Songfacts este artista." url="http://www.songfacts.com/search_fact.php?combinedartists=%ARTIST%" icon="icon.songfacts"/>
+		<sourceitem name="Songfacts (Som)" comment="Busca no Songfacts este som." url="http://www.songfacts.com/search_fact.php?title=%TITLE%" icon="icon.songfacts"/>
+		<sourceitem name="Swisscharts (Álbum)" comment="Busca no Swisscharts este álbum." url="http://www.swisscharts.com/search.asp?cat=a%AND%search=%ALBUM%" icon="icon.swisscharts"/>
+		<sourceitem name="Swisscharts (Som)" comment="Exibi este som no Swisscharts." url="http://www.swisscharts.com/showitem.asp?interpret=%ARTIST%%AND%titel=%TITLE%" icon="icon.swisscharts"/>
+		<sourceitem name="Wikipedia (Artista)" comment="Exibi no wikipedia a página do artista." url="http://en.wikipedia.org/wiki/%ARTIST%" icon="icon.wikipedia"/>
+		<sourceitem name="Yahoo! Busca" comment="Busca no Yahoo este som." url="http://search.yahoo.com/search?p=%ARTIST% %TITLE%%AND%ei=UTF-8%AND%fr=opera2" icon="icon.yahoo"/>
+		<sourceitem name="YouTube Busca" comment="Veja vídeos do arquivo em reprodução no YouTube" url="http://www.youtube.com/results?search_query=%ARTIST% %TITLE%%AND%search_type=%AND%aq=f" icon="icon.youtube"/>
+	</BrowserPro>
+</WasabiXML>

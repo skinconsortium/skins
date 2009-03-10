@@ -10,7 +10,7 @@ Global Layer bganim, aboutLay, mousetrap;
 Global Double smidge, vusmidge;
 Global int aniNO, vuValue, p_ani, pp_ani, creditPage;
 Global Timer animationToggle, animationToggleFade, waitForStart, creditRoll;
-Global GuiObject about_pjn, about_martin, about_quad, about_slob, about_pawel, about_trance, tempobject, about_other;
+Global GuiObject about_pjn, about_martin, about_quad, about_slob, about_pawel, about_trance, tempobject, about_lang, about_other;
 Global boolean creditsON;
 
 System.onScriptLoaded() {
@@ -25,7 +25,8 @@ System.onScriptLoaded() {
 	about_slob = mainGroup.findObject("about.4");
 	about_pawel = mainGroup.findObject("about.5");
 	about_trance = mainGroup.findObject("about.6");
-	about_other = mainGroup.findObject("about.7");
+	about_lang = mainGroup.findObject("about.7");
+	about_other = mainGroup.findObject("about.8");
 		
 	waitForStart = new Timer;
 	waitForStart.setDelay(3000);
@@ -157,13 +158,13 @@ bganim.fx_onFrame()
 }
 
 showAbout(int no){
-	if(creditPage>7){
+	if(creditPage>8){
 		creditPage=1;
 		no=1;
 	}
 	if(creditPage<1){
-		creditPage=7;
-		no=7;
+		creditPage=8;
+		no=8;
 	}
 	
 	about_pjn.hide();
@@ -172,10 +173,11 @@ showAbout(int no){
 	about_slob.hide();
 	about_pawel.hide();
 	about_trance.hide();
+	about_lang.hide();
 	about_other.hide();
 	
 	tempobject = mainGroup.findObject("about."+integerToString(no));
-	if(no!=7){
+	if(no<7){
 		tempobject.setXmlParam("x", integerToString(5+random(155)));
 		tempobject.setXmlParam("y", integerToString(5+random(155)));
 	}
@@ -238,6 +240,7 @@ toggleCredits(){
 		about_slob.hide();
 		about_pawel.hide();
 		about_trance.hide();
+		about_lang.hide();
 		about_other.hide();
 	}
 }

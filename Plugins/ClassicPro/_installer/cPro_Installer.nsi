@@ -24,9 +24,9 @@
 	!define CPRO_COPYRIGHT "Copyright (c) 2005-2009"	
 	!define CPRO_UNINSTALLER "Uninstall ClassicPro"	
 	!define CPRO_WINAMP_VERSION "5.55"
-	!define CPRO_WINAMP_SKINS "C:\Program Files\Winamp\Skins" ; change to compile properly
-	!define CPRO_WINAMP_SYSTEM "C:\Program Files\Winamp\System"	; change to compile properly
-	!define CPRO_OUTFILE_PATH "C:\Program Files\Winamp\"	; change to compile properly	
+	!define CPRO_WINAMP_SKINS "C:\Program Files (x86)\Winamp\Skins" ; change to compile properly
+	!define CPRO_WINAMP_SYSTEM "C:\Program Files (x86)\Winamp\System"	; change to compile properly
+	!define CPRO_OUTFILE_PATH "C:\Program Files (x86)\Winamp\"	; change to compile properly	
 ;Unselect when release version
 	!define CPRO_BETA "- Beta"
 	
@@ -464,11 +464,14 @@ Section "$(CPro_CProFiles)" "CPro_Sec_CProFiles"
 	SetOutPath $INSTDIR\Plugins\ClassicPro\_installer
 		File "cPro_Installer.nsi"
 	SetOutPath $INSTDIR\Plugins\ClassicPro\_installer\Images
-		File "images\*.*"	
+		File "images\*.bmp"
+		File "images\*.ico"	
+		File "images\*.*"
 	SetOutPath $INSTDIR\Plugins\ClassicPro\_installer\Languages
-		File "Languages\*.*"
+		File "Languages\*.nsh"
 	SetOutPath $INSTDIR\Plugins\ClassicPro\_installer\Plugins
-		File "Plugins\*.*"	
+		File "Plugins\*.txt"
+		File "Plugins\*.dll"	
 ;CPro engine		
 	SetOutPath $INSTDIR\Plugins\ClassicPro\engine
 		File "..\engine\*.xml"
@@ -538,6 +541,12 @@ Section "$(CPro_CProFiles)" "CPro_Sec_CProFiles"
 		File "..\engine\xui\Ratings\*.m"
 		File "..\engine\xui\Ratings\*.maki"
 
+	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\PlaylistPro
+		File "..\engine\xui\PlaylistPro\alt\*.xml"
+
+	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\PlaylistPro\alt
+		File "..\engine\xui\PlaylistPro\alt\*.xml"
+
 	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\SC-Channels
 		File "..\engine\xui\SC-Channels\*.xml"
 		File "..\engine\xui\SC-Channels\*.m"
@@ -567,7 +576,7 @@ Section "$(CPro_CProFiles)" "CPro_Sec_CProFiles"
 ;		File /nonfatal "..\engine\flex\xml\*.xml"
 
 ;	SetOutPath $INSTDIR\System
-;		File /nonfatal "${CPRO_WINAMP_SYSTEM}\ClassicProFlex.w5s"
+		File /nonfatal "${CPRO_WINAMP_SYSTEM}\ClassicProFlex.w5s"
 
 ;	SetOutPath "$INSTDIR\Skins\cProFlex - iFlex"
 ;		File /nonfatal /r "${CPRO_WINAMP_SKINS}\cProFlex - iFlex\"
