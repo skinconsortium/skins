@@ -10,7 +10,7 @@
 		<homepage>http://www.skinconsortium.com/</homepage>
 	</skininfo>
 	<scripts>
-		<script id="attribsinit" file="maki/attribs.maki"/>
+		<script id="attribsinit" param="@SKINPATH@" file="maki/attribs.maki"/>
 	</scripts>	
 	<include file="xui/toggle_lcd_button/toggle_lcd_button.xml"/>
 	<include file="xui/light_toggle_button.xml"/>
@@ -18,6 +18,6 @@
 	<include file="xml/player.xml"/>
 	<include file="Controls/controls.xml"/>
 	<scripts>
-		<script id="main" file="maki/main.maki"/>
+		<script id="main" param="@SKINPATH@" file="maki/main.maki"/>
 	</scripts>
 </WasabiXML>

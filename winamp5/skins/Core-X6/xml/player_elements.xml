@@ -24,8 +24,8 @@
 	<bitmap id="player.normal.LCD.visanimation.bitmap" file="player/lights.png" x="242" y="77" w="90" h="44" gammagroup="Lights"/>
 
 	<bitmap id="player.normal.LCD.seek.background.bitmap" file="player/lights.png" x="242" y="141" w="113" h="3" gammagroup="Lights"/>
-	<bitmap id="player.normal.LCD.seek.progress.bitmap" file="player/lights.png" x="241" y="138" w="116" h="3" gammagroup="Lights"/>
-	<bitmap id="player.normal.LCD.seek.map.bitmap" file="player/lights.png" x="241" y="135" w="116" h="3"/>
+	<bitmap id="player.normal.LCD.seek.progress.bitmap" file="player/lights.png" x="241" y="136" w="116" h="5" gammagroup="Lights"/>
+	<bitmap id="player.normal.LCD.seek.map.bitmap" file="player/lights.png" x="241" y="131" w="116" h="5"/>
 
 	<bitmap id="player.normal.LCD.crossfade.bitmap" file="player/lights.png" x="242" y="144" w="19" h="14" gammagroup="Lights"/>
 	<bitmap id="player.normal.LCD.shuffle.bitmap" file="player/lights.png" x="261" y="144" w="18" h="16" gammagroup="Lights"/>
@@ -34,8 +34,8 @@
 
 	<bitmap id="player.normal.LCD.volume.mute.bitmap" file="player/lights.png" x="242" y="158" w="18" h="13" gammagroup="Lights"/>
 	<bitmap id="player.normal.LCD.volume.background.bitmap" file="player/lights.png" x="260" y="161" w="88" h="3" gammagroup="Lights"/>
-	<bitmap id="player.normal.LCD.volume.progress.bitmap" file="player/lights.png" x="260" y="164" w="86" h="3" gammagoup="Lights"/>
-	<bitmap id="player.normal.LCD.volume.map.bitmap" file="player/lights.png" x="260" y="167" w="86" h="3"/>
+	<bitmap id="player.normal.LCD.volume.progress.bitmap" file="player/lights.png" x="260" y="164" w="86" h="5" gammagoup="Lights"/>
+	<bitmap id="player.normal.LCD.volume.map.bitmap" file="player/lights.png" x="260" y="169" w="86" h="5"/>
 
 	<bitmap id="player.normal.LCD.digits.bitmap" file="player/digits.png" x="0" y="0" w="238" h="52" gammagroup="Lights"/>
 	<bitmapfont id="player.normal.LCD.digits.font" file="player.normal.LCD.digits.bitmap" charwidth="15" charheight="26" hspacing="0" vspacing="0"/>

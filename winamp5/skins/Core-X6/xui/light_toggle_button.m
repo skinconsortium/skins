@@ -1,5 +1,6 @@
 #include </lib/std.mi>
 #include </lib/config.mi>
+#include </lib/fileio.mi>
 
 // Change PRESSSPEED to change the animation speed
 
@@ -10,8 +11,18 @@ Global Layer Foreground;
 Global Layer DImage;
 Global int Lightness;
 Global Boolean noactivate;
+Global Boolean ToTranslate;
+
+// Should be loaded first
+#include "../maki/languageParser.m"
 
 System.onScriptLoaded() {
+	ToTranslate = false;
+	string LangPath = system.getParam() + "Lang";
+
+	// Should be loaded first to use languages
+	languageParserOnLoaded(LangPath);
+	
 	Lightness = 255;
 	Group sg = System.getScriptGroup();
 	Background = sg.getObject("background");
@@ -29,9 +40,21 @@ System.onSetXuiParam(String param, String value)
 	{
 		Foreground.setXMLParam("image",value);	
 	}
+	
 	if (System.strlower(param) == "ttip")
 	{
-		Background.setXMLParam("tooltip", value);	
+		if (ToTranslate)
+		{
+			int LangID = StringtoInteger(Value);
+			if (LangID > 0)
+			{
+				Background.setXMLParam("tooltip", MyTranslate(LangID));
+			}			
+		}
+		else
+		{	
+			Background.setXMLParam("tooltip", value);
+		}
 	}
 	
 	if (System.strlower(param) == "noactivate")
@@ -43,8 +66,18 @@ System.onSetXuiParam(String param, String value)
 			Foreground.setXMLParam("Alpha","255");
 		}
 	}
-
-
+	if (System.strlower(param) == "langvar")
+	{
+		if (value == "1" || value == "true")
+		{
+			ToTranslate = true;
+			int LangID = StringtoInteger(Value);
+			if (LangID > 0)
+			{
+				Background.setXMLParam("tooltip", MyTranslate(LangID));
+			}
+		}	
+	}
 }
 
 Background.onLeftButtonDown(int x, int y)

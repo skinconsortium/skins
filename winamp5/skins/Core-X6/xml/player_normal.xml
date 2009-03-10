@@ -78,7 +78,8 @@
 		image="player.normal.switch.lcd.background.bitmap"
 		dimage="player.normal.switch.lcd.background.bitmap"
 		foreimage="player.normal.switch.lcd.light.bitmap"
-		ttip="LCD screen 2"
+		LangVar="1"
+		ttip="1"
 	/>
 	<Core-X6:Button
  		id="toggle3"
@@ -210,7 +211,25 @@
 		fitparent="1"
 		image="player.normal.LCD.background.bitmap"
 	/>
+	<group
+		id="player.normal.LCD.content.1"
+		fitparent="1"
+	/>
+	<group
+		id="player.normal.LCD.content.2"
+		fitparent="1"
+		visible="0"
+	/>
+	<group
+		id="player.normal.LCD.content.3"
+		fitparent="1"
+		visible="0"
+	/>
+</groupdef>
 
+
+
+<groupdef id="player.normal.LCD.content.1">
 	<animatedlayer
 		id="vis1"
 		x="11" y="6"
@@ -398,8 +417,8 @@
 	/>
 	<layer
 		id="seek.progress"
-		x="10" y="70"
-		w="116" h="3"
+		x="10" y="69"
+		w="116" h="5"
 		image="player.normal.LCD.seek.progress.bitmap"
 		move="0"
 	/>
@@ -458,8 +477,8 @@
 	/>
 	<layer
 		id="volume.progress"
-		x="29" y="90"
-		w="86" h="3"
+		x="29" y="89"
+		w="86" h="5"
 		image="player.normal.LCD.volume.progress.bitmap"
 		move="0"
 	/>
@@ -476,6 +495,11 @@
 
 	<script id="seek.script" file="maki/seeknvolbyregion.maki"/>
 
+</groupdef>
+
+<groupdef id="player.normal.LCD.content.2">
+</groupdef>
+<groupdef id="player.normal.LCD.content.3">
 </groupdef>
 
 <groupdef id="player.normal.drawer.cover">

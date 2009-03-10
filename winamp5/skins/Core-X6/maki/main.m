@@ -1,13 +1,6 @@
 #include </lib/std.mi>
 #include </lib/config.mi>
-
-#define WINDOW_ITEMS "{6559CA61-7EB2-4415-A8A9-A2AEEF762B7F}"
-#define OPTIONS_MENU "{1828D28F-78DD-4647-8532-EBA504B8FC04}"
-#define MY_OPT_MENU "{3448EFC7-D134-4F2B-BFA6-B8FC5AB48089}"
-
-// songticker config page
-#define CUSTOM_PAGE_SONGTICKER "{7061FDE0-0E12-11D8-BB41-0050DA442EF3}"
-
+#include </lib/fileio.mi>
 
 // MyChange is used by several functions to indicate, the changes are by the script
 Global int MyChange;
@@ -38,12 +31,16 @@ Global GuiObject Ticker;
 
 Global Group grpCover;
 Global Group grpEq;
+Global Group grpMNLCD1, grpMNLCD2, grpMNLCD3; // Contents of Main Normal LCD
+
 Global Layer btnCoverButton;
 Global Button btnCoverStar1, btnCoverStar2, btnCoverStar3, btnCoverStar4, btnCoverStar5;
 
 Global Layer lyrEQButton;
 
 Global Button btnMNCrossfade, btnMNShuffle, btnMNRepeat;
+
+Global Button btnMNcontent1, btnMNcontent2, btnMNcontent3; // Buttons to Switch contents of Main Normal LCD
 
 Global Layer PNBackground;
 Global Layer LCDCrossfade;
@@ -66,60 +63,72 @@ Global Int PrevValues1, PrevValues2, PrevValues3, PrevValues4, PrevValues5, Prev
 Global Int PrevValues8, PrevValues9, PrevValues10, PrevValues11, PrevValues12, PrevValues13, PrevValues14;
 Global Int PrevValues15, PrevValues16, PrevValues17, PrevValues18, PrevValues19, PrevValues20, PrevValues21;
 
-Global ConfigAttribute cattrDA;
-Global ConfigAttribute cattrAlbumArt;
-Global ConfigAttribute cattrEq;
+// Should be loaded first
+#include "languageParser.m"
+// Initialize attributes
+#include "initAttribs.m"
 
 #include "play2pause.m"
 #include "songinfo.m"
 #include "coverdrawer.m"
 #include "keyboard.m"
 #include "eqdrawer.m"
+// Swithcing between contents
+#include "LCDcontent.m"
 
 function SetVisFrame (animatedlayer vislayer, int Length, int BandStart, int BandStop, int PrevValue, int Offset);
 
 System.onScriptLoaded() {
+	
+	string LangPath = system.getParam() + "Lang";
+
+	// Should be loaded first to use languages
+	// as this script requires nothing, but can be used everywhere
+	languageParserOnLoaded(LangPath);
+
+	// Next we initialize attribs as it's data can be used, but it requires language support
+	initAttribsonLoaded();
 
 	Container cntMain = System.getContainer("main");
 	Layout lytMainNormal = cntMain.GetLayout("normal");
 	Group grpPlayerNormal = lytMainNormal.GetObject("player.normal.group");
 	Group grpLCD = grpPlayerNormal.GetObject("player.normal.LCD");
+	grpMNLCD1 = grpLCD.GetObject("player.normal.LCD.content.1");
+	grpMNLCD2 = grpLCD.GetObject("player.normal.LCD.content.2");
+	grpMNLCD3 = grpLCD.GetObject("player.normal.LCD.content.3");
+
+	btnMNcontent1 = grpPlayerNormal.getObject("toggle1");
+	btnMNcontent2 = grpPlayerNormal.getObject("toggle2");
+	btnMNcontent3 = grpPlayerNormal.getObject("toggle3");
 
 	grpCover = lytMainNormal.GetObject("player.normal.drawer.cover"); // Cover art drawer
 	grpEq = lytMainNormal.GetObject("player.normal.drawer.eq"); // Equalizer drawer
 	PNBackground = lytMainNormal.getObject("background");
 	
 	// Getting vis layers
-	lyrVis1 = grpLCD.getObject("vis1");
-	lyrVis2 = grpLCD.getObject("vis2");
-	lyrVis3 = grpLCD.getObject("vis3");
-	lyrVis4 = grpLCD.getObject("vis4");
-	lyrVis5 = grpLCD.getObject("vis5");
-	lyrVis6 = grpLCD.getObject("vis6");
-	lyrVis7 = grpLCD.getObject("vis7");
-	lyrVis8 = grpLCD.getObject("vis8");
-	lyrVis9 = grpLCD.getObject("vis9");
-	lyrVis10 = grpLCD.getObject("vis10");
-	lyrVis11 = grpLCD.getObject("vis11");
-	lyrVis12 = grpLCD.getObject("vis12");
-	lyrVis13 = grpLCD.getObject("vis13");
-	lyrVis14 = grpLCD.getObject("vis14");
-	lyrVis15 = grpLCD.getObject("vis15");
-	lyrVis16 = grpLCD.getObject("vis16");
-	lyrVis17 = grpLCD.getObject("vis17");
-	lyrVis18 = grpLCD.getObject("vis18");
-	lyrVis19 = grpLCD.getObject("vis19");
-	lyrVis20 = grpLCD.getObject("vis20");
-	lyrVis21 = grpLCD.getObject("vis21");
+	lyrVis1 = grpMNLCD1.getObject("vis1");
+	lyrVis2 = grpMNLCD1.getObject("vis2");
+	lyrVis3 = grpMNLCD1.getObject("vis3");
+	lyrVis4 = grpMNLCD1.getObject("vis4");
+	lyrVis5 = grpMNLCD1.getObject("vis5");
+	lyrVis6 = grpMNLCD1.getObject("vis6");
+	lyrVis7 = grpMNLCD1.getObject("vis7");
+	lyrVis8 = grpMNLCD1.getObject("vis8");
+	lyrVis9 = grpMNLCD1.getObject("vis9");
+	lyrVis10 = grpMNLCD1.getObject("vis10");
+	lyrVis11 = grpMNLCD1.getObject("vis11");
+	lyrVis12 = grpMNLCD1.getObject("vis12");
+	lyrVis13 = grpMNLCD1.getObject("vis13");
+	lyrVis14 = grpMNLCD1.getObject("vis14");
+	lyrVis15 = grpMNLCD1.getObject("vis15");
+	lyrVis16 = grpMNLCD1.getObject("vis16");
+	lyrVis17 = grpMNLCD1.getObject("vis17");
+	lyrVis18 = grpMNLCD1.getObject("vis18");
+	lyrVis19 = grpMNLCD1.getObject("vis19");
+	lyrVis20 = grpMNLCD1.getObject("vis20");
+	lyrVis21 = grpMNLCD1.getObject("vis21");
 
-	ConfigItem cfgDA = Config.getItemByGuid("{9149C445-3C30-4E04-8433-5A518ED0FDDE}");
-	cattrDA = cfgDA.getAttribute("Enable desktop alpha");
-
-	ConfigItem cfgWindows = Config.GetItemByGuid(WINDOW_ITEMS); // Toggle Windows menu
-	cattrAlbumArt = cfgWindows.getAttribute("Album Art\tAlt+A");
-	cattrEq = cfgWindows.getAttribute("Equalizer\tAlt+G");
-
-	Ticker = grpLCD.getObject("ticker");
+	Ticker = grpMNLCD1.getObject("ticker");
 
 	btnMNPlay = grpPlayerNormal.getObject("play2pause");
 	lyrMNPlayDown = grpPlayerNormal.getObject("play2pause.pressed");
@@ -130,9 +139,9 @@ System.onScriptLoaded() {
 	btnMNShuffle = grpPlayerNormal.getObject("shuffle");
 	btnMNRepeat = grpPlayerNormal.getObject("repeat");
 
-	LCDCrossfade = grpLCD.getObject("status.crossfade");
-	LCDShuffle = grpLCD.getObject("status.shuffle");
-	LCDRepeat = grpLCD.getObject("status.repeat");
+	LCDCrossfade = grpMNLCD1.getObject("status.crossfade");
+	LCDShuffle = grpMNLCD1.getObject("status.shuffle");
+	LCDRepeat = grpMNLCD1.getObject("status.repeat");
 
 	CoverMap = grpCover.getObject("noalpha.map");
 	btnCoverButton = grpCover.getObject("button");
@@ -171,6 +180,7 @@ System.onScriptLoaded() {
 	coverdrawerOnLoaded();
 	eqdrawerOnLoaded();
 	keyboardOnLoaded();
+	LCDcontentOnLoaded();
 
 }
 
@@ -242,4 +252,6 @@ System.onTitleChange(String newtitle)
 System.onScriptUnLoading() {
 	Delete tmrVis;
 	Delete tmrPlay2Pause;
+
+	initAttribsonUnLoading();
 }
