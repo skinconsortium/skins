@@ -16,7 +16,7 @@
 		alpha="150"
 	/>
 
-	<script id="player.toggle.button.script" file="xui/light_toggle_button.maki"/>
+	<script id="player.toggle.button.script" param="@SKINPATH@" file="xui/light_toggle_button.maki"/>
 </groupdef>
 
 <groupdef id="player.button" xuitag="Core-X6:Button" embed_xui="background">
@@ -37,5 +37,5 @@
 		alpha="150"
 	/>
 
-	<script id="player.toggle.button.script" file="xui/light_toggle_button.maki"/>
+	<script id="player.toggle.button.script" param="@SKINPATH@" file="xui/light_toggle_button.maki"/>
 </groupdef>
