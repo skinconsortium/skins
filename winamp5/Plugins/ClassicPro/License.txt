@@ -35,18 +35,30 @@ classicpro@skinconsortium.com
 ------------------------------------------------------------------
 3.	Credits
 ------------------------------------------------------------------
-Wasabi Coders:
-- pjn123 (main coder)
-- martin.deimos (browser, notifier, misc, widget Co-Developer)
-- SLoB (Colortheme development, AlbumArt Reflection, Help)
-- E-Trance (widget Co-Developer)
+::Development team:
+- pjn123 (main coder for ::One)
+- martin.deimos (main coder for ::Flex)
+- SLoB (Various coding)
+- Quadhelix (General ClassicPro gfx, Website gfx)
+
+::Installer Coder:
+- Pawel Porwisz
+
+::External help
+- E-Trance (helped with widget development)
 - TheElusiveMelon (ClassicPro clock)
 
-Graphics Designers
-- Quadhelix (General ClassicPro gfx, Website gfx)
-- Taber Buhl (Original Big Bento gfx)
+::Translators:
+- French			Julien Victor (veekee)
+- German			Christoph Grether (Koopa)
+			Marko Egger (mynameisnobody)
+- Polish			Pawel Porwisz (pepe)
+- PortugueseBR		Anderson Silva (candiba)
+- Romanian		Catalin Zamfirescu
+- Russian			Aleksey Potashnikoff (NickMikh)
+- Turkish			Mertcan Kaya (MerTcaN)
 
-Special thanks to...
+::Special thanks to:
 - iron2000 (made the first cPro skin!)\n- Veroka (helped with implementing ColorTheme support)
 - Zarko Jovic (helped with implementing ColorTheme support)
 - Wilian and Veroka (creating a template for cpro skins)
