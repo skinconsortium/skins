@@ -406,8 +406,8 @@ buttonIEHome.onLeftClick() {
 	String strAlbum = System.urlEncode(System.getPlayitemMetaDataString("album"));
 	String strTitle = System.urlEncode(System.getPlayitemMetaDataString("title"));
 	
-	string currData = "?v="+System.urlEncode(getPrivateString(getSkinName(),"KomodoVersion","1.0")) + "&artist=" + strArtist + "&album=" + strAlbum + "&title=" +strTitle;
-	
+	string currData = "?v="+System.urlEncode(getPrivateString(getSkinName(),"CurrentVersion","1.0")) + "&artist=" + strArtist + "&album=" + strAlbum + "&title=" +strTitle;
+
 	mainBrowser.navigateUrl(homepage+currData);
 }
 

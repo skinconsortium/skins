@@ -7,7 +7,7 @@
 // the current skin is designed for komodo version 1.0
 #define KOMODO_VER 1.0
 
-Global string path, versionPath;
+Global string path, versionPath, komodoVersion;
 Global int getNewVer, currVersion;
 
 Global XmlDoc versionCheck;
@@ -51,12 +51,12 @@ delayVersionCheck.onTimer() {
 	versionCheck.parser_addCallback("komododata/komodoversion");
 	versionCheck.parser_start();
 	versionCheck.parser_destroy();
+
 }
 
 versionCheck.parser_onCallback (String xmlpath, String xmltag, list paramname, list paramvalue) {
 
 	if (xmltag == "komodoversion") {
-
 		string param, value;
 		value = "";
 		int c = paramname.findItem("skinversion");
@@ -81,12 +81,13 @@ versionCheck.parser_onCallback (String xmlpath, String xmltag, list paramname, l
 			param = paramname.enumItem(c);
 			value = paramvalue.enumItem(c);
 			
-			setPrivateString(getSkinName(),"KomodoVersion",value);
+			setPrivateString(getSkinName(),"CurrentVersion",value);
+			
 		}
 	}
 }
 
 system.onScriptUnloading() {
 	delete delayVersionCheck;
-	if (getNewVer)	System.navigateUrl("http://komodo.nitrousaudio.com");
+	if (getNewVer)	System.navigateUrl("http://www.nitrousaudio.com/k/");
 }
