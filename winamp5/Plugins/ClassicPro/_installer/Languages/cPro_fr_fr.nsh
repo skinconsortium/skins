@@ -92,27 +92,27 @@
 ; CPro :: Widgets
 
 ; First Page of Installer
-	LangString CPro_Widget_Welcome_Title ${LANG_ENGLISH} "Bienvenue dans l'assistant d'installation de $(^NameDA)"
-	LangString CPro_Widget_Welcome_Text ${LANG_ENGLISH} "Cet assistant va vous guider pour installer $(^NameDA).$\r$\n$\r$\nIl est recommandé de fermer Winamp avant de démarrer cette installation, afin de mettre à jour les fichiers nécessaires.$\n$\nVous devez utiliser au moins Winamp ${CPRO_WINAMP_VERSION} pour cette version de ${CPRO_NAME} !$\r$\n$\r$\n$_CLICK"
+	LangString CPro_Widget_Welcome_Title ${LANG_FRENCH} "Bienvenue dans l'assistant d'installation de $(^NameDA)"
+	LangString CPro_Widget_Welcome_Text ${LANG_FRENCH} "Cet assistant va vous guider pour installer $(^NameDA).$\r$\n$\r$\nIl est recommandé de fermer Winamp avant de démarrer cette installation, afin de mettre à jour les fichiers nécessaires.$\n$\nVous devez utiliser au moins Winamp ${CPRO_WINAMP_VERSION} pour cette version de ${CPRO_NAME} !$\r$\n$\r$\n$_CLICK"
 
-	LangString CPro_Widget_Caption ${LANG_ENGLISH} "Installation de ${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION}"	
-	LangString CPro_Widget_Name_Text ${LANG_ENGLISH} "Gadget ${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION} pour ClassicPro©"		
+	LangString CPro_Widget_Caption ${LANG_FRENCH} "Installation de ${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION}"	
+	LangString CPro_Widget_Name_Text ${LANG_FRENCH} "Gadget ${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION} pour ClassicPro©"		
 	
 ; First Page of Uninstaller
-	LangString CPro_Widget_Un_Welcome_Title ${LANG_ENGLISH} "Bienvenue dans l'assistant désinstallation de $(^NameDA)"
-	LangString CPro_Widget_Un_Welcome_Text ${LANG_ENGLISH} "Cet assistant va vous guider pour désinstaller $(^NameDA).$\r$\n$\r$\nAvant de lancer la désinstallation, vérifiez que ${CPRO_NAME}${CPRO_CRS} v${CPRO_VERSION} n'est pas démarré.$\r$\n$\r$\n$_CLICK"
+	LangString CPro_Widget_Un_Welcome_Title ${LANG_FRENCH} "Bienvenue dans l'assistant désinstallation de $(^NameDA)"
+	LangString CPro_Widget_Un_Welcome_Text ${LANG_FRENCH} "Cet assistant va vous guider pour désinstaller $(^NameDA).$\r$\n$\r$\nAvant de lancer la désinstallation, vérifiez que ${CPRO_NAME}${CPRO_CRS} v${CPRO_VERSION} n'est pas démarré.$\r$\n$\r$\n$_CLICK"
 	
 ; Installer sections
-	LangString CPro_Widget_Files ${LANG_ENGLISH} "${CPRO_WIDGET_NAME} ${CPRO_WIDGET_VERSION} pour ${CPRO_NAME}${CPRO_CRS} ${CPRO_VERSION}"
+	LangString CPro_Widget_Files ${LANG_FRENCH} "${CPRO_WIDGET_NAME} ${CPRO_WIDGET_VERSION} pour ${CPRO_NAME}${CPRO_CRS} ${CPRO_VERSION}"
 		
 ; Installer sections descriptions	
-	LangString CPro_Widget_Desc_Files ${LANG_ENGLISH} "Cela installera tous les fichiers dont le gadget ${CPRO_WIDGET_NAME} ${CPRO_WIDGET_VERSION} a besoin."
+	LangString CPro_Widget_Desc_Files ${LANG_FRENCH} "Cela installera tous les fichiers dont le gadget ${CPRO_WIDGET_NAME} ${CPRO_WIDGET_VERSION} a besoin."
 
 ; Finish Page	
-	LangString CPro_Widget_FinishPage_1 ${LANG_ENGLISH} "Installation de ${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION} terminée"
-	LangString CPro_Widget_FinishPage_2 ${LANG_ENGLISH} "L'assistant a terminé l'installation de ${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION}. Vous pouvez désormais commencer à utiliser votre nouveau gadget ${CPRO_WIDGET_NAME} pour ${CPRO_NAME} dans Winamp."
-	LangString CPro_Widget_FinishPage_3 ${LANG_ENGLISH} "Si vous aimez ${CPRO_WIDGET_NAME} et souhaitez aider son développement, vous pouvez faire une donation au projet."
-	LangString CPro_Widget_FinishPage_4 ${LANG_ENGLISH} "Que voulez-vous faire maintenant ?"
-	LangString CPro_Widget_FinishPage_5 ${LANG_ENGLISH} "Aller sur notre page d'accueil pour obtenir plus de skins et de gadgets ${CPRO_NAME}"
-	LangString CPro_Widget_FinishPage_6 ${LANG_ENGLISH} "Ouvrir le skin par défaut de ${CPRO_NAME}"
-	LangString CPro_Widget_FinishPage_7 ${LANG_ENGLISH} "Terminé"	
+	LangString CPro_Widget_FinishPage_1 ${LANG_FRENCH} "Installation de ${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION} terminée"
+	LangString CPro_Widget_FinishPage_2 ${LANG_FRENCH} "L'assistant a terminé l'installation de ${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION}. Vous pouvez désormais commencer à utiliser votre nouveau gadget ${CPRO_WIDGET_NAME} pour ${CPRO_NAME} dans Winamp."
+	LangString CPro_Widget_FinishPage_3 ${LANG_FRENCH} "Si vous aimez ${CPRO_WIDGET_NAME} et souhaitez aider son développement, vous pouvez faire une donation au projet."
+	LangString CPro_Widget_FinishPage_4 ${LANG_FRENCH} "Que voulez-vous faire maintenant ?"
+	LangString CPro_Widget_FinishPage_5 ${LANG_FRENCH} "Aller sur notre page d'accueil pour obtenir plus de skins et de gadgets ${CPRO_NAME}"
+	LangString CPro_Widget_FinishPage_6 ${LANG_FRENCH} "Ouvrir le skin par défaut de ${CPRO_NAME}"
+	LangString CPro_Widget_FinishPage_7 ${LANG_FRENCH} "Terminé"	
