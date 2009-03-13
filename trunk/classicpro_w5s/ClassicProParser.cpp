@@ -37,7 +37,7 @@ ClassicProParser::ClassicProParser ()
 		HANDLE file = CreateFileW(filename, GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, NULL, NULL);
 
 		if (file == INVALID_HANDLE_VALUE)
-			MessageBox(0, L"classicpro.xml file could not be found!", L"ClassicPro ERROR", 0);
+			WARN(L"classicpro.xml file could not be found!");
 
 		char data[1024];
 
