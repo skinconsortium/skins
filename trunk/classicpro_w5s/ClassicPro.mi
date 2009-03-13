@@ -37,7 +37,7 @@ extern	String	ClassicPro.getEngineName();
  *
  * @ret cpro version required by this skin
  */
-extern	float	ClassicPro.getRequestedVersion();
+extern	float	ClassicPro.getSkinVersion();
 
 /**
  * applys a style from classicpro.xml to an GuiObject

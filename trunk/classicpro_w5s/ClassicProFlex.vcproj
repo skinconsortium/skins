@@ -35,7 +35,7 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="shlwapi.lib"
-				OutputFile="$(ProgramFiles)/Winamp/System/ClassicProFlex.w5s"
+				OutputFile="$(ProgramFiles)/Winamp/System/ClassicPro.w5s"
 				LinkIncremental="2"
 				IgnoreDefaultLibraryNames=""
 				GenerateDebugInformation="TRUE"
@@ -77,7 +77,7 @@
 				FavorSizeOrSpeed="2"
 				OmitFramePointers="TRUE"
 				AdditionalIncludeDirectories="..;../Wasabi"
-				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_USRDLL;CLASSICPROFLEX_EXPORTS"
+				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_USRDLL;CLASSICPROFLEX_EXPORTS;NOSVCMGR"
 				StringPooling="TRUE"
 				RuntimeLibrary="2"
 				BufferSecurityCheck="FALSE"
@@ -93,9 +93,9 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="shlwapi.lib"
-				OutputFile="$(ProgramFiles)/Winamp/System/ClassicProFlex.w5s"
+				OutputFile="$(ProgramFiles)/Winamp/System/ClassicPro.w5s"
 				LinkIncremental="1"
-				IgnoreDefaultLibraryNames="msvcprt.lib"
+				IgnoreDefaultLibraryNames="libcmt;msvcprt.lib"
 				GenerateDebugInformation="TRUE"
 				SubSystem="2"
 				OptimizeReferences="2"
@@ -142,6 +142,9 @@
 				RelativePath=".\main.cpp">
 			</File>
 			<File
+				RelativePath=".\SClassicProFile.cpp">
+			</File>
+			<File
 				RelativePath=".\SClassicProFlex.cpp">
 			</File>
 			<File
@@ -169,6 +172,9 @@
 			</File>
 			<File
 				RelativePath=".\global.h">
+			</File>
+			<File
+				RelativePath=".\SClassicProFile.h">
 			</File>
 			<File
 				RelativePath=".\SClassicProFlex.h">
