@@ -17,7 +17,7 @@
 	<truetypefont id="player.font.pllist" file="Bankgothic.ttf"/>
 	<truetypefont id="player.font.plcover" file="Bankgothic.ttf"/>
 	<truetypefont id="player.font.button" file="Bankgothic.ttf"/>
-
+	<truetypefont id="player.font.time" file="Bankgothic.ttf"/>
 
 	-->
 
@@ -26,6 +26,7 @@
 	<color id="color.indicator" value="255,255,255" gammagroup="text.indicator"/>
 	<color id="color.button.label" value="255,255,255" gammagroup="genbutton.text"/>
 	<color id="color.plist" value="255,255,255" gammagroup="text.plist"/>
+	<color id="color.time" value="255,255,255" gammagroup="text.time"/>
 	
 	<!-- wasabi colors -->
 	<color id="wasabi.text.color" value="255,255,255" gammagroup="wasabi.text"/>
