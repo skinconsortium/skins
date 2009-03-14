@@ -543,6 +543,9 @@ openMini(int miniNo){
 		if(getPublicInt("cPro.lastComponentPage", 0)==2){
 			openTabNo(0);
 		}
+		if(getPublicInt("cPro.lastDrawer", 0)==DRAWER_VID_ID){
+				drawer.sendAction ("switch_to_drawer", "", 0, 0, 0, 0); //close drawer vid
+		}
 		mini_Video.show();
 	}
 	else if(miniNo==4){

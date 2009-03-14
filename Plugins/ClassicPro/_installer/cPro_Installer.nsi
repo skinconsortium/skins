@@ -575,8 +575,8 @@ Section "$(CPro_CProFiles)" "CPro_Sec_CProFiles"
 ;	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\flex\xml
 ;		File /nonfatal "..\engine\flex\xml\*.xml"
 
-;	SetOutPath $INSTDIR\System
-		File /nonfatal "${CPRO_WINAMP_SYSTEM}\ClassicProFlex.w5s"
+	SetOutPath $INSTDIR\System
+		File /nonfatal "${CPRO_WINAMP_SYSTEM}\ClassicPro.w5s"
 
 ;	SetOutPath "$INSTDIR\Skins\cProFlex - iFlex"
 ;		File /nonfatal /r "${CPRO_WINAMP_SKINS}\cProFlex - iFlex\"
