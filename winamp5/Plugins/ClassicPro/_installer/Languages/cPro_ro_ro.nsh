@@ -2,7 +2,7 @@
 
 ; Lang:				Romanian
 ; LangID			1048
-; Last udpdated:	12.03.2009 09:54 EET
+; Last udpdated:	13.03.2009 20:41 EET
 ; Author:			Cãtãlin ZAMFIRESCU
 ; Email:			x10@mail.com
 
@@ -61,9 +61,9 @@
 	LangString CPro_FinishPage_1 ${LANG_ROMANIAN} "Instalare ${CPRO_NAME}${CPRO_CRS} v${CPRO_VERSION} finalizatã"
 	LangString CPro_FinishPage_2 ${LANG_ROMANIAN} "Asistentul a finalizat instalarea ${CPRO_NAME} v${CPRO_VERSION}. Puteþi începe sã folosiþi interfeþele ºi gadgeturile ${CPRO_NAME} în Winamp."
 	LangString CPro_FinishPage_3 ${LANG_ROMANIAN} "Dacã vã place ${CPRO_NAME} ºi doriþi sã sprijiniþi dezvolarea ulterioarã, vã rugãm sã faceþi donaþii pentru proiect."
-	LangString CPro_FinishPage_4 ${LANG_ROMANIAN} "Ce doriþi sã faceþi acum?"
-	LangString CPro_FinishPage_5 ${LANG_ROMANIAN} "Sã exploraþi pagina ${CPRO_NAME} ºi sã descãrcaþi interfeþe ºi gadgeturi"
-	LangString CPro_FinishPage_6 ${LANG_ROMANIAN} "Sã deschideþi interfaþa implicitã ${CPRO_NAME}"
+	LangString CPro_FinishPage_4 ${LANG_ROMANIAN} "Acþiuni dupã terminarea instalãrii:"
+	LangString CPro_FinishPage_5 ${LANG_ROMANIAN} "Explorare pagina ${CPRO_NAME} ºi descãrcare interfeþe ºi gadgeturi"
+	LangString CPro_FinishPage_6 ${LANG_ROMANIAN} "Deschidere interfaþa implicitã ${CPRO_NAME}"
 	LangString CPro_FinishPage_7 ${LANG_ROMANIAN} "Terminare"	
 
 ; First Page of Uninstaller
@@ -112,8 +112,8 @@
 	LangString CPro_Widget_FinishPage_1 ${LANG_ROMANIAN} "Instalare ${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION} finalizatã"
 	LangString CPro_Widget_FinishPage_2 ${LANG_ROMANIAN} "Asistentul a finalizat instalarea ${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION}. Puteþi începe sã folosiþi noul gadget ${CPRO_WIDGET_NAME} pentru ${CPRO_NAME} în Winamp."
 	LangString CPro_Widget_FinishPage_3 ${LANG_ROMANIAN} "Dacã vã place ${CPRO_WIDGET_NAME} ºi doriþi sã sprijiniþi dezvolarea ulterioarã, vã rugãm sã faceþi donaþii pentru proiect."
-	LangString CPro_Widget_FinishPage_4 ${LANG_ROMANIAN} "Ce doriþi sã faceþi acum?"
-	LangString CPro_Widget_FinishPage_5 ${LANG_ROMANIAN} "Sã exploraþi pagina ${CPRO_NAME} ºi sã descãrcaþi interfeþe ºi gadgeturi"
-	LangString CPro_Widget_FinishPage_6 ${LANG_ROMANIAN} "Sã deschideþi interfaþa implicitã ${CPRO_NAME}"
+	LangString CPro_Widget_FinishPage_4 ${LANG_ROMANIAN} "Acþiuni dupã terminarea instalãrii:"
+	LangString CPro_Widget_FinishPage_5 ${LANG_ROMANIAN} "Explorare pagina ${CPRO_NAME} ºi descãrcare interfeþe ºi gadgeturi"
+	LangString CPro_Widget_FinishPage_6 ${LANG_ROMANIAN} "Deschidere interfaþa implicitã ${CPRO_NAME}"
 	LangString CPro_Widget_FinishPage_7 ${LANG_ROMANIAN} "Terminare"
 
