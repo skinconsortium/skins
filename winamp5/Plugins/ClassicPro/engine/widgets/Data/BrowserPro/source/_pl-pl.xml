@@ -1,8 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <WasabiXML>
 	<BrowserPro>
-		<sourceitem name="Teksty utworów z serwisu SongBook" comment="Wyświetla tekst aktualnie odtwarzanego utworu. Bardzo duża baza danych." url="http://www.songbook.me/tmp/lyrics.php?bg=%COLOR:LBG%%AND%txt=%COLOR:LTXT%%AND%artist=%ARTIST%%AND%title=%TITLE%" icon="icon.songbook.lyrics"/>
-		<sourceitem name="Teksty utworów z serwisu SongBook (lokalnie)" comment="Wyświetla tekst aktualnie odtwarzanego utworu. Bardzo duża baza danych." url="http://localhost/songbook.me/tmp/lyrics.php?bg=%COLOR:LBG%%AND%txt=%COLOR:LTXT%%AND%artist=%ARTIST%%AND%title=%TITLE%" icon="icon.songbook.lyrics"/>
+		<sourceitem name="Teksty utworów z serwisu SongBook" comment="Wyświetla tekst aktualnie odtwarzanego utworu. Bardzo duża baza danych." url="http://www.songbook.me/tmp/lyrics.php?bg=%COLOR:LBG%%AND%txt=%COLOR:LTXT%%AND%artist=%ARTIST%%AND%title=%TITLE%%AND%album=%ALBUM%" icon="icon.songbook.lyrics"/>
 		<sourceitem name="Serwis Discogs (Wykonawca)" comment="Wyszukuje wykonawcę odtwarzanego utworu w serwisie Discogs." url="http://www.discogs.com/artist/%ARTIST%" icon="icon.discogs"/>
 		<sourceitem name="Przeglądanie folderu utworu" comment="Otwiera folder odtwarzanego utworu." url="%PATH%/" icon="icon.explorer"/>
 		<sourceitem name="Serwis Foxytunes (Wykonawca)" comment="Wyświetla informacje o wykonawcy odtwarzanego utworu w serwisie Foxytunes." url="http://www.foxytunes.com/artist/%ARTIST%" icon="icon.foxytunes"/>

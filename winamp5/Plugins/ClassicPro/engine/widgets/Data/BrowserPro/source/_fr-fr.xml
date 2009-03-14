@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <WasabiXML>
 	<BrowserPro>
-		<sourceitem name="Paroles SongBook" comment="Affiche les paroles de la chanson en cours. Très grande base de données." url="http://www.songbook.me/tmp/lyrics.php?bg=%COLOR:LBG%%AND%txt=%COLOR:LTXT%%AND%artist=%ARTIST%%AND%title=%TITLE%" icon="icon.songbook.lyrics"/>
-		<sourceitem name="Paroles SongBook (debug local)" comment="Affiche les paroles de la chanson en cours. Très grande base de données." url="http://localhost/songbook.me/tmp/lyrics.php?bg=%COLOR:LBG%%AND%txt=%COLOR:LTXT%%AND%artist=%ARTIST%%AND%title=%TITLE%" icon="icon.songbook.lyrics"/>
+		<sourceitem name="Paroles SongBook" comment="Affiche les paroles de la chanson en cours. Très grande base de données." url="http://www.songbook.me/tmp/lyrics.php?bg=%COLOR:LBG%%AND%txt=%COLOR:LTXT%%AND%artist=%ARTIST%%AND%title=%TITLE%%AND%album=%ALBUM%" icon="icon.songbook.lyrics"/>
 		<sourceitem name="Discogs (Artiste)" comment="Recherche cet artiste sur Discogs." url="http://www.discogs.com/artist/%ARTIST%" icon="icon.discogs"/>
 		<sourceitem name="Explorateur" comment="¨Parcours le dossier de l'élément en cours de lecture." url="%PATH%/" icon="icon.explorer"/>
 		<sourceitem name="Foxytunes (Artiste)" comment="Foxytunes affiche des informations sur l'artiste en cours." url="http://www.foxytunes.com/artist/%ARTIST%" icon="icon.foxytunes"/>

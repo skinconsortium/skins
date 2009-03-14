@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <WasabiXML>
 	<BrowserPro>
-		<sourceitem name="SongBook Lyrics" comment="Показывает слова проигрываемой песни. Очень большая база данных." url="http://www.songbook.me/tmp/lyrics.php?bg=%COLOR:LBG%%AND%txt=%COLOR:LTXT%%AND%artist=%ARTIST%%AND%title=%TITLE%" icon="icon.songbook.lyrics"/>
-		<sourceitem name="SongBook Lyrics (локализованный вариант)" comment="Показывает слова проигрываемой песни. Очень большая база данных." url="http://localhost/songbook.me/tmp/lyrics.php?bg=%COLOR:LBG%%AND%txt=%COLOR:LTXT%%AND%artist=%ARTIST%%AND%title=%TITLE%" icon="icon.songbook.lyrics"/>
+		<sourceitem name="SongBook Lyrics" comment="Показывает слова проигрываемой песни. Очень большая база данных." url="http://www.songbook.me/tmp/lyrics.php?bg=%COLOR:LBG%%AND%txt=%COLOR:LTXT%%AND%artist=%ARTIST%%AND%title=%TITLE%%AND%album=%ALBUM%" icon="icon.songbook.lyrics"/>
 		<sourceitem name="Discogs (Тсполнитель)" comment="Поиск дискографии исполнителя." url="http://www.discogs.com/artist/%ARTIST%" icon="icon.discogs"/>
 		<sourceitem name="Показать папку" comment="Переход к папке проигрываемого произведения." url="%PATH%/" icon="icon.explorer"/>
 		<sourceitem name="Foxytunes (Исполнитель)" comment="Foxytunes отображает информацию об исполнителе." url="http://www.foxytunes.com/artist/%ARTIST%" icon="icon.foxytunes"/>
