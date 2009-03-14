@@ -49,4 +49,6 @@ attrib-radio:%attrib=%value
 	reads/writes the attribute %attrib="%value" to the parent xml node if the radiobox is checked.
 	
 attrib-list:%tag>%attrib
-	applays for list object containing an ObjectCollection items. Will parse stuff and insert it in the list.
+	applays for list object containing an ObjectCollection items.
+	Will parse all subnodes with %tag has tagname having an attribte %attrib.
+	Be careful! Saving will destroy all information stored in other attributes!
