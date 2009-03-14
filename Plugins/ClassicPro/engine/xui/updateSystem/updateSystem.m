@@ -48,7 +48,7 @@ System.onScriptLoaded ()
 
 	brw = getScriptgroup().findObject("brw");
 
-	if (ready == 2) brw.navigateUrl(SERVERFILE + "?q=check&skin=" + str_skinname + "&version=" + str_version);
+	if (ready == 2) brw.navigateUrl(SERVERFILE + "?q=check&skin=" + str_skinname + "&version=" + str_version +"&lng=" + getLanguageId() );
 }
 
 int getDateStamp(){
@@ -72,7 +72,7 @@ System.onSetXuiParam (String param, String value)
 
 	if (ready == 2 && brw != null)
 	{
-		brw.navigateUrl(SERVERFILE + "?q=check&skin=" + str_skinname + "&version=" + str_version);
+		brw.navigateUrl(SERVERFILE + "?q=check&skin=" + str_skinname + "&version=" + str_version +"&lng=" + getLanguageId() );
 	}
 }
 
