@@ -26,6 +26,7 @@
 	<gammagroup id="text.indicator" value="0,0,0" gray="0" boost="0" />
 	<gammagroup id="text.timer" value="0,0,0" gray="0" boost="0" />
 	<gammagroup id="text.plist" value="0,0,0" gray="0" boost="0" />
+	<gammagroup id="text.time" value="0,0,0" gray="0" boost="0" />
 	<gammagroup id="volume" value="0,0,0" gray="0" boost="0" />
 	<gammagroup id="seeker" value="0,0,0" gray="0" boost="0" />
 	<gammagroup id="seeker.thumb" value="0,0,0" gray="0" boost="0" />
@@ -65,6 +66,7 @@
 	<gammagroup id="text.nowplaying" value="-4096,-1081,1770" gray="0" boost="0" />
 	<gammagroup id="text.indicator" value="0,-1227,-4096" gray="0" boost="0" />
 	<gammagroup id="text.timer" value="1189,245,-4096" gray="0" boost="0" />
+	<gammagroup id="text.time" value="1189,245,-4096" gray="0" boost="0" />
 	<gammagroup id="text.plist" value="1189,245,-4096" gray="0" boost="0" />
 	<gammagroup id="list.Background" value="-4096,-4096,-1099" gray="0" boost="1" />
 	<gammagroup id="list.Text" value="1425,0,-4096" gray="0" boost="0" />
@@ -104,6 +106,7 @@
 	<gammagroup id="text.nowplaying" value="-2848, -2304, -2496" gray="0" boost="0" />
 	<gammagroup id="text.indicator" value="-2848, -2304, -2496" gray="0" boost="0" />
 	<gammagroup id="text.timer" value="-2848, -2304, -2496" gray="0" boost="0" />
+	<gammagroup id="text.time" value="-2848, -2304, -2496" gray="0" boost="0" />
 	<gammagroup id="text.plist" value="1189,245,-4096" gray="0" boost="0" />
 	<gammagroup id="list.Background" value="-4096,-4096,-1099" gray="0" boost="1" />
 	<gammagroup id="list.Text" value="1425,0,-4096" gray="0" boost="0" />
