@@ -7,6 +7,7 @@
 <!--truetypefont id="player.font.pllist" file="@SKINSPATH@Komodo\engine\player\Beware.ttf"/-->
 <!--truetypefont id="player.font.plcover" file="@SKINSPATH@Komodo\engine\player\Beware.ttf"/-->
 <!--truetypefont id="player.font.button" file="@SKINSPATH@Komodo\engine\player\font-bankgothic.ttf"/-->
+<truetypefont id="player.font.time" file="@SKINSPATH@Komodo\engine\player\Beware.ttf"/>
 
 <bitmap id="bitmapfont.timer" file="graphics.png" x="1" y="324" w="478" h="111" gammagroup="text.timer"/>
 <bitmapfont id="player.font.timer" file="bitmapfont.timer" charwidth="30" charheight="55" hspacing="-10" vspacing="0"/>
@@ -163,4 +164,54 @@
 <bitmap id="player.component.frame.bottom.left" file="graphics.png" x="273" y="539" w="20" h="20" gammagroup="component.frame"/>
 <bitmap id="player.component.frame.bottom.middle" file="graphics.png" x="294" y="539" w="50" h="20" gammagroup="component.frame"/>
 <bitmap id="player.component.frame.bottom.right" file="graphics.png" x="345" y="539" w="20" h="20" gammagroup="component.frame"/>
+
+<!-- Custom colors -->
+	<color id="color.nowplaying" value="200,200,200" gammagroup="text.nowplaying"/>
+	<color id="color.indicator" value="255,255,255" gammagroup="text.indicator"/>
+	<color id="color.button.label" value="255,255,255" gammagroup="genbutton.text"/>
+	<color id="color.plist" value="255,255,255" gammagroup="text.plist"/>
+	<color id="color.time" value="255,255,255" gammagroup="text.time"/>
+	
+	<!-- wasabi colors -->
+	<color id="wasabi.text.color" value="255,255,255" gammagroup="wasabi.text"/>
+	<color id="wasabi.tooltips.textcolor" value="0,0,0" gammagroup="tooltip.text" />
+	<color id="abouttext" value="0,0,0" gammagroup="Text"/>
+	
+	<!-- Generic Lists -->
+	
+	<color id="wasabi.list.text" value="145,214,255" gammagroup="list.Text"/> <!--lists/trees item foreground (also edit text) -->
+	<color id="wasabi.list.background" value="0,0,0" gammagroup="List.Background"/>  <!--lists/trees item background (also bg for edit) -->
+	<bitmap id="wasabi.frame.basetexture" file="$solid" h="10" w="10" color="0,0,0" gammagroup="List.Background"/>  <!--this is for other list colors (color editor, etc.) -->
+	<bitmap id="wasabi.list.background" file="$solid" h="10" w="10" color="0,0,0" gammagroup="List.Background"/>  <!--this is for other list colors (color editor, etc.) -->
+	
+	<color id="wasabi.list.text.selected" value="50,50,50" gammagroup="List.TextSelected"/> <!--listview/treeview selection bar text color -->
+	<color id="wasabi.list.text.selected.background" value="110,160,190" gammagroup="List.SelBackground"/> <!--listview/treeview selection bar backcolor -->
+	<color id="studio.list.item.selected" value="50,50,50" gammagroup="List.TextSelected"/>
+	<color id="studio.list.item.focused" value="145,214,255" gammagroup="List.SelBackground"/>
+	
+	<color id="wasabi.list.text.current" value="145,214,0" gammagroup="playList.current"/> <!-- currently playing item in lists -->
+	<color id="wasabi.list.text.selected.inactive" value="10,10,10" gammagroup="List.TextSelected"/> <!-- listview/treeview selection bar textcolor (inactive) -->
+	<color id="wasabi.list.text.selected.background.inactive" value="70,105,128" gammagroup="List.SelBackground"/> <!-- listview/treeview selectionbar back color (inactive) -->
+	
+	<color id="wasabi.list.column.background" value="204,208,217" gammagroup="column.base"/> <!-- listview header background color -->
+	<color id="wasabi.list.column.text" value="0,0,0" gammagroup="column.text"/> <!-- listview header text color -->
+	<color id="wasabi.list.column.frame.top" value="246,246,248" gammagroup="column.base"/> // listview header frame top color
+	<color id="wasabi.list.column.frame.middle" value="142,150,163" gammagroup="column.base"/> // listview header frame middle color
+	<color id="wasabi.list.column.frame.bottom" value="0,0,0" gammagroup="column.base"/> // listview header frame bottom color
+	<color id="wasabi.list.column.empty" value="142,150,163" gammagroup="column.base"/> // listview header empty color (beyond the columns
+	
+	<!-- edit wnds -->
+	<color id="wasabi.window.background" value="77,75,76" gammagroup="base"/> <!--ML WINDOW BORDERS RALPHwindow background. -  If this color is not defined, a whole container is created in memory to extract a pixel, so specifying it makes skin loading faster -->
+	<color id="wasabi.window.text" value="200,200,200" gammagroup="wasabi.text"/> <!--text color within windows -->
+	<color id="wasabi.border.sunken" value="204,208,217" gammagroup="base"/> // color of dividers and sunken borders
+	<color id="wasabi.text" value="200,200,200" gammagroup="wasabi.text"/>
+	
+	<color id="wasabi.scrollbar.foreground" value="50,50,50" gammagroup="List.Background"/> <!-- scrollbar foreground color -->
+	<color id="wasabi.scrollbar.background" value="0,0,0" gammagroup="List.Background"/> <!-- scrollbar background color -->
+	<color id="wasabi.scrollbar.foreground.inverted" value="0,0,0" gammagroup="List.Background"/> <!-- inverse scrollbar foreground color -->
+	<color id="wasabi.scrollbar.background.inverted" value="0,0,0" gammagroup="List.Background"/> <!-- inverse scrollbar background color -->
+	
+	<color id="wasabi.button.text" value="150,150,150" gammagroup="wasabi.button.text"/> <!-- Buttons text color -->
+	<color id="wasabi.button.hiliteText" value="0,0,0" gammagroup="wasabi.button.text"/> <!-- Buttons hilite text color, used by tab windows-->
+	<color id="wasabi.button.dimmedText" value="149,156,169" gammagroup="wasabi.button.text"/> <!-- Buttons dimmed text color, when disabled -->
 </elements>

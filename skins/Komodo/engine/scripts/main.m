@@ -427,7 +427,7 @@ buttonWindow.onLeftClick() {
 	main.setXMLParam("lockminmax","0");
 	main.setXMLParam("move","1");
 	
-	attrAOT.setData(getPrivateString(getSkinName(),"lastAOT","0"));
+	//attrAOT.setData(getPrivateString(getSkinName(),"lastAOT","0"));
 }
 
 buttonFull.onLeftClick() {
@@ -452,7 +452,7 @@ buttonFull.onLeftClick() {
 	main.resize(0,0, getMonitorWidth(), getMonitorHeight());
 	main.setXMLParam("lockminmax","1");
 	
-	attrAOT.setData("1");
+	//attrAOT.setData("1");
 }
 
 attrAOT.onDataChanged() {

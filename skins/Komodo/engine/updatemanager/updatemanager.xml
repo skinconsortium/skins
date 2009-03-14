@@ -66,6 +66,6 @@
 
 <scripts>
 
-	<script file="updatemanager/updatemanager.maki" param="musicshow;0.1"/>
+	<script file="@SKINSPATH@Komodo\engine\updatemanager\updatemanager.maki" param="komodo;0.1"/>
 
 </scripts>
