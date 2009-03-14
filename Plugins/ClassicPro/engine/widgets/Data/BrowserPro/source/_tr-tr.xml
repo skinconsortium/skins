@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <WasabiXML>
 	<BrowserPro>
-		<sourceitem name="SongBook Þarký Sözleri" comment="Þu an yürütülen þarkýnýn þarký sözlerini gösterir. Çok büyük veritabaný." url="http://www.songbook.me/tmp/lyrics.php?bg=%COLOR:LBG%%AND%txt=%COLOR:LTXT%%AND%artist=%ARTIST%%AND%title=%TITLE%" icon="icon.songbook.lyrics"/>
-		<sourceitem name="SongBook Þarký Sözleri (yerel ayýklama)" comment="Þu an yürütülen þarkýnýn þarký sözlerini gösterir. Çok büyük veritabaný." url="http://localhost/songbook.me/tmp/lyrics.php?bg=%COLOR:LBG%%AND%txt=%COLOR:LTXT%%AND%artist=%ARTIST%%AND%title=%TITLE%" icon="icon.songbook.lyrics"/>
+		<sourceitem name="SongBook Þarký Sözleri" comment="Þu an yürütülen þarkýnýn þarký sözlerini gösterir. Çok büyük veritabaný." url="http://www.songbook.me/tmp/lyrics.php?bg=%COLOR:LBG%%AND%txt=%COLOR:LTXT%%AND%artist=%ARTIST%%AND%title=%TITLE%%AND%album=%ALBUM%" icon="icon.songbook.lyrics"/>
 		<sourceitem name="Discogs (Sanatçý)" comment="Bu sanatçý için Discogs arar." url="http://www.discogs.com/artist/%ARTIST%" icon="icon.discogs"/>
 		<sourceitem name="Gezgin Görünümü" comment="Þu an yürütülen öðenin dizinine göz atar." url="%PATH%/" icon="icon.explorer"/>
 		<sourceitem name="Foxytunes (Sanatçý)" comment="Foxytunes yürütülen sanatçý hakkýndaki bilgileri gösterir." url="http://www.foxytunes.com/artist/%ARTIST%" icon="icon.foxytunes"/>

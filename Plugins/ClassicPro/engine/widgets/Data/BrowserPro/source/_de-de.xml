@@ -1,8 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <WasabiXML>
 	<BrowserPro>
-		<sourceitem name="SongBook Texte" comment="zeigt den Liedtext des aktuellen Songs an. Sehr grosse Datenbank" url="http://www.songbook.me/tmp/lyrics.php?bg=%COLOR:LBG%%AND%txt=%COLOR:LTXT%%AND%artist=%ARTIST%%AND%title=%TITLE%" icon="icon.songbook.lyrics"/>
-		<sourceitem name="SongBook Texte (lokal)" comment="zeigt den Liedtext des aktuellen Songs an. Sehr grosse Datenbank" url="http://localhost/songbook.me/tmp/lyrics.php?bg=%COLOR:LBG%%AND%txt=%COLOR:LTXT%%AND%artist=%ARTIST%%AND%title=%TITLE%" icon="icon.songbook.lyrics"/>
+		<sourceitem name="SongBook Texte" comment="zeigt den Liedtext des aktuellen Songs an. Sehr grosse Datenbank" url="http://www.songbook.me/tmp/lyrics.php?bg=%COLOR:LBG%%AND%txt=%COLOR:LTXT%%AND%artist=%ARTIST%%AND%title=%TITLE%%AND%album=%ALBUM%" icon="icon.songbook.lyrics"/>
 		<sourceitem name="Discogs (Interpret)" comment="aktuellen Interpreten auf Discogs suchen" url="http://www.discogs.com/artist/%ARTIST%" icon="icon.discogs"/>
 		<sourceitem name="Explorer Ansicht" comment="zeigt den Ordner des aktuell abgespielten Titels" url="%PATH%/" icon="icon.explorer"/>
 		<sourceitem name="Foxytunes (Interpret)" comment="Foxytunes zeigt informationen zum aktuellen Interpreten an" url="http://www.foxytunes.com/artist/%ARTIST%" icon="icon.foxytunes"/>
