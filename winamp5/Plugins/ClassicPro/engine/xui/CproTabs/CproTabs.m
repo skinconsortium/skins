@@ -373,7 +373,7 @@ onMessage(int message, int i0, int i1, int i2, String s0, String s1, GuiObject o
 		if (t.isGoingToTarget())
 			return SUCCESS;
 
-		if (t.moving)
+		if (t.moving || i2)
 		{
 			moveTo(t, t.initX);
 			debugTabs();
