@@ -352,7 +352,6 @@ tabHolder.onResize (int x, int y, int w, int h)
 	align(firstTab);
 }
 
-
 onMessage(int message, int i0, int i1, int i2, String s0, String s1, GuiObject obj)
 {
 	Tab t = obj;
@@ -371,6 +370,9 @@ onMessage(int message, int i0, int i1, int i2, String s0, String s1, GuiObject o
 	}
 	if (message == ON_LEFT_BUTTON_UP)
 	{
+		if (t.isGoingToTarget())
+			return SUCCESS;
+
 		if (t.moving)
 		{
 			moveTo(t, t.initX);
@@ -386,6 +388,9 @@ onMessage(int message, int i0, int i1, int i2, String s0, String s1, GuiObject o
 	}
 	else if (message == ON_MOUSE_MOVE)
 	{
+		if (t.isGoingToTarget())
+			return SUCCESS;
+
 		if (t.moving)
 		{
 		t.bringToFront();

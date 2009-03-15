@@ -72,6 +72,12 @@ trigger.onLeftButtonUp (int x, int y)
 
 trigger.onRightButtonUp (int x, int y)
 {
+	if (movingTab)
+	{
+		complete;
+		return;
+	}
+	
 	sendMessage(ON_RIGHT_BUTTON_UP, x, clientToScreenX(trigger.getLeft()), clientToScreenY(trigger.getTop()+26), "", "", parent);
 }
 
