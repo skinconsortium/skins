@@ -28,7 +28,7 @@
 	!define CPRO_WIDGET_COMPANY "Skin Consortium"
 	!define CPRO_WIDGET_COPYRIGHT "Copyright (c) 2005-2009"	
 	!define CPRO_WIDGET_UNINSTALLER "Uninstall (${CPRO_WIDGET_NAME})"	
-	!define CPRO_WIDGET_OUTFILE_PATH "C:\Users\Pawel\Pulpit"	; change to compile properly	
+	!define CPRO_WIDGET_OUTFILE_PATH "C:\Program Files\Winamp"	; change to compile properly	
 	
 ;###########################################################################################
 ;#											CONFIGURATION
@@ -89,7 +89,6 @@
 	
 ; Installer pages	
 	!insertmacro MUI_PAGE_WELCOME
-;	!insertmacro MUI_PAGE_LICENSE "${CPRO_WIDGET_SOURCEPATH}\License.txt" ;_installer\License\CPro_en_us_License.rtf"
 	!insertmacro MUI_PAGE_COMPONENTS
 	!insertmacro MUI_PAGE_DIRECTORY
 	!insertmacro MUI_PAGE_INSTFILES
@@ -368,18 +367,18 @@ Function CreateFinishPage
     SetCtlColors $Label3 "0x000000" "TRANSPARENT"
 
 ; Fourth label
-	${NSD_CreateLabel} 115u 150u 63% 10u "$(CPro_Widget_FinishPage_4)"
+	${NSD_CreateLabel} 115u 148u 63% 10u "$(CPro_Widget_FinishPage_4)"
 	Pop $Label4
 	${NSD_AddStyle} $Label4 ${WS_VISIBLE}|${WS_CHILD}|${WS_CLIPSIBLINGS}
     SetCtlColors $Label4 "0x000000" "TRANSPARENT"	
 
 ; CheckBox 1
-	${NSD_CreateCheckBox} 115u 160u 65% 10u "$(CPro_Widget_FinishPage_5)"
+	${NSD_CreateCheckBox} 115u 160u 65% 10u "$(CPro_Widget_FinishPage_6)"
 	Pop $CheckBox1
     SetCtlColors $CheckBox1 "0x000000" "0xFFFFFF"
 	
 ; CheckBox 2
-	${NSD_CreateCheckBox} 115u 173u 65% 10u "$(CPro_Widget_FinishPage_6)"
+	${NSD_CreateCheckBox} 115u 170u 65% 16u "$(CPro_Widget_FinishPage_5)"
 	Pop $CheckBox2	
     SetCtlColors $CheckBox2 "0x000000" "0xFFFFFF"	
 	
@@ -497,14 +496,18 @@ SectionEnd
 Function un.onInit
 
 	!insertmacro MUI_LANGDLL_DISPLAY
-	
+
+FunctionEnd
+
+Section "-Un.Pre"
+
 	DetailPrint "$(CPro_Winamp_Path)"
 		Call un.MultiUser_Path	
 		
 	DetailPrint "$(CPro_Check_Winamp)"
 		Call un.CloseWinamp
-		
-FunctionEnd
+
+SectionEnd
 
 Section "-Un.Uninstall"
 

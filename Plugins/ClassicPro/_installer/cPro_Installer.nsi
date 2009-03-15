@@ -14,7 +14,7 @@
 	!define CPRO_VERSION "1.1"
 	!define CPRO_REVISION "0"
 	!define CPRO_BUILD "0"
-	!define CPRO_PAYPAL_LINK "https://www.paypal.com/uk/cgi-bin/webscr?cmd=_flow&SESSION=lbtyhrWugcvcf_QcrMnTrArKKiT3DcYJbH-_gFqC8-fXZNwJ4ibp2UbTunS&dispatch=5885d80a13c0db1fa798f5a5f5ae42e779d4b5655493f6171509c5b2ec019b86"	
+	!define CPRO_PAYPAL_LINK "https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=donate%40skinconsortium%2ecom&item_name=SkinConsortium%20Donation&item_number=%3e%20for%20skin%3a%20ClassicPro&no_shipping=1&no_note=1&cn=Optional%20Message&tax=0¤cy_code=EUR&lc=GB&bn=PP%2dDonationsBF&charset=UTF%2d8"	
 	!define /Date CPRO_DATE "%Y-%m-%d"
 	!define CPRO_BT "http://cpro.skinconsortium.com"
 	!define CPRO_WEB_PAGE "http://cpro.skinconsortium.com"
@@ -24,11 +24,12 @@
 	!define CPRO_COPYRIGHT "Copyright (c) 2005-2009"	
 	!define CPRO_UNINSTALLER "Uninstall ClassicPro"	
 	!define CPRO_WINAMP_VERSION "5.55"
-	!define CPRO_WINAMP_SKINS "C:\Program Files\Winamp\Skins" ; change to compile properly
+	!define CPRO_OUTFILE_PATH "C:\Program Files\Winamp"			; change to compile properly
+	!define CPRO_WINAMP_SKINS "C:\Program Files\Winamp\Skins"   ; change to compile properly
 	!define CPRO_WINAMP_SYSTEM "C:\Program Files\Winamp\System"	; change to compile properly
-	!define CPRO_OUTFILE_PATH "C:\Program Files\Winamp\"	; change to compile properly	
+
 ;Unselect when release version
-	!define CPRO_BETA "- Beta"
+	;!define CPRO_BETA "- Beta"
 	
 ;###########################################################################################
 ;#											CONFIGURATION
@@ -48,7 +49,7 @@
 	Caption "$(CPro_Caption)"
 	BrandingText "${CPRO_BT}"
 
-	InstType $(CPro_Full)     																		   ;1
+	InstType $(CPro_Full)
 	InstType $(CPro_Minimal)
 	
 	ReserveFile "Plugins\Linker.dll"
@@ -134,20 +135,20 @@
 	!include "Languages\cPro_de_de.nsh"
 	
 ;Language: Spanish International (3082), [1252], ${LANG_SPANISH_INTERNATIONAL}
-	!insertmacro MUI_LANGUAGE "SpanishInternational"			
-	!include "Languages\cPro_es_us.nsh"
+	;!insertmacro MUI_LANGUAGE "SpanishInternational"			
+	;!include "Languages\cPro_es_us.nsh"
 
 ;Language: French (1036), [1252], ${LANG_FRENCH}	
 	!insertmacro MUI_LANGUAGE "French"			
 	!include "Languages\cPro_fr_fr.nsh"	
 	
 ;Language: Italian (1040), [1252], ${LANG_ITALIAN}	
-	!insertmacro MUI_LANGUAGE "Italian"			
-	!include "Languages\cPro_it_it.nsh"
+	;!insertmacro MUI_LANGUAGE "Italian"			
+	;!include "Languages\cPro_it_it.nsh"
 
 ;Language: Dutch (1043), [1252], ${LANG_DUTCH}	
-	!insertmacro MUI_LANGUAGE "Dutch"			
-	!include "Languages\cPro_nl_nl.nsh"
+	;!insertmacro MUI_LANGUAGE "Dutch"			
+	;!include "Languages\cPro_nl_nl.nsh"
 
 ;Language: Polish (1045), [1250], ${LANG_POLISH}	
 	!insertmacro MUI_LANGUAGE "Polish"			
@@ -166,28 +167,28 @@
 	!include "Languages\cPro_ru_ru.nsh"
 	
 ;Language: Chinese (Simplified) (2052), [936], ${LANG_SIMPCHINESE}
-	!insertmacro MUI_LANGUAGE "SimpChinese"		
-	!include "Languages\cPro_zh_cn.nsh"
+	;!insertmacro MUI_LANGUAGE "SimpChinese"		
+	;!include "Languages\cPro_zh_cn.nsh"
 	
 ;Language: Chinese (Traditional) (1028), [950], ${LANG_TRADCHINESE}
-	!insertmacro MUI_LANGUAGE "TradChinese"		
-	!include "Languages\cPro_zh_tw.nsh"
+	;!insertmacro MUI_LANGUAGE "TradChinese"		
+	;!include "Languages\cPro_zh_tw.nsh"
 	
 ;Language: Swedish (1053), [1252], ${LANG_SWEDISH}	
-	!insertmacro MUI_LANGUAGE "Swedish"			
-	!include "Languages\cPro_sv_se.nsh"
+	;!insertmacro MUI_LANGUAGE "Swedish"			
+	;!include "Languages\cPro_sv_se.nsh"
 
 ;Language: Turkish (1055), [1254], ${LANG_TURKISH}	
 	!insertmacro MUI_LANGUAGE "Turkish"			
 	!include "Languages\cPro_tr_tr.nsh"
 
 ;Language: Japanese (1041), [932], ${LANG_JAPANESE}	
-	!insertmacro MUI_LANGUAGE "Japanese"			
-	!include "Languages\cPro_ja_jp.nsh"
+	;!insertmacro MUI_LANGUAGE "Japanese"			
+	;!include "Languages\cPro_ja_jp.nsh"
 
 ;Language: Korean (1042), [949], ${LANG_KOREAN}	
-	!insertmacro MUI_LANGUAGE "Korean"			
-	!include "Languages\cPro_ko_kr.nsh"
+	;!insertmacro MUI_LANGUAGE "Korean"			
+	;!include "Languages\cPro_ko_kr.nsh"
 	
 ;###########################################################################################
 ;#											VERSION INFORMATION
@@ -287,7 +288,6 @@ Function .onInit
 	!insertmacro MUI_LANGDLL_DISPLAY
    
 	InitPluginsDir
-
 ;	File /oname=$PLUGINSDIR\splash.bmp "Images\logo.bmp"
 ;	advsplash::show 1000 600 400 0x04025C $PLUGINSDIR\splash
 ;	Pop $0 
@@ -391,18 +391,18 @@ Function CreateFinishPage
     SetCtlColors $Label3 "0x000000" "TRANSPARENT"
 
 ; Fourth label
-	${NSD_CreateLabel} 115u 150u 63% 10u "$(CPro_FinishPage_4)"
+	${NSD_CreateLabel} 115u 148u 63% 10u "$(CPro_FinishPage_4)"
 	Pop $Label4
 	${NSD_AddStyle} $Label4 ${WS_VISIBLE}|${WS_CHILD}|${WS_CLIPSIBLINGS}
     SetCtlColors $Label4 "0x000000" "TRANSPARENT"	
 
 ; CheckBox 1
-	${NSD_CreateCheckBox} 115u 160u 65% 10u "$(CPro_FinishPage_5)"
+	${NSD_CreateCheckBox} 115u 160u 65% 10u "$(CPro_FinishPage_6)"
 	Pop $CheckBox1
     SetCtlColors $CheckBox1 "0x000000" "0xFFFFFF"
 	
 ; CheckBox 2
-	${NSD_CreateCheckBox} 115u 173u 65% 10u "$(CPro_FinishPage_6)"
+	${NSD_CreateCheckBox} 115u 170u 65% 16u "$(CPro_FinishPage_5)"
 	Pop $CheckBox2	
     SetCtlColors $CheckBox2 "0x000000" "0xFFFFFF"	
 	
@@ -426,12 +426,12 @@ FunctionEnd
 
 Function CheckFinishPage
 
-	${NSD_GetState} $CheckBox1 $Checkbox_State
+	${NSD_GetState} $CheckBox2 $Checkbox_State
 	${If} $Checkbox_State = ${BST_CHECKED}
 		ExecShell "open" "${CPRO_WEB_PAGE}"
 	${EndIf}
 	
-	${NSD_GetState} $CheckBox2 $Checkbox_State
+	${NSD_GetState} $CheckBox1 $Checkbox_State
 	${If} $Checkbox_State = ${BST_CHECKED}
 		ExecShell "open" "$INSTDIR\winamp.exe"
 		
@@ -466,12 +466,12 @@ Section "$(CPro_CProFiles)" "CPro_Sec_CProFiles"
 	SetOutPath $INSTDIR\Plugins\ClassicPro\_installer\Images
 		File "images\*.bmp"
 		File "images\*.ico"	
-		File "images\*.*"
+		;File "images\*.*"
 	SetOutPath $INSTDIR\Plugins\ClassicPro\_installer\Languages
 		File "Languages\*.nsh"
 	SetOutPath $INSTDIR\Plugins\ClassicPro\_installer\Plugins
 		File "Plugins\*.txt"
-		File "Plugins\*.dll"	
+		File "Plugins\*.dll"
 ;CPro engine		
 	SetOutPath $INSTDIR\Plugins\ClassicPro\engine
 		File "..\engine\*.xml"
@@ -576,8 +576,10 @@ Section "$(CPro_CProFiles)" "CPro_Sec_CProFiles"
 ;		File /nonfatal "..\engine\flex\xml\*.xml"
 
 	SetOutPath $INSTDIR\System
+		Delete "${CPRO_WINAMP_SYSTEM}\ClassicProflex.w5s"
 		File /nonfatal "${CPRO_WINAMP_SYSTEM}\ClassicPro.w5s"
-
+		File /nonfatal "${CPRO_WINAMP_SYSTEM}\ClassicPro.wbm"
+		
 ;	SetOutPath "$INSTDIR\Skins\cProFlex - iFlex"
 ;		File /nonfatal /r "${CPRO_WINAMP_SKINS}\cProFlex - iFlex\"
 ;	SetOutPath "$INSTDIR\Skins\cProFlex - Xenolith"
@@ -600,7 +602,7 @@ SectionGroup "$(CPro_CProCustom)" CPro_Sec_CProCustom
 
 	Section "$(CPro_cPlaylistPro)" CPro_Sec_cPlaylistPro
 		
-		SectionIn 1 2 RO	
+		SectionIn 1 2
 		SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\PlaylistPro
 			File "..\engine\xui\PlaylistPro\*.xml"
 			File "..\engine\xui\PlaylistPro\*.m"
@@ -671,7 +673,9 @@ Section "-Leave"
 		CreateDirectory "$SMPROGRAMS\Winamp\${CPRO_NAME}"
 		CreateShortCut "$SMPROGRAMS\Winamp\${CPRO_NAME}\$(CPro_MenuStart1).lnk" "$INSTDIR\${CPRO_UNINSTALLER}.exe"
 		CreateShortCut "$SMPROGRAMS\Winamp\${CPRO_NAME}\$(CPro_MenuStart2).lnk" "$INSTDIR\Plugins\ClassicPro\Whats new.txt"
-		CreateShortCut "$SMPROGRAMS\Winamp\${CPRO_NAME}\$(CPro_MenuStart3).lnk" "${CPRO_WEB_PAGE}"
+;		CreateShortCut "$SMPROGRAMS\Winamp\${CPRO_NAME}\$(CPro_MenuStart3).lnk" "${CPRO_WEB_PAGE}.lnk"
+		File /oname=$SMPROGRAMS\Winamp\${CPRO_NAME}\$(CPro_MenuStart3).url "Plugins\link.url"
+		
 	SetShellVarContext current
 
 ;Create uninstaller
@@ -703,13 +707,18 @@ SectionEnd
 Function un.onInit
 
 	!insertmacro MUI_LANGDLL_DISPLAY
-	
+		
+FunctionEnd
+
+Section "-Un.Pre"
+
 	DetailPrint "$(CPro_Winamp_Path)"
 		Call un.MultiUser_Path	
 		
 	DetailPrint "$(CPro_Check_Winamp)"
-		Call un.CloseWinamp		
-FunctionEnd
+		Call un.CloseWinamp
+		
+SectionEnd
 
 Section "-Un.Uninstall"
 
