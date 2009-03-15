@@ -785,22 +785,24 @@ closeTab (tab t)
 	}
 }
 
-sg.onAction (String action, String param, Int x, int y, int p1, int p2, GuiObject source)
+sg.onAction (String action, String param, int x, int y, int p1, int p2, GuiObject source)
 {
 	if(strlower(action) == "select_tab")
 	{
 		if(!checkedBrowser){
 			CproBrowser = getContainer("main").getLayout("normal").findObject("centro.browser");
-			sui_browser_attrib.setData(integerToString(CproBrowser.isVisible()));
+			//sui_browser_attrib.setData(integerToString(CproBrowser.isVisible())); //pjn123 - dont know why I put this here.. removed.. dont crash anymore
 			checkedBrowser=true;
 		}
 
-		Tab t;
+		//Tab t; //pjn123 - changed this
+		Tab t = firstTab;
 		boolean found = false;
-		//if(t.ID != x)
+
+		if(t.ID != x)
 		{
 			closeTab(lastActiveT);
-			t = firstTab;
+			//t = firstTab; //pjn123 - changed this
 			while (t != NULL)
 			{
 				if (t.ID == x && ((x == WIDGET_TAB_ID && param == t.IDS) || x != WIDGET_TAB_ID))
@@ -843,7 +845,7 @@ sg.onAction (String action, String param, Int x, int y, int p1, int p2, GuiObjec
 				}			
 			}
 		}
-		
+	
 		if(t.ID==WIDGET_TAB_ID)
 		{
 			CproSUI.sendAction ("widget_statusbar", "", t.statusbar, 0, 0, 0);
