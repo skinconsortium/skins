@@ -22,7 +22,7 @@
 	-->
 
 	<!-- Custom colors -->
-	<color id="color.nowplaying" value="200,200,200" gammagroup="text.nowplaying"/>
+	<color id="color.nowplaying" value="255,255,255" gammagroup="text.nowplaying"/>
 	<color id="color.indicator" value="255,255,255" gammagroup="text.indicator"/>
 	<color id="color.button.label" value="255,255,255" gammagroup="genbutton.text"/>
 	<color id="color.plist" value="255,255,255" gammagroup="text.plist"/>
