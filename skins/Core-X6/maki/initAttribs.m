@@ -16,8 +16,30 @@ Global ConfigAttribute cattrDA;
 Global ConfigAttribute cattrAlbumArt;
 Global ConfigAttribute cattrEq;
 
+// Attributes for LCD contents
+
+Global List aCattrMNcontent; // List to Parse in Loop
+Global configattribute CattrMNcontent1; //Separate for Triggers
+Global configattribute CattrMNcontent2;
+Global configattribute CattrMNcontent3;
+
 initAttribsonLoaded()
 {
+
+
+/*	ConfigItem cgiLCDcontentT = Config.getItemByGuid(CUSTOM_PAGE_LCD_CONTENT_TRANSLATED);
+	
+
+	CattrMNcontent1 = cgiLCDcontentT.getAttribute("Normal");
+	CattrMNcontent2 = cgiLCDcontentT.getAttribute(MyTranslate(1));
+	CattrMNcontent3 = cgiLCDcontentT.getAttribute("Options");
+
+	aCattrMNcontent = new List;
+	aCattrMNcontent.addItem(CattrMNcontent1);
+	aCattrMNcontent.addItem(CattrMNcontent2);
+	aCattrMNcontent.addItem(CattrMNcontent3);
+*/
+
 	ConfigItem cfgDA = Config.getItemByGuid("{9149C445-3C30-4E04-8433-5A518ED0FDDE}");
 	cattrDA = cfgDA.getAttribute("Enable desktop alpha");
 
@@ -30,5 +52,23 @@ initAttribsonLoaded()
 
 initAttribsonUnLoading()
 {
-	
+
+/*	ConfigAttribute cattribTemp1;
+	ConfigAttribute cattribTemp2;
+	ConfigItem cgiLCDcontent = Config.getItemByGuid(CUSTOM_PAGE_LCD_CONTENT);
+	ConfigItem cgiLCDcontentT = Config.getItemByGuid(CUSTOM_PAGE_LCD_CONTENT_TRANSLATED);
+	List aCattrMNcontentBase;
+	aCattrMNcontentBase = new List;
+	aCattrMNcontentBase.addItem(cgiLCDcontentT.getAttribute("Normal"));
+	aCattrMNcontentBase.addItem(cgiLCDcontentT.getAttribute("Visualization"));
+	aCattrMNcontentBase.addItem(cgiLCDcontentT.getAttribute("Options"));
+	for ( int i = 0; i <= 2; i++ )
+	{
+		cattribTemp1 = aCattrMNcontentBase.enumItem(i);
+		cattribTemp2 = aCattrMNcontent.enumItem(i);
+		cattribTemp1.setData(cattribTemp2.getData());
+	}
+	delete aCattrMNcontent;
+	delete aCattrMNcontentBase;
+	*/
 }
