@@ -31,7 +31,8 @@ Global GuiObject Ticker;
 
 Global Group grpCover;
 Global Group grpEq;
-Global Group grpMNLCD1, grpMNLCD2, grpMNLCD3; // Contents of Main Normal LCD
+
+Global List aGrpMNLCD; // Main Normal LCDs
 
 Global Layer btnCoverButton;
 Global Button btnCoverStar1, btnCoverStar2, btnCoverStar3, btnCoverStar4, btnCoverStar5;
@@ -75,7 +76,6 @@ Global Int PrevValues15, PrevValues16, PrevValues17, PrevValues18, PrevValues19,
 #include "eqdrawer.m"
 // Swithcing between contents
 #include "LCDcontent.m"
-
 function SetVisFrame (animatedlayer vislayer, int Length, int BandStart, int BandStop, int PrevValue, int Offset);
 
 System.onScriptLoaded() {
@@ -93,9 +93,15 @@ System.onScriptLoaded() {
 	Layout lytMainNormal = cntMain.GetLayout("normal");
 	Group grpPlayerNormal = lytMainNormal.GetObject("player.normal.group");
 	Group grpLCD = grpPlayerNormal.GetObject("player.normal.LCD");
-	grpMNLCD1 = grpLCD.GetObject("player.normal.LCD.content.1");
-	grpMNLCD2 = grpLCD.GetObject("player.normal.LCD.content.2");
-	grpMNLCD3 = grpLCD.GetObject("player.normal.LCD.content.3");
+
+	aGrpMNLCD = new List; // Adding LCD contents to a list (array)
+
+	aGrpMNLCD.addItem(grpLCD.GetObject("player.normal.LCD.content.1"));
+	aGrpMNLCD.addItem(grpLCD.GetObject("player.normal.LCD.content.2"));
+	aGrpMNLCD.addItem(grpLCD.GetObject("player.normal.LCD.content.3"));
+
+//	Group grpMNLCD1 = aGrpMNLCD.eNumItem(0);
+	Group grpMNLCD1 = grpLCD.GetObject("player.normal.LCD.content.1");
 
 	btnMNcontent1 = grpPlayerNormal.getObject("toggle1");
 	btnMNcontent2 = grpPlayerNormal.getObject("toggle2");
@@ -180,7 +186,7 @@ System.onScriptLoaded() {
 	coverdrawerOnLoaded();
 	eqdrawerOnLoaded();
 	keyboardOnLoaded();
-	LCDcontentOnLoaded();
+//	LCDcontentOnLoaded();
 
 }
 
@@ -252,6 +258,7 @@ System.onTitleChange(String newtitle)
 System.onScriptUnLoading() {
 	Delete tmrVis;
 	Delete tmrPlay2Pause;
+	delete aGrpMNLCD;
 
 	initAttribsonUnLoading();
 }
