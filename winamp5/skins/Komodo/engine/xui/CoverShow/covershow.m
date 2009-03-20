@@ -105,6 +105,7 @@ system.onScriptUnloading() {
 }
 
 PeListener.onPleditModified () {
+	if (scrollAnim.isRunning()) scrollAnim.stop();
 	if (!delayRefresh.isRunning()) delayRefresh.start();
 
 }
@@ -410,6 +411,7 @@ mousetrap.onLeftButtonDown(int x, int y) {
 
 mousetrap.onMouseMove(int x, int y) {
 	if (!mousePressed) return;
+	//parentLayout.sendAction("INDTEXT", "UP"+integertostring(random(100)), 0,0,0,0);
 	
 	float move = lastX - getMousePosX();
 	
@@ -432,16 +434,21 @@ mousetrap.onMouseMove(int x, int y) {
 	lasttime = getTimeOfDay();
 	
 	if (timediff <= 0) timediff = 1;
-	lastmove = (lastX2 - getMousePosX()) * 300 / (sensitivity*timediff);
-	lastX2 = getMousePosX();
+	//lastmove = (lastX2 - getMousePosX()) * 300 / (sensitivity*timediff);
+	//lastX2 = getMousePosX();
+	x = x + getLeft();
+	lastmove = (lastX2 - x) * 300 / (sensitivity*timediff);
+	lastX2 = x;
 	
 	updatePartial();
 }
 
 mousetrap.onLeftButtonUp(int x, int y) {
+	//mousetrap.onMouseMove(x, y);
+	
 	mousePressed = 0;
 	
-	updatePartial();
+	//updatePartial();
 	
 	int numtracks = pledit.getNumTracks();
 

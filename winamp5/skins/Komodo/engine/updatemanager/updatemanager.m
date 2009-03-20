@@ -60,7 +60,7 @@ System.onScriptLoaded ()
 	l_txt = l_updater.findObject("txt");
 
 	btn_cancel = l_updater.findObject("cancel");
-	btn_donate = l_updater.findObject("donate");
+	//btn_donate = l_updater.findObject("donate");
 
 	str_skinname = getToken(getParam(), ";", 0);
 	str_version = getToken(getParam(), ";", 1);
@@ -97,6 +97,7 @@ tmr_fill.onTimer ()
 		c_updater.show();
 		l_updater.center();
 		brw.navigateUrl(SERVERFILE + "?noheaderquit=1&q=check&skin=" + str_skinname + "&version=" + str_version);
+		//tmr_fill.setDelay(200);
 	}
 	
 	if (mappos >= map_fill.getWidth())
@@ -195,8 +196,9 @@ btn_cancel.onLeftClick ()
 {
 	shutdownScript();
 }
-
+/*
 btn_donate.onLeftClick ()
 {
 	System.navigateUrl("https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=donate%40skinconsortium%2ecom&item_name=SkinConsortium%20Donation&item_number=%3e%20for%20skin%3a%20"+str_skinname+"&no_shipping=1&no_note=1&cn=Optional%20Message&tax=0&currency_code=EUR&lc=GB&bn=PP%2dDonationsBF&charset=UTF%2d8");
 }
+*/
