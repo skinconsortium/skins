@@ -9,23 +9,23 @@
 
 <elements>
 
-	<bitmap id="sc.updatemanager.bg" file="updatemanager/updatemgr.png" x="0" y="0" w="194" h="28" />
+	<bitmap id="sc.updatemanager.bg" file="@SKINSPATH@Komodo\engine\updatemanager\updatemgr.png" x="0" y="0" w="194" h="28" />
 
-	<bitmap id="sc.updatemanager.progress.outer" file="updatemanager/updatemgr.png" x="0" y="60" w="92" h="10" />
-	<bitmap id="sc.updatemanager.progress.inner" file="updatemanager/updatemgr.png" x="92" y="60" w="92" h="10" />
-	<bitmap id="sc.updatemanager.progress.map" file="updatemanager/updatemgr.png" x="92" y="70" w="92" h="10" />
+	<bitmap id="sc.updatemanager.progress.outer" file="@SKINSPATH@Komodo\engine\updatemanager\updatemgr.png" x="0" y="60" w="92" h="10" />
+	<bitmap id="sc.updatemanager.progress.inner" file="@SKINSPATH@Komodo\engine\updatemanager\updatemgr.png" x="92" y="60" w="92" h="10" />
+	<bitmap id="sc.updatemanager.progress.map" file="@SKINSPATH@Komodo\engine\updatemanager\updatemgr.png" x="92" y="70" w="92" h="10" />
 
-	<bitmap id="sc.updatemanager.txt.update" file="updatemanager/updatemgr.png" x="0" y="70" w="92" h="10" />
-	<bitmap id="sc.updatemanager.txt.na" file="updatemanager/updatemgr.png" x="0" y="80" w="92" h="10" />
-	<bitmap id="sc.updatemanager.txt.av" file="updatemanager/updatemgr.png" x="92" y="80" w="92" h="10" />
+	<bitmap id="sc.updatemanager.txt.update" file="@SKINSPATH@Komodo\engine\updatemanager\updatemgr.png" x="0" y="70" w="92" h="10" />
+	<bitmap id="sc.updatemanager.txt.na" file="@SKINSPATH@Komodo\engine\updatemanager\updatemgr.png" x="0" y="80" w="92" h="10" />
+	<bitmap id="sc.updatemanager.txt.av" file="@SKINSPATH@Komodo\engine\updatemanager\updatemgr.png" x="92" y="80" w="92" h="10" />
 
-	<bitmap id="sc.updatemanager.donate" file="updatemanager/updatemgr.png" x="0" y="28" w="39" h="16" />
-	<bitmap id="sc.updatemanager.donate.hover" file="updatemanager/updatemgr.png" x="39" y="28" w="39" h="16" />
-	<bitmap id="sc.updatemanager.donate.down" file="updatemanager/updatemgr.png" x="78" y="28" w="39" h="16" />
+	<!--bitmap id="sc.updatemanager.donate" file="@SKINSPATH@Komodo\engine\updatemanager\updatemgr.png" x="0" y="28" w="39" h="16" />
+	<bitmap id="sc.updatemanager.donate.hover" file="@SKINSPATH@Komodo\engine\updatemanager\updatemgr.png" x="39" y="28" w="39" h="16" />
+	<bitmap id="sc.updatemanager.donate.down" file="@SKINSPATH@Komodo\engine\updatemanager\updatemgr.png" x="78" y="28" w="39" h="16" /-->
 
-	<bitmap id="sc.updatemanager.cancel" file="updatemanager/updatemgr.png" x="0" y="44" w="39" h="16" />
-	<bitmap id="sc.updatemanager.cancel.hover" file="updatemanager/updatemgr.png" x="39" y="44" w="39" h="16" />
-	<bitmap id="sc.updatemanager.cancel.down" file="updatemanager/updatemgr.png" x="78" y="44" w="39" h="16" />
+	<bitmap id="sc.updatemanager.cancel" file="@SKINSPATH@Komodo\engine\updatemanager\updatemgr.png" x="0" y="44" w="39" h="16" />
+	<bitmap id="sc.updatemanager.cancel.hover" file="@SKINSPATH@Komodo\engine\updatemanager\updatemgr.png" x="39" y="44" w="39" h="16" />
+	<bitmap id="sc.updatemanager.cancel.down" file="@SKINSPATH@Komodo\engine\updatemanager\updatemgr.png" x="78" y="44" w="39" h="16" />
 </elements>
 
 <container id="sc.updatemanager" name="Update Manager" nomenu="1" default_visible="0" dynamic="0">
@@ -37,14 +37,14 @@
 			x="0" y="0" h="1" w="1"
 		/>
 
-		<button
+		<!--button
 			id="donate"
 			x="6" y="6" w="39" h="16"
 			image="sc.updatemanager.donate"
 			hoverImage="sc.updatemanager.donate.hover"
 			downImage="sc.updatemanager.donate.down"
 			tooltip="Donate money to support our work"
-		/>
+		/-->
 
 		<button
 			id="cancel"
