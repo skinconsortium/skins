@@ -12,7 +12,7 @@
 global layout main;
 global group scriptGroup;
 global button buttonSwitchToCover, buttonSwitchToList;
-global group covershow, plplus;
+global group plplus, covershow;
 
 global group currGroup, nextGroup;
 

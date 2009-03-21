@@ -158,7 +158,15 @@ System.onScriptLoaded() {
 		firstload = new Timer;
 		firstload.setDelay(3000);
 		firstload.start();
-	};
+	}
+	
+	int currdate = getDateDoy(getDate());
+	if (getPrivateInt(getSkinName(), "Last update check", 0) != currdate)
+		setPrivateInt(getSkinName(), "Check for Updates", 1);
+	else
+		setPrivateInt(getSkinName(), "Check for Updates", 0);
+		
+	setPrivateInt(getSkinName(), "Last update check", currdate);
 }
 
 System.onScriptUnloading() {
