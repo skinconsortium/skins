@@ -18,6 +18,7 @@ function updateDim(float offPos);
 function updateCover(group g, int index);
 function setAAgroupToPos(group g, float pos);
 function group getAAgroup(int index);
+function int isOverObject(guiobject obj, int mx, int my);
 
 function updateInfo(int index);
 
@@ -54,7 +55,7 @@ global int numPLItems, targetPos;
 global int mousePressed, lastX, lastX2,  lasttime, origtime, noSlow, mousemoved;
 global float lastplpos, lastmove, scrollSpeed;
 
-global timer delayRefresh, scrollAnim, delayOnLoad;
+global timer delayRefresh, scrollAnim, delayOnLoad, delayDoubleClick;
 global int noreflect;
 
 global layer mousetrap;
@@ -79,7 +80,10 @@ System.onScriptLoaded () {
 	infoRatingHover = infoGr.getObject("info.ratings.hover");
 	
 	delayRefresh = new Timer;
-	delayRefresh.setDelay(50);
+	delayRefresh.setDelay(150);
+	
+	delayDoubleClick = new Timer;
+	delayDoubleClick.setDelay(150);
 	
 	scrollAnim = new Timer;
 	scrollAnim.setDelay(50);
@@ -100,8 +104,21 @@ System.onScriptLoaded () {
 }
 
 system.onScriptUnloading() {
+	parentLayout = NULL;
+	scriptGroup = NULL;
+	PeListener = NULL;
+	gaa1 = NULL;
+	gaa2 = NULL;
+	gaa3 = NULL;
+	gaa4 = NULL;
+	gaa5 = NULL;
+	gaa6 = NULL;
+	gaa7 = NULL;
+	
 	delete delayRefresh;
 	delete scrollAnim;
+	delete delayDoubleClick;
+	
 }
 
 PeListener.onPleditModified () {
@@ -361,9 +378,21 @@ scrollAnim.onTimer() {
 	updatePartial();
 }
 
+// returns true if mx, my mouse coord is over the object
+int isOverObject(guiobject obj, int mx, int my) {
+	//if (!obj) return FALSE;
+
+	int objx1 = obj.getLeft() + parentLayout.getLeft();
+	int objy1 = obj.getTop() + parentLayout.getTop();
+	int objx2 = objx1 + obj.getWidth();
+	int objy2 = objy1 + obj.getHeight();
+	parentLayout.sendAction("INDTEXT", integertostring(mx) + "-"+integertostring(my)+"-"+integertostring(obj.getLeft()) + "-"+integertostring(objx1), 0,0,0,0);
+	return (mx >= objx1 && mx <=objx2 && my >=objy1 && my <=objy2);
+		
+}
 
 mousetrap.onLeftButtonDblClk(int x, int y) {
-	
+	return;
 	int playtrack = TRUE;
 	
 	group g1 = getAAgroup(1);
@@ -377,6 +406,9 @@ mousetrap.onLeftButtonDblClk(int x, int y) {
 	int cur = currPos;
 	if (currPos - cur > 0.5) cur++;
 	
+	x = x + getLeft() + parentLayout.getLeft();
+	y = y + getTop() + parentLayout.getTop();
+	
 	if (g3.isMouseOverRect() && g3.isVisible()) targetPos = cur - 1;
 	else if (g5.isMouseOverRect() && g5.isVisible()) targetPos = cur + 1;
 	else if (g2.isMouseOverRect() && g2.isVisible()) targetPos = cur - 2;
@@ -388,6 +420,7 @@ mousetrap.onLeftButtonDblClk(int x, int y) {
 	
 
 	if (playtrack) PlEdit.playTrack(targetPos);
+	parentLayout.sendAction("INDTEXT", "play"+integertostring(random(100)), 0,0,0,0);
 
 }
 
@@ -396,7 +429,7 @@ mousetrap.onLeftButtonDown(int x, int y) {
 	mousePressed = 1;
 	if (scrollAnim.isRunning()) scrollAnim.stop();
 	
-	lastX = getMousePosX();
+	lastX = x+getLeft(); //getMousePosX();
 	lastX2 = lastX;
 	lastmove = 0;
 	
@@ -443,6 +476,10 @@ mousetrap.onMouseMove(int x, int y) {
 	updatePartial();
 }
 
+delayDoubleClick.onTimer() {
+	stop();
+}
+
 mousetrap.onLeftButtonUp(int x, int y) {
 	//mousetrap.onMouseMove(x, y);
 	
@@ -458,6 +495,7 @@ mousetrap.onLeftButtonUp(int x, int y) {
 		group g1 = getAAgroup(1);
 		group g2 = getAAgroup(2);
 		group g3 = getAAgroup(3);
+		group g4 = getAAgroup(4);
 		group g5 = getAAgroup(5);
 		group g6 = getAAgroup(6);
 		group g7 = getAAgroup(7);
@@ -465,16 +503,24 @@ mousetrap.onLeftButtonUp(int x, int y) {
 		int cur = currPos;
 		if (currPos - cur > 0.5) cur++;
 		
+		int playtrack = TRUE;
+		
 		if (g3.isMouseOverRect() && g3.isVisible()) targetPos = cur - 1;
 		else if (g5.isMouseOverRect() && g5.isVisible()) targetPos = cur + 1;
 		else if (g2.isMouseOverRect() && g2.isVisible()) targetPos = cur - 2;
 		else if (g6.isMouseOverRect() && g6.isVisible()) targetPos = cur + 2;
 		else if (g1.isMouseOverRect() && g1.isVisible()) targetPos = cur - 3;
 		else if (g7.isMouseOverRect() && g7.isVisible()) targetPos = cur + 3;
-		else targetPos = cur;
-		
+		else if (g4.isMouseOverRect() && g4.isVisible()) targetPos = cur;
+		else { targetPos = cur; playtrack = FALSE; }
+
 		scrollSpeed = 0.2;
 		noSlow = 1;
+		
+		if (delayDoubleClick.isRunning() && playtrack)
+			PlEdit.playTrack(targetPos);
+		else
+			delayDoubleClick.start();
 	} else {
 	
 		if (lastmove >= 0) {

@@ -96,6 +96,7 @@ tmr_fill.onTimer ()
 	{
 		c_updater.show();
 		l_updater.center();
+		str_version = getPrivateString(getSkinName(),"CurrentVersion","1.0");
 		brw.navigateUrl(SERVERFILE + "?noheaderquit=1&q=check&skin=" + str_skinname + "&version=" + str_version);
 		//tmr_fill.setDelay(200);
 	}
