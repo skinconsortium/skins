@@ -809,7 +809,7 @@ sg.onAction (String action, String param, int x, int y, int p1, int p2, GuiObjec
 		//{
 			closeTab(lastActiveT);
 			//t = firstTab; //pjn123 - changed this
-			while (true)
+			while (t != NULL)
 			{
 				
 				if (t.ID == x && ((x == WIDGET_TAB_ID && param == t.IDS) || x != WIDGET_TAB_ID))
