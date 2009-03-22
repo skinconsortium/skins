@@ -794,24 +794,27 @@ sg.onAction (String action, String param, int x, int y, int p1, int p2, GuiObjec
 {
 	if(strlower(action) == "select_tab")
 	{
-		if(!checkedBrowser){
+		//debugint(x);
+		/*if(!checkedBrowser){
 			CproBrowser = getContainer("main").getLayout("normal").findObject("centro.browser");
 			//sui_browser_attrib.setData(integerToString(CproBrowser.isVisible())); //pjn123 - dont know why I put this here.. removed.. dont crash anymore
 			checkedBrowser=true;
-		}
+		}*/
 
 		//Tab t; //pjn123 - changed this
 		Tab t = firstTab;
 		boolean found = false;
 
-		if(t.ID != x)
-		{
+		//if(t.ID != x)
+		//{
 			closeTab(lastActiveT);
 			//t = firstTab; //pjn123 - changed this
-			while (t != NULL)
+			while (true)
 			{
+				
 				if (t.ID == x && ((x == WIDGET_TAB_ID && param == t.IDS) || x != WIDGET_TAB_ID))
 				{
+					
 					lastActive = lastActiveT = t;
 					lastActive.setActivated(1);
 					found = true;
@@ -820,7 +823,7 @@ sg.onAction (String action, String param, int x, int y, int p1, int p2, GuiObjec
 				
 				t = t.right;
 			}
-		}
+		//}
 
 		if (!found)
 		{
