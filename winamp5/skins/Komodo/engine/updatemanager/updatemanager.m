@@ -12,6 +12,8 @@
 **		http://home.cs.tum.edu/~poehlman	**
 \********************************************************/
 
+/** updated for Komodo by leechbite.com **/
+
 
 #include <lib/std.mi>
 #include <lib/exd.mi>
@@ -62,8 +64,8 @@ System.onScriptLoaded ()
 	btn_cancel = l_updater.findObject("cancel");
 	//btn_donate = l_updater.findObject("donate");
 
-	str_skinname = getToken(getParam(), ";", 0);
-	str_version = getToken(getParam(), ";", 1);
+	str_skinname = getParam(); //getToken(getParam(), ";", 0);
+	//str_version = getToken(getParam(), ";", 1);
 
 	map_fill = new Map;
 	map_fill.loadMap("sc.updatemanager.progress.map");
