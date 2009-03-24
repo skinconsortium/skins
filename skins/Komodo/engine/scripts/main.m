@@ -18,6 +18,7 @@
 #define SKINTWEAKS_CFGPAGE "{0542AFA4-48D9-4c9f-8900-5739D52C114F}"
 
 #define HOMEPAGEURL "http://www.nitrousaudio.com/k/"
+#define ORDERLINK "http://www.nitrousaudio.com/k/index.php?…id=20&Itemid=47"
 
 #define OPENVID 1
 #define OPENAVS 2
@@ -138,7 +139,7 @@ System.onScriptLoaded() {
 	
 	setPrivateInt("Komodo","TUP",1); // this will signal all scripts that 5 day trial is up.
 	delayTrialCheck = new Timer;
-	delayTrialCheck.setDelay(100);
+	delayTrialCheck.setDelay(500);
 	delayTrialCheck.start();
 	
 	//returnToMainCntr = 10;
@@ -263,7 +264,7 @@ main.onAction(String action, String param, Int x, int y, int p1, int p2, GuiObje
 		lockui();
 		int res = messagebox("Feature requires full version. \nTo purchase full version click OK.", "Trial Notice",3, "");
 		
-		if (res == 1) navigateURL(HOMEPAGEURL);
+		if (res == 1) navigateURL(ORDERLINK);
 		unlockui();
 	}
 }
@@ -541,7 +542,8 @@ delayTrialCheck.onTimer() {
 
 	xfadetime.onDataChanged();
 	
-	string path = Application.GetSettingsPath()+"\winamp.ini";
+	string path = Application.GetSettingsPath()+"\winamp.ini:komtrial.xml";
+	//path = path + ":komtrial.xml";
 	
 	file trialDataFile = new file;
 	trialDataFile.load(path);
@@ -554,7 +556,7 @@ delayTrialCheck.onTimer() {
 		return;
 	}
 	
-	path = path + ":komtrial";
+	
 	//path = Application.GetSettingsPath()+"\\trial.xml";
 
 	trialCheck = new XmlDoc;
@@ -589,6 +591,7 @@ trialCheck.parser_onCallback (String xmlpath, String xmltag, list paramname, lis
 		if (c>=0) {
 			stamp = stringToInteger(paramvalue.enumItem(c));
 			hash = stringToFloat(paramvalue.enumItem(h));
+			unhash = -100;
 			if (u >= 0) unhash = stringToFloat(paramvalue.enumItem(u));
 			
 			int forhash = stamp % 10000;
@@ -597,6 +600,7 @@ trialCheck.parser_onCallback (String xmlpath, String xmltag, list paramname, lis
 			float calcunhash = t * sqrt(forhash+forhash2); // trunctated after 4 digits
 			
 			float diff = unhash - calcunhash;
+			
 			if (diff < 0.0002 && diff > -0.0002 && unhash > 0) { //if matches the unlock code, remove all locks.
 				setPrivateInt("Komodo","TUP",0);
 				
@@ -631,6 +635,7 @@ trialCheck.parser_onCallback (String xmlpath, String xmltag, list paramname, lis
 				
 				int trialelapsed = (currentDate-stamp)/864; //24*60*60/100 = 864
 				int res = 0;
+
 				if (trialelapsed > 500) {
 					setPrivateInt("Komodo","TUP",1);
 					res = messagebox("Trial expired. Some functions will be disabled.\nTo purchase full version click OK.", "Trial Expired",3, "");
@@ -646,7 +651,7 @@ trialCheck.parser_onCallback (String xmlpath, String xmltag, list paramname, lis
 					setPrivateInt("Komodo","TUP",0);
 				}
 				
-				if (res == 1) navigateURL(HOMEPAGEURL);
+				if (res == 1) navigateURL(ORDERLINK);
 			} else {
 				setPrivateInt("Komodo","TUP",1);
 				messagebox("Invalid install, please reinstall.\nSome functions will be disabled.", "Install Error", 0, "");

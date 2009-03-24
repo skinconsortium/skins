@@ -429,7 +429,7 @@ mousetrap.onLeftButtonDown(int x, int y) {
 	mousePressed = 1;
 	if (scrollAnim.isRunning()) scrollAnim.stop();
 	
-	lastX = x+getLeft(); //getMousePosX();
+	lastX = getMousePosX(); //x+getLeft();
 	lastX2 = lastX;
 	lastmove = 0;
 	
@@ -469,7 +469,7 @@ mousetrap.onMouseMove(int x, int y) {
 	if (timediff <= 0) timediff = 1;
 	//lastmove = (lastX2 - getMousePosX()) * 300 / (sensitivity*timediff);
 	//lastX2 = getMousePosX();
-	x = x + getLeft();
+	x = getMousePosX(); //x + getLeft();
 	lastmove = (lastX2 - x) * 300 / (sensitivity*timediff);
 	lastX2 = x;
 	
@@ -521,6 +521,7 @@ mousetrap.onLeftButtonUp(int x, int y) {
 			PlEdit.playTrack(targetPos);
 		else
 			delayDoubleClick.start();
+
 	} else {
 	
 		if (lastmove >= 0) {
