@@ -29,7 +29,7 @@ int SClassicProFlex::numSOs = 0;
 ClassicProParser* SClassicProFlex::classicProParser = 0;
 
 const wchar_t *ClassicProFlexScriptController::getClassName() {
-	return L"ClassicProFlex";
+	return L"ClassicPro";
 }
 
 const wchar_t *ClassicProFlexScriptController::getAncestorClassName() {

@@ -3,7 +3,7 @@
 #include "ScriptObjectService.h"
 
 ScriptObjectService svc;
-static const char serviceName[] = "ClassicPro::Flex";
+static const char serviceName[] = "ClassicPro";
 
 // {78A10A55-C644-4a99-8EE9-71710DDDE32F}
 static const GUID classicProFlexSvcGuid = 
