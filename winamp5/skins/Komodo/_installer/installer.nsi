@@ -46,7 +46,7 @@
   !define MUI_WELCOMEFINISHPAGE_BITMAP "${SOURCEPATH}\_installer\win.bmp"
   !define MUI_UNWELCOMEFINISHPAGE_BITMAP "${SOURCEPATH}\_installer\win.bmp"
 
-  !define MUI_FINISHPAGE_RUN "$INSTDIR\Skins\cPro__Bento.wal"
+  !define MUI_FINISHPAGE_RUN "$INSTDIR\Winamp.exe"
   !define MUI_FINISHPAGE_RUN_TEXT "Open Komodo in Winamp now?"
   !define MUI_FINISHPAGE_RUN_FUNCTION "LaunchLink"
 
@@ -89,19 +89,26 @@ Section "Komodo Engine" komodoFiles
 	!ifdef WINAMP_AUTOINSTALL
 		Call MakeSureIGotWinamp
 	!endif
-
+	
 	SectionIn RO    ; required
 
+	SetOutPath $INSTDIR\Skins\Komodo
+	File "${SOURCEPATH}\simpletrial.exe"
+	
+	'IfFileExists $INSTDIR\Winamp.ini:komtrial.xml SecondInstall
+    	;run
+  	'SecondInstall:
+	
 	SetOutPath $INSTDIR\Skins\Komodo
 	File "${SOURCEPATH}\*.xml"
 	File "${SOURCEPATH}\*.jpg"
 	File "${SOURCEPATH}\*.png"
 	File "${SOURCEPATH}\*.maki"
 
-	SetOutPath $INSTDIR\Skins\Komodo\_installer
-	File "${SOURCEPATH}\_installer\*.ico"
-	File "${SOURCEPATH}\_installer\*.nsi"
-	File "${SOURCEPATH}\_installer\*.bmp"
+	;SetOutPath $INSTDIR\Skins\Komodo\_installer
+	;File "${SOURCEPATH}\_installer\*.ico"
+	;File "${SOURCEPATH}\_installer\*.nsi"
+	;File "${SOURCEPATH}\_installer\*.bmp"
 	
 	SetOutPath $INSTDIR\Skins\Komodo\engine
 	File "${SOURCEPATH}\engine\*.xml"
@@ -118,22 +125,22 @@ Section "Komodo Engine" komodoFiles
 	File "${SOURCEPATH}\engine\player\*.ttf"
 
 	SetOutPath $INSTDIR\Skins\Komodo\engine\scripts
-	File "${SOURCEPATH}\engine\scripts\*.m"
+	;File "${SOURCEPATH}\engine\scripts\*.m"
 	File "${SOURCEPATH}\engine\scripts\*.maki"
-	File "${SOURCEPATH}\engine\scripts\*.bat"
+	;File "${SOURCEPATH}\engine\scripts\*.bat"
 	File "${SOURCEPATH}\engine\scripts\*.xml"
 
 	SetOutPath $INSTDIR\Skins\Komodo\engine\updatemanager
-	File "${SOURCEPATH}\engine\updatemanager\*.m"
+	;File "${SOURCEPATH}\engine\updatemanager\*.m"
 	File "${SOURCEPATH}\engine\updatemanager\*.maki"
 	File "${SOURCEPATH}\engine\updatemanager\*.xml"
-	File "${SOURCEPATH}\engine\updatemanager\*.psd"
+	;File "${SOURCEPATH}\engine\updatemanager\*.psd"
 
 	SetOutPath $INSTDIR\Skins\Komodo\engine\wasabi
 	File "${SOURCEPATH}\engine\wasabi\*.xml"
 
 	SetOutPath $INSTDIR\Skins\Komodo\engine\wasabi\standardframe
-	File "${SOURCEPATH}\engine\wasabi\standardframe\*.m"
+	;File "${SOURCEPATH}\engine\wasabi\standardframe\*.m"
 	File "${SOURCEPATH}\engine\wasabi\standardframe\*.maki"
 	File "${SOURCEPATH}\engine\wasabi\standardframe\*.xml"
 
@@ -147,48 +154,48 @@ Section "Komodo Engine" komodoFiles
 	File "${SOURCEPATH}\engine\xui\*.xml"
 
 	SetOutPath $INSTDIR\Skins\Komodo\engine\xui\CoverShow
-	File "${SOURCEPATH}\engine\xui\CoverShow\*.m"
+	;File "${SOURCEPATH}\engine\xui\CoverShow\*.m"
 	File "${SOURCEPATH}\engine\xui\CoverShow\*.maki"
 	File "${SOURCEPATH}\engine\xui\CoverShow\*.xml"
 
 	SetOutPath $INSTDIR\Skins\Komodo\engine\xui\CustomBG
-	File "${SOURCEPATH}\engine\xui\CustomBG\*.m"
+	;File "${SOURCEPATH}\engine\xui\CustomBG\*.m"
 	File "${SOURCEPATH}\engine\xui\CustomBG\*.maki"
 	File "${SOURCEPATH}\engine\xui\CustomBG\*.xml"
 
 	SetOutPath $INSTDIR\Skins\Komodo\engine\xui\customButton
-	File "${SOURCEPATH}\engine\xui\customButton\*.m"
+	;File "${SOURCEPATH}\engine\xui\customButton\*.m"
 	File "${SOURCEPATH}\engine\xui\customButton\*.maki"
 	File "${SOURCEPATH}\engine\xui\customButton\*.xml"
 
 	SetOutPath $INSTDIR\Skins\Komodo\engine\xui\FadeText
-	File "${SOURCEPATH}\engine\xui\FadeText\*.m"
+	;File "${SOURCEPATH}\engine\xui\FadeText\*.m"
 	File "${SOURCEPATH}\engine\xui\FadeText\*.maki"
 	File "${SOURCEPATH}\engine\xui\FadeText\*.xml"
 
 	SetOutPath $INSTDIR\Skins\Komodo\engine\xui\fileSelect
-	File "${SOURCEPATH}\engine\xui\fileSelect\*.m"
+	;File "${SOURCEPATH}\engine\xui\fileSelect\*.m"
 	File "${SOURCEPATH}\engine\xui\fileSelect\*.maki"
 	File "${SOURCEPATH}\engine\xui\fileSelect\*.xml"
 
 	SetOutPath $INSTDIR\Skins\Komodo\engine\xui\NowPlaying
-	File "${SOURCEPATH}\engine\xui\NowPlaying\*.m"
+	;File "${SOURCEPATH}\engine\xui\NowPlaying\*.m"
 	File "${SOURCEPATH}\engine\xui\NowPlaying\*.maki"
 	File "${SOURCEPATH}\engine\xui\NowPlaying\*.xml"
 	File "${SOURCEPATH}\engine\xui\NowPlaying\*.png"
 
 	SetOutPath $INSTDIR\Skins\Komodo\engine\xui\playlistPlus
-	File "${SOURCEPATH}\engine\xui\playlistPlus\*.m"
+	;File "${SOURCEPATH}\engine\xui\playlistPlus\*.m"
 	File "${SOURCEPATH}\engine\xui\playlistPlus\*.maki"
 	File "${SOURCEPATH}\engine\xui\playlistPlus\*.xml"
 
 	SetOutPath $INSTDIR\Skins\Komodo\engine\xui\ratings
-	File "${SOURCEPATH}\engine\xui\ratings\*.m"
+	;File "${SOURCEPATH}\engine\xui\ratings\*.m"
 	File "${SOURCEPATH}\engine\xui\ratings\*.maki"
 	File "${SOURCEPATH}\engine\xui\ratings\*.xml"
 
 	SetOutPath $INSTDIR\Skins\Komodo\engine\xui\VisAnim
-	File "${SOURCEPATH}\engine\xui\VisAnim\*.m"
+	;File "${SOURCEPATH}\engine\xui\VisAnim\*.m"
 	File "${SOURCEPATH}\engine\xui\VisAnim\*.maki"
 	File "${SOURCEPATH}\engine\xui\VisAnim\*.xml"
 
@@ -198,7 +205,7 @@ Section "Komodo Engine" komodoFiles
 
  
 	;Create uninstaller
-	WriteUninstaller "$INSTDIR\Uninstall ClassicPro.exe"
+	WriteUninstaller "$INSTDIR\Uninstall Komodo.exe"
 
 SectionEnd
 
