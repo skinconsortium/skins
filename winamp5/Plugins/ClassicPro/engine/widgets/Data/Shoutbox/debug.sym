@@ -93,75 +93,98 @@ var# |                Class |                                    What
 0059 |                  Int |                                    code1
 005A |                  Int |                                    code2
 005B |               String |                                 decToHex
-005C |       ClassicProFile |                           ClassicProFile*
-005D |              Browser |                                      brw
-005E |                 Edit |                                      msg
-005F |                 Text |                                      txt
-0060 |                 Text |                                    chars
-0061 |                Layer |                                     trap
-0062 |               String |                                  baseurl
-0063 |               String |                                     name
-0064 |               String |                                  urlname
-0065 |                Timer |                                      ref
-0066 |                Group |                                   parent
-0067 |                  Int |                                  curMode
-0068 |                  Int |                                    delay
-0069 |             ColorMgr |                                       cm
-006A |               String |                                    "brw"
-006B |               String |                               "edit.msg"
-006C |               String |                                "txt.msg"
-006D |               String |                              "txt.chars"
-006E |               String |                                   "trap"
-006F |               String |                    "classicPro_shoutbox"
-0070 |               String |                               "username"
-0071 |               String |                                 "&name="
-0072 |               String | "http://cpro.skinconsortium.com/services/cpro-shoutbox.php?bg="
-0073 |               String |                                  "&txt="
-0074 |               String |                                    "&v="
-0075 |               String |                                   "0.63"
-0076 |               String |                                "refresh"
-0077 |                  Int |                                       30
-0078 |                  Int |                                     1000
-0079 |               String |                                 newtheme
-007A |                  Int |                                  newmode
-007B |               String |                              "Username:"
-007C |                  Int |                                       20
-007D |               String |                               "Message:"
-007E |                  Int |                                      200
-007F |                  Int |                                        3
-0080 |               String |                               "Refresh:"
-0081 |               String |                                    "sec"
-0082 |                  Int |                                        x
-0083 |                  Int |                                        y
-0084 |                  Int |                                        w
-0085 |                  Int |                                        h
-0086 |              Boolean |                                    onoff
-0087 |               String |                                  "&msg="
-0088 |               String |                               "&artist="
-0089 |               String |                                "&title="
-008A |               String |                              "<Options>"
-008B |                  Int |                                        x
-008C |                  Int |                                        y
-008D |            PopupMenu |                                      men
-008E |               String |                           "Let's Shout!"
-008F |               String |                           "Set Username"
-0090 |               String |                   "Set Refresh-Interval"
-0091 |               String |                        "Reload Shoutbox"
-0092 |                  Int |                                     1001
-0093 |                  Int |                                      res
+005C |               String |                           songinfo_title
+005D |               String |                          songinfo_artist
+005E |               String |                           songinfo_album
+005F |               String |                        songinfo_location
+0060 |               String |                    songinfo_displayTitle
+0061 |               String |                     songinfo_streamTitle
+0062 |               String |                      songinfo_streamName
+0063 |               String |                       songinfo_streamURL
+0064 |               String |                  songinfo_streamAlbumArt
+0065 |              Boolean |                        songinfo_isStream
+0066 |                  Int |                      songinfo_streamType
+0067 |               String |                               metaPrefix
+0068 |               String |                             "streamtype"
+0069 |                  Int |                                        3
+006A |                  Int |                                        4
+006B |                  Int |                                      666
+006C |               String |                             "streamname"
+006D |               String |                            "streamtitle"
+006E |               String |                              "streamurl"
+006F |               String |                                  "uvox/"
+0070 |               String |                                   "cbs/"
+0071 |               String |                               "albumart"
+0072 |               String | "http://broadband-albumart.music.aol.com/scan/"
+0073 |              Browser |                                      brw
+0074 |                 Edit |                                      msg
+0075 |                 Text |                                      txt
+0076 |                 Text |                                    chars
+0077 |                Layer |                                     trap
+0078 |               String |                                  baseurl
+0079 |               String |                                     name
+007A |               String |                                  urlname
+007B |                Timer |                                      ref
+007C |                Group |                                   parent
+007D |                  Int |                                  curMode
+007E |                  Int |                                    delay
+007F |             ColorMgr |                                       cm
+0080 |               String |                                    "brw"
+0081 |               String |                               "edit.msg"
+0082 |               String |                                "txt.msg"
+0083 |               String |                              "txt.chars"
+0084 |               String |                                   "trap"
+0085 |               String |                    "classicPro_shoutbox"
+0086 |               String |                               "username"
+0087 |               String |                                 "&name="
+0088 |               String | "http://cpro.skinconsortium.com/services/cpro-shoutbox.php?bg="
+0089 |               String |                                  "&txt="
+008A |               String |                                    "&v="
+008B |               String |                                   "0.64"
+008C |               String |                                "refresh"
+008D |                  Int |                                       30
+008E |                  Int |                                     1000
+008F |               String |                                 newtheme
+0090 |               String |                                 newtitle
+0091 |                  Int |                                  newmode
+0092 |               String |                              "Username:"
+0093 |                  Int |                                       20
+0094 |               String |                               "Message:"
+0095 |                  Int |                                      200
+0096 |               String |                               "Refresh:"
+0097 |               String |                                    "sec"
+0098 |                  Int |                                        x
+0099 |                  Int |                                        y
+009A |                  Int |                                        w
+009B |                  Int |                                        h
+009C |              Boolean |                                    onoff
+009D |               String |                                  "&msg="
+009E |               String |                               "&artist="
+009F |               String |                                "&title="
+00A0 |               String |                              "<Options>"
+00A1 |                  Int |                                        x
+00A2 |                  Int |                                        y
+00A3 |            PopupMenu |                                      men
+00A4 |               String |                           "Let's Shout!"
+00A5 |               String |                           "Set Username"
+00A6 |               String |                   "Set Refresh-Interval"
+00A7 |               String |                        "Reload Shoutbox"
+00A8 |                  Int |                                     1001
+00A9 |                  Int |                                      res
 -- Events Table ------------------------------------------------------
 var# |         Code Pointer |                                    What 
 ----------------------------------------------------------------------
-0000 |                 0953 |                                      S.o
-0069 |                 0B03 |                                      c.o
-0066 |                 0CCC |                                      p.o
-0066 |                 0D23 |                                      p.o
-0065 |                 0DBB |                                      r.o
-005E |                 0DF8 |                                      m.o
-005E |                 0E99 |                                      m.o
-0061 |                 10FF |                                      t.o
-0061 |                 1126 |                                      t.o
-0061 |                 11A9 |                                      t.o
+0000 |                 0B49 |                                      S.o
+007F |                 0CFF |                                      c.o
+0000 |                 0D65 |                                      S.o
+007C |                 0EE9 |                                      p.o
+007C |                 0F40 |                                      p.o
+007B |                 0FD8 |                                      r.o
+0074 |                 1015 |                                      m.o
+0074 |                 10B6 |                                      m.o
+0077 |                 1306 |                                      t.o
+0077 |                 132D |                                      t.o
+0077 |                 13B0 |                                      t.o
 -- User Functions Table ----------------------------------------------
                Code Pointer |                                    What 
 ----------------------------------------------------------------------
@@ -173,4 +196,5 @@ var# |         Code Pointer |                                    What
                        051A |                                getMyPath
                        0630 |                              getColorHex
                        0733 |                                 decToHex
-                       0B69 |                               updateMode
+                       0953 |                          songinfo_reload
+                       0D86 |                               updateMode

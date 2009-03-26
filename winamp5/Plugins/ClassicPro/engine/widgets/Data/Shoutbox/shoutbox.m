@@ -8,7 +8,8 @@
 #include <lib/std.mi>
 #include <lib/colormgr.mi>
 #include "../BrowserPro/convert_address.mi"
-#include "../../../lib/ClassicProFile.mi"
+//#include "../../../lib/ClassicProFile.mi"
+#include <lib/com/songinfo.m>
 
 Function updateMode(int newMode);
 
@@ -28,7 +29,7 @@ Global int curMode, delay;
 
 Global ColorMgr cm;
 
-#define SHOUTBOX_VERSION "0.63"
+#define SHOUTBOX_VERSION "0.64"
 
 #define MODE_USERNAME 1
 #define MODE_CHAT 2
@@ -51,6 +52,9 @@ system.onScriptLoaded ()
 	baseurl = 
 
 	name = getPrivateString("classicPro_shoutbox", "username", "");
+
+	songinfo_reload();
+
 	if (name == "")
 	{
 		updateMode(MODE_USERNAME);
@@ -94,6 +98,12 @@ init()
 		return;
 	inited = true;
 }*/
+
+system.onTitleChange (String newtitle)
+{
+	songinfo_reload();
+}
+
 
 updateMode(int newmode)
 {
@@ -202,7 +212,7 @@ msg.onEnter()
 		}
 		
 		ref.stop();
-		brw.navigateUrl(baseurl + "&msg=" + urlencode(msg.getText()) + "&artist=" + urlEncode(getPlayItemMetaDataString("artist")) + "&title=" + urlEncode(getPlayItemMetaDataString("title")));
+		brw.navigateUrl(baseurl + "&msg=" + urlencode(msg.getText()) + "&artist=" + urlEncode(songinfo_artist) + "&title=" + urlEncode(songinfo_title));
 		setText("");
 		if (delay > 0)
 		{
