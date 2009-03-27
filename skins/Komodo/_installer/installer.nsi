@@ -4,7 +4,7 @@
 ; Define Sourcedirectory here
 
 ; source path of pjn123
-!define SOURCEPATH "C:\Program Files (x86)\Winamp\Skins\Komodo\"
+!define SOURCEPATH "C:\Program Files\Winamp\Skins\Komodo\"
 
 
 ;--------------------------------
@@ -41,7 +41,7 @@
 
 ;--------------------------------
 ;Interface Settings
-  !define MUI_TEXT_WELCOME_INFO_TEXT "This wizard will guide you through the installation of $(^NameDA).$\r$\n$\r$\nIt is recommended that you close Winamp before starting Setup. This will make it possible to update all relevant Winamp files.$\n$\nYou'll at least need Winamp 5.541 for this version of ClassicPro to work!$\r$\n$\r$\n$_CLICK"
+  !define MUI_TEXT_WELCOME_INFO_TEXT "This wizard will guide you through the installation of $(^NameDA).$\r$\n$\r$\nIt is recommended that you close Winamp before starting Setup. This will make it possible to update all relevant Winamp files.$\n$\nYou'll at least need Winamp 5.551 for this version of Komodo to work!$\r$\n$\r$\n$_CLICK"
 
   !define MUI_WELCOMEFINISHPAGE_BITMAP "${SOURCEPATH}\_installer\win.bmp"
   !define MUI_UNWELCOMEFINISHPAGE_BITMAP "${SOURCEPATH}\_installer\win.bmp"
@@ -64,7 +64,7 @@
 
   !insertmacro MUI_PAGE_WELCOME
   !insertmacro MUI_PAGE_LICENSE "${SOURCEPATH}\License.txt"
-  !insertmacro MUI_PAGE_COMPONENTS
+  ;!insertmacro MUI_PAGE_COMPONENTS
   !insertmacro MUI_PAGE_DIRECTORY
   !insertmacro MUI_PAGE_INSTFILES
   !insertmacro MUI_PAGE_FINISH
@@ -92,13 +92,6 @@ Section "Komodo Engine" komodoFiles
 	
 	SectionIn RO    ; required
 
-	SetOutPath $INSTDIR\Skins\Komodo
-	File "${SOURCEPATH}\simpletrial.exe"
-	
-	'IfFileExists $INSTDIR\Winamp.ini:komtrial.xml SecondInstall
-    	;run
-  	'SecondInstall:
-	
 	SetOutPath $INSTDIR\Skins\Komodo
 	File "${SOURCEPATH}\*.xml"
 	File "${SOURCEPATH}\*.jpg"
@@ -203,10 +196,19 @@ Section "Komodo Engine" komodoFiles
 	File "${SOURCEPATH}\optional\*.png"
 	File "${SOURCEPATH}\optional\*.xml"
 
- 
+	IfFileExists "$INSTDIR\winamp.ini:komtrial.xml" SecondInstall
+		SetOutPath $INSTDIR
+		File "${SOURCEPATH}\_installer\simpleTrial.exe"
+		
+    	ExecWait '"$INSTDIR\simpleTrial.exe" -o:winamp.ini:komtrial.xml'
+  	SecondInstall:
+  	
+  	Delete "$INSTDIR\simpleTrial.exe"
+	 
 	;Create uninstaller
 	WriteUninstaller "$INSTDIR\Uninstall Komodo.exe"
-
+	
+  	
 SectionEnd
 
 
