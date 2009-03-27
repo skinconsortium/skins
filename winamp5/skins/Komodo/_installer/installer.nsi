@@ -1,4 +1,4 @@
-; ClassicPro Installer
+; Komodo Installer
 
 ;--------------------------------
 ; Define Sourcedirectory here
@@ -16,10 +16,10 @@
 ;General
 
   ;Name and file
-  Name "Komodo v0.12"
+  Name "Komodo v0.13"
   
   ;RELEASE  
-  OutFile "Komodo_0.12.exe"
+  OutFile "Komodo_0.13.exe"
 
   ;BETA STAGE  
   !define /date DATE "%Y-%m-%d"
@@ -195,12 +195,15 @@ Section "Komodo Engine" komodoFiles
 	SetOutPath $INSTDIR\Skins\Komodo\optional
 	File "${SOURCEPATH}\optional\*.png"
 	File "${SOURCEPATH}\optional\*.xml"
+	
+	SetOutPath $INSTDIR\Skins
+	File "${SOURCEPATH}\_installer\Komodo2.wal"
 
 	IfFileExists "$INSTDIR\winamp.ini:komtrial.xml" SecondInstall
 		SetOutPath $INSTDIR
 		File "${SOURCEPATH}\_installer\simpleTrial.exe"
 		
-    	ExecWait '"$INSTDIR\simpleTrial.exe" -o:winamp.ini:komtrial.xml'
+    	ExecWait "$INSTDIR\simpleTrial.exe -o:winamp.ini:komtrial.xml"
   	SecondInstall:
   	
   	Delete "$INSTDIR\simpleTrial.exe"
@@ -251,5 +254,5 @@ Function .onVerifyInstDir
 FunctionEnd
 
 Function LaunchLink
-  ;ExecShell "" "$INSTDIR\Skins\cPro__Bento.wal"
+  ExecShell "" "$INSTDIR\Winamp.exe"
 FunctionEnd
