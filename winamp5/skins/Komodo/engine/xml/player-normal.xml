@@ -760,21 +760,29 @@
 		x="0" y="0" w="100" h="30" alpha="128"
 		text="12"
 		antialias="1" bold="0" ghost="1" color="color.time"
-		fontsize="25" align="right" valign="center"
+		fontsize="30" align="right" valign="center"
 		font="player.font.time"/>
 	<text id="time.min"
 		x="20" y="0" w="100" h="30" alpha="128"
 		text="00"
 		antialias="1" bold="0" ghost="1" color="color.time"
-		fontsize="25" align="left" valign="center"
+		fontsize="30" align="left" valign="center"
 		font="player.font.time"/>
 	<text id="time.colon"
 		x="15" y="0" w="100" h="30" alpha="128"
 		text=":"
 		antialias="1" bold="0" ghost="1" color="color.time"
-		fontsize="25" align="left" valign="center"
+		fontsize="30" align="left" valign="center"
 		font="player.font.time"/>
 	<script id="script.clock.digital" file="@SKINSPATH@Komodo\engine\scripts\clock-digital.maki"/>
+</groupdef>
+
+<groupdef id="player.smtrackinfo" w="250" h="50">
+	<group id="sc.nowplaying.cdbox" x="0" y="0" w="55" h="50" move="0"/>
+	
+	<text id="smtrackinfo.line3" x="60" y="0" w="0" h="20" relatw="1"  text="Title" color="color.nowplaying" align="left" valign="top" font="player.font.trackinfo.small" fontsize="20" alpha="255" antialias="2"/>
+	<text id="smtrackinfo.line2" x="60" y="15" w="0" h="20" relatw="1" text="Artist" color="color.nowplaying" align="left" valign="top" font="player.font.trackinfo.small" fontsize="20" alpha="255" antialias="2"/>
+	<text id="smtrackinfo.line1" x="60" y="30" w="0" h="20" relatw="1" text="Album" color="color.nowplaying" align="left" valign="top" font="player.font.trackinfo.small" fontsize="20" alpha="255" antialias="2"/>
 </groupdef>
 
 <groupdef id="player.underlay"></groupdef>
@@ -798,8 +806,6 @@
 	<group id="player.main.ie" x="0" y="0" w="100" h="0" relatx="2" relatw="2" relath="1" visible="0"/>
 	<group id="player.main.config" 	x="0" y="0" w="100" h="-40" relatx="2" relatw="2" relath="1" visible="0"/>
 	
-	
-	
 	<group id="player.cbuttons" x="0" y="-100" relaty="1" w="233" h="265"/>
 	<script file="@SKINSPATH@Komodo\engine\scripts\centerobject.maki" param="player.cbuttons,1,0"/>
 	
@@ -821,6 +827,7 @@
 	<script file="@SKINSPATH@Komodo\engine\scripts\pagescroll.maki" param="player.main.cms,player.main.pl,player.main.vis,player.main.ml,player.main.ie,player.main.config"/>
 	
 	<group id="player.datetime" x="15" y="0" w="150" h="30"/>
+	<!--group id="player.smtrackinfo" x="15" y="35"/-->
 	
 	<group id="player.overlay" fitparent="1"/>
 	
