@@ -219,7 +219,7 @@ SectionEnd
 ;Descriptions
 
   ;Language strings
-  LangString DESC_komodoFiles ${LANG_ENGLISH} "This will install all the files that ClassicPro needs to work."
+  LangString DESC_komodoFiles ${LANG_ENGLISH} "This will install all the files that Komodo needs to work."
 
   ;Assign language strings to sections
   !insertmacro MUI_FUNCTION_DESCRIPTION_BEGIN
@@ -232,6 +232,7 @@ SectionEnd
 Section "Uninstall"
 
   RMDir /r "$INSTDIR\Skins\Komodo"
+  Delete "$INSTDIR\Skins\Komodo2.exe"
 
 SectionEnd
 

@@ -13,8 +13,8 @@
 	<rect id="sc.nowplaying.bg"  w="0" h="0" color="255,255,255" filled="1" move="0"/>
 
 	<SC:FadeText id="sc.nowplaying.line3" x="0" y="-4" w="0" h="45" relatw="1" fgcolor="color.nowplaying" align="center" valign="top" font="player.font.title" fontsize="55" alpha="255" antialias="2" bold="1" />
-	<SC:FadeText id="sc.nowplaying.line2" x="0" y="24" w="0" h="35" relatw="1" fgcolor="color.nowplaying" align="center" valign="top" font="player.font.artist" fontsize="35" alpha="250" antialias="2"/>
-	<SC:FadeText id="sc.nowplaying.line1" x="0" y="43" w="0" h="35" relatw="1" fgcolor="color.nowplaying" align="center" valign="top" font="player.font.album" fontsize="34" alpha="235" antialias="2"/>
+	<SC:FadeText id="sc.nowplaying.line2" x="0" y="24" w="0" h="35" relatw="1" fgcolor="color.nowplaying" align="center" valign="top" font="player.font.artist" fontsize="35" alpha="255" antialias="2"/>
+	<SC:FadeText id="sc.nowplaying.line1" x="0" y="43" w="0" h="35" relatw="1" fgcolor="color.nowplaying" align="center" valign="top" font="player.font.album" fontsize="34" alpha="255" antialias="2"/>
 
 	<group id="sc.nowplaying.cdbox.holder" x="5" y="90" w="-5" h="-90" relatw="1" relath="1"/>
 	
