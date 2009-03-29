@@ -47,7 +47,11 @@ Global group pbuttonsWindow, pbuttonsFull;
 Global button buttonWindow, buttonFull;
 Global button buttonIEPrev, buttonIENext, buttonIEReload, buttonIEStop, buttonIEHome;
 Global guiobject topbar;
-Global int nosizesave;
+Global int nosizesave, unlocked=0;
+
+Global group smtrackinfo;
+Global text smtrackinfotxt1, smtrackinfotxt2, smtrackinfotxt3;
+Global guiObject smtrackinfoAA;
 
 //Global text titletext;
 Global string newtitle;
@@ -125,6 +129,12 @@ System.onScriptLoaded() {
 	buttonWindow = pbuttonsFull.getObject("pbutton.window");
 	buttonFull = pbuttonsWindow.getObject("pbutton.full");
 	topbar = pbuttonsWindow.getObject("pbutton.topbar");
+	
+	smtrackinfo = main.getObject("player.smtrackinfo");
+	//smtrackinfotxt1 = smtrackinfo.getObject("smtrackinfo.line1");
+	smtrackinfotxt2 = smtrackinfo.getObject("smtrackinfo.line2");
+	smtrackinfotxt3 = smtrackinfo.getObject("smtrackinfo.line3");
+	smtrackinfoAA = smtrackinfo.findObject("main.albumart");
 	
 	//titletext = main.findObject("player.main.title");
 	//origtitlealpha = titletext.getAlpha();
@@ -246,6 +256,18 @@ main.onAction(String action, String param, Int x, int y, int p1, int p2, GuiObje
 		} else {
 			if (delayVisShow.isRunning()) delayVisShow.stop();
 			openVIDAVS = -1;
+		}
+		if (!smtrackinfo.isGoingToTarget()) {
+			if (param=="player.main.cms") {
+				smtrackinfo.setTargetA(0);
+				smtrackinfo.setTargetSpeed(0.5);
+				smtrackinfo.gotoTarget();
+			} else if (!smtrackinfo.isVisible()) {
+				smtrackinfo.show();
+				smtrackinfo.setTargetA(255);
+				smtrackinfo.setTargetSpeed(0.5);
+				smtrackinfo.gotoTarget();
+			}
 		}
 		
 		/*group temp = NULL;
@@ -416,6 +438,7 @@ buttonIEHome.onLeftClick() {
 	String strTitle = System.urlEncode(System.getPlayitemMetaDataString("title"));
 	
 	string currData = "?v="+System.urlEncode(getPrivateString(getSkinName(),"CurrentVersion","1.0")) + "&artist=" + strArtist + "&album=" + strAlbum + "&title=" +strTitle;
+	if (unlocked) currData = currData+"&full=1";
 
 	mainBrowser.navigateUrl(homepage+currData);
 }
@@ -535,12 +558,54 @@ NowPlayingGroup.onSetVisible(int on) {
 		mousemonitor.start();}
 }*/
 
+// ************** Small Track info **************
+System.onTitleChange(String newTitle) {
+
+	//String year = System.getPlayItemMetaDataString("YEAR");
+	//String album = System.getPlayItemMetaDataString("ALBUM");
+	//if (strLen(year)<4) year="";
+	//else year="("+year+")";
+	//if(album=="") album="Unknown Album";
+	//smtrackinfotxt1.setXmlParam("text", album +" "+year);
+
+	String myartist = System.getPlayItemMetaDataString("ARTIST");
+	if(myartist==""){
+		if(strsearch(getPlayItemDisplayTitle(), "-")== -1){
+			myartist = "Unknown Artist";
+		}
+		else{
+			myartist = getToken(getPlayItemDisplayTitle(), "- ",  0);
+		}
+	}
+	smtrackinfotxt2.setXmlParam("text", "by " + strupper(myartist));
+	
+	String mytitle = System.getPlayItemMetaDataString("TITLE");
+	if(mytitle==""){
+		if(strsearch(getPlayItemDisplayTitle(), "-")== -1){
+			mytitle = getPlayItemDisplayTitle();
+		}
+		else{
+			mytitle = getToken(getPlayItemDisplayTitle(), "- ",  1);
+		}
+	}
+	smtrackinfotxt3.setXmlParam("text", mytitle);
+	
+}
+
+smtrackinfo.onTargetReached() {
+	if (getAlpha() == 0) hide();
+}
+
+smtrackinfoAA.onLeftButtonDown(int x, int y) {
+	if (!NowPlayingGroup.isVisible()) main.sendAction("REQUESTSWITCHPAGE", "", 0,0,0,0);
+}
 
 // ***************** TRIAL CHECK UP ************************
 delayTrialCheck.onTimer() {
 	stop();
 
 	xfadetime.onDataChanged();
+	System.onTitleChange("");
 	
 	string path = Application.GetSettingsPath()+"\winamp.ini:komtrial.xml";
 	//path = path + ":komtrial.xml";
@@ -603,6 +668,7 @@ trialCheck.parser_onCallback (String xmlpath, String xmltag, list paramname, lis
 			
 			if (diff < 0.0002 && diff > -0.0002 && unhash > 0) { //if matches the unlock code, remove all locks.
 				setPrivateInt("Komodo","TUP",0);
+				unlocked = 1;
 				
 				if (getPrivateInt("Komodo","FirstLoadUnlocked",1) == 1) {
 					setPrivateInt("Komodo","FirstLoadUnlocked",0);
@@ -644,10 +710,10 @@ trialCheck.parser_onCallback (String xmlpath, String xmltag, list paramname, lis
 					daysleft = 5-daysleft;
 					
 					// only displays trial notice once-a-day.
-					if (daysleft != getPrivateInt("Komodo","LDL",-1)) { // LDL = last days left
+					//if (daysleft != getPrivateInt("Komodo","LDL",-1)) { // LDL = last days left
 						res = messagebox(integertostring(daysleft)+" trial days left. \nTo purchase full version click OK.", "Trial Notice",3, "");
 						setPrivateInt("Komodo","LDL",daysleft);
-					}
+					//}
 					setPrivateInt("Komodo","TUP",0);
 				}
 				

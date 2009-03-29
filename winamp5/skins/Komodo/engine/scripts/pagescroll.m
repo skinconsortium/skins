@@ -94,6 +94,7 @@ scriptGroup.onAction(String action, String param, Int x, int y, int p1, int p2, 
 	action = strupper(action);
 
 	if (action=="REQUESTSWITCHPAGE") {
+
 		int pagediff = p1-currPage;
 		string currGroupID = getToken(pageList, ",", currPage);
 		currGroup = scriptGroup.getObject(currGroupID);
