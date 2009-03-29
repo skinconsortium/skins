@@ -233,11 +233,15 @@ int getChapterCurrent(){
 }
 
 prevBut.onLeftClick(){
+	if(_times.getNumItems()<1) return;
+
 	int i = getChapterCurrent()-1;
 	if(i<0)i=0;
 	gotoChapter(i);
 }
 nextBut.onLeftClick(){
+	if(_times.getNumItems()<1) return;
+
 	int i = getChapterCurrent()+1;
 
 	if(_times.getNumItems()==i) return; // do nothing
