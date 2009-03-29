@@ -33,7 +33,7 @@ System.onScriptLoaded() {
   
   
   ConfigItem custom_page_nonexposed = Config.newItem("Hidden", CUSTOM_PAGE_NONEXPOSED);
-  bkground_image_attrib = custom_page_nonexposed.newAttribute("Glamour Background Image", "IMAGE:player.main.background.default;1");
+  bkground_image_attrib = custom_page_nonexposed.newAttribute(getSkinName()+" Background Image", "IMAGE:player.main.background.default;1");
 
   scriptGroup = getScriptGroup();
   

@@ -4,7 +4,7 @@
 <truetypefont id="player.font.artist" file="@SKINSPATH@Komodo\engine\player\Beware.ttf"/>
 <truetypefont id="player.font.album" file="@SKINSPATH@Komodo\engine\player\Beware.ttf"/>
 <truetypefont id="player.font.indicator" file="@SKINSPATH@Komodo\engine\player\Beware.ttf"/>
-<truetypefont id="player.font.trackinfo.small" file="@SKINSPATH@Komodo\engine\player\Beware.ttf"/>
+<!--truetypefont id="player.font.trackinfo.small" file="@SKINSPATH@Komodo\engine\player\Beware.ttf"/-->
 <!--truetypefont id="player.font.pllist" file="@SKINSPATH@Komodo\engine\player\Beware.ttf"/-->
 <!--truetypefont id="player.font.plcover" file="@SKINSPATH@Komodo\engine\player\Beware.ttf"/-->
 <!--truetypefont id="player.font.button" file="@SKINSPATH@Komodo\engine\player\font-bankgothic.ttf"/-->

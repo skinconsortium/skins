@@ -10,8 +10,6 @@
 		downimage="player.main.revd"
 		rectrgn="1"
 		tooltip="Prev Track"/>
-	<!--layer id="player.main.revd" image="player.main.revd"  x="0" y="0" ghost="1"/>
-	<script file="@SKINSPATH@Komodo\engine\scripts\hoverglow.maki" param="Rev,player.main.revd"/-->
 	
 	<button 
 		id="Eject"
@@ -21,16 +19,10 @@
 		downimage="player.main.ejectd"
 		rectrgn="1"
 		tooltip="Get Song"/>
-	<!--layer id="player.main.ejectd" image="player.main.ejectd" x="47" y="0" ghost="1"/>
-	<script file="@SKINSPATH@Komodo\engine\scripts\hoverglow.maki" param="Eject,player.main.ejectd"/-->
 
 	<button id="play.button" x="93" y="0"  action="PLAY" image="player.main.play" downImage="player.main.playd" tooltip="Play"/>
 	<button id="pause.button" x="93" y="0"  action="PAUSE" image="player.main.Pause" downImage="player.main.Paused" tooltip="Pause"/>
 	<script file="@SKINSPATH@Komodo\engine\scripts\sc_PlayPause.maki" param="play.button;pause.button"/>
-	<!--layer id="player.main.playd" image="player.main.playd"  x="93" y="0" ghost="1"/>
-	<script file="@SKINSPATH@Komodo\engine\scripts\hoverglow.maki" param="play.button,player.main.playd"/>
-	<layer id="player.main.Paused" image="player.main.Paused"  x="93" y="0" ghost="1"/>
-	<script file="@SKINSPATH@Komodo\engine\scripts\hoverglow.maki" param="pause.button,player.main.Paused"/-->
 	
 	<button 
 		id="Stop"
@@ -40,8 +32,6 @@
 		downimage="player.main.stopd"
 		rectrgn="1"
 		tooltip="Stop"/>
-	<!--layer id="player.main.stopd" image="player.main.stopd" x="139" y="0"  ghost="1"/>
-	<script file="@SKINSPATH@Komodo\engine\scripts\hoverglow.maki" param="Stop,player.main.stopd"/-->
 	
 	<button 
 		id="Next"
@@ -51,9 +41,6 @@
 		downimage="player.main.forwardd"
 		rectrgn="1"
 		tooltip="Next Track"/>
-	<!--layer id="player.main.forwardd" image="player.main.forwardd" x="185" y="0"  ghost="1"/>
-	<script file="@SKINSPATH@Komodo\engine\scripts\hoverglow.maki" param="Next,player.main.forwardd"/-->
-
 </groupdef>
 
 <groupdef id="player.main.vol.content" w="176" h="37">
@@ -596,8 +583,8 @@
 
 
 <groupdef id="player.main.vis"  name="visualizations">
-	<group id="player.main.avs.buttons" x="100" y="70" w="-200" h="30" relatw="1" visible="0"/>
-	<group id="player.main.vid.buttons" x="100" y="70" w="-200" h="30" relatw="1" visible="0"/>
+	<group id="player.main.avs.buttons" x="100" y="75" w="-200" h="30" relatw="1" visible="0"/>
+	<group id="player.main.vid.buttons" x="100" y="75" w="-200" h="30" relatw="1" visible="0"/>
 
 	<group id="player.main.vis.content"
 		x="80" y="100" w="-160" h="-220" relatw="1" relath="1"/>
@@ -662,7 +649,7 @@
 
 
 <groupdef id="player.main.ie"  name="online">
-	<group id="player.main.ie.buttons" x="100" y="70" w="-200" h="30" relatw="1"/>
+	<group id="player.main.ie.buttons" x="100" y="75" w="-200" h="30" relatw="1"/>
 
 	<group id="player.main.ie.content"
 		x="80" y="100" w="-160" h="-220" relatw="1" relath="1"/>
@@ -777,12 +764,12 @@
 	<script id="script.clock.digital" file="@SKINSPATH@Komodo\engine\scripts\clock-digital.maki"/>
 </groupdef>
 
-<groupdef id="player.smtrackinfo" w="250" h="50">
-	<group id="sc.nowplaying.cdbox" x="0" y="0" w="55" h="50" move="0"/>
+<groupdef id="player.smtrackinfo" w="300" h="50">
+	<group id="sc.nowplaying.cdbox" x="0" y="0" w="45" h="40" move="0"/>
 	
-	<text id="smtrackinfo.line3" x="60" y="0" w="0" h="20" relatw="1"  text="Title" color="color.nowplaying" align="left" valign="top" font="player.font.trackinfo.small" fontsize="20" alpha="255" antialias="2"/>
-	<text id="smtrackinfo.line2" x="60" y="15" w="0" h="20" relatw="1" text="Artist" color="color.nowplaying" align="left" valign="top" font="player.font.trackinfo.small" fontsize="20" alpha="255" antialias="2"/>
-	<text id="smtrackinfo.line1" x="60" y="30" w="0" h="20" relatw="1" text="Album" color="color.nowplaying" align="left" valign="top" font="player.font.trackinfo.small" fontsize="20" alpha="255" antialias="2"/>
+	<text id="smtrackinfo.line3" x="50" y="3" w="0" h="15" relatw="1"  text="Title" color="color.nowplaying" align="left" valign="top" font="player.font.trackinfo.small" fontsize="16" alpha="160" antialias="2" ghost="1" bold="1"/>
+	<text id="smtrackinfo.line2" x="50" y="18" w="0" h="15" relatw="1" text="Artist" color="color.nowplaying" align="left" valign="top" font="player.font.trackinfo.small" fontsize="16" alpha="160" antialias="2" ghost="1"/>
+	<!--text id="smtrackinfo.line1" x="50" y="24" w="0" h="15" relatw="1" text="Album" color="color.nowplaying" align="left" valign="top" font="player.font.trackinfo.small" fontsize="14" alpha="160" antialias="2" ghost="1" visible="0"/-->
 </groupdef>
 
 <groupdef id="player.underlay"></groupdef>
@@ -798,6 +785,8 @@
 	<CustomBG x="0" y="0" w="0" h="0" relatw="1" relath="1" noreflection="0"/>
 	
 	<group id="player.underlay" fitparent="1"/>
+	
+	<group id="player.smtrackinfo" x="15" y="33" alpha="0" visible="0"/>
 
 	<group id="player.main.cms" x="0" y="0" w="100" h="0" relatx="2" relatw="2" relath="1"/>
 	<group id="player.main.pl" 	x="0" y="0" w="100" h="0" relatx="2" relatw="2" relath="1" visible="0"/>
@@ -827,7 +816,6 @@
 	<script file="@SKINSPATH@Komodo\engine\scripts\pagescroll.maki" param="player.main.cms,player.main.pl,player.main.vis,player.main.ml,player.main.ie,player.main.config"/>
 	
 	<group id="player.datetime" x="15" y="0" w="150" h="30"/>
-	<!--group id="player.smtrackinfo" x="15" y="35"/-->
 	
 	<group id="player.overlay" fitparent="1"/>
 	
