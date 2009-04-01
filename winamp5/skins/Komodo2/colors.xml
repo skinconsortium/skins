@@ -18,6 +18,7 @@
 	<truetypefont id="player.font.plcover" file="Bankgothic.ttf"/>
 	<truetypefont id="player.font.button" file="Bankgothic.ttf"/>
 	<truetypefont id="player.font.time" file="Bankgothic.ttf"/>
+	<truetypefont id="player.font.trackinfo.small" file="Bankgothic.ttf"/>
 
 	-->
 
