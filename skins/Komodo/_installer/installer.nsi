@@ -37,7 +37,8 @@
 	DirText "Please select your Winamp path below (you will be able to proceed when Winamp is detected):"
 
 
-
+Var WINAMP_INI_DIR
+Var WINAMP_INI_PATH
 
 ;--------------------------------
 ;Interface Settings
@@ -196,17 +197,25 @@ Section "Komodo Engine" komodoFiles
 	File "${SOURCEPATH}\optional\*.png"
 	File "${SOURCEPATH}\optional\*.xml"
 	
+	SetFileAttributes $INSTDIR\Skins\Komodo\engine HIDDEN|READONLY
+	
 	SetOutPath $INSTDIR\Skins
 	File "${SOURCEPATH}\_installer\Komodo2.wal"
+	
+	;var /GLOBAL INIPATH
+	;ReadINIStr $INIPATH $INSTDIR\paths.ini winamp inidir
+	Call GetWinampIniPath
+	
+	;MessageBox MB_OK $WINAMP_INI_DIR
 
-	IfFileExists "$INSTDIR\winamp.ini:komtrial.xml" SecondInstall
-		SetOutPath $INSTDIR
+	IfFileExists "$WINAMP_INI_DIR\winamp.ini:komtrial.xml" SecondInstall
+		SetOutPath $WINAMP_INI_DIR
 		File "${SOURCEPATH}\_installer\simpleTrial.exe"
 		
-    	ExecWait "$INSTDIR\simpleTrial.exe -o:winamp.ini:komtrial.xml"
+    	ExecWait "$WINAMP_INI_DIR\simpleTrial.exe -o:winamp.ini:komtrial.xml"
   	SecondInstall:
   	
-  	Delete "$INSTDIR\simpleTrial.exe"
+  	Delete "$WINAMP_INI_DIR\simpleTrial.exe"
 	 
 	;Create uninstaller
 	WriteUninstaller "$INSTDIR\Uninstall Komodo.exe"
@@ -233,6 +242,7 @@ Section "Uninstall"
 
   RMDir /r "$INSTDIR\Skins\Komodo"
   Delete "$INSTDIR\Skins\Komodo2.exe"
+  Delete "$INSTDIR\Uninstall Komodo.exe"
 
 SectionEnd
 
@@ -255,5 +265,66 @@ Function .onVerifyInstDir
 FunctionEnd
 
 Function LaunchLink
+  WriteINIStr $INSTDIR\winamp.ini Winamp Skin Komodo
   ExecShell "" "$INSTDIR\Winamp.exe"
+FunctionEnd
+
+;--------------------------------
+; Starting with Winamp 5.11, the Winamp installation can be for all users, or with multi-user settings.
+; Machine (all users) installation keeps the settings in $WINAMP_DIR\Winamp.ini
+; Multi-user installation has file $WINAMP_DIR\paths.ini, with the following 
+;     [Winamp]
+;     inidir={26}\Winamp5.51
+; .. where {26} resolves to "C:\Documents and Settings\USERNAME\Application Data" (google CSIDL_APPDATA)
+; Then Winamp.ini is in that directory
+; See also: http://forums.winamp.com/showthread.php?s=&threadid=226675&highlight=multi+user+paths.ini
+;--------------------------------
+Function GetWinampIniPath
+
+  ; If winamp.ini is in the same directory as winamp.exe, 
+  ; then we are dealing with computer-wide installation.
+  
+  ;IfFileExists $INSTDIR\Winamp.ini   +1   multi_user_installation
+  StrCpy $WINAMP_INI_DIR    $INSTDIR
+  StrCpy $WINAMP_INI_PATH   $WINAMP_INI_DIR\Winamp.ini
+  ;Goto done
+  
+
+;multi_user_installation:
+
+  ; If winamp.ini is missing and paths.ini is in the same directory as winamp.exe, 
+  ; then we are dealing with multi-user installation.
+  
+  IfFileExists "$INSTDIR\paths.ini"   +1   file_not_found
+  
+  ; Read paths.ini to find out where user-specific Winamp.ini is installed.
+
+  ;DetailPrint "Reading $INSTDIR\paths.ini"
+  ReadINIStr $0 $INSTDIR\paths.ini   Winamp  inidir
+  ReadINIStr $1 $INSTDIR\paths.ini   Winamp  inifile
+  
+  StrCmp $0 "" paths_ini_empty
+  StrCpy $2 $0 4
+  StrCmp $2 "{26}"   +1   no_replace
+  StrCpy $2 $0 "" 4
+  ExpandEnvStrings $0 "%APPDATA%$2"
+
+no_replace:
+  StrCpy $WINAMP_INI_DIR    $0
+  
+  StrCpy $WINAMP_INI_PATH   $WINAMP_INI_DIR\Winamp.ini
+  StrCmp $1 "" done
+  ExpandEnvStrings $0 $1
+  StrCpy $WINAMP_INI_PATH   $WINAMP_INI_DIR\$0
+
+
+paths_ini_empty:
+  ;DetailPrint "paths.ini does not define inidir"
+  Goto done
+
+file_not_found:
+  ;DetailPrint "Could not find file Winamp.ini or paths.ini"
+  Goto done
+
+done:
 FunctionEnd
