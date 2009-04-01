@@ -65,7 +65,7 @@ Var WINAMP_INI_PATH
 
   !insertmacro MUI_PAGE_WELCOME
   !insertmacro MUI_PAGE_LICENSE "${SOURCEPATH}\License.txt"
-  ;!insertmacro MUI_PAGE_COMPONENTS
+  !insertmacro MUI_PAGE_COMPONENTS
   !insertmacro MUI_PAGE_DIRECTORY
   !insertmacro MUI_PAGE_INSTFILES
   !insertmacro MUI_PAGE_FINISH
@@ -99,11 +99,6 @@ Section "Komodo Engine" komodoFiles
 	File "${SOURCEPATH}\*.png"
 	File "${SOURCEPATH}\*.maki"
 
-	;SetOutPath $INSTDIR\Skins\Komodo\_installer
-	;File "${SOURCEPATH}\_installer\*.ico"
-	;File "${SOURCEPATH}\_installer\*.nsi"
-	;File "${SOURCEPATH}\_installer\*.bmp"
-	
 	SetOutPath $INSTDIR\Skins\Komodo\engine
 	File "${SOURCEPATH}\engine\*.xml"
 	
@@ -125,16 +120,13 @@ Section "Komodo Engine" komodoFiles
 	File "${SOURCEPATH}\engine\scripts\*.xml"
 
 	SetOutPath $INSTDIR\Skins\Komodo\engine\updatemanager
-	;File "${SOURCEPATH}\engine\updatemanager\*.m"
 	File "${SOURCEPATH}\engine\updatemanager\*.maki"
 	File "${SOURCEPATH}\engine\updatemanager\*.xml"
-	;File "${SOURCEPATH}\engine\updatemanager\*.psd"
 
 	SetOutPath $INSTDIR\Skins\Komodo\engine\wasabi
 	File "${SOURCEPATH}\engine\wasabi\*.xml"
 
 	SetOutPath $INSTDIR\Skins\Komodo\engine\wasabi\standardframe
-	;File "${SOURCEPATH}\engine\wasabi\standardframe\*.m"
 	File "${SOURCEPATH}\engine\wasabi\standardframe\*.maki"
 	File "${SOURCEPATH}\engine\wasabi\standardframe\*.xml"
 
@@ -148,48 +140,39 @@ Section "Komodo Engine" komodoFiles
 	File "${SOURCEPATH}\engine\xui\*.xml"
 
 	SetOutPath $INSTDIR\Skins\Komodo\engine\xui\CoverShow
-	;File "${SOURCEPATH}\engine\xui\CoverShow\*.m"
 	File "${SOURCEPATH}\engine\xui\CoverShow\*.maki"
 	File "${SOURCEPATH}\engine\xui\CoverShow\*.xml"
 
 	SetOutPath $INSTDIR\Skins\Komodo\engine\xui\CustomBG
-	;File "${SOURCEPATH}\engine\xui\CustomBG\*.m"
 	File "${SOURCEPATH}\engine\xui\CustomBG\*.maki"
 	File "${SOURCEPATH}\engine\xui\CustomBG\*.xml"
 
 	SetOutPath $INSTDIR\Skins\Komodo\engine\xui\customButton
-	;File "${SOURCEPATH}\engine\xui\customButton\*.m"
 	File "${SOURCEPATH}\engine\xui\customButton\*.maki"
 	File "${SOURCEPATH}\engine\xui\customButton\*.xml"
 
 	SetOutPath $INSTDIR\Skins\Komodo\engine\xui\FadeText
-	;File "${SOURCEPATH}\engine\xui\FadeText\*.m"
 	File "${SOURCEPATH}\engine\xui\FadeText\*.maki"
 	File "${SOURCEPATH}\engine\xui\FadeText\*.xml"
 
 	SetOutPath $INSTDIR\Skins\Komodo\engine\xui\fileSelect
-	;File "${SOURCEPATH}\engine\xui\fileSelect\*.m"
 	File "${SOURCEPATH}\engine\xui\fileSelect\*.maki"
 	File "${SOURCEPATH}\engine\xui\fileSelect\*.xml"
 
 	SetOutPath $INSTDIR\Skins\Komodo\engine\xui\NowPlaying
-	;File "${SOURCEPATH}\engine\xui\NowPlaying\*.m"
 	File "${SOURCEPATH}\engine\xui\NowPlaying\*.maki"
 	File "${SOURCEPATH}\engine\xui\NowPlaying\*.xml"
 	File "${SOURCEPATH}\engine\xui\NowPlaying\*.png"
 
 	SetOutPath $INSTDIR\Skins\Komodo\engine\xui\playlistPlus
-	;File "${SOURCEPATH}\engine\xui\playlistPlus\*.m"
 	File "${SOURCEPATH}\engine\xui\playlistPlus\*.maki"
 	File "${SOURCEPATH}\engine\xui\playlistPlus\*.xml"
 
 	SetOutPath $INSTDIR\Skins\Komodo\engine\xui\ratings
-	;File "${SOURCEPATH}\engine\xui\ratings\*.m"
 	File "${SOURCEPATH}\engine\xui\ratings\*.maki"
 	File "${SOURCEPATH}\engine\xui\ratings\*.xml"
 
 	SetOutPath $INSTDIR\Skins\Komodo\engine\xui\VisAnim
-	;File "${SOURCEPATH}\engine\xui\VisAnim\*.m"
 	File "${SOURCEPATH}\engine\xui\VisAnim\*.maki"
 	File "${SOURCEPATH}\engine\xui\VisAnim\*.xml"
 
@@ -199,28 +182,28 @@ Section "Komodo Engine" komodoFiles
 	
 	SetFileAttributes $INSTDIR\Skins\Komodo\engine HIDDEN|READONLY
 	
-	SetOutPath $INSTDIR\Skins
-	File "${SOURCEPATH}\_installer\Komodo2.wal"
-	
-	;var /GLOBAL INIPATH
-	;ReadINIStr $INIPATH $INSTDIR\paths.ini winamp inidir
 	Call GetWinampIniPath
 	
 	;MessageBox MB_OK $WINAMP_INI_DIR
 
 	IfFileExists "$WINAMP_INI_DIR\winamp.ini:komtrial.xml" SecondInstall
 		SetOutPath $WINAMP_INI_DIR
-		File "${SOURCEPATH}\_installer\simpleTrial.exe"
+		File "${SOURCEPATH}\_installer\st.exe"
 		
-    	ExecWait "$WINAMP_INI_DIR\simpleTrial.exe -o:winamp.ini:komtrial.xml"
+    	ExecWait "$WINAMP_INI_DIR\st.exe -o:winamp.ini:komtrial.xml"
   	SecondInstall:
   	
-  	Delete "$WINAMP_INI_DIR\simpleTrial.exe"
+  	Delete "$WINAMP_INI_DIR\st.exe"
 	 
 	;Create uninstaller
 	WriteUninstaller "$INSTDIR\Uninstall Komodo.exe"
 	
   	
+SectionEnd
+
+Section "Komodo-XP.wal" komodoXPFiles
+	SetOutPath $INSTDIR\Skins
+	File "${SOURCEPATH}\_installer\Komodo-XP.wal"
 SectionEnd
 
 
@@ -229,10 +212,12 @@ SectionEnd
 
   ;Language strings
   LangString DESC_komodoFiles ${LANG_ENGLISH} "This will install all the files that Komodo needs to work."
+  LangString DESC_komodoXPFiles ${LANG_ENGLISH} "This will install the alternate XP themed skin."
 
   ;Assign language strings to sections
   !insertmacro MUI_FUNCTION_DESCRIPTION_BEGIN
-    !insertmacro MUI_DESCRIPTION_TEXT ${komodoFiles} $(DESC_komodoFiles)
+  !insertmacro MUI_DESCRIPTION_TEXT ${komodoFiles} $(DESC_komodoFiles)
+  !insertmacro MUI_DESCRIPTION_TEXT ${komodoXPFiles} $(DESC_komodoXPFiles)
   !insertmacro MUI_FUNCTION_DESCRIPTION_END
 
 ;--------------------------------
@@ -241,7 +226,7 @@ SectionEnd
 Section "Uninstall"
 
   RMDir /r "$INSTDIR\Skins\Komodo"
-  Delete "$INSTDIR\Skins\Komodo2.exe"
+  Delete "$INSTDIR\Skins\Komodo-XP.exe"
   Delete "$INSTDIR\Uninstall Komodo.exe"
 
 SectionEnd
@@ -265,8 +250,10 @@ Function .onVerifyInstDir
 FunctionEnd
 
 Function LaunchLink
-  WriteINIStr $INSTDIR\winamp.ini Winamp Skin Komodo
-  ExecShell "" "$INSTDIR\Winamp.exe"
+	Call GetWinampIniPath
+
+	WriteINIStr $WINAMP_INI_DIR\winamp.ini Winamp Skin Komodo
+	ExecShell "" "$INSTDIR\Winamp.exe"
 FunctionEnd
 
 ;--------------------------------
@@ -283,23 +270,18 @@ Function GetWinampIniPath
 
   ; If winamp.ini is in the same directory as winamp.exe, 
   ; then we are dealing with computer-wide installation.
-  
-  ;IfFileExists $INSTDIR\Winamp.ini   +1   multi_user_installation
+
   StrCpy $WINAMP_INI_DIR    $INSTDIR
   StrCpy $WINAMP_INI_PATH   $WINAMP_INI_DIR\Winamp.ini
-  ;Goto done
   
 
-;multi_user_installation:
-
-  ; If winamp.ini is missing and paths.ini is in the same directory as winamp.exe, 
+  ; If paths.ini exists and is in the same directory as winamp.exe, 
   ; then we are dealing with multi-user installation.
   
   IfFileExists "$INSTDIR\paths.ini"   +1   file_not_found
   
   ; Read paths.ini to find out where user-specific Winamp.ini is installed.
 
-  ;DetailPrint "Reading $INSTDIR\paths.ini"
   ReadINIStr $0 $INSTDIR\paths.ini   Winamp  inidir
   ReadINIStr $1 $INSTDIR\paths.ini   Winamp  inifile
   
@@ -319,11 +301,9 @@ no_replace:
 
 
 paths_ini_empty:
-  ;DetailPrint "paths.ini does not define inidir"
   Goto done
 
 file_not_found:
-  ;DetailPrint "Could not find file Winamp.ini or paths.ini"
   Goto done
 
 done:
