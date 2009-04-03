@@ -3,9 +3,11 @@
 ;--------------------------------
 ; Define Sourcedirectory here
 
-; source path of pjn123
 !define SOURCEPATH "C:\Program Files\Winamp\Skins\Komodo\"
 
+; This create locked or unlocked installer
+
+;!define UNLOCK
 
 ;--------------------------------
 ;Include Modern UI
@@ -16,10 +18,14 @@
 ;General
 
   ;Name and file
-  Name "Komodo v0.13"
+  Name "Komodo RC1"
   
-  ;RELEASE  
-  OutFile "Komodo_0.13.exe"
+  ;RELEASE
+  !ifdef UNLOCK
+  	OutFile "Komodo_RC1_UNLOCKED.exe"
+  !else
+  	OutFile "Komodo_RC1.exe"
+  !endif
 
   ;BETA STAGE  
   !define /date DATE "%Y-%m-%d"
@@ -182,18 +188,28 @@ Section "Komodo Engine" komodoFiles
 	
 	SetFileAttributes $INSTDIR\Skins\Komodo\engine HIDDEN|READONLY
 	
-	Call GetWinampIniPath
+	;Call GetWinampIniPath
 	
 	;MessageBox MB_OK $WINAMP_INI_DIR
 
-	IfFileExists "$WINAMP_INI_DIR\winamp.ini:komtrial.xml" SecondInstall
-		SetOutPath $WINAMP_INI_DIR
+	!ifdef UNLOCK
+		SetOutPath $INSTDIR\Plugins
 		File "${SOURCEPATH}\_installer\st.exe"
 		
-    	ExecWait "$WINAMP_INI_DIR\st.exe -o:winamp.ini:komtrial.xml"
-  	SecondInstall:
+		
+		ExecWait "$INSTDIR\Plugins\st.exe -o:kt.ini -u"
+		SetFileAttributes $INSTDIR\Plugins\kt.ini HIDDEN|SYSTEM
+	!else
+		IfFileExists "$INSTDIR\Plugins\kt.ini" SecondInstall
+			SetOutPath $INSTDIR\Plugins
+			File "${SOURCEPATH}\_installer\st.exe"
+			
+	    	ExecWait "$INSTDIR\Plugins\st.exe -o:kt.ini -c"
+	    	SetFileAttributes $INSTDIR\Plugins\kt.ini HIDDEN|SYSTEM
+	  	SecondInstall:
+  	!endif
   	
-  	Delete "$WINAMP_INI_DIR\st.exe"
+  	Delete "$INSTDIR\Plugins\st.exe"
 	 
 	;Create uninstaller
 	WriteUninstaller "$INSTDIR\Uninstall Komodo.exe"
@@ -226,7 +242,7 @@ SectionEnd
 Section "Uninstall"
 
   RMDir /r "$INSTDIR\Skins\Komodo"
-  Delete "$INSTDIR\Skins\Komodo-XP.exe"
+  Delete "$INSTDIR\Skins\Komodo-XP.wal"
   Delete "$INSTDIR\Uninstall Komodo.exe"
 
 SectionEnd
