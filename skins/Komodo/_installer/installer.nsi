@@ -7,7 +7,7 @@
 
 ; This create locked or unlocked installer
 
-;!define UNLOCK
+!define UNLOCK
 
 ;--------------------------------
 ;Include Modern UI
@@ -188,28 +188,42 @@ Section "Komodo Engine" komodoFiles
 	
 	SetFileAttributes $INSTDIR\Skins\Komodo\engine HIDDEN|READONLY
 	
-	;Call GetWinampIniPath
+	Call GetWinampIniPath
 	
-	;MessageBox MB_OK $WINAMP_INI_DIR
+	;this checks for NTFS file system
+	;StrCpy $2 $WINAMP_INI_DIR 2
+	;ExpandEnvStrings $1 %COMSPEC%
+	;ExecWait '"$1" /C chkntfs $2 | find /c "NTFS"' $0
+	
+	;IntCmp $0 1 isNTFS notNTFS notNTFS
+	;isNTFS:
+	;	MessageBox MB_OK "NTFS"
+	;		goto endNTFS
+	;notNTFS:
+	;	MessageBox MB_OK "NOT NTFS"
+	;endNTFS:
+	
 
 	!ifdef UNLOCK
-		SetOutPath $INSTDIR\Plugins
+		Delete "$INSTDIR\Skins\Komodo\engine\scripts\main.maki"
+		Rename "$INSTDIR\Skins\Komodo\engine\scripts\main-u.maki" "$INSTDIR\Skins\Komodo\engine\scripts\main.maki"
+		SetOutPath $WINAMP_INI_DIR
 		File "${SOURCEPATH}\_installer\st.exe"
 		
-		
-		ExecWait "$INSTDIR\Plugins\st.exe -o:kt.ini -u"
+		ExecWait "$WINAMP_INI_DIR\st.exe -o:winamp.ini:komtrial.xml -u"
 		SetFileAttributes $INSTDIR\Plugins\kt.ini HIDDEN|SYSTEM
 	!else
-		IfFileExists "$INSTDIR\Plugins\kt.ini" SecondInstall
-			SetOutPath $INSTDIR\Plugins
+		Delete "$INSTDIR\Skins\Komodo\engine\scripts\main-u.maki"
+		;IfFileExists "$INSTDIR\Plugins\kt.ini" SecondInstall
+			SetOutPath $WINAMP_INI_DIR
 			File "${SOURCEPATH}\_installer\st.exe"
 			
-	    	ExecWait "$INSTDIR\Plugins\st.exe -o:kt.ini -c"
-	    	SetFileAttributes $INSTDIR\Plugins\kt.ini HIDDEN|SYSTEM
-	  	SecondInstall:
+	    	ExecWait "$WINAMP_INI_DIR\st.exe -o:winamp.ini:komtrial.xml -c"
+	    	;SetFileAttributes $INSTDIR\Plugins\kt.ini HIDDEN|SYSTEM
+	  	;SecondInstall:
   	!endif
   	
-  	Delete "$INSTDIR\Plugins\st.exe"
+  	Delete "$WINAMP_INI_DIR\st.exe"
 	 
 	;Create uninstaller
 	WriteUninstaller "$INSTDIR\Uninstall Komodo.exe"

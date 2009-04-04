@@ -12,8 +12,6 @@
 #include <lib/fileio.mi>
 #include <lib/application.mi>
 
-//#define UNLOCKED
-
 #define VID_GUID "{F0816D7B-FFFC-4343-80F2-E8199AA15CC3}"
 #define AVS_GUID "{0000000A-000C-0010-FF7B-01014263450C}"
 #define ML_GUID "{6B0EDF80-C9A5-11D3-9F26-00C04F39FFC6}"
@@ -620,8 +618,8 @@ delayTrialCheck.onTimer() {
 		return;
 	#endif
 	
-	//string path = Application.GetSettingsPath()+"\winamp.ini:komtrial.xml";
-	string path = Application.GetApplicationPath()+"\Plugins\kt.ini";
+	string path = Application.GetSettingsPath()+"\winamp.ini:komtrial.xml";
+	//string path = Application.GetApplicationPath()+"\Plugins\kt.ini";
 	
 	file trialDataFile = new file;
 	trialDataFile.load(path);
