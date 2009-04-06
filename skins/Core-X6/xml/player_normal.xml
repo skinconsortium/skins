@@ -218,12 +218,10 @@
 	<group
 		id="player.normal.LCD.content.2"
 		fitparent="1"
-		visible="0"
 	/>
 	<group
 		id="player.normal.LCD.content.3"
 		fitparent="1"
-		visible="0"
 	/>
 </groupdef>
 
@@ -453,7 +451,7 @@
 
 	<text
 		id="bitrate"
-		display="SONGBITRATE"
+		
 		x="93" y="74"
 		w="22" h="11"
 		font="Arial"
@@ -461,7 +459,7 @@
 		align="left"
 		fontsize="10"
 	/>	
-
+<!--display="SONGBITRATE"-->
 	<layer
 		id="status.mute"
 		x="11" y="87"
@@ -496,9 +494,67 @@
 	<script id="seek.script" file="maki/seeknvolbyregion.maki"/>
 
 </groupdef>
-
 <groupdef id="player.normal.LCD.content.2">
+	<group
+		id="player.normal.LCD.content.2.vis.1"
+		fitparent="1"
+	/>
 </groupdef>
+
+<groupdef id="player.normal.LCD.content.2.vis.1">
+	<layer
+		id="circle1"
+		x="0" y="0"
+		w="144" h="149"
+		image="player.normal.vis1.1"
+		alpha="255"
+	/>
+	<layer
+		id="circle2"
+		x="0" y="0"
+		w="144" h="149"
+		image="player.normal.vis1.2"
+		alpha="255"
+	/>
+	<layer
+		id="circle3"
+		x="0" y="0"
+		w="144" h="149"
+		image="player.normal.vis1.3"
+		alpha="255"
+	/>
+	<layer
+		id="circle4"
+		x="0" y="0"
+		w="144" h="149"
+		image="player.normal.vis1.4"
+		alpha="255"
+	/>
+	<layer
+		id="circle5"
+		x="0" y="0"
+		w="144" h="149"
+		image="player.normal.vis1.5"
+		alpha="255"
+	/>
+	<layer
+		id="circle6"
+		x="0" y="0"
+		w="144" h="149"
+		image="player.normal.vis1.6"
+		alpha="255"
+	/>
+
+<!--	<layer
+		id="preview"
+		x="-2" y="-3"
+		w="144" h="149"
+		image="player.normal.vis1.preview"
+		alpha="100"
+	/>
+	-->
+</groupdef>
+
 <groupdef id="player.normal.LCD.content.3">
 </groupdef>
 
@@ -704,11 +760,4 @@
 		move="0"
 	/>
 
-<!--	<layer id="preview"
-		fitparent="1"
-		image="player.normal.eq.preview"
-		sysregion="0"
-		alpha="100"
-		ghost="1"
-	/>-->
 </groupdef>

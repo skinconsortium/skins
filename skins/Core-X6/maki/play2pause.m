@@ -1,4 +1,5 @@
 function play2pauseOnLoaded();
+function play2pauseOnUnLoading();
 
 #define PRESSSPEED 0.25
 
@@ -92,4 +93,9 @@ tmrPlay2Pause.OnTimer()
 	{
 		lyrMNPlayLight.setXMLParam("image","player.normal.play.light.bitmap");	
 	}
+}
+
+play2pauseOnUnLoading()
+{
+	tmrPlay2Pause.Stop();
 }
