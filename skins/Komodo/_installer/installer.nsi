@@ -190,20 +190,6 @@ Section "Komodo Engine" komodoFiles
 	
 	Call GetWinampIniPath
 	
-	;this checks for NTFS file system
-	;StrCpy $2 $WINAMP_INI_DIR 2
-	;ExpandEnvStrings $1 %COMSPEC%
-	;ExecWait '"$1" /C chkntfs $2 | find /c "NTFS"' $0
-	
-	;IntCmp $0 1 isNTFS notNTFS notNTFS
-	;isNTFS:
-	;	MessageBox MB_OK "NTFS"
-	;		goto endNTFS
-	;notNTFS:
-	;	MessageBox MB_OK "NOT NTFS"
-	;endNTFS:
-	
-
 	!ifdef UNLOCK
 		Delete "$INSTDIR\Skins\Komodo\engine\scripts\main.maki"
 		Rename "$INSTDIR\Skins\Komodo\engine\scripts\main-u.maki" "$INSTDIR\Skins\Komodo\engine\scripts\main.maki"
@@ -286,6 +272,8 @@ Function LaunchLink
 	ExecShell "" "$INSTDIR\Winamp.exe"
 FunctionEnd
 
+; ********** modified by leechbite - now accepts other CSIDL values ************
+
 ;--------------------------------
 ; Starting with Winamp 5.11, the Winamp installation can be for all users, or with multi-user settings.
 ; Machine (all users) installation keeps the settings in $WINAMP_DIR\Winamp.ini
@@ -298,43 +286,61 @@ FunctionEnd
 ;--------------------------------
 Function GetWinampIniPath
 
-  ; If winamp.ini is in the same directory as winamp.exe, 
-  ; then we are dealing with computer-wide installation.
+	; If winamp.ini is in the same directory as winamp.exe, 
+	; then we are dealing with computer-wide installation.
+	
+	StrCpy $WINAMP_INI_DIR    $INSTDIR
+	StrCpy $WINAMP_INI_PATH   $WINAMP_INI_DIR\Winamp.ini
+	
+	
+	; If paths.ini exists and is in the same directory as winamp.exe, 
+	; then we are dealing with multi-user installation.
+	
+	IfFileExists "$INSTDIR\paths.ini"   +1   file_not_found
+	
+	; Read paths.ini to find out where user-specific Winamp.ini is installed.
+	
+	ReadINIStr $0 $INSTDIR\paths.ini   Winamp  inidir
+	ReadINIStr $1 $INSTDIR\paths.ini   Winamp  inifile
+	
+	StrCmp $0 "" paths_ini_empty
+	StrCpy $2 $0 1
+	IntOp $1 0 - 0
+	StrCmp $2 "{"		+1	no_replace
+	
+	loopback:
+	IntOp $1 $1 + 1
+	StrCpy $2 $0 1 $1
+	StrCmp $2 "}" csid_found loopback
+	IntCmp $1 3 csid_found loopback no_replace
+	
+csid_found:
 
-  StrCpy $WINAMP_INI_DIR    $INSTDIR
-  StrCpy $WINAMP_INI_PATH   $WINAMP_INI_DIR\Winamp.ini
-  
-
-  ; If paths.ini exists and is in the same directory as winamp.exe, 
-  ; then we are dealing with multi-user installation.
-  
-  IfFileExists "$INSTDIR\paths.ini"   +1   file_not_found
-  
-  ; Read paths.ini to find out where user-specific Winamp.ini is installed.
-
-  ReadINIStr $0 $INSTDIR\paths.ini   Winamp  inidir
-  ReadINIStr $1 $INSTDIR\paths.ini   Winamp  inifile
-  
-  StrCmp $0 "" paths_ini_empty
-  StrCpy $2 $0 4
-  StrCmp $2 "{26}"   +1   no_replace
-  StrCpy $2 $0 "" 4
-  ExpandEnvStrings $0 "%APPDATA%$2"
+	StrCpy $3 $0 $1 1
+	IntOp $1 $1 + 1
+	StrCpy $2 $0 "" $1
+	
+	System::Call 'shell32::SHGetSpecialFolderPathA(i $HWNDPARENT, t .r1, i $3, b 'false') i r0'
+	
+	StrCpy $0 "$1$2"
 
 no_replace:
-  StrCpy $WINAMP_INI_DIR    $0
-  
-  StrCpy $WINAMP_INI_PATH   $WINAMP_INI_DIR\Winamp.ini
-  StrCmp $1 "" done
-  ExpandEnvStrings $0 $1
-  StrCpy $WINAMP_INI_PATH   $WINAMP_INI_DIR\$0
+	
+	StrCpy $WINAMP_INI_DIR    $0
+	
+	;MessageBox MB_OK|MB_ICONINFORMATION "$0"
+	
+	StrCpy $WINAMP_INI_PATH   $WINAMP_INI_DIR\Winamp.ini
+	StrCmp $1 "" done
+	ExpandEnvStrings $0 $1
+	StrCpy $WINAMP_INI_PATH   $WINAMP_INI_DIR\$0
 
 
 paths_ini_empty:
-  Goto done
+	Goto done
 
 file_not_found:
-  Goto done
+	Goto done
 
 done:
 FunctionEnd
