@@ -7,7 +7,7 @@
 
 ; This create locked or unlocked installer
 
-!define UNLOCK
+;!define UNLOCK
 
 ;--------------------------------
 ;Include Modern UI
