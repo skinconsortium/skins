@@ -86,7 +86,6 @@
 
 	<!-- Equalizer drawer -->
 
-	<bitmap id="player.normal.eq.preview" file="player/drawer_eq_preview.png" x="432" y="208" w="142" h="144" />
 	<bitmap id="player.normal.eq.background" file="player/drawer_eq.png" x="435" y="219" w="129" h="100" gammagroup="ColorBackgrounds"/>
 	<bitmap id="player.normal.eq.lcd" file="player/drawer_eq.png" x="440" y="121" w="119" h="98" gammagroup="PlasticBackgrounds"/>
 	<bitmap id="player.normal.eq.tips" file="player/drawer_eq.png" x="299" y="154" w="23" h="29" gammagroup="Lights"/>
@@ -107,4 +106,15 @@
 	<bitmap id="player.normal.eq.button"         file="player/drawer_eq.png" x="134" y="289" w="131" h="55" gammagroup="PlasticBackgrounds"/>
 
 	<bitmap id="player.normal.eq.shadow" file="player/drawer_eq.png" x="281" y="209" w="142" h="144" gammagroup="Shadows"/>
+
+	<!-- Screen 2. Visualizations -->
+	<!-- Visualization 1. Large circles -->
+	<bitmap id="player.normal.vis1.preview" file="player/Normal_Vis_Preview.png" x="0"   y="0"   w="144" h="149" gammagroup="Lights"/>
+
+	<bitmap id="player.normal.vis1.1" file="player/Normal_Vis1.png" x="0"   y="0"   w="144" h="149" gammagroup="Lights"/>
+	<bitmap id="player.normal.vis1.2" file="player/Normal_Vis1.png" x="144" y="0"   w="144" h="149" gammagroup="Lights"/>
+	<bitmap id="player.normal.vis1.3" file="player/Normal_Vis1.png" x="288" y="0"   w="144" h="149" gammagroup="Lights"/>
+	<bitmap id="player.normal.vis1.4" file="player/Normal_Vis1.png" x="432" y="0"   w="144" h="149" gammagroup="Lights"/>
+	<bitmap id="player.normal.vis1.5" file="player/Normal_Vis1.png" x="0"   y="149" w="144" h="149" gammagroup="Lights"/>
+	<bitmap id="player.normal.vis1.6" file="player/Normal_Vis1.png" x="144" y="149" w="144" h="149" gammagroup="Lights"/>
 </elements>

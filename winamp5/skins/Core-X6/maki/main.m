@@ -2,6 +2,21 @@
 #include </lib/config.mi>
 #include </lib/fileio.mi>
 
+#define WINDOW_ITEMS "{6559CA61-7EB2-4415-A8A9-A2AEEF762B7F}"
+#define OPTIONS_MENU "{1828D28F-78DD-4647-8532-EBA504B8FC04}"
+#define MY_OPT_MENU "{3448EFC7-D134-4F2B-BFA6-B8FC5AB48089}"
+
+// songticker config page
+#define CUSTOM_PAGE_SONGTICKER "{7061FDE0-0E12-11D8-BB41-0050DA442EF3}"
+
+// LCD content page.
+#define CUSTOM_PAGE_LCD_CONTENT_TRANSLATED "{349A0016-0950-11DE-856A-729855D89593}"
+
+/********************************************************************************************
+Globals, the variables, that are used in several independent functions and can't be forwarded 
+or store objects, that trigger functions
+********************************************************************************************/
+
 // MyChange is used by several functions to indicate, the changes are by the script
 Global int MyChange;
 
@@ -27,12 +42,25 @@ Global AnimatedLayer lyrVis18;
 Global AnimatedLayer lyrVis19;
 Global AnimatedLayer lyrVis20;
 Global AnimatedLayer lyrVis21;
+
+// Advanced Visualization Main Mode
+// Type 1
+Global Layer lyrAdvVis1_1, lyrAdvVis1_2, lyrAdvVis1_3, lyrAdvVis1_4, lyrAdvVis1_5, lyrAdvVis1_6;
+
 Global GuiObject Ticker;
+
+Global List LCDattrNames;
+
+Global List SpectrumList;
+Global List WaveFormList;
+
+Global BitList WorkingVis; //This parameter shows vis, that works at the moment
 
 Global Group grpCover;
 Global Group grpEq;
-
-Global List aGrpMNLCD; // Main Normal LCDs
+Global Group grpLCD;
+Global Group grpMNLCD1;
+Global Group grpMNLCD2;
 
 Global Layer btnCoverButton;
 Global Button btnCoverStar1, btnCoverStar2, btnCoverStar3, btnCoverStar4, btnCoverStar5;
@@ -50,6 +78,8 @@ Global Layer LCDRepeat;
 Global Layer LCDMute;
 Global Layer CoverMap;
 
+Global Text Bitrate;
+
 Global Button btnMNPlay;
 Global Layer lyrMNPlayDown, lyrMNPlayLight;
 
@@ -58,11 +88,8 @@ Global Slider sldEqMiddle;
 Global Slider sldEqTremble;
 
 Global Timer tmrVis;
-Global Timer tmrPlay2Pause;
 
-Global Int PrevValues1, PrevValues2, PrevValues3, PrevValues4, PrevValues5, PrevValues6, PrevValues7;
-Global Int PrevValues8, PrevValues9, PrevValues10, PrevValues11, PrevValues12, PrevValues13, PrevValues14;
-Global Int PrevValues15, PrevValues16, PrevValues17, PrevValues18, PrevValues19, PrevValues20, PrevValues21;
+Global Timer tmrPlay2Pause;
 
 // Should be loaded first
 #include "languageParser.m"
@@ -76,32 +103,28 @@ Global Int PrevValues15, PrevValues16, PrevValues17, PrevValues18, PrevValues19,
 #include "eqdrawer.m"
 // Swithcing between contents
 #include "LCDcontent.m"
-function SetVisFrame (animatedlayer vislayer, int Length, int BandStart, int BandStop, int PrevValue, int Offset);
+#include "custom_vis.m"
 
 System.onScriptLoaded() {
 	
 	string LangPath = system.getParam() + "Lang";
 
-	// Should be loaded first to use languages
-	// as this script requires nothing, but can be used everywhere
+	/* Should be loaded first to use languages
+	 as this script requires nothing, but can be used everywhere
+	 even in declarations */
 	languageParserOnLoaded(LangPath);
-
-	// Next we initialize attribs as it's data can be used, but it requires language support
-	initAttribsonLoaded();
 
 	Container cntMain = System.getContainer("main");
 	Layout lytMainNormal = cntMain.GetLayout("normal");
 	Group grpPlayerNormal = lytMainNormal.GetObject("player.normal.group");
-	Group grpLCD = grpPlayerNormal.GetObject("player.normal.LCD");
+	grpLCD = grpPlayerNormal.GetObject("player.normal.LCD");
+	
+	// Contents of main LCD
+	grpMNLCD1 = grpLCD.GetObject("player.normal.LCD.content.1");
+	grpMNLCD2 = grpLCD.GetObject("player.normal.LCD.content.2");
 
-	aGrpMNLCD = new List; // Adding LCD contents to a list (array)
-
-	aGrpMNLCD.addItem(grpLCD.GetObject("player.normal.LCD.content.1"));
-	aGrpMNLCD.addItem(grpLCD.GetObject("player.normal.LCD.content.2"));
-	aGrpMNLCD.addItem(grpLCD.GetObject("player.normal.LCD.content.3"));
-
-//	Group grpMNLCD1 = aGrpMNLCD.eNumItem(0);
-	Group grpMNLCD1 = grpLCD.GetObject("player.normal.LCD.content.1");
+	// Advanced Visualization types
+	Group grpMNLCD2_1 = grpMNLCD2.getObject("player.normal.LCD.content.2.vis.1");
 
 	btnMNcontent1 = grpPlayerNormal.getObject("toggle1");
 	btnMNcontent2 = grpPlayerNormal.getObject("toggle2");
@@ -134,6 +157,14 @@ System.onScriptLoaded() {
 	lyrVis20 = grpMNLCD1.getObject("vis20");
 	lyrVis21 = grpMNLCD1.getObject("vis21");
 
+	// Getting advanced visualization of main mode (type 1)
+	lyrAdvVis1_1 = grpMNLCD2_1.getObject("circle1");
+	lyrAdvVis1_2 = grpMNLCD2_1.getObject("circle2");
+	lyrAdvVis1_3 = grpMNLCD2_1.getObject("circle3");
+	lyrAdvVis1_4 = grpMNLCD2_1.getObject("circle4");
+	lyrAdvVis1_5 = grpMNLCD2_1.getObject("circle5");
+	lyrAdvVis1_6 = grpMNLCD2_1.getObject("circle6");
+
 	Ticker = grpMNLCD1.getObject("ticker");
 
 	btnMNPlay = grpPlayerNormal.getObject("play2pause");
@@ -141,6 +172,8 @@ System.onScriptLoaded() {
 	lyrMNPlayLight = grpPlayerNormal.getObject("play2pause.light");
 	tmrPlay2Pause = new Timer;
 	
+	tmrVis = new Timer;
+
 	btnMNCrossfade = grpPlayerNormal.getObject("crossfade");
 	btnMNShuffle = grpPlayerNormal.getObject("shuffle");
 	btnMNRepeat = grpPlayerNormal.getObject("repeat");
@@ -148,6 +181,8 @@ System.onScriptLoaded() {
 	LCDCrossfade = grpMNLCD1.getObject("status.crossfade");
 	LCDShuffle = grpMNLCD1.getObject("status.shuffle");
 	LCDRepeat = grpMNLCD1.getObject("status.repeat");
+
+	Bitrate = grpMNLCD1.getObject("bitrate");
 
 	CoverMap = grpCover.getObject("noalpha.map");
 	btnCoverButton = grpCover.getObject("button");
@@ -166,11 +201,20 @@ System.onScriptLoaded() {
 	sldEqMiddle = grpEq.getObject("bit.mids");
 	sldEqTremble =grpEq.getObject("bit.high");
 
+	//LCD attribs names
+	LCDattrNames = new List;
+	LCDattrNames.addItem("Normal");
+	LCDattrNames.addItem(MyTranslate(1));
+	LCDattrNames.addItem("Options");
 
-	tmrVis = new Timer;
-	tmrVis.SetDelay(30);
-	tmrVis.Start();
-	tmrVis.OnTimer();
+	// Vis values list
+	SpectrumList = new List;
+	WaveFormList = new List;
+	WorkingVis = new BitList;
+	WorkingVis.setSize(2); // VisWorking on/off, Fisrst/Second content
+
+	//First initializing attribs as it's data can be used
+	initAttribsonLoaded();
 
 	if (cattrDA.getData() == "1")
 	{
@@ -186,8 +230,8 @@ System.onScriptLoaded() {
 	coverdrawerOnLoaded();
 	eqdrawerOnLoaded();
 	keyboardOnLoaded();
-//	LCDcontentOnLoaded();
-
+	LCDcontentOnLoaded();
+	custom_visOnLoaded();
 }
 
 cattrDA.OnDataChanged()
@@ -208,57 +252,19 @@ cattrDA.OnDataChanged()
 	}
 }
 
-tmrVis.OnTimer(){
-	PrevValues1 = SetVisFrame(lyrVis1, 3, 0, 2, PrevValues1, 0);
-	PrevValues2 = SetVisFrame(lyrVis2, 6, 3, 6, PrevValues2, 0);
-	PrevValues3 = SetVisFrame(lyrVis3, 8, 7, 9, PrevValues3, 0);
-	PrevValues4 = SetVisFrame(lyrVis4, 10, 10, 13, PrevValues4, 0);
-	PrevValues5 = SetVisFrame(lyrVis5, 11, 14, 16, PrevValues5, 0);
-	PrevValues6 = SetVisFrame(lyrVis6, 12, 17, 20, PrevValues6, 0);
-	PrevValues7 = SetVisFrame(lyrVis7, 13, 21, 24, PrevValues7, 0);
-	PrevValues8 = SetVisFrame(lyrVis8, 14, 25, 27, PrevValues8, 0);
-	PrevValues9 = SetVisFrame(lyrVis9, 14, 28, 31, PrevValues9, 0);
-	PrevValues10 = SetVisFrame(lyrVis10, 14, 32, 34, PrevValues10, 0);
-	PrevValues11 = SetVisFrame(lyrVis11, 15, 35, 38, PrevValues11, 0);
-	PrevValues12 = SetVisFrame(lyrVis12, 15, 39, 41, PrevValues12, 0);
-	PrevValues13 = SetVisFrame(lyrVis13, 15, 42, 45, PrevValues13, 0);
-	PrevValues14 = SetVisFrame(lyrVis14, 15, 46, 48, PrevValues14, 0);
-	PrevValues15 = SetVisFrame(lyrVis15, 15, 49, 51, PrevValues15, 0);
-	PrevValues16 = SetVisFrame(lyrVis16, 15, 52, 54, PrevValues16, 0);
-	PrevValues17 = SetVisFrame(lyrVis17, 15, 55, 57, PrevValues17, 0);
-	PrevValues18 = SetVisFrame(lyrVis18, 15, 58, 60, PrevValues18, 0);
-	PrevValues19 = SetVisFrame(lyrVis19, 14, 61, 64, PrevValues19, 0);
-	PrevValues20 = SetVisFrame(lyrVis20, 13, 65, 67, PrevValues20, 0);
-	PrevValues21 = SetVisFrame(lyrVis21, 11, 68, 70, PrevValues21, 0);
-}
-
-SetVisFrame(animatedlayer vislayer, int Length, int BandStart, int BandStop, int PrevValue, int Offset) {
-
-	boolean playing = 0;
-	If (System. getStatus()!= 0) playing = 1;
-	double BandValue;
-	int i;
-	For (i=BandStart;i<=BandStop;i++) {BandValue = BandValue + System.getVisBand(0, i);}
-	BandValue = playing*BandValue;
-	If (PrevValue > BandValue) BandValue = (PrevValue * 4/5) + (BandValue / 5); // Using the old values too
-	PrevValue = BandValue;
-	BandValue = BandValue / 255 / (BandStop - BandStart);
-	int newFrame = Integer(BandValue * Length) + Offset;
-	If (newFrame >= Length) newFrame = Length - 1;
-	If (newFrame < 0) newFrame = 0;
-	vislayer.gotoFrame(newFrame);	
-	return PrevValue;
-}
-
 System.onTitleChange(String newtitle)
 {
 	coverDrawerOnTitleChange(newtitle);
 }
 
 System.onScriptUnLoading() {
-	Delete tmrVis;
-	Delete tmrPlay2Pause;
-	delete aGrpMNLCD;
-
+	
+// Functions of included scripts, used when Skin is Unloading 	
+	custom_visOnUnloading();
+	play2pauseOnUnLoading();
 	initAttribsonUnLoading();
+
+	delete LCDattrNames;
+	delete tmrPlay2Pause;
+	delete tmrVis;
 }
