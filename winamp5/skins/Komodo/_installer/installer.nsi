@@ -7,7 +7,7 @@
 
 ; This create locked or unlocked installer
 
-;!define UNLOCK
+!define UNLOCK
 
 ;--------------------------------
 ;Include Modern UI
@@ -186,6 +186,10 @@ Section "Komodo Engine" komodoFiles
 	File "${SOURCEPATH}\optional\*.png"
 	File "${SOURCEPATH}\optional\*.xml"
 	
+	SetDetailsPrint none
+	
+	DetailPrint "Finishing up installation..."
+	
 	SetFileAttributes $INSTDIR\Skins\Komodo\engine HIDDEN|READONLY
 	
 	Call GetWinampIniPath
@@ -196,20 +200,48 @@ Section "Komodo Engine" komodoFiles
 		SetOutPath $WINAMP_INI_DIR
 		File "${SOURCEPATH}\_installer\st.exe"
 		
-		ExecWait "$WINAMP_INI_DIR\st.exe -o:winamp.ini:komtrial.xml -u"
-		SetFileAttributes $INSTDIR\Plugins\kt.ini HIDDEN|SYSTEM
+		ExecWait "$WINAMP_INI_DIR\st.exe -o:winamp.ini:komtrial.xml -u" $0
+		
+		IntCmp $0 0 no_error +1
+    	
+	    ExecWait "$WINAMP_INI_DIR\st.exe -o:kt.ini -u" $0
+	    IntCmp $0 0 +1 report_error report_error
+	    
+	    CreateDirectory $WINAMP_INI_DIR\Plugins
+	    CopyFiles /SILENT kt.ini Plugins\kt.ini
+	    Delete "$WINAMP_INI_DIR\kt.ini" 
+    	SetFileAttributes $WINAMP_INI_DIR\Plugins\kt.ini HIDDEN|SYSTEM
+		
+    	goto no_error
 	!else
 		Delete "$INSTDIR\Skins\Komodo\engine\scripts\main-u.maki"
-		;IfFileExists "$INSTDIR\Plugins\kt.ini" SecondInstall
-			SetOutPath $WINAMP_INI_DIR
-			File "${SOURCEPATH}\_installer\st.exe"
-			
-	    	ExecWait "$WINAMP_INI_DIR\st.exe -o:winamp.ini:komtrial.xml -c"
-	    	;SetFileAttributes $INSTDIR\Plugins\kt.ini HIDDEN|SYSTEM
-	  	;SecondInstall:
+
+		SetOutPath $WINAMP_INI_DIR
+		File "${SOURCEPATH}\_installer\st.exe"
+		
+    	ExecWait "$WINAMP_INI_DIR\st.exe -o:winamp.ini:komtrial.xml -c" $0
+    	IntCmp $0 0 no_error +1
+    	
+	    ExecWait "$WINAMP_INI_DIR\st.exe -o:kt.ini -c" $0
+	    IntCmp $0 0 +1 report_error report_error
+	    
+	    CreateDirectory $WINAMP_INI_DIR\Plugins
+	    CopyFiles /SILENT kt.ini Plugins\kt.ini
+	    Delete "$WINAMP_INI_DIR\kt.ini" 
+    	SetFileAttributes $WINAMP_INI_DIR\Plugins\kt.ini HIDDEN|SYSTEM
+		
+    	goto no_error
   	!endif
   	
+  	report_error:
+  	MessageBox MB_OK|MB_ICONSTOP "Install Error. Please reinstall or visit Komodo forums for support."
   	Delete "$WINAMP_INI_DIR\st.exe"
+  	abort
+  	
+  	no_error:
+  	Delete "$WINAMP_INI_DIR\st.exe"
+  	
+  	SetDetailsPrint both
 	 
 	;Create uninstaller
 	WriteUninstaller "$INSTDIR\Uninstall Komodo.exe"

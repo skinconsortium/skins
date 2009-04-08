@@ -618,17 +618,27 @@ delayTrialCheck.onTimer() {
 		return;
 	#endif
 	
+	lockui();
+	
 	string path = Application.GetSettingsPath()+"\winamp.ini:komtrial.xml";
-	//string path = Application.GetApplicationPath()+"\Plugins\kt.ini";
+	//string path = Application.GetSettingsPath()+"\Plugins\kt.ini";
 	
 	file trialDataFile = new file;
 	trialDataFile.load(path);
 	int exist = trialDataFile.exists();
+	
+	if (!exist) {
+		path = Application.GetSettingsPath()+"\Plugins\kt.ini";
+		trialDataFile.load(path);
+		exist = trialDataFile.exists();
+	}
 	delete trialDataFile;
 	
 	if (!exist) {
 		messagebox("Invalid install, please reinstall.\nSome functions will be disabled.", "Install Error", 0, "");
 		setPrivateInt("Komodo","TUP",1);
+		unlockui();
+		
 		return;
 	}
 	
@@ -650,6 +660,8 @@ delayTrialCheck.onTimer() {
 		
 		bgdef.leftClick();
 	}
+	
+	unlockui();
 }
 
 trialCheck.parser_onCallback (String xmlpath, String xmltag, list paramname, list paramvalue) {
