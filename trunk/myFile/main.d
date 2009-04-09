@@ -9,7 +9,7 @@ module main;
 
 import controller.ModelController;
 import model.XmlModel;
-import about;
+import ui.about;
 import global;
 
 import dfl.all;
@@ -18,10 +18,10 @@ import com.skinconsortium.d.dfl.MenuWindow;
 
 import tango.io.FilePath;
 import tango.net.Socket;
+import ui.ExportHTML;
 import UI = ui.handlers;
 import tango.stdc.stdint;
 import tango.text.Properties;
-import model.StringUtils; // TODO CLEANUP
 
 import com.skinconsortium.d.model.ModelContainer;
 
@@ -47,7 +47,7 @@ class Main: MenuWindow, IModelContainer
 	this()
 	{
 		super();
-		aboutWindow = new About;
+		aboutWindow = new About();
 		icon = Application.resources.getIcon(ID_ICON);
 		controller = new ModelController!(XmlModel)(this);
 		initializeMain();
@@ -256,26 +256,9 @@ class Main: MenuWindow, IModelContainer
 	}
 	void menuExportHTML(Object sender, EventArgs ea)
 	{
-		auto fp = new tango.io.FilePath.FilePath("C:/export.html");
-		bool existed = fp.exists;
-		if (!existed)
-		{
-			fp.createFile;
-		}
-		
-		auto file = new tango.io.File.File(fp.toString());
-		auto doc = new tango.text.xml.Document.Document!(char);
-		
-		auto bodyE = doc.root.element(null, "html").element(null, "body");
-			
-		foreach(char[] key, char[] value; model.getMap())
-		{
-			bodyE.element(null, "h2", key);
-			bodyE.element(null, "p", nlToBr!(char)(value));
-		}
-		
-		auto print = new tango.text.xml.DocPrinter.DocPrinter!(char);
-		file.write(cast(void[])print(doc));
+		updateAll();
+		Form p = new ui.ExportHTML.ExportHTML(this);
+		p.showDialog(this);
 	}
 	
 	/// Entice DFL Stuff

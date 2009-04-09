@@ -11,6 +11,7 @@ import tango.io.FilePath;
 import tango.text.xml.DocPrinter;
 import tango.text.xml.Document;
 import tango.util.container.SortedMap;
+import tango.util.collection.HashMap;
 import tango.core.Array;
 import Integer = tango.text.convert.Integer;
 import com.skinconsortium.d.model.FileModelBase;
@@ -30,6 +31,15 @@ class XmlModel: FileModelBase
 	
 	/** xml version */ // TODO make global
 	public final char[] xmlVersion = "0.1";
+	
+	/+/** attributs map */
+	public final HashMap!(char[], char[]) attribs;+/
+	
+	/** filename for exporting */ // TODO add dirty flag
+	public char[] exportFilename;
+	
+	/** title for exporting */ // TODO add dirty flag
+	public char[] exportTitle;
 	
 	public this(char[] filename = null)
 	{
@@ -53,6 +63,10 @@ class XmlModel: FileModelBase
 			map.add(xmlEncode!(char)(node.query.attribute("name").nodes[0].value),
 				xmlEncode!(char)(node.value));
 		}
+		try	this.exportFilename = document.query[xmlRoot].attribute("exportFilename").nodes[0].value;
+		catch (Exception e) {}		
+		try this.exportTitle = document.query[xmlRoot].attribute("exportTitle").nodes[0].value;
+		catch (Exception e) {}		
 	}
 	
 	/** saves the current model in xml format */
@@ -65,7 +79,10 @@ class XmlModel: FileModelBase
 		document.header;
 		
 		// create root element
-		auto root = document.root.element(null, xmlRoot).attribute(null, "version", this.xmlVersion);
+		auto root = document.root.element(null, xmlRoot)
+			.attribute(null, "version", this.xmlVersion)
+			.attribute(null, "exportFilename", this.exportFilename)
+			.attribute(null, "exportTitle", this.exportTitle);
 		
 		// render map to xml
 		foreach(char[] key, char[] value; map)
