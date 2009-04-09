@@ -79,6 +79,12 @@ public class ConfigFile
 		return tango.text.convert.Integer.toInt!(char)(val);
 	}
 	
+	static bool getValue(char[] name, bool defaultReturn)
+	{
+		int ret = getValue(name, defaultReturn ? 1 : 0);
+		return ret != 0;
+	}
+	
 	static void setValue(char[] name, char[] value)
 	{
 		if (!doc.query["DCommonsConfig"].count)
@@ -97,6 +103,11 @@ public class ConfigFile
 	static void setValue(char[] name, int value)
 	{
 		setValue(name, tango.text.convert.Integer.toString(value));
+	}
+	
+	static void setValue(char[] name, bool value)
+	{
+		setValue(name, tango.text.convert.Integer.toString(value != 0 ? 1 : 0));
 	}
 
 	/+static void setValue(char[] name, Object value)
