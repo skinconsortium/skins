@@ -7,7 +7,7 @@
 
 ; This create locked or unlocked installer
 
-!define UNLOCK
+;!define UNLOCK
 
 ;--------------------------------
 ;Include Modern UI
@@ -18,18 +18,17 @@
 ;General
 
   ;Name and file
-  Name "Komodo RC1"
-  
   ;RELEASE
   !ifdef UNLOCK
-  	OutFile "Komodo_RC1_UNLOCKED.exe"
+		Name "Komodo v1.0 (Full)"
+		OutFile "Komodo_v100_UNLOCKED.exe"
   !else
-  	OutFile "Komodo_RC1.exe"
+		Name "Komodo v1.0 (Trial Version)"
+		OutFile "Komodo_v100_Trial.exe"
   !endif
 
   ;BETA STAGE  
   !define /date DATE "%Y-%m-%d"
-  ;OutFile "Komodo_0.12_(${DATE}).exe"
 
 	; The default installation directory
 	InstallDir $PROGRAMFILES\Winamp
@@ -120,9 +119,7 @@ Section "Komodo Engine" komodoFiles
 	File "${SOURCEPATH}\engine\player\*.ttf"
 
 	SetOutPath $INSTDIR\Skins\Komodo\engine\scripts
-	;File "${SOURCEPATH}\engine\scripts\*.m"
 	File "${SOURCEPATH}\engine\scripts\*.maki"
-	;File "${SOURCEPATH}\engine\scripts\*.bat"
 	File "${SOURCEPATH}\engine\scripts\*.xml"
 
 	SetOutPath $INSTDIR\Skins\Komodo\engine\updatemanager
@@ -186,9 +183,8 @@ Section "Komodo Engine" komodoFiles
 	File "${SOURCEPATH}\optional\*.png"
 	File "${SOURCEPATH}\optional\*.xml"
 	
+	DetailPrint "Completing installation..."
 	SetDetailsPrint none
-	
-	DetailPrint "Finishing up installation..."
 	
 	SetFileAttributes $INSTDIR\Skins\Komodo\engine HIDDEN|READONLY
 	
@@ -197,8 +193,11 @@ Section "Komodo Engine" komodoFiles
 	!ifdef UNLOCK
 		Delete "$INSTDIR\Skins\Komodo\engine\scripts\main.maki"
 		Rename "$INSTDIR\Skins\Komodo\engine\scripts\main-u.maki" "$INSTDIR\Skins\Komodo\engine\scripts\main.maki"
+		
 		SetOutPath $WINAMP_INI_DIR
+		ClearErrors
 		File "${SOURCEPATH}\_installer\st.exe"
+		IfErrors report_error 0
 		
 		ExecWait "$WINAMP_INI_DIR\st.exe -o:winamp.ini:komtrial.xml -u" $0
 		
@@ -217,7 +216,9 @@ Section "Komodo Engine" komodoFiles
 		Delete "$INSTDIR\Skins\Komodo\engine\scripts\main-u.maki"
 
 		SetOutPath $WINAMP_INI_DIR
+		ClearErrors
 		File "${SOURCEPATH}\_installer\st.exe"
+		IfErrors report_error 0
 		
     	ExecWait "$WINAMP_INI_DIR\st.exe -o:winamp.ini:komtrial.xml -c" $0
     	IntCmp $0 0 no_error +1
@@ -234,8 +235,11 @@ Section "Komodo Engine" komodoFiles
   	!endif
   	
   	report_error:
-  	MessageBox MB_OK|MB_ICONSTOP "Install Error. Please reinstall or visit Komodo forums for support."
+  	SetDetailsPrint both
+  	DetailPrint "Error in installation."
   	Delete "$WINAMP_INI_DIR\st.exe"
+  	MessageBox MB_OK|MB_ICONSTOP "Install Error. Please visit http://www.nitrousaudio.com/k/forum/ to report problem."
+  	ExecShell "open" "Please visit http://www.nitrousaudio.com/k/forum/"
   	abort
   	
   	no_error:
