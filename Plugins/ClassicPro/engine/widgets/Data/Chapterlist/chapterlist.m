@@ -10,6 +10,9 @@
 #include <lib/application.mi>
 #include <lib/ClassicProFile.mi>
 
+#define ICON_NORMAL "icon.chapterlist.playing"
+#define ICON_LOOP "icon.chapterlist.loop"
+
 Function readXmlList();
 Function saveXmlList();
 Function fillList(boolean save);
@@ -17,6 +20,8 @@ Function sortSyncTwoLists();
 Function clearListNow();
 Function int getChapterCurrent();
 Function gotoChapter(int no);
+Function updatePlayIcon();
+Function setLoopChapter(boolean onOff);
 
 Global Group main;
 Global GuiList myList;
@@ -25,6 +30,10 @@ Global XmlDoc myDoc;
 Global Button addBut, remBut, prevBut, nextBut;
 Global Edit editName;
 Global String lastReadXml;
+Global Timer playingTrack, loopCheck;
+Global int loopChapter;
+Global boolean loop;
+Global String iconpic;
 
 System.onScriptLoaded (){
 	main = getScriptGroup();
@@ -34,7 +43,15 @@ System.onScriptLoaded (){
 	prevBut = main.findObject("chapterlist.prev");
 	nextBut = main.findObject("chapterlist.next");
 	editName = main.findObject("chaperlist.editbox");
+
+	playingTrack = new Timer;
+	playingTrack.setDelay(1000);
+
+	myList.setIconWidth(16);
+	myList.setShowIcons(1);
 	
+	iconpic = ICON_NORMAL;
+
 	readXmlList();
 	//saveXmlList();
 }
@@ -62,6 +79,7 @@ readXmlList(){
 	if(!myDoc.exists()){
 		clearListNow();
 		myList.hide();
+		playingTrack.stop();
 		return;
 	}
 	
@@ -93,6 +111,7 @@ myDoc.parser_onCallback (String xmlpath, String xmltag, list paramname, list par
 fillList(boolean save){
 	if(_times.getNumItems()==0){
 		myList.hide();
+		playingTrack.stop();
 		clearListNow();
 		return;
 	}
@@ -111,12 +130,23 @@ fillList(boolean save){
 	}
 	if(_times.getNumItems()>0){
 		myList.show();
+		playingTrack.start();
+		updatePlayIcon();
 		if(save) saveXmlList();
 	}
 }
 
+/*myList.onSetVisible(boolean onOff){
+	if(onOff){
+		playingTrack = new Timer;
+		playingTrack.setDelay(1000);
+		playingTrack.start();
+	}
+	else delete playingTrack;
+}*/
 
 myList.onDoubleClick(Int itemnum){
+	setLoopChapter(false);
 	gotoChapter(itemnum);
 }
 
@@ -224,6 +254,7 @@ myList.onItemSelection(Int itemnum, Int selected){
 }
 
 System.onTitleChange(String newtitle){
+	setLoopChapter(false);
 	readXmlList();
 }
 
@@ -243,6 +274,7 @@ int getChapterCurrent(){
 prevBut.onLeftClick(){
 	if(_times.getNumItems()<1) return;
 
+	setLoopChapter(false);
 	int i = getChapterCurrent()-1;
 	if(i<0)i=0;
 	gotoChapter(i);
@@ -250,6 +282,7 @@ prevBut.onLeftClick(){
 nextBut.onLeftClick(){
 	if(_times.getNumItems()<1) return;
 
+	setLoopChapter(false);
 	int i = getChapterCurrent()+1;
 
 	if(_times.getNumItems()==i) return; // do nothing
@@ -260,4 +293,45 @@ nextBut.onLeftClick(){
 
 gotoChapter(int no){
 	System.seekTo(_times.enumItem(no));
+	updatePlayIcon();
+}
+
+
+playingTrack.onTimer(){
+	updatePlayIcon();
+}
+
+updatePlayIcon(){
+	int active = getChapterCurrent();
+	for(int x=0; x < _times.getNumItems(); x++){
+		if(x==active) myList.setItemIcon(x, iconpic);
+		else myList.setItemIcon(x, "");
+	}
+}
+
+myList.onIconLeftClick(int itemnum, int x, int y){
+	if(itemnum == getChapterCurrent()){
+		setLoopChapter(!loop);
+	}
+}
+
+setLoopChapter(boolean onOff){
+	loop=onOff;
+
+	if(onOff){
+		iconpic = ICON_LOOP;
+		loopChapter = getChapterCurrent();
+		loopCheck = new Timer;
+		loopCheck.setDelay(100);
+		loopCheck.start();
+	}
+	else{
+		iconpic = ICON_NORMAL;
+		delete loopCheck;
+	}
+	updatePlayIcon();
+}
+
+loopCheck.onTimer(){
+	if(getChapterCurrent()!=loopChapter) gotoChapter(loopChapter);
 }
