@@ -12,7 +12,7 @@
 
 Function readXmlList();
 Function saveXmlList();
-Function fillList();
+Function fillList(boolean save);
 Function sortSyncTwoLists();
 Function clearListNow();
 Function int getChapterCurrent();
@@ -69,7 +69,7 @@ readXmlList(){
 	myDoc.parser_start();
 	myDoc.parser_destroy();
 
-	fillList();
+	fillList(false);
 	delete myDoc;
 }
 
@@ -90,7 +90,7 @@ myDoc.parser_onCallback (String xmlpath, String xmltag, list paramname, list par
 }
 
 
-fillList(){
+fillList(boolean save){
 	if(_times.getNumItems()==0){
 		myList.hide();
 		clearListNow();
@@ -109,7 +109,10 @@ fillList(){
 		myList.addItem(System.integerToLongTime(stringToInteger(_times.enumItem(i))));
 		myList.setSubItem(i, 1, _names.enumItem(i));
 	}
-	if(_times.getNumItems()>0) myList.show();
+	if(_times.getNumItems()>0){
+		myList.show();
+		if(save) saveXmlList();
+	}
 }
 
 
@@ -167,7 +170,7 @@ addBut.onLeftClick(){
 	_times.addItem(integerToString(System.getPosition()));
 	_names.addItem("New Chapter");
 	
-	fillList();
+	fillList(true);
 }
 
 remBut.onLeftClick(){
@@ -177,7 +180,7 @@ remBut.onLeftClick(){
 	
 	_times.removeItem(sel);
 	_names.removeItem(sel);
-	fillList();
+	fillList(true);
 	
 	int select = sel-1;
 	if(select<0) select=0;
@@ -186,7 +189,12 @@ remBut.onLeftClick(){
 }
 
 saveXmlList(){
-	int qwe = ClassicProFile.createFile("C:/testtest.xml");
+	String temp = System.getPlayItemString() + ".xml";
+	if(System.strsearch(temp, "file://")!=-1){
+		temp = System.strright(temp, System.strlen(temp)-7);
+	}
+
+	int qwe = ClassicProFile.createFile(temp);
 	ClassicProFile.writeFile(qwe, "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<Chapterlist version=\"1.0\">\n");
 
 	for(int x=0; x < _times.getNumItems(); x++){
@@ -206,7 +214,7 @@ editName.onEnter(){
 	_times.removeItem(sel);
 	_names.removeItem(sel);
 	
-	fillList();
+	fillList(true);
 	
 	myList.setSelected(sel, 1);
 }
