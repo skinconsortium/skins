@@ -17,8 +17,8 @@
 #define ML_GUID "{6B0EDF80-C9A5-11D3-9F26-00C04F39FFC6}"
 #define SKINTWEAKS_CFGPAGE "{0542AFA4-48D9-4c9f-8900-5739D52C114F}"
 
-#define HOMEPAGEURL "http://www.nitrousaudio.com/k/"
-#define ORDERLINK "http://www.nitrousaudio.com/k/index.php?…id=20&Itemid=47"
+#define HOMEPAGEURL "http://komodo.nitrousaudio.com/"
+#define ORDERLINK "http://komodo.nitrousaudio.com/index.php?…id=20&Itemid=47"
 
 #define OPENVID 1
 #define OPENAVS 2
