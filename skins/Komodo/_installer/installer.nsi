@@ -7,7 +7,7 @@
 
 ; This create locked or unlocked installer
 
-;!define UNLOCK
+!define UNLOCK
 
 ;--------------------------------
 ;Include Modern UI
@@ -238,8 +238,8 @@ Section "Komodo Engine" komodoFiles
   	SetDetailsPrint both
   	DetailPrint "Error in installation."
   	Delete "$WINAMP_INI_DIR\st.exe"
-  	MessageBox MB_OK|MB_ICONSTOP "Install Error. Please visit http://www.nitrousaudio.com/k/forum/ to report problem."
-  	ExecShell "open" "Please visit http://www.nitrousaudio.com/k/forum/"
+  	MessageBox MB_OK|MB_ICONSTOP "Install Error. Please visit http://komodo.nitrousaudio.com/forum/ to report problem."
+  	ExecShell "open" "Please visit http://komodo.nitrousaudio.com/forum/"
   	abort
   	
   	no_error:
