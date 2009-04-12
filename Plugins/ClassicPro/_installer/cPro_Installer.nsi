@@ -11,7 +11,7 @@
 	!define CPRO_SOURCEPATH "ClassicPro"
 	!define CPRO_NAME "ClassicPro"
 	!define CPRO_CRS "©"
-	!define CPRO_VERSION "1.1"
+	!define CPRO_VERSION "1.11"
 	!define CPRO_REVISION "0"
 	!define CPRO_BUILD "0"
 	!define CPRO_PAYPAL_LINK "https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=donate%40skinconsortium%2ecom&item_name=SkinConsortium%20Donation&item_number=%3e%20for%20skin%3a%20ClassicPro&no_shipping=1&no_note=1&cn=Optional%20Message&tax=0¤cy_code=EUR&lc=GB&bn=PP%2dDonationsBF&charset=UTF%2d8"	
