@@ -28,11 +28,11 @@
 </groupdef>
 
 <groupdef id="about.7">
-	<text x="20" y="30" text="Translators..." fontsize="26" color="255,255,255" shadowcolor="0,0,0" shadowx="1" shadowy="1" font="Tahoma"/>
-	<group id="about.7.names" x="50" y="40" h="320"/>
+	<text x="5" y="2" text="Translators..." fontsize="26" color="255,255,255" shadowcolor="0,0,0" shadowx="1" shadowy="1" font="Tahoma"/>
+	<group id="about.7.names" x="50" y="20" h="350"/>
 </groupdef>
 <groupdef id="about.7.names">
-	<text fitparent="1" ghost="1" text="French\n- Julien Victor (veekee)\n\nGerman\n- Christoph Grether (Koopa)\n- Marko Egger (mynameisnobody)\n\nPolish\n- Pawel Porwisz (pepe)\n\nRussian\n- Aleksey Potashnikoff (NickMikh)\n\nTurkish\n- Mertcan Kaya (MerTcaN)" color="255,255,255" shadowcolor="0,0,0" shadowx="1" shadowy="1" font="Tahoma"/>
+	<text fitparent="1" ghost="1" text="French\n- Julien Victor (veekee)\n\nGerman\n- Christoph Grether (Koopa)\n- Marko Egger (mynameisnobody)\n\nPolish\n- Pawel Porwisz (pepe)\n\nPortugueseBR\n- Anderson Silva (candiba)\n\nRomanian\n- Catalin Zamfirescu\n\nRussian\n- Aleksey Potashnikoff (NickMikh)\n- Alexander Nureyev (VIPer)\n\nTurkish\n- Mertcan Kaya (MerTcaN)" color="255,255,255" shadowcolor="0,0,0" shadowx="1" shadowy="1" font="Tahoma"/>
 </groupdef>
 
 
