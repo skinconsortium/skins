@@ -30,7 +30,7 @@ Global XmlDoc myDoc;
 Global Button addBut, remBut, prevBut, nextBut;
 Global Edit editName;
 Global String lastReadXml;
-Global Timer playingTrack, loopCheck;
+Global Timer playingTrack, loopCheck, sleepDblc;
 Global int loopChapter;
 Global boolean loop;
 Global String iconpic;
@@ -46,14 +46,25 @@ System.onScriptLoaded (){
 
 	playingTrack = new Timer;
 	playingTrack.setDelay(1000);
+	
+	sleepDblc = new Timer;
+	sleepDblc.setDelay(100);
 
 	myList.setIconWidth(16);
 	myList.setShowIcons(1);
 	
 	iconpic = ICON_NORMAL;
+	
+	_times = new List;
+	_names = new List;
 
-	readXmlList();
+	if(main.isVisible()) readXmlList();
 	//saveXmlList();
+}
+System.onScriptUnLoading(){
+	delete playingTrack;
+	delete sleepDblc;
+	delete loopCheck;
 }
 
 readXmlList(){
@@ -63,8 +74,8 @@ readXmlList(){
 		temp = System.strright(temp, System.strlen(temp)-7);
 	}
 	
-	if(temp==lastReadXml) return;
-	lastReadXml = temp;
+	//if(temp==lastReadXml) return;
+	//lastReadXml = temp;
 
 	delete _times;
 	delete _names;
@@ -146,8 +157,12 @@ fillList(boolean save){
 }*/
 
 myList.onDoubleClick(Int itemnum){
-	setLoopChapter(false);
+	//debugstring("onDoubleClick",9);
+	//complete;
+	if(getChapterCurrent()!=itemnum && loop) setLoopChapter(false);
 	gotoChapter(itemnum);
+	sleepDblc.start();
+	//complete;
 }
 
 sortSyncTwoLists(){
@@ -205,6 +220,9 @@ addBut.onLeftClick(){
 
 remBut.onLeftClick(){
 	if(_times.getNumItems()<1) return;
+
+	setLoopChapter(false);
+
 	int sel = myList.getFirstItemSelected();
 	if(sel==0 && _times.getNumItems()>1) return;
 	
@@ -254,8 +272,18 @@ myList.onItemSelection(Int itemnum, Int selected){
 }
 
 System.onTitleChange(String newtitle){
+	if(!main.isVisible()) return;
+	
 	setLoopChapter(false);
 	readXmlList();
+}
+
+main.onSetVisible(boolean onOff){
+	if(onOff){
+		setLoopChapter(false);
+		readXmlList();
+	}
+
 }
 
 clearListNow(){
@@ -307,17 +335,22 @@ updatePlayIcon(){
 		if(x==active) myList.setItemIcon(x, iconpic);
 		else myList.setItemIcon(x, "");
 	}
+	//myList.scrollToItem(active);
 }
 
 myList.onIconLeftClick(int itemnum, int x, int y){
+	if(sleepDblc.isRunning()) return;
+	
+	//debugstring("onIconLeftClick",9);
 	if(itemnum == getChapterCurrent()){
 		setLoopChapter(!loop);
 	}
 }
+sleepDblc.onTimer(){sleepDblc.stop();}
 
 setLoopChapter(boolean onOff){
-	loop=onOff;
-
+	if(getChapterCurrent() == _times.getNumItems()-1) return;
+	
 	if(onOff){
 		iconpic = ICON_LOOP;
 		loopChapter = getChapterCurrent();
@@ -330,8 +363,14 @@ setLoopChapter(boolean onOff){
 		delete loopCheck;
 	}
 	updatePlayIcon();
+	loop=onOff;
 }
 
 loopCheck.onTimer(){
 	if(getChapterCurrent()!=loopChapter) gotoChapter(loopChapter);
+}
+
+System.onStop(){
+	setLoopChapter(false);
+	playingTrack.stop();
 }
