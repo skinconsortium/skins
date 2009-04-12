@@ -8,6 +8,7 @@ Function gotoGlobal();
 Function saveGlobal();
 Function saveResize(int x, int y, int w, int h);
 Function updateMax();
+Function String getMyPath();
 
 Global Group mainGroup, gr_Vis, gr_Vol, gr_seektick, gr_seektick1, gr_seektick2;
 Global GuiObject progressbar;
@@ -193,6 +194,10 @@ System.onPlay(){
 mlMenu1.onLeftClick(){
 	mlMenu2.leftClick(); //pass click onto the fakebutton so because we need the menu to pop a few pixels down... not over the whole shademode ;)
 }
+mlMenu1.onRightButtonUp(int x, int y){
+	System.navigateUrl(getMyPath());
+	complete;
+}
 
 /*resize6.onLeftButtonDown(int x, int y){mouseDown=true;}
 resize6.onLeftButtonUp(int x, int y){mouseDown=false;}
@@ -297,4 +302,13 @@ shade.onUndock(){
 updateMax(){
 	double newscalevalue = shade.getScale();
 	shade.setXmlParam("maximum_w", integerToString(getViewPortWidthfromGuiObject(shade)/newscalevalue));
+}
+
+String getMyPath() {
+	String bs = strleft("\ ",1);
+	String output = "";
+
+	if(System.strleft(System.getPlayItemString(),6) == "cda://") output = System.strmid(System.getPlayItemString(), 6, 1)+":"+bs;
+	else output= getPath(getPlayItemMetaDataString("filename"));
+	return output;
 }

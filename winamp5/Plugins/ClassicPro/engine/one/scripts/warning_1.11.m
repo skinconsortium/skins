@@ -15,7 +15,7 @@ System.onScriptLoaded() {
 		System.switchSkin("winamp classic");	// just switch away from our current skin
 	}
 	else{
-		if(getCproVersion()<110){
+		if(getCproVersion()<111){
 			myTimer = new Timer;
 			myTimer.setDelay(5000);
 			myTimer.start();

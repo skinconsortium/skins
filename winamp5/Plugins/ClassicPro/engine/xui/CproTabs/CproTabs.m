@@ -61,7 +61,7 @@ Function debugTabs ();
 Global Tab firstTab, lastTab, lastActiveT;
 Global ToggleButton lastActive;
 Global Group sg, tabHolder, CproSUI, CproBrowser;
-Global int totalTabWidth;
+Global int totalTabWidth, widthMouseDown;
 Global ComponentBucket widgetLoader;
 Global boolean aligned, checkedBrowser; // @martin: remove this when done ;)
 Global PopUpMenu popMenu;
@@ -358,6 +358,8 @@ onMessage(int message, int i0, int i1, int i2, String s0, String s1, GuiObject o
 
 	if (message == ON_LEFT_BUTTON_DOWN)
 	{
+		widthMouseDown = tabHolder.getWidth();
+		
 		if (t.isGoingToTarget())
 			return SUCCESS;
 
@@ -373,10 +375,13 @@ onMessage(int message, int i0, int i1, int i2, String s0, String s1, GuiObject o
 		if (t.isGoingToTarget())
 			return SUCCESS;
 
-		if (t.moving || i2)
-		{
-			moveTo(t, t.initX);
-			debugTabs();
+		//Fixed bug where if the side playlist was open and you click the pl tab the pl tab button will move to the middle of nowwhere when click is done.
+		if(widthMouseDown == tabHolder.getWidth()){ 
+			if (t.moving || i2)
+			{
+				moveTo(t, t.initX);
+				debugTabs();
+			}
 		}
 		
 		t.moving = false;
@@ -957,3 +962,4 @@ debugTab (Tab t)
 	}
 }
 #endif
+
