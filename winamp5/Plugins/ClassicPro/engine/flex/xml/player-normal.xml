@@ -325,11 +325,25 @@
 	<!-- Sysbuttons -->
 	<button
 		x="0" y="0"
+		id="sysmenu"
+		action="SYSMENU"
+		image="player.normal.sysmenu"
+		hoverImage="player.normal.sysmenu.hover"
+		downImage="player.normal.sysmenu.down"
+		tooltip="@winamp.global#0"
+		translate="2"
+		alpha="253"
+	/>
+	<layer id="sysmenu.glow" x="0" y="0" ghost="1" image="player.normal.sysmenu.glow" alpha="0"/>
+
+	<button
+		x="0" y="0"
 		action="MINIMIZE"
 		image="player.normal.minimize"
 		hoverImage="player.normal.minimize.hover"
 		downImage="player.normal.minimize.down"
-		tooltip="Minimize Winamp"
+		tooltip="@winamp.global#1"
+		translate="2"
 		alpha="253"
 	/>
 	<button
@@ -338,7 +352,8 @@
 		image="player.normal.close"
 		hoverImage="player.normal.close.hover"
 		downImage="player.normal.close.down"
-		tooltip="Exit Winamp"
+		tooltip="@winamp.global#4"
+		translate="2"
 		alpha="253"
 	/>
 
