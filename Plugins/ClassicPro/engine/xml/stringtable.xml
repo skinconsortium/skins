@@ -6,6 +6,15 @@ date: 2008/10/26
 
 -->
 
+<StringTable id="winamp.global">
+	<StringEntry id="0"		string="Main Menu"/>
+	<StringEntry id="1"		string="Minimize Winamp"/>
+	<StringEntry id="2"		string="Restore Winamp"/>
+	<StringEntry id="3"		string="Maximize Winamp"/>
+	<StringEntry id="4"		string="Exit Winamp"/>
+	<StringEntry id="5"		string="Windowshade Mode"/>
+</StringTable>
+
 <StringTable id="winamp.playback">
 
 	<!-- cbuttons -->

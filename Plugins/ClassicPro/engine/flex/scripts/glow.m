@@ -19,6 +19,8 @@ Global GlowObject stop, play, pause, prev, next, open, shuffle, repeat, mute;
 Global GlowLayer stop_gl, play_gl, pause_gl, prev_gl, next_gl, open_gl, shuffle_gl, repeat_gl, mute_gl;
 Global GlowObject pled, eq, ml, vs, mn;
 Global GlowLayer pled_gl, eq_gl, ml_gl, vs_gl, mn_gl;
+Global GlowObject sysmenu;
+Global GlowLayer sysmenu_gl;
 Global int glowType;
 
 System.onScriptLoaded ()
@@ -63,6 +65,7 @@ System.onScriptLoaded ()
 	ml = newGlowObject(ml, ml_gl, "comp.ml");
 	vs = newGlowObject(vs, vs_gl, "comp.vis");
 	mn = newGlowObject(mn, mn_gl, "comp.menu");
+	sysmenu = newGlowObject(sysmenu, sysmenu_gl, "sysmenu");
 
 	stop_gl = stop.glow;
 	play_gl = play.glow;
@@ -78,6 +81,7 @@ System.onScriptLoaded ()
 	ml_gl = ml.glow;
 	vs_gl = vs.glow;
 	mn_gl = mn.glow;
+	sysmenu_gl = sysmenu.glow;
 }
 
 GlowObject newGlowObject(GlowObject go, GlowLayer gl, String id)

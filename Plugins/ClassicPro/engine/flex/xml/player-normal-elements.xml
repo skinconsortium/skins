@@ -74,9 +74,15 @@
 	<bitmap id="player.normal.close" file="player/normal/wnd-close.png" gammagroup="player.normal.sysbuttons"/>
 	<bitmap id="player.normal.close.hover" file="player/normal/wnd-close-hover.png" gammagroup="player.normal.sysbuttons"/>
 	<bitmap id="player.normal.close.down" file="player/normal/wnd-close-down.png" gammagroup="player.normal.sysbuttons"/>
+
 	<bitmap id="player.normal.minimize" file="player/normal/wnd-minimize.png" gammagroup="player.normal.sysbuttons"/>
 	<bitmap id="player.normal.minimize.hover" file="player/normal/wnd-minimize-hover.png" gammagroup="player.normal.sysbuttons"/>
 	<bitmap id="player.normal.minimize.down" file="player/normal/wnd-minimize-down.png" gammagroup="player.normal.sysbuttons"/>
+
+	<bitmap id="player.normal.sysmenu" file="player/normal/wnd-sysmenu.png" gammagroup="player.normal.sysbuttons"/>
+	<bitmap id="player.normal.sysmenu.hover" file="player/normal/wnd-sysmenu-hover.png" gammagroup="player.normal.sysbuttons"/>
+	<bitmap id="player.normal.sysmenu.down" file="player/normal/wnd-sysmenu-down.png" gammagroup="player.normal.sysbuttons"/>
+	<bitmap id="player.normal.sysmenu.glow" file="player/normal/wnd-sysmenu-glow.png" gammagroup="player.normal.sysbuttons.glow"/>
 
 	<!-- Compbuttons -->
 	<bitmap id="player.normal.pl0" file="player/normal/comp-pl-off.png" gammagroup="player.normal.compbuttons"/>
