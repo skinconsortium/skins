@@ -36,6 +36,11 @@ public:
   static scriptVar script_vcpu_createFile(SCRIPT_FUNCTION_PARAMS, ScriptObject *o, scriptVar filename);
   static scriptVar script_vcpu_closeFile(SCRIPT_FUNCTION_PARAMS, ScriptObject *o, scriptVar filehandle);
   static scriptVar script_vcpu_writeFile(SCRIPT_FUNCTION_PARAMS, ScriptObject *o, scriptVar filehandle, scriptVar content);
+  static scriptVar script_vcpu_findFiles(SCRIPT_FUNCTION_PARAMS, ScriptObject *o, scriptVar path, scriptVar mask, scriptVar returnValues);
+  static scriptVar script_vcpu_openFile(SCRIPT_FUNCTION_PARAMS, ScriptObject *o, scriptVar filename, scriptVar params);
+  static scriptVar script_vcpu_editFile(SCRIPT_FUNCTION_PARAMS, ScriptObject *o, scriptVar filename, scriptVar params);
+  static scriptVar script_vcpu_printFile(SCRIPT_FUNCTION_PARAMS, ScriptObject *o, scriptVar filename, scriptVar params);
+  static scriptVar script_vcpu_exploreFile(SCRIPT_FUNCTION_PARAMS, ScriptObject *o, scriptVar filename, scriptVar params);
 };
 
 #endif
