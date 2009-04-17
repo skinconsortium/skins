@@ -1,7 +1,11 @@
 #include "api.h"
 #include "SClassicProFile.h"
+#include <strsafe.h>
+#include <shlwapi.h>
+#include "global.h"
+// #include <Wasabi/api/script/slist.h"
 #include <nu/AutoChar.h>
-#include <api/script/objects/c_script/c_guiobject.h>
+#include <api/script/objects/c_script/c_list.h>
 
 extern ScriptObjectController *script_root;
 extern ClassicProFileScriptController classicProFileController;
@@ -17,7 +21,12 @@ static const GUID classicProFileGuid =
 function_descriptor_struct ClassicProFileScriptController::exportedFunction[] = {
 	{L"createFile",								1, (void*)SClassicProFile::script_vcpu_createFile },
 	{L"closeFile",								1, (void*)SClassicProFile::script_vcpu_closeFile },
-	{L"writeFile",								1, (void*)SClassicProFile::script_vcpu_writeFile },
+	{L"writeFile",								2, (void*)SClassicProFile::script_vcpu_writeFile },
+	{L"findFiles",								3, (void*)SClassicProFile::script_vcpu_findFiles },
+	{L"exploreFile",							2, (void*)SClassicProFile::script_vcpu_exploreFile },
+	{L"openFile",								2, (void*)SClassicProFile::script_vcpu_openFile },
+	{L"printFile",								2, (void*)SClassicProFile::script_vcpu_printFile },
+	{L"editFile",								2, (void*)SClassicProFile::script_vcpu_editFile },
 };
 // --------------------------------------------------------
 
@@ -96,7 +105,7 @@ SClassicProFile::~SClassicProFile()
 
 scriptVar SClassicProFile::script_vcpu_createFile(SCRIPT_FUNCTION_PARAMS, ScriptObject *o, scriptVar filename) {
 	SCRIPT_FUNCTION_INIT;
-	HANDLE fh = CreateFileW(filename.data.sdata, GENERIC_WRITE, 0, 0, CREATE_NEW, 0, 0);
+	HANDLE fh = CreateFileW(filename.data.sdata, GENERIC_WRITE, 0, 0, CREATE_ALWAYS, 0, 0);
 	return MAKE_SCRIPT_INT((int)fh);
 }
 
@@ -112,4 +121,59 @@ scriptVar SClassicProFile::script_vcpu_writeFile(SCRIPT_FUNCTION_PARAMS, ScriptO
 	wchar_t BOM = 0xFEFF;
 	int ret = WriteFile((void*)filehandle.data.idata, AutoChar(content.data.sdata), sizeof(char)*wcslen(content.data.sdata), &writtenBytes, NULL);
 	return MAKE_SCRIPT_BOOLEAN(ret);
+}
+
+scriptVar SClassicProFile::script_vcpu_findFiles(SCRIPT_FUNCTION_PARAMS, ScriptObject *o, scriptVar path, scriptVar mask, scriptVar returnValues)
+{
+	SCRIPT_FUNCTION_INIT;
+	ScriptObject* listSO = (returnValues.data.odata);
+	// Somehow we get nullcalls on startup - get rid of em safely!
+	if (listSO == NULL)
+		return MAKE_SCRIPT_INT(-1);
+
+	wchar_t dirmask[MAX_PATH];
+	PathCombineW(dirmask, path.data.sdata, mask.data.sdata);
+	WIN32_FIND_DATAW find;
+	HANDLE hFind = FindFirstFileW(dirmask, &find);
+	int results = 0;
+	C_List lst(listSO);
+	if (hFind != INVALID_HANDLE_VALUE)
+	{
+		do
+		{
+			lst.addItem(MAKE_SCRIPT_STRING(find.cFileName));
+			results++;
+		}
+		while (FindNextFileW(hFind, &find));
+		FindClose(hFind);
+	}
+	return MAKE_SCRIPT_INT(results);
+}
+
+scriptVar SClassicProFile::script_vcpu_openFile(SCRIPT_FUNCTION_PARAMS, ScriptObject *o, scriptVar filename, scriptVar params)
+{
+	SCRIPT_FUNCTION_INIT;
+	int results = (int)ShellExecuteW(NULL, L"open", filename.data.sdata, params.data.sdata, NULL, SW_SHOWNORMAL);
+	return MAKE_SCRIPT_INT(results);
+}
+
+scriptVar SClassicProFile::script_vcpu_exploreFile(SCRIPT_FUNCTION_PARAMS, ScriptObject *o, scriptVar filename, scriptVar params)
+{
+	SCRIPT_FUNCTION_INIT;
+	int results = (int)ShellExecuteW(NULL, L"explore", filename.data.sdata, params.data.sdata, NULL, SW_SHOWNORMAL);
+	return MAKE_SCRIPT_INT(results);
+}
+
+scriptVar SClassicProFile::script_vcpu_editFile(SCRIPT_FUNCTION_PARAMS, ScriptObject *o, scriptVar filename, scriptVar params)
+{
+	SCRIPT_FUNCTION_INIT;
+	int results = (int)ShellExecuteW(NULL, L"edit", filename.data.sdata, params.data.sdata, NULL, SW_SHOWNORMAL);
+	return MAKE_SCRIPT_INT(results);
+}
+
+scriptVar SClassicProFile::script_vcpu_printFile(SCRIPT_FUNCTION_PARAMS, ScriptObject *o, scriptVar filename, scriptVar params)
+{
+	SCRIPT_FUNCTION_INIT;
+	int results = (int)ShellExecuteW(NULL, L"print", filename.data.sdata, params.data.sdata, NULL, SW_SHOWNORMAL);
+	return MAKE_SCRIPT_INT(results);
 }
