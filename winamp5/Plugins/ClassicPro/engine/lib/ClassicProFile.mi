@@ -1,0 +1,40 @@
+/**
+ * ClassicProFile Maki Library
+ *
+ * @package	com.skinconsortium.cpro.flex.maki
+ * @author	mpdeimos
+ * @date	09/03/06
+ * @version	0.1
+ */
+
+#ifndef __CLASSICPROFILE_MI
+#define __CLASSICPROFILE_MI
+
+extern class @{9D822FF4-9F86-4c7a-8CEB-3C02FE20D5A5}@ Object _predecl ClassicProFile;
+
+#define FileHandle int
+
+/** Creates always a new and empty File. Returns an FileHandle to this file (use with functions below). */
+extern FileHandle ClassicProFile.createFile(String filename);
+
+/** Writes to a file */
+extern boolean ClassicProFile.writeFile(FileHandle filehandle, String content);
+
+/** Closes a file */
+extern boolean ClassicProFile.closeFile(FileHandle filehandle);
+
+/**
+ * Performs a file search.
+ * @param	The path you want to search for a file.
+ * @param	The filemask. Can contain wildcards (cover.*).
+ * @param	A List in which the return filenames are stored as String.
+ * @return	The total number of files found. -1 if an error occured.
+ */
+extern int ClassicProFile.findFiles(String path, String mask, List returnValueStorage);
+
+extern int ClassicProFile.openFile(String filename, String params);
+extern int ClassicProFile.editFile(String filename, String params);
+extern int ClassicProFile.printFile(String filename, String params);
+extern int ClassicProFile.exploreFile(String filename, String params);
+
+#endif
