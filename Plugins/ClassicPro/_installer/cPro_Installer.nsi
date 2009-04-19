@@ -567,6 +567,18 @@ Section "$(CPro_CProFiles)" "CPro_Sec_CProFiles"
 		File "..\engine\xui\WasabiButton\*.m"
 		File "..\engine\xui\WasabiButton\*.maki"
 
+; Additional XUI Objects for widget devs
+
+	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\Layouts
+		File "..\engine\xui\Layouts\*.xml"
+		File "..\engine\xui\Layouts\*.m"
+		File "..\engine\xui\Layouts\*.maki"
+
+	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\KeepRatioLayer
+		File "..\engine\xui\KeepRatioLayer\*.xml"
+		File "..\engine\xui\KeepRatioLayer\*.m"
+		File "..\engine\xui\KeepRatioLayer\*.maki"
+
 ; cPro::Flex
 ;	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\flex\scripts
 ;		File /nonfatal "..\engine\flex\scripts\*.m"
