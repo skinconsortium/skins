@@ -69,4 +69,6 @@
 	<!--group id="centro.widgets.picturebox.loadanim" x="100" y="-16" h="13" w="13" relaty="1" relatw="1" /-->
 
 	<script file="@WINAMPPATH@/Plugins/ClassicPro/engine/widgets/Data/PictureBox/PictureBox.maki"/>
+
+	<SC:UpdateSystem x="0" y="0" h="0" w="0" skinname="picturebox" skinversion="0.91" ofvalue="PictureBox"/>
 </groupdef>
