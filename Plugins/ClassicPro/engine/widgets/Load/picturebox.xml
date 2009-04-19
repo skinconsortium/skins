@@ -1,0 +1,72 @@
+<groupdef id="centro.widgets.picturebox.dummy.drawer" name="Picture Box" userdata="centro.widgets.picturebox;0" windowtype="centro.widgets.drawer" />
+<groupdef id="centro.widgets.picturebox.dummy.mini" name="Picture Box" userdata="centro.widgets.picturebox;0" windowtype="centro.widgets.mini" />
+<groupdef id="centro.widgets.picturebox.dummy.main" name="Picture Box" userdata="centro.widgets.picturebox;0" windowtype="centro.widgets.main"/>
+
+<include file="@WINAMPPATH@/Plugins/classicPro/engine/xui/Layouts/QuadSplit.xml"/>
+<include file="@WINAMPPATH@/Plugins/classicPro/engine/xui/Layouts/ThumbList.xml"/>
+<include file="@WINAMPPATH@/Plugins/classicPro/engine/xui/KeepRatioLayer/KeepRatioLayer.xml"/>
+
+<groupdef id="centro.widgets.picturebox.preview">
+	<rect id="rect.selected" color="wasabi.list.text.selected.background" fitparent="1" visible="1" gammagroup="n.Color.ListSelBg"/>
+	<gradient 
+		id="gradient"
+		fitparent="-1"
+		ghost="1"
+		mode="linear" gradient_x1="0" gradient_y1="0" gradient_x2="0" gradient_y2="1"
+		gammagroup="n.Color.ListSelBg" alpha="64" visible="0"
+	/>
+	<SC:KeepRatioLayer id="preview" fitparent="-2" image="" valign="center"/>
+	<layer id="mousetrap" rectrgn="1" fitparent="1" move="0"/>
+</groupdef>
+
+<groupdef id="centro.widgets.picturebox.select.image">
+	<rect id="rect.selected" color="wasabi.list.text.selected.background" fitparent="1" visible="0" gammagroup="n.Color.ListSelBg"/>
+	<gradient 
+		id="gradient.selected"
+		fitparent="-1"
+		ghost="1"
+		mode="linear" gradient_x1="0" gradient_y1="0" gradient_x2="0" gradient_y2="1"
+		gammagroup="n.Color.ListSelBg" alpha="64" visible="0"
+	/>
+	<rect id="rect.hover" color="wasabi.list.text.current" fitparent="1" alpha="0" gammagroup="n.Color.ListCur"/>
+	<SC:KeepRatioLayer id="image" fitparent="-2" relatw="1" image="cover.notfound" rectrgn="1"/>
+	<layer id="mousetrap" rectrgn="1" fitparent="1" move="0"/>
+
+	<script file="@WINAMPPATH@/Plugins/ClassicPro/engine/widgets/Data/PictureBox/PictureBoxSelector.maki"/>
+</groupdef>
+
+<groupdef id="centro.widgets.picturebox.select.images">
+</groupdef>
+
+<groupdef id="centro.widgets.picturebox.select">
+	<Layout:ThumbList id="centro.widgets.picturebox.select.images.thumblist" content="centro.widgets.picturebox.select.images" fitparent="1" spacing="4" />
+</groupdef>
+
+<!--groupdef id="centro.widgets.picturebox.loadanim">
+
+	<rect id="0" color="Playlist.Status.Text" x="4" y="0" w="4" h="4" alpha="0"/>
+	<rect id="1" color="Playlist.Status.Text" x="0" y="4" w="4" h="4" alpha="0"/>
+	<rect id="2" color="Playlist.Status.Text" x="4" y="8" w="4" h="4" alpha="0"/>
+	<rect id="3" color="Playlist.Status.Text" x="8" y="4" w="4" h="4" alpha="0"/>
+
+	<rect color="Playlist.Status.Text" x="5" y="1" w="2" h="2"/>
+	<rect color="Playlist.Status.Text" x="1" y="5" w="2" h="2"/>
+	<rect color="Playlist.Status.Text" x="9" y="5" w="2" h="2"/>
+	<rect color="Playlist.Status.Text" x="5" y="9" w="2" h="2"/>
+
+	<script file="@WINAMPPATH@/Plugins/ClassicPro/engine/widgets/Data/PictureBox/LoadAnim.maki"/>
+</groupdef-->
+
+<groupdef id="centro.widgets.picturebox">
+	<Layout:QuadSplit id="centro.widgets.picturebox.quadsplit" x="5" y="5" h="-26" w="-10" relatw="1" relath="1" quadgroup="centro.widgets.picturebox.preview" modalgroup="centro.widgets.picturebox.select" spacing="7" modalminw="40" modalminh="40" modalpreferred="bottom"/>
+
+	<button	id="options" x="1" y="-18" relaty="1" image="component.menu.1" hoverImage="component.menu.2" downImage="component.menu.3" tooltip="Options Menu"/>
+	<button	id="prev" x="33" y="-18" relaty="1" image="component.avs.prev.1" hoverImage="component.avs.prev.2" downImage="component.avs.prev.3" tooltip="Previous Picture"/>
+	<button	id="next" x="64" y="-18" relaty="1" image="component.avs.next.1" hoverImage="component.avs.next.2" downImage="component.avs.next.3" tooltip="Next Picture"/>
+
+	<text id="statustext" ticker="1" x="96" y="-16" h="13" w="-128" relaty="1" relatw="1" align="center" fontsize="13" antialias="1" color="Playlist.Status.Text" font="cpro.status.font" move="1" text="Loading ..."/>
+
+	<!--group id="centro.widgets.picturebox.loadanim" x="100" y="-16" h="13" w="13" relaty="1" relatw="1" /-->
+
+	<script file="@WINAMPPATH@/Plugins/ClassicPro/engine/widgets/Data/PictureBox/PictureBox.maki"/>
+</groupdef>
