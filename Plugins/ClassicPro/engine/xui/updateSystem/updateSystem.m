@@ -22,10 +22,11 @@
 //define SERVERFILE "http://localhost/updateSystem/updateSystem.php"
 
 Function int getDateStamp();
+Function initCheck();
 
 Global Browser brw;
 
-Global String str_skinname, str_version;
+Global String str_skinname, str_version, ofvalue;
 Global String url;
 Global int ready = 0;
 Global boolean done;
@@ -33,22 +34,33 @@ Global boolean done;
 System.onScriptLoaded ()
 {
 	initAttribs();
+	brw = getScriptgroup().findObject("brw");
+
+	initCheck();
+}
+
+initCheck()
+{
+	if (ready < 3)
+	{
+		return;
+	}
+
+	if (autoupdate_attrib.getData() == "0") return; // we quit savely
+
+	String publicInt = "ClassicPro.update.timestamp" + str_skinname;
 	
 	//Only check for updates once every 5days!!!
-	if(getPublicInt("ClassicPro.update.timestamp", 0)< getDateStamp()-4 || getPublicInt("ClassicPro.update.timestamp", 0)> getDateStamp()){
-		setPublicInt("ClassicPro.update.timestamp", getDateStamp());
+	if(getPublicInt(publicInt, 0)< getDateStamp()-4 || getPublicInt(publicInt, 0)> getDateStamp()){
+		setPublicInt(publicInt, getDateStamp());
 	}
 	else return;
 
-	
-	if (autoupdate_attrib.getData() == "0") return; // we quit savely
 
 	/*if (!getPrivateInt(getSkinName(), "Check for Updates", 1))
 		return; // we quit savely*/
 
-	brw = getScriptgroup().findObject("brw");
-
-	if (ready == 2) brw.navigateUrl(SERVERFILE + "?q=check&skin=" + str_skinname + "&version=" + str_version +"&lng=" + getLanguageId() );
+	brw.navigateUrl(SERVERFILE + "?q=check&skin=" + str_skinname + "&version=" + str_version +"&lng=" + getLanguageId() );
 }
 
 int getDateStamp(){
@@ -69,10 +81,14 @@ System.onSetXuiParam (String param, String value)
 		str_version = value;
 		ready++;		
 	}
-
-	if (ready == 2 && brw != null)
+	else if (strlower(param) == "ofvalue")
 	{
-		brw.navigateUrl(SERVERFILE + "?q=check&skin=" + str_skinname + "&version=" + str_version +"&lng=" + getLanguageId() );
+		ofvalue = value;
+		ready++;
+	}
+	if (ready == 3 && brw != null)
+	{
+		initCheck();
 	}
 }
 
@@ -105,7 +121,7 @@ brw.onDocumentComplete (String url)
 
 		// Display the messagebox
 		int i_upd = messageBox(
-			"A new version of ClassicPro is available!\n\n" 
+			"A new version of "+ofvalue+" is available!\n\n" 
 			+ msg
 			+ "\n\nWould you like to download this version?"
 			, "New Version Available", 12, "");
