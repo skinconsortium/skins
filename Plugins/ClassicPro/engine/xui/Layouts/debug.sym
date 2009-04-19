@@ -1,0 +1,82 @@
+-- Variables Table ---------------------------------------------------
+var# |                Class |                                    What 
+----------------------------------------------------------------------
+0000 |               System |                                   System*
+0001 |                  Int |                                     NULL
+0002 |                  Int |                     __deprecated_runtime
+0003 |               Double |                                        v
+0004 |                  Int |                                        2
+0005 |                  Int |                                    65535
+0006 |                  Int |                                        1
+0007 |               String |                           "runtimecheck"
+0008 |                  Int |                                        0
+0009 |                  Int |                                     last
+000A |                  Int |                                      now
+000B |                  Int |                                     5000
+000C |               String |                  "This script requires "
+000D |               String |        "Winamp 5.54 (skin version 1.34)"
+000E |               String |                                  "Error"
+000F |               String |                                       ""
+0010 |               String |                                        s
+0011 |               String |                                  "DEBUG"
+0012 |                  Int |                                        s
+0013 |                Group |                              scriptGroup
+0014 |            GuiObject |                                   coQuad
+0015 |            GuiObject |                                  coModal
+0016 |                  Int |                                  spacing
+0017 |                  Int |                                modalminw
+0018 |                  Int |                                modalminh
+0019 |                  Int |                           modalpreferred
+001A |               String |                                   "quad"
+001B |               String |                                  "modal"
+001C |               String |                                    param
+001D |               String |                                    value
+001E |               String |                              "quadgroup"
+001F |               String |                                "groupid"
+0020 |               String |                             "modalgroup"
+0021 |               String |                                "spacing"
+0022 |               String |                              "modalminw"
+0023 |               String |                              "modalminh"
+0024 |               String |                         "modalpreferred"
+0025 |               String |                                  "right"
+0026 |               String |                                 "bottom"
+0027 |               String |                             "rightfixed"
+0028 |               String |                            "bottomfixed"
+0029 |               String |                                   action
+002A |               String |                                    param
+002B |                  Int |                                        x
+002C |                  Int |                                        y
+002D |                  Int |                                       p1
+002E |                  Int |                                       p2
+002F |            GuiObject |                                   source
+0030 |               String |                                 "update"
+0031 |                  Int |                                        x
+0032 |                  Int |                                        y
+0033 |                  Int |                                        w
+0034 |                  Int |                                        h
+0035 |                  Int |                                        w
+0036 |                  Int |                                        h
+0037 |                  Int |                                     setQ
+0038 |               String |                                      "w"
+0039 |               String |                                      "h"
+003A |               String |                                      "y"
+003B |               String |                                      "x"
+003C |               String |                                      "0"
+003D |              Boolean |                               setToRight
+003E |                  Int |                                        a
+003F |                  Int |                                        b
+-- Events Table ------------------------------------------------------
+var# |         Code Pointer |                                    What 
+----------------------------------------------------------------------
+0000 |                 0153 |                                      S.o
+0000 |                 01B5 |                                      S.o
+0013 |                 0431 |                                      s.o
+0013 |                 0480 |                                      s.o
+-- User Functions Table ----------------------------------------------
+               Code Pointer |                                    What 
+----------------------------------------------------------------------
+                       0000 |                             versionCheck
+                       00F2 |                                    debug
+                       011D |                                 debugInt
+                       0B7B |                                      min
+                       04B0 |                             updateLayout
