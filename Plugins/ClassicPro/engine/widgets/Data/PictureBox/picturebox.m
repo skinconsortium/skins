@@ -31,11 +31,11 @@ Global GuiObject gradient;
 
 Global String backslash;
 
-Global Timer refreshImages;
+Global Timer refreshImages, slideShow;
 
 Global String defaultImage;
 
-Global Boolean needsRefresh;
+Global int needsRefresh;
 
 System.onScriptLoaded ()
 {
@@ -59,13 +59,16 @@ System.onScriptLoaded ()
 	quadSplit.setXmlParam("modalpreferred", getPrivateString("ClassicPro", "PictureBox.PrefPos", "smooth"));
 
 	// Init Gradient Colors.
-	Color c = ColorMgr.getColor("color.selected.active.bg");
+	Color c = ColorMgr.getColor("wasabi.list.text.selected.background");
 	String rgb = integerToString(c.getRed()) + "," + integerToString(c.getGreen()) + "," + integerToString(c.getBlue());
 	gradient.setXmlParam("points", "0.0=" + rgb + ",0;1.0=" + rgb + ",255");
 	gradient.show();
 
 	setDispatcher(selectGroup);
 
+	slideShow = new Timer;
+	int d = getPrivateInt("ClassicPro", "PictureBox.SlideShowSpeed", 0)*1000;
+	slideShow.setDelay(d);
 	refreshImages = new Timer;
 	refreshImages.setDelay(1000); // wait one sec on startup before we show the images. This gives Winamp some time to breath.
 
@@ -95,11 +98,24 @@ System.onTitleChange (String newtitle)
 
 scriptGroup.onSetVisible (Boolean onoff)
 {
+	slideShow.stop();
 	if (needsRefresh && onoff)
 	{
 		refreshImages.stop();
 		refreshImages.start();
 	}
+	else
+	{
+		if (getPrivateInt("ClassicPro", "PictureBox.SlideShowSpeed", 0) > 0 && numPics > 1 && scriptGroup.isvisible())
+		{
+			slideShow.start();
+		}
+	}
+}
+
+slideShow.onTimer ()
+{
+	next.leftclick();	
 }
 
 refreshImages.onTimer ()
@@ -113,10 +129,12 @@ refreshImages.onTimer ()
 readImages ()
 {
 	String curPath = playitemPath();
-	if (lastPath == curPath)
+	if (needsRefresh != 2 && lastPath == curPath)
 	{
 		return;
 	}
+
+	needsRefresh = false;
 
 	lastPath = curPath;
 
@@ -127,6 +145,8 @@ readImages ()
 	ClassicProFile.findFiles(curPath, "*.png", lst);
 	ClassicProFile.findFiles(curPath, "*.gif", lst);
 	ClassicProFile.findFiles(curPath, "*.bmp", lst);
+
+	slideShow.stop();
 
 	// clear old images
 	if (numPics)
@@ -163,6 +183,11 @@ readImages ()
 		}
 	
 		setPreviewImage(selectGroup.enumObject(0));
+
+		if (getPrivateInt("ClassicPro", "PictureBox.SlideShowSpeed", 0) > 0 && numPics > 1 && scriptGroup.isvisible())
+		{
+			slideShow.start();
+		}
 	}
 	else
 	{
@@ -240,6 +265,7 @@ rightClickMenu(String filename, boolean showOptions)
 	if (showOptions)
 	{
 		pop.addSeparator();
+		pop.addCommand("Reload", 200, false, false);
 		PopupMenu popPrefPos = new PopupMenu;
 		popPrefPos.addCommand("Right (Loose)", 201, getPrivateString("ClassicPro", "PictureBox.PrefPos", "smooth") == "right", false);
 		popPrefPos.addCommand("Right (Fixed)", 202, getPrivateString("ClassicPro", "PictureBox.PrefPos", "smooth") == "rightfixed", false);
@@ -247,6 +273,15 @@ rightClickMenu(String filename, boolean showOptions)
 		popPrefPos.addCommand("Bottom (Fixed)", 204, getPrivateString("ClassicPro", "PictureBox.PrefPos", "smooth") == "bottomfixed", false);
 		popPrefPos.addCommand("Smooth ", 205, getPrivateString("ClassicPro", "PictureBox.PrefPos", "smooth") == "smooth", false);
 		pop.addSubMenu(popPrefPos, "Preferred Thumbs Position");
+
+		PopupMenu popSlideShow = new PopupMenu;
+		popSlideShow.addCommand("0 sec (Off)", 300, getPrivateInt("ClassicPro", "PictureBox.SlideShowSpeed", 0) == 0, false);
+		popSlideShow.addCommand("5 sec", 305, getPrivateInt("ClassicPro", "PictureBox.SlideShowSpeed", 0) == 5, false);
+		popSlideShow.addCommand("10 sec", 310, getPrivateInt("ClassicPro", "PictureBox.SlideShowSpeed", 0) == 10, false);
+		popSlideShow.addCommand("20 sec", 320, getPrivateInt("ClassicPro", "PictureBox.SlideShowSpeed", 0) == 20, false);
+		popSlideShow.addCommand("40 sec", 340, getPrivateInt("ClassicPro", "PictureBox.SlideShowSpeed", 0) == 40, false);
+		popSlideShow.addCommand("60 sec", 360, getPrivateInt("ClassicPro", "PictureBox.SlideShowSpeed", 0) == 60, false);
+		pop.addSubMenu(popSlideShow, "Slide Show");	
 	}
 	
 	
@@ -266,7 +301,12 @@ rightClickMenu(String filename, boolean showOptions)
 	}
 	else if (r == 4)
 	{
-		ClassicProFile.exploreFile(getPath(filename), removePath(filename));
+		ClassicProFile.exploreFile(filename);
+	}
+	else if (r == 200)
+	{
+		needsRefresh = 2;
+		scriptGroup.onSetVisible (true);
 	}
 	else if (r == 201)
 	{
@@ -293,7 +333,24 @@ rightClickMenu(String filename, boolean showOptions)
 		setPrivateString("ClassicPro", "PictureBox.PrefPos", "smooth");
 		quadSplit.setXmlParam("modalpreferred", "smooth");
 	}
-
+	else if (r >= 300 && r < 400)
+	{
+		r -= 300;
+		setPrivateInt("ClassicPro", "PictureBox.SlideShowSpeed", r);
+		if (numPics > 1 && r > 0 && scriptGroup.isvisible())
+		{
+			int d = r*1000;
+			slideShow.setDelay(d);
+			slideShow.start();
+		}
+		else
+		{
+			slideShow.stop();
+		}
+		
+		
+	}
+	
 	complete;
 }
 
