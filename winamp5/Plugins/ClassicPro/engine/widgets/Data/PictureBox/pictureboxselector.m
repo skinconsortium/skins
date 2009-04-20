@@ -27,7 +27,7 @@ System.onScriptLoaded ()
 	gradientSelected = scriptGroup.findObject("gradient.selected");
 
 	// Init Gradient Colors.
-	Color c = ColorMgr.getColor("color.selected.active.bg");
+	Color c = ColorMgr.getColor("wasabi.list.text.selected.background");
 	String rgb = integerToString(c.getRed()) + "," + integerToString(c.getGreen()) + "," + integerToString(c.getBlue());
 	gradientSelected.setXmlParam("points", "0.0=" + rgb + ",0;1.0=" + rgb + ",255");
 

@@ -35,6 +35,7 @@ extern int ClassicProFile.findFiles(String path, String mask, List returnValueSt
 extern int ClassicProFile.openFile(String filename, String params);
 extern int ClassicProFile.editFile(String filename, String params);
 extern int ClassicProFile.printFile(String filename, String params);
-extern int ClassicProFile.exploreFile(String filename, String params);
+extern int ClassicProFile.exploreFile(String filename );
+extern int ClassicProFile.exploreFolder(String filename, String params);
 
 #endif
