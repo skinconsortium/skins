@@ -122,7 +122,7 @@ System.onScriptLoaded ()
 		{
 			isInternal.setItem(internalNames.getNumItems()+i, false);
 			GuiObject d = widgetLoader.enumChildren(i);
-			orderedTabs.addItem(getToken(d.getXmlParam("userdata"), ";", 0));
+			orderedTabs.addItem(d.getXmlParam("userdata"));
 			widgetNames.addItem(getToken(d.getXmlParam("name"), ";", 0));
 		}
 	}
@@ -174,7 +174,7 @@ System.onScriptLoaded ()
 				isInternal.setSize(isInternal.getSize()+1);
 				isInternal.setItem(isInternal.getSize()-1, false);
 				GuiObject d = widgetLoader.enumChildren(i);
-				orderedTabs.addItem(getToken(d.getXmlParam("userdata"), ";", 0));
+				orderedTabs.addItem(d.getXmlParam("userdata"));
 				widgetNames.addItem(getToken(d.getXmlParam("name"), ";", 0));
 			}
 		}
