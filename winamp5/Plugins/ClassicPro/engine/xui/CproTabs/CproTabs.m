@@ -122,8 +122,8 @@ System.onScriptLoaded ()
 		{
 			isInternal.setItem(internalNames.getNumItems()+i, false);
 			GuiObject d = widgetLoader.enumChildren(i);
-			orderedTabs.addItem(d.getXmlParam("userdata"));
-			widgetNames.addItem(d.getXMLparam("name"));
+			orderedTabs.addItem(getToken(d.getXmlParam("userdata"), ";", 0));
+			widgetNames.addItem(getToken(d.getXmlParam("name"), ";", 0));
 		}
 	}
 	else
@@ -150,7 +150,7 @@ System.onScriptLoaded ()
 						if (getToken(d.getXmlParam("userdata"), ";", 0) == ids)
 						{
 							passedWidgets.setItem(j, true); // Mark this widget to be inited
-							widgetNames.addItem(d.getXMLparam("name"));
+							widgetNames.addItem(getToken(d.getXmlParam("name"), ";", 0));
 							isInternal.setItem(i, false);
 							orderedTabs.addItem(ids);
 							found = true;
@@ -174,8 +174,8 @@ System.onScriptLoaded ()
 				isInternal.setSize(isInternal.getSize()+1);
 				isInternal.setItem(isInternal.getSize()-1, false);
 				GuiObject d = widgetLoader.enumChildren(i);
-				orderedTabs.addItem(d.getXmlParam("userdata"));
-				widgetNames.addItem(d.getXMLparam("name"));
+				orderedTabs.addItem(getToken(d.getXmlParam("userdata"), ";", 0));
+				widgetNames.addItem(getToken(d.getXmlParam("name"), ";", 0));
 			}
 		}
 	}
