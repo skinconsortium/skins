@@ -1,12 +1,15 @@
 #include <lib/std.mi>
+#include "../../lib/ClassicProFile.mi"
 
 Function refreshCover();
-Function String getMyPath();
+//Function String getMyPath();
+Function String getMyFile();
 
 Global Group XUIGroup;
 Global GuiObject albumart;
 Global PopUpMenu popMenu;
 Global Timer lookagain;
+
 
 System.onScriptLoaded(){
 	XUIGroup = getScriptGroup();
@@ -36,7 +39,8 @@ albumart.onRightButtonUp(int x, int y){
 		albumart.setXmlParam("notfoundimage", getXmlParam("notfoundimage"));
 	}
 	else if (result == 3){
-		System.navigateUrl(getMyPath());
+		//System.navigateUrl(getMyPath());
+		ClassicProFile.exploreFile(getMyFile());
 	}
 
 	delete popMenu;
@@ -44,7 +48,8 @@ albumart.onRightButtonUp(int x, int y){
 }
 
 albumart.onLeftButtonDblClk (int x, int y){
-	System.navigateUrl(getMyPath());
+	//System.navigateUrl(getMyPath());
+	ClassicProFile.exploreFile(getMyFile());
 }
 
 System.onTitleChange (String newtitle){
@@ -73,11 +78,20 @@ lookagain.onTimer(){
 	refreshCover();
 }
 
-String getMyPath() {
+/*String getMyPath() {
 	String bs = strleft("\ ",1);
 	String output = "";
 
 	if(System.strleft(System.getPlayItemString(),6) == "cda://") output = System.strmid(System.getPlayItemString(), 6, 1)+":"+bs;
 	else output= getPath(getPlayItemMetaDataString("filename"));
+	return output;
+}*/
+
+String getMyFile() {
+	String bs = strleft("\ ",1);
+	String output = "";
+
+	if(System.strleft(System.getPlayItemString(),6) == "cda://") output = System.strmid(System.getPlayItemString(), 6, 1)+":"+bs;
+	else output= getPlayItemMetaDataString("filename");
 	return output;
 }

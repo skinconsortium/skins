@@ -1,7 +1,9 @@
 #include <lib/std.mi>
+#include "../../../lib/ClassicProFile.mi"
 
 Function doMyMenu(int x, int y);
 Function openMyFolder();
+Function String getMyFile();
 
 Global layer AlbumArt, AlbumArt2;
 
@@ -48,5 +50,13 @@ AlbumArt2.onLeftButtonDblClk (int x, int y){
 	openMyFolder();
 }
 openMyFolder(){
-	System.navigateUrl(getPath(getPlayItemMetaDataString("filename")));
+	ClassicProFile.exploreFile(getMyFile());
+}
+String getMyFile() {
+	String bs = strleft("\ ",1);
+	String output = "";
+
+	if(System.strleft(System.getPlayItemString(),6) == "cda://") output = System.strmid(System.getPlayItemString(), 6, 1)+":"+bs;
+	else output= getPlayItemMetaDataString("filename");
+	return output;
 }
