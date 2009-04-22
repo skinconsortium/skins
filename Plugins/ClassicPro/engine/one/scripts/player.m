@@ -4,6 +4,7 @@
 #include attribs/init_Autoresize.m
 #include <lib/quickPlaylist.mi>
 #include <lib/fileio.mi>
+#include "../../lib/ClassicProFile.mi"
 
 //#define rres 20 
 
@@ -12,6 +13,7 @@ Function saveResize(int x, int y, int w, int h);
 Function gotoGlobal();
 Function saveGlobal();
 Function updateMax();
+Function String getMyFile();
 
 // Mute warning
 Function doFade();
@@ -386,7 +388,8 @@ bolt.onLeftClick(){
 		fakeAbout.leftClick();
 	}
 	else if(a==1){
-		System.navigateUrl(getPath(getPlayItemMetaDataString("filename")));
+		//System.navigateUrl(getPath(getPlayItemMetaDataString("filename")));
+		ClassicProFile.exploreFile(getMyFile());
 	}
 	else if(a==2){
 		popQuickPlaylist(40, false);
@@ -396,6 +399,15 @@ bolt.onLeftClick(){
 	}
 	
 }
+String getMyFile() {
+	String bs = strleft("\ ",1);
+	String output = "";
+
+	if(System.strleft(System.getPlayItemString(),6) == "cda://") output = System.strmid(System.getPlayItemString(), 6, 1)+":"+bs;
+	else output= getPlayItemMetaDataString("filename");
+	return output;
+}
+
 bolt.onRightButtonUp(int x, int y){
 	selMenu = new PopupMenu;
 	selMenu.addCommand("Multi-Button Action:", -1, 0, 1);

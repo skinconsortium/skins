@@ -1,6 +1,7 @@
 #include <lib/std.mi>
 #include attribs/init_Autoresize.m
 #include <lib/fileio.mi>
+#include "../../lib/ClassicProFile.mi"
 
 #define rres 20 
 
@@ -8,7 +9,8 @@ Function gotoGlobal();
 Function saveGlobal();
 Function saveResize(int x, int y, int w, int h);
 Function updateMax();
-Function String getMyPath();
+//Function String getMyPath();
+Function String getMyFile();
 
 Global Group mainGroup, gr_Vis, gr_Vol, gr_seektick, gr_seektick1, gr_seektick2;
 Global GuiObject progressbar;
@@ -195,7 +197,8 @@ mlMenu1.onLeftClick(){
 	mlMenu2.leftClick(); //pass click onto the fakebutton so because we need the menu to pop a few pixels down... not over the whole shademode ;)
 }
 mlMenu1.onRightButtonUp(int x, int y){
-	System.navigateUrl(getMyPath());
+	//System.navigateUrl(getMyPath());
+	ClassicProFile.exploreFile(getMyFile());
 	complete;
 }
 
@@ -304,11 +307,20 @@ updateMax(){
 	shade.setXmlParam("maximum_w", integerToString(getViewPortWidthfromGuiObject(shade)/newscalevalue));
 }
 
-String getMyPath() {
+/*String getMyPath() {
 	String bs = strleft("\ ",1);
 	String output = "";
 
 	if(System.strleft(System.getPlayItemString(),6) == "cda://") output = System.strmid(System.getPlayItemString(), 6, 1)+":"+bs;
 	else output= getPath(getPlayItemMetaDataString("filename"));
+	return output;
+}*/
+
+String getMyFile() {
+	String bs = strleft("\ ",1);
+	String output = "";
+
+	if(System.strleft(System.getPlayItemString(),6) == "cda://") output = System.strmid(System.getPlayItemString(), 6, 1)+":"+bs;
+	else output= getPlayItemMetaDataString("filename");
 	return output;
 }
