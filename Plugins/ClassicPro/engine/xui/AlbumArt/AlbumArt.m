@@ -50,6 +50,7 @@ albumart.onRightButtonUp(int x, int y){
 albumart.onLeftButtonDblClk (int x, int y){
 	//System.navigateUrl(getMyPath());
 	ClassicProFile.exploreFile(getMyFile());
+	//ClassicProFile.exploreFile("D:\# Music\Triphop nu jazz\Saint Germain - Des-Prés Café, Vol. 6\08-Horne Singers-Flat Foot.wma");
 }
 
 System.onTitleChange (String newtitle){
@@ -88,10 +89,14 @@ lookagain.onTimer(){
 }*/
 
 String getMyFile() {
+//debug(getPlayItemMetaDataString("filename"));
 	String bs = strleft("\ ",1);
 	String output = "";
 
 	if(System.strleft(System.getPlayItemString(),6) == "cda://") output = System.strmid(System.getPlayItemString(), 6, 1)+":"+bs;
 	else output= getPlayItemMetaDataString("filename");
+
+//debug(output);
+
 	return output;
 }
