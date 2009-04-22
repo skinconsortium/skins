@@ -2,7 +2,7 @@
 Version 1.11 (12 Apr 2009)
 -------------------------------------------------------------
 - New: Explorer Folder now also selects your file when Explorer opens!
-- New: If you Click open while holding the Alt button Winamp will play all the files in that folder
+- New: ALT + Open button will play all the files in the current folder
 - New: Explore Folder when you right click the shademode Library's Playlist button
 - Fixed: Various tab bugs
 - Improved: Translation packs for installer and BrowserPro
