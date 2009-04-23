@@ -76,24 +76,32 @@ updateThumbs()
 	for ( int i = 0; i < content.getNumObjects(); i++ )
 	{
 		GuiObject go = content.enumObject(i);
+
+		if (go.isVisible())
+		{
+			if (strupper(go.getID()) == "NL")
+			{
+				yOffset += lineHeight+spacing;
+				xOffset = 0;
+			}
+			else if (!xOffset || xOffset + go.getWidth() <= w)
+			{
+				go.setXmlParam("x", integerToString(xOffset));
+				go.setXmlParam("y", integerToString(yOffset));
+
 		
-		if (!xOffset || xOffset + go.getWidth() <= w)
-		{
-			go.setXmlParam("x", integerToString(xOffset));
-			go.setXmlParam("y", integerToString(yOffset));
+				xOffset += spacing + go.getWidth();
+				lineHeight = max(lineHeight, go.getHeight());
+			}
+			else
+			{
+				go.setXmlParam("x", "0");
+				yOffset += lineHeight+spacing;
+				go.setXmlParam("y", integerToString(yOffset));
 
-	
-			xOffset += spacing + go.getWidth();
-			lineHeight = max(lineHeight, go.getHeight());
-		}
-		else
-		{
-			go.setXmlParam("x", "0");
-			yOffset += lineHeight+spacing;
-			go.setXmlParam("y", integerToString(yOffset));
-
-			xOffset = spacing + go.getWidth();
-			lineHeight = go.getHeight();
+				xOffset = spacing + go.getWidth();
+				lineHeight = go.getHeight();
+			}
 		}
 	}
 }
