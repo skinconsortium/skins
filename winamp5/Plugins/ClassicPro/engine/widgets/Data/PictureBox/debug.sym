@@ -78,129 +78,140 @@ var# |                Class |                                    What
 004A |               String |                             "ClassicPro"
 004B |               String |                     "PictureBox.PrefPos"
 004C |               String |                                 "smooth"
-004D |               String |   "wasabi.list.text.selected.background"
-004E |                Color |                                        c
-004F |               String |                                      ","
-0050 |               String |                                      rgb
-0051 |               String |                                 "points"
-0052 |               String |                                   "0.0="
-0053 |               String |                                ",0;1.0="
-0054 |               String |                                   ",255"
-0055 |               String |              "PictureBox.SlideShowSpeed"
-0056 |                  Int |                                     1000
-0057 |                  Int |                                        d
-0058 |               String |                                 newtitle
-0059 |              Boolean |                                    onoff
-005A |                  Int |                                      100
-005B |               String |                                  curPath
-005C |                 List |                                      lst
-005D |               String |                                  "*.jpg"
-005E |               String |                                 "*.jpeg"
-005F |               String |                                  "*.png"
-0060 |               String |                                  "*.gif"
-0061 |               String |                                  "*.bmp"
-0062 |                  Int |                                        i
-0063 |            GuiObject |                                        l
-0064 |               String |                            "Loading ..."
-0065 |                  Int |                                        i
-0066 |            GuiObject |                                        l
-0067 |               String |                                "tooltip"
-0068 |               String |                               "userdata"
-0069 |               String |                                 "update"
-006A |               String |                       "No Images Found."
-006B |               String |                                   output
-006C |                  Int |                                        6
-006D |               String |                                 "cda://"
-006E |               String |                                      ":"
-006F |               String |                               "filename"
-0070 |               String |                                       id
-0071 |               String | "centro.widgets.picturebox.select.image"
-0072 |            GuiObject |                                        l
-0073 |               String |                                      "x"
-0074 |               String |                                      "0"
-0075 |               String |                                      "y"
-0076 |               String |                                      "h"
-0077 |               String |                                     "40"
-0078 |               String |                                      "w"
-0079 |               String |                                     "id"
-007A |                  Int |                                  message
-007B |                  Int |                                       i0
-007C |                  Int |                                       i1
-007D |                  Int |                                       i2
-007E |               String |                                       s0
-007F |               String |                                       s1
-0080 |            GuiObject |                                      obj
-0081 |                  Int |                                     0003
-0082 |                  Int |                                     0004
-0083 |                  Int |                                     0005
-0084 |                  Int |                                     0006
-0085 |                  Int |                                        x
-0086 |                  Int |                                        y
-0087 |               String |                                 filename
-0088 |              Boolean |                              showOptions
-0089 |            PopupMenu |                                      pop
-008A |               String |                                   "Open"
-008B |               String |                                   "Edit"
-008C |               String |                                  "Print"
-008D |                  Int |                                        3
-008E |               String |                            "Open Folder"
-008F |                  Int |                                        4
-0090 |               String |                                 "Reload"
-0091 |                  Int |                                      200
-0092 |            PopupMenu |                               popPrefPos
-0093 |               String |                          "Right (Loose)"
-0094 |                  Int |                                      201
-0095 |               String |                                  "right"
-0096 |               String |                          "Right (Fixed)"
-0097 |                  Int |                                      202
-0098 |               String |                             "rightfixed"
-0099 |               String |                         "Bottom (Loose)"
-009A |                  Int |                                      203
-009B |               String |                                 "bottom"
-009C |               String |                         "Bottom (Fixed)"
-009D |                  Int |                                      204
-009E |               String |                            "bottomfixed"
-009F |               String |                                "Smooth "
-00A0 |                  Int |                                      205
-00A1 |               String |              "Preferred Thumbs Position"
-00A2 |            PopupMenu |                             popSlideShow
-00A3 |               String |                            "0 sec (Off)"
-00A4 |                  Int |                                      300
-00A5 |               String |                                  "5 sec"
-00A6 |                  Int |                                      305
-00A7 |                  Int |                                        5
-00A8 |               String |                                 "10 sec"
-00A9 |                  Int |                                      310
-00AA |                  Int |                                       10
-00AB |               String |                                 "20 sec"
-00AC |                  Int |                                      320
-00AD |                  Int |                                       20
-00AE |               String |                                 "40 sec"
-00AF |                  Int |                                      340
-00B0 |                  Int |                                       40
-00B1 |               String |                                 "60 sec"
-00B2 |                  Int |                                      360
-00B3 |                  Int |                                       60
-00B4 |               String |                             "Slide Show"
-00B5 |                  Int |                                        r
-00B6 |                  Int |                                      400
-00B7 |                  Int |                                        d
-00B8 |            GuiObject |                                    thumb
-00B9 |               String |                               "selected"
-00BA |               String |                                      "1"
+004D |               String |                                "quality"
+004E |               String |         "PictureBox.DownSamplingPreview"
+004F |               String |   "wasabi.list.text.selected.background"
+0050 |                Color |                                        c
+0051 |               String |                                      ","
+0052 |               String |                                      rgb
+0053 |               String |                                 "points"
+0054 |               String |                                   "0.0="
+0055 |               String |                                ",0;1.0="
+0056 |               String |                                   ",255"
+0057 |               String |              "PictureBox.SlideShowSpeed"
+0058 |                  Int |                                     1000
+0059 |                  Int |                                        d
+005A |               String |                                 newtitle
+005B |              Boolean |                                    onoff
+005C |                  Int |                                      100
+005D |               String |                                  curPath
+005E |                 List |                                      lst
+005F |               String |                                  "*.jpg"
+0060 |               String |                                 "*.jpeg"
+0061 |               String |                                  "*.png"
+0062 |               String |                                  "*.gif"
+0063 |               String |                                  "*.bmp"
+0064 |                  Int |                                        i
+0065 |            GuiObject |                                        l
+0066 |               String |                            "Loading ..."
+0067 |                  Int |                                        i
+0068 |            GuiObject |                                        l
+0069 |               String |                                "tooltip"
+006A |               String |                               "userdata"
+006B |               String |                                 "update"
+006C |               String |                       "No Images Found."
+006D |               String |                                   output
+006E |                  Int |                                        6
+006F |               String |                                 "cda://"
+0070 |               String |                                      ":"
+0071 |               String |                               "filename"
+0072 |               String |                                       id
+0073 |               String | "centro.widgets.picturebox.select.image"
+0074 |            GuiObject |                                        l
+0075 |               String |                                      "x"
+0076 |               String |                                      "0"
+0077 |               String |                                      "y"
+0078 |               String |                                      "h"
+0079 |               String |                                     "40"
+007A |               String |                                      "w"
+007B |               String |                                     "id"
+007C |               String |          "PictureBox.DownSamplingThumbs"
+007D |                  Int |                                  message
+007E |                  Int |                                       i0
+007F |                  Int |                                       i1
+0080 |                  Int |                                       i2
+0081 |               String |                                       s0
+0082 |               String |                                       s1
+0083 |            GuiObject |                                      obj
+0084 |                  Int |                                     0003
+0085 |                  Int |                                     0004
+0086 |                  Int |                                     0005
+0087 |                  Int |                                     0006
+0088 |                  Int |                                        x
+0089 |                  Int |                                        y
+008A |               String |                                 filename
+008B |              Boolean |                              showOptions
+008C |            PopupMenu |                                      pop
+008D |               String |                                   "Open"
+008E |               String |                                   "Edit"
+008F |               String |                                  "Print"
+0090 |                  Int |                                        3
+0091 |               String |                            "Open Folder"
+0092 |                  Int |                                        4
+0093 |               String |                                 "Reload"
+0094 |                  Int |                                      200
+0095 |            PopupMenu |                             popSlideShow
+0096 |               String |                            "0 sec (Off)"
+0097 |                  Int |                                      300
+0098 |               String |                                  "5 sec"
+0099 |                  Int |                                      305
+009A |                  Int |                                        5
+009B |               String |                                 "10 sec"
+009C |                  Int |                                      310
+009D |                  Int |                                       10
+009E |               String |                                 "20 sec"
+009F |                  Int |                                      320
+00A0 |                  Int |                                       20
+00A1 |               String |                                 "40 sec"
+00A2 |                  Int |                                      340
+00A3 |                  Int |                                       40
+00A4 |               String |                                 "60 sec"
+00A5 |                  Int |                                      360
+00A6 |                  Int |                                       60
+00A7 |               String |                             "Slide Show"
+00A8 |            PopupMenu |                               popPrefPos
+00A9 |               String |                          "Right (Loose)"
+00AA |                  Int |                                      201
+00AB |               String |                                  "right"
+00AC |               String |                          "Right (Fixed)"
+00AD |                  Int |                                      202
+00AE |               String |                             "rightfixed"
+00AF |               String |                         "Bottom (Loose)"
+00B0 |                  Int |                                      203
+00B1 |               String |                                 "bottom"
+00B2 |               String |                         "Bottom (Fixed)"
+00B3 |                  Int |                                      204
+00B4 |               String |                            "bottomfixed"
+00B5 |               String |                                "Smooth "
+00B6 |                  Int |                                      205
+00B7 |               String |              "Preferred Thumbs Position"
+00B8 |            PopupMenu |                                    popDs
+00B9 |               String |                          "Preview Image"
+00BA |                  Int |                                      401
+00BB |               String |                           "Thumb Images"
+00BC |                  Int |                                      402
+00BD |               String |                           "Downsampling"
+00BE |                  Int |                                        r
+00BF |                  Int |                                      400
+00C0 |                  Int |                                        d
+00C1 |                  Int |                                        i
+00C2 |            GuiObject |                                       go
+00C3 |            GuiObject |                                    thumb
+00C4 |               String |                               "selected"
+00C5 |               String |                                      "1"
 -- Events Table ------------------------------------------------------
 var# |         Code Pointer |                                    What 
 ----------------------------------------------------------------------
 001C |                 01B1 |                                      d.o
 0000 |                 0213 |                                      S.o
-0000 |                 04E8 |                                      S.o
-0026 |                 053C |                                      s.o
-0038 |                 05D9 |                                      s.o
-0037 |                 05FB |                                      r.o
-002D |                 0BCE |                                      m.o
-0030 |                 12CF |                                      o.o
-0031 |                 1310 |                                      n.o
-0032 |                 1375 |                                      p.o
+0000 |                 051E |                                      S.o
+0026 |                 0572 |                                      s.o
+0038 |                 060F |                                      s.o
+0037 |                 0631 |                                      r.o
+002D |                 0C3A |                                      m.o
+0030 |                 151C |                                      o.o
+0031 |                 155D |                                      n.o
+0032 |                 15C2 |                                      p.o
 -- User Functions Table ----------------------------------------------
                Code Pointer |                                    What 
 ----------------------------------------------------------------------
@@ -209,9 +220,9 @@ var# |         Code Pointer |                                    What
                        011D |                                 debugInt
                        017C |                           initDispatcher
                        019A |                            setDispatcher
-                       0AE8 |                                onMessage
-                       09A9 |                             playitemPath
-                       0634 |                               readImages
-                       0A41 |                              createGroup
-                       0C19 |                           rightClickMenu
-                       13EB |                          setPreviewImage
+                       0B54 |                                onMessage
+                       09DF |                             playitemPath
+                       066A |                               readImages
+                       0A77 |                              createGroup
+                       0C85 |                           rightClickMenu
+                       1638 |                          setPreviewImage

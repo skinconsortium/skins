@@ -57,6 +57,7 @@ System.onScriptLoaded ()
 	gradient	= previewGroup.findObject("gradient");
 	
 	quadSplit.setXmlParam("modalpreferred", getPrivateString("ClassicPro", "PictureBox.PrefPos", "smooth"));
+	preview.setXmlParam("quality", integerToString(getPrivateInt("ClassicPro", "PictureBox.DownSamplingPreview", 1))); 
 
 	// Init Gradient Colors.
 	Color c = ColorMgr.getColor("wasabi.list.text.selected.background");
@@ -216,7 +217,8 @@ GuiObject createGroup(String id)
 	l.setXmlParam("y", "0");
 	l.setXmlParam("h", "40");
 	l.setXmlParam("w", "40");
-	l.setXmlParam("id", id); 
+	l.setXmlParam("id", id);
+	l.setXmlParam("quality", integerToString(getPrivateInt("ClassicPro", "PictureBox.DownSamplingThumbs", 0)));
 	l.init(selectGroup);
 	return l;
 }
@@ -266,13 +268,6 @@ rightClickMenu(String filename, boolean showOptions)
 	{
 		pop.addSeparator();
 		pop.addCommand("Reload", 200, false, false);
-		PopupMenu popPrefPos = new PopupMenu;
-		popPrefPos.addCommand("Right (Loose)", 201, getPrivateString("ClassicPro", "PictureBox.PrefPos", "smooth") == "right", false);
-		popPrefPos.addCommand("Right (Fixed)", 202, getPrivateString("ClassicPro", "PictureBox.PrefPos", "smooth") == "rightfixed", false);
-		popPrefPos.addCommand("Bottom (Loose)", 203, getPrivateString("ClassicPro", "PictureBox.PrefPos", "smooth") == "bottom", false);
-		popPrefPos.addCommand("Bottom (Fixed)", 204, getPrivateString("ClassicPro", "PictureBox.PrefPos", "smooth") == "bottomfixed", false);
-		popPrefPos.addCommand("Smooth ", 205, getPrivateString("ClassicPro", "PictureBox.PrefPos", "smooth") == "smooth", false);
-		pop.addSubMenu(popPrefPos, "Preferred Thumbs Position");
 
 		PopupMenu popSlideShow = new PopupMenu;
 		popSlideShow.addCommand("0 sec (Off)", 300, getPrivateInt("ClassicPro", "PictureBox.SlideShowSpeed", 0) == 0, false);
@@ -281,7 +276,22 @@ rightClickMenu(String filename, boolean showOptions)
 		popSlideShow.addCommand("20 sec", 320, getPrivateInt("ClassicPro", "PictureBox.SlideShowSpeed", 0) == 20, false);
 		popSlideShow.addCommand("40 sec", 340, getPrivateInt("ClassicPro", "PictureBox.SlideShowSpeed", 0) == 40, false);
 		popSlideShow.addCommand("60 sec", 360, getPrivateInt("ClassicPro", "PictureBox.SlideShowSpeed", 0) == 60, false);
-		pop.addSubMenu(popSlideShow, "Slide Show");	
+		pop.addSubMenu(popSlideShow, "Slide Show");
+
+		pop.addSeparator();
+
+		PopupMenu popPrefPos = new PopupMenu;
+		popPrefPos.addCommand("Right (Loose)", 201, getPrivateString("ClassicPro", "PictureBox.PrefPos", "smooth") == "right", false);
+		popPrefPos.addCommand("Right (Fixed)", 202, getPrivateString("ClassicPro", "PictureBox.PrefPos", "smooth") == "rightfixed", false);
+		popPrefPos.addCommand("Bottom (Loose)", 203, getPrivateString("ClassicPro", "PictureBox.PrefPos", "smooth") == "bottom", false);
+		popPrefPos.addCommand("Bottom (Fixed)", 204, getPrivateString("ClassicPro", "PictureBox.PrefPos", "smooth") == "bottomfixed", false);
+		popPrefPos.addCommand("Smooth ", 205, getPrivateString("ClassicPro", "PictureBox.PrefPos", "smooth") == "smooth", false);
+		pop.addSubMenu(popPrefPos, "Preferred Thumbs Position");
+
+		PopupMenu popDs = new PopupMenu;
+		popDs.addCommand("Preview Image", 401, getPrivateInt("ClassicPro", "PictureBox.DownSamplingPreview", 1) == 1, false);
+		popDs.addCommand("Thumb Images", 402, getPrivateInt("ClassicPro", "PictureBox.DownSamplingThumbs", 0) == 1, false);
+		pop.addSubMenu(popDs, "Downsampling");
 	}
 	
 	
@@ -350,6 +360,22 @@ rightClickMenu(String filename, boolean showOptions)
 		
 		
 	}
+	else if (r == 401)
+	{
+		setPrivateInt("ClassicPro", "PictureBox.DownSamplingPreview", !getPrivateInt("ClassicPro", "PictureBox.DownSamplingPreview", 1));
+		preview.setXmlParam("quality", integerToString(getPrivateInt("ClassicPro", "PictureBox.DownSamplingPreview", 1))); 
+	}
+	else if (r == 402)
+	{
+		setPrivateInt("ClassicPro", "PictureBox.DownSamplingThumbs", !getPrivateInt("ClassicPro", "PictureBox.DownSamplingThumbs", 0));
+
+		for ( int i = 0; i < selectGroup.getNumObjects(); i++ )
+		{
+			GuiObject go = 	selectGroup.enumObject(i);
+			go.setXmlParam("quality", integerToString(getPrivateInt("ClassicPro", "PictureBox.DownSamplingThumbs", 0)));
+		}
+	}
+	
 	
 	complete;
 }
