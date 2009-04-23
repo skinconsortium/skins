@@ -1,6 +1,6 @@
 <groupdef id="centro.widgets.picturebox.dummy.drawer" name="Picture Box" userdata="centro.widgets.picturebox;0" windowtype="centro.widgets.drawer" />
 <groupdef id="centro.widgets.picturebox.dummy.mini" name="Picture Box" userdata="centro.widgets.picturebox;0" windowtype="centro.widgets.mini" />
-<groupdef id="centro.widgets.picturebox.dummy.main" name="Picture Box" userdata="centro.widgets.picturebox;0" windowtype="centro.widgets.main"/>
+<groupdef id="centro.widgets.picturebox.dummy.main" name="Picture Box;PB" userdata="centro.widgets.picturebox;0" windowtype="centro.widgets.main"/>
 
 <include file="@WINAMPPATH@/Plugins/classicPro/engine/xui/Layouts/QuadSplit.xml"/>
 <include file="@WINAMPPATH@/Plugins/classicPro/engine/xui/Layouts/ThumbList.xml"/>
@@ -15,7 +15,7 @@
 		mode="linear" gradient_x1="0" gradient_y1="0" gradient_x2="0" gradient_y2="1"
 		gammagroup="n.Color.ListSelBg" alpha="64" visible="0"
 	/>
-	<SC:KeepRatioLayer id="preview" fitparent="-2" image="" valign="center"/>
+	<SC:KeepRatioLayer id="preview" fitparent="-2" image="" valign="center" quality="1"/>
 	<layer id="mousetrap" rectrgn="1" fitparent="1" move="0"/>
 </groupdef>
 
