@@ -7,7 +7,7 @@
 
 ; This create locked or unlocked installer
 
-;!define UNLOCK
+!define UNLOCK
 
 ;--------------------------------
 ;Include Modern UI
@@ -20,11 +20,11 @@
   ;Name and file
   ;RELEASE
   !ifdef UNLOCK
-		Name "Komodo v1.0 (Full)"
-		OutFile "Komodo_v100_UNLOCKED.exe"
+		Name "Komodo v1.1 (Full)"
+		OutFile "Komodo_v110_UNLOCKED.exe"
   !else
-		Name "Komodo v1.0 (Trial Version)"
-		OutFile "Komodo_v100_Trial.exe"
+		Name "Komodo v1.1 (Trial Version)"
+		OutFile "Komodo_v110_Trial.exe"
   !endif
 
   ;BETA STAGE  

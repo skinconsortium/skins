@@ -481,7 +481,17 @@ buttonFull.onLeftClick() {
 	setPrivateInt(getSkinName(),"windowmode", 0);
 	nosizesave = 0;
 	
-	main.resize(0,0, getMonitorWidth(), getMonitorHeight());
+	int midptX = main.getLeft() + main.getWidth()/2;
+	int midptY = main.getTop() + main.getHeight()/2;
+	
+	int monitorX = getViewportLeftFromPoint(midptX, midptY);
+	int monitorY = getViewportTopFromPoint(midptX, midptY);
+	
+	// checks if on 2nd monitor or just taskbar being moved.
+	if (monitorX < 300) monitorX = 0;
+	if (monitorY < 300) monitorY = 0;
+	
+	main.resize(monitorX, monitorY, getMonitorWidthFromPoint(midptX, midptY), getMonitorHeightFromPoint(midptX, midptY));
 	main.setXMLParam("lockminmax","1");
 	
 	//attrAOT.setData("1");
