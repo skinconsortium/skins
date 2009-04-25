@@ -188,17 +188,18 @@ var# |                Class |                                    What
 00B8 |            PopupMenu |                                    popDs
 00B9 |               String |                          "Preview Image"
 00BA |                  Int |                                      401
-00BB |               String |                           "Thumb Images"
-00BC |                  Int |                                      402
-00BD |               String |                           "Downsampling"
-00BE |                  Int |                                        r
-00BF |                  Int |                                      400
-00C0 |                  Int |                                        d
-00C1 |                  Int |                                        i
-00C2 |            GuiObject |                                       go
-00C3 |            GuiObject |                                    thumb
-00C4 |               String |                               "selected"
-00C5 |               String |                                      "1"
+00BB |               Double |                                     5.56
+00BC |               String |                           "Thumb Images"
+00BD |                  Int |                                      402
+00BE |               String |                           "Downsampling"
+00BF |                  Int |                                        r
+00C0 |                  Int |                                      400
+00C1 |                  Int |                                        d
+00C2 |                  Int |                                        i
+00C3 |            GuiObject |                                       go
+00C4 |            GuiObject |                                    thumb
+00C5 |               String |                               "selected"
+00C6 |               String |                                      "1"
 -- Events Table ------------------------------------------------------
 var# |         Code Pointer |                                    What 
 ----------------------------------------------------------------------
@@ -209,9 +210,9 @@ var# |         Code Pointer |                                    What
 0038 |                 060F |                                      s.o
 0037 |                 0631 |                                      r.o
 002D |                 0C3A |                                      m.o
-0030 |                 151C |                                      o.o
-0031 |                 155D |                                      n.o
-0032 |                 15C2 |                                      p.o
+0030 |                 154A |                                      o.o
+0031 |                 15A0 |                                      n.o
+0032 |                 1605 |                                      p.o
 -- User Functions Table ----------------------------------------------
                Code Pointer |                                    What 
 ----------------------------------------------------------------------
@@ -225,4 +226,4 @@ var# |         Code Pointer |                                    What
                        066A |                               readImages
                        0A77 |                              createGroup
                        0C85 |                           rightClickMenu
-                       1638 |                          setPreviewImage
+                       167B |                          setPreviewImage
