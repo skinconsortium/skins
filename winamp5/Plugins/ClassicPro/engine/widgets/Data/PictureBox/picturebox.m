@@ -289,8 +289,8 @@ rightClickMenu(String filename, boolean showOptions)
 		pop.addSubMenu(popPrefPos, "Preferred Thumbs Position");
 
 		PopupMenu popDs = new PopupMenu;
-		popDs.addCommand("Preview Image", 401, getPrivateInt("ClassicPro", "PictureBox.DownSamplingPreview", 1) == 1, false);
-		popDs.addCommand("Thumb Images", 402, getPrivateInt("ClassicPro", "PictureBox.DownSamplingThumbs", 0) == 1, false);
+		popDs.addCommand("Preview Image", 401, getPrivateInt("ClassicPro", "PictureBox.DownSamplingPreview", 1) == 1, stringToFloat(getWinampVersion()) < 5.56);
+		popDs.addCommand("Thumb Images", 402, getPrivateInt("ClassicPro", "PictureBox.DownSamplingThumbs", 0) == 1, stringToFloat(getWinampVersion()) < 5.56);
 		pop.addSubMenu(popDs, "Downsampling");
 	}
 	
@@ -384,6 +384,8 @@ options.onLeftClick ()
 {
 	if (lastSelectedImage != NULL)
 		rightClickMenu(lastSelectedImage.getXmlParam("userdata"), true);
+	else
+		rightClickMenu("", true);		
 }
 
 next.onLeftClick ()
