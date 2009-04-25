@@ -588,7 +588,7 @@ Section "$(CPro_CProFiles)" "CPro_Sec_CProFiles"
 ;		File /nonfatal "..\engine\flex\xml\*.xml"
 
 	SetOutPath $INSTDIR\System
-		Delete "${CPRO_WINAMP_SYSTEM}\ClassicProflex.w5s"
+		Delete "${CPRO_WINAMP_SYSTEM}\ClassicProFlex.w5s"
 		File /nonfatal "${CPRO_WINAMP_SYSTEM}\ClassicPro.w5s"
 		File /nonfatal "${CPRO_WINAMP_SYSTEM}\ClassicPro.wbm"
 		
