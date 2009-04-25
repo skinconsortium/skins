@@ -800,11 +800,11 @@ sg.onAction (String action, String param, int x, int y, int p1, int p2, GuiObjec
 	if(strlower(action) == "select_tab")
 	{
 		//debugint(x);
-		/*if(!checkedBrowser){
+		if(!checkedBrowser){
 			CproBrowser = getContainer("main").getLayout("normal").findObject("centro.browser");
 			//sui_browser_attrib.setData(integerToString(CproBrowser.isVisible())); //pjn123 - dont know why I put this here.. removed.. dont crash anymore
 			checkedBrowser=true;
-		}*/
+		}
 
 		//Tab t; //pjn123 - changed this
 		Tab t = firstTab;

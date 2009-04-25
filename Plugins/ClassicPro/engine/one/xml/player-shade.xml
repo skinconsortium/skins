@@ -68,6 +68,7 @@
 		downImage="s.eject.3"
 		rectrgn="1" action="EJECT" tooltip="Open File(s)"
 	/>
+	<script file="@WINAMPPATH@\Plugins\classicPro\engine\one\scripts\extendedbuttons.maki"/>
 
 	<group id="shade.visgroup" x="91" y="0" w="63" h="23" move="1" visible="0"/>
 	<group id="shade.volgroup" x="154" y="0" w="69" h="23" move="1" visible="0"/>

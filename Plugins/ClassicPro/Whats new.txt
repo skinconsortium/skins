@@ -1,9 +1,10 @@
 -------------------------------------------------------------
-Version 1.11 (12 Apr 2009)
+Version 1.11 (25 Apr 2009)
 -------------------------------------------------------------
 - New: Explorer Folder now also selects your file when Explorer opens!
 - New: ALT + Open button will play all the files in the current folder
 - New: Explore Folder when you right click the shademode Library's Playlist button
+- New: More powerful functions for widget developers to play with
 - Fixed: Various tab bugs
 - Improved: Translation packs for installer and BrowserPro
 - Improved: More miscellaneous optimizations
