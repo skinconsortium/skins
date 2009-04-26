@@ -4,10 +4,9 @@ import tango.text.xml.Document;
 import tango.text.xml.DocPrinter;
 import tango.io.FilePath;
 import tango.io.File;
-import tango.io.Stdout;
-import tango.sys.Environment;
-
-Document!(char) cdoc;
+debug import tango.io.Stdout;
+//import tango.sys.Environment;
+import tango.io.FileSystem;
 
 /**
  * ConfigFile
@@ -26,7 +25,8 @@ public class ConfigFile
 	/** static constructor - loads/creates the xml document */
 	static this()
 	{
-		auto fp = Environment.exePath(configFilename);
+		FilePath fp = new FilePath(FileSystem.toAbsolute(configFilename));
+
 		bool existed = fp.exists;
 		if (!existed)
 		{
@@ -34,7 +34,6 @@ public class ConfigFile
 		}
 	
 		file = new File(fp.toString());
-		debug Stdout(file.toString());
 		doc = new Document!(char);
 		doc.header;
 		
@@ -45,18 +44,18 @@ public class ConfigFile
 		}
 		
 		doc.parse(cast(char[])file.read());
-		doc.header;		
+		doc.header;
 	}
 	
 	/** static destructor - saves the file on program termination */
 	static ~this()
-	{
+	{			
 		auto print = new DocPrinter!(char);
 		file.write(cast(void[])print(doc));		
 	}
 	
 	static char[] getValue(char[] name, char[] defaultReturn = "")
-	{
+	{		
 		foreach (node;doc.query["DCommonsConfig"][name])
 		{
 			return node.value;
