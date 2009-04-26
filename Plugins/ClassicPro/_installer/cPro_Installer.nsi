@@ -319,6 +319,9 @@ Function onGUIInit
 	EnableWindow $0 1
 	Linker::link /NOUNLOAD $0 "${CPRO_BT}"
 
+;;;	DetailPrint "$(CPro_Check_Winamp)"
+		Call CloseWinamp
+
 FunctionEnd
 
 Function .onGUIEnd
@@ -433,6 +436,11 @@ Function CheckFinishPage
 	
 	${NSD_GetState} $CheckBox1 $Checkbox_State
 	${If} $Checkbox_State = ${BST_CHECKED}
+
+		DetailPrint "$(CPro_Ini)"
+			WriteINIStr "$MultiPath\winamp.ini" "Winamp" "skin" "cPro__Bento.wal"
+			FlushINI "$MultiPath\winamp.ini"
+
 		ExecShell "open" "$INSTDIR\winamp.exe"
 		
 	${EndIf}
@@ -449,9 +457,10 @@ Section "-Pre"
 	DetailPrint "$(CPro_Winamp_Path)"
 		Call MultiUser_Path
 
-	DetailPrint "$(CPro_Check_Winamp)"
-		Call CloseWinamp
-		
+;; (mpdeimos) moved to onGuiInit, so winamp has some time to release ClassicPro.w5s		
+;;;	DetailPrint "$(CPro_Check_Winamp)"
+;;;		Call CloseWinamp
+
 SectionEnd
 
 Section "$(CPro_CProFiles)" "CPro_Sec_CProFiles"
@@ -586,11 +595,6 @@ Section "$(CPro_CProFiles)" "CPro_Sec_CProFiles"
 
 ;	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\flex\xml
 ;		File /nonfatal "..\engine\flex\xml\*.xml"
-
-	SetOutPath $INSTDIR\System
-		Delete "${CPRO_WINAMP_SYSTEM}\ClassicProFlex.w5s"
-		File /nonfatal "${CPRO_WINAMP_SYSTEM}\ClassicPro.w5s"
-		File /nonfatal "${CPRO_WINAMP_SYSTEM}\ClassicPro.wbm"
 		
 ;	SetOutPath "$INSTDIR\Skins\cProFlex - iFlex"
 ;		File /nonfatal /r "${CPRO_WINAMP_SKINS}\cProFlex - iFlex\"
@@ -599,14 +603,22 @@ Section "$(CPro_CProFiles)" "CPro_Sec_CProFiles"
 
 	SetOutPath "$INSTDIR\Skins"
 		File "${CPRO_WINAMP_SKINS}\cPro__Bento.wal"
-
-	DetailPrint "$(CPro_Ini)"
-		WriteINIStr "$MultiPath\winamp.ini" "Winamp" "skin" "cPro__Bento.wal"
-		FlushINI "$MultiPath\winamp.ini"
 		
 	RMDir /r "$INSTDIR\Skins\cPro - Big Bento\" 
 	RMDir /r "$INSTDIR\Skins\cPro - Bento\" 
 	RMDir /r "$INSTDIR\Skins\cPro_Bento\" 
+
+; System files
+
+	SetOutPath $INSTDIR\System
+		AllowSkipFiles off
+		Delete "${CPRO_WINAMP_SYSTEM}\ClassicProFlex.w5s"
+		Delete "${CPRO_WINAMP_SYSTEM}\ClassicPro.w5s"
+		Delete "${CPRO_WINAMP_SYSTEM}\ClassicPro.wbm"
+		
+		;; sometimes this file is still open, so allow skip needs to be off
+		File /nonfatal "${CPRO_WINAMP_SYSTEM}\ClassicPro.w5s"
+		File /nonfatal "${CPRO_WINAMP_SYSTEM}\ClassicPro.wbm"
  
 SectionEnd
 
