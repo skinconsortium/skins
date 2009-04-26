@@ -16,6 +16,7 @@ import dfl.registry;
 import tango.sys.Process;
 import tango.text.stream.LineIterator;
 import dfl.internal.winapi;
+import tango.stdc.stringz;
 
 class Main: PositionedWindow
 {
@@ -79,8 +80,10 @@ class Main: PositionedWindow
 		if (testInstaller.tag is null)
 			return;
 		
-		auto p = new Process(testInstaller.tag.toString());
-		p.execute;
+		//auto p = new Process("\""~testInstaller.tag.toString()~"\"");
+		char* stringz = toStringz("\""~testInstaller.tag.toString()~"\"");
+		ShellExecuteA(null, null, stringz, null, null, SW_SHOWNORMAL);
+//		p.execute;
 	}
 	
 	private void startBuild(Object sender, EventArgs ea)
@@ -107,16 +110,6 @@ class Main: PositionedWindow
 		     {
 		    	 try
 		    	 {
-			    	 if (line.length > 10)
-			    	 {
-			    		 //if (line[0..11] == "LangString:")
-			    		//	 continue;
-			    		 if (line[0..8] == "Output: ")
-			    		 {
-			    			 testInstaller.enable();
-			    			 testInstaller.tag = new dfl.all.StringObject(line[9..$-1]);
-			    		 }
-			    	 }		    	 
 			    	 lineCount++;
 			    	 append ~= line ~ "\r\n";
 			    	// if (lineCount %50 == 0)
@@ -124,6 +117,16 @@ class Main: PositionedWindow
 				    	 nsisOutput.text = append;
 				    	 SendMessageA(nsisOutput.handle(), EM_LINESCROLL, 0, lineCount);
 			    	 }
+			    	 if (line.length > 10)
+			    	 {
+			    		 //if (line[0..11] == "LangString:")
+			    		 //	 continue;
+			    		 if (line[0..8] == "Output: ")
+			    		 {
+			    			 testInstaller.enable();
+			    			 testInstaller.tag = new dfl.all.StringObject(line[9..$-1].dup);
+			    		 }
+			    	 }		    	 
 		    	 }
 		    	 catch(Exception e) {}
 		     }
