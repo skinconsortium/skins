@@ -10,7 +10,7 @@
 !define XMLFILENAME "picturebox.xml"
 !define DATA_FOLDERNAME "Picturebox"
 !define NSISFILENAME "cpro-widget-Picturebox.nsi"
-!define WIDGET_VERSION "0.91"
+!define WIDGET_VERSION "0.93"
 !define WIDGET_NAME "Picturebox"
 
 
