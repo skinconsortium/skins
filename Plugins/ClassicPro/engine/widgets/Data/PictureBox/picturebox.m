@@ -140,12 +140,19 @@ readImages ()
 	lastPath = curPath;
 
 	List lst = new List;
+
+	int limit = getPrivateInt("ClassicPro", "PictureBox.PicLimit", 20);
 	
 	ClassicProFile.findFiles(curPath, "*.jpg", lst);
-	ClassicProFile.findFiles(curPath, "*.jpeg", lst);
-	ClassicProFile.findFiles(curPath, "*.png", lst);
-	ClassicProFile.findFiles(curPath, "*.gif", lst);
-	ClassicProFile.findFiles(curPath, "*.bmp", lst);
+
+	if (!limit || lst.getNumItems() <= limit)
+		ClassicProFile.findFiles(curPath, "*.jpeg", lst);
+	if (!limit || lst.getNumItems() <= limit)
+		ClassicProFile.findFiles(curPath, "*.png", lst);
+	if (!limit || lst.getNumItems() <= limit)
+		ClassicProFile.findFiles(curPath, "*.gif", lst);
+	if (!limit || lst.getNumItems() <= limit)
+		ClassicProFile.findFiles(curPath, "*.bmp", lst);
 
 	slideShow.stop();
 
@@ -165,7 +172,7 @@ readImages ()
 	{
 		statusText.setText("Loading ...");
 		preview.setXmlParam("image", curPath + backslash + lst.enumItem(0));
-		for (int i = 0; i < lst.getNumItems(); i++ )
+		for (int i = 0; i < lst.getNumItems() && (!limit || i < limit); i++ )
 		{
 			GuiObject l;
 			if (i < selectGroup.getNumObjects())
@@ -292,6 +299,15 @@ rightClickMenu(String filename, boolean showOptions)
 		popDs.addCommand("Preview Image", 401, getPrivateInt("ClassicPro", "PictureBox.DownSamplingPreview", 1) == 1, stringToFloat(getWinampVersion()) < 5.56);
 		popDs.addCommand("Thumb Images", 402, getPrivateInt("ClassicPro", "PictureBox.DownSamplingThumbs", 0) == 1, stringToFloat(getWinampVersion()) < 5.56);
 		pop.addSubMenu(popDs, "Downsampling");
+
+		PopupMenu popLimit = new PopupMenu;
+		popLimit.addCommand("Off", 500, getPrivateInt("ClassicPro", "PictureBox.PicLimit", 20) == 0, false);
+		popLimit.addCommand("5", 505, getPrivateInt("ClassicPro", "PictureBox.PicLimit", 20) == 5, false);
+		popLimit.addCommand("10", 510, getPrivateInt("ClassicPro", "PictureBox.PicLimit", 20) == 10, false);
+		popLimit.addCommand("20", 520, getPrivateInt("ClassicPro", "PictureBox.PicLimit", 20) == 20, false);
+		popLimit.addCommand("50", 550, getPrivateInt("ClassicPro", "PictureBox.PicLimit", 20) == 50, false);
+		popLimit.addCommand("100", 599, getPrivateInt("ClassicPro", "PictureBox.PicLimit", 20) == 99, false);
+		pop.addSubMenu(popLimit, "Picture Limit");
 	}
 	
 	
@@ -375,7 +391,11 @@ rightClickMenu(String filename, boolean showOptions)
 			go.setXmlParam("quality", integerToString(getPrivateInt("ClassicPro", "PictureBox.DownSamplingThumbs", 0)));
 		}
 	}
-	
+	else if (r >= 500 && r < 600)
+	{
+		r -= 500;
+		setPrivateInt("ClassicPro", "PictureBox.PicLimit", r);
+	}
 	
 	complete;
 }
