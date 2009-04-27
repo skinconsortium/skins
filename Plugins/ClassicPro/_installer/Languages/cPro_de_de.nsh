@@ -57,6 +57,21 @@
 ; Direcory Text	
 	LangString CPro_DirText ${LANG_GERMAN} "Bitte den Winamp Installationsordner angeben:$\r$\n(Das Installationsprogramm versucht den korrekten Ordner automatisch zu ermitteln)"
 
+; Cleanup Page	
+	LangString CPro_CleanupPage_Title ${LANG_GERMAN} "Winamp Aufräumen"
+	LangString CPro_CleanupPage_Subtitle ${LANG_GERMAN} "Winamp Einstellungen aufräumen."
+	LangString CPro_CleanupPage_Caption0 ${LANG_GERMAN} "Mit den Optionen auf dieser Seite können Einstellungen von Winamp gelöscht werden, welche nicht über verschiedene Versionen von Winamp und ${CPRO_NAME} hinweg funktionieren."
+	LangString CPro_CleanupPage_Caption1 ${LANG_GERMAN} "Falls Probleme mit ${CPRO_NAME} auftreten ist es jederzeit möglich ${CPRO_NAME} erneut zu installieren und mit Hilfe dieser Optionen diese Probleme zu lösen."
+	LangString CPro_CleanupPage_Caption2 ${LANG_GERMAN} "ANMERKUNG: Das löschen der Einstellungen ist unbedenklich, sie werden nur erneuert."
+	LangString CPro_CleanupPage_Caption3 ${LANG_GERMAN} "Die erneute Installation mit Hilfe dieser Optionen sollte nur durchgeführt werden, falls Probleme mit ${CPRO_NAME} und Winamp auftreten."
+	LangString CPro_CleanupPage_Caption4 ${LANG_GERMAN} "Danke für das Verständnis."
+	LangString CPro_CleanupPage_Footer ${LANG_GERMAN} "Falls es weiterhin zu Problemen mit ${CPRO_NAME} kommt,"
+	LangString CPro_CleanupPage_TSLink ${LANG_GERMAN} "Bitte den kostenlosen Support im Skin Consortium Forum kontaktieren."
+	LangString CPro_CleanupPage_StudioXnf ${LANG_GERMAN} "Skin Einstellungen löschen (studio.xnf)"
+	LangString CPro_CleanupPage_StudioXnf_Desc ${LANG_GERMAN} "Löscht Skin-spezifische Einstellungen wie: Fenster Positionen, Aktive Reiter, Fenstermodus, ..."
+	LangString CPro_CleanupPage_WinampIni ${LANG_GERMAN} "Winamp Einstellungen löschen (winamp.ini)"
+	LangString CPro_CleanupPage_WinampIni_Desc ${LANG_GERMAN} "Löscht Winamp-spezifische Einstellungen wie: Aktueller Skin, Erweiterte Titelformatierung,..."
+
 ; Finish Page	
 	LangString CPro_FinishPage_1 ${LANG_GERMAN} "${CPRO_NAME}${CPRO_CRS} v${CPRO_VERSION} Installation beendet"
 	LangString CPro_FinishPage_2 ${LANG_GERMAN} "Die Installation von ${CPRO_NAME} v${CPRO_VERSION} ist abgeschloßen. Sie können nun ${CPRO_NAME} Skins and Widgets mit Winamp verwenden."

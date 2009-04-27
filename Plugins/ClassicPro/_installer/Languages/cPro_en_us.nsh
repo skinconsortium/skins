@@ -57,9 +57,24 @@
 ; Direcory Text	
 	LangString CPro_DirText ${LANG_ENGLISH} "Please select your Winamp path below (you will be able to proceed when Winamp is detected):"
 
+; Cleanup Page	
+	LangString CPro_CleanupPage_Title ${LANG_ENGLISH} "Winamp Cleanup"
+	LangString CPro_CleanupPage_Subtitle ${LANG_ENGLISH} "Cleanup some Winamp Preferences."
+	LangString CPro_CleanupPage_Caption0 ${LANG_ENGLISH} "Using the options on this page will remove some Winamp Configuration files which may not work across different versions of both Winamp and ${CPRO_NAME}."
+	LangString CPro_CleanupPage_Caption1 ${LANG_ENGLISH} "If you have problems getting ${CPRO_NAME} to run properly you can reinstall ${CPRO_NAME} at any time and use this page to solve your problems."
+	LangString CPro_CleanupPage_Caption2 ${LANG_ENGLISH} "NOTE: It's perfectly ok, these files will be rebuilt by Winamp."
+	LangString CPro_CleanupPage_Caption3 ${LANG_ENGLISH} "The reinstall with these options should be used only if you are experiencing difficulties using ${CPRO_NAME} with Winamp."
+	LangString CPro_CleanupPage_Caption4 ${LANG_ENGLISH} "Thank you for your understanding."
+	LangString CPro_CleanupPage_Footer ${LANG_ENGLISH} "If you are still having problems using ClassicPro,"
+	LangString CPro_CleanupPage_TSLink ${LANG_ENGLISH} "Ask for free support in the Skin Consortium Forums."
+	LangString CPro_CleanupPage_StudioXnf ${LANG_ENGLISH} "Delete Skin Configuration (studio.xnf)"
+	LangString CPro_CleanupPage_StudioXnf_Desc ${LANG_ENGLISH} "Deletes skin-specific settings like: window positions, active tabs, current windowmode, ..."
+	LangString CPro_CleanupPage_WinampIni ${LANG_ENGLISH} "Delete Winamp Configuration (winamp.ini)"
+	LangString CPro_CleanupPage_WinampIni_Desc ${LANG_ENGLISH} "Deletes winamp-specific settings like: current skin, advanced title formatting, current language, ..."
+
 ; Finish Page	
 	LangString CPro_FinishPage_1 ${LANG_ENGLISH} "${CPRO_NAME}${CPRO_CRS} v${CPRO_VERSION} installation finished"
-	LangString CPro_FinishPage_2 ${LANG_ENGLISH} "The setup wizard have finished installing ${CPRO_NAME} v${CPRO_VERSION}. You can now start using ${CPRO_NAME} skins and widgets in Winamp."
+	LangString CPro_FinishPage_2 ${LANG_ENGLISH} "The setup wizard has finished installing ${CPRO_NAME} v${CPRO_VERSION}. You can now start using ${CPRO_NAME} skins and widgets in Winamp."
 	LangString CPro_FinishPage_3 ${LANG_ENGLISH} "If you like ${CPRO_NAME} and would like to help future development of the product please donate to the project."
 	LangString CPro_FinishPage_4 ${LANG_ENGLISH} "What do you want to do now?"
 	LangString CPro_FinishPage_5 ${LANG_ENGLISH} "Go to our homepage to get more ${CPRO_NAME} skins and widgets"
