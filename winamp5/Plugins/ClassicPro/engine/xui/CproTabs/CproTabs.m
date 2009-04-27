@@ -812,11 +812,14 @@ sg.onAction (String action, String param, int x, int y, int p1, int p2, GuiObjec
 
 		//if(t.ID != x)
 		//{
-			closeTab(lastActiveT);
+			if (lastActiveT)
+			{
+				closeTab(lastActiveT);				
+			}
+
 			//t = firstTab; //pjn123 - changed this
 			while (t != NULL)
 			{
-				
 				if (t.ID == x && ((x == WIDGET_TAB_ID && param == t.IDS) || x != WIDGET_TAB_ID))
 				{
 					
@@ -829,7 +832,6 @@ sg.onAction (String action, String param, int x, int y, int p1, int p2, GuiObjec
 				t = t.right;
 			}
 		//}
-
 		if (!found)
 		{
 			for ( int i = 0; i < hiddenTabs.getNumItems(); i++ )
@@ -840,11 +842,21 @@ sg.onAction (String action, String param, int x, int y, int p1, int p2, GuiObjec
 					lastActive = lastActiveT = t;
 					lastActive.setActivated(1);
 
-					t.left = lastTab;
-					lastTab.right = t;
+					t.left = lastTab; // may be null here, but is OK
 					t.right = null;
 
-					t.setXmlParam("x", integerToString(lastTab.getGuiX() + lastTab.w));
+					// (mpdeimos) lastTab can be NULL here
+					// fixes bug from joebloggscity -- http://forums.skinconsortium.com/index.php?page=Thread&threadID=1256
+					if (lastTab)
+					{
+						lastTab.right = t;
+						t.setXmlParam("x", integerToString(lastTab.getGuiX() + lastTab.w));
+					}
+					else
+					{
+						t.setXmlParam("x", "0");
+					}
+					
 					t.show();
 					t.removed = false;
 
