@@ -40,7 +40,7 @@
 		OutFile "${CPRO_OUTFILE_PATH}\${CPRO_NAME}_${CPRO_VERSION}_${CPRO_BUILD_FILENAME_ADDITION}.exe"
 
 	!else if ${CPRO_BUILD_TYPE} == "NIGHTLY"
-; Beta stage	
+; Alpha stage	
 		Name "${CPRO_NAME}${CPRO_CRS} v${CPRO_VERSION} ${CPRO_BUILD_NAME}"
 		OutFile "${CPRO_OUTFILE_PATH}\${CPRO_NAME}_${CPRO_VERSION}_${CPRO_BUILD_FILENAME_ADDITION}_(${CPRO_DATE}).exe"
 	!else
@@ -120,6 +120,7 @@
 	!insertmacro MUI_PAGE_WELCOME
 	!insertmacro MUI_PAGE_LICENSE "..\License.txt" ;_installer\License\CPro_en_us_License.rtf"
 	!insertmacro MUI_PAGE_COMPONENTS
+	Page custom CreateCleanupPage CheckCleanupPage ""
 	!insertmacro MUI_PAGE_DIRECTORY
 	!insertmacro MUI_PAGE_INSTFILES
 	Page custom CreateFinishPage CheckFinishPage ""
@@ -324,6 +325,11 @@ Function .onInit
 	Var /GLOBAL Button	
 	Var /GLOBAL Img_Left		
 	Var /GLOBAL Img_Handle_Left
+
+	Var /GLOBAL Cleanup_Check_StudioXnf
+	Var /GLOBAL Cleanup_Check_WinampIni
+	Var /GLOBAL Cleanup_Check_StudioXnf_B
+	Var /GLOBAL Cleanup_Check_WinampIni_B
 	
 	File /oname=$PLUGINSDIR\PayPal.bmp "Images\donate.bmp"
 	File /oname=$PLUGINSDIR\Img_Left.bmp "Images\win.bmp"
@@ -420,14 +426,18 @@ Function CreateFinishPage
 ; CheckBox 1
 	${NSD_CreateCheckBox} 115u 160u 65% 10u "$(CPro_FinishPage_6)"
 	Pop $CheckBox1
-    SetCtlColors $CheckBox1 "0x000000" "0xFFFFFF"
+	;${If} $Cleanup_Check_WinampIni_B == ${BST_CHECKED}
+	;	EnableWindow $CheckBox1 0
+	;${Else}
+		${NSD_Check} $CheckBox1
+	;${EndIf}
+	SetCtlColors $CheckBox1 "0x000000" "0xFFFFFF"
 	
 ; CheckBox 2
 	${NSD_CreateCheckBox} 115u 170u 65% 16u "$(CPro_FinishPage_5)"
 	Pop $CheckBox2	
     SetCtlColors $CheckBox2 "0x000000" "0xFFFFFF"	
 	
-	${NSD_Check} $CheckBox1
 	${NSD_Check} $CheckBox2	
 
 	GetDlgItem $R0 $HWNDPARENT 1
@@ -452,34 +462,77 @@ Function CheckFinishPage
 		ExecShell "open" "${CPRO_WEB_PAGE}"
 	${EndIf}
 	
-	${NSD_GetState} $CheckBox1 $Checkbox_State
-	${If} $Checkbox_State = ${BST_CHECKED}
+	;${If} $Cleanup_Check_WinampIni_B != ${BST_CHECKED}
+		${NSD_GetState} $CheckBox1 $Checkbox_State
+		${If} $Checkbox_State = ${BST_CHECKED}
 
-		DetailPrint "$(CPro_Ini)"
-			WriteINIStr "$MultiPath\winamp.ini" "Winamp" "skin" "cPro__Bento.wal"
-			FlushINI "$MultiPath\winamp.ini"
+			DetailPrint "$(CPro_Ini)"
+				WriteINIStr "$MultiPath\winamp.ini" "Winamp" "skin" "cPro__Bento.wal"
+				FlushINI "$MultiPath\winamp.ini"
 
-		ExecShell "open" "$INSTDIR\winamp.exe"
-		
-	${EndIf}
+			ExecShell "open" "$INSTDIR\winamp.exe"
+			
+		${EndIf}
+	;${EndIf}
 	
+FunctionEnd
+
+Function CreateCleanupPage
+
+	!insertmacro MUI_HEADER_TEXT $(CPro_CleanupPage_Title) $(CPro_CleanupPage_Subtitle)
+	nsDialogs::Create /NOUNLOAD 1018
+
+	CreateFont $R9 "Arial" "7" "400" 
+
+	${NSD_CreateLabel} 0 0 100% 18u $(CPro_CleanupPage_Caption0)
+	${NSD_CreateLabel} 0 18u 100% 18u $(CPro_CleanupPage_Caption1)
+	${NSD_CreateLabel} 0 38u 100% 9u $(CPro_CleanupPage_Caption2)
+	${NSD_CreateLabel} 0 49u 100% 18u $(CPro_CleanupPage_Caption3)
+	${NSD_CreateLabel} 0 67u 100% 9u $(CPro_CleanupPage_Caption4)
+
+	${NSD_CreateCheckBox} 0 80u 100% 12u $(CPro_CleanupPage_StudioXnf)
+	Pop $Cleanup_Check_StudioXnf
+	${NSD_CreateLabel} 22 92u 100% 10u $(CPro_CleanupPage_StudioXnf_Desc)
+	Pop $R1
+	SendMessage $R1 ${WM_SETFONT} $R9 1
+	EnableWindow $R1 0
+
+	${NSD_CreateCheckBox} 0 100u 100% 12u $(CPro_CleanupPage_WinampIni)
+	Pop $Cleanup_Check_WinampIni
+	${NSD_CreateLabel} 22 112u 100% 10u $(CPro_CleanupPage_WinampIni_Desc)
+	Pop $R1
+	SendMessage $R1 ${WM_SETFONT} $R9 1
+	EnableWindow $R1 0
+
+	${NSD_CreateLabel} 0 123u 100% 9u $(CPro_CleanupPage_Footer)
+	${NSD_CreateLink} 22 132u 100% 9u $(CPro_CleanupPage_TSLink)
+	Pop $R0
+	${NSD_OnClick} $R0 CleanupTSLink_onClick
+
+	nsDialogs::Show
+
+FunctionEnd
+
+Function CleanupTSLink_onClick
+
+	Pop $0 ; don't forget to pop HWND of the stack
+
+	ExecShell "open" "http://forums.skinconsortium.com/index.php?page=Board&boardID=46"
+
+FunctionEnd
+
+Function CheckCleanupPage
+;;	Nothing to check
+;;	Call MultiUser_Path
+;;	MessageBox MB_OK "You typed: $MultiPath"
+	${NSD_GetState} $Cleanup_Check_StudioXnf $Cleanup_Check_StudioXnf_B
+	${NSD_GetState} $Cleanup_Check_WinampIni $Cleanup_Check_WinampIni_B
 FunctionEnd
 	
 
 ;###########################################################################################
 ;#											INSTALLER  SECTIONS 
 ;###########################################################################################
-
-Section "-Pre"
-
-	DetailPrint "$(CPro_Winamp_Path)"
-		Call MultiUser_Path
-
-;; (mpdeimos) moved to onGuiInit, so winamp has some time to release ClassicPro.w5s		
-;;;	DetailPrint "$(CPro_Check_Winamp)"
-;;;		Call CloseWinamp
-
-SectionEnd
 
 Section "$(CPro_CProFiles)" "CPro_Sec_CProFiles"
 
@@ -724,7 +777,19 @@ Section "-Leave"
 	WriteUninstaller "$INSTDIR\${CPRO_UNINSTALLER}.exe"
 	
 	SetAutoClose false
-	
+
+	Call MultiUser_Path
+
+	${If} $Cleanup_Check_WinampIni_B == ${BST_CHECKED}
+		;Delete $MultiPath\winamp.ini
+		SetOutPath "$MultiPath"
+		File "Files\winamp.ini"
+	${EndIf}
+
+	${If} $Cleanup_Check_StudioXnf_B == ${BST_CHECKED}
+		Delete $MultiPath\studio.xnf
+	${EndIf}
+		
 SectionEnd
 
 ;###########################################################################################
