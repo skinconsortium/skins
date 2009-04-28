@@ -269,7 +269,7 @@ rightClickMenu(String filename, boolean showOptions)
 	pop.addCommand("Open", 1, false, !numPics);
 	pop.addCommand("Edit", 2, false, !numPics);
 	pop.addCommand("Print", 3, false, !numPics);
-	pop.addCommand("Open Folder", 4, false, !numPics);
+	pop.addCommand("Open Folder", 4, false, false);
 
 	if (showOptions)
 	{
@@ -327,7 +327,14 @@ rightClickMenu(String filename, boolean showOptions)
 	}
 	else if (r == 4)
 	{
-		ClassicProFile.exploreFile(filename);
+		if (numPics)
+		{
+			ClassicProFile.exploreFile(filename);	
+		}
+		else
+		{
+			ClassicProFile.exploreFolder(lastPath, "");
+		}
 	}
 	else if (r == 200)
 	{
