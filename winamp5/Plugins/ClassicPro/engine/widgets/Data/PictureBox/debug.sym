@@ -229,9 +229,9 @@ var# |         Code Pointer |                                    What
 0038 |                 060F |                                      s.o
 0037 |                 0631 |                                      r.o
 002D |                 0CE2 |                                      m.o
-0030 |                 17C4 |                                      o.o
-0031 |                 181A |                                      n.o
-0032 |                 187F |                                      p.o
+0030 |                 17E8 |                                      o.o
+0031 |                 183E |                                      n.o
+0032 |                 18A3 |                                      p.o
 -- User Functions Table ----------------------------------------------
                Code Pointer |                                    What 
 ----------------------------------------------------------------------
@@ -245,4 +245,4 @@ var# |         Code Pointer |                                    What
                        066A |                               readImages
                        0B1F |                              createGroup
                        0D2D |                           rightClickMenu
-                       18F5 |                          setPreviewImage
+                       1919 |                          setPreviewImage

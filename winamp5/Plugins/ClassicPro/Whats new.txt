@@ -1,4 +1,12 @@
 -------------------------------------------------------------
+Version 1.12 (19 May 2009)
+-------------------------------------------------------------
+- New: Installer-Page for deleting studio.xnf & winamp.ini
+- Improved: Abort option if Winamp is running
+- Fixed: Various tab bugs
+-------------------------------------------------------------
+
+-------------------------------------------------------------
 Version 1.11 (25 Apr 2009)
 -------------------------------------------------------------
 - New: Explorer Folder now also selects your file when Explorer opens!
