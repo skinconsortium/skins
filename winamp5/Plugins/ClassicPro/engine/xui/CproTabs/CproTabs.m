@@ -10,6 +10,8 @@
 
 #include <lib/std.mi>
 #include <lib/config.mi>
+#include <lib/colormgr.mi>
+Global ColorMgr StartupCallback;
 
 #define DISPATCH
 #include dispatch_codes.m
@@ -77,6 +79,8 @@ Global ConfigAttribute sui_browser_attrib;
 
 System.onScriptLoaded ()
 {
+	StartupCallback = new ColorMgr;
+
 	checkedBrowser = false;
 	
 	sg = getScriptGroup();
@@ -975,3 +979,24 @@ debugTab (Tab t)
 }
 #endif
 
+
+Function cProLoaded();
+
+/* Notify Widget Manager, what cool widgets has been installed */ 
+StartupCallback.onLoaded()
+{
+	cProLoaded();
+}
+
+/** somehow winamp creates PVC calls when i do this stuff above */
+cProLoaded ()
+{
+	Layout main_normal = sg.getparentLayout();
+	int widgetPlace = main_normal.onAction("widget_manager_register", "Main Area", 0,0,0,0,sg); // TODO Translate
+	for (int i = 0; i < widgetLoader.getNumChildren(); i++)
+	{
+		GuiObject d = widgetLoader.enumChildren(i);
+		main_normal.onAction("widget_manager_check", getToken(d.getXmlParam("userdata"), ";", 0), widgetPlace,0,0,0,d);
+	}
+	widgetPlace = main_normal.onAction("widget_manager_done", "", widgetPlace,0,0,0,sg);
+}

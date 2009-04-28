@@ -1,6 +1,12 @@
-<groupdef id="centro.widgets.picturebox.dummy.drawer" name="Picture Box" userdata="centro.widgets.picturebox;0" windowtype="centro.widgets.drawer" />
+<groupdef id="centro.widgets.picturebox.dummy.drawer" name="Picture Box" userdata="centro.widgets.picturebox;0" windowtype="centro.widgets.drawer">
+	<guiobject id="@author"		userdata="Martin Poehlmann"/>
+	<guiobject id="@version"	userdata="0.93"/>
+</groupdef>
 <groupdef id="centro.widgets.picturebox.dummy.mini" name="Picture Box" userdata="centro.widgets.picturebox;0" windowtype="centro.widgets.mini" />
-<groupdef id="centro.widgets.picturebox.dummy.main" name="Picture Box;PB" userdata="centro.widgets.picturebox;0" windowtype="centro.widgets.main"/>
+<groupdef id="centro.widgets.picturebox.dummy.main" name="Picture Box;PB" userdata="centro.widgets.picturebox;0" windowtype="centro.widgets.main">
+	<guiobject id="@author"		userdata="Martin Poehlmann"/>
+	<guiobject id="@version"	userdata="0.93"/>
+</groupdef>
 
 <include file="@WINAMPPATH@/Plugins/classicPro/engine/xui/Layouts/QuadSplit.xml"/>
 <include file="@WINAMPPATH@/Plugins/classicPro/engine/xui/Layouts/ThumbList.xml"/>
@@ -58,6 +64,7 @@
 </groupdef-->
 
 <groupdef id="centro.widgets.picturebox">
+
 	<Layout:QuadSplit id="centro.widgets.picturebox.quadsplit" x="5" y="5" h="-26" w="-10" relatw="1" relath="1" quadgroup="centro.widgets.picturebox.preview" modalgroup="centro.widgets.picturebox.select" spacing="7" modalminw="40" modalminh="40" modalpreferred="bottom"/>
 
 	<button	id="options" x="1" y="-18" relaty="1" image="component.menu.1" hoverImage="component.menu.2" downImage="component.menu.3" tooltip="Options Menu"/>

@@ -1,4 +1,10 @@
-<groupdef id="centro.widgets.browserpro.dummy.main" name="BrowserPro" userdata="centro.widgets.browserpro;0" windowtype="centro.widgets.main" />
+<groupdef id="centro.widgets.browserpro.dummy.main" name="BrowserPro" userdata="centro.widgets.browserpro;0" windowtype="centro.widgets.main">
+	<guiobject id="@author"		userdata="Pieter Niewoudt"/>
+	<guiobject id="@version"	userdata="1.00"/>
+</groupdef>
+<elements>
+    <bitmap id="centro.widgets.browserpro.thumbnail" file="@WINAMPPATH@\Plugins\classicPro\engine\widgets\Data\BrowserPro\thumbnail.png"/>
+</elements>
 
 <include file="..\Data\BrowserPro\icons.xml"/>
 

@@ -7,4 +7,5 @@
 <include file="widgets\load\*.xml"/>
 <include file="xml\notifier.xml"/>
 <include file="one\xml\files-one.xml"/>
+<include file="xml\widgets-manager.xml"/>
 <include file="xml\about.xml"/>
