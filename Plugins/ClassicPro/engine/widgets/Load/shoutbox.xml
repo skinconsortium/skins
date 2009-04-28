@@ -1,6 +1,9 @@
 <groupdef id="centro.widgets.shoutbox.dummy.drawer" name="Shoutbox" userdata="centro.widgets.shoutbox;0" windowtype="centro.widgets.drawer" />
 <groupdef id="centro.widgets.shoutbox.dummy.mini" name="Shoutbox" userdata="centro.widgets.shoutbox;0" windowtype="centro.widgets.mini" />
-<groupdef id="centro.widgets.shoutbox.dummy.main" name="Shoutbox" userdata="centro.widgets.shoutbox;0" windowtype="centro.widgets.main"/>
+<groupdef id="centro.widgets.shoutbox.dummy.main" name="Shoutbox" userdata="centro.widgets.shoutbox;0" windowtype="centro.widgets.main">
+	<guiobject id="@author"		userdata="Martin Poehlmann"/>
+	<guiobject id="@version"	userdata="0.64"/>
+</groupdef>
 
 <groupdef id="centro.widgets.shoutbox">
 
