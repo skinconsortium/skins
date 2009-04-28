@@ -2,7 +2,8 @@
 Version 1.12 (19 May 2009)
 -------------------------------------------------------------
 - New: Installer-Page for deleting studio.xnf & winamp.ini
-- Improved: Abort option if Winamp is running
+- Improved: Widget installer templates
+- Improved: Abort option if Winamp is running for Installer
 - Fixed: Various tab bugs
 -------------------------------------------------------------
 
