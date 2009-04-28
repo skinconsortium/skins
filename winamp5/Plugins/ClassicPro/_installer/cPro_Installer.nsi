@@ -534,6 +534,20 @@ FunctionEnd
 ;#											INSTALLER  SECTIONS 
 ;###########################################################################################
 
+Section "-Pre"
+
+
+	DetailPrint "$(CPro_Winamp_Path)"
+		Call MultiUser_Path
+
+
+;; (mpdeimos) moved to onGuiInit, so winamp has some time to release ClassicPro.w5s		
+;;;	DetailPrint "$(CPro_Check_Winamp)"
+;;;		Call CloseWinamp
+
+
+SectionEnd
+
 Section "$(CPro_CProFiles)" "CPro_Sec_CProFiles"
 
 	SectionIn 1 2 RO
