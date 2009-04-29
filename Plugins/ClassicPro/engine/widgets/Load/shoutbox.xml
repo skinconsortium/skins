@@ -2,6 +2,7 @@
 	<guiobject id="@author"			userdata="Martin Poehlmann"/>
 	<guiobject id="@version"		userdata="0.64"/>
 	<guiobject id="@uninstaller"	userdata="Uninstall (Shoutbox).exe"/>
+	<guiobject id="@support"		userdata="http://www.skinconsortium.com"/>
 </groupdef>
 <groupdef id="centro.widgets.shoutbox.dummy.mini" name="Shoutbox" userdata="centro.widgets.shoutbox;0" windowtype="centro.widgets.mini" inherit_group="centro.widgets.shoutbox.dummy.drawer"/>
 <groupdef id="centro.widgets.shoutbox.dummy.main" name="Shoutbox" userdata="centro.widgets.shoutbox;0" windowtype="centro.widgets.main"  inherit_group="centro.widgets.shoutbox.dummy.drawer"/>

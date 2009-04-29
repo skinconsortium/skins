@@ -1,5 +1,7 @@
 #include <lib/std.mi>
 #include <lib/fileio.mi>
+#include <lib/colormgr.mi>
+Global ColorMgr StartupCallback;
 
 Function openDrawer(int drawerNo);
 Function gotoPrevDrawer();
@@ -35,6 +37,7 @@ Global GuiObject customObj;
 Global List internalWidgets;
 
 System.onScriptLoaded() {
+	StartupCallback = new ColorMgr;
 	myDoc = new XmlDoc;
 	String fullpath = getParam()+"ClassicPro.xml";
 	myDoc.load(fullpath);
@@ -237,9 +240,21 @@ openDrawer(int drawerNo){
 
 myGroup.onAction (String action, String param, int x, int y, int p1, int p2, GuiObject source){
 	if (strlower(action) == "switch_to_drawer") openDrawer(x);
-	if (strlower(action) == "release"){
+	else if (strlower(action) == "release"){
 		if(param=="TAG") if(getPublicInt("cPro.lastDrawer", 0)==1) openDrawer(0);
 	}
+	else if (strlower("action") == "show_widget")
+	{
+		for (int i = 0; i < dummyBuck.getNumChildren(); i++)
+		{
+			GuiObject d = dummyBuck.enumChildren(i);
+			if (getToken(d.getXmlParam("userdata"), ";",0) == param)
+			{
+				openDrawer(i+userWidgetOffset);	
+			}
+		}		
+	}
+	
 }
 
 but_drawerGoto.onEnterArea(){
@@ -358,4 +373,26 @@ setDrawerBG(int mode){
 	else{
 		debug("Error: Mini background not found!");
 	}
+}
+
+
+Function cProLoaded();
+
+/* Notify Widget Manager, what cool widgets has been installed */ 
+StartupCallback.onLoaded()
+{
+	cProLoaded();
+}
+
+/** somehow winamp creates PVC calls when i do this stuff above */
+cProLoaded ()
+{
+	Layout main_normal = myGroup.getparentLayout();
+	int widgetPlace = myLayout.onAction("widget_manager_register", "Side Area", 0,0,0,0,myGroup); // TODO Translate
+	for (int i = 0; i < dummyBuck.getNumChildren(); i++)
+	{
+		GuiObject d = dummyBuck.enumChildren(i);
+		myLayout.onAction("widget_manager_check", getToken(d.getXmlParam("userdata"), ";", 0), widgetPlace,0,0,0,d);
+	}
+	widgetPlace = myLayout.onAction("widget_manager_done", "", widgetPlace,0,0,0,myGroup);
 }

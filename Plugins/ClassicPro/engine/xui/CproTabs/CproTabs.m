@@ -53,7 +53,7 @@ Function align(Tab t); // uses one of the two methods below
 Function alignFull(Tab t);
 Function alignByResize();
 Function removeTab(Tab t);
-Function closeTab(tab t);
+Function closeTab(Tab t);
 
 #ifdef DEBUG
 Function debugTab (Tab t);
@@ -801,8 +801,13 @@ closeTab (tab t)
 
 sg.onAction (String action, String param, int x, int y, int p1, int p2, GuiObject source)
 {
-	if(strlower(action) == "select_tab")
+	if(strlower(action) == "select_tab" || strlower(action) == "show_widget") // first one is msg from centro, second one from widget manager
 	{
+		if (strlower(action) == "show_widget")
+		{
+			x = WIDGET_TAB_ID;
+		}
+		
 		//debugint(x);
 		if(!checkedBrowser){
 			CproBrowser = getContainer("main").getLayout("normal").findObject("centro.browser");
@@ -874,8 +879,15 @@ sg.onAction (String action, String param, int x, int y, int p1, int p2, GuiObjec
 				}			
 			}
 		}
-	
-		if(t.ID==WIDGET_TAB_ID)
+
+
+		if (found && strlower(action) == "show_widget")
+		{
+			CproSUI.sendAction ("show_tab", t.IDS, t.ID, 0, 0, 0); // We need to notify centro sui
+		}
+		
+
+		if(found && t.ID==WIDGET_TAB_ID)
 		{
 			CproSUI.sendAction ("widget_statusbar", "", t.statusbar, 0, 0, 0);
 		}
@@ -908,6 +920,7 @@ sg.onAction (String action, String param, int x, int y, int p1, int p2, GuiObjec
 			tabI = tabI.right;
 		}	
 	}
+	
 	debugTabs();
 }
 

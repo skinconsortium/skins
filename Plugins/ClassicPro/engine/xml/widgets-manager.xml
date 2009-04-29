@@ -9,9 +9,6 @@
 	<rect x="0" y="0" w="0" relatw="1" filled="0" h="64" color="wasabi.list.text.selected.background" />
 
 	<layer id="thumbnail" x="2" y="2" h="60" w="60" image="widgets.manager.thumbnail" />
-
-	<text x="-18" y="0" w="18" relatx="1" default="x" bold="1" align="center" antialias="1" fontsize="14" ghost="1" color="wasabi.list.text"/>
-	<rect x="-16" y="0" w="16" h="16" relatx="1" color="wasabi.list.text.selected.background"/>
 	
 	<text id="name" x="65" y="3" h="16" w="-65" relatw="1" bold="1" antialiasing="1" text="" fontsize="18" color="wasabi.list.text.current"/>
 	<text x="65" y="19" h="16" w="-65" relatw="1" bold="1" antialiasing="1" text="Author:" color="wasabi.list.text"/>
@@ -21,7 +18,15 @@
 	<text x="65" y="47" h="16" w="-65" relatw="1" bold="1" antialiasing="1" text="Position:" color="wasabi.list.text"/>
 	<text id="position" x="118" y="47" h="16" w="-65" relatw="1" bold="0" antialiasing="1" text="" color="wasabi.list.text"/>
 
-	<wasabi:button id="show" x="-84" y="-29" h="16" w="78" relatx="1" relaty="1" text="Show Widget" color="wasabi.list.text"/>
+	<text id="uninstall.1" x="-18" y="0" w="18" relatx="1" default="x" bold="1" align="center" antialias="1" fontsize="14" ghost="1" color="wasabi.list.text" visible="0"/>
+	<rect id="uninstall.2" x="-16" y="0" w="16" h="16" relatx="1" color="wasabi.list.text.selected.background" visible="0"/>
+	<button id="uninstall" x="-16" y="0" w="16" h="16" relatx="1" rectrgn="1" tooltip="Uninstall Widget" cursor="IDC_HAND" visible="0"/>
+
+	<text id="support.1" x="-32" y="1" w="18" relatx="1" default="?" bold="1" align="center" antialias="1" fontsize="14" ghost="1" color="wasabi.list.text" visible="0"/>
+	<rect id="support.2" x="-31" y="0" w="16" h="16" relatx="1" color="wasabi.list.text.selected.background" visible="0"/>
+	<button id="support" x="-31" y="0" w="16" h="16" relatx="1" rectrgn="1" tooltip="Widget Support" cursor="IDC_HAND" visible="0"/>
+
+	<wasabi:button id="show" x="-84" y="-29" h="16" w="78" relatx="1" relaty="1" text="Show Widget" cursor="IDC_HAND" color="wasabi.list.text"/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\scripts\widgetsManagerItem.maki"/>
 </groupdef>
 
@@ -33,7 +38,10 @@
 	<rect x="0" y="57" h="1" w="0" relatw="1" filled="1" color="0,0,0" alpha="56"/>
 	<rect x="0" y="58" h="1" w="0" relatw="1" filled="1" color="255,255,255" alpha="56"/>
 
-	<GroupList id="grplst" x="5" y="65" h="-70" w="-10" relatw="1" relath="1" />
+	<wasabi:button id="show" x="5" y="64" h="16" w="78" text="New Widgets" cursor="IDC_HAND" color="wasabi.list.text"/>
+	<wasabi:button id="show" x="90" y="64" h="16" w="78" text="All Widgets" cursor="IDC_HAND" color="wasabi.list.text"/>
+
+	<GroupList id="grplst" x="5" y="85" h="-90" w="-10" relatw="1" relath="1" />
 
 </groupdef>
 
@@ -48,5 +56,5 @@
 </container>
 
 <scripts>
-	<script file="@WINAMPPATH@\Plugins\classicPro\engine\scripts\widgetsManager.maki"/>
+	<script file="@WINAMPPATH@\Plugins\classicPro\engine\scripts\widgetsManager.maki" param="@WINAMPPATH@\Plugins\ClassicPro\engine\widgets\"/>
 </scripts>

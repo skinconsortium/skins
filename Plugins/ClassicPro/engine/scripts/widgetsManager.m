@@ -20,20 +20,23 @@ Global int done;
 
 Global GroupList grplst;
 
+Global String widgetPath;
+
 System.onScriptLoaded ()
 {
 	main_normal = getContainer("main").getLayout("normal");
 	manager_normal = getContainer("widgets.manager").getLayout("normal");
 	grplst = manager_normal.findObject("grplst");
+	widgetPath = getParam();
 	widgetPlaces = new List;
 	done = 0;
 }
 
-main_normal.onAction (String action, String param, Int x, int y, int p1, int p2, GuiObject source)
+main_normal.onAction (String action, String param, Int x, int y, int p1, int p2, GuiObject _source)
 {
 	if (strlower(action) == "widget_manager_register")
 	{
-		WidgetPlace wp = source;
+		WidgetPlace wp = _source;
 		wp.name = param;
 		widgetPlaces.addItem(wp);
 		return widgetPlaces.getNumItems()-1;
@@ -42,18 +45,31 @@ main_normal.onAction (String action, String param, Int x, int y, int p1, int p2,
 	{
 		WidgetPlace wp = widgetPlaces.enumItem(x);
 		Group g = grplst.instantiate("widgets.manager.listitem", 1);
+		Group source = _source;
 		g.setXmlParam("widgetname", getToken(source.getXmlParam("name"), ";", 0));
 		g.setXmlParam("widgetposition", wp.name);
 		g.setXmlParam("widgetid", param);
+		g.setXmlParam("userdata", integertostring(x));
 
-		GuiObject data = source.findObject("@author");
+		GuiObject data = NULL;
+		data = source.getObject("@author");
 		if (data)
 			g.setXmlParam("widgetauthor", data.getXmlParam("userdata"));
 
-		GuiObject data = source.findObject("@version");
+		data = NULL;
+		data = source.getObject("@version");
 		if (data)
 			g.setXmlParam("widgetversion", data.getXmlParam("userdata"));
-		
+
+		data = NULL;
+		data = source.getObject("@uninstaller");
+		if (data)
+			g.setXmlParam("widgetuninstaller", widgetPath + data.getXmlParam("userdata"));
+
+		data = NULL;
+		data = source.getObject("@support");
+		if (data)
+			g.setXmlParam("widgetsupport", data.getXmlParam("userdata"));
 	}
 	else if (strlower(action) == "widget_manager_done")
 	{
@@ -66,3 +82,12 @@ main_normal.onAction (String action, String param, Int x, int y, int p1, int p2,
 	}
 }
 
+manager_normal.onAction (String action, String param, Int x, int y, int p1, int p2, GuiObject source)
+{
+	if (strlower(action) == "show_widget")
+	{
+		WidgetPlace wp = widgetPlaces.enumItem(x);
+		wp.sendAction("show_widget", param, 0,0,0,0);
+	}
+	
+}
