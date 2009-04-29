@@ -1,11 +1,10 @@
 <groupdef id="centro.widgets.picturebox.dummy.drawer" name="Picture Box" userdata="centro.widgets.picturebox;0" windowtype="centro.widgets.drawer">
-	<guiobject id="@author"		userdata="Martin Poehlmann"/>
-	<guiobject id="@version"	userdata="0.93"/>
+	<guiobject id="@author"			userdata="Martin Poehlmann"/>
+	<guiobject id="@version"		userdata="0.93"/>
+	<guiobject id="@uninstaller"	userdata="Uninstall (Picturebox).exe"/>
 </groupdef>
-<groupdef id="centro.widgets.picturebox.dummy.mini" name="Picture Box" userdata="centro.widgets.picturebox;0" windowtype="centro.widgets.mini" />
-<groupdef id="centro.widgets.picturebox.dummy.main" name="Picture Box;PB" userdata="centro.widgets.picturebox;0" windowtype="centro.widgets.main">
-	<guiobject id="@author"		userdata="Martin Poehlmann"/>
-	<guiobject id="@version"	userdata="0.93"/>
+<groupdef id="centro.widgets.picturebox.dummy.mini" name="Picture Box" userdata="centro.widgets.picturebox;0" windowtype="centro.widgets.mini" inherit_group="centro.widgets.picturebox.dummy.drawer"/>
+<groupdef id="centro.widgets.picturebox.dummy.main" name="Picture Box;PB" userdata="centro.widgets.picturebox;0" windowtype="centro.widgets.main" inherit_group="centro.widgets.picturebox.dummy.drawer">
 </groupdef>
 
 <include file="@WINAMPPATH@/Plugins/classicPro/engine/xui/Layouts/QuadSplit.xml"/>
