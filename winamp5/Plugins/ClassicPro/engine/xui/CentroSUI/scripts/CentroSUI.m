@@ -1,5 +1,7 @@
 #include <lib/std.mi>
 #include <lib/pldir.mi>
+#include <lib/colormgr.mi>
+Global ColorMgr StartupCallback;
 
 #define VIDEO_GUID "{F0816D7B-FFFC-4343-80F2-E8199AA15CC3}"
 #define VIS_GUID "{0000000A-000C-0010-FF7B-01014263450C}"
@@ -81,6 +83,7 @@ Global GuiObject widgetHolder, drawerResize;
 
 
 System.onScriptLoaded(){
+	StartupCallback = new ColorMgr;
 	dontTabCall=false;
 	delayStart=true;
 	
@@ -1022,4 +1025,41 @@ setDrawerSizeSave(int h){
 	drawer.setXmlParam("y", integerToString(h));
 	drawer.setXmlParam("h", integerToString(-h));
 	drawerResize.setXmlParam("y", integerToString(h-4));
+}
+
+area_mini.onAction (String action, String param, Int x, int y, int p1, int p2, GuiObject source)
+{
+	if (strlower(action) == "show_widget")
+	{
+		for (int i = 0; i < dummyBuck.getNumChildren(); i++)
+		{
+			GuiObject d = dummyBuck.enumChildren(i);
+			if (getToken(d.getXmlParam("userdata"), ";",0) == param)
+			{
+				setMainFrame(true);
+				openMini(i+100);	
+			}
+		}	
+	}
+}
+
+
+Function cProLoaded();
+
+/* Notify Widget Manager, what cool widgets has been installed */ 
+StartupCallback.onLoaded()
+{
+	cProLoaded();
+}
+
+/** somehow winamp creates PVC calls when i do this stuff above */
+cProLoaded ()
+{
+	int widgetPlace = normal.onAction("widget_manager_register", "Side Area", 0,0,0,0,area_mini); // TODO Translate
+	for (int i = 0; i < dummyBuck.getNumChildren(); i++)
+	{
+		GuiObject d = dummyBuck.enumChildren(i);
+		normal.onAction("widget_manager_check", getToken(d.getXmlParam("userdata"), ";", 0), widgetPlace,0,0,0,d);
+	}
+	widgetPlace = normal.onAction("widget_manager_done", "", widgetPlace,0,0,0,area_mini);
 }

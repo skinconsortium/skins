@@ -243,7 +243,7 @@ myGroup.onAction (String action, String param, int x, int y, int p1, int p2, Gui
 	else if (strlower(action) == "release"){
 		if(param=="TAG") if(getPublicInt("cPro.lastDrawer", 0)==1) openDrawer(0);
 	}
-	else if (strlower("action") == "show_widget")
+	else if (strlower(action) == "show_widget")
 	{
 		for (int i = 0; i < dummyBuck.getNumChildren(); i++)
 		{
@@ -387,8 +387,7 @@ StartupCallback.onLoaded()
 /** somehow winamp creates PVC calls when i do this stuff above */
 cProLoaded ()
 {
-	Layout main_normal = myGroup.getparentLayout();
-	int widgetPlace = myLayout.onAction("widget_manager_register", "Side Area", 0,0,0,0,myGroup); // TODO Translate
+	int widgetPlace = myLayout.onAction("widget_manager_register", "Drawer Area", 0,0,0,0,myGroup); // TODO Translate
 	for (int i = 0; i < dummyBuck.getNumChildren(); i++)
 	{
 		GuiObject d = dummyBuck.enumChildren(i);
