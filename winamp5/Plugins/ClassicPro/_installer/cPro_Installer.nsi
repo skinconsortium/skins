@@ -740,6 +740,7 @@ SectionGroup "$(CPro_WidgetsSection)" CPro_Sec_WidgetsSection
  
 		SetOutPath "$INSTDIR\Plugins\ClassicPro\engine\widgets\Data\BrowserPro"
 			File "..\engine\widgets\Data\BrowserPro\*.m"
+			File "..\engine\widgets\Data\BrowserPro\*.png"
 			File "..\engine\widgets\Data\BrowserPro\*.maki"
 			File "..\engine\widgets\Data\BrowserPro\*.xml"
 			File "..\engine\widgets\Data\BrowserPro\*.mi"
