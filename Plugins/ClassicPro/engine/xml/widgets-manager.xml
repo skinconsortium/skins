@@ -30,6 +30,16 @@
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\scripts\widgetsManagerItem.maki"/>
 </groupdef>
 
+<groupdef id="widgets.manager.content.new">
+	<GroupList id="grplst" x="5" y="85" h="-90" w="-30" relatw="1" relath="1" />
+	<SC:VScrollBar id="vscroll" x="-18" relatx="1" y="85" w="13" h="-90" relath="1" low="0" high="100"/>
+</groupdef>
+
+<groupdef id="widgets.manager.content.all">
+	<GroupList id="grplst" x="5" y="85" h="-90" w="-30" relatw="1" relath="1" />
+	<SC:VScrollBar id="vscroll" x="-18" relatx="1" y="85" w="13" h="-90" relath="1" low="0" high="100"/>
+</groupdef>
+
 <groupdef id="widgets.manager.content">
 
 	<rect x="0" y="0" h="57" w="0" relatw="1" filled="1" color="255,255,255" />
@@ -38,12 +48,11 @@
 	<rect x="0" y="57" h="1" w="0" relatw="1" filled="1" color="0,0,0" alpha="56"/>
 	<rect x="0" y="58" h="1" w="0" relatw="1" filled="1" color="255,255,255" alpha="56"/>
 
-	<wasabi:button id="show" x="5" y="64" h="16" w="78" text="New Widgets" cursor="IDC_HAND" color="wasabi.list.text"/>
-	<wasabi:button id="show" x="90" y="64" h="16" w="78" text="All Widgets" cursor="IDC_HAND" color="wasabi.list.text"/>
+	<wasabi:button id="newW" x="5" y="64" h="16" w="78" text="New Widgets" cursor="IDC_HAND" color="wasabi.list.text"/>
+	<wasabi:button id="allW" x="90" y="64" h="16" w="78" text="All Widgets" cursor="IDC_HAND" color="wasabi.list.text"/>
 
-	<GroupList id="grplst" x="5" y="85" h="-90" w="-30" relatw="1" relath="1" />
-
-	<SC:VScrollBar id="vscroll" x="-18" relatx="1" y="85" w="13" h="-90" relath="1" low="0" high="100" />
+	<group id="widgets.manager.content.new" fitparent="1" visible="0"/>
+	<group id="widgets.manager.content.all" fitparent="1" />
 
 </groupdef>
 
