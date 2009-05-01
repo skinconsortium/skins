@@ -654,6 +654,11 @@ Section "$(CPro_CProFiles)" "CPro_Sec_CProFiles"
 		File "..\engine\xui\SC-ProgressGrid\*.m"
 		File "..\engine\xui\SC-ProgressGrid\*.maki"
 
+	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\ScrollBar
+		File "..\engine\xui\ScrollBar\*.xml"
+		File "..\engine\xui\ScrollBar\*.m"
+		File "..\engine\xui\ScrollBar\*.maki"
+
 	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\updateSystem
 		File "..\engine\xui\updateSystem\*.xml"
 		File "..\engine\xui\updateSystem\*.m"
