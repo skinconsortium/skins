@@ -41,7 +41,9 @@
 	<wasabi:button id="show" x="5" y="64" h="16" w="78" text="New Widgets" cursor="IDC_HAND" color="wasabi.list.text"/>
 	<wasabi:button id="show" x="90" y="64" h="16" w="78" text="All Widgets" cursor="IDC_HAND" color="wasabi.list.text"/>
 
-	<GroupList id="grplst" x="5" y="85" h="-90" w="-10" relatw="1" relath="1" />
+	<GroupList id="grplst" x="5" y="85" h="-90" w="-30" relatw="1" relath="1" />
+
+	<SC:VScrollBar id="vscroll" x="-18" relatx="1" y="85" w="13" h="-90" relath="1" low="0" high="100" />
 
 </groupdef>
 

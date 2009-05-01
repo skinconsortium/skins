@@ -19,7 +19,7 @@ Global List widgetPlaces;
 Global int done;
 
 Global GroupList grplst;
-
+Global Slider vscroll;
 Global String widgetPath;
 
 System.onScriptLoaded ()
@@ -27,6 +27,8 @@ System.onScriptLoaded ()
 	main_normal = getContainer("main").getLayout("normal");
 	manager_normal = getContainer("widgets.manager").getLayout("normal");
 	grplst = manager_normal.findObject("grplst");
+	grplst.setRedraw(1);
+	vscroll = manager_normal.findObject("vscroll");
 	widgetPath = getParam();
 	widgetPlaces = new List;
 	done = 0;
@@ -90,4 +92,12 @@ manager_normal.onAction (String action, String param, Int x, int y, int p1, int 
 		wp.sendAction("show_widget", param, 0,0,0,0);
 	}
 	
+}
+
+vscroll.onSetPosition(int newpos)
+{
+	int percent = 99-newpos;
+	//grplst.setXmlParam("y", integertostring(-newpos));
+	grplst.scrolltopercent(percent);
+	grplst.setRedraw(percent);
 }
