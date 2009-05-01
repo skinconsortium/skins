@@ -72,6 +72,8 @@ Section "Dummy Section" SecDummy
 	File /nonfatal "${SOURCEPATH}\engine\widgets\Data\${DATA_FOLDERNAME}\*.m"
 	File /nonfatal "${SOURCEPATH}\engine\widgets\Data\${DATA_FOLDERNAME}\*.maki"
 	File /nonfatal "${SOURCEPATH}\engine\widgets\Data\${DATA_FOLDERNAME}\*.xml"
+	File /nonfatal "${SOURCEPATH}\engine\widgets\Data\${DATA_FOLDERNAME}\*.png"
+	File /nonfatal "${SOURCEPATH}\engine\widgets\Data\${DATA_FOLDERNAME}\*.jpg"
 
 	SetOutPath "$INSTDIR\Plugins\classicPro\engine\widgets\Data\${DATA_FOLDERNAME}\icons"
 	File /nonfatal "${SOURCEPATH}\engine\widgets\Data\${DATA_FOLDERNAME}\icons\*.png"
