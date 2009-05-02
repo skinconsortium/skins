@@ -24,8 +24,12 @@ OutFile "cpro-widget-${WIDGET_NAME}-${WIDGET_VERSION}.exe"
 ;Interface Settings
 
   !define MUI_FINISHPAGE_RUN "$INSTDIR\winamp.exe"
-  !define MUI_FINISHPAGE_RUN_TEXT "Open Winamp now"
+  !define MUI_FINISHPAGE_RUN_TEXT "Reload ClassicPro or open Winamp now"
   !define MUI_FINISHPAGE_RUN_FUNCTION "LaunchLink"
+
+  !define MUI_UNFINISHPAGE_RUN "$INSTDIR\winamp.exe"
+  !define MUI_UNFINISHPAGE_RUN_TEXT "Reload ClassicPro or open Winamp now"
+  !define MUI_UNFINISHPAGE_RUN_FUNCTION "LaunchLink"
 
   !define MUI_ABORTWARNING
 
@@ -98,6 +102,46 @@ SectionEnd
   !insertmacro MUI_FUNCTION_DESCRIPTION_END
 
 ;--------------------------------
+; Reload Winamp
+
+Function LaunchLink
+;  ExecShell "" "$INSTDIR\winamp.exe"
+; (mpdeimos) now we just reload winamp or open it if not already done!
+
+	Push $5
+	FindWindow $5 "Winamp v1.x"
+	IntCmp $5 0 NoWinamp
+		; MessageBox MB_OK|MB_ICONEXCLAMATION "$(CPro_Close_Winamp)" 
+		; TODO (mpdeimos) maybe include a loop for refreshing skin again!
+		;loop:
+		;	FindWindow $5 "Winamp v1.x"
+		;	IntCmp $5 0 NoMoreWinampToKill
+		;	DetailPrint "$(CPro_Closing_Winamp)"			
+				SendMessage $5 0x0111 40291 0
+		;		Sleep 100
+		;		Goto loop
+		;	NoMoreWinampToKill:
+		;		DetailPrint "$(CPro_No_More_Winamp)"
+				GoTo RefreshDone
+	NoWinamp:	
+		ExecShell "" "$INSTDIR\winamp.exe"
+	RefreshDone:	
+	Pop $5
+
+FunctionEnd
+
+Function un.LaunchLink
+
+	Push $5
+	FindWindow $5 "Winamp v1.x"
+	IntCmp $5 0 RefreshDone		
+		SendMessage $5 0x0111 40291 0
+	RefreshDone:
+	Pop $5
+
+FunctionEnd
+
+;--------------------------------
 ;Uninstaller Section
 
 Section "Uninstall"
@@ -112,6 +156,8 @@ Section "Uninstall"
 	RMDir "$INSTDIR\Data\${DATA_FOLDERNAME}"
 	Delete "$INSTDIR\${WIDGET_UNINSTALL_NAME}"
 
+	; TODO (mpdeimos) we should make this an option and move to finishonclick
+	call un.LaunchLink
 
 SectionEnd
 
@@ -131,8 +177,4 @@ Function .onVerifyInstDir
 
 !endif ; WINAMP_AUTOINSTALL
 
-FunctionEnd
-
-Function LaunchLink
-  ExecShell "" "$INSTDIR\winamp.exe"
 FunctionEnd
