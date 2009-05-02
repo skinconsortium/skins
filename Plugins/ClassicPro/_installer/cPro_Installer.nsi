@@ -270,7 +270,7 @@
 !macro SharedWinamp un
   
 Function ${un}CloseWinamp
-
+; TODO (mpdeimos) Maybe we should prefer calling "winamp.exe /KILL" from cmd line instead - would be worth a try!
 	Push $5
 	FindWindow $5 "Winamp v1.x"
 	IntCmp $5 0 NoWinamp
