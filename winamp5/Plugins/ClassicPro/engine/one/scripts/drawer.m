@@ -159,7 +159,8 @@ but_drawerGoto.onleftClick(){
 	if (numUserWidgets == 0) popMenu.addCommand("No widgets found for this view!", -1, 0, 1);
 	//popMenu.addSubMenu(widgetmenu, "Widgets");
 
-
+	popMenu.addSeparator();
+	popMenu.addCommand("Widgets Manager", -3, getContainer("widgets.manager").getLayout("normal").isvisible(), 0);
 	popMenu.addSeparator();
 	popMenu.addCommand("Close drawer", -2, 0, 0);//** Item code changed to -2 to support widgets.
 
@@ -172,6 +173,16 @@ but_drawerGoto.onleftClick(){
 	else if(result == -2){
 		setPublicInt("cPro.draweropened", 0);
 		myGroup.hide();
+	}
+	else if(result == -3){
+		if (getContainer("widgets.manager").getLayout("normal").isvisible())
+		{
+			myLayout.sendAction("widget_manager_hide", "", 0,0,0,0);
+		}
+		else
+		{
+			myLayout.sendAction("widget_manager_show", "", 0,0,0,0);
+		}
 	}
 
 	delete popMenu;

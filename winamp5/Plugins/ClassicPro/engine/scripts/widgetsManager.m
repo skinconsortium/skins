@@ -23,9 +23,9 @@ Global Slider vscroll, vscrollN;
 Global String widgetPath;
 
 Global Group grpAll, grpNew;
-Global Button newW, allW;
+Global Button newW, allW, dld1, dld2;
 
-Global Boolean newWidgetInstalled;
+Global Boolean newWidgetInstalled, hasWidgets;
 
 System.onScriptLoaded ()
 {
@@ -46,12 +46,17 @@ System.onScriptLoaded ()
 	widgetPlaces = new List;
 	done = 0;
 	newWidgetInstalled = false;
+	hasWidgets = false;
+	
+	dld1 = grplstN.instantiate("widgets.manager.listitem.none", 1).getObject("dld");
+	dld2 = grplst.instantiate("widgets.manager.listitem.none", 1).getObject("dld");
 }
 
 main_normal.onAction (String action, String param, Int x, int y, int p1, int p2, GuiObject _source)
 {
 	if (strlower(action) == "widget_manager_register")
 	{
+		complete;
 		WidgetPlace wp = _source;
 		wp.name = param;
 		widgetPlaces.addItem(wp);
@@ -72,6 +77,11 @@ main_normal.onAction (String action, String param, Int x, int y, int p1, int p2,
 		if (getPrivateString("cpro.widget-manager.check", integerToString(x)+param, "") != version)
 		{
 			setPrivateString("cpro.widget-manager.check", integerToString(x)+param, version);
+			if (!newWidgetInstalled)
+			{
+				grplstN.removeAll();
+			}
+			
 			newWidgetInstalled = true;
 
 			Group g = grplstN.instantiate("widgets.manager.listitem", 1);
@@ -97,6 +107,12 @@ main_normal.onAction (String action, String param, Int x, int y, int p1, int p2,
 			if (data)
 				g.setXmlParam("widgetsupport", data.getXmlParam("userdata"));
 		}		
+
+		if (!hasWidgets)
+		{
+			grplst.removeAll();
+			hasWidgets = true;
+		}
 
 		Group g = grplst.instantiate("widgets.manager.listitem", 1);
 		g.setXmlParam("widgetname", getToken(source.getXmlParam("name"), ";", 0));
@@ -129,6 +145,19 @@ main_normal.onAction (String action, String param, Int x, int y, int p1, int p2,
 			manager_normal.show();
 		}
 		
+	}
+	else if (strlower(action) == "widget_manager_show")
+	{
+		manager_normal.show();
+	}
+	else if (strlower(action) == "widget_manager_hide")
+	{
+		manager_normal.hide();
+	}
+	else if (strlower(action) == "widget_manager_visible")
+	{
+		complete;
+		return manager_normal.isvisible();
 	}
 }
 
@@ -168,4 +197,14 @@ allW.onLeftClick ()
 {
 	grpNew.hide();
 	grpAll.show();
+}
+
+dld1.onLeftClick ()
+{
+	System.navigateURL("http://www.skinconsortium.com/index.php?page=Downloads&typeID=7");
+}
+
+dld2.onLeftClick ()
+{
+	System.navigateURL("http://www.skinconsortium.com/index.php?page=Downloads&typeID=7");
 }

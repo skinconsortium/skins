@@ -516,6 +516,9 @@ but_miniGoto.onleftClick(){
 
 	if (count == 0) popMenu.addCommand("No widgets found for this view!", -1, 0, 1);
 
+	popMenu.addSeparator();
+	popMenu.addCommand("Widgets Manager", -3, getContainer("widgets.manager").getLayout("normal").isvisible(), 0);
+
 	popMenu.checkCommand(getPublicInt("cPro.lastMini", 0), 1);
 
 	int result = popMenu.popAtXY(clientToScreenX(but_miniGoto.getLeft()), clientToScreenY(but_miniGoto.getTop() + but_miniGoto.getHeight()));
@@ -523,6 +526,17 @@ but_miniGoto.onleftClick(){
 	if(result>=0){
 		openMini(result);
 	}
+	else if(result == -3){
+		if (getContainer("widgets.manager").getLayout("normal").isvisible())
+		{
+			normal.sendAction("widget_manager_hide", "", 0,0,0,0);
+		}
+		else
+		{
+			normal.sendAction("widget_manager_show", "", 0,0,0,0);
+		}
+	}
+	
 	delete popMenu;
 	complete;
 }

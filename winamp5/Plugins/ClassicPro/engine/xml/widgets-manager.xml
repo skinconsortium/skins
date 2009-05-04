@@ -5,6 +5,11 @@
 	<bitmap id="widgets.manager.thumbnail" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgets-thumbnail.png"/>
 </elements>
 
+<groupdef id="widgets.manager.listitem.none" h="74">
+	<text id="name" x="0" y="8" h="16" w="0" relatw="1" bold="1" align="center" antialiasing="1" fontsize="18" color="wasabi.list.text.current" text="No Widgets Found!"/>
+	<wasabi:button id="dld" x="0" y="30" h="16" w="0" relatw="1" text="Download Widgtes" />
+</groupdef>
+
 <groupdef id="widgets.manager.listitem" h="74">
 	<rect x="0" y="0" w="0" relatw="1" filled="0" h="64" color="wasabi.list.text.selected.background" />
 
