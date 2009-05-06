@@ -1,6 +1,8 @@
 <include file="player-shade-group.xml"/>
 
 <layout id="shade" minimum_h="23" minimum_w="317" maximum_h="23" h="23" w="500" appbar="top|bottom" wantfocus="1" linkwidth="normal">
+	<group id="cpro.shade.background" fitparent="1" sysregion="1"/>
+
 	<layer fitparent="1" dblClickAction="SWITCH;normal"/>
 	<layer x="0" y="0" regionop="1" image="shade.bg.1" wantfocus="1" ghost="1"/>
 	<layer x="90" y="0" w="-280" relatw="1" regionop="1" image="shade.bg.2" wantfocus="1" ghost="1"/>

@@ -2,6 +2,7 @@
 
 <layout id="normal" minimum_h="168" minimum_w="317" h="168" w="317" default_w="500" default_h="500" appbar="top|bottom|left|right" wantfocus="1" linkwidth="shade">
 
+	<group id="cpro.normal.background" fitparent="1" sysregion="1"/>
 
 	<layer id="read.bg.top" x="0" y="0" w="0" image="player.top.alt" visible="0"/>
 	<layer id="read.bg.left" x="0" y="0" h="0" image="player.left.alt" visible="0"/>
