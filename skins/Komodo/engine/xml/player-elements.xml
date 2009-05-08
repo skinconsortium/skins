@@ -65,7 +65,8 @@
 <bitmap id="player.main.topbar.right" file="graphics.png" x="279" y="436" w="200" h="30" gammagroup="glass"/> 
 
 <!-- **** vis elements **** -->
-<bitmap id="player.main.visanim" file="graphics.png" x="420" y="45" w="60" h="84" gammagroup="vis"/>  
+<bitmap id="player.main.visanim" file="graphics.png" x="420" y="45" w="60" h="84" gammagroup="vis"/>
+<bitmap id="player.main.visanim.big" file="graphics.png" x="1" y="536" w="100" h="140" gammagroup="vis"/> <!-- skin ver 1.1 -->
 
 <bitmap id="player.main.icon.list" file="graphics.png" x="210" y="279" w="30" h="30" gammagroup="genbutton.icon"/>  
 <bitmap id="player.main.icon.cover" file="graphics.png" x="240" y="279" w="30" h="30" gammagroup="genbutton.icon"/> 

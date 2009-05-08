@@ -7,7 +7,7 @@
 
 ; This create locked or unlocked installer
 
-!define UNLOCK
+;!define UNLOCK
 
 ;--------------------------------
 ;Include Modern UI
@@ -341,8 +341,8 @@ Function GetWinampIniPath
 	
 	StrCmp $0 "" paths_ini_empty
 	StrCpy $2 $0 1
-	IntOp $1 0 - 0
 	StrCmp $2 "{"		+1	no_replace
+	IntOp $1 0 - 0
 	
 	loopback:
 	IntOp $1 $1 + 1

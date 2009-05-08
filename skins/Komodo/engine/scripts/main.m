@@ -147,6 +147,20 @@ System.onScriptLoaded() {
 	indtextTimer = new Timer;
 	indtextTimer.setDelay(1000);
 	
+	guiobject visaniml = NowPlayingGroup.getObject("visanim.left");
+	guiobject visanimr = NowPlayingGroup.getObject("visanim.right");
+	
+	map visbigcheck = new map;
+	visbigcheck.loadmap("player.main.visanim.big");
+	if (visbigcheck.getHeight() == 140) {
+		visaniml.setXMLParam("image","player.main.visanim.big");
+		visaniml.setXMLParam("framewidth","5");
+		visaniml.setXMLParam("frameheight","150");
+		visanimr.setXMLParam("image","player.main.visanim.big");
+		visanimr.setXMLParam("framewidth","5");
+		visanimr.setXMLParam("frameheight","150");
+	}
+	
 	setPrivateInt("Komodo","TUP",1); // this will signal all scripts that 5 day trial is up.
 	delayTrialCheck = new Timer;
 	delayTrialCheck.setDelay(500);
