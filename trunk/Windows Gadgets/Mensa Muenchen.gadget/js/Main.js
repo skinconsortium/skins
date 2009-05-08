@@ -34,7 +34,7 @@ function SettingsShow()
 {
 	// Do Nothing
 }
-       
+
     var updateTimeOut = null;
 	var curPos = 0;
     function init()
@@ -77,12 +77,19 @@ function SettingsShow()
 	function load()
 	{ 
 		xmlDoc=getXmlDOM();
-		var url="http://services.songbook.me/mensa?loc="+location;
+		var url="http://services.songbook.me/mensa/?p=win-gadget&v=1.0&loc="+location;
 //		var url="http://localhost/songbook.me/tmp/mensa.php";
 		xmlDoc.load(url);
 	}
 	function xmlDocLoaded() 
 	{
+		var newVersion = xmlDoc.getElementsByTagName("VersionUpdate");
+		if (newVersion.length > 0)
+		{
+			var url = newVersion[0].attributes["url"];
+			document.getElementById("newVersion").href = newVersion[0].attributes[0].nodeValue;
+			document.getElementById("newVersion").style.left = "6px";
+		}
 		adjust(0);
 	}
 	function adjust(adjustPos)

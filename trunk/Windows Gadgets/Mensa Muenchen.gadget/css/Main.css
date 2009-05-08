@@ -78,6 +78,23 @@
 		    	margin: 0;
 		    	padding: 0;		    	
 		    }
+			#newVersion
+			{
+		    	position:absolute;
+		    	left: -200px;
+				width: 118px;
+		    	bottom: 6px;
+		    	margin: 0;
+		    	padding: 0;
+				font-size: 8pt;
+				text-align: center;
+				background-color: rgb(83,91,101);
+			}
+			#newVersion:hover
+			{
+				background-color: rgb(103,111,121);
+				color: rgb(250,250,250);
+			}
 			.bold { text-decoration: underline; font-weight: bolder; color: rgb(147,175,185);}
 			.meal { }
 			.price { margin: 0; margin-top: -3; text-align: right; color: rgb(180,180,180);}
