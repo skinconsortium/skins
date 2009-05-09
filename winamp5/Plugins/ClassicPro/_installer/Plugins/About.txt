@@ -1,2 +1,5 @@
 Linker plug-in
 http://nsis.sourceforge.net/Linker_plug-in
+
+LockedList plug-in
+http://nsis.sourceforge.net/LockedList_plug-in
