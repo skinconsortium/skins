@@ -261,7 +261,17 @@ myGroup.onAction (String action, String param, int x, int y, int p1, int p2, Gui
 			GuiObject d = dummyBuck.enumChildren(i);
 			if (getToken(d.getXmlParam("userdata"), ";",0) == param)
 			{
-				openDrawer(i+userWidgetOffset);	
+				myLayout.getContainer().switchToLayout("normal");
+				if (myLayout.getHeight() < 360)
+				{
+					setPublicInt("cPro.h",388);
+					myLayout.resize(myLayout.getLeft(), myLayout.getTop(), myLayout.getWidth(), 388);
+				}
+				
+				setPublicInt("cPro.draweropened", 1);
+				openDrawer(i+userWidgetOffset);
+				myGroup.show();
+				return;
 			}
 		}		
 	}
