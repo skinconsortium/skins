@@ -875,6 +875,7 @@ sg.onAction (String action, String param, int x, int y, int p1, int p2, GuiObjec
 					forceAlign(firstTab);
 
 					hiddenTabs.removeItem(i);
+					CproSUI.sendAction ("show_tab", t.IDS, t.ID, 0, 0, 0); // notif centro sui once again!
 					break;
 				}			
 			}
@@ -883,6 +884,15 @@ sg.onAction (String action, String param, int x, int y, int p1, int p2, GuiObjec
 
 		if (found && strlower(action) == "show_widget")
 		{
+			// show sui if needed!
+			layout main_normal = sg.getparentLayout();
+			main_normal.getContainer().switchToLayout("normal");
+			if (main_normal.getHeight() < 338)
+			{
+				setPublicInt("cPro.h",388);
+				main_normal.resize(main_normal.getLeft(), main_normal.getTop(), main_normal.getWidth(), 388);
+			}
+
 			CproSUI.sendAction ("show_tab", t.IDS, t.ID, 0, 0, 0); // We need to notify centro sui
 		}
 		

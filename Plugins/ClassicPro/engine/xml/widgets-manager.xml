@@ -63,7 +63,7 @@
 
 <container id="widgets.manager" name="Widgets Manager" dynamic="0" default_visible="0"  nomenu="0" nofocusapponclose="1">
 
-	<layout id="normal" minimum_h="400" minimum_w="290" noparent="1" ontop="1" nodock="1">
+	<layout id="normal" minimum_h="400" minimum_w="310" noparent="1" ontop="1" nodock="1">
 
 		<Wasabi:StandardFrame:Modal id="framewnd" content="widgets.manager.content" fitparent="1"/>
 

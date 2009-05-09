@@ -1050,7 +1050,37 @@ area_mini.onAction (String action, String param, Int x, int y, int p1, int p2, G
 			GuiObject d = dummyBuck.enumChildren(i);
 			if (getToken(d.getXmlParam("userdata"), ";",0) == param)
 			{
+				normal.getContainer().switchToLayout("normal");
+
+				boolean resize = false;
+				int w = normal.getWidth();
+				int h = normal.getHeight();
+
+				if (normal.getHeight() < 238)
+				{
+					resize = true;
+					h = 388;
+				}
+				if (normal.getWidth() < 427)
+				{
+					resize = true;
+					w = 427;
+				}
+				if (resize)
+				{
+					setPublicInt("cPro.h",h);
+					setPublicInt("cPro.w",w);
+					normal.resize(normal.getLeft(), normal.getTop(), w, h);	
+				}
+				
 				setMainFrame(true);
+
+				if (plFrame.getPosition() < 40)
+				{
+					setPublicInt("cpro.e1.frame2", 160);
+					setFrame2(160,0);
+				}
+
 				openMini(i+100);	
 			}
 		}	
