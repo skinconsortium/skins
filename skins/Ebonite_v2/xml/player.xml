@@ -1,0 +1,15 @@
+
+<container id="main" desktopalpha="1" name="Player Window" default_x="0" default_y="0" 
+	minimum_h="300" 
+	maximum_h="300" w="522" h="300" default_w="522" default_h="300"	
+	default_visible="1" dynamic="0">
+
+	<include file="player-full.xml"/>
+	<include file="player-compact.xml"/>
+	<include file="player-compact-narrow.xml"/>
+	<include file="player-mini.xml"/>
+	<include file="player-mini-vert.xml"/>
+	<include file="player-stick.xml"/>
+	
+</container>
+

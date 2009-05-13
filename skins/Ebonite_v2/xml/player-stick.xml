@@ -1,0 +1,331 @@
+<!-- Ebonite Skin - Player.xml file created by Mike Winston aka WinstonGFX -->
+
+<!-- Winamp Buttons Group Definition -->
+<groupdef id="player.stick.winampbuttons">
+
+	<SC:WindowModeButton 
+		id="stick.background.switch"
+		x="10" y="24"
+		image="button.mode"
+		switch="this"
+		layouts="5"
+		layoutids="mini;minivert;narrow;full;compact"
+		rclick="menu"
+		lclick="switchto:mini"
+		menuentry="Mini;MiniVert;Narrow;Full;Compact"
+		tooltip="Window Modes"
+		rectrgn="1"
+		
+	/>
+	
+	<button
+		id="Close"
+		action="CLOSE"
+		x="21" y="24"
+		image="button.close"
+		tooltip="Close"
+		rectrgn="1"
+		
+	/>
+	
+	<button
+		id="Minimize"
+		action="minimize"
+		x="0" y="24"
+		image="button.minimize"
+		tooltip="Minimize"
+		rectrgn="1"
+	
+	/>
+
+</groupdef>
+
+<!-- Playback Buttons Group Definition -->
+<groupdef id="player.stick.playbuttons">
+
+	<button
+		id="Winamp"
+		action="sysmenu"
+		x="1" y="6"
+		image="button.winampmenu"
+		tooltip="Winamp Menu"
+		rectrgn="1"
+	/>
+	
+	<button
+		id="Stop"
+		action="STOP"
+		x="13" y="13"
+		image="button.stop"
+		hoverimage="button.stop.down"
+		downImage="button.stop.down"
+		tooltip="Stop"
+		rectrgn="1"
+	/>
+	<button
+		id="Previous"
+		action="PREV"
+		x="37" y="10"
+		image="button.previous"
+		hoverimage="button.previous.down"
+		downImage="button.previous.down"
+		tooltip="Previous"
+		rectrgn="1"
+	/>
+	<button
+		id="Play"
+		action="PLAY"
+		x="68" y="10"
+		image="button.play"
+		hoverimage="button.play.down"
+		downImage="button.play.down"
+		tooltip="Play"
+		rectrgn="1"
+	/>
+	
+	<button
+		id="Pause"
+		action="PAUSE"
+		x="70" y="13"
+		image="button.pause"
+		hoverimage="button.pause.down"
+		downImage="button.pause.down"
+		tooltip="Pause"
+		rectrgn="1"
+	/>
+	
+	<button
+		id="Next"
+		action="NEXT"
+		x="97" y="10"
+		image="button.next"
+		hoverimage="button.next.down"
+		downImage="button.next.down"
+		tooltip="Next"
+		rectrgn="1"
+	/>
+	<button
+		id="Open"
+		action="EJECT"
+		x="124" y="13"
+		image="button.open"
+		hoverimage="button.open.down"
+		downImage="button.open.down"
+		tooltip="Open"
+		rectrgn="1"
+	/>
+</groupdef>
+
+<!-- Window Buttons Buttons Group Definition -->
+<groupdef id="player.stick.windowbuttons">
+	<togglebutton
+		id="PL"
+		action="TOGGLE"
+		param="guid:pl"
+		x="157" y="17"
+		image="button.pl"
+		activeimage="button.pl.down"
+		hoverimage="button.pl.down"
+		downImage="button.pl.down"
+		tooltip="Playlist"		
+		rectrgn="1"
+	/>
+	<togglebutton
+		id="ML"
+		action="TOGGLE"
+		param="guid:ml"
+		x="177" y="17"
+		image="button.ml"
+		activeimage="button.ml.down"
+		hoverimage="button.ml.down"
+		downImage="button.ml.down"
+		tooltip="Media Library"
+		rectrgn="1"
+	/>
+	<togglebutton
+		id="EQ"
+		action="TOGGLE"
+		param="equalizer"
+		x="197" y="17"
+		image="button.eq"
+		activeimage="button.eq.down"
+		hoverimage="button.eq.down"
+		downImage="button.eq.down"
+		tooltip="Equalizer"
+		rectrgn="1"
+	/>
+	<togglebutton
+		id="CNFG"
+		action="TOGGLE"
+		param="{B397A4CE-455A-4D62-8BF6-D0F91ACB70E6}"
+		x="219" y="17"
+		image="button.config"
+		hoverimage="button.config.down"
+		downImage="button.config.down"
+		tooltip="Configuration"
+		rectrgn="1"
+	/>
+	<togglebutton
+		id="SHUF"
+		cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Shuffle"
+		x="162" y="29"
+		image="button.shuf"
+		activeimage="button.shuf.down"
+		hoverimage="button.shuf.down"
+		downImage="button.shuf.down"
+		tooltip="Shuffle"
+		rectrgn="1"
+	/>
+	<nstatesbutton
+		id="RPT"
+		x="194" y="29"
+		nstates="3"
+		autoelements="0"
+		image="button.repeat"
+		activeimage="button.repeat.down"
+		hoverimage="button.repeat.down"
+		downImage="button.repeat.down"
+		tooltip="Toggle Playlist/Song Repeating"
+		cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Repeat"
+		cfgval="0;1;-1"
+		rectrgn="1"		
+	/>
+	
+	<togglebutton
+		id="CFD"
+		action="toggle_crossfader"
+		x="218" y="29"
+		image="button.crossfade"
+		activeimage="button.crossfade.down"
+		hoverimage="button.crossfade.down"
+		downImage="button.crossfade.down"
+		tooltip="Crossfade"
+		rectrgn="1"
+	/>
+	<layer id="bar" image="layout.bar" x="216" y="32"/>
+	<layer id="bar" image="layout.bar" x="190" y="32"/>
+	<layer id="bar" image="layout.bar" x="215" y="20"/>
+	<layer id="bar" image="layout.bar" x="195" y="20"/>
+	<layer id="bar" image="layout.bar" x="174" y="20"/>
+</groupdef>
+
+<!-- Other Base Items -->
+<groupdef id="player.stick.baseitems">
+	<layer id="layout.vol" image="layout.vol" x="120" y="6" ghost="1"/>
+	<layer id="layout.prog" image="layout.prog" x="226" y="6" ghost="1"/>
+	<layer id="volumebar" image="layout.volumebar" x="136" y="7" w="79" ghost="1"/>
+	<layer id="progressbar" image="layout.progressbar" x="245" y="7" w="79" ghost="1"/>
+	<slider id="vol.slider" x="136" y="6" w="79" h="6" image="volume.slider" thumb="bit.slider" action="VOLUME"/>
+	<slider id="prog.slider" x="245" y="6" w="75" h="6" image="progress.slider" thumb="bit.slider" action="SEEK" ghost="1"/>
+	<slider id="prog.slider.ghost" x="245" y="6" w="75" h="6" image="progress.slider" thumb="bit.slider" action="SEEK"/>
+
+</groupdef>
+
+<!-- Song File Information Group Definition -->
+<groupdef id="player.stick.songinfo">
+	<text
+		id="timer"
+		display="time"
+		x="426" y="35"
+		w="44" h="12"
+		font="Trebuchet MS"
+		forcefixed="1"
+		color="lcdtext"
+		fontsize="12" 
+		align="left"
+		timecolonwidth="7"
+	/>
+	
+	
+	<Text 
+		id="txtbrlblkbps" 			
+		x="-64" y="35" 
+		h="12" w="30"
+		relatx="1"
+		font="Trebuchet MS"
+		forcefixed="1"
+		color="lcdtext"
+		fontsize="12" 
+		align="left"		
+		default="kbps:"
+		ticker="0"
+		ghost="1"
+	/>
+	
+	<Text 
+		id="bitrate" 			
+		x="-55" y="35" 
+		h="12" w="32"
+		relatx="1"
+		font="Trebuchet MS"
+		forcefixed="1"
+		color="lcdtext"
+		fontsize="12" 
+		align="right"		
+		display="SONGBITRATE" 
+		ticker="0"
+		ghost="1"
+	/>
+	
+	<OneDirectionText
+		id="SongTicker" ticker="1"
+		display="songname" default="" showlen="1"
+		x="268" y="31"
+		w="150" h="16"
+		align="center" 
+		forcefixed="1" 
+		forceupcase="0" 
+		antialias="1" 
+		color="lcdtext" 
+		bold="0"
+		rightclickaction="trackmenu"
+		dblclickaction="trackinfo"
+		font="Trebuchet MS"
+		fontsize="16" 
+		BetweenString="  "
+		FirstDelay="1000"
+		shadow="0"
+		configattrib="{7061FDE0-0E12-11D8-BB41-0050DA442EF3};Classic Style"
+	/>
+		
+	<!-- Song File Information -->	 
+	<!--text
+		id="infoline" 
+		ticker="0"
+		display="songinfo"
+		default=""
+		x="0" y="0"
+		w="0" h="0"
+		font="Trebuchet MS" 
+		fontsize="0" 
+		ghost="1"
+	/-->
+</groupdef>
+
+	<!-- First Layout -->	           			
+	<layout id="stick" droptarget="pldr" desktopalpha="1"
+		alphabackground="player.background.stick" background="player.background.stick.non"
+		snapadjusttop = "0"
+		snapadjustleft = "0"
+		snapadjustright = "0"
+		snapadjustbottom = "5" 
+		w="499" h="40">
+		
+		<!-- RGB -->		
+		<layer id="player.background.stick.blue" image="player.background.stick.blue" rectrgn="0" x="0" y="0" alpha="0" ghost="1"/>
+		<layer id="player.background.stick.green" image="player.background.stick.green" rectrgn="0" x="0" y="0" alpha="0" ghost="1"/>
+		<layer id="player.background.stick.red" image="player.background.stick.red" rectrgn="0" x="0" y="0" alpha="0" ghost="1"/>
+		<!-- RGB -->
+		
+		<group id="player.stick.baseitems" x="129" y="-2"/>		
+		<group id="player.stick.playbuttons" x="9" y="-3"/>
+		<group id="player.stick.winampbuttons" x="-40" y="-18" relatx="1"/>
+		<group id="player.stick.windowbuttons" x="-4" y="-14"/>
+		<group id="player.stick.songinfo" x="-21" y="-18" w="30" relatw="1"/>
+		<layer id="dummdrag" image="blank" x="-40" y="17" w="30" h="14" relatx="1" moveable="1"/>
+		
+		<script id="stick.script" file="scripts/stick.maki"/>
+		<script id="clock.script" file="scripts/clock.maki"/>
+		
+	</layout>
+	

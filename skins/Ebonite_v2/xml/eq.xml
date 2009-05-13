@@ -1,0 +1,5 @@
+<container id="equalizer" name="Equalizer" default_x="165" default_y="107" default_w="346" default_h="192" default_visible="1">
+
+   <include file="eq-normal.xml"/>
+
+</container>

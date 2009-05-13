@@ -1,0 +1,37 @@
+<include file="tooltips-elements.xml"/>
+
+<groupdef id="wasabi.tooltip.group" h="17" noactivation="1">
+   <grid
+     id="tooltip.grid"
+     x="0" y="0"
+     w="-16" h="0"
+     sysregion="1"
+     relatw="1" relath="1"
+     topleft="wasabi.tooltip.top.left"
+     top="wasabi.tooltip.top"
+     topright="wasabi.tooltip.top.right"
+     left="wasabi.tooltip.left"
+     middle="wasabi.tooltip.center"
+     right="wasabi.tooltip.right"
+     bottomleft="wasabi.tooltip.bottom.left"
+     bottom="wasabi.tooltip.bottom"
+     bottomright="wasabi.tooltip.bottom.right"
+   />
+
+   <text
+     id="tooltip.text"
+     x="2" y="1"
+     w="0" h="-2"
+     relatw="1" relath="1"
+     default="Tooltip Sample"
+     font="player.font.black" fontsize="14" color="lcdtext"
+   />
+
+	<layer image="wasabi.tooltip.top.left.region" sysregion="-2" x="0" y="0" relatx="0" relaty="0" />
+	<layer image="wasabi.tooltip.top.right.region" sysregion="-2" x="-20" y="0" w="4" h="4" relatx="1" relaty="0" />
+	<layer image="wasabi.tooltip.bottom.left.region" sysregion="-2" x="0" y="-4" h="4" w="4" relatx="0" relaty="1" />
+	<layer image="wasabi.tooltip.bottom.right.region" sysregion="-2" x="-20" y="-4" w="4" h="4" relatx="1" relaty="1" />
+
+  <script id="tip" file="wasabi/tooltips/tooltips.maki"/> 
+
+</groupdef>

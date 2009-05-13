@@ -1,0 +1,81 @@
+To add this xui object you need to do the following:
+
+////////////////Step 1/////////////////////
+
+Add these lines to your skin.xml
+
+<include file="sc/xui.xml"/>
+<elements>
+  <bitmap id="my.music.pic" file="pics/1.png"/>
+  <bitmap id="my.video.pic" file="pics/2.png"/>
+  <bitmap id="my.audioCd.pic" file="pics/3.png"/>
+</elements>
+
+///////////////////////////////////////////
+
+////////////////Step 2/////////////////////
+
+Copy the "sc" folder to your skin.
+
+Example of file structure:
+
+c:\winamp\skins\myNewSkin\skin.xml
+c:\winamp\skins\myNewSkin\sc\xui.xml
+c:\winamp\skins\myNewSkin\sc\SC-Cover
+c:\winamp\skins\myNewSkin\sc\SC-Cover\*.*
+
+///////////////////////////////////////////
+
+////////////////Step 3/////////////////////
+Add the object where you want it and tweak any params to suit.
+
+	<SC:Cover
+		x="5" y="1" w="-10" h="-2" relatw="1" relath="1"
+		musicImage="my.music.pic"
+		videoImage="my.video.pic"
+		cdMusicImage="my.audioCd.pic"
+		changeMode="random"
+		changeTime="2.0"
+		keepRatio="1"
+		stretch="0"
+		stretchNoCover="0"
+		shadow="1"
+		dbClickAction="pic"
+		menu="1"
+		filelist="cover.jpg;coverart.jpg;folder.jpg;front.jpg;cover.png;coverart.png;folder.png;front.png;%artist% - [Cover] - %album%.jpg;%artist% - %album%.jpg;(%year%) %album%.jpg"
+		AllowDemoMode="0"
+	/>
+
+///////////////////////////////////////////
+	
+List of all the animations avalible in changeMode option:
+
+Standard		
+			- "none", "random", "fade", "fadeslide",
+SLIDES
+horizontal 	- "slide:h:l", "slide:h:r",
+vertical 	- "slide:v:u", "slide:v:d",
+diagonal	- "slide:y:l", "slide:y:r", "slide:y2:l", "slide:y2:r"
+
+LAYERFX - NB subtle transition, transition variation & transition Distortion Factor menu options also affects some the LayerFX
+			- "lyrfx1", "lyrfx2", "lyrfx3", "lyrfx4", "lyrfx5", "lyrfx6", "lyrfx7"
+lyrfx1 = Bouncing Squares FX
+lyrfx2 = Rotating Merged Blob FX
+lyrfx3 = Vortexes FX				- has sub transitions
+lyrfx4 = Psychedelic FX
+lyrfx5 = BenditLikeCover FX
+lyrfx6 = WaterPlasticLikeWraps FX	- has sub transitions
+lyrfx7 = Misc FX 					- has sub transitions
+
+best use is to set to "random", with random enabled its possible to randomise standard or layerfx transitions thru the right click menu options
+
+AllowDemoMode if set to -1 or 1 (anything but 0) then enables demo mode on advanced menu - transitions will keep going back to back 1 after the other if enabled
+
+///////////////////////////////////////////
+
+			Credits
+www.SkinConsortium.com
+
+> Pieter Nieuwoudt 	(Sylvester aka pjn123)	- sylvester@skinconsortium.com
+> Martin Poehlmann 	(martin.deimos) 	- martin@skinconsortium.com
+> Kev 			(SLoB) 			- slob@skinconsortium.com

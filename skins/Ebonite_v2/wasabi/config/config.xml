@@ -1,0 +1,246 @@
+<!-- multi config window, notifier options etc. -->
+<!-- prefs window -->
+
+<groupdef id="grpgeneral" name="General" tooltip="General options">
+		
+<!-- GENERAL -->
+	
+	<Wasabi:TitleBox id="containergenopt" x="0" y="0" 
+		w="170" h="46" 
+		title="General Options"
+		color="lcdtext"/>
+	
+	<!-- DTA forced on due to duplicating windows bug - for now at least -->
+	
+	<Wasabi:Checkbox id="checkbox.aot" x="10" y="12" color="255,255,255" text="Always On Top" 
+		cfgattrib="{280876CF-48C0-40BC-8E86-73CE6BB462E5};Always on top"		
+	/>	
+	<Wasabi:Checkbox id="checkbox.enabletooltips" x="10" y="25" color="255,255,255" text="Enable Tooltips" 
+		cfgattrib="{9149C445-3C30-4E04-8433-5A518ED0FDDE};Enable tooltips"		
+	/>
+	
+<!-- CLOCK -->
+	<Wasabi:TitleBox id="container" x="0" y="49" 
+		w="170" h="60" 
+		title="Clock Options"
+		color="lcdtext"/>
+	
+	<Wasabi:Checkbox id="checkbox.clockshowclockwhenstopped" x="10" y="61" text="Show when stopped"/>
+	<Wasabi:Checkbox id="checkbox.clockshow24hourclock" x="10" y="74" text="Show 24 hour Clock"/>
+	<Wasabi:Checkbox id="checkbox.clockshowclockleadingzero" x="10" y="87" text="Show leading zero"/>
+	
+<!-- COVER -->
+	<Wasabi:TitleBox id="container" x="0" y="112" 
+		w="170" h="74" 
+		title="Full Mode Cover Options"
+		color="lcdtext"/>
+	
+	
+	<Wasabi:Checkbox id="checkbox.covershowcover" x="10" y="124" text="Toggle Cover"/>
+	<Wasabi:Checkbox id="checkbox.covershowviz" x="10" y="137" text="Toggle Viz"/>
+	<Wasabi:Checkbox id="checkbox.covershowcubeviz" x="10" y="150" text="Toggle Cube Viz"/>
+	
+	<Wasabi:Checkbox id="checkbox.coverrotatestdviz" x="10" y="164" text="Rotate Std Viz"/>
+	
+	
+<!-- SONGTICKER -->	
+	<Wasabi:TitleBox id="container" x="0" y="189" 
+		w="170" h="46" 
+		title="Songticker Options"
+		color="lcdtext"/>
+	
+	<Wasabi:Checkbox id="checkbox.tickerscrolling" x="10" y="201" color="255,255,255" text="Enable Scrolling"/>	
+	<Wasabi:Checkbox id="checkbox.tickerclassicstyle" x="10" y="214" color="255,255,255" text="Classic Style"/>
+	
+	
+</groupdef>
+
+<groupdef id="cfggrps" name="ConfigGroups">
+
+	<text 
+		id="txtgrpGeneral" 
+		x="10" y="27" 
+		w="100" h="14" 
+		text="General"
+		font="Trebuchet MS"
+		align="left"
+		fontsize="14"
+		ticker="0"
+		rectrgn="1"
+		color="lcdtext"
+	/>
+
+	<button
+		id="btngrpGeneral"
+		x="10" y="27" 
+		w="100" h="14"
+		image="blank"
+		tooltip="Show General Options"
+		rectrgn="1"
+	/>
+		
+	
+		<text 
+		id="txtgrpNotifier" 
+		x="100" y="27" 
+		w="100" h="14" 
+		text="Notifier"
+		font="Trebuchet MS"
+		align="left"
+		fontsize="14"
+		color="lcdtext"
+		ticker="0"		
+	/>
+	
+	
+	<button
+		id="btngrpNotifier"
+		x="100" y="27" 
+		w="100" h="14"
+		image="blank"
+		tooltip="Show Notifier Options"
+		rectrgn="1"
+	/>
+	
+</groupdef>
+
+<groupdef id="grpnotifier" name="Notifier" tooltip="Set notifier options here">
+	<Wasabi:TitleBox id="containernoti" x="0" y="0" 
+		w="170" h="236"
+		title="Notifier Options"
+		color="lcdtext"/>
+
+
+	<Wasabi:RadioGroup id="notishowgrp" />	
+	<Wasabi:Checkbox id="checkbox.notishowalways" x="10" y="12" text="Show Always" radioid="notishowgrp"/>
+	<Wasabi:Checkbox id="checkbox.notishowminimized" x="10" y="25" text="Show only when minimized" radioid="notishowgrp"/>
+	<Wasabi:Checkbox id="checkbox.notishownever" x="10" y="38" text="Show Never" radioid="notishowgrp"/>
+	
+	<Wasabi:Checkbox id="checkbox.notishowfullscreen" x="10" y="52" text="Show in fullscreen"/>
+
+	
+	<Wasabi:Checkbox id="checkbox.notienablecover" x="10" y="70" text="Enable Cover"/>
+	
+	<text 
+		id="notilocation" 
+		x="10" y="90" 
+		w="100" h="14" 
+		text="Location:"
+		font="Trebuchet MS"
+		align="left"
+		fontsize="14"
+		color="lcdtext"
+		ticker="0"		
+	/>
+	<Wasabi:RadioGroup id="locationnoti"/>
+	<Wasabi:Checkbox id="checkbox.notilocationtl" x="10" y="102" text="Top Left" radioid="locationnoti"/>
+	<Wasabi:Checkbox id="checkbox.notilocationtr" x="85" y="102" text="Top Right" radioid="locationnoti"/>
+	<Wasabi:Checkbox id="checkbox.notilocationbl" x="10" y="115" text="Bottom Left" radioid="locationnoti"/>
+	<Wasabi:Checkbox id="checkbox.notilocationbr" x="85" y="115" text="Bottom Right" radioid="locationnoti"/>
+	
+		
+	
+	<text 
+		id="notifadein" 
+		x="10" y="138" 
+		w="100" h="14" 
+		text="Fade In Effect:"
+		font="Trebuchet MS"
+		align="left"
+		fontsize="14"
+		color="lcdtext"
+		ticker="0"		
+	/>
+	
+	<Wasabi:RadioGroup id="notiinfade" />	
+	<Wasabi:Checkbox id="checkbox.notifadeinalpha" x="10" y="150" text="Alpha" radioid="notiinfade"/>
+	<Wasabi:Checkbox id="checkbox.notifadeinvertical" x="10" y="163" text="Vertical" radioid="notiinfade"/>
+	<Wasabi:Checkbox id="checkbox.notifadeinhorizontal" x="10" y="176" text="Horizontal" radioid="notiinfade"/>
+	
+	<text 
+		id="notifadeout" 
+		x="86" y="138" 
+		w="100" h="14" 
+		text="Fade Out Effect:"
+		font="Trebuchet MS"
+		align="left"
+		fontsize="14"
+		color="lcdtext"
+		ticker="0"		
+	/>
+	
+	<Wasabi:RadioGroup id="notioutfade" />	
+	<Wasabi:Checkbox id="checkbox.notifadeinalpha" x="86" y="150" text="Alpha" radioid="notioutfade"/>
+	<Wasabi:Checkbox id="checkbox.notifadeinvertical" x="86" y="163" text="Vertical" radioid="notioutfade"/>
+	<Wasabi:Checkbox id="checkbox.notifadeinhorizontal" x="86" y="176" text="Horizontal" radioid="notioutfade"/>
+	
+		
+		
+	<text 
+		id="notiyoffset" 
+		x="10" y="200" 
+		w="100" h="14" 
+		text="Y Offset (Pixels):"
+		font="Trebuchet MS"
+		align="left"
+		fontsize="14"
+		color="lcdtext"
+		ticker="0"		
+	/>
+	<Wasabi:RadioGroup id="yoffsetnoti"/>
+	<Wasabi:Checkbox id="checkbox.notiyoffset1" x="10" y="213" text="20" radioid="yoffsetnoti" color="lcdtext"/>
+	<Wasabi:Checkbox id="checkbox.notiyoffset2" x="40" y="213" text="40" radioid="yoffsetnoti"/>
+	<Wasabi:Checkbox id="checkbox.notiyoffset3" x="70" y="213" text="60" radioid="yoffsetnoti"/>
+	<Wasabi:Checkbox id="checkbox.notiyoffset4" x="100" y="213" text="80" radioid="yoffsetnoti"/>
+	<Wasabi:Checkbox id="checkbox.notiyoffset5" x="130" y="213" text="100" radioid="yoffsetnoti"/>
+		
+</groupdef>
+
+
+
+<container id="configs" name="Config Options" default_visible="0" >
+	<layout id="normalconfigs" droptarget="pldr" desktopalpha="1"
+		alphabackground="player.background.full.config" background="player.background.full.config"
+		snapadjusttop = "0"
+		snapadjustleft = "0"
+		snapadjustright = "0"
+		snapadjustbottom = "5" w="197" h="297">
+		
+		<!-- RGB -->
+		<layer id="cfg.background.changer.blue" image="player.background.blue" rectrgn="0" x="0" y="0" alpha="0" ghost="1"/>
+		<layer id="cfg.background.changer.green" image="player.background.green" rectrgn="0" x="0" y="0" alpha="0" ghost="1"/>
+		<layer id="cfg.background.changer.red" image="player.background.red" rectrgn="0" x="0" y="0" alpha="0" ghost="1"/>
+		<!-- RGB -->
+		
+		<text 
+			id="title" 
+			x="0" y="9" 
+			w="192" h="14" 
+			text="Ebonite Config"
+			font="Trebuchet MS"
+			align="center"
+			fontsize="14"
+			color="lcdtext"
+			ghost="1"
+			ticker="0"
+		/>
+		
+
+		
+		<button
+			id="Close"
+			action="CLOSE"
+			x="178" y="6"
+			image="button.close"
+			tooltip="Close"
+			rectrgn="1"
+		/>
+		
+		
+		<group id="cfggrps" x="0" y="0"/>
+		<group id="grpgeneral" x="10" y="45" w="170" h="257"/>
+		<group id="grpnotifier" x="10" y="45" w="170" h="257"/>
+	
+		<script id="cfgs.script" file="scripts/config.maki"/>
+	</layout>	
+</container>

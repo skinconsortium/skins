@@ -1,0 +1,112 @@
+<include file="standardframe.xml" />
+
+
+<groupdef id="pledit.buttons.group">
+
+	
+	
+ 	<Button
+		id="pladd"
+		action="PE_ADD"
+		x="20" y="0"     	
+		tooltip="Add Files to Playlist"
+		Image="add.normal"
+		downImage="add.down"
+		rectrgn="1"
+	/>
+	
+
+	<Button
+		id="plrem"
+		action="PE_REM"
+		x="45" y="0"    
+		tooltip="Remove Files from Playlist"
+		Image="rem.normal"
+		downImage="rem.down"
+		rectrgn="1"
+	/>
+	
+	
+	<Button
+		id="plsel"
+		action="PE_SEL"
+		x="73" y="0"    
+		tooltip="Select"
+		Image="sel.normal"
+		downImage="sel.down"
+		rectrgn="1"
+	/>
+	
+	<Button
+		id="plmisc"
+		action="PE_MISC"
+		x="95" y="0"    
+		tooltip="Misc"
+		Image="misc.normal"
+		downImage="misc.down"
+		rectrgn="1"
+	/>
+  
+	<Button
+		id="pllist"
+		action="PE_LIST"
+		x="120" y="0" 
+		tooltip="Manage Playlist"
+		Image="list.normal"
+		downImage="list.down"
+		rectrgn="1"
+	/>
+</groupdef>
+
+<groupdef id="pledit.content.group">
+
+	<component
+		x="0"
+		y="0"
+		w="4"
+		relatw="1"
+		h="-18"
+		relath="1"
+		noshowcmdbar="1"
+		autoopen="1"
+		autoclose="1"
+		param="guid:{45F3F7C1-A6F3-4ee6-A15E-125E92FC3F8D}"
+	/>
+
+</groupdef>
+
+<groupdef id="petime" >
+	<text
+		id="PLTime"
+		ticker="1"
+		display="PE_Info"
+		x="10" y="9" w="150" h="18"
+		color="lcdtext" font="Trebuchet MS" fontsize="16" ghost="1"
+		align="right"
+		valign="top"		
+	/>
+</groupdef>
+		
+	
+<layout id="normal" 
+	minimum_h="250" 
+	minimum_w="250" 
+	default_h="250" 
+	default_w="250"
+	>
+
+	<Wasabi:StandardFrame:NoStatus
+		x="0" y="0" w="0" h="0" relatw="1" relath="1"
+		content="pledit.content.group"
+		padtitleright="8"
+		notify="playlist.content"
+	/>
+	
+	<layer id="dummybar" x="0" y="-42" w="250" h="20" relaty="1" image="blank" />
+	<group id="pledit.buttons.group" x="0" y="-42" relaty="1" />
+	<group id="petime" x="-190" y="-57" relaty="1" relatx="1" />
+	
+  
+</layout>
+
+

@@ -1,0 +1,149 @@
+<!-- College-Test - Player.xml file
+     by Leechbite
+	 
+	 SLoB - thanks Quad, leechbite
+	 heavily modified maki script to cope with all windows RGB
+	 -->
+
+	 
+<elements>
+	<bitmap id="color.palette" file="colorchanger/colors.png" />
+	<bitmap id="color.map.red" file="colorchanger/mapred.png" />
+	<bitmap id="color.map.green" file="colorchanger/mapgreen.png" />
+	<bitmap id="color.map.blue" file="colorchanger/mapblue.png" />
+	
+	<bitmap id="red" file="colorchanger/red.png" />
+	<bitmap id="green" file="colorchanger/green.png" />
+	<bitmap id="blue" file="colorchanger/blue.png" />
+	<cursor id="cursor.cross" bitmap="colorchanger/cursor_cross.png" hotspot_x="15" hotspot_y="15"/>
+	
+	<bitmap id="brightness.bg1" file="$gradient" mode="linear" gradient_x1="0" gradient_y1="0" gradient_x2="1" gradient_y2="1" points="0.0=0,0,0,255;1.0=255,255,255,255" h="10" w="640"/>
+	<bitmap id="brighness.slider.thumb" file="$gradient" h="10" w="10"
+	gradient_x1="0.5" gradient_y1="0.5" gradient_x2="1" gradient_y2="0.5"
+	mode="circular" points="1.0=0,0,0,0;0.8=0,0,0;0.7=0,0,0;0.65=255,255,255,255;0=0,0,0,255"/>
+
+		
+</elements>
+	 
+
+
+	<groupdef id="color.content.group">
+	
+		<text 
+			id="title" 
+			x="0" y="9" 
+			w="192" h="14" 
+			text="RGB Colour Changer"
+			font="Trebuchet MS"
+			align="center"
+			fontsize="14"
+			color="lcdtext"
+			ghost="1"
+			ticker="0"
+		/>
+
+		<Wasabi:Checkbox id="checkbox.wargbbody" x="8" y="21" text="Change Body"/>
+		<Wasabi:Checkbox id="checkbox.wargboverlay" x="8" y="35" text="Change Overlay"/>
+		<Wasabi:Checkbox id="checkbox.wargblcd" x="105" y="21" text="Change LCD"/>
+		<Wasabi:Checkbox id="checkbox.wargbtext" x="105" y="35" text="Change Text"/>
+
+
+		<slider id="red.slider" x="34" y="49" w="120" h="15" image="volume.slider" thumb="bit.slider"/>
+		<slider id="green.slider" x="34" y="63" w="120" h="15" image="volume.slider" thumb="bit.slider"/>
+		<slider id="blue.slider" x="34" y="78" w="120" h="15" image="volume.slider" thumb="bit.slider"/>
+		<layer id="barr" image="layout.volumebar" x="34" y="55" w="120" h="6" ghost="1"/>
+		<layer id="barg" image="layout.volumebar" x="34" y="69" w="120" h="6" ghost="1"/>
+		<layer id="barb" image="layout.volumebar" x="34" y="84" w="120" h="6" ghost="1"/>
+
+		<group id="wasabi.objectframe.group" 
+			x="9" y="52" w="19" h="12" />
+		<rect filled="1" color="255,0,0"
+			x="11" y="54" w="15" h="8"/>
+		<group id="wasabi.objectframe.group" 
+			x="9" y="66" w="19" h="12" />
+		<rect filled="1" color="0,255,0"
+			x="11" y="68" w="15" h="8"/>
+		<group id="wasabi.objectframe.group" 
+			x="9" y="80" w="19" h="12" />
+		<rect filled="1" color="0,0,255"
+			x="11" y="82" w="15" h="8"/>
+			
+		<Wasabi:text 
+			id="text.red" 
+			x="160" y="49" 
+			w="30" h="14" 
+			text="0" 
+			fontsize="14"
+			color="lcdtext"
+		/>
+
+		<Wasabi:text 
+			id="text.green" 
+			x="160" y="64" 
+			w="30" h="14" 
+			text="0" 
+			fontsize="14"
+			color="lcdtext"
+		/>
+
+		<Wasabi:text 
+			id="text.blue" 
+			x="160" y="79" 
+			w="30" h="14" 
+			text="0" 
+			fontsize="14"
+			color="lcdtext"
+		/>
+
+		<!-- brightness -->
+		<rect x="8" y="94" w="176" h="12" color="0,0,0"/>
+		<rect x="9" y="95" w="175" h="10" color="255,255,255"/>
+		<layer x="9" y="95" w="175" h="10" image="brightness.bg1"/>
+		<slider id="brightness.adjust" x="9" y="95" w="175" h="10" thumb="brighness.slider.thumb" low="-4096" high="4096" hotpos="255" />
+		
+
+		<group id="wasabi.objectframe.group" x="7" y="108" w="178" h="178"/>
+		<layer id="color.palette" x="8" y="109" cursor="cursor.cross" wantfocus="1" image="color.palette" move="0" alpha="255"/>
+
+		<!--group id="wasabi.objectframe.group" 
+				x="7" y="258" w="178" h="26"/>	
+		<layer id="colorchangerblue" image="blue" 
+				x="8" y="259" w="176" h="24" alpha="0" tile="1"/>			
+		<layer id="colorchangergreen" image="green" 
+				x="8" y="259" w="176" h="24" alpha="0" tile="1"/>			
+		<layer id="colorchangerred" image="red" 
+				x="8" y="259" w="176" h="24" alpha="0" tile="1"/-->	
+	
+	</groupdef>
+
+	<!-- color Window -->
+<container id="colorchanger" name="RGBColorChanger" default_visible="0">
+
+	<layout id="changer" droptarget="pldr" desktopalpha="1"
+	alphabackground="player.background.full" background="player.background.full.non"
+	snapadjusttop = "0"
+	snapadjustleft = "0"
+	snapadjustright = "0"
+	snapadjustbottom = "5" w="197" h="297">
+	
+		<!-- RGB -->
+		<layer id="player.background.changer.blue" image="player.background.blue" rectrgn="0" x="0" y="0" alpha="0" ghost="1"/>
+		<layer id="player.background.changer.green" image="player.background.green" rectrgn="0" x="0" y="0" alpha="0" ghost="1"/>
+		<layer id="player.background.changer.red" image="player.background.red" rectrgn="0" x="0" y="0" alpha="0" ghost="1"/>
+		<!-- RGB -->
+	
+		<group id="color.content.group" x="0" y="-2" w="200" h="297"/>
+		
+		<button
+			id="Close"
+			action="CLOSE"
+			x="178" y="6"
+			image="button.close"
+			tooltip="Close"
+			rectrgn="1"
+		/>
+	
+	
+	</layout> 
+
+</container>

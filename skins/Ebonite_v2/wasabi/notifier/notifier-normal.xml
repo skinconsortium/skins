@@ -1,0 +1,54 @@
+<groupdef id="notifier.text" sysregion = "1" ghost="1">
+	<text id="plentry" x="10" y="10" default="2/15" w="120" color="notifier.white" font="player.font.black" fontsize="14" ghost="1"/>
+	<text id="nexttrack" x="-180" y="12" w="132" relatw="1" align="left" default="Next track" color="notifier.white" font="player.font.black" fontsize="12" ghost="1"/>
+
+	<text id="title" x="14" y="28" w="-32" relatw="1" default="Nothing" color="notifier.white" font="player.font.black" fontsize="20" ghost="1"/>
+	<text id="artist" x="14" y="44" w="-32" h="18" relatw="1" default="Nithin Sawhney" color="notifier.white" font="player.font.black" fontsize="14" ghost="1"/>
+	<text id="album" x="14" y="58" w="-32" h="12" relatw="1" default="Prophesy" color="notifier.white" font="player.font.black" fontsize="14" ghost="1"/>
+
+	<text id="endofplayback" x="10" y="32" w="-42" relatw="1" align="left" default="End of playback" color="notifier.white" font="player.font.black" fontsize="20" visible="0" ghost="1"/>
+</groupdef>
+
+
+<layout id="normal" noparent="1" ontop="1" h="100" w="258" forcealpha="1" noactivation="1" nodock="1" move="0">
+
+	<grid left="notifier.bg.left" middle="notifier.bg.center" right="notifier.bg.right" fitparent="1" sysregion="1" ghost="1" rectrgn="0" move="0"/>
+	<group id="notifier.text" fitparent="1" move="0" x="0" y="0"/>
+	<!--layer id="notifier.local.cdcover" image="cdcover.noimage" rectrgn="0" x="4" y="4" w="65" h="65"/-->
+		
+		<AlbumArt
+			id="aanotifier"
+			x="4" y="4" w="65" h="65"
+			move="1"
+		/>
+		
+	
+	<layer id="notifier.local.cdcover.glass" image="noticdcover.glass" x="3" y="3" w="67" h="67"/>	
+
+	<grid id="notiblue" left="notifier.bg.left.da.blue" middle="notifier.bg.center.da.blue" right="notifier.bg.right.da.blue" fitparent="1" ghost="1" move="0" alpha="0"/>
+	<grid id="notigreen" left="notifier.bg.left.da.green" middle="notifier.bg.center.da.green" right="notifier.bg.right.da.green" fitparent="1" ghost="1" move="0" alpha="0"/>
+	<grid id="notired" left="notifier.bg.left.da.red" middle="notifier.bg.center.da.red" right="notifier.bg.right.da.red" fitparent="1" ghost="1" move="0" alpha="0"/>
+  
+</layout>
+
+<layout id="desktopalpha" noparent="1" ontop="1" h="100" w="258" desktopalpha="1" noactivation="1" nodock="1" move="0">
+
+	<grid left="notifier.bg.left.da" middle="notifier.bg.center.da" right="notifier.bg.right.da" fitparent="1" ghost="1" move="0"/>
+
+	<grid id="danotiblue" left="notifier.bg.left.da.blue" middle="notifier.bg.center.da.blue" right="notifier.bg.right.da.blue" fitparent="1" ghost="1" move="0" alpha="0"/>
+	<grid id="danotigreen" left="notifier.bg.left.da.green" middle="notifier.bg.center.da.green" right="notifier.bg.right.da.green" fitparent="1" ghost="1" move="0" alpha="0"/>
+	<grid id="danotired" left="notifier.bg.left.da.red" middle="notifier.bg.center.da.red" right="notifier.bg.right.da.red" fitparent="1" ghost="1" move="0" alpha="0"/>
+
+	<group id="notifier.text" fitparent="1" move="0" x="0" y="0"/>
+
+	<!--layer id="notifier.local.cdcover" image="cdcover.noimage" rectrgn="0" x="4" y="4" w="65" h="65"/-->
+	
+		<AlbumArt
+			id="aanotifier"
+			x="4" y="4" w="65" h="65"
+			move="1"
+		/>
+		
+	<layer id="notifier.local.cdcover.glass" image="noticdcover.glass" rectrgn="0" x="3" y="3" w="67" h="67"/>	
+		
+</layout>

@@ -1,0 +1,615 @@
+<!-- Ebonite Skin - Player.xml file created by Mike Winston aka WinstonGFX -->
+
+<!-- Winamp Buttons Group Definition -->
+<groupdef id="player.full.winampbuttons">
+	
+	<SC:WindowModeButton 
+		id="full.background.switch"
+		x="188" y="24"
+		w="9" h="5"
+		image="button.mode"
+		switch="this"
+		layouts="6"
+		layoutids="compact;stick;mini;minivert;narrow"
+		rclick="menu"
+		lclick="switchto:compact"
+		menuentry="Compact;Stick;Mini;MiniVert;Narrow"
+		tooltip="Window Modes"
+		rectrgn="1"
+	/>
+
+	<button
+		id="Close"
+		action="CLOSE"
+		x="199" y="24"
+		image="button.close"
+		tooltip="Close"
+		rectrgn="1"
+	/>
+
+	<button
+		id="Minimize"
+		action="MINIMIZE"
+		x="177" y="24"
+		w="7" h="6"
+		image="button.minimize"
+		tooltip="Minimize"
+		rectrgn="1"
+	/>
+	<button
+		id="Winamp"
+		action="sysmenu"
+		x="31" y="24"
+		image="button.winampmenu"
+		tooltip="Winamp Menu"
+		rectrgn="1"
+	/>
+</groupdef>
+
+<!-- Playback Buttons Group Definition -->
+<groupdef id="player.full.playbuttons">
+	<button
+		id="Stop"
+		action="STOP"
+		x="41" y="112"
+		image="button.stop"
+		hoverimage="button.stop.down"
+		downImage="button.stop.down"
+		tooltip="Stop"
+		rectrgn="1"
+	/>
+	<button
+		id="Previous"
+		action="PREV"
+		x="72" y="109"
+		image="button.previous"
+		hoverimage="button.previous.down"
+		downImage="button.previous.down"
+		tooltip="Previous"
+		rectrgn="1"
+	/>
+	<button
+		id="Play"
+		action="PLAY"
+		x="114" y="109"
+		image="button.play"
+		hoverimage="button.play.down"
+		downImage="button.play.down"
+		tooltip="Play"
+		rectrgn="1"
+	/>
+	<button
+		id="Pause"
+		action="PAUSE"
+		x="114" y="111"
+		image="button.pause"
+		hoverimage="button.pause.down"
+		downImage="button.pause.down"
+		tooltip="Pause"
+		rectrgn="1"
+	/>
+	<button
+		id="Next"
+		action="NEXT"
+		x="147" y="109"
+		image="button.next"
+		hoverimage="button.next.down"
+		downImage="button.next.down"
+		tooltip="Next"
+		rectrgn="1"
+	/>
+	<button
+		id="Open"
+		action="EJECT"
+		x="183" y="111"
+		image="button.open"
+		hoverimage="button.open.down"
+		downImage="button.open.down"
+		tooltip="Open"
+		rectrgn="1"
+	/>
+</groupdef>
+
+<!-- Window Buttons Buttons Group Definition -->
+<groupdef id="player.full.windowbuttons">
+	<togglebutton
+		id="PL"
+		action="TOGGLE"
+		param="Pledit"
+		x="27" y="73"
+		image="button.pl"
+		activeimage="button.pl.down"
+		hoverimage="button.pl.down"
+		downImage="button.pl.down"
+		tooltip="Playlist"		
+		rectrgn="1"
+	/>
+	<togglebutton
+		id="ML"
+		action="TOGGLE"
+		param="guid:ml"
+		x="50" y="73"
+		image="button.ml"
+		activeimage="button.ml.down"
+		hoverimage="button.ml.down"
+		downImage="button.ml.down"
+		tooltip="Media Library"
+		rectrgn="1"
+	/>
+	<togglebutton
+		id="EQ"
+		action="TOGGLE"
+		param="equalizer"
+		x="72" y="73"
+		image="button.eq"
+		activeimage="button.eq.down"
+		hoverimage="button.eq.down"
+		downImage="button.eq.down"
+		tooltip="Equalizer"
+		rectrgn="1"
+	/>
+	<togglebutton
+		id="CNFG"
+		action="TOGGLE" param="guid:{B397A4CE-455A-4D62-8BF6-D0F91ACB70E6}"
+		x="95" y="73"
+		image="button.config"
+		hoverimage="button.config.down"
+		downImage="button.config.down"
+		tooltip="Configuration"
+		rectrgn="1"
+	/>
+	<togglebutton
+		id="SHUF"
+		cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Shuffle"
+		x="126" y="73"
+		image="button.shuf"
+		activeimage="button.shuf.down"
+		hoverimage="button.shuf.down"
+		downImage="button.shuf.down"
+		tooltip="Shuffle"
+		rectrgn="1"
+	/>
+	<nstatesbutton
+		id="RPT"
+		x="159" y="73"		
+		nstates="3"
+		autoelements="0"
+		image="button.repeat"
+		activeimage="button.repeat.down"
+		hoverimage="button.repeat.down"
+		downImage="button.repeat.down"
+		tooltip="Toggle Playlist/Song Repeating"
+		cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Repeat"
+		cfgval="0;1;-1"
+		rectrgn="1"		
+	/>
+	
+	<togglebutton
+		id="CFD"
+		action="toggle_crossfader"
+		x="183" y="73"
+		image="button.crossfade"
+		activeimage="button.crossfade.down"
+		hoverimage="button.crossfade.down"
+		downImage="button.crossfade.down"
+		tooltip="Crossfade"
+		rectrgn="1"
+	/>
+</groupdef>
+
+<!-- Other Base Items -->
+<groupdef id="player.full.baseitems">
+	<layer id="bar" image="layout.bar" x="181" y="76"/>
+	<layer id="bar" image="layout.bar" x="155" y="76"/>
+	<layer id="bar" image="layout.bar" x="122" y="76"/>
+	<layer id="bar" image="layout.bar" x="92" y="76"/>
+	<layer id="bar" image="layout.bar" x="69" y="76"/>
+	<layer id="bar" image="layout.bar" x="46" y="76"/>
+	
+	<!-- Sliders -->
+	<layer id="layout.vol" image="layout.vol" x="38" y="131" ghost="1"/>
+	<layer id="layout.prog" image="layout.prog" x="35" y="97" ghost="1"/>
+	<slider id="vol.slider" x="55" y="130" w="143" h="6" image="volume.slider" thumb="bit.slider" action="VOLUME"/>
+	<slider id="prog.slider" x="55" y="96" w="143" h="6" image="progress.slider" thumb="bit.slider" action="SEEK"/>
+	<slider id="prog.slider.ghost" x="55" y="96" w="143" h="6" image="progress.slider" thumb="bit.slider" action="SEEK"/>
+	<layer id="volumebar" image="layout.volumebar" x="55" y="132" ghost="1"/>
+	<layer id="progressbar" image="layout.progressbar" x="55" y="98" ghost="1"/>
+</groupdef>
+
+<!-- Song File Information Group Definition -->
+<groupdef id="player.full.songinfo">
+
+
+	<Text 
+		id="txtbrlblkhz" 			
+		x="40" y="56" 
+		h="12" w="30"		
+		font="Trebuchet MS"
+		color="lcdtext"
+		fontsize="12"
+		forcefixed="1"		
+		align="left"		
+		default="khz:"
+		ticker="0"
+		ghost="1"
+	/>
+	
+	<Text 
+		id="Frequency" 			
+		x="58" y="58" 
+		h="10" w="36"
+		font="Trebuchet MS"
+		color="lcdtext"
+		forcefixed="1"
+		fontsize="12" 
+		align="left"		
+		display="SONGSAMPLERATE" 
+		ticker="0"
+		ghost="1"
+	/>
+	
+	
+	<text
+		id="timer"
+		display="time"
+		x="96" y="56"
+		w="44" h="12"
+		font="Trebuchet MS"
+		color="lcdtext"
+		forcefixed="1"
+		fontsize="12" 
+		align="center"
+		timecolonwidth="7"		
+	/>
+	
+	<Text 
+		id="txtbrlblkbps" 			
+		x="150" y="56"
+		w="44" h="12"
+		font="Trebuchet MS"
+		color="lcdtext"
+		fontsize="12"
+		forcefixed="1"
+		align="left"		
+		default="kbps:"
+		ticker="0"
+		ghost="1"
+	/>
+	
+	<Text 
+		id="bitrate" 			
+		x="172" y="56"
+		w="44" h="12"
+		font="Trebuchet MS"
+		color="lcdtext"
+		fontsize="12"
+		forcefixed="1"		
+		align="left"		
+		display="SONGBITRATE" 
+		ticker="0"
+		ghost="1"
+	/>
+	
+	<OneDirectionText
+		id="SongTicker" ticker="1"
+		display="songname" 
+		default="" 
+		showlen="1"
+		x="30" y="36"
+		w="175" h="16"
+		align="center" 
+		forcefixed="1" 
+		forceupcase="0" 
+		antialias="1"
+		color="lcdtext"
+		bold="0"
+		rightclickaction="trackmenu"
+		dblclickaction="trackinfo"
+		fontsize="16"
+		font="Trebuchet MS"
+		BetweenString="  "
+		FirstDelay="1000"
+		shadow="0"
+		configattrib="{7061FDE0-0E12-11D8-BB41-0050DA442EF3};Classic Style"
+		
+	/>
+  
+		
+	<!-- Song File Information -->	 
+	<!--text
+		id="infoline"
+		ticker="0"
+		display="songinfo"
+		default=""
+		x="0" y="0"
+		w="0" h="0"
+		font="Trebuchet MS"
+		fontsize="0"
+		ghost="1"
+		color="255,255,255"
+	/-->
+</groupdef>
+
+
+<groupdef id="cubes">
+
+<!-- 1 -->
+	<AnimatedLayer
+		id="cube1"
+		x="0" y="0"
+		w="25" h="25"
+		image="cubevis1"
+		autoplay="0" autoreplay="0" ghost="1"
+		Speed="1" 
+		frameheight="25" 
+		move="0"		
+	/>
+<!-- 2 -->
+	<AnimatedLayer
+		id="cube2"
+		x="25" y="0"
+		w="25" h="25"
+		image="cubevis1"
+		autoplay="0" autoreplay="1" ghost="1"
+		Speed="1" 
+		frameheight="25" 
+		move="0"		
+	/>
+	
+<!-- 3 -->
+	<AnimatedLayer
+		id="cube3"
+		x="50" y="0"
+		w="25" h="25"
+		image="cubevis1"
+		autoplay="0" autoreplay="0" ghost="1"
+		Speed="1" 
+		frameheight="25" 
+		move="0"		
+	/>
+	
+<!-- 4 -->
+	<AnimatedLayer
+		id="cube4"
+		x="75" y="0"
+		w="25" h="25"
+		image="cubevis1"
+		autoplay="0" autoreplay="0" ghost="1"
+		Speed="1" 
+		frameheight="25" 
+		move="0"		
+	/>
+	
+<!-- 5 -->
+	<AnimatedLayer
+		id="cube5"
+		x="0" y="25"
+		w="25" h="25"
+		image="cubevis1"
+		autoplay="0" autoreplay="0" ghost="1"
+		Speed="1" 
+		frameheight="25" 
+		move="0"		
+	/>
+	
+<!-- 6 -->
+	<AnimatedLayer
+		id="cube6"
+		x="25" y="25"
+		w="25" h="25"
+		image="cubevis1"
+		autoplay="0" autoreplay="0" ghost="1"
+		Speed="1" 
+		frameheight="25" 
+		move="0"		
+	/>
+	
+<!-- 7 -->
+	<AnimatedLayer
+		id="cube7"
+		x="50" y="25"
+		w="25" h="25"
+		image="cubevis1"
+		autoplay="0" autoreplay="0" ghost="1"
+		Speed="1" 
+		frameheight="25" 
+		move="0"		
+	/>
+	
+<!-- 8 -->
+	<AnimatedLayer
+		id="cube8"
+		x="75" y="25"
+		w="25" h="25"
+		image="cubevis1"
+		autoplay="0" autoreplay="0" ghost="1"
+		Speed="1" 
+		frameheight="25" 
+		move="0"		
+	/>
+		
+<!-- 9 -->
+	<AnimatedLayer
+		id="cube9"
+		x="0" y="50"
+		w="25" h="25"
+		image="cubevis1"
+		autoplay="0" autoreplay="0" ghost="1"
+		Speed="1" 
+		frameheight="25" 
+		move="0"		
+	/>
+	
+<!-- 10 -->
+	<AnimatedLayer
+		id="cube10"
+		x="25" y="50"
+		w="25" h="25"
+		image="cubevis1"
+		autoplay="0" autoreplay="0" ghost="1"
+		Speed="1" 
+		frameheight="25" 
+		move="0"		
+	/>
+	
+<!-- 11 -->
+	<AnimatedLayer
+		id="cube11"
+		x="50" y="50"
+		w="25" h="25"
+		image="cubevis1"
+		autoplay="0" autoreplay="0" ghost="1"
+		Speed="1" 
+		frameheight="25" 
+		move="0"		
+	/>
+	
+<!-- 12 -->
+	<AnimatedLayer
+		id="cube12"
+		x="75" y="50"
+		w="25" h="25"
+		image="cubevis1"
+		autoplay="0" autoreplay="0" ghost="1"
+		Speed="1" 
+		frameheight="25" 
+		move="0"		
+	/>
+	
+<!-- 13 -->
+	<AnimatedLayer
+		id="cube13"
+		x="0" y="75"
+		w="25" h="25"
+		image="cubevis1"
+		autoplay="0" autoreplay="0" ghost="1"
+		Speed="1" 
+		frameheight="25" 
+		move="0"		
+	/>
+	
+<!-- 14 -->
+	<AnimatedLayer
+		id="cube14"
+		x="25" y="75"
+		w="25" h="25"
+		image="cubevis1"
+		autoplay="0" autoreplay="0" ghost="1"
+		Speed="1" 
+		frameheight="25" 
+		move="0"		
+	/>
+	
+<!-- 15 -->
+	<AnimatedLayer
+		id="cube15"
+		x="50" y="75"
+		w="25" h="25"
+		image="cubevis1"
+		autoplay="0" autoreplay="0" ghost="1"
+		Speed="1" 
+		frameheight="25" 
+		move="0"		
+	/>
+	
+<!-- 16 -->
+	<AnimatedLayer
+		id="cube16"
+		x="75" y="75"
+		w="25" h="25"
+		image="cubevis1"
+		autoplay="0" autoreplay="0" ghost="1"
+		Speed="1" 
+		frameheight="25" 
+		move="0"		
+	/>
+		
+			
+</groupdef>
+	
+
+	<!-- First Layout -->	           			
+	<layout id="full" droptarget="pldr" desktopalpha="1"
+	alphabackground="player.background.full" background="player.background.full.non"
+	snapadjusttop = "0"
+	snapadjustleft = "0"
+	snapadjustright = "0"
+	snapadjustbottom = "5" w="197" h="297">
+	
+		<!-- RGB -->
+		<layer id="player.background.blue" image="player.background.blue" rectrgn="0" x="0" y="0" alpha="0" ghost="1"/>
+		<layer id="player.background.green" image="player.background.green" rectrgn="0" x="0" y="0" alpha="0" ghost="1"/>
+		<layer id="player.background.red" image="player.background.red" rectrgn="0" x="0" y="0" alpha="0" ghost="1"/>
+		<!-- RGB -->
+		
+		<group id="player.full.winampbuttons" x="-21" y="-18"/>
+		<group id="player.full.songinfo" x="-21" y="-18"/>
+		<group id="player.full.baseitems" x="-21" y="-18"/>	
+		<group id="player.full.playbuttons" x="-21" y="-18"/>
+		<group id="player.full.windowbuttons" x="-21" y="-18"/>
+		
+		<!--layer id="local.cdcover" image="cdcover.noimage" rectrgn="0" x="46" y="142" w="99" h="99" tooltip="Dbl Click to open folder"/-->		
+		
+		<vis 
+			id="newvis" 
+			x="46" y="142" w="99" h="99"
+			bandwidth = "wide"
+			falloff = "3"
+			peakfalloff = "3"
+			fps = "60"
+			coloring = "gradient"
+			peaks = "1"
+			oscstyle = "solid"
+
+			colorbandpeak="255,255,255"
+			ColorBand1="15,15,15"
+			ColorBand2="30,30,30"
+			ColorBand3="45,45,45"
+			ColorBand4="60,60,60"
+			ColorBand5="75,75,75"
+			ColorBand6="90,90,90"
+			ColorBand7="105,105,105"
+			ColorBand8="120,120,120"
+			ColorBand9="135,135,135"
+			ColorBand10="150,150,150"
+			ColorBand11="165,165,165"
+			ColorBand12="180,180,180"
+			ColorBand13="195,195,195"
+			ColorBand14="210,210,210"
+			ColorBand15="225,225,225"
+			ColorBand16="240,240,240"
+			ColorBand17="250,250,250"
+			ColorBand18="255,255,255"
+			
+			colorosc1="50,50,50"
+			colorosc2="100,100,100"
+			colorosc3="150,150,150"
+			colorosc4="200,200,200"
+			colorosc5="255,255,255"
+			
+			alpha="170"
+			gammagroup="lcdstuff"
+		/>
+		
+		<AlbumArt
+			id="aafull"
+			x="46" y="142" w="99" h="99"
+			move="1"
+		/>
+		
+		<layer id="vis" x="46" y="142" w="99" h="99" image="blank" tooltip="Right Click for Menu|Left Click to open album folder"/>
+				
+		<layer id="glass" x="46" y="142" image="cdcoverglass" ghost="1"/>		
+		
+		<group id="cubes" x="46" y="142" h="100" w="100"/>
+		
+		<script id="test.script" file="scripts/testvis.maki"/>
+		<script id="cube.script" file="scripts/cubetimelinevis_byframe.maki"/>
+						
+		<script id="full.script" file="scripts/full.maki" />
+		<script id="clock.script" file="scripts/clock.maki" />
+		<script id="cover.script" file="scripts/cover.maki" />
+		
+		
+	</layout>
+	

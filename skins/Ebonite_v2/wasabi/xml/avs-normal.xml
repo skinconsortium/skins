@@ -1,0 +1,103 @@
+
+
+
+<layout id="normal" background="component.basetexture" desktopalpha="0" minimum_w="354" minimum_h="164" h="349" w="708" appbar="left|top|right|bottom">
+	<wasabi.visframe.nostatusbar
+		x="0" y="0" w="0" h="0" relatw="1" relath="1"
+		content="vis.content.group"
+	/>
+
+  <layer
+	id="buttonspacer"
+	x="-178" y="-37" 
+	relaty="1"
+        relatx="1"
+	image="pl.buttonspacer"
+	ghost="1"
+
+  />
+
+	<Button 
+		id="vis.prev"
+		action="VIS_Prev"
+		labelText="PREV"
+		Image="avs.prev"
+		hoverImage="avs.prev.hover"
+		downImage="avs.prev.down"
+		x="-175" y="-38" 
+    		relaty="1"
+    		relatx="1"
+		tooltip="Previous"
+	/>
+	<Button 
+		id="vis.next"
+		action="VIS_Next"
+		labelText="NEXT"
+		Image="avs.next"
+		hoverImage="avs.next.hover"
+		downImage="avs.next.down"
+		x="-147" y="-38" 
+    		relaty="1"
+    		relatx="1"
+		tooltip="Next"
+	/>
+	<ToggleButton 
+		id="vis.random"
+		cfgattrib="{0000000A-000C-0010-FF7B-01014263450C};Random"
+		labelText="RANDOM"
+		Image="avs.rand"
+		hoverImage="avs.rand.hover"
+		downImage="avs.rand.down"
+		activeimage="avs.rand.down"
+		x="-119" y="-38" 
+    		relaty="1"
+    		relatx="1"
+		tooltip="Random"
+	/>
+
+	<button id="vis.fullscr"
+		action="VIS_Fs"
+		x="-91" y="-38" 
+    		relaty="1"
+    		relatx="1"
+		Image="avs.fs"
+		hoverImage="avs.fs.hover"
+		downImage="avs.fs.down"
+		tooltip="FullScreen"
+	/>
+
+	<Button 
+		id="vis.options"
+		action="VIS_Menu"
+		labelText="OPTIONS"
+		Image="avs.opt"
+		hoverImage="avs.opt.hover"
+		downImage="avs.opt.down"
+		 x="-62" y="-38" 
+    		relaty="1"
+    		relatx="1"
+		tooltip="Viz Options" 
+	/>
+
+
+	
+   <layer
+     id="window.resizer"
+     x="-24" y="-24"
+     relatx="1" relaty="1"
+     image="stdfrm.resizer"
+     resize="bottomright"
+     scale="bottomright"
+   />
+
+   <layer
+     id="window.resizel"
+     x="6" y="-24"
+     relaty="1"
+     image="stdfrm.resizel"
+     resize="bottomleft"
+     scale="bottomleft"
+   />
+</layout>
+
+</container>

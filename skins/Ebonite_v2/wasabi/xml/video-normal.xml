@@ -1,0 +1,100 @@
+<include file="standardframe.xml" />
+
+
+<groupdef id="video.buttons.group">
+
+	
+	
+ 	<Button
+		id="pladd"
+		action="VID_1X"
+		x="20" y="0"     	
+		tooltip="Normal Size"
+		Image="1x.normal"
+		downImage="1x.down"
+		rectrgn="1"		
+	/>
+	
+
+	<Button
+		id="plrem"
+		action="VID_2X"
+		x="45" y="0"    
+		tooltip="Double Size"
+		Image="2x.normal"
+		downImage="2x.down"
+		rectrgn="1"
+	/>
+	
+	
+	<Button
+		id="plsel"
+		action="VID_TV"
+		x="73" y="0"    
+		tooltip="Internet TV"
+		Image="tv.normal"
+		downImage="tv.down"
+		rectrgn="1"
+	/>
+	
+	<Button
+		id="plmisc"
+		action="VID_Misc"
+		x="95" y="0"    
+		tooltip="Options"
+		Image="opt.normal"
+		downImage="opt.down"
+		rectrgn="1"
+	/>
+  
+	<Button
+		id="pllist"
+		action="VID_FS"
+		x="120" y="0" 
+		tooltip="FullScreen"
+		Image="fscr.normal"
+		downImage="fscr.down"
+		rectrgn="1"
+	/>
+</groupdef>
+
+<groupdef id="video.content.group">
+
+	<component
+		x="0"
+		y="0"
+		w="4"
+		relatw="1"
+		h="-18"
+		relath="1"
+		noshowcmdbar="1"
+		autoopen="1"
+		autoclose="1"
+		param="guid:{F0816D7B-FFFC-4343-80F2-E8199AA15CC3}"
+	/>
+
+</groupdef>
+
+
+	
+<layout id="normal" 
+	minimum_h="250" 
+	minimum_w="250" 
+	default_h="250" 
+	default_w="250" 
+	>
+
+	<Wasabi:StandardFrame:NoStatus
+		x="0" y="0" w="0" h="0" relatw="1" relath="1"
+		content="video.content.group"
+		padtitleright="8"
+		notify="playlist.content"
+	/>
+	
+	<layer id="dummybar" x="0" y="-42" w="250" h="20" relaty="1" image="blank" />
+	<group id="video.buttons.group" x="0" y="-41" relaty="1" />
+	
+  
+</layout>
+
+

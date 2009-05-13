@@ -1,0 +1,111 @@
+<groupdef id="buttons">
+
+	<button
+		id="Close"
+		action="CLOSE"
+		x="130" y="4"
+		image="button.close"
+		tooltip="Close"
+		rectrgn="1"
+	/>
+  	
+	<togglebutton
+		id="On"
+		action="EQ_TOGGLE"
+		x="14" y="60"
+		image="eq.on" 
+		hoverImage="eq.on.down"
+		downImage="eq.on.down"
+		activeImage="eq.on.down"
+		rectrgn="1"
+		tooltip="Toggle EQ processing"
+	/>
+	<togglebutton
+		id="Auto"
+		action="EQ_AUTO"
+		x="10" y="72"
+		image="eq.auto" 
+		hoverImage="eq.auto.down"
+		downImage="eq.auto.down"
+		activeImage="eq.auto.down"
+		rectrgn="1"
+		tooltip="Toggle EQ automatic processing"
+	/>
+	<button
+		id="presets"
+		action="MENU" param="presets"
+		x="6" y="84"
+		image="eq.preset" 
+		hoverImage="eq.preset.down"
+		downImage="eq.preset.down"
+		activeImage="eq.preset.down"
+		rectrgn="1"
+		tooltip="Display Presets menu"
+	/>
+</groupdef>
+
+<groupdef id="bars">
+
+<layer
+		id="midbareq"
+		x="31" y="52"
+		image="eq.midbar" 
+		move="1"
+	/>
+	<slider
+		id="balance"
+		action="PAN"
+		x="5" y="8" w="25" h="6"
+		orientation="horizontal"
+		thumb="bit.slider"
+		tooltip="Sound Balance" 
+    />
+	<slider 
+		id="Crossfade" 
+		cfgattrib="{F1239F09-8CC6-4081-8519-C2AE99FCB14C};Crossfade time" 
+		x="21" y="13" w="6" h="25"
+		orientation="vertical" 
+		high="20" 
+		thumb="bit.slider"
+		tooltip="Crossfade Time" 
+    />
+	
+	<slider	id="eq0"	action="EQ_BAND"	param="PREAMP"	x="6"	y="13" w="6" h="25"		orientation="vertical"	thumb="bit.slider"	tooltip="Preamp"/>		
+	<slider	id="eq1"	action="EQ_BAND"	param="1"		x="33" 	y="24" w="6" h="58" 	orientation="vertical"	thumb="bit.slider" 	tooltip="60 Hz" />
+	<slider	id="eq2"	action="EQ_BAND"	param="2"		x="43" 	y="24" w="6" h="58" 	orientation="vertical"	thumb="bit.slider" 	tooltip="170 Hz"/>
+	<slider	id="eq3"	action="EQ_BAND"	param="3"		x="53" 	y="24" w="6" h="58" 	orientation="vertical"	thumb="bit.slider" 	tooltip="310 Hz"/>
+	<slider	id="eq4"	action="EQ_BAND"	param="4"		x="63" 	y="24" w="6" h="58" 	orientation="vertical"	thumb="bit.slider" 	tooltip="600 Hz"/>
+	<slider	id="eq5"	action="EQ_BAND"	param="5"		x="73" 	y="24" w="6" h="58" 	orientation="vertical"	thumb="bit.slider"  tooltip="1 kHz"/>
+	<slider	id="eq6"	action="EQ_BAND"	param="6"		x="83" 	y="24" w="6" h="58" 	orientation="vertical"	thumb="bit.slider"  tooltip="3 kHz"	/>
+	<slider	id="eq7"	action="EQ_BAND"	param="7"		x="93" 	y="24" w="6" h="58" 	orientation="vertical"	thumb="bit.slider"  tooltip="6 kHz"/>
+	<slider	id="eq8"	action="EQ_BAND"	param="8"		x="103" y="24" w="6" h="58" 	orientation="vertical"	thumb="bit.slider"  tooltip="12 kHz"/>
+	<slider	id="eq9"	action="EQ_BAND"	param="9"		x="113" y="24" w="6" h="58" 	orientation="vertical"	thumb="bit.slider"  tooltip="14 kHz"/>
+	<slider	id="eq10"	action="EQ_BAND"	param="10"		x="123" y="24" w="6" h="58" 	orientation="vertical"	thumb="bit.slider"  tooltip="16 kHz"/>
+
+</groupdef>	
+
+<layout id="normal" alphabackground="player.background.eq" background="player.background.eq.non" minimum_w="147" minimum_h="106" maximum_w="147" maximum_h="106" desktopalpha="1" snapadjustleft="0" snapadjusttop="0" snapadjustbottom="0" snapadjustright="12">
+	
+	<!-- RGB -->
+	<layer id="player.background.eq.blue" image="player.background.eq.blue" rectrgn="0" x="0" y="0" alpha="0" ghost="1"/>
+	<layer id="player.background.eq.green" image="player.background.eq.green" rectrgn="0" x="0" y="0" alpha="0" ghost="1"/>
+	<layer id="player.background.eq.red" image="player.background.eq.red" rectrgn="0" x="0" y="0" alpha="0" ghost="1"/>
+	<!-- RGB -->
+	
+	<group id="buttons" fitparent="1" move="1"/>
+	
+	<group id="bars" fitparent="1" x="4" y="10" />
+	
+	<eqvis 
+		id="stick_Visspline" 
+		x="40" y="13" w="92" h="17"
+		colortop="250,250,250" 
+		colormiddle="50,50,50" 
+		colorbottom="200,200,200"
+		colorpreamp="0,0,0"
+		ghost="1"
+		gammagroup="lcdtext"
+	/>
+
+
+</layout>

@@ -1,0 +1,29 @@
+<container id="covermain" name="Album Art" default_visible="0" default_y="216">
+	<include file="cover.xml"/>
+	
+	<groupdef id="all.stuff">
+		<SC:Cover
+			x="5" y="1" w="-10" h="-2" relatw="1" relath="1"
+			musicImage="my.music.pic"
+			videoImage="my.video.pic"
+			cdMusicImage="my.audioCd.pic"
+			changeMode="random:lfx"
+			changeTime="2.0"
+			keepRatio="1"
+			stretch="1"
+			stretchNoCover="1"
+			dbClickAction="pic"
+			menu="1"
+			filelist="album.jpg;cover.jpg;coverart.jpg;folder.jpg;front.jpg;cover.png;coverart.png;folder.png;front.png;%artist% - [Cover] - %album%.jpg;%artist% - %album%.jpg;albumartsmall.jpg;albumartmedium.jpg;albumartlarge.jpg"
+			AllowDemoMode="0"
+			
+		/>
+
+	</groupdef>
+
+	<layout id="cover" minimum_w="300" minimum_h="300" rectrgn="1" default_visible="0">
+		<Wasabi:StandardFrame:NoStatus fitparent="1" content="all.stuff"/>			
+	</layout>
+	
+</container>
+
