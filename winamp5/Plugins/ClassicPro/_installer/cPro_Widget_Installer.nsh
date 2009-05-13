@@ -9,7 +9,7 @@
 ;###########################################################################################
 
 	Name "$(CPro_Widget_Name_Text)"
-	OutFile "${CPRO_WIDGET_OUTFILE_PATH}cpro-widget-${CPRO_WIDGET_NAME}_${CPRO_WIDGET_VERSION}.exe"
+	OutFile "${CPRO_WIDGET_OUTFILE_PATH}ClassicPro_Widget_${CPRO_WIDGET_NAME}_${CPRO_WIDGET_VERSION}.exe"
 
 	SetCompressor /SOLID lzma
 	Caption "$(CPro_Widget_Caption)"
