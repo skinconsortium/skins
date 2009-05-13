@@ -1,0 +1,146 @@
+-- Variables Table ---------------------------------------------------
+var# |                Class |                                    What 
+----------------------------------------------------------------------
+0000 |               System |                                   System*
+0001 |                  Int |                                     NULL
+0002 |                  Int |                     __deprecated_runtime
+0003 |               Double |                                        v
+0004 |                  Int |                                        2
+0005 |                  Int |                                    65535
+0006 |                  Int |                                        1
+0007 |               String |                           "runtimecheck"
+0008 |                  Int |                                        0
+0009 |                  Int |                                     last
+000A |                  Int |                                      now
+000B |                  Int |                                     5000
+000C |               String |                  "This script requires "
+000D |               String |        "Winamp 5.54 (skin version 1.34)"
+000E |               String |                                  "Error"
+000F |               String |                                       ""
+0010 |               String |                                        s
+0011 |               String |                                  "DEBUG"
+0012 |                  Int |                                        s
+0013 |               Config |                                   Config*
+0014 |           ConfigItem |                         optionsmenu_page
+0015 |           ConfigItem |                      custom_windows_page
+0016 |           ConfigItem |                   custom_page_nonexposed
+0017 |               String |                                 "Hidden"
+0018 |               String | "{0b804f46-fd44-49e6-ba2d-410844a4b190}"
+0019 |               String | "{1828D28F-78DD-4647-8532-EBA504B8FC04}"
+001A |               String | "{6559CA61-7EB2-4415-A8A9-A2AEEF762B7F}"
+001B |                  Int |                         attribs_mychange
+001C |      ConfigAttribute |                                      sep
+001D |                  Int |                                sep_count
+001E |           ConfigItem |                              cfgmenupage
+001F |               String |                              "seperator"
+0020 |               String |                                      "-"
+0021 |           ConfigItem |                                   parent
+0022 |               String |                                     name
+0023 |               String |                                     guid
+0024 |           ConfigItem |                                    __ret
+0025 |      ConfigAttribute |                                   __dret
+0026 |      ConfigAttribute |      songticker_scrolling_enabled_attrib
+0027 |      ConfigAttribute |              songticker_style_old_attrib
+0028 |               String |                             "Songticker"
+0029 |               String | "{7061FDE0-0E12-11D8-BB41-0050DA442EF3}"
+002A |           ConfigItem |                   custom_page_songticker
+002B |               String |            "Enable Songticker scrolling"
+002C |               String |                                      "1"
+002D |               String |                          "Classic Style"
+002E |      ConfigAttribute |              desktopalpha_enabled_attrib
+002F |               String | "{9149C445-3C30-4E04-8433-5A518ED0FDDE}"
+0030 |               String |                   "Enable desktop alpha"
+0031 |      ConfigAttribute |                notifier_minimized_attrib
+0032 |      ConfigAttribute |                   notifier_always_attrib
+0033 |      ConfigAttribute |                    notifier_never_attrib
+0034 |      ConfigAttribute |               notifier_fadeintime_attrib
+0035 |      ConfigAttribute |              notifier_fadeouttime_attrib
+0036 |      ConfigAttribute |                 notifier_holdtime_attrib
+0037 |      ConfigAttribute |           notifier_showfullscreen_attrib
+0038 |      ConfigAttribute |                     notifier_fdout_alpha
+0039 |      ConfigAttribute |                    notifier_fdout_hslide
+003A |      ConfigAttribute |                    notifier_fdout_vslide
+003B |      ConfigAttribute |                      notifier_fdin_alpha
+003C |      ConfigAttribute |                     notifier_fdin_hslide
+003D |      ConfigAttribute |                     notifier_fdin_vslide
+003E |      ConfigAttribute |                   notifier_loc_br_attrib
+003F |      ConfigAttribute |                   notifier_loc_bl_attrib
+0040 |      ConfigAttribute |                   notifier_loc_tr_attrib
+0041 |      ConfigAttribute |                   notifier_loc_tl_attrib
+0042 |      ConfigAttribute |                notifier_showcover_attrib
+0043 |      ConfigAttribute |                  notifier_ypos_20_attrib
+0044 |      ConfigAttribute |                  notifier_ypos_40_attrib
+0045 |      ConfigAttribute |                  notifier_ypos_60_attrib
+0046 |      ConfigAttribute |                  notifier_ypos_80_attrib
+0047 |      ConfigAttribute |                 notifier_ypos_100_attrib
+0048 |               String |                          "Notifications"
+0049 |               String | "{4b100531-6dd6-4b89-8ee2-3392d7feeb79}"
+004A |           ConfigItem |                     custom_page_notifier
+004B |               String |                            "Show always"
+004C |               String |               "Show only when minimized"
+004D |               String |                                      "0"
+004E |               String |                             "Never show"
+004F |               String |                     "Show in fullscreen"
+0050 |               String |                           "Enable Cover"
+0051 |               String |                               "Location"
+0052 |               String | "{e308e077-16d9-4704-9cd5-125c06e93e71}"
+0053 |           ConfigItem |                 custom_page_notifier_loc
+0054 |               String |                         "Fade In Effect"
+0055 |               String | "{45779031-790e-4f71-aa74-5c4744e044ac}"
+0056 |           ConfigItem |                custom_page_notifier_fdin
+0057 |               String |                        "Fade Out Effect"
+0058 |               String | "{b15651a9-2256-4019-a357-b776d2cc00a1}"
+0059 |           ConfigItem |               custom_page_notifier_fdout
+005A |               String |                               "Y Offset"
+005B |               String | "{66623378-20fb-11dc-8314-0800200c9a66}"
+005C |           ConfigItem |                custom_page_notifier_ypos
+005D |               String |             "Notifications fade in time"
+005E |               String |                                   "1000"
+005F |               String |            "Notifications fade out time"
+0060 |               String |                                   "5000"
+0061 |               String |             "Notifications display time"
+0062 |               String |                                   "2000"
+0063 |               String |                           "Bottom Right"
+0064 |               String |                            "Bottom Left"
+0065 |               String |                              "Top Right"
+0066 |               String |                               "Top Left"
+0067 |               String |                              "20 Pixels"
+0068 |               String |                              "40 Pixels"
+0069 |               String |                              "60 Pixels"
+006A |               String |                              "80 Pixels"
+006B |               String |                             "100 Pixels"
+006C |               String |                            "Alpha Fade "
+006D |               String |                        "Vertical Slide "
+006E |               String |                      "Horizontal Slide "
+006F |               String |                             "Alpha Fade"
+0070 |               String |                         "Vertical Slide"
+0071 |               String |                       "Horizontal Slide"
+-- Events Table ------------------------------------------------------
+var# |         Code Pointer |                                    What 
+----------------------------------------------------------------------
+0032 |                 0629 |                                      n.o
+0033 |                 06B6 |                                      n.o
+0031 |                 0743 |                                      n.o
+0038 |                 07D0 |                                      n.o
+0039 |                 085D |                                      n.o
+003A |                 08EA |                                      n.o
+003B |                 0977 |                                      n.o
+003C |                 0A04 |                                      n.o
+003D |                 0A91 |                                      n.o
+003E |                 0B1E |                                      n.o
+003F |                 0BBC |                                      n.o
+0041 |                 0C5A |                                      n.o
+0040 |                 0CF8 |                                      n.o
+0000 |                 0D96 |                                      S.o
+-- User Functions Table ----------------------------------------------
+               Code Pointer |                                    What 
+----------------------------------------------------------------------
+                       0000 |                             versionCheck
+                       00F2 |                                    debug
+                       011D |                                 debugInt
+                       0153 |                                initPages
+                       01AF |                         addMenuSeparator
+                       0216 |                         addConfigSubMenu
+                       027A |                   initAttribs_songTicker
+                       02E4 |                      initAttribs_general
+                       0312 |                     initAttribs_notifier

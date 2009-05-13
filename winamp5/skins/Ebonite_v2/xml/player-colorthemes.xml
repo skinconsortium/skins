@@ -1,0 +1,6 @@
+<gammaset id="default">
+	<gammagroup id="bodynotused" value="0, 0, 0" gray="0" boost="0" />
+	<gammagroup id="overlay" value="0, 0, 0" gray="0" boost="0" />
+	<gammagroup id="lcd" value="0, 0, 0" gray="0" boost="0" />
+	<gammagroup id="lcdstuff" value="0, 0, 0" gray="0" boost="0" />
+</gammaset>

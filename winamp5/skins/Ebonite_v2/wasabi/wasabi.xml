@@ -1,0 +1,6 @@
+<include file="standardframe/standardframe.xml" />
+<include file="notifier/notifier.xml" />
+<include file="xml/pledit.xml"/>
+<include file="xml/video.xml"/>
+<include file="tooltips/tooltips.xml" />
+<include file="xml/system-colors.xml"/>

@@ -1,0 +1,111 @@
+<elements>
+  	<bitmap id="about.bg" file="about/about1.jpg" />
+  	<bitmap id="ablank" file="about/about1.png" />
+	
+	<bitmap id="about.pp.n" file="about/paypal.png" h="31" y="0"/>
+	<bitmap id="about.pp.h" file="about/paypal.png" h="31" y="31"/>
+	<bitmap id="about.pp.d" file="about/paypal.png" h="31" y="62"/>
+	
+  <color id="font.about.color1" value="255,0,0" />
+  <color id="font.about.color2" value="0,255,255" />
+
+</elements>
+
+<groupdef id="skin.about.group" w="0" h="0" relatw="1" relath="1" rectrgn="1">
+  <rect fitparent="1" color="110,119,134" filled="1" />
+  <layer
+    x="0" y="0"
+    w="0" relatw="1"
+    h="321"
+    image="about.bg"
+  />
+  <layer
+	id="fx"
+    x="0" y="0"
+    image="ablank"
+	fitparent="1"
+  />
+  
+   <text
+    id="about.txt1"
+    color="font.about.color1"
+    x="0" y="112"
+    w="350"
+    h="20"
+    valign="top"
+    align="center"
+    fontsize="15"
+    font="Arial"
+    bold="1"
+    default=""
+	alpha="145"
+	shadow="1" shadowcolor="font.about.color2" shadowx="-1" shadowy="0"
+  />
+  <text
+    id="about.txt2"
+    color="font.about.color1"
+    x="0" y="128"
+    w="350"
+    h="20"
+    valign="top"
+    align="center"
+    fontsize="15"
+    font="Arial"
+    bold="1"
+    default=""
+alpha="145"
+	shadow="1" shadowcolor="font.about.color2" shadowx="-1" shadowy="0"
+  />
+
+  
+<text
+    id="test"
+    color="font.about.color1"
+    x="0" y="240"
+    w="350"
+    h="20"
+    valign="top"
+    align="center"
+    fontsize="14"
+    font="Arial"
+    bold="1"
+    default=""
+  />
+
+<text
+    id="dd"
+    color="0,0,0"
+    x="70" y="1" 
+    w="351"
+    h="30"
+    valign="top"
+    align="left"
+    fontsize="14"
+    font="Arial"
+    text="Please support our work so we can continue coding skins and"
+
+  />
+
+    <text
+    id="dd"
+    color="0,0,0"
+    x="70" y="12" 
+    w="351"
+    h="30"
+    valign="top"
+    align="left"
+    fontsize="14"
+    font="Arial"
+    text="raise prizes for future skinning competitions, Thanks"
+
+  />
+  
+  <button id="donate" x="0" y="0" relaty="0" image="about.pp.n" hoverImage="about.pp.h" downImage="about.pp.d" />
+
+  <script file="about/donate.maki" param="Ebonite"/>
+  
+ <guiobject fitparent="1" ghost="1"/>
+
+ <script file="about/about.maki"/>
+
+</groupdef>

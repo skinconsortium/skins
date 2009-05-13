@@ -1,0 +1,47 @@
+<!-- ===================================================================================================
+
+  <Deimos:updateSystem /> implmentation
+
+  by Martin P. alias Deimos - martin.deimos@gmx.de - www.martin.deimos.de.vu
+
+    Available parameters :
+
+	  - skinVersion="1.0" //this must be a numeric value
+
+      - remoteFile="http://..." or "file:///C:\..." // navigation url to your hosted update file. To navigate to a local file (for testing) use "file:///I:\Eigene Dateien\Meine Websites\skinconsortium\updatemanager\vortex.htm" instead.
+
+
+	Example:
+
+		<Deimos:updateSystem
+			skinVersion="1.0" 
+			remoteFile="http://www.skinconsortium.com/updates/vortex.htm" 
+		/>
+
+
+	
+	IMPORTANT: <Deimos:updateSystem /> object will kill desktopalpha on the layout it is used in! Therefore just put it in the playlisteditor window!
+
+
+==================================================================================================== -->
+
+<groupdef id="updateSystem.imp" xuitag="Deimos:updateSystem" >
+
+	<browser id="brw" x="0" y="0" w="0" h="0" scrollbars="never" url="about:blank" visible="1" ghost="1" />
+
+	<script id="updateSystem.script" file="wasabi/updateSystem/updateSystem.maki" />
+
+</groupdef>
+
+<Container id="updateSystem" name="updatesystem" nomenu="1">
+
+<layout id="normal" h="20" w="20" >
+
+  <Deimos:updateSystem 
+	skinVersion="1.0"
+	remoteFile="http://www.skinconsortium.com/updatemanager/skYce_update.htm"
+  />
+
+</layout>
+
+</Container>

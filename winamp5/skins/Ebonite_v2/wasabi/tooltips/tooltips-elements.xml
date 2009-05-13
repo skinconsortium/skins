@@ -1,0 +1,16 @@
+<elements>
+   <bitmap id="wasabi.tooltip.top.left" file="wasabi/tooltips/tooltips-elements.png" x="0" y="0" h="4" w="4" gammagroup="lcd"/>
+   <bitmap id="wasabi.tooltip.top" file="wasabi/tooltips/tooltips-elements.png" x="4" y="0" h="4" w="8" gammagroup="lcd"/>
+   <bitmap id="wasabi.tooltip.top.right" file="wasabi/tooltips/tooltips-elements.png" x="13" y="0" h="4" w="4" gammagroup="lcd"/>
+   <bitmap id="wasabi.tooltip.left" file="wasabi/tooltips/tooltips-elements.png" x="0" y="4" h="8" w="4" gammagroup="lcd"/>
+   <bitmap id="wasabi.tooltip.center" file="wasabi/tooltips/tooltips-elements.png" x="4" y="4" h="8" w="8" gammagroup="lcd"/>
+   <bitmap id="wasabi.tooltip.right" file="wasabi/tooltips/tooltips-elements.png" x="13" y="4" h="8" w="4" gammagroup="lcd"/>
+   <bitmap id="wasabi.tooltip.bottom.left" file="wasabi/tooltips/tooltips-elements.png" x="0" y="13" h="4" w="4" gammagroup="lcd"/>
+   <bitmap id="wasabi.tooltip.bottom" file="wasabi/tooltips/tooltips-elements.png" x="4" y="13" h="4" w="8" gammagroup="lcd"/>
+   <bitmap id="wasabi.tooltip.bottom.right" file="wasabi/tooltips/tooltips-elements.png" x="13" y="13" h="4" w="4" gammagroup="lcd"/>
+
+   <bitmap id="wasabi.tooltip.top.left.region" file="wasabi/tooltips/tooltips-region.png" x="0" y="0" h="4" w="4" gammagroup="lcd"/>
+   <bitmap id="wasabi.tooltip.top.right.region" file="wasabi/tooltips/tooltips-region.png" x="13" y="0" h="4" w="4" gammagroup="lcd"/>
+   <bitmap id="wasabi.tooltip.bottom.left.region" file="wasabi/tooltips/tooltips-region.png" x="0" y="13" h="4" w="4" gammagroup="lcd"/>
+   <bitmap id="wasabi.tooltip.bottom.right.region" file="wasabi/tooltips/tooltips-region.png" x="13" y="13" h="4" w="4" gammagroup="lcd"/>
+</elements>

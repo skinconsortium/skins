@@ -1,0 +1,271 @@
+<!-- Ebonite Skin - Player.xml file created by SLoB -->
+
+<!-- Winamp Buttons Group Definition -->
+<groupdef id="player.compactnarrow.winampbuttons">
+	
+	<SC:WindowModeButton 
+		id="full.background.switch"
+		x="247" y="24"
+		w="9" h="5"
+		image="button.mode"
+		switch="this"
+		layouts="6"
+		layoutids="full;compact;stick;mini;minivert"
+		rclick="menu"
+		lclick="switchto:full"
+		menuentry="Full;Compact;Stick;Mini;MiniVert"
+		tooltip="Window Modes"
+		rectrgn="1"
+	/>
+
+	<button
+		id="Close"
+		action="CLOSE"
+		x="258" y="24"
+		image="button.close"
+		tooltip="Close"
+		rectrgn="1"
+	/>
+	
+	<button
+		id="Minimize"
+		action="minimize"
+		x="236" y="24"
+		image="button.minimize"
+		tooltip="Minimize"
+		rectrgn="1"
+	/>
+	<button
+		id="Winamp"
+		action="sysmenu"
+		x="28" y="24"
+		image="button.winampmenu"
+		tooltip="Winamp Menu"
+		rectrgn="1"
+	/>
+</groupdef>
+
+<!-- Playback Buttons Group Definition -->
+<groupdef id="player.compactnarrow.playbuttons">
+	<button
+		id="Stop"
+		action="STOP"
+		x="106" y="59"
+		image="button.stop"
+		hoverimage="button.stop.down"
+		downImage="button.stop.down"
+		tooltip="Stop"
+		rectrgn="1"
+	/>
+	<button
+		id="Prev"
+		action="PREV"
+		x="132" y="56"
+		image="button.previous"
+		hoverimage="button.previous.down"
+		downImage="button.previous.down"
+		tooltip="Previous"
+		rectrgn="1"
+	/>
+	<button
+		id="Play"
+		action="PLAY"
+		x="164" y="56"
+		image="button.play"
+		hoverimage="button.play.down"
+		downImage="button.play.down"
+		tooltip="Play"
+		rectrgn="1"
+	/>
+	<button
+		id="Pause"
+		action="PAUSE"
+		x="164" y="59"
+		image="button.pause"
+		hoverimage="button.pause.down"
+		downImage="button.pause.down"
+		tooltip="Pause"
+		rectrgn="1"
+	/>
+	<button
+		id="Next"
+		action="NEXT"
+		x="194" y="56"
+		image="button.next"
+		hoverimage="button.next.down"
+		downImage="button.next.down"
+		tooltip="Next"
+		rectrgn="1"
+	/>
+	<button
+		id="Open"
+		action="EJECT"
+		x="226" y="59"
+		image="button.open"
+		hoverimage="button.open.down"
+		downImage="button.open.down"
+		tooltip="Open"
+		rectrgn="1"
+	/>
+</groupdef>
+
+<!-- Other Base Items -->
+<groupdef id="player.compactnarrow.baseitems">
+	<!-- Sliders -->
+	<layer id="layout.vol" image="layout.vol" x="108" y="77" ghost="1"/>
+	<layer id="layout.prog" image="layout.prog" x="104" y="47" ghost="1"/>
+	<slider id="vol.slider" x="122" y="77" w="115" h="6" image="volume.slider" thumb="bit.slider" action="VOLUME"/>
+	<slider id="prog.slider" x="122" y="47" w="115" h="6" image="progress.slider" thumb="bit.slider" action="SEEK"/>
+	<slider id="prog.slider.ghost" x="122" y="47" w="115" h="6" image="progress.slider" thumb="bit.slider" action="SEEK"/>
+	<layer id="volumebar" image="layout.volumebar" x="122" y="78" w="120" h="6" ghost="1"/>
+	<layer id="progressbar" image="layout.progressbar" x="122" y="48" w="120" h="6" ghost="1"/>
+</groupdef>
+
+<!-- Song File Information Group Definition -->
+<groupdef id="player.compactnarrow.songinfo">
+
+
+	<Text 
+		id="txtbrlblkhz" 			
+		x="108" y="32" 
+		h="12" w="30"		
+		font="Trebuchet MS" 
+		fontsize="12" 
+		forcefixed="1"
+		color="lcdtext"
+		align="left"		
+		default="khz:"
+		ticker="0"
+		ghost="1"
+	/>
+	
+	<Text 
+		id="Frequency" 			
+		x="128" y="32" 
+		h="12" w="36"
+		font="Trebuchet MS" 
+		forcefixed="1"
+		color="lcdtext"
+		fontsize="12"
+		align="left"		
+		display="SONGSAMPLERATE" 
+		ticker="0"
+		ghost="1"
+	/>
+	
+	
+	<text
+		id="timer"
+		display="time"
+		x="150" y="32"
+		w="44" h="12"
+		font="Trebuchet MS" 
+		forcefixed="1"
+		color="lcdtext"
+		fontsize="12"
+		align="center"
+		timecolonwidth="7"
+	/>
+	
+	<Text 
+		id="txtbrlblkbps" 			
+		x="194" y="32"
+		w="60" h="12"
+		font="Trebuchet MS" 
+		forcefixed="1"
+		color="lcdtext"
+		fontsize="12" 
+		align="left"		
+		default="kbps:"
+		ticker="0"
+		ghost="1"
+	/>
+	
+	<Text 
+		id="bitrate" 			
+		x="218" y="32"
+		w="44" h="12"
+		font="Trebuchet MS" 
+		forcefixed="1"
+		color="lcdtext"
+		fontsize="12" 
+		align="left"		
+		display="SONGBITRATE" 
+		ticker="0"
+		ghost="1"
+	/>
+	
+	<OneDirectionText
+		id="SongTicker" ticker="1"
+		display="songname" 
+		default="" 
+		showlen="1"
+		x="102" y="12"
+		w="140" h="16"
+		align="center" 
+		forcefixed="1" 
+		forceupcase="0" 
+		antialias="1" 
+		color="lcdtext"
+		gammagroup="Buttons"
+		bold="0"
+		rightclickaction="trackmenu"
+		dblclickaction="trackinfo"
+		fontsize="16"
+		font="Trebuchet MS"
+		BetweenString="  "
+		FirstDelay="1000"
+		shadow="0"
+		configattrib="{7061FDE0-0E12-11D8-BB41-0050DA442EF3};Classic Style"
+	/>
+  
+		
+	<!-- Song File Information -->	 
+	<!--text
+		id="infoline" ticker="0"
+		display="songinfo" default=""
+		x="0" y="0"
+		w="0" h="0"
+		font="Trebuchet MS" fontsize="0" ghost="1"
+	/-->
+</groupdef>
+
+
+	<!-- First Layout -->	           			
+	<layout id="narrow" droptarget="pldr" desktopalpha="1"
+	alphabackground="player.background.compact.narrow" background="player.background.compact.narrow.non"
+	snapadjusttop = "0"
+	snapadjustleft = "0"
+	snapadjustright = "0"
+	snapadjustbottom = "5" w="258" h="99">
+	
+		<!-- RGB -->
+		<layer id="player.background.narrow.blue" image="player.background.narrow.blue" rectrgn="0" x="0" y="0" alpha="0" ghost="1"/>
+		<layer id="player.background.narrow.green" image="player.background.narrow.green" rectrgn="0" x="0" y="0" alpha="0" ghost="1"/>
+		<layer id="player.background.narrow.red" image="player.background.narrow.red" rectrgn="0" x="0" y="0" alpha="0" ghost="1"/>
+		<!-- RGB -->
+		
+		<group id="player.compactnarrow.winampbuttons" x="-21" y="-18"/>
+		<group id="player.compactnarrow.songinfo" x="0" y="0"/>
+		<group id="player.compactnarrow.baseitems" x="0" y="0"/>	
+		<group id="player.compactnarrow.playbuttons" x="0" y="0"/>
+		
+		
+		<!--layer id="local.cdcover" image="cdcover.noimage" rectrgn="0" x="46" y="142" w="99" h="99" tooltip="Dbl Click to open folder"/-->
+		
+		<AlbumArt
+			id="aanarrow"
+			x="16"
+			y="6"
+			w="76"
+			h="76"
+			move="1"
+			tooltip="Click to open album folder"
+		/>
+	
+
+		<script id="clock.script" file="scripts/clock.maki" />
+		<script id="narrow.script" file="scripts/compactnarrow.maki" />
+		<script id="aanarrow.script" file="scripts/albumart.maki" />
+	</layout>
+	

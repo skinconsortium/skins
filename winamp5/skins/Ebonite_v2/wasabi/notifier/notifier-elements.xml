@@ -1,0 +1,29 @@
+<elements>
+
+	<bitmap id="notifier.bg.left" file="wasabi/notifier/notif-bg.png" x="0" y="0" w="8" h="100" gammagroup="body"/>
+	<bitmap id="notifier.bg.center" file="wasabi/notifier/notif-bg.png" x="8" y="0" w="230" h="100" gammagroup="body"/>
+	<bitmap id="notifier.bg.right" file="wasabi/notifier/notif-bg.png" x="238" y="0" w="20" h="100" gammagroup="body"/>
+
+	<bitmap id="notifier.bg.left.da" file="wasabi/notifier/notif-bg-alpha.png" x="0" y="0" w="8" h="100" gammagroup="body"/>
+	<bitmap id="notifier.bg.center.da" file="wasabi/notifier/notif-bg-alpha.png" x="8" y="0" w="230" h="100" gammagroup="body"/>
+	<bitmap id="notifier.bg.right.da" file="wasabi/notifier/notif-bg-alpha.png" x="238" y="0" w="20" h="100" gammagroup="body"/>
+
+	<!-- RGB -->
+	<bitmap id="notifier.bg.left.da.blue" file="wasabi/notifier/notif-bg-alpha_blue.png" x="0" y="0" w="8" h="100"/>
+	<bitmap id="notifier.bg.center.da.blue" file="wasabi/notifier/notif-bg-alpha_blue.png" x="8" y="0" w="230" h="100"/>
+	<bitmap id="notifier.bg.right.da.blue" file="wasabi/notifier/notif-bg-alpha_blue.png" x="238" y="0" w="20" h="100"/>
+	
+	<bitmap id="notifier.bg.left.da.green" file="wasabi/notifier/notif-bg-alpha_green.png" x="0" y="0" w="8" h="100"/>
+	<bitmap id="notifier.bg.center.da.green" file="wasabi/notifier/notif-bg-alpha_green.png" x="8" y="0" w="230" h="100"/>
+	<bitmap id="notifier.bg.right.da.green" file="wasabi/notifier/notif-bg-alpha_green.png" x="238" y="0" w="20" h="100"/>
+	
+	<bitmap id="notifier.bg.left.da.red" file="wasabi/notifier/notif-bg-alpha_red.png" x="0" y="0" w="8" h="100"/>
+	<bitmap id="notifier.bg.center.da.red" file="wasabi/notifier/notif-bg-alpha_red.png" x="8" y="0" w="230" h="100"/>
+	<bitmap id="notifier.bg.right.da.red" file="wasabi/notifier/notif-bg-alpha_red.png" x="238" y="0" w="20" h="100"/>
+	<!-- RGB -->
+	
+	<color id="notifier.white" value="255,255,255" gammagroup="lcdstuff"/>
+	<bitmap id="noticdcover.glass" file="wasabi/notifier/noticoverglass.png" />
+	
+</elements>
+

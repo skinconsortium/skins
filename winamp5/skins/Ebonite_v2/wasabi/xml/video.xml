@@ -1,0 +1,7 @@
+
+<container id="Video" name="Video" minimum_h="250" minimum_w="350" 
+	default_h="350" default_w="350" default_visible="0" default_y="216" >
+	
+	<include file="video-normal.xml"/>
+	
+</container>

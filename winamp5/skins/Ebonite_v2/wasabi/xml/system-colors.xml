@@ -1,0 +1,69 @@
+	<!--
+
+	system-colors.xml
+
+	this file contains all the static color definitions for Wasabi. An objects that does not rely on a group will use
+	one of these elements to decide what color to use.
+
+	-->
+
+
+<elements>
+	
+	<color id="color.display.white" value="255,255,255" gammagroup="lcdstuff"/>
+
+	<!-- playlist editor -->
+	<color id="pledit.text" value="255,255,255" gammagroup="lcdstuff"/>	<!-- text color in editor -->
+	<color id="pledit.text.current" value="184,184,184" gammagroup="lcdstuff"/> <!-- current playback file foreground -->
+	<color id="pledit.currentoutline" value="255,255,255" gammagroup="lcdstuff"/> <!-- current playback file outline color -->
+	<color id="pledit.dir.plitem" value="255,255,255" gammagroup="lcdstuff"/> <!-- playlist directory item foreground color -->
+	<color id="pledit.dir.working" value="0,0,0" gammagroup="lcdstuff"/> <!-- playlist directory working playlist item foreground color -->
+	<color id="pledit.dir.workingbg" value="150,150,150" gammagroup="lcd"/> <!-- playlist directory working playlist item background color -->
+
+	<color id="studio.list.item.selected" value="184,184,184" gammagroup="lcdstuff"/>
+
+	<!-- Generic Trees -->
+	<color id="wasabi.tree.text" value="200,200,200" gammagroup="lcdstuff"/> <!-- Item text color -->
+	<color id="wasabi.tree.selected" value="222,222,222" gammagroup="lcdstuff"/> <!-- Select item text
+	background color -->
+	<color id="wasabi.tree.hiliteddrop" value="255,255,255" gammagroup="lcdstuff"/> <!-- Drop marker color -->
+	<color id="wasabi.statusbar.text" value="222,222,222" gammagroup="lcdstuff"/>
+	<!-- Generic Lists -->
+	<color id="wasabi.list.text" value="255,255,255" gammagroup="lcdstuff"/> <!--lists/trees item foreground (also edit text) -->
+	<color id="wasabi.list.background" value="70,70,70" gammagroup="lcd"/> <!--lists/trees item background (also bg for edit) -->
+
+	<color id="wasabi.text.color" value="200,200,200" gammagroup="lcdstuff"/>
+	<color id="white" value="0,0,0"  gammagroup="lcdstuff"/>
+	<color id="wasabi.tooltips.textcolor" value="0,0,0" gammagroup="lcdstuff" />
+
+	<color id="wasabi.list.text.selected" value="255,255,255" gammagroup="lcdstuff"/> <!--listview/treeview selection bar text color -->
+	<color id="wasabi.list.text.selected.background" value="117,117,117" gammagroup="lcdstuff"/> <!--listview/treeview selection bar backcolor -->
+	<color id="studio.list.item.selected" value="217,217,217" gammagroup="lcd"/> 
+	<color id="studio.list.item.focused" value="217,217,217" gammagroup="lcd"/> 
+
+	<color id="wasabi.list.text.current" value="135,135,135" gammagroup="lcdstuff"/> <!-- listview/treeview selection bar textcolor (inactive) -->
+	<color id="wasabi.list.text.selected.background.inactive" value="37,37,37" gammagroup="lcd"/> <!-- listview/treeview selectionbar back color (inactive) -->
+
+	<color id="wasabi.list.column.background" value="0,0,0" gammagroup="lcd"/> <!-- listview header background color -->
+	<color id="wasabi.list.column.text" value="200,200,200" gammagroup="lcdstuff"/> <!-- listview header text color -->
+	<color id="wasabi.list.column.frame.top" value="247,247,247" gammagroup="lcd"/> <!-- listview header frame top color -->
+	<color id="wasabi.list.column.frame.middle" value="227,227,227" gammagroup="lcd"/> <!-- listview header frame middle color -->
+	<color id="wasabi.list.column.frame.bottom" value="217,217,217" gammagroup="lcd"/> <!-- listview header frame bottom color -->
+	<color id="wasabi.list.column.empty" value="137,137,137" gammagroup="lcd"/> <!-- listview header empty color (beyond the columns) -->
+
+	<!-- edit wnds -->
+	<color id="color.display.bg" value="50,50,50" gammagroup="lcd"/>
+	
+	<color id="wasabi.window.background" value="37,37,37" gammagroup="lcd"/> <!--window background. -  If this color is not defined, a whole container is created in memory to extract a pixel, so specifying it makes skin loading faster -->
+	<color id="wasabi.window.text" value="200,200,200" gammagroup="lcdstuff"/> <!--text color within windows -->
+	<color id="wasabi.border.sunken" value="60,60,60" gammagroup="lcd"/> <!-- color of dividers and sunken borders -->
+
+	<color id="wasabi.scrollbar.foreground" value="97,97,97" gammagroup="lcd"/> <!-- scrollbar foreground color -->
+	<color id="wasabi.scrollbar.background" value="107,107,107" gammagroup="lcd"/> <!-- scrollbar background color -->
+	<color id="wasabi.scrollbar.foreground.inverted" value="137,137,137" gammagroup="lcd"/><!-- inverse scrollbar foreground color -->
+	<color id="wasabi.scrollbar.background.inverted" value="57,57,57" gammagroup="lcd"/> <!-- inverse scrollbar background color -->
+
+	<color id="wasabi.button.text" value="200,200,200" gammagroup="lcdstuff"/> <!-- Buttons text color -->
+	<color id="wasabi.button.hiliteText" value="255,255,255" gammagroup="lcdstuff"/> <!-- Buttons hilite text color, used by tab windows-->
+	<color id="wasabi.button.dimmedText" value="200,200,200" gammagroup="lcdstuff"/> <!-- Buttons dimmed text color, when disabled -->
+</elements>

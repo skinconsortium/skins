@@ -1,0 +1,84 @@
+
+build009 (10.05.2007)
+[SLoB]
+--retweaked menu for std, adv options
+--added brief layerfx guide in SC-Cover.xml & howtousethis.txt
+
+- added menu item Force Transition (on title change), also added private int save
+- added menu item Stretch Cover, also added private int save
+- added menu item Show Reflection(for non stretched cover), also added private int save
+- fixed a typo for strech variable as it was bugging me ;)
+- removed language from xui declaration as its used in maki code so non editable
+- changed slide:h to slide:h:l
+- changed slide:zs' to slide:ys' as z will be a new transition at some point and z was y
+- changed shadow slightly for both left/right edges
+- amended example declaration as per changes above
+- added some layerfx transitions, Enjoy :)
+
+
+todo
+finish off transitions and menu stuff
+add paypal donation on bottom of menu????
+
+
+build008 (28.12.2006)
+[sylvester]
+- support for more id3 tags
+- fixed a few small live settings change bugs
+- fixed a few other small things while implementing it in Azenis 2
+
+build007 (25.11.2006)
+[sylvester]
+- dbl click on noCover and "pic" will now open the folder
+- startup with noCover if stopped
+- new animations
+   List of all the animations avalible:
+   "fade", "fadelist", "none", "random",
+   "slide:w", "slide:w:r",
+   "slide:h", "slide:h:r",
+   "slide:z", "slide:z:r",
+   "slide:z2", "slide:z2:r"
+
+build006 (24.11.2006)
+[sylvester]
+- added fadeslide animation mode
+- added slide:z animation mode
+- added random animation mode
+- The shadow is now in a group
+- Code cleanup
+- Added default param values
+- Added support for Winamp 5.31 for CD noCover... can now be:
+   "1411kbps stereo 44.0kHz" or "1411kbps stereo 44.1kHz"
+- New Param (strechNoCover) Choose to strech the noCover picture
+- New Param (language) Change the language of the menu
+   default is "Explore Item Folder;Open Album Art;Dimensions"
+
+build005 (9.11.2006)
+[sylvester]
+- fixed BIG memory leak issue
+   All maps are deleted after use
+
+build004 (7.11.2006)
+[sylvester]
+- fixed bug with fade animation changing the w/h (think/hope so
+- removed lots of unnecessary code in animateCover()
+- removed the use of the use of the setSize() function and replaced it with
+   {w="0" h="0" relatw="1" relath="1"} in cover.xml
+
+build003 (4.11.2006)
+[sylvester]
+- added Changelog
+- loading doesn't show shadows
+- loading doesn't animate
+- removed some unnecessary code from animate() (less/no bugs I hope)
+- added some debugString()'s (use debug console)
+
+build002 (4.11.2006)
+[sylvester]
+- menu param
+- only animate a change in cover 
+- doesn't resize the noCover image
+
+build001 (23.08.2006)
+[sylvester]
+- foundation

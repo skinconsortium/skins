@@ -1,0 +1,209 @@
+<!-- =======================================================================================================
+
+	This file implements the following objects :
+
+	- Wasabi:PlaylistFrame:NoStatus
+	- Wasabi:MediaLibraryFrame:NoStatus
+	Available parameters :
+
+		padtitleleft	: resizes the title from the left by the specified amount of pixels
+		padtitleright : resizes the title from the right by the specified amount of pixels
+		content		 : tells the object which group to instantiate in its client area
+
+======================================================================================================== -->
+
+<include file="standardframe-elements.xml" />
+
+
+<!-- =======================================================================================================
+
+	This group serves as a template for all the Wasabi:StandardFrame objects
+
+======================================================================================================== -->
+
+<container id="sc.alphaframe" dynamic="1" default_visible="0" nomenu="1">
+
+	<layout id="scdef" desktopalpha="1" w="200" h="150" minimum_h="150" minimum_w="200" >
+
+		<layer id="window.topleft" x="0" y="0" h="30" w="10" image="wasabi.frame.topleft" resize="0" sysregion="1"/>
+		<layer id="window.top" x="10" y="0" h="30" w="-27" relatw="1" image="wasabi.frame.top" resize="0" sysregion="1"/>		
+		<layer id="window.topright" x="-17" y="0" h="30" w="17" relatx="1" image="wasabi.frame.topright" resize="0" sysregion="1"/>
+		
+		<!-- RGB -->
+		<layer id="window.topleft.blue" x="0" y="0" h="30" w="10" image="wasabi.frame.topleft.blue" ghost="1" alpha="0"/>
+		<layer id="window.top.blue" x="10" y="0" h="30" w="-27" relatw="1" image="wasabi.frame.top.blue" ghost="1" alpha="0"/>		
+		<layer id="window.topright.blue" x="-17" y="0" h="30" w="17" relatx="1" image="wasabi.frame.topright.blue" ghost="1" alpha="0"/>		
+		
+		<layer id="window.topleft.green" x="0" y="0" h="30" w="10" image="wasabi.frame.topleft.green" ghost="1" alpha="0"/>
+		<layer id="window.top.green" x="10" y="0" h="30" w="-27" relatw="1" image="wasabi.frame.top.green" ghost="1" alpha="0"/>		
+		<layer id="window.topright.green" x="-17" y="0" h="30" w="17" relatx="1" image="wasabi.frame.topright.green" ghost="1" alpha="0"/>		
+		
+		<layer id="window.topleft.red" x="0" y="0" h="30" w="10" image="wasabi.frame.topleft.red" ghost="1" alpha="0"/>
+		<layer id="window.top.red" x="10" y="0" h="30" w="-27" relatw="1" image="wasabi.frame.top.red" ghost="1" alpha="0"/>		
+		<layer id="window.topright.red" x="-17" y="0" h="30" w="17" relatx="1" image="wasabi.frame.topright.red" ghost="1" alpha="0"/>
+		
+
+		<text
+			id="window.titl"
+			x="50" y="8"
+			w="-100" relatw="1" h="16" sysregion="0" font="Arial"
+			size="16" ghost="1" align="center"
+		/>
+
+	
+		<guiObject fitparent="1" id="mousetrap" move="1" />
+
+		<layer id="window.left" x="0" y="30" h="-60" tile="0" relath="1" w="10" image="wasabi.frame.left" resize="left" sysregion="1" />
+		<layer id="window.right" x="-17" y="30" h="-60" relath="1" w="17" relatx="1" tile="0" image="wasabi.frame.right" resize="right" sysregion="1" />
+
+		<!-- RGB -->
+		<layer id="window.left.blue" x="0" y="30" h="-60" tile="0" relath="1" w="10" image="wasabi.frame.left.blue" ghost="1" />
+		<layer id="window.right.blue" x="-17" y="30" h="-60" relath="1" w="17" relatx="1" tile="0" image="wasabi.frame.right.blue" ghost="1" />
+
+		<layer id="window.left.green" x="0" y="30" h="-60" tile="0" relath="1" w="10" image="wasabi.frame.left.green" ghost="1" />
+		<layer id="window.right.green" x="-17" y="30" h="-60" relath="1" w="17" relatx="1" tile="0" image="wasabi.frame.right.green" ghost="1" />
+
+		<layer id="window.left.red" x="0" y="30" h="-60" tile="0" relath="1" w="10" image="wasabi.frame.left.red" ghost="1" />
+		<layer id="window.right.red" x="-17" y="30" h="-60" relath="1" w="17" relatx="1" tile="0" image="wasabi.frame.right.red" ghost="1" />
+		
+		
+		
+		<layer id="window.bottomleft" x="0" y="-30" relaty="1" h="30" w="10" image="wasabi.frame.bottomleft" resize="bottomleft" sysregion="1" />
+		<layer id="window.bottom" x="10" y="-30" h="30" relaty="1" w="-27" relatw="1" image="wasabi.frame.bottom" resize="bottom" sysregion="1" />
+		<layer id="window.bottomright" x="-17" y="-30" w="17" relaty="1" h="30" relatx="1" image="wasabi.frame.bottomright" resize="bottomright" sysregion="1" />
+
+		<!-- RGB -->
+		<layer id="window.bottomleft.blue" x="0" y="-30" relaty="1" h="30" w="10" image="wasabi.frame.bottomleft.blue" ghost="1" />
+		<layer id="window.bottom.blue" x="10" y="-30" h="30" relaty="1" w="-27" relatw="1" image="wasabi.frame.bottom.blue" ghost="1" />
+		<layer id="window.bottomright.blue" x="-17" y="-30" w="17" relaty="1" h="30" relatx="1" image="wasabi.frame.bottomright.blue" ghost="1" />
+
+		<layer id="window.bottomleft.green" x="0" y="-30" relaty="1" h="30" w="10" image="wasabi.frame.bottomleft.green" ghost="1" />
+		<layer id="window.bottom.green" x="10" y="-30" h="30" relaty="1" w="-27" relatw="1" image="wasabi.frame.bottom.green" ghost="1" />
+		<layer id="window.bottomright.green" x="-17" y="-30" w="17" relaty="1" h="30" relatx="1" image="wasabi.frame.bottomright.green" ghost="1" />
+		
+		<layer id="window.bottomleft.red" x="0" y="-30" relaty="1" h="30" w="10" image="wasabi.frame.bottomleft.red" ghost="1" />
+		<layer id="window.bottom.red" x="10" y="-30" h="30" relaty="1" w="-27" relatw="1" image="wasabi.frame.bottom.red" ghost="1" />
+		<layer id="window.bottomright.red" x="-17" y="-30" w="17" relaty="1" h="30" relatx="1" image="wasabi.frame.bottomright.red" ghost="1" />
+		
+		<layer id="window.resize.disabler" image="blank" fitparent="1" move="1" visible="0"/>
+		
+		<LayoutStatus id="sysmenu.status" bg="0" x="5" y="3" w="14" h="9" includeonly="{system}" />
+		<hideobject target="sysmenu.status"/>
+
+		<button
+			id="CLOSE"
+			action="CLOSE"
+			x="-19" relatx="1" y="6"
+			rectrgn="1"
+			image="button.close"
+			tooltip="Close Window"
+		/>
+		
+		<button
+			id="MINIMIZE"
+			action="MINIMIZE"
+			x="-30" relatx="1" y="6"
+			rectrgn="1"
+			image="button.minimize"
+			tooltip="Minimize Window"
+		/>
+		
+		<layer
+			id="window.resizer"
+			x="-26" y="-28"
+			relatx="1" relaty="1"
+			image="resizer"
+			ghost="1"
+			alpha="255"
+		/>
+
+		<layer
+			id="window.resizel"
+			x="2" y="-28"
+			relaty="1"
+			image="resizel"
+			ghost="1"
+			alpha="255"
+		/>
+		
+		
+
+	</layout>
+</container>
+
+<groupdef id="wasabi.frame.dummy" background="wasabi.frame.inner">
+
+	<layer id="top" x="0" y="0" w="30" relatw="1" h="30" image="wasabi.frame.dummybg" sysregion="-2" />
+	<layer id="left" x="0" y="30" w="10" relath="1" h="-30" image="wasabi.frame.dummybg" sysregion="-2" />
+	<layer id="right" x="-0" relatx="1" y="30" w="17" relath="1" h="-0" image="wasabi.frame.dummybg" sysregion="-2" />
+	<layer id="bottom" x="0" y="-10" relaty="1" w="-0" relatw="1" h="30" image="wasabi.frame.dummybg" sysregion="-2" />
+
+	<!--layer id="inner" x="20" y="30" relath="1" w="-29" relatw="1" h="-50" image="wasabi.frame.inner" sysregion="1" tile="0"/-->
+<layer id="inner" x="11" y="17" relath="1" w="-30" relatw="1" h="-20" image="wasabi.frame.inner" sysregion="1" tile="0"/>
+
+	<Wasabi:Text
+		id="wasabi.titlebar" default=":componentname"
+		x="17" y="35" alpha="0" ghost="1"
+		w="1" h="1"
+		relatw="1" sysregion="1"
+		size="16"
+	/>
+
+</groupdef>
+
+
+<!-- =======================================================================================================
+
+	<Wasabi:StandardFrame:Status /> implementation
+
+======================================================================================================== -->
+
+ <groupdef id="wasabi.standardframe.statusbar" sysregion="1" xuitag="Wasabi:StandardFrame:Status">
+
+	<group id="wasabi.frame.dummy" x="0" y="0" w="-17" relatw="1" h="-20" relath="1" sysregion="1"/>
+
+	<!--LayoutStatus id="standardframe.layoutstatus" x="17" y="-60" relaty="1" w="-34" relatw="1" h="18" exclude="{system}"/-->
+	<script id="standardframe.script" file="wasabi/standardframe/standardframe.maki" param="12,30,-28,-61,0,0,1,1" />
+
+</groupdef>
+
+
+
+
+<!-- =======================================================================================================
+
+	<Wasabi:StandardFrame:NoStatus /> implementation
+
+======================================================================================================== -->
+
+<groupdef id="wasabi.standardframe.nostatusbar" sysregion="1" xuitag="Wasabi:StandardFrame:NoStatus">
+
+	<group id="wasabi.frame.dummy" x="0" y="0" w="-17" relatw="1" h="-20" relath="1"/>
+		
+	<script id="standardframe.script" file="wasabi/standardframe/standardframe.maki" param="12,30,-28,-61,0,0,1,1" />
+
+</groupdef>
+
+
+
+<!-- =======================================================================================================
+
+	<Wasabi:StandardFrame:Modal /> implementation
+
+======================================================================================================== -->
+
+<groupdef id="wasabi.standardframe.modal" forcenoresize="1" inherit_group="wasabi.standardframe.nostatusbar" sysregion="1" xuitag="Wasabi:StandardFrame:Modal">
+	<sendparams target="window.resize.disabler" visible="1" />
+	<sendparams target="window.resizer" visible="0" />
+	<sendparams target="window.resizel" visible="0" />
+</groupdef>
+
+
+<!-- =======================================================================================================
+
+	<Wasabi:StandardFrame:Static /> implementation
+
+======================================================================================================== -->
+
+<groupdef id="wasabi.standardframe.static" forcenoresize="1" inherit_group="wasabi.standardframe.nostatusbar" sysregion="1" xuitag="Wasabi:StandardFrame:Static">	
+</groupdef>

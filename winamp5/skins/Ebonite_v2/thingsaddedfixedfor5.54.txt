@@ -1,0 +1,14 @@
+martin fixed invalid window bug in genff
+which fixed 2 gurus in stdframe.maki
+
+fixed props loop to only process valid count of props
+fixed infoline in all modes, should no longer be visible
+fixed transitions working on cover window
+added album art fetch, open folder in full mode
+added album art to cover window, now uses album art object, no support for local cover now
+changed RGB Changer window title
+changed skin version to 1.34
+added acceleration keys
+removed unused components
+
+

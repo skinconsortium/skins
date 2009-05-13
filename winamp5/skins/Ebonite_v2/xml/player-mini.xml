@@ -1,0 +1,147 @@
+<!-- Ebonite Skin - Player.xml file created by Mike Winston aka WinstonGFX -->
+
+<!-- Winamp Buttons Group Definition -->
+<groupdef id="player.mini.winampbuttons">
+
+	<SC:WindowModeButton 
+		id="mini.background.switch"
+		x="188" y="24"
+		image="button.mode"
+		switch="this"
+		layouts="6"
+		layoutids="minivert;narrow;full;compact;stick"
+		rclick="menu"
+		lclick="switchto:minivert"
+		menuentry="MiniVert;Narrow;Full;Compact;Stick"
+		tooltip="Window Modes"
+		rectrgn="1"
+	/>
+	
+	<button
+		id="Close"
+		action="CLOSE"
+		x="199" y="24"
+		image="button.close"
+		tooltip="Close"
+		rectrgn="1"
+	/>
+	<!--button
+		id="Mode"
+		action="switch"
+		param="stick"
+		x="188" y="24"
+		image="button.mode"
+		tooltip="Change Mode"
+		rectrgn="1"
+	/-->
+	
+	<button
+		id="Minimize"
+		action="minimize"
+		x="177" y="24"
+		image="button.minimize"
+		tooltip="Minimize"
+		rectrgn="1"
+	/>
+	<button
+		id="Winamp"
+		action="sysmenu"
+		x="31" y="24"
+		image="button.winampmenu"
+		tooltip="Winamp Menu"
+		rectrgn="1"
+	/>
+</groupdef>
+
+<!-- Playback Buttons Group Definition -->
+<groupdef id="player.mini.playbuttons">
+	<button
+		id="Stop"
+		action="STOP"
+		x="41" y="59"
+		image="button.stop"
+		hoverimage="button.stop.down"
+		downImage="button.stop.down"
+		tooltip="Stop"
+		rectrgn="1"
+	/>
+	<button
+		id="Previous"
+		action="PREV"
+		x="72" y="56"
+		image="button.previous"
+		hoverimage="button.previous.down"
+		downImage="button.previous.down"
+		tooltip="Previous"
+		rectrgn="1"
+	/>
+	<button
+		id="Play"
+		action="PLAY"
+		x="114" y="56"
+		image="button.play"
+		hoverimage="button.play.down"
+		downImage="button.play.down"
+		tooltip="Play"
+		rectrgn="1"
+	/>
+	<button
+		id="Pause"
+		action="PAUSE"
+		x="114" y="59"
+		image="button.pause"
+		hoverimage="button.pause.down"
+		downImage="button.pause.down"
+		tooltip="Pause"
+		rectrgn="1"
+	/>
+	<button
+		id="Next"
+		action="NEXT"
+		x="147" y="56"
+		image="button.next"
+		hoverimage="button.next.down"
+		downImage="button.next.down"
+		tooltip="Next"
+		rectrgn="1"
+	/>
+	<button
+		id="Open"
+		action="EJECT"
+		x="183" y="58"
+		image="button.open"
+		hoverimage="button.open.down"
+		downImage="button.open.down"
+		tooltip="Open"
+		rectrgn="1"
+	/>
+	
+	<layer id="progressbar" image="layout.progressbar" x="41" y="77" w="155" ghost="1"/>
+	<slider id="mini.prog.slider" x="41" y="76" w="153" h="6" image="progress.slider" thumb="bit.slider" action="SEEK" ghost="1"/>
+	<slider id="mini.prog.slider.ghost" x="41" y="76" w="153" h="6" image="progress.slider" thumb="bit.slider" action="SEEK"/>
+	
+</groupdef>
+
+	<!-- First Layout -->	           			
+	<layout id="mini" droptarget="pldr" desktopalpha="1"
+		alphabackground="player.background.mini" background="player.background.mini.non"
+		snapadjusttop = "0"
+		snapadjustleft = "0"
+		snapadjustright = "0"
+		snapadjustbottom = "5" 
+		w="198" h="52">
+		
+		<!-- RGB -->
+		<layer id="player.background.mini.blue" image="player.background.mini.blue" rectrgn="0" x="0" y="0" alpha="0" ghost="1"/>
+		<layer id="player.background.mini.green" image="player.background.mini.green" rectrgn="0" x="0" y="0" alpha="0" ghost="1"/>
+		<layer id="player.background.mini.red" image="player.background.mini.red" rectrgn="0" x="0" y="0" alpha="0" ghost="1"/>
+		<!-- RGB -->
+		
+		<group id="player.mini.winampbuttons" x="-21" y="-18"/>
+		<group id="player.mini.playbuttons" x="-21" y="-42"/>
+
+		<layer id="dummdrag" image="blank" x="-24" y="18" w="28" h="33" relatx="1" moveable="1"/>
+		
+		<script id="mini.script" file="scripts/mini.maki" />
+	</layout>
+	

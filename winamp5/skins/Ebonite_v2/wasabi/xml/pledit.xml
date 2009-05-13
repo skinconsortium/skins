@@ -1,0 +1,7 @@
+<!-- component="guid:{45F3F7C1-A6F3-4ee6-A15E-125E92FC3F8D}" -->
+<container id="Pledit" name="Playlist Editor" dynamic="0" minimum_h="250" minimum_w="350" 
+	default_h="350" default_w="350" default_visible="0" default_y="216" >
+	
+	<include file="pledit-normal.xml"/>
+	
+</container>

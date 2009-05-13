@@ -1,0 +1,141 @@
+<elements>
+
+	<bitmap id="wasabi.tree.background" file="$solid" color="237,237,237" gammagroup="lcd"/><!-- Tree background bitmap (tile) -->
+	<bitmap id="wasabi.list.background" file="$solid" color="237,237,237" gammagroup="lcd"/><!-- Tree background bitmap (tile) -->
+
+<!-- Generic Button -->
+
+  <bitmap id="wasabi.button.label.arrow.up" file="gfx/window/window-elements.png" x="137" y="75" h="4" w="7" gammagroup="lcdstuff"/>
+  <bitmap id="wasabi.button.label.arrow.down" file="gfx/window/window-elements.png" x="137" y="86" h="4" w="7" gammagroup="lcdstuff"/>
+  <bitmap id="wasabi.button.label.arrow.left" file="gfx/window/window-elements.png" x="133" y="79" h="7" w="4" gammagroup="lcdstuff"/>
+  <bitmap id="wasabi.button.label.arrow.right" file="gfx/window/window-elements.png" x="144" y="79" h="7" w="4" gammagroup="lcdstuff"/>
+  <bitmap id="wasabi.button.label.ellipses" file="gfx/window/window-elements.png" x="138" y="92" h="1" w="5" gammagroup="lcdstuff"/>
+
+  <bitmap id="wasabi.button.top.left" file="gfx/window/window-elements.png" x="0" y="134" h="4" w="4" gammagroup="lcd"/>
+  <bitmap id="wasabi.button.top" file="gfx/window/window-elements.png" x="4" y="134" h="4" w="25" gammagroup="lcd"/>
+  <bitmap id="wasabi.button.top.right" file="gfx/window/window-elements.png" x="29" y="134" h="4" w="4" gammagroup="lcd"/>
+  <bitmap id="wasabi.button.left" file="gfx/window/window-elements.png" x="0" y="138" h="25" w="4" gammagroup="lcd"/>
+  <bitmap id="wasabi.button.center" file="gfx/window/window-elements.png" x="4" y="138" h="25" w="25" gammagroup="lcd"/>
+  <bitmap id="wasabi.button.right" file="gfx/window/window-elements.png" x="29" y="138" h="25" w="4" gammagroup="lcd"/>
+  <bitmap id="wasabi.button.bottom.left" file="gfx/window/window-elements.png" x="0" y="163" h="4" w="4" gammagroup="lcd"/>
+  <bitmap id="wasabi.button.bottom" file="gfx/window/window-elements.png" x="4" y="163" h="4" w="25" gammagroup="lcd"/>
+  <bitmap id="wasabi.button.bottom.right" file="gfx/window/window-elements.png" x="29" y="163" h="4" w="4" gammagroup="lcd"/>
+
+  <bitmap id="wasabi.button.hover.top.left" file="gfx/window/window-elements.png" x="33" y="134" h="4" w="4" gammagroup="lcd"/>
+  <bitmap id="wasabi.button.hover.top" file="gfx/window/window-elements.png" x="37" y="134" h="4" w="25" gammagroup="lcd"/>
+  <bitmap id="wasabi.button.hover.top.right" file="gfx/window/window-elements.png" x="62" y="134" h="4" w="4" gammagroup="lcd"/>
+  <bitmap id="wasabi.button.hover.left" file="gfx/window/window-elements.png" x="33" y="138" h="25" w="4" gammagroup="lcd"/>
+  <bitmap id="wasabi.button.hover.center" file="gfx/window/window-elements.png" x="37" y="138" h="25" w="25" gammagroup="lcd"/>
+  <bitmap id="wasabi.button.hover.right" file="gfx/window/window-elements.png" x="62" y="138" h="25" w="4" gammagroup="lcd"/>
+  <bitmap id="wasabi.button.hover.bottom.left" file="gfx/window/window-elements.png" x="33" y="163" h="4" w="4" gammagroup="lcd"/>
+  <bitmap id="wasabi.button.hover.bottom" file="gfx/window/window-elements.png" x="37" y="163" h="4" w="25" gammagroup="lcd"/>
+  <bitmap id="wasabi.button.hover.bottom.right" file="gfx/window/window-elements.png" x="62" y="163" h="4" w="4" gammagroup="lcd"/>
+
+  <bitmap id="wasabi.button.pressed.top.left" file="gfx/window/window-elements.png" x="66" y="134" h="4" w="4" gammagroup="lcd"/>
+  <bitmap id="wasabi.button.pressed.top" file="gfx/window/window-elements.png" x="70" y="134" h="4" w="25" gammagroup="lcd"/>
+  <bitmap id="wasabi.button.pressed.top.right" file="gfx/window/window-elements.png" x="95" y="134" h="4" w="4" gammagroup="lcd"/>
+  <bitmap id="wasabi.button.pressed.left" file="gfx/window/window-elements.png" x="66" y="138" h="25" w="4" gammagroup="lcd"/>
+  <bitmap id="wasabi.button.pressed.center" file="gfx/window/window-elements.png" x="70" y="138" h="25" w="25" gammagroup="lcd"/>
+  <bitmap id="wasabi.button.pressed.right" file="gfx/window/window-elements.png" x="95" y="138" h="25" w="4" gammagroup="lcd"/>
+  <bitmap id="wasabi.button.pressed.bottom.left" file="gfx/window/window-elements.png" x="66" y="163" h="4" w="4" gammagroup="lcd"/>
+  <bitmap id="wasabi.button.pressed.bottom" file="gfx/window/window-elements.png" x="70" y="163" h="4" w="25" gammagroup="lcd"/>
+  <bitmap id="wasabi.button.pressed.bottom.right" file="gfx/window/window-elements.png" x="95" y="163" h="4" w="4" gammagroup="lcd"/>
+
+  <bitmap id="wasabi.button.middle" file="gfx/window/window-elements.png" x="4" y="138" h="25" w="25" gammagroup="lcd"/>
+  <bitmap id="wasabi.button.hover.middle" file="gfx/window/window-elements.png" x="37" y="138" h="25" w="25" gammagroup="lcd"/>
+  <bitmap id="wasabi.button.pressed.middle" file="gfx/window/window-elements.png" x="70" y="138" h="25" w="25" gammagroup="lcd"/>
+
+  <bitmap id="wasabi.scrollbar.vertical.grip" file="gfx/window/scrollgrips.png" x="0" y="0" h="8" w="6" gammagroup="lcdstuff"/>
+  <bitmap id="wasabi.scrollbar.horizontal.grip" file="gfx/window/scrollgrips.png" x="7" y="0" h="6" w="8" gammagroup="lcdstuff"/>
+
+  <bitmap id="wasabi.tree.tab.closed" file="gfx/window/window-elements.png" x="149" y="0" h="14" w="14" gammagroup="lcdstuff"/> 
+  <bitmap id="wasabi.tree.tab.open" file="gfx/window/window-elements.png" x="135" y="0" h="14" w="14" gammagroup="lcdstuff"/> 
+  <bitmap id="wasabi.tree.link.top.bottom" file="gfx/window/window-elements.png" x="135" y="14" h="14" w="14" gammagroup="lcdstuff"/> 
+  <bitmap id="wasabi.tree.link.top.right" file="gfx/window/window-elements.png" x="135" y="42" h="14" w="14" gammagroup="lcdstuff"/> 
+  <bitmap id="wasabi.tree.link.top.rightBottom" file="gfx/window/window-elements.png" x="135" y="28" h="14" w="14" gammagroup="lcdstuff"/> 
+  <bitmap id="wasabi.tree.link.tab.top.bottom" file="gfx/window/window-elements.png" x="149" y="14" h="14" w="14" gammagroup="lcdstuff"/> 
+  <bitmap id="wasabi.tree.link.tab.top.right" file="gfx/window/window-elements.png" x="149" y="42" h="14" w="14" gammagroup="lcdstuff"/> 
+  <bitmap id="wasabi.tree.link.tab.top.rightBottom" file="gfx/window/window-elements.png" x="149" y="28" h="14" w="14" gammagroup="lcdstuff"/> 
+
+<!-- Checkboxes and Radiobuttons -->
+  <bitmap id="wasabi.button.checkbox" file="gfx/window/window-elements.png" x="79" y="77" h="7" w="7" gammagroup="lcdstuff"/>
+  <bitmap id="wasabi.button.checkbox.pressed" file="gfx/window/window-elements.png" x="58" y="77" h="7" w="7" gammagroup="lcdstuff"/>
+
+  <bitmap id="wasabi.button.radio.background" file="gfx/window/window-elements.png" x="58" y="66" h="11" w="11" gammagroup="lcd"/>
+  <bitmap id="wasabi.button.radio.background.display" file="gfx/window/window-elements.png" x="69" y="66" h="9" w="9" gammagroup="lcd"/>
+  <bitmap id="wasabi.button.radio" file="gfx/window/window-elements.png" x="79" y="77" h="7" w="7" gammagroup="lcdstuff"/>
+  <bitmap id="wasabi.button.radio.pressed" file="gfx/window/window-elements.png" x="72" y="77" h="7" w="7" gammagroup="lcdstuff"/>
+
+<!-- Combo Box List-->
+  <bitmap id="wasabi.dropdownlist.list.top.left" file="gfx/window/window-elements.png" x="40" y="124" h="1" w="1" gammagroup="lcd"/>
+  <bitmap id="wasabi.dropdownlist.list.top" file="gfx/window/window-elements.png" x="41" y="124" h="1" w="10" gammagroup="lcd"/>
+  <bitmap id="wasabi.dropdownlist.list.top.right" file="gfx/window/window-elements.png" x="51" y="124" h="1" w="1" gammagroup="lcd"/>
+  <bitmap id="wasabi.dropdownlist.list.left" file="gfx/window/window-elements.png" x="40" y="125" h="8" w="1" gammagroup="lcd"/>
+  <bitmap id="wasabi.dropdownlist.list.center" file="gfx/window/window-elements.png" x="41" y="125" h="8" w="10" gammagroup="lcd"/>
+  <bitmap id="wasabi.dropdownlist.list.right" file="gfx/window/window-elements.png" x="51" y="125" h="8" w="1" gammagroup="lcd"/>
+  <bitmap id="wasabi.dropdownlist.list.bottom.left" file="gfx/window/window-elements.png" x="40" y="133" h="1" w="1" gammagroup="lcd"/>
+  <bitmap id="wasabi.dropdownlist.list.bottom" file="gfx/window/window-elements.png" x="41" y="133" h="1" w="10" gammagroup="lcd"/>
+  <bitmap id="wasabi.dropdownlist.list.bottom.right" file="gfx/window/window-elements.png" x="51" y="133" h="1" w="1" gammagroup="lcd"/>
+
+<!-- Object Frame-->
+  <bitmap id="wasabi.objectframe.top.left" file="gfx/window/window-elements.png" x="0" y="114" h="1" w="1" gammagroup="lcd"/>
+  <bitmap id="wasabi.objectframe.top" file="gfx/window/window-elements.png" x="1" y="114" h="1" w="17" gammagroup="lcd"/>
+  <bitmap id="wasabi.objectframe.top.right" file="gfx/window/window-elements.png" x="18" y="114" h="1" w="1" gammagroup="lcd"/>
+  <bitmap id="wasabi.objectframe.left" file="gfx/window/window-elements.png" x="0" y="115" h="17" w="1" gammagroup="lcd"/>
+  <bitmap id="wasabi.objectframe.center" file="gfx/window/window-elements.png" x="1" y="115" h="17" w="17" gammagroup="lcd"/>
+  <bitmap id="wasabi.objectframe.right" file="gfx/window/window-elements.png" x="18" y="115" h="17" w="1" gammagroup="lcd"/>
+  <bitmap id="wasabi.objectframe.bottom.left" file="gfx/window/window-elements.png" x="0" y="132" h="1" w="1" gammagroup="lcd"/>
+  <bitmap id="wasabi.objectframe.bottom" file="gfx/window/window-elements.png" x="1" y="132" h="1" w="17" gammagroup="lcd"/>
+  <bitmap id="wasabi.objectframe.bottom.right" file="gfx/window/window-elements.png" x="18" y="132" h="1" w="1" gammagroup="lcd"/>
+
+<!-- Scrollbars (on List, Tree, etc...) -->
+  <bitmap id="wasabi.scrollbar.vertical.button" file="gfx/window/scrollbars.png" x="20" y="0" h="31" w="13" gammagroup="lcd"/>
+  <bitmap id="wasabi.scrollbar.vertical.button.hover" file="gfx/window/scrollbars.png" x="20" y="0" h="31" w="13" gammagroup="lcd"/>
+  <bitmap id="wasabi.scrollbar.vertical.button.pressed" file="gfx/window/scrollbars.png" x="40" y="0" h="31" w="13" gammagroup="lcd"/>
+
+  <bitmap id="wasabi.scrollbar.vertical.left" file="gfx/window/scrollbars.png" x="60" y="0" h="17" w="13" gammagroup="lcd"/>
+  <bitmap id="wasabi.scrollbar.vertical.left.hover" file="gfx/window/scrollbars.png" x="60" y="0" h="17" w="13" gammagroup="lcd"/>
+  <bitmap id="wasabi.scrollbar.vertical.left.pressed" file="gfx/window/scrollbars.png" x="80" y="0" h="17" w="13" gammagroup="lcd"/>
+
+  <bitmap id="wasabi.scrollbar.vertical.right" file="gfx/window/scrollbars.png" x="60" y="26" h="17" w="13" gammagroup="lcd"/>
+  <bitmap id="wasabi.scrollbar.vertical.right.hover" file="gfx/window/scrollbars.png" x="60" y="26" h="17" w="13" gammagroup="lcd"/>
+  <bitmap id="wasabi.scrollbar.vertical.right.pressed" file="gfx/window/scrollbars.png" x="80" y="26" h="17" w="13" gammagroup="lcd"/>
+
+  <bitmap id="wasabi.scrollbar.vertical.background" file="gfx/window/scrollbars.png" x="0" y="0" w="13" h="17" gammagroup="lcd"/>
+  <bitmap id="wasabi.scrollbar.vertical.background.top" file="gfx/window/scrollbars.png" x="0" y="0" w="13" h="17" gammagroup="lcd"/>
+  <bitmap id="wasabi.scrollbar.vertical.background.middle" file="gfx/window/scrollbars.png" x="0" y="0" w="13" h="17" gammagroup="lcd"/>
+  <bitmap id="wasabi.scrollbar.vertical.background.bottom" file="gfx/window/scrollbars.png" x="0" y="0" w="13" h="17" gammagroup="lcd"/>
+
+  <bitmap id="wasabi.scrollbar.horizontal.button" file="gfx/window/scrollbars.png" x="12" y="70" h="13" w="31" gammagroup="lcd"/>
+  <bitmap id="wasabi.scrollbar.horizontal.button.hover" file="gfx/window/scrollbars.png" x="12" y="70" h="13" w="31" gammagroup="lcd"/>
+  <bitmap id="wasabi.scrollbar.horizontal.button.pressed" file="gfx/window/scrollbars.png" x="12" y="90" h="13" w="31" gammagroup="lcd"/>
+
+  <bitmap id="wasabi.scrollbar.horizontal.left" file="gfx/window/scrollbars.png" x="0" y="110" h="13" w="17" gammagroup="lcd"/>
+  <bitmap id="wasabi.scrollbar.horizontal.left.hover" file="gfx/window/scrollbars.png" x="0" y="110" h="13" w="17" gammagroup="lcd"/>
+  <bitmap id="wasabi.scrollbar.horizontal.left.pressed" file="gfx/window/scrollbars.png" x="0" y="130" h="13" w="17" gammagroup="lcd"/>
+
+  <bitmap id="wasabi.scrollbar.horizontal.right" file="gfx/window/scrollbars.png" x="26" y="110" h="13" w="17" gammagroup="lcd"/>
+  <bitmap id="wasabi.scrollbar.horizontal.right.hover" file="gfx/window/scrollbars.png" x="26" y="110" h="13" w="17" gammagroup="lcd"/>
+  <bitmap id="wasabi.scrollbar.horizontal.right.pressed" file="gfx/window/scrollbars.png" x="26" y="130" h="13" w="17" gammagroup="lcd"/>
+
+  <bitmap id="wasabi.scrollbar.horizontal.background" file="gfx/window/scrollbars.png" x="18" y="50" w="17" h="13" gammagroup="lcd"/>
+  <bitmap id="wasabi.scrollbar.horizontal.background.top" file="gfx/window/scrollbars.png" x="18" y="50" w="17" h="13" gammagroup="lcd"/>
+  <bitmap id="wasabi.scrollbar.horizontal.background.middle" file="gfx/window/scrollbars.png" x="18" y="50" w="17" h="13" gammagroup="lcd"/>
+  <bitmap id="wasabi.scrollbar.horizontal.background.bottom" file="gfx/window/scrollbars.png" x="18" y="50" w="17" h="13" gammagroup="lcd"/>
+
+<!-- Generic Sliders -->
+  <bitmap id="wasabi.slider.horizontal.left" file="gfx/window/window-elements.png" x="106" y="149" h="8" w="8" gammagroup="lcd"/>
+  <bitmap id="wasabi.slider.horizontal.middle" file="gfx/window/window-elements.png" x="115" y="149" h="8" w="10" gammagroup="lcd"/>
+  <bitmap id="wasabi.slider.horizontal.right" file="gfx/window/window-elements.png" x="126" y="149" h="8" w="8" gammagroup="lcd"/>
+
+  <bitmap id="wasabi.slider.vertical.top" file="gfx/window/window-elements.png" x="138" y="136" h="8" w="8" gammagroup="lcd"/>
+  <bitmap id="wasabi.slider.vertical.middle" file="gfx/window/window-elements.png" x="138" y="145" h="10" w="8" gammagroup="lcd"/>
+  <bitmap id="wasabi.slider.vertical.bottom" file="gfx/window/window-elements.png" x="138" y="156" h="8" w="8" gammagroup="lcd"/>
+
+  <bitmap id="wasabi.slider.horizontal.button" file="gfx/window/window-elements.png" x="106" y="136" h="13" w="15" gammagroup="lcd"/>
+  <bitmap id="wasabi.slider.horizontal.button.pressed" file="gfx/window/window-elements.png" x="121" y="136" h="13" w="15" gammagroup="lcd"/>
+
+  <bitmap id="wasabi.slider.vertical.button" file="gfx/window/window-elements.png" x="106" y="157" h="12" w="16" gammagroup="lcd"/>
+  <bitmap id="wasabi.slider.vertical.button.pressed" file="gfx/window/window-elements.png" x="122" y="157" h="12" w="16" gammagroup="lcd"/>
+
+</elements>

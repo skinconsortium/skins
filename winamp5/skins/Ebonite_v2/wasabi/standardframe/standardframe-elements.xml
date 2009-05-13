@@ -1,0 +1,101 @@
+<elements>
+
+<!-- WASABI:StandardFrame -->
+
+	<bitmap id="wasabi.frame.topleft" file="gfx/standardframe/frame.png" x="0" y="0" h="30" w="10"/>
+	<bitmap id="wasabi.frame.top" file="gfx/standardframe/frame.png" x="10" y="0" h="30" w="273"/>
+	<bitmap id="wasabi.frame.topright" file="gfx/standardframe/frame.png" x="276" y="0" h="30" w="17"/>
+	<bitmap id="wasabi.frame.left" file="gfx/standardframe/frame.png" x="0" y="30" h="257" w="10"/>
+	<bitmap id="wasabi.frame.inner" file="gfx/standardframe/innerbg.png" x="0" y="0" h="240" w="262"/>	
+	<bitmap id="wasabi.frame.right" file="gfx/standardframe/frame.png" x="276" y="30" h="257" w="17"/>
+	<bitmap id="wasabi.frame.bottomleft" file="gfx/standardframe/frame.png" x="0" y="277" h="30" w="10"/>
+	<bitmap id="wasabi.frame.bottom" file="gfx/standardframe/frame.png" x="10" y="277" h="30" w="265"/>
+	<bitmap id="wasabi.frame.bottomright" file="gfx/standardframe/frame.png" x="276" y="277" h="30" w="17"/>
+	
+	
+	<!-- RGB -->
+	<bitmap id="wasabi.frame.topleft.red" file="gfx/standardframe/frame_red.png" x="0" y="0" h="30" w="10"/>
+	<bitmap id="wasabi.frame.top.red" file="gfx/standardframe/frame_red.png" x="10" y="0" h="30" w="273"/>
+	<bitmap id="wasabi.frame.topright.red" file="gfx/standardframe/frame_red.png" x="276" y="0" h="30" w="17"/>
+	<bitmap id="wasabi.frame.left.red" file="gfx/standardframe/frame_red.png" x="0" y="30" h="257" w="10"/>
+	<bitmap id="wasabi.frame.inner.red" file="gfx/standardframe/innerbg_red.png" x="0" y="0" h="240" w="262"/>	
+	<bitmap id="wasabi.frame.right.red" file="gfx/standardframe/frame_red.png" x="276" y="30" h="257" w="17"/>
+	<bitmap id="wasabi.frame.bottomleft.red" file="gfx/standardframe/frame_red.png" x="0" y="277" h="30" w="10"/>
+	<bitmap id="wasabi.frame.bottom.red" file="gfx/standardframe/frame_red.png" x="10" y="277" h="30" w="265"/>
+	<bitmap id="wasabi.frame.bottomright.red" file="gfx/standardframe/frame_red.png" x="276" y="277" h="30" w="17"/>
+	
+	<bitmap id="wasabi.frame.topleft.green" file="gfx/standardframe/frame_green.png" x="0" y="0" h="30" w="10"/>
+	<bitmap id="wasabi.frame.top.green" file="gfx/standardframe/frame_green.png" x="10" y="0" h="30" w="273"/>
+	<bitmap id="wasabi.frame.topright.green" file="gfx/standardframe/frame_green.png" x="276" y="0" h="30" w="17"/>
+	<bitmap id="wasabi.frame.left.green" file="gfx/standardframe/frame_green.png" x="0" y="30" h="257" w="10"/>
+	<bitmap id="wasabi.frame.inner.green" file="gfx/standardframe/innerbg_green.png" x="0" y="0" h="240" w="262"/>	
+	<bitmap id="wasabi.frame.right.green" file="gfx/standardframe/frame_green.png" x="276" y="30" h="257" w="17"/>
+	<bitmap id="wasabi.frame.bottomleft.green" file="gfx/standardframe/frame_green.png" x="0" y="277" h="30" w="10"/>
+	<bitmap id="wasabi.frame.bottom.green" file="gfx/standardframe/frame_green.png" x="10" y="277" h="30" w="265"/>
+	<bitmap id="wasabi.frame.bottomright.green" file="gfx/standardframe/frame_green.png" x="276" y="277" h="30" w="17"/>
+	
+	<bitmap id="wasabi.frame.topleft.blue" file="gfx/standardframe/frame_blue.png" x="0" y="0" h="30" w="10"/>
+	<bitmap id="wasabi.frame.top.blue" file="gfx/standardframe/frame_blue.png" x="10" y="0" h="30" w="273"/>
+	<bitmap id="wasabi.frame.topright.blue" file="gfx/standardframe/frame_blue.png" x="276" y="0" h="30" w="17"/>
+	<bitmap id="wasabi.frame.left.blue" file="gfx/standardframe/frame_blue.png" x="0" y="30" h="257" w="10"/>
+	<bitmap id="wasabi.frame.inner.blue" file="gfx/standardframe/innerbg_blue.png" x="0" y="0" h="240" w="262"/>	
+	<bitmap id="wasabi.frame.right.blue" file="gfx/standardframe/frame_blue.png" x="276" y="30" h="257" w="17"/>
+	<bitmap id="wasabi.frame.bottomleft.blue" file="gfx/standardframe/frame_blue.png" x="0" y="277" h="30" w="10"/>
+	<bitmap id="wasabi.frame.bottom.blue" file="gfx/standardframe/frame_blue.png" x="10" y="277" h="30" w="265"/>
+	<bitmap id="wasabi.frame.bottomright.blue" file="gfx/standardframe/frame_blue.png" x="276" y="277" h="30" w="17"/>
+	
+	<bitmap id="wasabi.frame.topleft.na" file="gfx/standardframe/frame_na.png" x="0" y="0" h="30" w="10"/>
+	<bitmap id="wasabi.frame.top.na" file="gfx/standardframe/frame_na.png" x="10" y="0" h="30" w="273"/>
+	<bitmap id="wasabi.frame.topright.na" file="gfx/standardframe/frame_na.png" x="276" y="0" h="30" w="17"/>
+	<bitmap id="wasabi.frame.left.na" file="gfx/standardframe/frame_na.png" x="0" y="30" h="257" w="10"/>
+	<bitmap id="wasabi.frame.inner.na" file="gfx/standardframe/innerbg.png" x="0" y="0" h="240" w="262"/>
+	<bitmap id="wasabi.frame.right.na" file="gfx/standardframe/frame_na.png" x="276" y="30" h="257" w="17"/>
+	<bitmap id="wasabi.frame.bottomleft.na" file="gfx/standardframe/frame_na.png" x="0" y="277" h="30" w="10"/>
+	<bitmap id="wasabi.frame.bottom.na" file="gfx/standardframe/frame_na.png" x="10" y="277" h="30" w="265"/>
+	<bitmap id="wasabi.frame.bottomright.na" file="gfx/standardframe/frame_na.png" x="276" y="277" h="30" w="17"/>
+	
+	<!--bitmap id="wasabi.frame.inner.na" file="gfx/standardframe/frame_na.png" x="10" y="30" h="257" w="268"/-->
+	
+	<bitmap id="wasabi.frame.dummybg" file="gfx/standardframe/window/background.png" x="0" y="0" h="10" w="10" gammagroup="lcd"/>
+
+	<bitmap id="clear" file="gfx/clear.png"/>
+	<bitmap id="wasabi.basetexture" file="gfx/standardframe/window/background.png" gammagroup="lcd"/>
+	<bitmap id="wasabi.frame.basetexture" file="gfx/standardframe/window/background.png" gammagroup="lcd"/>
+	
+	<!-- component window buttons --> 
+	<bitmap id="1x.normal" file="componentbuttons/1x_normal.png" gammagroup="lcdstuff"/>
+	<bitmap id="1x.down" file="componentbuttons/1x_down.png" gammagroup="lcdstuff"/>
+	<bitmap id="2x.normal" file="componentbuttons/2x_normal.png" gammagroup="lcdstuff"/>
+	<bitmap id="2x.down" file="componentbuttons/2x_down.png" gammagroup="lcdstuff"/>
+	<bitmap id="add.normal" file="componentbuttons/add_normal.png" gammagroup="lcdstuff"/>
+	<bitmap id="add.down" file="componentbuttons/add_down.png" gammagroup="lcdstuff"/>
+	<bitmap id="fscr.normal" file="componentbuttons/fscr_normal.png" gammagroup="lcdstuff"/>
+	<bitmap id="fscr.down" file="componentbuttons/fscr_down.png" gammagroup="lcdstuff"/>
+	<bitmap id="fullscreen.normal" file="componentbuttons/fullscreen_normal.png" gammagroup="lcdstuff"/>
+	<bitmap id="fullscreen.down" file="componentbuttons/fullscreen_down.png" gammagroup="lcdstuff"/>
+	<bitmap id="list.down" file="componentbuttons/list_down.png" gammagroup="lcdstuff"/>
+	<bitmap id="list.normal" file="componentbuttons/list_normal.png" gammagroup="lcdstuff"/>
+	<bitmap id="misc.normal" file="componentbuttons/misc_normal.png" gammagroup="lcdstuff"/>
+	<bitmap id="misc.down" file="componentbuttons/misc_down.png" gammagroup="lcdstuff"/>
+	<bitmap id="next.vis.normal" file="componentbuttons/next_vis_normal.png" gammagroup="lcdstuff"/>
+	<bitmap id="next.vis.down" file="componentbuttons/next_vis_down.png" gammagroup="lcdstuff"/>
+	<bitmap id="opt.normal" file="componentbuttons/opt_normal.png" gammagroup="lcdstuff"/>
+	<bitmap id="opt.down" file="componentbuttons/opt_down.png" gammagroup="lcdstuff"/>
+	<bitmap id="previous.vis.normal" file="componentbuttons/previous_vis_normal.png" gammagroup="lcdstuff"/>
+	<bitmap id="previous.vis.down" file="componentbuttons/previous_vis_down.png" gammagroup="lcdstuff"/>
+	<bitmap id="rand.normal" file="componentbuttons/rand_normal.png" gammagroup="lcdstuff"/>
+	<bitmap id="rand.down" file="componentbuttons/rand_down.png" gammagroup="lcdstuff"/>
+	<bitmap id="rem.normal" file="componentbuttons/rem_normal.png" gammagroup="lcdstuff"/>
+	<bitmap id="rem.down" file="componentbuttons/rem_down.png" gammagroup="lcdstuff"/>
+	<bitmap id="sel.normal" file="componentbuttons/sel_normal.png" gammagroup="lcdstuff"/>
+	<bitmap id="sel.down" file="componentbuttons/sel_down.png" gammagroup="lcdstuff"/>
+	<bitmap id="tv.normal" file="componentbuttons/tv_normal.png" gammagroup="lcdstuff"/>
+	<bitmap id="tv.down" file="componentbuttons/tv_down.png" gammagroup="lcdstuff"/>
+	
+	<bitmap id="resizel" file="componentbuttons/resizel.png" gammagroup="lcdstuff"/>
+	<bitmap id="resizer" file="componentbuttons/resizer.png" gammagroup="lcdstuff"/>
+	
+	<bitmap id="blank" file="componentbuttons/blank.png"/>
+	
+
+</elements>

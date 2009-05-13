@@ -1,0 +1,46 @@
+<!-- ===================================================================================================
+
+  <OneDirectionText /> implementation
+
+  by Potashnikoff Aleksey aka NickMikh - APotashnikoff@yandex.ru
+
+    Available parameters :
+
+      - All params for Text
+      - All params for Group
+
+      - betweenstring="string" (eg. "***") - string between two texts
+	  - configattrib="ConfigItemGuid;ConfigAttributeName" eg "{00000000-0000-0000-0000-000000000000};Enable One Direction Text" - previously created attribute to toggle ForwardBackward/OneDirection text
+	  - firstdelay="Int" (eg. "1000") - Delay before text begins to move in ms
+
+==================================================================================================== -->
+
+<groupdef id="OneDirectionText" xuitag="OneDirectionText" embed_xui="my.text.main">
+  <text
+    id="my.text.main"
+	x="0" y="0"
+	w="0" h="0"
+	relath="1" relatw="1"
+	valign="center"
+	color="lcdtext"
+	shadowcolor="0,0,0"
+	align="left"
+	bold="0"
+	timeroffstyle="0"
+	
+  />
+  <text
+    id="my.text.2"
+	x="0" y="0"
+	w="0" h="0"
+	relath="1"
+	valign="center"
+	color="lcdtext"
+	shadowcolor="0,0,0"
+	align="left"
+	bold="0"
+	timeroffstyle="0"
+	
+  /> 
+  <script id="One.Direction.Text.Script" file="OneDirectionText/OneDirectionText.maki"/>
+</groupdef>

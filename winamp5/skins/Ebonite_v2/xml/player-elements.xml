@@ -1,0 +1,115 @@
+
+<!-- Elements definition -->
+<elements>
+	
+	<!-- -->
+	<color id="lcdtext" value="255,255,255" gammagroup="lcdstuff"/>
+
+	<bitmap id="player.background.full" file="images/base_full.png" gammagroup="body"/>
+	<bitmap id="player.background.full.config" file="images/base_full_config.png" gammagroup="body"/>	
+	<bitmap id="player.background.compact" file="images/base_compact.png" gammagroup="body"/>
+	<bitmap id="player.background.compact.narrow" file="images/base_compact_narrow.png" gammagroup="body"/>
+	<bitmap id="player.background.mini" file="images/base_mini.png" gammagroup="body"/>
+	<bitmap id="player.background.mini.vert" file="images/base_mini_vert.png" gammagroup="body"/>
+	<bitmap id="player.background.stick" file="images/base_stick.png" gammagroup="body"/>
+	<bitmap id="player.background.eq" file="images/base_eq.png" gammagroup="body"/>
+	<bitmap id="player.background.full.non" file="images/base_full_non.png" gammagroup="body"/>
+	<bitmap id="player.background.compact.non" file="images/base_compact_non.png" gammagroup="body"/>
+	<bitmap id="player.background.compact.narrow.non" file="images/base_compact_narrow_non.png" gammagroup="body"/>
+	<bitmap id="player.background.mini.non" file="images/base_mini_non.png" gammagroup="body"/>
+	<bitmap id="player.background.mini.vert.non" file="images/base_mini_vert_non.png" gammagroup="body"/>
+	<bitmap id="player.background.stick.non" file="images/base_stick_non.png" gammagroup="body"/>
+	<bitmap id="player.background.eq.non" file="images/base_eq_non.png" gammagroup="body"/>
+	<bitmap id="button.stop" file="images/stop_normal.png" gammagroup="lcdstuff"/>
+	<bitmap id="button.stop.down" file="images/stop_down.png" gammagroup="lcdstuff"/>
+	<bitmap id="button.previous" file="images/previous_normal.png" gammagroup="lcdstuff"/>
+	<bitmap id="button.previous.down" file="images/previous_down.png" gammagroup="lcdstuff"/>
+	<bitmap id="button.play" file="images/play_normal.png" gammagroup="lcdstuff"/>
+	<bitmap id="button.play.down" file="images/play_down.png" gammagroup="lcdstuff"/>
+	<bitmap id="button.pause" file="images/pause_normal.png" gammagroup="lcdstuff"/>
+	<bitmap id="button.pause.down" file="images/pause_down.png" gammagroup="lcdstuff"/>
+	<bitmap id="button.next" file="images/next_normal.png" gammagroup="lcdstuff"/>
+	<bitmap id="button.next.down" file="images/next_down.png" gammagroup="lcdstuff"/>
+	<bitmap id="button.open" file="images/open_normal.png" gammagroup="lcdstuff"/>
+	<bitmap id="button.open.down" file="images/open_down.png" gammagroup="lcdstuff"/>
+	<bitmap id="layout.bar" file="images/bar.png" gammagroup="lcdstuff"/>
+	<bitmap id="layout.progressbar" file="images/progress-bar.png" gammagroup="lcdstuff"/>
+	<bitmap id="layout.progressbar.vert" file="images/progress-bar-vert.png" gammagroup="lcdstuff"/>
+	<bitmap id="layout.volumebar" file="images/volume-bar.png" gammagroup="lcdstuff"/>
+	<bitmap id="layout.sliderbit" file="images/sliderbit.png" gammagroup="lcdstuff"/>
+	<bitmap id="button.pl" file="images/playlist_normal.png" gammagroup="lcdstuff"/>
+	<bitmap id="button.pl.down" file="images/playlist_down.png" gammagroup="lcdstuff"/>
+	<bitmap id="button.ml" file="images/library_normal.png" gammagroup="lcdstuff"/>
+	<bitmap id="button.ml.down" file="images/library_down.png" gammagroup="lcdstuff"/>
+	<bitmap id="button.eq" file="images/equalizer_normal.png" gammagroup="lcdstuff"/>
+	<bitmap id="button.eq.down" file="images/equalizer_down.png" gammagroup="lcdstuff"/>
+	<bitmap id="button.config" file="images/config_normal.png" gammagroup="lcdstuff"/>
+	<bitmap id="button.config.down" file="images/config_down.png" gammagroup="lcdstuff"/>
+	<bitmap id="button.shuf" file="images/random_normal.png" gammagroup="lcdstuff"/>
+	<bitmap id="button.shuf.down" file="images/random_down.png" gammagroup="lcdstuff"/>
+	<bitmap id="button.repeat" file="images/repeat_normal.png" gammagroup="lcdstuff"/>
+	<bitmap id="button.repeat.down" file="images/repeat_down.png" gammagroup="lcdstuff"/>
+	<bitmap id="button.crossfade.down" file="images/cfd_down.png" gammagroup="lcdstuff"/>
+	<bitmap id="button.crossfade" file="images/cfd_normal.png" gammagroup="lcdstuff"/>
+	<bitmap id="button.close" file="images/close.png" gammagroup="lcdstuff"/>
+	<bitmap id="button.minimize" file="images/minimize.png" gammagroup="lcdstuff"/>
+	<bitmap id="button.mode" file="images/mode.png" gammagroup="lcdstuff"/>
+	<bitmap id="button.winampmenu" file="images/winampmenu.png" gammagroup="lcdstuff"/>
+	<bitmap id="volume.slider" file="images/volume-bar.png" gammagroup="lcdstuff"/>
+	<bitmap id="progress.slider" file="images/progress-bar.png" gammagroup="lcdstuff"/>
+	<bitmap id="bit.slider" file="images/sliderbit.png" gammagroup="lcdstuff"/>
+	<bitmap id="layout.prog" file="images/prog_text.png" gammagroup="lcdstuff"/>
+	<bitmap id="layout.vol" file="images/vol_text.png" gammagroup="lcdstuff"/>
+	<bitmap id="eq.bal" file="images/balance.png" gammagroup="lcdstuff"/>
+	<bitmap id="eq.analyzer" file="images/analyzer.png" gammagroup="lcdstuff"/>
+	<bitmap id="eq.preamp" file="images/preamp.png" gammagroup="lcdstuff"/>
+	<bitmap id="eq.cfd" file="images/cfd.png" gammagroup="lcdstuff"/>
+	<bitmap id="eq.on" file="images/on_normal.png" gammagroup="lcdstuff"/>
+	<bitmap id="eq.on.down" file="images/on_down.png" gammagroup="lcdstuff"/>
+	<bitmap id="eq.auto" file="images/auto_normal.png" gammagroup="lcdstuff"/>
+	<bitmap id="eq.auto.down" file="images/auto_down.png" gammagroup="lcdstuff"/>
+	<bitmap id="eq.preset" file="images/preset_normal.png" gammagroup="lcdstuff"/>
+	<bitmap id="eq.preset.down" file="images/preset_down.png" gammagroup="lcdstuff"/>
+	<bitmap id="eq.midbar" file="images/mid-bar.png" gammagroup="lcdstuff"/>
+	<bitmap id="blank" file="images/blank.png" />
+	<bitmap id="cdcoverglass" file="images/cdcoverglass.png" />	
+	<bitmap id="cdcover.noimage" file="pics/noimage.png" gammagroup="lcdstuff"/>
+	<bitmap id="cdcover.noimage" file="pics/noimage.png" gammagroup="lcdstuff"/>
+	
+	<bitmap id="cubevis1" file="pics/cubestrip1.png"  gammagroup="lcdstuff"/>
+	<bitmap id="cubevis2" file="pics/cubestrip2.png"  gammagroup="lcdstuff"/>
+	<bitmap id="cubevis3" file="pics/cubestrip3.png"  gammagroup="lcdstuff"/>
+	
+	<!-- RGB -->
+	
+	<bitmap id="player.background.red" file="images/base_full_red.png" />
+	<bitmap id="player.background.green" file="images/base_full_green.png" />
+	<bitmap id="player.background.blue" file="images/base_full_blue.png" />
+	
+	<bitmap id="player.background.mini.red" file="images/base_mini_red.png" />
+	<bitmap id="player.background.mini.green" file="images/base_mini_green.png" />
+	<bitmap id="player.background.mini.blue" file="images/base_mini_blue.png" />
+	
+	<bitmap id="player.background.mini.vert.red" file="images/base_mini_vert_red.png" />
+	<bitmap id="player.background.mini.vert.green" file="images/base_mini_vert_green.png" />
+	<bitmap id="player.background.mini.vert.blue" file="images/base_mini_vert_blue.png" />
+	
+	<bitmap id="player.background.compact.red" file="images/base_compact_red.png" />
+	<bitmap id="player.background.compact.green" file="images/base_compact_green.png" />
+	<bitmap id="player.background.compact.blue" file="images/base_compact_blue.png" />
+	
+	<bitmap id="player.background.stick.red" file="images/base_stick_red.png" />
+	<bitmap id="player.background.stick.green" file="images/base_stick_green.png" />
+	<bitmap id="player.background.stick.blue" file="images/base_stick_blue.png" />
+	
+	<bitmap id="player.background.narrow.red" file="images/base_compact_narrow_red.png" />
+	<bitmap id="player.background.narrow.green" file="images/base_compact_narrow_green.png" />
+	<bitmap id="player.background.narrow.blue" file="images/base_compact_narrow_blue.png" />
+	
+	<bitmap id="player.background.eq.red" file="images/base_eq_red.png"/>
+	<bitmap id="player.background.eq.green" file="images/base_eq_green.png"/>
+	<bitmap id="player.background.eq.blue" file="images/base_eq_blue.png"/>
+	
+	<!-- RGB -->
+	
+</elements>

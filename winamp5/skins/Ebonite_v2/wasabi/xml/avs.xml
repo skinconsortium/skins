@@ -1,0 +1,12 @@
+<include file="avs-normal.xml"/>
+<container id="AVS" name="AVS" dynamic="0" component="guid:{0000000A-000C-0010-FF7B-01014263450C}" default_visible="0" default_x="0" default_y="0" default_w="354">
+
+	<groupdef id="vis.content.group">
+		<group id="wasabi.objectframe.group" x="0" y="0" w="0" relatw="1" h="0" relath="1" />
+
+		<component x="0" y="0" w="0" relatw="1" h="0" relath="1" 
+			noshowcmdbar="1" autoopen="1" autoclose="1" 
+			param="guid:{0000000A-000C-0010-FF7B-01014263450C}"/>
+	</groupdef>
+	
+</container>

@@ -1,0 +1,112 @@
+<!--
+	<MSPP:Cover
+		fitparent="1"
+		musicImage="my.music.pic"
+		videoImage="my.video.pic"
+		cdMusicImage="my.audioCd.pic"
+		changeMode="random"
+		changeTime="1.0"
+		keepRatio="1"
+		stretch="1"
+		stretchNoCover="1"
+		shadow="1"
+		dbClickAction="dir"
+		menu="1"
+		filelist="cover.jpg;coverart.jpg;folder.jpg;front.jpg;cover.png;coverart.png;folder.png;front.png;%artist% - [Cover] - %album%.jpg;%artist% - %album%.jpg"
+		showReflection="1"
+		AllowDemoMode="1"
+	/>
+	
+List of all the animations avalible in changeMode option:
+
+Standard		
+			- "none", "random", "fade", "fadeslide",
+SLIDES
+horizontal 	- "slide:h:l", "slide:h:r",
+vertical 	- "slide:v:u", "slide:v:d",
+diagonal	- "slide:y:l", "slide:y:r", "slide:y2:l", "slide:y2:r"
+
+LAYERFX - NB subtle transition, transition variation & transition Distortion Factor menu options also affects some the LayerFX
+			- "lyrfx1", "lyrfx2", "lyrfx3", "lyrfx4", "lyrfx5", "lyrfx6", "lyrfx7"
+lyrfx1 = Bouncing Squares FX
+lyrfx2 = Rotating Merged Blob FX
+lyrfx3 = Vortexes FX				- has sub transitions
+lyrfx4 = Psychedelic FX
+lyrfx5 = BenditLikeCover FX
+lyrfx6 = WaterPlasticLikeWraps FX	- has sub transitions
+lyrfx7 = Misc FX 					- has sub transitions
+
+best use is to set to "random", with random enabled its possible to randomise standard or layerfx transitions
+-->
+
+<elements>
+	<!--<bitmap id="shadow.bottom" file="sc/SC-Cover/shadow.png" x="0" y="0" w="7" h="7"/>
+	<bitmap id="shadow.left" file="sc/SC-Cover/shadow.png" x="21" y="0" w="7" h="7"/>
+	<bitmap id="shadow.right" file="sc/SC-Cover/shadow.png" x="7" y="0" w="7" h="7"/>
+	<bitmap id="shadow.bottomright" file="sc/SC-Cover/shadow.png" x="15" y="0" w="6" h="7"/>
+	<bitmap id="shadow.bottomleft" file="sc/SC-Cover/shadow.png" x="28" y="0" w="6" h="7"/>-->
+	<bitmap id="blank" file="sc/SC-Cover/transparent.png"/>
+	
+</elements>
+<!--
+<groupdef id="group.image.1.shadow">
+	<layer image="shadow.left" x="0" y="2" h="-8" w="6" relath="1"/>
+	<layer image="shadow.bottomleft" x="0" y="-6" relaty="1"/>
+	<layer image="shadow.bottom" x="6" y="-6" w="-11" relaty="1" relatw="1"/>
+	<layer image="shadow.right" x="-6" y="2" h="-8" w="6" relatx="1" relath="1"/>
+	<layer image="shadow.bottomright" x="-5" y="-6" relatx="1" relaty="1"/>	
+</groupdef>
+<groupdef id="group.image.2.shadow">
+	<layer image="shadow.left" x="0" y="2" h="-8" w="6" relath="1"/>
+	<layer image="shadow.bottomleft" x="0" y="-6" relaty="1"/>
+	<layer image="shadow.bottom" x="6" y="-6" w="-11" relaty="1" relatw="1"/>
+	<layer image="shadow.right" x="-6" y="2" h="-8" w="6" relatx="1" relath="1"/>
+	<layer image="shadow.bottomright" x="-5" y="-6" relatx="1" relaty="1"/>	
+</groupdef>
+-->
+<groupdef id="group.image.hold.1">
+	<!--<group id="group.image.1.shadow" fitparent="1" ghost="1"/>-->
+	<!--layer id="image.1" image="blank" x="3" y="0" w="-6" h="-6" relatw="1" relath="1"/-->
+	<albumart id="image.1" notfoundimage="cover.notfound" x="3" y="0" w="85" h="93" relatx="2" relaty="2" relatw="2" relath="2" stretched="1"/>
+	<layer id="layerfx.1" image="blank" x="3" y="0" w="85" h="93" relatx="2" relaty="2" relatw="2" relath="2" ghost="1"/>
+
+</groupdef>
+<groupdef id="group.image.hold.2">
+	<!--<group id="group.image.2.shadow" fitparent="1" ghost="1"/>-->
+	<!--layer id="image.2" image="blank" x="3" y="0" w="-6" h="-6" relatw="1" relath="1"/-->
+	<albumart id="image.2" notfoundimage="cover.notfound" x="3" y="0" w="85" h="93" relatx="2" relaty="2" relatw="2" relath="2" stretched="1"/>
+	<layer id="layerfx.2" image="blank" x="3" y="0" w="85" h="93" relatx="2" relaty="2" relatw="2" relath="2" ghost="1"/>
+</groupdef>
+
+
+<groupdef id="group.image.1">
+	<group id="group.image.hold.1"/>
+</groupdef>
+<groupdef id="group.image.2">
+	<group id="group.image.hold.2"/>
+</groupdef>
+
+<groupdef id="group.image.hold.reflections">
+	<layer id="image.1.reflection" image="blank" x="3" y="0" w="-6" h="30" tile="0" relatw="1" ghost="1"/>
+	<layer id="image.2.reflection" image="blank" x="3" y="0" w="-6" h="30" tile="0" relatw="1" ghost="1"/>
+</groupdef>
+
+
+<groupdef id="group.image.reflections">
+	<group id="group.image.hold.reflections"/>
+</groupdef>
+
+
+
+<groupdef id="SC.Cover" xuitag="SC:Cover" embed_xui="mousetrap">
+	
+	
+	<group id="group.image.2" alpha="0" w="0" h="0" relatw="1" relath="1"/>
+	<group id="group.image.1" alpha="0" w="0" h="0" relatw="1" relath="1"/>
+	
+	<!--group id="group.image.reflections" alpha="120" w="0" h="200" relatw="1"/-->
+	
+	<layer id="mousetrap" fitparent="1" ghost="0"/>
+
+	<script file="sc\SC-Cover\SC-Cover.maki"/>
+</groupdef>
