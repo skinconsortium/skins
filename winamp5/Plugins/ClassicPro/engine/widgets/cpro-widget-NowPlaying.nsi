@@ -13,7 +13,7 @@
 ;-------------------------------------------------------------------------------------------
 
 ; The name of your widget
-!define CPRO_WIDGET_NAME "BrowserPro"
+!define CPRO_WIDGET_NAME "NowPlaying"
 
 ; The current version of your widget
 !define CPRO_WIDGET_VERSION "1.0"
@@ -25,13 +25,13 @@
 !define CPRO_WIDGET_BUILD "0"
 	
 ; The XML file used as entry point for your widget. Located in /Load
-!define CPRO_WIDGET_XMLFILENAME "browserpro.xml"
+!define CPRO_WIDGET_XMLFILENAME "nowplaying.xml"
 
 ; The data folder of your widget. Located in /Data
-!define CPRO_WIDGET_DATA_FOLDERNAME "BrowserPro"
+!define CPRO_WIDGET_DATA_FOLDERNAME "NowPlaying"
 
 ; The filename of this installation script
-!define CPRO_WIDGET_NSISFILENAME "cpro-widget-BrowserPro.nsi"
+!define CPRO_WIDGET_NSISFILENAME "cpro-widget-NowPlaying.nsi"
 
 ; Your ClassicPro Directory
 !define CPRO_WIDGET_SOURCEPATH "C:\Program Files\Winamp\Plugins\ClassicPro"
@@ -55,7 +55,7 @@
 !define CPRO_WIDGET_WEB_PAGE "http://cpro.skinconsortium.com"
 
 ; Web page with widget support
-!define CPRO_WIDGET_HELP_LINK "http://forums.skinconsortium.com/index.php?page=Thread&threadID=1084"
+!define CPRO_WIDGET_HELP_LINK "http://forums.skinconsortium.com/index.php?page=Board&boardID=56"
 
 ; Author of this widget
 !define CPRO_WIDGET_AUTHOR "Pieter Niewoudt"

@@ -1,151 +1,84 @@
-;-------------------------------------------------
-; ClassicPro Widget Installer for ClassicPro v1.1
-;		by SkinConsortium
-;-------------------------------------------------
+;###########################################################################################
+;###########################################################################################
+;#
+;#								   ClassicPro Widget Installer         
+;#							   Copyright (c) 2009 by SkinConsortium   
+;#
+;###########################################################################################
+;###########################################################################################
 
-;-------------------------------------------------
+
+;-------------------------------------------------------------------------------------------
 ; Change your widget information here
-;-------------------------------------------------
-!define SOURCEPATH "C:\Program Files\Winamp\Plugins\classicPro"
-!define XMLFILENAME "shoutbox.xml"
-!define DATA_FOLDERNAME "Shoutbox"
-!define NSISFILENAME "cpro-widget-Shoutbox.nsi"
-!define WIDGET_VERSION "0.64"
-!define WIDGET_NAME "Shoutbox"
+;-------------------------------------------------------------------------------------------
 
+; The name of your widget
+!define CPRO_WIDGET_NAME "Shoutbox"
 
-;----------------------------------------------------------------
-;DONT CHANGE ANYTHING BELOW THIS LINE (UNLESS YOU KNOW WHAT YOUR DOING ;)
-;----------------------------------------------------------------
+; The current version of your widget
+!define CPRO_WIDGET_VERSION "0.64"
 
-!include "MUI.nsh"
-
-;Name and file
-Name "${WIDGET_NAME} widget for ClassicPro©"
-OutFile "cpro-widget-${WIDGET_NAME}-${WIDGET_VERSION}.exe"
-!define WIDGET_UNINSTALL_NAME "Uninstall (${WIDGET_NAME}).exe"
-
-
-; The default installation directory
-	InstallDir $PROGRAMFILES\Winamp
-
-	; detect winamp path from uninstall string if available
-	InstallDirRegKey HKLM \
-                 "Software\Microsoft\Windows\CurrentVersion\Uninstall\Winamp" \
-                 "UninstallString"
-
-	; The text to prompt the user to enter a directory
-	DirText "Please select your Winamp path below (you will be able to proceed when Winamp is detected):"
-
-
-;--------------------------------
-;Interface Settings
-
-  !define MUI_FINISHPAGE_RUN "$INSTDIR\winamp.exe"
-  !define MUI_FINISHPAGE_RUN_TEXT "Open Winamp now"
-  !define MUI_FINISHPAGE_RUN_FUNCTION "LaunchLink"
-
-  !define MUI_ABORTWARNING
-
-  !define MUI_ICON "${SOURCEPATH}\_installer\Images\widget.ico"
-  !define MUI_UNICON "${NSISDIR}\Contrib\Graphics\Icons\orange-uninstall.ico"
-
-;--------------------------------
-;Pages
-
-;	!insertmacro MUI_PAGE_WELCOME
-;	!insertmacro MUI_PAGE_LICENSE "${SOURCEPATH}\License.txt"
-;	!insertmacro MUI_PAGE_COMPONENTS
-  !insertmacro MUI_PAGE_DIRECTORY
-  !insertmacro MUI_PAGE_INSTFILES
-  !insertmacro MUI_PAGE_FINISH
-
-
-  !insertmacro MUI_UNPAGE_WELCOME
-  !insertmacro MUI_UNPAGE_CONFIRM
-  !insertmacro MUI_UNPAGE_INSTFILES
-  !insertmacro MUI_UNPAGE_FINISH
-
-;--------------------------------
-;Languages
-
-  !insertmacro MUI_LANGUAGE "English"
-
-;--------------------------------
-;Installer Sections
-
-Section "Dummy Section" SecDummy
-
-	!ifdef WINAMP_AUTOINSTALL
-	  Call MakeSureIGotWinamp
-	!endif
-
-	SetOutPath "$INSTDIR\Plugins\classicPro\engine\widgets\Load"
-	File "${SOURCEPATH}\engine\widgets\Load\${XMLFILENAME}"
- 
-	SetOutPath "$INSTDIR\Plugins\classicPro\engine\widgets\Data\${DATA_FOLDERNAME}"
-	File /nonfatal "${SOURCEPATH}\engine\widgets\Data\${DATA_FOLDERNAME}\*.m"
-	File /nonfatal "${SOURCEPATH}\engine\widgets\Data\${DATA_FOLDERNAME}\*.maki"
-	File /nonfatal "${SOURCEPATH}\engine\widgets\Data\${DATA_FOLDERNAME}\*.xml"
-
-	SetOutPath "$INSTDIR\Plugins\classicPro\engine\widgets\Data\${DATA_FOLDERNAME}\icons"
-	File /nonfatal "${SOURCEPATH}\engine\widgets\Data\${DATA_FOLDERNAME}\icons\*.png"
-
-	SetOutPath "$INSTDIR\Plugins\classicPro\engine\widgets"
-	File /nonfatal "${SOURCEPATH}\engine\widgets\${NSISFILENAME}"
-
-	;Create uninstaller
-	WriteUninstaller "$INSTDIR\Plugins\classicPro\engine\widgets\${WIDGET_UNINSTALL_NAME}"
-
-SectionEnd
-
-;--------------------------------
-;Descriptions
-
-  ;Language strings
-  LangString DESC_SecDummy ${LANG_ENGLISH} "A test section."
-
-  ;Assign language strings to sections
-  !insertmacro MUI_FUNCTION_DESCRIPTION_BEGIN
-    !insertmacro MUI_DESCRIPTION_TEXT ${SecDummy} $(DESC_SecDummy)
-  !insertmacro MUI_FUNCTION_DESCRIPTION_END
-
-;--------------------------------
-;Uninstaller Section
-
-Section "Uninstall"
-
-	Delete "$INSTDIR\Load\${XMLFILENAME}"
-	Delete "$INSTDIR\${NSISFILENAME}"
+; The current revision of your widget
+!define CPRO_WIDGET_REVISION "0"
 	
-	Delete "$INSTDIR\Data\${DATA_FOLDERNAME}\icons\*.*"
-	RMDir "$INSTDIR\Data\${DATA_FOLDERNAME}\icons\"
+; The current build of your widget	
+!define CPRO_WIDGET_BUILD "0"
 	
-	Delete "$INSTDIR\Data\${DATA_FOLDERNAME}\*.*"
-	RMDir "$INSTDIR\Data\${DATA_FOLDERNAME}"
-	Delete "$INSTDIR\${WIDGET_UNINSTALL_NAME}"
+; The XML file used as entry point for your widget. Located in /Load
+!define CPRO_WIDGET_XMLFILENAME "shoutbox.xml"
 
+; The data folder of your widget. Located in /Data
+!define CPRO_WIDGET_DATA_FOLDERNAME "Shoutbox"
 
-SectionEnd
+; The filename of this installation script
+!define CPRO_WIDGET_NSISFILENAME "cpro-widget-Shoutbox.nsi"
 
+; Your ClassicPro Directory
+!define CPRO_WIDGET_SOURCEPATH "C:\Program Files\Winamp\Plugins\ClassicPro"
 
-;--------------------------------
-;Make sure you have Winamp
+; The name of cPro Widget uninstaller
+!define CPRO_WIDGET_UNINSTALLER "Uninstall (${CPRO_WIDGET_NAME}).exe"
 
-Function .onVerifyInstDir
+; Your Widget setup file directory (use empty path to create it in script directory)	
+!define CPRO_WIDGET_OUTFILE_PATH ""
 
-!ifndef WINAMP_AUTOINSTALL
+; Branding Text URL 
+!define CPRO_WIDGET_BT "http://cpro.skinconsortium.com"
+	
+; Shows (1) / hides (0) the components page of installer	
+!define CPRO_WIDGET_SHOW_COMPONENTS_PAGE "0"	
+	
+; The PayPal link for widget author (by default SkinConsortium account)	
+!define CPRO_WIDGET_PAYPAL_LINK "https://www.paypal.com/uk/cgi-bin/webscr?cmd=_flow&SESSION=lbtyhrWugcvcf_QcrMnTrArKKiT3DcYJbH-_gFqC8-fXZNwJ4ibp2UbTunS&dispatch=5885d80a13c0db1fa798f5a5f5ae42e779d4b5655493f6171509c5b2ec019b86"
 
-  ;Check for Winamp installation
+; CPro widget web page
+!define CPRO_WIDGET_WEB_PAGE "http://cpro.skinconsortium.com"
 
-  IfFileExists $INSTDIR\Winamp.exe Good
-    Abort
-  Good:
+; Web page with widget support
+!define CPRO_WIDGET_HELP_LINK "http://forums.skinconsortium.com/index.php?page=Thread&threadID=1190"
 
-!endif ; WINAMP_AUTOINSTALL
+; Author of this widget
+!define CPRO_WIDGET_AUTHOR "Martin Poehlmann"
 
-FunctionEnd
+; Widget company
+!define CPRO_WIDGET_COMPANY "Skin Consortium"
 
-Function LaunchLink
-  ExecShell "" "$INSTDIR\winamp.exe"
-FunctionEnd
+; Widget copyright
+!define /Date CPRO_WIDGET_COPYRIGHT "Copyright (c) 2005-%Y"	
+
+; Winamp version needed to run CPro and this widget 
+!define CPRO_WINAMP_VERSION "5.55"
+
+; The name of CPro 
+!define CPRO_NAME "ClassicPro"
+
+; Copyright
+!define CPRO_CRS "©"	
+
+; Current version of ClassicPro 
+!define CPRO_VERSION "1.1"
+
+;-------------------------------------------------------------------------------------------
+; Always include this file
+;-------------------------------------------------------------------------------------------
+!include "${CPRO_WIDGET_SOURCEPATH}\_installer\cPro_Widget_Installer.nsh"
