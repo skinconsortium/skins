@@ -1,7 +1,6 @@
 #include <lib/std.mi>
 #include <lib/config.mi>
-//#include "../scripts/attribs/init_songticker.m"
-#include "../scripts/attribs.m"
+#include "../scripts/attribs/init_songticker.m"
 
 
 #define TEXT_PROPS "antialias,Font,fontsize,color,shadowcolor,shadowx,shadowy,timeroffstyle,timecolonwidth,forcefixed,forceupcase,forceuppercase,forcelocase,forcelowercase,bold,wrap,valign,offsety,dblclickaction,rightclickaction,move"
@@ -32,8 +31,7 @@ Global Timer moveText;
 
 System.onScriptLoaded()
 {
-	//initAttribs_songTicker();
-	initAttribs();
+	initAttribs_songTicker();
 	
 	SG = System.getScriptGroup();
 

@@ -23,6 +23,7 @@ Internet:	www.skinconsortium.com
 //#include "attribs/init_visualizer.m"
 #include "attribs/init_general.m"
 #include "attribs/init_notifier.m"
+#include "attribs/init_rgb.m"
 
 /*
 include "attribs/init_glowbuttons.m"
@@ -56,4 +57,5 @@ System.onScriptLoaded()
 	//initAttribs_windowpage();
 
 	initAttribs_general();
+	initAttribs_RGB();
 }

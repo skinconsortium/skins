@@ -24,6 +24,10 @@
 		<accelerator bind="Alt+H" action="MENUHOTKEY_HELP" />
 	</accelerators>
 
+	<scripts>
+		<script file="scripts/loadattribs.maki"/> <!-- Must be loaded at first -->
+	</scripts>
+
 	<accelerators section="normal">
 			<accelerator bind="space" action="SHOW_CURRENT_TRACK" />
 	</accelerators>

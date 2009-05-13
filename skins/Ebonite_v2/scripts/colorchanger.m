@@ -18,7 +18,7 @@ SLoB for Ebonite 2008
 
 #include <lib/std.mi>
 #include <lib/colormgr.mi>
-#include "attribs.m"
+#include "../scripts/attribs/init_rgb.m"
 
 
 //#define DEBUG
@@ -77,7 +77,7 @@ Global Boolean mychange;
 
 System.onScriptLoaded() 
 {
-	initattribs();
+	initAttribs_RGB();
 	
 	//wargbmaki
 	myColMgr = new ColorMgr;

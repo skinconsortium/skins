@@ -25,9 +25,9 @@
 		title="Clock Options"
 		color="lcdtext"/>
 	
-	<Wasabi:Checkbox id="checkbox.clockshowclockwhenstopped" x="10" y="61" text="Show when stopped"/>
-	<Wasabi:Checkbox id="checkbox.clockshow24hourclock" x="10" y="74" text="Show 24 hour Clock"/>
-	<Wasabi:Checkbox id="checkbox.clockshowclockleadingzero" x="10" y="87" text="Show leading zero"/>
+	<Wasabi:Checkbox id="checkbox.clockshowclockwhenstopped" x="10" y="61" text="Show when stopped" cfgattrib="{F260193E-3598-4086-82B2-651110BA2900};ShowClockwhenStopped"/>
+	<Wasabi:Checkbox id="checkbox.clockshow24hourclock" x="10" y="74" text="Show 24 hour Clock" cfgattrib="{F260193E-3598-4086-82B2-651110BA2900};Show24HourClock"/>
+	<Wasabi:Checkbox id="checkbox.clockshowclockleadingzero" x="10" y="87" text="Show leading zero" cfgattrib="{F260193E-3598-4086-82B2-651110BA2900};ShowClockLeadingZero"/>
 	
 <!-- COVER -->
 	<Wasabi:TitleBox id="container" x="0" y="112" 
@@ -49,8 +49,8 @@
 		title="Songticker Options"
 		color="lcdtext"/>
 	
-	<Wasabi:Checkbox id="checkbox.tickerscrolling" x="10" y="201" color="255,255,255" text="Enable Scrolling"/>	
-	<Wasabi:Checkbox id="checkbox.tickerclassicstyle" x="10" y="214" color="255,255,255" text="Classic Style"/>
+	<Wasabi:Checkbox id="checkbox.tickerscrolling" x="10" y="201" color="255,255,255" text="Enable Scrolling" cfgattrib="{7061FDE0-0E12-11D8-BB41-0050DA442EF3};Enable Songticker scrolling"/>	
+	<Wasabi:Checkbox id="checkbox.tickerclassicstyle" x="10" y="214" color="255,255,255" text="Classic Style" cfgattrib="{7061FDE0-0E12-11D8-BB41-0050DA442EF3};Classic Style"/>
 	
 	
 </groupdef>

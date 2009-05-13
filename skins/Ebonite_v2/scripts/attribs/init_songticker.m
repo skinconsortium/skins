@@ -27,9 +27,14 @@ Function initAttribs_songTicker();
 
 
 Global ConfigAttribute songticker_scrolling_enabled_attrib;
+Global ConfigAttribute songticker_scrolling_disabled_attrib ;
 
+Global ConfigAttribute songticker_style_modern_attrib;
 Global ConfigAttribute songticker_style_old_attrib;
 
+
+Global ConfigAttribute attrTextDirect;
+Global ConfigAttribute attrTextSpeed;
 
 initAttribs_songTicker()
 {
@@ -39,19 +44,20 @@ initAttribs_songTicker()
 	ConfigItem custom_page_songticker = addConfigSubMenu(optionsmenu_page, "Songticker", CUSTOM_PAGE_SONGTICKER);
 
 	songticker_scrolling_enabled_attrib = custom_page_songticker.newAttribute("Enable Songticker scrolling", "1");
-	//songticker_scrolling_disabled_attrib = custom_page_songticker.newAttribute("Disable Songticker scrolling", "0");
+	songticker_scrolling_disabled_attrib = custom_page_songticker.newAttribute("Disable Songticker scrolling", "0");
 
 	addMenuSeparator(custom_page_songticker);
 
-	//songticker_style_modern_attrib = custom_page_songticker.newAttribute("Modern Style", "0");
+	songticker_style_modern_attrib = custom_page_songticker.newAttribute("Modern Style", "0");
 	songticker_style_old_attrib = custom_page_songticker.newAttribute("Classic Style", "1");
+
+	//from onedirectiontext
+	attrTextSpeed = Config.getItemByGuid("{9149C445-3C30-4e04-8433-5A518ED0FDDE}").getAttribute("Text Ticker Speed");
 
 }
 
 #ifdef MAIN_ATTRIBS_MGR
 
-// CUT (mpdeimos) nothing to do here anymore!
-/*
 songticker_scrolling_enabled_attrib.onDataChanged()
 {
   if (attribs_mychange) return;
@@ -86,5 +92,5 @@ songticker_style_modern_attrib.onDataChanged()
   if (getData() == "0") songticker_style_old_attrib.setData("1");
   attribs_mychange = 0;
 }
-*/
+
 #endif

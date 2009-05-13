@@ -14,196 +14,127 @@ var# |                Class |                                    What
 000A |                  Int |                                      now
 000B |                  Int |                                     5000
 000C |               String |                  "This script requires "
-000D |               String |        "Winamp 5.51 (skin version 1.31)"
+000D |               String |        "Winamp 5.54 (skin version 1.34)"
 000E |               String |                                  "Error"
 000F |               String |                                       ""
 0010 |               String |                                        s
 0011 |               String |                                  "DEBUG"
 0012 |                  Int |                                        s
 0013 |               Config |                                   Config*
-0014 |      ConfigAttribute |                myattrib_stdfrmBGREDColor
-0015 |      ConfigAttribute |              myattrib_stdfrmBGGREENColor
-0016 |      ConfigAttribute |               myattrib_stdfrmBGBLUEColor
-0017 |      ConfigAttribute |                 myattrib_stdfrmBGEnabled
-0018 |      ConfigAttribute |          myattrib_stdfrmBGOverlayEnabled
-0019 |      ConfigAttribute |              myattrib_stdfrmBGLCDEnabled
-001A |      ConfigAttribute |          myattrib_stdfrmBGLCDTextEnabled
-001B |      ConfigAttribute |              desktopalpha_enabled_attrib
-001C |               String |                                 "Hidden"
-001D |               String | "{E9C2D926-53CA-400f-9A4D-85E31755A4CF}"
-001E |           ConfigItem |                   custom_page_nonexposed
-001F |               String |                          "stdframeBGRed"
-0020 |               String |                                      "0"
-0021 |               String |                        "stdframeBGGreen"
-0022 |               String |                         "stdframeBGBlue"
-0023 |               String |                      "stdframeBGEnabled"
-0024 |               String |               "stdframeBGOverlayEnabled"
-0025 |               String |                   "stdframeBGLCDEnabled"
-0026 |               String |               "stdframeBGLCDTextEnabled"
-0027 |               String | "{9149C445-3C30-4E04-8433-5A518ED0FDDE}"
-0028 |               String |                   "Enable desktop alpha"
-0029 |      ConfigAttribute |               configAttribute_repeatType
-002A |      ConfigAttribute |              configAttribute_shuffleType
-002B |      ConfigAttribute |            configAttribute_crossfadeType
-002C |      ConfigAttribute |               configAttribute_configType
-002D |      ConfigAttribute |    configAttribute_clock_showleadingzero
-002E |      ConfigAttribute |           configAttribute_clock_show24hr
-002F |      ConfigAttribute |    configAttribute_clock_showwhenstopped
-0030 |      ConfigAttribute |                    myattr_SCCoverEnabled
-0031 |      ConfigAttribute |                 myattr_SC90DegVisEnabled
-0032 |      ConfigAttribute |               myattr_SC90DegVisDirection
-0033 |      ConfigAttribute |                myattr_SC90DegVisRotation
-0034 |      ConfigAttribute |                    vis_mode_style_attrib
-0035 |      ConfigAttribute |                  vis_mode_Pattern_attrib
-0036 |      ConfigAttribute |                  myattr_SCCubeVisEnabled
-0037 |      ConfigAttribute |            globalmyattr_SCCubeVisEnabled
-0038 |      ConfigAttribute |           globalmyattr_SC90DegVisEnabled
-0039 |      ConfigAttribute |              globalmyattr_SCCoverEnabled
-003A |      ConfigAttribute |                           attrTextDirect
-003B |      ConfigAttribute |                            attrTextSpeed
-003C |           ConfigItem |                         optionsmenu_page
-003D |      ConfigAttribute |      songticker_scrolling_enabled_attrib
-003E |      ConfigAttribute |     songticker_scrolling_disabled_attrib
-003F |      ConfigAttribute |           songticker_style_modern_attrib
-0040 |      ConfigAttribute |              songticker_style_old_attrib
-0041 |                  Int |                         attribs_mychange
-0042 |      ConfigAttribute |                                      sep
-0043 |                  Int |                                sep_count
-0044 |           ConfigItem |                              cfgmenupage
-0045 |               String |                              "seperator"
-0046 |               String |                                      "-"
-0047 |           ConfigItem |                                   parent
-0048 |               String |                                     name
-0049 |               String |                                     guid
-004A |           ConfigItem |                                    __ret
-004B |      ConfigAttribute |                                   __dret
-004C |               String |                           "Ebonite Skin"
-004D |               String | "{1118eb99-e7fe-4807-9842-7bd08cf33084}"
-004E |           ConfigItem |                              custom_page
-004F |               String |                                  "Cover"
-0050 |               String | "{0ff91115-b854-4c37-b614-fadb84edac8f}"
-0051 |           ConfigItem |                        custom_page_cover
-0052 |               String |                             "Songticker"
-0053 |               String | "{7061FDE0-0E12-11D8-BB41-0050DA442EF3}"
-0054 |           ConfigItem |                   custom_page_songticker
-0055 |           ConfigItem |                   custom_page_nonexposed
-0056 |               String | "{1828D28F-78DD-4647-8532-EBA504B8FC04}"
-0057 |           ConfigItem |                      custom_options_page
-0058 |               String |                                 "Repeat"
-0059 |               String |                                      "1"
-005A |               String |                                 "Config"
-005B |               String |                                "shuffle"
-005C |               String |                              "crossfade"
-005D |               String |                           "VizDirection"
-005E |               String |                                  "Clock"
-005F |      ConfigAttribute |                            submenuattrib
-0060 |               String |                   "ShowClockwhenStopped"
-0061 |               String |                        "Show24HourClock"
-0062 |               String |                   "ShowClockLeadingZero"
-0063 |      ConfigAttribute |                            submenuattrib
-0064 |               String |                             "Show Cover"
-0065 |               String |                               "Show Viz"
-0066 |               String |                          "Show Cube Viz"
-0067 |               String |                         "Rotate Std Viz"
-0068 |               String |                                  "Style"
-0069 |               String |                                "Pattern"
-006A |               String |                     "coverenablecubeviz"
-006B |               String |                       "coverenablecover"
-006C |               String |                       "coverenable90viz"
-006D |               String |                      "Text Ticker Speed"
-006E |      ConfigAttribute |                            submenuattrib
-006F |               String |            "Enable Songticker scrolling"
-0070 |               String |                          "Classic Style"
-0071 |           ConfigItem |                                 cfgItems
-0072 |               String |                        "Playlist editor"
-0073 |               String |                                      "2"
-0074 |                  Int |                                TextWidth
-0075 |                  Int |                                AutoWidth
-0076 |                  Int |                                    MainX
-0077 |                  Int |                               FirstDelay
-0078 |                  Int |                                    Delay
-0079 |               String |                               strBetween
-007A |              Boolean |                                   Moving
-007B |              Boolean |                                  NoSpeed
-007C |                  Int |                                   MouseX
-007D |                Group |                                       SG
-007E |                 Text |                                  txtMain
-007F |                 Text |                                     txt2
-0080 |                Timer |                                 moveText
-0081 |                  Int |                                    20000
-0082 |                  Int |                                       20
-0083 |               String |                                    "***"
-0084 |               String |                           "My.Text.Main"
-0085 |               String |                              "My.Text.2"
-0086 |               String |                                    param
-0087 |               String |                                    value
-0088 |               String |                          "betweenstring"
-0089 |               String |                           "configattrib"
-008A |               String |                                      ";"
-008B |               String |                              strItemGuid
-008C |               String |                              strAttrName
-008D |           ConfigItem |                             cfgMyOptMenu
-008E |               String |    "Error: Declared attribute not found"
-008F |               String |                      "OneDirection Text"
-0090 |               String |                             "firstdelay"
-0091 |               String |                                   newtxt
-0092 |                  Int |                               AutoWidth2
-0093 |               String |                                      "w"
-0094 |               String |                                      "x"
-0095 |                  Int |                                   BWidth
-0096 |                  Int |                                        x
-0097 |                  Int |                                        y
-0098 |               String |                                 "nograb"
-0099 |               String |                                   "move"
-009A |                  Int |                                       30
-009B |                  Int |                                        x
-009C |                  Int |                                        y
-009D |                  Int |                                        x
-009E |                  Int |                                        y
-009F |              Boolean |                             blnCheckProp
-00A0 |                  Int |                                        i
-00A1 |               String | "antialias,Font,fontsize,color,shadowcolor,shadowx,shadowy,timeroffstyle,timecolonwidth,forcefixed,forceupcase,forceuppercase,forcelocase,forcelowercase,bold,wrap,valign,offsety,dblclickaction,rightclickaction,move"
-00A2 |               String |                                      ","
-00A3 |                  Int |                                        i
-00A4 |               String |                                 "ticker"
-00A5 |               String |                                   action
-00A6 |               String |                                    param
-00A7 |                  Int |                                        x
-00A8 |                  Int |                                        y
-00A9 |                  Int |                                       p1
-00AA |                  Int |                                       p2
-00AB |            GuiObject |                                   source
-00AC |               String |                                "setText"
+0014 |           ConfigItem |                         optionsmenu_page
+0015 |           ConfigItem |                      custom_windows_page
+0016 |           ConfigItem |                   custom_page_nonexposed
+0017 |               String |                                 "Hidden"
+0018 |               String | "{0b804f46-fd44-49e6-ba2d-410844a4b190}"
+0019 |               String | "{1828D28F-78DD-4647-8532-EBA504B8FC04}"
+001A |               String | "{6559CA61-7EB2-4415-A8A9-A2AEEF762B7F}"
+001B |                  Int |                         attribs_mychange
+001C |      ConfigAttribute |                                      sep
+001D |                  Int |                                sep_count
+001E |           ConfigItem |                              cfgmenupage
+001F |           ConfigItem |                                   parent
+0020 |               String |                                     name
+0021 |               String |                                     guid
+0022 |           ConfigItem |                                    __ret
+0023 |      ConfigAttribute |                                   __dret
+0024 |      ConfigAttribute |      songticker_scrolling_enabled_attrib
+0025 |      ConfigAttribute |     songticker_scrolling_disabled_attrib
+0026 |      ConfigAttribute |           songticker_style_modern_attrib
+0027 |      ConfigAttribute |              songticker_style_old_attrib
+0028 |      ConfigAttribute |                           attrTextDirect
+0029 |      ConfigAttribute |                            attrTextSpeed
+002A |               String |                             "Songticker"
+002B |               String | "{7061FDE0-0E12-11D8-BB41-0050DA442EF3}"
+002C |           ConfigItem |                   custom_page_songticker
+002D |               String |            "Enable Songticker scrolling"
+002E |               String |                                      "1"
+002F |               String |           "Disable Songticker scrolling"
+0030 |               String |                                      "0"
+0031 |               String |                           "Modern Style"
+0032 |               String |                          "Classic Style"
+0033 |               String | "{9149C445-3C30-4e04-8433-5A518ED0FDDE}"
+0034 |               String |                      "Text Ticker Speed"
+0035 |                  Int |                                TextWidth
+0036 |                  Int |                                AutoWidth
+0037 |                  Int |                                    MainX
+0038 |                  Int |                               FirstDelay
+0039 |                  Int |                                    Delay
+003A |               String |                               strBetween
+003B |              Boolean |                                   Moving
+003C |              Boolean |                                  NoSpeed
+003D |                  Int |                                   MouseX
+003E |                Group |                                       SG
+003F |                 Text |                                  txtMain
+0040 |                 Text |                                     txt2
+0041 |                Timer |                                 moveText
+0042 |                  Int |                                    20000
+0043 |                  Int |                                       20
+0044 |               String |                                    "***"
+0045 |               String |                           "My.Text.Main"
+0046 |               String |                              "My.Text.2"
+0047 |               String |                                    param
+0048 |               String |                                    value
+0049 |               String |                          "betweenstring"
+004A |               String |                           "configattrib"
+004B |               String |                                      ";"
+004C |               String |                              strItemGuid
+004D |               String |                              strAttrName
+004E |           ConfigItem |                             cfgMyOptMenu
+004F |               String |    "Error: Declared attribute not found"
+0050 |               String |                      "OneDirection Text"
+0051 |               String |                             "firstdelay"
+0052 |               String |                                   newtxt
+0053 |                  Int |                               AutoWidth2
+0054 |               String |                                      "w"
+0055 |               String |                                      "x"
+0056 |                  Int |                                   BWidth
+0057 |                  Int |                                        x
+0058 |                  Int |                                        y
+0059 |               String |                                 "nograb"
+005A |               String |                                   "move"
+005B |                  Int |                                       30
+005C |                  Int |                                        x
+005D |                  Int |                                        y
+005E |                  Int |                                        x
+005F |                  Int |                                        y
+0060 |              Boolean |                             blnCheckProp
+0061 |                  Int |                                        i
+0062 |               String | "antialias,Font,fontsize,color,shadowcolor,shadowx,shadowy,timeroffstyle,timecolonwidth,forcefixed,forceupcase,forceuppercase,forcelocase,forcelowercase,bold,wrap,valign,offsety,dblclickaction,rightclickaction,move"
+0063 |               String |                                      ","
+0064 |                  Int |                                        i
+0065 |               String |                                 "ticker"
+0066 |               String |                                   action
+0067 |               String |                                    param
+0068 |                  Int |                                        x
+0069 |                  Int |                                        y
+006A |                  Int |                                       p1
+006B |                  Int |                                       p2
+006C |            GuiObject |                                   source
+006D |               String |                                "setText"
 -- Events Table ------------------------------------------------------
 var# |         Code Pointer |                                    What 
 ----------------------------------------------------------------------
-0031 |                 074D |   myattr_SC90DegVisEnabled.onDataChanged
-0036 |                 0854 |    myattr_SCCubeVisEnabled.onDataChanged
-003D |                 08EB | songticker_scrolling_enabled_attrib.onDataChanged
-003E |                 0977 | songticker_scrolling_disabled_attrib.onDataChanged
-0040 |                 0A03 | songticker_style_old_attrib.onDataChanged
-003F |                 0A8F | songticker_style_modern_attrib.onDataChanged
-0000 |                 0B1B |                    System.onScriptLoaded
-0000 |                 0C03 |                     System.onSetXuiParam
-007E |                 0D9A |                    txtMain.onTextChanged
-003A |                 0DBB |             attrTextDirect.onDataChanged
-003B |                 0DD7 |              attrTextSpeed.onDataChanged
-0080 |                 10EF |                         moveText.OnTimer
-007F |                 127A |                    txt2.OnLeftButtonDown
-007F |                 1306 |                      txt2.OnLeftButtonUp
-007F |                 1353 |                  txt2.onLeftButtonDblClk
-0000 |                 13A0 |                 System.OnScriptUnloading
-003D |                 14D0 | songticker_scrolling_enabled_attrib.onDataChanged
-007E |                 1524 |                         txtMain.onAction
+0000 |                 02E2 |                                      S.o
+0000 |                 03CA |                                      S.o
+003F |                 0561 |                                      t.o
+0028 |                 0582 |                                      a.O
+0029 |                 059E |                                      a.O
+0041 |                 08B6 |                                      m.O
+0040 |                 0A41 |                                      t.O
+0040 |                 0ACD |                                      t.O
+0040 |                 0B1A |                                      t.o
+0000 |                 0B67 |                                      S.O
+0024 |                 0C97 |                                      s.O
+003F |                 0CEB |                                      t.o
 -- User Functions Table ----------------------------------------------
                Code Pointer |                                    What 
 ----------------------------------------------------------------------
                        0000 |                             versionCheck
                        00F2 |                                    debug
                        011D |                                 debugInt
-                       0153 |                           initRGBAttribs
-                       0332 |                              initAttribs
-                       0267 |                         addMenuSeparator
-                       02CE |                         addConfigSubMenu
-                       0E5A |                           chooseBehavior
-                       13BD |                       CopyTextProperties
+                       0153 |                                initPages
+                       01AF |                         addMenuSeparator
+                       01BA |                         addConfigSubMenu
+                       021E |                   initAttribs_songTicker
+                       0621 |                           chooseBehavior
+                       0B84 |                       CopyTextProperties
