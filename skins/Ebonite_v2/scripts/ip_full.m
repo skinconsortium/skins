@@ -32,7 +32,7 @@ Global Slider Seeker, Volume;
 load_full()
 {
 	//load global attribs
-	initAttribs();
+	initAttribs_misc();
 
 	Main = getContainer("main"); 
     LayoutFull = Main.getLayout("full");

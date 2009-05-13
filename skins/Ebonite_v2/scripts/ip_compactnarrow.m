@@ -7,7 +7,7 @@
 //--------------------------------------------------------------------------------------
 
 
-#include "attribs.m"
+#include "attribs/init_misc.m"
 
 //load and unload
 Function load_narrow();
@@ -28,7 +28,7 @@ Global Slider Seeker, Volume;
 load_narrow()
 {
 	//load global attribs
-	initAttribs();
+	initAttribs_misc();
 	
 	Main = getContainer("main"); 
     LayoutNarrow = Main.getLayout("narrow");

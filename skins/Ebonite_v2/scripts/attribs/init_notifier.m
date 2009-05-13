@@ -72,7 +72,7 @@ initAttribs_notifier() {
 	notifier_never_attrib = custom_page_notifier.newAttribute("Never show", "0");
 	notifier_showfullscreen_attrib = custom_page_notifier.newAttribute("Show in fullscreen", "0");
 	//addMenuSeparator(custom_page_notifier);	
-	notifier_showcover_attrib = custom_page_notifier.newAttribute("Enable Cover", "0");
+	notifier_showcover_attrib = custom_page_notifier.newAttribute("Enable Cover", "1");
 	//addMenuSeparator(custom_page_notifier);
 	
 	

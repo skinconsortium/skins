@@ -7,7 +7,7 @@
 //--------------------------------------------------------------------------------------
 
 
-#include "attribs.m"
+#include "attribs/init_misc.m"
 
 //load and unload
 Function load_compact();
@@ -32,7 +32,7 @@ Global Slider Seeker, Volume;
 load_compact()
 {
 	//load global attribs
-	initAttribs();
+	initAttribs_misc();
 	
 	Main = getContainer("main"); 
     LayoutCompact = Main.getLayout("compact");

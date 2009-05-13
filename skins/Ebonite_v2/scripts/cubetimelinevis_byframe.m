@@ -41,7 +41,7 @@ Disclaimer:	no responsibility taken for hypnotic side effects induced by watchin
 */
 
 #include <lib/std.mi>
-#include "attribs.m"
+#include "attribs/init_vis.m"
 
 #define DEBUG
 #ifdef DEBUG
@@ -81,7 +81,7 @@ global String sRememberStyle;
 
 System.onScriptLoaded()
 {
-	initAttribs();
+	initAttribs_vis();
 	
 	VisGroup = getScriptGroup();
 	LayoutRTLV = getContainer("main").getLayout("full");

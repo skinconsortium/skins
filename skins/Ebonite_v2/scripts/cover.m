@@ -1,5 +1,5 @@
 #include <lib/std.mi>
-#include "../scripts/attribs.m"
+#include "../scripts/attribs/init_vis.m"
 
 Function UpdateCDCover();
 Function String GetSkinPath(String strRaw);
@@ -25,7 +25,7 @@ debug(String debugStr)
 
 System.onScriptLoaded() 
 {
-initAttribs();
+initAttribs_vis();
 	//Group cover = system.getScriptGroup();
 
 	MainMode = getContainer("main").getLayout("full");	
