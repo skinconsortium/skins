@@ -1,3 +1,6 @@
+// TODO (mpdeimos) MERGE with other attrib system!
+
+
 #ifndef included
 #error This script can only be compiled as a #include
 #endif
@@ -12,20 +15,20 @@
 
 
 // this is the page that maps its items to the options menu, you can add attribs or more pages (submenus)
-#define CUSTOM_OPTIONSMENU_ITEMS "{1828D28F-78DD-4647-8532-EBA504B8FC04}"
+#define CUSTOM_OPTIONSMENU_ITEMS_FOO "{1828D28F-78DD-4647-8532-EBA504B8FC04}"
 
 // this is the page that maps its items to the windows menu (aka View), you can add attribs or more pages (submenus)
-#define CUSTOM_WINDOWSMENU_ITEMS "{6559CA61-7EB2-4415-A8A9-A2AEEF762B7F}"
+#define CUSTOM_WINDOWSMENU_ITEMS_FOO "{6559CA61-7EB2-4415-A8A9-A2AEEF762B7F}"
 
 // non exposed attribs page
-#define CUSTOM_PAGE_NONEXPOSED "{E9C2D926-53CA-400f-9A4D-85E31755A4CF}"
+#define CUSTOM_PAGE_NONEXPOSED_FOO "{E9C2D926-53CA-400f-9A4D-85E31755A4CF}"
 
 // custom options submenu item page, you can add more, just use guidgen and Config.newItem()
 #define CUSTOM_PAGE "{1118eb99-e7fe-4807-9842-7bd08cf33084}"
 
 #define CUSTOM_PAGE_COVER "{0ff91115-b854-4c37-b614-fadb84edac8f}"
 
-#define CUSTOM_PAGE_SONGTICKER "{7061FDE0-0E12-11D8-BB41-0050DA442EF3}"
+// CUT (mpdeimos) #define CUSTOM_PAGE_SONGTICKER "{7061FDE0-0E12-11D8-BB41-0050DA442EF3}"
 
 #include "attribs_rgb.m"
 
@@ -41,10 +44,6 @@ Global ConfigAttribute configAttribute_shuffleType;
 Global ConfigAttribute configAttribute_crossfadeType;
 Global ConfigAttribute configAttribute_configType;
 
-Global ConfigAttribute configAttribute_clock_showleadingzero;
-Global ConfigAttribute configAttribute_clock_show24hr;
-Global ConfigAttribute configAttribute_clock_showwhenstopped;
-
 Global ConfigAttribute myattr_SCCoverEnabled;
 Global ConfigAttribute myattr_SC90DegVisEnabled;
 Global ConfigAttribute myattr_SC90DegVisDirection;
@@ -57,9 +56,6 @@ Global ConfigAttribute myattr_SCCubeVisEnabled;
 Global ConfigAttribute globalmyattr_SCCubeVisEnabled;
 Global ConfigAttribute globalmyattr_SC90DegVisEnabled;
 Global ConfigAttribute globalmyattr_SCCoverEnabled;
-
-Global ConfigAttribute attrTextDirect;
-Global ConfigAttribute attrTextSpeed;
 
 
 /*
@@ -76,16 +72,18 @@ Global ConfigItem optionsmenu_page;
 
 //#define CUSTOM_PAGE_SONGTICKER "{7061FDE0-0E12-11D8-BB41-0050DA442EF3}"
 
+/* CUT (mpdeimos)
 Global ConfigAttribute songticker_scrolling_enabled_attrib;
 Global ConfigAttribute songticker_scrolling_disabled_attrib;
 
 Global ConfigAttribute songticker_style_modern_attrib;
 Global ConfigAttribute songticker_style_old_attrib;
+*/
 
 
 	
 // -----------------------------------------------------------------------------------------------------------------
-#define NOOFF if (getData()=="0") { setData("1"); return; }
+#define NOOFF_FOO if (getData()=="0") { setData("1"); return; }
 Global Int attribs_mychange;
 Global ConfigAttribute sep;
 Global Int sep_count = 0;
@@ -119,30 +117,24 @@ initAttribs() {
 	
 	ConfigItem custom_page_cover		= Config.newItem("Cover", CUSTOM_PAGE_COVER);
 	
-	ConfigItem custom_page_songticker	= Config.newItem("Songticker", CUSTOM_PAGE_SONGTICKER);
+// CUT (mpdeimos) 	ConfigItem custom_page_songticker	= Config.newItem("Songticker", CUSTOM_PAGE_SONGTICKER);
 	
 
-	ConfigItem custom_page_nonexposed	= Config.newItem("Hidden", CUSTOM_PAGE_NONEXPOSED);
+	ConfigItem fooPage	= Config.newItem("Hidden", CUSTOM_PAGE_NONEXPOSED_FOO);
 
 	// load up the cfgpage in which we'll insert our custom page
-	ConfigItem custom_options_page 		= Config.getItem(CUSTOM_OPTIONSMENU_ITEMS);
-	optionsmenu_page = Config.getItem(CUSTOM_OPTIONSMENU_ITEMS);
+	ConfigItem custom_options_page 		= Config.getItem(CUSTOM_OPTIONSMENU_ITEMS_FOO);
+	optionsmenu_page = Config.getItem(CUSTOM_OPTIONSMENU_ITEMS_FOO);
 	
 	//ConfigItem custom_page_notifier = Config.newItem("Notifications", CUSTOM_PAGE_NOTIFIER);
 
 	
-	configAttribute_repeatType 			= custom_page_nonexposed.newAttribute("Repeat", "1");
-	configAttribute_configType 			= custom_page_nonexposed.newAttribute("Config", "1");
-	configAttribute_shuffleType 		= custom_page_nonexposed.newAttribute("shuffle", "1");
-	configAttribute_crossfadeType 		= custom_page_nonexposed.newAttribute("crossfade", "0");
+	configAttribute_repeatType 			= fooPage.newAttribute("Repeat", "1");
+	configAttribute_configType 			= fooPage.newAttribute("Config", "1");
+	configAttribute_shuffleType 		= fooPage.newAttribute("shuffle", "1");
+	configAttribute_crossfadeType 		= fooPage.newAttribute("crossfade", "0");
 	
-	myattr_SC90DegVisDirection 			= custom_page_nonexposed.newAttribute("VizDirection", "0");
-	
-	ConfigAttribute submenuattrib = custom_options_page.newAttribute("Clock", "");
-	submenuattrib.setData(CUSTOM_PAGE);
-	configAttribute_clock_showwhenstopped 		= custom_page.newAttribute("ShowClockwhenStopped", "1");
-	configAttribute_clock_show24hr 				= custom_page.newAttribute("Show24HourClock", "1");
-	configAttribute_clock_showleadingzero 		= custom_page.newAttribute("ShowClockLeadingZero", "1");
+	myattr_SC90DegVisDirection 			= fooPage.newAttribute("VizDirection", "0");
 	
 	ConfigAttribute submenuattrib = custom_options_page.newAttribute("Cover", "");
 	submenuattrib.setData(CUSTOM_PAGE_COVER);	
@@ -151,29 +143,26 @@ initAttribs() {
 	myattr_SCCubeVisEnabled = custom_page_cover.newAttribute("Show Cube Viz", "0");
 	myattr_SC90DegVisRotation = custom_page_cover.newAttribute("Rotate Std Viz", "1");
 	
-	vis_mode_style_attrib = custom_page_nonexposed.newAttribute("Style", "1");
-	vis_mode_Pattern_attrib = custom_page_nonexposed.newAttribute("Pattern", "1");
-	globalmyattr_SCCubeVisEnabled = custom_page_nonexposed.newAttribute("coverenablecubeviz", "0");
-	globalmyattr_SCCoverEnabled = custom_page_nonexposed.newAttribute("coverenablecover", "0");
-	globalmyattr_SC90DegVisEnabled = custom_page_nonexposed.newAttribute("coverenable90viz", "0");
+	vis_mode_style_attrib = fooPage.newAttribute("Style", "1");
+	vis_mode_Pattern_attrib = fooPage.newAttribute("Pattern", "1");
+	globalmyattr_SCCubeVisEnabled = fooPage.newAttribute("coverenablecubeviz", "0");
+	globalmyattr_SCCoverEnabled = fooPage.newAttribute("coverenablecover", "0");
+	globalmyattr_SC90DegVisEnabled = fooPage.newAttribute("coverenable90viz", "0");
 	
 	//std frame stuff
-	myattrib_stdfrmBGREDColor = custom_page_nonexposed.newAttribute("stdframeBGRed", "0");
-	myattrib_stdfrmBGGREENColor = custom_page_nonexposed.newAttribute("stdframeBGGreen", "0");
-	myattrib_stdfrmBGBLUEColor = custom_page_nonexposed.newAttribute("stdframeBGBlue", "0");
+	myattrib_stdfrmBGREDColor = fooPage.newAttribute("stdframeBGRed", "0");
+	myattrib_stdfrmBGGREENColor = fooPage.newAttribute("stdframeBGGreen", "0");
+	myattrib_stdfrmBGBLUEColor = fooPage.newAttribute("stdframeBGBlue", "0");
 
 	
 	desktopalpha_enabled_attrib = Config.getItemByGuid("{9149C445-3C30-4E04-8433-5A518ED0FDDE}").getAttribute("Enable desktop alpha");
 	
 	
-	//from onedirectiontext
-	attrTextSpeed = Config.getItemByGuid("{9149C445-3C30-4e04-8433-5A518ED0FDDE}").getAttribute("Text Ticker Speed");
 	
-	
-	ConfigAttribute submenuattrib = custom_options_page.newAttribute("Songticker", "");
-	submenuattrib.setData(CUSTOM_PAGE_SONGTICKER);
-	songticker_scrolling_enabled_attrib 		= custom_page_songticker.newAttribute("Enable Songticker scrolling", "1");
-	songticker_style_old_attrib 				= custom_page_songticker.newAttribute("Classic Style", "1");
+// CUT (mpdeimos) 	ConfigAttribute submenuattrib = custom_options_page.newAttribute("Songticker", "");
+// CUT (mpdeimos) 	submenuattrib.setData(CUSTOM_PAGE_SONGTICKER);
+// CUT (mpdeimos) 	songticker_scrolling_enabled_attrib 		= custom_page_songticker.newAttribute("Enable Songticker scrolling", "1");
+// CUT (mpdeimos) 	songticker_style_old_attrib 				= custom_page_songticker.newAttribute("Classic Style", "1");
 
 	initRGBAttribs ();
 	
@@ -237,7 +226,8 @@ myattr_SCCubeVisEnabled.onDataChanged()
 	}
 }
 
-
+// CUT (mpdeimos) 
+/*
 songticker_scrolling_enabled_attrib.onDataChanged()
 {
   if (attribs_mychange) return;
@@ -272,7 +262,7 @@ songticker_style_modern_attrib.onDataChanged()
   if (getData() == "0") songticker_style_old_attrib.setData("1");
   attribs_mychange = 0;
 }
-
+*/
 
 
 #endif

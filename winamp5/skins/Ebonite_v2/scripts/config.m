@@ -11,9 +11,10 @@ SLoB for Ebonite 2008
 
 #include <lib/std.mi>
 //#include <lib/config.mi>
-#include "attribs.m"
+//#include "attribs.m"
 //#include "attribs/init_notifier.m"
-
+//#include "attribs/init_songticker.m"
+#include "attribs/init_rgb.m"
 
 Function cfgsetSC_RGB_Red(int iRed);
 Function cfgsetSC_RGB_Green(int iGreen);
@@ -39,9 +40,11 @@ Global togglebutton optNotiPosTL, optNotiPosTR, optNotiPosBL, optNotiPosBR;
 
 System.onScriptLoaded() 
 {
-	initAttribs();
+/*	initAttribs();
 	//initAttribs_notifier();
-	
+	initAttribs_songticker();
+*/	
+	initAttribs_rgb();
 	contConfig = getContainer("configs");
 	layConfig = contConfig.getLayout("normalconfigs");
 	
@@ -70,12 +73,12 @@ System.onScriptLoaded()
 	
 	optTickerScrolling = layConfig.findObject("checkbox.tickerscrolling");
 	optTickerClassic = layConfig.findObject("checkbox.tickerclassicstyle");
+
 	
 	optNotiPosTL = layConfig.findObject("checkbox.notilocationtl");
 	optNotiPosTR = layConfig.findObject("checkbox.notilocationtr");
 	optNotiPosBL = layConfig.findObject("checkbox.notilocationbl");
 	optNotiPosBR = layConfig.findObject("checkbox.notilocationbr");
-	
 	
 	
 	iCfgGrp = getPrivateInt(getSkinName(),"cfgGroupShown", 0);
@@ -129,7 +132,7 @@ System.onShowLayout(Layout layConfig)
 	cfgsetSC_RGB_Red(getPrivateInt(getSkinName(),"redbg", 0));
 	cfgsetSC_RGB_Green(getPrivateInt(getSkinName(),"greenbg", 0));
 	cfgsetSC_RGB_Blue(getPrivateInt(getSkinName(),"bluebg", 0));
-	
+#ifdef 0	
 	//set defaults
 	if(configAttribute_clock_showwhenstopped.getData()=="1")
 	{
@@ -148,7 +151,7 @@ System.onShowLayout(Layout layConfig)
 	{
 		optShowCover.setChecked(0);
 	}
-
+#endif
 }	
 
 btnNotifier.onEnterArea()
@@ -243,6 +246,7 @@ cfgsetSC_RGB_Blue(int iBlue)
 	cfgBlue.setAlpha(iBlue);
 }
 
+#ifdef 0
 
 //option changes now, lets sort em out
 
@@ -480,3 +484,5 @@ optNotiPosTL.onToggle(int newstate)
 	}
 }
 */
+
+#endif

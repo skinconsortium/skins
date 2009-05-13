@@ -1,5 +1,5 @@
 #include <lib/std.mi>
-#include "attribs.m"
+#include "attribs/init_clock.m"
 /*
 Date:-		12/05/2007
 Script:-		SC quick Clock script
@@ -22,7 +22,7 @@ Global String timerText, temp_hours, temp_mins;
 
 System.onScriptLoaded()
 {
-	initAttribs();
+	initAttribs_Clock();
 	
 	Group mainGrp = getScriptGroup();
 

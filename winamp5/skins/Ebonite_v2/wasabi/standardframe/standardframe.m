@@ -22,7 +22,7 @@ Known Bugs:
 ---------------------------------------------------*/
 
 #include <lib/std.mi>
-#include "../../scripts/attribs_rgb.m"
+#include "../../scripts/attribs/init_rgb.m"
 
 #define LAYOUT_PROPS "alpha,linkwidth,layout,linkheight,taskbar,appbar,minimum_h,minimum_w,maximum_h,maximum_w,h,w,nme,lockminmax,default_visible,default_w,default_h"
 Class Layer Resizer;
@@ -62,7 +62,7 @@ Global Layer btopleft, btop, btopright, bleft, bright, bbottomright, bbottom, bb
 
 System.onScriptLoaded()
 {
-	initRGBAttribs(); //RGB
+	initAttribs_RGB(); //RGB
 	
 	scriptGroup = getScriptGroup();
 	
