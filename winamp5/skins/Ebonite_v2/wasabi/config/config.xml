@@ -136,7 +136,7 @@
 	<Wasabi:Checkbox id="checkbox.notilocationtl" x="10" y="102" text="Top Left" radioid="locationnoti" cfgattrib="{e308e077-16d9-4704-9cd5-125c06e93e71};Top Left"/>
 	<Wasabi:Checkbox id="checkbox.notilocationtr" x="85" y="102" text="Top Right" radioid="locationnoti" cfgattrib="{e308e077-16d9-4704-9cd5-125c06e93e71};Top Right"/>
 	<Wasabi:Checkbox id="checkbox.notilocationbl" x="10" y="115" text="Bottom Left" radioid="locationnoti" cfgattrib="{e308e077-16d9-4704-9cd5-125c06e93e71};Bottom Left"/>
-	<Wasabi:Checkbox id="checkbox.notilocationbr" x="85" y="115" text="Bottom Right" radioid="locationnoti" />
+	<Wasabi:Checkbox id="checkbox.notilocationbr" x="85" y="115" text="Bottom Right" radioid="locationnoti" cfgattrib="{e308e077-16d9-4704-9cd5-125c06e93e71};Bottom Right"/>
 	
 		
 	
