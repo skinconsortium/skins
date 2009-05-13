@@ -1,5 +1,5 @@
 #include <lib/std.mi>
-#include "attribs.m"
+#include "attribs/init_vis.m"
 
 
 //SLoB - quick hack to rotate vis 90 degrees
@@ -20,7 +20,7 @@ Global GuiObject AlbumArt;
 
 system.onscriptloaded()
 {
-initAttribs();
+initAttribs_vis();
 	
 	contvis = getContainer("main");
 	fullvis = contvis.getLayout("full");

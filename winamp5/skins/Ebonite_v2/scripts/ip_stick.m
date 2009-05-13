@@ -7,7 +7,7 @@
 //--------------------------------------------------------------------------------------
 
 
-#include "attribs.m"
+#include "attribs/init_misc.m"
 
 //load and unload
 Function load_stick();
@@ -32,7 +32,7 @@ Global Slider Seeker, Volume;
 load_stick()
 {
 	//load global attribs
-	initAttribs();
+	initAttribs_misc();
 
 	Main = getContainer("main"); 
     LayoutStick = Main.getLayout("stick");

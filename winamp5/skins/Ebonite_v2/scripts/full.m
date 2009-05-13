@@ -8,7 +8,7 @@ www.skinconsortium.com
 
 #include <lib/std.mi>
 #include <lib/config.mi>
-#include "attribs.m"
+#include "attribs/init_misc.m"
 #include "ip_full.m"
 
 system.onScriptLoaded()

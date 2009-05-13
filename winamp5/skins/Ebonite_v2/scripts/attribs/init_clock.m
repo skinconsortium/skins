@@ -6,7 +6,7 @@
 
 Function initAttribs_clock();
 
-#define CUSTOM_PAGE_CLOCK "{F260193E-3598-4086-82B2-651110BA2900}"
+#define CUSTOM_PAGE_CLOCK "{EFF7B9C8-57D3-442f-B9D2-43F9C1AEF75F}"
 
 Global ConfigAttribute configAttribute_clock_showleadingzero;
 Global ConfigAttribute configAttribute_clock_show24hr;

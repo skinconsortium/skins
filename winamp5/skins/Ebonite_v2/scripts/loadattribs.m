@@ -24,7 +24,9 @@ Internet:	www.skinconsortium.com
 #include "attribs/init_general.m"
 #include "attribs/init_notifier.m"
 #include "attribs/init_rgb.m"
-
+#include "attribs/init_misc.m"
+#include "attribs/init_vis.m"
+#include "attribs/init_clock.m"
 /*
 include "attribs/init_glowbuttons.m"
 include "attribs/init_windowmenus.m"
@@ -47,7 +49,9 @@ System.onScriptLoaded()
 	initAttribs_glowbuttons();*/
 	initAttribs_notifier();
 	initAttribs_songTicker();
-	//initAttribs_visualizer();
+	initAttribs_misc();
+	initAttribs_vis();
+	initAttribs_clock();
 /*	
 	initAttribs_windowmenus();
 	initAttribs_playback();

@@ -25,9 +25,9 @@
 		title="Clock Options"
 		color="lcdtext"/>
 	
-	<Wasabi:Checkbox id="checkbox.clockshowclockwhenstopped" x="10" y="61" text="Show when stopped" cfgattrib="{F260193E-3598-4086-82B2-651110BA2900};ShowClockwhenStopped"/>
-	<Wasabi:Checkbox id="checkbox.clockshow24hourclock" x="10" y="74" text="Show 24 hour Clock" cfgattrib="{F260193E-3598-4086-82B2-651110BA2900};Show24HourClock"/>
-	<Wasabi:Checkbox id="checkbox.clockshowclockleadingzero" x="10" y="87" text="Show leading zero" cfgattrib="{F260193E-3598-4086-82B2-651110BA2900};ShowClockLeadingZero"/>
+	<Wasabi:Checkbox id="checkbox.clockshowclockwhenstopped" x="10" y="61" text="Show when stopped" cfgattrib="{EFF7B9C8-57D3-442f-B9D2-43F9C1AEF75F};ShowClockwhenStopped"/>
+	<Wasabi:Checkbox id="checkbox.clockshow24hourclock" x="10" y="74" text="Show 24 hour Clock" cfgattrib="{EFF7B9C8-57D3-442f-B9D2-43F9C1AEF75F};Show24HourClock"/>
+	<Wasabi:Checkbox id="checkbox.clockshowclockleadingzero" x="10" y="87" text="Show leading zero" cfgattrib="{EFF7B9C8-57D3-442f-B9D2-43F9C1AEF75F};ShowClockLeadingZero"/>
 	
 <!-- COVER -->
 	<Wasabi:TitleBox id="container" x="0" y="112" 
@@ -36,11 +36,11 @@
 		color="lcdtext"/>
 	
 	
-	<Wasabi:Checkbox id="checkbox.covershowcover" x="10" y="124" text="Toggle Cover"/>
-	<Wasabi:Checkbox id="checkbox.covershowviz" x="10" y="137" text="Toggle Viz"/>
-	<Wasabi:Checkbox id="checkbox.covershowcubeviz" x="10" y="150" text="Toggle Cube Viz"/>
+	<Wasabi:Checkbox id="checkbox.covershowcover" x="10" y="124" text="Toggle Cover" cfgattrib="{0ff91115-b854-4c37-b614-fadb84edac8f};Show Cover"/>
+	<Wasabi:Checkbox id="checkbox.covershowviz" x="10" y="137" text="Toggle Viz" cfgattrib="{0ff91115-b854-4c37-b614-fadb84edac8f};Show Viz"/>
+	<Wasabi:Checkbox id="checkbox.covershowcubeviz" x="10" y="150" text="Toggle Cube Viz" cfgattrib="{0ff91115-b854-4c37-b614-fadb84edac8f};Show Cube Viz"/>
 	
-	<Wasabi:Checkbox id="checkbox.coverrotatestdviz" x="10" y="164" text="Rotate Std Viz"/>
+	<Wasabi:Checkbox id="checkbox.coverrotatestdviz" x="10" y="164" text="Rotate Std Viz" cfgattrib="{0ff91115-b854-4c37-b614-fadb84edac8f};Rotate Std Viz"/>
 	
 	
 <!-- SONGTICKER -->	
@@ -112,14 +112,14 @@
 
 
 	<Wasabi:RadioGroup id="notishowgrp" />	
-	<Wasabi:Checkbox id="checkbox.notishowalways" x="10" y="12" text="Show Always" radioid="notishowgrp"/>
-	<Wasabi:Checkbox id="checkbox.notishowminimized" x="10" y="25" text="Show only when minimized" radioid="notishowgrp"/>
-	<Wasabi:Checkbox id="checkbox.notishownever" x="10" y="38" text="Show Never" radioid="notishowgrp"/>
+	<Wasabi:Checkbox id="checkbox.notishowalways" x="10" y="12" text="Show Always" radioid="notishowgrp" cfgattrib="{4b100531-6dd6-4b89-8ee2-3392d7feeb79};Show always"/>
+	<Wasabi:Checkbox id="checkbox.notishowminimized" x="10" y="25" text="Show only when minimized" radioid="notishowgrp" cfgattrib="{4b100531-6dd6-4b89-8ee2-3392d7feeb79};Show only when minimized"/>
+	<Wasabi:Checkbox id="checkbox.notishownever" x="10" y="38" text="Show Never" radioid="notishowgrp" cfgattrib="{4b100531-6dd6-4b89-8ee2-3392d7feeb79};Never show"/>
 	
-	<Wasabi:Checkbox id="checkbox.notishowfullscreen" x="10" y="52" text="Show in fullscreen"/>
+	<Wasabi:Checkbox id="checkbox.notishowfullscreen" x="10" y="52" text="Show in fullscreen" cfgattrib="{4b100531-6dd6-4b89-8ee2-3392d7feeb79};Show in fullscreen"/>
 
 	
-	<Wasabi:Checkbox id="checkbox.notienablecover" x="10" y="70" text="Enable Cover"/>
+	<Wasabi:Checkbox id="checkbox.notienablecover" x="10" y="70" text="Enable Cover" cfgattrib="{4b100531-6dd6-4b89-8ee2-3392d7feeb79};Enable Cover"/>
 	
 	<text 
 		id="notilocation" 
@@ -133,10 +133,10 @@
 		ticker="0"		
 	/>
 	<Wasabi:RadioGroup id="locationnoti"/>
-	<Wasabi:Checkbox id="checkbox.notilocationtl" x="10" y="102" text="Top Left" radioid="locationnoti"/>
-	<Wasabi:Checkbox id="checkbox.notilocationtr" x="85" y="102" text="Top Right" radioid="locationnoti"/>
-	<Wasabi:Checkbox id="checkbox.notilocationbl" x="10" y="115" text="Bottom Left" radioid="locationnoti"/>
-	<Wasabi:Checkbox id="checkbox.notilocationbr" x="85" y="115" text="Bottom Right" radioid="locationnoti"/>
+	<Wasabi:Checkbox id="checkbox.notilocationtl" x="10" y="102" text="Top Left" radioid="locationnoti" cfgattrib="{e308e077-16d9-4704-9cd5-125c06e93e71};Top Left"/>
+	<Wasabi:Checkbox id="checkbox.notilocationtr" x="85" y="102" text="Top Right" radioid="locationnoti" cfgattrib="{e308e077-16d9-4704-9cd5-125c06e93e71};Top Right"/>
+	<Wasabi:Checkbox id="checkbox.notilocationbl" x="10" y="115" text="Bottom Left" radioid="locationnoti" cfgattrib="{e308e077-16d9-4704-9cd5-125c06e93e71};Bottom Left"/>
+	<Wasabi:Checkbox id="checkbox.notilocationbr" x="85" y="115" text="Bottom Right" radioid="locationnoti" />
 	
 		
 	
@@ -153,9 +153,9 @@
 	/>
 	
 	<Wasabi:RadioGroup id="notiinfade" />	
-	<Wasabi:Checkbox id="checkbox.notifadeinalpha" x="10" y="150" text="Alpha" radioid="notiinfade"/>
-	<Wasabi:Checkbox id="checkbox.notifadeinvertical" x="10" y="163" text="Vertical" radioid="notiinfade"/>
-	<Wasabi:Checkbox id="checkbox.notifadeinhorizontal" x="10" y="176" text="Horizontal" radioid="notiinfade"/>
+	<Wasabi:Checkbox id="checkbox.notifadeinalpha" x="10" y="150" text="Alpha" radioid="notiinfade" cfgattrib="{45779031-790e-4f71-aa74-5c4744e044ac};Alpha Fade"/>
+	<Wasabi:Checkbox id="checkbox.notifadeinvertical" x="10" y="163" text="Vertical" radioid="notiinfade" cfgattrib="{45779031-790e-4f71-aa74-5c4744e044ac};Vertical Slide"/>
+	<Wasabi:Checkbox id="checkbox.notifadeinhorizontal" x="10" y="176" text="Horizontal" radioid="notiinfade" cfgattrib="{45779031-790e-4f71-aa74-5c4744e044ac};Horizontal Slide"/>
 	
 	<text 
 		id="notifadeout" 
@@ -170,9 +170,9 @@
 	/>
 	
 	<Wasabi:RadioGroup id="notioutfade" />	
-	<Wasabi:Checkbox id="checkbox.notifadeinalpha" x="86" y="150" text="Alpha" radioid="notioutfade"/>
-	<Wasabi:Checkbox id="checkbox.notifadeinvertical" x="86" y="163" text="Vertical" radioid="notioutfade"/>
-	<Wasabi:Checkbox id="checkbox.notifadeinhorizontal" x="86" y="176" text="Horizontal" radioid="notioutfade"/>
+	<Wasabi:Checkbox id="checkbox.notifadeinalpha" x="86" y="150" text="Alpha" radioid="notioutfade" cfgattrib="{b15651a9-2256-4019-a357-b776d2cc00a1};Alpha Fade "/>
+	<Wasabi:Checkbox id="checkbox.notifadeinvertical" x="86" y="163" text="Vertical" radioid="notioutfade" cfgattrib="{b15651a9-2256-4019-a357-b776d2cc00a1};Vertical Slide "/>
+	<Wasabi:Checkbox id="checkbox.notifadeinhorizontal" x="86" y="176" text="Horizontal" radioid="notioutfade" cfgattrib="{b15651a9-2256-4019-a357-b776d2cc00a1};Horizontal Slide "/>
 	
 		
 		
@@ -188,11 +188,11 @@
 		ticker="0"		
 	/>
 	<Wasabi:RadioGroup id="yoffsetnoti"/>
-	<Wasabi:Checkbox id="checkbox.notiyoffset1" x="10" y="213" text="20" radioid="yoffsetnoti" color="lcdtext"/>
-	<Wasabi:Checkbox id="checkbox.notiyoffset2" x="40" y="213" text="40" radioid="yoffsetnoti"/>
-	<Wasabi:Checkbox id="checkbox.notiyoffset3" x="70" y="213" text="60" radioid="yoffsetnoti"/>
-	<Wasabi:Checkbox id="checkbox.notiyoffset4" x="100" y="213" text="80" radioid="yoffsetnoti"/>
-	<Wasabi:Checkbox id="checkbox.notiyoffset5" x="130" y="213" text="100" radioid="yoffsetnoti"/>
+	<Wasabi:Checkbox id="checkbox.notiyoffset1" x="10" y="213" text="20" radioid="yoffsetnoti" cfgattrib="{66623378-20fb-11dc-8314-0800200c9a66};20 Pixels"/>
+	<Wasabi:Checkbox id="checkbox.notiyoffset2" x="40" y="213" text="40" radioid="yoffsetnoti" cfgattrib="{66623378-20fb-11dc-8314-0800200c9a66};40 Pixels"/>
+	<Wasabi:Checkbox id="checkbox.notiyoffset3" x="70" y="213" text="60" radioid="yoffsetnoti" cfgattrib="{66623378-20fb-11dc-8314-0800200c9a66};60 Pixels"/>
+	<Wasabi:Checkbox id="checkbox.notiyoffset4" x="100" y="213" text="80" radioid="yoffsetnoti" cfgattrib="{66623378-20fb-11dc-8314-0800200c9a66};80 Pixels"/>
+	<Wasabi:Checkbox id="checkbox.notiyoffset5" x="130" y="213" text="100" radioid="yoffsetnoti" cfgattrib="{66623378-20fb-11dc-8314-0800200c9a66};100 Pixels"/>
 		
 </groupdef>
 
