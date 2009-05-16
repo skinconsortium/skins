@@ -27,9 +27,6 @@
 	!define /Date CPRO_COPYRIGHT "Copyright (c) 2005-%Y"	
 	!define CPRO_UNINSTALLER "Uninstall ClassicPro"	
 	!define CPRO_WINAMP_VERSION "5.55"
-	!define CPRO_OUTFILE_PATH "C:\Program Files\Winamp\Plugins\ClassicPro\_installer"	; change to compile properly
-	!define CPRO_WINAMP_SKINS "C:\Program Files\Winamp\Skins"				; change to compile properly
-	!define CPRO_WINAMP_SYSTEM "C:\Program Files\Winamp\System"				; change to compile properly
 	
 ;###########################################################################################
 ;#											CONFIGURATION
