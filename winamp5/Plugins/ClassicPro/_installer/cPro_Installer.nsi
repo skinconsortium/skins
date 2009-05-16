@@ -571,6 +571,7 @@ Section "$(CPro_CProFiles)" "CPro_Sec_CProFiles"
 	SetOutPath $INSTDIR\Plugins\ClassicPro\_installer\Plugins
 		File "Plugins\*.txt"
 		File "Plugins\*.dll"
+		File "Plugins\*.url"
 	SetOutPath $INSTDIR\Plugins\ClassicPro\_installer\Files
 		File "Files\*.*"
 ; CPro engine		
@@ -796,7 +797,6 @@ Section "-Leave"
 		CreateShortCut "$SMPROGRAMS\Winamp\${CPRO_NAME}\$(CPro_MenuStart1).lnk" "$INSTDIR\${CPRO_UNINSTALLER}.exe"
 		CreateShortCut "$SMPROGRAMS\Winamp\${CPRO_NAME}\$(CPro_MenuStart2).lnk" "$INSTDIR\Plugins\ClassicPro\Whats new.txt"
 		File /oname=$SMPROGRAMS\Winamp\${CPRO_NAME}\$(CPro_MenuStart3).url "Plugins\link.url"
-		
 	SetShellVarContext current
 
 ; Create uninstaller
