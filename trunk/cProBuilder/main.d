@@ -15,8 +15,11 @@ import com.skinconsortium.d.commons.NSISDefinitionFile;
 import dfl.registry;
 import tango.sys.Process;
 import tango.text.stream.LineIterator;
+import tango.util.PathUtil;
 import dfl.internal.winapi;
 import tango.stdc.stringz;
+import tango.io.FilePath,
+	   tango.io.FileSystem;
 
 class Main: PositionedWindow
 {
@@ -45,6 +48,7 @@ class Main: PositionedWindow
 	final static char[][] BUILD_TYPE_NAMES = ["", "Beta 1", "Nigtly"];
 	
 	final char[] nsisPath;
+	final FilePath exePath;
 	
 	this()
 	{
@@ -73,6 +77,8 @@ class Main: PositionedWindow
 		{
 			runBuild.disable();
 		}
+		
+		exePath = (new FilePath(FileSystem.getDirectory()));
 	}
 	
 	private void startInstaller(Object sender, EventArgs ea)
@@ -96,6 +102,11 @@ class Main: PositionedWindow
 		NSISDefinitionFile.setValue("CPRO_BUILD_TYPE", buildChooser.text);
 		NSISDefinitionFile.setValue("CPRO_BUILD_NAME", textBuildName.text);
 		NSISDefinitionFile.setValue("CPRO_BUILD_FILENAME_ADDITION", Text.replace!(char)(textBuildName.text, ' ', '_'));
+		auto installerPath = exePath.dup.native.toString;
+		auto winampPath = exePath.pop.pop.pop.native.toString;
+		NSISDefinitionFile.setValue("CPRO_OUTFILE_PATH", installerPath);
+		NSISDefinitionFile.setValue("CPRO_WINAMP_SKINS", winampPath~"\\Skins");
+		NSISDefinitionFile.setValue("CPRO_WINAMP_SYSTEM", winampPath~"\\System");
 		NSISDefinitionFile.save();
 		
 		try
@@ -112,7 +123,7 @@ class Main: PositionedWindow
 		    	 {
 			    	 lineCount++;
 			    	 append ~= line ~ "\r\n";
-			    	// if (lineCount %50 == 0)
+			    	 //if (lineCount % 2 == 0)
 			    	 {
 				    	 nsisOutput.text = append;
 				    	 SendMessageA(nsisOutput.handle(), EM_LINESCROLL, 0, lineCount);
@@ -246,7 +257,7 @@ class Main: PositionedWindow
 		label5 = new dfl.label.Label();
 		label5.name = "label5";
 		label5.enabled = false;
-		label5.text = "ClassicPro Builder - version 0.1";
+		label5.text = "ClassicPro Builder - version 0.2";
 		label5.bounds = dfl.all.Rect(0, 8, 188, 15);
 		label5.parent = panel3;
 		//~DFL dfl.textbox.TextBox=nsisOutput
