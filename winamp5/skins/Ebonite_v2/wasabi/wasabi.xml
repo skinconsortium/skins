@@ -1,3 +1,4 @@
+<include file="updateSystem/updateSystem.xml"/>
 <include file="standardframe/standardframe.xml" />
 <include file="notifier/notifier.xml" />
 <include file="xml/pledit.xml"/>
