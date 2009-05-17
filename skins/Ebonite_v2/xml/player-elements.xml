@@ -76,6 +76,8 @@
 	<bitmap id="cdcover.noimage" file="pics/noimage.png" gammagroup="lcdstuff"/>
 	<bitmap id="cdcover.noimage" file="pics/noimage.png" gammagroup="lcdstuff"/>
 	
+	<bitmap id="aanarrowglassimg" file="images/glass_narrowmode.png" />	
+	
 	<bitmap id="cubevis1" file="pics/cubestrip1.png"  gammagroup="lcdstuff"/>
 	<bitmap id="cubevis2" file="pics/cubestrip2.png"  gammagroup="lcdstuff"/>
 	<bitmap id="cubevis3" file="pics/cubestrip3.png"  gammagroup="lcdstuff"/>

@@ -262,7 +262,7 @@
 			move="1"
 			tooltip="Click to open album folder"
 		/>
-	
+		<layer id="aanarrowglass" image="aanarrowglassimg" rectrgn="0" x="16" y="6" w="76" h="60" ghost="1"/>
 
 		<script id="clock.script" file="scripts/clock.maki" />
 		<script id="narrow.script" file="scripts/compactnarrow.maki" />
