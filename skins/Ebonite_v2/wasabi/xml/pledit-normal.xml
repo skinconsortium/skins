@@ -106,6 +106,7 @@
 	<group id="pledit.buttons.group" x="0" y="-42" relaty="1" />
 	<group id="petime" x="-190" y="-57" relaty="1" relatx="1" />
 	
+	<SC:UpdateSystem x="0" y="0" h="0" w="0" skinname="ebonite" skinversion="2.00" ofvalue="Ebonite"/>
   
 </layout>
 

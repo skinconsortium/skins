@@ -1,115 +1,134 @@
-/*---------------------------------------------------
------------------------------------------------------
-Filename:	updateSystem.m
+/********************************************************\
+**  Filename:	updateSystem.m				**
+**  Version:	3.1					**
+**  Date:	4. Mrt. 2009 - 00:31			**
+**********************************************************
+**  Type:	winamp.wasabi/XUI Object		**
+**  Project:	misc					**
+**********************************************************
+**  Author:	Martin Poehlmann aka Deimos		**
+**  E-Mail:	martin@skinconsortium.com		**
+**  Internet:	http://www.skinconsortium.com		**
+**		http://home.cs.tum.edu/~poehlman	**
+**		Traffic Reduction update by pjn123		**
+\********************************************************/
 
-Type:		maki/source
-Version:	skin version 1.2
-Date:		22:39 17.05.2005
-Author:		Martin P. alias Deimos
-E-Mail:		martin.deimos@gmx.de
-Internet:	www.martin.deimos.de.vu
------------------------------------------------------
----------------------------------------------------*/
 
-#include "../../../../lib/std.mi"
-#include "../../scripts/attribs/init_updateSystem.m"
+#include <lib/std.mi>
+#include <lib/exd.mi>
 
-Function String replaceString(string baseString, string toreplace, string replacedby);
+#define SERVERFILE "http://www.skinconsortium.com/updatemanager/updateSystem.php"
+//define SERVERFILE "http://localhost/updateSystem/updateSystem.php"
+
+Function int getDateStamp();
+Function initCheck();
 
 Global Browser brw;
 
-Global String str_version;
+Global String str_skinname, str_version, ofvalue;
 Global String url;
-Global Boolean ready = 0;
-Global int count = 0;
-Global Timer tmr, timeout;
-Global Layout l;
+Global int ready = 0;
+Global boolean done;
 
-System.onSetXuiParam(String stringParam, String stringValue) {
-	if (strlower(stringParam) == "remotefile") { url = stringValue; count++; }
-	if (strlower(stringParam) == "skinversion") { str_version = stringValue;  count++; }
-	if (count == 2) {
-		initAttribs_updateSystem();
+System.onScriptLoaded ()
+{
+	brw = getScriptgroup().findObject("brw");
 
-		Group XUIGroup = getScriptgroup();
-
-		l = XUIGroup.getParentLayout();
-
-		brw = XUIGroup.findObject("brw");
-		if (autoupdate_attrib.getData() == "1") {
-			tmr = new Timer;
-			tmr.setDelay(5000);
-			tmr.start();
-			timeout = new Timer;
-			timeout.setDelay(30000);
-			timeout.start();
-		}
-	}	
+	initCheck();
 }
 
-System.onScriptUnloading ()
+initCheck()
 {
-	l.hide();
-}
-
-
-tmr.onTimer ()
-{
-	Stop();
-	l.show();
-}
-
-timeout.onTimer ()
-{
-	Stop();
-	l.hide();
-}
-
-l.onSetVisible (Boolean onoff)
-{
-	if (onoff)
+	if (ready < 3)
 	{
-		brw.navigateURL(url + "?skinupdate+" + str_version);
+		return;
+	}
+
+	String publicInt = "ClassicPro.update.timestamp" + str_skinname;
+	
+	//Only check for updates once every 5days!!!
+	if(getPublicInt(publicInt, 0)< getDateStamp()-4 || getPublicInt(publicInt, 0)> getDateStamp()){
+		setPublicInt(publicInt, getDateStamp());
+	}
+	else return;
+
+
+	/*if (!getPrivateInt(getSkinName(), "Check for Updates", 1))
+		return; // we quit savely*/
+
+	brw.navigateUrl(SERVERFILE + "?q=check&skin=" + str_skinname + "&version=" + str_version +"&lng=" + getLanguageId() );
+}
+
+int getDateStamp(){
+	int i = System.getDateYear(System.getDate())*365 + System.getDateDoy(System.getDate());
+	return i;
+}
+
+System.onSetXuiParam (String param, String value)
+{
+	if (strlower(param) == "skinname")
+
+	{
+		str_skinname = value;
+		ready++;
+	}
+	else if (strlower(param) == "skinversion")
+	{
+		str_version = value;
+		ready++;		
+	}
+	else if (strlower(param) == "ofvalue")
+	{
+		ofvalue = value;
+		ready++;
+	}
+	if (ready == 3 && brw != null)
+	{
+		initCheck();
 	}
 }
 
-brw.onDocumentComplete(String url) {
-//	debug(url);
-	if (strsearch(url, "|Available") != -1 && !ready) {
-		string msg = getToken(url, ";", 1);
-		for ( int i = 0; i < 666; i++ ) {	
-			if (strsearch(msg, "%20") != -1) {
-				msg = replaceString(msg, "%20", " ");
-				i = 0;
-			} else i = 666;
-		}
-		for ( int i = 0; i < 666; i++ ) {	
-			if (strsearch(msg, "%40") != -1) {
-				msg = replaceString(msg, "%40", "\n");
-				i = 0;
-			} else i = 666;
-		}
-		int i_upd = messageBox("A new version of this skin is available!\n\n" + msg + "\n\nDo you like to download this version?" , "New Version Available", 12, "");
-		ready = 1;
-		if (i_upd == 4 ) brw.navigateUrl(url+ "," + str_version + "+Down");
-		brw.navigateUrl("about:blank");
-		timeout.stop();
-		timeout.setDelay(10000);
-		timeout.start();
-	}
-}
+// The browser is used as interface between the skin and our server
+brw.onDocumentComplete (String url)
+{
+	// Once we've started to querry our server we might get a response via redirection
+	// skinupdate.php will redirect to skinupdate.php?avmsg=somemessage&blank=0 if a new version is available.
+	// you can response to this site via skinupdate.php?download=1&skin=xxx
+	// blank=0 means that you should response in this browser, blank=1 will tell you that it's better to open a browser wnd
+	
+	if (done)
+		return;	
 
-String replaceString(string baseString, string toreplace, string replacedby) {
-	if (toreplace == "") return baseString;
-	string sf1 = strupper(baseString);
-	string sf2 = strupper(toreplace);
-	int i = strsearch(sf1, sf2);
-	if (i == -1) return baseString;
-	string left = "", right = "";
-	if (i != 0) left = strleft(baseString, i);
+	String query = getToken(url, "?", 1);		// Get URL Query
 
-	if (strlen(basestring) - i - strlen(toreplace) != 0) {
-		right = strright(basestring, strlen(basestring) - i - strlen(toreplace));
+	if (strsearch(query, "avmsg=") != -1)		// There is a new version available
+	{
+		done = true;				// Set flag, so this will be the last handled response
+
+		// Extract the message to be displayed later on
+		String msg = getToken(query, "&", 0);	// Per definition avmsg= should be the 1st param
+		msg = getToken(msg, "=", 1);		// Now we've the raw message
+
+		while(strsearch(msg, "%20") != -1)	// Replace every '%40' with a space
+			msg = replaceString(msg, "%20", " ");
+
+		while(strsearch(msg, "%40") != -1)	// replace every '%40' with a new line char --  dunno if there is a real sombol instead of %40
+			msg = replaceString(msg, "%40", "\n");
+
+		// Display the messagebox
+		int i_upd = messageBox(
+			"A new version of "+ofvalue+" is available!\n\n" 
+			+ msg
+			+ "\n\nWould you like to download this version?"
+			, "New Version Available", 12, "");
+
+		if (i_upd == 4)				// if user clicks YES, we'll start downloading
+		{
+			String dl_invoke = SERVERFILE + "?q=get&skin=" + str_skinname;
+			if (strsearch(query, "blank=1") != -1)
+				System.navigateUrl(dl_invoke);
+			else
+				brw.navigateUrl(dl_invoke);
+		}
 	}
-	return left + replacedby + right;
 }
