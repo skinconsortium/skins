@@ -5,4 +5,4 @@
 	<text id="r" x="0"  w="0" relatw="1" y="15" text="" align="right" ghost="1" alpha="255" fontsize="12"/>
 	<togglebutton id="cpro.tab.button" fitparent="1" rectrgn="1"/>
 	<script file="@WINAMPPATH@\Plugins\ClassicPro\engine\xui\CproTabs\CproTabButton.maki" />
-</groupdef>z
+</groupdef>
