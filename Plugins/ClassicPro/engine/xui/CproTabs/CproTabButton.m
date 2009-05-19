@@ -21,6 +21,11 @@ Global Text label;
 Global boolean wasActive, movingTab, mouseDown, moved;
 Global int dx;
 
+// HACK (mpdeimos) this timer is a big HACK! Remove it if possible
+// needed to recieve button deactivated msgs (mainly to send the action)
+// test w/ GTAIV skin
+Global timer tmr;
+
 System.onScriptLoaded ()
 {
 	setDispatcher(getScriptGroup().getParent());
@@ -29,7 +34,17 @@ System.onScriptLoaded ()
 	label = getScriptGroup().findObject("cpro.tab.text");
 	grid = getScriptGroup().findObject("cpro.tab.grid");
 	parent = getScriptGroup();
+
+	tmr = new Timer;
+	tmr.setDelay(10);
 }
+
+System.onScriptUnloading ()
+{
+	tmr.stop();
+	delete tmr;
+}
+
 
 trigger.onLeftButtonDown (int x, int y)
 {
@@ -91,19 +106,34 @@ trigger.onActivate (boolean onOff)
 	else
 	{
 		setButtonState(2);
+		tmr.stop();
+		tmr.start();
 	}
 }
+
+tmr.onTimer ()
+{
+	tmr.stop();
+	sendMessageO(ON_TAB_OFF, parent);
+}
+
 
 trigger.onEnterArea()
 {
 	if (!trigger.getActivated())
+	{
 		setButtonState(3);
+		sendMessageO(ON_ENTER_AREA, parent);
+	}
 }
 
 trigger.onLeaveArea()
 {
 	if (!trigger.getActivated())
+	{
 		setButtonState(2);
+		sendMessageO(ON_LEAVE_AREA, parent);
+	}
 }
 
 setButtonState (int mode)
