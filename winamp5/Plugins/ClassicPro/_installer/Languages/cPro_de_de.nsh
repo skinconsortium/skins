@@ -2,8 +2,8 @@
 
 ; Lang:				German
 ; LangID			1031
-; Last udpdated:	24.02.2009
-; Author:			x
+; Last udpdated:	16.05.2009
+; Author:			Marko Egger(mynameisnobody)
 ; Email:			x@x
 
 ; Notes:
@@ -19,7 +19,7 @@
 
 ; Language selection
 	LangString CPro_Language_Title ${LANG_GERMAN} "Sprache wählen"
-	LangString CPro_Un_Language_Title ${LANG_GERMAN} "Uninstaller language"	
+	LangString CPro_Un_Language_Title ${LANG_GERMAN} "Sprache wählen"	
 	LangString CPro_Language_Text ${LANG_GERMAN} "Bitte wählen Sie eine Sprache:"
 
 ; First Page of Installer
@@ -43,7 +43,7 @@
 	LangString CPro_Minimal ${LANG_GERMAN} "Minimal"
 	
 ; Installer sections
-	LangString CPro_CProFiles ${LANG_GERMAN} "${CPRO_NAME} Engine"
+	LangString CPro_CProFiles ${LANG_GERMAN} "${CPRO_NAME} Kernkomponenten"
 	LangString CPro_wBrowserPro ${LANG_GERMAN} "BrowserPro"
 	LangString CPro_wAlbumArt ${LANG_GERMAN} "AlbumArt"
 	LangString CPro_WidgetsSection ${LANG_GERMAN} "Widgets"
@@ -87,7 +87,7 @@
 	
 ; First Page of Uninstaller
 	LangString CPro_Un_Welcome_Title ${LANG_GERMAN} "Willkomen zum $(^NameDA) Deinstallationsprogramm"
-	LangString CPro_Un_Welcome_Text ${LANG_GERMAN} "Dieser Assistent fürht Sie durch die Deinstallation von $(^NameDA).$\r$\n$\r$\nBevor Sie die Deinstallation starten, stellen Sie bitte sicher, dass ${CPRO_NAME}${CPRO_CRS} v${CPRO_VERSION} beendet ist.$\r$\n$\r$\n$_CLICK"
+	LangString CPro_Un_Welcome_Text ${LANG_GERMAN} "Dieser Assistent führt Sie durch die Deinstallation von $(^NameDA).$\r$\n$\r$\nBevor Sie die Deinstallation starten, stellen Sie bitte sicher, dass ${CPRO_NAME}${CPRO_CRS} v${CPRO_VERSION} beendet ist.$\r$\n$\r$\n$_CLICK"
 
 ; Installation
 	LangString CPro_Ini ${LANG_GERMAN} "winamp.ini wird aktualisiert..."
@@ -96,16 +96,16 @@
 	LangString CPro_Winamp_Path ${LANG_GERMAN} "Pfad zur Winamp-Konfigurationsdatei..."	
 
 ; Close all instances of Winamp
-	LangString CPro_CloseWinamp_Welcome_Title ${LANG_GERMAN} "Programs to close"
-	LangString CPro_CloseWinamp_Welcome_Text  ${LANG_GERMAN} "Programs, that must be closed before continuing installation"	
-	LangString CPro_CloseWinamp_Heading ${LANG_GERMAN} "Close all programs from the list before continuing installation..."
-	LangString CPro_CloseWinamp_Searching ${LANG_GERMAN} "Searching programs, please wait..."
-	LangString CPro_CloseWinamp_EndSearch ${LANG_GERMAN} "Searching programs finished..."
-	LangString CPro_CloseWinamp_EndMonitor ${LANG_GERMAN} "Closing active process monitor, please wait..."
-	LangString CPro_CloseWinamp_NoPrograms ${LANG_GERMAN} "Installer didn't find any programs to close"
-	LangString CPro_CloseWinamp_ColHeadings1 ${LANG_GERMAN} "Application"
-	LangString CPro_CloseWinamp_ColHeadings2 ${LANG_GERMAN} "Process"
-	LangString CPro_CloseWinamp_Autoclosesilent ${LANG_GERMAN} "Closing program failed"
+	LangString CPro_CloseWinamp_Welcome_Title ${LANG_GERMAN} "Laufende Programme beenden"
+	LangString CPro_CloseWinamp_Welcome_Text  ${LANG_GERMAN} "Programme, die vor der weiterführun der Installation beendet werden müssen"	
+	LangString CPro_CloseWinamp_Heading ${LANG_GERMAN} "Bitte beenden Sie alle aufgelisteten Programme bevor Sie forfahren..."
+	LangString CPro_CloseWinamp_Searching ${LANG_GERMAN} "Suche Programme, bitte warten..."
+	LangString CPro_CloseWinamp_EndSearch ${LANG_GERMAN} "Suche abgeschlossen..."
+	LangString CPro_CloseWinamp_EndMonitor ${LANG_GERMAN} "Beende aktiven Prozess Monitor, bitte warten..."
+	LangString CPro_CloseWinamp_NoPrograms ${LANG_GERMAN} "Keine zu beendenden Programme gefunden"
+	LangString CPro_CloseWinamp_ColHeadings1 ${LANG_GERMAN} "Applikation"
+	LangString CPro_CloseWinamp_ColHeadings2 ${LANG_GERMAN} "Prozess"
+	LangString CPro_CloseWinamp_Autoclosesilent ${LANG_GERMAN} "Beenden fehlgeschlagen"
 
 ; Menu Start
 	LangString CPro_MenuStart1 ${LANG_GERMAN} "${CPRO_NAME} deinstallieren"
@@ -116,33 +116,33 @@
 ; CPro :: Widgets
 
 ; First Page of Installer
-	LangString CPro_Widget_Welcome_Title ${LANG_GERMAN} "Welcome to the $(^NameDA) Setup Wizard"
-	LangString CPro_Widget_Welcome_Text ${LANG_GERMAN} "This wizard will guide you through the installation of $(^NameDA).$\r$\n$\r$\nYou'll at least need Winamp ${CPRO_WINAMP_VERSION} and ${CPRO_NAME} ${CPRO_VERSION} for this version of ${CPRO_WIDGET_NAME} to work!$\r$\n$\r$\n$_CLICK"
+	LangString CPro_Widget_Welcome_Title ${LANG_GERMAN} "Willkomen zum $(^NameDA) Installationsprogramm"
+	LangString CPro_Widget_Welcome_Text ${LANG_GERMAN} "Dieser Assistent führt Sie durch die Installation von $(^NameDA).$\r$\n$\r$\nSie benötigen mindestens Winamp ${CPRO_WINAMP_VERSION} und ${CPRO_NAME} ${CPRO_VERSION} für diese Version von ${CPRO_WIDGET_NAME}!$\r$\n$\r$\n$_CLICK"
 
 	LangString CPro_Widget_Caption ${LANG_GERMAN} "${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION} Setup"	
-	LangString CPro_Widget_Name_Text ${LANG_GERMAN} "${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION} widget for ${CPRO_NAME}${CPRO_CRS}"		
+	LangString CPro_Widget_Name_Text ${LANG_GERMAN} "${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION} Widget für ${CPRO_NAME}${CPRO_CRS}"		
 	
 ; First Page of Uninstaller
-	LangString CPro_Widget_Un_Welcome_Title ${LANG_GERMAN} "Welcome to the $(^NameDA) Uninstall Wizard"
-	LangString CPro_Widget_Un_Welcome_Text ${LANG_GERMAN} "This wizard will guide you through the uninstallation of $(^NameDA).$\r$\n$\r$\n$_CLICK"
+	LangString CPro_Widget_Un_Welcome_Title ${LANG_GERMAN} "Willkomen zum $(^NameDA) Deinstallationsprogramm"
+	LangString CPro_Widget_Un_Welcome_Text ${LANG_GERMAN} "Dieser Assistent führt Sie durch die Deinstallation von $(^NameDA).$\r$\n$\r$\n$_CLICK"
 
 ; Installer sections
-	LangString CPro_Widget_Files ${LANG_GERMAN} "${CPRO_WIDGET_NAME} ${CPRO_WIDGET_VERSION} for ${CPRO_NAME}${CPRO_CRS} ${CPRO_VERSION}"
+	LangString CPro_Widget_Files ${LANG_GERMAN} "${CPRO_WIDGET_NAME} ${CPRO_WIDGET_VERSION} für ${CPRO_NAME}${CPRO_CRS} ${CPRO_VERSION}"
 		
 ; Installer sections descriptions	
-	LangString CPro_Widget_Desc_Files ${LANG_GERMAN} "This will install all the files that ${CPRO_WIDGET_NAME} ${CPRO_WIDGET_VERSION} needs to work."
+	LangString CPro_Widget_Desc_Files ${LANG_GERMAN} "Für ${CPRO_WIDGET_NAME} ${CPRO_WIDGET_VERSION} benötigte Dateien werden installiert."
 
 ; Finish Page	
-	LangString CPro_Widget_FinishPage_1 ${LANG_GERMAN} "${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION} installation finished"
-	LangString CPro_Widget_FinishPage_2 ${LANG_GERMAN} "The setup wizard has finished installing ${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION}. You can now start using your new ${CPRO_WIDGET_NAME} widget for ${CPRO_NAME} in Winamp."
-	LangString CPro_Widget_FinishPage_3 ${LANG_GERMAN} "If you like ${CPRO_WIDGET_NAME} and would like to help future development of the product please donate to the project."
-	LangString CPro_Widget_FinishPage_4 ${LANG_GERMAN} "What do you want to do now?"
-	LangString CPro_Widget_FinishPage_5 ${LANG_GERMAN} "Go to our homepage to get more ${CPRO_NAME} widgets"
-	LangString CPro_Widget_FinishPage_6 ${LANG_GERMAN} "Reload ${CPRO_NAME} or open Winamp now"
-	LangString CPro_Widget_FinishPage_7 ${LANG_GERMAN} "Finish"	
+	LangString CPro_Widget_FinishPage_1 ${LANG_GERMAN} "${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION} Installation beendet"
+	LangString CPro_Widget_FinishPage_2 ${LANG_GERMAN} "Der Assistent hat die Installation von ${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION} abgeschlossen. Sie können nun ${CPRO_WIDGET_NAME} Widget für ${CPRO_NAME} mit Winamp verwenden."
+	LangString CPro_Widget_FinishPage_3 ${LANG_GERMAN} "Wenn Ihnen ${CPRO_WIDGET_NAME} gefällt und Sie die weitere Entwicklung unterstützen wollen, würden wir uns über eine Spende für unser Projekt freuen."
+	LangString CPro_Widget_FinishPage_4 ${LANG_GERMAN} "Wie möchten Sie fortfahren?"
+	LangString CPro_Widget_FinishPage_5 ${LANG_GERMAN} "unsere Homepage öffnen und weitere ${CPRO_NAME} Widgets finden"
+	LangString CPro_Widget_FinishPage_6 ${LANG_GERMAN} "${CPRO_NAME} neu laden oder Winamp starten"
+	LangString CPro_Widget_FinishPage_7 ${LANG_GERMAN} "Beenden"	
 	
 ; UnFinish Page	
-	LangString CPro_Widget_UnFinishPage_1 ${LANG_GERMAN} "Completing the ${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION} widget for ${CPRO_NAME}${CPRO_CRS} Uninstall Wizard"
-	LangString CPro_Widget_UnFinishPage_2 ${LANG_GERMAN} "${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION} widget for ${CPRO_NAME}${CPRO_CRS} has been uninstalled from your computer."
-	LangString CPro_Widget_UnFinishPage_3 ${LANG_GERMAN} "Click $(CPro_Widget_FinishPage_7) to close this wizard"
-	LangString CPro_Widget_UnFinishPage_4 ${LANG_GERMAN} "Reload ${CPRO_NAME} if Winamp is running"
+	LangString CPro_Widget_UnFinishPage_1 ${LANG_GERMAN} "${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION} Widget für ${CPRO_NAME}${CPRO_CRS} Deinstallation abschließen"
+	LangString CPro_Widget_UnFinishPage_2 ${LANG_GERMAN} "${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION} Widget für ${CPRO_NAME}${CPRO_CRS} wurde von Ihrem Computer entfernt."
+	LangString CPro_Widget_UnFinishPage_3 ${LANG_GERMAN} "Klicken Sie auf $(CPro_Widget_FinishPage_7) um das Deinstallationsprogramm zu beenden"
+	LangString CPro_Widget_UnFinishPage_4 ${LANG_GERMAN} "${CPRO_NAME} neu laden falls Winamp läuft"
