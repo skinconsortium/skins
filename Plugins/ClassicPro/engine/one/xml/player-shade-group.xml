@@ -1,3 +1,5 @@
+<!-- TODO (mpdeimos) change all groups w/ background to a grid/layer, since otherwise customability is lost! deleting the background in shade.png will not show the group anymore and this is not desired if u have a skin using a tiled background -->
+
 <groupdef id="shade.visgroup" background="shade.vis">
 	<layer x="0" y="0" image="shade.o.vis" ghost="1"/>
 	<layer fitparent="1" dblClickAction="SWITCH;normal"/>
