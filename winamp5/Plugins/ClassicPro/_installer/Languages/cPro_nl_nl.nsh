@@ -2,9 +2,9 @@
 
 ; Lang:				Dutch
 ; LangID			1043
-; Last udpdated:	24.02.2009
-; Author:			x
-; Email:			x@x
+; Last udpdated:	24.05.2009
+; Author:			Muhda
+; Email:			mohamed_dahhouch@hotmail.com
 
 ; Notes:
 ; Use ';' or '#' for comments
@@ -18,13 +18,13 @@
 ;###########################################################################################
 
 ; Language selection
-	LangString CPro_Language_Title ${LANG_DUTCH} "Installer language"
-	LangString CPro_Un_Language_Title ${LANG_DUTCH} "Uninstaller language"	
-	LangString CPro_Language_Text ${LANG_DUTCH} "Please select a language:"
+	LangString CPro_Language_Title ${LANG_DUTCH} "Installatie taal"
+	LangString CPro_Un_Language_Title ${LANG_DUTCH} "Uninstallatie taal"	
+	LangString CPro_Language_Text ${LANG_DUTCH} "Kies een Taal alsjeblieft:"
 
 ; First Page of Installer
-	LangString CPro_Welcome_Title ${LANG_DUTCH} "Welcome to the $(^NameDA) Setup Wizard"
-	LangString CPro_Welcome_Text ${LANG_DUTCH} "This wizard will guide you through the installation of $(^NameDA).$\r$\n$\r$\nIt is recommended that you close Winamp before starting Setup. This will make it possible to update all relevant Winamp files.$\n$\nYou'll at least need Winamp ${CPRO_WINAMP_VERSION} for this version of ${CPRO_NAME} to work!$\r$\n$\r$\n$_CLICK"
+	LangString CPro_Welcome_Title ${LANG_DUTCH} "Welcome Bij de $(^NameDA) Setup Wizard"
+	LangString CPro_Welcome_Text ${LANG_DUTCH} "Deze wizard zal u helpen bij de installatie van $(^NameDA).$\r$\n$\r$\nHet is aanbevolen dat u Winamp afsluit voor het starten van de Setup. Dit maakt het mogelijk om alle relevante winamp bestanden te updaten.$\n$\nU zal ten minste Winamp ${CPRO_WINAMP_VERSION} nodig moeten hebben om deze versie van ${CPRO_NAME} correct te laten werken!$\r$\n$\r$\n$_CLICK"
 
 ; Installer Header
 	!if ${CPRO_BUILD_TYPE} == "BETA"
@@ -39,8 +39,8 @@
 	!endif
 	
 ; Installation type	
-	LangString CPro_Full ${LANG_DUTCH} "Full"
-	LangString CPro_Minimal ${LANG_DUTCH} "Minimal"
+	LangString CPro_Full ${LANG_DUTCH} "volledig"
+	LangString CPro_Minimal ${LANG_DUTCH} "Minimaal"
 	
 ; Installer sections
 	LangString CPro_CProFiles ${LANG_DUTCH} "${CPRO_NAME} Engine"
@@ -51,98 +51,98 @@
 	LangString CPro_cPlaylistPro ${LANG_DUTCH} "Playlist Search"
 		
 ; Installer sections descriptions	
-	LangString CPro_Desc_CProFiles ${LANG_DUTCH} "This will install all the files that ${CPRO_NAME} needs to work."
-	LangString CPro_Desc_wBrowserPro ${LANG_DUTCH} "BrowserPro is a widget that will enable your browser to auto navigate to popular websites and explore the playing directory."
-	LangString CPro_Desc_wAlbumArt ${LANG_DUTCH} "Now Playing is a widget that shows a big cd cover and information about the playing file."
-	LangString CPro_Desc_WidgetsSection ${LANG_DUTCH} "${CPRO_NAME} skins support widgets and here you'll find some of them that we decided to bundle with this installer."
-	LangString CPro_Desc_CProCustom ${LANG_DUTCH} "Optional components for ${CPRO_NAME}."
-	LangString CPro_Desc_cPlaylistPro ${LANG_DUTCH} "Add a search box above your playlist for easy searches in your playlist."
+	LangString CPro_Desc_CProFiles ${LANG_DUTCH} "Dit installeert alle bestanden die ${CPRO_NAME} nodig heeft om te werken."
+	LangString CPro_Desc_wBrowserPro ${LANG_DUTCH} "BrowserPro is een widget dat jouw automatisch naar populaire websites en door het directory afspelen laat navigeren."
+	LangString CPro_Desc_wAlbumArt ${LANG_DUTCH} "Now Playing is een widget dat een groot cd cover en informatie over de afspelende bestand laat zien."
+	LangString CPro_Desc_WidgetsSection ${LANG_DUTCH} "${CPRO_NAME} skins ondersteunen widgets en hier zul je een paar vinden die we gebundeld hebben met de installer."
+	LangString CPro_Desc_CProCustom ${LANG_DUTCH} "Optionele componenten voor ${CPRO_NAME}."
+	LangString CPro_Desc_cPlaylistPro ${LANG_DUTCH} "Voegt een zoekbalk boven je afspeellijst , om makkelijk te zoeken in je afspeellijst."
 
 ; Direcory Text	
-	LangString CPro_DirText ${LANG_DUTCH} "Please select your Winamp path below (you will be able to proceed when Winamp is detected):"
+	LangString CPro_DirText ${LANG_DUTCH} "Seleceer jouw Winamp Instalatie pad (u kunt verder gaan als de instalatie pad van Winamp is gedetecteerd) :"
 
 ; Cleanup Page	
 	LangString CPro_CleanupPage_Title ${LANG_DUTCH} "Winamp Cleanup"
-	LangString CPro_CleanupPage_Subtitle ${LANG_DUTCH} "Cleanup some Winamp Preferences."
-	LangString CPro_CleanupPage_Caption0 ${LANG_DUTCH} "Using the options on this page will remove some Winamp Configuration files which may not work across different versions of both Winamp and ${CPRO_NAME}."
-	LangString CPro_CleanupPage_Caption1 ${LANG_DUTCH} "If you have problems getting ${CPRO_NAME} to run properly you can reinstall ${CPRO_NAME} at any time and use this page to solve your problems."
-	LangString CPro_CleanupPage_Caption2 ${LANG_DUTCH} "NOTE: It's perfectly ok, these files will be rebuilt by Winamp."
-	LangString CPro_CleanupPage_Caption3 ${LANG_DUTCH} "The reinstall with these options should be used only if you are experiencing difficulties using ${CPRO_NAME} with Winamp."
-	LangString CPro_CleanupPage_Caption4 ${LANG_DUTCH} "Thank you for your understanding."
-	LangString CPro_CleanupPage_Footer ${LANG_DUTCH} "If you are still having problems using ${CPRO_NAME},"
-	LangString CPro_CleanupPage_TSLink ${LANG_DUTCH} "Ask for free support in the Skin Consortium Forums."
-	LangString CPro_CleanupPage_StudioXnf ${LANG_DUTCH} "Delete Skin Configuration (studio.xnf)"
-	LangString CPro_CleanupPage_StudioXnf_Desc ${LANG_DUTCH} "Deletes skin-specific settings like: window positions, active tabs, current windowmode, ..."
-	LangString CPro_CleanupPage_WinampIni ${LANG_DUTCH} "Delete Winamp Configuration (winamp.ini)"
-	LangString CPro_CleanupPage_WinampIni_Desc ${LANG_DUTCH} "Deletes winamp-specific settings like: current skin, advanced title formatting, current language, ..."
+	LangString CPro_CleanupPage_Subtitle ${LANG_DUTCH} "Ruim sommige Winamp voorkeuren op."
+	LangString CPro_CleanupPage_Caption0 ${LANG_DUTCH} "Met behulp van de opties op deze pagina, zullen sommige Winamp Configuratie bestanden worden verwijdert die niet kunnen samenwerken met verschillende versies van Winamp ${CPRO_NAME}."
+	LangString CPro_CleanupPage_Caption1 ${LANG_DUTCH} "Heeft u problemen om ${CPRO_NAME} correct te laten werken, dan kunt u ${CPRO_NAME} op elke moment her-installeren en deze pagina gebruiken om je problemen op te lossen."
+	LangString CPro_CleanupPage_Caption2 ${LANG_DUTCH} "NOTE: Het is volkomen in orde!, deze bestanden zullen door Winamp herbouwd worden."
+	LangString CPro_CleanupPage_Caption3 ${LANG_DUTCH} "Herinstalleren met deze opties, mag alleen worden gebruikt als u problemen ervaart met ${CPRO_NAME} in Winamp."
+	LangString CPro_CleanupPage_Caption4 ${LANG_DUTCH} "Dank u wel voor uw begrip ."
+	LangString CPro_CleanupPage_Footer ${LANG_DUTCH} "Als u nog steeds problemen heeft met het gebruik van ${CPRO_NAME},"
+	LangString CPro_CleanupPage_TSLink ${LANG_DUTCH} "Vraag gratis om hulp in de Skin Consortium Forums."
+	LangString CPro_CleanupPage_StudioXnf ${LANG_DUTCH} "Verwijder Skin Configuratie (studio.xnf)"
+	LangString CPro_CleanupPage_StudioXnf_Desc ${LANG_DUTCH} "Verwijdert specifieke-skins instellingen zoals: window posities, active tabs, huidige windowmode, ..."
+	LangString CPro_CleanupPage_WinampIni ${LANG_DUTCH} "Verwijdert Winamp Configuratie (winamp.ini)"
+	LangString CPro_CleanupPage_WinampIni_Desc ${LANG_DUTCH} "Verwijdert winamp-specifieke instellingen zoals: huidige skin, geavanceerde title formatting, huidige taal, ..."
 
 ; Finish Page	
-	LangString CPro_FinishPage_1 ${LANG_DUTCH} "${CPRO_NAME}${CPRO_CRS} v${CPRO_VERSION} installation finished"
-	LangString CPro_FinishPage_2 ${LANG_DUTCH} "The setup wizard has finished installing ${CPRO_NAME} v${CPRO_VERSION}. You can now start using ${CPRO_NAME} skins and widgets in Winamp."
-	LangString CPro_FinishPage_3 ${LANG_DUTCH} "If you like ${CPRO_NAME} and would like to help future development of the product please donate to the project."
-	LangString CPro_FinishPage_4 ${LANG_DUTCH} "What do you want to do now?"
-	LangString CPro_FinishPage_5 ${LANG_DUTCH} "Go to our homepage to get more ${CPRO_NAME} skins and widgets"
-	LangString CPro_FinishPage_6 ${LANG_DUTCH} "Open Winamp with the default ${CPRO_NAME} skin now"
-	LangString CPro_FinishPage_7 ${LANG_DUTCH} "Finish"	
+	LangString CPro_FinishPage_1 ${LANG_DUTCH} "${CPRO_NAME}${CPRO_CRS} v${CPRO_VERSION} installatie is klaar"
+	LangString CPro_FinishPage_2 ${LANG_DUTCH} "The setup wizard is klaar met installeren ${CPRO_NAME} v${CPRO_VERSION}. U kunt nu gebruik maken van ${CPRO_NAME} skins and widgets in Winamp."
+	LangString CPro_FinishPage_3 ${LANG_DUTCH} "Als u ${CPRO_NAME} Bevalt, en u wilt toekomstige ontwikkeling van het product ondersteunen dan kunt u een donatie geven aan het project."
+	LangString CPro_FinishPage_4 ${LANG_DUTCH} "Wat wilt u nu doen?"
+	LangString CPro_FinishPage_5 ${LANG_DUTCH} "Ga naar onze homepage voor meer ${CPRO_NAME} skins and widgets"
+	LangString CPro_FinishPage_6 ${LANG_DUTCH} "Open Winamp met de standaard ${CPRO_NAME} skin nu"
+	LangString CPro_FinishPage_7 ${LANG_DUTCH} "Klaar"	
 	
 ; First Page of Uninstaller
-	LangString CPro_Un_Welcome_Title ${LANG_DUTCH} "Welcome to the $(^NameDA) Uninstall Wizard"
-	LangString CPro_Un_Welcome_Text ${LANG_DUTCH} "This wizard will guide you through the uninstallation of $(^NameDA).$\r$\n$\r$\nBefore starting the uninstallation, make sure ${CPRO_NAME}${CPRO_CRS} v${CPRO_VERSION} is not running.$\r$\n$\r$\n$_CLICK"
+	LangString CPro_Un_Welcome_Title ${LANG_DUTCH} "Welkom bij de $(^NameDA) Uninstall Wizard"
+	LangString CPro_Un_Welcome_Text ${LANG_DUTCH} "Deze Wizard zal u helpen bij de uninstallatie van $(^NameDA).$\r$\n$\r$\nVoor het starten van de uninstallatie, weet dan zeker of ${CPRO_NAME}${CPRO_CRS} v${CPRO_VERSION} Afgesloten is.$\r$\n$\r$\n$_CLICK"
 
 ; Installation
-	LangString CPro_Ini ${LANG_DUTCH} "Updating the winamp.ini configuration file..."
-	LangString CPro_Account ${LANG_DUTCH} "Multi-user settings"
-	LangString CPro_No_Account ${LANG_DUTCH} "No Multi-user settings"
-	LangString CPro_Winamp_Path ${LANG_DUTCH} "Specifying path to Winamp configuration file..."	
+	LangString CPro_Ini ${LANG_DUTCH} "Update de winamp.ini configuratie bestand..."
+	LangString CPro_Account ${LANG_DUTCH} "Multi-gebruikers instellingen"
+	LangString CPro_No_Account ${LANG_DUTCH} "Geen Multi-gebruikers instellingen"
+	LangString CPro_Winamp_Path ${LANG_DUTCH} "pad naar Winamp configuratie bestand Specificeren..."	
 
 ; Close all instances of Winamp
-	LangString CPro_CloseWinamp_Welcome_Title ${LANG_DUTCH} "Programs to close"
-	LangString CPro_CloseWinamp_Welcome_Text  ${LANG_DUTCH} "Programs, that must be closed before continuing installation"	
-	LangString CPro_CloseWinamp_Heading ${LANG_DUTCH} "Close all programs from the list before continuing installation..."
-	LangString CPro_CloseWinamp_Searching ${LANG_DUTCH} "Searching programs, please wait..."
-	LangString CPro_CloseWinamp_EndSearch ${LANG_DUTCH} "Searching programs finished..."
-	LangString CPro_CloseWinamp_EndMonitor ${LANG_DUTCH} "Closing active process monitor, please wait..."
-	LangString CPro_CloseWinamp_NoPrograms ${LANG_DUTCH} "Installer didn't find any programs to close"
-	LangString CPro_CloseWinamp_ColHeadings1 ${LANG_DUTCH} "Application"
-	LangString CPro_CloseWinamp_ColHeadings2 ${LANG_DUTCH} "Process"
-	LangString CPro_CloseWinamp_Autoclosesilent ${LANG_DUTCH} "Closing program failed"
+	LangString CPro_CloseWinamp_Welcome_Title ${LANG_DUTCH} "Programma's die afgesloten moeten worden"
+	LangString CPro_CloseWinamp_Welcome_Text  ${LANG_DUTCH} "Programma's, die afgesloten moeten worden voor dat u verder gaat met de instalatie"	
+	LangString CPro_CloseWinamp_Heading ${LANG_DUTCH} "Sluit alle programma's af die in de lijst staan voor dat u verder gaat met de instalatie..."
+	LangString CPro_CloseWinamp_Searching ${LANG_DUTCH} "Programma's zoeken, ogenblik geduld..."
+	LangString CPro_CloseWinamp_EndSearch ${LANG_DUTCH} "Programma zoeken klaar..."
+	LangString CPro_CloseWinamp_EndMonitor ${LANG_DUTCH} "Active process monitor Afsluiten, ogenblik geduld..."
+	LangString CPro_CloseWinamp_NoPrograms ${LANG_DUTCH} "Installer heeft geen programma's gevonden om af te sluiten"
+	LangString CPro_CloseWinamp_ColHeadings1 ${LANG_DUTCH} "Applicatie"
+	LangString CPro_CloseWinamp_ColHeadings2 ${LANG_DUTCH} "Proces"
+	LangString CPro_CloseWinamp_Autoclosesilent ${LANG_DUTCH} "Programa Afsluiten is mislukt"
 
 ; Menu Start
 	LangString CPro_MenuStart1 ${LANG_DUTCH} "Uninstall ${CPRO_NAME}"
-	LangString CPro_MenuStart2 ${LANG_DUTCH} "Whats new"
-	LangString CPro_MenuStart3 ${LANG_DUTCH} "Get more ${CPRO_NAME} skins and widgets!"	
+	LangString CPro_MenuStart2 ${LANG_DUTCH} "Wat is nieuw?"
+	LangString CPro_MenuStart3 ${LANG_DUTCH} "Verkrijg meer ${CPRO_NAME} skins and widgets!"	
 
 	
 ; CPro :: Widgets
 
 ; First Page of Installer
-	LangString CPro_Widget_Welcome_Title ${LANG_DUTCH} "Welcome to the $(^NameDA) Setup Wizard"
-	LangString CPro_Widget_Welcome_Text ${LANG_DUTCH} "This wizard will guide you through the installation of $(^NameDA).$\r$\n$\r$\nYou'll at least need Winamp ${CPRO_WINAMP_VERSION} and ${CPRO_NAME} ${CPRO_VERSION} for this version of ${CPRO_WIDGET_NAME} to work!$\r$\n$\r$\n$_CLICK"
+	LangString CPro_Widget_Welcome_Title ${LANG_DUTCH} "Welkom bij de $(^NameDA) Setup Wizard"
+	LangString CPro_Widget_Welcome_Text ${LANG_DUTCH} "Deze wizard zal u helpen bij de installatie van $(^NameDA).$\r$\n$\r$\nU hebt tenminste Winamp ${CPRO_WINAMP_VERSION} en ${CPRO_NAME} ${CPRO_VERSION} om deze versie van ${CPRO_WIDGET_NAME} correct te laten werken!$\r$\n$\r$\n$_CLICK"
 
 	LangString CPro_Widget_Caption ${LANG_DUTCH} "${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION} Setup"	
-	LangString CPro_Widget_Name_Text ${LANG_DUTCH} "${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION} widget for ${CPRO_NAME}${CPRO_CRS}"		
+	LangString CPro_Widget_Name_Text ${LANG_DUTCH} "${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION} widget voor ${CPRO_NAME}${CPRO_CRS}"		
 	
 ; First Page of Uninstaller
-	LangString CPro_Widget_Un_Welcome_Title ${LANG_DUTCH} "Welcome to the $(^NameDA) Uninstall Wizard"
-	LangString CPro_Widget_Un_Welcome_Text ${LANG_DUTCH} "This wizard will guide you through the uninstallation of $(^NameDA).$\r$\n$\r$\n$_CLICK"
+	LangString CPro_Widget_Un_Welcome_Title ${LANG_DUTCH} "Welkom bij de $(^NameDA) Uninstall Wizard"
+	LangString CPro_Widget_Un_Welcome_Text ${LANG_DUTCH} "Deze wizard zal u helpen bij de uninstallatie van $(^NameDA).$\r$\n$\r$\n$_CLICK"
 
 ; Installer sections
-	LangString CPro_Widget_Files ${LANG_DUTCH} "${CPRO_WIDGET_NAME} ${CPRO_WIDGET_VERSION} for ${CPRO_NAME}${CPRO_CRS} ${CPRO_VERSION}"
+	LangString CPro_Widget_Files ${LANG_DUTCH} "${CPRO_WIDGET_NAME} ${CPRO_WIDGET_VERSION} voor ${CPRO_NAME}${CPRO_CRS} ${CPRO_VERSION}"
 		
 ; Installer sections descriptions	
-	LangString CPro_Widget_Desc_Files ${LANG_DUTCH} "This will install all the files that ${CPRO_WIDGET_NAME} ${CPRO_WIDGET_VERSION} needs to work."
+	LangString CPro_Widget_Desc_Files ${LANG_DUTCH} "Dit installeert alle bestanden die ${CPRO_WIDGET_NAME} ${CPRO_WIDGET_VERSION} nodig heeft om correct te kunnen werken."
 
 ; Finish Page	
-	LangString CPro_Widget_FinishPage_1 ${LANG_DUTCH} "${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION} installation finished"
-	LangString CPro_Widget_FinishPage_2 ${LANG_DUTCH} "The setup wizard has finished installing ${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION}. You can now start using your new ${CPRO_WIDGET_NAME} widget for ${CPRO_NAME} in Winamp."
-	LangString CPro_Widget_FinishPage_3 ${LANG_DUTCH} "If you like ${CPRO_WIDGET_NAME} and would like to help future development of the product please donate to the project."
-	LangString CPro_Widget_FinishPage_4 ${LANG_DUTCH} "What do you want to do now?"
-	LangString CPro_Widget_FinishPage_5 ${LANG_DUTCH} "Go to our homepage to get more ${CPRO_NAME} widgets"
-	LangString CPro_Widget_FinishPage_6 ${LANG_DUTCH} "Reload ${CPRO_NAME} or open Winamp now"
-	LangString CPro_Widget_FinishPage_7 ${LANG_DUTCH} "Finish"	
+	LangString CPro_Widget_FinishPage_1 ${LANG_DUTCH} "${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION} installatie is klaar"
+	LangString CPro_Widget_FinishPage_2 ${LANG_DUTCH} "De setup wizard is klaar met de installatie ${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION}. U kunt nu gebruik maken van de nieuwe ${CPRO_WIDGET_NAME} widget voor ${CPRO_NAME} in Winamp."
+	LangString CPro_Widget_FinishPage_3 ${LANG_DUTCH} "Als u ${CPRO_WIDGET_NAME} Bevalt, en u wilt toekomstige ontwikkeling van het product ondersteunen dan kunt u een donatie geven aan het project."
+	LangString CPro_Widget_FinishPage_4 ${LANG_DUTCH} "Wat wilt u nu doen?"
+	LangString CPro_Widget_FinishPage_5 ${LANG_DUTCH} "Ga naar onze homepage voor meer ${CPRO_NAME} widgets"
+	LangString CPro_Widget_FinishPage_6 ${LANG_DUTCH} "Herlaad ${CPRO_NAME} of open Winamp nu"
+	LangString CPro_Widget_FinishPage_7 ${LANG_DUTCH} "Klaar"	
 	
 ; UnFinish Page	
-	LangString CPro_Widget_UnFinishPage_1 ${LANG_DUTCH} "Completing the ${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION} widget for ${CPRO_NAME}${CPRO_CRS} Uninstall Wizard"
-	LangString CPro_Widget_UnFinishPage_2 ${LANG_DUTCH} "${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION} widget for ${CPRO_NAME}${CPRO_CRS} has been uninstalled from your computer."
-	LangString CPro_Widget_UnFinishPage_3 ${LANG_DUTCH} "Click $(CPro_Widget_FinishPage_7) to close this wizard"
-	LangString CPro_Widget_UnFinishPage_4 ${LANG_DUTCH} "Reload ${CPRO_NAME} if Winamp is running"
+	LangString CPro_Widget_UnFinishPage_1 ${LANG_DUTCH} "Voltooiing van ${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION} widget voor ${CPRO_NAME}${CPRO_CRS} Uninstall Wizard"
+	LangString CPro_Widget_UnFinishPage_2 ${LANG_DUTCH} "${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION} widget voor ${CPRO_NAME}${CPRO_CRS} is ge-uninstalleerd van you computer."
+	LangString CPro_Widget_UnFinishPage_3 ${LANG_DUTCH} "klik $(CPro_Widget_FinishPage_7) om de wizard af te sluiten"
+	LangString CPro_Widget_UnFinishPage_4 ${LANG_DUTCH} "Herlaad ${CPRO_NAME} als Winamp open is"

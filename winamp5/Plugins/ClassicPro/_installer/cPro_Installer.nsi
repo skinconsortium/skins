@@ -184,6 +184,10 @@
 	!insertmacro MUI_LANGUAGE "Danish"			
 	!include "Languages\cPro_da_dk.nsh"
 
+; Language: Dutch (1043), [1252], ${LANG_DUTCH}	
+	!insertmacro MUI_LANGUAGE "Dutch"			
+	!include "Languages\cPro_nl_nl.nsh"
+	
 ; Language: Spanish International (3082), [1252], ${LANG_SPANISH_INTERNATIONAL}
 	; !insertmacro MUI_LANGUAGE "SpanishInternational"			
 	; !include "Languages\cPro_es_us.nsh"
@@ -192,10 +196,6 @@
 	; !insertmacro MUI_LANGUAGE "Italian"			
 	; !include "Languages\cPro_it_it.nsh"
 
-; Language: Dutch (1043), [1252], ${LANG_DUTCH}	
-	; !insertmacro MUI_LANGUAGE "Dutch"			
-	; !include "Languages\cPro_nl_nl.nsh"
-	
 ; Language: Chinese (Simplified) (2052), [936], ${LANG_SIMPCHINESE}
 	; !insertmacro MUI_LANGUAGE "SimpChinese"		
 	; !include "Languages\cPro_zh_cn.nsh"
