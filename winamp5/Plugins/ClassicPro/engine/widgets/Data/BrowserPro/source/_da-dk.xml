@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<WasabiXML>
+	<BrowserPro>
+      <sourceitem name="Sangbog tekster" comment="Viser teksten for den spillende sang. Meget stor database." url="http://www.songbook.me/tmp/lyrics.php?bg=%COLOR:LBG%%AND%txt=%COLOR:LTXT%%AND%artist=%ARTIST%%AND%title=%TITLE%%AND%album=%ALBUM%" icon="icon.songbook.lyrics"/>
+      <sourceitem name="Discogs (Kunstner)" comment="Sog Discogs for denne kunstner." url="http://www.discogs.com/artist/%ARTIST%" icon="icon.discogs"/>
+      <sourceitem name="Explorer Visning" comment="Dette vil abne mappen den spillende sang ligger i." url="%PATH%/" icon="icon.explorer"/>
+      <sourceitem name="Foxytunes (Kunstner)" comment="Foxytunes viser dig information om den spillende kunstner." url="http://www.foxytunes.com/artist/%ARTIST%" icon="icon.foxytunes"/>
+      <sourceitem name="Google Sogning (Sang)" comment="Sog pa Google efter denne sang." url="http://www.google.com/search?hl=en%AND%q=%ARTIST% %TITLE%" icon="icon.google"/>
+      <sourceitem name="Tekster" comment="Viser teksten for den spillende sang. Meget stor database." url="http://www.lyricsplugin.com/winamp03/plugin/?artist=%ARTIST%%AND%title=%TITLE%" icon="icon.lyricplugin"/>
+      <sourceitem name="Metalstorm (Album)" comment="Sog www.metalstorm.ee efter dette album." url="http://www.metalstorm.ee/home/search.php?search_what=%ALBUM%%AND%search_where=album" icon="icon.metalstorm"/>
+      <sourceitem name="Metalstorm (Kunstner)" comment="Sog www.metalstorm.ee efter denne kunstner." url="http://www.metalstorm.ee/home/search.php?search_what=%ARTIST%%AND%search_where=band2" icon="icon.metalstorm"/>
+      <sourceitem name="RateYourMusic (Kunstner)" comment="Sog RateYourMusic for denne kunstner." url="http://rateyourmusic.com/search?searchterm=%ARTIST%%AND%searchtype=a" icon="icon.rateyourmusic"/>
+      <sourceitem name="Songfacts (Kunstner)" comment="Sog Songfacts for denne kunstner." url="http://www.songfacts.com/search_fact.php?combinedartists=%ARTIST%" icon="icon.songfacts"/>
+      <sourceitem name="Songfacts (Sang)" comment="Sog Songfacts for denne sang." url="http://www.songfacts.com/search_fact.php?title=%TITLE%" icon="icon.songfacts"/>
+      <sourceitem name="Swisscharts (Album)" comment="Sog Swisscharts for dette album." url="http://www.swisscharts.com/search.asp?cat=a%AND%search=%ALBUM%" icon="icon.swisscharts"/>
+      <sourceitem name="Swisscharts (Sang)" comment="Vis denne sang pa Swisscharts." url="http://www.swisscharts.com/showitem.asp?interpret=%ARTIST%%AND%titel=%TITLE%" icon="icon.swisscharts"/>
+      <sourceitem name="Wikipedia (Kunstner)" comment="Viser wikipedia siden for denne kunstner." url="http://en.wikipedia.org/wiki/%ARTIST%" icon="icon.wikipedia"/>
+      <sourceitem name="Yahoo! Sogning" comment="Sog med Yahoo for denne sang." url="http://search.yahoo.com/search?p=%ARTIST% %TITLE%%AND%ei=UTF-8%AND%fr=opera2" icon="icon.yahoo"/>
+      <sourceitem name="YouTube Sogning" comment="Led efter videoer med den spillende fil pa YouTube" url="http://www.youtube.com/results?search_query=%ARTIST% %TITLE%%AND%search_type=%AND%aq=f" icon="icon.youtube"/>
+	</BrowserPro>
+</WasabiXML>
