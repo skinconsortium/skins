@@ -39,7 +39,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 - SLoB (Various coding)
 - Quadhelix (General ClassicPro gfx, Website gfx)
 
-::Installer Coder:
+::Installer Coders:
 - Pawel Porwisz
 - martin.deimos
 
