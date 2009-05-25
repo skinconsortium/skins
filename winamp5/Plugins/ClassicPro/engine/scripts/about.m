@@ -1,4 +1,4 @@
-#include lib/std.mi
+#include <lib/std.mi>
 
 Function showAbout(int no);
 Function toggleCredits();
