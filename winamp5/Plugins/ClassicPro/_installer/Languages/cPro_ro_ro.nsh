@@ -19,7 +19,7 @@
 
 ; Language selection
 	LangString CPro_Language_Title ${LANG_ROMANIAN} "Limbã instalare"
-	LangString CPro_Un_Language_Title ${LANG_ROMANIAN} "Uninstaller language"	
+	LangString CPro_Un_Language_Title ${LANG_ROMANIAN} "Limbã dezinstalare"	
 	LangString CPro_Language_Text ${LANG_ROMANIAN} "Selectaþi o limbã:"
 
 ; First Page of Installer
@@ -62,19 +62,19 @@
 	LangString CPro_DirText ${LANG_ROMANIAN} "Selectaþi dosarul unde a fost instalat Winamp (veþi putea continua dupã ce Winamp a fost detectat):"
 
 ; Cleanup Page	
-	LangString CPro_CleanupPage_Title ${LANG_ROMANIAN} "Winamp Cleanup"
-	LangString CPro_CleanupPage_Subtitle ${LANG_ROMANIAN} "Cleanup some Winamp Preferences."
-	LangString CPro_CleanupPage_Caption0 ${LANG_ROMANIAN} "Using the options on this page will remove some Winamp Configuration files which may not work across different versions of both Winamp and ${CPRO_NAME}."
-	LangString CPro_CleanupPage_Caption1 ${LANG_ROMANIAN} "If you have problems getting ${CPRO_NAME} to run properly you can reinstall ${CPRO_NAME} at any time and use this page to solve your problems."
-	LangString CPro_CleanupPage_Caption2 ${LANG_ROMANIAN} "NOTE: It's perfectly ok, these files will be rebuilt by Winamp."
-	LangString CPro_CleanupPage_Caption3 ${LANG_ROMANIAN} "The reinstall with these options should be used only if you are experiencing difficulties using ${CPRO_NAME} with Winamp."
-	LangString CPro_CleanupPage_Caption4 ${LANG_ROMANIAN} "Thank you for your understanding."
-	LangString CPro_CleanupPage_Footer ${LANG_ROMANIAN} "If you are still having problems using ${CPRO_NAME},"
-	LangString CPro_CleanupPage_TSLink ${LANG_ROMANIAN} "Ask for free support in the Skin Consortium Forums."
-	LangString CPro_CleanupPage_StudioXnf ${LANG_ROMANIAN} "Delete Skin Configuration (studio.xnf)"
-	LangString CPro_CleanupPage_StudioXnf_Desc ${LANG_ROMANIAN} "Deletes skin-specific settings like: window positions, active tabs, current windowmode, ..."
-	LangString CPro_CleanupPage_WinampIni ${LANG_ROMANIAN} "Delete Winamp Configuration (winamp.ini)"
-	LangString CPro_CleanupPage_WinampIni_Desc ${LANG_ROMANIAN} "Deletes winamp-specific settings like: current skin, advanced title formatting, current language, ..."
+	LangString CPro_CleanupPage_Title ${LANG_ROMANIAN} "Reconfigurare Winamp"
+	LangString CPro_CleanupPage_Subtitle ${LANG_ROMANIAN} "Eliminare configuraþii Winamp."
+	LangString CPro_CleanupPage_Caption0 ${LANG_ROMANIAN} "Alegând opþiunile din aceastã paginã se vor elimina câteva dintre fiºierele de configurare Winamp care ar putea produce disfuncþionalitãþi în utilizarea împreunã a diferite versiuni ale Winamp ºi ${CPRO_NAME}."
+	LangString CPro_CleanupPage_Caption1 ${LANG_ROMANIAN} "Dacã întâmpinaþi probleme de funcþionare a ${CPRO_NAME}, puteþi reinstala programul în orice moment ºi folosi aceastã paginã pentru rezolvarea lor."
+	LangString CPro_CleanupPage_Caption2 ${LANG_ROMANIAN} "NOTÃ: Totul este în regulã, aceste fiºiere vor fi rescrise de Winamp."
+	LangString CPro_CleanupPage_Caption3 ${LANG_ROMANIAN} "Reinstalarea ${CPRO_NAME} cu aceste opþiuni ar trebui folositã numai dacã întâmpinaþi dificultãþi la utilizarea programului împreunã cu Winamp."
+	LangString CPro_CleanupPage_Caption4 ${LANG_ROMANIAN} "Vã mulþumim pentru înþelegere."
+	LangString CPro_CleanupPage_Footer ${LANG_ROMANIAN} "Dacã încã întâmpinaþi dificultãþi în folosirea ${CPRO_NAME}, cereþi"
+	LangString CPro_CleanupPage_TSLink ${LANG_ROMANIAN} "Suport gratuit în Forumurile Skin Consortium."
+	LangString CPro_CleanupPage_StudioXnf ${LANG_ROMANIAN} "ªtergere configuraþie interfeþe (studio.xnf)"
+	LangString CPro_CleanupPage_StudioXnf_Desc ${LANG_ROMANIAN} "Se eliminã opþiunile specifice interfeþelor, ca: poziþia ferestrei, fila activã, modul de afiºare, ..."
+	LangString CPro_CleanupPage_WinampIni ${LANG_ROMANIAN} "ªtergere configuraþie Winamp (winamp.ini)"
+	LangString CPro_CleanupPage_WinampIni_Desc ${LANG_ROMANIAN} "Se eliminã opþiunile specifice Winamp, ca: interfaþa curentã, formatarea complexã a titlului, limba curentã, ..."
 
 ; Finish Page
 	LangString CPro_FinishPage_1 ${LANG_ROMANIAN} "Instalare ${CPRO_NAME}${CPRO_CRS} v${CPRO_VERSION} finalizatã"
@@ -82,7 +82,7 @@
 	LangString CPro_FinishPage_3 ${LANG_ROMANIAN} "Dacã vã place ${CPRO_NAME} ºi doriþi sã sprijiniþi dezvolarea ulterioarã, vã rugãm sã faceþi donaþii pentru proiect."
 	LangString CPro_FinishPage_4 ${LANG_ROMANIAN} "Acþiuni dupã terminarea instalãrii:"
 	LangString CPro_FinishPage_5 ${LANG_ROMANIAN} "Explorare pagina ${CPRO_NAME} ºi descãrcare interfeþe ºi gadgeturi"
-	LangString CPro_FinishPage_6 ${LANG_ROMANIAN} "Open Winamp with the default ${CPRO_NAME} skin now"
+	LangString CPro_FinishPage_6 ${LANG_ROMANIAN} "Deschidere Winamp cu interfaþa implicitã ${CPRO_NAME}"
 	LangString CPro_FinishPage_7 ${LANG_ROMANIAN} "Terminare"	
 
 ; First Page of Uninstaller
@@ -96,53 +96,53 @@
 	LangString CPro_Winamp_Path ${LANG_ROMANIAN} "Specificare dosar fiºier de configurare Winamp..."	
 
 ; Close all instances of Winamp
-	LangString CPro_CloseWinamp_Welcome_Title ${LANG_ROMANIAN} "Programs to close"
-	LangString CPro_CloseWinamp_Welcome_Text  ${LANG_ROMANIAN} "Programs, that must be closed before continuing installation"	
-	LangString CPro_CloseWinamp_Heading ${LANG_ROMANIAN} "Close all programs from the list before continuing installation..."
-	LangString CPro_CloseWinamp_Searching ${LANG_ROMANIAN} "Searching programs, please wait..."
-	LangString CPro_CloseWinamp_EndSearch ${LANG_ROMANIAN} "Searching programs finished..."
-	LangString CPro_CloseWinamp_EndMonitor ${LANG_ROMANIAN} "Closing active process monitor, please wait..."
-	LangString CPro_CloseWinamp_NoPrograms ${LANG_ROMANIAN} "Installer didn't find any programs to close"
-	LangString CPro_CloseWinamp_ColHeadings1 ${LANG_ROMANIAN} "Application"
-	LangString CPro_CloseWinamp_ColHeadings2 ${LANG_ROMANIAN} "Process"
-	LangString CPro_CloseWinamp_Autoclosesilent ${LANG_ROMANIAN} "Closing program failed"
+	LangString CPro_CloseWinamp_Welcome_Title ${LANG_ROMANIAN} "Programe de închis"
+	LangString CPro_CloseWinamp_Welcome_Text  ${LANG_ROMANIAN} "Programe care trebuie închise înainte de continuarea instalãrii"	
+	LangString CPro_CloseWinamp_Heading ${LANG_ROMANIAN} "Închideþi toate programele din listã înainte de a continua instalarea..."
+	LangString CPro_CloseWinamp_Searching ${LANG_ROMANIAN} "Cãutare programe... Vã rugãm, aºteptaþi..."
+	LangString CPro_CloseWinamp_EndSearch ${LANG_ROMANIAN} "Cãutare programe finalizatã."
+	LangString CPro_CloseWinamp_EndMonitor ${LANG_ROMANIAN} "Închidere monitor procese active... Vã rugãm, aºteptaþi..."
+	LangString CPro_CloseWinamp_NoPrograms ${LANG_ROMANIAN} "Asistentul nu a gãsit nici un program care trebuie închis."
+	LangString CPro_CloseWinamp_ColHeadings1 ${LANG_ROMANIAN} "Program"
+	LangString CPro_CloseWinamp_ColHeadings2 ${LANG_ROMANIAN} "Proces"
+	LangString CPro_CloseWinamp_Autoclosesilent ${LANG_ROMANIAN} "Închiderea programului a eºuat!"
 
 ; Menu Start
 	LangString CPro_MenuStart1 ${LANG_ROMANIAN} "Dezinstalare ${CPRO_NAME}"
-	LangString CPro_MenuStart2 ${LANG_ROMANIAN} "Ce-i nou"
+	LangString CPro_MenuStart2 ${LANG_ROMANIAN} "Noutãþi"
 	LangString CPro_MenuStart3 ${LANG_ROMANIAN} "Mai multe interfeþe ºi gadgeturi ${CPRO_NAME}!"
 
 	
 ; CPro :: Widgets
 
 ; First Page of Installer
-	LangString CPro_Widget_Welcome_Title ${LANG_ROMANIAN} "Welcome to the $(^NameDA) Setup Wizard"
-	LangString CPro_Widget_Welcome_Text ${LANG_ROMANIAN} "This wizard will guide you through the installation of $(^NameDA).$\r$\n$\r$\nYou'll at least need Winamp ${CPRO_WINAMP_VERSION} and ${CPRO_NAME} ${CPRO_VERSION} for this version of ${CPRO_WIDGET_NAME} to work!$\r$\n$\r$\n$_CLICK"
+	LangString CPro_Widget_Welcome_Title ${LANG_ROMANIAN} "Bun venit la asistentul pentru instalare a $(^NameDA)"
+	LangString CPro_Widget_Welcome_Text ${LANG_ROMANIAN} "Acest asistent vã va ghida în procesul de instalare a $(^NameDA).$\r$\n$\r$\nAveþi nevoie, cel puþin, de Winamp ${CPRO_WINAMP_VERSION} ºi de ${CPRO_NAME} ${CPRO_VERSION} pentru ca aceastã versiune a ${CPRO_WIDGET_NAME} sã funcþioneze!$\r$\n$\r$\n$_CLICK"
 
-	LangString CPro_Widget_Caption ${LANG_ROMANIAN} "${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION} Setup"	
-	LangString CPro_Widget_Name_Text ${LANG_ROMANIAN} "${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION} widget for ${CPRO_NAME}${CPRO_CRS}"		
+	LangString CPro_Widget_Caption ${LANG_ROMANIAN} "Instalare ${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION}"
+	LangString CPro_Widget_Name_Text ${LANG_ROMANIAN} "Gadget ${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION} pentru ${CPRO_NAME}${CPRO_CRS}"
 	
 ; First Page of Uninstaller
-	LangString CPro_Widget_Un_Welcome_Title ${LANG_ROMANIAN} "Welcome to the $(^NameDA) Uninstall Wizard"
-	LangString CPro_Widget_Un_Welcome_Text ${LANG_ROMANIAN} "This wizard will guide you through the uninstallation of $(^NameDA).$\r$\n$\r$\n$_CLICK"
+	LangString CPro_Widget_Un_Welcome_Title ${LANG_ROMANIAN} "Bun venit la asistentul pentru dezinstalare a $(^NameDA)"
+	LangString CPro_Widget_Un_Welcome_Text ${LANG_ROMANIAN} "Acest asistent vã va ghida prin procesul de dezinstalare a $(^NameDA).$\r$\n$\r$\n$_CLICK"
 
 ; Installer sections
-	LangString CPro_Widget_Files ${LANG_ROMANIAN} "${CPRO_WIDGET_NAME} ${CPRO_WIDGET_VERSION} for ${CPRO_NAME}${CPRO_CRS} ${CPRO_VERSION}"
+	LangString CPro_Widget_Files ${LANG_ROMANIAN} "${CPRO_WIDGET_NAME} ${CPRO_WIDGET_VERSION} pentru ${CPRO_NAME}${CPRO_CRS} ${CPRO_VERSION}"
 		
 ; Installer sections descriptions	
-	LangString CPro_Widget_Desc_Files ${LANG_ROMANIAN} "This will install all the files that ${CPRO_WIDGET_NAME} ${CPRO_WIDGET_VERSION} needs to work."
+	LangString CPro_Widget_Desc_Files ${LANG_ROMANIAN} "Fiºiere necesare pentru funcþionarea ${CPRO_WIDGET_NAME} ${CPRO_WIDGET_VERSION}."
 
 ; Finish Page	
-	LangString CPro_Widget_FinishPage_1 ${LANG_ROMANIAN} "${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION} installation finished"
-	LangString CPro_Widget_FinishPage_2 ${LANG_ROMANIAN} "The setup wizard has finished installing ${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION}. You can now start using your new ${CPRO_WIDGET_NAME} widget for ${CPRO_NAME} in Winamp."
-	LangString CPro_Widget_FinishPage_3 ${LANG_ROMANIAN} "If you like ${CPRO_WIDGET_NAME} and would like to help future development of the product please donate to the project."
-	LangString CPro_Widget_FinishPage_4 ${LANG_ROMANIAN} "What do you want to do now?"
-	LangString CPro_Widget_FinishPage_5 ${LANG_ROMANIAN} "Go to our homepage to get more ${CPRO_NAME} widgets"
-	LangString CPro_Widget_FinishPage_6 ${LANG_ROMANIAN} "Reload ${CPRO_NAME} or open Winamp now"
-	LangString CPro_Widget_FinishPage_7 ${LANG_ROMANIAN} "Finish"	
+	LangString CPro_Widget_FinishPage_1 ${LANG_ROMANIAN} "Instalare ${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION} finalizatã"
+	LangString CPro_Widget_FinishPage_2 ${LANG_ROMANIAN} "Asistentul a finalizat instalarea ${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION}. Puteþi începe sã folosiþi noul gadget ${CPRO_WIDGET_NAME} pentru ${CPRO_NAME} în Winamp."
+	LangString CPro_Widget_FinishPage_3 ${LANG_ROMANIAN} "Dacã vã place ${CPRO_WIDGET_NAME} ºi doriþi sã sprijiniþi dezvolarea ulterioarã, vã rugãm sã faceþi donaþii pentru proiect."
+	LangString CPro_Widget_FinishPage_4 ${LANG_ROMANIAN} "Acþiuni dupã terminarea instalãrii:"
+	LangString CPro_Widget_FinishPage_5 ${LANG_ROMANIAN} "Explorare paginã ${CPRO_NAME} ºi descãrcare interfeþe ºi gadgeturi"
+	LangString CPro_Widget_FinishPage_6 ${LANG_ROMANIAN} "Reîncãrcare ${CPRO_NAME} ºi deschidere în Winamp"
+	LangString CPro_Widget_FinishPage_7 ${LANG_ROMANIAN} "Terminare"	
 	
 ; UnFinish Page	
-	LangString CPro_Widget_UnFinishPage_1 ${LANG_ROMANIAN} "Completing the ${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION} widget for ${CPRO_NAME}${CPRO_CRS} Uninstall Wizard"
-	LangString CPro_Widget_UnFinishPage_2 ${LANG_ROMANIAN} "${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION} widget for ${CPRO_NAME}${CPRO_CRS} has been uninstalled from your computer."
-	LangString CPro_Widget_UnFinishPage_3 ${LANG_ROMANIAN} "Click $(CPro_Widget_FinishPage_7) to close this wizard"
-	LangString CPro_Widget_UnFinishPage_4 ${LANG_ROMANIAN} "Reload ${CPRO_NAME} if Winamp is running"
+	LangString CPro_Widget_UnFinishPage_1 ${LANG_ROMANIAN} "Finalizare dezinstalare gadget ${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION} pentru  ${CPRO_NAME}${CPRO_CRS}"
+	LangString CPro_Widget_UnFinishPage_2 ${LANG_ROMANIAN} "Gadgetul ${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION} pentru ${CPRO_NAME}${CPRO_CRS} s-a dezinstalat de pe computerul Dvs."
+	LangString CPro_Widget_UnFinishPage_3 ${LANG_ROMANIAN} "Faceþi clic pe $(CPro_Widget_FinishPage_7) pentru a închide asistentul"
+	LangString CPro_Widget_UnFinishPage_4 ${LANG_ROMANIAN} "Reîncãrcare ${CPRO_NAME} dacã Winamp este deschis"
