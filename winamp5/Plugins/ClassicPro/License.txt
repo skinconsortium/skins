@@ -48,16 +48,19 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 - TheElusiveMelon (ClassicPro clock)
 
 ::Translators:
-- French			Julien Victor (veekee)
+- French			Julien Victor (Veekee)
 - German			Christoph Grether (Koopa)
-			Marko Egger (mynameisnobody)
-- Polish			Pawel Porwisz (pepe)
-- PortugueseBR		Anderson Silva (candiba)
+			Marko Egger (Mynameisnobody)
+- Polish			Pawel Porwisz (Pepe)
+- PortugueseBR		Anderson Silva (Candiba)
 - Romanian		Catalin Zamfirescu
 - Russian			Aleksey Potashnikoff (NickMikh)
 			Alexander Nureyev (VIPer)
 - Turkish			Mertcan Kaya (MerTcaN)
-
+			Ali Saryodlu
+- Dutch			Mohamed Dahhouch (Muhda) 
+- Danish			Andreas Brandenborg
+ 
 ::Special thanks to:
 - iron2000 (made the first cPro skin!)
 - Veroka (helped with implementing ColorTheme support)

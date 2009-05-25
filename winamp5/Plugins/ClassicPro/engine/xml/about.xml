@@ -28,19 +28,26 @@
 </groupdef>
 
 <groupdef id="about.7">
-	<text x="5" y="2" text="Translators..." fontsize="26" color="255,255,255" shadowcolor="0,0,0" shadowx="1" shadowy="1" font="Tahoma"/>
+	<text x="20" y="30" text="Translators..." fontsize="26" color="255,255,255" shadowcolor="0,0,0" shadowx="1" shadowy="1" font="Tahoma"/>
 	<group id="about.7.names" x="50" y="20" h="350"/>
 </groupdef>
 <groupdef id="about.7.names">
-	<text fitparent="1" ghost="1" text="French\n- Julien Victor (veekee)\n\nGerman\n- Christoph Grether (Koopa)\n- Marko Egger (mynameisnobody)\n\nPolish\n- Pawel Porwisz (pepe)\n\nPortugueseBR\n- Anderson Silva (candiba)\n\nRomanian\n- Catalin Zamfirescu\n\nRussian\n- Aleksey Potashnikoff (NickMikh)\n- Alexander Nureyev (VIPer)\n\nTurkish\n- Mertcan Kaya (MerTcaN)" color="255,255,255" shadowcolor="0,0,0" shadowx="1" shadowy="1" font="Tahoma"/>
+	<text fitparent="1" ghost="1" text="French\n- Julien Victor (Veekee)\n\nGerman\n- Christoph Grether (Koopa)\n- Marko Egger (mynameisnobody)\n\nPolish\n- Pawel Porwisz (pepe)\n\nPortugueseBR\n- Anderson Silva (candiba)\n\nRomanian\n- Catalin Zamfirescu" color="255,255,255" shadowcolor="0,0,0" shadowx="1" shadowy="1" font="Tahoma"/>
 </groupdef>
-
 
 <groupdef id="about.8">
-	<text x="20" y="30" text="Special thanks to..." fontsize="26" color="255,255,255" shadowcolor="0,0,0" shadowx="1" shadowy="1" font="Tahoma"/>
-	<group id="about.8.names" x="50" y="40" h="320"/>
+	<text x="20" y="30" text="Translators..." fontsize="26" color="255,255,255" shadowcolor="0,0,0" shadowx="1" shadowy="1" font="Tahoma"/>
+	<group id="about.8.names" x="50" y="10" h="310"/>
 </groupdef>
 <groupdef id="about.8.names">
+	<text fitparent="1" ghost="1" text="\n\nRussian\n- Aleksey Potashnikoff (NickMikh)\n- Alexander Nureyev (VIPer)\n\nTurkish\n- Mertcan Kaya (MerTcaN)\n- Ali Saryodlu\n\nDutch\n- Mohamed Dahhouch (Muhda)\n\nDanish\n- Andreas Brandenborg" color="255,255,255" shadowcolor="0,0,0" shadowx="1" shadowy="1" font="Tahoma"/>
+</groupdef>
+
+<groupdef id="about.9">
+	<text x="20" y="30" text="Special thanks to..." fontsize="26" color="255,255,255" shadowcolor="0,0,0" shadowx="1" shadowy="1" font="Tahoma"/>
+	<group id="about.9.names" x="50" y="40" h="320"/>
+</groupdef>
+<groupdef id="about.9.names">
 	<text fitparent="1" ghost="1" text="- iron2000 (made the first cPro skin!)\n- Veroka (helped with implementing ColorTheme support)\n- Zarko Jovic (helped with implementing ColorTheme support)\n- Wilian and Veroka (creating a template for cpro skins)\n- TheElusiveMelon (ClassicPro clock)\n- and1945 (beta testing and spreading the word ;)\n- fille1000 (widgets and skins ;)\n- leechbite (widgets and skins ;)\n- Wildrose-Wally (helped with publising)\n- Koogle (always full of new ideas)\n- Paparazzi (ideas and testing)\n- Taber Buhl (Original Big Bento gfx)\n- Benski (Winamp gen_ff developments)\n- Winamp Development team\n- MerTcaN (beta testing ;)\n- mynameisnobody (beta testing ;)\n- osmosis (beta testing ;)\n- pouldam (beta testing 8)" color="255,255,255" shadowcolor="0,0,0" shadowx="1" shadowy="1" font="Tahoma"/>
 </groupdef>
 
@@ -87,7 +94,8 @@
 	/>
 
 	<group id="about.7" visible="0" fitparent="1"/>
-	<group id="about.8" visible="0" fitparent="1"/>
+	<group id="about.8" visible="0" fitparent="1"/>	
+	<group id="about.9" visible="0" fitparent="1"/>
 	<layer id="mousetrap" fitparent="1" rectrgn="1" tooltip="Double-Click to toggle the credits on/off (Scroll credits with mousewheel)"/>
 </groupdef>
 
