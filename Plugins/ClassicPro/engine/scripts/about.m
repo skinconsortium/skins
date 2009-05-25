@@ -1,4 +1,4 @@
-#include <lib/std.mi>
+#include lib/std.mi
 
 Function showAbout(int no);
 Function toggleCredits();
@@ -10,7 +10,7 @@ Global Layer bganim, aboutLay, mousetrap;
 Global Double smidge, vusmidge;
 Global int aniNO, vuValue, p_ani, pp_ani, creditPage;
 Global Timer animationToggle, animationToggleFade, waitForStart, creditRoll;
-Global GuiObject about_pjn, about_martin, about_quad, about_slob, about_pawel, about_trance, tempobject, about_lang, about_other;
+Global GuiObject about_pjn, about_martin, about_quad, about_slob, about_pawel, about_trance, tempobject, about_lang, about_lang1, about_other;
 Global boolean creditsON;
 
 System.onScriptLoaded() {
@@ -26,7 +26,8 @@ System.onScriptLoaded() {
 	about_pawel = mainGroup.findObject("about.5");
 	about_trance = mainGroup.findObject("about.6");
 	about_lang = mainGroup.findObject("about.7");
-	about_other = mainGroup.findObject("about.8");
+	about_lang1 = mainGroup.findObject("about.8");	
+	about_other = mainGroup.findObject("about.9");
 		
 	waitForStart = new Timer;
 	waitForStart.setDelay(3000);
@@ -158,13 +159,13 @@ bganim.fx_onFrame()
 }
 
 showAbout(int no){
-	if(creditPage>8){
+	if(creditPage>9){
 		creditPage=1;
 		no=1;
 	}
 	if(creditPage<1){
-		creditPage=8;
-		no=8;
+		creditPage=9;
+		no=9;
 	}
 	
 	about_pjn.hide();
@@ -174,6 +175,7 @@ showAbout(int no){
 	about_pawel.hide();
 	about_trance.hide();
 	about_lang.hide();
+	about_lang1.hide();	
 	about_other.hide();
 	
 	tempobject = mainGroup.findObject("about."+integerToString(no));
@@ -241,6 +243,7 @@ toggleCredits(){
 		about_pawel.hide();
 		about_trance.hide();
 		about_lang.hide();
+		about_lang1.hide();		
 		about_other.hide();
 	}
 }
