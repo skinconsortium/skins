@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <WasabiXML>
 	<BrowserPro>
-		<sourceitem name="Lyrics" comment="Afişează versurile pentru piesa curentă (bază de date foarte mare)." url="http://www.lyricsplugin.com/winamp03/plugin/?artist=%ARTIST%%AND%title=%TITLE%%AND%album=%ALBUM%" icon="icon.lyricplugin"/>
-		<sourceitem name="SongBook local (versuri)" comment="Afişează versurile pentru piesa curentă (bază de date locală)." url="http://localhost/songbook.me/tmp/lyrics.php?bg=%COLOR:LBG%%AND%txt=%COLOR:LTXT%%AND%artist=%ARTIST%%AND%title=%TITLE%" icon="icon.songbook.lyrics"/>
+		<sourceitem name="Lyrics" comment="Afişează versurile pentru piesa curentă (bază de date foarte mare)." url="http://www.lyricsplugin.com/winamp03/plugin/?artist=%ARTIST%%AND%title=%TITLE%" icon="icon.lyricplugin"/>
+		<sourceitem name="SongBook (versuri)" comment="Afişează versurile pentru piesa curentă (bază de date web foarte mare)." url="http://www.songbook.me/tmp/lyrics.php?bg=%COLOR:LBG%%AND%txt=%COLOR:LTXT%%AND%artist=%ARTIST%%AND%title=%TITLE%" icon="icon.songbook.lyrics"/>
 		<sourceitem name="Discogs (artist)" comment="Caută în Discogs artistul curent." url="http://www.discogs.com/artist/%ARTIST%" icon="icon.discogs"/>
 		<sourceitem name="Foxytunes (artist)" comment="Afişează informaţii despre artistul curent." url="http://www.foxytunes.com/artist/%ARTIST%" icon="icon.foxytunes"/>
 		<sourceitem name="Google (piesă)" comment="Caută cu Google piesa curentă" url="http://www.google.ro/search?hl=en%AND%q=%ARTIST% %TITLE%" icon="icon.google"/>
