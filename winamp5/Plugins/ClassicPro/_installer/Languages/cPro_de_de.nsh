@@ -82,7 +82,7 @@
 	LangString CPro_FinishPage_3 ${LANG_GERMAN} "Wenn Ihnen ${CPRO_NAME} gefällt und Sie die weitere Entwicklung unterstützen wollen, würden wir uns über eine Spende für unser Projekt freuen."
 	LangString CPro_FinishPage_4 ${LANG_GERMAN} "Wie möchten Sie fortfahren?"
 	LangString CPro_FinishPage_5 ${LANG_GERMAN} "Weitere ${CPRO_NAME} Skins und Widgets finden."
-	LangString CPro_FinishPage_6 ${LANG_GERMAN} "Open Winamp with the default ${CPRO_NAME} skin now"
+	LangString CPro_FinishPage_6 ${LANG_GERMAN} "Winamp mit der Standard ${CPRO_NAME} Skin öffnen"
 	LangString CPro_FinishPage_7 ${LANG_GERMAN} "Beenden"	
 	
 ; First Page of Uninstaller
