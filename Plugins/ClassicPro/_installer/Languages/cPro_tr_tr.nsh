@@ -2,7 +2,7 @@
 
 ; Lang:				Turkish
 ; LangID			1055
-; Last udpdated:	23.05.2009
+; Last udpdated:		27.05.2009
 ; Author:			Ali Sarýoðlu
 ; Email:			alsau@mynet.com
 
@@ -67,7 +67,7 @@
 	LangString CPro_CleanupPage_Caption0 ${LANG_TURKISH} "Bu sayfadaki seçenekleri kullanmak Winamp ve ${CPRO_NAME} programlarýnýn ikisinin de farklý sürümleriyle birlikte karþýlýklý çalýþmayabilen bazý Winamp Yapýlandýrma dosyalarýný silecek."
 	LangString CPro_CleanupPage_Caption1 ${LANG_TURKISH} "${CPRO_NAME}'nun çalýþmasýnda sorunlar yaþýyorsanýz ${CPRO_NAME}'yu istediðiniz zaman yeniden kurabilirsiniz ve sorunlarýnýzý çözmek için bu sayfayý kullanabilirsiniz."
 	LangString CPro_CleanupPage_Caption2 ${LANG_TURKISH} "NOT: Bu tamamen olaðandýr, bu dosyalar Winamp tarafýndan yeniden yapýlanýcaktýr."
-	LangString CPro_CleanupPage_Caption3 ${LANG_TURKISH} "Bu seçeneklerle yeniden kurlulumu yalnýzca Winamp'ý ${CPRO_NAME} ile birlikte kullanýrken zorluklar yaþýyorsanýz kullanýlmalýdýr."
+	LangString CPro_CleanupPage_Caption3 ${LANG_TURKISH} "Bu seçeneklerle yeniden kurulumu yalnýzca Winamp'ý ${CPRO_NAME} ile birlikte kullanýrken zorluklar yaþýyorsanýz kullanmalýsýnýz."
 	LangString CPro_CleanupPage_Caption4 ${LANG_TURKISH} "Anlayýþýnýz için teþekkür ederiz."
 	LangString CPro_CleanupPage_Footer ${LANG_TURKISH} "Eðer ${CPRO_NAME} kullanýrken sorun yaþamaya devam ediyorsanýz,"
 	LangString CPro_CleanupPage_TSLink ${LANG_TURKISH} "Skin Consortium Forumlarý'nda ücretsiz destek isteyebilirsiniz."
@@ -117,7 +117,7 @@
 
 ; First Page of Installer
 	LangString CPro_Widget_Welcome_Title ${LANG_TURKISH} "$(^NameDA) Kurulum Sihirbazý'na hoþ geldiniz"
-	LangString CPro_Widget_Welcome_Text ${LANG_TURKISH} "Bu sihirbaz size $(^NameDA) kurulumu boyunca rehberlik edecek.$\r$\n$\r$\n${CPRO_WIDGET_NAME} widget'ýnýn bu sürümü doðru bir þekilde çalýþabilmesi için, Winamp ${CPRO_WINAMP_VERSION} ve ${CPRO_NAME} ${CPRO_VERSION} veya daha yüksek bir sürümü bilgisayarýnýzda kurulu olmalýdýr!$\r$\n$\r$\n$_CLICK"
+	LangString CPro_Widget_Welcome_Text ${LANG_TURKISH} "Bu sihirbaz size $(^NameDA) kurulumu boyunca rehberlik edecek.$\r$\n$\r$\n{CPRO_WIDGET_NAME} widget'ýnýn bu sürümü doðru bir þekilde çalýþabilmesi için, Winamp ${CPRO_WINAMP_VERSION} ve ${CPRO_NAME} ${CPRO_VERSION} veya daha yüksek bir sürümü bilgisayarýnýzda kurulu olmalýdýr!$\r$\n$\r$\n$_CLICK"
 
 	LangString CPro_Widget_Caption ${LANG_TURKISH} "${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION} Kur"	
 	LangString CPro_Widget_Name_Text ${LANG_TURKISH} "${CPRO_NAME}${CPRO_CRS} için ${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION} widget'ý"		
