@@ -1,25 +1,25 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+ï»¿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <WasabiXML>
 	<BrowserPro>
-		<sourceitem name="SongBook Þarký Sözleri" comment="Þu an yürütülen þarkýnýn þarký sözlerini gösterir. Çok büyük veritabaný." url="http://www.songbook.me/tmp/lyrics.php?bg=%COLOR:LBG%%AND%txt=%COLOR:LTXT%%AND%artist=%ARTIST%%AND%title=%TITLE%%AND%album=%ALBUM%" icon="icon.songbook.lyrics"/>
-		<sourceitem name="Discogs (Sanatçý)" comment="Bu sanatçý için Discogs arar." url="http://www.discogs.com/artist/%ARTIST%" icon="icon.discogs"/>
-		<sourceitem name="Gezgin Görünümü" comment="Þu an yürütülen öðenin dizinine göz atar." url="%PATH%/" icon="icon.explorer"/>
-		<sourceitem name="Foxytunes (Sanatçý)" comment="Foxytunes yürütülen sanatçý hakkýndaki bilgileri gösterir." url="http://www.foxytunes.com/artist/%ARTIST%" icon="icon.foxytunes"/>
-		<sourceitem name="Google Arama (Þarký)" comment="Bu þarkýyý Google.com.tr ile arar." url="http://www.google.com.tr/search?hl=tr%AND%q=%ARTIST% %TITLE%" icon="icon.google"/>
-		<sourceitem name="Google Görsel Arama (Albüm)" comment="Bu albüm kapaðýný Google.com.tr ile arar." url="http://images.google.com.tr/images?hl=tr%AND%q=%ARTIST% %ALBUM%" icon="icon.google"/>
-		<sourceitem name="Þarký Sözleri" comment="Þu an yürütülen þarkýnýn þarký sözlerini gösterir. Çok büyük veritabaný." url="http://www.lyricsplugin.com/winamp03/plugin/?artist=%ARTIST%%AND%title=%TITLE%" icon="icon.lyricplugin"/>
-		<sourceitem name="Metalstorm (Albüm)" comment="Bu albümü www.metalstorm.ee ile arar." url="http://www.metalstorm.ee/home/search.php?search_what=%ALBUM%%AND%search_where=album" icon="icon.metalstorm"/>
-		<sourceitem name="Metalstorm (Sanatçý)" comment="Bu sanatçýyý www.metalstorm.ee ile arar." url="http://www.metalstorm.ee/home/search.php?search_what=%ARTIST%%AND%search_where=band2" icon="icon.metalstorm"/>
-		<sourceitem name="RateYourMusic (Sanatçý)" comment="Bu sanatçý için RateYourMusic arar." url="http://rateyourmusic.com/search?searchterm=%ARTIST%%AND%searchtype=a" icon="icon.rateyourmusic"/>
-		<sourceitem name="Songfacts (Sanatçý)" comment="Bu sanatçý için Songfacts arar." url="http://www.songfacts.com/search_fact.php?combinedartists=%ARTIST%" icon="icon.songfacts"/>
-		<sourceitem name="Songfacts (Þarký)" comment="Bu þarký için Songfacts arar." url="http://www.songfacts.com/search_fact.php?title=%TITLE%" icon="icon.songfacts"/>
-		<sourceitem name="Swisscharts (Albüm)" comment="Bu albüm için Swisscharts arar." url="http://www.swisscharts.com/search.asp?cat=a%AND%search=%ALBUM%" icon="icon.swisscharts"/>
-		<sourceitem name="Swisscharts (Sanatçý)" comment="Bu þarký için Swisscharts arar." url="http://www.swisscharts.com/showitem.asp?interpret=%ARTIST%%AND%titel=%TITLE%" icon="icon.swisscharts"/>
-		<sourceitem name="Wikipedia EN (Sanatçý)" comment="Bu sanatçý için en.wikipedia sayfasýný gösterir." url="http://en.wikipedia.org/wiki/%ARTIST%" icon="icon.wikipedia"/>
-		<sourceitem name="Wikipedia TR (Sanatçý)" comment="Bu sanatçý için tr.wikipedia sayfasýný gösterir." url="http://tr.wikipedia.org/wiki/%ARTIST%" icon="icon.wikipedia"/>
-		<sourceitem name="Wikipedia EN (Albüm)" comment="Bu albüm için en.wikipedia sayfasýný gösterir." url="http://en.wikipedia.org/wiki/%ALBUM%" icon="icon.wikipedia"/>
-		<sourceitem name="Wikipedia TR (Albüm)" comment="Bu albüm için tr.wikipedia sayfasýný gösterir." url="http://tr.wikipedia.org/wiki/%ALBUM%" icon="icon.wikipedia"/>
-		<sourceitem name="Yahoo! Arama" comment="Bu þarkýyý Yahoo ile arar." url="http://search.yahoo.com/search?p=%ARTIST% %TITLE%%AND%ei=UTF-8%AND%fr=opera2" icon="icon.yahoo"/>
-		<sourceitem name="YouTube Arama" comment="Yürütülen dosyanýn YouTube'daki videolarýna bakar" url="http://www.youtube.com/results?search_query=%ARTIST% %TITLE%%AND%search_type=%AND%aq=f" icon="icon.youtube"/>
+		<sourceitem name="ÅžarkÄ± SÃ¶zleri sitesi SongBook" comment="Åžu an yÃ¼rÃ¼tÃ¼len ÅŸarkÄ±nÄ±n ÅŸarkÄ± sÃ¶zlerini gÃ¶sterir. Ã‡ok bÃ¼yÃ¼k veritabanÄ±." url="http://www.songbook.me/tmp/lyrics.php?bg=%COLOR:LBG%%AND%txt=%COLOR:LTXT%%AND%artist=%ARTIST%%AND%title=%TITLE%%AND%album=%ALBUM%" icon="icon.songbook.lyrics"/>
+		<sourceitem name="Discogs (SanatÃ§Ä±)" comment="Bu sanatÃ§Ä± iÃ§in Discogs'da arama yapar." url="http://www.discogs.com/artist/%ARTIST%" icon="icon.discogs"/>
+		<sourceitem name="Gezgin GÃ¶rÃ¼nÃ¼mÃ¼" comment="Åžu an yÃ¼rÃ¼tÃ¼len Ã¶ÄŸenin dizinine gÃ¶z atar." url="%PATH%/" icon="icon.explorer"/>
+		<sourceitem name="Foxytunes (SanatÃ§Ä±)" comment="YÃ¼rÃ¼tÃ¼len sanatÃ§Ä± hakkÄ±ndaki bilgileri gÃ¶sterir." url="http://www.foxytunes.com/artist/%ARTIST%" icon="icon.foxytunes"/>
+		<sourceitem name="Google Arama (ÅžarkÄ±)" comment="Bu ÅŸarkÄ±yÄ± Google.com.tr ile arar." url="http://www.google.com.tr/search?hl=tr%AND%q=%ARTIST% %TITLE%" icon="icon.google"/>
+		<sourceitem name="Google GÃ¶rsel Arama (AlbÃ¼m)" comment="Bu albÃ¼m kapaÄŸÄ±nÄ± Google.com.tr ile arar." url="http://images.google.com.tr/images?hl=tr%AND%q=%ARTIST% %ALBUM%" icon="icon.google"/>
+		<sourceitem name="ÅžarkÄ± SÃ¶zleri" comment="Åžu an yÃ¼rÃ¼tÃ¼len ÅŸarkÄ±nÄ±n ÅŸarkÄ± sÃ¶zlerini gÃ¶sterir. Ã‡ok bÃ¼yÃ¼k veritabanÄ±." url="http://www.lyricsplugin.com/winamp03/plugin/?artist=%ARTIST%%AND%title=%TITLE%" icon="icon.lyricplugin"/>
+		<sourceitem name="Metalstorm (AlbÃ¼m)" comment="Bu albÃ¼mÃ¼ www.metalstorm.ee ile arar." url="http://www.metalstorm.ee/home/search.php?search_what=%ALBUM%%AND%search_where=album" icon="icon.metalstorm"/>
+		<sourceitem name="Metalstorm (SanatÃ§Ä±)" comment="Bu sanatÃ§Ä±yÄ± www.metalstorm.ee ile arar." url="http://www.metalstorm.ee/home/search.php?search_what=%ARTIST%%AND%search_where=band2" icon="icon.metalstorm"/>
+		<sourceitem name="RateYourMusic (SanatÃ§Ä±)" comment="Bu sanatÃ§Ä± iÃ§in RateYourMusic'de aramaya yapar." url="http://rateyourmusic.com/search?searchterm=%ARTIST%%AND%searchtype=a" icon="icon.rateyourmusic"/>
+		<sourceitem name="Songfacts (SanatÃ§Ä±)" comment="Bu sanatÃ§Ä± iÃ§in Songfacts'da arama yapar." url="http://www.songfacts.com/search_fact.php?combinedartists=%ARTIST%" icon="icon.songfacts"/>
+		<sourceitem name="Songfacts (ÅžarkÄ±)" comment="Bu ÅŸarkÄ± iÃ§in Songfacts'da arama yapar." url="http://www.songfacts.com/search_fact.php?title=%TITLE%" icon="icon.songfacts"/>
+		<sourceitem name="Swisscharts (AlbÃ¼m)" comment="Bu albÃ¼m iÃ§in Swisscharts'da arama yapar." url="http://www.swisscharts.com/search.asp?cat=a%AND%search=%ALBUM%" icon="icon.swisscharts"/>
+		<sourceitem name="Swisscharts (SanatÃ§Ä±)" comment="Bu ÅŸarkÄ± iÃ§in Swisscharts'da arama yapar." url="http://www.swisscharts.com/showitem.asp?interpret=%ARTIST%%AND%titel=%TITLE%" icon="icon.swisscharts"/>
+		<sourceitem name="Wikipedia EN (SanatÃ§Ä±)" comment="Bu sanatÃ§Ä± iÃ§in en.wikipedia sayfasÄ±nÄ± gÃ¶sterir." url="http://en.wikipedia.org/wiki/%ARTIST%" icon="icon.wikipedia"/>
+		<sourceitem name="Wikipedia TR (SanatÃ§Ä±)" comment="Bu sanatÃ§Ä± iÃ§in tr.wikipedia sayfasÄ±nÄ± gÃ¶sterir." url="http://tr.wikipedia.org/wiki/%ARTIST%" icon="icon.wikipedia"/>
+		<sourceitem name="Wikipedia EN (AlbÃ¼m)" comment="Bu albÃ¼m iÃ§in en.wikipedia sayfasÄ±nÄ± gÃ¶sterir." url="http://en.wikipedia.org/wiki/%ALBUM%" icon="icon.wikipedia"/>
+		<sourceitem name="Wikipedia TR (AlbÃ¼m)" comment="Bu albÃ¼m iÃ§in tr.wikipedia sayfasÄ±nÄ± gÃ¶sterir." url="http://tr.wikipedia.org/wiki/%ALBUM%" icon="icon.wikipedia"/>
+		<sourceitem name="Yahoo! Arama" comment="Bu ÅŸarkÄ±yÄ± Yahoo ile arar." url="http://search.yahoo.com/search?p=%ARTIST% %TITLE%%AND%ei=UTF-8%AND%fr=opera2" icon="icon.yahoo"/>
+		<sourceitem name="YouTube Arama" comment="YÃ¼rÃ¼tÃ¼len dosyanÄ±n YouTube'daki videolarÄ±na bakar." url="http://www.youtube.com/results?search_query=%ARTIST% %TITLE%%AND%search_type=%AND%aq=f" icon="icon.youtube"/>
 	</BrowserPro>
 </WasabiXML>
