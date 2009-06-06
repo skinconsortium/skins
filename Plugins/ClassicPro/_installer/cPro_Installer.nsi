@@ -104,7 +104,7 @@
 	!else if ${CPRO_BUILD_TYPE} == "NIGHTLY"
 		!define MUI_HEADERIMAGE_BITMAP "Images\header-nightly.bmp"
 	!else
-		!define MUI_HEADERIMAGE_BITMAP "Images\header.bmp"
+		!define MUI_HEADERIMAGE_BITMAP "Images\header-final.bmp"
 	!endif 
 	
 	!define MUI_ABORTWARNING
