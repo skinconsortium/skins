@@ -1,10 +1,11 @@
 -------------------------------------------------------------
-Version 1.12 (24 May 2009)
+Version 1.12 (6 Jun 2009)
 -------------------------------------------------------------
 - New: Widget Manager
 - New: Installer-Page for deleting studio.xnf & winamp.ini
 - New: Live seeker, hold alt/ctrl/shift while dragging seeker
 - Improved: Widget installer templates
+- Improved: Language support
 - Improved: Abort option if Winamp is running for Installer
 - Fixed: Various tab bugs
 -------------------------------------------------------------
