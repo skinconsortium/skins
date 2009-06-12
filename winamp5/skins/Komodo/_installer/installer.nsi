@@ -7,7 +7,7 @@
 
 ; This create locked or unlocked installer
 
-;!define UNLOCK
+!define UNLOCK
 
 ;--------------------------------
 ;Include Modern UI
@@ -20,7 +20,7 @@
   ;Name and file
   ;RELEASE
   !ifdef UNLOCK
-		Name "Komodo v1.1 (Full)"
+		Name "Komodo v1.101 (Full)"
 		OutFile "Komodo_v110_UNLOCKED.exe"
   !else
 		Name "Komodo v1.1 (Trial Version)"
@@ -253,10 +253,10 @@ Section "Komodo Engine" komodoFiles
   	
 SectionEnd
 
-Section "Komodo-XP.wal" komodoXPFiles
-	SetOutPath $INSTDIR\Skins
-	File "${SOURCEPATH}\_installer\Komodo-XP.wal"
-SectionEnd
+;Section "Komodo-XP.wal" komodoXPFiles
+;	SetOutPath $INSTDIR\Skins
+;	File "${SOURCEPATH}\_installer\Komodo-XP.wal"
+;SectionEnd
 
 
 ;--------------------------------
@@ -264,12 +264,12 @@ SectionEnd
 
   ;Language strings
   LangString DESC_komodoFiles ${LANG_ENGLISH} "This will install all the files that Komodo needs to work."
-  LangString DESC_komodoXPFiles ${LANG_ENGLISH} "This will install the alternate XP themed skin."
+  ;LangString DESC_komodoXPFiles ${LANG_ENGLISH} "This will install the alternate XP themed skin."
 
   ;Assign language strings to sections
   !insertmacro MUI_FUNCTION_DESCRIPTION_BEGIN
   !insertmacro MUI_DESCRIPTION_TEXT ${komodoFiles} $(DESC_komodoFiles)
-  !insertmacro MUI_DESCRIPTION_TEXT ${komodoXPFiles} $(DESC_komodoXPFiles)
+  ;!insertmacro MUI_DESCRIPTION_TEXT ${komodoXPFiles} $(DESC_komodoXPFiles)
   !insertmacro MUI_FUNCTION_DESCRIPTION_END
 
 ;--------------------------------

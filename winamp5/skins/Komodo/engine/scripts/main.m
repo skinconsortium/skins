@@ -637,7 +637,7 @@ delayTrialCheck.onTimer() {
 		
 		if (getPrivateInt("Komodo","FirstLoadUnlocked",1) == 1) {
 			setPrivateInt("Komodo","FirstLoadUnlocked",0);
-			messagebox("All features unlocked.", "Komodo",0, "");
+			//messagebox("All features unlocked.", "Komodo",0, "");
 		}
 		return;
 	#endif
