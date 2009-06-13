@@ -556,21 +556,23 @@ Section "$(CPro_CProFiles)" "CPro_Sec_CProFiles"
 ; Main directory	
 	SetOutPath $INSTDIR\Plugins\ClassicPro
 		File "..\*.txt"
-; Installer -- TODO add to new category 'Development Kit', so user can unselect
-	SetOutPath $INSTDIR\Plugins\ClassicPro\_installer
-		File "*.nsi"
-		File "*.nsh"
-	SetOutPath $INSTDIR\Plugins\ClassicPro\_installer\Images
-		File "images\*.bmp"
-		File "images\*.ico"
-	SetOutPath $INSTDIR\Plugins\ClassicPro\_installer\Languages
-		File "Languages\*.nsh"
-	SetOutPath $INSTDIR\Plugins\ClassicPro\_installer\Plugins
-		File "Plugins\*.txt"
-		File "Plugins\*.dll"
-		File "Plugins\*.url"
-	SetOutPath $INSTDIR\Plugins\ClassicPro\_installer\Files
-		File "Files\*.*"
+
+; CUT (mpdeimos) we no longer want to install those files! all this stuff is in on SVN.
+;	SetOutPath $INSTDIR\Plugins\ClassicPro\_installer
+;		File "*.nsi"
+;		File "*.nsh"
+;	SetOutPath $INSTDIR\Plugins\ClassicPro\_installer\Images
+;		File "images\*.bmp"
+;		File "images\*.ico"
+;	SetOutPath $INSTDIR\Plugins\ClassicPro\_installer\Languages
+;		File "Languages\*.nsh"
+;	SetOutPath $INSTDIR\Plugins\ClassicPro\_installer\Plugins
+;		File "Plugins\*.txt"
+;		File "Plugins\*.dll"
+;		File "Plugins\*.url"
+;	SetOutPath $INSTDIR\Plugins\ClassicPro\_installer\Files
+;		File "Files\*.*"
+
 ; CPro engine		
 	SetOutPath $INSTDIR\Plugins\ClassicPro\engine
 		File "..\engine\*.xml"
