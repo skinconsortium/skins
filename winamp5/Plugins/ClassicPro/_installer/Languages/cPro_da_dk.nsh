@@ -19,7 +19,7 @@
 
 ; Language selection
 	LangString CPro_Language_Title ${LANG_DANISH} "Installations sprog"
-	LangString CPro_Un_Language_Title ${LANG_DANISH} "Uninstaller language"	
+	LangString CPro_Un_Language_Title ${LANG_DANISH} "Afinstallations sprog"	
 	LangString CPro_Language_Text ${LANG_DANISH} "Vælg venligst et sprog:"
 
 ; First Page of Installer
@@ -96,16 +96,16 @@
 	LangString CPro_Winamp_Path ${LANG_DANISH} "Specifér sti til Winamp konfigurations filen..."
 
 ; Close all instances of Winamp
-	LangString CPro_CloseWinamp_Welcome_Title ${LANG_DANISH} "Programs to close"
-	LangString CPro_CloseWinamp_Welcome_Text  ${LANG_DANISH} "Programs, that must be closed before continuing installation"	
-	LangString CPro_CloseWinamp_Heading ${LANG_DANISH} "Close all programs from the list before continuing installation..."
-	LangString CPro_CloseWinamp_Searching ${LANG_DANISH} "Searching programs, please wait..."
-	LangString CPro_CloseWinamp_EndSearch ${LANG_DANISH} "Searching programs finished..."
-	LangString CPro_CloseWinamp_EndMonitor ${LANG_DANISH} "Closing active process monitor, please wait..."
-	LangString CPro_CloseWinamp_NoPrograms ${LANG_DANISH} "Installer didn't find any programs to close"
-	LangString CPro_CloseWinamp_ColHeadings1 ${LANG_DANISH} "Application"
-	LangString CPro_CloseWinamp_ColHeadings2 ${LANG_DANISH} "Process"
-	LangString CPro_CloseWinamp_Autoclosesilent ${LANG_DANISH} "Closing program failed"
+	LangString CPro_CloseWinamp_Welcome_Title ${LANG_DANISH} "Programmer at lukke"
+	LangString CPro_CloseWinamp_Welcome_Text  ${LANG_DANISH} "Programmer, der skal lukkes før installation kan fortsætte"	
+	LangString CPro_CloseWinamp_Heading ${LANG_DANISH} "Luk alle programmer på listen, før du fortsætter installationen..."
+	LangString CPro_CloseWinamp_Searching ${LANG_DANISH} "Søger programmer, vent venligst..."
+	LangString CPro_CloseWinamp_EndSearch ${LANG_DANISH} "Søgning af programmer færdigjort..."
+	LangString CPro_CloseWinamp_EndMonitor ${LANG_DANISH} "Lukker aktiv proces overvåger, vent venligst..."
+	LangString CPro_CloseWinamp_NoPrograms ${LANG_DANISH} "Installeren fandt ingen programmer der skulle lukkes"
+	LangString CPro_CloseWinamp_ColHeadings1 ${LANG_DANISH} "Program"
+	LangString CPro_CloseWinamp_ColHeadings2 ${LANG_DANISH} "Proces"
+	LangString CPro_CloseWinamp_Autoclosesilent ${LANG_DANISH} "Lukning af program fejlet"
 
 ; Menu Start
 	LangString CPro_MenuStart1 ${LANG_DANISH} "Afinstaller ${CPRO_NAME}"
@@ -116,33 +116,33 @@
 ; CPro :: Widgets
 
 ; First Page of Installer
-	LangString CPro_Widget_Welcome_Title ${LANG_DANISH} "Welcome to the $(^NameDA) Setup Wizard"
-	LangString CPro_Widget_Welcome_Text ${LANG_DANISH} "This wizard will guide you through the installation of $(^NameDA).$\r$\n$\r$\nYou'll at least need Winamp ${CPRO_WINAMP_VERSION} and ${CPRO_NAME} ${CPRO_VERSION} for this version of ${CPRO_WIDGET_NAME} to work!$\r$\n$\r$\n$_CLICK"
+	LangString CPro_Widget_Welcome_Title ${LANG_DANISH} "velkommen til $(^NameDA) installations guiden"
+	LangString CPro_Widget_Welcome_Text ${LANG_DANISH} "Denne guide vil hjælpe dig igennem installationen af $(^NameDA).$\r$\n$\r$\nDu skal mindst have Winamp ${CPRO_WINAMP_VERSION} og ${CPRO_NAME} ${CPRO_VERSION} for at denne version af ${CPRO_WIDGET_NAME} fungerer!$\r$\n$\r$\n$_CLICK"
 
-	LangString CPro_Widget_Caption ${LANG_DANISH} "${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION} Setup"	
+	LangString CPro_Widget_Caption ${LANG_DANISH} "${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION} Guide"	
 	LangString CPro_Widget_Name_Text ${LANG_DANISH} "${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION} widget for ${CPRO_NAME}${CPRO_CRS}"		
 	
 ; First Page of Uninstaller
-	LangString CPro_Widget_Un_Welcome_Title ${LANG_DANISH} "Welcome to the $(^NameDA) Uninstall Wizard"
-	LangString CPro_Widget_Un_Welcome_Text ${LANG_DANISH} "This wizard will guide you through the uninstallation of $(^NameDA).$\r$\n$\r$\n$_CLICK"
+	LangString CPro_Widget_Un_Welcome_Title ${LANG_DANISH} "Velkommen til $(^NameDA) Afinstallations guide"
+	LangString CPro_Widget_Un_Welcome_Text ${LANG_DANISH} "Denne guide vil hjælpe dig igennem afinstallationen af $(^NameDA).$\r$\n$\r$\n$_CLICK"
 
 ; Installer sections
 	LangString CPro_Widget_Files ${LANG_DANISH} "${CPRO_WIDGET_NAME} ${CPRO_WIDGET_VERSION} for ${CPRO_NAME}${CPRO_CRS} ${CPRO_VERSION}"
 		
 ; Installer sections descriptions	
-	LangString CPro_Widget_Desc_Files ${LANG_DANISH} "This will install all the files that ${CPRO_WIDGET_NAME} ${CPRO_WIDGET_VERSION} needs to work."
+	LangString CPro_Widget_Desc_Files ${LANG_DANISH} "Dette vil installere alle filerne nødvendigt for ${CPRO_WIDGET_NAME} ${CPRO_WIDGET_VERSION} kan fungere."
 
 ; Finish Page	
-	LangString CPro_Widget_FinishPage_1 ${LANG_DANISH} "${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION} installation finished"
-	LangString CPro_Widget_FinishPage_2 ${LANG_DANISH} "The setup wizard has finished installing ${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION}. You can now start using your new ${CPRO_WIDGET_NAME} widget for ${CPRO_NAME} in Winamp."
-	LangString CPro_Widget_FinishPage_3 ${LANG_DANISH} "If you like ${CPRO_WIDGET_NAME} and would like to help future development of the product please donate to the project."
-	LangString CPro_Widget_FinishPage_4 ${LANG_DANISH} "What do you want to do now?"
-	LangString CPro_Widget_FinishPage_5 ${LANG_DANISH} "Go to our homepage to get more ${CPRO_NAME} widgets"
-	LangString CPro_Widget_FinishPage_6 ${LANG_DANISH} "Reload ${CPRO_NAME} or open Winamp now"
-	LangString CPro_Widget_FinishPage_7 ${LANG_DANISH} "Finish"	
+	LangString CPro_Widget_FinishPage_1 ${LANG_DANISH} "${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION} installation fuldført"
+	LangString CPro_Widget_FinishPage_2 ${LANG_DANISH} "Installations guiden har færdiggjort installationen af ${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION}. Du kan nu starte med at benytte din nye ${CPRO_WIDGET_NAME} widget for ${CPRO_NAME} i Winamp."
+	LangString CPro_Widget_FinishPage_3 ${LANG_DANISH} "Hvis du kan lide ${CPRO_WIDGET_NAME} og vil hjælpe fremtidig udvikling af dette produkt donér venligst til projektet."
+	LangString CPro_Widget_FinishPage_4 ${LANG_DANISH} "Hvad vil du nu?"
+	LangString CPro_Widget_FinishPage_5 ${LANG_DANISH} "Gå til vores hjemmeside for at finde flere ${CPRO_NAME} widgets"
+	LangString CPro_Widget_FinishPage_6 ${LANG_DANISH} "Genindlæs ${CPRO_NAME} eller åben Winamp nu"
+	LangString CPro_Widget_FinishPage_7 ${LANG_DANISH} "Færdig"	
 	
 ; UnFinish Page	
-	LangString CPro_Widget_UnFinishPage_1 ${LANG_DANISH} "Completing the ${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION} widget for ${CPRO_NAME}${CPRO_CRS} Uninstall Wizard"
-	LangString CPro_Widget_UnFinishPage_2 ${LANG_DANISH} "${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION} widget for ${CPRO_NAME}${CPRO_CRS} has been uninstalled from your computer."
-	LangString CPro_Widget_UnFinishPage_3 ${LANG_DANISH} "Click $(CPro_Widget_FinishPage_7) to close this wizard"
-	LangString CPro_Widget_UnFinishPage_4 ${LANG_DANISH} "Reload ${CPRO_NAME} if Winamp is running"
+	LangString CPro_Widget_UnFinishPage_1 ${LANG_DANISH} "Færdiggører ${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION} widget for ${CPRO_NAME}${CPRO_CRS} afinstallations guiden"
+	LangString CPro_Widget_UnFinishPage_2 ${LANG_DANISH} "${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION} widget for ${CPRO_NAME}${CPRO_CRS} er blevet afinstalleret på din computer."
+	LangString CPro_Widget_UnFinishPage_3 ${LANG_DANISH} "Click $(CPro_Widget_FinishPage_7) fpr at lukke denne guide"
+	LangString CPro_Widget_UnFinishPage_4 ${LANG_DANISH} "Genindlæs ${CPRO_NAME} hvis Winamp stadig kører"
