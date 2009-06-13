@@ -66,7 +66,7 @@ class Main: PositionedWindow
 
 		buildVersion.text = NSISDefinitionFile.getValue("CPRO_VERSION", "1.10");
 		buildChooser.text = NSISDefinitionFile.getValue("CPRO_BUILD_TYPE", BUILD_TYPES[0]);
-		textBuildName.text = NSISDefinitionFile.getValue("CPRO_BUILD_NAME", "foo");
+		textBuildName.text = NSISDefinitionFile.getValue("CPRO_BUILD_NAME", "");
 		
 		runBuild.click ~= &startBuild;
 		testInstaller.click ~= &startInstaller;
