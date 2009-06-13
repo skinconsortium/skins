@@ -91,11 +91,11 @@
 	!define MUI_WELCOMEPAGE_TITLE $(CPro_Welcome_Title)
 	!define MUI_WELCOMEPAGE_TEXT $(CPro_Welcome_Text)
 
-	!if ${CPRO_BUILD_TYPE} != "FINAL"
+	;!if ${CPRO_BUILD_TYPE} != "FINAL"
 		!define MUI_HEADERIMAGE_LEFT
-	!else
-		!define MUI_HEADERIMAGE_RIGHT
-	!endif 
+	;!else
+	;	!define MUI_HEADERIMAGE_RIGHT
+	;!endif 
 
 	!define MUI_HEADERIMAGE
 
@@ -230,7 +230,6 @@
 		VIAddVersionKey "LegalCopyright" "${CPRO_COPYRIGHT}, ${CPRO_AUTHOR}"
 		VIAddVersionKey "FileDescription" "${CPRO_NAME} v${CPRO_VERSION} ${CPRO_BUILD_NAME} (${CPRO_BUILD_TYPE})"
 		VIAddVersionKey "FileVersion" "${CPRO_VERSION}"
-
 	!else if ${CPRO_BUILD_TYPE} == "NIGHTLY"
 ; Alpha stage	
 		VIProductVersion "${CPRO_VERSION}.${CPRO_REVISION}.${CPRO_BUILD}"
@@ -556,7 +555,6 @@ Section "$(CPro_CProFiles)" "CPro_Sec_CProFiles"
 ; Main directory	
 	SetOutPath $INSTDIR\Plugins\ClassicPro
 		File "..\*.txt"
-
 ; CUT (mpdeimos) we no longer want to install those files! all this stuff is in on SVN.
 ;	SetOutPath $INSTDIR\Plugins\ClassicPro\_installer
 ;		File "*.nsi"
@@ -795,7 +793,7 @@ Section "-Leave"
 		CreateDirectory "$SMPROGRAMS\Winamp\${CPRO_NAME}"
 		CreateShortCut "$SMPROGRAMS\Winamp\${CPRO_NAME}\$(CPro_MenuStart1).lnk" "$INSTDIR\${CPRO_UNINSTALLER}.exe"
 		CreateShortCut "$SMPROGRAMS\Winamp\${CPRO_NAME}\$(CPro_MenuStart2).lnk" "$INSTDIR\Plugins\ClassicPro\Whats new.txt"
-		File /oname=$SMPROGRAMS\Winamp\${CPRO_NAME}\$(CPro_MenuStart3).url "Plugins\link.url"
+		File /nonfatal /oname=$SMPROGRAMS\Winamp\${CPRO_NAME}\$(CPro_MenuStart3).url "Plugins\link.url"
 	SetShellVarContext current
 
 ; Create uninstaller
