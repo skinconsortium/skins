@@ -20,6 +20,7 @@ import dfl.internal.winapi;
 import tango.stdc.stringz;
 import tango.io.FilePath,
 	   tango.io.FileSystem;
+import buildstamp;
 
 class Main: PositionedWindow
 {
@@ -40,7 +41,7 @@ class Main: PositionedWindow
 	dfl.groupbox.GroupBox groupBox2;
 	dfl.panel.Panel panel3;
 	dfl.button.Button testInstaller;
-	dfl.label.Label label5;
+	dfl.label.Label builderVersion;
 	dfl.textbox.TextBox nsisOutput;
 	//~Entice Designer variables end here.
 	
@@ -49,6 +50,7 @@ class Main: PositionedWindow
 	
 	final char[] nsisPath;
 	final FilePath exePath;
+	final static char[] CPRO_BUILDER_VERSION = "0.21";
 	
 	this()
 	{
@@ -61,9 +63,10 @@ class Main: PositionedWindow
 		panel2.dockPadding.all = 6;
 		
 		buildChooser.items.addRange(BUILD_TYPES);
+
 		buildVersion.text = NSISDefinitionFile.getValue("CPRO_VERSION", "1.10");
 		buildChooser.text = NSISDefinitionFile.getValue("CPRO_BUILD_TYPE", BUILD_TYPES[0]);
-		textBuildName.text = NSISDefinitionFile.getValue("CPRO_BUILD_NAME", "");
+		textBuildName.text = NSISDefinitionFile.getValue("CPRO_BUILD_NAME", "foo");
 		
 		runBuild.click ~= &startBuild;
 		testInstaller.click ~= &startInstaller;
@@ -253,13 +256,13 @@ class Main: PositionedWindow
 		testInstaller.text = "Test Installer";
 		testInstaller.bounds = dfl.all.Rect(244, 4, 99, 21);
 		testInstaller.parent = panel3;
-		//~DFL dfl.label.Label=label5
-		label5 = new dfl.label.Label();
-		label5.name = "label5";
-		label5.enabled = false;
-		label5.text = "ClassicPro Builder - version 0.2";
-		label5.bounds = dfl.all.Rect(0, 8, 188, 15);
-		label5.parent = panel3;
+		//~DFL dfl.label.Label=builderVersion
+		builderVersion = new dfl.label.Label();
+		builderVersion.name = "builderVersion";
+		builderVersion.enabled = false;
+		builderVersion.text = "ClassicPro Builder - version "~CPRO_BUILDER_VERSION~" Build #"~buildstamp.buildstamp_char;
+		builderVersion.bounds = dfl.all.Rect(0, 8, 200, 15);
+		builderVersion.parent = panel3;
 		//~DFL dfl.textbox.TextBox=nsisOutput
 		nsisOutput = new dfl.textbox.TextBox();
 		nsisOutput.name = "nsisOutput";
