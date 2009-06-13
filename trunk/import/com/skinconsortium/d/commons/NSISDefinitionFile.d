@@ -73,10 +73,13 @@ public class NSISDefinitionFile
 				
 				if (bits[0] == "!define")
 				{
-					if (bits.length > 2)
-						definitionMap[bits[1]] = bits[2][1..$-1];
-					else
-						definitionMap[bits[1]] = null;
+					//definitionMap[bits[1]] = null;
+					try
+					{
+						if (bits.length > 2)
+							definitionMap[bits[1]] = bits[2][1..$-1].dup;
+					}
+					catch (Exception e) {} // TODO (mpdeimos) I dunno why an exception is rosen here. happens when there is something like "!define CPRO_WINAMP_SYSTEM"
 				}
 			}
 		}
@@ -102,14 +105,19 @@ public class NSISDefinitionFile
 		file.write(cast(void[])fileoutput);		
 	}
 	
-	static char[] getValue(char[] name, char[] defaultReturn = "")
+	static char[] getValue(char[] name, char[] defaultReturn = null)
 	{	
 		char[] ret = defaultReturn;
 		try
 		{
-			ret = definitionMap[name];
+			if (name in definitionMap)
+				ret = definitionMap[name];
 		}
 		catch (Exception e) {}
+		if (ret is null)
+		{
+			ret = defaultReturn;
+		}
 		return ret;
 	}
 
