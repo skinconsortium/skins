@@ -8,6 +8,7 @@
                 font-weight: bold;
                 font-size: small;
                 color: rgb(210,210,210);
+				border: 0;
 		    }
 		    #imgBackground
 		    {
@@ -20,6 +21,7 @@
 				height: 170px;
 		        max-height: 250px;
 		        overflow: hidden;
+				border: 0;
 		    }
 		    #date
 		    {

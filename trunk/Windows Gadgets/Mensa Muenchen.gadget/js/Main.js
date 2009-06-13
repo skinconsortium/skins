@@ -44,10 +44,11 @@ function SettingsShow()
         if (String(set) != "") 
         	location = set;
         
-    	var currentTime = new Date();
+/*    	var currentTime = new Date();
 		var h=currentTime.getHours();
 		var m=currentTime.getMinutes();
-		var timeLeft = 60*24 - (60*h+m) + 1;
+		var timeLeft = 60*24 - (60*h+m) + 1;*/
+		var timeLeft = 30; // check every 30 mins :P
 		
 		/*if (updateTimeOut != null)
        		clearTimeOut(updateTimeOut);
@@ -67,7 +68,7 @@ function SettingsShow()
        	/*if (updateTimeOut)
        		clearTimeOut(updateTimeOut);
        	updateTimeOut = null;*/
-       	updateTimeOut = setTimeout("update();",24*60*60*1000);
+       	updateTimeOut = setTimeout("update();",30*60*1000);
        	
        	curPos = 0;
        	load();
@@ -77,7 +78,7 @@ function SettingsShow()
 	function load()
 	{ 
 		xmlDoc=getXmlDOM();
-		var url="http://services.songbook.me/mensa/?p=win-gadget&v=1.0&loc="+location;
+		var url="http://services.songbook.me/mensa/?p=win-gadget&v=1.1&loc="+location;
 //		var url="http://localhost/songbook.me/tmp/mensa.php";
 		xmlDoc.load(url);
 	}
