@@ -12,15 +12,13 @@ import dfl.all;
 import res.res;
 import com.skinconsortium.d.dfl.PositionedWindow;
 import com.skinconsortium.d.commons.NSISDefinitionFile;
-import dfl.registry;
-import tango.sys.Process;
-import tango.text.stream.LineIterator;
 import tango.util.PathUtil;
 import dfl.internal.winapi;
 import tango.stdc.stringz;
 import tango.io.FilePath,
 	   tango.io.FileSystem;
 import buildstamp;
+import BuildThread;
 
 class Main: PositionedWindow
 {
@@ -48,9 +46,11 @@ class Main: PositionedWindow
 	final static char[][] BUILD_TYPES = ["FINAL", "BETA", "NIGHTLY"];
 	final static char[][] BUILD_TYPE_NAMES = ["", "Beta 1", "Nigtly"];
 	
-	final char[] nsisPath;
 	final FilePath exePath;
-	final static char[] CPRO_BUILDER_VERSION = "0.21";
+	final static char[] CPRO_BUILDER_VERSION = "0.30";
+	
+	/// used to count the lines in nsisOutput - maybe add a better method for this, since linewrapping may result in glitches...
+	private int lineCount = 0;	
 	
 	this()
 	{
@@ -71,17 +71,34 @@ class Main: PositionedWindow
 		runBuild.click ~= &startBuild;
 		testInstaller.click ~= &startInstaller;
 		
-		try
-		{
-			RegistryKey rvalue  = Registry.localMachine.openSubKey(`SOFTWARE\\NSIS`);
-			nsisPath = rvalue.getValue(rvalue.getValueNames()[0]).toString();
-		}
-		catch (Exception e)
-		{
-			runBuild.disable();
-		}
-		
 		exePath = (new FilePath(FileSystem.getDirectory()));
+	}
+	
+	private void buildThreadStatusUpdate(char[] line)
+	{
+		 try
+		 {
+			 lineCount++;
+			 char[] append = nsisOutput.text;
+			 append ~= line ~ "\r\n";
+	    	 nsisOutput.text = append;
+	    	 SendMessageA(nsisOutput.handle(), EM_LINESCROLL, 0, lineCount);
+		    	 
+			 if (line.length > 10)
+			 {
+				 if (line[0..8] == "Output: ")
+				 {
+					 testInstaller.enable();
+					 testInstaller.tag = new dfl.all.StringObject(line[9..$-1].dup);
+				 }
+			 }		    	 
+		 }
+		 catch(Exception e) {}
+	}
+	
+	private void buildThreadComplete()
+	{
+		runBuild.enable();
 	}
 	
 	private void startInstaller(Object sender, EventArgs ea)
@@ -89,10 +106,8 @@ class Main: PositionedWindow
 		if (testInstaller.tag is null)
 			return;
 		
-		//auto p = new Process("\""~testInstaller.tag.toString()~"\"");
 		char* stringz = toStringz("\""~testInstaller.tag.toString()~"\"");
 		ShellExecuteA(null, null, stringz, null, null, SW_SHOWNORMAL);
-//		p.execute;
 	}
 	
 	private void startBuild(Object sender, EventArgs ea)
@@ -106,50 +121,15 @@ class Main: PositionedWindow
 		NSISDefinitionFile.setValue("CPRO_BUILD_NAME", textBuildName.text);
 		NSISDefinitionFile.setValue("CPRO_BUILD_FILENAME_ADDITION", Text.replace!(char)(textBuildName.text, ' ', '_'));
 		auto installerPath = exePath.dup.native.toString;
-		auto winampPath = exePath.pop.pop.pop.native.toString;
+		auto winampPath = exePath.dup.pop.pop.pop.native.toString;
 		NSISDefinitionFile.setValue("CPRO_OUTFILE_PATH", installerPath);
 		NSISDefinitionFile.setValue("CPRO_WINAMP_SKINS", winampPath~"\\Skins");
 		NSISDefinitionFile.setValue("CPRO_WINAMP_SYSTEM", winampPath~"\\System");
 		NSISDefinitionFile.save();
 		
-		try
-		{
-//		     auto p = new Process (nsisPath ~ "\\makensis", "H:\\Program Files\\Nullsoft\\nsis\\Examples\\example1.nsi");
-		     auto p = new Process (nsisPath ~ "\\makensis /V3 cPro_Installer.nsi", null);
-		     p.execute;
-		    // auto result = p.wait;
-		     int lineCount = 0;
-		     char[] append = "";
-		     foreach (line; new LineIterator!(char) (p.stdout))
-		     {
-		    	 try
-		    	 {
-			    	 lineCount++;
-			    	 append ~= line ~ "\r\n";
-			    	 //if (lineCount % 2 == 0)
-			    	 {
-				    	 nsisOutput.text = append;
-				    	 SendMessageA(nsisOutput.handle(), EM_LINESCROLL, 0, lineCount);
-			    	 }
-			    	 if (line.length > 10)
-			    	 {
-			    		 //if (line[0..11] == "LangString:")
-			    		 //	 continue;
-			    		 if (line[0..8] == "Output: ")
-			    		 {
-			    			 testInstaller.enable();
-			    			 testInstaller.tag = new dfl.all.StringObject(line[9..$-1].dup);
-			    		 }
-			    	 }		    	 
-		    	 }
-		    	 catch(Exception e) {}
-		     }
-		     nsisOutput.text = append;
-		     SendMessageA(nsisOutput.handle(), EM_LINESCROLL, 0, lineCount);
-		 }
-		 catch (Exception e) {}
-	
-		runBuild.enable();
+		
+		BuildThread bt = new BuildThread(&buildThreadStatusUpdate, &buildThreadComplete);
+		bt.start();
 	}
 	
 	
