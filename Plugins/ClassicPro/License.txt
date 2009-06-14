@@ -48,10 +48,10 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 - TheElusiveMelon (ClassicPro clock)
 
 ::Translators:
+- Polish			Pawel Porwisz (Pepe) [Main Translator]
 - French			Julien Victor (Veekee)
 - German			Christoph Grether (Koopa)
 			Marko Egger (Mynameisnobody)
-- Polish			Pawel Porwisz (Pepe)
 - PortugueseBR		Anderson Silva (Candiba)
 - Romanian		Catalin Zamfirescu
 - Russian			Aleksey Potashnikoff (NickMikh)
