@@ -194,22 +194,22 @@ Section "Komodo Engine" komodoFiles
 		Delete "$INSTDIR\Skins\Komodo\engine\scripts\main.maki"
 		Rename "$INSTDIR\Skins\Komodo\engine\scripts\main-u.maki" "$INSTDIR\Skins\Komodo\engine\scripts\main.maki"
 		
-		SetOutPath $WINAMP_INI_DIR
-		ClearErrors
-		File "${SOURCEPATH}\_installer\st.exe"
-		IfErrors report_error 0
+		;SetOutPath $WINAMP_INI_DIR
+		;ClearErrors
+		;File "${SOURCEPATH}\_installer\st.exe"
+		;IfErrors report_error 0
 		
-		ExecWait "$WINAMP_INI_DIR\st.exe -o:winamp.ini:komtrial.xml -u" $0
+		;ExecWait "$WINAMP_INI_DIR\st.exe -o:winamp.ini:komtrial.xml -u" $0
 		
-		IntCmp $0 0 no_error +1
+		;IntCmp $0 0 no_error +1
     	
-	    ExecWait "$WINAMP_INI_DIR\st.exe -o:kt.ini -u" $0
-	    IntCmp $0 0 +1 report_error report_error
+	    ;ExecWait "$WINAMP_INI_DIR\st.exe -o:kt.ini -u" $0
+	    ;IntCmp $0 0 +1 report_error report_error
 	    
-	    CreateDirectory $WINAMP_INI_DIR\Plugins
-	    CopyFiles /SILENT kt.ini Plugins\kt.ini
-	    Delete "$WINAMP_INI_DIR\kt.ini" 
-    	SetFileAttributes $WINAMP_INI_DIR\Plugins\kt.ini HIDDEN|SYSTEM
+	    ;CreateDirectory $WINAMP_INI_DIR\Plugins
+	    ;CopyFiles /SILENT kt.ini Plugins\kt.ini
+	    ;Delete "$WINAMP_INI_DIR\kt.ini" 
+    	;SetFileAttributes $WINAMP_INI_DIR\Plugins\kt.ini HIDDEN|SYSTEM
 		
     	goto no_error
 	!else
@@ -278,7 +278,7 @@ SectionEnd
 Section "Uninstall"
 
   RMDir /r "$INSTDIR\Skins\Komodo"
-  Delete "$INSTDIR\Skins\Komodo-XP.wal"
+  ;Delete "$INSTDIR\Skins\Komodo-XP.wal"
   Delete "$INSTDIR\Uninstall Komodo.exe"
 
 SectionEnd

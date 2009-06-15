@@ -84,15 +84,15 @@
 
 <groupdef id="player.main.cms" name="now playing" w="0" h="0" relatw="1" relath="1">
 	<VisAnim id="visanim.left"
-		x="14" y="55" w="18" h="84" relatx="2" relaty="2" relatw="2"
+		x="14" y="50" w="18" h="140" relatx="2" relaty="2" relatw="2"
 		image="player.main.visanim" speed="50"
-		numbars="auto" framewidth="3" frameheight="84" spacer="1"/>
+		numbars="auto" framewidth="5" frameheight="140" spacer="1"
 	/>
 
 	<VisAnim id="visanim.right"
-		x="70" y="55" w="18" h="84" relatx="2" relaty="2" relatw="2"
+		x="70" y="50" w="18" h="140" relatx="2" relaty="2" relatw="2"
 		image="player.main.visanim" speed="50" mirror="1"
-		numbars="auto" framewidth="3" frameheight="84" spacer="1"/>
+		numbars="auto" framewidth="5" frameheight="140" spacer="1"
 	/>
 	
 	<SC:NowPlaying 

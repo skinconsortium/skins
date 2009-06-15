@@ -11,7 +11,7 @@ Global string path, versionPath, komodoVersion;
 Global int getNewVer, currVersion;
 
 Global XmlDoc versionCheck;
-Global timer delayVersionCheck;
+Global timer delayVersionCheck, delaySwitchSkin;
 
 System.onScriptLoaded() { 
 	
@@ -23,34 +23,42 @@ System.onScriptLoaded() {
 	currVersion = 0;
 	
 	int ret, exist;
+	
+	delayVersionCheck = new Timer;
+	delayVersionCheck.setDelay(100);
+	delayVersionCheck.start();
+	
+	setPrivateString(getSkinName(),"KomodoSkinVersion",floatToString(KOMODO_VER,2));
+}
+
+system.onScriptUnloading() {
+	delete delayVersionCheck;
+}
+
+delayVersionCheck.onTimer() {
+	stop();
+	
+	int ret, exist;
 	file installFile = new file;
 	installFile.load(path);
 	exist = installFile.exists();
 	delete installFile;
 	
 	if (!exist) {
-		ret = System.messageBox("For this skin to work, you'll need to install the Komodo Winamp plugin.\n\nDo you want to download it now?", "Komodo Plugin not found.", 4, "");
+		ret = System.messageBox("For this skin to work, you'll need to install the Komodo Winamp plugin.\n\nDo you want to download it now?", "Komodo Plugin not found.", 12, "");
 		if (ret==4) {
 			getNewVer = 1;
+			System.navigateUrl("http://www.nitrousaudio.com/k/");
 		}
 		System.switchSkin("winamp classic");
-	} else {
-		delayVersionCheck = new Timer;
-		delayVersionCheck.setDelay(100);
-		delayVersionCheck.start();
-	}
-	
-	setPrivateString(getSkinName(),"KomodoSkinVersion",floatToString(KOMODO_VER,2));
-}
 
-delayVersionCheck.onTimer() {
-	stop();
-	
-	versionCheck = new XmlDoc;
-	versionCheck.load(versionPath);
-	versionCheck.parser_addCallback("komododata/komodoversion");
-	versionCheck.parser_start();
-	versionCheck.parser_destroy();
+	} else {
+		versionCheck = new XmlDoc;
+		versionCheck.load(versionPath);
+		versionCheck.parser_addCallback("komododata/komodoversion");
+		versionCheck.parser_start();
+		versionCheck.parser_destroy();
+	}
 
 }
 
@@ -70,8 +78,9 @@ versionCheck.parser_onCallback (String xmlpath, String xmltag, list paramname, l
 		
 		if (currVersion < KOMODO_VER) {
 			int ret = System.messageBox("This skin requires the latest Komodo Winamp plugin.\n\nDo you want to download it now?", "Komodo Plugin incorrect version.", 4, "");
-				if (ret==4) {
+			if (ret==4) {
 				getNewVer = 1;
+				System.navigateUrl("http://www.nitrousaudio.com/k/");
 			}
 			System.switchSkin("winamp classic");
 		}
@@ -87,7 +96,4 @@ versionCheck.parser_onCallback (String xmlpath, String xmltag, list paramname, l
 	}
 }
 
-system.onScriptUnloading() {
-	delete delayVersionCheck;
-	if (getNewVer)	System.navigateUrl("http://www.nitrousaudio.com/k/");
-}
+
