@@ -1,5 +1,0 @@
-<optionalpackages>
-		<optionalpackage
-			minversion="0.1-dev2"
-			file="optionals/package.tar">me.songbook.test.sub.2</optionalpackage>
-</optionalpackages>
