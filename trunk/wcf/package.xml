@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE package SYSTEM "http://www.woltlab.com/DTDs/package.dtd">
+<package name="me.songbook.wcf.startsitepiptest">
+	<packageInformation>
+		<packageName>Startsite PIP Test</packageName>
+		<packageDescription>Startsite PIP Test</packageDescription>
+		<isunique>1</isunique>
+		<version>0.1-dev4</version>
+		<date>2008-12-18</date>
+	</packageInformation>
+
+	<requiredpackages>
+		<requiredpackage minversion="0.1.8">me.songbook.wbb.startpage</requiredpackage>
+	</requiredpackages>
+
+	<authorinformation>
+		<author>Martin Poehlmann</author>
+		<authorurl>http://www.songbook.me</authorurl>
+	</authorinformation>
+
+	<instructions type="install">
+		<startpage name="wcf.header.menu.Help">page=Help</startpage>
+		<startpage name="wcf.header.menu.MembersList">page=MembersList</startpage>
+	</instructions>
+
+	<instructions type="update" fromversion="*">
+		<startpage name="wcf.header.menu.help">page=Help</startpage>
+		<startpage name="wcf.header.menu.memberslist">page=MembersList</startpage>
+	</instructions>
+
+</package>
