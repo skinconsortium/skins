@@ -34,6 +34,8 @@ Class GuiObject Tab;
 	Member Boolean Tab.isInternal;
 	Member Int Tab.ID;
 	Member String Tab.IDS;
+	Member String Tab.nameLong;
+	Member String Tab.nameShort;
 	Member boolean Tab.removed;
 	Member boolean Tab.statusbar;
 
@@ -54,6 +56,7 @@ Function alignFull(Tab t);
 Function alignByResize();
 Function removeTab(Tab t);
 Function closeTab(Tab t);
+Function updateTabCount();
 
 #ifdef DEBUG
 Function debugTab (Tab t);
@@ -63,9 +66,9 @@ Function debugTabs ();
 Global Tab firstTab, lastTab, lastActiveT;
 Global ToggleButton lastActive;
 Global Group sg, tabHolder, CproSUI, CproBrowser;
-Global int totalTabWidth, widthMouseDown;
+Global int totalTabWidth, widthMouseDown, tabCount;
 Global ComponentBucket widgetLoader;
-Global boolean aligned, checkedBrowser; // @martin: remove this when done ;)
+Global boolean aligned, checkedBrowser, isFullNames; // @martin: remove this when done ;)
 Global PopUpMenu popMenu;
 Global List hiddenTabs;
 
@@ -100,12 +103,21 @@ System.onScriptLoaded ()
 	internalNames.addItem("Browser");			//4
 	internalNames.addItem("@ALL@");				//5
 
+	List internalNamesShort = new List;
+	internalNamesShort.addItem("LIB");		//0
+	internalNamesShort.addItem("PLE");		//1
+	internalNamesShort.addItem("VID");		//2
+	internalNamesShort.addItem("VIS");		//3
+	internalNamesShort.addItem("BRO");		//4
+	internalNamesShort.addItem("@ALL@");	//5
+
 	/** Create ordered list of all saved tabs */
 
 	Bitlist isInternal = new BitList;
 	hiddenTabs = new List;
 	List orderedTabs = new List;
 	List widgetNames = new List;
+	List widgetNames2 = new List;
 	Bitlist passedWidgets = new BitList;
 	Bitlist skipWidget = new BitList;
 	passedWidgets.setSize(widgetLoader.getNumChildren());
@@ -113,6 +125,10 @@ System.onScriptLoaded ()
 
 	int n = getPrivateInt("ClassicPro", "TabOrder_nItems", 0);
 	skipWidget.setSize(n);
+	
+	isFullNames = true;
+	
+	
 	if (n == 0) // First start, we need to init!
 	{
 		isInternal.setSize(internalNames.getNumItems());
@@ -128,6 +144,7 @@ System.onScriptLoaded ()
 			GuiObject d = widgetLoader.enumChildren(i);
 			orderedTabs.addItem(d.getXmlParam("userdata"));
 			widgetNames.addItem(getToken(d.getXmlParam("name"), ";", 0));
+			widgetNames2.addItem(getToken(d.getXmlParam("name"), ";", 1));
 		}
 	}
 	else
@@ -155,6 +172,7 @@ System.onScriptLoaded ()
 						{
 							passedWidgets.setItem(j, true); // Mark this widget to be inited
 							widgetNames.addItem(getToken(d.getXmlParam("name"), ";", 0));
+							widgetNames2.addItem(getToken(d.getXmlParam("name"), ";", 1));
 							isInternal.setItem(i, false);
 							orderedTabs.addItem(ids);
 							found = true;
@@ -180,6 +198,7 @@ System.onScriptLoaded ()
 				GuiObject d = widgetLoader.enumChildren(i);
 				orderedTabs.addItem(d.getXmlParam("userdata"));
 				widgetNames.addItem(getToken(d.getXmlParam("name"), ";", 0));
+				widgetNames2.addItem(getToken(d.getXmlParam("name"), ";", 1));
 			}
 		}
 	}
@@ -207,6 +226,8 @@ System.onScriptLoaded ()
 				tabI.ID = orderedTabs.enumItem(i);
 				tabI.IDS = "";
 				tabI.isInternal = true;
+				tabI.nameLong = internalNames.enumItem(tabI.ID);
+				tabI.nameShort = internalNamesShort.enumItem(tabI.ID);
 			}
 			else
 			{
@@ -217,6 +238,14 @@ System.onScriptLoaded ()
 				tabI.IDS = getToken(orderedTabs.enumItem(i), ";", 0);
 				tabI.statusbar = stringToInteger(getToken(orderedTabs.enumItem(i), ";", 1));
 				tabI.isInternal = false;
+				tabI.nameLong = widgetNames.enumItem(0);
+				
+				if(widgetNames2.enumItem(0)!="") tabI.nameShort = strupper(strLeft(widgetNames2.enumItem(0),3)); //Force all languagepacks to 3max & uppercase
+				else tabI.nameShort = strupper(strLeft(widgetNames.enumItem(0),3));
+				
+				//debugstring(integerToString(widgetNames.getNumItems())+" _ "+integerToString(widgetNames2.getNumItems()) + widgetNames2.enumItem(0),9);
+				widgetNames.removeItem(0);
+				widgetNames2.removeItem(0);
 			}
 
 			Boolean hideTab;
@@ -249,15 +278,20 @@ System.onScriptLoaded ()
 			tabI.init(tabHolder);
 
 			text t = tabI.findObject("cpro.tab.text");
-			if (tabI.isInternal)
+			t.setXmlParam("text", tabI.nameLong);
+			//t.setXmlParam("text", tabI.nameShort);
+			
+			
+			/*if (tabI.isInternal)
 			{
-				t.setXmlParam("text", internalNames.enumItem(tabI.ID));	
+				t.setXmlParam("text", tabI.nameLong);
+				//t.setXmlParam("text", internalNames.enumItem(tabI.ID));	
 			}
 			else
 			{
-				t.setXmlParam("text", widgetNames.enumItem(0));
-				widgetNames.removeItem(0);
-			}
+				//t.setXmlParam("text", widgetNames.enumItem(0));
+				//widgetNames.removeItem(0);
+			}*/
 			
 			updateTabWidth(tabI);
 			if (hideTab)
@@ -285,6 +319,7 @@ System.onScriptLoaded ()
 	delete internalNames;
 	delete isInternal;
 	delete widgetNames;
+	delete widgetNames2;
 	delete skipWidget;
 	delete passedWidgets;
 }
@@ -701,15 +736,37 @@ forceAlign (Tab t)
 
 align(Tab t)
 {
-	if (tabHolder.getWidth() < totalTabWidth)
-	{
-		aligned = false;
-		alignByResize();
+	boolean startFNbool = isFullNames;
+	
+	if(isFullNames){
+		if (tabHolder.getWidth() < totalTabWidth){
+			aligned = false;
+			alignByResize();
+		}
+		else if (!aligned)	{		
+			alignFull(firstTab);
+			aligned = true;
+		}
 	}
-	else if (!aligned)
-	{		
-		alignFull(firstTab);
-		aligned = true;
+	else{
+		if (tabHolder.getWidth() < totalTabWidth)
+		{
+			aligned = false;
+			alignByResize();
+		}
+		else if(tabHolder.getWidth()>tabCount*50){
+			isFullNames = true;
+			alignByResize();
+		}
+		else if (!aligned)
+		{		
+			alignFull(firstTab);
+			aligned = true;
+		}
+	}
+	
+	if(startFNbool!=isFullNames){
+		align(t);
 	}
 }
 
@@ -755,6 +812,16 @@ alignByResize ()
 		t = t.right;
 	}
 }*/
+
+updateTabCount(){
+	Tab t = firstTab;
+	tabCount = 0;
+	while (t != NULL)	{
+		tabCount++;
+		t = t.right;
+	}
+}
+
 alignByResize ()
 {
 	Tab t = firstTab;
@@ -762,18 +829,44 @@ alignByResize ()
 	/*
 	Martin... please replace this peice of code...if possible... just used to count how many visible tabs are there... theres probably a better way to detect ;)
 	*/
-	int tabCountTemp = 0;
-	while (t != NULL)	{
-		tabCountTemp++;
-		t = t.right;
-	}
+	updateTabCount();
+	
 	t = firstTab;
 	
-	float ratio = (tabHolder.getWidth()-tabCountTemp*20)/(totalTabWidth-tabCountTemp*20);
+	float ratio = (tabHolder.getWidth()-tabCount*20)/(totalTabWidth-tabCount*20);
+	
+	text tn = t.findObject("cpro.tab.text");
+	//debugstring(floattostring(ratio,5),9);
+	
+	/*if(isFullNames){
+		if(ratio<0.65) isFullNames = false;
+	}*/
+	if(tabHolder.getWidth()<=tabCount*50) isFullNames = false;
+	
+	/*else{
+		if(tabHolder.getWidth()>300) isFullNames = true;
+	}*/
+	
 	if(ratio<0) ratio=0;
 
 	int x = 0;
 
+	while (t != NULL)
+	{
+		if(isFullNames){
+			text tn = t.findObject("cpro.tab.text");
+			tn.setXmlParam("text", t.nameLong);
+		}
+		else{
+			text tn = t.findObject("cpro.tab.text");
+			tn.setXmlParam("text", t.nameShort);
+		}
+		updateTabWidth(t);
+		t = t.right;
+	}
+
+	ratio = (tabHolder.getWidth()-tabCount*20)/(totalTabWidth-tabCount*20);
+	t = firstTab;
 	while (t != NULL)
 	{
 		t.w = (t.maxW-20)*ratio+20;
@@ -902,6 +995,7 @@ sg.onAction (String action, String param, int x, int y, int p1, int p2, GuiObjec
 			CproSUI.sendAction ("widget_statusbar", "", t.statusbar, 0, 0, 0);
 		}
 	}
+	//sg.sendAction("update_tabname", "123123", 0, 0, 0, 0)
 	else if(strlower(action) == "update_tabname")
 	{			
 		Tab tabI = firstTab;
