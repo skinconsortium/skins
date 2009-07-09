@@ -101,7 +101,7 @@ System.onScriptLoaded ()
 	internalNames.addItem("Video");				//2
 	internalNames.addItem("Visualization");		//3
 	internalNames.addItem("Browser");			//4
-	internalNames.addItem("@ALL@");				//5
+	internalNames.addItem("Plugin");			//5
 
 	List internalNamesShort = new List;
 	internalNamesShort.addItem("LIB");		//0
@@ -109,7 +109,7 @@ System.onScriptLoaded ()
 	internalNamesShort.addItem("VID");		//2
 	internalNamesShort.addItem("VIS");		//3
 	internalNamesShort.addItem("BRO");		//4
-	internalNamesShort.addItem("@ALL@");	//5
+	internalNamesShort.addItem("PLU");	//5
 
 	/** Create ordered list of all saved tabs */
 
@@ -847,8 +847,6 @@ alignByResize ()
 		if(tabHolder.getWidth()>300) isFullNames = true;
 	}*/
 	
-	if(ratio<0) ratio=0;
-
 	int x = 0;
 
 	while (t != NULL)
@@ -866,6 +864,9 @@ alignByResize ()
 	}
 
 	ratio = (tabHolder.getWidth()-tabCount*20)/(totalTabWidth-tabCount*20);
+	if(ratio<0) ratio=0;
+	if(ratio>1) ratio=1;
+
 	t = firstTab;
 	while (t != NULL)
 	{
@@ -995,10 +996,45 @@ sg.onAction (String action, String param, int x, int y, int p1, int p2, GuiObjec
 			CproSUI.sendAction ("widget_statusbar", "", t.statusbar, 0, 0, 0);
 		}
 	}
-	//sg.sendAction("update_tabname", "123123", 0, 0, 0, 0)
 	else if(strlower(action) == "update_tabname")
-	{			
+	{	
 		Tab tabI = firstTab;
+		while (tabI != null)
+		{
+			if (tabI.ID == x)
+			{
+				tabI.nameLong = getToken(param, ";", 0);
+				if(getToken(param, ";", 1)!="") tabI.nameShort = strupper(strLeft(getToken(param, ";", 1),3)); //Force all languagepacks to 3max & uppercase
+				else tabI.nameShort = strupper(strLeft(getToken(param, ";", 0),3));
+				
+				text t = tabI.findObject("cpro.tab.text");
+				if(isFullNames) t.setXmlParam("text", tabI.nameLong);
+				else t.setXmlParam("text", tabI.nameShort);
+				updateTabWidth(tabI);
+				align(firstTab);
+				return;
+			}
+			tabI = tabI.right;
+		}
+		
+			
+					
+					/*text t = tabI.findObject("cpro.tab.text");
+					t.setXmlParam("text", param);
+					int oldTotalTabWidth = totalTabWidth;
+					updateTabWidth(tabI);
+
+					if (sg.getWidth() < totalTabWidth || sg.getWidth() < oldTotalTabWidth)
+					{
+						alignByResize();
+					}
+					else
+					{
+						align(tabI);	
+					}
+					return;*/
+
+		/*Tab tabI = firstTab;
 		while (tabI != null)
 		{
 			if (tabI.isInternal)
@@ -1022,7 +1058,7 @@ sg.onAction (String action, String param, int x, int y, int p1, int p2, GuiObjec
 				}
 			}
 			tabI = tabI.right;
-		}	
+		}*/
 	}
 	
 	debugTabs();
