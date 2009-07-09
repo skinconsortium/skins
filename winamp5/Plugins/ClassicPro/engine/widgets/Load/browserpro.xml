@@ -1,4 +1,4 @@
-<groupdef id="centro.widgets.browserpro.dummy.main" name="BrowserPro" userdata="centro.widgets.browserpro;0" windowtype="centro.widgets.main">
+<groupdef id="centro.widgets.browserpro.dummy.main" name="BrowserPro;BPR" userdata="centro.widgets.browserpro;0" windowtype="centro.widgets.main">
 	<guiobject	id="@author"		userdata="Pieter Niewoudt"/>
 	<guiobject	id="@version"		userdata="1.00"/>
 </groupdef>
