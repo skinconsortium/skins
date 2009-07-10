@@ -1,4 +1,12 @@
 -------------------------------------------------------------
+Version 1.13 (x Jul 2009)
+-------------------------------------------------------------
+- Improved: Short tab names are now used when the width is small
+- Fixed: Plugin tab still openned after swithing to winshade mode and back
+-------------------------------------------------------------
+
+
+-------------------------------------------------------------
 Version 1.12 (6 Jun 2009)
 -------------------------------------------------------------
 - New: Widget Manager
@@ -9,6 +17,7 @@ Version 1.12 (6 Jun 2009)
 - Improved: Abort option if Winamp is running for Installer
 - Fixed: Various tab bugs
 -------------------------------------------------------------
+
 
 -------------------------------------------------------------
 Version 1.11 (25 Apr 2009)
