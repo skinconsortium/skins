@@ -4,6 +4,7 @@
 #include attribs/init_Autoresize.m
 #include <lib/quickPlaylist.mi>
 #include <lib/fileio.mi>
+#include <lib/application.mi>
 #include "../../lib/ClassicProFile.mi"
 
 //#define rres 20 
@@ -32,7 +33,7 @@ Global GuiObject progressbar, seekBg;
 Global Vis mainVis;
 Global Text tracktimer, infodisplay;
 Global GuiObject trackTitle, vol_images;
-Global Button bolt, fakeAbout, changeTheme;
+Global Button bolt, fakeAbout, changeTheme, sysMenu, sysMenuFake;
 Global Popupmenu selMenu;
 Global XmlDoc myDoc;
 
@@ -69,6 +70,8 @@ System.onScriptLoaded() {
 	bolt = mainGroup.findObject("winampbolt");
 	fakeAbout = mainGroup.findObject("aboutwinamp.hidden");
 	changeTheme = mainGroup.findObject("Cpro.theme.next");
+	sysMenu = mainGroup.findObject("player.sysmenu");
+	sysMenuFake = mainGroup.findObject("player.sysmenu.fake");
 
 	bgLeftRead = mainGroup.findObject("read.bg.left");
 	bgTopRead = mainGroup.findObject("read.bg.top");
@@ -425,6 +428,17 @@ bolt.onRightButtonUp(int x, int y){
 	}
 	Complete;
 	delete selMenu;
+}
+sysMenu.onLeftButtonDblClk(int x, int y){
+	Application.Shutdown();
+}
+sysMenu.onLeftClick(){
+	sysMenuFake.leftClick();
+	complete;
+}
+sysMenu.onRightButtonUp(int x, int y){
+	ClassicProFile.exploreFile(getMyFile());
+	complete;
 }
 
 

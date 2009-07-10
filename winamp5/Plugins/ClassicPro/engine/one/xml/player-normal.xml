@@ -127,7 +127,8 @@
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\one\scripts\mainmenu.maki"/>
 
 
-	<button x="6" y="3" action="SYSMENU" image="menu.1"	hoverImage="menu.2"	downImage="menu.3" rectrgn="1" tooltip="Main Menu"/>
+	<button id="player.sysmenu.fake" x="6" y="22" action="SYSMENU"/>
+	<button id="player.sysmenu" x="6" y="3" image="menu.1"	hoverImage="menu.2"	downImage="menu.3" rectrgn="1" tooltip="Main Menu"/>
 
 	<NStatesButton id="player.aot" x="-111" y="3" relatx="1" image="aot.1." hoverimage="aot.2." downimage="aot.3." rectrgn="1" cfgattrib="{280876CF-48C0-40BC-8E86-73CE6BB462E5};Always on top" nstates="2" tooltip="Toggle Always on top" cfgvals="0;1"/>
 	<layer id="player.aot.docked" x="-111" y="3" relatx="1" image="aot.1.1" visible="0" ghost="1"/>

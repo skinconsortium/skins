@@ -1,4 +1,5 @@
 #include <lib/std.mi>
+#include <lib/std.mi>
 #include attribs/init_Autoresize.m
 #include <lib/fileio.mi>
 #include "../../lib/ClassicProFile.mi"
