@@ -208,15 +208,21 @@ System.onscriptunloading(){
 }
 
 xuiGroup.onSetVisible(boolean onOff){
+	int pageNo = getPublicInt("cPro.lastComponentPage", 0);
+
 	if(skipLoad && 	!wasTabTrig){
-		int pageNo = getPublicInt("cPro.lastComponentPage", 0);
 		//if(pageNo==5) pageNo=0;
 		openTabNo(pageNo);
+		//debugstring(integertoString(pageNo),9);
 		ssWinHol.start();
 		skipLoad=false;
 	}
 	if(mainFrame.getPosition()==0){
 		area_right.hide();
+	}
+	
+	if(!onOff){
+		if(pageNo==5) openTabNo(0);
 	}
 }
 
@@ -235,7 +241,7 @@ System.onOpenUrl(string url){
 
 System.onGetCancelComponent(String guid, boolean goingvisible){
 	//debugString(guid,9);
-	//setClipboardText(guid);
+	setClipboardText(guid);
 	//debug(guid);
 
 	// Check to see if this component is on the blacklist, and if it is, it will open in its own window or just close it...
@@ -307,6 +313,7 @@ System.onGetCancelComponent(String guid, boolean goingvisible){
 				hold_Other.setXMLParam("hold", "");
 				hold_Other.show();
 				hold_Other.setXMLParam("hold", "@all@");
+				//hold_Other.setXMLParam("hold", "guid:"+ guid);
 				refreshAIOTab.start();
 			}
 			return false;
