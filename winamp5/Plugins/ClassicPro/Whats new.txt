@@ -5,6 +5,7 @@ Version 1.13 (x Jul 2009)
 - New: Double-clicking the topleft menu button now closes Winamp
 - Improved: Short tab names are now used when the width is small
 - Improved: Main menu now opens under the button and not over it
+- Improved: AlbumArt refresh uses regular Winamp API
 - Fixed: Plugin tab still openned after swithing to winshade mode and back
 -------------------------------------------------------------
 
