@@ -6,7 +6,7 @@ Function refreshCover();
 Function String getMyFile();
 
 Global Group XUIGroup;
-Global GuiObject albumart;
+Global AlbumArtLayer albumart;
 Global PopUpMenu popMenu;
 Global Timer lookagain;
 
@@ -32,11 +32,11 @@ albumart.onRightButtonUp(int x, int y){
 
 	if (result==1){
 		if (system.getAlbumArt(system.getPlayItemString()) > 0)	{
-			albumart.setXmlParam("notfoundimage", getXmlParam("notfoundimage"));
+			refreshCover();
 		}
 	}
 	else if(result == 2){
-		albumart.setXmlParam("notfoundimage", getXmlParam("notfoundimage"));
+		refreshCover();
 	}
 	else if (result == 3){
 		//System.navigateUrl(getMyPath());
@@ -70,6 +70,8 @@ refreshCover(){
 	else{
 		albumart.setXmlParam("notfoundimage","cover.notfound");
 	}
+
+	AlbumArt.refresh();
 	
 	if(stype == "" && !lookagain.isRunning()) lookagain.start();
 	else if(stype != "") lookagain.stop();
