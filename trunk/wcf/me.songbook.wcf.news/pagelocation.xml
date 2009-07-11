@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<!DOCTYPE import SYSTEM "DTD/import.dtd">
+<data>
+	<import>
+		<pagelocation name="wcf.usersOnline.location.sb.news">
+			<pattern><![CDATA[index\.php\?page=SimpleNews]]></pattern>
+		</pagelocation>
+	</import>
+</data>

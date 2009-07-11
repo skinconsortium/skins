@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE package SYSTEM "http://www.woltlab.com/DTDs/package.dtd">
+<package name="me.songbook.wbb.startpage">
+	<packageinformation>
+		<packagename><![CDATA[WBB Start Page]]></packagename>
+		<packagedescription><![CDATA[Adds configuration possibility to change the WBB Start Page.]]></packagedescription>
+		<packagedescription language="de"><![CDATA[Ermöglicht es die WBB Startseite zu ändern.]]></packagedescription>
+		<packagedescription language="de-informal"><![CDATA[Ermöglicht es die WBB Startseite zu ändern.]]></packagedescription>
+		<isunique>0</isunique>
+		<version>0.2.0-dev4</version>
+		<date>2009-07-01</date>
+		<plugin>com.woltlab.wbb</plugin>
+	</packageinformation>
+	
+	<authorinformation>
+		<author><![CDATA[Martin Pöhlmann]]></author>
+		<authorurl>http://www.skinconsortium.com</authorurl>
+	</authorinformation>
+
+	<instructions type="install">
+		<packageinstallationplugins>pip.tar</packageinstallationplugins>
+		<files>files.tar</files>
+		<sql>install.sql</sql>
+		<options>options.xml</options>
+		<groupoptions>groupoptions.xml</groupoptions>
+		<eventlistener>eventlistener.xml</eventlistener>
+		<acpmenu>acpmenu.xml</acpmenu>
+		<acptemplates>acptemplates.tar</acptemplates>
+		<languages languagecode="en">en.xml</languages>
+		<languages languagecode="de">de.xml</languages>
+		<languages languagecode="de-informal">de-informal.xml</languages>
+	</instructions>
+
+	<instructions type="update" fromversion="0.2.*">
+		<packageinstallationplugins>pip.tar</packageinstallationplugins>
+		<files>files.tar</files>
+		<options>options.xml</options>
+		<groupoptions>groupoptions.xml</groupoptions>
+		<eventlistener>eventlistener.xml</eventlistener>
+		<acpmenu>acpmenu.xml</acpmenu>
+		<acptemplates>acptemplates.tar</acptemplates>
+		<languages languagecode="en">en.xml</languages>
+		<languages languagecode="de">de.xml</languages>
+		<languages languagecode="de-informal">de-informal.xml</languages>
+	</instructions>
+
+</package>

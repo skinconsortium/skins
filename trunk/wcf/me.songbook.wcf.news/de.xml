@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "http://www.woltlab.com/DTDs/language.dtd">
+<language languagecode="de">
+	<category name="wcf.acp.option">
+		<item name="wcf.acp.option.category.songbook_news"><![CDATA[News Seite]]></item>
+		<item name="wcf.acp.option.category.songbook_news.description"><![CDATA[Einstellungen der News Seite]]></item>
+		<item name="wcf.acp.option.category.songbook_news.hotTopic"><![CDATA[Simple News]]></item>
+		<item name="wcf.acp.option.category.songbook_news.hotTopic.description"><![CDATA[Hierbei handelt es sich um ein Forum-basierendes News System. Es nimmt die aktuellsten Beiträge aus einem Board und zeigt den jeweiligen Start-Beitrag auf der News Seite an.]]></item>
+		<item name="wcf.acp.option.category.songbook_news.addThis"><![CDATA[AddThis]]></item>
+		<item name="wcf.acp.option.category.songbook_news.addThis.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.category.songbook_news.appearance"><![CDATA[Darstellung]]></item>
+		<item name="wcf.acp.option.category.songbook_news.appearance.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.category.songbook_news.feed"><![CDATA[News Feed]]></item>
+		<item name="wcf.acp.option.category.songbook_news.feed.description"><![CDATA[]]></item>
+
+		<item name="wcf.acp.option.songbook_news_hottopic_subboards"><![CDATA[Unterforen durchsuchen]]></item>
+		<item name="wcf.acp.option.songbook_news_hottopic_subboards.description"><![CDATA[Unterforen dieses Forums werden für Newseinträge auch durchsucht.]]></item>
+		<item name="wcf.acp.option.songbook_news_hottopic_boardid"><![CDATA[Board ID]]></item>
+		<item name="wcf.acp.option.songbook_news_hottopic_boardid.description"><![CDATA[Bitte die ID des Boards eintragen welches als für Newseinträge genutzt werden soll (Mehrere Boards mit ',' trennen.]]></item>
+		<item name="wcf.acp.option.songbook_news_hottopic_numberoftopics"><![CDATA[Anzahl an Beiträgen]]></item>
+		<item name="wcf.acp.option.songbook_news_hottopic_numberoftopics.description"><![CDATA[Bitte die Anzahl der Beiträge, welche auf der News Seite angezeigt werden sollen, angeben.]]></item>
+		<item name="wcf.acp.option.songbook_news_hottopic_incthreadviews"><![CDATA[Zugriffszähler erhöhen]]></item>
+		<item name="wcf.acp.option.songbook_news_hottopic_incthreadviews.description"><![CDATA[Soll der Zugriffszähler eines jeden auf der News Seite befindlichen Beitrags erhöht werden sobald die Seite geladen wird?]]></item>
+
+		<item name="wcf.acp.option.songbook_news_hottopic_showannouncements"><![CDATA[Ankündigungen anzeigen]]></item>
+		<item name="wcf.acp.option.songbook_news_hottopic_showannouncements.description"><![CDATA[Wenn diese Option an ist werden Ankündigungen des News-Boards auch auf der News Seite angezeigt.]]></item>
+		<item name="wcf.acp.option.songbook_news_hottopic_showstickies"><![CDATA[Show Stickies]]></item>
+		<item name="wcf.acp.option.songbook_news_hottopic_showstickies.description"><![CDATA[Wenn diese Option an ist werden wichtige Threads des News-Boards auch auf der News Seite angezeigt.]]></item>
+
+		<item name="wcf.acp.option.songbook_news_hottopic_centertext"><![CDATA[Newstext zentrieren]]></item>
+		<item name="wcf.acp.option.songbook_news_hottopic_centertext.description"><![CDATA[Mithilfe dieser Option kann der Newstext zentriert werden. Eigene Formatierungen können auch mit BBCodes gewählt werden.]]></item>
+		<item name="wcf.acp.option.songbook_news_hottopic_borders"><![CDATA[News in Kästen]]></item>
+		<item name="wcf.acp.option.songbook_news_hottopic_borders.description"><![CDATA[Ist diese Option aktiv wird jeder Eintrag mit einem Kasten umgeben, welcher dem WBB Design ähnelt.]]></item>
+		<item name="wcf.acp.option.songbook_news_hottopic_rightalign"><![CDATA[Buttons rechts anzeigen]]></item>
+		<item name="wcf.acp.option.songbook_news_hottopic_rightalign.description"><![CDATA[Sollen die Buttons wie "Diskutieren" oder "Weitersagen" rechtsbündig angezeigt werden?]]></item>
+		<item name="wcf.acp.option.songbook_news_hottopic_trunctate"><![CDATA[Newstext kürzen]]></item>
+		<item name="wcf.acp.option.songbook_news_hottopic_trunctate.description"><![CDATA[Anzahl der Zeichen ab denen der Newstext mit "...[mehr]" abgekürzt wird. Zum abschalten dieser Function 0 eingeben.]]></item>
+
+		<!-- Feed -->
+		<item name="wcf.acp.option.songbook_news_feed_threadlimit"><![CDATA[Anzahl an Beiträgen]]></item>
+		<item name="wcf.acp.option.songbook_news_feed_threadlimit.description"><![CDATA[Bitte die Anzahl der Beiträge, welche im Feed angezeigt werden sollen, angeben.]]></item>
+		<item name="wcf.acp.option.songbook_news_feed_timelimit"><![CDATA[Zeitgrenze]]></item>
+		<item name="wcf.acp.option.songbook_news_feed_timelimit.description"><![CDATA[Beiträge, welche älter als dieser Wert sind (in Tagen), werden nicht im Feed angezeigt.]]></item>
+
+		<item name="wcf.acp.option.songbook_news_addthis_enable"><![CDATA[AddThis Button anzeigen]]></item>
+		<item name="wcf.acp.option.songbook_news_addthis_enable.description"><![CDATA[Zeigt einen 'Weitersagen' Button zu jedem Newseintrag an, welcher Optionen für persöhnliche und soziale Lesezeichen beinhaltet.]]></item>
+		<item name="wcf.acp.option.songbook_news_addthis_username"><![CDATA[AddThis Benutzername]]></item>
+		<item name="wcf.acp.option.songbook_news_addthis_username.description"><![CDATA[Du solltest deinen AddThis.com Benutzernamen hier eingeben um die Verwendung von Lesezeichen auf deiner Webseite zu verfolgen zu können. Du kannst dich dazu auf http://www.addthis.com/register.php kostenlos registrieren.]]></item>
+	</category>
+	<category name="wbb.sb.news">
+		<item name="wbb.sb.news.title"><![CDATA[News]]></item>
+		<item name="wbb.sb.news.discuss"><![CDATA[Diskutieren]]></item>
+		<item name="wbb.sb.news.comments"><![CDATA[Kommentare]]></item>
+		<item name="wbb.sb.news.comment"><![CDATA[Kommentar]]></item>
+		<item name="wbb.sb.news.share"><![CDATA[Weitersagen]]></item>
+		<item name="wbb.sb.news.archive"><![CDATA[News Archiv]]></item>
+		<item name="wbb.sb.news.rssabo"><![CDATA[RSS abonnieren]]></item>
+		<item name="wbb.sb.news.atomabo"><![CDATA[Atom abonieren]]></item>
+		<item name="wbb.sb.news.trunctate"><![CDATA[[mehr]]]></item>
+		<item name="wbb.sb.news.trunctate.tooltip"><![CDATA[Weiterlesen...]]></item>
+	</category>
+	<category name="wcf.usersOnline">
+		<item name="wcf.usersOnline.location.sb.news"><![CDATA[News]]></item>
+	</category>
+</language>

@@ -1,0 +1,106 @@
+﻿<?xml version="1.0"?>
+<!DOCTYPE data SYSTEM "http://www.woltlab.com/DTDs/options.dtd">
+<data>
+	<import>
+		<categories>
+			<category name="songbook_news"></category>
+			<category name="songbook_news.hotTopic">
+				<parent>songbook_news</parent>
+				<showorder>1</showorder>
+			</category>
+			<category name="songbook_news.appearance">
+				<parent>songbook_news</parent>
+				<showorder>2</showorder>
+			</category>
+			<category name="songbook_news.feed">
+				<parent>songbook_news</parent>
+				<showorder>3</showorder>
+			</category>
+			<category name="songbook_news.addThis">
+				<parent>songbook_news</parent>
+				<showorder>4</showorder>
+			</category>
+		</categories>
+	
+		<options>
+			<!-- General -->
+			<option name="songbook_news_hottopic_boardid">
+				<categoryname>songbook_news.hotTopic</categoryname>
+				<optiontype>text</optiontype>
+				<defaultvalue>1</defaultvalue>
+			</option>
+			<option name="songbook_news_hottopic_subboards">
+				<categoryname>songbook_news.hotTopic</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+			</option>
+			<option name="songbook_news_hottopic_numberoftopics">
+				<categoryname>songbook_news.hotTopic</categoryname>
+				<optiontype>integer</optiontype>
+				<defaultvalue>5</defaultvalue>
+			</option>
+			<option name="songbook_news_hottopic_showannouncements">
+				<categoryname>songbook_news.hotTopic</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>1</defaultvalue>
+			</option>
+			<option name="songbook_news_hottopic_showstickies">
+				<categoryname>songbook_news.hotTopic</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>1</defaultvalue>
+			</option>
+			<option name="songbook_news_hottopic_incthreadviews">
+				<categoryname>songbook_news.hotTopic</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>1</defaultvalue>
+			</option>
+
+			<!-- Appearance -->
+			<option name="songbook_news_hottopic_centertext">
+				<categoryname>songbook_news.appearance</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+			</option>
+			<option name="songbook_news_hottopic_borders">
+				<categoryname>songbook_news.appearance</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+			</option>
+			<option name="songbook_news_hottopic_rightalign">
+				<categoryname>songbook_news.appearance</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+			</option>
+			<option name="songbook_news_hottopic_trunctate">
+				<categoryname>songbook_news.appearance</categoryname>
+				<optiontype>integer</optiontype>
+				<defaultvalue>0</defaultvalue>
+			</option>
+
+			<!-- Feed -->
+			<option name="songbook_news_feed_threadlimit">
+				<categoryname>songbook_news.feed</categoryname>
+				<optiontype>integer</optiontype>
+				<defaultvalue>10</defaultvalue>
+			</option>
+			<option name="songbook_news_feed_timelimit">
+				<categoryname>songbook_news.feed</categoryname>
+				<optiontype>integer</optiontype>
+				<defaultvalue>30</defaultvalue>
+			</option>
+
+			<!-- AddThis -->
+			<option name="songbook_news_addthis_enable">
+				<categoryname>songbook_news.addThis</categoryname>
+				<optiontype>boolean</optiontype>
+				<enableoptions>songbook_news_addthis_username</enableoptions>
+				<defaultvalue>1</defaultvalue>
+			</option>
+			<option name="songbook_news_addthis_username">
+				<categoryname>songbook_news.addThis</categoryname>
+				<optiontype>text</optiontype>
+				<defaultvalue></defaultvalue>
+			</option>
+		</options>
+	</import>
+</data>

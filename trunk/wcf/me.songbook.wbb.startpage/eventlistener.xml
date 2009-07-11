@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!DOCTYPE data SYSTEM "http://www.woltlab.com/DTDs/eventListeners.dtd">
+<data>
+	<import>
+		<eventlistener>
+            <eventClassName>IndexPage</eventClassName>
+            <eventName>readParameters</eventName>
+			<inherit>0</inherit>
+			<listenerClassFile>lib/system/event/listener/StartPageListener.class.php</listenerClassFile>
+		</eventlistener>
+	</import>
+</data>

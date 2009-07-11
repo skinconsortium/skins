@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "http://www.woltlab.com/DTDs/language.dtd">
+<language languagecode="de-informal">
+	<category name="wcf.acp.group">
+		<item name="wcf.acp.group.option.category.admin.system.startpage"><![CDATA[Startseite]]></item>
+		<item name="wcf.acp.group.option.category.admin.system.startpage.description"><![CDATA[]]></item>
+		<item name="wcf.acp.group.option.admin.system.startpage.canSetStartPage"><![CDATA[Kann die Startseite ändern]]></item>
+		<item name="wcf.acp.group.option.admin.system.startpage.canSetStartPage.description"><![CDATA[Mitglieder dieser Benutzergruppe können die WBB Startseite ändern.]]></item>
+	</category>
+	<category name="wcf.acp.menu">
+		<item name="wcf.acp.menu.link.system.startpage"><![CDATA[Startseite]]></item>
+		<item name="wcf.acp.menu.link.system.startpage.settings"><![CDATA[Einstellungen]]></item>
+	</category>
+	<category name="wcf.acp.startpage">
+		<item name="wcf.acp.startpage.settings"><![CDATA[Startseiten Einstellungen]]></item>
+		<item name="wcf.acp.startpage.settings.description"><![CDATA[Hier kannst du die WBB Startseite ändern.]]></item>
+		<item name="wcf.acp.startpage.settings.request"><![CDATA[Startseiten Request]]></item>
+		<item name="wcf.acp.startpage.settings.request.description"><![CDATA[Wähle den Request der ausgeführt werden soll, wenn ein Benutzer das WBB Forum auf der Verzeichniswurzel aufruft.<br/>Die Verzeichniswurzel ist die URL deines Forums ohne angehängten Request. (Beispiel: www.mysite.com/forum/).]]></item>
+		<item name="wcf.acp.startpage.settings.request.status.off"><![CDATA[Standard Seite (Forenauflistung)]]></item>
+		<item name="wcf.acp.startpage.settings.request.status.off.description"><![CDATA[Ist diese Option gewählt, wird die WBB Forenauflistung als Startseite festgelegt.]]></item>
+		<item name="wcf.acp.startpage.settings.request.status.suggested.description"><![CDATA[Ist diese Option gewählt, wird {lang}{$suggestedStartpageName}{/lang} als Startseite festgelegt.]]></item>
+		<item name="wcf.acp.startpage.settings.request.status.custom"><![CDATA[Benutzerdefinierte Seite]]></item>
+		<item name="wcf.acp.startpage.settings.request.status.custom.description"><![CDATA[Ist diese Option gewählt, wird eine benutzerdefinierte URL als Startseite festgelegt.]]></item>
+		<item name="wcf.acp.startpage.settings.request.status.custom.edit.description"><![CDATA[Beispiel: 'page=Index'. Bitte entferne jegliche Sessioninformationen von der URL.]]></item>
+	</category>
+	<category name="wcf.acp.package">
+		<item name="wcf.acp.package.step.install.StartPageInstallationPlugin"><![CDATA[WBB Startsage konfigurieren]]></item>
+		<item name="wcf.acp.package.step.update.StartPageInstallationPlugin"><![CDATA[WBB Startsage konfigurieren]]></item>
+		<item name="wcf.acp.package.step.uninstall.StartPageInstallationPlugin"><![CDATA[WBB Start Page konfigurieren]]></item>
+		<item name="wcf.acp.package.step.StartPageInstallationPlugin"><![CDATA[Wähle die standard WBB Startseite aus]]></item>
+		<item name="wcf.acp.package.step.StartPageInstallationPlugin.description"><![CDATA[Mit den weiter unten aufgefürten Optionen kannst du die standard WBB Start Seite ändern. Die standard WBB Startseite wird angezeigt, wenn ein Benutzer deinen Forum besucht ohne einen Request in der URL zu übergeben (Beispiel: www.mysite.com/forums/).]]></item>
+		<item name="wcf.acp.package.step.StartPageInstallationPlugin.keep"><![CDATA[Aktuelle Startseite beibehalten (standard)]]></item>
+		<item name="wcf.acp.package.step.StartPageInstallationPlugin.keep.description"><![CDATA[Ist diese Option gewählt, wird die aktuelle Startseite nicht geändert.]]></item>
+	</category>
+</language>

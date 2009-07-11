@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<!DOCTYPE package SYSTEM "http://www.woltlab.com/DTDs/package.dtd">
+<package name="me.songbook.wbb.news">
+	<packageinformation>
+		<packagename>Simple News</packagename>
+		<packagedescription>Adds a simple news page that can be configured via ACP.</packagedescription>
+		<isunique>1</isunique>
+		<version>1.1.2</version>
+		<date>2008-05-14</date>
+		<plugin>com.woltlab.wbb</plugin>
+	</packageinformation>
+	
+	<requiredpackages>
+		<requiredpackage minversion="1.0.8">com.woltlab.wbb</requiredpackage>
+	</requiredpackages>
+	
+	<optionalpackages>
+		<optionalpackage
+			minversion="1.1.1"
+			file="requirements/me.songbook.wbb.news.headermenu.tar">me.songbook.wbb.news.headermenu</optionalpackage>
+		<optionalpackage
+			minversion="1.0.0"
+			file="requirements/com.plunts.wbb.news.hidehack.tar">com.plunts.wbb.news.hidehack</optionalpackage>
+	</optionalpackages>
+
+	<authorinformation>
+		<author>Martin Poehlmann</author>
+		<authorurl>http://www.songbook.me</authorurl>
+	</authorinformation>
+
+	<instructions type="install">
+		<templates>templates.tar</templates>
+		<files>files.tar</files>
+		<options>options.xml</options>
+		<languages languagecode="en">en.xml</languages>
+		<languages languagecode="de">de.xml</languages>
+		<languages languagecode="de-informal">de-informal.xml</languages>
+		<languages languagecode="da">da.xml</languages>
+		<languages languagecode="hr">hr.xml</languages>
+		<languages languagecode="it">it.xml</languages>
+		<languages languagecode="fr">fr.xml</languages>
+		<pagelocation>pagelocation.xml</pagelocation>
+	</instructions>
+
+	<instructions type="update" fromversion="1.1.2*">
+		<templates>templates.tar</templates>
+		<files>files.tar</files>
+		<options>options.xml</options>
+		<languages languagecode="en">en.xml</languages>
+		<languages languagecode="de">de.xml</languages>
+		<languages languagecode="de-informal">de-informal.xml</languages>
+		<languages languagecode="da">da.xml</languages>
+		<languages languagecode="hr">hr.xml</languages>
+		<languages languagecode="it">it.xml</languages>
+		<languages languagecode="fr">fr.xml</languages>
+		<pagelocation>pagelocation.xml</pagelocation>
+	</instructions>
+
+	<instructions type="update" fromversion="1.1.1*">
+		<templates>templates.tar</templates>
+		<files>files.tar</files>
+		<options>options.xml</options>
+		<languages languagecode="en">en.xml</languages>
+		<languages languagecode="de">de.xml</languages>
+		<languages languagecode="de-informal">de-informal.xml</languages>
+		<languages languagecode="da">da.xml</languages>
+		<languages languagecode="hr">hr.xml</languages>
+		<languages languagecode="it">it.xml</languages>
+		<languages languagecode="fr">fr.xml</languages>
+		<pagelocation>pagelocation.xml</pagelocation>
+	</instructions>
+
+	<instructions type="update" fromversion="1.1.0">
+		<templates>templates.tar</templates>
+		<files>files.tar</files>
+		<options>options.xml</options>
+		<languages languagecode="en">en.xml</languages>
+		<languages languagecode="de">de.xml</languages>
+		<languages languagecode="de-informal">de-informal.xml</languages>
+		<languages languagecode="da">da.xml</languages>
+		<languages languagecode="hr">hr.xml</languages>
+		<languages languagecode="it">it.xml</languages>
+		<languages languagecode="fr">fr.xml</languages>
+		<pagelocation>pagelocation.xml</pagelocation>
+	</instructions>
+
+	<instructions type="update" fromversion="1.1.0-rc3">
+		<templates>templates.tar</templates>
+		<files>files.tar</files>
+		<options>options.xml</options>
+		<languages languagecode="en">en.xml</languages>
+		<languages languagecode="de">de.xml</languages>
+		<languages languagecode="de-informal">de-informal.xml</languages>
+		<languages languagecode="da">da.xml</languages>
+		<languages languagecode="hr">hr.xml</languages>
+		<languages languagecode="it">it.xml</languages>
+		<languages languagecode="fr">fr.xml</languages>
+		<headermenu>headermenu.xml</headermenu>
+		<pagelocation>pagelocation.xml</pagelocation>
+	</instructions>
+
+</package>

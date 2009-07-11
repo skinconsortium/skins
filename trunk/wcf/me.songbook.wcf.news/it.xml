@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "http://www.woltlab.com/DTDs/language.dtd">
+<language languagecode="it">
+	<category name="wcf.acp.option">
+		<item name="wcf.acp.option.category.songbook_news"><![CDATA[Pagina News]]></item>
+		<item name="wcf.acp.option.category.songbook_news.description"><![CDATA[Configurazione della pagina news]]></item>
+		<item name="wcf.acp.option.category.songbook_news.hotTopic"><![CDATA[Simple News]]></item>
+		<item name="wcf.acp.option.category.songbook_news.hotTopic.description"><![CDATA[Questo è un forum basato sul sistema news. Prende tutte le discussioni di uno specifico forum e gli estratti dei loro primi messaggi. Questo è visualizzato come un normale messaggio del forum.]]></item>
+		<item name="wcf.acp.option.category.songbook_news.addThis"><![CDATA[AddThis]]></item>
+		<item name="wcf.acp.option.category.songbook_news.addThis.description"><![CDATA[Bookmarking Sociale e Personale.]]></item>
+
+		<item name="wcf.acp.option.songbook_news_hottopic_boardid"><![CDATA[ID Forum]]></item>
+		<item name="wcf.acp.option.songbook_news_hottopic_boardid.description"><![CDATA[Si prega di inserire l'ID del forum che si vuole usare come per le discussioni Notizie.]]></item>
+		<item name="wcf.acp.option.songbook_news_hottopic_numberoftopics"><![CDATA[Numero di notizie]]></item>
+		<item name="wcf.acp.option.songbook_news_hottopic_numberoftopics.description"><![CDATA[Inserire la quantità delle notizie mostrate nella pagina Notizie.]]></item>
+		<item name="wcf.acp.option.songbook_news_hottopic_incthreadviews"><![CDATA[Incremento visite Discussioni ]]></item>
+		<item name="wcf.acp.option.songbook_news_hottopic_incthreadviews.description"><![CDATA[Se il counter delle visite delle discussioni di ogni Notizia mostrata deve essere incrementato quando un utente carica la pagina News.]]></item>
+
+		<item name="wcf.acp.option.songbook_news_hottopic_showannouncements"><![CDATA[Mostra Annunci]]></item>
+		<item name="wcf.acp.option.songbook_news_hottopic_showannouncements.description"><![CDATA[Se questa opzione è attivata gli annunci delle notizie del forum sono inclusi nella lista notizie.]]></item>
+		<item name="wcf.acp.option.songbook_news_hottopic_showstickies"><![CDATA[Mostra Importanti]]></item>
+		<item name="wcf.acp.option.songbook_news_hottopic_showstickies.description"><![CDATA[Se questa opzione è attivata, gli importanti notizie del forum sono inclusi nella lista notizie.]]></item>
+
+		<item name="wcf.acp.option.songbook_news_hottopic_borders"><![CDATA[Traccia i bordi]]></item>
+		<item name="wcf.acp.option.songbook_news_hottopic_borders.description"><![CDATA[Attivando questa opzione ogni voce della notizia opition sarà circondato da un bordo simile al WBB.]]></item>
+		<item name="wcf.acp.option.songbook_news_hottopic_rightalign"><![CDATA[Allinea i bottoni sulla destra]]></item>
+		<item name="wcf.acp.option.songbook_news_hottopic_rightalign.description"><![CDATA[Visualizza il bottone Discuti e Condividi sul lato destro dell'argomento delle notizie.]]></item>
+
+		<item name="wcf.acp.option.songbook_news_addthis_enable"><![CDATA[Mostra bottone AddThis]]></item>
+		<item name="wcf.acp.option.songbook_news_addthis_enable.description"><![CDATA[Mostra un bottone Condividi per ogni argomento che offre personale e sociale bookmarking.]]></item>
+		<item name="wcf.acp.option.songbook_news_addthis_username"><![CDATA[Nome Utente AddThis]]></item>
+		<item name="wcf.acp.option.songbook_news_addthis_username.description"><![CDATA[Devi inserire il nome utente su AddThis.com qui, al fine di monitorare Bookmarking. È possibile registrarsi gratuitamente al http://www.addthis.com/register.php]]></item>
+	</category>
+	<category name="wbb.sb.news">
+		<item name="wbb.sb.news.title"><![CDATA[Notizie]]></item>
+		<item name="wbb.sb.news.discuss"><![CDATA[Discuti]]></item>
+		<item name="wbb.sb.news.comments"><![CDATA[Commenti]]></item>
+		<item name="wbb.sb.news.comment"><![CDATA[Commento]]></item>
+		<item name="wbb.sb.news.share"><![CDATA[Condividi]]></item>
+		<item name="wbb.sb.news.archive"><![CDATA[Archivio Notizie]]></item>
+		<item name="wbb.sb.news.rssabo"><![CDATA[Sottoscrivi a RSS]]></item>
+		<item name="wbb.sb.news.atomabo"><![CDATA[Sottoscrivi ad Atom]]></item>
+	</category>
+	<category name="wcf.usersOnline">
+		<item name="wcf.usersOnline.location.sb.news"><![CDATA[Notizie]]></item>
+	</category>
+</language>

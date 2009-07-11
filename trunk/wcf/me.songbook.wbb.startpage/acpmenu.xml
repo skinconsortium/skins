@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE data SYSTEM "http://www.woltlab.com/DTDs/acpMenu.dtd">
+<data>	
+	<import>
+		
+		<acpmenuitem name="wcf.acp.menu.link.system.startpage">
+			<parent>wcf.acp.menu.link.system</parent>
+			<showorder>100</showorder>
+			<permissions>admin.system.startpage.canSetStartPage</permissions>
+		</acpmenuitem>
+		
+		<acpmenuitem name="wcf.acp.menu.link.system.startpage.settings">
+			<parent>wcf.acp.menu.link.system.startpage</parent>
+			<icon>icon/startPageConfigM.png</icon>
+			<link>index.php?form=StartPageSettings</link>
+			<showorder>1</showorder>
+			<permissions>admin.system.startpage.canSetStartPage</permissions>
+		</acpmenuitem>
+
+	</import>
+</data>

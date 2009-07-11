@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!DOCTYPE package SYSTEM "http://www.woltlab.com/DTDs/package.dtd">
+<package name="me.songbook.wbb.news.headermenu">
+	<packageinformation>
+		<packagename>Simple News Headermenu</packagename>
+		<packagedescription>Adds a headermenu entry for Simple News.</packagedescription>
+		<packagedescription language="da">Tilføjer en hovedmenu indgang til Simple News pluginet.</packagedescription>
+		<packagedescription language="de">Fügt dem Simple News Plugin einen Headermenu Eintrag hinzu.</packagedescription>
+		<packagedescription language="de-informal">Fügt dem Simple News Plugin einen Headermenu Eintrag hinzu.</packagedescription>
+		<isunique>1</isunique>
+		<version>1.1.2</version>
+		<date>2009-05-14</date>
+		<plugin>com.woltlab.wbb</plugin>
+	</packageinformation>
+	
+	<requiredpackages>
+		<requiredpackage minversion="1.1.2">me.songbook.wbb.news</requiredpackage>
+	</requiredpackages>
+
+	<authorinformation>
+		<author>Martin Poehlmann</author>
+		<authorurl>http://www.songbook.me</authorurl>
+	</authorinformation>
+
+	<instructions type="install">
+		<languages languagecode="en">en.xml</languages>
+		<languages languagecode="de">de.xml</languages>
+		<languages languagecode="de-informal">de-informal.xml</languages>
+		<languages languagecode="da">da.xml</languages>
+		<languages languagecode="hr">hr.xml</languages>
+		<languages languagecode="it">it.xml</languages>
+		<languages languagecode="fr">fr.xml</languages>
+		<files>files.tar</files>
+		<headermenu>headermenu.xml</headermenu>
+	</instructions>
+
+	<instructions type="update" fromversion="1.1.0">
+		<languages languagecode="en">en.xml</languages>
+		<languages languagecode="de">de.xml</languages>
+		<languages languagecode="de-informal">de-informal.xml</languages>
+		<languages languagecode="da">da.xml</languages>
+		<languages languagecode="hr">hr.xml</languages>
+		<languages languagecode="it">it.xml</languages>
+		<languages languagecode="fr">fr.xml</languages>
+		<files>files.tar</files>
+		<headermenu>headermenu.xml</headermenu>
+	</instructions>
+
+</package>

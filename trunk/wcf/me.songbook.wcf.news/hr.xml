@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "http://www.woltlab.com/DTDs/language.dtd">
+<language languagecode="hr">
+	<category name="wcf.acp.option">
+		<item name="wcf.acp.option.category.songbook_news"><![CDATA[Stranica Novosti]]></item>
+		<item name="wcf.acp.option.category.songbook_news.description"><![CDATA[Postavke Novosti]]></item>
+		<item name="wcf.acp.option.category.songbook_news.hotTopic"><![CDATA[Jednostavne Novosti]]></item>
+		<item name="wcf.acp.option.category.songbook_news.hotTopic.description"><![CDATA[Ovdje se radi o forumskim novostima. Uzima aktualne novosti iz foruma i prikazuje početni post na stranici sa novostima.]]></item>
+		<item name="wcf.acp.option.category.songbook_news.addThis"><![CDATA[DodajOvo]]></item>
+		<item name="wcf.acp.option.category.songbook_news.addThis.description"><![CDATA[]]></item>
+
+		<item name="wcf.acp.option.songbook_news_hottopic_boardid"><![CDATA[ID Foruma]]></item>
+		<item name="wcf.acp.option.songbook_news_hottopic_boardid.description"><![CDATA[Molim Vas upišite ID podforuma, iz kojeg želite da se koriste teme na stranici sa novostima.]]></item>
+		<item name="wcf.acp.option.songbook_news_hottopic_numberoftopics"><![CDATA[Broj unosa]]></item>
+		<item name="wcf.acp.option.songbook_news_hottopic_numberoftopics.description"><![CDATA[Odredite broj novosti, koje želite prikazati na stranici sa novostima.]]></item>
+		<item name="wcf.acp.option.songbook_news_hottopic_incthreadviews"><![CDATA[Prirast pogleda teme]]></item>
+		<item name="wcf.acp.option.songbook_news_hottopic_incthreadviews.description"><![CDATA[Želite li da brojač pregleda svaki put povečava broj pregleda tog posta ovisno o otvaranju stranice?]]></item>
+
+		<item name="wcf.acp.option.songbook_news_hottopic_showannouncements"><![CDATA[Najave Prikazati]]></item>
+		<item name="wcf.acp.option.songbook_news_hottopic_showannouncements.description"><![CDATA[Ako je ova postavka aktivirana, onda će se i najave podforuma prikazivati na stranici sa novostima.]]></item>
+		<item name="wcf.acp.option.songbook_news_hottopic_showstickies"><![CDATA[Važne teme prikazati]]></item>
+		<item name="wcf.acp.option.songbook_news_hottopic_showstickies.description"><![CDATA[Ako je ova postavka aktivirana, onda će se i važne teme podforuma prikazivati na stranici sa novostima.]]></item>
+
+		<item name="wcf.acp.option.songbook_news_hottopic_borders"><![CDATA[Novosti sa rubom]]></item>
+		<item name="wcf.acp.option.songbook_news_hottopic_borders.description"><![CDATA[Ako je ova postavka aktivirana, onda će se svaki unos okviriti, koji slići WBB designu.]]></item>
+		<item name="wcf.acp.option.songbook_news_hottopic_rightalign"><![CDATA[Tipke desno prikazati]]></item>
+		<item name="wcf.acp.option.songbook_news_hottopic_rightalign.description"><![CDATA[Želite li tipke "Komentiraj" ili "Reci Dalje" na desnoj stranic prikazati?]]></item>
+
+		<item name="wcf.acp.option.songbook_news_addthis_enable"><![CDATA[AddThis tipku prikazati]]></item>
+		<item name="wcf.acp.option.songbook_news_addthis_enable.description"><![CDATA[Prikaži dugme za djeljenje na svakoj temi koja ima ličnu ili socijalnu oznaku.]]></item>
+		<item name="wcf.acp.option.songbook_news_addthis_username"><![CDATA[AddThis Korisničko ime]]></item>
+		<item name="wcf.acp.option.songbook_news_addthis_username.description"><![CDATA[Trebate svoje AddThis.com korisničko ime ovdje upisati, kako bi ova opcija mogli funkcionirati. Možete se besplatno registrirati na http://www.addthis.com/register.php.]]></item>
+	</category>
+	<category name="wbb.sb.news">
+		<item name="wbb.sb.news.title"><![CDATA[Novosti]]></item>
+		<item name="wbb.sb.news.discuss"><![CDATA[Komentiraj]]></item>
+		<item name="wbb.sb.news.comments"><![CDATA[Komentari]]></item>
+		<item name="wbb.sb.news.comment"><![CDATA[Komentar]]></item>
+		<item name="wbb.sb.news.share"><![CDATA[Reci Dalje]]></item>
+		<item name="wbb.sb.news.archive"><![CDATA[Arhiva Novosti]]></item>
+		<item name="wbb.sb.news.rssabo"><![CDATA[RSS abonirati]]></item>
+		<item name="wbb.sb.news.atomabo"><![CDATA[Atom abonirati]]></item>
+	</category>
+	<category name="wcf.usersOnline">
+		<item name="wcf.usersOnline.location.sb.news"><![CDATA[Novosti]]></item>
+	</category>
+</language>

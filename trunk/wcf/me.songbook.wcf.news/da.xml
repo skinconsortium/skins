@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE language SYSTEM "http://www.woltlab.com/DTDs/language.dtd">
+<language languagecode="da">
+  <category name="wcf.acp.option">
+    <item name="wcf.acp.option.category.songbook_news"><![CDATA[Nyheds side]]></item>
+    <item name="wcf.acp.option.category.songbook_news.description"><![CDATA[Opsætning af nyheds side]]></item>
+    <item name="wcf.acp.option.category.songbook_news.hotTopic"><![CDATA[Simple News]]></item>
+    <item name="wcf.acp.option.category.songbook_news.hotTopic.description"><![CDATA[Dette er et forum baseret nyhedssystem. Det benytter alle de seneste tråde fra et angivet forum og laver et udtræk af deres første indlæg, som vises på nyhedssiden som et almindeligt forum indlæg.]]></item>
+    <item name="wcf.acp.option.category.songbook_news.addThis"><![CDATA[AddThis]]></item>
+    <item name="wcf.acp.option.category.songbook_news.addThis.description"><![CDATA[Sociale og personlige bogmærker.]]></item>
+    <item name="wcf.acp.option.category.songbook_news.appearance"><![CDATA[Udseende]]></item>
+    <item name="wcf.acp.option.category.songbook_news.appearance.description"><![CDATA[]]></item>
+    <item name="wcf.acp.option.category.songbook_news.feed"><![CDATA[Nyheds feed]]></item>
+    <item name="wcf.acp.option.category.songbook_news.feed.description"><![CDATA[]]></item>
+    <item name="wcf.acp.option.songbook_news_hottopic_subboards"><![CDATA[Scan underfora]]></item>
+    <item name="wcf.acp.option.songbook_news_hottopic_subboards.description"><![CDATA[Ved aktivering af denne mulighed vil underfora løbende blive scannet for nyheder.]]></item>
+    <item name="wcf.acp.option.songbook_news_hottopic_boardid"><![CDATA[Forum ID]]></item>
+    <item name="wcf.acp.option.songbook_news_hottopic_boardid.description"><![CDATA[Indtast venligst ID'et på det forum, som du vil benytte til nyheds emner.]]></item>
+    <item name="wcf.acp.option.songbook_news_hottopic_numberoftopics"><![CDATA[Antal nyheds anførsler]]></item>
+    <item name="wcf.acp.option.songbook_news_hottopic_numberoftopics.description"><![CDATA[Indtast det antal nyhedsanførsler, der skal vises på nyheds siden.]]></item>
+    <item name="wcf.acp.option.songbook_news_hottopic_incthreadviews"><![CDATA[Forøg tråd visninger]]></item>
+    <item name="wcf.acp.option.songbook_news_hottopic_incthreadviews.description"><![CDATA[Skal tælleren for antal trådvisninger forøges hver gang en bruger indlæser nyheds siden.]]></item>
+    <item name="wcf.acp.option.songbook_news_hottopic_showannouncements"><![CDATA[Vis bekendtgørelser]]></item>
+    <item name="wcf.acp.option.songbook_news_hottopic_showannouncements.description"><![CDATA[Hvis denne mulighed aktiveres, vil bekendtgørelser i nyhedsforummet blive inkluderet i nyhedslisten.]]></item>
+    <item name="wcf.acp.option.songbook_news_hottopic_showstickies"><![CDATA[Vis marker som vigtigt]]></item>
+    <item name="wcf.acp.option.songbook_news_hottopic_showstickies.description"><![CDATA[Hvis denne mulighed er aktiveret, vil indlæg markeret som vigtigt blive inkluderet i nyhedslisten.]]></item>
+    <item name="wcf.acp.option.songbook_news_hottopic_centertext"><![CDATA[Centrer nyheds tekst]]></item>
+    <item name="wcf.acp.option.songbook_news_hottopic_centertext.description"><![CDATA[Justerer nyhedsbeskeden centreret. Dette er blot en standard justering, der kan ændres med BBCodes]]></item>
+    <item name="wcf.acp.option.songbook_news_hottopic_borders"><![CDATA[Tegner kanter]]></item>
+    <item name="wcf.acp.option.songbook_news_hottopic_borders.description"><![CDATA[Ved aktivering af denne mulighed vil hver nyhedsanførsel blive omkranset af en WBB-lignende kant.]]></item>
+    <item name="wcf.acp.option.songbook_news_hottopic_rightalign"><![CDATA[Justerer knapper til højre]]></item>
+    <item name="wcf.acp.option.songbook_news_hottopic_rightalign.description"><![CDATA[Viser diskussions og dele knappen på den højre side af nyheds emnet.]]></item>
+    <item name="wcf.acp.option.songbook_news_hottopic_trunctate"><![CDATA[Forkort nyhedstekst]]></item>
+    <item name="wcf.acp.option.songbook_news_hottopic_trunctate.description"><![CDATA[Antal tegn som nyhedsteksten vil blive forkortet med "...[mere]". Sættes med 0, hvis du vil slå denne funktion fra.]]></item>
+    <!-- Feed -->
+    <item name="wcf.acp.option.songbook_news_feed_threadlimit"><![CDATA[Antal nye angivelser]]></item>
+    <item name="wcf.acp.option.songbook_news_feed_threadlimit.description"><![CDATA[Indtast antallet af nye angivelser, der skal vises i feed'et.]]></item>
+    <item name="wcf.acp.option.songbook_news_feed_timelimit"><![CDATA[Tidsbegrænsning]]></item>
+    <item name="wcf.acp.option.songbook_news_feed_timelimit.description"><![CDATA[Nyhedsangivelser ældre end denne værdi (i daga) vil ikke blive vist i feed'et.]]></item>
+    <item name="wcf.acp.option.songbook_news_addthis_enable"><![CDATA[Vis AddThis knap]]></item>
+    <item name="wcf.acp.option.songbook_news_addthis_enable.description"><![CDATA[Viser en dele knap for hvert emne der tilbyder et personligt eller et socialt bogmærke.]]></item>
+    <item name="wcf.acp.option.songbook_news_addthis_username"><![CDATA[AddThis brugernavn]]></item>
+    <item name="wcf.acp.option.songbook_news_addthis_username.description"><![CDATA[Du skal anføre dit AddThis.com brugernavn her for at kunne spore bogmærket. Du kan registrere dig gratis ved http://www.addthis.com/register.php]]></item>
+  </category>
+  <category name="wbb.sb.news">
+    <item name="wbb.sb.news.title"><![CDATA[Nyheder]]></item>
+    <item name="wbb.sb.news.discuss"><![CDATA[Diskussioner]]></item>
+    <item name="wbb.sb.news.comments"><![CDATA[Kommentarer]]></item>
+    <item name="wbb.sb.news.comment"><![CDATA[Kommentar]]></item>
+    <item name="wbb.sb.news.share"><![CDATA[Deling]]></item>
+    <item name="wbb.sb.news.archive"><![CDATA[Nyheds arkiv]]></item>
+    <item name="wbb.sb.news.rssabo"><![CDATA[Abbonner på RSS]]></item>
+    <item name="wbb.sb.news.atomabo"><![CDATA[Abbonner på Atom]]></item>
+    <item name="wbb.sb.news.trunctate"><![CDATA[[mere]]]></item>
+    <item name="wbb.sb.news.trunctate.tooltip"><![CDATA[Læs yderligere...]]></item>
+  </category>
+  <category name="wcf.usersOnline">
+    <item name="wcf.usersOnline.location.sb.news"><![CDATA[Nyheder]]></item>
+  </category>
+</language>

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<!DOCTYPE import SYSTEM "DTD/import.dtd">
+<data>
+	<delete>
+		<headermenuitem name="wcf.header.menu.sb.news"/>
+	</delete>
+</data>

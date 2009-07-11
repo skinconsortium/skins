@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "http://www.woltlab.com/DTDs/language.dtd">
+<language languagecode="en">
+	<category name="wcf.acp.group">
+		<item name="wcf.acp.group.option.category.admin.system.startpage"><![CDATA[Start Page]]></item>
+		<item name="wcf.acp.group.option.category.admin.system.startpage.description"><![CDATA[]]></item>
+		<item name="wcf.acp.group.option.admin.system.startpage.canSetStartPage"><![CDATA[Can modify Start Page]]></item>
+		<item name="wcf.acp.group.option.admin.system.startpage.canSetStartPage.description"><![CDATA[Members of this usergroup can modify the WBB Start Page.]]></item>
+	</category>
+	<category name="wcf.acp.menu">
+		<item name="wcf.acp.menu.link.system.startpage"><![CDATA[Start Page]]></item>
+		<item name="wcf.acp.menu.link.system.startpage.settings"><![CDATA[Settings]]></item>
+	</category>
+	<category name="wcf.acp.startpage">
+		<item name="wcf.acp.startpage.settings"><![CDATA[Start Page Settings]]></item>
+		<item name="wcf.acp.startpage.settings.description"><![CDATA[You can modify the WBB Start Page here.]]></item>
+		<item name="wcf.acp.startpage.settings.request"><![CDATA[Page Request]]></item>
+		<item name="wcf.acp.startpage.settings.request.description"><![CDATA[Select the request that should be triggered when a visitor navigates to the directory root of your WBB Forum.<br/>The directory root is the URL of your forum without any request attached (example: www.mysite.com/forum/).]]></item>
+		<item name="wcf.acp.startpage.settings.request.status.off"><![CDATA[Default Page (Forum Root)]]></item>
+		<item name="wcf.acp.startpage.settings.request.status.off.description"><![CDATA[Selecting this option will set the forum root as startpage.]]></item>	<item name="wcf.acp.startpage.settings.request.status.suggested.description"><![CDATA[Selecting this option will set {lang}{$suggestedStartpageName}{/lang} as startpage.]]></item>
+		<item name="wcf.acp.startpage.settings.request.status.custom"><![CDATA[Custom Page]]></item>
+		<item name="wcf.acp.startpage.settings.request.status.custom.description"><![CDATA[Selecting this option will set a custom URL as startpage.]]></item>
+		<item name="wcf.acp.startpage.settings.request.status.custom.edit.description"><![CDATA[Example: 'page=Index'. Please strip any session information from the URL.]]></item>
+	</category>
+	<category name="wcf.acp.package">
+		<item name="wcf.acp.package.step.install.StartPageInstallationPlugin"><![CDATA[Configuring WBB Start Page]]></item>
+		<item name="wcf.acp.package.step.update.StartPageInstallationPlugin"><![CDATA[Configuring WBB Start Page]]></item>
+		<item name="wcf.acp.package.step.uninstall.StartPageInstallationPlugin"><![CDATA[Configuring WBB Start Page]]></item>
+		<item name="wcf.acp.package.step.StartPageInstallationPlugin"><![CDATA[Select your default WBB Start Page]]></item>
+		<item name="wcf.acp.package.step.StartPageInstallationPlugin.description"><![CDATA[You can alter the default WBB Start Page using the given options. The WBB Start Page is the page shown when a user visits your board URL without any request (ie: www.mysite.com/forums/).]]></item>
+		<item name="wcf.acp.package.step.StartPageInstallationPlugin.keep"><![CDATA[Keep current Start Page (Default)]]></item>
+		<item name="wcf.acp.package.step.StartPageInstallationPlugin.keep.description"><![CDATA[Selecting this option will keep your current Start Page.]]></item>
+	</category>
+</language>

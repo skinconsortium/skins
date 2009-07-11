@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "http://www.woltlab.com/DTDs/language.dtd">
+<language languagecode="fr">
+	<category name="wcf.acp.option">
+		<item name="wcf.acp.option.category.songbook_news"><![CDATA[Page de nouvelles]]></item>
+		<item name="wcf.acp.option.category.songbook_news.description"><![CDATA[Configuration de la page de nouvelles]]></item>
+		<item name="wcf.acp.option.category.songbook_news.hotTopic"><![CDATA[Nouvelle simple]]></item>
+		<item name="wcf.acp.option.category.songbook_news.hotTopic.description"><![CDATA[C'est un forum basé sur le système de nouvelles. Il prend tous les sujets récents d'un forum spécifique et extrait leur premier message. Ces derniers sont affichés tout comme les messages normaux du forum.]]></item>
+		<item name="wcf.acp.option.category.songbook_news.addThis"><![CDATA[AddThis]]></item>
+		<item name="wcf.acp.option.category.songbook_news.addThis.description"><![CDATA[Marque-page social et personnel.]]></item>
+		<item name="wcf.acp.option.category.songbook_news.appearance"><![CDATA[Apparence]]></item>
+		<item name="wcf.acp.option.category.songbook_news.appearance.description"><![CDATA[]]></item>
+
+		<item name="wcf.acp.option.songbook_news_hottopic_subboards"><![CDATA[Analyse des sous-forums]]></item>
+		<item name="wcf.acp.option.songbook_news_hottopic_subboards.description"><![CDATA[Cette option analysera les sous-forums contenus dans ce forum pour les nouvelles.]]></item>
+		<item name="wcf.acp.option.songbook_news_hottopic_boardid"><![CDATA[ID Forum]]></item>
+		<item name="wcf.acp.option.songbook_news_hottopic_boardid.description"><![CDATA[Entrez l’ID du forum que vous souhaitez utiliser pour les messages de nouvelles (vous pouvez séparer les ID de plusieurs forums à l’aide de virgules).]]></item>
+		<item name="wcf.acp.option.songbook_news_hottopic_numberoftopics"><![CDATA[Nombre d’entrées dans les nouvelles]]></item>
+		<item name="wcf.acp.option.songbook_news_hottopic_numberoftopics.description"><![CDATA[Entrez le nombre d’articles que vous souhaitez afficher dans la page de nouvelles.]]></item>
+		<item name="wcf.acp.option.songbook_news_hottopic_incthreadviews"><![CDATA[Incrémentation des vues de sujet]]></item>
+		<item name="wcf.acp.option.songbook_news_hottopic_incthreadviews.description"><![CDATA[Le compteur de vues d’un sujet doit-il être incrémenté à chaque fois qu’une nouvelle est affichée en chargeant la page de nouvelles ?]]></item>
+
+		<item name="wcf.acp.option.songbook_news_hottopic_showannouncements"><![CDATA[Montrer les annonces]]></item>
+		<item name="wcf.acp.option.songbook_news_hottopic_showannouncements.description"><![CDATA[En activant cette option, les annonces contenues dans les forums de nouvelles seront incluses dans la liste des nouvelles.]]></item>
+		<item name="wcf.acp.option.songbook_news_hottopic_showstickies"><![CDATA[Montrer les sujets importants]]></item>
+		<item name="wcf.acp.option.songbook_news_hottopic_showstickies.description"><![CDATA[En activant cette option, les sujets importants contenus dans les forums de nouvelles seront inclus dans la liste des nouvelles.]]></item>
+
+		<item name="wcf.acp.option.songbook_news_hottopic_centertext"><![CDATA[Centrer les textes des nouvelles]]></item>
+		<item name="wcf.acp.option.songbook_news_hottopic_centertext.description"><![CDATA[En activant cette option, les nouvelles seront centrées. Cet alignement par défaut peut être altéré par des BBCodes.]]></item>
+		<item name="wcf.acp.option.songbook_news_hottopic_borders"><![CDATA[Dessiner des bordures]]></item>
+		<item name="wcf.acp.option.songbook_news_hottopic_borders.description"><![CDATA[En activant cette option, chaque nouvelle sera entourée d’une bordure aux couleurs du forum.]]></item>
+		<item name="wcf.acp.option.songbook_news_hottopic_rightalign"><![CDATA[Aligner les boutons sur la droite]]></item>
+		<item name="wcf.acp.option.songbook_news_hottopic_rightalign.description"><![CDATA[Affiche les boutons Discuter et Partager sur le côté droit du sujet de nouvelle.]]></item>
+
+		<item name="wcf.acp.option.songbook_news_addthis_enable"><![CDATA[Montrer le bouton AddThis]]></item>
+		<item name="wcf.acp.option.songbook_news_addthis_enable.description"><![CDATA[En activant cette option, un bouton Partager est affiché pour chaque sujet qui offre un marque-page personnel et social.]]></item>
+		<item name="wcf.acp.option.songbook_news_addthis_username"><![CDATA[Nom d’utilisateur AddThis]]></item>
+		<item name="wcf.acp.option.songbook_news_addthis_username.description"><![CDATA[Vous devez entrer votre nom d’utilisateur AddThis.com afin de créer le marque-page. Si vous n’êtes pas enregistré sur AddThis.com, vous pouvez le faire gratuitement sur http://www.addthis.com/register.php]]></item>
+	</category>
+	<category name="wbb.sb.news">
+		<item name="wbb.sb.news.title"><![CDATA[Nouvelles]]></item>
+		<item name="wbb.sb.news.discuss"><![CDATA[Discuter]]></item>
+		<item name="wbb.sb.news.comments"><![CDATA[Commentaires]]></item>
+		<item name="wbb.sb.news.comment"><![CDATA[Commenter]]></item>
+		<item name="wbb.sb.news.share"><![CDATA[Partager]]></item>
+		<item name="wbb.sb.news.archive"><![CDATA[Archive des nouvelles]]></item>
+		<item name="wbb.sb.news.rssabo"><![CDATA[Souscrire au flux RSS]]></item>
+		<item name="wbb.sb.news.atomabo"><![CDATA[Souscrire au flux Atom]]></item>
+	</category>
+	<category name="wcf.usersOnline">
+		<item name="wcf.usersOnline.location.sb.news"><![CDATA[Nouvelles]]></item>
+	</category>
+</language>
