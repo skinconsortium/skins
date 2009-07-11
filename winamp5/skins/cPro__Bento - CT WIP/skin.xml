@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<WasabiXML version="1.34">
+
+<skininfo>
+	<version>1.1</version>
+	<name>cPro - Bento</name>
+	<comment>Graphics by the the original Winamp development team</comment>
+	<author gaybag="pjn123">Skin Consortium</author>
+	<email>classicpro@skinconsortium.com</email>
+	<homepage>http://cpro.skinconsortium.com</homepage>
+	<screenshot>screenshot.png</screenshot>
+</skininfo>
+	<scripts> <script file="warning_1.1.maki" param="@COLORTHEMESPATH@"/> </scripts>
+	<include file="colors.xml"/>
+	<include file="@COLORTHEMESPATH@/../../Plugins/classicPro/engine/load.xml"/>
+</WasabiXML>
