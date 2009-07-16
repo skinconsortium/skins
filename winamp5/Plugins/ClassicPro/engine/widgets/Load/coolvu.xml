@@ -1,6 +1,6 @@
 <groupdef id="centro.widgets.coolvu.drawer" name="Cool VU" userdata="centro.widgets.coolvu;0" windowtype="centro.widgets.drawer">
 	<guiobject id="@author"			userdata="E-Trance"/>
-	<guiobject id="@version"		userdata="1.11"/>
+	<guiobject id="@version"		userdata="1.12"/>
 	<guiobject id="@uninstaller"	userdata="Uninstall (CoolVU).exe"/>
 	<guiobject id="@support"		userdata="http://forums.skinconsortium.com/index.php?page=Thread&amp;threadID=1273"/>
 	<guiobject id="@databaseid"		userdata="130"/>
@@ -36,5 +36,5 @@
 	<group id="coolvu.main" x="0" y="0"/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\widgets\Data\CoolVU\sc_centerGroup.maki" param="coolvu.main;1;1;1"/>
 
-	<SC:UpdateSystem x="0" y="0" h="0" w="0" skinname="coolvu" skinversion="1.11" ofvalue="CoolVU"/>
+	<SC:UpdateSystem x="0" y="0" h="0" w="0" skinname="coolvu" skinversion="1.12" ofvalue="CoolVU"/>
 </groupdef>
