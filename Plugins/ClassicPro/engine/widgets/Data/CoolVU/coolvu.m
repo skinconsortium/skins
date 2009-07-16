@@ -156,16 +156,16 @@ menubtn.onLeftButtonUp(int x, int y) {// Settings menu
   ModeMenu = new PopupMenu;
   for (int c = 1; c < 20; c++) {
     string tip = "";
-    if (c == 1) tip = "\tfast";
-    else if (c == 4) tip = "\tdefault";
-    else if (c == 19) tip = "\tslow";
+    if (c == 1) tip = "\t" + translate("fast");
+    else if (c == 4) tip = "\t" + translate("default");
+    else if (c == 19) tip = "\t" + translate("slow");
     SpeedMenu1.addCommand(integerToString(c)+tip, c+50, steps_up == c, 0);
   }
   for (int c = 81; c < 110; c++) {
     string tip = "";
-    if (c == 1) tip = "\tfast";
-    else if (c == 4) tip = "\tdefault";
-    else if (c == 19) tip = "\tslow";
+    if (c == 1) tip = "\t" + translate("fast");
+    else if (c == 4) tip = "\t" + translate("default");
+    else if (c == 19) tip = "\t" + translate("slow");
     if (c%2==0) SpeedMenu2.addCommand(integerToString(c-80)+tip, c, steps_down == c-80, 0);
   }
   VuMenu.addSubMenu(SpeedMenu1, "Rise speed");

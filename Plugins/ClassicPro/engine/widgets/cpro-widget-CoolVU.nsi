@@ -16,7 +16,7 @@
 !define CPRO_WIDGET_NAME "CoolVU"
 
 ; The current version of your widget
-!define CPRO_WIDGET_VERSION "1.11"
+!define CPRO_WIDGET_VERSION "1.12"
 
 ; The current revision of your widget
 !define CPRO_WIDGET_REVISION "0"
