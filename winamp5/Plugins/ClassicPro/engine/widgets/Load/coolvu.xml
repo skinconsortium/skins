@@ -1,6 +1,6 @@
 <groupdef id="centro.widgets.coolvu.drawer" name="Cool VU" userdata="centro.widgets.coolvu;0" windowtype="centro.widgets.drawer">
 	<guiobject id="@author"			userdata="E-Trance"/>
-	<guiobject id="@version"		userdata="1.12"/>
+	<guiobject id="@version"		userdata="1.5"/>
 	<guiobject id="@uninstaller"	userdata="Uninstall (CoolVU).exe"/>
 	<guiobject id="@support"		userdata="http://forums.skinconsortium.com/index.php?page=Thread&amp;threadID=1273"/>
 	<guiobject id="@databaseid"		userdata="130"/>
@@ -16,11 +16,16 @@
 
 
 <elements>
-    <bitmap id="neddleimg" file="@WINAMPPATH@\Plugins\classicPro\engine\widgets\Data\CoolVU\NEEDLE.PNG" gammagroup="color.display"/>
-	<bitmap id="scaleimg" file="@WINAMPPATH@\Plugins\classicPro\engine\widgets\Data\CoolVU\SCALE.PNG" gammagroup="color.display"/>
+    <bitmap id="neddleimg.white" file="@WINAMPPATH@\Plugins\classicPro\engine\widgets\Data\CoolVU\needle-white.png" gammagroup="n.Color.List"/>
+    <bitmap id="neddleimg.black" file="@WINAMPPATH@\Plugins\classicPro\engine\widgets\Data\CoolVU\needle-black.png" gammagroup="n.Color.List"/>
+    <bitmap id="neddleimg.gray" file="@WINAMPPATH@\Plugins\classicPro\engine\widgets\Data\CoolVU\needle-gray.png" gammagroup="n.Color.List"/>
+	<bitmap id="scaleimg.white" file="@WINAMPPATH@\Plugins\classicPro\engine\widgets\Data\CoolVU\scale-white.png" gammagroup="n.Color.List"/>
+	<bitmap id="scaleimg.black" file="@WINAMPPATH@\Plugins\classicPro\engine\widgets\Data\CoolVU\scale-black.png" gammagroup="n.Color.List"/>
+	<bitmap id="scaleimg.gray" file="@WINAMPPATH@\Plugins\classicPro\engine\widgets\Data\CoolVU\scale-gray.png" gammagroup="n.Color.List"/>
 </elements>
 
 <groupdef id="centro.widgets.coolvu">
+	<rect x="2" y="2" w="-4" h="-21" relatw="1" relath="1" move="1" color="wasabi.list.background" filled="1"/>
 	<group id="coolvu.main.group" x="2" y="4" w="-4" h="-23" relatw="1" relath="1"/>
 	<button id="settings" x="1" y="-18" relaty="1" image="component.menu.1" hoverimage="component.menu.2" downimage="component.menu.3" tooltip="Video Options"/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\widgets\Data\CoolVU\coolvu.maki" param="needle/settings/2/42/0/0"/>
@@ -28,13 +33,13 @@
 
 
 <groupdef id="coolvu.main" w="164" h="130">
-	<layer id="scale" image="scaleimg" x="0" y="0" ghost="1"/>
-	<layer id="needle" image="neddleimg" x="-68" y="-23" ghost="1"/>
+	<layer id="scale" image="scaleimg.white" x="0" y="0" ghost="1" alpha="200"/>
+	<layer id="needle" image="neddleimg.white" x="-68" y="-23" ghost="1" alpha="200"/>
 </groupdef>
 
 <groupdef id="coolvu.main.group">
 	<group id="coolvu.main" x="0" y="0"/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\widgets\Data\CoolVU\sc_centerGroup.maki" param="coolvu.main;1;1;1"/>
 
-	<SC:UpdateSystem x="0" y="0" h="0" w="0" skinname="coolvu" skinversion="1.12" ofvalue="CoolVU"/>
+	<SC:UpdateSystem x="0" y="0" h="0" w="0" skinname="coolvu" skinversion="1.5" ofvalue="CoolVU"/>
 </groupdef>
