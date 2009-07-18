@@ -7,6 +7,7 @@ Version 1.13 (x Jul 2009)
 - Improved: Main menu now opens under the button and not over it
 - Improved: AlbumArt refresh uses regular Winamp API
 - Fixed: Plugin tab still openned after swithing to winshade mode and back
+- Fixed: Now Playing background displays wrong color
 -------------------------------------------------------------
 
 
