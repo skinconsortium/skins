@@ -23,7 +23,7 @@
 
 <groupdef id="sc.nowplaying" xuitag="SC:NowPlaying">
 
-	<rect id="sc.nowplaying.bg" fitparent="1" color="255,255,255" filled="1" move="1" gammagroup="n.Color.ListBg"/>
+	<rect id="sc.nowplaying.bg" fitparent="1" color="wasabi.list.background" filled="1" move="1" gammagroup="n.Color.ListBg"/>
 
 	<SC:FadeText id="sc.nowplaying.line3" x="0" y="5" w="0" h="20" relatw="1" fgcolor="0,0,0" align="center" fontsize="20" alpha="200" translate="0"/>
 	<SC:FadeText id="sc.nowplaying.line2" x="0" y="22" w="0" h="20" relatw="1" fgcolor="0,0,0" align="center" fontsize="16" alpha="225" translate="0"/>

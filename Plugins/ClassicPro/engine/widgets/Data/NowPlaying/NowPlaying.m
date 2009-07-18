@@ -9,6 +9,7 @@ this is a wip, please do not rip it without giving proper credit
 */
 
 #include <lib/std.mi>
+#include <lib/colormgr.mi>
 
 Function setAllTags();
 Function resizeToThis(int x, int y, int w, int h);
@@ -40,7 +41,7 @@ System.onScriptLoaded(){
 	line2 = XUIGroup.findObject("sc.nowplaying.line2");
 	line3 = XUIGroup.findObject("sc.nowplaying.line3");
 	
-	BGCol = XUIGroup.findObject("sc.nowplaying.bg");
+	//BGCol = XUIGroup.findObject("sc.nowplaying.bg");
 	CDBoxFade = XUIGroup.findObject("cdbox.fg.fademask");
 	//CDBoxFade2 = XUIGroup.findObject("cdbox.fg.fademask2");
 
@@ -49,13 +50,16 @@ System.onScriptLoaded(){
 		CDBoxFade.hide();
 		CDBoxFade2.show();
 	}*/
-
-	// Reader for albumart gradient (remove later... just keep here to see what code was used)... this will be done inside the widget from v1.1
-	Map myMap = new Map;
-	myMap.loadMap("wasabi.list.background");
-	XUIGroup.setXmlParam("bgcolor", integerToString(myMap.getARGBValue(0,0,2))+","+integerToString(myMap.getARGBValue(0,0,1))+","+integerToString(myMap.getARGBValue(0,0,0)));
-	delete myMap;
 	
+	// Reader for albumart gradient (remove later... just keep here to see what code was used)... this will be done inside the widget from v1.1
+	//Map myMap = new Map;
+	//myMap.loadMap("wasabi.list.background");
+	Color myColor = ColorMgr.getColor("wasabi.list.background");
+	//XUIGroup.setXmlParam("bgcolor", integerToString(myMap.getARGBValue(0,0,2))+","+integerToString(myMap.getARGBValue(0,0,1))+","+integerToString(myMap.getARGBValue(0,0,0)));
+	XUIGroup.setXmlParam("bgcolor", integerToString(myColor.getRed())+","+integerToString(myColor.getGreen())+","+integerToString(myColor.getBlue()));
+	delete myColor;
+	//delete myMap;
+		
 	delayMyResize = new Timer;
 	delayMyResize.setDelay(100);
 	
@@ -100,9 +104,10 @@ System.onSetXuiParam(String param, String value)
 	if(strlower(param) == "bgcolor")
 	{
 		string sbgcol = strlower(value);
-		BGCol.setXMLParam("color", sbgcol);
+		//BGCol.setXMLParam("color", sbgcol);
 
 		//gradient fade to mask the reflection from image to background ie fade it to nothing
+		CDBoxFade.setXMLParam("gammagroup", "n.Color.ListBg");
 		CDBoxFade.setXMLParam("points", "0.0=" + sbgcol + ",50;1.0=" + sbgcol + ",255"); //pjn mix
 		
 	}
@@ -162,7 +167,7 @@ XUIGroup.onSetVisible(boolean onOff)
 		lyrFxFG.fx_setEnabled(1);
 		
 		setAllTags();
-		delayMyResize.start();	
+		delayMyResize.start();
 	}
 	else{
 		lyrFx.fx_setEnabled(0);
