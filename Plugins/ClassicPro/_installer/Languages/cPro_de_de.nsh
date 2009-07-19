@@ -84,6 +84,7 @@
 	LangString CPro_FinishPage_5 ${LANG_GERMAN} "Weitere ${CPRO_NAME} Skins und Widgets finden."
 	LangString CPro_FinishPage_6 ${LANG_GERMAN} "Winamp mit der Standard ${CPRO_NAME} Skin öffnen"
 	LangString CPro_FinishPage_7 ${LANG_GERMAN} "Beenden"	
+	LangString CPro_FinishPage_8 ${LANG_GERMAN} "Open Winamp with current skin"
 	
 ; First Page of Uninstaller
 	LangString CPro_Un_Welcome_Title ${LANG_GERMAN} "Willkomen zum $(^NameDA) Deinstallationsprogramm"

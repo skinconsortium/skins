@@ -83,7 +83,8 @@
 	LangString CPro_FinishPage_4 ${LANG_ROMANIAN} "Acþiuni dupã terminarea instalãrii:"
 	LangString CPro_FinishPage_5 ${LANG_ROMANIAN} "Explorare pagina ${CPRO_NAME} ºi descãrcare interfeþe ºi gadgeturi"
 	LangString CPro_FinishPage_6 ${LANG_ROMANIAN} "Deschidere Winamp cu interfaþa implicitã ${CPRO_NAME}"
-	LangString CPro_FinishPage_7 ${LANG_ROMANIAN} "Terminare"	
+	LangString CPro_FinishPage_7 ${LANG_ROMANIAN} "Terminare"
+	LangString CPro_FinishPage_8 ${LANG_ROMANIAN} "Open Winamp with current skin"	
 
 ; First Page of Uninstaller
 	LangString CPro_Un_Welcome_Title ${LANG_ROMANIAN} "Bun venit la asistentul pentru dezinstalare a $(^NameDA)"

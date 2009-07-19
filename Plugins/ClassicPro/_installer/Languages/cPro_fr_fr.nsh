@@ -84,6 +84,7 @@
 	LangString CPro_FinishPage_5 ${LANG_FRENCH} "Afficher le site de ${CPRO_NAME} pour plus de skins / gadgets"
 	LangString CPro_FinishPage_6 ${LANG_FRENCH} "Ouvrir Winamp avec le skin ${CPRO_NAME} par défaut"
 	LangString CPro_FinishPage_7 ${LANG_FRENCH} "Terminer"
+	LangString CPro_FinishPage_8 ${LANG_FRENCH} "Open Winamp with current skin"	
 	
 ; First Page of Uninstaller
 	LangString CPro_Un_Welcome_Title ${LANG_FRENCH} "Bienvenue dans l'assistant de désinstallation de $(^NameDA)"

@@ -83,7 +83,8 @@
 	LangString CPro_FinishPage_4 ${LANG_PORTUGUESE_BRAZILIAN} "O que deseja fazer agora?"
 	LangString CPro_FinishPage_5 ${LANG_PORTUGUESE_BRAZILIAN} "Ir para o site e baixar Skins ${CPRO_NAME} e widgets."
 	LangString CPro_FinishPage_6 ${LANG_PORTUGUESE_BRAZILIAN} "Abrir Winamp com skin padrão do ${CPRO_NAME} agora"
-	LangString CPro_FinishPage_7 ${LANG_PORTUGUESE_BRAZILIAN} "Finalzar"	
+	LangString CPro_FinishPage_7 ${LANG_PORTUGUESE_BRAZILIAN} "Finalzar"
+	LangString CPro_FinishPage_8 ${LANG_PORTUGUESE_BRAZILIAN} "Open Winamp with current skin"	
 	
 ; First Page of Uninstaller
 	LangString CPro_Un_Welcome_Title ${LANG_PORTUGUESE_BRAZILIAN} "Bem-vindo ao Desinstalador do $(^NameDA)"

@@ -83,7 +83,8 @@
 	LangString CPro_FinishPage_4 ${LANG_POLISH} "Co chcesz teraz zrobiæ?"
 	LangString CPro_FinishPage_5 ${LANG_POLISH} "Pobierz wiêcej skórek i wid¿etów ze strony ${CPRO_NAME}"
 	LangString CPro_FinishPage_6 ${LANG_POLISH} "Otwórz Winampa z domyœln¹ skórk¹ ${CPRO_NAME}"
-	LangString CPro_FinishPage_7 ${LANG_POLISH} "Zakoñcz"	
+	LangString CPro_FinishPage_7 ${LANG_POLISH} "Zakoñcz"
+	LangString CPro_FinishPage_8 ${LANG_POLISH} "Otwórz Winampa z bie¿¹c¹ skórk¹"	
 
 ; First Page of Uninstaller
 	LangString CPro_Un_Welcome_Title ${LANG_POLISH} "Witam w kreatorze dezinstalacji $(^NameDA)"

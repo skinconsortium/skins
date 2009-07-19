@@ -83,7 +83,8 @@
 	LangString CPro_FinishPage_4 ${LANG_DUTCH} "Wat wilt u nu doen?"
 	LangString CPro_FinishPage_5 ${LANG_DUTCH} "Ga naar onze homepage voor meer ${CPRO_NAME} skins and widgets"
 	LangString CPro_FinishPage_6 ${LANG_DUTCH} "Open Winamp met de standaard ${CPRO_NAME} skin nu"
-	LangString CPro_FinishPage_7 ${LANG_DUTCH} "Klaar"	
+	LangString CPro_FinishPage_7 ${LANG_DUTCH} "Klaar"
+	LangString CPro_FinishPage_8 ${LANG_DUTCH} "Open Winamp with current skin"	
 	
 ; First Page of Uninstaller
 	LangString CPro_Un_Welcome_Title ${LANG_DUTCH} "Welkom bij de $(^NameDA) Uninstall Wizard"

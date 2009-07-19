@@ -84,6 +84,7 @@
 	LangString CPro_FinishPage_5 ${LANG_DANISH} "Gå til vores hjemmeside for at få flere ${CPRO_NAME} skins og widgets"
 	LangString CPro_FinishPage_6 ${LANG_DANISH} "Åben standard ${CPRO_NAME} skin nu"
 	LangString CPro_FinishPage_7 ${LANG_DANISH} "Afslut"	
+	LangString CPro_FinishPage_8 ${LANG_DANISH} "Open Winamp with current skin"
 	
 ; First Page of Uninstaller
 	LangString CPro_Un_Welcome_Title ${LANG_DANISH} "Velkommen til $(^NameDA) Afinstallations Guiden"
