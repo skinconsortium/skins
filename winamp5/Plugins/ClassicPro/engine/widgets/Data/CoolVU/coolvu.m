@@ -34,7 +34,7 @@ entrase@yandex.ru
 
 
 2009-07-19 - Updates by pjn123
-> Needle dont show the volume on change anymore (was it just annoying me?)
+> Added needle showing volume as option
 > Changed the values in the menu's to text already used elsewhere in Winamp
 > Made the gfx colortheme compatible and it should also look more at home in more skins
 
@@ -50,8 +50,9 @@ Function int compress(int val, double c);
 Global Timer mover, volumenotifier;
 Global Layer needle, bg;
 Global Double LAR,level,sens;
-Global Int steps_up, steps_down, channel, limit, mode, turnby, invert;//, whatshow;
+Global Int steps_up, steps_down, channel, limit, mode, turnby, invert, whatshow;
 Global Button menubtn;
+Global Boolean showVolume;
 
 Global Text txt;
 
@@ -74,10 +75,11 @@ System.onScriptLoaded() {// general initialization
 	needle = tg.findObject(needleid);
 	menubtn = tg.findObject(btnid);
 	bg = tg.findObject("scale");
-	steps_up = getPublicInt("cPro.CoolVU.Rotation steps_up of "+needleid, 4);
-	steps_down = getPublicInt("cPro.CoolVU.Rotation steps_down of "+needleid, 8);
-	mode = getPublicInt("cPro.CoolVU.Mode of "+needleid, 4);
-	sens = getPublicInt("cPro.CoolVU.Sensitivity of "+needleid, 125)/100;
+	showVolume = getPublicInt("cPro.CoolVU.ShowVolume", 1);
+	steps_up = getPublicInt("cPro.CoolVU.steps_up", 5);
+	steps_down = getPublicInt("cPro.CoolVU.steps_down", 8);
+	mode = getPublicInt("cPro.CoolVU.Mode", 4);
+	sens = getPublicInt("cPro.CoolVU.Sensitivity", 125)/100;
 
 	txt = tg.getObject("txt");
 
@@ -85,9 +87,9 @@ System.onScriptLoaded() {// general initialization
 	mover = new Timer;
 	mover.setDelay(10);
 	mover.start();
-	//volumenotifier = new Timer;
-	//volumenotifier.setDelay(3000);
-	//whatshow = 0;
+	volumenotifier = new Timer;
+	volumenotifier.setDelay(3000);
+	whatshow = 0;
 
 	Color myColor = ColorMgr.getColor("wasabi.list.text");
 	int avCol = (myColor.getRed()+myColor.getGreen()+myColor.getBlue())/3;
@@ -135,7 +137,7 @@ needle.fx_onGetPixelR(double r, double d, double x, double y) {
 }
 
 getLevel(int ch) {
-	//if (whatshow == 0) {
+	if (whatshow == 0) {
 		if (ch == 0) return compress(getLeftVuMeter(),sens);
 		else if (ch == 1) return compress(getRightVuMeter(),sens);
 		else if (ch == 2) return compress((getRightVuMeter()+getLeftVuMeter())/2,sens);
@@ -143,10 +145,10 @@ getLevel(int ch) {
 			// Extra LF attenuation mode
 			return compress(((getRightVuMeter()+getLeftVuMeter())/2)*(getVisBand(0,0)/850+0.7),sens);
 		}
-	//}
-	//else {
-	//	return getVolume();
-	//}
+	}
+	else {
+		return getVolume();
+	}
 }
 
 compress(int val, double c) {
@@ -159,15 +161,16 @@ compress(int val, double c) {
 	else if (mode == 5) return sqrt(sqrt(ni))*63.813;// Logarithmic
 }
 
-/*volumenotifier.onTimer() {
+volumenotifier.onTimer() {
 	whatshow = 0;
 	volumenotifier.stop();
 }
 
 System.onVolumeChanged(int vol) {
+	if(!showVolume) return;
 	whatshow = 1;
 	volumenotifier.start();
-}*/
+}
 
 menubtn.onLeftButtonUp(int x, int y) {// Settings menu
 	PopupMenu VuMenu;
@@ -209,6 +212,8 @@ menubtn.onLeftButtonUp(int x, int y) {// Settings menu
 
 	VuMenu.addSubMenu(SensMenu, "Sensitivity");
 	VuMenu.addSubMenu(ModeMenu, "Mode");
+	VuMenu.addCommand("Show volume if changed", 200, showVolume,0);
+	
 	//int com = VuMenu.popAtMouse();
 	int com = VuMenu.popAtXY(clientToScreenX(menubtn.getLeft()), clientToScreenY(menubtn.getTop() + menubtn.getHeight()));
 
@@ -226,12 +231,18 @@ menubtn.onLeftButtonUp(int x, int y) {// Settings menu
 	else if (com == 20) mover.start();
 	else if (com > 49 && com < 80) {
 		steps_up = com - 50;
-		setPublicInt("cPro.CoolVU.Rotation steps_up of "+getToken(getParam(), "/", 0), com - 50);
+		setPublicInt("cPro.CoolVU.steps_up", com-50);
 	}
 	else if (com > 80 && com < 111) {
 		steps_down = com - 80;
-		setPublicInt("cPro.CoolVU.Rotation steps_down of "+getToken(getParam(), "/", 0), com-80);
+		setPublicInt("cPro.CoolVU.steps_down", com-80);
 	}
-	setPublicInt("cPro.CoolVU.Sensitivity of "+getToken(getParam(), "/", 0), sens*100);
-	setPublicInt("cPro.CoolVU.Mode of "+getToken(getParam(), "/", 0), mode);
+	else if(com==200){
+		showVolume = !showVolume;
+		setPublicInt("cPro.CoolVU.ShowVolume", showVolume);
+		whatshow = 0;
+		volumenotifier.stop();
+	}
+	setPublicInt("cPro.CoolVU.Sensitivity", sens*100);
+	setPublicInt("cPro.CoolVU.Mode", mode);
 }
