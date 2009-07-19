@@ -83,7 +83,8 @@
 	LangString CPro_FinishPage_4 ${LANG_TURKISH} "Þimdi ne yapmak istiyorsunuz?"
 	LangString CPro_FinishPage_5 ${LANG_TURKISH} "Daha fazla ${CPRO_NAME} widget ve dýþ görünümleri için web sayfamýzý ziyaret edin."
 	LangString CPro_FinishPage_6 ${LANG_TURKISH} "Winamp'ý varsayýlan olarak ${CPRO_NAME} ile baþlat"
-	LangString CPro_FinishPage_7 ${LANG_TURKISH} "Bitir"	
+	LangString CPro_FinishPage_7 ${LANG_TURKISH} "Bitir"
+	LangString CPro_FinishPage_8 ${LANG_TURKISH} "Open Winamp with current skin"	
 	
 ; First Page of Uninstaller
 	LangString CPro_Un_Welcome_Title ${LANG_TURKISH} "$(^NameDA) Kaldýrma Sahirbazý'na Hoþ Geldiniz"

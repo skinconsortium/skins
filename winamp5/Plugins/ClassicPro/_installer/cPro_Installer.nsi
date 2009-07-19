@@ -91,12 +91,7 @@
 	!define MUI_WELCOMEPAGE_TITLE $(CPro_Welcome_Title)
 	!define MUI_WELCOMEPAGE_TEXT $(CPro_Welcome_Text)
 
-	;!if ${CPRO_BUILD_TYPE} != "FINAL"
-		!define MUI_HEADERIMAGE_LEFT
-	;!else
-	;	!define MUI_HEADERIMAGE_RIGHT
-	;!endif 
-
+	!define MUI_HEADERIMAGE_LEFT
 	!define MUI_HEADERIMAGE
 
 	!if ${CPRO_BUILD_TYPE} == "BETA"
@@ -318,8 +313,9 @@ Function .onInit
 	Var /Global Label3
 	Var /Global Label4	
 	Var /Global CheckBox1
-	Var /Global CheckBox2	
-	Var /Global Checkbox_State	
+	Var /Global RadioButton1
+	Var /Global RadioButton2
+	Var /Global Control_State	
 	Var /GLOBAL Button	
 	Var /GLOBAL Img_Left		
 	Var /GLOBAL Img_Handle_Left
@@ -394,7 +390,7 @@ Function CreateFinishPage
 	${NSD_AddStyle} $Label2 ${WS_VISIBLE}|${WS_CHILD}|${WS_CLIPSIBLINGS}
     SetCtlColors $Label2 "0x000000" "TRANSPARENT"	
 	
-	${NSD_CreateButton} 115u 100u 58 35 ""
+	${NSD_CreateButton} 115u 95u 58 35 ""
 	Pop $Button
 	${NSD_AddStyle} $Button "${BS_BITMAP}" 
 	System::Call 'user32::LoadImage(i 0, t "$PLUGINSDIR\PayPal.bmp", i ${IMAGE_BITMAP}, i 0, i 0, i ${LR_CREATEDIBSECTION}|${LR_LOADFROMFILE}) i.s' 
@@ -402,29 +398,30 @@ Function CreateFinishPage
 	SendMessage $Button ${BM_SETIMAGE} ${IMAGE_BITMAP} $1
 	${NSD_OnClick} $Button Button_Click		
 
-	${NSD_CreateLabel} 160u 100u 50% 30u "$(CPro_FinishPage_3)"
+	${NSD_CreateLabel} 160u 95u 50% 30u "$(CPro_FinishPage_3)"
 	Pop $Label3
 	${NSD_AddStyle} $Label3 ${WS_VISIBLE}|${WS_CHILD}|${WS_CLIPSIBLINGS}
-    SetCtlColors $Label3 "0x000000" "TRANSPARENT"
+    SetCtlColors $Label3 "0x111111" "TRANSPARENT"
 
-	${NSD_CreateLabel} 115u 148u 63% 10u "$(CPro_FinishPage_4)"
+	${NSD_CreateLabel} 115u 133u 63% 10u "$(CPro_FinishPage_4)"
 	Pop $Label4
 	${NSD_AddStyle} $Label4 ${WS_VISIBLE}|${WS_CHILD}|${WS_CLIPSIBLINGS}
     SetCtlColors $Label4 "0x000000" "TRANSPARENT"	
 
-	${NSD_CreateCheckBox} 115u 160u 65% 10u "$(CPro_FinishPage_6)"
-	Pop $CheckBox1
-	;${If} $Cleanup_Check_WinampIni_B == ${BST_CHECKED}
-	;	EnableWindow $CheckBox1 0
-	;${Else}
-		${NSD_Check} $CheckBox1
-	;${EndIf}
-	SetCtlColors $CheckBox1 "0x000000" "0xFFFFFF"
+	${NSD_CreateRadioButton} 115u 143u 63% 16u "$(CPro_FinishPage_6)"
+	Pop $RadioButton1
+	${NSD_Check} $RadioButton1
+	SetCtlColors $RadioButton1 "0x000000" "0xFFFFFF"
 	
-	${NSD_CreateCheckBox} 115u 170u 65% 16u "$(CPro_FinishPage_5)"
-	Pop $CheckBox2	
-	${NSD_Check} $CheckBox2		
-    SetCtlColors $CheckBox2 "0x000000" "0xFFFFFF"	
+	${NSD_CreateRadioButton} 115u 155u 63% 16u "$(CPro_FinishPage_8)"
+	Pop $RadioButton2	
+    SetCtlColors $RadioButton2 "0x000000" "0xFFFFFF"	
+	
+	${NSD_CreateCheckBox} 115u 169u 63% 16u "$(CPro_FinishPage_5)"
+	Pop $CheckBox1	
+	${NSD_Check} $CheckBox1		
+    SetCtlColors $CheckBox1 "0x000000" "0xFFFFFF"	
+
 
 	GetDlgItem $R0 $HWNDPARENT 1
 	SendMessage $R0 ${WM_SETTEXT} 0 "STR:$(CPro_FinishPage_7)"
@@ -443,21 +440,20 @@ FunctionEnd
 
 Function CheckFinishPage
 
-	${NSD_GetState} $CheckBox2 $Checkbox_State
-	${If} $Checkbox_State = ${BST_CHECKED}
+	${NSD_GetState} $CheckBox1 $Control_State
+	${If} $Control_State = ${BST_CHECKED}
 		ExecShell "open" "${CPRO_WEB_PAGE}"
 	${EndIf}
-	
-	;${If} $Cleanup_Check_WinampIni_B != ${BST_CHECKED}
-		${NSD_GetState} $CheckBox1 $Checkbox_State
-		${If} $Checkbox_State = ${BST_CHECKED}
 
-			DetailPrint "$(CPro_Ini)"
-				WriteINIStr "$WINAMP_INI_DIR\winamp.ini" "Winamp" "skin" "cPro__Bento.wal"
-				FlushINI "$WINAMP_INI_DIR\winamp.ini"
-			ExecShell "open" "$INSTDIR\winamp.exe"
-		${EndIf}
-	;${EndIf}
+	${NSD_GetState} $RadioButton1 $Control_State
+	${If} $Control_State = ${BST_CHECKED}
+		DetailPrint "$(CPro_Ini)"
+		WriteINIStr "$WINAMP_INI_DIR\winamp.ini" "Winamp" "skin" "cPro__Bento.wal"
+		FlushINI "$WINAMP_INI_DIR\winamp.ini"
+		ExecShell "open" "$INSTDIR\winamp.exe"
+	${Else}
+		ExecShell "open" "$INSTDIR\winamp.exe"
+	${EndIf}
 	
 FunctionEnd
 
