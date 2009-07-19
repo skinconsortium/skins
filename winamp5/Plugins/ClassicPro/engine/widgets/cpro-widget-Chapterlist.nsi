@@ -16,7 +16,7 @@
 !define CPRO_WIDGET_NAME "Chapterlist"
 
 ; The current version of your widget
-!define CPRO_WIDGET_VERSION "0.2"
+!define CPRO_WIDGET_VERSION "0.5"
 
 ; The current revision of your widget
 !define CPRO_WIDGET_REVISION "0"
@@ -67,7 +67,7 @@
 !define /Date CPRO_WIDGET_COPYRIGHT "Copyright (c) 2005-%Y"	
 
 ; Winamp version needed to run CPro and this widget 
-!define CPRO_WINAMP_VERSION "5.55"
+!define CPRO_WINAMP_VERSION "5.56"
 
 ; The name of CPro 
 !define CPRO_NAME "ClassicPro"
@@ -76,7 +76,7 @@
 !define CPRO_CRS "©"	
 
 ; Current version of ClassicPro 
-!define CPRO_VERSION "1.1"
+!define CPRO_VERSION "1.12"
 
 ;-------------------------------------------------------------------------------------------
 ; Always include this file
