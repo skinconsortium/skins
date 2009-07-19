@@ -9,9 +9,10 @@
 #include <lib/fileio.mi>
 #include <lib/application.mi>
 #include <lib/ClassicProFile.mi>
+#include <lib/colormgr.mi>
 
-#define ICON_NORMAL "icon.chapterlist.playing"
-#define ICON_LOOP "icon.chapterlist.loop"
+//#define ICON_NORMAL "icon.chapterlist.playing"
+//#define ICON_LOOP "icon.chapterlist.loop"
 
 Function readXmlList();
 Function saveXmlList();
@@ -33,7 +34,7 @@ Global String lastReadXml;
 Global Timer playingTrack, loopCheck, sleepDblc;
 Global int loopChapter;
 Global boolean loop;
-Global String iconpic;
+Global String iconpic, ICON_NORMAL, ICON_LOOP;
 
 System.onScriptLoaded (){
 	main = getScriptGroup();
@@ -52,6 +53,22 @@ System.onScriptLoaded (){
 
 	myList.setIconWidth(16);
 	myList.setShowIcons(1);
+	
+	Color myColor = ColorMgr.getColor("wasabi.list.text");
+	int avCol = (myColor.getRed()+myColor.getGreen()+myColor.getBlue())/3;
+
+	if(avCol<255/5){
+		ICON_NORMAL = "icon.chapterlist.playing.black";
+		ICON_LOOP = "icon.chapterlist.loop.black";
+	}
+	else if(avCol<255/5*3){
+		ICON_NORMAL = "icon.chapterlist.playing.gray";
+		ICON_LOOP = "icon.chapterlist.loop.gray";
+	}
+	else{
+		ICON_NORMAL = "icon.chapterlist.playing.white";
+		ICON_LOOP = "icon.chapterlist.loop.white";
+	}
 	
 	iconpic = ICON_NORMAL;
 	
@@ -209,11 +226,11 @@ sortSyncTwoLists(){
 addBut.onLeftClick(){
 	if(_times.getNumItems()==0){
 		_times.addItem("0");
-		_names.addItem("Start of first chapter");
+		_names.addItem(System.translate("Start of first chapter"));
 	}
 
 	_times.addItem(integerToString(System.getPosition()));
-	_names.addItem("New Chapter");
+	_names.addItem(System.translate("New Chapter"));
 	
 	fillList(true);
 }

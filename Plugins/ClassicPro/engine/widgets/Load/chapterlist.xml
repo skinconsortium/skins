@@ -1,10 +1,21 @@
 <elements>
-	<bitmap id="icon.chapterlist.playing" file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\widgets\Data\Chapterlist\activechapter.png"/>
-	<bitmap id="icon.chapterlist.loop" file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\widgets\Data\Chapterlist\replaychapter.png"/>
+	<bitmap id="icon.chapterlist.playing.black" file="@WINAMPPATH@\Plugins\classicPro\engine\widgets\Data\Chapterlist\activechapter-black.png" gammagroup="n.Color.List"/>
+	<bitmap id="icon.chapterlist.loop.black" file="@WINAMPPATH@\Plugins\classicPro\engine\widgets\Data\Chapterlist\replaychapter-black.png" gammagroup="n.Color.List"/>
+	<bitmap id="icon.chapterlist.playing.white" file="@WINAMPPATH@\Plugins\classicPro\engine\widgets\Data\Chapterlist\activechapter-white.png" gammagroup="n.Color.List"/>
+	<bitmap id="icon.chapterlist.loop.white" file="@WINAMPPATH@\Plugins\classicPro\engine\widgets\Data\Chapterlist\replaychapter-white.png" gammagroup="n.Color.List"/>
+	<bitmap id="icon.chapterlist.playing.gray" file="@WINAMPPATH@\Plugins\classicPro\engine\widgets\Data\Chapterlist\activechapter-gray.png" gammagroup="n.Color.List"/>
+	<bitmap id="icon.chapterlist.loop.gray" file="@WINAMPPATH@\Plugins\classicPro\engine\widgets\Data\Chapterlist\replaychapter-gray.png" gammagroup="n.Color.List"/>
+
+	<bitmap id="centro.widgets.chapterlist.thumbnail" file="@WINAMPPATH@\Plugins\classicPro\engine\widgets\Data\Chapterlist\thumbnail.png"/>
 </elements>
 
-<groupdef id="centro.widgets.chapterlist.dummy.drawer" name="Chapterlist" userdata="centro.widgets.chapterlist;0" windowtype="centro.widgets.drawer" />
-
+<groupdef id="centro.widgets.chapterlist.dummy.drawer" name="Chapterlist" userdata="centro.widgets.chapterlist;0" windowtype="centro.widgets.drawer">
+	<guiobject id="@author"			userdata="pjn123"/>
+	<guiobject id="@version"		userdata="0.5"/>
+	<guiobject id="@uninstaller"	userdata="Uninstall (Chapterlist).exe"/>
+	<guiobject id="@support"		userdata="http://forums.skinconsortium.com/index.php?page=Thread&amp;threadID=1273"/>
+	<guiobject id="@databaseid"		userdata="128"/>
+</groupdef>
 
 <groupdef id="centro.widgets.chapterlist.bottombuttons">
 	<button id="chapterlist.add" x="0" y="0" image="component.pl.add.1" hoverImage="component.pl.add.2" downImage="component.pl.add.3" tooltip="Add New Chapter"/>
@@ -17,8 +28,8 @@
 </groupdef>
 
 <groupdef id="centro.widgets.chapterlist">
-	<rect id="chapterlist.rect" x="2" y="2" w="-4" h="-21" relatw="1" relath="1" filled="1" color="wasabi.list.background"/>
-	<text id="chapterlist.rect.text" x="2" y="2" w="-4" h="-21" relatw="1" relath="1" text="Create your chapters!" valign="center" align="center" color="wasabi.list.text" italic="1"/>
+	<rect id="chapterlist.rect" x="2" y="2" w="-4" h="-21" relatw="1" relath="1" filled="1" color="wasabi.list.background" move="1"/>
+	<text id="chapterlist.rect.text" x="2" y="2" w="-4" h="-21" relatw="1" relath="1" text="Create your chapters!" valign="center" align="center" color="wasabi.list.text" italic="1" ghost="1"/>
 	<list id="chapterlist" x="2" y="2" w="-4" h="-21" relatw="1" relath="1" nocolheader="1" numcolumns="2" columnwidths="50;-1" visible="0"/>
 	<group id="centro.widgets.chapterlist.bottombuttons" x="1" y="-18" w="-1" relaty="1" relatw="1"/>
 
