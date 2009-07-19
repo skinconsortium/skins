@@ -1,6 +1,6 @@
 <groupdef id="centro.widgets.coolvu.drawer" name="Cool VU" userdata="centro.widgets.coolvu;0" windowtype="centro.widgets.drawer">
 	<guiobject id="@author"			userdata="E-Trance"/>
-	<guiobject id="@version"		userdata="1.5"/>
+	<guiobject id="@version"		userdata="1.51"/>
 	<guiobject id="@uninstaller"	userdata="Uninstall (CoolVU).exe"/>
 	<guiobject id="@support"		userdata="http://forums.skinconsortium.com/index.php?page=Thread&amp;threadID=1273"/>
 	<guiobject id="@databaseid"		userdata="130"/>
@@ -27,7 +27,7 @@
 <groupdef id="centro.widgets.coolvu">
 	<rect x="2" y="2" w="-4" h="-21" relatw="1" relath="1" move="1" color="wasabi.list.background" filled="1"/>
 	<group id="coolvu.main.group" x="2" y="4" w="-4" h="-23" relatw="1" relath="1"/>
-	<button id="settings" x="1" y="-18" relaty="1" image="component.menu.1" hoverimage="component.menu.2" downimage="component.menu.3" tooltip="Video Options"/>
+	<button id="settings" x="1" y="-18" relaty="1" image="component.menu.1" hoverimage="component.menu.2" downimage="component.menu.3" tooltip="Options"/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\widgets\Data\CoolVU\coolvu.maki" param="needle/settings/2/42/0/0"/>
 </groupdef>
 
@@ -41,5 +41,5 @@
 	<group id="coolvu.main" x="0" y="0"/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\widgets\Data\CoolVU\sc_centerGroup.maki" param="coolvu.main;1;1;1"/>
 
-	<SC:UpdateSystem x="0" y="0" h="0" w="0" skinname="coolvu" skinversion="1.5" ofvalue="CoolVU"/>
+	<SC:UpdateSystem x="0" y="0" h="0" w="0" skinname="coolvu" skinversion="1.51" ofvalue="CoolVU"/>
 </groupdef>
