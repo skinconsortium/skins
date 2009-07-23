@@ -113,7 +113,8 @@
 	
 ; Installer pages	
 	!insertmacro MUI_PAGE_WELCOME
-	!insertmacro MUI_PAGE_LICENSE "..\License.txt" ;_installer\License\CPro_en_us_License.rtf"
+;	!insertmacro MUI_PAGE_LICENSE "..\License.txt"
+	!insertmacro MUI_PAGE_LICENSE "..\License.rtf"	
 	!insertmacro MUI_PAGE_COMPONENTS
 	!insertmacro MUI_PAGE_DIRECTORY
 	Page Custom LockedListShow		
@@ -401,7 +402,7 @@ Function CreateFinishPage
 	${NSD_CreateLabel} 160u 95u 50% 30u "$(CPro_FinishPage_3)"
 	Pop $Label3
 	${NSD_AddStyle} $Label3 ${WS_VISIBLE}|${WS_CHILD}|${WS_CLIPSIBLINGS}
-    SetCtlColors $Label3 "0x111111" "TRANSPARENT"
+    SetCtlColors $Label3 "0x000000" "TRANSPARENT"
 
 	${NSD_CreateLabel} 115u 133u 63% 10u "$(CPro_FinishPage_4)"
 	Pop $Label4
