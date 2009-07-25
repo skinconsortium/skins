@@ -107,7 +107,7 @@ System.onScriptLoaded() {
 	
 	if(getPrivateInt(getSkinName(), "muted", 0)==1){
 		mute_but.setActivated(true);
-		mute_but.setXmlParam("tooltip", "Turn Volume on");
+		mute_but.setXmlParam("tooltip", "Turn Volume On");
 		startFade();
 	}
 	
@@ -162,7 +162,7 @@ System.onScriptLoaded() {
 	
 	if(getPrivateInt(getSkinName(), "muted", 0)==1){
 		mute_but.setActivated(true);
-		mute_but.setXmlParam("tooltip", "Turn Volume on");
+		mute_but.setXmlParam("tooltip", "Turn Volume On");
 	}
 	else{
 		mute_but.setActivated(false);
@@ -272,7 +272,7 @@ System.onShowLayout(Layout _layout){
 	if(dontResize){
 		if(getPrivateInt(getSkinName(), "muted", 0)==1){
 			mute_but.setActivated(true);
-			mute_but.setXmlParam("tooltip", "Turn Volume on");
+			mute_but.setXmlParam("tooltip", "Turn Volume On");
 		}
 		else{
 			mute_but.setActivated(false);
@@ -358,7 +358,7 @@ mute_but.onToggle(Boolean onoff){
 	else{
 		setPrivateInt(getSkinName(), "saveVol", getVolume());
 		setVolume(0);
-		mute_but.setXmlParam("tooltip", "Turn Volume on");
+		mute_but.setXmlParam("tooltip", "Turn Volume On");
 		startFade();
 	}
 	setPrivateInt(getSkinName(), "muted", mute_but.getCurCfgVal());

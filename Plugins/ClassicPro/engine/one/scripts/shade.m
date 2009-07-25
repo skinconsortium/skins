@@ -66,7 +66,7 @@ System.onScriptLoaded() {
 
 	if(getPrivateInt(getSkinName(), "muted", 0)==1){
 		mute_but.setActivated(true);
-		mute_but.setXmlParam("tooltip", "Turn Volume on");
+		mute_but.setXmlParam("tooltip", "Turn Volume On");
 	}
 	
 	// Reader for classic vis colors from bitmap (wa5.51)
@@ -126,7 +126,7 @@ myDoc.parser_onCallback (String xmlpath, String xmltag, list paramname, list par
 mainGroup.onSetVisible(boolean onOff){
 	if(getPrivateInt(getSkinName(), "muted", 0)==1){
 		mute_but.setActivated(true);
-		mute_but.setXmlParam("tooltip", "Turn Volume on");
+		mute_but.setXmlParam("tooltip", "Turn Volume On");
 	}
 	else{
 		mute_but.setActivated(false);
@@ -142,7 +142,7 @@ mute_but.onToggle(Boolean onoff){
 	else{
 		setPrivateInt(getSkinName(), "saveVol", getVolume());
 		setVolume(0);
-		mute_but.setXmlParam("tooltip", "Turn Volume on");
+		mute_but.setXmlParam("tooltip", "Turn Volume On");
 	}
 	setPrivateInt(getSkinName(), "muted", mute_but.getCurCfgVal());
 }
