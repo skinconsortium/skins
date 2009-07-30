@@ -113,9 +113,9 @@
 	/>
 	
 	<button id="previous.track" x="11" y="-45" relaty="1" action="PREV" image="player.prev.1" hoverimage="player.prev.2" downimage="player.prev.3" rectrgn="1" tooltip="Previous Track"/>
-	<button x="38" y="-45" relaty="1" action="PLAY" image="player.play.1" hoverimage="player.play.2" downimage="player.play.3" rectrgn="1" tooltip="Play"/>
-	<button x="65" y="-45" relaty="1" action="PAUSE" image="player.pause.1" hoverimage="player.pause.2" downimage="player.pause.3" rectrgn="1" tooltip="Pause Playback"/>
-	<button x="92" y="-45" relaty="1" action="STOP" image="player.stop.1" hoverimage="player.stop.2" downimage="player.stop.3" rectrgn="1" tooltip="Stop Playback"/>
+	<button id="play.track" x="38" y="-45" relaty="1" action="PLAY" image="player.play.1" hoverimage="player.play.2" downimage="player.play.3" rectrgn="1" tooltip="Play"/>
+	<button id="pause.track" x="65" y="-45" relaty="1" action="PAUSE" image="player.pause.1" hoverimage="player.pause.2" downimage="player.pause.3" rectrgn="1" tooltip="Pause Playback"/>
+	<button id="stop.track" x="92" y="-45" relaty="1" action="STOP" image="player.stop.1" hoverimage="player.stop.2" downimage="player.stop.3" rectrgn="1" tooltip="Stop Playback"/>
 	<button id="next.track" x="119" y="-45" relaty="1" action="NEXT" image="player.next.1" hoverimage="player.next.2" downimage="player.next.3" rectrgn="1" tooltip="Next Track"/>
 
 	<button id="open.tracks" x="-160" y="-44" relatx="1" relaty="1" action="EJECT" image="player.eject.1" hoverimage="player.eject.2" downimage="player.eject.3" rectrgn="1" tooltip="Open File(s)"/>
