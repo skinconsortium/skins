@@ -11,6 +11,7 @@
 		<sourceitem name="Metalstorm (Albüm)" comment="Bu albümü www.metalstorm.ee ile arar." url="http://www.metalstorm.ee/home/search.php?search_what=%ALBUM%%AND%search_where=album" icon="icon.metalstorm"/>
 		<sourceitem name="Metalstorm (Sanatçı)" comment="Bu sanatçıyı www.metalstorm.ee ile arar." url="http://www.metalstorm.ee/home/search.php?search_what=%ARTIST%%AND%search_where=band2" icon="icon.metalstorm"/>
 		<sourceitem name="RateYourMusic (Sanatçı)" comment="Bu sanatçı için RateYourMusic'de aramaya yapar." url="http://rateyourmusic.com/search?searchterm=%ARTIST%%AND%searchtype=a" icon="icon.rateyourmusic"/>
+		<sourceitem name="SC Web Search (Song)" comment="Search with Skin Consortium Web Search for this song." url="http://forums.skinconsortium.com/index.php?page=custom%AND%action=search-browserpro%AND%cx=partner-pub-8995745745086103%3Ak3ng4q-3f9c%AND%cof=FORID%3A10%AND%ie=ISO-8859-1%AND%sa=Search%AND%q=%ARTIST% %TITLE%" icon="icon.google"/>
 		<sourceitem name="Songfacts (Sanatçı)" comment="Bu sanatçı için Songfacts'da arama yapar." url="http://www.songfacts.com/search_fact.php?combinedartists=%ARTIST%" icon="icon.songfacts"/>
 		<sourceitem name="Songfacts (Şarkı)" comment="Bu şarkı için Songfacts'da arama yapar." url="http://www.songfacts.com/search_fact.php?title=%TITLE%" icon="icon.songfacts"/>
 		<sourceitem name="Swisscharts (Albüm)" comment="Bu albüm için Swisscharts'da arama yapar." url="http://www.swisscharts.com/search.asp?cat=a%AND%search=%ALBUM%" icon="icon.swisscharts"/>
