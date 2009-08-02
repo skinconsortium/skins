@@ -1,53 +1,151 @@
-<!-- ClassicPro v1.1 Official Translation : 5-Mar-2009 -->
+<!-- ClassicPro v1.13 Official Translation : 02.08.2009 -->
 <!-- Copy and paste this language strings to wasabi.xml, from Winamp language pack-->
 
-	<!-- Generic -->
-	<translation from="View" to="Happy View" />
-	<translation from="Help" to="Happy Help" />
-	<translation from="Select Drawer" to="Happy Select Drawer" />
-	<translation from="Open drawer" to="Happy Open drawer" />		
-	<translation from="Close drawer" to="Happy Close drawer" />
-	<translation from="Close Side" to="Happy Close Side" />
-	<translation from="Open Side" to="Happy Open Side" />
-	<translation from="Tag Viewer" to="Happy Tag Viewer" />		
-	<translation from="Tag Viewer Options" to="Happy Tag Viewer Options" />
-	<translation from="Check for ClassicPro Updates at Startup?" to="Happy Check for ClassicPro Updates at Startup?" />
-	<translation from="Solid Bands" to="Happy Solid Bands" />
-	<translation from="Show Beat vis" to="Happy Show Beat vis" />
-	<translation from="Right-Click for more animations" to="Happy Right-Click for more animations" />
-	<translation from="Select Mini view" to="Happpy Select Mini view" />
-	<translation from="No widgets found for this view!" to="Happy No widgets found for this view!" />
-	<!-- Tabs -->		
-	<translation from="BrowserPro" to="Happy BrowserPro" />
-	<translation from="Now Playing" to="Happy Now Playing" />
-	<translation from="Show Status Bar" to="Happy Show Status Bar" />
-	<translation from="Auto Close Tab" to="Happy Auto Close Tab" />
-	<!-- Browser -->		
-	<translation from="Go" to="Happy Go" /> <!-- Not working -->
-	<translation from="Search" to="Happy Search" /> <!-- Not working -->		
-	<!-- Clock menu -->		
-	<translation from="Clock Menu" to="Happy Clock Menu" />
-	<translation from="Show Clock When Stopped" to="Happy Show Clock When Stopped" />
-	<translation from="24 Hour Mode" to="Happy 24 Hour Mode" />
-	<translation from="Add Leading 0" to="Happy Add Leading 0" />
-	<!-- PlaylistPro -->
-	<translation from="Search in Playlist" to="Happy Search in Playlist" />
-	<translation from="Clear Search" to="Happy Clear Search" />		
-	<translation from="Items found: " to="Happy Items found: " />		
-	<translation from="Click to search the playlist (Right-Click for search history)" to="Happy Click to search the playlist (Right-Click for search history)" />		
-	<translation from="Clear History" to="Happy Clear History" />				
-	<translation from="** Search history **" to="Happy ** Search history **" />
-	<translation from="Nothing was found" to="Happy Nothing was found" />		
-	<!--MultiButton menu -->
-	<translation from="Multi-Button (right-click for Options)" to="Happy Multi-Button (right-click for Options)" />
-	<translation from="Multi-Button Action:" to="Happy Multi-Button Action:" />
-	<translation from="Open About Winamp" to="Happy Open About Winamp" />
-	<translation from="Explore Folder" to="Happy Explore Folder" />
-	<translation from="Show Quick Playlist" to="Happy Show Quick Playlist" />
-	<translation from="Change Color Theme" to="Happy Change Color Theme" />
-	<!--Widgets :: BrowserPro -->
-	<translation from="Select your service" to="Happy Select your service" />
-	<!--Widgets :: Now Playing -->
-	<translation from="Unknown Album" to="Happy Unknown Album" />
-	<translation from="Unknown Artist" to="Happy Unknown Artist" />
-	<translation from="by" to="Happy by" />
+<!-- Generic -->
+		<translation from="View" to="Happy View" />
+		<translation from="Help" to="Happy Help" />
+		<translation from="Select Drawer" to="Happy Select Drawer" />
+		<translation from="Open drawer" to="Happy Open drawer" />		
+		<translation from="Close drawer" to="Happy Close drawer" />
+		<translation from="Close Side" to="Happy Close Side" />
+		<translation from="Open Side" to="Happy Open Side" />
+		<translation from="Tag Viewer" to="Happy Tag Viewer" />		
+		<translation from="Tag Viewer Options" to="Happy Tag Viewer Options" />
+		<translation from="Check for ClassicPro Updates at Startup?" to="Happy Check for ClassicPro Updates at Startup?" />
+		<translation from="Solid Bands" to="Happy Solid Bands" />
+		<translation from="Show Beat vis" to="Happy Show Beat vis" />
+		<translation from="Right-Click for more animations" to="Happy Right-Click for more animations" />
+		<translation from="Select Mini view" to="Happpy Select Mini view" />
+		<translation from="No widgets found for this view!" to="Happy No widgets found for this view!" />
+
+<!-- Tabs -->		
+		<translation from="BrowserPro" to="Happy BrowserPro" />
+		<translation from="Now Playing" to="Happy Now Playing" />
+		<translation from="Show Status Bar" to="Happy Show Status Bar" />
+		<translation from="Auto Close Tab" to="Happy Auto Close Tab" />	
+
+<!-- MiniTabs -->
+		<translation from="LIB" to="Happy LIB" /> <!-- Media Library -->
+		<translation from="PLE" to="Happy PLE" /> <!-- Playlist Editor -->	
+		<translation from="VID" to="Happy VID" /> <!-- Video -->
+		<translation from="VIS" to="Happy VIS" /> <!-- Visualisation -->
+		<translation from="BPR" to="Happy BPR" /> <!-- Browser Pro -->
+		<translation from="NOW" to="Happy NOW" /> <!-- Now Playing -->
+
+<!-- Browser -->		
+		<translation from="Go" to="Happy Go" /> <!-- Not working -->
+		<translation from="Search" to="Happy Search" /> <!-- Not working -->		
+
+<!-- Clock menu -->		
+		<translation from="Clock Menu" to="Happy Clock Menu" />
+		<translation from="Show Clock When Stopped" to="Happy Show Clock When Stopped" />
+		<translation from="24 Hour Mode" to="Happy 24 Hour Mode" />
+		<translation from="Add Leading 0" to="Happy Add Leading 0" />
+
+<!-- PlaylistPro -->
+		<translation from="Search in Playlist" to="Happy Search in Playlist" />
+		<translation from="Clear Search" to="Happy Clear Search" />		
+		<translation from="Items found: " to="Happy Items found: " />		
+		<translation from="Click to search the playlist (Right-Click for search history)" to="Happy Click to search the playlist (Right-Click for search history)" />		
+		<translation from="Clear History" to="Happy Clear History" />				
+		<translation from="** Search history **" to="Happy ** Search history **" />
+		<translation from="Nothing was found" to="Happy Nothing was found" />	
+
+<!--MultiButton menu -->
+		<translation from="Multi-Button (right-click for Options)" to="Happy Multi-Button (right-click for Options)" />
+		<translation from="Multi-Button Action:" to="Happy Multi-Button Action:" />
+		<translation from="Open About Winamp" to="Happy Open About Winamp" />
+		<translation from="Explore Folder" to="Happy Explore Folder" />
+		<translation from="Show Quick Playlist" to="Happy Show Quick Playlist" />
+		<translation from="Change Color Theme" to="Happy Change Color Theme" />
+
+<!-- Widgets :: Widgets Manager -->
+		<translation from="WIDGETS MANAGER" to="Happy WIDGETS MANAGER" />
+		<translation from="Widgets Manager" to="Happy Widgets Manager" /> <!-- Not working -->		
+		<translation from="Author:" to="Happy Author:" />
+		<translation from="Version:" to="Happy Version:" />
+		<translation from="Position:" to="Happy Position:" />
+		<translation from="Main Area" to="Happy Main Area" />
+		<translation from="Drawer Area" to="Happy Drawer Area" />
+		<translation from="Side Area" to="Happy Side Area" />		
+		<translation from="Uninstall Widget" to="Happy Uninstall Widget" />
+		<translation from="Widget Support" to="Happy Widget Support" />
+		<translation from="Show Widget" to="Happy Show Widget" /> <!-- Not working -->
+		<translation from="New Widgets" to="Happy New Widgets" /> <!-- Not working -->
+		<translation from="All Widgets" to="Happy All Widgets" /> <!-- Not working -->
+		
+<!-- Widgets :: BrowserPro v1.0 -->
+		<translation from="Select your service" to="Happy Select your service" />
+	
+<!-- Widgets :: Now Playing v1.0 -->
+		<translation from="Unknown Album" to="Happy Unknown Album" />
+		<translation from="Unknown Artist" to="Happy Unknown Artist" />
+		<translation from="by" to="Happy by" />
+		
+<!-- Widgets :: ChapterList v0.5 -->
+		<translation from="Chapterlist" to="Happy Chapterlist" />
+		<translation from="Add New Chapter" to="Happy Add New Chapter" />
+		<translation from="Remove Selected Chapter" to="Happy Remove Selected Chapter" />
+		<translation from="Previous Chapter" to="Happy Previous Chapter" />		
+		<translation from="Next Chapter" to="Happy Next Chapter" />
+		<translation from="Create your chapters!" to="Happy Create your chapters!" />
+		<translation from="Start of first chapter" to="Happy Start of first chapter" />
+		<translation from="New Chapter" to="Happy New Chapter" />
+		
+<!-- Widgets :: PictureBox v0.93 -->
+		<translation from="PIC" to="Happy PIC" />
+		<translation from="Picture Box" to="Happy Picture Box" />
+		<translation from="Options Menu" to="Happy Options Menu" />
+		<translation from="Previous Picture" to="Happy Previous Picture" />
+		<translation from="Next Picture" to="Happy Next Picture" />
+		<translation from="Loading ..." to="Happy Loading ..." />
+		<translation from="No Images Found." to="Happy No Images Found." />
+		<translation from="Open" to="Happy Open" />
+		<translation from="Edit" to="Happy Edit" />
+		<translation from="Print" to="Happy Print" />
+		<translation from="Reload" to="Happy Reload" />
+		<translation from="0 sec (Off)" to="Happy 0 sec (Off)" />
+		<translation from="5 sec" to="Happy 5 sec" />
+		<translation from="10 sec" to="Happy 10 sec" />
+		<translation from="20 sec" to="Happy 20 sec" />
+		<translation from="40 sec" to="Happy 40 sec" />
+		<translation from="60 sec" to="Happy 60 sec" />
+		<translation from="Slide Show" to="Happy Slide Show" />
+		<translation from="Right (Loose)" to="Happy Right (Loose)" />
+		<translation from="Right (Fixed)" to="Happy Right (Fixed)" />
+		<translation from="Bottom (Loose)" to="Happy Bottom (Loose)" />
+		<translation from="Bottom (Fixed)" to="Happy Bottom (Fixed)" />
+		<translation from="Smooth " to="Happy Smooth " />
+		<translation from="Preferred Thumbs Position" to="Happy Preferred Thumbs Position" />
+		<translation from="Preview Image" to="Happy Preview Image" />
+		<translation from="Thumb Images" to="Happy Thumb Images" />
+		<translation from="Downsampling" to="Happy Downsampling" />
+		<translation from="Off" to="Happy Off" />
+		<translation from="Picture Limit" to="Happy Picture Limit" />
+		
+<!-- Widgets :: ShoutBox v0.64 -->
+		<translation from="SHO" to="Happy SHO" />
+		<translation from="Shoutbox" to="Happy Shoutbox" />
+		<translation from="Remaining Characters" to="Happy Remaining Characters" />
+		<translation from="Username:" to="Happy Username:" />
+		<translation from="Message:" to="Happy Message:" />
+		<translation from="Refresh:" to="Happy Refresh:" />
+		<translation from="sec" to="Happy sec" />
+		<translation from="&lt;Options&gt;" to="Happy &lt;Options&gt;" />
+		<translation from="Let's Shout!" to="Happy Let's Shout!" />
+		<translation from="Set Username" to="Happy Set Username" />
+		<translation from="Set Refresh-Interval" to="Happy Set Refresh-Interval" />
+		<translation from="Reload Shoutbox" to="Happy Reload Shoutbox" />
+
+<!-- Widgets :: Cool VU v1.51 -->
+		<translation from="Cool VU" to="Happy Cool VU" />
+		<translation from="Rise speed" to="Happy Rise speed" />
+		<translation from="Falloff speed" to="Happy Falloff speed" />
+		<translation from="Exponential" to="Happy Exponential" />
+		<translation from="Hybrid (exp+linear)" to="Happy Hybrid (exp+linear)" />
+		<translation from="Linear" to="Happy Linear" />
+		<translation from="Hybrid (log+linear)" to="Happy Hybrid (log+linear)" />
+		<translation from="Logarithmic" to="Happy Logarithmic" />		
+		<translation from="Sensitivity" to="Happy Sensitivity" />
+		<translation from="Mode" to="Happy Mode" />
+		<translation from="Show volume if changed" to="Happy Show volume if changed" />
