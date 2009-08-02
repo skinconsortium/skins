@@ -13,11 +13,8 @@ del *.gz /Q
 
 @echo generating new archives
 @echo -----------
-cd optionals
-7z a -r -ttar ../optionals.tar ./*
-cd ..
-7z a -ttar -x!*.cmd %plugin_name%.tar ./*.*
-7z a -r -ttar %plugin_name%.tar ./*/*.tar
+
+7z a -ttar -x!*.cmd %plugin_name%.tar -x!.svn ./*.*
 
 7z a -tgzip %plugin_name%.tar.gz %plugin_name%.tar
 pause

@@ -5,12 +5,12 @@
 		<packageName>Startsite PIP Test</packageName>
 		<packageDescription>Startsite PIP Test</packageDescription>
 		<isunique>1</isunique>
-		<version>0.1-dev4</version>
+		<version>0.1-dev5</version>
 		<date>2008-12-18</date>
 	</packageInformation>
 
 	<requiredpackages>
-		<requiredpackage minversion="0.1.8">me.songbook.wbb.startpage</requiredpackage>
+		<requiredpackage minversion="0.1.8">net.inovato.wbb.startpage</requiredpackage>
 	</requiredpackages>
 
 	<authorinformation>
@@ -19,8 +19,8 @@
 	</authorinformation>
 
 	<instructions type="install">
-		<startpage name="wcf.header.menu.Help">page=Help</startpage>
-		<startpage name="wcf.header.menu.MembersList">page=MembersList</startpage>
+		<startpage name="wcf.header.menu.help">page=Help</startpage>
+		<startpage name="wcf.header.menu.memberslist">page=MembersList</startpage>
 	</instructions>
 
 	<instructions type="update" fromversion="*">
