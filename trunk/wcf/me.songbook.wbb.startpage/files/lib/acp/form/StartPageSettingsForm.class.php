@@ -8,7 +8,7 @@ require_once(WCF_DIR.'lib/acp/package/plugin/StartPageInstallationPlugin.class.p
  * @author		Martin 'mpdeimos' Poehlmann
  * @copyright	2009 Skin Consortium
  * @license		Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported License <http://creativecommons.org/licenses/by-nc-sa/3.0/>
- * @package		me.songbook.wbb.startsite
+ * @package		net.inovato.wbb.startsite
  */
 
 class StartPageSettingsForm extends ACPForm

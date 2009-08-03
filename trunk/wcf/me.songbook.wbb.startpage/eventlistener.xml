@@ -3,9 +3,9 @@
 <data>
 	<import>
 		<eventlistener>
-            <eventClassName>IndexPage</eventClassName>
-            <eventName>readParameters</eventName>
-			<inherit>0</inherit>
+            <eventClassName>SessionFactory</eventClassName>
+            <eventName>shouldInit</eventName>
+			<inherit>1</inherit>
 			<listenerClassFile>lib/system/event/listener/StartPageListener.class.php</listenerClassFile>
 		</eventlistener>
 	</import>

@@ -10,7 +10,7 @@ require_once(WCF_DIR.'lib/acp/option/Options.class.php');
  * @author		Martin 'mpdeimos' Poehlmann
  * @copyright	2009 Skin Consortium
  * @license		Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported License <http://creativecommons.org/licenses/by-nc-sa/3.0/>
- * @package		me.songbook.wbb.startpage
+ * @package		net.inovato.wbb.startpage
 */
 
 class StartPageInstallationPlugin extends AbstractPackageInstallationPlugin
@@ -188,7 +188,7 @@ class StartPageInstallationPlugin extends AbstractPackageInstallationPlugin
 		// get startpage plugin ID
 		$sql = "SELECT packageID
 			FROM	wcf".WCF_N."_package
-			WHERE 	package = 'me.songbook.wbb.startpage'
+			WHERE 	package = 'net.inovato.wbb.startpage'
 			AND		parentPackageID = ".PACKAGE_ID;
 		
 		$row = WCF::getDB()->getFirstRow($sql);
