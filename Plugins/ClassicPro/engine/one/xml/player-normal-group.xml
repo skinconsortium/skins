@@ -7,26 +7,26 @@
 
 
 <groupdef id="beatvisB.left">
-	<layer id="beatvisB.left.layer" x="-150" y="0" h="45" relatx="1" image="beat.left.b" tile="1"/>
+	<layer id="beatvisB.left.layer" x="-150" y="0" h="45" relatx="1" image="beat.left.b" tile="1" alpha="253"/>
 </groupdef>
 <groupdef id="beatvisB.right">
-	<layer id="beatvisB.right.layer" x="0" y="0" h="45" image="beat.right.b" tile="1"/>
+	<layer id="beatvisB.right.layer" x="0" y="0" h="45" image="beat.right.b" tile="1" alpha="253"/>
 </groupdef>
 <groupdef id="beatvis">
 	<AnimatedLayer id="beatvis.left" x="0" y="0" w="150" h="45" image="beat.0.left" autoplay="0" autoreplay="1" ghost="1" frameheight="45"/>
 	<AnimatedLayer id="beatvis.right" x="150" y="0" w="150" h="45" image="beat.0.right" autoplay="0" autoreplay="1" ghost="1" frameheight="45"/>
-	<layer id="beatvisC.left" x="0" y="0" h="45" image="beat.left.c" tile="1" visible="0"/>
-	<layer id="beatvisC.right" x="0" y="0" h="45" relatx="0" image="beat.right.c" tile="1" visible="0"/>
+	<layer id="beatvisC.left" x="0" y="0" h="45" image="beat.left.c" tile="1" visible="0" alpha="253"/>
+	<layer id="beatvisC.right" x="0" y="0" h="45" relatx="0" image="beat.right.c" tile="1" visible="0" alpha="253"/>
 	<group id="beatvisB.left" x="0" y="0" w="0" h="45" visible="0"/>
 	<group id="beatvisB.right" x="150" y="0" w="0" h="45" visible="0"/>
-	<layer id="beat.overlay" x="0" y="0" h="45" relatx="0" image="beatvis.overlay" tile="1" ghost="1"/>
+	<layer id="beat.overlay" x="0" y="0" h="45" relatx="0" image="beatvis.overlay" tile="1" ghost="1" alpha="253"/>
 </groupdef>
 <groupdef id="beatpromo">
-	<layer id="beat.promo" x="0" y="0" image="cPro.promo.1"/>
+	<layer id="beat.promo" x="0" y="0" image="cPro.promo.1" alpha="253"/>
 </groupdef>
 
 <groupdef id="cpro.screen">
-	<layer id="cpro.bg.title" x="0" y="0" image="player.center.title" ghost="1" visible="0"/>
+	<layer id="cpro.bg.title" x="0" y="0" image="player.center.title" ghost="1" visible="0" alpha="253"/>
 
 	<group id="beatvis" x="200" y="47" w="300" h="45"/>
 	<group id="beatpromo" x="200" y="47" w="300" h="45" visible="0"/>
@@ -339,6 +339,9 @@
 		topleft="player.gframe.1.alt" top="player.gframe.2.alt" topright="player.gframe.3.alt"
 		regionop="1" move="1"
 	/>
+	<group id="centro.drawer.overlay" fitparent="1"/>
+
+
 	<group id="drawer.equalizer" fitparent="1" visible="0"/>
 	<group id="drawer.tagviewer" fitparent="1" visible="0"/>
 	<group id="drawer.savedpl" fitparent="1" visible="0"/>
