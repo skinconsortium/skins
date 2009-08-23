@@ -53,9 +53,9 @@
 	<color id="wasabi.list.text.alternate" value="147,175,185"/> 
 
 	<!-- List: Background -->
-	<color id="wasabi.list.background" value="8,9,10"/>
-	<color id="wasabi.list.background.alternate" value="13,14,15"/>	
-	<bitmap id="wasabi.list.background" file="$solid" h="64" w="64" color="8,9,10"/>
+	<color id="wasabi.list.background" value="8,9,10" gammagroup="n.Color.ListBg"/>
+	<color id="wasabi.list.background.alternate" value="13,14,15" gammagroup="n.Color.ListBg"/>	
+	<bitmap id="wasabi.list.background" file="$solid" h="64" w="64" color="8,9,10" gammagroup="n.Color.ListBg"/>
 
 	<!-- List: Text Color (Selected) -->
 	<color id="wasabi.list.text.selected" value="200,200,200"/>
