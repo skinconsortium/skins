@@ -241,7 +241,7 @@ System.onOpenUrl(string url){
 
 System.onGetCancelComponent(String guid, boolean goingvisible){
 	//debugString(guid,9);
-	setClipboardText(guid);
+	//setClipboardText(guid);
 	//debug(guid);
 
 	// Check to see if this component is on the blacklist, and if it is, it will open in its own window or just close it...
