@@ -29,6 +29,8 @@
 	<gammagroup id="n.Menu.Text" value="0,0,0"/>	
 	<gammagroup id="n.TooltipCombobox.Text" value="0,0,0"/>	
 	<gammagroup id="Color.GenericText" value="0,0,0"/>	
+	<gammagroup id="n.Button.Icon" value="0,0,0"/>	
+	<gammagroup id="n.Background.Alt" value="0,0,0"/>	
 
 
 
