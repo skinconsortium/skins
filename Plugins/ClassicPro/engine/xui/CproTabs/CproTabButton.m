@@ -159,9 +159,10 @@ setButtonState (int mode)
 		label.setXmlParam("color", "Tab.Text.Hover");
 	}
 }
-
+/*
 label.onTextChanged (String newtxt)
 {
 	trigger.setXmlParam("tooltip", newtxt);
 	sendMessageO(ON_TAB_TEXT_UPDATED, parent);
 }
+*/

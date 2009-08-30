@@ -101,6 +101,11 @@ clockTmr.onTimer()
 			temp = temp - 12;
 			temp_hours = integertoString(temp);
 		}
+
+		if((!clock24) && temp==0){
+			temp = 12;
+			temp_hours = integertoString(temp);
+		}
 		
 		if((clock0s)&&(temp < 10))
 		{	

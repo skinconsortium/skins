@@ -277,8 +277,12 @@ System.onScriptLoaded ()
 
 			tabI.init(tabHolder);
 
-			text t = tabI.findObject("cpro.tab.text");
+			Text t = tabI.findObject("cpro.tab.text");
 			t.setXmlParam("text", tabI.nameLong);
+			
+			ToggleButton t2 = tabI.findObject("cpro.tab.button");
+			t2.setXmlParam("tooltip", tabI.nameLong);
+			
 			//t.setXmlParam("text", tabI.nameShort);
 			
 			
@@ -1007,9 +1011,15 @@ sg.onAction (String action, String param, int x, int y, int p1, int p2, GuiObjec
 				if(getToken(param, ";", 1)!="") tabI.nameShort = strupper(strLeft(getToken(param, ";", 1),3)); //Force all languagepacks to 3max & uppercase
 				else tabI.nameShort = strupper(strLeft(getToken(param, ";", 0),3));
 				
-				text t = tabI.findObject("cpro.tab.text");
+				Text t = tabI.findObject("cpro.tab.text");
 				if(isFullNames) t.setXmlParam("text", tabI.nameLong);
 				else t.setXmlParam("text", tabI.nameShort);
+				
+				//We want the fullname for the tooltip ;)
+				ToggleButton t2 = tabI.findObject("cpro.tab.button");
+				t2.setXmlParam("tooltip", tabI.nameLong);
+
+				
 				updateTabWidth(tabI);
 				align(firstTab);
 				return;
