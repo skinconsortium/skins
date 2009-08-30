@@ -74,6 +74,10 @@
 
 
 	
+	<bitmap id="custom.shuffle.1" file="custom-shuffle.png" gammagroup="n.Button.Icon"/>
+	<bitmap id="custom.repeat.1" file="custom-repeat.png" gammagroup="n.Button.Icon"/>
+	<bitmap id="custom.repeat.2" file="custom-repeat1.png" gammagroup="n.Button.Icon"/>
+	<bitmap id="custom.winamp" file="custom-winamp.png" gammagroup="n.Background.Alt"/>
 
 	<!--
 	These fonts wont be used in this skin (default = Arial)
