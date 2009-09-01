@@ -84,7 +84,7 @@
 	LangString CPro_FinishPage_5 ${LANG_RUSSIAN} "Найти больше обложек и дополнений аддона ${CPRO_NAME} на сайте"
 	LangString CPro_FinishPage_6 ${LANG_RUSSIAN} "Открыть Winamp с обложкой аддона ${CPRO_NAME} по умолчанию"
 	LangString CPro_FinishPage_7 ${LANG_RUSSIAN} "Завершить"	
-	LangString CPro_FinishPage_8 ${LANG_RUSSIAN} "Open Winamp with current skin"
+	LangString CPro_FinishPage_8 ${LANG_RUSSIAN} "Открыть Winamp с текущей обложкой"
 	
 ; First Page of Uninstaller
 	LangString CPro_Un_Welcome_Title ${LANG_RUSSIAN} "Добро пожаловать в мастер удаления $(^NameDA)"
