@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE package SYSTEM "http://www.woltlab.com/DTDs/package.dtd"[]>
+<package name="net.inovato.stub">
+	<packageinformation>
+		<packagename>Stub</packagename>
+		<packagedescription>Standalone WCF App Stub</packagedescription>
+		<isunique>0</isunique>
+		<standalone>1</standalone>
+		<version>1.0.0-dev15</version>
+		<date>2009-09-01</date>
+	</packageinformation>
+	<requiredpackages>
+		<!-- basics -->
+		<requiredpackage minversion="1.1.0 Beta 4" file="requirements/com.woltlab.wcf.tar">com.woltlab.wcf</requiredpackage>
+		<requiredpackage minversion="1.1.0 Beta 3" file="requirements/com.woltlab.wcf.data.cronjobs.tar">com.woltlab.wcf.data.cronjobs</requiredpackage>
+		<requiredpackage minversion="1.0.3" file="requirements/com.woltlab.wcf.data.feed.reader.tar">com.woltlab.wcf.data.feed.reader</requiredpackage>
+		<requiredpackage minversion="1.1.0 Beta 2" file="requirements/com.woltlab.wcf.data.image.tar">com.woltlab.wcf.data.image</requiredpackage>
+		<requiredpackage minversion="1.1.0 Beta 3" file="requirements/com.woltlab.wcf.data.image.captcha.tar">com.woltlab.wcf.data.image.captcha</requiredpackage>
+		<requiredpackage minversion="1.0.0 Beta 4" file="requirements/com.woltlab.wcf.imageViewer.tar">com.woltlab.wcf.imageViewer</requiredpackage>
+		<!-- page system -->
+		<requiredpackage minversion="1.1.0 Beta 3" file="requirements/com.woltlab.wcf.data.page.headerMenu.tar">com.woltlab.wcf.data.page.headerMenu</requiredpackage>
+		<requiredpackage minversion="1.1.0 Beta 4" file="requirements/com.woltlab.wcf.system.style.tar">com.woltlab.wcf.system.style</requiredpackage>
+		<requiredpackage minversion="1.1.0 Beta 3" file="requirements/com.woltlab.wcf.data.page.tar">com.woltlab.wcf.data.page</requiredpackage>
+		<requiredpackage minversion="1.1.0 Beta 4" file="requirements/com.woltlab.wcf.data.help.tar">com.woltlab.wcf.data.help</requiredpackage>
+		<!-- message -->
+		<requiredpackage minversion="1.1.0 Beta 3" file="requirements/com.woltlab.wcf.data.message.tar">com.woltlab.wcf.data.message</requiredpackage>
+		<requiredpackage minversion="1.1.0 Beta 4" file="requirements/com.woltlab.wcf.data.message.attachment.tar">com.woltlab.wcf.data.message.attachment</requiredpackage>
+		<requiredpackage minversion="1.1.0 Beta 4" file="requirements/com.woltlab.wcf.data.message.bbcode.tar">com.woltlab.wcf.data.message.bbcode</requiredpackage>
+		<requiredpackage minversion="1.1.0 Beta 4" file="requirements/com.woltlab.wcf.form.message.wysiwyg.tar">com.woltlab.wcf.form.message.wysiwyg</requiredpackage>
+		<requiredpackage minversion="1.0.0 Beta 4" file="requirements/com.woltlab.wcf.tagging.tar">com.woltlab.wcf.tagging</requiredpackage>
+		<!-- user profile -->
+		<requiredpackage minversion="1.1.0 Beta 4" file="requirements/com.woltlab.wcf.form.user.tar">com.woltlab.wcf.form.user</requiredpackage>
+		<requiredpackage minversion="1.1.0 Beta 4" file="requirements/com.woltlab.wcf.page.user.profile.tar">com.woltlab.wcf.page.user.profile</requiredpackage>
+		<!-- NOT LGPL requiredpackage minversion="1.1.0 Beta 2" file="requirements/com.woltlab.wcf.data.user.messenger.tar">com.woltlab.wcf.data.user.messenger</requiredpackage-->
+		<!-- messages -->
+		<requiredpackage minversion="1.1.0 Beta 3" file="requirements/com.woltlab.wcf.data.message.poll.tar">com.woltlab.wcf.data.message.poll</requiredpackage>
+		<requiredpackage minversion="1.1.0 Beta 3" file="requirements/com.woltlab.wcf.data.message.censorship.tar">com.woltlab.wcf.data.message.censorship</requiredpackage>
+		<requiredpackage minversion="1.1.0 Beta 4" file="requirements/com.woltlab.wcf.form.message.tar">com.woltlab.wcf.form.message</requiredpackage>
+		<requiredpackage minversion="1.1.0 Beta 3" file="requirements/com.woltlab.wcf.data.message.search.tar">com.woltlab.wcf.data.message.search</requiredpackage>
+		<!-- NOT LGPLrequiredpackage minversion="1.1.0 Beta 2" file="requirements/com.woltlab.wcf.form.user.signature.tar">com.woltlab.wcf.form.user.signature</requiredpackage-->
+		<requiredpackage minversion="1.0.0 Beta 2" file="requirements/com.woltlab.wcf.message.sidebar.tar">com.woltlab.wcf.message.sidebar</requiredpackage>
+		<!-- NOT LGPLrequiredpackage minversion="1.0.0 Beta 3" file="requirements/com.woltlab.wcf.message.multiQuote.tar">com.woltlab.wcf.message.multiQuote</requiredpackage>
+		<requiredpackage minversion="1.1.0 Beta 4" file="requirements/com.woltlab.wcf.data.message.pm.tar">com.woltlab.wcf.data.message.pm</requiredpackage-->
+		<requiredpackage minversion="1.0.0 Beta 1" file="requirements/com.woltlab.wcf.data.message.search.tagging.tar">com.woltlab.wcf.data.message.search.tagging</requiredpackage>
+		<!-- specials -->
+		<!--requiredpackage minversion="1.1.0 Beta 3" file="requirements/com.woltlab.wcf.form.user.group.tar">com.woltlab.wcf.form.user.group</requiredpackage>
+		<requiredpackage minversion="1.1.0 Beta 4" file="requirements/com.woltlab.wcf.page.user.usersOnline.tar">com.woltlab.wcf.page.user.usersOnline</requiredpackage>
+		<requiredpackage minversion="1.1.0 Beta 4" file="requirements/com.woltlab.wcf.page.user.membersList.team.tar">com.woltlab.wcf.page.user.membersList.team</requiredpackage>
+		<requiredpackage minversion="1.0.0 Beta 3" file="requirements/com.woltlab.wcf.user.infraction.tar">com.woltlab.wcf.user.infraction</requiredpackage>
+		<requiredpackage minversion="1.0.0 Beta 2" file="requirements/com.woltlab.wcf.user.attachment.tar">com.woltlab.wcf.user.attachment</requiredpackage>
+		<requiredpackage minversion="1.0.0 Beta 2" file="requirements/com.woltlab.wcf.user.security.login.tar">com.woltlab.wcf.user.security.login</requiredpackage-->
+	</requiredpackages>
+	<authorinformation>
+		<author>Martin Poehlmann</author>
+		<authorurl>http://www.inovato.net</authorurl>
+	</authorinformation>
+	<instructions type="install">
+		<!-- languages -->
+		<languages languagecode="en">en.xml</languages>
+		<languages languagecode="de">de.xml</languages>
+		<languages languagecode="de-informal">de-informal.xml</languages>
+		<!-- files -->
+		<files>files.tar</files>
+		<acptemplates>acptemplates.tar</acptemplates>
+		<templates>templates.tar</templates>
+		<!-- settings -->
+		<options>options.xml</options>
+	</instructions>
+	<instructions type="update" fromversion="1.0.*">
+		<!-- languages -->
+		<languages languagecode="en">en.xml</languages>
+		<languages languagecode="de">de.xml</languages>
+		<languages languagecode="de-informal">de-informal.xml</languages>
+		<!-- files -->
+		<files>files.tar</files>
+		<acptemplates>acptemplates.tar</acptemplates>
+		<templates>templates.tar</templates>
+		<!-- settings -->
+		<options>options.xml</options>
+	</instructions>
+</package>
