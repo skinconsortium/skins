@@ -2,7 +2,7 @@
 
 ; Lang:				Romanian
 ; LangID			1048
-; Last udpdated:	13.03.2009 20:41 EET
+; Last udpdated:	01.09.2009 22:27 EET
 ; Author:			Cãtãlin ZAMFIRESCU
 ; Email:			x10@mail.com
 
@@ -84,7 +84,7 @@
 	LangString CPro_FinishPage_5 ${LANG_ROMANIAN} "Explorare pagina ${CPRO_NAME} ºi descãrcare interfeþe ºi gadgeturi"
 	LangString CPro_FinishPage_6 ${LANG_ROMANIAN} "Deschidere Winamp cu interfaþa implicitã ${CPRO_NAME}"
 	LangString CPro_FinishPage_7 ${LANG_ROMANIAN} "Terminare"
-	LangString CPro_FinishPage_8 ${LANG_ROMANIAN} "Open Winamp with current skin"	
+	LangString CPro_FinishPage_8 ${LANG_ROMANIAN} "Deschidere Winamp cu interfaþa curentã"	
 
 ; First Page of Uninstaller
 	LangString CPro_Un_Welcome_Title ${LANG_ROMANIAN} "Bun venit la asistentul pentru dezinstalare a $(^NameDA)"
