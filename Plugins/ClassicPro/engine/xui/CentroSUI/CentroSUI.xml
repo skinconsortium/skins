@@ -44,7 +44,7 @@
 -->
 <groupdef id="centro.browser" name="Browser">
 	<rect color="wasabi.window.background" filled="1" x="1" y="1" w="-2" relatw="1" h="-4" relath="1"/>
-	<Winamp:Browser id="cpro.browser" x="0" y="1" w="0" relatw="1" h="-4" relath="1" home="http://cpro.skinconsortium.com/browser.php" visible="1"/>
+	<Winamp:Browser id="cpro.browser" x="0" y="1" w="0" relatw="1" h="-4" relath="1" home="http://www.cproskinning.com/" visible="1"/>
 </groupdef>
 
 <!--
