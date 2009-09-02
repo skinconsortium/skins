@@ -5,7 +5,8 @@
 		<sourceitem name="Discogs (Artist)" comment="Zoek via Discogs naar deze Artiest." url="http://www.discogs.com/artist/%ARTIST%" icon="icon.discogs"/>
 		<sourceitem name="Explorer View" comment="Dit zal bladeren naar de map van de huidige afspelende item." url="%PATH%/" icon="icon.explorer"/>
 		<sourceitem name="Foxytunes (Artist)" comment="Foxytunes toont u informatie over de spelende Artiest." url="http://www.foxytunes.com/artist/%ARTIST%" icon="icon.foxytunes"/>
-		<sourceitem name="Google Search (Song)" comment="Zoek met Google naar deze lied." url="http://www.google.com/search?hl=en%AND%q=%ARTIST% %TITLE%" icon="icon.google"/>
+		<!--sourceitem name="Google Search (Song)" comment="Zoek met Google naar deze lied." url="http://www.google.com/search?hl=en%AND%q=%ARTIST% %TITLE%" icon="icon.google"/-->
+		<sourceitem name="Google sponsored SC Web Search (Song)" comment="Zoek met Google naar deze lied." url="http://forums.skinconsortium.com/index.php?page=custom%AND%action=search-browserpro%AND%cx=partner-pub-8995745745086103%3Ak3ng4q-3f9c%AND%cof=FORID%3A10%AND%ie=ISO-8859-1%AND%sa=Search%AND%q=%ARTIST% %TITLE%" icon="icon.google"/>
 		<sourceitem name="Lyrics" comment="Toon de lyrics van de huidige afspelende lied. Hele Grote database." url="http://www.lyricsplugin.com/winamp03/plugin/?artist=%ARTIST%%AND%title=%TITLE%" icon="icon.lyricplugin"/>
 		<sourceitem name="Metalstorm (Album)" comment="Zoek op www.metalstorm.ee naar deze album." url="http://www.metalstorm.ee/home/search.php?search_what=%ALBUM%%AND%search_where=album" icon="icon.metalstorm"/>
 		<sourceitem name="Metalstorm (Artist)" comment="Zoek op www.metalstorm.ee naar deze Artiest." url="http://www.metalstorm.ee/home/search.php?search_what=%ARTIST%%AND%search_where=band2" icon="icon.metalstorm"/>

@@ -5,7 +5,8 @@
 		<sourceitem name="Discogs (Sanatçı)" comment="Bu sanatçı için Discogs'da arama yapar." url="http://www.discogs.com/artist/%ARTIST%" icon="icon.discogs"/>
 		<sourceitem name="Gezgin Görünümü" comment="Şu an yürütülen öğenin dizinine göz atar." url="%PATH%/" icon="icon.explorer"/>
 		<sourceitem name="Foxytunes (Sanatçı)" comment="Yürütülen sanatçı hakkındaki bilgileri gösterir." url="http://www.foxytunes.com/artist/%ARTIST%" icon="icon.foxytunes"/>
-		<sourceitem name="Google Arama (Şarkı)" comment="Bu şarkıyı Google.com.tr ile arar." url="http://www.google.com.tr/search?hl=tr%AND%q=%ARTIST% %TITLE%" icon="icon.google"/>
+		<!--sourceitem name="Google Arama (Şarkı)" comment="Bu şarkıyı Google.com.tr ile arar." url="http://www.google.com.tr/search?hl=tr%AND%q=%ARTIST% %TITLE%" icon="icon.google"/-->
+		<sourceitem name="Google sponsored SC Web Search (Şarkı)" comment="Bu şarkıyı Google.com.tr ile arar." url="http://forums.skinconsortium.com/index.php?page=custom%AND%action=search-browserpro%AND%cx=partner-pub-8995745745086103%3Ak3ng4q-3f9c%AND%cof=FORID%3A10%AND%ie=ISO-8859-1%AND%sa=Search%AND%q=%ARTIST% %TITLE%" icon="icon.google"/>
 		<sourceitem name="Google Görsel Arama (Albüm)" comment="Bu albüm kapağını Google.com.tr ile arar." url="http://images.google.com.tr/images?hl=tr%AND%q=%ARTIST% %ALBUM%" icon="icon.google"/>
 		<sourceitem name="Şarkı Sözleri" comment="Şu an yürütülen şarkının şarkı sözlerini gösterir. Çok büyük veritabanı." url="http://www.lyricsplugin.com/winamp03/plugin/?artist=%ARTIST%%AND%title=%TITLE%" icon="icon.lyricplugin"/>
 		<sourceitem name="Metalstorm (Albüm)" comment="Bu albümü www.metalstorm.ee ile arar." url="http://www.metalstorm.ee/home/search.php?search_what=%ALBUM%%AND%search_where=album" icon="icon.metalstorm"/>

@@ -5,7 +5,8 @@
 		<sourceitem name="Serwis Discogs (Wykonawca)" comment="Wyszukuje wykonawcę odtwarzanego utworu w serwisie Discogs." url="http://www.discogs.com/artist/%ARTIST%" icon="icon.discogs"/>
 		<sourceitem name="Przeglądanie folderu utworu" comment="Otwiera folder odtwarzanego utworu." url="%PATH%/" icon="icon.explorer"/>
 		<sourceitem name="Serwis Foxytunes (Wykonawca)" comment="Wyświetla informacje o wykonawcy odtwarzanego utworu w serwisie Foxytunes." url="http://www.foxytunes.com/artist/%ARTIST%" icon="icon.foxytunes"/>
-		<sourceitem name="Wyszukiwanie w Google (Utwór)" comment="Wyszukuje odtwarzany utwór w Google." url="http://www.google.com/search?hl=en%AND%q=%ARTIST% %TITLE%" icon="icon.google"/>
+		<!--sourceitem name="Wyszukiwanie w Google (Utwór)" comment="Wyszukuje odtwarzany utwór w Google." url="http://www.google.com/search?hl=en%AND%q=%ARTIST% %TITLE%" icon="icon.google"/-->
+		<sourceitem name="Google sponsored SC Web Search (Utwórs)" comment="Wyszukuje odtwarzany utwór w Google." url="http://forums.skinconsortium.com/index.php?page=custom%AND%action=search-browserpro%AND%cx=partner-pub-8995745745086103%3Ak3ng4q-3f9c%AND%cof=FORID%3A10%AND%ie=ISO-8859-1%AND%sa=Search%AND%q=%ARTIST% %TITLE%" icon="icon.google"/>
 		<sourceitem name="Teksty utworów" comment="Wyświetla tekst aktualnie odtwarzanego utworu. Bardzo duża baza danych." url="http://www.lyricsplugin.com/winamp03/plugin/?artist=%ARTIST%%AND%title=%TITLE%" icon="icon.lyricplugin"/>
 		<sourceitem name="Serwis Metalstorm (Album)" comment="Wyszukuje album odtwarzanego utworu w serwisie Metalstorm." url="http://www.metalstorm.ee/home/search.php?search_what=%ALBUM%%AND%search_where=album" icon="icon.metalstorm"/>
 		<sourceitem name="Serwis Metalstorm (Wykonawca)" comment="Wyszukuje wykonawcę odtwarzanego utworu w serwisie Metalstorm." url="http://www.metalstorm.ee/home/search.php?search_what=%ARTIST%%AND%search_where=band2" icon="icon.metalstorm"/>
