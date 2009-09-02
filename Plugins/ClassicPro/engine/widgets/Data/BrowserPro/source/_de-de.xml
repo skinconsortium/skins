@@ -5,7 +5,8 @@
 		<sourceitem name="Discogs (Interpret)" comment="aktuellen Interpreten auf Discogs suchen" url="http://www.discogs.com/artist/%ARTIST%" icon="icon.discogs"/>
 		<sourceitem name="Explorer Ansicht" comment="zeigt den Ordner des aktuell abgespielten Titels" url="%PATH%/" icon="icon.explorer"/>
 		<sourceitem name="Foxytunes (Interpret)" comment="Foxytunes zeigt informationen zum aktuellen Interpreten an" url="http://www.foxytunes.com/artist/%ARTIST%" icon="icon.foxytunes"/>
-		<sourceitem name="Google Suche (Song)" comment="aktuellen Song auf Google.de suchen" url="http://www.google.de/search?hl=de%AND%q=%ARTIST% %TITLE%" icon="icon.google"/>
+		<!--sourceitem name="Google Suche (Song)" comment="aktuellen Song auf Google.de suchen" url="http://www.google.de/search?hl=de%AND%q=%ARTIST% %TITLE%" icon="icon.google"/-->
+		<sourceitem name="Google sponsored SC Web Search (Song)" comment="aktuellen Song auf Google.de suchen." url="http://forums.skinconsortium.com/index.php?page=custom%AND%action=search-browserpro%AND%cx=partner-pub-8995745745086103%3Ak3ng4q-3f9c%AND%cof=FORID%3A10%AND%ie=ISO-8859-1%AND%sa=Search%AND%q=%ARTIST% %TITLE%" icon="icon.google"/>
 		<sourceitem name="Google Bildsuche (Song)" comment="Bilder zum aktuellen Song auf Google.de suchen" url="http://images.google.de/images?hl=de%AND%q=%ARTIST% %TITLE%" icon="icon.google"/>
 		<sourceitem name="Google Bildsuche (Album)" comment="Bilder zum aktuellen Album auf Google.de suchen" url="http://images.google.de/images?hl=de%AND%q=%ARTIST% %ALBUM%" icon="icon.google"/>
 		<sourceitem name="Texte" comment="zeigt den Liedtext des aktuellen Songs an. Sehr grosse Datenbank" url="http://www.lyricsplugin.com/winamp03/plugin/?artist=%ARTIST%%AND%title=%TITLE%" icon="icon.lyricplugin"/>
