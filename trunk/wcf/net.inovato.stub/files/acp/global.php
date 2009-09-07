@@ -9,6 +9,10 @@
 // define paths
 define('RELATIVE_STUB_DIR', '../');
 
+// define paths for appframe
+define('APPLICATION_DIR', STUB_DIR);
+define('RELATIVE_APPLICATION_DIR', RELATIVE_STUB_DIR);
+
 // include config
 $packageDirs = array();
 require_once(dirname(dirname(__FILE__)).'/config.inc.php');
@@ -18,7 +22,7 @@ require_once(RELATIVE_WCF_DIR.'global.php');
 if (!count($packageDirs)) $packageDirs[] = STUB_DIR;
 $packageDirs[] = WCF_DIR;
 
-// starting wbb acp
-require_once(STUB_DIR.'lib/system/StubACP.class.php');
-new StubACP();
+// starting appframe acp
+require_once(WCF_DIR.'lib/system/AppFrameACP.class.php');
+new AppFrameACP();
 ?>

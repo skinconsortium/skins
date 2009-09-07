@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<data xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com/XSD/options.xsd">
+	<import>
+		<categories>
+			<category name="general.appframe_offline">
+				<parent>general</parent>
+				<showorder>2</showorder>
+			</category>
+			<category name="general.appframe_offline.general">
+				<parent>general.appframe_offline</parent>
+			</category>
+		</categories>
+		
+		<options>
+			
+			<!-- offline -->
+			<option name="appframe_offline">
+				<categoryname>general.appframe_offline.general</categoryname>
+				<optiontype>boolean</optiontype>
+			 	<enableoptions><![CDATA[appframe_offline_message,appframe_offline_message_allow_html]]></enableoptions>
+			</option>
+			<option name="appframe_offline_message">
+				<categoryname>general.appframe_offline.general</categoryname>
+				<optiontype>textarea</optiontype>
+			</option>
+			<option name="appframe_offline_message_allow_html">
+				<categoryname>general.appframe_offline.general</categoryname>
+				<optiontype>boolean</optiontype>
+			</option>
+			<!-- /offline -->
+			
+			<!-- general.page -->
+			<option name="appframe_show_version_number">
+				<categoryname>general.page</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>1</defaultvalue>
+			</option>
+			<option name="appframe_show_style_chooser">
+				<categoryname>general.page</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>1</defaultvalue>
+			</option>
+			<!-- /general.page -->
+
+			<!-- general.date -->
+			<option name="appframe_show_clock">
+				<categoryname>general.date</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>1</defaultvalue>
+			</option>
+			<!-- /general.date -->
+		</options>
+	</import>
+</data>
