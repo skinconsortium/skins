@@ -1,11 +1,12 @@
 -------------------------------------------------------------
-Version 1.13 (2 Sep 2009)
+Version 1.13 (8 Sep 2009)
 -------------------------------------------------------------
 - New: Explore Folder when you right click the menu button
 - Improved: Double-clicking the topleft menu button now closes Winamp
 - Improved: Short tab names are now used when the width is small
 - Improved: Main menu now opens under the button and not over it
 - Improved: AlbumArt refresh uses regular Winamp API
+- Improved: Playlist status buttons for mainview
 - Fixed: Plugin tab still openned after swithing to winshade mode and back
 - Fixed: Now Playing background displays wrong color
 - Fixed: Clock not displaying correct in 12hour mode
