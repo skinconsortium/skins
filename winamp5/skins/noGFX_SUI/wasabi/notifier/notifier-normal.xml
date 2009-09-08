@@ -1,0 +1,88 @@
+<groupdef id="notifier.text.left" sysregion = "1" ghost="1">
+	<!--group id="wasabi.window.embedded" x="12" y="9" w="62" h="62" /-->
+	<Deimos:Cover id="cover" notifier="1" x="13" y="11" h="60" w="60" ghost="1"/>
+
+  <text id="plentry" x="75" y="10" default="2/15" w="100" color="notifier.dark" shadow="1" shadowcolor="notifier.bright" shadowx="1" shadowy="1" font="Arial" fontsize="18" ghost="1"/>
+  <text id="nexttrack" x="-118" y="12" w="102" relatw="1" align="right" default="Next track" color="notifier.dark" shadow="1" shadowcolor="notifier.bright" shadowx="1" shadowy="1" font="Arial" fontsize="14" ghost="1"/>
+
+  <text id="title" x="75" y="28" w="-32" relatw="1" default="Nothing" color="notifier.dark" shadow="1" shadowcolor="notifier.bright" shadowx="1" shadowy="1" font="Arial" fontsize="20" ghost="1"/>
+  <text id="artist" x="75" y="44" w="-32" h="18" relatw="1" default="Nithin Sawhney" color="notifier.dark" shadow="1" shadowcolor="notifier.bright" shadowx="1" shadowy="1" font="Arial" fontsize="14" ghost="1"/>
+  <text id="album" x="75" y="58" w="-32" h="12" relatw="1" default="Prophesy" color="notifier.dark" shadow="1" shadowcolor="notifier.bright" shadowx="1" shadowy="1" font="Arial" fontsize="14" ghost="1"/>
+
+  <text id="endofplayback" x="75" y="32" w="-90" relatw="1" align="center" default="End of playback" color="notifier.dark" shadow="1" shadowcolor="notifier.bright" shadowx="1" shadowy="1" font="Arial" fontsize="20" visible="0" ghost="1"/>
+</groupdef>
+
+<groupdef id="notifier.text.right" sysregion = "1" ghost="1">
+  	<!--group id="wasabi.window.embedded" x="-74" relatx="1" y="9" w="62" h="62" /-->
+	<Deimos:Cover id="cover" x="-73" relatx="1" y="11" h="60" w="60" ghost="1" notifier="1"/>
+
+
+  <text id="plentry" x="12" y="10" default="2/15" w="100" color="notifier.dark" shadow="1" shadowcolor="notifier.bright" shadowx="1" shadowy="1" font="Arial" fontsize="18" ghost="1"/>
+  <text id="nexttrack" x="-180" y="12" w="102" relatw="1" align="right" default="Next track" color="notifier.dark" shadow="1" shadowcolor="notifier.bright" shadowx="1" shadowy="1" font="Arial" fontsize="14" ghost="1"/>
+
+  <text id="title" x="16" y="28" w="-32" relatw="1" default="Nothing" color="notifier.dark" shadow="1" shadowcolor="notifier.bright" shadowx="1" shadowy="1" font="Arial" fontsize="20" ghost="1"/>
+  <text id="artist" x="16" y="44" w="-32" h="18" relatw="1" default="Nithin Sawhney" color="notifier.dark" shadow="1" shadowcolor="notifier.bright" shadowx="1" shadowy="1" font="Arial" fontsize="14" ghost="1"/>
+  <text id="album" x="16" y="58" w="-32" h="12" relatw="1" default="Prophesy" color="notifier.dark" shadow="1" shadowcolor="notifier.bright" shadowx="1" shadowy="1" font="Arial" fontsize="14" ghost="1"/>
+
+  <text id="endofplayback" x="16" y="32" w="-96" relatw="1" align="center" default="End of playback" color="notifier.dark" shadow="1" shadowcolor="notifier.bright" shadowx="1" shadowy="1" font="Arial" fontsize="20" visible="0" ghost="1"/>
+
+</groupdef>
+
+<groupdef id="notifier.text" sysregion = "1" ghost="1">
+  <text id="plentry" x="12" y="10" default="2/15" w="100" color="notifier.dark" shadow="1" shadowcolor="notifier.bright" shadowx="1" shadowy="1" font="Arial" fontsize="18" ghost="1"/>
+  <text id="nexttrack" x="-116" y="12" w="102" relatw="1" align="right" default="Next track" color="notifier.dark" shadow="1" shadowcolor="notifier.bright" shadowx="1" shadowy="1" font="Arial" fontsize="14" ghost="1"/>
+
+  <text id="title" x="16" y="28" w="-32" relatw="1" default="Nothing" color="notifier.dark" shadow="1" shadowcolor="notifier.bright" shadowx="1" shadowy="1" font="Arial" fontsize="20" ghost="1"/>
+  <text id="artist" x="16" y="44" w="-32" h="18" relatw="1" default="Nithin Sawhney" color="notifier.dark" shadow="1" shadowcolor="notifier.bright" shadowx="1" shadowy="1" font="Arial" fontsize="14" ghost="1"/>
+  <text id="album" x="16" y="58" w="-32" h="12" relatw="1" default="Prophesy" color="notifier.dark" shadow="1" shadowcolor="notifier.bright" shadowx="1" shadowy="1" font="Arial" fontsize="14" ghost="1"/>
+
+  <text id="endofplayback" x="16" y="32" w="-32" relatw="1" align="center" default="End of playback" color="notifier.dark" shadow="1" shadowcolor="notifier.bright" shadowx="1" shadowy="1" font="Arial" fontsize="20" visible="0" ghost="1"/>
+</groupdef>
+
+<!-- Alpha -->
+
+<!--groupdef id="notifier.nw.text.left" sysregion = "1" ghost="1">
+	<group id="wasabi.window.embedded" x="12" y="9" w="62" h="62" />
+	<Deimos:Cover:NoWeb id="cover" image="tree.bg" notifier="1" x="13" y="10" h="60" w="60" ghost="1"/>
+
+  <text id="plentry" x="75" y="10" default="2/15" w="100" color="notifier.dark" shadow="1" shadowcolor="notifier.bright" shadowx="1" shadowy="1" font="Arial" fontsize="18" ghost="1"/>
+  <text id="nexttrack" x="-118" y="12" w="102" relatw="1" align="right" default="Next track" color="notifier.dark" shadow="1" shadowcolor="notifier.bright" shadowx="1" shadowy="1" font="Arial" fontsize="14" ghost="1"/>
+
+  <text id="title" x="75" y="28" w="-32" relatw="1" default="Nothing" color="notifier.dark" shadow="1" shadowcolor="notifier.bright" shadowx="1" shadowy="1" font="Arial" fontsize="20" ghost="1"/>
+  <text id="artist" x="75" y="44" w="-32" h="18" relatw="1" default="Nithin Sawhney" color="notifier.dark" shadow="1" shadowcolor="notifier.bright" shadowx="1" shadowy="1" font="Arial" fontsize="14" ghost="1"/>
+  <text id="album" x="75" y="58" w="-32" h="12" relatw="1" default="Prophesy" color="notifier.dark" shadow="1" shadowcolor="notifier.bright" shadowx="1" shadowy="1" font="Arial" fontsize="14" ghost="1"/>
+
+  <text id="endofplayback" x="75" y="32" w="-90" relatw="1" align="center" default="End of playback" color="notifier.dark" shadow="1" shadowcolor="notifier.bright" shadowx="1" shadowy="1" font="Arial" fontsize="20" visible="0" ghost="1"/>
+</groupdef>
+
+<groupdef id="notifier.nw.text.right" sysregion = "1" ghost="1">
+  <text id="plentry" x="12" y="10" default="2/15" w="100" color="notifier.dark" shadow="1" shadowcolor="notifier.bright" shadowx="1" shadowy="1" font="Arial" fontsize="18" ghost="1"/>
+  <text id="nexttrack" x="-180" y="12" w="102" relatw="1" align="right" default="Next track" color="notifier.dark" shadow="1" shadowcolor="notifier.bright" shadowx="1" shadowy="1" font="Arial" fontsize="14" ghost="1"/>
+
+  <text id="title" x="16" y="28" w="-32" relatw="1" default="Nothing" color="notifier.dark" shadow="1" shadowcolor="notifier.bright" shadowx="1" shadowy="1" font="Arial" fontsize="20" ghost="1"/>
+  <text id="artist" x="16" y="44" w="-32" h="18" relatw="1" default="Nithin Sawhney" color="notifier.dark" shadow="1" shadowcolor="notifier.bright" shadowx="1" shadowy="1" font="Arial" fontsize="14" ghost="1"/>
+  <text id="album" x="16" y="58" w="-32" h="12" relatw="1" default="Prophesy" color="notifier.dark" shadow="1" shadowcolor="notifier.bright" shadowx="1" shadowy="1" font="Arial" fontsize="14" ghost="1"/>
+
+  <text id="endofplayback" x="16" y="32" w="-96" relatw="1" align="center" default="End of playback" color="notifier.dark" shadow="1" shadowcolor="notifier.bright" shadowx="1" shadowy="1" font="Arial" fontsize="20" visible="0" ghost="1"/>
+
+  	<group id="wasabi.window.embedded" x="-74" relatx="1" y="9" w="62" h="62" />
+	<Deimos:Cover:NoWeb id="cover" image="tree.bg" x="-73" relatx="1" y="10" h="60" w="60" ghost="1" notifier="1"/>
+
+</groupdef-->
+
+<layout id="normal" noparent="1" ontop="1" h="80" w="128" forcealpha="1" noactivation="1" nodock="1" move="0">
+
+  <grid left="notifier.bg.left" middle="notifier.bg.center" right="notifier.bg.right" fitparent="1" sysregion="1" ghost="1" rectrgn="0" move="0"/>
+  <group id="notifier.text" visible="1" fitparent="1" move="0"/>
+  <group id="notifier.text.left" visible="0" fitparent="1" move="0"/>
+  <group id="notifier.text.right" visible="0" fitparent="1" move="0"/>
+
+</layout>
+
+<!--layout id="desktopalpha" noparent="1" ontop="1" h="80" w="128" desktopalpha="1" noactivation="1" nodock="1" move="0">
+
+  <grid left="notifier.bg.left.da" middle="notifier.bg.center.da" right="notifier.bg.right.da" fitparent="1" ghost="1" move="0"/>
+  <group id="notifier.text" visible="1" fitparent="1" move="0"/>
+  <group id="notifier.nw.text.left" visible="0" fitparent="1" move="0"/>
+  <group id="notifier.nw.text.right" visible="0" fitparent="1" move="0"/>
+</layout-->

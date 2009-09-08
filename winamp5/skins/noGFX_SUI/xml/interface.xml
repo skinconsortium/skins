@@ -1,0 +1,5 @@
+<container id="main" name="Main Window" ghost="1">
+
+	<include file="interface-normal.xml"/>
+
+</container>

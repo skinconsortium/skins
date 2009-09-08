@@ -1,0 +1,81 @@
+<elements>
+<!--Gammagroups: Shadows, Borders, Backgrounds -->
+
+	 <bitmap id="player.status.stop" file="$polygon" points="2,2;7,2;7,7;2,7;2,2=0,0,0" h="9" w="9" gammagroup="Playback Status Symbols"/>
+  <bitmap id="player.status.play" file="$polygon" points="2,-1;7,4;2,9;2,-1=0,0,0" h="9" w="9" gammagroup="Playback Status Symbols"/>
+  <bitmap id="player.status.pause" file="$polygon" points="1,2;4,2;4,7;1,7;1,2=0,0,0|5,2;8,2;8,7;5,7;5,2=0,0,0" h="9" w="9" gammagroup="Playback Status Symbols"/>
+
+    <bitmap id="b" file="$solid" color="0,0,0" w="10" h="10" gammagroup="Backgrounds"/>
+
+  <bitmap id="bg" file="$gradient" color="73,78,91"
+   w="256" h="256" gammagroup="Backgrounds" gradient_x1="0.5" gradient_y1="0.5"
+   mode="circular" points="0=255,255,255,255;5=255,0,0,0"
+   gradient_x2="1.50" gradient_y2="1.5"/>
+
+  <bitmap id="wasabi.titlebar.center." file="$gradient" h="9" w="7" gammagroup="Titlebars"
+   gradient_x1="0" gradient_x2="0" gradient_y1="0" gradient_y2="1"
+   points="0=#00000000;0.5=#dfdfdfdf;1.0=#00000000" />
+
+
+	<!---color id="color.borders" value="90,115,155" gammagroup="Borders" /-->
+
+	<color id="color.borders" value="255,168,0" gammagroup="Borders" />
+
+	<bitmap id="interface.bg" file="$solid" color="255,210,140" h="1" w="1"/>
+
+	<bitmap id="interface.shadow.left" file="$gradient" h="2" w="5" gammagroup="Shadows"
+		gradient_x1="0" gradient_y1="0.1" gradient_x2="1" gradient_y2="0.10000001"
+		points="0=0,0,0,0;1=0,0,0,100" />
+	<bitmap id="interface.shadow.right" file="$gradient" h="2" w="5" gammagroup="Shadows"
+		gradient_x1="1" gradient_y1="0.1" gradient_x2="0" gradient_y2="0.10000001"
+		points="0=0,0,0,0;1.1=0,0,0,100" />
+	<bitmap id="interface.shadow.top" file="$gradient" h="5" w="2" gammagroup="Shadows"
+		gradient_x1="0" gradient_y1="0" gradient_x2="0" gradient_y2="1"
+		points="0=0,0,0,0;1=0,0,0,100" />
+	<bitmap id="interface.shadow.bottom" file="$gradient" h="5" w="2" gammagroup="Shadows"
+		gradient_x1="0" gradient_y1="0" gradient_x2="0" gradient_y2="1"
+		points="1=0,0,0,0;-0.1=0,0,0,100" />
+	<bitmap id="interface.shadow.edge" file="$gradient" h="10" w="10"  gammagroup="Shadows"
+		gradient_x1="0.5" gradient_y1="0.5" gradient_x2="1" gradient_y2="0.5"
+		mode="circular" points="0=0,0,0,100;1=0,0,0,0"/>
+	<bitmap id="interface.shadow.transparent" file="$solid" h="5" w="5" color="0,0,0" alpha="0" />
+	<bitmap id="interface.shadow.region.topleft" file="$polygon" points="0,0;0,5;5,5;5,0;0,0=0,0,0" h="10" w="10" />
+	<bitmap id="interface.shadow.region.topright" file="$polygon" points="5,0;10,0;10,5;5,5;5,0=0,0,0" h="10" w="10" />
+	<bitmap id="interface.shadow.region.bottomleft" file="$polygon" points="0,5;5,5;5,10;0,10;0,5=0,0,0" h="10" w="10" />
+	<bitmap id="interface.shadow.region.bottomright" file="$polygon" points="5,5;10,5;10,10;5,10;5,5=0,0,0" h="10" w="10" />
+
+	<bitmap id="interface.resize" file="$polygon" points="0,8;8,0;8,1;1,8;0,8=0,0,0,200|8,1;8,2;2,8;1,8;8,1=255,255,255,200|4,8;8,4;8,5;5,8;4,8=0,0,0,200|5,8;8,5;8,6;6,8;5,8=255,255,255,200" h="8" w="8" gammagroup="Text"/>
+
+	<bitmap id="interface.titlebar.bg.left" file="$gradient" h="20" w="50" gammagroup="Backgrounds"
+		gradient_x1="1" gradient_y1="0" gradient_x2="0" gradient_y2="1"
+		mode="circular"
+		points="1=255,255,255,255;0.5=255,255,255,0;0=255,255,255,0" />
+
+	<bitmap id="interface.titlebar.bg.left2" file="$gradient" h="20" w="500" gammagroup="Backgrounds"
+		gradient_x1="1" gradient_y1="1" gradient_x2="0" gradient_y2="0"
+		mode="circular"
+		points="1=255,210,140,255;0.6=255,210,140,0;0=255,210,140,0" />
+
+	<bitmap id="interface.titlebar.bg" file="$gradient" h="20" w="1" gammagroup="Backgrounds"
+		gradient_x1="0" gradient_y1="0" gradient_x2="1" gradient_y2="1"
+		points="1=255,210,140,255;0=255,255,255,255" />
+	<bitmap id="interface.titlebar.edge" file="$gradient" h="20" w="20" gammagroup="Backgrounds"
+		gradient_x1="0.5" gradient_y1="0.5" gradient_x2="1" gradient_y2="0.5"
+		mode="circular" points="1=255,210,140,255;0=255,255,255,255"/>
+
+	<bitmap id="interface.titlebar.button.inner" file="$gradient" h="14" w="14" gammagroup="Backgrounds"
+		gradient_x1="0" gradient_y1="0" gradient_x2="0" gradient_y2="1"
+		points="1=255,168,0,255;0=255,255,255,255"/>
+	<bitmap id="interface.titlebar.button.bg" file="$gradient" h="14" w="14" gammagroup="Backgrounds"
+		gradient_x1="0.5" gradient_y1="0.5" gradient_x2="1" gradient_y2="0.5"
+		mode="circular" points="1.0=255,210,140,0;0.8=255,210,140;0.7=255,210,140;0.65=255,255,255,255;0=255,168,0,255"/>
+	<bitmap id="interface.titlebar.button.bg.region" file="$gradient" h="14" w="14" gammagroup="Backgrounds"
+		gradient_x1="0.5" gradient_y1="0.5" gradient_x2="1" gradient_y2="0.5"
+		mode="circular" points="0.8=0,0,0,0;0.75=0,0,0,255;0=0,0,0,255"/>
+
+
+	<bitmap id="interface.titlebar.region.left" file="$polygon" points="0,0;9,0;9,18;0,18;0,0=0,0,0" h="18" w="18" />
+	<bitmap id="interface.titlebar.region.right" file="$polygon" points="9,0;18,0;18,18;9,18;9,0=0,0,0" h="18" w="18" />
+
+
+</elements>

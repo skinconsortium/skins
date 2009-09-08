@@ -1,0 +1,23 @@
+<!-- ===================================================================================================
+
+  <Deimos:DropDownList /> implmentation
+
+  by Martin P. alias Deimos - martin.deimos@gmx.de - www.martin.deimos.de.vu
+
+    Available parameters :
+
+      - All params for DropDownList
+      - All params for Group
+
+	  - itemguid="..."
+	  - lh="listheigth"
+	  - privateIntSection="..."
+	  - privateIntItem="..."
+	  - defaultItem="..."
+
+==================================================================================================== -->
+
+<groupdef id="customdropdownlist" xuitag="Deimos:DropDownList" embed_xui="dropdownlist">
+	<Wasabi:Dropdownlist id="dropdownlist" x="0" y="0" w="0" h="20" relatw="1" />
+	<script id="customdropdownlistscript" file="wasabi/customdropdownlist/customdropdownlist.maki"></script>
+</groupdef>

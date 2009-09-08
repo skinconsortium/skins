@@ -1,0 +1,92 @@
+<groupdef id="interface.titlebar" >
+
+	<rect fitparent="1" color="color.borders" edges="bottom" thickness="1"/>
+	<layer fitparent="-1" image="interface.titlebar.bg"/>
+	<layer x="1" y="1" image="interface.titlebar.bg.left"/>
+	<layer x="1" y="1" image="interface.titlebar.bg.left2"/>
+	<!--layer x="1" y="1" image="interface.titlebar.edge" region="interface.titlebar.region.left"/>
+	<layer x="-20" relatx="1" y="1" image="interface.titlebar.edge" region="interface.titlebar.region.right"/-->
+
+	<text relatw="1" size="10" font="Tahoma" bold="1" align="left" x="24" y="3" text="Winamp" color="color.borders"/>
+	
+	<button id="Close" action="minimize" x="-38" y="4" relatx="1" h="14" w="14" rectrgn="1" image="interface.titlebar.button.bg" tooltip="Close Winamp" />
+
+	<!--layer x="-35" y="4" relatx="1" image="interface.titlebar.button.inner" region="interface.titlebar.button.bg.region"/-->
+	<button id="Close" action="Close" x="-20" y="4" h="14" w="14" rectrgn="1" relatx="1" image="interface.titlebar.button.bg" tooltip="Minimize Winamp" />
+
+	<button id="Close" action="controlmenu" x="4" y="4" relatx="0" h="14" w="14" rectrgn="1" image="interface.titlebar.button.bg" tooltip="Control Menu" />
+
+</groupdef>
+
+<groupdef id="player.content.vis.dummy.group" name="AVSDummyGroup" relatw="1" relath="1" w="0" h="0">
+  <component
+    x="0"
+    y="0"
+    w="0"
+    relatw="1"
+    h="0"
+    relath="1"
+    noshowcmdbar="1"
+    autoopen="1"
+    autoclose="1"
+    param="{0000000A-000C-0010-FF7B-01014263450C}"
+  />
+</groupdef>
+
+<groupdef id="interface.background">
+
+	<grid fitparent="1" move="1"
+		left="interface.shadow.left"
+		topleft="interface.shadow.transparent"
+		topright="interface.shadow.transparent"
+		top="interface.shadow.top"
+		right="interface.shadow.right"
+		bottomleft="interface.shadow.transparent"
+		bottomright="interface.shadow.transparent"
+		bottom="interface.shadow.bottom"
+	/>
+	<layer x="0" y="0" h="10" w="10" image="interface.shadow.edge" region="interface.shadow.region.topleft"/>
+	<layer x="-10" relatx="1" y="0" h="10" w="10" image="interface.shadow.edge" region="interface.shadow.region.topright"/>
+	<layer x="0" y="-10" relaty="1" h="10" w="10" image="interface.shadow.edge" region="interface.shadow.region.bottomleft"/>
+	<layer x="-10" relatx="1" y="-10" relaty="1" h="10" w="10" image="interface.shadow.edge" region="interface.shadow.region.bottomright"/>
+
+
+	<rect fitparent="-5" color="color.borders" thickness="1"/>
+
+	<layer image="interface.bg" fitparent="-6" sysregion="1"/>
+	<layer x="50" y="50" image="interface.titlebar.bg.left2"/>
+
+	<group x="5" y="5" h="22" w="-10" relatw="1" id="interface.titlebar" />
+
+
+
+
+</groupdef>
+
+<layout id="normal" minimum_h="100" minimum_w="200" desktopalpha="1">
+
+
+	<!--rect id="seek.track.fill" 
+		x="5" y="5" w="-10" h="-10" relatw="1" relath="1" 
+		color="160,160,255" filled="1"
+		sysregion="1" move="1"
+	/-->
+
+	<!--layer x="5" y="30"  image="interface.shadow.region.topleft" sysregion="1" /-->
+  <!--rect filled="0" color="wasabi.objectframe.upperleft" fitparent="1" edges="left;top" alpha="128" />
+  <rect filled="0" color="wasabi.objectframe.lowerright" fitparent="1" edges="bottom;right" alpha="128" />
+  <rect filled="1" color="wasabi.objectframe.inside" fitparent="-1" thickness="1"/-->
+<!--status
+  id="status"
+  x="13" y="12"
+  w="9" h="9"
+  stopBitmap="player.status.stop"
+  playBitmap="player.status.play"
+  pauseBitmap="player.status.pause"
+/-->
+
+
+	<group id="interface.background" fitparent="1" sysregion="1" move="1"/>
+
+	<layer y="-16" x="-16" h="8" w="8" relatx="1" relaty="1" image="interface.resize" sysregion="1" resize="bottomright" rectrgn="1"/>
+</layout>
