@@ -1,0 +1,55 @@
+<!-- ===================================================================================================
+
+	<Deimos:WindowModeButton /> implementation
+
+	by Martin Poehlmann aka Deimos - martin@skinconsortium.com
+	www.skinconsortium.com - www.martin.deimos.de.vu
+
+    Available parameters :
+
+      - All params for Button
+      - All params for Group
+
+
+      - switch="container_id" or "this" for current container
+
+	  - layoutIds="layout_id1;layout_id2;..." use before menuentry!!!
+
+	  - menuentry="layout_name1;layout_name2;..." defines the names displayed in the WindowModeMenu
+
+	  - lclick="menu" to show the menu, "switchto:layout_id" to switch to a layout, or "null" for no action
+
+	  - rclick="menu" to show the menu, "switchto:layout_id" to switch to a layout, or "null" for no action
+	
+	  
+    EXAMPLE:
+	  <Deimos:WindowModeButton
+			id="windowswitch"
+			x="10" y="10"
+			image="windowswitch.n"
+			downImage="windowswitch.d"
+			switch="normal"
+			layoutIds="normal;shade;comp;dash"
+			menuentry="Normal;Shade;Compact;Dashboard"
+			rclick="menu"
+			lclick="switchto:dash"
+	  />
+
+    USAGE:
+		- copy "windowmodebutton.xml" in your "skinname/xml/" folder
+		- copy "windowmodebutton.maki" in your "skinname/scripts/" folder
+		- implement this line in "skin.xml":
+				<include file="xml/windowmodebutton.xml" />
+
+	NOTE: Leave this header if you use this file in your project!
+		  You can give me credit in your "about the skin" if you want ;)
+
+==================================================================================================== -->
+
+<groupdef id="windowmodebutton" xuitag="Deimos:WindowModeButton" embed_xui="btn">
+
+	<Button id="btn" tooltip="Window Modes" />
+
+	<script id="windowmodebutton.script" file="wasabi/windowmodebutton/windowmodebutton.maki" />
+
+</groupdef>

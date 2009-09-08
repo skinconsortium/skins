@@ -1,0 +1,24 @@
+<!-- Titan:WASABI -->
+
+<!--include file="xml/color-presets.xml"/>
+<include file="xml/system-colors.xml"/>
+
+<include file="standardframe/standardframe.xml" /-->
+<!--include file="ConfigPage/configpage.xml" /-->
+<!--include file="button/button.xml" /-->
+<!--include file="updateSystem/updateSystem.xml" /-->
+<!--include file="titlebar/titlebar.xml" /-->
+<!--include file="tabsheet/tabsheet.xml" /-->
+<!--include file="notifier/notifier.xml" /-->
+
+<!--include file="CustomDropDownList/customdropdownlist.xml" /-->
+<!--include file="GlowButton/glowbutton.xml" /-->
+<include file="Cover/cover.xml" />
+<!--include file="SliderText/slidertext.xml" />
+<include file="TickerText/tickertext.xml" />
+<include file="RestoreButton/restorebutton.xml" />
+<include file="HyperLinkButton/HyperLinkButton.xml" />
+<include file="windowmodebutton/windowmodebutton.xml" /-->
+<!--include file="Visualizer/visualizer.xml" />
+<include file="checkbox/checkbox.xml" />
+<include file="titlebox/titlebox.xml" /-->

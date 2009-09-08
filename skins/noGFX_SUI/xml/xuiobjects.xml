@@ -1,0 +1,4 @@
+<!--groupdef id="nogfx.sui.layerwithregion" embed_xui="layer" xuitag="rLayer">
+	<layer fitparent="1" id="layer"/>
+	<script file="scripts/rLayer.maki"/>
+</groupdef-->

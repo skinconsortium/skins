@@ -1,0 +1,18 @@
+<container id="albumart" name="AlbumArt">
+
+	<groupdef id="covergroup">
+
+		<Wasabi:AlbumArt fitparent="1" />
+
+	</groupdef>
+
+	<layout id="normal" minimum_w="138" minimum_h="189" default_w="198" default_h="249" default_visible="1">
+
+		<Wasabi:StandardFrame:NoStatus
+			x="0" y="0" w="0" h="0" relatw="1" relath="1"
+			content="covergroup"
+		/>
+
+	</layout>
+
+</container>

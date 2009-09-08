@@ -1,0 +1,23 @@
+<!-- ===================================================================================================
+
+  <Deimos:RestoreButton /> implmentation
+
+  by Martin P. alias Deimos - martin.deimos@gmx.de - www.martin.deimos.de.vu
+
+    Available parameters :
+
+      - All params for Button
+      - All params for Group
+
+      - setAttribs="attrib+':'+newval+'|'attrib2+':'+newval2"
+	  - numAttribs="n"
+
+==================================================================================================== -->
+
+<groupdef id="titan.restorebutton" xuitag="Deimos:RestoreButton" embed_xui="btn">
+
+	<Wasabi:Button id="btn" visible="1" x="0" y="0" h="0" w="0" relath="1" relatw="1" />
+
+	<script id="rst.script" file="wasabi/RestoreButton/restorebutton.maki" />
+
+</groupdef>

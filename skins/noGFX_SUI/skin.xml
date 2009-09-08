@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<WinampAbstractionLayer version="1.2">
+	<skininfo>
+		<version>1.0</version>
+		<name>noGFX SUI</name>
+		<author>Martin Poehlmann</author>
+		<email>martin@skinconsortium.com</email>
+		<homepage>http://www.skinconsortium.com/</homepage>
+		<comment>A Single User Interface Skin without graphics</comment>
+	</skininfo>
+
+
+	<include file="wasabi/wasabi.xml"/>
+	<include file="xml/elements.xml"/>
+	<include file="xml/xuiobjects.xml"/>
+	<include file="xml/interface.xml"/>
+	<include file="xml/coverwnd.xml"/>
+	<include file="xml/open.xml"/>
+	
+
+</WinampAbstractionLayer>

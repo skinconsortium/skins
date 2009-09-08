@@ -1,0 +1,23 @@
+  <container id="fselect" name="Select File through Box">
+   <layout id="normal">
+    <Wasabi:StandardFrame:NoStatus id="fselect" w="200" h="200"/>
+    <browser
+     id="filebrowse"
+     x="30" y="30"
+     w="130" h="100"
+     scrollbars="never"
+    />
+    <text
+     id="dummyaddholder"
+     x="-20" y="-120"
+     text="file:///@SKINPATH@"
+     alpha="0"
+    />
+    <text
+     id="filename"
+     x="30" y="140"
+     width="180"
+    />
+    <script id="fselect.browser" file="scripts/fselect.maki"/>
+   </layout>
+  </container>
