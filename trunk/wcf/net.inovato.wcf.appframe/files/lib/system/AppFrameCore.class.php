@@ -12,8 +12,14 @@ require_once(WCF_DIR.'lib/system/style/StyleManager.class.php');
  * @package		net.inovato.wcf.appframe
  */
 
-
-class StubCore extends WCF implements PageMenuContainer, UserCPMenuContainer, UserProfileMenuContainer {
+class AppFrameCore extends WCF implements PageMenuContainer, UserCPMenuContainer, UserProfileMenuContainer
+{
+	// Permission of users to view the application in offline mode. Default is unused (=null).
+	protected static $canViewAppInOfflineModePermission = null;
+	
+	// Default activated headermenu item. If set to null no item will be activated by default.
+	protected static $defaultActiveHeaderMenuItem = null;
+	
 	protected static $pageMenuObj = null;
 	protected static $userCPMenuObj = null;
 	protected static $userProfileMenuObj = null;
@@ -25,7 +31,8 @@ class StubCore extends WCF implements PageMenuContainer, UserCPMenuContainer, Us
 	/**
 	 * @see WCF::initTPL()
 	 */
-	protected function initTPL() {
+	protected function initTPL()
+	{
 		// init style to get template pack id
 		$this->initStyle();
 		
@@ -38,30 +45,39 @@ class StubCore extends WCF implements PageMenuContainer, UserCPMenuContainer, Us
 		$this->initCronjobs();
 		
 		// check offline mode
-		// reimplement
-		/*if (OFFLINE && !self::getUser()->getPermission('user.board.canViewStubOffline')) {
-			$showOfflineError = true;
-			foreach (self::$availablePagesDuringOfflineMode as $type => $names) {
-				if (isset($_REQUEST[$type])) {
-					foreach ($names as $name) {
-						if ($_REQUEST[$type] == $name) {
-							$showOfflineError = false;
-							break 2;
+		if (APPFRAME_OFFLINE)
+		{
+			if (self::$canViewAppInOfflineModePermission == null || !self::getUser()->getPermission(self::$canViewAppInOfflineModePermission))
+			{
+				$showOfflineError = true;
+				foreach (self::$availablePagesDuringOfflineMode as $type => $names)
+				{
+					if (isset($_REQUEST[$type]))
+					{
+						foreach ($names as $name) 
+						{
+							if ($_REQUEST[$type] == $name)
+							{
+								$showOfflineError = false;
+								break 2;
+							}
 						}
+						
+						break;
 					}
-					
-					break;
 				}
 			}
 			
-			if ($showOfflineError) {
-				self::getTPL()->display('offline');
+			if ($showOfflineError)
+			{
+				self::getTPL()->display('appFrameOffline');
 				exit;
 			}
-		}*/
+		}
 		
 		// user ban
-		if (self::getUser()->banned && (!isset($_REQUEST['page']) || $_REQUEST['page'] != 'LegalNotice')) {
+		if (self::getUser()->banned && (!isset($_REQUEST['page']) || $_REQUEST['page'] != 'LegalNotice'))
+		{
 			throw new NamedUserException(WCF::getLanguage()->getDynamicVariable('wcf.user.banned'));
 		}
 	}
@@ -69,23 +85,26 @@ class StubCore extends WCF implements PageMenuContainer, UserCPMenuContainer, Us
 	/**
 	 * Initialises the cronjobs.
 	 */
-	protected function initCronjobs() {
+	protected function initCronjobs()
+	{
 		self::getTPL()->assign('executeCronjobs', WCF::getCache()->get('cronjobs-'.PACKAGE_ID, 'nextExec') < TIME_NOW);
 	}
 	
 	/**
 	 * @see WCF::loadDefaultCacheResources()
 	 */
-	protected function loadDefaultCacheResources() {
+	protected function loadDefaultCacheResources()
+	{
 		parent::loadDefaultCacheResources();
-		$this->loadDefaultStubCacheResources();
+		$this->loadDefaultAppFrameCacheResources();
 	}
 	
 	/**
-	 * Loads default cache resources of the stub app.
+	 * Loads default cache resources of the AppFrame.
 	 * Can be called statically from other applications or plugins.
 	 */
-	public static function loadDefaultStubCacheResources() {
+	public static function loadDefaultAppFrameCacheResources()
+	{
 		WCF::getCache()->addResource('pageLocations-'.PACKAGE_ID, WCF_DIR.'cache/cache.pageLocations-'.PACKAGE_ID.'.php', WCF_DIR.'lib/system/cache/CacheBuilderPageLocations.class.php');
 		WCF::getCache()->addResource('bbcodes', WCF_DIR.'cache/cache.bbcodes.php', WCF_DIR.'lib/system/cache/CacheBuilderBBCodes.class.php');
 		WCF::getCache()->addResource('smileys', WCF_DIR.'cache/cache.smileys.php', WCF_DIR.'lib/system/cache/CacheBuilderSmileys.class.php');
@@ -96,16 +115,21 @@ class StubCore extends WCF implements PageMenuContainer, UserCPMenuContainer, Us
 	/**
 	 * Initialises the page header menu.
 	 */
-	protected static function initPageMenu() {
+	protected static function initPageMenu()
+	{
 		require_once(WCF_DIR.'lib/page/util/menu/PageMenu.class.php');
 		self::$pageMenuObj = new PageMenu();
-		if (PageMenu::getActiveMenuItem() == '') PageMenu::setActiveMenuItem('stub.header.menu.home');
+		if (self::$defaultActiveHeaderMenuItem != null && PageMenu::getActiveMenuItem() == '')
+		{
+			PageMenu::setActiveMenuItem(self::$defaultActiveHeaderMenuItem);
+		}
 	}
 	
 	/**
 	 * Initialises the user cp menu.
 	 */
-	protected static function initUserCPMenu() {
+	protected static function initUserCPMenu()
+	{
 		require_once(WCF_DIR.'lib/page/util/menu/UserCPMenu.class.php');
 		self::$userCPMenuObj = UserCPMenu::getInstance();
 	}
@@ -113,7 +137,8 @@ class StubCore extends WCF implements PageMenuContainer, UserCPMenuContainer, Us
 	/**
 	 * Initialises the user profile menu.
 	 */
-	protected static function initUserProfileMenu() {
+	protected static function initUserProfileMenu()
+	{
 		require_once(WCF_DIR.'lib/page/util/menu/UserProfileMenu.class.php');
 		self::$userProfileMenuObj = UserProfileMenu::getInstance();
 	}
@@ -121,15 +146,18 @@ class StubCore extends WCF implements PageMenuContainer, UserCPMenuContainer, Us
 	/**
 	 * @see WCF::getOptionsFilename()
 	 */
-	protected function getOptionsFilename() {
-		return STUB_DIR.'options.inc.php';
+	protected function getOptionsFilename()
+	{
+		return APPLICATION_DIR.'options.inc.php';
 	}
 	
 	/**
 	 * Initialises the style system.
 	 */
-	protected function initStyle() {
-		if (isset($_GET['styleID'])) {
+	protected function initStyle()
+	{
+		if (isset($_GET['styleID']))
+		{
 			self::getSession()->setStyleID(intval($_GET['styleID']));
 		}
 		
@@ -139,8 +167,10 @@ class StubCore extends WCF implements PageMenuContainer, UserCPMenuContainer, Us
 	/**
 	 * @see PageMenuContainer::getPageMenu()
 	 */
-	public static final function getPageMenu() {
-		if (self::$pageMenuObj === null) {
+	public static final function getPageMenu()
+	{
+		if (self::$pageMenuObj === null)
+		{
 			self::initPageMenu();
 		}
 		
@@ -151,15 +181,18 @@ class StubCore extends WCF implements PageMenuContainer, UserCPMenuContainer, Us
 	 * @see PageMenuContainer::getPageMenu()
 	 * @deprecated
 	 */
-	public static final function getHeaderMenu() {
+	public static final function getHeaderMenu()
+	{
 		return self::getPageMenu();
 	}
 	
 	/**
 	 * @see UserCPMenuContainer::getUserCPMenu()
 	 */
-	public static final function getUserCPMenu() {
-		if (self::$userCPMenuObj === null) {
+	public static final function getUserCPMenu()
+	{
+		if (self::$userCPMenuObj === null)
+		{
 			self::initUserCPMenu();
 		}
 		
@@ -169,8 +202,10 @@ class StubCore extends WCF implements PageMenuContainer, UserCPMenuContainer, Us
 	/**
 	 * @see UserProfileMenuContainer::getUserProfileMenu()
 	 */
-	public static final function getUserProfileMenu() {
-		if (self::$userProfileMenuObj === null) {
+	public static final function getUserProfileMenu()
+	{
+		if (self::$userProfileMenuObj === null)
+		{
 			self::initUserProfileMenu();
 		}
 		
@@ -182,17 +217,19 @@ class StubCore extends WCF implements PageMenuContainer, UserCPMenuContainer, Us
 	 * 
 	 * @return	ActiveStyle
 	 */
-	public static final function getStyle() {
+	public static final function getStyle()
+	{
 		return StyleManager::getStyle();
 	}
 	
 	/**
 	 * @see WCF::initSession()
 	 */
-	protected function initSession() {
+	protected function initSession()
+	{
 		// start session
-		require_once(STUB_DIR.'lib/system/session/StubSessionFactory.class.php');
-		$factory = new StubSessionFactory();
+		require_once(WCF_DIR.'lib/system/session/AppFrameSessionFactory.class.php');
+		$factory = new AppFrameSessionFactory();
 		self::$sessionObj = $factory->get();
 		self::$userObj = self::getSession()->getUser();
 	}
@@ -200,12 +237,14 @@ class StubCore extends WCF implements PageMenuContainer, UserCPMenuContainer, Us
 	/**
 	 * @see	WCF::assignDefaultTemplateVariables()
 	 */
-	protected function assignDefaultTemplateVariables() {
+	protected function assignDefaultTemplateVariables()
+	{
 		parent::assignDefaultTemplateVariables();
 		self::getTPL()->registerPrefilter('icon');
 		self::getTPL()->assign(array(
 			'timezone' => DateUtil::getTimezone(),
-			'stylePickerOptions' => (SHOW_STYLE_CHOOSER ? StyleManager::getAvailableStyles() : array())
+			'stylePickerOptions' => (APPFRAME_SHOW_STYLE_CHOOSER ? StyleManager::getAvailableStyles() : array()),
+			'canViewAppInOfflineModePermission' => self::$canViewAppInOfflineModePermission
 		));
 	}
 }

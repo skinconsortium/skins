@@ -11,9 +11,6 @@
 <script type="text/javascript" src="{@RELATIVE_WCF_DIR}js/PopupMenuList.class.js"></script>
 <script type="text/javascript" src="{@RELATIVE_WCF_DIR}js/AjaxRequest.class.js"></script>
 
-<!-- stub styles -->
-<link rel="stylesheet" type="text/css" media="screen" href="{@RELATIVE_STUB_DIR}style/stub.css" />
-
 {if $specialStyles|isset}
 	<!-- special styles -->
 	{@$specialStyles}
@@ -106,4 +103,9 @@
 		ajaxRequest.openGet('index.php?action=CronjobsExec'+SID_ARG_2ND);
 		//]]>
 	</script>
+{/if}
+
+{if $specialScripts|isset}
+	<!-- special scripts -->
+	{@$specialScripts}
 {/if}

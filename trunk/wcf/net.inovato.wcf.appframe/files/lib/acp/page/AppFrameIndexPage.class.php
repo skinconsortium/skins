@@ -3,6 +3,7 @@
 require_once(WCF_DIR.'lib/page/AbstractPage.class.php');
 require_once(WCF_DIR.'lib/acp/package/PackageInstallationQueue.class.php');
 require_once(WCF_DIR.'lib/data/feed/FeedReaderSource.class.php');
+require_once(WCF_DIR.'lib/system/cache/CacheBuilderAppFrameACPStatistics.class.php');
 
 /**
  * Shows the welcome page in admin control panel.
@@ -99,31 +100,12 @@ abstract class AppFrameIndexPage extends AbstractPage
 	 */
 	protected function readStat()
 	{
-		// appframe version
-		$sql = "SELECT	packageVersion
-				FROM	wcf" . WCF_N . "_package
-				WHERE	package = 'net.inovato.wcf.appframe'";
-		$row = WCF::getDB()->getFirstRow($sql);
-		$this->stat['appFrameVersion'] = $row['packageVersion'];
-		
-		
-		// members
-		$sql = "SELECT	COUNT(*) AS members
-				FROM	wcf" . WCF_N . "_user";
-		$row = WCF::getDB()->getFirstRow($sql);
-		$this->stat['members'] = $row['members'];
-		
-		// database entries and size
-		// TODO use caching
-		$this->stat['databaseSize'] = 0;
-		$this->stat['databaseEntries'] = 0;
-		$sql = "SHOW TABLE STATUS";
-		$result = WCF::getDB()->sendQuery($sql);
-		while($row = WCF::getDB()->fetchArray($result))
-		{
-			$this->stat['databaseSize'] += $row['Data_length'] + $row['Index_length'];
-			$this->stat['databaseEntries'] += $row['Rows'];
-		}
+		WCF::getCache()->addResource('appframeacpstat',
+									 WCF_DIR.'cache/cache.appframe.acp.stat-'.PACKAGE_ID.'.php',
+									 WCF_DIR.'lib/system/cache/CacheBuilderAppFrameACPStatistics.class.php',
+									 0,
+									 15*3600);
+		$this->stat = WCF::getCache()->get('appframeacpstat');
 		
 		// total users online
 		$sql = "SELECT	COUNT(*) AS totalUsersOnline

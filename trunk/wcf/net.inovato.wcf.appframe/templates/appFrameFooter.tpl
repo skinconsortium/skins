@@ -10,7 +10,7 @@
 					
 					{if $stylePickerOptions|count > 1}
 						<li class="stylePicker">
-							<a id="changeStyle" class="hidden"><img src="{icon}styleOptionsS.png{/icon}" alt="" /> <span>{lang}wbb.global.changeStyle{/lang}</span></a>
+							<a id="changeStyle" class="hidden"><img src="{icon}styleOptionsS.png{/icon}" alt="" /> <span>{lang}wcf.appframe.global.changeStyle{/lang}</span></a>
 							<div class="hidden" id="changeStyleMenu">
 								<ul>
 									{foreach from=$stylePickerOptions item=style key=styleID}
@@ -42,14 +42,14 @@
 							</noscript>
 						</li>
 					{/if}
-					{if SHOW_CLOCK}
+					{if APPFRAME_SHOW_CLOCK}
 						<li id="date" class="date" title="{@TIME_NOW|fulldate} UTC{if $timezone > 0}+{@$timezone}{else if $timezone < 0}{@$timezone}{/if}"><em><img src="{icon}dateS.png{/icon}" alt="" /> <span>{@TIME_NOW|fulldate}</span></em></li>
 					{/if}
 					<li id="toTopLink" class="last extraButton"><a href="#top" title="{lang}wcf.global.scrollUp{/lang}"><img src="{icon}upS.png{/icon}" alt="{lang}wcf.global.scrollUp{/lang}" /> <span class="hidden">{lang}wcf.global.scrollUp{/lang}</span></a></li>
 				</ul>
 			</div>
 		</div>
-		<p class="copyright">{lang}wbb.global.copyright{/lang}</p>
+		<p class="copyright">{lang}wcf.appframe.global.copyright{/lang}{lang}wcf.appframe.global.copyright2{/lang}</p>
 	</div>
 </div>
 {if !$this->user->userID && !LOGIN_USE_CAPTCHA}
@@ -62,7 +62,7 @@
 				{@SID_INPUT_TAG}
 				<input tabindex="4" type="image" class="inputImage" src="{icon}submitS.png{/icon}" alt="{lang}wcf.global.button.submit{/lang}" />
 			</div>
-			<p><label><input tabindex="3" type="checkbox" id="useCookies" name="useCookies" value="1" /> {lang}wbb.header.login.useCookies{/lang}</label></p>
+			<p><label><input tabindex="3" type="checkbox" id="useCookies" name="useCookies" value="1" /> {lang}acf.appframe.header.login.useCookies{/lang}</label></p>
 		</form>
 	</div>
 {/if}

@@ -54,8 +54,8 @@
 		<item name="wcf.acp.option.category.general.appframe_offline.description"><![CDATA[]]></item>
 		<item name="wcf.acp.option.category.general.appframe_offline.general"><![CDATA[Maintenance Mode]]></item>
 		<item name="wcf.acp.option.category.general.appframe_offline.general.description"><![CDATA[]]></item>
-		<item name="wcf.acp.option.appframe_offline"><![CDATA[Disable application]]></item>
-		<item name="wcf.acp.option.appframe_offline.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.appframe_offline"><![CDATA[Disable {PACKAGE_NAME}]]></item>
+		<item name="wcf.acp.option.appframe_offline.description"><![CDATA[{PACKAGE_NAME} can be turned off for maintenance tasks.]]></item>
 		<item name="wcf.acp.option.appframe_offline_message"><![CDATA[Deactivation note]]></item>
 		<item name="wcf.acp.option.appframe_offline_message.description"><![CDATA[This message is displayed while the application is disabled.]]></item>
 		<item name="wcf.acp.option.appframe_offline_message_allow_html"><![CDATA[Use HTML code]]></item>
@@ -66,5 +66,37 @@
 		<item name="wcf.acp.option.appframe_show_style_chooser.description"><![CDATA[A list of all available styles is displayed in the footer of the page.]]></item>
 		<item name="wcf.acp.option.appframe_show_version_number"><![CDATA[Show version number in copyright note]]></item>
 		<item name="wcf.acp.option.appframe_show_version_number.description"><![CDATA[By enabling this option the version number of this application will be displayed in the copyright note.]]></item>
+	</category>
+
+	<category name="wcf.appframe.global">
+		<item name="wcf.appframe.global.changeStyle"><![CDATA[Change style]]></item>
+		<item name="wcf.appframe.global.copyright2"><![CDATA[, using <strong><a href="http://www.woltlab.com">Woltlab Community Framework</a></strong> and <strong><a href="http://www.inovato.net">Inovato AppFrame</a></strong>]]></item>
+		<item name="wcf.appframe.global.copyright"><![CDATA[<a href="#">Software: <strong>{PACKAGE_NAME}{if APPFRAME_SHOW_VERSION_NUMBER} {@PACKAGE_VERSION}{/if}</strong></a>]]></item>
+		<item name="wcf.appframe.global.offline"><![CDATA[{PAGE_TITLE} is currently offline{if APPFRAME_OFFLINE_MESSAGE != ''} for the following reason(s):{else}.{/if}]]></item>
+	</category>
+
+	<category name="wcf.appframe.header">
+		<item name="wcf.appframe.header.login.useCookies"><![CDATA[Remember me?]]></item>
+		<item name="wcf.appframe.header.search.extended"><![CDATA[Advanced Search]]></item>
+		<item name="wcf.appframe.header.search.query"><![CDATA[Enter search word]]></item>
+		<item name="wcf.appframe.header.userMenu.acp"><![CDATA[Administration]]></item>
+		<item name="wcf.appframe.header.userMenu.changeLanguage"><![CDATA[Change Language]]></item>
+		<item name="wcf.appframe.header.userMenu.login"><![CDATA[Login]]></item>
+		<item name="wcf.appframe.header.userMenu.logout"><![CDATA[Logout]]></item>
+		<item name="wcf.appframe.header.userMenu.moderation"><![CDATA[Moderation]]></item>
+		<item name="wcf.appframe.header.userMenu.pm"><![CDATA[Private Messages]]></item>
+		<item name="wcf.appframe.header.userMenu.profile"><![CDATA[Edit Profile]]></item>
+		<item name="wcf.appframe.header.userMenu.register"><![CDATA[Register]]></item>
+		<item name="wcf.appframe.header.userMenu.subscriptions"><![CDATA[Favourites]]></item>
+		<item name="wbb.header.userMenu.userGroupLeader"><![CDATA[Gruppenleitung]]></item>
+		<item name="wcf.appframe.header.userNote.guest"><![CDATA[You are not logged in.]]></item>
+		<item name="wcf.appframe.header.userNote.user"><![CDATA[Welcome <a href="index.php?page=User&amp;userID={@$this->user->userID}{@SID_ARG_2ND}">{$this->user->username}</a>.]]></item>
+		<item name="wcf.appframe.header.welcomeBack"><![CDATA[Welcome back, {$this->user->username}!]]></item>
+	</category>
+
+	<category name="wcf.appframe.generic">
+		<item name="wcf.appframe.generic.home"><![CDATA[Main Page]]></item>
+		<item name="wcf.appframe.generic.more"><![CDATA[More]]></item>
+		<item name="wcf.appframe.generic.moreinfo"><![CDATA[More Information]]></item>
 	</category>
 </language>

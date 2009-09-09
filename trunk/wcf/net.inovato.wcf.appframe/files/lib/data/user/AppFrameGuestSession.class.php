@@ -1,16 +1,17 @@
 <?php
-// stub imports
-require_once(STUB_DIR.'lib/data/user/AbstractStubUserSession.class.php');
+// appframe imports
+require_once(WCF_DIR.'lib/data/user/AbstractAppFrameUserSession.class.php');
 
 /**
  * Represents a guest session.
  *
  * @author		Martin Poehlmann
  * @copyright	2009 Inovato, LLC <http://www.inovato.net>
- * @license		GNU Lesser General Public License <http://opensource.org/licenses/lgpl-license.php>
- * @package		net.inovato.stub
+ * @license		Creative Commons Attribution-Noncommercial-No Derivative Works 3.0 Unported <http://creativecommons.org/licenses/by-nc-nd/3.0/>
+ * @package		net.inovato.wcf.appframe
  */
-class StubGuestSession extends AbstractStubUserSession {
+class AppFrameGuestSession extends AbstractAppFrameUserSession
+{
 
 }
 ?>

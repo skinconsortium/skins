@@ -54,8 +54,8 @@
 		<item name="wcf.acp.option.category.general.appframe_offline.description"><![CDATA[]]></item>
 		<item name="wcf.acp.option.category.general.appframe_offline.general"><![CDATA[Wartungsmodus]]></item>
 		<item name="wcf.acp.option.category.general.appframe_offline.general.description"><![CDATA[]]></item>
-		<item name="wcf.acp.option.appframe_offline"><![CDATA[Anwendung deaktivieren]]></item>
-		<item name="wcf.acp.option.appframe_offline.description"><![CDATA[Hier kann die Anwendung vorübergehend deaktiviert werden (z.B. für Wartungsarbeiten).]]></item>
+		<item name="wcf.acp.option.appframe_offline"><![CDATA[{PACKAGE_NAME} deaktivieren]]></item>
+		<item name="wcf.acp.option.appframe_offline.description"><![CDATA[{PACKAGE_NAME} kann hier vorübergehend deaktiviert werden (z.B. für Wartungsarbeiten).]]></item>
 		<item name="wcf.acp.option.appframe_offline_message"><![CDATA[Deaktivierungshinweis]]></item>
 		<item name="wcf.acp.option.appframe_offline_message.description"><![CDATA[Eine Nachricht/Ein Hinweis, der während der Deaktivierung der Anwendung angezeigt wird]]></item>
 		<item name="wcf.acp.option.appframe_offline_message_allow_html"><![CDATA[HTML-Code im Hinweistext verwenden]]></item>
@@ -66,5 +66,38 @@
 		<item name="wcf.acp.option.appframe_show_style_chooser.description"><![CDATA[Soll im Fußteil der Seite eine Liste aller Stile zur Auswahl angezeigt werden?]]></item>
 		<item name="wcf.acp.option.appframe_show_version_number"><![CDATA[Versionsnummer der Anwendung im Copyright-Hinweis anzeigen]]></item>
 		<item name="wcf.acp.option.appframe_show_version_number.description"><![CDATA[Durch Aktivierung dieser Option wird die Versionsnummer der Anwendung im Copyright-Hinweis angezeigt.]]></item>
+	</category>
+
+	<category name="wcf.appframe.global">
+		<item name="wcf.appframe.global.changeStyle"><![CDATA[Stil ändern]]></item>
+		<item name="wcf.appframe.global.copyright2"><![CDATA[, basierend auf <strong><a href="http://www.woltlab.com">Woltlab Community Framework</a></strong> und <strong><a href="http://www.inovato.net">Inovato AppFrame</a></strong>]]></item>
+		<item name="wcf.appframe.global.copyright"><![CDATA[<a href="#">Software: <strong>{PACKAGE_NAME}{if APPFRAME_SHOW_VERSION_NUMBER} {@PACKAGE_VERSION}{/if}</strong></a>]]></item>
+		<item name="wcf.appframe.global.offline"><![CDATA[{PAGE_TITLE} befindet sich zur Zeit {if APPFRAME_OFFLINE_MESSAGE != ''}aus folgenden Gründen im Wartungsmodus:{else}im Wartungsmodus.{/if}]]></item>
+	</category>
+
+	<category name="wcf.appframe.header">
+		<item name="wcf.appframe.header.login.useCookies"><![CDATA[Dauerhaft angemeldet bleiben?]]></item>
+		<item name="wcf.appframe.header.menu.board"><![CDATA[Forum]]></item>
+		<item name="wcf.appframe.header.search.extended"><![CDATA[Erweiterte Suche]]></item>
+		<item name="wcf.appframe.header.search.query"><![CDATA[Suchbegriffe eingeben]]></item>
+		<item name="wcf.appframe.header.userMenu.acp"><![CDATA[Administration]]></item>
+		<item name="wcf.appframe.header.userMenu.changeLanguage"><![CDATA[Sprache ändern]]></item>
+		<item name="wcf.appframe.header.userMenu.login"><![CDATA[Anmelden]]></item>
+		<item name="wcf.appframe.header.userMenu.logout"><![CDATA[Abmelden]]></item>
+		<item name="wcf.appframe.header.userMenu.moderation"><![CDATA[Moderation]]></item>
+		<item name="wcf.appframe.header.userMenu.pm"><![CDATA[Private Nachrichten]]></item>
+		<item name="wcf.appframe.header.userMenu.profile"><![CDATA[Profil bearbeiten]]></item>
+		<item name="wcf.appframe.header.userMenu.register"><![CDATA[Registrieren]]></item>
+		<item name="wcf.appframe.header.userMenu.subscriptions"><![CDATA[Abonnements]]></item>
+		<item name="wcf.appframe.header.userMenu.userGroupLeader"><![CDATA[Gruppenleitung]]></item>
+		<item name="wcf.appframe.header.userNote.guest"><![CDATA[Du bist nicht angemeldet.]]></item>
+		<item name="wcf.appframe.header.userNote.user"><![CDATA[Angemeldet als <a href="index.php?page=User&amp;userID={@$this->user->userID}{@SID_ARG_2ND}">{$this->user->username}</a>.]]></item>
+		<item name="wcf.appframe.header.welcomeBack"><![CDATA[Willkommen zurück, {$this->user->username}!]]></item>
+	</category>
+
+	<category name="wcf.appframe.generic">
+		<item name="wcf.appframe.generic.home"><![CDATA[Startseite]]></item>
+		<item name="wcf.appframe.generic.more"><![CDATA[Mehr]]></item>
+		<item name="wcf.appframe.generic.moreinfo"><![CDATA[Mehr Informationen]]></item>
 	</category>
 </language>

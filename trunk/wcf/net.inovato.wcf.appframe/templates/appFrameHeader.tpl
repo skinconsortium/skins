@@ -7,32 +7,30 @@
 	<a id="top"></a>
 	<div id="userPanel" class="userPanel">
 		<div class="userPanelInner">
-			<p style="display: none;" id="userAvatar">
-				{if $this->user->userID && $this->user->getAvatar()}{@$this->user->getAvatar()}{else}<img src="{@RELATIVE_WCF_DIR}images/avatars/avatar-default.png" alt="" />{/if}
-			</p>
+
 			<p id="userNote"> 
-				{if $this->user->userID != 0}{lang}stub.header.userNote.user{/lang}{else}{lang}stub.header.userNote.guest{/lang}{/if}
+				{if $this->user->userID != 0}{lang}wcf.appframe.header.userNote.user{/lang}{else}{lang}wcf.appframe.header.userNote.guest{/lang}{/if}
 			</p>
 			<div id="userMenu">
 				<ul>
 					{if $this->user->userID != 0}
-						<li id="userMenuLogout"><a href="index.php?action=UserLogout&amp;t={@SECURITY_TOKEN}{@SID_ARG_2ND}"><img src="{icon}logoutS.png{/icon}" alt="" /> <span>{lang}stub.header.userMenu.logout{/lang}</span></a></li>
-						<li id="userMenuProfileEdit"><a href="index.php?form=UserProfileEdit{@SID_ARG_2ND}"><img src="{icon}editS.png{/icon}" alt="" /> <span>{lang}stub.header.userMenu.profile{/lang}</span></a></li>
+						<li id="userMenuLogout"><a href="index.php?action=UserLogout&amp;t={@SECURITY_TOKEN}{@SID_ARG_2ND}"><img src="{icon}logoutS.png{/icon}" alt="" /> <span>{lang}wcf.appframe.header.userMenu.logout{/lang}</span></a></li>
+						<li id="userMenuProfileEdit"><a href="index.php?form=UserProfileEdit{@SID_ARG_2ND}"><img src="{icon}editS.png{/icon}" alt="" /> <span>{lang}wcf.appframe.header.userMenu.profile{/lang}</span></a></li>
 						
 						{if $additionalUserMenuItems|isset}{@$additionalUserMenuItems}{/if}
 						
 						{if $this->user->getPermission('admin.general.canUseAcp')}
-							<li id="userMenuACP"><a href="acp/index.php?packageID={@PACKAGE_ID}"><img src="{icon}acpS.png{/icon}" alt="" /> <span>{lang}stub.header.userMenu.acp{/lang}</span></a></li>
+							<li id="userMenuACP"><a href="acp/index.php?packageID={@PACKAGE_ID}"><img src="{icon}acpS.png{/icon}" alt="" /> <span>{lang}wcf.appframe.header.userMenu.acp{/lang}</span></a></li>
 						{/if}
 					{else}
-						<li id="userMenuLogin"><a href="index.php?form=UserLogin{@SID_ARG_2ND}" id="loginButton"><img src="{icon}loginS.png{/icon}" alt="" id="loginButtonImage" /> <span>{lang}stub.header.userMenu.login{/lang}</span></a></li>
+						<li id="userMenuLogin"><a href="index.php?form=UserLogin{@SID_ARG_2ND}" id="loginButton"><img src="{icon}loginS.png{/icon}" alt="" id="loginButtonImage" /> <span>{lang}wcf.appframe.header.userMenu.login{/lang}</span></a></li>
 						
-						{if !REGISTER_DISABLED}<li id="userMenuRegistration"><a href="index.php?page=Register{@SID_ARG_2ND}"><img src="{icon}registerS.png{/icon}" alt="" /> <span>{lang}stub.header.userMenu.register{/lang}</span></a></li>{/if}
+						{if !REGISTER_DISABLED}<li id="userMenuRegistration"><a href="index.php?page=Register{@SID_ARG_2ND}"><img src="{icon}registerS.png{/icon}" alt="" /> <span>{lang}wcf.appframe.header.userMenu.register{/lang}</span></a></li>{/if}
 						
 						{if $additionalUserMenuItems|isset}{@$additionalUserMenuItems}{/if}
 						
 						{if $this->language->countAvailableLanguages() > 1}
-							<li id="userMenuLanguage" class="languagePicker"><a id="changeLanguage" class="hidden"><img src="{icon}language{@$this->language->getLanguageCode()|ucfirst}S.png{/icon}" alt="" /> <span>{lang}stub.header.userMenu.changeLanguage{/lang}</span></a>
+							<li id="userMenuLanguage" class="languagePicker"><a id="changeLanguage" class="hidden"><img src="{icon}language{@$this->language->getLanguageCode()|ucfirst}S.png{/icon}" alt="" /> <span>{lang}wcf.appframe.header.userMenu.changeLanguage{/lang}</span></a>
 								<div class="hidden" id="changeLanguageMenu">
 									<ul>
 										{foreach from=$this->language->getAvailableLanguageCodes() item=guestLanguageCode key=guestLanguageID}
@@ -118,7 +116,7 @@
 		 * $searchScript=search script; default=index.php?form=Search
 		 * $searchFieldName=name of the search input field; default=q
 		 * $searchFieldValue=default value of the search input field; default=content of $query
-		 * $searchFieldTitle=title of search input field; default=language variable stub.header.search.query
+		 * $searchFieldTitle=title of search input field; default=language variable wcf.appframe.header.search.query
 		 * $searchFieldOptions=special search options for popup menu; default=empty
 		 * $searchExtendedLink=link to extended search form; default=index.php?form=Search{@SID_ARG_2ND}
 		 * $searchHiddenFields=optional hidden fields; default=empty
@@ -128,7 +126,7 @@
 		{if !$searchScript|isset}{assign var='searchScript' value='index.php?form=Search'}{/if}
 		{if !$searchFieldName|isset}{assign var='searchFieldName' value='q'}{/if}
 		{if !$searchFieldValue|isset && $query|isset}{assign var='searchFieldValue' value=$query}{/if}
-		{if !$searchFieldTitle|isset}{assign var='searchFieldTitle' value='{lang}stub.header.search.query{/lang}'}{/if}
+		{if !$searchFieldTitle|isset}{assign var='searchFieldTitle' value='{lang}wcf.appframe.header.search.query{/lang}'}{/if}
 		{if !$searchFieldOptions|isset}{assign var='searchFieldOptions' value=''}{/if}
 		{if !$searchExtendedLink|isset}{assign var='searchExtendedLink' value='index.php?form=Search'|concat:SID_ARG_2ND}{/if}
 		{if !$searchShowExtendedLink|isset}{assign var='searchShowExtendedLink' value=true}{/if}
@@ -160,7 +158,7 @@
 								<div class="pageMenu smallFont">
 									<ul>
 										{@$searchFieldOptions}
-										{if $searchShowExtendedLink}<li><a href="{@$searchExtendedLink}{if !$searchFieldValue|empty}&amp;defaultQuery={$searchFieldValue|rawurlencode}{/if}">{lang}stub.header.search.extended{/lang}</a></li>{/if}
+										{if $searchShowExtendedLink}<li><a href="{@$searchExtendedLink}{if !$searchFieldValue|empty}&amp;defaultQuery={$searchFieldValue|rawurlencode}{/if}">{lang}wcf.appframe.header.search.extended{/lang}</a></li>{/if}
 									</ul>
 								</div>
 							</div>
@@ -169,7 +167,7 @@
 					
 					{if $searchShowExtendedLink}
 						<noscript>
-							<p><a href="{@$searchExtendedLink}">{lang}stub.header.search.extended{/lang}</a></p>
+							<p><a href="{@$searchExtendedLink}">{lang}wcf.appframe.header.search.extended{/lang}</a></p>
 						</noscript>
 					{/if}
 				</div>
@@ -180,11 +178,11 @@
 				<h1 class="pageTitle"><a href="index.php?page=Index{@SID_ARG_2ND}">{lang}{PAGE_TITLE}{/lang}</a></h1>
 				{if $this->getStyle()->getVariable('page.logo.image')}
 					<a href="index.php?page=Index{@SID_ARG_2ND}" class="pageLogo">
-						<img src="{@RELATIVE_STUB_DIR}images/stub-header-logo.png" title="{lang}{PAGE_TITLE}{/lang}" alt="" />
+						<img src="{$this->getStyle()->getVariable('page.logo.image')}" title="{lang}{PAGE_TITLE}{/lang}" alt="" />
 					</a>
 				{elseif $this->getStyle()->getVariable('page.logo.image.application.use') == 1}
 					<a href="index.php?page=Index{@SID_ARG_2ND}" class="pageLogo">
-						<img src="{@RELATIVE_STUB_DIR}images/stub-header-logo.png" title="{lang}{PAGE_TITLE}{/lang}" alt="" />
+						<img src="{@RELATIVE_APPLICATION_DIR}images/header-logo.png" title="{lang}{PAGE_TITLE}{/lang}" alt="" />
 					</a>
 				{/if}
 			</div>
@@ -199,7 +197,7 @@
 		
 		{if $this->user->activationCode && REGISTER_ACTIVATION_METHOD == 1}<p class="warning">{lang}wcf.user.register.needsActivation{/lang}</p>{/if}
 		
-		{if $this->session->isNew}<p class="info">{lang}stub.header.welcomeBack{/lang}</p>{/if}
+		{if $this->session->isNew}<p class="info">{lang}wcf.appframe.header.welcomeBack{/lang}</p>{/if}
 		
 		{if MODULE_PM == 1 && $this->user->showPmPopup && $this->user->pmOutstandingNotifications && $this->user->getOutstandingNotifications()|count > 0}
 			<div class="info deletable" id="pmOutstandingNotifications">
@@ -256,10 +254,10 @@
 		{if $this->session->isNew}<p class="info">{lang}wcf.user.register.welcome{/lang}</p>{/if}
 		
 	{/if}
-	{if OFFLINE == 1 && $this->user->getPermission('user.board.canViewBoardOffline')}
+	{if APPFRAME_OFFLINE == 1 && $this->user->getPermission($canViewAppInOfflineModePermission)}
 		<div class="warning">
-			{lang}stub.global.offline{/lang}
-			<p>{if OFFLINE_MESSAGE_ALLOW_HTML}{@OFFLINE_MESSAGE}{else}{@OFFLINE_MESSAGE|htmlspecialchars|nl2br}{/if}</p>
+			{lang}wcf.appframe.global.offline{/lang}
+			<p>{if APPFRAME_OFFLINE_MESSAGE_ALLOW_HTML}{@APPFRAME_OFFLINE_MESSAGE}{else}{@APPFRAME_OFFLINE_MESSAGE|htmlspecialchars|nl2br}{/if}</p>
 		</div>
 	{/if}
 {/capture}
