@@ -81,8 +81,8 @@
 	<layer id="shade.aot.docked" x="-91" y="3" relatx="1" image="s.aot.1.1" visible="0" ghost="1"/>
 
 	<button x="-64" relatx="1" y="3" id="player.button.minimize" action="MINIMIZE" image="s.min.1" hoverImage="s.min.2" downImage="s.min.3" rectrgn="1" tooltip="Minimize Winamp"/>
-	<button x="-44" relatx="1" y="3" action="SWITCH" param="normal" image="s.mode.1" hoverImage="s.mode.2" downImage="s.mode.3" rectrgn="1" tooltip="Main Mode"/>
-	<button x="-24" relatx="1" y="3" action="CLOSE" image="s.close.1" hoverImage="s.close.2" downImage="s.close.3" rectrgn="1" tooltip="Exit Winamp"/>
+	<button id="player.button.switch" x="-44" relatx="1" y="3" action="SWITCH" param="normal" image="s.mode.1" hoverImage="s.mode.2" downImage="s.mode.3" rectrgn="1" tooltip="Main Mode"/>
+	<button id="player.button.close" x="-24" relatx="1" y="3" action="CLOSE" image="s.close.1" hoverImage="s.close.2" downImage="s.close.3" rectrgn="1" tooltip="Exit Winamp"/>
 
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\one\scripts\shade.maki" param="@SKINPATH@"/>
 

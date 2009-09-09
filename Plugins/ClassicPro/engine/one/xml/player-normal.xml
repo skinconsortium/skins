@@ -137,8 +137,8 @@
 	<button x="-64" relatx="1" y="3" id="main.goSmall" image="ismax.1" hoverImage="ismax.2" downImage="ismax.3" rectrgn="1" tooltip="Restore Winamp"/>
 	<button x="-64" relatx="1" y="3" id="main.goBig" image="gomax.1" hoverImage="gomax.2" downImage="gomax.3" rectrgn="1" tooltip="Maximize Winamp"/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\one\scripts\maximize.maki"/>
-	<button x="-44" relatx="1" y="3" action="SWITCH" param="shade" image="mode.1" hoverImage="mode.2" downImage="mode.3" rectrgn="1" tooltip="Windowshade Mode"/>
-	<button x="-24" relatx="1" y="3" action="CLOSE" image="close.1" hoverImage="close.2" downImage="close.3" rectrgn="1" tooltip="Exit Winamp"/>
+	<button id="player.button.switch" x="-44" relatx="1" y="3" action="SWITCH" param="shade" image="mode.1" hoverImage="mode.2" downImage="mode.3" rectrgn="1" tooltip="Windowshade Mode"/>
+	<button id="player.button.close" x="-24" relatx="1" y="3" action="CLOSE" image="close.1" hoverImage="close.2" downImage="close.3" rectrgn="1" tooltip="Exit Winamp"/>
 
 	<button id="aboutwinamp.hidden" x="0" y="0" w="0" h="0" relatx="1" relaty="1" action="TOGGLE" param="guid:{D6201408-476A-4308-BF1B-7BACA1124B12}"/>
 
