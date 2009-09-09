@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE language SYSTEM "http://www.woltlab.com/DTDs/language.dtd">
 <language languagecode="en">
-	<category name="stub.acp">
-		<item name="stub.acp.jumpToStub"><![CDATA[Go to Stub]]></item>
+	<category name="stub.header.menu">
+		<item name="stub.header.menu.home"><![CDATA[{lang}wcf.appframe.generic.home{/lang}]]></item>
 	</category>
 </language>

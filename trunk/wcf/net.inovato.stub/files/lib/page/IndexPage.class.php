@@ -1,34 +1,30 @@
 <?php
 // wcf imports
-require_once(WCF_DIR.'lib/page/AbstractPage.class.php');
+require_once(WCF_DIR.'lib/page/AbstractAppFramePage.class.php');
 
 /**
  * Shows the start page.
  *
  * @author		Martin Poehlmann
  * @copyright	2009 Inovato, LLC <http://www.inovato.net>
- * @license		GNU Lesser General Public License <http://opensource.org/licenses/lgpl-license.php>
- * @package		net.inovato.stub
+ * @license		Creative Commons Attribution-Noncommercial-No Derivative Works 3.0 Unported <http://creativecommons.org/licenses/by-nc-nd/3.0/>
+ * @package		net.inovato.wcf.appframe
  */
-class IndexPage extends AbstractPage {
+class IndexPage extends AbstractAppFramePage
+{
 	public $templateName = 'index';
-
-	/**
-	 * @see Page::assignVariables();
-	 */
-	public function assignVariables() {
-		parent::assignVariables();
-
-		WCF::getTPL()->assign(array(
-			'selfLink' => 'index.php?page=Index'.SID_ARG_2ND_NOT_ENCODED,
-			'allowSpidersToIndexThisPage' => true,
-		));
-		
-		/* TODO check if (WCF::getSession()->spiderID) {
-			if ($lastChangeTime = @filemtime(WBB_DIR.'cache/cache.stat.php')) {
-				@header('Last-Modified: '.gmdate('D, d M Y H:i:s', $lastChangeTime).' GMT');
-			}
-		}*/
-	}
+	
+	// Site Title. May be a language var.
+	public $appFrameGenericSiteTitle = 'wcf.appframe.generic.home';
+	
+	// Shows the Site Caption
+	public $appFrameGenericSiteShowCaption = true;
+	
+	// Site caption text. May be language vars.
+	public $appFrameGenericSiteCaption = PAGE_TITLE;
+	public $appFrameGenericSiteCaptionSub = PAGE_DESCRIPTION;
+	
+	// Icon shown beside the caption.
+	public $appFrameGenericSiteCaptionIcon = 'homeL.png';
 }
 ?>

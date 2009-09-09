@@ -6,8 +6,8 @@
 		<packagedescription>Standalone WCF App Stub</packagedescription>
 		<isunique>0</isunique>
 		<standalone>1</standalone>
-		<version>1.0.0-dev30</version>
-		<date>2009-09-07</date>
+		<version>1.0.0-dev36</version>
+		<date>2009-09-09</date>
 	</packageinformation>
 	<requiredpackages>
 		<!-- basics -->
@@ -29,6 +29,7 @@
 		<templates>templates.tar</templates>
 		<!-- settings -->
 		<options>options.xml</options>
+		<pagemenu>pagemenu.xml</pagemenu>
 	</instructions>
 	<instructions type="update" fromversion="1.0.*">
 		<!-- languages -->
@@ -41,5 +42,6 @@
 		<templates>templates.tar</templates>
 		<!-- settings -->
 		<options>options.xml</options>
+		<pagemenu>pagemenu.xml</pagemenu>
 	</instructions>
 </package>
