@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE language SYSTEM "http://www.woltlab.com/DTDs/language.dtd">
-<language languagecode="da">
-	<category name="wcf.header.menu">
-		<item name="wcf.header.menu.sb.simplenews"><![CDATA[Nyheder]]></item>
-	</category>
-</language>

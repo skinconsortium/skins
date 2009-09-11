@@ -2,12 +2,12 @@
 <!DOCTYPE package SYSTEM "http://www.woltlab.com/DTDs/package.dtd"[]>
 <package name="net.inovato.wcf.appframe">
 	<packageinformation>
-		<packagename>WCF AppFrame</packagename>
+		<packagename>Inovato AppFrame</packagename>
 		<packagedescription>Basic wbb-like templates for standalone wcf applications</packagedescription>
 		<isunique>1</isunique>
 		<standalone>0</standalone>
-		<version>1.0.0-dev56</version>
-		<date>2009-09-09</date>
+		<version>1.0.0-beta1-dev2</version>
+		<date>2009-09-11</date>
 	</packageinformation>
 	<requiredpackages>
 		<!-- basics -->

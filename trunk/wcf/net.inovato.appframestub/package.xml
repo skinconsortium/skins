@@ -3,11 +3,11 @@
 <package name="net.inovato.appframestub">
 	<packageinformation>
 		<packagename>AppFrame Stub</packagename>
-		<packagedescription>Standalone WCF App Stub</packagedescription>
+		<packagedescription>Standalone WCF AppStub</packagedescription>
 		<isunique>0</isunique>
 		<standalone>1</standalone>
-		<version>1.0.0-dev9</version>
-		<date>2009-09-10</date>
+		<version>1.0.0-beta1-dev1</version>
+		<date>2009-09-11</date>
 	</packageinformation>
 	<requiredpackages>
 		<!-- basics -->

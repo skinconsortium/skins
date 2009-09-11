@@ -62,7 +62,7 @@
 				{@SID_INPUT_TAG}
 				<input tabindex="4" type="image" class="inputImage" src="{icon}submitS.png{/icon}" alt="{lang}wcf.global.button.submit{/lang}" />
 			</div>
-			<p><label><input tabindex="3" type="checkbox" id="useCookies" name="useCookies" value="1" /> {lang}acf.appframe.header.login.useCookies{/lang}</label></p>
+			<p><label><input tabindex="3" type="checkbox" id="useCookies" name="useCookies" value="1" /> {lang}wcf.appframe.header.login.useCookies{/lang}</label></p>
 		</form>
 	</div>
 {/if}

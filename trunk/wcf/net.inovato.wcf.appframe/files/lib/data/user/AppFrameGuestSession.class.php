@@ -12,6 +12,6 @@ require_once(WCF_DIR.'lib/data/user/AbstractAppFrameUserSession.class.php');
  */
 class AppFrameGuestSession extends AbstractAppFrameUserSession
 {
-
+	// TODO implement last visit stuff
 }
 ?>

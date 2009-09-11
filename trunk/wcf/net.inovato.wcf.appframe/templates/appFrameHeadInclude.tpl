@@ -36,7 +36,7 @@
 	var SID_ARG_2ND	= '{@SID_ARG_2ND_NOT_ENCODED}';
 	var SECURITY_TOKEN = '{@SECURITY_TOKEN}';
 	var RELATIVE_WCF_DIR = '{@RELATIVE_WCF_DIR}';
-	var RELATIVE_STUB_DIR = '{@RELATIVE_STUB_DIR}';
+	var RELATIVE_APPLICATION_DIR = '{@RELATIVE_APPLICATION_DIR}';
 	var LANG_DELETE_CONFIRM = '{lang}wcf.global.button.delete.confirm{/lang}';
 	//]]>
 </script>

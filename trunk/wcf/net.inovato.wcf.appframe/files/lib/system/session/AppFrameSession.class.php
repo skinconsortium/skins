@@ -14,7 +14,8 @@ require_once(WCF_DIR.'lib/data/user/User.class.php');
  * @package		net.inovato.wcf.appframe
  */
 
-class AppFrameSession extends CookieSession {
+class AppFrameSession extends CookieSession
+{
 	protected $userSessionClassName = 'AppFrameUserSession';
 	protected $guestSessionClassName = 'AppFrameGuestSession';
 	protected $styleID = 0;
@@ -22,28 +23,30 @@ class AppFrameSession extends CookieSession {
 	/**
 	 * Initialises the session.
 	 */
-	public function init() {
+	public function init()
+	{
 		parent::init();
 		
 		// handle style id
 		if ($this->user->userID) $this->styleID = $this->user->styleID;
 		if (($styleID = $this->getVar('styleID')) !== null) $this->styleID = $styleID;
 		
-		if ($this->userID) {
-
-			// update user stats goes in here
-			/*if ($this->user->boardLastActivityTime > $this->user->boardLastVisitTime && $this->user->boardLastActivityTime < TIME_NOW - SESSION_TIMEOUT) {
-
-				// reset user data
-				$this->resetUserData();
-			}*/
+		if ($this->userID)
+		{
+			/* TODO remimplement something like a global activity for all AppFrame Apps
+			 * 				$sql = "DELETE FROM	wbb".WBB_N."_board_visit
+					WHERE		userID = ".$this->userID."
+							AND lastVisitTime <= ".($this->user->boardLastMarkAllAsReadTime);
+				WCF::getDB()->registerShutdownUpdate($sql);
+			 */
 			
 			// update global last activity time
-			if ($this->lastActivityTime < TIME_NOW - USER_ONLINE_TIMEOUT + 299) {
-				StubUserSession::updateLastActivityTime($this->userID);
+			if ($this->lastActivityTime < TIME_NOW - USER_ONLINE_TIMEOUT + 299)
+			{
+				AppFrameUserSession::updateLastActivityTime($this->userID);
 			}
 		}
-		// TODO re-implement
+		// TODO re-implement something like this
 		/*else {
 			// guest
 			$boardLastActivityTime = 0;
@@ -64,10 +67,10 @@ class AppFrameSession extends CookieSession {
 	/**
 	 * @see CookieSession::update()
 	 */
-	public function update() {
-		// nothing to do for the stub atm
+	public function update()
+	{
+		// nothing to do for us here atm
 		//$this->updateSQL .= ", boardID = ".$this->boardID.", threadID = ".$this->threadID;
-		 
 		parent::update();
 	}
 	
@@ -76,7 +79,8 @@ class AppFrameSession extends CookieSession {
 	 * 
 	 * @param 	integer		$newStyleID
 	 */
-	public function setStyleID($newStyleID) {
+	public function setStyleID($newStyleID)
+	{
 		$this->styleID = $newStyleID;
 		if ($newStyleID > 0) $this->register('styleID', $newStyleID);
 		else $this->unregister('styleID');
@@ -87,7 +91,8 @@ class AppFrameSession extends CookieSession {
 	 * 
 	 * @return	integer
 	 */
-	public function getStyleID() {
+	public function getStyleID()
+	{
 		return $this->styleID;
 	}
 }
