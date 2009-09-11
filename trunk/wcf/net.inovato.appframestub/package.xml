@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE package SYSTEM "http://www.woltlab.com/DTDs/package.dtd"[]>
+<package name="net.inovato.appframestub">
+	<packageinformation>
+		<packagename>AppFrame Stub</packagename>
+		<packagedescription>Standalone WCF App Stub</packagedescription>
+		<isunique>0</isunique>
+		<standalone>1</standalone>
+		<version>1.0.0-dev9</version>
+		<date>2009-09-10</date>
+	</packageinformation>
+	<requiredpackages>
+		<!-- basics -->
+		<requiredpackage minversion="1.1.0 Beta 4" file="requirements/com.woltlab.wcf.tar">com.woltlab.wcf</requiredpackage>
+		<requiredpackage minversion="0.1" file="requirements/net.inovato.wcf.appframe.tar">net.inovato.wcf.appframe</requiredpackage>
+	</requiredpackages>
+	<authorinformation>
+		<author>Martin Poehlmann</author>
+		<authorurl>http://www.inovato.net</authorurl>
+	</authorinformation>
+	<instructions type="install">
+		<!-- languages -->
+		<languages languagecode="en">en.xml</languages>
+		<languages languagecode="de">de.xml</languages>
+		<languages languagecode="de-informal">de-informal.xml</languages>
+		<!-- files -->
+		<files>files.tar</files>
+		<acptemplates>acptemplates.tar</acptemplates>
+		<templates>templates.tar</templates>
+		<!-- settings -->
+		<options>options.xml</options>
+		<pagemenu>pagemenu.xml</pagemenu>
+	</instructions>
+	<instructions type="update" fromversion="1.0.*">
+		<!-- languages -->
+		<languages languagecode="en">en.xml</languages>
+		<languages languagecode="de">de.xml</languages>
+		<languages languagecode="de-informal">de-informal.xml</languages>
+		<!-- files -->
+		<files>files.tar</files>
+		<acptemplates>acptemplates.tar</acptemplates>
+		<templates>templates.tar</templates>
+		<!-- settings -->
+		<options>options.xml</options>
+		<pagemenu>pagemenu.xml</pagemenu>
+	</instructions>
+</package>

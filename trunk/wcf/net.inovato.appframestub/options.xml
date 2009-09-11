@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<data xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com/XSD/options.xsd">
+	<delete>
+		<optioncategory name="offline.general" />
+		<option name="offline" />
+		<option name="offline_message" />
+		<option name="offline_message_allow_html" />
+		<option name="show_style_chooser" />
+		<option name="show_version_number" />
+		<option name="show_clock" />
+	</delete>
+
+</data>

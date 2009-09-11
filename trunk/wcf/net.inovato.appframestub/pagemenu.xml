@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE data SYSTEM "http://www.woltlab.com/DTDs/headerMenu.dtd">
+<data>	
+	<import>
+		<pagemenuitem name="stub.header.menu.home">
+			<iconmedium>appFrameHomeM.png</iconmedium>
+			<iconsmall>appFrameHomeS.png</iconsmall>
+			<link>index.php?page=Index</link>
+			<position>header</position>
+			<showorder>0</showorder>
+		</pagemenuitem>
+	</import>
+</data>
