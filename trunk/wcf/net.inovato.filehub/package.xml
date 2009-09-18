@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE package SYSTEM "http://www.woltlab.com/DTDs/package.dtd"[]>
-<package name="net.inovato.appframestub">
+<package name="net.inovato.filehub">
 	<packageinformation>
-		<packagename>AppFrame Stub</packagename>
-		<packagedescription>Standalone WCF AppStub</packagedescription>
+		<packagename>Inovato Filehub</packagename>
+		<packagedescription>Oneclick Hosting for your WCF</packagedescription>
 		<isunique>0</isunique>
 		<standalone>1</standalone>
-		<version>1.0.0-beta1-dev6</version>
-		<date>2009-09-14</date>
+		<version>1.0.0-beta1-dev13</version>
+		<date>2009-09-18</date>
 	</packageinformation>
 	<requiredpackages>
 		<!-- basics -->
@@ -27,11 +27,13 @@
 		<files>files.tar</files>
 		<acptemplates>acptemplates.tar</acptemplates>
 		<templates>templates.tar</templates>
+		<!-- data -->
+		<sql>install.sql</sql>
 		<!-- settings -->
 		<options>options.xml</options>
 		<pagemenu>pagemenu.xml</pagemenu>
 	</instructions>
-	<instructions type="update" fromversion="1.0.*">
+	<instructions type="update" fromversion="1.0.0*">
 		<!-- languages -->
 		<languages languagecode="en">en.xml</languages>
 		<languages languagecode="de">de.xml</languages>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<data xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com/XSD/options.xsd">
+	<import>
+		<options>
+			<!-- general.page -->
+			<option name="page_title">
+				<categoryname>general.page</categoryname>
+				<optiontype>text</optiontype>
+				<showorder>1</showorder>
+				<defaultvalue>Inovato Filehub</defaultvalue>
+			</option>
+			<option name="page_description">
+				<categoryname>general.page</categoryname>
+				<optiontype>text</optiontype>
+				<showorder>2</showorder>
+				<defaultvalue>Filestorage &amp; One-click-hosting</defaultvalue>
+			</option>
+		</options>
+	</import>
+</data>

@@ -26,6 +26,28 @@ abstract class AbstractAppFramePage extends AbstractPage
 	// Icon shown beside the caption.
 	public $appFrameGenericSiteCaptionIcon = '';
 	
+	// Self Link to the page. This will normally be constructed out of the classname. Modify in setSelfLink() method.
+	public $appFrameSelfLink;
+	
+	public $appFrameAllowSpidersToIndexThisPage = true;
+	
+	/**
+	 * Creates a new AbstractAppFramePage object.
+	 */
+	public function __construct()
+	{
+		parent::__construct();
+
+		$this->setSelfLink();
+	}
+	
+	public function setSelfLink()
+	{
+		 //$this->appFrameSelfLink = 'index.php?page=Index'.SID_ARG_2ND_NOT_ENCODED;
+		 die();
+		 $this->appFrameSelfLink = 'index.php?'.substr(get_class($this), -4, 4);
+		// if (substr(get_class($this), -4, 4))
+	}
 
 	/**
 	 * @see Page::assignVariables();
@@ -35,8 +57,8 @@ abstract class AbstractAppFramePage extends AbstractPage
 		parent::assignVariables();
 
 		WCF::getTPL()->assign(array(
-			'selfLink' => 'index.php?page=Index'.SID_ARG_2ND_NOT_ENCODED,
-			'allowSpidersToIndexThisPage' => true,
+			'selfLink' => $this->appFrameSelfLink,
+			'allowSpidersToIndexThisPage' => $this->appFrameAllowSpidersToIndexThisPage,
 			'appFrameGenericSiteTitle' => $this->appFrameGenericSiteTitle,
 			'appFrameGenericSiteShowCaption' => $this->appFrameGenericSiteShowCaption,
 			'appFrameGenericSiteCaption' => $this->appFrameGenericSiteCaption,
