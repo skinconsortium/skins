@@ -441,7 +441,7 @@ onMessage(int message, int i0, int i1, int i2, String s0, String s1, GuiObject o
 
 		if (t.moving)
 		{
-		t.bringToFront();
+			t.bringToFront();
 			int newPos = i0 - t.lastX + t.getGuiX();
 
 			if (newPos < 0)
@@ -887,14 +887,24 @@ alignByResize ()
 closeTab (tab t)
 {
 
-	if (lastActive)
-	{
-		lastActive.setActivated(0);
+	//if (lastActive)
+	//{
+		//Deselect all tabs ** Fix for some tabs staying open - Also moved the enable tab function after the sendmessage was executed in the CProTabButton
+		Tab t1 = firstTab;
+		while (t1 != NULL)	{
+			lastActive = t1;
+			t1 = t1.right;
+			lastActive.setActivated(0);
+		}
+		
+		
+		//lastActive = t;
+		//lastActive.setActivated(0);
 		if(lastActiveT.ID == 5 || (getPublicInt("Cpro.One.TabAutoClose."+integerToString(t.ID), 0) && t.ID != WIDGET_TAB_ID) || (t.ID==WIDGET_TAB_ID && getPublicInt("Cpro.One.TabAutoClose."+t.IDS, 0)))
 		{
 			removeTab(t);
 		}
-	}
+	//}
 }
 
 sg.onAction (String action, String param, int x, int y, int p1, int p2, GuiObject source)
@@ -923,6 +933,7 @@ sg.onAction (String action, String param, int x, int y, int p1, int p2, GuiObjec
 			{
 				closeTab(lastActiveT);				
 			}
+			//debugstring(integerToString(lastActiveT.ID),9);
 
 			//t = firstTab; //pjn123 - changed this
 			while (t != NULL)
