@@ -73,8 +73,8 @@ trigger.onLeftButtonUp (int x, int y)
 	mouseDown=false;
 	if (!movingTab)
 	{
-		setActivated(1);
 		if(!wasActive) sendMessageO(ON_TAB_ACTIVATED, parent);
+		setActivated(1);
 	}
 	else
 	{
