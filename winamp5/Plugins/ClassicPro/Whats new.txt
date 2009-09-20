@@ -1,7 +1,9 @@
 -------------------------------------------------------------
 Version 1.14 (1 Nov 2009)
 -------------------------------------------------------------
+- New: Link with shade mode position & width (Options > Window Sizing > "Link Shade-mode Position and Width") 
 - Fixed: Some tabs stay enabled after a new tab is openned
+- Fixed: Player go out of view when maximized is used with collapse to bottom
 -------------------------------------------------------------
 
 

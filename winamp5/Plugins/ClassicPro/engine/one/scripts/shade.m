@@ -224,10 +224,14 @@ resize6.onMouseMove(int x, int y){
 }
 
 gotoGlobal(){
+	String piPrefix;
+	if(linkPosWidth.getData() == "1") piPrefix = "cPro.2";
+	else piPrefix = "cPro.";
+
 	if(docked) return;
-	int x = getPublicInt("cPro.x", getCurAppLeft());
-	int y = getPublicInt("cPro.y", getCurAppTop());
-	int w = getPublicInt("cPro.w", getCurAppWidth());
+	int x = getPublicInt(piPrefix+"x", getCurAppLeft());
+	int y = getPublicInt(piPrefix+"y", getCurAppTop());
+	int w = getPublicInt(piPrefix+"w", getCurAppWidth());
 	int h = 23;
 
 	//removed x,y< 0 as multimonitors can use negative values
@@ -235,7 +239,7 @@ gotoGlobal(){
 	if(w<317) w= 317;
 	
 	//Winshade -> Normal : Bottom of screen
-	if(getPublicInt("cPro.saveby", 0)==0 && collapse_bottom_attrib.getData() == "1"){
+	if(getPublicInt("cPro.saveby", 0)==0 && collapse_bottom_attrib.getData() == "1" && linkPosWidth.getData() != "1"){
 		//debugstring("pre (shade): "+integerToString(x)+", "+integerToString(y)+", "+integerToString(w)+", "+integerToString(h), 9);
 		y=y+getPublicInt("cPro.h", getCurAppHeight())-23;
 	}
@@ -246,10 +250,15 @@ gotoGlobal(){
 }
 saveGlobal(){
 	if(main.getCurLayout() == shade){
-		setPublicInt("cPro.x", shade.getLeft());
-		setPublicInt("cPro.y", shade.getTop());
-		setPublicInt("cPro.w", lastKnownW);
-		setPublicInt("cPro.saveby", 1); //0=normal ; 1=shade
+		String piPrefix;
+		if(linkPosWidth.getData() == "1") piPrefix = "cPro.2";
+		else piPrefix = "cPro.";
+
+		setPublicInt(piPrefix+"x", shade.getLeft());
+		setPublicInt(piPrefix+"y", shade.getTop());
+		setPublicInt(piPrefix+"w", lastKnownW);
+		
+		if(linkPosWidth.getData() != "1") setPublicInt("cPro.saveby", 1); //0=normal ; 1=shade
 	}
 }
 shade.onResize(int x, int y, int w, int h){
