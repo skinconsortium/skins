@@ -235,8 +235,12 @@ gotoGlobal(){
 	if(w<317) w= 317;
 	if(h<168) h= 168; //why was this w=168??? just change back if any bugs arise
 	
+	//debug(integerToString(x)+","+integerToString(y)+","+integerToString(w)+","+integerToString(h));
+
 	if(getPublicInt("cPro.saveby", 0)==1 && collapse_bottom_attrib.getData() == "1"){
+		if(getPublicInt("cPro.maximized", 0)==1) y = getPublicInt("cPro.y", getCurAppTop());
 		y-=h-23;
+		//debug(integerToString(x)+","+integerToString(y)+","+integerToString(w)+","+integerToString(h));
 	}
 
 	//Winshade -> Normal : Bottom of screen
