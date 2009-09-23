@@ -4,4 +4,16 @@
 	<category name="filehub.header.menu">
 		<item name="filehub.header.menu.home"><![CDATA[{lang}wcf.appframe.generic.home{/lang}]]></item>
 	</category>
+	<category name="wcf.acp.group">
+		<item name="wcf.acp.group.option.category.user.filehub"><![CDATA[Filehub]]></item>
+		<item name="wcf.acp.group.option.category.user.filehub.description"><![CDATA[]]></item>
+		<item name="wcf.acp.group.option.category.user.filehub.store"><![CDATA[Dateien hochladen]]></item>
+		<item name="wcf.acp.group.option.category.user.filehub.store.description"><![CDATA[]]></item>
+		<item name="wcf.acp.group.option.user.filehub.store.canUploadFiles"><![CDATA[Kann Dateien hochladen]]></item>
+		<item name="wcf.acp.group.option.user.filehub.store.canUploadFiles.description"><![CDATA[Mitglieder dieser Benutzergruppe können Dateien hochladen.]]></item>
+		<item name="wcf.acp.group.option.user.filehub.store.needUploadKey"><![CDATA['Upload Key' benötigt]]></item>
+		<item name="wcf.acp.group.option.user.filehub.store.needUploadKey.description"><![CDATA[Mitglieder diser Benutzergruppe benötigen einen 'Upload Key' um dateien hochladen zu können.]]></item>
+		<item name="wcf.acp.group.option.user.filehub.store.needCaptcha"><![CDATA[Captcha lösen]]></item>
+		<item name="wcf.acp.group.option.user.filehub.store.needCaptcha.description"><![CDATA[Mitglieder dieser Benutzergruppe müssen ein Captcha lösen bevor sie Dateien hochladen können. Falls sie den 'Upload Key' wissen, kann die Captcha Frage umgangen werden.]]></item>
+	</category>
 </language>

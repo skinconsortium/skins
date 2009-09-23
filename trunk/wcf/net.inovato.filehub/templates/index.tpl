@@ -6,8 +6,11 @@
 	<div class="container-1">
 		<form method="POST" action="index.php?form=Upload" enctype="multipart/form-data"> 
 		<input type="file" name="file" style="width: 340px;" size="39" /> 
+		{@SID_INPUT_TAG}
+		<input type="hidden" name="postID" value="foo" />		
 		<input type="submit" value="Upload" /> 
 		</form> 
+		{$selfLink}
 	</div>
 </div>
 {/capture}

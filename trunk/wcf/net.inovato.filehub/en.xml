@@ -4,4 +4,16 @@
 	<category name="filehub.header.menu">
 		<item name="filehub.header.menu.home"><![CDATA[{lang}wcf.appframe.generic.home{/lang}]]></item>
 	</category>
+	<category name="wcf.acp.group">
+		<item name="wcf.acp.group.option.category.user.filehub"><![CDATA[Filehub]]></item>
+		<item name="wcf.acp.group.option.category.user.filehub.description"><![CDATA[]]></item>
+		<item name="wcf.acp.group.option.category.user.filehub.store"><![CDATA[File Upload]]></item>
+		<item name="wcf.acp.group.option.category.user.filehub.store.description"><![CDATA[]]></item>
+		<item name="wcf.acp.group.option.user.filehub.store.canUploadFiles"><![CDATA[Can upload files]]></item>
+		<item name="wcf.acp.group.option.user.filehub.store.canUploadFiles.description"><![CDATA[Members of this usergroup can upload files.]]></item>
+		<item name="wcf.acp.group.option.user.filehub.store.needUploadKey"><![CDATA[Need upload key]]></item>
+		<item name="wcf.acp.group.option.user.filehub.store.needUploadKey.description"><![CDATA[Members of this usergroup need an additional upload key in order to upload files.]]></item>
+		<item name="wcf.acp.group.option.user.filehub.store.needCaptcha"><![CDATA[Need to solve captcha]]></item>
+		<item name="wcf.acp.group.option.user.filehub.store.needCaptcha.description"><![CDATA[Members of this usergroup need to solve a captcha in order to upload files. If they know the upload key the captcha question can be bypassed.]]></item>
+	</category>
 </language>

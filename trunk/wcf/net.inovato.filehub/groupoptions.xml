@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE data SYSTEM "http://www.woltlab.com/DTDs/options.dtd">
+<data>
+	<import>
+		<categories>
+			<category name="user.filehub">
+				<parent>user</parent>
+			</category>
+			<category name="user.filehub.store">
+				<parent>user.filehub</parent>
+			</category>
+			<category name="user.filehub.read">
+				<parent>user.filehub</parent>
+			</category>
+			<category name="user.filehub.edit">
+				<parent>user.filehub</parent>
+			</category>
+		</categories>
+		
+		<options>
+			<option name="user.filehub.store.canUploadFiles">
+				<categoryname>user.filehub.store</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>1</defaultvalue>
+				<enableoptions><![CDATA[user.filehub.store.needUploadKey,user.filehub.store.needCaptcha]]></enableoptions>
+			</option>
+			<option name="user.filehub.store.needUploadKey">
+				<categoryname>user.filehub.store</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+			</option>
+			<option name="user.filehub.store.needCaptcha">
+				<categoryname>user.filehub.store</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+			</option>
+		</options>
+	</import>
+</data>
