@@ -3,14 +3,63 @@
 <elements>
 	<bitmap id="widgets.manager.header" file="@WINAMPPATH@\Plugins\classicPro\engine\image\header-widgets.png"/>
 	<bitmap id="widgets.manager.thumbnail" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgets-thumbnail.png"/>
+	
+	
+	<bitmap id="widgets.manager.frame.left.1" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="0" y="0" w="80" h="64"/>
+	<bitmap id="widgets.manager.frame.center.1" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="81" y="0" w="10" h="64"/>
+	<bitmap id="widgets.manager.frame.right.1" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="92" y="0" w="130" h="64"/>
+
+	<bitmap id="widgets.manager.frame.left.2" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="0" y="65" w="80" h="64"/>
+	<bitmap id="widgets.manager.frame.center.2" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="81" y="65" w="10" h="64"/>
+	<bitmap id="widgets.manager.frame.right.2" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="92" y="65" w="130" h="64"/>
+
+	<bitmap id="widgets.manager.info.1" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="223" y="0" w="20" h="20"/>
+	<bitmap id="widgets.manager.info.2" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="244" y="0" w="20" h="20"/>
+	<bitmap id="widgets.manager.info.3" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="265" y="0" w="20" h="20"/>
+
+	<bitmap id="widgets.manager.unins.1" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="223" y="21" w="20" h="20"/>
+	<bitmap id="widgets.manager.unins.2" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="244" y="21" w="20" h="20"/>
+	<bitmap id="widgets.manager.unins.3" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="265" y="21" w="20" h="20"/>
+
+	<bitmap id="widgets.manager.main.1" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="223" y="42" w="20" h="20"/>
+	<bitmap id="widgets.manager.main.2" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="244" y="42" w="20" h="20"/>
+	<bitmap id="widgets.manager.main.3" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="265" y="42" w="20" h="20"/>
+
+	<bitmap id="widgets.manager.drawer.1" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="223" y="63" w="20" h="20"/>
+	<bitmap id="widgets.manager.drawer.2" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="244" y="63" w="20" h="20"/>
+	<bitmap id="widgets.manager.drawer.3" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="265" y="63" w="20" h="20"/>
+
+	<bitmap id="widgets.manager.side.1" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="223" y="84" w="20" h="20"/>
+	<bitmap id="widgets.manager.side.2" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="244" y="84" w="20" h="20"/>
+	<bitmap id="widgets.manager.side.3" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="265" y="84" w="20" h="20"/>
 </elements>
 
-<groupdef id="widgets.manager.listitem.none" h="74">
+<!--<groupdef id="widgets.manager.listitem.none" h="74">
 	<text id="name" x="0" y="8" h="16" w="0" relatw="1" bold="1" align="center" antialiasing="1" fontsize="18" color="wasabi.list.text.current" text="No Widgets Found!"/>
 	<wasabi:button id="dld" x="0" y="30" h="16" w="0" relatw="1" text="Download Widgtes" />
+</groupdef>-->
+
+<groupdef id="widgets.manager.listitem" h="65"> <!--xuitag="Cpro::WidgetmanagerItem">-->
+	<grid fitparent="1" h="64" topleft="widgets.manager.frame.left.1" top="widgets.manager.frame.center.1" topright="widgets.manager.frame.right.1"/>
+
+	<layer id="thumbnail" x="2" y="2" h="60" w="60" image="widgets.manager.thumbnail" />
+	
+	<text id="name" x="65" y="2" h="28" w="-65" relatw="1" bold="1" antialiasing="1" text="BrowserPro" fontsize="28" color="wasabi.list.text.current"/>
+	<text id="version" x="186" y="12" h="16" w="40" bold="0" antialiasing="1" text="v2.10" fontsize="12" color="wasabi.list.text"/>
+
+	<text id="author" x="72" y="27" h="16" w="-65" relatw="1" bold="0" antialiasing="1" text="by Pieter Nieuwoudt" color="wasabi.list.text"/>
+
+	<!--<wasabi:button id="support" x="-20" y="-20" h="20" w="20" relatx="1" relaty="1" text="I" cursor="IDC_HAND" color="wasabi.list.text"/>-->
+	<button id="show.mini" x="-80" y="-21" h="20" w="20" relatx="1" relaty="1" alpha="50" ghost="1"  image="widgets.manager.side.1" hoverimage="widgets.manager.side.2" downimage="widgets.manager.side.3"/>
+	<button id="show.drawer" x="-100" y="-21" h="20" w="20" relatx="1" relaty="1" alpha="50" ghost="1"  image="widgets.manager.drawer.1" hoverimage="widgets.manager.drawer.2" downimage="widgets.manager.drawer.3"/>
+	<button id="show.main" x="-120" y="-21" h="20" w="20" relatx="1" relaty="1" alpha="50" ghost="1" image="widgets.manager.main.1" hoverimage="widgets.manager.main.2" downimage="widgets.manager.main.3"/>
+	
+	<button id="uninstall" x="-40" y="-21" h="20" w="20" relatx="1" relaty="1" cursor="IDC_HAND" image="widgets.manager.unins.1" hoverimage="widgets.manager.unins.2" downimage="widgets.manager.unins.3"/>
+	<button id="support" x="-20" y="-21" h="20" w="20" relatx="1" relaty="1" cursor="IDC_HAND" image="widgets.manager.info.1" hoverimage="widgets.manager.info.2" downimage="widgets.manager.info.3"/>
+	<script file="@WINAMPPATH@\Plugins\classicPro\engine\scripts\widgetManItem.maki"/>
 </groupdef>
 
-<groupdef id="widgets.manager.listitem" h="74">
+<!--<groupdef id="widgets.manager.listitem" h="74">
 	<rect x="0" y="0" w="0" relatw="1" filled="0" h="64" color="wasabi.list.text.selected.background" />
 
 	<layer id="thumbnail" x="2" y="2" h="60" w="60" image="widgets.manager.thumbnail" />
@@ -38,16 +87,16 @@
 <groupdef id="widgets.manager.content.new">
 	<GroupList id="grplst" x="5" y="85" h="-90" w="-30" relatw="1" relath="1" />
 	<SC:VScrollBar id="vscroll" x="-18" relatx="1" y="85" w="13" h="-90" relath="1" low="0" high="100"/>
-</groupdef>
+</groupdef>-->
 
 <groupdef id="widgets.manager.content.all">
-	<GroupList id="grplst" x="5" y="85" h="-90" w="-30" relatw="1" relath="1" />
-	<SC:VScrollBar id="vscroll" x="-18" relatx="1" y="85" w="13" h="-90" relath="1" low="0" high="100"/>
+	<GroupList id="grplst" x="5" y="5" h="-10" w="-28" relatw="1" relath="1" />
+	<SC:VScrollBar id="vscroll" x="-18" relatx="1" y="5" w="13" h="-10" relath="1" low="0" high="100"/>
 </groupdef>
 
 <groupdef id="widgets.manager.content">
 
-	<rect x="0" y="0" h="57" w="0" relatw="1" filled="1" color="255,255,255" />
+	<!--<rect x="0" y="0" h="57" w="0" relatw="1" filled="1" color="255,255,255" />
 	<layer x="0" y="0" h="57" w="150" image="widgets.manager.header" />
 
 	<rect x="0" y="57" h="1" w="0" relatw="1" filled="1" color="0,0,0" alpha="56"/>
@@ -55,15 +104,28 @@
 
 	<wasabi:button id="newW" x="5" y="64" h="16" w="78" text="New Widgets" cursor="IDC_HAND" color="wasabi.list.text"/>
 	<wasabi:button id="allW" x="90" y="64" h="16" w="78" text="All Widgets" cursor="IDC_HAND" color="wasabi.list.text"/>
+	-->
 
-	<group id="widgets.manager.content.new" fitparent="1" visible="0"/>
+	<!--<group id="widgets.manager.content.new" fitparent="1" visible="0"/>-->
 	<group id="widgets.manager.content.all" fitparent="1" />
 
+	
+	<!--<Cpro::WidgetmanagerItem x="5" y="164" w="-30" h="64" relatw="1" 
+		widgetid="centro.widgets.shoutbox"
+		widgetname="Shoutbox 123123"
+		widgetauthor="martin.deimos"
+		widgetversion="0.71"
+		widgetuninstaller=""
+		widgetsupport=""
+		widgetpos_mini="1"
+		widgetpos_drawer="1"
+		widgetpos_main="1"
+	/>-->
 </groupdef>
 
 <container id="widgets.manager" name="Widgets Manager" dynamic="0" default_visible="0"  nomenu="0" nofocusapponclose="1">
 
-	<layout id="normal" minimum_h="400" minimum_w="310" noparent="1" ontop="1" nodock="1">
+	<layout id="normal" minimum_h="400" minimum_w="100" noparent="1" ontop="1" nodock="1">
 
 		<Wasabi:StandardFrame:Modal id="framewnd" content="widgets.manager.content" fitparent="1"/>
 
