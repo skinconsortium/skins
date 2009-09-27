@@ -5,33 +5,33 @@
 	<bitmap id="widgets.manager.thumbnail" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgets-thumbnail.png"/>
 	
 	
-	<bitmap id="widgets.manager.frame.left.1" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="0" y="0" w="80" h="64"/>
-	<bitmap id="widgets.manager.frame.center.1" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="81" y="0" w="10" h="64"/>
-	<bitmap id="widgets.manager.frame.right.1" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="92" y="0" w="130" h="64"/>
+	<bitmap id="widgets.manager.frame.left.1" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="0" y="0" w="150" h="64"/>
+	<bitmap id="widgets.manager.frame.center.1" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="151" y="0" w="50" h="64"/>
+	<bitmap id="widgets.manager.frame.right.1" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="201" y="0" w="63" h="64"/>
 
-	<bitmap id="widgets.manager.frame.left.2" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="0" y="65" w="80" h="64"/>
-	<bitmap id="widgets.manager.frame.center.2" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="81" y="65" w="10" h="64"/>
-	<bitmap id="widgets.manager.frame.right.2" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="92" y="65" w="130" h="64"/>
+	<bitmap id="widgets.manager.frame.left.2" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="0" y="0" w="150" h="64"/>
+	<bitmap id="widgets.manager.frame.center.2" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="151" y="0" w="50" h="64"/>
+	<bitmap id="widgets.manager.frame.right.2" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="201" y="0" w="63" h="64"/>
 
-	<bitmap id="widgets.manager.info.1" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="223" y="0" w="20" h="20"/>
-	<bitmap id="widgets.manager.info.2" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="244" y="0" w="20" h="20"/>
-	<bitmap id="widgets.manager.info.3" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="265" y="0" w="20" h="20"/>
+	<bitmap id="widgets.manager.info.1" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="75" y="130" w="24" h="20"/>
+	<bitmap id="widgets.manager.info.2" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="75" y="151" w="24" h="20"/>
+	<bitmap id="widgets.manager.info.3" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="75" y="172" w="24" h="20"/>
 
-	<bitmap id="widgets.manager.unins.1" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="223" y="21" w="20" h="20"/>
-	<bitmap id="widgets.manager.unins.2" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="244" y="21" w="20" h="20"/>
-	<bitmap id="widgets.manager.unins.3" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="265" y="21" w="20" h="20"/>
+	<bitmap id="widgets.manager.unins.1" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="100" y="130" w="24" h="20"/>
+	<bitmap id="widgets.manager.unins.2" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="100" y="151" w="24" h="20"/>
+	<bitmap id="widgets.manager.unins.3" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="100" y="172" w="24" h="20"/>
 
-	<bitmap id="widgets.manager.main.1" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="223" y="42" w="20" h="20"/>
-	<bitmap id="widgets.manager.main.2" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="244" y="42" w="20" h="20"/>
-	<bitmap id="widgets.manager.main.3" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="265" y="42" w="20" h="20"/>
+	<bitmap id="widgets.manager.main.1" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="0" y="130" w="24" h="20"/>
+	<bitmap id="widgets.manager.main.2" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="0" y="151" w="24" h="20"/>
+	<bitmap id="widgets.manager.main.3" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="0" y="172" w="24" h="20"/>
 
-	<bitmap id="widgets.manager.drawer.1" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="223" y="63" w="20" h="20"/>
-	<bitmap id="widgets.manager.drawer.2" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="244" y="63" w="20" h="20"/>
-	<bitmap id="widgets.manager.drawer.3" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="265" y="63" w="20" h="20"/>
+	<bitmap id="widgets.manager.drawer.1" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="25" y="130" w="24" h="20"/>
+	<bitmap id="widgets.manager.drawer.2" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="25" y="151" w="24" h="20"/>
+	<bitmap id="widgets.manager.drawer.3" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="25" y="172" w="24" h="20"/>
 
-	<bitmap id="widgets.manager.side.1" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="223" y="84" w="20" h="20"/>
-	<bitmap id="widgets.manager.side.2" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="244" y="84" w="20" h="20"/>
-	<bitmap id="widgets.manager.side.3" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="265" y="84" w="20" h="20"/>
+	<bitmap id="widgets.manager.side.1" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="50" y="130" w="24" h="20"/>
+	<bitmap id="widgets.manager.side.2" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="50" y="151" w="24" h="20"/>
+	<bitmap id="widgets.manager.side.3" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="50" y="172" w="24" h="20"/>
 </elements>
 
 <!--<groupdef id="widgets.manager.listitem.none" h="74">
@@ -44,18 +44,18 @@
 
 	<layer id="thumbnail" x="2" y="2" h="60" w="60" image="widgets.manager.thumbnail" />
 	
-	<text id="name" x="65" y="2" h="28" w="-65" relatw="1" bold="1" antialiasing="1" text="BrowserPro" fontsize="28" color="wasabi.list.text.current"/>
-	<text id="version" x="186" y="12" h="16" w="40" bold="0" antialiasing="1" text="v2.10" fontsize="12" color="wasabi.list.text"/>
+	<text id="name" x="68" y="2" h="24" w="-65" relatw="1" bold="1" antialiasing="1" text="" fontsize="24" color="255,255,255"/>
+	<text id="version" x="186" y="6" h="16" w="40" bold="0" antialiasing="1" text="" fontsize="16" color="128,128,128"/>
 
-	<text id="author" x="72" y="27" h="16" w="-65" relatw="1" bold="0" antialiasing="1" text="by Pieter Nieuwoudt" color="wasabi.list.text"/>
+	<text id="author" x="68" y="23" h="16" w="-65" relatw="1" bold="0" antialiasing="1" text="by Pieter Nieuwoudt" fontsize="16" color="128,128,128"/>
 
 	<!--<wasabi:button id="support" x="-20" y="-20" h="20" w="20" relatx="1" relaty="1" text="I" cursor="IDC_HAND" color="wasabi.list.text"/>-->
-	<button id="show.mini" x="-80" y="-21" h="20" w="20" relatx="1" relaty="1" alpha="50" ghost="1"  image="widgets.manager.side.1" hoverimage="widgets.manager.side.2" downimage="widgets.manager.side.3"/>
-	<button id="show.drawer" x="-100" y="-21" h="20" w="20" relatx="1" relaty="1" alpha="50" ghost="1"  image="widgets.manager.drawer.1" hoverimage="widgets.manager.drawer.2" downimage="widgets.manager.drawer.3"/>
-	<button id="show.main" x="-120" y="-21" h="20" w="20" relatx="1" relaty="1" alpha="50" ghost="1" image="widgets.manager.main.1" hoverimage="widgets.manager.main.2" downimage="widgets.manager.main.3"/>
+	<button id="show.mini" x="120" y="42" alpha="50" ghost="1" cursor="IDC_HAND" image="widgets.manager.side.1" hoverimage="widgets.manager.side.2" downimage="widgets.manager.side.3"/>
+	<button id="show.drawer" x="95" y="42" alpha="50" ghost="1" cursor="IDC_HAND" image="widgets.manager.drawer.1" hoverimage="widgets.manager.drawer.2" downimage="widgets.manager.drawer.3"/>
+	<button id="show.main" x="70" y="42" alpha="50" ghost="1" cursor="IDC_HAND" image="widgets.manager.main.1" hoverimage="widgets.manager.main.2" downimage="widgets.manager.main.3"/>
 	
-	<button id="uninstall" x="-40" y="-21" h="20" w="20" relatx="1" relaty="1" cursor="IDC_HAND" image="widgets.manager.unins.1" hoverimage="widgets.manager.unins.2" downimage="widgets.manager.unins.3"/>
-	<button id="support" x="-20" y="-21" h="20" w="20" relatx="1" relaty="1" cursor="IDC_HAND" image="widgets.manager.info.1" hoverimage="widgets.manager.info.2" downimage="widgets.manager.info.3"/>
+	<button id="uninstall" x="-50" y="42" relatx="1" alpha="50" ghost="1" cursor="IDC_HAND" image="widgets.manager.unins.1" hoverimage="widgets.manager.unins.2" downimage="widgets.manager.unins.3" tooltip="Uninstall this widget"/>
+	<button id="support" x="-25" y="42" relatx="1" alpha="50" ghost="1" cursor="IDC_HAND" image="widgets.manager.info.1" hoverimage="widgets.manager.info.2" downimage="widgets.manager.info.3" tooltip="Get support for this widget"/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\scripts\widgetManItem.maki"/>
 </groupdef>
 

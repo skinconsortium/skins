@@ -42,7 +42,7 @@ system.onSetXuiParam (String param, String value)
 	if (strlower(param) == "widgetname")
 	{
 		name.setText(value);
-		version.setXmlParam("x", integerToString(65 + name.getTextWidth()));
+		version.setXmlParam("x", integerToString(66 + name.getTextWidth()));
 	}
 	else if (strlower(param) == "widgetpos_mini"){
 		showmini.setXmlParam("ghost", "0");
@@ -62,7 +62,7 @@ system.onSetXuiParam (String param, String value)
 	}
 	else if (strlower(param) == "widgetversion")
 	{
-		version.setText("v"+value);
+		version.setText(value);
 	}
 	else if (strlower(param) == "widgetid")
 	{
@@ -76,11 +76,15 @@ system.onSetXuiParam (String param, String value)
 	}
 	else if (strlower(param) == "widgetuninstaller")
 	{
-			uninstallerPath = value;
+		uninstaller.setXmlParam("ghost", "0");
+		uninstaller.setAlpha(255);
+		uninstallerPath = value;
 	}
 	else if (strlower(param) == "widgetsupport")
 	{
-			supportURL = value;
+		support.setXmlParam("ghost", "0");
+		support.setAlpha(255);
+		supportURL = value;
 	}
 }
 
@@ -95,10 +99,10 @@ support.onLeftClick ()
 	//getParentLayout().sendAction("show_widget", widgetID,stringToInteger(sg.getXmlParam("userdata")),0,0,0);
 }
 
-
+/*
 showmain.onLeftClick ()
 {
 	//debug(sg.getXmlParam("userdata"));
 	getParentLayout().sendAction("show_widget", widgetID,stringToInteger(sg.getXmlParam("userdata")),0,0,0);
-}
+}*/
 
