@@ -30,5 +30,6 @@
 	<include file="color-presets.xml"/>
 	<include file="colors.xml"/>
 	<include file="@COLORTHEMESPATH@/../../Plugins/classicPro/engine/load.xml"/>
+	<include file="custom-element-overide.xml"/>
 	
 </WasabiXML>

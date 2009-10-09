@@ -13,9 +13,12 @@
 	<gammagroup id="n.Beatvis" value="0,0,0"/>
 	<gammagroup id="n.Promo" value="0,0,0"/>
 	<gammagroup id="n.Button.Top" value="0,0,0"/>
+	<gammagroup id="n.Button.Top2" value="0,0,0"/>
 	<gammagroup id="n.Button" value="0,0,0"/>
+	<gammagroup id="n.Button2" value="0,0,0"/>
 	<gammagroup id="n.SuiFrameLabel" value="0,0,0"/>
 	<gammagroup id="n.Volume.BG" value="0,0,0"/>
+	<gammagroup id="n.Volume.Thumb" value="0,0,0"/>
 	<gammagroup id="n.Background.Alt" value="0,0,0"/>
 	<gammagroup id="n.Scrollbars.Gfx" value="0,0,0"/>
 	<gammagroup id="n.Seeker.BG" value="0,0,0"/>
@@ -31,6 +34,7 @@
 	<gammagroup id="Color.GenericText" value="0,0,0"/>	
 	<gammagroup id="n.Button.Icon" value="0,0,0"/>	
 	<gammagroup id="n.Background.Alt" value="0,0,0"/>	
+	<gammagroup id="n.Cover" value="0,0,0"/>	
 
 
 
