@@ -1,0 +1,23 @@
+<elements>
+	<bitmap id="close.1" file="buttons.png" x="90" y="109" w="17" h="19" gammagroup="n.Button.Top2"/>
+	<bitmap id="close.2" file="buttons.png" x="90" y="129" w="17" h="19" gammagroup="n.Button.Top2"/>
+	<bitmap id="close.3" file="buttons.png" x="90" y="149" w="17" h="19" gammagroup="n.Button.Top2"/>
+
+	<bitmap id="menu.1" file="buttons.png" x="108" y="109" w="17" h="19" gammagroup="n.Button.Top2"/>
+	<bitmap id="menu.2" file="buttons.png" x="108" y="129" w="17" h="19" gammagroup="n.Button.Top2"/>
+	<bitmap id="menu.3" file="buttons.png" x="108" y="149" w="17" h="19" gammagroup="n.Button.Top2"/>
+
+	<!-- Sui Buttons -->
+	<bitmap id="drawer.1.0" file="suiframe.png" x="111" y="0" w="20" h="20" gammagroup="n.Button2"/>
+	<bitmap id="drawer.2.0" file="suiframe.png" x="111" y="21" w="20" h="20" gammagroup="n.Button2"/>
+	<bitmap id="drawer.3.0" file="suiframe.png" x="111" y="42" w="20" h="20" gammagroup="n.Button2"/>
+	<bitmap id="drawer.1.1" file="suiframe.png" x="111" y="72" w="20" h="20" gammagroup="n.Button2"/>
+	<bitmap id="drawer.2.1" file="suiframe.png" x="132" y="72" w="20" h="20" gammagroup="n.Button2"/>
+	<bitmap id="drawer.3.1" file="suiframe.png" x="153" y="72" w="20" h="20" gammagroup="n.Button2"/>
+	<bitmap id="open.right.1" file="suiframe.png" x="141" y="9" w="20" h="20" gammagroup="n.Button2"/>
+	<bitmap id="open.right.2" file="suiframe.png" x="141" y="30" w="20" h="20" gammagroup="n.Button2"/>
+	<bitmap id="open.right.3" file="suiframe.png" x="141" y="51" w="20" h="20" gammagroup="n.Button2"/>
+	<bitmap id="close.right.1" file="suiframe.png" x="162" y="9" w="20" h="20" gammagroup="n.Button2"/>
+	<bitmap id="close.right.2" file="suiframe.png" x="162" y="30" w="20" h="20" gammagroup="n.Button2"/>
+	<bitmap id="close.right.3" file="suiframe.png" x="162" y="51" w="20" h="20" gammagroup="n.Button2"/>
+</elements>

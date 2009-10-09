@@ -91,4 +91,7 @@
  	<truetypefont id="cpro.status.font" file="font.ttf" allowmapping="0"/>
  	<truetypefont id="cpro.winshade.font" file="font.ttf" allowmapping="0"/>
 	-->
+	<bitmap id="beat.1.left" file="beat_left2.png" gammagroup="n.beatvis"/>
+	<bitmap id="beat.1.right" file="beat_right2.png" gammagroup="n.beatvis"/>
+
 </elements>
