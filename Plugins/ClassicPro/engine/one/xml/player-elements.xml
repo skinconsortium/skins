@@ -165,9 +165,9 @@
 	<bitmapfont id="bitmapfont.songinfo" file="songinfo.source" charwidth="5" charheight="5" hspacing="0" vspacing="0"  gammagroup="_"/>
 
 	<!-- Layer: NoCover -->
-	<bitmap id="cover.notfound" file="art_notfound.png" gammagroup="_"/>
-	<bitmap id="cover.sc" file="art_shoutcast.png" gammagroup="_"/>
-	<bitmap id="cover.aolr" file="art_aolradio.png" gammagroup="_"/>
+	<bitmap id="cover.notfound" file="art_notfound.png" gammagroup="n.Cover"/>
+	<bitmap id="cover.sc" file="art_shoutcast.png" gammagroup="n.Cover"/>
+	<bitmap id="cover.aolr" file="art_aolradio.png" gammagroup="n.Cover"/>
 
 	<!-- BeatVis -->
 	<bitmap id="beat.0.left" file="beat_left.png" gammagroup="n.Beatvis"/>
@@ -482,9 +482,9 @@
 
 	<!-- Browser -->
 	
-	<bitmap id="browser.editframe.left" file="browser.png" x="132" y="42" h="22" w="4" gammagroup="_"/>
-	<bitmap id="browser.editframe.center" file="browser.png" x="137" y="42" h="22" w="2" gammagroup="_"/>
-	<bitmap id="browser.editframe.right" file="browser.png" x="140" y="42" h="22" w="4" gammagroup="_"/>
+	<bitmap id="browser.editframe.left" file="browser.png" x="132" y="42" h="22" w="4" gammagroup="n.SuiFrame"/>
+	<bitmap id="browser.editframe.center" file="browser.png" x="137" y="42" h="22" w="2" gammagroup="n.SuiFrame"/>
+	<bitmap id="browser.editframe.right" file="browser.png" x="140" y="42" h="22" w="4" gammagroup="n.SuiFrame"/>
 
 	<bitmap id="browser.editframe.center.2" file="browser.png" x="137" y="44" h="18" w="2" gammagroup="_"/>
 	

@@ -326,6 +326,7 @@
 	<layer id="centro.blf.1" x="0" y="0" image="player.gframe.7" move="1"/>
 	<layer id="centro.blf.2" x="6" y="0" w="-6" relatw="1" image="player.gframe.8" move="1"/>
 	<layer id="centro.blf.1a" x="0" y="0" image="player.gframe.7.alt" visible="0" move="1"/>
+	<layer id="centro.blf.1a.overlay" x="1" y="9" image="player.gframe.7.alt.overlay" visible="0" move="1"/>
 </groupdef>
 <groupdef id="centro.multidrawer">
 	<grid id="centro.gadget.grid" fitparent="1" h="-27" move="1"

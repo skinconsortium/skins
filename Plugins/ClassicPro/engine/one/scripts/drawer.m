@@ -30,7 +30,7 @@ Global GuiObject cpro_sui, gad_Grid, gad_GridEQ;
 Global Layer ct_fakeLayer, tempfix;
 Global Boolean gotThemes, mouse_but_drawerGoto, cuseqbg, transparentSave;
 Global XmlDoc myDoc;
-Global Layer gadgrid1, gadgrid1a, gadgrid2, gadgrid3;
+Global Layer gadgrid1, gadgrid1a, gadgrid1a_overlay, gadgrid2, gadgrid3;
 
 Global ComponentBucket dummyBuck;
 Global GuiObject customObj;
@@ -61,6 +61,7 @@ System.onScriptLoaded() {
 	tempfix = myGroup.findObject("tempfix");
 	gadgrid1 = myGroup.findObject("centro.blf.1");
 	gadgrid1a = myGroup.findObject("centro.blf.1a");
+	gadgrid1a_overlay = myGroup.findObject("centro.blf.1a.overlay");
 	gadgrid2 = myGroup.findObject("centro.blf.2");
 	gadgrid3 = myGroup.findObject("centro.blf.3");
 
@@ -357,6 +358,7 @@ setDrawerBG(int mode){
 		gadgrid3.show();
 
 		gadgrid1a.hide();
+		gadgrid1a_overlay.hide();
 		gad_GridEQ.hide();
 	
 		gadgrid2.setXmlParam("x", "6");
@@ -364,6 +366,7 @@ setDrawerBG(int mode){
 	}
 	else if(mode==1){
 		gadgrid1a.show();
+		gadgrid1a_overlay.show();
 		gadgrid2.show();
 		gadgrid3.show();
 		
@@ -388,6 +391,7 @@ setDrawerBG(int mode){
 		gadgrid1.hide();
 		gadgrid2.hide();
 		gadgrid1a.hide();
+		gadgrid1a_overlay.hide();
 		gad_GridEQ.show();
 		gadgrid3.hide();
 	}

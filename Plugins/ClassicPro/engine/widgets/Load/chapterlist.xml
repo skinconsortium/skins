@@ -13,7 +13,7 @@
 	<guiobject id="@author"			userdata="pjn123"/>
 	<guiobject id="@version"		userdata="0.5"/>
 	<guiobject id="@uninstaller"	userdata="Uninstall (Chapterlist).exe"/>
-	<guiobject id="@support"		userdata="http://forums.skinconsortium.com/index.php?page=Thread&amp;threadID=1273"/>
+	<guiobject id="@support"		userdata="http://forums.skinconsortium.com/index.php?page=Thread&amp;threadID=1236"/>
 	<guiobject id="@databaseid"		userdata="128"/>
 </groupdef>
 

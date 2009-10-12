@@ -48,7 +48,7 @@ Global Button but_miniGoto;
 Global PopUpMenu popMenu;
 Global Boolean mouse_but_miniGoto,  dmr_down;
 Global GuiObject gad_Grid;
-Global Layer gadgrid1, gadgrid1a, gadgrid2;
+Global Layer gadgrid1, gadgrid1a, gadgrid1a_overlay, gadgrid2;
 
 // Gui Extras
 Global Text plText1, plText2;
@@ -146,6 +146,7 @@ System.onScriptLoaded(){
 	gad_Grid = xuiGroup.findObject("centro.mini.grid");
 	gadgrid1 = xuiGroup.findObject("centro.bottomleftgrid.1");
 	gadgrid1a = xuiGroup.findObject("centro.bottomleftgrid.1a");
+	gadgrid1a_overlay = xuiGroup.findObject("centro.bottomleftgrid.1a.overlay");
 	gadgrid2 = xuiGroup.findObject("centro.bottomleftgrid.2");
 	drawerResize = xuiGroup.findObject("cpro.drawer.resize");
 
@@ -666,6 +667,7 @@ setMiniBG(int mode){
 	if(mode==0){
 		gadgrid1.show();
 		gadgrid1a.hide();
+		gadgrid1a_overlay.hide();
 		
 		gadgrid2.setXmlParam("x", "6");
 		gadgrid2.setXmlParam("w", "-6");
@@ -674,6 +676,7 @@ setMiniBG(int mode){
 		if(getPublicInt("cPro.transparentsave", 0)){
 			gadgrid1.hide();
 			gadgrid1a.show();
+			gadgrid1a_overlay.show();
 
 			gadgrid2.setXmlParam("x", "247");
 			gadgrid2.setXmlParam("w", "-247");
@@ -681,6 +684,7 @@ setMiniBG(int mode){
 		else{
 			gadgrid1.show();
 			gadgrid1a.show();
+			gadgrid1a_overlay.show();
 			
 			gadgrid2.setXmlParam("x", "6");
 			gadgrid2.setXmlParam("w", "-6");
