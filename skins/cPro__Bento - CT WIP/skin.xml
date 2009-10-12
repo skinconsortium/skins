@@ -3,7 +3,7 @@
 <WasabiXML version="1.34">
 
 <skininfo>
-	<version>1.1</version>
+	<version>2.0</version>
 	<name>cPro - Bento</name>
 	<comment>Graphics by the the original Winamp development team</comment>
 	<author gaybag="pjn123">Skin Consortium</author>
@@ -12,19 +12,22 @@
 	<screenshot>screenshot.png</screenshot>
 </skininfo>
 	<scripts> <script file="warning_1.1.maki" param="@COLORTHEMESPATH@"/> </scripts>
-	<groupdef id="centro.mini.overlay">
-		<rect x="1" y="1" w="-2" h="-19" relatw="1" relath="1" filled="1" color="wasabi.list.background"/>
+	<groupdef id="centro.side.overlay">
+		<rect x="1" y="1" w="-2" h="-19" relatw="1" relath="1" filled="1" color="wasabi.list.background" ghost="1"/>
 	</groupdef>
 	<groupdef id="centro.drawer.overlay">
-		<rect x="1" y="1" w="-2" h="-19" relatw="1" relath="1" filled="1" color="wasabi.list.background"/>
+		<rect x="1" y="1" w="-2" h="-19" relatw="1" relath="1" filled="1" color="wasabi.list.background" ghost="1"/>
 	</groupdef>
 	<groupdef id="centro.sui.overlay">
-		<rect x="1" y="1" w="-2" h="28" relatw="1"  filled="1" color="wasabi.list.background"/>
+		<rect x="1" y="1" w="-2" h="28" relatw="1"  filled="1" color="wasabi.list.background" ghost="1"/>
 	</groupdef>
 	<groupdef id="cpro.normal.overlay">
 		<layer x="35" y="7" image="custom.winamp" ghost="1"/>
 		<NStatesButton x="-108" y="-47" w="33" h="31" relatx="1" relaty="1" image="custom.shuffle." hoverimage="custom.shuffle." downimage="custom.shuffle." nstates="2" cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Shuffle" ghost="1"/>
 		<NStatesButton x="-76" y="-45" w="34" h="29" relatx="1" relaty="1" image="custom.repeat." hoverimage="custom.repeat." downimage="custom.repeat." rectrgn="1" nstates="3" cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Repeat" cfgvals="0;1;-1" ghost="1"/>
+	</groupdef>
+	<groupdef id="cpro.shade.overlay">
+		<layer x="35" y="7" image="custom.winamp" ghost="1"/>
 	</groupdef>
 
 	<include file="color-presets.xml"/>

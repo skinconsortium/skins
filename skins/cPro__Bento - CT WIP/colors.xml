@@ -10,7 +10,7 @@
 	<color id="Browser.MediaMonitor" value="173,173,173" gammagroup="n.Text.On.Bg"/>
 	<color id="Shade.SongTicker.Text" value="147,175,185" gammagroup="n.Text.SongTime"/>
 
-	<color id="Playlist.Status.Text" value="162,193,204" gammagroup="n.Text.SongTime"/>
+	<color id="Playlist.Status.Text" value="162,193,204" gammagroup="n.Text.Status"/>
 	<color id="ComponentTab.Status.Text" value="210,210,210" gammagroup="n.Text.On.Bg"/>
 
 	<color id="wasabi.tooltips.textcolor" value="147,175,185" gammagroup="n.TooltipCombobox.Text"/>
@@ -21,10 +21,10 @@
 	
 
 	<!-- Notifier -->
-	<color id="notifier.dark" value="35,35,35" gammagroup="n.Notifier.Text"/>
-	<color id="notifier.bright" value="255,255,255" gammagroup="n.Notifier.Text"/>
-	<color id="notifier.dark.upper" value="35,35,35" gammagroup="n.Notifier.Text"/>
-	<color id="notifier.bright.upper" value="255,255,255" gammagroup="n.Notifier.Text"/>
+	<color id="notifier.dark" value="35,35,35" gammagroup="n.Notifier.Text.Big"/>
+	<color id="notifier.bright" value="255,255,255" gammagroup="n.Notifier.Text.Big"/>
+	<color id="notifier.dark.upper" value="35,35,35" gammagroup="n.Notifier.Text.Small"/>
+	<color id="notifier.bright.upper" value="255,255,255" gammagroup="n.Notifier.Text.Small"/>
 
 
 
@@ -78,6 +78,7 @@
 	<bitmap id="custom.repeat.1" file="custom-repeat.png" gammagroup="n.Button.Icon"/>
 	<bitmap id="custom.repeat.2" file="custom-repeat1.png" gammagroup="n.Button.Icon"/>
 	<bitmap id="custom.winamp" file="custom-winamp.png" gammagroup="n.Background.Alt"/>
+	<bitmap id="player.gframe.7.alt.overlay" file="custom-bottomleft.png" gammagroup="n.Color.ListBg"/>
 
 	<!--
 	These fonts wont be used in this skin (default = Arial)

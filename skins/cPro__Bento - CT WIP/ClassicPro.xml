@@ -2,6 +2,11 @@
 <ClassicPro version="1.14" engine="one">
 	<!-- See the <Cpro - Bento/not used> folder for the optional stuff you can use here-->
 	
+	<TextSettings>
+		<Style id="normal.songticker"
+			antialias="1"
+		/>
+	</TextSettings>
 
 	<Visualization>
 		<BeatVis>
