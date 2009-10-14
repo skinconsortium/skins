@@ -5,9 +5,10 @@
 	{include file='appFrameHeadInclude' sandbox=false}
 </head>
 <body{if $templateName|isset} id="tpl{$templateName|ucfirst}"{/if}>
-{include file='appFrameHeader' sandbox=true}
+{include file='appFrameHeader' sandbox=false}
 
 <div id="main">
+	{if APPFRAME_SHOW_BREADCRUMB_NAVIGATION}{include file="appFrameBreadCrumbs"}{/if}
 	
 	{if $appFrameGenericSiteShowCaption}
 		<div class="mainHeadline">

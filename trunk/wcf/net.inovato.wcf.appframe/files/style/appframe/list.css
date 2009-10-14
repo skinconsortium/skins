@@ -1,0 +1,22 @@
+.listBody
+{
+	clear:both;
+}
+
+.listHead
+{
+	padding-right: 1px;
+}
+
+.listHead ul li
+{
+	display: inline;
+	float:left;
+}
+
+.listHead div a
+{
+	margin: 0;
+	margin-right: 1px;
+	padding: 0 25px 0 25px;
+}

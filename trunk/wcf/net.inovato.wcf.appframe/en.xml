@@ -66,6 +66,8 @@
 		<item name="wcf.acp.option.appframe_show_style_chooser.description"><![CDATA[A list of all available styles is displayed in the footer of the page.]]></item>
 		<item name="wcf.acp.option.appframe_show_version_number"><![CDATA[Show version number in copyright note]]></item>
 		<item name="wcf.acp.option.appframe_show_version_number.description"><![CDATA[By enabling this option the version number of this application will be displayed in the copyright note.]]></item>
+		<item name="wcf.acp.option.appframe_show_breadcrumb_navigation"><![CDATA[Show bread crumb navigation]]></item>
+		<item name="wcf.acp.option.appframe_show_breadcrumb_navigation.description"><![CDATA[By enabling this option a bread crumb navigation bar will be displayed below the header navigation bar.]]></item>
 	</category>
 
 	<category name="wcf.appframe.global">
@@ -98,5 +100,7 @@
 		<item name="wcf.appframe.generic.home"><![CDATA[Main Page]]></item>
 		<item name="wcf.appframe.generic.more"><![CDATA[More]]></item>
 		<item name="wcf.appframe.generic.moreinfo"><![CDATA[More Information]]></item>
+		<item name="wcf.appframe.generic.panelOpen"><![CDATA[Open &raquo;{lang}{$titleBarPanelName}{/lang}&laquo;]]></item>
+		<item name="wcf.appframe.generic.panelClose"><![CDATA[Close &raquo;{lang}{$titleBarPanelName}{/lang}&laquo;]]></item>
 	</category>
 </language>
