@@ -5,16 +5,16 @@
 		<packagename>Simple News</packagename>
 		<packagedescription>Adds a simple news page that can be configured via ACP.</packagedescription>
 		<isunique>1</isunique>
-		<version>1.2.0-dev8</version>
+		<version>1.2.0-beta1-dev3</version>
 		<date>2009-09-11</date>
 		<plugin>com.woltlab.wbb</plugin>
 	</packageinformation>
 	<requiredpackages>
-		<requiredpackage minversion="3.1.0 Beta 5">com.woltlab.wbb</requiredpackage>
+		<requiredpackage minversion="1.0.8">com.woltlab.wbb</requiredpackage>
 	</requiredpackages>
 	<optionalpackages>
-		<optionalpackage minversion="1.1.1" file="requirements/me.songbook.wbb.news.headermenu.tar">me.songbook.wbb.news.headermenu</optionalpackage>
-		<optionalpackage minversion="1.0.0" file="requirements/community/com.plunts.wbb.news.hidehack.tar">com.plunts.wbb.news.hidehack</optionalpackage>
+		<optionalpackage minversion="1.2.0" file="optionals/me.songbook.wbb.news.headermenu.tar">me.songbook.wbb.news.headermenu</optionalpackage>
+		<optionalpackage minversion="1.0.0" file="optionals/community/com.plunts.wbb.news.hidehack.tar">com.plunts.wbb.news.hidehack</optionalpackage>
 	</optionalpackages>
 	<authorinformation>
 		<author>Martin Poehlmann</author>

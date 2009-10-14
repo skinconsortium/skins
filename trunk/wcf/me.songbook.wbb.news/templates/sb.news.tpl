@@ -11,7 +11,7 @@
 		<script type="text/javascript">
 			var addthis_pub = "{SONGBOOK_NEWS_ADDTHIS_USERNAME}";
 			var addthis_offset_top=-4;
-			var addthis_offset_left=28;
+			var addthis_offset_left=0;
 			var addthis_language='{$langCodeShort}';
 		</script>
 	{/if}
@@ -70,7 +70,7 @@
 			<div class="largeButtons{if !SONGBOOK_NEWS_HOTTOPIC_RIGHTALIGN} leftFloat{/if}">
 				<ul>
 					{if SONGBOOK_NEWS_ADDTHIS_ENABLE}
-						<li><a rel="nofollow" href="http://www.addthis.com/bookmark.php" onmouseover="return addthis_open(this, '', '{@PAGE_URL}/index.php?page=Thread&amp;threadID={$hotThreads[$key]->threadID}', '{@$hotTopic->subject|encodejs}')" onmouseout="addthis_close()" onclick="return addthis_sendto()"><img src="{@RELATIVE_WBB_DIR}icon/addThisM.png" alt="{lang}wbb.sb.news.share{/lang}" height="24" width="24" /> {lang}wbb.sb.news.share{/lang}</a></li>
+						<li><a rel="nofollow" href="http://www.addthis.com/bookmark.php" onmouseover="return addthis_open(this, '', '{@PAGE_URL}/index.php?page=Thread&amp;threadID={$hotThreads[$key]->threadID}', '{@$hotTopic->subject|encodejs}')" onmouseout="addthis_close()" onclick="return addthis_sendto()"><img src="{@RELATIVE_WBB_DIR}icon/addThisM.png" alt="{lang}wbb.sb.news.share{/lang}" height="24" width="24" /><span> {lang}wbb.sb.news.share{/lang}</span></a></li>
 					{/if}
 					{if $hotThreads[$key]->isClosed != true}
 						<li><a href="{@RELATIVE_WBB_DIR}index.php?page=Thread&amp;threadID={$hotThreads[$key]->threadID}{@SID_ARG_2ND}"><img src="{@RELATIVE_WBB_DIR}icon/discussM.png" alt="{lang}wbb.sb.news.discuss{/lang}" /> <span>{lang}wbb.sb.news.discuss{/lang}</span></a></li>
@@ -82,8 +82,10 @@
 	{/foreach}
 	<div class="pageOptions{if !SONGBOOK_NEWS_HOTTOPIC_RIGHTALIGN} leftFloat{else} clearingSpace{/if}">
 		<a href="index.php?page=Board&amp;boardID={SONGBOOK_NEWS_HOTTOPIC_BOARDID}"><img src="{@RELATIVE_WBB_DIR}icon/simpleNewsArchive.png" alt="" /> <span>{lang}wbb.sb.news.archive{/lang}</span></a>
+		{if $displayRSSLinks}
 		<a href="index.php?page=SimpleNewsFeed&amp;type=RSS2"><img src="{@RELATIVE_WBB_DIR}icon/addThisS.png" alt="" /> <span>{lang}wbb.sb.news.rssabo{/lang}</span></a>
 		<a href="index.php?page=SimpleNewsFeed&amp;type=Atom"><img src="{@RELATIVE_WBB_DIR}icon/addThisS.png" alt="" /> <span>{lang}wbb.sb.news.atomabo{/lang}</span></a>
+		{/if}
 	</div>
 	{if $newsPostPadding|isset}{@$newsPostPadding}{/if}
 </div>
