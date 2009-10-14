@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE data SYSTEM "http://www.woltlab.com/DTDs/headerMenu.dtd">
+<data>	
+	<import>
+		<pagemenuitem name="wcf.header.menu.sb.simplenews">
+			<iconmedium>simpleNewsM.png</iconmedium>
+			<iconsmall>simpleNewsS.png</iconsmall>
+			<link>index.php?page=SimpleNews</link>
+			<position>header</position>
+			<showorder>0</showorder>
+		</pagemenuitem>
+	</import>
+</data>
