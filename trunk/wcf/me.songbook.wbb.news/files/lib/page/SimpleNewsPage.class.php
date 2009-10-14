@@ -24,7 +24,6 @@ class SimpleNewsPage extends AbstractPage
 	public $hotThreads;
 	public $rssIDs;
 	
-	
 	private $boards = array();
 	private $boardsToCheck = array();
 		
@@ -85,6 +84,7 @@ class SimpleNewsPage extends AbstractPage
 			'rssIDs' => $this->rssIDs,
 			'langCodeShort' => $code,
 			'allowSpidersToIndexThisPage' => true,
+			'displayRSSLinks' => (version_compare(PACKAGE_VERSION, '3.0.0', '>')) // wbbLite2 has no RSS class, so i might consider writing the feedreader on my own
         ));
 	}
 	
