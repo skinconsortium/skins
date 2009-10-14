@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE language SYSTEM "http://www.woltlab.com/DTDs/language.dtd">
 <language languagecode="en">
+	<category name="filehub.pages">
+		<item name="filehub.pages.home.selectFile"><![CDATA[Select a file from your Hard Drive.]]></item>
+		<item name="filehub.pages.home.makePrivate"><![CDATA[Keep this file private?]]></item>
+		<item name="filehub.pages.home.upload"><![CDATA[Upload]]></item>
+		<item name="filehub.pages.home.quickupload"><![CDATA[Quick Upload]]></item>
+		<item name="filehub.pages.home.latestFiles"><![CDATA[The last {#FILEHUB_STARTPAGE_NUMUPLOADS} uploads]]></item>
+	</category>
 	<category name="filehub.header.menu">
 		<item name="filehub.header.menu.home"><![CDATA[{lang}wcf.appframe.generic.home{/lang}]]></item>
 	</category>
@@ -15,5 +22,15 @@
 		<item name="wcf.acp.group.option.user.filehub.store.needUploadKey.description"><![CDATA[Members of this usergroup need an additional upload key in order to upload files.]]></item>
 		<item name="wcf.acp.group.option.user.filehub.store.needCaptcha"><![CDATA[Need to solve captcha]]></item>
 		<item name="wcf.acp.group.option.user.filehub.store.needCaptcha.description"><![CDATA[Members of this usergroup need to solve a captcha in order to upload files. If they know the upload key the captcha question can be bypassed.]]></item>
+	</category>
+	<category name="wcf.acp.option">
+		<item name="wcf.acp.option.category.filehub"><![CDATA[Filehub]]></item>
+		<item name="wcf.acp.option.category.filehub.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.category.filehub.startpage"><![CDATA[Start Page]]></item>
+		<item name="wcf.acp.option.category.filehub.startpage.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.filehub_startpage_showupload"><![CDATA[Show Quick Upload Form]]></item>
+		<item name="wcf.acp.option.filehub_startpage_showupload.description"><![CDATA[By enabling this option a Quick Upload Form will be shown on the start page if the current user has upload rights.]]></item>
+		<item name="wcf.acp.option.filehub_startpage_numuploads"><![CDATA[Number of uploads]]></item>
+		<item name="wcf.acp.option.filehub_startpage_numuploads.description"><![CDATA[Number of most recently uploaded files shown on the start page.]]></item>
 	</category>
 </language>

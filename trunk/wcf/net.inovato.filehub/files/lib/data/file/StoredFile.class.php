@@ -1,6 +1,7 @@
 <?php
 // wcf imports
 require_once(WCF_DIR.'lib/data/DatabaseObject.class.php');
+require_once(WCF_DIR.'lib/util/AppFrameUtil.class.php');
 
 /**
  * Represents a file in the storage directories.
@@ -69,13 +70,13 @@ class StoredFile extends DatabaseObject
 			}
 			// Fill fields
 			$this->handleData(WCF::getDB()->fetchArray($result));
-		}
-		else											// This means a dataRow is submitted
+		}*/
+		else if ($dataRow != null) // This means a dataRow is submitted
 		{
 			$this->handleData($dataRow);
 		}
 		
-		$this->projectDir = PROJECTS_ROOT.$this->itemID.'/';
+		/*$this->projectDir = PROJECTS_ROOT.$this->itemID.'/';
 		$this->relativeProjectDir = RELATIVE_PROJECTS_ROOT.$this->itemID.'/';*/
 	}
 	
@@ -84,9 +85,8 @@ class StoredFile extends DatabaseObject
 		if(!$this->fileID) // storing a new file
 		{
 			// Add fileinfo to DB
-			
 			$sql = "INSERT INTO filehub".FILEHUB_N.self::DB_TABLE_SUFFIX.
-				 "(userID, username, storetime, filename, fileext, filetype, filesize, title, ipAddress)
+				 "(userID, username, storetime, filename, fileext, filetype, filesize, title, ipAddress, isPublic)
 				  VALUES(".
 					$this->userID.", ".
 					"'".escapeString($this->username)."', ".
@@ -96,11 +96,12 @@ class StoredFile extends DatabaseObject
 					"'".escapeString($this->filetype)."', ".
 					intval($this->filesize).", ".
 					"'".($this->title?escapeString($this->title):escapeString($this->filename))."', ".
-					"'".escapeString(WCF::getSession()->ipAddress)."'".
+					"'".escapeString(WCF::getSession()->ipAddress)."', ".
+					(isset($this->isPublic)?intval($this->isPublic):'DEFAULT').
 					")";
 					
 			WCF::getDB()->sendQuery($sql);
-			$this->itemID = WCF::getDB()->getInsertID();
+			$this->fileID = WCF::getDB()->getInsertID();
 			
 			// Update Stats
 			
@@ -111,7 +112,7 @@ class StoredFile extends DatabaseObject
 			
 			WCF::getDB()->sendQuery($sql);*/
 			
-			// Move File
+			// Move File // todo use FileUtil
 			if (!is_dir($this->fileDir))
 			{
 				@mkdir($this->fileDir);
@@ -134,6 +135,11 @@ class StoredFile extends DatabaseObject
 		{
 			
 		}
+	}
+	
+	public function getFileTypeIcon()
+	{
+		return AppFrameUtil::getFileTypeIcon($this->fileext);
 	}
 }
 ?>

@@ -1,9 +1,107 @@
-.subHeadline2
+.stretched
 {
-	font-size: 1.1em;
-	font-weight: bold;
-	margin: 14px 0px 8px 0px;
-	padding-bottom: 4px;
-	display: block;
-	border-bottom: 1px solid silver;
+	width: 100%;
 }
+
+.floatLeft
+{
+	float: left;
+	margin-top: 8px;
+}
+
+.red
+{
+	border: solid 1px red;
+}
+
+#uploadTools
+{
+	margin-left: 130px;
+}
+
+#uploadCheckbox
+{
+	margin: 5px;
+}
+
+#uploadSubmit
+{
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 0px;
+}
+
+.listRight
+{
+	float: right;
+	margin-right: 10px;
+}
+
+.definitionList,
+.definitionList dt,
+.definitionList dd
+{
+	margin: 0;
+	padding: 0;
+	
+}
+
+.definitionList dt
+{
+	float:right;
+	width:40%;
+}
+
+.definitionList dd
+{
+	float:left;
+	text-align:right;
+	width:58%;
+}
+
+.listBody
+{
+	clear:both;
+}
+
+.listHead
+{
+	margin: 0;
+	width: 100%;
+}
+
+.listHead ul
+{
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.listHead ul li
+{
+	display: inline;
+	background-color: #FFFFFF;
+	float:left;
+}
+
+.listHead div
+{
+	float: left;
+}
+
+.listHead div a
+{
+	margin: 0;
+	margin-right: 1px;
+	padding: 0 25px 0 25px;
+}
+
+.noSpacing
+{
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.fileHubListSize { width: 10%; }
+.fileHubListCount { width: 13%; }
+.fileHubListContent { width: 75% }

@@ -1,6 +1,15 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <data xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com/XSD/options.xsd">
 	<import>
+		<categories>
+			<category name="filehub">
+				<showorder>10</showorder>
+			</category>
+			<category name="filehub.startpage">
+				<parent>filehub</parent>
+				<showorder>1</showorder>
+			</category>
+		</categories>
 		<options>
 			<!-- general.page -->
 			<option name="page_title">
@@ -14,6 +23,18 @@
 				<optiontype>text</optiontype>
 				<showorder>2</showorder>
 				<defaultvalue>Filestorage &amp; One-click-hosting</defaultvalue>
+			</option>
+
+			<!-- filehub.startpage -->
+			<option name="filehub_startpage_showupload">
+				<categoryname>filehub.startpage</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>1</defaultvalue>
+			</option>
+			<option name="filehub_startpage_numuploads">
+				<categoryname>filehub.startpage</categoryname>
+				<optiontype>integer</optiontype>
+				<defaultvalue>10</defaultvalue>
 			</option>
 		</options>
 	</import>

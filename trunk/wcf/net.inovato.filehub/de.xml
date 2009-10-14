@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE language SYSTEM "http://www.woltlab.com/DTDs/language.dtd">
 <language languagecode="de">
+	<category name="filehub.pages">
+		<item name="filehub.pages.home.selectFile"><![CDATA[Eine Datei von der Festplatte auswählen.]]></item>
+		<item name="filehub.pages.home.makePrivate"><![CDATA[Die Datei nicht öffentlich auflisten?]]></item>
+		<item name="filehub.pages.home.upload"><![CDATA[Hochladen]]></item>
+		<item name="filehub.pages.home.quickupload"><![CDATA[Dateien hochladen]]></item>
+		<item name="filehub.pages.home.latestFiles"><![CDATA[Die neusten {#FILEHUB_STARTPAGE_NUMUPLOADS} Dateien]]></item>
+	</category>
 	<category name="filehub.header.menu">
 		<item name="filehub.header.menu.home"><![CDATA[{lang}wcf.appframe.generic.home{/lang}]]></item>
 	</category>
@@ -15,5 +22,15 @@
 		<item name="wcf.acp.group.option.user.filehub.store.needUploadKey.description"><![CDATA[Mitglieder diser Benutzergruppe benötigen einen 'Upload Key' um dateien hochladen zu können.]]></item>
 		<item name="wcf.acp.group.option.user.filehub.store.needCaptcha"><![CDATA[Captcha lösen]]></item>
 		<item name="wcf.acp.group.option.user.filehub.store.needCaptcha.description"><![CDATA[Mitglieder dieser Benutzergruppe müssen ein Captcha lösen bevor sie Dateien hochladen können. Falls sie den 'Upload Key' wissen, kann die Captcha Frage umgangen werden.]]></item>
+	</category>
+	<category name="wcf.acp.option">
+		<item name="wcf.acp.option.category.filehub"><![CDATA[Filehub]]></item>
+		<item name="wcf.acp.option.category.filehub.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.category.filehub.startpage"><![CDATA[Startseite]]></item>
+		<item name="wcf.acp.option.category.filehub.startpage.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.filehub_startpage_showupload"><![CDATA['Dateien hochladen' anzeigen]]></item>
+		<item name="wcf.acp.option.filehub_startpage_showupload.description"><![CDATA[Durch Aktivierung dieser Option wird auf der Startseite eine 'Dateien hochladen' Eingabemaske angezeigt, falls der Benutzer Hochladerechte besitzt.]]></item>
+		<item name="wcf.acp.option.filehub_startpage_numuploads"><![CDATA[Anzahl an Dateien]]></item>
+		<item name="wcf.acp.option.filehub_startpage_numuploads.description"><![CDATA[Anzahl an kürzlich hochgeladen Dateien, welche auf der Startseite angezeigt werden sollen.]]></item>
 	</category>
 </language>

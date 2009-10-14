@@ -15,7 +15,10 @@ require_once(FILEHUB_DIR.'lib/data/file/StoredFile.class.php');
  */
 class UploadForm extends AbstractAppFrameForm
 {
-	public $templateName = 'index';
+	public $templateName = 'upload';
+	
+	// Permissions to view this page
+	public $neededPermissions = 'user.filehub.store.canUploadFiles';
 	
 	// Site Title. May be a language var.
 	public $appFrameGenericSiteTitle = 'wcf.appframe.generic.home';
@@ -40,6 +43,10 @@ class UploadForm extends AbstractAppFrameForm
 		parent::readFormParameters();
 
 		if (isset($_FILES['file'])) $this->file = new StoredFile(null, null, $_FILES['file']);
+		else return;
+		
+		if (isset($_POST['public'])) $this->file->isPublic = 0;
+		else $this->file->isPublic = 1;
 	}
 	
 	/**

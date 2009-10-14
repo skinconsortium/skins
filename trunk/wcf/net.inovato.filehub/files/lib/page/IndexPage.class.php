@@ -2,6 +2,9 @@
 // wcf imports
 require_once(WCF_DIR.'lib/page/AbstractAppFramePage.class.php');
 
+// filehub imports
+require_once(FILEHUB_DIR.'lib/data/file/StoredFile.class.php');
+
 /**
  * Shows the start page.
  *
@@ -26,5 +29,32 @@ class IndexPage extends AbstractAppFramePage
 	
 	// Icon shown beside the caption.
 	public $appFrameGenericSiteCaptionIcon = 'appFrameHomeL.png';
+	
+	// List of latest files
+	public $latestFiles = array();	
+	
+	/**
+	 * @see wcf/lib/page/AbstractPage#readData()
+	 */
+	public function readData()
+	{
+		$sql = "SELECT * from filehub".FILEHUB_N.StoredFile::DB_TABLE_SUFFIX."
+				ORDER BY '".StoredFile::DB_PRIMARY_KEY."' DESC";
+		
+		WCF::getDB()->sendQuery($sql, FILEHUB_STARTPAGE_NUMUPLOADS);
+		
+		while($row = WCF::getDB()->fetchArray())
+		{
+			$this->latestFiles[] = new StoredFile(null, $row);
+		}
+	}
+	
+	public function assignVariables()
+	{
+		parent::assignVariables();
+		WCF::getTPL()->assign(array(
+			'latestFiles' => $this->latestFiles
+		));
+	}
 }
 ?>
