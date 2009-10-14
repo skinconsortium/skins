@@ -6,8 +6,8 @@
 		<packagedescription>Standalone WCF AppStub</packagedescription>
 		<isunique>0</isunique>
 		<standalone>1</standalone>
-		<version>1.0.0-beta1-dev6</version>
-		<date>2009-09-14</date>
+		<version>1.0.0-beta1-dev7</version>
+		<date>2009-10-09</date>
 	</packageinformation>
 	<requiredpackages>
 		<!-- basics -->
