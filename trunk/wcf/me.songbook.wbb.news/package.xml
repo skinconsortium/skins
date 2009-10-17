@@ -5,8 +5,8 @@
 		<packagename>Simple News</packagename>
 		<packagedescription>Adds a simple news page that can be configured via ACP.</packagedescription>
 		<isunique>1</isunique>
-		<version>1.2.0-beta1-dev3</version>
-		<date>2009-09-11</date>
+		<version>1.2.0-beta1-dev4</version>
+		<date>2009-10-15</date>
 		<plugin>com.woltlab.wbb</plugin>
 	</packageinformation>
 	<requiredpackages>

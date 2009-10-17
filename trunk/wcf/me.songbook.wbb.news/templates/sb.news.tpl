@@ -80,7 +80,7 @@
 			{if !SONGBOOK_NEWS_HOTTOPIC_RIGHTALIGN}<br class="clearingSpace"/>{/if}
 		</div>
 	{/foreach}
-	<div class="pageOptions{if !SONGBOOK_NEWS_HOTTOPIC_RIGHTALIGN} leftFloat{else} clearingSpace{/if}">
+	<div class="pageOptions{if !SONGBOOK_NEWS_HOTTOPIC_RIGHTALIGN} leftFloat{/if}">
 		<a href="index.php?page=Board&amp;boardID={SONGBOOK_NEWS_HOTTOPIC_BOARDID}"><img src="{@RELATIVE_WBB_DIR}icon/simpleNewsArchive.png" alt="" /> <span>{lang}wbb.sb.news.archive{/lang}</span></a>
 		{if $displayRSSLinks}
 		<a href="index.php?page=SimpleNewsFeed&amp;type=RSS2"><img src="{@RELATIVE_WBB_DIR}icon/addThisS.png" alt="" /> <span>{lang}wbb.sb.news.rssabo{/lang}</span></a>

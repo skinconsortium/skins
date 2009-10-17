@@ -6,6 +6,10 @@
 		<item name="wcf.acp.group.option.category.admin.system.startpage.description"><![CDATA[]]></item>
 		<item name="wcf.acp.group.option.admin.system.startpage.canSetStartPage"><![CDATA[Kann die Startseite ändern]]></item>
 		<item name="wcf.acp.group.option.admin.system.startpage.canSetStartPage.description"><![CDATA[Mitglieder dieser Benutzergruppe können die WBB Startseite ändern.]]></item>
+		<item name="wcf.acp.group.option.admin.system.startpage.canAddStartPages"><![CDATA[Kann Startseiten hinzufügen]]></item>
+		<item name="wcf.acp.group.option.admin.system.startpage.canAddStartPages.description"><![CDATA[Mitglieder dieser Benutzergruppe können manuell WBB Startseite hinzufügen.]]></item>
+		<item name="wcf.acp.group.option.admin.system.startpage.canRemoveStartPages"><![CDATA[Kann Startseiten entfernen]]></item>
+		<item name="wcf.acp.group.option.admin.system.startpage.canRemoveStartPages.description"><![CDATA[Mitglieder dieser Benutzergruppe können manuell WBB Startseite entfernen.]]></item>
 	</category>
 	<category name="wcf.acp.menu">
 		<item name="wcf.acp.menu.link.system.startpage"><![CDATA[Startseite]]></item>

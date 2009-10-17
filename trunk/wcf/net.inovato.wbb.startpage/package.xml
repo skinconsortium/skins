@@ -7,7 +7,7 @@
 		<packagedescription language="de"><![CDATA[Ermöglicht es die WBB Startseite zu ändern.]]></packagedescription>
 		<packagedescription language="de-informal"><![CDATA[Ermöglicht es die WBB Startseite zu ändern.]]></packagedescription>
 		<isunique>0</isunique>
-		<version>0.3-dev6</version>
+		<version>0.3-dev10</version>
 		<date>2009-10-14</date>
 		<plugin>com.woltlab.wbb</plugin>
 	</packageinformation>
@@ -29,6 +29,7 @@
 		<groupoptions>groupoptions.xml</groupoptions>
 		<eventlistener>eventlistener.xml</eventlistener>
 		<acpmenu>acpmenu.xml</acpmenu>
+		<script>acp/install.php</script>
 		<acptemplates>acptemplates.tar</acptemplates>
 		<languages languagecode="en">en.xml</languages>
 		<languages languagecode="de">de.xml</languages>
@@ -41,6 +42,7 @@
 		<groupoptions>groupoptions.xml</groupoptions>
 		<eventlistener>eventlistener.xml</eventlistener>
 		<acpmenu>acpmenu.xml</acpmenu>
+		<script>acp/install.php</script>
 		<acptemplates>acptemplates.tar</acptemplates>
 		<languages languagecode="en">en.xml</languages>
 		<languages languagecode="de">de.xml</languages>
