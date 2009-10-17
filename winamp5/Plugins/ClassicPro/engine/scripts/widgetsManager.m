@@ -111,8 +111,8 @@ main_normal.onAction (String action, String param, int x, int y, int p1, int p2,
 
 			//data = NULL;
 			data = source.getObject("@author");
-			g.setXmlParam("widgetauthor", data.getXmlParam("userdata"));
-			if(data) g.setXmlParam("widgetid", param);
+			if(data) g.setXmlParam("widgetauthor", data.getXmlParam("userdata"));
+			g.setXmlParam("widgetid", param);
 
 			//data = NULL;
 			data = source.getObject("@uninstaller");
