@@ -22,22 +22,24 @@ Global List cusbeat_names;
 
 System.onScriptLoaded (){
 	frameGroup = getScriptGroup ();
+
+	// mpdeimos> taking advance of grouping and get instead of find will save lots of CPU cycles and skins are more resistant against mods!
+
+	Group cg = frameGroup.getObject("cpro.screen");
 	
-	beatGroup = frameGroup.findObject("beatvis");
-	promoGroup = frameGroup.findObject("beatpromo");
-	promoPic = frameGroup.findObject("beat.promo");
-	mouseTrap = frameGroup.findObject("beat.mousetrap");
+	beatGroup = cg.getObject("beatvis");
+	promoGroup = cg.getObject("beatpromo");
+	promoPic = promoGroup.getObject("beat.promo");
+	mouseTrap = cg.getObject("beat.mousetrap");
 
-	t01 = frameGroup.findObject("beatvis.left");
-	t02 = frameGroup.findObject("beatvis.right");
-	b01 = frameGroup.findObject("beatvisB.left");
-	b02 = frameGroup.findObject("beatvisB.right");
-	b01layer = frameGroup.findObject("beatvisB.left.layer");
-	b02layer = frameGroup.findObject("beatvisB.right.layer");
-	c01 = frameGroup.findObject("beatvisC.left");
-	c02 = frameGroup.findObject("beatvisC.right");
-
-		
+	t01 = beatGroup.getObject("beatvis.left");
+	t02 = beatGroup.getObject("beatvis.right");
+	b01 = beatGroup.getObject("beatvisB.left");
+	b02 = beatGroup.getObject("beatvisB.right");
+	b01layer = b01.findObject("beatvisB.left.layer");
+	b02layer = b02.findObject("beatvisB.right.layer");
+	c01 = beatGroup.getObject("beatvisC.left");
+	c02 = beatGroup.getObject("beatvisC.right");
 	
 	myTimer = new Timer;
 	myTimer.setDelay(10);
