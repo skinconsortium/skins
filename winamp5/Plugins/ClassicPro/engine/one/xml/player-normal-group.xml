@@ -413,11 +413,12 @@
 <groupdef id="fileinfo.mode.1" w="138" h="15">
 	<SC:Channels
 		x="-61" y="0" w="49" h="5" relatx="1"
+		id="info.channels"
 		ch_1="channels.1"
 		ch_2="channels.2"
 		ch_6="channels.s"
 	/>
-	<layer x="29" y="0" image="size.khzkbps"/>
+	<layer id="info.layer" x="29" y="0" image="size.khzkbps"/>
 	<text id="info.kbps" x="-138" y="0" w="30" h="5" relatx="1" text="128" font="bitmapfont.songinfo"	align="right" valign="top"/>
 	<text id="info.khz" x="-138" y="10" w="30" h="5" relatx="1" text="48" font="bitmapfont.songinfo"	align="right" valign="top"/>
 	<text id="info.size" x="-90" y="10" w="61" h="5" relatx="1" text="999.8" font="bitmapfont.songinfo"	align="right" valign="top"/>
