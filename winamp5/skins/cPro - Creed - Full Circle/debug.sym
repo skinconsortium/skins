@@ -1,0 +1,76 @@
+-- Variables Table ---------------------------------------------------
+var# |                Class |                                    What 
+----------------------------------------------------------------------
+0000 |               System |                                   System*
+0001 |                  Int |                                     NULL
+0002 |                  Int |                     __deprecated_runtime
+0003 |               Double |                                        v
+0004 |                  Int |                                        2
+0005 |                  Int |                                    65535
+0006 |                  Int |                                        1
+0007 |               String |                           "runtimecheck"
+0008 |                  Int |                                        0
+0009 |                  Int |                                     last
+000A |                  Int |                                      now
+000B |                  Int |                                     5000
+000C |               String |                  "This script requires "
+000D |               String |        "Winamp 5.54 (skin version 1.34)"
+000E |               String |                                  "Error"
+000F |               String |                                       ""
+0010 |               String |                                        s
+0011 |               String |                                  "DEBUG"
+0012 |                  Int |                                        s
+0013 |           ClassicPro |                               ClassicPro*
+0014 |                Group |                                   normal
+0015 |               String |                               "SongTime"
+0016 |               String |                          "$set:SongTime"
+0017 |               String |                                 "status"
+0018 |               String |                            "$set:status"
+0019 |               String |                        "fileinfo.mode.1"
+001A |                Group |                                       fi
+001B |               String |                   "$set:fileinfo.mode.1"
+001C |               String |                              "info.size"
+001D |               String |                        "info.size.layer"
+001E |               String |                              "info.kbps"
+001F |            GuiObject |                                       go
+0020 |               String |                                      "x"
+0021 |               String |                                    "-58"
+0022 |               String |                                      "y"
+0023 |               String |                                     "10"
+0024 |               String |                                 "seeker"
+0025 |               String |                                    "-67"
+0026 |               String |                                "seeker2"
+0027 |               String |                              "volume.bg"
+0028 |               String |                         "$set:volume.bg"
+0029 |               String |                             "volume.bg2"
+002A |               String |                        "$set:volume.bg2"
+002B |               String |                          "volume.images"
+002C |               String |                     "$set:volume.images"
+002D |               String |                                 "Volume"
+002E |               String |                            "$set:Volume"
+002F |               String |                                   "mute"
+0030 |               String |                              "$set:mute"
+0031 |               String |                           "mute.warning"
+0032 |               String |                      "$set:mute.warning"
+0033 |               String |                               "main.vis"
+0034 |               String |                          "$set:main.vis"
+0035 |               String |                            "vis.overlay"
+0036 |               String |                      "$set:vis.overlay1"
+0037 |               String |                          "vis.overlay.2"
+0038 |               String |                      "$set:vis.overlay2"
+0039 |               String |                          "vis.mousetrap"
+003A |               String |                     "$set:vis.mousetrap"
+003B |               String |                            "cpro.screen"
+003C |               String |                       "$set:cpro.screen"
+003D |               String |                              "minimum_w"
+003E |               String |                                    "348"
+-- Events Table ------------------------------------------------------
+var# |         Code Pointer |                                    What 
+----------------------------------------------------------------------
+0000 |                 0153 |                                      S.o
+-- User Functions Table ----------------------------------------------
+               Code Pointer |                                    What 
+----------------------------------------------------------------------
+                       0000 |                             versionCheck
+                       00F2 |                                    debug
+                       011D |                                 debugInt
