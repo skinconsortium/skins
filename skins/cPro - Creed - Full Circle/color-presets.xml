@@ -1,0 +1,45 @@
+<!-- Gamma sets -->
+
+<gammaset id="* Red Edition">
+	<gammagroup id="General" value="0,0,0"/>
+	<gammagroup id="n.Background.Bottom" value="0,0,0"/>
+	<gammagroup id="n.Background.Alt" value="0,0,0"/>
+	<gammagroup id="n.Background.Overlay" value="0,0,0"/>
+	<gammagroup id="n.Vis" value="0,0,0"/>
+	<gammagroup id="n.Text.SongInfo" value="0,0,0"/>
+	<gammagroup id="n.Text.SongTime" value="0,0,0"/>
+	<gammagroup id="n.Scrollbars.Gfx" value="0,0,0"/>
+	<gammagroup id="n.TooltipCombobox" value="0,0,0"/>
+	<gammagroup id="n.Notifier.Bg" value="0,0,0"/>
+	<gammagroup id="n.Seeker.BG" value="0,0,0"/>
+	<gammagroup id="n.Seeker.Thumb" value="0,0,0"/>
+	<gammagroup id="n.Volume.BG" value="0,0,0"/>
+	<gammagroup id="n.Volume.Thumb" value="0,0,0"/>
+	<gammagroup id="n.SuiFrame" value="0,0,0"/>
+	<gammagroup id="n.beatvis" value="0,0,0"/>
+	<gammagroup id="n.Color.ListBg" value="0,0,0"/>
+	<gammagroup id="n.Button" value="0,0,0"/>
+	<gammagroup id="s.Background.Bottom" value="0,0,0"/>
+	<gammagroup id="s.Background.Overlay" value="0,0,0"/>
+	<gammagroup id="s.Vis" value="0,0,0"/>
+	<gammagroup id="s.Seeker.BG" value="0,0,0"/>
+	<gammagroup id="s.Seeker.Thumb" value="0,0,0"/>
+	<gammagroup id="s.Volume.BG" value="0,0,0"/>
+	<gammagroup id="s.Volume.Thumb" value="0,0,0"/>
+</gammaset>
+
+
+<gammaset id="Blue Edition">
+  <gammagroup id="n.Background.Overlay" value="0,2110,4096" gray="2" boost="0" />
+  <gammagroup id="s.Background.Overlay" value="0,2110,4096" gray="2" boost="0" />
+</gammaset>
+
+<gammaset id="Yellow Edition">
+  <gammagroup id="n.Background.Overlay" value="1932,1258,-4096" gray="2" boost="1" />
+  <gammagroup id="s.Background.Overlay" value="1932,1258,-4096" gray="2" boost="1" />
+</gammaset>
+
+<gammaset id="White Edition">
+  <gammagroup id="n.Background.Overlay" value="797,797,797" gray="2" boost="1" />
+  <gammagroup id="s.Background.Overlay" value="797,797,797" gray="2" boost="1" />
+</gammaset>

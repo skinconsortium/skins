@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ClassicPro version="1.13" engine="one">
+	<TextSettings>
+		<Style id="normal.songticker"
+			bold="0"
+			fontsize="24"
+			antialias="1"
+			y="48"
+			w="-153"
+			x="140"
+		/>
+
+
+		<Style id="$set:SongTime"
+			font="cpro.songname.font"
+			antialias="1"
+			x="28"
+			y="32"
+			fontsize="36"
+		/>
+		<Style id="$set:status"
+			relatx="0" x="6"
+			y="50"
+		/>
+		<Style id="$set:fileinfo.mode.1"
+			y="32"
+			x="-154"
+		/>
+
+		<Style id="$set:volume.bg"
+			x="-122"
+			y="70"
+		/>
+		<Style id="$set:volume.bg2"
+			x="-122"
+			y="70"
+		/>
+		<Style id="$set:volume.images"
+			x="-122"
+			y="70"
+		/>
+		<Style id="$set:Volume"
+			x="-122"
+			y="70"
+		/>
+		<Style id="$set:mute"
+			x="-164"
+			y="60"
+		/>
+		<Style id="$set:mute.warning"
+			x="-164"
+			y="60"
+		/>
+
+		<Style id="$set:main.vis"
+			x="28"
+			y="62"
+			h="16"
+		/>
+		<Style id="$set:vis.overlay1"
+			visible="0" alpha="0"
+		/>
+		<Style id="$set:vis.overlay2"
+			visible="0" alpha="0"
+		/>
+		<Style id="$set:vis.mousetrap"
+			x="28"
+			y="62"
+			h="16"
+		/>
+		<Style id="$set:cpro.screen"
+			visible="0"
+			ghost="1"
+		/>
+	</TextSettings>
+</ClassicPro>

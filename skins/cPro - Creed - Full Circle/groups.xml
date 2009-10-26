@@ -1,0 +1,69 @@
+<!-- 
+	Custom Groups can be added to your skin, some may require maki to fully complemtent the feature you are trying to add.
+	If you have any questions on adding custom things to your cPro skin please visit www.skinconsortium.com
+-->
+
+<elements>
+	<bitmap id="custom.mainframe.display.left" file="display.png" x="0" y="0" h="110" w="173" />
+	<bitmap id="custom.mainframe.display.mid" file="display.png" x="173" y="0" h="110" w="18" />
+	<bitmap id="custom.mainframe.display.right" file="display.png" x="191" y="0" h="110" w="173" />
+	<bitmap id="custom.mainframe.logo" file="logo.png" />
+	<bitmap id="size.khzkbps.2" file="songinfo.png" x="111" y="15" w="25" h="5" gammagroup="n.Text.SongInfo"/>
+	<bitmap id="custom.mainframe.bottom.tile" file="bottom.png"/>
+	<bitmap id="custom.mainframe.bottom.right" file="bottom-right.png"/>
+	<bitmap id="custom.mainframe.bottom.left" file="bottom-left2.png"/>
+	<bitmap id="custom.beat.promo" file="promo-beat.png"/>
+</elements>
+
+
+<groupdef id="beatvisB.left2">
+	<layer id="beatvisB.left.layer2" x="-150" y="0" h="34" relatx="1" image="beat.left.b" tile="1" alpha="253"/>
+</groupdef>
+<groupdef id="beatvisB.right2">
+	<layer id="beatvisB.right.layer2" x="0" y="0" h="34" image="beat.right.b" tile="1" alpha="253"/>
+</groupdef>
+<groupdef id="beatvis2">
+	<AnimatedLayer id="beatvis.left2" x="0" y="0" w="84" h="34" image="beat.0.left" autoplay="0" autoreplay="1" ghost="1" frameheight="34"/>
+	<AnimatedLayer id="beatvis.right2" x="0" y="34" w="84" h="34" image="beat.0.right" autoplay="0" autoreplay="1" ghost="1" frameheight="34"/>
+	<layer id="beatvisC.left2" x="0" y="0" h="34" image="beat.left.c" tile="1" visible="0" alpha="253"/>
+	<layer id="beatvisC.right2" x="0" y="0" h="34" relatx="0" image="beat.right.c" tile="1" visible="0" alpha="253"/>
+	<group id="beatvisB.left2" x="0" y="0" w="0" h="34" visible="0"/>
+	<group id="beatvisB.right2" x="150" y="0" w="0" h="34" visible="0"/>
+	<layer id="beat.overlay2" x="0" y="0" h="68" w="84" relatx="0" image="beatvis.overlay" tile="1" ghost="1" alpha="253"/>
+</groupdef>
+<groupdef id="beatpromo2">
+	<layer id="beat.promo2" x="0" y="0" image="custom.beat.promo" alpha="253"/>
+</groupdef>
+
+<groupdef id="cpro.screen2">
+	<layer id="cpro.bg.title2" x="0" y="0" image="player.center.title" ghost="1" visible="0" alpha="253"/>
+
+	<group id="beatvis2" x="200" y="0" w="0" h="68"/>
+	<group id="beatpromo2" x="0" y="0" w="84" h="68" visible="1"/>
+	<layer id="beat.mousetrap2" x="143" y="0" w="-317" h="68" relatw="1"/>
+</groupdef>
+
+<groupdef id="cpro.normal.underlay">
+	<layer id="logo" x="0" y="0" image="custom.mainframe.logo"/>
+
+	<grid x="0" y="0" relatw="1" w="0" h="110"
+		left="custom.mainframe.display.left"
+		middle="custom.mainframe.display.mid"
+		right="custom.mainframe.display.right"
+	/>
+
+	<group id="cpro.screen2" x="0" y="25" w="0" h="68" relatw="1" wantfocus="1"/>
+
+	<layer id="info.khz.layer" x="-45" y="42" relatx="1" image="size.khzkbps.2"/>
+
+	<layer x="1" y="-63" relaty="1" w="-2" relatw="1" h="62" tile="1" image="custom.mainframe.bottom.tile" />
+	<layer x="-166" y="-51" relaty="1" relatx="1" image="custom.mainframe.bottom.right" />
+	<layer x="1" y="-51" relaty="1" image="custom.mainframe.bottom.left" />
+
+	<script file="beat.maki" param="@SKINPATH@"/>
+</groupdef>
+
+
+<groupdef id="cpro.normal.overlay">
+	<script file="displaymods.maki"/>
+</groupdef>
