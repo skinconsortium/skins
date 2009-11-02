@@ -1,0 +1,102 @@
+<elements>
+	<!--bitmap id="component.region.top" file="standardframe/region.png" x="0" y="0" w="1" h="1"/>
+	<bitmap id="component.region.left" file="standardframe/region.png" x="0" y="0" w="1" h="1"/>
+	<bitmap id="component.region.right" file="standardframe/region.png" x="0" y="0" w="1" h="1"/>
+	<bitmap id="component.region.bottom" file="standardframe/region.png" x="0" y="0" w="1" h="1"/-->
+	<bitmap id="component.region.top.left" file="standardframe/region.png" x="0" y="0" w="16" h="16"/>
+	<bitmap id="component.region.top.right" file="standardframe/region.png" x="20" y="0" w="16" h="16"/>
+	<bitmap id="component.region.bottom.left" file="standardframe/region.png" x="0" y="20" w="16" h="16"/>
+	<bitmap id="component.region.bottom.right" file="standardframe/region.png" x="20" y="20" w="16" h="16"/>
+
+	<bitmap id="component.top.left" file="standardframe/frame.png" x="24" y="24" w="16" h="16"/>
+	<bitmap id="component.top.middle" file="standardframe/frame.png" x="40" y="24" w="119" h="16"/>
+	<bitmap id="component.top.right" file="standardframe/frame.png" x="159" y="24" w="16" h="16"/>
+	<bitmap id="component.left" file="standardframe/frame.png" x="24" y="40" w="16" h="119"/>
+	<bitmap id="component.right" file="standardframe/frame.png" x="159" y="40" w="16" h="119"/>
+	<bitmap id="component.bottom.left" file="standardframe/frame.png" x="24" y="159" w="16" h="16"/>
+	<bitmap id="component.bottom.middle" file="standardframe/frame.png" x="40" y="159" w="119" h="16"/>
+	<bitmap id="component.bottom.right" file="standardframe/frame.png" x="159" y="159" w="16" h="16"/>
+</elements>
+<groupdef id="wasabi.titlebar" xuitag="Wasabi:TitleBar" embed_xui="window.titlebar.title">
+
+	<text id="window.titlebar.title" x="16" y="0" w="-32" relatw="1"
+	  antialias="1" fontsize="15" bold="1" color="0,0,0" align="right"
+	  default=":componentname" font="Calibri" forceupcase="1" alpha="127"
+	/>
+	<layer id="mousetrap" x="16" y="0" w="0" h="16" relatw="1" move="1"/>
+	<!-- This is where you would include titlebar.maki if you so desired -->
+</groupdef>
+<!-- This determines the top and middle of the Component-->
+<groupdef id="wasabi.frame.layout" background="component.basetexture">
+
+	<layer id="regiontopleft" x="0" y="0" image="component.region.top.left" sysregion="-2"/>
+	<!--layer id="regiontop" x="16" y="0" w="-32" relatw="1" image="component.region.top" sysregion="-2"/-->
+	<layer id="regiontopright" x="-16" y="0" relatx="1" image="component.region.top.right" sysregion="-2"/>
+	<!--layer id="regionleft" x="0" y="16" h="-32" relath="1" image="component.region.left" sysregion="-2"/>
+	<layer id="regionright" x="-1" y="16" relatx="1" h="-32" relath="1" image="component.region.right" sysregion="-2"/-->
+
+	<layer id="component.top.left" x="0" y="0" image="component.top.left" resize="topleft"/>
+	<layer id="component.top.middle" x="16" y="0" w="-32" relatw="1" image="component.top.middle" resize="top"/>
+	<layer id="component.top.right" x="-16" y="0" relatx="1" image="component.top.right" resize="topright"/>
+	<layer id="component.left" x="0" y="16" h="-32" relath="1" image="component.left" resize="left"/>
+	<layer id="component.right" x="-16" y="16" h="-32" relatx="1" relath="1" image="component.right" resize="right"/>
+
+	<layer id="window.resize.disabler" x="5" y="5" w="-10" h="-10" relatw="1" relath="1"/>
+
+	<button id="ControlMenu" action="controlmenu" tooltip="Control Menu"
+      x="0" y="0"
+      w="16" h="16" rectrgn="1"
+    />
+	<button id="Close" action="CLOSE" tooltip="Close"
+      x="-16" y="0" relatx="1"
+ 	  w="16" h="16" rectrgn="1"
+	/>
+	<group id="wasabi.titlebar" x="16" y="0" w="-32" h="16" relatw="1"/>
+</groupdef>
+<!-- This determines the bottom of Components with Statusbars -->
+<!-- Playlist Editor, Media Library, AVS, etc -->
+<groupdef id="wasabi.standardframe.statusbar" background="wasabi.frame.basetexture" sysregion="1" xuitag="Wasabi:StandardFrame:Status">
+	<layer id="regionbottomleft" x="0" y="-16" relaty="1" image="component.region.bottom.left" sysregion="-2"/>
+	<!--layer id="regionbottom" x="16" y="-1" relaty="1" w="-32" relatw="1" image="component.region.bottom" sysregion="-2"/-->
+	<layer id="regionbottomright" x="-16" y="-16" relatx="1" relaty="1" image="component.region.bottom.right" sysregion="-2"/>
+
+	<group id="wasabi.frame.layout" x="0" y="0" w="0" relatw="1" h="0" relath="1"/>
+
+	<layer id="component.bottom.left" x="0" y="-16" relaty="1" image="component.bottom.left" resize="bottomleft"/>
+	<layer id="component.bottom.middle" x="16" y="-16" relaty="1" w="-32" relatw="1" image="component.bottom.middle" resize="bottom"/>
+	<layer id="component.bottom.right" x="-16" relatx="1" y="-16" relaty="1" image="component.bottom.right" resize="bottomright"/>
+
+	<!-- This determines the position and dimenstions of the Statusbar -->
+	<LayoutStatus id="standardframe.layoutstatus" x="16" y="-32" relaty="1" w="-32" relatw="1" h="16" exclude="{system}" />
+
+	<!-- The parameters of this script determine the position and size of the contents -->
+	<script id="standardframe.script" file="scripts/standardframe.maki" param="16,16,-32,-48,0,0,1,1" />
+</groupdef>
+<!-- This determines the bottom of Components without Statusbars -->
+<!-- Preferences, MessageBoxes, etc -->
+<groupdef id="wasabi.standardframe.nostatusbar" background="wasabi.frame.basetexture" sysregion="1" xuitag="Wasabi:StandardFrame:NoStatus">
+	<group id="wasabi.frame.layout" x="0" y="0" w="0" relatw="1" h="0" relath="1"/>
+	<layer id="regionbottomleft" x="0" y="-16" relaty="1" image="component.region.bottom.left" sysregion="-2"/>
+	<!--layer id="regionbottom" x="18" y="-1" relaty="1" w="-36" relatw="1" image="component.region.bottom" sysregion="-2"/-->
+	<layer id="regionbottomright" x="-16" y="-16" relatx="1" relaty="1" image="component.region.bottom.right" sysregion="-2"/>
+
+	<layer id="component.bottom.left" x="0" y="-16" relaty="1" image="component.bottom.left" resize="bottomleft"/>
+	<layer id="component.bottom.middle" x="16" y="-16" relaty="1" w="-32" relatw="1" image="component.bottom.middle" resize="bottom"/>
+	<layer id="component.bottom.right" x="-16" relatx="1" y="-16" relaty="1" image="component.bottom.right" resize="bottomright"/>
+
+	<!-- The parameters of this script determine the position and size of the contents -->
+	<script id="standardframe.script" file="scripts/standardframe.maki" param="16,16,-32,-32,0,0,1,1" />
+</groupdef>
+<!-- This further defines Components without Statusbars, namely Modal Windows -->
+<!-- MessageBoxes, etc -->
+<groupdef id="wasabi.standardframe.modal" inherit_group="wasabi.standardframe.nostatusbar" sysregion="1" xuitag="Wasabi:StandardFrame:Modal">
+	<!--<group id="wasabi.panel" x="45" y="43" w="-94" h="-83" relatw="1" relath="1"/>-->
+	<!-- This disables resizing on for windows that aren't to be resized -->
+	<sendparams target="component.top.left;component.top.middle;component.top.right;component.left;component.right;component.bottom.left;component.bottom.middle;component.bottom.right" resize="0"/>
+</groupdef>
+<!-- This further defines Components without Statusbars, namely Static Windows -->
+<!-- Preferences, etc -->
+<groupdef id="wasabi.standardframe.static" inherit_group="wasabi.standardframe.nostatusbar" sysregion="1" xuitag="Wasabi:StandardFrame:Static">
+	<!-- This disables resizing on for windows that aren't to be resized -->
+	<sendparams target="component.top.left;component.top.middle;component.top.right;component.left;component.right;component.bottom.left;component.bottom.middle;component.bottom.right" resize="0" />
+</groupdef>

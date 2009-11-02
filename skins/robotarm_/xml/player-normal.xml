@@ -1,0 +1,236 @@
+<groupdef id="vol.group" w="54" h="10">
+	<grid id="volume.rect" left="vol.ctrl.rect.l" middle="vol.ctrl.rect.c" right="vol.ctrl.rect.r" x="0" y="0" w="0" relatw="1" h="10"/>
+	<slider id="Volume" action="VOLUME" tooltip="Volume"
+			x="1" y="0" w="-2" relatw="1" h="10"
+			thumb="vol.ctrl.thumb.n" hoverThumb="vol.ctrl.thumb.h" downThumb="vol.ctrl.thumb.d"
+			/>
+</groupdef>
+<groupdef id="nav.group" w="80" h="20">
+	<button id="playctrl.prev" action="PREV" style="button_normal" x="0" y="0" rectrgn="1"
+		image="play.ctrl.prev.n" hoverImage="play.ctrl.prev.h" downImage="play.ctrl.prev.d"/>
+	<button id="playctrl.pause" action="PAUSE" style="button_normal" x="20" y="0" rectrgn="1"
+		image="play.ctrl.paus.n" hoverImage="play.ctrl.paus.h" downImage="play.ctrl.paus.d"/>
+	<button id="playctrl.play" action="PLAY" style="button_normal" x="20" y="0" rectrgn="1"
+		image="play.ctrl.play.n" hoverImage="play.ctrl.play.h" downImage="play.ctrl.play.d"/>
+	<button id="playctrl.next" action="NEXT" style="button_normal" x="40" y="0" rectrgn="1"
+		image="play.ctrl.next.n" hoverImage="play.ctrl.next.h" downImage="play.ctrl.next.d"/>
+	<button id="playctrl.stop" action="STOP" style="button_normal" x="60" y="0" rectrgn="1"
+		image="play.ctrl.stop.n" hoverImage="play.ctrl.stop.h" downImage="play.ctrl.stop.d"/>
+	<script id="play2pause" file="scripts/p2p.maki"/>
+</groupdef>
+<groupdef id="nfo.group" w="208" h="42">
+	<SC:OneDirectionText mytext="%artist%" x="0" y="0" w="0" relatw="1" h="20"
+		font="wwr" fontsize="18" align="right" valign="center" forceupcase="1"/>
+	<SC:OneDirectionText mytext="%title%" x="0" y="13" w="0" relatw="1" h="20"
+		font="wwr" fontsize="22" align="right" valign="center" forceupcase="1"/>
+	<SC:OneDirectionText mytext="%album%" x="0" y="26" w="0" relatw="1" h="20"
+		font="wwr" fontsize="18" align="right" valign="center" forceupcase="1"/>
+</groupdef>
+<groupdef id="toggle.group" w="43" h="10">
+	<button
+		id="ml" action="TOGGLE" param="guid:ml" tooltip="Media Library"
+		x="0" y="0" rectrgn="1"
+		image="player.ml" activeImage="player.ml.active"
+		/>
+	<button
+		id="pl" action="TOGGLE" param="guid:pl" tooltip="Playlist Editor"
+		x="11" y="0" rectrgn="1"
+		image="player.pl" activeImage="player.pl.active"
+		/>
+	<NStatesButton
+		id="rpt" nstates="3" tooltip="Toggle Playlist/Song Repeating"
+		x="22" y="0" rectrgn="1"
+		image="player.repeat" downImage="player.repeat" activeImage="player.repeat" hoverImage="player.repeat"
+		cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Repeat" cfgvals="0;1;-1"
+		/>
+	<togglebutton
+		id="shfl" tooltip="Toggle Playlist Shuffling"
+		x="33" y="0" rectrgn="1"
+		image="player.shuffle.off" activeImage="player.shuffle.on"
+		cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Shuffle"
+		/>
+</groupdef>
+<!--groupdef id="p.buttons" w="80" h="10">
+	<button id="f0" x="0" y="0" image="f0.button" rectrgn="1"/>
+	<script file="scripts/progbutton.maki" param="f0,F0,EQ|Flat"/>
+	<button id="f1" x="10" y="0" image="f1.button" rectrgn="1"/>
+	<script file="scripts/progbutton.maki" param="f1,F1,EQ|Full"/>
+	<button id="f2" x="20" y="0" image="f2.button" rectrgn="1"/>
+	<script file="scripts/progbutton.maki" param="f2,F2,EQ|Rock"/>
+	<button id="f3" x="30" y="0" image="f3.button" rectrgn="1"/>
+	<script file="scripts/progbutton.maki" param="f3,F3,EQ|Soft"/>
+	<button id="f4" x="40" y="0" image="f4.button" rectrgn="1"/>
+	<script file="scripts/progbutton.maki" param="f4,F4,EQ|Pop"/>
+	<button id="f5" x="50" y="0" image="f5.button" rectrgn="1"/>
+	<script file="scripts/progbutton.maki" param="f5,F5,EQ|USER"/>
+	<button id="f6" x="60" y="0" image="f6.button" rectrgn="1"/>
+	<script file="scripts/progbutton.maki" param="f6,F6,PATH|http://212.72.186.10:8072|energyradio.fm - energyx"/>
+	<button id="f7" x="70" y="0" image="f7.button" rectrgn="1"/>
+	<script file="scripts/progbutton.maki" param="f7,F7,PATH|http://212.72.186.10:8072|energyradio.fm - energyx"/>
+</groupdef-->
+<groupdef id="seek.group" w="137" h="12">
+	<layer id="seek.bar" image="diag" x="1" y="1" h="10" tile="1"/>
+	<grid id="seek.rect" x="0" y="0" w="0" relatw="1" h="12" left="seek.rect.l" middle="seek.rect.c" right="seek.rect.r" move="0"/>
+	<script id="seek.script" file="scripts/seek.maki"/>
+</groupdef>
+<groupdef id="eq.group" x="208" h="104">
+	<grid
+		x="34" y="3" w="21" h="15"
+		topleft="eq.rect.1" top="eq.rect.2"
+		left="eq.rect.4" middle="eq.rect.5"
+		bottomleft="eq.rect.7" bottom="eq.rect.8"
+		/>
+	<button
+		action="EQ_TOGGLE" tooltip="EQ on/off"
+		x="34" y="3" w="21" h="15" center_image="1" rectrgn="1"
+		Image="eq.on" activeImage="eq.off"
+		/>
+	<grid
+		x="34" y="19" w="21" h="15"
+		topleft="eq.rect.1" top="eq.rect.2"
+		left="eq.rect.4" middle="eq.rect.5"
+		bottomleft="eq.rect.7" bottom="eq.rect.8"
+		/>
+	<button
+		action="MENU" param="presets" tooltip="Open presets"
+		x="34" y="19" w="21" h="15" center_image="1" rectrgn="1"
+		Image="eq.pre.n" downimage="eq.pre.d"
+		/>
+	<grid
+		x="34" y="35" w="21" h="15"
+		topleft="eq.rect.1" top="eq.rect.2"
+		left="eq.rect.4" middle="eq.rect.5"
+		bottomleft="eq.rect.7" bottom="eq.rect.8"
+		/>
+	<button
+		action="EQ_AUTO"
+		x="34" y="35" w="21" h="15" center_image="1" rectrgn="1"
+		Image="eq.man" activeImage="eq.aut"
+		/>
+	<grid
+		x="55" y="0" w="122" h="70"
+		topleft="eq.rect.1" top="eq.rect.2" topright="eq.rect.3"
+		left="eq.rect.4" middle="eq.rect.5" right="eq.rect.6"
+		bottomleft="eq.rect.7" bottom="eq.rect.8" bottomright="eq.rect.9"
+		/>
+	<layer x="66" y="1" w="100" h="68" image="eq.line" tile="1"/>
+	<slider
+		id="preamp" action="EQ_BAND" param="preamp" orientation="vertical" tooltip="Preamp"
+		x="56" y="1" w="10" h="68"
+		thumb="eq.thumb.n" hoverthumb="eq.thumb.h" downthumb="eq.thumb.d"
+		/>
+	<slider
+		id="eq1" action="EQ_BAND" param="1" orientation="vertical"
+		x="67" y="1" w="10" h="68"
+		thumb="eq.thumb.n" hoverthumb="eq.thumb.h" downthumb="eq.thumb.d"
+		/>
+	<slider
+		id="eq2" action="EQ_BAND" param="2" orientation="vertical"
+		x="78" y="1" w="10" h="68"
+		thumb="eq.thumb.n" hoverthumb="eq.thumb.h" downthumb="eq.thumb.d"
+		/>
+	<slider
+		id="eq3" action="EQ_BAND" param="3" orientation="vertical"
+		x="89" y="1" w="10" h="68"
+		thumb="eq.thumb.n" hoverthumb="eq.thumb.h" downthumb="eq.thumb.d"
+		/>
+	<slider
+		id="eq4" action="EQ_BAND" param="4" orientation="vertical"
+		x="100" y="1" w="10" h="68"
+		thumb="eq.thumb.n" hoverthumb="eq.thumb.h" downthumb="eq.thumb.d"
+		/>
+	<slider
+		id="eq5" action="EQ_BAND" param="5" orientation="vertical"
+		x="111" y="1" w="10" h="68"
+		thumb="eq.thumb.n" hoverthumb="eq.thumb.h" downthumb="eq.thumb.d"
+		/>
+	<slider
+		id="eq6" action="EQ_BAND" param="6" orientation="vertical"
+		x="122" y="1" w="10" h="68"
+		thumb="eq.thumb.n" hoverthumb="eq.thumb.h" downthumb="eq.thumb.d"
+		/>
+	<slider
+		id="eq7" action="EQ_BAND" param="7" orientation="vertical"
+		x="133" y="1" w="10" h="68"
+		thumb="eq.thumb.n" hoverthumb="eq.thumb.h" downthumb="eq.thumb.d"
+		/>
+	<slider
+		id="eq8" action="EQ_BAND" param="8" orientation="vertical"
+		x="144" y="1" w="10" h="68"
+		thumb="eq.thumb.n" hoverthumb="eq.thumb.h" downthumb="eq.thumb.d"
+		/>
+	<slider
+		id="eq9" action="EQ_BAND" param="9" orientation="vertical"
+		x="155" y="1" w="10" h="68"
+		thumb="eq.thumb.n" hoverthumb="eq.thumb.h" downthumb="eq.thumb.d"
+		/>
+	<slider
+		id="eq10" action="EQ_BAND" param="10" orientation="vertical"
+		x="166" y="1" w="10" h="68"
+		thumb="eq.thumb.n" hoverthumb="eq.thumb.h" downthumb="eq.thumb.d"
+		/>
+	<grid
+		x="0" y="3" w="21" h="15"
+		topleft="eq.rect.1" top="eq.rect.2"
+		left="eq.rect.4" middle="eq.rect.5"
+		bottomleft="eq.rect.7" bottom="eq.rect.8"
+		/>
+	<togglebutton
+		tooltip="Toggle Cross-Fading"
+		x="0" y="3" w="21" h="15" center_image="1" rectrgn="1"
+		image="xfd.on" activeImage="xfd.off"
+		cfgattrib="{FC3EAF78-C66E-4ED2-A0AA-1494DFCC13FF};Enable crossfading"
+		/>
+	<grid
+		x="21" y="0" w="12" h="70"
+		topleft="eq.rect.1" top="eq.rect.2" topright="eq.rect.3"
+		left="eq.rect.4" middle="eq.rect.5" right="eq.rect.6"
+		bottomleft="eq.rect.7" bottom="eq.rect.8" bottomright="eq.rect.9"
+		/>
+	<slider
+		orientation="vertical" cfgattrib="{F1239F09-8CC6-4081-8519-C2AE99FCB14C};Crossfade time"
+		high="20"
+		x="22" y="1" w="10" h="68"
+		thumb="eq.thumb.n" hoverthumb="eq.thumb.h" downthumb="eq.thumb.d"
+		/>
+</groupdef>
+<groupdef id="robotarm.display">
+	<layer image="display.bg"/>
+	<!--grid
+		x="7" y="49" w="34" h="9" ghost="1"
+		topleft="eq.rect.1" top="eq.rect.2" topright="eq.rect.3"
+		left="eq.rect.4" middle="eq.rect.5" right="eq.rect.6"
+		bottomleft="eq.rect.7" bottom="eq.rect.8" bottomright="eq.rect.9"
+		/-->
+	<albumart id="album.art" x="151" y="47" h="64" w="64" notfoundImage="64rect" stretched="0"/>
+	<group id="nfo.group" x="7" y="1" alpha="191"/>
+	<group id="nav.group" x="7" y="90"/>
+	<group id="vol.group" x="90" y="95"/>
+	<group id="seek.group" x="7" y="74"/>
+	<group id="toggle.group" x="101" y="62"/>
+	<group id="eq.group" x="22" y="24" visible="0"/>
+	<text id="txt.timer" display="TIME" x="7" y="61" w="60" h="10" font="bitmapfont.numbers" alpha="127"/>
+	<button id="layout.sw" image="layout.sw"/>
+	<script id="layout.switcher" file="scripts/switch.maki"/>
+	<!--button x="27" y="7" w="120" h="20" image="switch.interface" borders="1" center_image="1"/-->
+</groupdef>
+<groupdef id="robotarm.frameset">
+	<AnimatedLayer
+		id="animationlayer" speed="30" autoplay="0" autoreplay="0" 
+		w="500" h="370" move="1" sysregion="1"
+		image="anivis"
+		/>
+	<button
+		id="animationbutton" tooltip="Show/Hide Winamp"
+		x="427" y="5" sysregion="1"
+		image="player.power.n" hoverImage="player.power.h" downimage="player.power.d"
+		/>
+	<!--background is not aBlended, serves as a blocker-->
+	<group id="robotarm.display" x="198" y="125" w="222" h="118" visible="0" alpha="0" background="blocker"/>
+	<!--this creates a more realistic impression of a display-->
+	<layer image="reflection" id="reflection" x="198" y="125" w="222" h="118" visible="0" ghost="1"/>
+	<script file="scripts/animation.maki"/>
+</groupdef>
+<layout id="normal" background="player.main.background" alphabackground="player.main.background">
+	<group id="robotarm.frameset" w="500" h="370" />
+</layout>

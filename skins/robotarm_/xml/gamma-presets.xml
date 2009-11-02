@@ -1,0 +1,11 @@
+<gammaset id=".default">
+	<gammagroup id="Background"				value="0,0,0" gray="0" boost="0" />
+	<gammagroup id="Dispaly.Bg"				value="-2048,-2048,-2048" gray="1" boost="0" />
+	<gammagroup id="Main.Body"				value="0,0,0" gray="1" boost="0" />
+	<gammagroup id="Lining"					value="0,0,0" gray="0" boost="0" />
+	<gammagroup id="Text"					value="0,0,0" gray="1" boost="0"/>
+	<gammagroup id="Buttons"				value="0,0,0" gray="0" boost="0" />
+	<gammagroup id="Scrollbar Buttons"		value="0,0,0" gray="1" boost="0" />
+	<gammagroup id="Tooltips Background"	value="-3072,-3072,-3072" gray="1" boost="1" />
+	<gammagroup id="Tooltips Text"			value="3072,3072,3072" gray="1" boost="1" />
+</gammaset>

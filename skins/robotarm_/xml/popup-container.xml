@@ -1,0 +1,36 @@
+<!-- IMPORTANT: this must be included somewhere in the skin -->
+
+<!-- ******* container to type path/url used for progbuttons ************** -->
+
+<container id="query.pathurl" name="Type Path/URL" noMenu="1" dynamic="1" default_visible="0">
+
+<groupdef id="pathurl.content" w="0" h="0" relatw="1" relath="1">
+	<wasabi:text id="label.path"
+		text="Enter media/playlist path/url:"
+		x="5" y="5" w="-10" h="20" relatw="1"/>
+	<Wasabi:EditBox id="pathurl.editbox"
+		x="5" y="25" w="-10" h="20" relatw="1"/>
+		
+	<wasabi:text id="label.name"
+		text="Media Name:"
+		x="5" y="50" w="-10" h="20" relatw="1"/>
+	<Wasabi:EditBox id="medianame.editbox"
+		x="5" y="70" w="-10" h="20" relatw="1"/>
+		
+	<wasabi:button id="Ok"
+		text="Ok"
+		x="-120" y="94" w="50" h="20" relatx="1"/>
+	<wasabi:button id="cancel"
+		text="Cancel" action="CLOSE"
+		x="-60" y="94" w="50" h="20" relatx="1"/>
+</groupdef>
+
+<layout id="normal" x="0" y="0" background="component.basetexture" desktopalpha="0"
+	w="320" h="180" minimum_h="220" minimum_w="320" maximum_h="220" maximum_w="320">
+	<Wasabi:StandardFrame:Static
+		x="0" y="0" w="0" h="0" relatw="1" relath="1"
+		content="pathurl.content"
+	/>
+</layout>
+
+</container>
