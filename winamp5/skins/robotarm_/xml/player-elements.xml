@@ -1,0 +1,176 @@
+<elements>
+	<truetypefont id="wwr" file="wwr.ttf"/>
+	
+	<bitmap id="player.main.background" file="player/background.png"/>
+	<bitmap id="blocker" file="player/blocker.png"/>
+	<bitmap id="component.basetexture" file="player/blocker.png" x="0" y="0" w="1" h="1"/>
+	<bitmap id="display.bg" file="player/back.png" gammagroup="Dispaly.Bg" />
+	<bitmap id="reflection" file="player/reflection.png" gammagroup="Main.Body"/>
+	<bitmap id="anivis" file="player/anivis.png" gammagroup="Main.Body"/>
+	<bitmap id="64rect" file="player/64rect.png" gammagroup="Lining"/>
+	<bitmap id="104rect" file="player/104rect.png" gammagroup="Lining"/>
+	<bitmap id="bitmap.numbers" file="window/misc.png" x="10" y="0" h="20" w="120" gammagroup="Text"/>
+	<bitmapfont id="bitmapfont.numbers" file="bitmap.numbers" charwidth="5" charheight="10" hspacing="2" vspacing="0"/>
+	
+	<bitmap id="player.power.n" file="player/show.button.png" x="0" y="0" w="30" h="30" gammagroup="Buttons"/>
+	<bitmap id="player.power.h" file="player/show.button.png" x="30" y="0" w="30" h="30" gammagroup="Buttons"/>
+	<bitmap id="player.power.d" file="player/show.button.png" x="60" y="0" w="30" h="30" gammagroup="Buttons"/>
+	<bitmap id="vol.ctrl.rect.l" file="player/play.ctrl.png" x="0" y="60" w="3" h="10" gammagroup="Lining"/>
+	<bitmap id="vol.ctrl.rect.c" file="player/play.ctrl.png" x="3" y="60" w="1" h="10" gammagroup="Lining"/>
+	<bitmap id="vol.ctrl.rect.r" file="player/play.ctrl.png" x="4" y="60" w="3" h="10" gammagroup="Lining"/>
+	<bitmap id="vol.ctrl.thumb.n" file="player/play.ctrl.png" x="7" y="60" w="4" h="12" gammagroup="Lining"/>
+	<bitmap id="vol.ctrl.thumb.h" file="player/play.ctrl.png" x="11" y="60" w="4" h="12" gammagroup="Lining"/>
+	<bitmap id="vol.ctrl.thumb.d" file="player/play.ctrl.png" x="15" y="60" w="4" h="12" gammagroup="Lining"/>
+	
+	<bitmap id="player.mute.n" file="player/mute.png" x="0" y="0" w="20" h="20" gammagroup="Buttons"/>
+	<bitmap id="player.mute.h" file="player/mute.png" x="0" y="20" w="20" h="20" gammagroup="Buttons"/>
+	<bitmap id="player.mute.d" file="player/mute.png" x="0" y="40" w="20" h="20" gammagroup="Buttons"/>
+	<bitmap id="play.ctrl.prev.n" file="player/play.ctrl.png" x="0" y="0" w="20" h="20" gammagroup="Buttons"/>
+	<bitmap id="play.ctrl.paus.n" file="player/play.ctrl.png" x="20" y="0" w="20" h="20" gammagroup="Buttons"/>
+	<bitmap id="play.ctrl.next.n" file="player/play.ctrl.png" x="40" y="0" w="20" h="20" gammagroup="Buttons"/>
+	<bitmap id="play.ctrl.stop.n" file="player/play.ctrl.png" x="60" y="0" w="20" h="20" gammagroup="Buttons"/>
+	<bitmap id="play.ctrl.play.n" file="player/play.ctrl.png" x="80" y="0" w="20" h="20" gammagroup="Buttons"/>
+	<bitmap id="play.ctrl.prev.h" file="player/play.ctrl.png" x="0" y="20" w="20" h="20" gammagroup="Buttons"/>
+	<bitmap id="play.ctrl.paus.h" file="player/play.ctrl.png" x="20" y="20" w="20" h="20" gammagroup="Buttons"/>
+	<bitmap id="play.ctrl.next.h" file="player/play.ctrl.png" x="40" y="20" w="20" h="20" gammagroup="Buttons"/>
+	<bitmap id="play.ctrl.stop.h" file="player/play.ctrl.png" x="60" y="20" w="20" h="20" gammagroup="Buttons"/>
+	<bitmap id="play.ctrl.play.h" file="player/play.ctrl.png" x="80" y="20" w="20" h="20" gammagroup="Buttons"/>
+	<bitmap id="play.ctrl.prev.d" file="player/play.ctrl.png" x="0" y="40" w="20" h="20" gammagroup="Buttons"/>
+	<bitmap id="play.ctrl.paus.d" file="player/play.ctrl.png" x="20" y="40" w="20" h="20" gammagroup="Buttons"/>
+	<bitmap id="play.ctrl.next.d" file="player/play.ctrl.png" x="40" y="40" w="20" h="20" gammagroup="Buttons"/>
+	<bitmap id="play.ctrl.stop.d" file="player/play.ctrl.png" x="60" y="40" w="20" h="20" gammagroup="Buttons"/>
+	<bitmap id="play.ctrl.play.d" file="player/play.ctrl.png" x="80" y="40" w="20" h="20" gammagroup="Buttons"/>
+	<!--bitmap id="play.ctrl.bb" file="player/play.ctrl.png" x="0" y="60" w="80" h="20" gammagroup="Lining"/-->
+	
+	<bitmap id="diag" file="player/diag.png" gammagroup="Buttons"/>
+	<bitmap id="seek.rect.l" file="player/seek.rect.png" x="0" y="0" w="3" h="12" gammagroup="Lining"/>
+	<bitmap id="seek.rect.c" file="player/seek.rect.png" x="3" y="0" w="1" h="12" gammagroup="Lining"/>
+	<bitmap id="seek.rect.r" file="player/seek.rect.png" x="4" y="0" w="3" h="12" gammagroup="Lining"/>
+	
+	<bitmap id="player.shuffle.on" file="player/toggle.buttons.png" x="10" y="0" w="10" h="10" gammagroup="Buttons"/>
+	<bitmap id="player.shuffle.off" file="player/toggle.buttons.png" x="10" y="10" w="10" h="10" gammagroup="Buttons"/>
+	<bitmap id="player.repeat0" file="player/toggle.buttons.png" x="0" y="0" w="10" h="10" gammagroup="Buttons"/>
+	<bitmap id="player.repeat1" file="player/toggle.buttons.png" x="0" y="10" w="10" h="10" gammagroup="Buttons"/>
+	<bitmap id="player.repeat2" file="player/toggle.buttons.png" x="0" y="20" w="10" h="10" gammagroup="Buttons"/>
+	<bitmap id="player.pl" file="player/toggle.buttons.png" x="20" y="0" w="10" h="10" gammagroup="Buttons"/>
+	<bitmap id="player.pl.active" file="player/toggle.buttons.png" x="20" y="20" w="10" h="10" gammagroup="Buttons"/>
+	<bitmap id="player.ml" file="player/toggle.buttons.png" x="20" y="10" w="10" h="10" gammagroup="Buttons"/>
+	<bitmap id="player.ml.active" file="player/toggle.buttons.png" x="10" y="20" w="10" h="10" gammagroup="Buttons"/>
+	
+	<bitmap id="f0.button" file="player/pbuttons.png" x="0" y="0" w="10" h="10" gammagroup="Buttons"/>
+	<bitmap id="f1.button" file="player/pbuttons.png" x="10" y="0" w="10" h="10" gammagroup="Buttons"/>
+	<bitmap id="f2.button" file="player/pbuttons.png" x="20" y="0" w="10" h="10" gammagroup="Buttons"/>
+	<bitmap id="f3.button" file="player/pbuttons.png" x="30" y="0" w="10" h="10" gammagroup="Buttons"/>
+	<bitmap id="f4.button" file="player/pbuttons.png" x="40" y="0" w="10" h="10" gammagroup="Buttons"/>
+	<bitmap id="f5.button" file="player/pbuttons.png" x="50" y="0" w="10" h="10" gammagroup="Buttons"/>
+	<bitmap id="f6.button" file="player/pbuttons.png" x="60" y="0" w="10" h="10" gammagroup="Buttons"/>
+	<bitmap id="f7.button" file="player/pbuttons.png" x="70" y="0" w="10" h="10" gammagroup="Buttons"/>
+	
+	<bitmap id="left.dir" file="player/open.close.png" x="0" y="0" w="10" h="10" gammagroup="Buttons"/>
+	<bitmap id="right.dir" file="player/open.close.png" x="10" y="0" w="10" h="10" gammagroup="Buttons"/>
+
+	<bitmap id="eq.rect.1" file="player/eq.png" x="0" y="12" w="2" h="2" gammagroup="Lining"/>
+	<bitmap id="eq.rect.2" file="player/eq.png" x="2" y="12" w="1" h="2" gammagroup="Lining"/>
+	<bitmap id="eq.rect.3" file="player/eq.png" x="3" y="12" w="2" h="2" gammagroup="Lining"/>
+	<bitmap id="eq.rect.4" file="player/eq.png" x="0" y="14" w="2" h="1" gammagroup="Lining"/>
+	<bitmap id="eq.rect.5" file="player/eq.png" x="2" y="14" w="1" h="1" gammagroup="Lining"/>
+	<bitmap id="eq.rect.6" file="player/eq.png" x="3" y="14" w="2" h="1" gammagroup="Lining"/>
+	<bitmap id="eq.rect.7" file="player/eq.png" x="0" y="15" w="2" h="2" gammagroup="Lining"/>
+	<bitmap id="eq.rect.8" file="player/eq.png" x="2" y="15" w="1" h="2" gammagroup="Lining"/>
+	<bitmap id="eq.rect.9" file="player/eq.png" x="3" y="15" w="2" h="2" gammagroup="Lining"/>
+	<bitmap id="eq.line" file="player/eq.png" x="10" y="0" w="11" h="1" gammagroup="Lining"/>
+	<bitmap id="eq.thumb.n" file="player/eq.png" x="0" y="0" w="10" h="4" gammagroup="Buttons"/>
+	<bitmap id="eq.thumb.h" file="player/eq.png" x="0" y="4" w="10" h="4" gammagroup="Buttons"/>
+	<bitmap id="eq.thumb.d" file="player/eq.png" x="0" y="8" w="10" h="4" gammagroup="Buttons"/>
+	<bitmap id="eq.on" file="player/eq.png" x="21" y="0" w="17" h="5" gammagroup="Buttons"/>
+	<bitmap id="eq.off" file="player/eq.png" x="21" y="5" w="17" h="5" gammagroup="Buttons"/>
+	<bitmap id="eq.pre.n" file="player/eq.png" x="21" y="10" w="17" h="5" gammagroup="Buttons"/>
+	<bitmap id="eq.pre.d" file="player/eq.png" x="21" y="15" w="17" h="5" gammagroup="Buttons"/>
+	<bitmap id="eq.man" file="player/eq.png" x="21" y="20" w="17" h="5" gammagroup="Buttons"/>
+	<bitmap id="eq.aut" file="player/eq.png" x="21" y="25" w="17" h="5" gammagroup="Buttons"/>
+	<bitmap id="xfd.on" file="player/eq.png" x="21" y="30" w="17" h="5" gammagroup="Buttons"/>
+	<bitmap id="xfd.off" file="player/eq.png" x="21" y="35" w="17" h="5" gammagroup="Buttons"/>
+
+	<bitmap id="layout.sw" file="window/misc.png" x="25" y="20" w="10" h="10" gammagroup="Text"/>
+	<bitmap id="switch.interface" file="window/misc.png" x="15" y="0" w="84" h="5" gammagroup="Text"/>
+	
+	
+	<!-- Scrollbars (on List, Tree, etc...) -->
+	<bitmap id="wasabi.scrollbar.vertical.button" file="window/scrollbars.png" x="20" y="0" h="31" w="13" gammagroup="Scrollbar Buttons"/>
+	<bitmap id="wasabi.scrollbar.vertical.button.hover" file="window/scrollbars.png" x="20" y="0" h="31" w="13" gammagroup="Scrollbar Hover"/>
+	<bitmap id="wasabi.scrollbar.vertical.button.pressed" file="window/scrollbars.png" x="40" y="0" h="31" w="13" gammagroup="Scrollbar Buttons"/>
+
+	<bitmap id="wasabi.scrollbar.vertical.left" file="window/scrollbars.png" x="60" y="0" h="17" w="13" gammagroup="Scrollbar Buttons"/>
+	<bitmap id="wasabi.scrollbar.vertical.left.hover" file="window/scrollbars.png" x="60" y="0" h="17" w="13" gammagroup="Scrollbar Hover"/>
+	<bitmap id="wasabi.scrollbar.vertical.left.pressed" file="window/scrollbars.png" x="80" y="0" h="17" w="13" gammagroup="Scrollbar Buttons"/>
+
+	<bitmap id="wasabi.scrollbar.vertical.right" file="window/scrollbars.png" x="60" y="26" h="17" w="13" gammagroup="Scrollbar Buttons"/>
+	<bitmap id="wasabi.scrollbar.vertical.right.hover" file="window/scrollbars.png" x="60" y="26" h="17" w="13" gammagroup="Scrollbar Hover"/>
+	<bitmap id="wasabi.scrollbar.vertical.right.pressed" file="window/scrollbars.png" x="80" y="26" h="17" w="13" gammagroup="Scrollbar Buttons"/>
+
+	<bitmap id="wasabi.scrollbar.vertical.background" file="window/scrollbars.png" x="0" y="0" w="13" h="17" />
+	<bitmap id="wasabi.scrollbar.vertical.background.top" file="window/scrollbars.png" x="0" y="0" w="13" h="17" />
+	<bitmap id="wasabi.scrollbar.vertical.background.middle" file="window/scrollbars.png" x="0" y="0" w="13" h="17" />
+	<bitmap id="wasabi.scrollbar.vertical.background.bottom" file="window/scrollbars.png" x="0" y="0" w="13" h="17" />
+
+	<bitmap id="wasabi.scrollbar.horizontal.button" file="window/scrollbars.png" x="12" y="70" h="13" w="31" gammagroup="Scrollbar Buttons"/>
+	<bitmap id="wasabi.scrollbar.horizontal.button.hover" file="window/scrollbars.png" x="12" y="70" h="13" w="31" gammagroup="Scrollbar Hover"/>
+	<bitmap id="wasabi.scrollbar.horizontal.button.pressed" file="window/scrollbars.png" x="12" y="90" h="13" w="31" gammagroup="Scrollbar Buttons"/>
+
+	<bitmap id="wasabi.scrollbar.horizontal.left" file="window/scrollbars.png" x="0" y="110" h="13" w="17" gammagroup="Scrollbar Buttons"/>
+	<bitmap id="wasabi.scrollbar.horizontal.left.hover" file="window/scrollbars.png" x="0" y="110" h="13" w="17" gammagroup="Scrollbar Hover"/>
+	<bitmap id="wasabi.scrollbar.horizontal.left.pressed" file="window/scrollbars.png" x="0" y="130" h="13" w="17" gammagroup="Scrollbar Buttons"/>
+
+	<bitmap id="wasabi.scrollbar.horizontal.right" file="window/scrollbars.png" x="26" y="110" h="13" w="17" gammagroup="Scrollbar Buttons"/>
+	<bitmap id="wasabi.scrollbar.horizontal.right.hover" file="window/scrollbars.png" x="26" y="110" h="13" w="17" gammagroup="Scrollbar Hover"/>
+	<bitmap id="wasabi.scrollbar.horizontal.right.pressed" file="window/scrollbars.png" x="26" y="130" h="13" w="17" gammagroup="Scrollbar Buttons"/>
+
+	<bitmap id="wasabi.scrollbar.horizontal.background" file="window/scrollbars.png" x="18" y="50" w="17" h="13" />
+	<bitmap id="wasabi.scrollbar.horizontal.background.left" file="window/scrollbars.png" x="18" y="50" w="17" h="13" />
+	<bitmap id="wasabi.scrollbar.horizontal.background.middle" file="window/scrollbars.png" x="18" y="50" w="17" h="13" />
+	<bitmap id="wasabi.scrollbar.horizontal.background.right" file="window/scrollbars.png" x="18" y="50" w="17" h="13" />
+
+	<!-- Generic Button -->
+	<bitmap id="wasabi.button.label.arrow.up" file="window/misc.png" x="0" y="0" h="5" w="5" gammagroup="Button Fonts"/>
+	<bitmap id="wasabi.button.label.arrow.down" file="window/misc.png" x="0" y="5" h="5" w="5" gammagroup="Button Fonts"/>
+	<bitmap id="wasabi.button.label.arrow.left" file="window/misc.png" x="0" y="10" h="5" w="5" gammagroup="Button Fonts"/>
+	<bitmap id="wasabi.button.label.arrow.right" file="window/misc.png" x="0" y="15" h="5" w="5" gammagroup="Button Fonts"/>
+	<bitmap id="wasabi.button.label.ellipses" file="window/misc.png" x="0" y="0" h="10" w="10" gammagroup="Button Fonts"/>
+	<bitmap id="wasabi.scrollbar.vertical.grip" file="window/misc.png" x="5" y="0" h="5" w="4" gammagroup="Scrollbar Buttons"/>
+	<bitmap id="wasabi.scrollbar.horizontal.grip" file="window/misc.png" x="5" y="5" h="4" w="5" gammagroup="Scrollbar Buttons"/>
+
+	<bitmap id="wasabi.button.top.left" file="window/std.button.png" x="00" y="0" h="3" w="3" gammagroup="Buttons"/>
+	<bitmap id="wasabi.button.top" file="window/std.button.png" x="03" y="0" h="3" w="14" gammagroup="Buttons"/>
+	<bitmap id="wasabi.button.top.right" file="window/std.button.png" x="17" y="0" h="3" w="3" gammagroup="Buttons"/>
+	<bitmap id="wasabi.button.left" file="window/std.button.png" x="00" y="3" h="14" w="3" gammagroup="Buttons"/>
+	<bitmap id="wasabi.button.center" file="window/std.button.png" x="03" y="3" h="14" w="14" gammagroup="Buttons"/>
+	<bitmap id="wasabi.button.right" file="window/std.button.png" x="17" y="3" h="14" w="3" gammagroup="Buttons"/>
+	<bitmap id="wasabi.button.bottom.left" file="window/std.button.png" x="00" y="17" h="3" w="3" gammagroup="Buttons"/>
+	<bitmap id="wasabi.button.bottom" file="window/std.button.png" x="03" y="17" h="3" w="13" gammagroup="Buttons"/>
+	<bitmap id="wasabi.button.bottom.right" file="window/std.button.png" x="17" y="17" h="3" w="3" gammagroup="Buttons"/>
+
+	<bitmap id="wasabi.button.hover.top.left" file="window/std.button.png" x="20" y="0" h="3" w="3" gammagroup="Buttons"/>
+	<bitmap id="wasabi.button.hover.top" file="window/std.button.png" x="23" y="0" h="3" w="14" gammagroup="Buttons"/>
+	<bitmap id="wasabi.button.hover.top.right" file="window/std.button.png" x="37" y="0" h="3" w="3" gammagroup="Buttons"/>
+	<bitmap id="wasabi.button.hover.left" file="window/std.button.png" x="20" y="3" h="14" w="3" gammagroup="Buttons"/>
+	<bitmap id="wasabi.button.hover.center" file="window/std.button.png" x="23" y="3" h="14" w="14" gammagroup="Buttons"/>
+	<bitmap id="wasabi.button.hover.right" file="window/std.button.png" x="37" y="3" h="14" w="3" gammagroup="Buttons"/>
+	<bitmap id="wasabi.button.hover.bottom.left" file="window/std.button.png" x="20" y="17" h="3" w="3" gammagroup="Buttons"/>
+	<bitmap id="wasabi.button.hover.bottom" file="window/std.button.png" x="23" y="17" h="3" w="14" gammagroup="Buttons"/>
+	<bitmap id="wasabi.button.hover.bottom.right" file="window/std.button.png" x="37" y="17" h="3" w="3" gammagroup="Buttons"/>
+
+	<bitmap id="wasabi.button.pressed.top.left" file="window/std.button.png" x="40" y="0" h="3" w="3" gammagroup="Buttons"/>
+	<bitmap id="wasabi.button.pressed.top" file="window/std.button.png" x="43" y="0" h="3" w="14" gammagroup="Buttons"/>
+	<bitmap id="wasabi.button.pressed.top.right" file="window/std.button.png" x="57" y="0" h="3" w="3" gammagroup="Buttons"/>
+	<bitmap id="wasabi.button.pressed.left" file="window/std.button.png" x="40" y="3" h="14" w="3" gammagroup="Buttons"/>
+	<bitmap id="wasabi.button.pressed.center" file="window/std.button.png" x="43" y="3" h="14" w="14" gammagroup="Buttons"/>
+	<bitmap id="wasabi.button.pressed.right" file="window/std.button.png" x="57" y="3" h="14" w="3" gammagroup="Buttons"/>
+	<bitmap id="wasabi.button.pressed.bottom.left" file="window/std.button.png" x="40" y="17" h="3" w="3" gammagroup="Buttons"/>
+	<bitmap id="wasabi.button.pressed.bottom" file="window/std.button.png" x="43" y="17" h="3" w="14" gammagroup="Buttons"/>
+	<bitmap id="wasabi.button.pressed.bottom.right" file="window/std.button.png" x="57" y="17" h="3" w="3" gammagroup="Buttons"/>
+
+	<bitmap id="wasabi.button.middle" file="window/std.button.png" x="3" y="3" h="14" w="14" gammagroup="Buttons"/>
+	<bitmap id="wasabi.button.hover.middle" file="window/std.button.png" x="23" y="3" h="14" w="14" gammagroup="Buttons"/>
+	<bitmap id="wasabi.button.pressed.middle" file="window/std.button.png" x="43" y="3" h="14" w="14" gammagroup="Buttons"/>
+
+</elements>

@@ -1,0 +1,173 @@
+<!-- ===================================================================================================
+
+	Use:
+		1) Put this folder into "Xui" folder in skin folder
+		2) Write the following line into skin.xml file:
+		<include file="Xui/SC Text Objects/SC Text Objects.xml"/>
+
+	This file defines the following objects:
+		- OneDirectionText (v. 1.02.00)
+		- SC:Text (v. 0.05.01)
+		- SC:OneDirectionText
+
+		See below for more information
+
+==================================================================================================== -->
+
+
+<!-- ===================================================================================================
+
+  <OneDirectionText /> implementation
+
+  by Potashnikoff Aleksey aka NickMikh - nickmikh@gmail.com
+
+  Description: This object works the same way as text object, but moves in one direction when the string it shows is longer then the object can show.
+
+  Version: 1.02.00
+
+    Available parameters:
+
+      - All params for Text
+      - All params for Group
+
+      - betweenstring="string" (eg. "***") - string between two texts
+	  - configattrib="ConfigItemGuid;ConfigAttributeName" eg "{00000000-0000-0000-0000-000000000000};Enable One Direction Text" - previously created attribute to toggle ForwardBackward/OneDirection text
+	  - firstdelay="Int" (eg. "1000") - Delay before text begins to move after being stopped or dragged by user in ms
+	  -  ttip="string" - displays string as text's tooltip
+
+Version History:
+	1.02
+		- Added: Tooltips
+	1.01
+		- Fixed: "move after resize" bug
+		- Improved: Stopping when the text is not visible (Greatly reduces CPU usage when using several objects in different modes)
+
+==================================================================================================== -->
+
+<groupdef id="OneDirectionText" xuitag="OneDirectionText" embed_xui="my.text.main">
+	<text
+	  id="my.text.main"
+	  x="0" y="0"
+	  w="0" h="0"
+	  relath="1" relatw="1"
+	  valign="center"
+	  color="255,255,255"
+	  shadowcolor="0,0,0"
+	  align="left"
+	  bold="0"
+	  timeroffstyle="0"
+  />
+	<text
+	  id="my.text.2"
+	  x="0" y="0"
+	  w="0" h="0"
+	  relath="1"
+	  valign="center"
+	  color="255,255,255"
+	  shadowcolor="0,0,0"
+	  align="left"
+	  bold="0"
+	  timeroffstyle="0"
+  />
+	<script id="One.Direction.Text.Script" file="Xui/SC Text Objects/OneDirectionText.maki"/>
+</groupdef>
+
+<!-- =======================================================================================================
+					BUILD 005	24-May-2009
+	<SC:Text
+		mytext=""
+		ttip=""
+	/> implementation
+
+============================================================================================================
+by Pieter Nieuwoudt (sylvester) > sylvester@skinconsortium.com
+
+  Description: This object is a text object to display custom made string using these substrings:
+		%title%
+		%artist%
+		%album%
+		%year%"
+		%genre%
+		%track%
+		%composer%
+		%comment%
+		%albumartist%
+		%numsamples%
+		%postgap%
+		%pregap%
+		%publisher%
+		%encoder%
+		%conductor%
+		%disc%
+		%bitrate%
+		%length.longtime%
+		%length.time%
+		%length.sec%
+		%filesize%
+		%(year)%
+		%video.res%
+		%video.fps%
+		%video.vid.bitrate%
+		%video.aud.bitrate%
+		%video.aud.khz%
+		%video.aud.ch%
+
+  Version 0.05
+
+Version History:
+	0.05.01
+		- Fixed: Move text bug
+	0.05
+		- Added: tooltips
+	0.04
+		- Fixed: stream bug
+	0.03
+		- Added substrings:
+			%filesize%
+			%(year)%
+			%video.res%
+			%video.fps%
+			%video.vid.bitrate%
+			%video.aud.bitrate%
+			%video.aud.khz%
+			%video.aud.ch%
+
+
+Thanks to martin.deimos for the use of his replaceString() method.
+
+======================================================================================================== -->
+
+
+<groupdef id="SC.Text" xuitag="SC:Text" embed_xui="sc.main.text">
+	<text id="sc.main.text.vid.info" x="0" y="0" w="0" h="0" visible="0" display="VID_Info" ghost="1"/>
+	<text id="sc.main.text" fitparent="1" display="ERROR" valign="top"/>
+	<script file="Xui/SC Text Objects/sctext.maki"/>
+</groupdef>
+
+<!-- =======================================================================================================
+					BUILD 001	26-AUGUST-2007
+	<SC:OneDirectionText /> implementation
+
+    Available parameters :
+
+      - All params for OneDirectionText
+      - All params for SC:Text
+
+============================================================================================================
+by Pieter Nieuwoudt (sylvester) > sylvester@skinconsortium.com
+&& Potashnikoff Aleksey (NickMikh) > nickmikh@gmail.com
+
+  Description: This object is a text object that merges functionality of OneDirectionText and SC:Text (see versions above).
+
+======================================================================================================== -->
+
+<groupdef id="SC.OneDirectionText" xuitag="SC:OneDirectionText" embed_xui="sc.main.text">
+	<text id="sc.main.text.vid.info" x="0" y="0" w="0" h="0" visible="0" display="VID_Info" ghost="1"/>
+	<OneDirectionText
+		id="sc.main.text"
+		fitparent="1"
+		display="ERROR"
+		valign="top"
+	/>
+	<script file="Xui/SC Text Objects/sctext.maki"/>
+</groupdef>

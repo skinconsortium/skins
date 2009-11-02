@@ -1,0 +1,16 @@
+<WinampAbstractionLayer version="0.8">
+	<skininfo>
+		<version>dev-alpha</version>
+		<name>RobotArm/SAMI</name>
+		<comment>wip</comment>
+		<author>Quadhelix/t09</author>
+		<email></email>
+		<homepage></homepage>
+		<screenshot>skinshot.png</screenshot>
+	</skininfo>
+	<include file="Xui/SC Text Objects/SC Text Objects.xml"/>
+	<include file="xml/popup-container.xml"/>
+	<include file="xml/player.xml"/>
+	<include file="standardframe/standardframe.xml"/>
+	<include file="xml/gamma-presets.xml"/>
+</WinampAbstractionLayer>
