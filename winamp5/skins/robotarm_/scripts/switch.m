@@ -38,7 +38,7 @@ closeTop.onLeftButtonUp(int x, int y)
 	layoutsMenu.addCommand("Normal", 0, (currentLayout==0), 0);
 	layoutsMenu.addCommand("Large album art", 1, (currentLayout==1), 0);
 	layoutsMenu.addCommand("Equalizer", 2, (currentLayout==2), 0);
-	int nextLayout = layoutsMenu.popAtMouse();
+	int nextLayout = layoutsMenu.popAtXY(closeTop.getLeft()+54, closeTop.getTop());
 	delete layoutsMenu;
 	if (nextLayout==currentLayout) complete;
 	else if(nextLayout==1)applyLayout1();
