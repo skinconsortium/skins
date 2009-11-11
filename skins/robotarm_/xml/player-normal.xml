@@ -220,12 +220,19 @@
 		w="500" h="370" move="1" sysregion="1"
 		image="anivis"
 		/>
+	<grid
+		id="rectangle" x="427" y="5" w="30" h="30"
+		topleft="rect.1" top="rect.2" topright="rect.3"
+		left="rect.4" middle="rect.5" right="rect.6"
+		bottomleft="rect.7" bottom="rect.8" bottomright="rect.9"
+		/>
 	<button
 		id="animationbutton" tooltip="Show/Hide Winamp"
-		x="427" y="5" sysregion="1"
+		x="427" y="5" sysregion="1" rectrgn="1"
 		image="player.power.n" hoverImage="player.power.h" downimage="player.power.d"
 		/>
-	<!--background is not aBlended, serves as a blocker-->
+	<group id="nav.group" x="342" y="10" visible="0" alpha="0"/>
+	<!--background is not aBlended, serves as a blocker   x="337" y="5" w="120" h="30"-->
 	<group id="robotarm.display" x="198" y="125" w="222" h="118" visible="0" alpha="0" background="blocker"/>
 	<!--this creates a more realistic impression of a display-->
 	<layer image="reflection" id="reflection" x="198" y="125" w="222" h="118" visible="0" ghost="1"/>

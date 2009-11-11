@@ -21,15 +21,18 @@ Global Layer reflection;
 Global Button animButton;
 Global Layout normal;
 Global Boolean armIsOut;
-Global Group display;
+Global Group display, nav2;
+Global GuiObject rectangle;
 
 System.onScriptLoaded ()
 {
 	robotArm = getScriptGroup().findObject("animationlayer");
 	animButton = getScriptGroup().findObject("animationbutton");
 	display =  getScriptGroup().findObject("robotarm.display");
+	nav2 =  getScriptGroup().findObject("nav.group");
 	normal = getScriptGroup().getParentLayout();
 	reflection =  getScriptGroup().findObject("reflection");
+	rectangle =  getScriptGroup().findObject("rectangle");
 }
 
 normal.onSetVisible (Boolean onoff)
@@ -62,6 +65,9 @@ toggleArm ()
 	if (armIsOut && display.isVisible())
 	{
 		fade (display, 0, 0.5);
+		fade (nav2, 255, 0.5);
+		rectangle.setXmlParam("x", "337");
+		rectangle.setXmlParam("w", "120");
 		return;
 	}
 
@@ -82,6 +88,7 @@ robotArm.onStop ()
 	{
 		reflection.show();
 		fade (display, 255, 0.5);
+		fade (nav2, 0, 0.5);
 	}
 }
 
@@ -100,7 +107,17 @@ display.onTargetReached ()
 	{
 		display.hide();
 		reflection.hide();
+		nav2.show();
 		toggleArm();
 	}
 	
+}
+nav2.onTargetReached ()
+{
+	if (nav2.getAlpha() == 0)
+	{
+		nav2.hide();
+		rectangle.setXmlParam("x", "427");
+		rectangle.setXmlParam("w", "30");
+	}
 }

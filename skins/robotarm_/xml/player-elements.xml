@@ -78,6 +78,15 @@
 	<bitmap id="eq.rect.7" file="player/eq.png" x="0" y="15" w="2" h="2" gammagroup="Lining"/>
 	<bitmap id="eq.rect.8" file="player/eq.png" x="2" y="15" w="1" h="2" gammagroup="Lining"/>
 	<bitmap id="eq.rect.9" file="player/eq.png" x="3" y="15" w="2" h="2" gammagroup="Lining"/>
+	<bitmap id="rect.1" file="player/srect.png" x="0" y="0" w="3" h="3" gammagroup="Lining"/>
+	<bitmap id="rect.2" file="player/srect.png" x="3" y="0" w="1" h="3" gammagroup="Lining"/>
+	<bitmap id="rect.3" file="player/srect.png" x="4" y="0" w="3" h="3" gammagroup="Lining"/>
+	<bitmap id="rect.4" file="player/srect.png" x="0" y="3" w="3" h="1" gammagroup="Lining"/>
+	<bitmap id="rect.5" file="player/srect.png" x="2" y="3" w="1" h="1" gammagroup="Lining"/>
+	<bitmap id="rect.6" file="player/srect.png" x="4" y="3" w="3" h="1" gammagroup="Lining"/>
+	<bitmap id="rect.7" file="player/srect.png" x="0" y="4" w="3" h="3" gammagroup="Lining"/>
+	<bitmap id="rect.8" file="player/srect.png" x="3" y="4" w="1" h="3" gammagroup="Lining"/>
+	<bitmap id="rect.9" file="player/srect.png" x="4" y="4" w="3" h="3" gammagroup="Lining"/>
 	<bitmap id="eq.line" file="player/eq.png" x="10" y="0" w="11" h="1" gammagroup="Lining"/>
 	<bitmap id="eq.thumb.n" file="player/eq.png" x="0" y="0" w="10" h="4" gammagroup="Buttons"/>
 	<bitmap id="eq.thumb.h" file="player/eq.png" x="0" y="4" w="10" h="4" gammagroup="Buttons"/>
