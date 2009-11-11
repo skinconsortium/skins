@@ -48,7 +48,6 @@ animButton.onLeftClick ()
 	toggleArm();
 }
 
-
 toggleArm ()
 {
 	if (robotArm.isPlaying())
@@ -65,9 +64,12 @@ toggleArm ()
 	if (armIsOut && display.isVisible())
 	{
 		fade (display, 0, 0.5);
-		fade (nav2, 255, 0.5);
-		rectangle.setXmlParam("x", "337");
-		rectangle.setXmlParam("w", "120");
+		if (System.getPrivateInt("robotarm", "showBackupNav", 0) == 1)
+		{
+			fade (nav2, 255, 0.5);
+			rectangle.setXmlParam("x", "337");
+			rectangle.setXmlParam("w", "120");
+		}
 		return;
 	}
 
@@ -88,7 +90,7 @@ robotArm.onStop ()
 	{
 		reflection.show();
 		fade (display, 255, 0.5);
-		fade (nav2, 0, 0.5);
+		if (System.getPrivateInt("robotarm", "showBackupNav", 0) == 1) fade (nav2, 0, 0.5);
 	}
 }
 
@@ -107,11 +109,11 @@ display.onTargetReached ()
 	{
 		display.hide();
 		reflection.hide();
-		nav2.show();
+		if (System.getPrivateInt("robotarm", "showBackupNav", 0) == 1) nav2.show();
 		toggleArm();
 	}
-	
 }
+
 nav2.onTargetReached ()
 {
 	if (nav2.getAlpha() == 0)

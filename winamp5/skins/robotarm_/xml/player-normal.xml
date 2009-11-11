@@ -194,6 +194,10 @@
 		thumb="eq.thumb.n" hoverthumb="eq.thumb.h" downthumb="eq.thumb.d"
 		/>
 </groupdef>
+<groupdef id="config">
+	<Wasabi:CheckBox x="10" y="10" id="backupNav" text="Show backup playback controls"/>
+	<script id="config" file="scripts/config.maki"/>
+</groupdef>
 <groupdef id="robotarm.display">
 	<layer image="display.bg"/>
 	<!--grid
@@ -209,6 +213,7 @@
 	<group id="seek.group" x="7" y="74"/>
 	<group id="toggle.group" x="101" y="62"/>
 	<group id="eq.group" x="22" y="24" visible="0"/>
+	<group id="config" x="0" y="0"/>
 	<text id="txt.timer" display="TIME" x="7" y="61" w="60" h="10" font="bitmapfont.numbers" alpha="127"/>
 	<button id="layout.sw" image="layout.sw"/>
 	<script id="layout.switcher" file="scripts/switch.maki"/>
