@@ -1,13 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE package SYSTEM "http://www.woltlab.com/DTDs/package.dtd"[]>
-<package name="net.inovato.wcf.appframe">
+<package name="net.inovato.wcf.appframe" xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com/XSD/package.xsd">
 	<packageinformation>
 		<packagename>Inovato AppFrame</packagename>
 		<packagedescription>Basic wbb-like templates for standalone wcf applications</packagedescription>
 		<isunique>1</isunique>
 		<standalone>0</standalone>
-		<version>1.0.0-beta1-dev11</version>
-		<date>2009-10-09</date>
+		<version>1.0.0-beta2-dev1</version>
+		<date>2009-11-15</date>
 	</packageinformation>
 	<requiredpackages>
 		<!-- basics -->
