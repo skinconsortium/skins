@@ -1,0 +1,31 @@
+<elements>
+
+	<!-- Frame Section -->
+	<bitmap id="frame.topleft" file="frame.png" x="0" y="0" w="90" gammagroup="n.Frame"/>
+	<bitmap id="frame.top" file="frame.png" x="91" y="0" w="10" gammagroup="n.Frame"/>
+	<bitmap id="frame.topright" file="frame.png" x="102" y="0" w="150" gammagroup="n.Frame"/>
+	<bitmap id="frame.left" file="frame.png" x="253" y="0" w="8" gammagroup="n.Frame"/>
+	<bitmap id="frame.right" file="frame.png" x="262" y="0" w="8" gammagroup="n.Frame"/>
+	<bitmap id="frame.bottomleft" file="frame.png" x="271" y="0" w="8" h="8" gammagroup="n.Frame"/>
+	<bitmap id="frame.bottom" file="frame.png" x="271" y="9" w="8" h="8" gammagroup="n.Frame"/>
+	<bitmap id="frame.bottomright" file="frame.png" x="280" y="0" w="8" h="8" gammagroup="n.Frame"/>
+	<bitmap id="frame.center" file="frame.png" x="280" y="9" w="8" h="8" gammagroup="n.Frame"/>
+
+	<!-- Playback Section -->
+	<bitmap id="playback.bg.buttons" file="playback.png" x="0" y="0" w="165" gammagroup="n.Playback"/>
+	<bitmap id="playback.bg.vis" file="playback.png" x="166" y="0" w="77" gammagroup="n.Playback"/>
+	<bitmap id="playback.bg.fill" file="playback.png" x="244" y="0" w="10" gammagroup="n.Playback"/>
+	<bitmap id="playback.bg.volume" file="playback.png" x="255" y="0" w="151" gammagroup="n.Playback"/>
+	<bitmap id="playback.bg.shufrep" file="playback.png" x="407" y="0" w="75" gammagroup="n.Playback"/>
+
+	<!-- Info Section -->
+	<bitmap id="info.bg.time" file="info.png" x="0" y="0" w="64" h="40" gammagroup="n.Info"/>
+	<bitmap id="info.bg.seeker.0" file="info.png" x="65" y="0" w="10" h="40" gammagroup="n.Info"/>
+	<bitmap id="info.bg.seeker.1" file="info.png" x="65" y="41" w="10" h="40" gammagroup="n.Info"/>
+	<bitmap id="info.bg.seeker.2" file="info.png" x="65" y="82" w="10" h="40" gammagroup="n.Info"/>
+	<bitmap id="info.bg.seeker.3" file="info.png" x="65" y="123" w="10" h="40" gammagroup="n.Info"/>
+	<bitmap id="info.bg.other" file="info.png" x="76" y="0" w="64" h="40" gammagroup="n.Info"/>
+
+	<bitmap id="info.seeker.thumb" file="images/seekerthumb.png"/>
+
+</elements>
