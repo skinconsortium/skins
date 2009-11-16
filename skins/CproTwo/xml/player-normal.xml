@@ -1,0 +1,80 @@
+<!-- 
+:: Info Section ::
+-->
+<groupdef id="two.info.seeker">
+	<layer id="two.info.seeker.inactive" x="0" y="0" w="0" relatw="1" image="info.bg.seeker.0"/>
+	<layer id="two.info.seeker.active" x="0" y="0" w="30" image="info.bg.seeker.1"/>
+	<layer id="two.info.seeker.finder" x="0" y="0" w="0" image="info.bg.seeker.3" alpha="200"/> <!-- Remove alpha l@r... image can do it-->
+	<slider id="two.info.seeker.slider.0" x="0" y="0" w="0" h="0" relatw="1" relath="1" action="SEEK" thumb="info.seeker.thumb"/>
+	<slider id="two.info.seeker.slider.1" x="0" y="0" w="0" h="0" relatw="1" relath="1" action="SEEK" thumb="info.seeker.thumb" cursor="IDC_HAND"/>
+
+	<text id="two.info.text.title" x="0" y="0" w="0" h="24" relatw="1" align="center" text="Long Way Home [Steve Murano Remix]" fontsize="20" color="black" ghost="1" font="Calibri"/>
+	<text id="two.info.text.artist" x="0" y="20" w="0" h="16" relatw="1" align="center" text="by ATB" fontsize="16" color="black" ghost="1" font="Calibri" alpha="150"/>
+	<script file="scripts/info-seeker.maki"/>
+</groupdef>
+<groupdef id="two.info" h="40">
+	<layer id="two.info.time" x="0" y="0" image="info.bg.time" regionop="1"/>
+	<group id="two.info.seeker" x="64" y="0" w="-128" h="0" relatw="1" relath="1"/>
+	<layer x="-64" y="0" relatx="1" image="info.bg.other" regionop="1"/>
+
+	<text id="two.info.text.tracktime" x="4" y="2" w="66" h="20" align="center" valign="center" text="" fontsize="22" color="black" font="Calibri"/>
+	<text id="two.info.text.totaltime" x="4" y="18" w="66" h="20" align="center" valign="center" text="" fontsize="16" color="black" font="Calibri" alpha="150"/>
+	<text id="two.info.text.trackevent" x="0" y="0" w="0" h="0" display="TIME" visible="0"/>
+
+	<text id="two.info.text.other.kbps" x="-64" y="3" w="52" h="12" relatx="1" align="center" valign="center" text="" fontsize="14" color="black" font="Calibri"/>
+	<text id="two.info.text.other.size" x="-64" y="13" w="52" h="12" relatx="1" align="center" valign="center" text="" fontsize="14" color="black" font="Calibri"/>
+	<text id="two.info.text.other.hz" x="-64" y="23" w="52" h="12" relatx="1" align="center" valign="center" text="" fontsize="14" color="black" font="Calibri"/>
+
+	<script file="scripts/info-text.maki"/>
+</groupdef>
+
+
+<!-- 
+:: Playback Section ::
+-->
+<groupdef id="two.playback.vis" background="playback.bg.vis" w="77">
+	<vis
+		id="main.vis"
+		x="3" y="8"
+		w="71" h="17"
+		gammagroup="n.Vis"
+	/>
+</groupdef>
+<groupdef id="two.playback.volume" background="playback.bg.volume" w="151">
+</groupdef>
+<groupdef id="two.playback" autoheightsource="two.playback.buttons">
+	<layer id="two.playback.buttons" x="0" y="0" image="playback.bg.buttons" regionop="1"/>
+	<layer id="two.playback.fill" x="165" y="0" w="-240" relatw="1" image="playback.bg.fill"/>
+	<layer id="two.playback.shufrep" x="-75" y="0" relatx="1" image="playback.bg.shufrep" regionop="1"/>
+	<group id="two.playback.volume" x="-226" y="0" h="0" relatx="1" relath="1" visible="0"/>
+	<group id="two.playback.vis" x="0" y="0" h="0" relath="1" visible="0"/>
+	<script file="scripts/playback-layout.maki"/>
+</groupdef>
+<groupdef id="two.screen">
+	<group id="two.info" x="0" w="0" relatw="1"/>
+	<group id="two.playback" x="0" y="40" w="0" relatw="1"/>
+</groupdef>
+
+
+<layout id="normal" minimum_h="200" minimum_w="240" h="600" w="800" appbar="top|bottom|left|right" >
+
+	<!-- 
+	:: Frame layers ::
+	-->
+	<layer id="two.frame.1" x="0" y="0" image="frame.topleft" regionop="1"/>
+	<layer id="two.frame.2" x="90" y="0" w="-240" relatw="1" image="frame.top" regionop="1"/>
+	<layer id="two.frame.3" x="-150" y="0" relatx="1" image="frame.topright" regionop="1"/>
+	<layer id="two.frame.7" x="0" y="-8" relaty="1" image="frame.bottomleft" regionop="1" resize="bottomleft"/>
+	<layer id="two.frame.8" x="8" y="-8" w="-16" relaty="1" relatw="1" image="frame.bottom" regionop="1" resize="bottom"/>
+	<layer id="two.frame.9" x="-8" y="-8" relatx="1" relaty="1" image="frame.bottomright" regionop="1" resize="bottomright"/>
+
+	<!-- These layers will have their y & h set by layout.maki -->
+	<layer id="two.frame.4" x="0" relath="1" image="frame.left" regionop="1" resize="left"/>
+	<layer id="two.frame.5" x="8" w="-16" relatw="1" relath="1" image="frame.center" regionop="1"/>
+	<layer id="two.frame.6" x="-8" relatx="1" relath="1" image="frame.right" regionop="1" resize="right"/>
+
+	<!-- This group will have it's y & h set by layout.maki -->
+	<group id="two.screen" x="0" w="0" relatw="1"/>
+
+	<script file="scripts/layout.maki"/>
+</layout>

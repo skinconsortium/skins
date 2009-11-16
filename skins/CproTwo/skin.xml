@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<WinampAbstractionLayer version="1.34">
+	<skininfo>
+		<version>0.001</version>
+		<name>CproTwo</name>
+		<author>Pieter Nieuwoudt, Martin Pöhlmann</author>
+		<comment>Work in progress</comment>
+		<email>email@skinconsortium.com</email>
+		<screenshot>screenshot.png</screenshot>
+		<homepage>http://www.skinconsortium.com/</homepage>
+	</skininfo>
+
+	<accelerators section="general">
+		<accelerator bind="Alt+F" action="MENUHOTKEY_FILE"/>
+		<accelerator bind="Alt+P" action="MENUHOTKEY_PLAY"/>
+		<accelerator bind="Alt+O" action="MENUHOTKEY_OPTIONS"/>
+		<accelerator bind="Alt+I" action="MENUHOTKEY_VIEW"/>
+		<accelerator bind="Alt+H" action="MENUHOTKEY_HELP"/>
+	</accelerators>
+
+	<accelerators section="normal">
+			<accelerator bind="space" action="SHOW_CURRENT_TRACK" />
+	</accelerators>
+
+	<include file="xml/player.xml"/>
+
+</WinampAbstractionLayer>
