@@ -198,6 +198,12 @@
 	<Wasabi:CheckBox x="10" y="10" id="backupNav" text="Show backup playback controls"/>
 	<script id="config" file="scripts/config.maki"/>
 </groupdef>
+<groupdef id="rating" w="50" h="10">
+	<layer id="rate.back" x="0" y="0" w="50" h="10" tile="1" rectrgn="1" move="0"/>
+	<layer id="rate.outl" image="star.outline" x="0" y="0" w="50" h="10" tile="1" alpha="63" ghost="1"/>
+	<layer id="rate.fill" image="star.fill" x="0" y="0" w="50" h="10" tile="1" alpha="31" ghost="1"/>
+	<script id="rating" file="scripts/rate.maki"/>
+</groupdef>
 <groupdef id="robotarm.display">
 	<layer image="display.bg"/>
 	<!--grid
@@ -213,7 +219,8 @@
 	<group id="seek.group" x="7" y="74"/>
 	<group id="toggle.group" x="101" y="62"/>
 	<group id="eq.group" x="22" y="24" visible="0"/>
-	<group id="config" x="0" y="0"/>
+	<group id="config"/>
+	<group id="rating" x="7" y="47"/>
 	<text id="txt.timer" display="TIME" x="7" y="61" w="60" h="10" font="bitmapfont.numbers" alpha="127"/>
 	<button id="layout.sw" image="layout.sw"/>
 	<script id="layout.switcher" file="scripts/switch.maki"/>
@@ -226,7 +233,7 @@
 		image="anivis"
 		/>
 	<grid
-		id="rectangle" x="427" y="5" w="30" h="30"
+		id="rectangle" x="427" y="5" w="30" h="30" move="1"
 		topleft="rect.1" top="rect.2" topright="rect.3"
 		left="rect.4" middle="rect.5" right="rect.6"
 		bottomleft="rect.7" bottom="rect.8" bottomright="rect.9"

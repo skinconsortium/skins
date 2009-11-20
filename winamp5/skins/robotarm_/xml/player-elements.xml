@@ -102,6 +102,9 @@
 
 	<bitmap id="layout.sw" file="window/misc.png" x="25" y="20" w="10" h="10" gammagroup="Text"/>
 	<bitmap id="switch.interface" file="window/misc.png" x="15" y="0" w="84" h="5" gammagroup="Text"/>
+
+	<bitmap id="star.outline" file="player/star.png" x="0" y="0" w="10" h="10" gammagroup="Lining"/>
+	<bitmap id="star.fill" file="player/star.png" x="0" y="10" w="10" h="10" gammagroup="Buttons"/>
 	
 	
 	<!-- Scrollbars (on List, Tree, etc...) -->
