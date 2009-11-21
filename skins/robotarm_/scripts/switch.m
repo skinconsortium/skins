@@ -8,7 +8,7 @@ Function relocate2(GuiObject, int, int);
 Global AnimatedLayer switchBase;
 Global GuiObject albumArt;
 Global Text txtTimer;
-Global Group nfoGrp, navGrp, eqGrp, volGrp, seekGrp, toggleGrp, eqGrp, cfgGrp;
+Global Group nfoGrp, navGrp, eqGrp, volGrp, seekGrp, toggleGrp, eqGrp, cfgGrp, rateGrp;
 Global Button closeTop;
 Global int currentLayout;
 System.onScriptLoaded ()
@@ -22,6 +22,7 @@ System.onScriptLoaded ()
 	toggleGrp =		getScriptGroup().findObject("toggle.group");
 	eqGrp =			getScriptGroup().findObject("eq.group");
 	cfgGrp =		getScriptGroup().findObject("config");
+	rateGrp =		getScriptGroup().findObject("rating");
 	txtTimer =		getScriptGroup().findObject("txt.timer");
 	closeTop =		getScriptGroup().findObject("layout.sw");
 	currentLayout = System.getPrivateInt("robotarm", "LastLayout", 0);
@@ -69,6 +70,7 @@ applyLayout0()
 	toggleGrp.setXMLParam("x","101");
 	AlbumArt.setXMLParam("notfoundImage","64rect");
 	cfgGrp.hide();
+	rateGrp.show();
 }
 applyLayout1()
 {
@@ -88,6 +90,7 @@ applyLayout1()
 	toggleGrp.setXMLParam("x","60");
 	AlbumArt.setXMLParam("notfoundImage","104rect");
 	cfgGrp.hide();
+	rateGrp.hide();
 }
 applyLayout2()
 {
@@ -101,6 +104,7 @@ applyLayout2()
 	eqGrp.show();
 	txtTimer.hide();
 	cfgGrp.hide();
+	rateGrp.hide();
 }
 applyLayout3()
 {
@@ -114,6 +118,7 @@ applyLayout3()
 	eqGrp.hide();
 	txtTimer.hide();
 	cfgGrp.show();
+	rateGrp.hide();
 }
 resize2(GuiObject target, int x, int y, int w, int h)
 {
