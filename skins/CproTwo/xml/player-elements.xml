@@ -12,12 +12,19 @@
 	<bitmap id="frame.center" file="frame.png" x="280" y="9" w="8" h="8" gammagroup="n.Frame"/>
 
 	<!-- Playback Section -->
-	<bitmap id="playback.bg.buttons" file="playback.png" x="0" y="0" w="165" gammagroup="n.Playback"/>
-	<bitmap id="playback.bg.vis" file="playback.png" x="166" y="0" w="77" gammagroup="n.Playback"/>
-	<bitmap id="playback.bg.fill" file="playback.png" x="244" y="0" w="10" gammagroup="n.Playback"/>
-	<bitmap id="playback.bg.volume" file="playback.png" x="255" y="0" w="151" gammagroup="n.Playback"/>
-	<bitmap id="playback.bg.shufrep" file="playback.png" x="407" y="0" w="75" gammagroup="n.Playback"/>
+	<bitmap id="playback.bg.left.1" file="playback.png" x="0" y="0" w="8" gammagroup="n.Playback"/>
+	<bitmap id="playback.bg.left.2" file="playback.png" x="324" y="0" w="91" gammagroup="n.Playback"/>
 
+	<bitmap id="playback.bg.right.1" file="playback.png" x="314" y="0" w="8" gammagroup="n.Playback"/>
+	<bitmap id="playback.bg.right.2" file="playback.png" x="447" y="0" w="91" gammagroup="n.Playback"/>
+	<bitmap id="playback.bg.right.2.mute" file="playback.png" x="416" y="0" w="30" gammagroup="n.Playback"/>
+
+	<bitmap id="playback.bg.buttons.left" file="playback.png" x="9" y="0" w="157" gammagroup="n.Playback"/>
+	<bitmap id="playback.bg.buttons.right.1" file="playback.png" x="167" y="0" w="67" gammagroup="n.Playback"/>
+	<bitmap id="playback.bg.buttons.right.2" file="playback.png" x="235" y="0" w="67" gammagroup="n.Playback"/>
+
+	<bitmap id="playback.bg.fill" file="playback.png" x="303" y="0" w="10" gammagroup="n.Playback"/>
+	
 	<!-- Info Section -->
 	<bitmap id="info.bg.time" file="info.png" x="0" y="0" w="64" h="40" gammagroup="n.Info"/>
 	<bitmap id="info.bg.seeker.0" file="info.png" x="65" y="0" w="10" h="40" gammagroup="n.Info"/>
