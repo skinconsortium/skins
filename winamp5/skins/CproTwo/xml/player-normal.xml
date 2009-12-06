@@ -32,22 +32,33 @@
 <!-- 
 :: Playback Section ::
 -->
-<groupdef id="two.playback.vis" background="playback.bg.vis" w="77">
+<groupdef id="two.playback.vis" w="91">
 	<vis
 		id="main.vis"
-		x="3" y="8"
+		x="14" y="6"
 		w="71" h="17"
 		gammagroup="n.Vis"
 	/>
 </groupdef>
-<groupdef id="two.playback.volume" background="playback.bg.volume" w="151">
+<groupdef id="two.playback.volume">
+	<layer id="two.playback.volume.left" x="-121" y="0" relatx="1" image="playback.bg.right.2.mute"/>
 </groupdef>
-<groupdef id="two.playback" autoheightsource="two.playback.buttons">
-	<layer id="two.playback.buttons" x="0" y="0" image="playback.bg.buttons" regionop="1"/>
-	<layer id="two.playback.fill" x="165" y="0" w="-240" relatw="1" image="playback.bg.fill"/>
-	<layer id="two.playback.shufrep" x="-75" y="0" relatx="1" image="playback.bg.shufrep" regionop="1"/>
-	<group id="two.playback.volume" x="-226" y="0" h="0" relatx="1" relath="1" visible="0"/>
-	<group id="two.playback.vis" x="0" y="0" h="0" relath="1" visible="0"/>
+<groupdef id="two.playback.buttons" w="224">
+	<layer id="two.playback.buttons.left" x="0" y="0" image="playback.bg.buttons.left"/>
+	<layer id="two.playback.buttons.right" x="157" y="0" image="playback.bg.buttons.right.1"/>
+</groupdef>
+<groupdef id="two.playback" autoheightsource="two.playback.left">
+	<layer id="two.playback.fill" x="8" y="0" w="-16" relatw="1" image="playback.bg.fill" regionop="1"/>
+
+	<layer id="two.playback.left" x="0" y="0" image="playback.bg.left.1" regionop="1"/>
+	<layer id="two.playback.right" x="-8" y="0" relatx="1" image="playback.bg.right.1" regionop="1"/>
+
+	<group id="two.playback.buttons" x="8" y="0" h="0" relath="1"/>
+
+
+	<group id="two.playback.vis" x="0" y="0" h="0" relath="1" visible="1"/>
+	<group id="two.playback.volume" x="0" y="0" h="0" relatx="1" relath="1" visible="0"/>
+
 	<script file="scripts/playback-layout.maki"/>
 </groupdef>
 <groupdef id="two.screen">
