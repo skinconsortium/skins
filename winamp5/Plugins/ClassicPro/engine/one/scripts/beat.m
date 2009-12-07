@@ -11,7 +11,7 @@ Function setCustomVis(int a);
 
 Global Group frameGroup, beatGroup, promoGroup, b01, b02;
 
-Global AnimatedLayer t01, t02;
+Global AnimatedLayer beatAnimLeft, beatAnimRight;
 Global Timer myTimer;
 Global int lastBeatLeft,lastBeatRight, myFrames, aniW, beatLeft, beatRight, frameLeft, frameRight, run_max, cusno;
 Global Boolean showBeat, showPromo, animTypeB, oneSide, customvis;
@@ -32,12 +32,12 @@ System.onScriptLoaded (){
 	promoPic = promoGroup.getObject("beat.promo");
 	mouseTrap = cg.getObject("beat.mousetrap");
 
-	t01 = beatGroup.getObject("beatvis.left");
-	t02 = beatGroup.getObject("beatvis.right");
+	beatAnimLeft = beatGroup.getObject("beatvis.left");
+	beatAnimRight = beatGroup.getObject("beatvis.right");
 	b01 = beatGroup.getObject("beatvisB.left");
 	b02 = beatGroup.getObject("beatvisB.right");
-	b01layer = b01.findObject("beatvisB.left.layer");
-	b02layer = b02.findObject("beatvisB.right.layer");
+	b01layer = b01.getObject("beatvisB.left.layer");
+	b02layer = b02.getObject("beatvisB.right.layer");
 	c01 = beatGroup.getObject("beatvisC.left");
 	c02 = beatGroup.getObject("beatvisC.right");
 	
@@ -50,9 +50,9 @@ System.onScriptLoaded (){
 	aniW=myMap.getWidth();
 
 	beatGroup.setXmlParam("w", integerToString(aniW*2));
-	t01.setXmlParam("w", integerToString(aniW));
-	t02.setXmlParam("x", integerToString(aniW));
-	t02.setXmlParam("w", integerToString(aniW));
+	beatAnimLeft.setXmlParam("w", integerToString(aniW));
+	beatAnimRight.setXmlParam("x", integerToString(aniW));
+	beatAnimRight.setXmlParam("w", integerToString(aniW));
 	b01layer.setXmlParam("x", integerToString(-aniW));
 	c02.setXmlParam("x", integerToString(aniW));
 	
@@ -82,8 +82,8 @@ System.onScriptLoaded (){
 	
 	if(myMap.getHeight()<=90){
 		animTypeB=true;
-		t01.hide();
-		t02.hide();
+		beatAnimLeft.hide();
+		beatAnimRight.hide();
 		b01.show();
 		
 		if(myMap.getHeight()==90) c01.show();
@@ -99,7 +99,7 @@ System.onScriptLoaded (){
 	}
 	else{
 		animTypeB=false;
-		myFrames = t01.getLength();
+		myFrames = beatAnimLeft.getLength();
 	}
 	
 	delete myMap;
@@ -125,9 +125,9 @@ setAnimNo(int i){
 	Map myMap = new Map;
 	myMap.loadMap("beat.left");
 	
-	t01.setXmlParam("image", "beat.left#.0");
-	t02.setXmlParam("image", "beat.left#.0");
-	myFrames = t01.getLength();
+	beatAnimLeft.setXmlParam("image", "beat.left#.0");
+	beatAnimRight.setXmlParam("image", "beat.left#.0");
+	myFrames = beatAnimLeft.getLength();
 
 }
 
@@ -172,8 +172,8 @@ myTimer.onTimer(){
 		lastBeatLeft=frameLeft;
 		lastBeatRight=frameRight;
 
-		t01.gotoframe(frameLeft);
-		t02.gotoframe(frameRight);
+		beatAnimLeft.gotoframe(frameLeft);
+		beatAnimRight.gotoframe(frameRight);
 	}
 }
 
@@ -184,8 +184,8 @@ System.onTitleChange(String newTxt){
 System.onStop(){
 	refreshView();
 	myTimer.stop();
-	t01.gotoframe(0);
-	t02.gotoframe(0);
+	beatAnimLeft.gotoframe(0);
+	beatAnimRight.gotoframe(0);
 }
 
 System.onPlay(){
@@ -309,9 +309,9 @@ ProcessMenuResult(int a){
 setCustomVis(int a){
 	//debugString("setCustomVis=" + integerToString(a),9);
 	if(a>=cusbeat_names.getNumItems()) a=0;
-	t01.setXmlParam("image", "beat."+integerToString(a)+".left");
-	if(!oneSide) t02.setXmlParam("image", "beat."+integerToString(a)+".right");
-	myFrames = t01.getLength();
+	beatAnimLeft.setXmlParam("image", "beat."+integerToString(a)+".left");
+	if(!oneSide) beatAnimRight.setXmlParam("image", "beat."+integerToString(a)+".right");
+	myFrames = beatAnimLeft.getLength();
 	
 	setPrivateInt(getSkinName(), "customvis", a);
 }
