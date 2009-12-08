@@ -7,8 +7,13 @@
 
 #include <lib/std.mi>
 
+// GuiObject that should be faded
 Global GuiObject fader;
+
+// Containing GuiObject in which the fader sits 
 Global GuiObject parent;
+
+// amount of milliseconds the fade should take
 Global float ms;
 
 System.onScriptLoaded ()

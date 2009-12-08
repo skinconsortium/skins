@@ -55,22 +55,21 @@ System.onScriptLoaded ()
 
 main_normal.onAction (String action, String param, int x, int y, int p1, int p2, GuiObject _source)
 {
-	//debugint(x);
 	if (strlower(action) == "widget_manager_register")
 	{
 		if(param=="Main Area") widgetType=0;
 		else if(param=="Drawer Area") widgetType=1;
 		else if(param=="Side Area") widgetType=2;
 		
-		/*
 		
-		debugstring("1: "+param,9);
+		
+		//debugstring("1: "+param,9);
 		complete;
 		WidgetPlace wp = _source;
 		wp.name = param;
 		widgetPlaces.addItem(wp);
 		return widgetPlaces.getNumItems()-1;
-		*/
+		
 	}
 	else if (strlower(action) == "widget_manager_check")
 	{
@@ -122,7 +121,7 @@ main_normal.onAction (String action, String param, int x, int y, int p1, int p2,
 			data = source.getObject("@support");
 			if(data) g.setXmlParam("widgetsupport", data.getXmlParam("userdata"));
 
-			g.setXmlParam("userdata", integertostring(x));
+			//g.setXmlParam("userdata", integertostring(x));
 			
 		}
 		
@@ -130,19 +129,19 @@ main_normal.onAction (String action, String param, int x, int y, int p1, int p2,
 		g = grplst.enumItem(widgetNo-1);
 		//if(g==Null) debug("123");
 		if(widgetType==0){
-			g.setXmlParam("widgetpos_main","1");
+			g.setXmlParam("widgetpos_main",integertostring(x));
 		}
 		else if(widgetType==1){
-			g.setXmlParam("widgetpos_drawer","1");
+			g.setXmlParam("widgetpos_drawer",integertostring(x));
 		}
 		else if(widgetType==2){
-			g.setXmlParam("widgetpos_mini","1");
+			g.setXmlParam("widgetpos_mini",integertostring(x));
 		}
-		g.setXmlParam("userdata", integertostring(x));
+		//g.setXmlParam("userdata", integertostring(x));
 		
 		
 		
-		/*debugstring("2: "+param,9);
+		//*debugstring("2: "+param,9);
 		WidgetPlace wp = widgetPlaces.enumItem(x);
 
 		Group source = _source;
@@ -156,14 +155,15 @@ main_normal.onAction (String action, String param, int x, int y, int p1, int p2,
 		if (getPrivateString("cpro.widget-manager.check", integerToString(x)+param, "") != version)
 		{
 			setPrivateString("cpro.widget-manager.check", integerToString(x)+param, version);
-			if (!newWidgetInstalled)
+			/*if (!newWidgetInstalled)
 			{
 				grplstN.removeAll();
-			}
+			}*/
 			
 			newWidgetInstalled = true;
-
-			Group g = grplstN.instantiate("widgets.manager.listitem", 1);
+			g.setXmlParam("hilight", "1");
+		}
+			/*Group g = grplstN.instantiate("widgets.manager.listitem", 1);
 			g.setXmlParam("widgetname", getToken(source.getXmlParam("name"), ";", 0));
 			g.setXmlParam("widgetposition", wp.name);
 			g.setXmlParam("widgetid", param);

@@ -9,9 +9,9 @@
 	<bitmap id="widgets.manager.frame.center.1" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="151" y="0" w="50" h="64"/>
 	<bitmap id="widgets.manager.frame.right.1" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="201" y="0" w="63" h="64"/>
 
-	<bitmap id="widgets.manager.frame.left.2" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="0" y="0" w="150" h="64"/>
-	<bitmap id="widgets.manager.frame.center.2" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="151" y="0" w="50" h="64"/>
-	<bitmap id="widgets.manager.frame.right.2" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="201" y="0" w="63" h="64"/>
+	<bitmap id="widgets.manager.frame.left.2" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="0" y="65" w="150" h="64"/>
+	<bitmap id="widgets.manager.frame.center.2" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="151" y="65" w="50" h="64"/>
+	<bitmap id="widgets.manager.frame.right.2" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="201" y="65" w="63" h="64"/>
 
 	<bitmap id="widgets.manager.info.1" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="75" y="130" w="24" h="20"/>
 	<bitmap id="widgets.manager.info.2" file="@WINAMPPATH@\Plugins\classicPro\engine\image\widgetmanager.png" x="75" y="151" w="24" h="20"/>
@@ -39,8 +39,9 @@
 	<wasabi:button id="dld" x="0" y="30" h="16" w="0" relatw="1" text="Download Widgtes" />
 </groupdef>-->
 
-<groupdef id="widgets.manager.listitem" h="65"> <!--xuitag="Cpro::WidgetmanagerItem">-->
-	<grid fitparent="1" h="64" topleft="widgets.manager.frame.left.1" top="widgets.manager.frame.center.1" topright="widgets.manager.frame.right.1"/>
+<groupdef id="widgets.manager.listitem" h="68"> <!--xuitag="Cpro::WidgetmanagerItem">-->
+	<grid id="f1" fitparent="1" h="64" topleft="widgets.manager.frame.left.1" top="widgets.manager.frame.center.1" topright="widgets.manager.frame.right.1"/>
+	<grid id="f2" visible="0" fitparent="1" h="64" topleft="widgets.manager.frame.left.2" top="widgets.manager.frame.center.2" topright="widgets.manager.frame.right.2"/>
 
 	<layer id="thumbnail" x="2" y="2" h="60" w="60" image="widgets.manager.thumbnail" />
 	
@@ -50,12 +51,12 @@
 	<text id="author" x="68" y="23" h="16" w="-65" relatw="1" bold="0" antialiasing="1" text="by Pieter Nieuwoudt" fontsize="16" color="128,128,128"/>
 
 	<!--<wasabi:button id="support" x="-20" y="-20" h="20" w="20" relatx="1" relaty="1" text="I" cursor="IDC_HAND" color="wasabi.list.text"/>-->
-	<button id="show.mini" x="120" y="42" alpha="50" ghost="1" cursor="IDC_HAND" image="widgets.manager.side.1" hoverimage="widgets.manager.side.2" downimage="widgets.manager.side.3"/>
-	<button id="show.drawer" x="95" y="42" alpha="50" ghost="1" cursor="IDC_HAND" image="widgets.manager.drawer.1" hoverimage="widgets.manager.drawer.2" downimage="widgets.manager.drawer.3"/>
-	<button id="show.main" x="70" y="42" alpha="50" ghost="1" cursor="IDC_HAND" image="widgets.manager.main.1" hoverimage="widgets.manager.main.2" downimage="widgets.manager.main.3"/>
+	<button id="show.mini" x="120" y="43" alpha="50" ghost="1" cursor="IDC_HAND" image="widgets.manager.side.1" hoverimage="widgets.manager.side.2" downimage="widgets.manager.side.3"/>
+	<button id="show.drawer" x="95" y="43" alpha="50" ghost="1" cursor="IDC_HAND" image="widgets.manager.drawer.1" hoverimage="widgets.manager.drawer.2" downimage="widgets.manager.drawer.3"/>
+	<button id="show.main" x="70" y="43" alpha="50" ghost="1" cursor="IDC_HAND" image="widgets.manager.main.1" hoverimage="widgets.manager.main.2" downimage="widgets.manager.main.3"/>
 	
-	<button id="uninstall" x="-50" y="42" relatx="1" alpha="50" ghost="1" cursor="IDC_HAND" image="widgets.manager.unins.1" hoverimage="widgets.manager.unins.2" downimage="widgets.manager.unins.3" tooltip="Uninstall this widget"/>
-	<button id="support" x="-25" y="42" relatx="1" alpha="50" ghost="1" cursor="IDC_HAND" image="widgets.manager.info.1" hoverimage="widgets.manager.info.2" downimage="widgets.manager.info.3" tooltip="Get support for this widget"/>
+	<button id="uninstall" x="-50" y="43" relatx="1" alpha="50" ghost="1" cursor="IDC_HAND" image="widgets.manager.unins.1" hoverimage="widgets.manager.unins.2" downimage="widgets.manager.unins.3" tooltip="Uninstall this widget"/>
+	<button id="support" x="-25" y="43" relatx="1" alpha="50" ghost="1" cursor="IDC_HAND" image="widgets.manager.info.1" hoverimage="widgets.manager.info.2" downimage="widgets.manager.info.3" tooltip="Get support for this widget"/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\scripts\widgetManItem.maki"/>
 </groupdef>
 
@@ -90,23 +91,26 @@
 </groupdef>-->
 
 <groupdef id="widgets.manager.content.all">
-	<GroupList id="grplst" x="5" y="5" h="-10" w="-28" relatw="1" relath="1" />
-	<SC:VScrollBar id="vscroll" x="-18" relatx="1" y="5" w="13" h="-10" relath="1" low="0" high="100"/>
+	<GroupList id="grplst" x="5" y="60" h="-65" w="-28" relatw="1" relath="1" />
+	<SC:VScrollBar id="vscroll" x="-18" relatx="1" y="60" w="13" h="-65" relath="1" low="0" high="100"/>
 </groupdef>
 
 <groupdef id="widgets.manager.content">
 
-	<!--<rect x="0" y="0" h="57" w="0" relatw="1" filled="1" color="255,255,255" />
-	<layer x="0" y="0" h="57" w="150" image="widgets.manager.header" />
-
-	<rect x="0" y="57" h="1" w="0" relatw="1" filled="1" color="0,0,0" alpha="56"/>
-	<rect x="0" y="58" h="1" w="0" relatw="1" filled="1" color="255,255,255" alpha="56"/>
+	<!--
 
 	<wasabi:button id="newW" x="5" y="64" h="16" w="78" text="New Widgets" cursor="IDC_HAND" color="wasabi.list.text"/>
 	<wasabi:button id="allW" x="90" y="64" h="16" w="78" text="All Widgets" cursor="IDC_HAND" color="wasabi.list.text"/>
 	-->
 
 	<!--<group id="widgets.manager.content.new" fitparent="1" visible="0"/>-->
+
+	<rect x="0" y="0" h="57" w="0" relatw="1" filled="1" color="255,255,255" />
+	<layer x="0" y="0" h="57" w="150" image="widgets.manager.header" />
+
+	<rect x="0" y="57" h="1" w="0" relatw="1" filled="1" color="0,0,0" alpha="56"/>
+	<rect x="0" y="58" h="1" w="0" relatw="1" filled="1" color="255,255,255" alpha="56"/>
+
 	<group id="widgets.manager.content.all" fitparent="1" />
 
 	

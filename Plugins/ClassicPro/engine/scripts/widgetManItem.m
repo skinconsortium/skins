@@ -15,6 +15,7 @@ Global Button uninstaller, support;
 Global Group sg;
 
 Global Button showmini, showdrawer, showmain;
+Global String miniX, drawerX, mainX;
 
 System.onScriptLoaded ()
 {
@@ -44,17 +45,28 @@ system.onSetXuiParam (String param, String value)
 		name.setText(value);
 		version.setXmlParam("x", integerToString(66 + name.getTextWidth()));
 	}
+	else if (strlower(param) == "hilight")
+	{
+		sg.getObjecT("f1").hide();
+		sg.getObjecT("f2").show();
+		name.setXmlParam("x", "88");
+		version.setXmlParam("x", integerToString(88 + name.getTextWidth()));
+	}
 	else if (strlower(param) == "widgetpos_mini"){
 		showmini.setXmlParam("ghost", "0");
 		showmini.setAlpha(255);
+		miniX = value;
+		//debug(strlower(value));
 	}
 	else if (strlower(param) == "widgetpos_drawer"){
 		showdrawer.setXmlParam("ghost", "0");
 		showdrawer.setAlpha(255);
+		drawerX = value;
 	}
 	else if (strlower(param) == "widgetpos_main"){
 		showmain.setXmlParam("ghost", "0");
 		showmain.setAlpha(255);
+		mainX = value;
 	}
 	else if (strlower(param) == "widgetauthor")
 	{
@@ -105,4 +117,19 @@ showmain.onLeftClick ()
 	//debug(sg.getXmlParam("userdata"));
 	getParentLayout().sendAction("show_widget", widgetID,stringToInteger(sg.getXmlParam("userdata")),0,0,0);
 }*/
+
+showmain.onLeftClick ()
+{
+	getParentLayout().sendAction("show_widget", widgetID,stringToInteger(mainX),0,0,0);
+}
+
+showdrawer.onLeftClick ()
+{
+	getParentLayout().sendAction("show_widget", widgetID,stringToInteger(drawerX),0,0,0);
+}
+
+showmini.onLeftClick ()
+{
+	getParentLayout().sendAction("show_widget", widgetID,stringToInteger(miniX),0,0,0);
+}
 

@@ -1,6 +1,6 @@
 <groupdef id="centro.widgets.picturebox.dummy.drawer" name="Picture Box" userdata="centro.widgets.picturebox;0" windowtype="centro.widgets.drawer">
 	<guiobject id="@author"			userdata="Martin Poehlmann"/>
-	<guiobject id="@version"		userdata="0.93"/>
+	<guiobject id="@version"		userdata="0.92"/>
 	<guiobject id="@uninstaller"	userdata="Uninstall (Picturebox).exe"/>
 	<guiobject id="@support"		userdata="http://forums.skinconsortium.com/index.php?page=Thread&amp;threadID=1240"/>
 	<guiobject id="@databaseid"		userdata="126"/>
