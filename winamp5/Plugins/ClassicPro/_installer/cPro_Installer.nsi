@@ -185,8 +185,8 @@
 	!include "Languages\cPro_nl_nl.nsh"
 	
 ; Language: Spanish International (3082), [1252], ${LANG_SPANISH_INTERNATIONAL}
-	; !insertmacro MUI_LANGUAGE "SpanishInternational"			
-	; !include "Languages\cPro_es_us.nsh"
+	 !insertmacro MUI_LANGUAGE "SpanishInternational"			
+	 !include "Languages\cPro_es_us.nsh"
 
 ; Language: Italian (1040), [1252], ${LANG_ITALIAN}	
 	; !insertmacro MUI_LANGUAGE "Italian"			
