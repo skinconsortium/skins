@@ -13,7 +13,6 @@ System.onScriptLoaded(){
 	grid_M = XUIGroup.findObject("sc.pg.center");
 	grid_R = XUIGroup.findObject("sc.pg.right");
 	fakeSlider = XUIGroup.findObject("sc.seeker");
-	
 	refreshPos();
 }
 
@@ -63,9 +62,10 @@ refreshPos(){
 	int len = System.getPlayItemLength();
 	
 	int proW;
-	if(len!=0) proW = w/len*System.getPosition();
+	if(len!=0) proW = (w+0)/len*System.getPosition(); //add 2 to the width - so that the progress and thumb doesnt loose contact
 	else proW=0;
 	
+	if(proW>w) proW=w;
 	
 	if(proW<20){
 		grid_M.setXmlParam("w", "-10");
@@ -76,5 +76,4 @@ refreshPos(){
 		grid_R.show();
 	}
 	myGrid.setXmlParam("w", integerToString(proW));
-
 }

@@ -85,8 +85,8 @@
 
 	<grid id="progressbar.bg" left="seeker.bg.left.1" middle="seeker.bg.center.1" right="seeker.bg.right.1" x="10" y="-66" h="20" w="-20" relaty="1" relatw="1"/>
 	<SC:ProgressGrid id="progressbar" x="10" y="-66" h="20" w="-20" relaty="1" relatw="1" orientation="right"/>
-	<Slider	id="seeker2" interval="100" action="SEEK" x="10" y="-66" h="20" w="-20" relaty="1" relatw="1" thumb="seeker.thumb.1" hoverThumb="seeker.thumb.2" downThumb="seeker.thumb.3" ghost="1"/>
-	<Slider	id="seeker"  interval="100" action="SEEK" x="10" y="-66" h="20" w="-20" relaty="1" relatw="1" thumb="seeker.thumb.1" hoverThumb="seeker.thumb.2" downThumb="seeker.thumb.3"	tooltip="Seeker" cursor="IDC_HAND"/>
+	<Slider	id="seeker2" interval="50" action="SEEK" x="10" y="-66" h="20" w="-20" relaty="1" relatw="1" thumb="seeker.thumb.1" hoverThumb="seeker.thumb.2" downThumb="seeker.thumb.3" ghost="1" alpha="253"/>
+	<Slider	id="seeker"  interval="50" action="SEEK" x="10" y="-66" h="20" w="-20" relaty="1" relatw="1" thumb="seeker.thumb.1" hoverThumb="seeker.thumb.2" downThumb="seeker.thumb.3"	tooltip="Seeker" cursor="IDC_HAND" alpha="253"/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\scripts/sc_liveSeeker.maki" param="seeker"/>
 
 	<layer id="volume.bg" x="-109" y="82" relatx="1" tile="1" image="volume.bg" visible="0"/>

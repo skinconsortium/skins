@@ -23,6 +23,8 @@ Function int getChapterCurrent();
 Function gotoChapter(int no);
 Function updatePlayIcon();
 Function setLoopChapter(boolean onOff);
+Function String makeUrlSave(String url);
+Function String replaceString(string baseString, string toreplace, string replacedby);
 
 Global Group main;
 Global GuiList myList;
@@ -85,12 +87,23 @@ System.onScriptUnLoading(){
 }
 
 readXmlList(){
-	String temp = System.getPlayItemString() + ".xml";
+
+	String temp;
 	
-	if(System.strsearch(temp, "file://")!=-1){
-		temp = System.strright(temp, System.strlen(temp)-7);
+	if(System.strleft(System.getPlayItemString(),4)=="http"){
+		//temp = Application.GetSettingsPath()+"\Chapterlist" +makeUrlSave(System.getPlayItemString()) + ".xml";
+		temp = Application.GetSettingsPath() +makeUrlSave(System.getPlayItemString()) + ".xml";
 	}
+	else{
+		temp = System.getPlayItemString() + ".xml";
+		if(System.strsearch(temp, "file://")!=-1) temp = System.strright(temp, System.strlen(temp)-7);
+	}
+
+		//debug(temp);
 	
+	myDoc = new XmlDoc;
+	myDoc.load (temp);
+
 	//if(temp==lastReadXml) return;
 	//lastReadXml = temp;
 
@@ -100,9 +113,6 @@ readXmlList(){
 	_times = new List;
 	_names = new List;
 	
-	myDoc = new XmlDoc;
-	
-	myDoc.load (temp);
 	
 	if(!myDoc.exists()){
 		clearListNow();
@@ -254,10 +264,20 @@ remBut.onLeftClick(){
 }
 
 saveXmlList(){
-	String temp = System.getPlayItemString() + ".xml";
-	if(System.strsearch(temp, "file://")!=-1){
-		temp = System.strright(temp, System.strlen(temp)-7);
+	String temp;
+	
+	if(System.strleft(System.getPlayItemString(),4)=="http"){
+		//temp = Application.GetSettingsPath()+"\Chapterlist" +makeUrlSave(System.getPlayItemString()) + ".xml";
+		temp = Application.GetSettingsPath() +makeUrlSave(System.getPlayItemString()) + ".xml";
 	}
+	else{
+		temp = System.getPlayItemString() + ".xml";
+		if(System.strsearch(temp, "file://")!=-1) temp = System.strright(temp, System.strlen(temp)-7);
+	}
+
+
+
+
 
 	int qwe = ClassicProFile.createFile(temp);
 	ClassicProFile.writeFile(qwe, "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<Chapterlist version=\"1.0\">\n");
@@ -390,4 +410,34 @@ loopCheck.onTimer(){
 System.onStop(){
 	setLoopChapter(false);
 	playingTrack.stop();
+}
+
+String makeUrlSave(String url){
+	String wip;
+	while(wip != url){
+		wip = url;
+		url = replaceString(url, strleft("\ ",1), "_");
+		url = replaceString(url, strleft("/ ",1), "_");
+		url = replaceString(url, strleft(": ",1), "_");
+		url = replaceString(url, strleft("* ",1), "_");
+		url = replaceString(url, strleft("? ",1), "_");
+		url = replaceString(url, strleft("< ",1), "_");
+		url = replaceString(url, strleft("> ",1), "_");
+		url = replaceString(url, strleft("| ",1), "_");
+	}
+	return strleft("\ ",1) + url;
+}
+
+String replaceString(string baseString, string toreplace, string replacedby){
+	if (toreplace == "") return baseString;
+	string sf1 = strupper(baseString);
+	string sf2 = strupper(toreplace);
+	int i = strsearch(sf1, sf2);
+	if (i == -1) return baseString;
+	string left = "", right = "";
+	if (i != 0) left = strleft(baseString, i);
+	if (strlen(basestring) - i - strlen(toreplace) != 0) {
+		right = strright(basestring, strlen(basestring) - i - strlen(toreplace));
+	}
+	return left + replacedby + right;
 }

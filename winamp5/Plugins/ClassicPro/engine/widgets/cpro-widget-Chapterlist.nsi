@@ -16,7 +16,7 @@
 !define CPRO_WIDGET_NAME "Chapterlist"
 
 ; The current version of your widget
-!define CPRO_WIDGET_VERSION "0.5"
+!define CPRO_WIDGET_VERSION "0.6"
 
 ; The current revision of your widget
 !define CPRO_WIDGET_REVISION "0"
@@ -34,7 +34,7 @@
 !define CPRO_WIDGET_NSISFILENAME "cpro-widget-Chapterlist.nsi"
 
 ; Your ClassicPro Directory
-!define CPRO_WIDGET_SOURCEPATH "C:\Program Files\Winamp\Plugins\ClassicPro"
+!define CPRO_WIDGET_SOURCEPATH "C:\Program Files (x86)\Winamp\Plugins\ClassicPro"
 
 ; The name of cPro Widget uninstaller
 !define CPRO_WIDGET_UNINSTALLER "Uninstall (${CPRO_WIDGET_NAME}).exe"
@@ -76,7 +76,7 @@
 !define CPRO_CRS "©"	
 
 ; Current version of ClassicPro 
-!define CPRO_VERSION "1.12"
+!define CPRO_VERSION "1.13"
 
 ;-------------------------------------------------------------------------------------------
 ; Always include this file

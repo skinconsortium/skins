@@ -330,6 +330,7 @@ vol_slider.onSetPosition(int newpos){
 	if(mute_but.getCurCfgVal()==1 && newpos>0){
 		mute_but.setActivated(false);
 		setPrivateInt(getSkinName(), "muted", 0);
+		stopFade();
 	}
 }
 vol_slider.onPostedPosition(int newpos){
@@ -337,6 +338,7 @@ vol_slider.onPostedPosition(int newpos){
 	if(mute_but.getCurCfgVal()==1 && newpos>0){
 		mute_but.setActivated(false);
 		setPrivateInt(getSkinName(), "muted", 0);
+		stopFade();
 	}
 }
 
