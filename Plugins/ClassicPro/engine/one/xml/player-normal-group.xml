@@ -111,7 +111,7 @@
 	<button id="eq.set.top" x="30" y="12" w="25" h="20" rectrgn="1"/>
 	<button id="eq.set.cen" x="30" y="35" w="25" h="20" rectrgn="1"/>
 	<button id="eq.set.bot" x="30" y="58" w="25" h="20" rectrgn="1"/>
-
+	<group id="centro.drawer.eq.content.overlay" fitparent="1"/>
 </groupdef>
 
 <groupdef id="equalizer.content.holder">
@@ -149,6 +149,7 @@
 		tooltip="Open presets"
 	/>
 
+	<group id="centro.drawer.eq.overlay" fitparent="1"/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\one\scripts\eq.maki"/>
 </groupdef>
 
