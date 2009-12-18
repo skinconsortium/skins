@@ -8,8 +8,8 @@
 	<comment>Graphics by the the original Winamp development team</comment>
 	<author gaybag="SC">Skin Consortium</author>
 	<email>classicpro@skinconsortium.com</email>
-	<homepage>http://cpro.skinconsortium.com</homepage>
 	<screenshot>screenshot.png</screenshot>
+	<homepage>http://cpro.skinconsortium.com</homepage>
 </skininfo>
 	<scripts> <script file="warning_1.14.maki" param="@COLORTHEMESPATH@"/> </scripts>
 	<groupdef id="centro.side.overlay">
