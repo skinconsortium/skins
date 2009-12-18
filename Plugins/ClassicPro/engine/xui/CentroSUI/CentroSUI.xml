@@ -32,6 +32,7 @@
 	<button action="VIS_Menu" x="-52" y="1" relatx="1" rectrgn="1" image="vis.button.presets.normal" hoverImage="vis.button.presets.hover" downImage="vis.button.presets.down" tooltip="Presets"/>
 	<button action="VIS_Cfg" x="-27" y="1" relatx="1" rectrgn="1" image="video.button.cfg.normal" hoverImage="video.button.cfg.hover" downImage="video.button.cfg.down" tooltip="Preset Editor / Options"/>
 	<text id="centro.visname" ticker="1" x="105" y="4" h="13" w="-163" relatw="1" dblclickaction="WA5:Prefs" dblclickparam="33" align="center" color="ComponentTab.Status.Text" font="cpro.status.font" move="1"/>
+	<group id="cpro.tab.visualization.buttons.overlay" fitparent="1"/>
 </groupdef>
 <groupdef id="centro.visualization" name="Visualization">
 	<rect id="centro.windowholder.visualization.bg" x="1" y="1" w="-2" relatw="1" h="-27" relath="1" color="0,0,0" filled="1"/>
@@ -102,7 +103,7 @@
 		bottomleft="player.suiframe.7" bottom="player.suiframe.8" bottomright="player.suiframe.9"
 		regionop="1" move="1"
 	/>
-	<group id="centro.sui.overlay" fitparent="1"/>
+	<group id="cpro.sui.overlay" fitparent="1"/>
 
 	<Cpro:Tabs id="Cpro.tabs" x="0" y="0" h="33" w="-50" relatw="1"/>
 	<NStatesButton id="tog.drawer" x="-48" y="5" relatx="1" image="drawer.1." hoverimage="drawer.2." downimage="drawer.3." rectrgn="1" nstates="2" cfgvals="0;1"/>
@@ -177,7 +178,7 @@
 	/>
 	<layer x="-6" y="-27" relatx="1" relaty="1" image="player.gframe.9"/>
 	<group id="centro.bottomleftgrid" x="0" y="-27" w="-6" h="27" relaty="1" relatw="1"/>
-	<group id="centro.side.overlay" fitparent="1"/>
+	<group id="cpro.side.overlay" fitparent="1"/>
 
 	<group id="centro.playlist.directory.cov" fitparent="1" visible="0"/>
 	<group id="centro.playlist.directory.vid" fitparent="1" visible="0"/>
