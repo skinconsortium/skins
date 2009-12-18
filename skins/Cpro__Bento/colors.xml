@@ -80,6 +80,7 @@
 	<bitmap id="custom.xfade" file="custom-xfade.png" gammagroup="n.Button.Icon"/>
 	<bitmap id="custom.eqon" file="custom-eqon.png" gammagroup="n.Button.Icon"/>
 	<bitmap id="custom.eqauto" file="custom-eqauto.png" gammagroup="n.Button.Icon"/>
+	<bitmap id="custom.visran" file="custom-visran.png" gammagroup="n.Button.Icon"/>
 
 	<bitmap id="custom.winamp" file="custom-winamp.png" gammagroup="n.Background.Alt"/>
 	<bitmap id="player.gframe.7.alt.overlay" file="custom-bottomleft.png" gammagroup="n.Color.ListBg"/>
