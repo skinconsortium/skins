@@ -3,15 +3,41 @@
 <WasabiXML version="1.34">
 
 <skininfo>
-	<version>1.13</version>
+	<version>1.14</version>
 	<name>cPro - Bento</name>
 	<comment>Graphics by the the original Winamp development team</comment>
-	<author gaybag="pjn123">Skin Consortium</author>
+	<author gaybag="SC">Skin Consortium</author>
 	<email>classicpro@skinconsortium.com</email>
 	<homepage>http://cpro.skinconsortium.com</homepage>
 	<screenshot>screenshot.png</screenshot>
 </skininfo>
-	<scripts> <script file="warning_1.13.maki" param="@COLORTHEMESPATH@"/> </scripts>
+	<scripts> <script file="warning_1.14.maki" param="@COLORTHEMESPATH@"/> </scripts>
+	<groupdef id="centro.side.overlay">
+		<rect x="1" y="1" w="-2" h="-19" relatw="1" relath="1" filled="1" color="wasabi.list.background" ghost="1"/>
+	</groupdef>
+	<groupdef id="centro.drawer.overlay">
+		<rect x="1" y="1" w="-2" h="-19" relatw="1" relath="1" filled="1" color="wasabi.list.background" ghost="1"/>
+	</groupdef>
+	<groupdef id="centro.drawer.eq.content.overlay">
+		<togglebutton x="298" y="17" w="33" h="19" activeImage="custom.xfade" cfgattrib="{FC3EAF78-C66E-4ED2-A0AA-1494DFCC13FF};Enable crossfading" ghost="1"/>	
+	</groupdef>
+	<groupdef id="centro.drawer.eq.overlay">
+		<togglebutton x="0" y="-24" w="32" h="21" relaty="1" activeImage="custom.eqon" action="EQ_TOGGLE" ghost="1"/>
+		<togglebutton x="29" y="-25" w="42" h="22" relaty="1" activeImage="custom.eqauto" action="EQ_AUTO" ghost="1"/>
+	</groupdef>
+	<groupdef id="centro.sui.overlay">
+		<rect x="1" y="1" w="-2" h="28" relatw="1"  filled="1" color="wasabi.list.background" ghost="1"/>
+	</groupdef>
+	<groupdef id="cpro.normal.overlay">
+		<layer x="35" y="7" image="custom.winamp" ghost="1"/>
+		<NStatesButton x="-108" y="-47" w="33" h="31" relatx="1" relaty="1" image="custom.shuffle." hoverimage="custom.shuffle." downimage="custom.shuffle." nstates="2" cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Shuffle" ghost="1"/>
+		<NStatesButton x="-76" y="-45" w="34" h="29" relatx="1" relaty="1" image="custom.repeat." hoverimage="custom.repeat." downimage="custom.repeat." rectrgn="1" nstates="3" cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Repeat" cfgvals="0;1;-1" ghost="1"/>
+	</groupdef>
+	<groupdef id="cpro.shade.overlay">
+		<layer x="35" y="7" image="custom.winamp" ghost="1"/>
+	</groupdef>
+	<include file="color-presets.xml"/>
 	<include file="colors.xml"/>
 	<include file="@COLORTHEMESPATH@/../../Plugins/classicPro/engine/load.xml"/>
+	<include file="custom-element-overide.xml"/>
 </WasabiXML>
