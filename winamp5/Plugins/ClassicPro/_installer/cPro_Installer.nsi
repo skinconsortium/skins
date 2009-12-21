@@ -680,19 +680,20 @@ Section "$(CPro_CProFiles)" "CPro_Sec_CProFiles"
 		File "..\engine\xui\KeepRatioLayer\*.m"
 		File "..\engine\xui\KeepRatioLayer\*.maki"
 
+!if ${CPRO_BUILD_TYPE} == "NIGHTLY"
 ; cPro::Flex
-;	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\flex\scripts
-;		File /nonfatal "..\engine\flex\scripts\*.m"
-;		File /nonfatal "..\engine\flex\scripts\*.maki"
+	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\flex\scripts
+		File /nonfatal "..\engine\flex\scripts\*.m"
+		File /nonfatal "..\engine\flex\scripts\*.maki"
 
-;	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\flex\xml
-;		File /nonfatal "..\engine\flex\xml\*.xml"
+	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\flex\xml
+		File /nonfatal "..\engine\flex\xml\*.xml"
 		
-;	SetOutPath "$INSTDIR\Skins\cProFlex - iFlex"
-;		File /nonfatal /r "${CPRO_WINAMP_SKINS}\cProFlex - iFlex\"
+	SetOutPath "$INSTDIR\Skins"
+		File /nonfatal /r "${CPRO_WINAMP_SKINS}\cProFlex - iFlex\cProFlex - iFlex.wal"
 ;	SetOutPath "$INSTDIR\Skins\cProFlex - Xenolith"
-;		File /nonfatal /r "${CPRO_WINAMP_SKINS}\cProFlex - Xenolith\"
-
+;		File /nonfatal /r /x *.psd /x .svn "${CPRO_WINAMP_SKINS}\cProFlex - Xenolith"
+!endif
 	SetOutPath "$INSTDIR\Skins"
 		File "${CPRO_WINAMP_SKINS}\cPro__Bento.wal"
 		
