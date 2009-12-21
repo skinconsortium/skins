@@ -5,7 +5,7 @@
 	<layer id="two.info.seeker.inactive" x="0" y="0" w="0" relatw="1" image="info.bg.seeker.0"/>
 	<layer id="two.info.seeker.active" x="0" y="0" w="30" image="info.bg.seeker.1"/>
 	<layer id="two.info.seeker.finder" x="0" y="0" w="0" image="info.bg.seeker.3" alpha="200"/> <!-- Remove alpha l@r... image can do it-->
-	<slider id="two.info.seeker.slider.0" x="0" y="0" w="0" h="0" relatw="1" relath="1" action="SEEK" thumb="info.seeker.thumb"/>
+	<slider id="two.info.seeker.slider.0" x="0" y="0" w="0" h="0" relatw="1" relath="1" action="SEEK" thumb="info.seeker.thumb" interval="50"/>
 	<slider id="two.info.seeker.slider.1" x="0" y="0" w="0" h="0" relatw="1" relath="1" action="SEEK" thumb="info.seeker.thumb" cursor="IDC_HAND"/>
 
 	<text id="two.info.text.title" x="0" y="0" w="0" h="24" relatw="1" align="center" text="Long Way Home [Steve Murano Remix]" fontsize="20" color="black" ghost="1" font="Calibri"/>
@@ -17,8 +17,8 @@
 	<group id="two.info.seeker" x="64" y="0" w="-128" h="0" relatw="1" relath="1"/>
 	<layer x="-64" y="0" relatx="1" image="info.bg.other" regionop="1"/>
 
-	<text id="two.info.text.tracktime" x="4" y="2" w="66" h="20" align="center" valign="center" text="" fontsize="22" color="black" font="Calibri"/>
-	<text id="two.info.text.totaltime" x="4" y="18" w="66" h="20" align="center" valign="center" text="" fontsize="16" color="black" font="Calibri" alpha="150"/>
+	<text id="two.info.text.tracktime" x="8" y="2" w="56" h="20" align="center" valign="center" text="" fontsize="22" color="black" font="Calibri"/>
+	<text id="two.info.text.totaltime" x="8" y="18" w="56" h="20" align="center" valign="center" text="" fontsize="16" color="black" font="Calibri" alpha="150"/>
 	<text id="two.info.text.trackevent" x="0" y="0" w="0" h="0" display="TIME" visible="0"/>
 
 	<text id="two.info.text.other.kbps" x="-64" y="3" w="52" h="12" relatx="1" align="center" valign="center" text="" fontsize="14" color="black" font="Calibri"/>
@@ -40,12 +40,25 @@
 		gammagroup="n.Vis"
 	/>
 </groupdef>
-<groupdef id="two.playback.volume">
-	<layer id="two.playback.volume.left" x="-121" y="0" relatx="1" image="playback.bg.right.2.mute"/>
+<groupdef id="two.playback.buttons.volume" w="67" h="30">
+	<slider x="4" y="0" w="58" h="30" action="VOLUME"/>
+</groupdef>
+<groupdef id="two.playback.buttons.shufrep" w="67" h="30">
+	<NStatesButton x="0" y="0" image="playback.button.shuf.1." hoverimage="playback.button.shuf.2." downimage="playback.button.shuf.3." rectrgn="1" nstates="2" tooltip="Toggle Playlist Shuffling" cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Shuffle"/>
+	<NStatesButton x="30" y="0" image="playback.button.rep.1." hoverimage="playback.button.rep.2." downimage="playback.button.rep.3." rectrgn="1" nstates="3" tooltip="Toggle Playlist/Song Repeating" cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Repeat" cfgvals="0;1;-1"/>
 </groupdef>
 <groupdef id="two.playback.buttons" w="224">
 	<layer id="two.playback.buttons.left" x="0" y="0" image="playback.bg.buttons.left"/>
 	<layer id="two.playback.buttons.right" x="157" y="0" image="playback.bg.buttons.right.1"/>
+	<button x="7" y="0" action="PREV" image="playback.button.prev.1" hoverimage="playback.button.prev.2" downimage="playback.button.prev.3"/>
+	<button id="two.playback.play" x="37" y="0" action="PLAY" image="playback.button.play.1" hoverimage="playback.button.play.2" downimage="playback.button.play.3"/>
+	<button id="two.playback.paus" x="37" y="0" action="PAUSE" image="playback.button.paus.1" hoverimage="playback.button.paus.2" downimage="playback.button.paus.3"/>
+	<button x="67" y="0" action="NEXT" image="playback.button.next.1" hoverimage="playback.button.next.2" downimage="playback.button.next.3"/>
+	<button x="97" y="0" action="STOP" image="playback.button.stop.1" hoverimage="playback.button.stop.2" downimage="playback.button.stop.3"/>
+	<button x="127" y="0" action="EJECT" image="playback.button.open.1" hoverimage="playback.button.open.2" downimage="playback.button.open.3"/>
+
+	<group id="two.playback.buttons.volume" x="157" y="0" visible="0"/>
+	<group id="two.playback.buttons.shufrep" x="157" y="0" visible="0"/>
 </groupdef>
 <groupdef id="two.playback" autoheightsource="two.playback.left">
 	<layer id="two.playback.fill" x="8" y="0" w="-16" relatw="1" image="playback.bg.fill" regionop="1"/>
@@ -76,13 +89,15 @@
 	<layer id="two.frame.2" x="90" y="0" w="-240" relatw="1" image="frame.top" regionop="1"/>
 	<layer id="two.frame.3" x="-150" y="0" relatx="1" image="frame.topright" regionop="1"/>
 	<layer id="two.frame.7" x="0" y="-8" relaty="1" image="frame.bottomleft" regionop="1" resize="bottomleft"/>
-	<layer id="two.frame.8" x="8" y="-8" w="-16" relaty="1" relatw="1" image="frame.bottom" regionop="1" resize="bottom"/>
-	<layer id="two.frame.9" x="-8" y="-8" relatx="1" relaty="1" image="frame.bottomright" regionop="1" resize="bottomright"/>
+	<layer id="two.frame.8" x="8" y="-8" w="-16" relaty="1" relatw="1" image="frame.bottom" regionop="1" move="0" cursor="IDC_SIZENS"/>
+	<layer id="two.frame.9" x="-8" y="-8" relatx="1" relaty="1" image="frame.bottomright" regionop="1" move="0" cursor="IDC_SIZENWSE"/>
 
+	
 	<!-- These layers will have their y & h set by layout.maki -->
 	<layer id="two.frame.4" x="0" relath="1" image="frame.left" regionop="1" resize="left"/>
 	<layer id="two.frame.5" x="8" w="-16" relatw="1" relath="1" image="frame.center" regionop="1"/>
-	<layer id="two.frame.6" x="-8" relatx="1" relath="1" image="frame.right" regionop="1" resize="right"/>
+	<layer id="two.frame.6" x="-8" relatx="1" relath="1" image="frame.right" regionop="1" move="0" cursor="IDC_SIZEWE"/>
+	<script file="scripts/layout-resizer.maki"/>
 
 	<!-- This group will have it's y & h set by layout.maki -->
 	<group id="two.screen" x="0" w="0" relatw="1"/>

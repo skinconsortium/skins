@@ -1,6 +1,6 @@
 #include <lib/std.mi>
 
-Function setSeekerPos(int newpos);
+Function setSeekerPos();
 
 Global Group g;
 Global Container c;
@@ -21,8 +21,9 @@ System.onScriptUnloading(){
 }
 
 s_seeker0.onPostedPosition(int newpos){
-	setSeekerPos(newpos);
+	setSeekerPos();
 }
+
 s_seeker1.onSetPosition(int newpos){
 	int temp = g.getWidth();
 	l_seekerFinder.setXmlParam("w", integerToString(temp*newpos/255));
@@ -31,14 +32,22 @@ s_seeker1.onSetFinalPosition(int pos){
 	l_seekerFinder.setXmlParam("w", "0");
 }
 g.onResize(int x, int y, int w, int h){
-	setSeekerPos(s_seeker0.getPosition());
+	setSeekerPos();
 }
 
-setSeekerPos(int newpos){
+setSeekerPos(){
 	int temp = g.getWidth();
-	l_seekerInactive.setXmlParam("x", integerToString(temp*newpos/255));
-	l_seekerInactive.setXmlParam("w", integerToString(temp-temp*newpos/255));
-	l_seekerActive.setXmlParam("w", integerToString(temp*newpos/255));
+	int newpos = System.getPosition();
+	int fullpos = System.getPlayItemLength();
+	
+	if(System.getStatus()==STATUS_STOPPED || fullpos==0){
+		newpos = 0;
+		fullpos = 1;
+	}
+	
+	l_seekerInactive.setXmlParam("x", integerToString(temp*newpos/fullpos));
+	l_seekerInactive.setXmlParam("w", integerToString(temp-temp*newpos/fullpos));
+	l_seekerActive.setXmlParam("w", integerToString(temp*newpos/fullpos));
 }
 
 
@@ -47,4 +56,8 @@ s_seeker1.onEnterArea(){
 }
 s_seeker1.onLeaveArea(){
 	l_seekerActive.setXmlParam("image", "info.bg.seeker.1");
+}
+
+System.onStop(){
+	setSeekerPos();
 }

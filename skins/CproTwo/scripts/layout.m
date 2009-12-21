@@ -1,14 +1,14 @@
 #include <lib/std.mi>
 
 #define i_info 40 
+#define i_playback 30 
 
 Function buildSkin();
 
 Global Group g, g_screen, g_info, g_playback;
 Global Container c;
 Global Layer l_frame4, l_frame5, l_frame6;
-Global int i_titlebar, i_playback;
-
+Global int i_titlebar;
 
 System.onScriptLoaded() {
 	g = getScriptGroup();
@@ -23,8 +23,6 @@ System.onScriptLoaded() {
 	Map m = new Map;
 	m.loadMap("frame.top");
 	i_titlebar = m.getHeight();
-	m.loadMap("playback.bg.fill");
-	i_playback = m.getHeight();
 	delete m;
 	
 	g.setXmlParam("minimum_h",integerToString(i_titlebar+i_info+i_playback+8));
