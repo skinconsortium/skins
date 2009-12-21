@@ -81,9 +81,9 @@
 	
 	<cPro:About id="about.5"
 		x="0" y="0" visible="0"
-		about_name="Pawel Porwisz" about_alias="pepe" about_age="5;1;1979"
+		about_name="Pawel Porwisz" about_alias="Pepe" about_age="5;1;1979"
 		about_country="POLAND"	about_image="about.gfx.pawel"
-		credits="Credits:\n- Translator\n- CPro Installer\n- Beta testing"
+		credits="Credits:\n - Translator\n - CPro Installer\n - Beta testing"
 	/>
 
 	<cPro:About id="about.6"
