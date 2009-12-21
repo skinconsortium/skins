@@ -4,6 +4,7 @@ Function int getChannels (); // returning 1 for mono, 2 for stereo, more for mul
 Function String getBitrate();
 Function String getFrequency();
 Function updateInfo();
+Function int getNumOfSeps();
 
 Global Group g, g_seeker;
 Global Text t_trackTime, t_totalTime, t_timeEvent;
@@ -31,6 +32,8 @@ System.onScriptLoaded() {
 	waitForReturn = new Timer;
 	waitForReturn.setDelay(100);
 	updateInfo();
+	
+	//debugint(stringToInteger("Phil Collins"));
 }
 
 System.onscriptunloading(){
@@ -67,9 +70,37 @@ waitForReturn.onTimer(){
 	recheck.stop();
 	updateInfo();
 }
+
+int getNumOfSeps(){
+	int i = 0;
+	while(true){
+		if(System.getToken(System.getPlayItemDisplayTitle(), "- ", i)=="") return i;
+		else i++;
+	}
+}
+
 updateInfo(){
-	t_nameTop.setText(System.getPlayItemMetaDataString("title"));
-	t_nameBottom.setText("by " + System.getPlayItemMetaDataString("artist"));
+	String top = System.getPlayItemMetaDataString("title");
+	String bottom = System.getPlayItemMetaDataString("artist");
+	
+	if(top=="" || bottom==""){
+		int sep = getNumOfSeps();
+	///debugint(sep);
+		//debugint(sep);
+		//  079 - Keyshia Cole ft. Missy Elliott & Lil Kim - Let It Go.MP3
+		if(top==""){
+			if(sep>0) top = System.getToken(System.getPlayItemDisplayTitle(), "-", sep-1);
+			else top = System.getToken(System.getPlayItemDisplayTitle(), "-", 0);
+		}
+		
+		if(bottom==""){
+			if(sep>0) bottom = System.getToken(System.getPlayItemDisplayTitle(), "-", sep-2);
+			else bottom = "Unknown Artist";
+		}
+	}
+
+	t_nameTop.setText(top);
+	t_nameBottom.setText("by " + bottom);
 
 	float rawsize = System.getFileSize(strmid(System.getPlayItemString(), 7, strlen(System.getPlayItemString())-7));
 	String sizeType = "mb";
@@ -90,6 +121,8 @@ updateInfo(){
 	t_hz.setText(getFrequency()+"hz");
 	
 	//Refresh if NA
+	if(System.getStatus() != STATUS_PLAYING) return;
+	
 	String sit = getSongInfoText();
 	if (sit != ""){
 		waitForReturn.stop();
