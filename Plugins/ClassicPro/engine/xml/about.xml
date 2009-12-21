@@ -32,15 +32,15 @@
 	<group id="about.7.names" x="50" y="20" h="350"/>
 </groupdef>
 <groupdef id="about.7.names">
-	<text fitparent="1" ghost="1" text="French\n- Julien Victor (Veekee)\n\nGerman\n- Christoph Grether (Koopa)\n- Marko Egger (mynameisnobody)\n\nPolish\n- Pawel Porwisz (pepe)\n\nPortugueseBR\n- Anderson Silva (candiba)\n\nRomanian\n- Catalin Zamfirescu" color="255,255,255" shadowcolor="0,0,0" shadowx="1" shadowy="1" font="Tahoma"/>
+	<text fitparent="1" ghost="1" text="Danish\n- Andreas Brandenborg (and1945)\n\nDutch\n- Mohamed Dahhouch (Muhda)\n\nFrench\n- Julien Victor (Veekee)\n\nGerman\n- Marko Egger (Mynameisnobody)\n- Christoph Grether (Koopa)\n\nPolish\n- Pawel Porwisz (Pepe)" color="255,255,255" shadowcolor="0,0,0" shadowx="1" shadowy="1" font="Tahoma"/>
 </groupdef>
 
 <groupdef id="about.8">
 	<text x="20" y="30" text="Translators..." fontsize="26" color="255,255,255" shadowcolor="0,0,0" shadowx="1" shadowy="1" font="Tahoma"/>
-	<group id="about.8.names" x="50" y="10" h="310"/>
+	<group id="about.8.names" x="50" y="20" h="350"/>
 </groupdef>
 <groupdef id="about.8.names">
-	<text fitparent="1" ghost="1" text="\n\nRussian\n- Aleksey Potashnikoff (NickMikh)\n- Alexander Nureyev (VIPer)\n\nTurkish\n- Mertcan Kaya (MerTcaN)\n- Ali Saryodlu\n\nDutch\n- Mohamed Dahhouch (Muhda)\n\nDanish\n- Andreas Brandenborg" color="255,255,255" shadowcolor="0,0,0" shadowx="1" shadowy="1" font="Tahoma"/>
+	<text fitparent="1" ghost="1" text="PortugueseBR\n- Anderson Silva (Candiba)\n\nRomanian\n- Catalin Zamfirescu (x10winamp)\n\nRussian\n- Aleksey Potashnikoff (NickMikh)\n- Alexander Nureyev (VIPer)\n\nSpanish (International)\n- Manuel Fernando Gutierrez\n\nTurkish\n- Mertcan Kaya (MerTcaN)\n- Ali Saryodlu" color="255,255,255" shadowcolor="0,0,0" shadowx="1" shadowy="1" font="Tahoma"/>
 </groupdef>
 
 <groupdef id="about.9">
