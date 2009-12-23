@@ -40,6 +40,10 @@
 		gammagroup="n.Vis"
 	/>
 </groupdef>
+<groupdef id="two.playback.volume">
+	<layer id="two.playback.volume.left" x="-121" y="0" relatx="1" image="playback.bg.right.2.mute"/>
+	<slider x="-88" y="0" w="76" h="30" relatx="1" action="VOLUME"/>
+</groupdef>
 <groupdef id="two.playback.buttons.volume" w="67" h="30">
 	<slider x="4" y="0" w="58" h="30" action="VOLUME"/>
 </groupdef>
