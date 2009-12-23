@@ -10,11 +10,16 @@ Global Layout mylayout;
 //Global Layer resize1, resize2, resize3, resize4, resize6, resize7, resize8, resize9;
 Global Layer resize6, resize8, resize9;
 Global Boolean mouseDown, docked;
-Global int rres;
+Global int rres, i_titlebar;
 
 System.onScriptLoaded() {
 	rres=20;
 	mainGroup = getScriptGroup();
+
+	Map m = new Map;
+	m.loadMap("frame.top");
+	i_titlebar = m.getHeight();
+	delete m;
 
 	
 	main = System.getContainer("main");
@@ -71,7 +76,7 @@ saveResize(int x, int y, int w, int h){
 	if(getPublicInt("cPro.maximized", 0)==1) return;
 	
 	if(w<240) w=240;
-	if(h<240) h=200;
+	if(h<i_titlebar+40+30+8+40) h=i_titlebar+40+30+8;
 	
 	myLayout.resize(x,y,w,h);
 }
