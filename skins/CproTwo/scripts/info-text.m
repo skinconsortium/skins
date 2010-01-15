@@ -6,7 +6,7 @@ Function String getFrequency();
 Function updateInfo();
 Function int getNumOfSeps();
 
-Global Group g, g_seeker;
+Global Group g, g_seeker, g_texttime, g_textother;
 Global Text t_trackTime, t_totalTime, t_timeEvent;
 Global Text t_nameTop, t_nameBottom;
 Global Text t_kbps, t_size, t_hz;
@@ -14,13 +14,16 @@ Global Timer waitForReturn, recheck;
 
 System.onScriptLoaded() {
 	g = getScriptGroup();
-	t_trackTime = g.getObject("two.info.text.tracktime");
-	t_totalTime = g.getObject("two.info.text.totaltime");
-	t_timeEvent = g.getObject("two.info.text.trackevent");
 	
-	t_kbps = g.getObject("two.info.text.other.kbps");
-	t_size = g.getObject("two.info.text.other.size");
-	t_hz = g.getObject("two.info.text.other.hz");
+	g_texttime = g.getObject("two.info.text.time");
+	t_trackTime = g_texttime.getObject("two.info.text.tracktime");
+	t_totalTime = g_texttime.getObject("two.info.text.totaltime");
+	t_timeEvent = g_texttime.getObject("two.info.text.trackevent");
+	
+	g_textother = g.getObject("two.info.text.other");
+	t_kbps = g_textother.getObject("two.info.text.other.kbps");
+	t_size = g_textother.getObject("two.info.text.other.size");
+	t_hz = g_textother.getObject("two.info.text.other.hz");
 	
 	g_seeker = g.getObject("two.info.seeker");
 	t_nameTop = g_seeker.getObject("two.info.text.title");
@@ -32,6 +35,8 @@ System.onScriptLoaded() {
 	waitForReturn = new Timer;
 	waitForReturn.setDelay(100);
 	updateInfo();
+	
+	if(System.getStatus() != STATUS_STOPPED) g_textother.show();
 	
 	//debugint(stringToInteger("Phil Collins"));
 }
@@ -53,9 +58,11 @@ System.onTitleChange(String newtitle){
 
 System.onStop(){
 	recheck.stop();
+	g_textother.hide();
 }
 System.onPlay(){
 	recheck.start();
+	g_textother.show();
 }
 System.onPause(){
 	recheck.stop();
@@ -100,7 +107,7 @@ updateInfo(){
 	}
 
 	t_nameTop.setText(top);
-	t_nameBottom.setText("by " + bottom);
+	t_nameBottom.setText(bottom);
 
 	float rawsize = System.getFileSize(strmid(System.getPlayItemString(), 7, strlen(System.getPlayItemString())-7));
 	String sizeType = "mb";

@@ -1,9 +1,9 @@
 <elements>
 
 	<!-- Frame Section -->
-	<bitmap id="frame.topleft" file="frame.png" x="0" y="0" w="90" gammagroup="n.Frame"/>
-	<bitmap id="frame.top" file="frame.png" x="91" y="0" w="10" gammagroup="n.Frame"/>
-	<bitmap id="frame.topright" file="frame.png" x="102" y="0" w="150" gammagroup="n.Frame"/>
+	<bitmap id="frame.topleft" file="frame.png" x="0" y="0" w="105" gammagroup="n.Frame"/>
+	<bitmap id="frame.top" file="frame.png" x="106" y="0" w="10" gammagroup="n.Frame"/>
+	<bitmap id="frame.topright" file="frame.png" x="117" y="0" w="135" gammagroup="n.Frame"/>
 	<bitmap id="frame.left" file="frame.png" x="253" y="0" w="8" gammagroup="n.Frame"/>
 	<bitmap id="frame.right" file="frame.png" x="262" y="0" w="8" gammagroup="n.Frame"/>
 	<bitmap id="frame.bottomleft" file="frame.png" x="271" y="0" w="8" h="8" gammagroup="n.Frame"/>
@@ -66,13 +66,25 @@
 	<bitmap id="playback.button.rep.2.2" file="playback.png" x="296" y="155" w="30" h="30" gammagroup="n.Playback.Button"/>
 	<bitmap id="playback.button.rep.3.2" file="playback.png" x="296" y="186" w="30" h="30" gammagroup="n.Playback.Button"/>
 
+	<bitmap id="playback.volume.small.1" file="playback_vol.png" x="0" y="0" h="30" gammagroup="xxx"/>
+	<bitmap id="playback.volume.small.2" file="playback_vol.png" x="0" y="31" h="30" gammagroup="xxx"/>
+	<bitmap id="playback.volume.small.3" file="playback_vol.png" x="0" y="62" h="30" gammagroup="xxx"/>
+
+	<bitmap id="playback.volume.big.1" file="playback_vol.png" x="0" y="94" h="30" gammagroup="xxx"/>
+	<bitmap id="playback.volume.big.2" file="playback_vol.png" x="0" y="125" h="30" gammagroup="xxx"/>
+	<bitmap id="playback.volume.big.3" file="playback_vol.png" x="0" y="156" h="30" gammagroup="xxx"/>
+
 	
 	<!-- Info Section -->
 	<bitmap id="info.bg.time" file="info.png" x="0" y="0" w="64" h="40" gammagroup="n.Info"/>
+	<bitmap id="info.bg.time.play" file="info.png" x="0" y="41" w="64" h="40" gammagroup="n.Info"/>
+	<bitmap id="info.bg.time.pause" file="info.png" x="0" y="82" w="64" h="40" gammagroup="n.Info"/>
+	<bitmap id="info.bg.time.stop" file="info.png" x="0" y="123" w="64" h="40" gammagroup="n.Info"/>
 	<bitmap id="info.bg.seeker.0" file="info.png" x="65" y="0" w="10" h="40" gammagroup="n.Info"/>
 	<bitmap id="info.bg.seeker.1" file="info.png" x="65" y="41" w="10" h="40" gammagroup="n.Info"/>
 	<bitmap id="info.bg.seeker.2" file="info.png" x="65" y="82" w="10" h="40" gammagroup="n.Info"/>
 	<bitmap id="info.bg.seeker.3" file="info.png" x="65" y="123" w="10" h="40" gammagroup="n.Info"/>
+	<bitmap id="info.bg.seeker.light" file="info-seeklight.png" h="40" gammagroup="n.Info"/>
 	<bitmap id="info.bg.other" file="info.png" x="76" y="0" w="64" h="40" gammagroup="n.Info"/>
 
 	<bitmap id="info.seeker.thumb" file="images/seekerthumb.png"/>
