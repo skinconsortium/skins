@@ -31,37 +31,34 @@ System.onScriptLoaded() {
 }
 
 g.onResize(int x, int y, int w, int h){
-	if(w<406){
+	if(w<398){
 		l_left.setXmlParam("image","playback.bg.left.1");
-		l_right.setXmlParam("image","playback.bg.right.1");
-		l_right.setXmlParam("x","-8");
+		l_right.hide();
 		l_butright.setXmlParam("image","playback.bg.buttons.right.1");
 		g_vis.hide();
 		g_volume.hide();
 		g_butVol.show();
 		g_butShufRep.hide();
 	}
-	else if(w<466){
+	else if(w<458){
 		l_left.setXmlParam("image","playback.bg.left.2");
-		l_right.setXmlParam("image","playback.bg.right.2");
-		l_right.setXmlParam("x","-91");
+		l_right.show();
 		l_butright.setXmlParam("image","playback.bg.buttons.right.2");
 		g_vis.show();
 		g_volume.show();
-		g_volume.setXmlParam("x","-91");
-		g_volume.setXmlParam("w","91");
+		g_volume.setXmlParam("x","-83");
+		g_volume.setXmlParam("w","83");
 		g_butVol.hide();
 		g_butShufRep.show();
 	}
 	else{
 		l_left.setXmlParam("image","playback.bg.left.2");
-		l_right.setXmlParam("image","playback.bg.right.2");
-		l_right.setXmlParam("x","-91");
+		l_right.show();
 		l_butright.setXmlParam("image","playback.bg.buttons.right.2");
 		g_vis.show();
 		g_volume.show();
-		g_volume.setXmlParam("x","-121");
-		g_volume.setXmlParam("w","121");
+		g_volume.setXmlParam("x","-113");
+		g_volume.setXmlParam("w","113");
 		g_butVol.hide();
 		g_butShufRep.show();
 	}

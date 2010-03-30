@@ -1,0 +1,103 @@
+<elements>
+	<!-- Generic Cpro Colors -->
+	<color id="Menu.Text" value="199,201,207" gammagroup="n.Menu.Text"/>
+	<color id="Tab.Text.On" value="210,210,210" gammagroup="n.Tab.Text"/>
+	<color id="Tab.Text.Off" value="200,200,200" gammagroup="n.Tab.Text"/>
+	<color id="Tab.Text.Hover" value="210,210,210" gammagroup="n.Tab.Text"/>
+	<color id="Tag.Info.Text" value="147,175,185" gammagroup="n.Color.List"/>
+	<color id="Player.SongTicker.Text" value="147,175,185" gammagroup="n.Text.SongTime"/>
+	<color id="Eq.xfade.Text" value="147,175,185" gammagroup="n.Text.On.Bg"/>
+	<color id="Browser.MediaMonitor" value="173,173,173" gammagroup="n.Text.On.Bg"/>
+	<color id="Shade.SongTicker.Text" value="147,175,185" gammagroup="n.Text.SongTime"/>
+
+	<color id="Playlist.Status.Text" value="162,193,204" gammagroup="n.Text.Status"/>
+	<color id="ComponentTab.Status.Text" value="210,210,210" gammagroup="n.Text.On.Bg"/>
+
+	<color id="wasabi.tooltips.textcolor" value="147,175,185" gammagroup="n.TooltipCombobox.Text"/>
+	<color id="wasabi.button.text" value="30,30,30" gammagroup="n.Button"/>
+
+
+
+	
+
+	<!-- Notifier -->
+	<color id="notifier.dark" value="35,35,35" gammagroup="n.Notifier.Text.Big"/>
+	<color id="notifier.bright" value="255,255,255" gammagroup="n.Notifier.Text.Big"/>
+	<color id="notifier.dark.upper" value="35,35,35" gammagroup="n.Notifier.Text.Small"/>
+	<color id="notifier.bright.upper" value="255,255,255" gammagroup="n.Notifier.Text.Small"/>
+
+
+
+	
+
+	<!-- Component: Background -->
+	<color id="wasabi.window.background" value="51,55,56" gammagroup="n.SuiFrame"/>
+	<color id="wasabi.border.sunken" value="30,30,30" gammagroup="n.SuiFrame"/>
+
+	<!-- Component: Text -->
+	<color id="wasabi.window.text" value="210,210,210" gammagroup="n.Text.On.Bg"/>
+
+	<!-- Component: Column -->
+	<color id="wasabi.list.column.text" value="210,210,210" gammagroup="n.Text.On.Bg"/>
+	<color id="wasabi.list.column.background" value="73,76,77" gammagroup="n.SuiFrame"/>
+	<color id="wasabi.list.column.frame.top" value="100,103,104" gammagroup="n.SuiFrame"/>
+	<color id="wasabi.list.column.frame.middle" value="57,61,62" gammagroup="n.SuiFrame"/>
+	<color id="wasabi.list.column.frame.bottom" value="31,34,35" gammagroup="n.SuiFrame"/>
+
+
+
+	
+
+	<!-- List: Text Color -->
+	<color id="wasabi.list.text" value="147,175,185" gammagroup="n.Color.List"/>
+	<color id="wasabi.list.text.alternate" value="147,175,185" gammagroup="n.Color.List"/>
+
+	<!-- List: Background -->
+	<color id="wasabi.list.background" value="8,9,10" gammagroup="n.Color.ListBg"/>
+	<color id="wasabi.list.background.alternate" value="13,14,15" gammagroup="n.Color.ListBg2"/>	
+	<bitmap id="wasabi.list.background" file="$solid" h="64" w="64" color="8,9,10" gammagroup="n.Color.ListBg"/>
+
+	<!-- List: Text Color (Selected) -->
+	<color id="wasabi.list.text.selected" value="200,200,200" gammagroup="n.Color.ListSel"/>
+	<color id="wasabi.list.text.selected.inactive" value="210,210,210" gammagroup="n.Color.ListSel"/>
+	
+	<!-- List: Background (Selected)-->
+	<color id="wasabi.list.text.selected.background" value="49,53,64" gammagroup="n.Color.ListSelBg"/>
+	<color id="wasabi.list.text.selected.background.inactive" value="42,46,57" gammagroup="n.Color.ListSelBg"/>
+
+	<!-- List: Scrollbar OLD (updated/new plugins use scrollbars.png) -->
+	<color id="wasabi.scrollbar.background" value="20,21,22" gammagroup="n.Color.ListBg"/>
+
+	<!-- List: Text Color (Now Playing in Playlist Editor) -->
+	<color id="wasabi.list.text.current" value="200,200,200" gammagroup="n.Color.ListCur"/>
+
+
+
+	
+	<bitmap id="custom.shuffle.1" file="custom-shuffle.png" gammagroup="n.Button.Icon"/>
+	<bitmap id="custom.repeat.1" file="custom-repeat.png" gammagroup="n.Button.Icon"/>
+	<bitmap id="custom.repeat.2" file="custom-repeat1.png" gammagroup="n.Button.Icon"/>
+	<bitmap id="custom.xfade" file="custom-xfade.png" gammagroup="n.Button.Icon"/>
+	<bitmap id="custom.eqon" file="custom-eqon.png" gammagroup="n.Button.Icon"/>
+	<bitmap id="custom.eqauto" file="custom-eqauto.png" gammagroup="n.Button.Icon"/>
+	<bitmap id="custom.visran" file="custom-visran.png" gammagroup="n.Button.Icon"/>
+
+	<bitmap id="custom.winamp" file="custom-winamp.png" gammagroup="n.Background.Alt"/>
+	<bitmap id="player.gframe.7.alt.overlay" file="custom-bottomleft.png" gammagroup="n.Color.ListBg"/>
+
+	<!--
+	These fonts wont be used in this skin (default = Arial)
+	Remember if you want to use custom fonts cut&paste them outside this area ;)
+
+	<truetypefont id="cpro.tracktime.font" file="font.ttf" allowmapping="0"/>
+	<truetypefont id="cpro.songname.font" file="font.ttf" allowmapping="0"/>
+	<truetypefont id="cpro.songinfo2.font" file="font.ttf" allowmapping="0"/>
+	<truetypefont id="cpro.menu.font" file="font.ttf" allowmapping="0"/>
+	<truetypefont id="cpro.tab.font" file="font.ttf" allowmapping="0"/>
+ 	<truetypefont id="cpro.status.font" file="font.ttf" allowmapping="0"/>
+ 	<truetypefont id="cpro.winshade.font" file="font.ttf" allowmapping="0"/>
+	-->
+	<bitmap id="beat.1.left" file="beat_left2.png" gammagroup="n.beatvis"/>
+	<bitmap id="beat.1.right" file="beat_right2.png" gammagroup="n.beatvis"/>
+
+</elements>
