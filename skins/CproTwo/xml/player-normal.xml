@@ -19,8 +19,8 @@
 	<script file="scripts/info-seeker.maki"/>
 </groupdef>
 <groupdef id="two.info.text.time">
-	<text id="two.info.text.tracktime" x="8" y="2" w="56" h="20" align="center" valign="center" text="" fontsize="22" color="black" font="Calibri"/>
-	<text id="two.info.text.totaltime" x="8" y="18" w="56" h="20" align="center" valign="center" text="" fontsize="16" color="black" font="Calibri" alpha="150"/>
+	<text id="two.info.text.tracktime" x="0" y="2" w="48" h="20" align="center" valign="center" text="" fontsize="22" color="black" font="Calibri"/>
+	<text id="two.info.text.totaltime" x="0" y="18" w="48" h="20" align="center" valign="center" text="" fontsize="16" color="black" font="Calibri" alpha="150"/>
 	<text id="two.info.text.trackevent" x="0" y="0" w="0" h="0" display="TIME" visible="0"/>
 </groupdef>
 <groupdef id="two.info.text.other">
@@ -30,12 +30,12 @@
 </groupdef>
 <groupdef id="two.info" h="40">
 	<layer id="two.info.time" x="0" y="0" image="info.bg.time" regionop="1"/>
-	<group id="two.info.seeker" x="64" y="0" w="-128" h="0" relatw="1" relath="1"/>
-	<layer x="-64" y="0" relatx="1" image="info.bg.other" regionop="1"/>
+	<group id="two.info.seeker" x="56" y="0" w="-112" h="0" relatw="1" relath="1"/>
+	<layer x="-56" y="0" relatx="1" image="info.bg.other" regionop="1"/>
 
 	<group id="two.info.text.time" x="0" y="0" w="64" h="40"/>
 
-	<group id="two.info.text.other" x="-64" y="0" w="52" h="40" relatx="1" visible="0"/>
+	<group id="two.info.text.other" x="-56" y="0" w="52" h="40" relatx="1" visible="0"/>
 
 	<layer id="two.info.pbstatus" x="0" y="0" image="info.bg.time.stop" visible="0"/>
 
@@ -50,14 +50,14 @@
 <groupdef id="two.playback.vis" w="91">
 	<vis
 		id="main.vis"
-		x="14" y="6"
+		x="6" y="6"
 		w="71" h="17"
 		gammagroup="n.Vis"
 	/>
 </groupdef>
 <groupdef id="two.playback.volume">
-	<layer id="two.playback.volume.left" x="-121" y="0" relatx="1" image="playback.bg.right.2.mute"/>
-	<slider x="-88" y="0" w="76" h="30" relatx="1" action="VOLUME" thumb="playback.volume.big.1" hoverthumb="playback.volume.big.2" downthumb="playback.volume.big.3" cursor="IDC_HAND"/>
+	<layer id="two.playback.volume.left" x="-113" y="0" relatx="1" image="playback.bg.right.mute"/>
+	<slider x="-80" y="0" w="76" h="30" relatx="1" action="VOLUME" thumb="playback.volume.big.1" hoverthumb="playback.volume.big.2" downthumb="playback.volume.big.3" cursor="IDC_HAND"/>
 </groupdef>
 <groupdef id="two.playback.buttons.volume" w="67" h="30">
 	<slider x="4" y="0" w="58" h="30" action="VOLUME" thumb="playback.volume.small.1" hoverthumb="playback.volume.small.2" downthumb="playback.volume.small.3" cursor="IDC_HAND"/>
@@ -80,10 +80,10 @@
 	<group id="two.playback.buttons.shufrep" x="157" y="0" visible="0"/>
 </groupdef>
 <groupdef id="two.playback" autoheightsource="two.playback.left">
-	<layer id="two.playback.fill" x="8" y="0" w="-16" relatw="1" image="playback.bg.fill" regionop="1"/>
+	<layer id="two.playback.fill" x="0" y="0" w="0" relatw="1" image="playback.bg.fill" regionop="1"/>
 
 	<layer id="two.playback.left" x="0" y="0" image="playback.bg.left.1" regionop="1"/>
-	<layer id="two.playback.right" x="-8" y="0" relatx="1" image="playback.bg.right.1" regionop="1"/>
+	<layer id="two.playback.right" x="-83" y="0" relatx="1" image="playback.bg.right" regionop="1"/>
 
 	<group id="two.playback.buttons" x="8" y="0" h="0" relath="1"/>
 
@@ -99,7 +99,7 @@
 </groupdef>
 
 
-<layout id="normal" minimum_h="200" minimum_w="240" h="600" w="800" appbar="top|bottom|left|right" >
+<layout id="normal" minimum_h="200" minimum_w="240" h="600" w="800" appbar="top|bottom|left|right">
 
 	<!-- 
 	:: Frame layers ::
@@ -118,8 +118,16 @@
 	<layer id="two.frame.6" x="-8" relatx="1" relath="1" image="frame.right" regionop="1" move="0" cursor="IDC_SIZEWE"/>
 	<script file="scripts/layout-resizer.maki"/>
 
+	<button x="-108" relatx="1" image="frame.button.min.1" hoverimage="frame.button.min.2" downimage="frame.button.min.3" action="MINIMIZE"/>
+	<button x="-83" relatx="1" image="frame.button.gobig.1" hoverimage="frame.button.gobig.2" downimage="frame.button.gobig.3"/>
+	<button x="-33" relatx="1" image="frame.button.close.1" hoverimage="frame.button.close.2" downimage="frame.button.close.3" action="CLOSE"/>
+
 	<!-- This group will have it's y & h set by layout.maki -->
-	<group id="two.screen" x="0" w="0" relatw="1"/>
+	<group id="two.screen" x="8" w="-16" relatw="1" wantfocus="1"/>
+	
+	<ClassicPro:SUI id="two.suiframe"
+		x="8" y="100" w="-16" h="-108" relatw="1" relath="1"
+	/>
 
 	<script file="scripts/layout.maki"/>
 </layout>

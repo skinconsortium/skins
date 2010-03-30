@@ -22,7 +22,11 @@
 	<accelerators section="normal">
 			<accelerator bind="space" action="SHOW_CURRENT_TRACK" />
 	</accelerators>
+	
+	<include file="@COLORTHEMESPATH@/../../Plugins/classicPro/engine/load-onexui.xml"/>
 
+	<include file="player-elements2.xml"/>
+	<include file="colors.xml"/>
 	<include file="xml/player.xml"/>
 
 </WinampAbstractionLayer>
