@@ -2,7 +2,7 @@
 
 ; Lang:				PortugueseBR
 ; LangID			1046
-; Last udpdated:	01.09.2009
+; Last udpdated:	16.04.2010
 ; Author:			Anderson Silva (Candiba)
 ; Email:			candiba@gmail.com
 
@@ -52,11 +52,11 @@
 		
 ; Installer sections descriptions	
 	LangString CPro_Desc_CProFiles ${LANG_PORTUGUESE_BRAZILIAN} "Esta opção instala todos os arquivos necessários do ${CPRO_NAME}."
-	LangString CPro_Desc_wBrowserPro ${LANG_PORTUGUESE_BRAZILIAN} "Este widget habilita o BrowserPRO a auto navegar em sites e explorar diretórios."
+	LangString CPro_Desc_wBrowserPro ${LANG_PORTUGUESE_BRAZILIAN} "Este widget habilita o BrowserPRO a auto navegar em sites e explorar pastas."
 	LangString CPro_Desc_wAlbumArt ${LANG_PORTUGUESE_BRAZILIAN} "Este widget mostra a Capa do CD e informação da mídia em reprodução."
 	LangString CPro_Desc_WidgetsSection ${LANG_PORTUGUESE_BRAZILIAN} "Esta opção instala Skins ${CPRO_NAME} e widgets suportados pelo ClassicPro."
 	LangString CPro_Desc_CProCustom ${LANG_PORTUGUESE_BRAZILIAN} "Esta opção instala os Componentes Opcionais para o ${CPRO_NAME}."
-	LangString CPro_Desc_cPlaylistPro ${LANG_PORTUGUESE_BRAZILIAN} "Esta opção adiciona um campo de busca na playlist."
+	LangString CPro_Desc_cPlaylistPro ${LANG_PORTUGUESE_BRAZILIAN} "Esta opção adiciona um campo de busca no Editor de Playlist."
 
 ; Direcory Text	
 	LangString CPro_DirText ${LANG_PORTUGUESE_BRAZILIAN} "Por favor selecione abaixo a pasta do Winamp (a instalação continuará quando o Winamp for encontrado):"
@@ -74,7 +74,7 @@
 	LangString CPro_CleanupPage_StudioXnf ${LANG_PORTUGUESE_BRAZILIAN} "Deletar Configurações de Skin (studio.xnf)"
 	LangString CPro_CleanupPage_StudioXnf_Desc ${LANG_PORTUGUESE_BRAZILIAN} "Deleta especificações das skins como: posições de janela, abas ativas, modo de janela atual, etc"
 	LangString CPro_CleanupPage_WinampIni ${LANG_PORTUGUESE_BRAZILIAN} "Deletar Configurações do Winamp (winamp.ini)"
-	LangString CPro_CleanupPage_WinampIni_Desc ${LANG_PORTUGUESE_BRAZILIAN} "Deletar especificações do winamp como: skin atual, formatação avançada de título, idioma atual, etc"
+	LangString CPro_CleanupPage_WinampIni_Desc ${LANG_PORTUGUESE_BRAZILIAN} "Deleta especificações do Winamp como: skin atual, formatação avançada de título, idioma atual, etc"
 
 ; Finish Page	
 	LangString CPro_FinishPage_1 ${LANG_PORTUGUESE_BRAZILIAN} "Instalação do ${CPRO_NAME}${CPRO_CRS} v${CPRO_VERSION} finalizada."
@@ -99,11 +99,11 @@
 ; Close all instances of Winamp
 	LangString CPro_CloseWinamp_Welcome_Title ${LANG_PORTUGUESE_BRAZILIAN} "Programa para fechar"
 	LangString CPro_CloseWinamp_Welcome_Text  ${LANG_PORTUGUESE_BRAZILIAN} "Programa que deve ser fechado antes de continuar a instalação"	
-	LangString CPro_CloseWinamp_Heading ${LANG_PORTUGUESE_BRAZILIAN} "Feche o programa abaixo antes de continuar a instalação..."
+	LangString CPro_CloseWinamp_Heading ${LANG_PORTUGUESE_BRAZILIAN} "Feche o(s) programa(s) abaixo antes de continuar a instalação..."
 	LangString CPro_CloseWinamp_Searching ${LANG_PORTUGUESE_BRAZILIAN} "Buscando programa, por favor espere..."
 	LangString CPro_CloseWinamp_EndSearch ${LANG_PORTUGUESE_BRAZILIAN} "Busca por programa finalizada..."
 	LangString CPro_CloseWinamp_EndMonitor ${LANG_PORTUGUESE_BRAZILIAN} "Fechando monitor de processo ativo, por favor espere..."
-	LangString CPro_CloseWinamp_NoPrograms ${LANG_PORTUGUESE_BRAZILIAN} "Instalador não encontrou nenhum programa para ser fechado"
+	LangString CPro_CloseWinamp_NoPrograms ${LANG_PORTUGUESE_BRAZILIAN} "O instalador não encontrou nenhum programa para ser fechado"
 	LangString CPro_CloseWinamp_ColHeadings1 ${LANG_PORTUGUESE_BRAZILIAN} "Aplicação"
 	LangString CPro_CloseWinamp_ColHeadings2 ${LANG_PORTUGUESE_BRAZILIAN} "Processo"
 	LangString CPro_CloseWinamp_Autoclosesilent ${LANG_PORTUGUESE_BRAZILIAN} "Erro ao fechar programa"
@@ -143,7 +143,7 @@
 	LangString CPro_Widget_FinishPage_7 ${LANG_PORTUGUESE_BRAZILIAN} "Finalizar"	
 	
 ; UnFinish Page	
-	LangString CPro_Widget_UnFinishPage_1 ${LANG_PORTUGUESE_BRAZILIAN} "Completando a desinstalção do widget ${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION} para ${CPRO_NAME}${CPRO_CRS}"
+	LangString CPro_Widget_UnFinishPage_1 ${LANG_PORTUGUESE_BRAZILIAN} "Completando a desinstalação do widget ${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION} para ${CPRO_NAME}${CPRO_CRS}"
 	LangString CPro_Widget_UnFinishPage_2 ${LANG_PORTUGUESE_BRAZILIAN} "Widget ${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION} para ${CPRO_NAME}${CPRO_CRS} foi desinstalado de seu computador."
 	LangString CPro_Widget_UnFinishPage_3 ${LANG_PORTUGUESE_BRAZILIAN} "Clique em $(CPro_Widget_FinishPage_7) para fechar"
 	LangString CPro_Widget_UnFinishPage_4 ${LANG_PORTUGUESE_BRAZILIAN} "Recarregue o ${CPRO_NAME} se o Winamp estiver em execução"
