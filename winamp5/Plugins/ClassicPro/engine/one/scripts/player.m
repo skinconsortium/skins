@@ -83,6 +83,7 @@ System.onScriptLoaded() {
 	
 	main = System.getContainer("main");
 	mylayout = main.getLayout("normal");
+	updateMax();
 	
 	reCheck = new Timer;
 	reCheck.setDelay(10);

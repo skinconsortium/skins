@@ -152,22 +152,31 @@ myTimer.onTimer(){
 	}
 	else
 	{	
-		frameLeft=beatLeft/run_max*myFrames;
-		frameRight=beatRight/run_max*myFrames;
+		frameLeft=((beatLeft/(run_max*0.8))*myFrames);
+		frameRight=((beatRight/(run_max*0.8))*myFrames);
+
+
+		if (frameLeft<lastBeatLeft){
+			frameLeft=lastBeatLeft-1;
+		}
+		if (frameRight<lastBeatRight) {
+			frameRight=lastBeatRight-1;
+		}
+		
+		if (frameLeft>lastBeatLeft+2){
+			frameLeft=lastBeatLeft+3;
+		}
+		if (frameRight>lastBeatRight+2) {
+			frameRight=lastBeatRight+3;
+		}
 
 		// Martin> Frames go from 0 to myFrames-1 !!!
 		if (frameLeft>=myFrames) frameLeft=myFrames-1;
 		if (frameRight>=myFrames) frameRight=myFrames-1;
-
-		if (frameLeft<lastBeatLeft){
-			frameLeft=lastBeatLeft-1;
-			if(frameLeft<0) frameLeft=0;
-		}
-
-		if (frameRight<lastBeatRight) {
-			frameRight=lastBeatRight-1;
-			if(frameRight<0) frameRight=0;
-		}
+		
+		if(frameLeft<0) frameLeft=0;
+		if(frameRight<0) frameRight=0;
+		
 
 		lastBeatLeft=frameLeft;
 		lastBeatRight=frameRight;

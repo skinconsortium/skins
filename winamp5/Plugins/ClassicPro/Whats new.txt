@@ -1,7 +1,15 @@
 -------------------------------------------------------------
-Version 1.14 (17 Dec 2009)
+Version 1.15 World Cup Edition (11 Jun 2010)
 -------------------------------------------------------------
-- New: Cpro - Bento with color themes!
+- New: Bundled special Bento World cup edition! (with a theme for your team)
+- Improved: Beatvis algorithm
+-------------------------------------------------------------
+
+
+-------------------------------------------------------------
+Version 1.14 (18 Dec 2009)
+-------------------------------------------------------------
+- New: Cpro - Bento with color themes! Please create more and share in the forum!
 - New: Link with shade mode position & width (Options > Window Sizing > "Link Shade-mode Position and Width")
 - Improved: Widget Manager
 - Improved: Seeker refresh rate now seamless
@@ -9,6 +17,7 @@ Version 1.14 (17 Dec 2009)
 - Fixed: Some tabs stay enabled after a new tab is openned
 - Fixed: Player go out of view when maximized is used with collapse to bottom
 - Fixed: Mute button doesn't stop fading in/out when volume is changed
+- Fixed: Winamp 5.57 clean install support
 -------------------------------------------------------------
 
 
