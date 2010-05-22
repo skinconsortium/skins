@@ -703,13 +703,18 @@ removeTab(Tab t)
 	if (d != null)
 	{
 		d.left = t.left;
+		d.initX = t.getGuiX();
 		d.setXmlParam("x", integerToString(t.getGuiX()));
 		forceAlign(d);
+		//jacqueline
 	}
 	else
 	{
 		lastTab = t.left;
 	}
+	//forceAlign(firstTab);
+	//alignByResize();
+	
 	
 
 	//TODO align if tabs are not all visible!
@@ -855,12 +860,13 @@ alignByResize ()
 
 	while (t != NULL)
 	{
+		text tn = t.findObject("cpro.tab.text");
 		if(isFullNames){
-			text tn = t.findObject("cpro.tab.text");
+			//text tn = t.findObject("cpro.tab.text");
 			tn.setXmlParam("text", t.nameLong);
 		}
 		else{
-			text tn = t.findObject("cpro.tab.text");
+			//text tn = t.findObject("cpro.tab.text");
 			tn.setXmlParam("text", t.nameShort);
 		}
 		updateTabWidth(t);
@@ -904,6 +910,7 @@ closeTab (tab t)
 		{
 			removeTab(t);
 		}
+		alignByResize();
 	//}
 }
 
@@ -977,6 +984,7 @@ sg.onAction (String action, String param, int x, int y, int p1, int p2, GuiObjec
 					
 					t.show();
 					t.removed = false;
+					alignByResize();
 
 					lastTab = t;
 
