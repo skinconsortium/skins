@@ -3,6 +3,9 @@ Version 1.15 World Cup Edition (11 Jun 2010)
 -------------------------------------------------------------
 - New: Bundled special Bento World cup edition! (with a theme for your team)
 - Improved: Beatvis algorithm
+- Fixed: Opened tab moving out of line when old tab close
+- Fixed: If tab appear again still have the old width
+- Fixed: When tab close the other tabs doesn't utilize the extra space
 -------------------------------------------------------------
 
 
