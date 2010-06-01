@@ -273,7 +273,7 @@
 						StrCpy $3 $0 $1 1
 						IntOp $1 $1 + 1
 						StrCpy $2 $0 "" $1
-						System::Call 'shell32::SHGetSpecialFolderPathA(i $HWNDPARENT, t .r1, i $3, b 'false') i r0'
+						System::Call "shell32::SHGetSpecialFolderPath(i $HWNDPARENT, t .r1, i $3, i0) i .r0"
 						StrCpy $0 "$1$2"
 			No_Replace:
 			StrCpy $WINAMP_INI_DIR $0
@@ -329,7 +329,7 @@ Function .onInit
 	Var /GLOBAL Cleanup_Check_WinampIni
 	Var /GLOBAL Cleanup_Check_StudioXnf_B
 	Var /GLOBAL Cleanup_Check_WinampIni_B
-	
+
 FunctionEnd
 
 Function My_GUIInit
