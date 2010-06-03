@@ -332,6 +332,28 @@ Function .onInit
 
 FunctionEnd
 
+
+	Var /Global WINAMP_SKIN_DIR
+
+!macro SharedSkinPath un
+  
+	Function ${un}GetWinampSkinDirectory
+
+		ReadINIStr $R0 "$WINAMP_INI_DIR\winamp.ini" "Winamp" "SkinDir"
+		${If} $R0 == ""
+			StrCpy $WINAMP_SKIN_DIR "$INSTDIR\Skins"
+		${Else}
+			StrCpy $WINAMP_SKIN_DIR $R0
+		${EndIf}
+	
+	FunctionEnd
+
+!macroend
+
+; Insert function as an installer and uninstaller function
+	!insertmacro SharedSkinPath ""
+	!insertmacro SharedSkinPath "un."
+	
 Function My_GUIInit
 
 	FindWindow $0 "#32770" "" $HWNDPARENT
@@ -394,7 +416,7 @@ Function CreateFinishPage
 	${NSD_CreateButton} 115u 95u 58 35 ""
 	Pop $Button
 	${NSD_AddStyle} $Button "${BS_BITMAP}" 
-	System::Call 'user32::LoadImage(i 0, t "$PLUGINSDIR\PayPal.bmp", i ${IMAGE_BITMAP}, i 0, i 0, i ${LR_CREATEDIBSECTION}|${LR_LOADFROMFILE}) i.s' 
+	System::Call "user32::LoadImage(i 0, t "$PLUGINSDIR\PayPal.bmp", i ${IMAGE_BITMAP}, i 0, i 0, i ${LR_CREATEDIBSECTION}|${LR_LOADFROMFILE}) i.s"
 	Pop $1 
 	SendMessage $Button ${BM_SETIMAGE} ${IMAGE_BITMAP} $1
 	${NSD_OnClick} $Button Button_Click		
@@ -543,6 +565,7 @@ Section "-Pre"
 
 	DetailPrint "$(CPro_Winamp_Path)"
 		Call GetWinampIniPath
+		Call GetWinampSkinDirectory
 
 SectionEnd
 
@@ -689,17 +712,17 @@ Section "$(CPro_CProFiles)" "CPro_Sec_CProFiles"
 	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\flex\xml
 		File /nonfatal "..\engine\flex\xml\*.xml"
 		
-	SetOutPath "$INSTDIR\Skins"
+	SetOutPath "$INSTDIR\$WINAMP_SKIN_DIR"
 		File /nonfatal /r "${CPRO_WINAMP_SKINS}\cProFlex - iFlex\cProFlex - iFlex.wal"
-;	SetOutPath "$INSTDIR\Skins\cProFlex - Xenolith"
+;	SetOutPath "$INSTDIR\$WINAMP_SKIN_DIR\cProFlex - Xenolith"
 ;		File /nonfatal /r /x *.psd /x .svn "${CPRO_WINAMP_SKINS}\cProFlex - Xenolith"
 !endif
-	SetOutPath "$INSTDIR\Skins"
+	SetOutPath "$INSTDIR\$WINAMP_SKIN_DIR"
 		File "${CPRO_WINAMP_SKINS}\cPro__Bento.wal"
 		
-	RMDir /r "$INSTDIR\Skins\cPro - Big Bento\" 
-	RMDir /r "$INSTDIR\Skins\cPro - Bento\" 
-	RMDir /r "$INSTDIR\Skins\cPro_Bento\" 
+	RMDir /r "$INSTDIR\$WINAMP_SKIN_DIR\cPro - Big Bento\" 
+	RMDir /r "$INSTDIR\$WINAMP_SKIN_DIR\cPro - Bento\" 
+	RMDir /r "$INSTDIR\$WINAMP_SKIN_DIR\cPro_Bento\" 
 
 ; System files
 
@@ -857,6 +880,7 @@ Section "-Un.Pre"
 
 	DetailPrint "$(CPro_Winamp_Path)"
 		Call un.GetWinampIniPath	
+		Call un.GetWinampSkinDirectory
 		
 SectionEnd
 
@@ -867,7 +891,7 @@ Section "-Un.Uninstall"
 		WriteINIStr "$WINAMP_INI_DIR\winamp.ini" "Winamp" "skin" "Bento"
 		FlushINI "$WINAMP_INI_DIR\winamp.ini"	
 	RMDir /r "$INSTDIR\Plugins\ClassicPro"
-	Delete "$INSTDIR\Skins\cPro__Bento.wal"
+	Delete "$INSTDIR\$WINAMP_SKIN_DIR\cPro__Bento.wal"
 	
 	SetShellVarContext all
 		RMDir /r "$SMPROGRAMS\Winamp\${CPRO_NAME}"
