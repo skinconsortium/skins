@@ -107,7 +107,9 @@
 	LangString CPro_CloseWinamp_ColHeadings1 ${LANG_DANISH} "Program"
 	LangString CPro_CloseWinamp_ColHeadings2 ${LANG_DANISH} "Proces"
 	LangString CPro_CloseWinamp_Autoclosesilent ${LANG_DANISH} "Lukning af program fejlet"
-
+	LangString CPro_CloseWinamp_MenuItem1 ${LANG_DANISH} "Close"
+	LangString CPro_CloseWinamp_MenuItem2 ${LANG_DANISH} "Copy list"
+	
 ; Menu Start
 	LangString CPro_MenuStart1 ${LANG_DANISH} "Afinstaller ${CPRO_NAME}"
 	LangString CPro_MenuStart2 ${LANG_DANISH} "Hvad der er nyt"

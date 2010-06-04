@@ -107,7 +107,9 @@
 	LangString CPro_CloseWinamp_ColHeadings1 ${LANG_JAPANESE} "Application"
 	LangString CPro_CloseWinamp_ColHeadings2 ${LANG_JAPANESE} "Process"
 	LangString CPro_CloseWinamp_Autoclosesilent ${LANG_JAPANESE} "Closing program failed"
-
+	LangString CPro_CloseWinamp_MenuItem1 ${LANG_JAPANESE} "Close"
+	LangString CPro_CloseWinamp_MenuItem2 ${LANG_JAPANESE} "Copy list"
+	
 ; Menu Start
 	LangString CPro_MenuStart1 ${LANG_JAPANESE} "Uninstall ${CPRO_NAME}"
 	LangString CPro_MenuStart2 ${LANG_JAPANESE} "Whats new"
