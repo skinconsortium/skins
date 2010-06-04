@@ -2,7 +2,7 @@
 ;###########################################################################################
 ;#
 ;#										      ClassicPro Installer         
-;#									   Copyright (c) 2009 by Pawe³ Porwisz                                   
+;#									   Copyright (c) 2009-2010 by Pawe³ Porwisz                                   
 ;#
 ;###########################################################################################
 ;###########################################################################################
@@ -252,7 +252,7 @@
 	
 !macro SharedPath un
   
-	Function ${un}GetWinampIniPath
+	Function ${un}GetWinampIniPath ;This function have to be changed! It doeasnt cover all possibilities
 
 		StrCpy $WINAMP_INI_DIR $INSTDIR
 		
@@ -388,7 +388,7 @@ Function CreateFinishPage
     ShowWindow $0 ${SW_NORMAL}
     LockWindow off
 
-    nsDialogs::Create /NOUNLOAD 1044
+    nsDialogs::Create 1044
 	Pop $Dialog
 	
 	${If} $Dialog == error
@@ -415,8 +415,9 @@ Function CreateFinishPage
 	
 	${NSD_CreateButton} 115u 95u 58 35 ""
 	Pop $Button
-	${NSD_AddStyle} $Button "${BS_BITMAP}" 
-	System::Call "user32::LoadImage(i 0, t "$PLUGINSDIR\PayPal.bmp", i ${IMAGE_BITMAP}, i 0, i 0, i ${LR_CREATEDIBSECTION}|${LR_LOADFROMFILE}) i.s"
+	${NSD_AddStyle} $Button "${BS_BITMAP}"
+	StrCpy $0 "$PLUGINSDIR\PayPal.bmp" 
+	System::Call "user32::LoadImage(i 0, t r0, i ${IMAGE_BITMAP}, i 0, i 0, i ${LR_CREATEDIBSECTION}|${LR_LOADFROMFILE}) i.s"
 	Pop $1 
 	SendMessage $Button ${BM_SETIMAGE} ${IMAGE_BITMAP} $1
 	${NSD_OnClick} $Button Button_Click		
@@ -484,7 +485,7 @@ Function CreateCleanupPage
 
 	!insertmacro MUI_HEADER_TEXT "$(CPro_CleanupPage_Title)" "$(CPro_CleanupPage_Subtitle)"
 	
-	nsDialogs::Create /NOUNLOAD 1018
+	nsDialogs::Create 1018
 	Pop $Dialog
 	
 	${If} $Dialog == error
@@ -539,8 +540,8 @@ Function LockedListShow
 
 	${If} ${AtLeastWinNt4}
 		!insertmacro MUI_HEADER_TEXT "$(CPro_CloseWinamp_Welcome_Title)" "$(CPro_CloseWinamp_Welcome_Text)"
-			LockedList::AddModule /NOUNLOAD "$INSTDIR\winamp.exe"
-			LockedList::Dialog /heading "$(CPro_CloseWinamp_Heading)" /searching "$(CPro_CloseWinamp_Searching)" /endsearch "$(CPro_CloseWinamp_EndSearch)" /endmonitor "$(CPro_CloseWinamp_EndMonitor)" /noprograms "$(CPro_CloseWinamp_NoPrograms)" /colheadings "$(CPro_CloseWinamp_ColHeadings1)" "$(CPro_CloseWinamp_ColHeadings2)" /autoclosesilent "$(CPro_CloseWinamp_Autoclosesilent)" ignore "$(^NextBtn)"
+			LockedList::AddModule "$INSTDIR\winamp.exe"
+			LockedList::Dialog /heading "$(CPro_CloseWinamp_Heading)" /searching "$(CPro_CloseWinamp_Searching)" /endsearch "$(CPro_CloseWinamp_EndSearch)" /endmonitor "$(CPro_CloseWinamp_EndMonitor)" /noprograms "$(CPro_CloseWinamp_NoPrograms)" /colheadings "$(CPro_CloseWinamp_ColHeadings1)" "$(CPro_CloseWinamp_ColHeadings2)" /autoclosesilent "$(CPro_CloseWinamp_Autoclosesilent)" "$(^NextBtn)" /menuitems "$(CPro_CloseWinamp_MenuItem1)" "$(CPro_CloseWinamp_MenuItem2)"
 	${EndIf}
 
 FunctionEnd
@@ -549,8 +550,8 @@ Function un.LockedListShow
 
 	${If} ${AtLeastWinNt4}
 		!insertmacro MUI_HEADER_TEXT "$(CPro_CloseWinamp_Welcome_Title)" "$(CPro_CloseWinamp_Welcome_Text)"
-			LockedList::AddModule /NOUNLOAD "$INSTDIR\winamp.exe"
-			LockedList::Dialog /heading "$(CPro_CloseWinamp_Heading)" /searching "$(CPro_CloseWinamp_Searching)" /endsearch "$(CPro_CloseWinamp_EndSearch)" /endmonitor "$(CPro_CloseWinamp_EndMonitor)" /noprograms "$(CPro_CloseWinamp_NoPrograms)" /colheadings "$(CPro_CloseWinamp_ColHeadings1)" "$(CPro_CloseWinamp_ColHeadings2)" /autoclosesilent "$(CPro_CloseWinamp_Autoclosesilent)" ignore "$(^NextBtn)"
+			LockedList::AddModule "$INSTDIR\winamp.exe"
+			LockedList::Dialog /heading "$(CPro_CloseWinamp_Heading)" /searching "$(CPro_CloseWinamp_Searching)" /endsearch "$(CPro_CloseWinamp_EndSearch)" /endmonitor "$(CPro_CloseWinamp_EndMonitor)" /noprograms "$(CPro_CloseWinamp_NoPrograms)" /colheadings "$(CPro_CloseWinamp_ColHeadings1)" "$(CPro_CloseWinamp_ColHeadings2)" /autoclosesilent "$(CPro_CloseWinamp_Autoclosesilent)" "$(^NextBtn)" /menuitems "$(CPro_CloseWinamp_MenuItem1)" "$(CPro_CloseWinamp_MenuItem2)"
 	${EndIf}
 
 FunctionEnd
@@ -575,22 +576,6 @@ Section "$(CPro_CProFiles)" "CPro_Sec_CProFiles"
 ; Main directory	
 	SetOutPath $INSTDIR\Plugins\ClassicPro
 		File "..\*.txt"
-; CUT (mpdeimos) we no longer want to install those files! all this stuff is in on SVN.
-;	SetOutPath $INSTDIR\Plugins\ClassicPro\_installer
-;		File "*.nsi"
-;		File "*.nsh"
-;	SetOutPath $INSTDIR\Plugins\ClassicPro\_installer\Images
-;		File "images\*.bmp"
-;		File "images\*.ico"
-;	SetOutPath $INSTDIR\Plugins\ClassicPro\_installer\Languages
-;		File "Languages\*.nsh"
-;	SetOutPath $INSTDIR\Plugins\ClassicPro\_installer\Plugins
-;		File "Plugins\*.txt"
-;		File "Plugins\*.dll"
-;		File "Plugins\*.url"
-;	SetOutPath $INSTDIR\Plugins\ClassicPro\_installer\Files
-;		File "Files\*.*"
-
 ; CPro engine		
 	SetOutPath $INSTDIR\Plugins\ClassicPro\engine
 		File "..\engine\*.xml"
@@ -712,17 +697,18 @@ Section "$(CPro_CProFiles)" "CPro_Sec_CProFiles"
 	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\flex\xml
 		File /nonfatal "..\engine\flex\xml\*.xml"
 		
-	SetOutPath "$INSTDIR\$WINAMP_SKIN_DIR"
+	SetOutPath "$WINAMP_SKIN_DIR"
 		File /nonfatal /r "${CPRO_WINAMP_SKINS}\cProFlex - iFlex\cProFlex - iFlex.wal"
-;	SetOutPath "$INSTDIR\$WINAMP_SKIN_DIR\cProFlex - Xenolith"
+;	SetOutPath "$WINAMP_SKIN_DIR\cProFlex - Xenolith"
 ;		File /nonfatal /r /x *.psd /x .svn "${CPRO_WINAMP_SKINS}\cProFlex - Xenolith"
 !endif
-	SetOutPath "$INSTDIR\$WINAMP_SKIN_DIR"
+	
+	SetOutPath "$WINAMP_SKIN_DIR"
 		File "${CPRO_WINAMP_SKINS}\cPro__Bento.wal"
 		
-	RMDir /r "$INSTDIR\$WINAMP_SKIN_DIR\cPro - Big Bento\" 
-	RMDir /r "$INSTDIR\$WINAMP_SKIN_DIR\cPro - Bento\" 
-	RMDir /r "$INSTDIR\$WINAMP_SKIN_DIR\cPro_Bento\" 
+	RMDir /r "$WINAMP_SKIN_DIR\cPro - Big Bento\" 
+	RMDir /r "$WINAMP_SKIN_DIR\cPro - Bento\" 
+	RMDir /r "$WINAMP_SKIN_DIR\cPro_Bento\" 
 
 ; System files
 
@@ -891,7 +877,7 @@ Section "-Un.Uninstall"
 		WriteINIStr "$WINAMP_INI_DIR\winamp.ini" "Winamp" "skin" "Bento"
 		FlushINI "$WINAMP_INI_DIR\winamp.ini"	
 	RMDir /r "$INSTDIR\Plugins\ClassicPro"
-	Delete "$INSTDIR\$WINAMP_SKIN_DIR\cPro__Bento.wal"
+	Delete "$WINAMP_SKIN_DIR\cPro__Bento.wal"
 	
 	SetShellVarContext all
 		RMDir /r "$SMPROGRAMS\Winamp\${CPRO_NAME}"

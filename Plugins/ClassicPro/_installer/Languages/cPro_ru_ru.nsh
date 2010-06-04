@@ -107,7 +107,9 @@
 	LangString CPro_CloseWinamp_ColHeadings1 ${LANG_RUSSIAN} "Приложение"
 	LangString CPro_CloseWinamp_ColHeadings2 ${LANG_RUSSIAN} "Процесс"
 	LangString CPro_CloseWinamp_Autoclosesilent ${LANG_RUSSIAN} "Не удалось закрыть программу"
-
+	LangString CPro_CloseWinamp_MenuItem1 ${LANG_RUSSIAN} "Close"
+	LangString CPro_CloseWinamp_MenuItem2 ${LANG_RUSSIAN} "Copy list"
+	
 ; Menu Start
 	LangString CPro_MenuStart1 ${LANG_RUSSIAN} "Удалить аддон ${CPRO_NAME}"
 	LangString CPro_MenuStart2 ${LANG_RUSSIAN} "Что нового"

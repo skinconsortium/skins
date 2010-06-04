@@ -107,7 +107,9 @@
 	LangString CPro_CloseWinamp_ColHeadings1 ${LANG_TURKISH} "Uygulama"
 	LangString CPro_CloseWinamp_ColHeadings2 ${LANG_TURKISH} "Yansýma Adý"
 	LangString CPro_CloseWinamp_Autoclosesilent ${LANG_TURKISH} "Program kapatýlýrken hata oluþtu"
-
+	LangString CPro_CloseWinamp_MenuItem1 ${LANG_TURKISH} "Close"
+	LangString CPro_CloseWinamp_MenuItem2 ${LANG_TURKISH} "Copy list"
+	
 ; Menu Start
 	LangString CPro_MenuStart1 ${LANG_TURKISH} "${CPRO_NAME} Kaldýr"
 	LangString CPro_MenuStart2 ${LANG_TURKISH} "Neler Yeni"

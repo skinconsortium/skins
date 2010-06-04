@@ -107,7 +107,9 @@
 	LangString CPro_CloseWinamp_ColHeadings1 ${LANG_DUTCH} "Applicatie"
 	LangString CPro_CloseWinamp_ColHeadings2 ${LANG_DUTCH} "Proces"
 	LangString CPro_CloseWinamp_Autoclosesilent ${LANG_DUTCH} "Programa Afsluiten is mislukt"
-
+	LangString CPro_CloseWinamp_MenuItem1 ${LANG_DUTCH} "Close"
+	LangString CPro_CloseWinamp_MenuItem2 ${LANG_DUTCH} "Copy list"
+	
 ; Menu Start
 	LangString CPro_MenuStart1 ${LANG_DUTCH} "Uninstall ${CPRO_NAME}"
 	LangString CPro_MenuStart2 ${LANG_DUTCH} "Wat is nieuw?"

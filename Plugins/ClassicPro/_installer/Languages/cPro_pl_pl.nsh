@@ -107,6 +107,8 @@
 	LangString CPro_CloseWinamp_ColHeadings1 ${LANG_POLISH} "Aplikacja"
 	LangString CPro_CloseWinamp_ColHeadings2 ${LANG_POLISH} "Proces"
 	LangString CPro_CloseWinamp_Autoclosesilent ${LANG_POLISH} "Nie uda³o siê zamkn¹æ programu"
+	LangString CPro_CloseWinamp_MenuItem1 ${LANG_POLISH} "Zamknij"
+	LangString CPro_CloseWinamp_MenuItem2 ${LANG_POLISH} "Kopiuj listê"	
 
 ; Menu Start
 	LangString CPro_MenuStart1 ${LANG_POLISH} "Odinstaluj ${CPRO_NAME}"

@@ -107,7 +107,9 @@
 	LangString CPro_CloseWinamp_ColHeadings1 ${LANG_ROMANIAN} "Program"
 	LangString CPro_CloseWinamp_ColHeadings2 ${LANG_ROMANIAN} "Proces"
 	LangString CPro_CloseWinamp_Autoclosesilent ${LANG_ROMANIAN} "Închiderea programului a eºuat!"
-
+	LangString CPro_CloseWinamp_MenuItem1 ${LANG_ROMANIAN} "Close"
+	LangString CPro_CloseWinamp_MenuItem2 ${LANG_ROMANIAN} "Copy list"
+	
 ; Menu Start
 	LangString CPro_MenuStart1 ${LANG_ROMANIAN} "Dezinstalare ${CPRO_NAME}"
 	LangString CPro_MenuStart2 ${LANG_ROMANIAN} "Noutãþi"

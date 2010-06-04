@@ -107,7 +107,9 @@
 	LangString CPro_CloseWinamp_ColHeadings1 ${LANG_PORTUGUESE_BRAZILIAN} "Aplicação"
 	LangString CPro_CloseWinamp_ColHeadings2 ${LANG_PORTUGUESE_BRAZILIAN} "Processo"
 	LangString CPro_CloseWinamp_Autoclosesilent ${LANG_PORTUGUESE_BRAZILIAN} "Erro ao fechar programa"
-
+	LangString CPro_CloseWinamp_MenuItem1 ${LANG_PORTUGUESE_BRAZILIAN} "Close"
+	LangString CPro_CloseWinamp_MenuItem2 ${LANG_PORTUGUESE_BRAZILIAN} "Copy list"
+	
 ; Menu Start
 	LangString CPro_MenuStart1 ${LANG_PORTUGUESE_BRAZILIAN} "Desinstalar ${CPRO_NAME}"
 	LangString CPro_MenuStart2 ${LANG_PORTUGUESE_BRAZILIAN} "Novidades"
