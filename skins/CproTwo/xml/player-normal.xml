@@ -98,6 +98,16 @@
 	<group id="two.playback" x="0" y="40" w="0" relatw="1"/>
 </groupdef>
 
+<groupdef id="two.frame.buttons">
+	<button x="-108" relatx="1" image="frame.button.min.1" hoverimage="frame.button.min.2" downimage="frame.button.min.3" action="MINIMIZE"/>
+	<button id="two.frame.goBig" x="-83" relatx="1" image="frame.button.gobig.1" hoverimage="frame.button.gobig.2" downimage="frame.button.gobig.3"/>
+	<button x="-33" relatx="1" image="frame.button.close.1" hoverimage="frame.button.close.2" downimage="frame.button.close.3" action="CLOSE"/>
+</groupdef>
+<groupdef id="two.frame.buttons.fs">
+	<button x="-102" relatx="1" image="frame.button.min.fs.1" hoverimage="frame.button.min.fs.2" downimage="frame.button.min.fs.3" action="MINIMIZE"/>
+	<button id="two.frame.goSmall" x="-77" relatx="1" image="frame.button.gobig.fs.1" hoverimage="frame.button.gobig.fs.2" downimage="frame.button.gobig.fs.3"/>
+	<button x="-27" relatx="1" image="frame.button.close.fs.1" hoverimage="frame.button.close.fs.2" downimage="frame.button.close.fs.3" action="CLOSE"/>
+</groupdef>
 
 <layout id="normal" minimum_h="200" minimum_w="240" h="600" w="800" appbar="top|bottom|left|right">
 
@@ -118,9 +128,8 @@
 	<layer id="two.frame.6" x="-8" relatx="1" relath="1" image="frame.right" regionop="1" move="0" cursor="IDC_SIZEWE"/>
 	<script file="scripts/layout-resizer.maki"/>
 
-	<button x="-108" relatx="1" image="frame.button.min.1" hoverimage="frame.button.min.2" downimage="frame.button.min.3" action="MINIMIZE"/>
-	<button x="-83" relatx="1" image="frame.button.gobig.1" hoverimage="frame.button.gobig.2" downimage="frame.button.gobig.3"/>
-	<button x="-33" relatx="1" image="frame.button.close.1" hoverimage="frame.button.close.2" downimage="frame.button.close.3" action="CLOSE"/>
+	<group id="two.frame.buttons" x="0" w="0" h="30" relatw="1" wantfocus="1"/>
+	<group id="two.frame.buttons.fs" x="0" w="0" h="30" relatw="1" wantfocus="1" visible="0"/>
 
 	<!-- This group will have it's y & h set by layout.maki -->
 	<group id="two.screen" x="8" w="-16" relatw="1" wantfocus="1"/>

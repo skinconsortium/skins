@@ -19,14 +19,22 @@
 	<bitmap id="frame.button.min.1" file="frame.png" x="367" y="0" w="25" gammagroup="n.Frame"/>
 	<bitmap id="frame.button.min.2" file="frame.png" x="393" y="0" w="25" gammagroup="n.Frame"/>
 	<bitmap id="frame.button.min.3" file="frame.png" x="419" y="0" w="25" gammagroup="n.Frame"/>
-
 	<bitmap id="frame.button.gobig.1" file="frame.png" x="445" y="0" w="25" gammagroup="n.Frame"/>
 	<bitmap id="frame.button.gobig.2" file="frame.png" x="471" y="0" w="25" gammagroup="n.Frame"/>
 	<bitmap id="frame.button.gobig.3" file="frame.png" x="497" y="0" w="25" gammagroup="n.Frame"/>
-
 	<bitmap id="frame.button.close.1" file="frame.png" x="601" y="0" w="25" gammagroup="n.Frame"/>
 	<bitmap id="frame.button.close.2" file="frame.png" x="627" y="0" w="25" gammagroup="n.Frame"/>
 	<bitmap id="frame.button.close.3" file="frame.png" x="653" y="0" w="25" gammagroup="n.Frame"/>
+
+	<bitmap id="frame.button.min.fs.1" file="frame_full.png" x="367" y="0" w="25" gammagroup="n.Frame"/>
+	<bitmap id="frame.button.min.fs.2" file="frame_full.png" x="393" y="0" w="25" gammagroup="n.Frame"/>
+	<bitmap id="frame.button.min.fs.3" file="frame_full.png" x="419" y="0" w="25" gammagroup="n.Frame"/>
+	<bitmap id="frame.button.gobig.fs.1" file="frame_full.png" x="445" y="0" w="25" gammagroup="n.Frame"/>
+	<bitmap id="frame.button.gobig.fs.2" file="frame_full.png" x="471" y="0" w="25" gammagroup="n.Frame"/>
+	<bitmap id="frame.button.gobig.fs.3" file="frame_full.png" x="497" y="0" w="25" gammagroup="n.Frame"/>
+	<bitmap id="frame.button.close.fs.1" file="frame_full.png" x="601" y="0" w="25" gammagroup="n.Frame"/>
+	<bitmap id="frame.button.close.fs.2" file="frame_full.png" x="627" y="0" w="25" gammagroup="n.Frame"/>
+	<bitmap id="frame.button.close.fs.3" file="frame_full.png" x="653" y="0" w="25" gammagroup="n.Frame"/>
 
 
 	<!-- Playback Section -->
