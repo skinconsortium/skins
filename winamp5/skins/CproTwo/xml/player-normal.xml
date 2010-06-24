@@ -6,6 +6,11 @@
 	<layer id="two.info.seeker.active.light" x="0" y="0" visible="0" image="info.bg.seeker.light" alpha="253"/>
 </groupdef>
 
+<groupdef id="two.info.seeker.text">
+	<SongTicker id="two.info.text.songticker" fitparent="1" showlen="1" align="center" color="black" valign="center" visible="0" ghost="1" font="Calibri"/>
+	<text id="two.info.text.title" x="0" y="0" w="0" h="50" relatw="1" relath="2" align="center" valign="center" text="" color="black" ghost="1" visible="0" font="Calibri"/>
+	<text id="two.info.text.artist" x="0" y="50" w="0" h="50" relaty="2" relatw="1" relath="2" align="center" valign="center" text="" color="black" ghost="1" font="Calibri" visible="0" alpha="150"/>
+</groupdef>
 
 <groupdef id="two.info.seeker">
 	<layer id="two.info.seeker.inactive" x="0" y="0" w="0" relatw="1" image="info.bg.seeker.0"/>
@@ -14,13 +19,12 @@
 	<slider id="two.info.seeker.slider.0" x="0" y="0" w="0" h="0" relatw="1" relath="1" action="SEEK" thumb="info.seeker.thumb" interval="50"/>
 	<slider id="two.info.seeker.slider.1" x="0" y="0" w="0" h="0" relatw="1" relath="1" action="SEEK" thumb="info.seeker.thumb" cursor="IDC_HAND"/>
 
-	<text id="two.info.text.title" x="0" y="0" w="0" h="24" relatw="1" align="center" text="Long Way Home [Steve Murano Remix]" fontsize="20" color="black" ghost="1" font="Calibri"/>
-	<text id="two.info.text.artist" x="0" y="20" w="0" h="16" relatw="1" align="center" text="by ATB" fontsize="16" color="black" ghost="1" font="Calibri" alpha="150"/>
+	<group id="two.info.seeker.text" x="0" y="3" w="0" h="-6" relath="1" relatw="1"/>
 	<script file="scripts/info-seeker.maki"/>
 </groupdef>
 <groupdef id="two.info.text.time">
-	<text id="two.info.text.tracktime" x="0" y="2" w="48" h="20" align="center" valign="center" text="" fontsize="22" color="black" font="Calibri"/>
-	<text id="two.info.text.totaltime" x="0" y="18" w="48" h="20" align="center" valign="center" text="" fontsize="16" color="black" font="Calibri" alpha="150"/>
+	<text id="two.info.text.tracktime" x="0" y="0" w="48" h="50" relath="2" align="center" valign="center" text="" fontsize="20" color="black" font="Calibri"/>
+	<text id="two.info.text.totaltime" x="0" y="50" w="48" h="50" relaty="2" relath="2" align="center" valign="center" text="" fontsize="16" color="black" font="Calibri" alpha="150" visible="0"/>
 	<text id="two.info.text.trackevent" x="0" y="0" w="0" h="0" display="TIME" visible="0"/>
 </groupdef>
 <groupdef id="two.info.text.other">
@@ -33,7 +37,7 @@
 	<group id="two.info.seeker" x="56" y="0" w="-112" h="0" relatw="1" relath="1"/>
 	<layer x="-56" y="0" relatx="1" image="info.bg.other" regionop="1"/>
 
-	<group id="two.info.text.time" x="0" y="0" w="64" h="40"/>
+	<group id="two.info.text.time" x="0" y="3" w="64" h="-6" relath="1"/>
 
 	<group id="two.info.text.other" x="-56" y="0" w="52" h="40" relatx="1" visible="0"/>
 
