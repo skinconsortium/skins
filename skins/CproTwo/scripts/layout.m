@@ -1,6 +1,5 @@
 #include <lib/std.mi>
 
-#define i_info 40 
 #define i_playback 30 
 
 Function buildSkin();
@@ -12,7 +11,7 @@ Global Group g, g_screen, g_info, g_playback, g_sui, g_frameBut, g_frameButFS;
 Global Container player;
 Global Layout normal;
 Global Layer l_frame1, l_frame2, l_frame3, l_frame4, l_frame5, l_frame6, l_frame7, l_frame8, l_frame9;
-Global int i_titlebar;
+Global int i_titlebar, i_info;
 Global Button b_goBig, b_goSmall;
 Global Boolean fullscreen;
 
@@ -42,7 +41,14 @@ System.onScriptLoaded() {
 	l_frame8 = g.getObject("two.frame.8");
 	l_frame9 = g.getObject("two.frame.9");
 	
+	//read screen height
+	Map m = new Map;
+	m.loadMap("info.bg.seeker.0");
+	i_info = m.getHeight();
+	delete m;
+
 	readFrameHeight();
+	
 	
 	g.setXmlParam("minimum_h",integerToString(i_titlebar+i_info+i_playback+8));
 	buildSkin();
@@ -74,7 +80,10 @@ buildSkin(){
 	//l_frame5.setXmlParam("h", temp);
 	l_frame6.setXmlParam("h", temp);
 
+	g_playback.setXmlParam("y", integerToString(i_info));
+	g_info.setXmlParam("h", integerToString(i_info));
 	g_screen.setXmlParam("h", integerToString(i_info + i_playback));
+
 }
 
 saveSkinPos(){
