@@ -23,7 +23,7 @@ Global int xc, yc, wc, hc;
 Global layer lyrFx, lyrFxFG; //, CDBoxFade2;
 global double dblSmidge;
 Global int reflectionheight;
-
+Global AlbumArtLayer AlbumArt2;
 
 System.onScriptLoaded(){
 	XUIGroup = getScriptGroup();
@@ -31,6 +31,7 @@ System.onScriptLoaded(){
 	
 	cdbox = XUIGroup.findObject("sc.nowplaying.cdbox.holder.top");
 	cdbox_2 = XUIGroup.findObject("sc.nowplaying.cdbox.holder.bottom");
+	AlbumArt2 = XUIGroup.findObject("main.albumart.reflection");
 	
 	cdboxref = XUIGroup.findObject("sc.nowplaying.cdbox.reflection"); 
 	
@@ -247,6 +248,12 @@ System.onTitleChange(String newTitle)
 	//cdboxHolder.setAlpha(0);
 	
 	setAllTags();
+}
+
+AlbumArt2.onAlbumArtLoaded(boolean success)
+{
+	lyrFx.fx_update();
+	lyrFxFG.fx_update();
 }
 
 setAllTags(){

@@ -675,7 +675,7 @@ Int fillNextTrackInfo(String corneroverride) {
 		}
 		else
 		{
-			if (cover.isInvalid()) // Check if the album art obj shows a pic
+			if (FALSE/* cover.isInvalid()*/) // Check if the album art obj shows a pic
 			{
 				showAlbumArt = FALSE;
 			}
