@@ -152,7 +152,7 @@
 
 	<!-- Seek -->
 
-	<layer x="0" y="0" id="seek.fillbar" image="player.normal.seek.fillbar" translate="2" tooltip="@winamp.playback#20" rectrgn="0" move="0"/>
+	<layer x="0" y="0" id="seek.fillbar" image="player.normal.seek.fillbar" translate="2" tooltip="@winamp.playback#20" rectrgn="0" move="0" cursor="IDC_HAND"/>
 	<script
 		file="@WINAMPPATH@\Plugins\classicPro\engine\flex\scripts\seekbar.maki"
 		param="seek.fillbar;player.normal.seek.fillbar.map"
@@ -160,7 +160,7 @@
 
 	<!-- Volume -->
 
-	<layer x="0" y="0" id="volume.fillbar" image="player.normal.volume.fillbar" translate="2" tooltip="@winamp.playback#10" rectrgn="0" move="0"/>
+	<layer x="0" y="0" id="volume.fillbar" image="player.normal.volume.fillbar" translate="2" tooltip="@winamp.playback#10" rectrgn="0" move="0" cursor="IDC_HAND"/>
 
 	<NStatesButton
 		id="volume.mute"
@@ -303,7 +303,7 @@
 		param="songticker;player.normal.songticker.region"
 	/>
 
-	<Text
+	<text
 		x="0" y="0" h="30" w="90"
 		id="sysinfo"
 		alpha="253"
@@ -321,6 +321,35 @@
 		file="@WINAMPPATH@\Plugins\classicPro\engine\flex\scripts\songticker.maki"
 		param="songticker;sysinfo"
 	/>
+
+	<!-- Fileinfo -->
+	<text
+		x="0" y="0" h="30" w="90"
+		id="fileinfo.bitrate"
+		display="SONGBITRATE"
+		alpha="253"
+		userdata="normal.fileinfo.bitrate"
+	/>
+
+	<script
+		file="@WINAMPPATH@\Plugins\classicPro\engine\flex\scripts\text.maki"
+		param="fileinfo.bitrate;player.normal.fileinfo.bitrate.region"
+	/>
+
+	<text
+		x="0" y="0" h="30" w="90"
+		id="fileinfo.frequency"
+		display="SONGSAMPLERATE"
+		alpha="253"
+		userdata="normal.fileinfo.frequency"
+	/>
+
+	<script
+		file="@WINAMPPATH@\Plugins\classicPro\engine\flex\scripts\text.maki"
+		param="fileinfo.frequency;player.normal.fileinfo.frequency.region"
+	/>
+
+	<layer id="fileinfo.overlay" x="0" y="0" image="player.normal.fileinfo.overlay" alpha="253" sysregion="1"/>
 
 	<!-- Sysbuttons -->
 	<button

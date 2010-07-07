@@ -14,10 +14,15 @@
 	<bitmap id="player.normal.ghost" file="player/normal/ghost.png" gammagroup="player.normal.ghost"/>
 
 	<!-- Indicators -->
-	<bitmap id="player.normal.indicator.out.na" file="player/normal/indicator-out-na.png" gammagroup="player.normal.display.elements"/>
-	<bitmap id="player.normal.indicator.out.mono" file="player/normal/indicator-out-mono.png" gammagroup="player.normal.display.elements"/>
-	<bitmap id="player.normal.indicator.out.stereo" file="player/normal/indicator-out-stereo.png" gammagroup="player.normal.display.elements"/>
-	<bitmap id="player.normal.indicator.out.surround" file="player/normal/indicator-out-surround.png" gammagroup="player.normal.display.elements"/>
+	<bitmap id="player.normal.indicator.out.na" file="player/normal/indicator-out-na.png" gammagroup="player.normal.display.fileinfo"/>
+	<bitmap id="player.normal.indicator.out.mono" file="player/normal/indicator-out-mono.png" gammagroup="player.normal.display.fileinfo"/>
+	<bitmap id="player.normal.indicator.out.stereo" file="player/normal/indicator-out-stereo.png" gammagroup="player.normal.display.fileinfo"/>
+	<bitmap id="player.normal.indicator.out.surround" file="player/normal/indicator-out-surround.png" gammagroup="player.normal.display.fileinfo"/>
+
+	<!-- Fileinfo -->
+	<bitmap id="player.normal.fileinfo.overlay" file="player/normal/fileinfo-overlay.png" gammagroup="player.normal.display.fileinfo"/>
+	<bitmap id="player.normal.fileinfo.bitrate.region" file="player/normal/fileinfo-bitrate-region.png" gammagroup="player.normal.display.fileinfo"/>
+	<bitmap id="player.normal.fileinfo.frequency.region" file="player/normal/fileinfo-frequency-region.png" gammagroup="player.normal.display.fileinfo"/>
 	
 	<!-- CButtons -->
 	<bitmap id="player.normal.open" file="player/normal/cbutton-open.png" gammagroup="player.normal.cbuttons"/>

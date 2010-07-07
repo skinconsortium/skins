@@ -5,6 +5,7 @@
 	<gammagroup id="player.normal.display"				value="0,0,0" gray="0" boost="0" />
 	<gammagroup id="player.normal.display.overlay"		value="0,0,0" gray="0" boost="0" />
 	<gammagroup id="player.normal.display.elements"		value="0,0,0" gray="0" boost="0" />
+	<gammagroup id="player.normal.display.fileinfo"		value="0,0,0" gray="0" boost="0" />
 	<gammagroup id="player.normal.ghost"				value="0,0,0" gray="0" boost="0" />
 	<gammagroup id="player.normal.cbuttons"				value="0,0,0" gray="0" boost="0" />
 	<gammagroup id="player.normal.cbuttons.glow"		value="0,0,0" gray="0" boost="0" />
