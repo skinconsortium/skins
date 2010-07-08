@@ -85,6 +85,7 @@
 	LangString CPro_FinishPage_6 ${LANG_RUSSIAN} "Открыть Winamp с обложкой аддона ${CPRO_NAME} по умолчанию"
 	LangString CPro_FinishPage_7 ${LANG_RUSSIAN} "Завершить"	
 	LangString CPro_FinishPage_8 ${LANG_RUSSIAN} "Открыть Winamp с текущей обложкой"
+	LangString CPro_FinishPage_9 ${LANG_RUSSIAN} "Do not open Winamp at all"
 	
 ; First Page of Uninstaller
 	LangString CPro_Un_Welcome_Title ${LANG_RUSSIAN} "Добро пожаловать в мастер удаления $(^NameDA)"
@@ -95,6 +96,10 @@
 	LangString CPro_Account ${LANG_RUSSIAN} "Установки всех пользователей"
 	LangString CPro_No_Account ${LANG_RUSSIAN} "Установки одного пользователя"
 	LangString CPro_Winamp_Path ${LANG_RUSSIAN} "Нахождение файла установок Winamp..."	
+	LangString CPro_Warning_CreateMutex		${LANG_RUSSIAN}	"${CPRO_NAME} v${CPRO_VERSION} installer is already running."
+	LangString CPro_Warning_No_Winamp		${LANG_RUSSIAN} "Winamp wasn't detected on this system.$\r$\nPlease install latest Winamp version from Winamp.com,$\r$\nbefore you can install ${CPRO_NAME} v${CPRO_VERSION}.$\r$\nInstallation will be aborted."
+	LangString CPro_Warning_Low_Version		${LANG_RUSSIAN} "${CPRO_NAME} v${CPRO_VERSION} requires at least Winamp ${CPRO_WINAMP_VERSION} or above.$\r$\n$\nPlease update your Winamp version first (You have installed: $R0).$\r$\nInstallation will be aborted."
+	LangString CPro_Warning_AtLeast_2000	${LANG_RUSSIAN} "Sorry, your system is not supported. ${CPRO_NAME} v${CPRO_VERSION} only runs on Windows 2000 or newer.$\r$\nInstallation will be aborted."
 
 ; Close all instances of Winamp
 	LangString CPro_CloseWinamp_Welcome_Title ${LANG_RUSSIAN} "Завершение работы программ"

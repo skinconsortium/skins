@@ -85,6 +85,7 @@
 	LangString CPro_FinishPage_6 ${LANG_FRENCH} "Ouvrir Winamp avec le skin ${CPRO_NAME} par défaut"
 	LangString CPro_FinishPage_7 ${LANG_FRENCH} "Terminer"
 	LangString CPro_FinishPage_8 ${LANG_FRENCH} "Open Winamp with current skin"	
+	LangString CPro_FinishPage_9 ${LANG_FRENCH} "Do not open Winamp at all"
 	
 ; First Page of Uninstaller
 	LangString CPro_Un_Welcome_Title ${LANG_FRENCH} "Bienvenue dans l'assistant de désinstallation de $(^NameDA)"
@@ -95,6 +96,10 @@
 	LangString CPro_Account ${LANG_FRENCH} "Paramètres multi-utilisateurs"
 	LangString CPro_No_Account ${LANG_FRENCH} "Pas de paramètres multi-utilisateurs"
 	LangString CPro_Winamp_Path ${LANG_FRENCH} "Veuillez spécifier le dossier du fichier de configuration de Winamp..."	
+	LangString CPro_Warning_CreateMutex		${LANG_FRENCH}	"${CPRO_NAME} v${CPRO_VERSION} installer is already running."
+	LangString CPro_Warning_No_Winamp		${LANG_FRENCH} "Winamp wasn't detected on this system.$\r$\nPlease install latest Winamp version from Winamp.com,$\r$\nbefore you can install ${CPRO_NAME} v${CPRO_VERSION}.$\r$\nInstallation will be aborted."
+	LangString CPro_Warning_Low_Version		${LANG_FRENCH} "${CPRO_NAME} v${CPRO_VERSION} requires at least Winamp ${CPRO_WINAMP_VERSION} or above.$\r$\n$\nPlease update your Winamp version first (You have installed: $R0).$\r$\nInstallation will be aborted."
+	LangString CPro_Warning_AtLeast_2000	${LANG_FRENCH} "Sorry, your system is not supported. ${CPRO_NAME} v${CPRO_VERSION} only runs on Windows 2000 or newer.$\r$\nInstallation will be aborted."
 
 ; Close all instances of Winamp
 	LangString CPro_CloseWinamp_Welcome_Title ${LANG_FRENCH} "Applications à fermer"

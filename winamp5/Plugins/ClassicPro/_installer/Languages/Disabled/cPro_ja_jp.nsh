@@ -85,6 +85,7 @@
 	LangString CPro_FinishPage_6 ${LANG_JAPANESE} "Open Winamp with the default ${CPRO_NAME} skin now"
 	LangString CPro_FinishPage_7 ${LANG_JAPANESE} "Finish"
 	LangString CPro_FinishPage_8 ${LANG_JAPANESE} "Open Winamp with current skin"	
+	LangString CPro_FinishPage_9 ${LANG_JAPANESE} "Do not open Winamp at all"
 	
 ; First Page of Uninstaller
 	LangString CPro_Un_Welcome_Title ${LANG_JAPANESE} "Welcome to the $(^NameDA) Uninstall Wizard"

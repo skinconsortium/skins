@@ -85,6 +85,7 @@
 	LangString CPro_FinishPage_6 ${LANG_SWEDISH} "Open Winamp with the default ${CPRO_NAME} skin now"
 	LangString CPro_FinishPage_7 ${LANG_SWEDISH} "Finish"
 	LangString CPro_FinishPage_8 ${LANG_SWEDISH} "Open Winamp with current skin"	
+	LangString CPro_FinishPage_9 ${LANG_SWEDISH} "Do not open Winamp at all"
 	
 ; First Page of Uninstaller
 	LangString CPro_Un_Welcome_Title ${LANG_SWEDISH} "Welcome to the $(^NameDA) Uninstall Wizard"
