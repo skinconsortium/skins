@@ -85,6 +85,7 @@
 	LangString CPro_FinishPage_6 ${LANG_GERMAN} "Winamp mit der Standard ${CPRO_NAME} Skin öffnen"
 	LangString CPro_FinishPage_7 ${LANG_GERMAN} "Beenden"	
 	LangString CPro_FinishPage_8 ${LANG_GERMAN} "Open Winamp with current skin"
+	LangString CPro_FinishPage_9 ${LANG_GERMAN} "Do not open Winamp at all"
 	
 ; First Page of Uninstaller
 	LangString CPro_Un_Welcome_Title ${LANG_GERMAN} "Willkomen zum $(^NameDA) Deinstallationsprogramm"
@@ -95,6 +96,10 @@
 	LangString CPro_Account ${LANG_GERMAN} "Mehr-Benutzer Konfiguration"
 	LangString CPro_No_Account ${LANG_GERMAN} "keine Mehr-Benutzer Konfiguration"
 	LangString CPro_Winamp_Path ${LANG_GERMAN} "Pfad zur Winamp-Konfigurationsdatei..."	
+	LangString CPro_Warning_CreateMutex		${LANG_GERMAN}	"${CPRO_NAME} v${CPRO_VERSION} installer is already running."
+	LangString CPro_Warning_No_Winamp		${LANG_GERMAN} "Winamp wasn't detected on this system.$\r$\nPlease install latest Winamp version from Winamp.com,$\r$\nbefore you can install ${CPRO_NAME} v${CPRO_VERSION}.$\r$\nInstallation will be aborted."
+	LangString CPro_Warning_Low_Version		${LANG_GERMAN} "${CPRO_NAME} v${CPRO_VERSION} requires at least Winamp ${CPRO_WINAMP_VERSION} or above.$\r$\n$\nPlease update your Winamp version first (You have installed: $R0).$\r$\nInstallation will be aborted."
+	LangString CPro_Warning_AtLeast_2000	${LANG_GERMAN} "Sorry, your system is not supported. ${CPRO_NAME} v${CPRO_VERSION} only runs on Windows 2000 or newer.$\r$\nInstallation will be aborted."
 
 ; Close all instances of Winamp
 	LangString CPro_CloseWinamp_Welcome_Title ${LANG_GERMAN} "Laufende Programme beenden"

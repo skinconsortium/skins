@@ -85,6 +85,7 @@
 	LangString CPro_FinishPage_6 ${LANG_TURKISH} "Winamp'ý varsayýlan olarak ${CPRO_NAME} ile baþlat"
 	LangString CPro_FinishPage_7 ${LANG_TURKISH} "Bitir"
 	LangString CPro_FinishPage_8 ${LANG_TURKISH} "Open Winamp with current skin"	
+	LangString CPro_FinishPage_9 ${LANG_TURKISH} "Do not open Winamp at all"
 	
 ; First Page of Uninstaller
 	LangString CPro_Un_Welcome_Title ${LANG_TURKISH} "$(^NameDA) Kaldýrma Sahirbazý'na Hoþ Geldiniz"
@@ -95,6 +96,10 @@
 	LangString CPro_Account ${LANG_TURKISH} "Çoklu-kullanýcý ayarlarý"
 	LangString CPro_No_Account ${LANG_TURKISH} "Çoklu-kullanýcý ayarlarý yok"
 	LangString CPro_Winamp_Path ${LANG_TURKISH} "Winamp yapýlandýrma dosyasýnýn yolu belirleniyor..."	
+	LangString CPro_Warning_CreateMutex		${LANG_TURKISH}	"${CPRO_NAME} v${CPRO_VERSION} installer is already running."
+	LangString CPro_Warning_No_Winamp		${LANG_TURKISH} "Winamp wasn't detected on this system.$\r$\nPlease install latest Winamp version from Winamp.com,$\r$\nbefore you can install ${CPRO_NAME} v${CPRO_VERSION}.$\r$\nInstallation will be aborted."
+	LangString CPro_Warning_Low_Version		${LANG_TURKISH} "${CPRO_NAME} v${CPRO_VERSION} requires at least Winamp ${CPRO_WINAMP_VERSION} or above.$\r$\n$\nPlease update your Winamp version first (You have installed: $R0).$\r$\nInstallation will be aborted."
+	LangString CPro_Warning_AtLeast_2000	${LANG_TURKISH} "Sorry, your system is not supported. ${CPRO_NAME} v${CPRO_VERSION} only runs on Windows 2000 or newer.$\r$\nInstallation will be aborted."
 
 ; Close all instances of Winamp
 	LangString CPro_CloseWinamp_Welcome_Title ${LANG_TURKISH} "Program kapatma"
