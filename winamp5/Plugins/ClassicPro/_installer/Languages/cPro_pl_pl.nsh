@@ -23,8 +23,8 @@
 	LangString CPro_Language_Text		${LANG_POLISH} "Proszê wybraæ jêzyk:"
  
 ; First Page of Installer
-	LangString CPro_Welcome_Title ${LANG_POLISH} "Witam w kreatorze instalacji $(^NameDA)"
-	LangString CPro_Welcome_Text ${LANG_POLISH}  "Ten kreator pomo¿e Ci zainstalowaæ $(^NameDA).$\r$\n$\r$\nPrzed rozpoczêciem instalacji zalecane jest zamkniêcie Winampa. Pozwoli to na uaktualnienie niezbêdnych plików programu Winamp.$\n$\nDo prawid³owej pracy tej wersji ${CPRO_NAME} musisz mieæ zainstalowanego Winampa w wersji ${CPRO_WINAMP_VERSION} lub nowszego!$\r$\n$\r$\n$_CLICK"
+	LangString CPro_Welcome_Title		${LANG_POLISH} "Witam w kreatorze instalacji $(^NameDA)"
+	LangString CPro_Welcome_Text		${LANG_POLISH}  "Ten kreator pomo¿e Ci zainstalowaæ $(^NameDA).$\r$\n$\r$\nPrzed rozpoczêciem instalacji zalecane jest zamkniêcie Winampa. Pozwoli to na uaktualnienie niezbêdnych plików programu Winamp.$\n$\nDo prawid³owej pracy tej wersji ${CPRO_NAME} musisz mieæ zainstalowanego Winampa w wersji ${CPRO_WINAMP_SHORT_VERSION} lub nowszego!$\r$\n$\r$\n$_CLICK"
 
 ; Installer Header
 	!if ${CPRO_BUILD_TYPE} == "BETA"
@@ -80,23 +80,24 @@
 	LangString CPro_FinishPage_1 ${LANG_POLISH} "Zakoñczono instalacjê ${CPRO_NAME}${CPRO_CRS} v${CPRO_VERSION}"
 	LangString CPro_FinishPage_2 ${LANG_POLISH} "Kreator instalacji zakoñczy³ instalowanie ${CPRO_NAME} v${CPRO_VERSION}. Mo¿esz zacz¹æ u¿ywaæ skórek i wid¿etów ${CPRO_NAME} w Winampie."
 	LangString CPro_FinishPage_3 ${LANG_POLISH} "Jeœli podoba ci siê ${CPRO_NAME} i chcesz wspomóc dalszy rozwój projektu, wesprzyj nas dowoln¹ kwot¹."
-	LangString CPro_FinishPage_4 ${LANG_POLISH} "Co chcesz teraz zrobiæ?"
-	LangString CPro_FinishPage_5 ${LANG_POLISH} "Pobierz wiêcej skórek i wid¿etów ze strony ${CPRO_NAME}"
-	LangString CPro_FinishPage_6 ${LANG_POLISH} "Otwórz Winampa z domyœln¹ skórk¹ ${CPRO_NAME}"
-	LangString CPro_FinishPage_7 ${LANG_POLISH} "Zakoñcz"
-	LangString CPro_FinishPage_8 ${LANG_POLISH} "Otwórz Winampa z bie¿¹c¹ skórk¹"
-	LangString CPro_FinishPage_9 ${LANG_POLISH} "Nie uruchamiaj Winampa"
+	LangString CPro_FinishPage_4 ${LANG_POLISH} "Zakoñcz"	
+	LangString CPro_FinishPage_5 ${LANG_POLISH} "Co chcesz teraz zrobiæ?"	
+	LangString CPro_FinishPage_6 ${LANG_POLISH} "Pobierz wiêcej skórek i wid¿etów ze strony ${CPRO_NAME}"
+	LangString CPro_FinishPage_7 ${LANG_POLISH} "Uruchom Winampa"
+	LangString CPro_FinishPage_8 ${LANG_POLISH} "Ustaw skórkê ${CPRO_NAME} domyœln¹ skórk¹ Winampa"
 	
 
 ; First Page of Uninstaller
-	LangString CPro_Un_Welcome_Title ${LANG_POLISH} "Witam w kreatorze dezinstalacji $(^NameDA)"
-	LangString CPro_Un_Welcome_Text ${LANG_POLISH} "Ten kreator pomo¿e Ci odinstalowaæ $(^NameDA).$\r$\n$\r$\nPrzed rozpoczêciem dezinstalacji, upewnij siê, ¿e ${CPRO_NAME}${CPRO_CRS} ${CPRO_VERSION} nie jest uruchomiony.$\r$\n$\r$\n$_CLICK"
+	LangString CPro_Un_Welcome_Title	${LANG_POLISH} "Witam w kreatorze dezinstalacji $(^NameDA)"
+	LangString CPro_Un_Welcome_Text		${LANG_POLISH} "Ten kreator pomo¿e Ci odinstalowaæ $(^NameDA).$\r$\n$\r$\nPrzed rozpoczêciem dezinstalacji, upewnij siê, ¿e ${CPRO_NAME}${CPRO_CRS} ${CPRO_VERSION} nie jest uruchomiony.$\r$\n$\r$\n$_CLICK"
 
 ; Installation
 	LangString CPro_Ini 					${LANG_POLISH} "Aktualizacja pliku konfiguracyjnego winamp.ini..."
 	LangString CPro_Account 				${LANG_POLISH} "Konta wielu u¿ytkowników"
 	LangString CPro_No_Account 				${LANG_POLISH} "Brak obs³ugi kont wielu u¿ytkowników"
 	LangString CPro_Winamp_Path 			${LANG_POLISH} "Okreœlanie œcie¿ki do pliku konfiguracyjnego Winampa..."
+
+; Warnings
 	LangString CPro_Warning_CreateMutex		${LANG_POLISH} "Instalator programu ${CPRO_NAME} v${CPRO_VERSION} jest ju¿ uruchomiony."
 	LangString CPro_Warning_No_Winamp		${LANG_POLISH} "W systemie u¿ytkownika nie wykryto zainstalowanego Winampa.$\r$\nZanim zainstalujesz program ${CPRO_NAME} v${CPRO_VERSION},$\r$\nodwiedŸ stronê Winamp.com, pobierz najnowsz¹ wersjê Winampa i zainstaluj j¹.$\r$\nInstalacja zostanie przerwana."
 	LangString CPro_Warning_Low_Version		${LANG_POLISH} "Program ${CPRO_NAME} v${CPRO_VERSION} wymaga do prawid³owej pracy Winampa w wersji ${CPRO_WINAMP_VERSION} lub nowszej.$\r$\n$\nPrzed kontynuacj¹ instalacji uaktualnij Winampa (Masz zainstalowan¹ wersjê: $R0).$\r$\nInstalacja zostanie przerwana."
@@ -126,7 +127,7 @@
 
 ; First Page of Installer
 	LangString CPro_Widget_Welcome_Title ${LANG_POLISH} "Witam w kreatorze instalacji $(^NameDA)"
-	LangString CPro_Widget_Welcome_Text  ${LANG_POLISH} "Ten kreator pomo¿e Ci zainstalowaæ $(^NameDA).$\r$\n$\r$\nDo prawid³owej pracy tej wersji ${CPRO_WIDGET_NAME} musisz mieæ zainstalowanego Winampa w wersji ${CPRO_WINAMP_VERSION} lub nowszego oraz ${CPRO_NAME} ${CPRO_VERSION}!$\r$\n$\r$\n$_CLICK"
+	LangString CPro_Widget_Welcome_Text  ${LANG_POLISH} "Ten kreator pomo¿e Ci zainstalowaæ $(^NameDA).$\r$\n$\r$\nDo prawid³owej pracy tej wersji ${CPRO_WIDGET_NAME} musisz mieæ zainstalowanego Winampa w wersji ${CPRO_WINAMP_SHORT_VERSION} lub nowszego oraz ${CPRO_NAME} ${CPRO_VERSION}!$\r$\n$\r$\n$_CLICK"
 
 	LangString CPro_Widget_Caption	 ${LANG_POLISH} "Instalacja ${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION}"	
 	LangString CPro_Widget_Name_Text ${LANG_POLISH} "${CPRO_WIDGET_NAME} v${CPRO_WIDGET_VERSION} dla ${CPRO_NAME}${CPRO_CRS}"		

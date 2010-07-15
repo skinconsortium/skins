@@ -10,6 +10,7 @@
 	!define CPRO_REVISION "0"
 	!define CPRO_BUILD "0"
 	!define CPRO_WINAMP_VERSION "5.5.5.0"	
+	!define CPRO_WINAMP_SHORT_VERSION "5.55"
 	
 ;###########################################################################################
 ;	VERSION INFORMATION

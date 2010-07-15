@@ -15,7 +15,7 @@
 	!define CPRO_SOURCEPATH "ClassicPro"
 	!define CPRO_NAME "ClassicPro"
 	!define CPRO_CRS "©"
-	!define CPRO_PAYPAL_LINK "https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=donate%40skinconsortium%2ecom&item_name=SkinConsortium%20Donation&item_number=%3e%20for%20skin%3a%20ClassicPro&no_shipping=1&no_note=1&cn=Optional%20Message&tax=0¤cy_code=EUR&lc=GB&bn=PP%2dDonationsBF&charset=UTF%2d8"	
+	!define CPRO_PAYPAL_LINK "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4V8JAK6FLJZHW"	
 	!define CPRO_TECHNICAL_SUPPORT_LINK "http://forums.skinconsortium.com/index.php?page=Board&boardID=46"
 	!define /Date CPRO_DATE "%Y-%m-%d"
 	!define CPRO_BT "http://cpro.skinconsortium.com"
@@ -312,35 +312,32 @@ Function CreateFinishPage
 	${NSD_AddStyle} $Label3 ${WS_VISIBLE}|${WS_CHILD}|${WS_CLIPSIBLINGS}
     SetCtlColors $Label3 "0x000000" "TRANSPARENT"
 
-	${NSD_CreateLabel} 115u 125u 63% 10u "$(CPro_FinishPage_4)"
+	${NSD_CreateLabel} 115u 125u 63% 10u "$(CPro_FinishPage_5)"
 	Pop $Label4
 	${NSD_AddStyle} $Label4 ${WS_VISIBLE}|${WS_CHILD}|${WS_CLIPSIBLINGS}
     SetCtlColors $Label4 "0x000000" "TRANSPARENT"	
-
-	${NSD_CreateRadioButton} 115u 135u 63% 12u "$(CPro_FinishPage_6)"
-	Pop $RadioButton1
-	;${NSD_Check} $RadioButton1
-	SetCtlColors $RadioButton1 "0x000000" "0xFFFFFF"
 	
-	${NSD_CreateRadioButton} 115u 147u 63% 12u "$(CPro_FinishPage_8)"
-	Pop $RadioButton2	
-	;${NSD_Check} $RadioButton2
-    SetCtlColors $RadioButton2 "0x000000" "0xFFFFFF"	
-
-	${NSD_CreateRadioButton} 115u 159u 63% 12u "$(CPro_FinishPage_9)"
-	Pop $RadioButton3	
-	${NSD_Check} $RadioButton3
-    SetCtlColors $RadioButton3 "0x000000" "0xFFFFFF"
-
+; Run Winamp	
+	${NSD_CreateCheckBox} 120u 138u 60% 12u "$(CPro_FinishPage_7)"
+	Pop $ACheckBox1
+	${NSD_Check} $ACheckBox1
+	SetCtlColors $ACheckBox1 "0x000000" "0xFFFFFF"
 	
-	${NSD_CreateCheckBox} 115u 175u 63% 16u "$(CPro_FinishPage_5)"
+; Set ClassicPro skin as default	
+	${NSD_CreateCheckBox} 120u 150u 60% 12u "$(CPro_FinishPage_8)"
+	Pop $ACheckBox2
+	${NSD_Check} $ACheckBox2
+    SetCtlColors $ACheckBox2 "0x000000" "0xFFFFFF"	
+	
+; Go to homepage	
+	${NSD_CreateCheckBox} 115u 175u 63% 16u "$(CPro_FinishPage_6)"
 	Pop $CheckBox1	
 	${NSD_Check} $CheckBox1		
     SetCtlColors $CheckBox1 "0x000000" "0xFFFFFF"	
 
 
 	GetDlgItem $R0 $HWNDPARENT 1
-	SendMessage $R0 ${WM_SETTEXT} 0 "STR:$(CPro_FinishPage_7)"
+	SendMessage $R0 ${WM_SETTEXT} 0 "STR:$(CPro_FinishPage_4)"
 	
 	nsDialogs::Show
 	${NSD_FreeImage} $Img_Handle_Left
@@ -358,28 +355,25 @@ FunctionEnd
 
 Function CheckFinishPage
 
-	${NSD_GetState} $CheckBox1 $Control_State
+; Run Winamp
+	${NSD_GetState} $ACheckBox1 $Control_State
 	${If} $Control_State = ${BST_CHECKED}
-		ExecShell "open" "${CPRO_WEB_PAGE}"
+		ExecShell "open" "$INSTDIR\winamp.exe"
 	${EndIf}
 
-	${NSD_GetState} $RadioButton1 $Control_State
+; Default ClassicPro skin	
+	${NSD_GetState} $ACheckBox2 $Control_State
 	${If} $Control_State = ${BST_CHECKED}
 		DetailPrint "$(CPro_Ini)"
 		WriteINIStr "$WINAMP_INI_DIR\winamp.ini" "Winamp" "skin" "cPro__Bento.wal"
 		FlushINI "$WINAMP_INI_DIR\winamp.ini"
-		ExecShell "open" "$INSTDIR\winamp.exe"
 	${EndIf}
 
-	${NSD_GetState} $RadioButton2 $Control_State
+; Homepage	
+	${NSD_GetState} $CheckBox1 $Control_State
 	${If} $Control_State = ${BST_CHECKED}
-		ExecShell "open" "$INSTDIR\winamp.exe"
+		ExecShell "open" "${CPRO_WEB_PAGE}"
 	${EndIf}
-
-	${NSD_GetState} $RadioButton3 $Control_State
-	${If} $Control_State = ${BST_CHECKED}
-		Return
-	${EndIf}	
 	
 FunctionEnd
 

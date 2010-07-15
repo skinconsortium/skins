@@ -23,9 +23,8 @@ Function Initialize_Variables
 	Var /Global Label3
 	Var /Global Label4	
 	Var /Global CheckBox1
-	Var /Global RadioButton1
-	Var /Global RadioButton2
-	Var /Global RadioButton3	
+	Var /Global ACheckBox1
+	Var /Global ACheckBox2
 	Var /Global Control_State	
 	Var /GLOBAL Button	
 	Var /GLOBAL Img_Left		
