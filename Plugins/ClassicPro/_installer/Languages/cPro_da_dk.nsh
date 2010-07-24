@@ -99,7 +99,7 @@
 ; Warnings
 	LangString CPro_Warning_CreateMutex		${LANG_DANISH} "${CPRO_NAME} v${CPRO_VERSION} installeren kører allerede."
 	LangString CPro_Warning_No_Winamp		${LANG_DANISH} "Winamp blev ikke fundet på dette system.$\r$\nInstallér venligst seneste Winamp version fra Winamp.com,$\r$\nfør du kan installere ${CPRO_NAME} v${CPRO_VERSION}.$\r$\nInstallationen vil nu blive annuleret."
-	LangString CPro_Warning_Low_Version		${LANG_DANISH} "${CPRO_NAME} v${CPRO_VERSION} krøver mindst Winamp ${CPRO_WINAMP_VERSION} eller højere.$\r$\n$\nOpdater venligst din Winamp version først (Du har installeret: $R0).$\r$\nInstallationen vil nu blive annuleret."
+	LangString CPro_Warning_Low_Version		${LANG_DANISH} "${CPRO_NAME} v${CPRO_VERSION} krøver mindst Winamp ${CPRO_WINAMP_VERSION} eller højere.$\r$\nOpdater venligst din Winamp version først (Du har installeret: $R0).$\r$\nInstallationen vil nu blive annuleret."
 	LangString CPro_Warning_AtLeast_2000	${LANG_DANISH} "Beklager, dit system er ikke understøttet. ${CPRO_NAME} v${CPRO_VERSION} kører kun på Windows 2000 eller nyere.$\r$\nInstallationen vil nu blive annuleret."
 
 ; Close all instances of Winamp
