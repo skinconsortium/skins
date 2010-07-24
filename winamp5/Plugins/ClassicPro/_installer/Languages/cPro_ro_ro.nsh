@@ -99,7 +99,7 @@
 ; Warnings
 	LangString CPro_Warning_CreateMutex		${LANG_ROMANIAN} "Asistentul pentru instalare ${CPRO_NAME} v${CPRO_VERSION} este deja lansat."
 	LangString CPro_Warning_No_Winamp		${LANG_ROMANIAN} "Winamp nu a fost detectat pe acest sistem.$\r$\nTrebuie sã instalaþi ultima versiune a Winamp de la Winamp.com,$\r$\nînainte de a putea instala ${CPRO_NAME} v${CPRO_VERSION}.$\r$\nInstallarea va fi anulatã."
-	LangString CPro_Warning_Low_Version		${LANG_ROMANIAN} "${CPRO_NAME} v${CPRO_VERSION} necesitã cel puþin Winamp ${CPRO_WINAMP_VERSION} or mai nou.$\r$\n$\nVã rugãm, mai îmtâi actualizaþi Winamp (existã instalat: $R0).$\r$\nInstallarea va fi anulatã."
+	LangString CPro_Warning_Low_Version		${LANG_ROMANIAN} "${CPRO_NAME} v${CPRO_VERSION} necesitã cel puþin Winamp ${CPRO_WINAMP_VERSION} or mai nou.$\r$\nVã rugãm, mai îmtâi actualizaþi Winamp (existã instalat: $R0).$\r$\nInstallarea va fi anulatã."
 	LangString CPro_Warning_AtLeast_2000	${LANG_ROMANIAN} "Din pãgate sistemul Dvs de operare nu este acceptat. ${CPRO_NAME} v${CPRO_VERSION} funcþioneazã pe Windows 2000 or mai nou.$\r$\nInstallarea va fi anulatã."
 
 ; Close all instances of Winamp

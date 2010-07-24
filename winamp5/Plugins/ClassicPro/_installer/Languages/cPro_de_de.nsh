@@ -99,7 +99,7 @@
 ; Warnings
 	LangString CPro_Warning_CreateMutex		${LANG_GERMAN} "${CPRO_NAME} v${CPRO_VERSION} Installer läuft bereits."
 	LangString CPro_Warning_No_Winamp		${LANG_GERMAN} "Winamp wurde nicht gefunden.$\r$\nBitte installieren Sie die aktuelle Winamp version von Winamp.com,$\r$\nbevor Sie ${CPRO_NAME} v${CPRO_VERSION}installieren.$\r$\nInstallation wird abgebrochen."
-	LangString CPro_Warning_Low_Version		${LANG_GERMAN} "${CPRO_NAME} v${CPRO_VERSION} benötigt mindestens Winamp ${CPRO_WINAMP_VERSION} oder höher.$\r$\n$\nBitte aktualisieren Sie Winamp (derzeit installierte Version: $R0).$\r$\nInstallation wird abgebrochen."
+	LangString CPro_Warning_Low_Version		${LANG_GERMAN} "${CPRO_NAME} v${CPRO_VERSION} benötigt mindestens Winamp ${CPRO_WINAMP_VERSION} oder höher.$\r$\nBitte aktualisieren Sie Winamp (derzeit installierte Version: $R0).$\r$\nInstallation wird abgebrochen."
 	LangString CPro_Warning_AtLeast_2000	${LANG_GERMAN} "Achtung, Ihr System wird leider nicht unterstützt. ${CPRO_NAME} v${CPRO_VERSION} benötigt mindestens Windows 2000 oder neuer.$\r$\nInstallation wird abgebrochen."
 
 ; Close all instances of Winamp

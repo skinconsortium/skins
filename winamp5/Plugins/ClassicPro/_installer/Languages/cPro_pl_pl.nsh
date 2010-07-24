@@ -100,7 +100,7 @@
 ; Warnings
 	LangString CPro_Warning_CreateMutex		${LANG_POLISH} "Instalator programu ${CPRO_NAME} v${CPRO_VERSION} jest ju¿ uruchomiony."
 	LangString CPro_Warning_No_Winamp		${LANG_POLISH} "W systemie u¿ytkownika nie wykryto zainstalowanego Winampa.$\r$\nZanim zainstalujesz program ${CPRO_NAME} v${CPRO_VERSION},$\r$\nodwiedŸ stronê Winamp.com, pobierz najnowsz¹ wersjê Winampa i zainstaluj j¹.$\r$\nInstalacja zostanie przerwana."
-	LangString CPro_Warning_Low_Version		${LANG_POLISH} "Program ${CPRO_NAME} v${CPRO_VERSION} wymaga do prawid³owej pracy Winampa w wersji ${CPRO_WINAMP_VERSION} lub nowszej.$\r$\n$\nPrzed kontynuacj¹ instalacji uaktualnij Winampa (Masz zainstalowan¹ wersjê: $R0).$\r$\nInstalacja zostanie przerwana."
+	LangString CPro_Warning_Low_Version		${LANG_POLISH} "Program ${CPRO_NAME} v${CPRO_VERSION} wymaga do prawid³owej pracy Winampa w wersji ${CPRO_WINAMP_VERSION} lub nowszej.$\r$\nPrzed kontynuacj¹ instalacji uaktualnij Winampa (Masz zainstalowan¹ wersjê: $R0).$\r$\nInstalacja zostanie przerwana."
 	LangString CPro_Warning_AtLeast_2000	${LANG_POLISH} "Przykro mi, ale Twój system operacyjny nie jest obs³ugiwany. Program ${CPRO_NAME} v${CPRO_VERSION} mo¿na uruchomiæ tylko w systemie Windows 2000 lub nowszym.$\r$\nInstalacja zostanie przerwana."
 	
 ; Close all instances of Winamp

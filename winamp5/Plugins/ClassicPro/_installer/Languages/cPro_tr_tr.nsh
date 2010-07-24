@@ -2,9 +2,9 @@
 
 ; Lang:				Turkish
 ; LangID			1055
-; Last udpdated:	5.06.2009
-; Author:			Ali Sarýoðlu
-; Email:			alsau@mynet.com
+; Last udpdated:	24.07.2010
+; Author:			Mertcan Kaya (MerTcaN)/Ali Sarýoðlu
+; Email:			mertcan.kaya@gmail.com/alsau@mynet.com
 
 ; Notes:
 ; Use ';' or '#' for comments
@@ -83,8 +83,8 @@
 	LangString CPro_FinishPage_4 ${LANG_TURKISH} "Bitir"
 	LangString CPro_FinishPage_5 ${LANG_TURKISH} "Þimdi ne yapmak istiyorsunuz?"
 	LangString CPro_FinishPage_6 ${LANG_TURKISH} "Daha fazla ${CPRO_NAME} widget ve dýþ görünümleri için web sayfamýzý ziyaret edin."
-	LangString CPro_FinishPage_7 ${LANG_TURKISH} "Run Winamp"
-	LangString CPro_FinishPage_8 ${LANG_TURKISH} "Set ${CPRO_NAME} as default skin"	
+	LangString CPro_FinishPage_7 ${LANG_TURKISH} "Winamp'ý çalýþtýr"
+	LangString CPro_FinishPage_8 ${LANG_TURKISH} "ClassicPro'yu varsayýlan dýþgörünüm olarak ayarla"	
 	
 ; First Page of Uninstaller
 	LangString CPro_Un_Welcome_Title	${LANG_TURKISH} "$(^NameDA) Kaldýrma Sahirbazý'na Hoþ Geldiniz"
@@ -97,10 +97,10 @@
 	LangString CPro_Winamp_Path		${LANG_TURKISH} "Winamp yapýlandýrma dosyasýnýn yolu belirleniyor..."	
 
 ; Warnings
-	LangString CPro_Warning_CreateMutex		${LANG_TURKISH}	"${CPRO_NAME} v${CPRO_VERSION} installer is already running."
-	LangString CPro_Warning_No_Winamp		${LANG_TURKISH} "Winamp wasn't detected on this system.$\r$\nPlease install latest Winamp version from Winamp.com,$\r$\nbefore you can install ${CPRO_NAME} v${CPRO_VERSION}.$\r$\nInstallation will be aborted."
-	LangString CPro_Warning_Low_Version		${LANG_TURKISH} "${CPRO_NAME} v${CPRO_VERSION} requires at least Winamp ${CPRO_WINAMP_VERSION} or above.$\r$\n$\nPlease update your Winamp version first (You have installed: $R0).$\r$\nInstallation will be aborted."
-	LangString CPro_Warning_AtLeast_2000	${LANG_TURKISH} "Sorry, your system is not supported. ${CPRO_NAME} v${CPRO_VERSION} only runs on Windows 2000 or newer.$\r$\nInstallation will be aborted."
+	LangString CPro_Warning_CreateMutex		${LANG_TURKISH}	"${CPRO_NAME} v${CPRO_VERSION} kurucusu zaten çalýþmakta."
+	LangString CPro_Warning_No_Winamp		${LANG_TURKISH} "Winamp sisteminizde algýlanmadý.$\r$\nLütfen, {CPRO_NAME} v${CPRO_VERSION} kurulumundan önce$\r$\nWinamp.com'dan Winamp'ýn son sürümünü yükleyin.$\r$\nKurulum bitirilmeden durdurulacaktýr."
+	LangString CPro_Warning_Low_Version		${LANG_TURKISH} "${CPRO_NAME} v${CPRO_VERSION} en azýndan Winamp ${CPRO_WINAMP_VERSION} ya da üzerini gerektirmektedir.$\r$\nLütfen önce Winamp sürümünüzü güncelleyin (Kurulu olan: $R0).$\r$\nKurulum bitirilmeden durdurulacaktýr."
+	LangString CPro_Warning_AtLeast_2000	${LANG_TURKISH} "Üzgünüz, sisteminiz desteklenmemekte. ${CPRO_NAME} v${CPRO_VERSION} yalnýzca Windows 2000 ya da daha yenisinde çalýþýr.$\r$\nKurulum bitirilmeden durdurulacaktýr."
 
 ; Close all instances of Winamp
 	LangString CPro_CloseWinamp_Welcome_Title		${LANG_TURKISH} "Program kapatma"
@@ -113,8 +113,8 @@
 	LangString CPro_CloseWinamp_ColHeadings1		${LANG_TURKISH} "Uygulama"
 	LangString CPro_CloseWinamp_ColHeadings2		${LANG_TURKISH} "Yansýma Adý"
 	LangString CPro_CloseWinamp_Autoclosesilent		${LANG_TURKISH} "Program kapatýlýrken hata oluþtu"
-	LangString CPro_CloseWinamp_MenuItem1			${LANG_TURKISH} "Close"
-	LangString CPro_CloseWinamp_MenuItem2			${LANG_TURKISH} "Copy list"
+	LangString CPro_CloseWinamp_MenuItem1			${LANG_TURKISH} "Kapat"
+	LangString CPro_CloseWinamp_MenuItem2			${LANG_TURKISH} "Listeyi kopyala"
 	
 ; Menu Start
 	LangString CPro_MenuStart1 ${LANG_TURKISH} "${CPRO_NAME} Kaldýr"
