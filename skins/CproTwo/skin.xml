@@ -23,10 +23,9 @@
 			<accelerator bind="space" action="SHOW_CURRENT_TRACK" />
 	</accelerators>
 	
-	<include file="@COLORTHEMESPATH@/../../Plugins/classicPro/engine/load-onexui.xml"/>
-
-	<include file="player-elements2.xml"/>
+	<include file="colorthemes.xml"/>
+	<scripts> <script file="warning_1.14.maki" param="@COLORTHEMESPATH@"/> </scripts>
 	<include file="colors.xml"/>
-	<include file="xml/player.xml"/>
+	<include file="@COLORTHEMESPATH@/../../Plugins/classicPro/engine/load-two.xml"/>
 
 </WinampAbstractionLayer>
