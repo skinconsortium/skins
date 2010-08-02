@@ -1,8 +1,0 @@
-<include file="player-elements.xml"/>
-
-<container id="main" name="Main Window" primarycomponent="guid:player">
-
-	<include file="player-normal.xml"/>
-	<include file="player-shade.xml"/>
-
-</container>
