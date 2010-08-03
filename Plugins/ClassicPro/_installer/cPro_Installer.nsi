@@ -501,6 +501,17 @@ Section "$(CPro_CProFiles)" "CPro_Sec_CProFiles"
 		File "..\engine\one\scripts\attribs\*.m"
 	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\one\xml
 		File "..\engine\one\xml\*.xml"
+
+; CPro engine	 - cPro::Two
+	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\two\scripts
+		File "..\engine\two\scripts\*.m"
+		File "..\engine\two\scripts\*.maki"
+	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\two\xml
+		File "..\engine\two\xml\*.xml"
+	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\one\xml
+		File "..\engine\two\images\*.png"
+
+
 ; CPro engine	 - Scripts
 	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\scripts
 		File "..\engine\scripts\*.m"
