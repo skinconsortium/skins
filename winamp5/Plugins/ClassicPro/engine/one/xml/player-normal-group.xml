@@ -1,11 +1,3 @@
-<groupdef id="modsic.suiarea">
-	<Centro:SUI id="cpro.sui" fitparent="1"/>
-</groupdef>
-
-
-
-
-
 <groupdef id="beatvisB.left">
 	<layer id="beatvisB.left.layer" x="-150" y="0" h="45" relatx="1" image="beat.left.b" tile="1" alpha="253"/>
 </groupdef>

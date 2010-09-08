@@ -1,12 +1,13 @@
 -------------------------------------------------------------
-Version 1.15 (3 Aug 2010)
+Version 1.15 (7 Sep 2010)
 -------------------------------------------------------------
+- Updated: BrowserPro sources list with new sites!
 - Improved: Beatvis algorithm
-- Improved: More bundled color themes with cPro - Bento
 - Improved: Added an extra beatvis mode for cPro - Bento
 - Fixed: Opened tab moving out of line when old tab close
 - Fixed: If tab appear again still have the old width
 - Fixed: When tab close the other tabs doesn't utilize the extra space
+- Fixed: ModernSongticker & SCChannel xui's can't go ghost
 -------------------------------------------------------------
 
 

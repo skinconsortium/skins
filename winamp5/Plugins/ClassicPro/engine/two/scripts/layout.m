@@ -20,7 +20,7 @@ System.onScriptLoaded() {
 
 	player = System.getContainer("main");
 	normal = player.getLayout("normal");
-	normal.setRedrawOnResize(0);
+	//normal.setRedrawOnResize(0);
 
 	g = getScriptGroup();
 	g_screen = g.getObject("two.screen");
@@ -100,6 +100,7 @@ saveSkinPos(){
 }
 
 fullScreen(boolean onOff){
+	normal.hide();
 	if(onOff){
 		g_frameBut.hide();
 		g_screen.setXmlParam("x", "0");
@@ -171,6 +172,7 @@ fullScreen(boolean onOff){
 		g_sui.setXmlParam("h", integerToString(-(i_titlebar+i_info+i_playback+8)));
 		//g_sui.resize(8,i_titlebar+i_info+i_playback,-16,-(i_titlebar+i_info+i_playback+8));
 	}
+	normal.show();
 
 }
 

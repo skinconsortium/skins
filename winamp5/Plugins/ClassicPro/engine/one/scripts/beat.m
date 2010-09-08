@@ -13,12 +13,13 @@ Global Group frameGroup, beatGroup, promoGroup, b01, b02;
 
 Global AnimatedLayer beatAnimLeft, beatAnimRight;
 Global Timer myTimer;
-Global int lastBeatLeft,lastBeatRight, myFrames, aniW, beatLeft, beatRight, frameLeft, frameRight, run_max, cusno;
+Global int lastBeatLeft,lastBeatRight, myFrames, aniW, beatLeft, beatRight, frameLeft, run_max1, frameRight, cusno; 
 Global Boolean showBeat, showPromo, animTypeB, oneSide, customvis;
 Global Layer promoPic, mouseTrap, b01layer, b02layer, c01, c02;
 Global Popupmenu selMenu;
 Global XmlDoc myDoc;
 Global List cusbeat_names;
+Global float run_max;
 
 System.onScriptLoaded (){
 	frameGroup = getScriptGroup ();
@@ -141,9 +142,16 @@ myTimer.onTimer(){
 		beatLeft=(beatLeft+beatRight)/2;
 	}
 	
+	
+	
 	if (beatLeft > run_max) run_max = beatLeft;
 	if (beatRight > run_max) run_max = beatRight;
+	run_max = run_max*0.9999;
+	if (run_max < 50) run_max = 50;
 	
+	
+	//System.SetclipboardText(floatToString(run_max,5));
+
 	if(animTypeB){
 		beatLeft=aniW/run_max*beatLeft;
 		b01.setXmlParam("w", integerToString(beatLeft));
@@ -152,8 +160,8 @@ myTimer.onTimer(){
 	}
 	else
 	{	
-		frameLeft=((beatLeft/(run_max*0.8))*myFrames);
-		frameRight=((beatRight/(run_max*0.8))*myFrames);
+		frameLeft=((beatLeft/(run_max*1))*myFrames);
+		frameRight=((beatRight/(run_max*1))*myFrames);
 
 
 		if (frameLeft<lastBeatLeft){
@@ -180,7 +188,9 @@ myTimer.onTimer(){
 
 		lastBeatLeft=frameLeft;
 		lastBeatRight=frameRight;
-
+		
+		//debuger+=integerToString(frameLeft)+", ";
+		//System.SetclipboardText(debuger);
 		beatAnimLeft.gotoframe(frameLeft);
 		beatAnimRight.gotoframe(frameRight);
 	}

@@ -1,7 +1,7 @@
 <elements>
     <bitmap id="icon.google" file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\widgets\Data\BrowserPro\icons\google.png"/>
     <bitmap id="icon.wikipedia" file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\widgets\Data\BrowserPro\icons\wikipedia.png"/>
-    <bitmap id="icon.foxytunes" file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\widgets\Data\BrowserPro\icons\foxytunes.png"/>
+    <bitmap id="icon.yahoomusic" file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\widgets\Data\BrowserPro\icons\yahoomusic.png"/>
     <bitmap id="icon.lyricplugin" file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\widgets\Data\BrowserPro\icons\lyricplugin.png"/>
     <bitmap id="icon.explorer" file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\widgets\Data\BrowserPro\icons\explorer.png"/>
     <bitmap id="icon.youtube" file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\widgets\Data\BrowserPro\icons\youtube.png"/>
@@ -12,4 +12,5 @@
 	<bitmap id="icon.rateyourmusic" file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\widgets\Data\BrowserPro\icons\rateyourmusic.png"/>
 	<bitmap id="icon.discogs" file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\widgets\Data\BrowserPro\icons\discogs.png"/>
 	<bitmap id="icon.songbook.lyrics" file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\widgets\Data\BrowserPro\icons\songbook-lyrics.png"/>
+	<bitmap id="icon.lastfm" file="@COLORTHEMESPATH@\..\..\Plugins\classicPro\engine\widgets\Data\BrowserPro\icons\lastfm.png"/>
 </elements>

@@ -14,6 +14,6 @@ by Pieter Nieuwoudt (pjn123) > sylvester@skinconsortium.com
 	<layer id="mono" fitparent="1" visible="0"/>
 	<layer id="stereo" fitparent="1" visible="0"/>
 	<layer id="6ch" fitparent="1" visible="0"/>
-	<layer fitparent="1" dblclickaction="WA5:Prefs" dblclickparam="42"/>
+	<layer id="sccoverlay" fitparent="1" dblclickaction="WA5:Prefs" dblclickparam="42"/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\xui\SC-Channels\scchannels.maki"/>
 </groupdef>

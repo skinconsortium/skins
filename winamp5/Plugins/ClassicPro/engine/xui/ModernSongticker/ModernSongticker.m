@@ -100,6 +100,10 @@ System.onSetXuiParam(String param, String value) {
 	else if(strlower(param) == "id_mute"){
 		def_Mute = value;
 	}
+	else if(strlower(param) == "ghost_all"){
+		info_songticker.setXmlParam("ghost", value);
+		info_news.setXmlParam("ghost", value);
+	}
 	else{
 		info_songticker.setXmlParam(param, value);
 		info_news.setXmlParam(param, value);

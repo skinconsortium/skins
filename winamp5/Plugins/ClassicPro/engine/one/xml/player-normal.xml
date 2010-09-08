@@ -1,5 +1,9 @@
 <include file="player-normal-group.xml"/>
 
+<groupdef id="modsic.suiarea">
+	<Centro:SUI id="cpro.sui" fitparent="1"/>
+</groupdef>
+
 <layout id="normal" minimum_h="168" minimum_w="317" h="168" w="317" default_w="500" default_h="500" appbar="top|bottom|left|right" wantfocus="1" linkwidth="shade">
 
 	<group id="cpro.normal.background" fitparent="1" sysregion="1"/>
@@ -149,7 +153,7 @@
 	
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\one\scripts\extendedbuttons.maki"/>
 	
-	<SC:UpdateSystem x="0" y="0" h="0" w="0" skinname="classicpro" skinversion="1.14" ofvalue="ClassicPro"/>
+	<SC:UpdateSystem x="0" y="0" h="0" w="0" skinname="classicpro" skinversion="1.15" ofvalue="ClassicPro"/>
 
 	<group id="cpro.normal.overlay" fitparent="1" sysregion="1"/>
 </layout>

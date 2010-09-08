@@ -4,7 +4,7 @@ Function updateChannel(String SongInfoString);
 Function string tokenizeSongInfo(String tkn, String sinfo);
 
 Global Group XUIGroup;
-Global Layer lay1ch, lay2ch, lay6ch;
+Global Layer lay1ch, lay2ch, lay6ch, overlay;
 Global Timer songInfoTimer;
 
 System.onScriptLoaded() {
@@ -12,6 +12,7 @@ System.onScriptLoaded() {
 	lay1ch = XUIGroup.findObject("mono");
 	lay2ch = XUIGroup.findObject("stereo");
 	lay6ch = XUIGroup.findObject("6ch");
+	overlay = XUIGroup.findObject("sccoverlay");
 	
 	songInfoTimer = new Timer;
 	songInfoTimer.setDelay(2000);
@@ -40,6 +41,18 @@ System.onSetXuiParam(String param, String value) {
 	}
 	else if(strlower(param) == "ch_6"){
 		lay6ch.setXmlParam("image", value);
+	}
+	else if(strlower(param) == "ghost_all"){
+		lay1ch.setXmlParam("ghost", value);
+		lay2ch.setXmlParam("ghost", value);
+		lay6ch.setXmlParam("ghost", value);
+		overlay.setXmlParam("ghost", value);
+	}
+	else{
+		lay1ch.setXmlParam(param, value);
+		lay2ch.setXmlParam(param, value);
+		lay6ch.setXmlParam(param, value);
+		overlay.setXmlParam(param, value);
 	}
 }
 
