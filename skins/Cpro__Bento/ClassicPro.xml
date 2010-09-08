@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<ClassicPro version="1.14" engine="one">
+<ClassicPro version="1.15" engine="one">
 	<!-- See the <Cpro - Bento/not used> folder for the optional stuff you can use here-->
 	
 	<TextSettings>
@@ -12,6 +12,7 @@
 		<BeatVis>
 			<customvis name="Bars"/>
 			<customvis name="Llama"/>
+			<customvis name="Soccer Llama!"/>
 		</BeatVis>
 	</Visualization>
 

@@ -99,5 +99,6 @@
 	-->
 	<bitmap id="beat.1.left" file="beat_left2.png" gammagroup="n.beatvis"/>
 	<bitmap id="beat.1.right" file="beat_right2.png" gammagroup="n.beatvis"/>
-
+	<bitmap id="beat.2.left" file="beat_left3.png" gammagroup="n.beatvis"/>
+	<bitmap id="beat.2.right" file="beat_right3.png" gammagroup="n.beatvis"/>
 </elements>

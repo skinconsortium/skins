@@ -3,7 +3,7 @@
 <WasabiXML version="1.34">
 
 <skininfo>
-	<version>1.14</version>
+	<version>1.15</version>
 	<name>cPro - Bento</name>
 	<comment>Graphics by the the original Winamp development team</comment>
 	<author gaybag="SC">Skin Consortium</author>
@@ -11,7 +11,7 @@
 	<screenshot>screenshot.png</screenshot>
 	<homepage>http://cpro.skinconsortium.com</homepage>
 </skininfo>
-	<scripts> <script file="warning_1.14.maki" param="@COLORTHEMESPATH@"/> </scripts>
+	<scripts> <script file="warning_1.15.maki" param="@COLORTHEMESPATH@"/> </scripts>
 	<groupdef id="cpro.side.overlay">
 		<rect x="1" y="1" w="-2" h="-19" relatw="1" relath="1" filled="1" color="wasabi.list.background" ghost="1"/>
 	</groupdef>

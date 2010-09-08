@@ -155,105 +155,157 @@
 </gammaset>
 
 <gammaset id="Winamp 3">
-  <gammagroup id="n.Text.On.Bg" value="2571,2571,2571" gray="0" boost="0" />
-  <gammagroup id="n.SuiFrame" value="3103,1790,3103" gray="0" boost="0" />
-  <gammagroup id="n.Color.ListCur" value="4096,1152,-4096" gray="0" boost="0" />
-  <gammagroup id="n.Color.ListSel" value="0,4096,0" gray="1" boost="0" />
-  <gammagroup id="n.Color.ListSelBg" value="-4096,-4096,3032" gray="0" boost="0" />
-  <gammagroup id="n.Notifier.Text.Big" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="n.Notifier.Text.Small" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="n.Background.Bottom" value="3103,1790,3103" gray="0" boost="0" />
-  <gammagroup id="n.Color.ListBg" value="-4096,-4096,-4096" gray="1" boost="0" />
-  <gammagroup id="n.Color.ListBg2" value="-1047,-1047,-1047" gray="1" boost="0" />
-  <gammagroup id="n.Background.Overlay" value="-4096,-4096,-4096" gray="1" boost="0" />
-  <gammagroup id="n.Beatvis" value="762,4096,762" gray="1" boost="0" />
-  <gammagroup id="n.Promo" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="n.Button.Top" value="372,-302,372" gray="2" boost="0" />
-  <gammagroup id="n.Button.Top2" value="372,-302,372" gray="2" boost="0" />
-  <gammagroup id="n.Button" value="-657,-657,-657" gray="2" boost="0" />
-  <gammagroup id="n.Button2" value="-515,-515,-515" gray="2" boost="0" />
-  <gammagroup id="n.SuiFrameLabel" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="n.Volume.BG" value="-1579,4096,-1720" gray="1" boost="0" />
-  <gammagroup id="n.Volume.Thumb" value="-657,-657,-657" gray="2" boost="0" />
-  <gammagroup id="n.Background.Alt" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="n.Scrollbars.Gfx" value="-657,-657,-657" gray="2" boost="0" />
-  <gammagroup id="n.Seeker.BG" value="-1579,4096,-1720" gray="1" boost="0" />
-  <gammagroup id="n.Seeker.Thumb" value="-657,-657,-657" gray="2" boost="0" />
-  <gammagroup id="n.Vis" value="0,4096,0" gray="1" boost="0" />
-  <gammagroup id="n.TooltipCombobox" value="4096,1400,4096" gray="0" boost="0" />
-  <gammagroup id="n.Notifier.Bg" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="n.Text.SongInfo" value="4096,4096,4096" gray="1" boost="0" />
-  <gammagroup id="n.Text.SongTime" value="1294,1294,1294" gray="1" boost="1" />
-  <gammagroup id="n.Color.List" value="0,4096,0" gray="1" boost="0" />
-  <gammagroup id="n.Menu.Text" value="4096,4096,4096" gray="0" boost="0" />
-  <gammagroup id="n.TooltipCombobox.Text" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="Color.GenericText" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="n.Button.Icon" value="-3919,-869,-4096" gray="1" boost="0" />
-  <gammagroup id="n.Cover" value="2358,4096,2323" gray="1" boost="0" />
-  <gammagroup id="n.Button.Bolt" value="-231,0,-2891" gray="0" boost="0" />
-  <gammagroup id="n.Tab.Text" value="1684,726,1684" gray="0" boost="0" />
-  <gammagroup id="n.Scrollbars.Bg" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="s.Background.Bottom" value="3103,1790,3103" gray="0" boost="0" />
-  <gammagroup id="s.Background.Overlay" value="-4096,-4096,-4096" gray="1" boost="0" />
-  <gammagroup id="s.Button" value="-657,-657,-657" gray="2" boost="0" />
-  <gammagroup id="s.Volume.BG" value="-1579,4096,-1720" gray="1" boost="0" />
-  <gammagroup id="s.Seeker.BG" value="-1579,4096,-1720" gray="1" boost="0" />
-  <gammagroup id="s.Volume.Thumb" value="-657,-657,-657" gray="2" boost="0" />
-  <gammagroup id="s.Seeker.Thumb" value="-657,-657,-657" gray="2" boost="0" />
-  <gammagroup id="s.Vis" value="0,4096,0" gray="1" boost="0" />
-  <gammagroup id="n.Text.Status" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="n.SuiFrame.Eq" value="0,0,0" gray="1" boost="1" />
-  <gammagroup id="n.Notifier.Text" value="0,0,0" gray="0" boost="0" />
+<gammagroup id="n.Text.On.Bg" value="2571,2571,2571" gray="0" boost="0" />
+<gammagroup id="n.SuiFrame" value="3103,1790,3103" gray="0" boost="0" />
+<gammagroup id="n.Color.ListCur" value="4096,1152,-4096" gray="0" boost="0" />
+<gammagroup id="n.Color.ListSel" value="0,4096,0" gray="1" boost="0" />
+<gammagroup id="n.Color.ListSelBg" value="-4096,-4096,3032" gray="0" boost="0" />
+<gammagroup id="n.Notifier.Text.Big" value="0,0,0" gray="0" boost="0" />
+<gammagroup id="n.Notifier.Text.Small" value="0,0,0" gray="0" boost="0" />
+<gammagroup id="n.Background.Bottom" value="3103,1790,3103" gray="0" boost="0" />
+<gammagroup id="n.Color.ListBg" value="-4096,-4096,-4096" gray="1" boost="0" />
+<gammagroup id="n.Color.ListBg2" value="-1047,-1047,-1047" gray="1" boost="0" />
+<gammagroup id="n.Background.Overlay" value="-4096,-4096,-4096" gray="1" boost="0" />
+<gammagroup id="n.Beatvis" value="762,4096,762" gray="1" boost="0" />
+<gammagroup id="n.Promo" value="0,0,0" gray="0" boost="0" />
+<gammagroup id="n.Button.Top" value="372,-302,372" gray="2" boost="0" />
+<gammagroup id="n.Button.Top2" value="372,-302,372" gray="2" boost="0" />
+<gammagroup id="n.Button" value="-657,-657,-657" gray="2" boost="0" />
+<gammagroup id="n.Button2" value="-515,-515,-515" gray="2" boost="0" />
+<gammagroup id="n.SuiFrameLabel" value="0,0,0" gray="0" boost="0" />
+<gammagroup id="n.Volume.BG" value="-1579,4096,-1720" gray="1" boost="0" />
+<gammagroup id="n.Volume.Thumb" value="-657,-657,-657" gray="2" boost="0" />
+<gammagroup id="n.Background.Alt" value="0,0,0" gray="0" boost="0" />
+<gammagroup id="n.Scrollbars.Gfx" value="-657,-657,-657" gray="2" boost="0" />
+<gammagroup id="n.Seeker.BG" value="-1579,4096,-1720" gray="1" boost="0" />
+<gammagroup id="n.Seeker.Thumb" value="-657,-657,-657" gray="2" boost="0" />
+<gammagroup id="n.Vis" value="0,4096,0" gray="1" boost="0" />
+<gammagroup id="n.TooltipCombobox" value="4096,1400,4096" gray="0" boost="0" />
+<gammagroup id="n.Notifier.Bg" value="0,0,0" gray="0" boost="0" />
+<gammagroup id="n.Text.SongInfo" value="4096,4096,4096" gray="1" boost="0" />
+<gammagroup id="n.Text.SongTime" value="1294,1294,1294" gray="1" boost="1" />
+<gammagroup id="n.Color.List" value="0,4096,0" gray="1" boost="0" />
+<gammagroup id="n.Menu.Text" value="4096,4096,4096" gray="0" boost="0" />
+<gammagroup id="n.TooltipCombobox.Text" value="0,0,0" gray="0" boost="0" />
+<gammagroup id="Color.GenericText" value="0,0,0" gray="0" boost="0" />
+<gammagroup id="n.Button.Icon" value="-3919,-869,-4096" gray="1" boost="0" />
+<gammagroup id="n.Cover" value="2358,4096,2323" gray="1" boost="0" />
+<gammagroup id="n.Button.Bolt" value="-231,0,-2891" gray="0" boost="0" />
+<gammagroup id="n.Tab.Text" value="1684,726,1684" gray="0" boost="0" />
+<gammagroup id="n.Scrollbars.Bg" value="0,0,0" gray="0" boost="0" />
+<gammagroup id="s.Background.Bottom" value="3103,1790,3103" gray="0" boost="0" />
+<gammagroup id="s.Background.Overlay" value="-4096,-4096,-4096" gray="1" boost="0" />
+<gammagroup id="s.Button" value="-657,-657,-657" gray="2" boost="0" />
+<gammagroup id="s.Volume.BG" value="-1579,4096,-1720" gray="1" boost="0" />
+<gammagroup id="s.Seeker.BG" value="-1579,4096,-1720" gray="1" boost="0" />
+<gammagroup id="s.Volume.Thumb" value="-657,-657,-657" gray="2" boost="0" />
+<gammagroup id="s.Seeker.Thumb" value="-657,-657,-657" gray="2" boost="0" />
+<gammagroup id="s.Vis" value="0,4096,0" gray="1" boost="0" />
+<gammagroup id="n.Text.Status" value="0,0,0" gray="0" boost="0" />
+<gammagroup id="n.SuiFrame.Eq" value="0,0,0" gray="1" boost="1" />
+<gammagroup id="n.Notifier.Text" value="0,0,0" gray="0" boost="0" />
 </gammaset>
 
 <gammaset id="Darker - Red">
-  <gammagroup id="n.Text.On.Bg" value="524,-4096,-4096" gray="0" boost="1" />
-  <gammagroup id="n.SuiFrame" value="-2130,-2130,-2130" gray="0" boost="0" />
-  <gammagroup id="n.Color.ListCur" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="n.Color.ListSel" value="0,-4096,-4096" gray="0" boost="0" />
-  <gammagroup id="n.Color.ListSelBg" value="1900,-4096,-4096" gray="0" boost="0" />
-  <gammagroup id="n.Notifier.Text.Big" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="n.Notifier.Text.Small" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="n.Background.Bottom" value="-2130,-2130,-2130" gray="0" boost="0" />
-  <gammagroup id="n.Color.ListBg" value="-4096,-4096,-4096" gray="0" boost="0" />
-  <gammagroup id="n.Color.ListBg2" value="-3638,-4096,-4096" gray="0" boost="1" />
-  <gammagroup id="n.Background.Overlay" value="-4096,-4096,-4096" gray="1" boost="1" />
-  <gammagroup id="n.Beatvis" value="1212,-4096,-4096" gray="0" boost="1" />
-  <gammagroup id="n.Promo" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="n.Button.Top" value="524,-3572,-3572" gray="0" boost="0" />
-  <gammagroup id="n.Button.Top2" value="524,-2655,-2655" gray="0" boost="0" />
-  <gammagroup id="n.Button" value="524,-3507,-3539" gray="0" boost="0" />
-  <gammagroup id="n.Button2" value="0,-4096,-3867" gray="0" boost="0" />
-  <gammagroup id="n.SuiFrameLabel" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="n.Volume.BG" value="524,-3572,-3572" gray="0" boost="0" />
-  <gammagroup id="n.Volume.Thumb" value="524,-3572,-3572" gray="0" boost="0" />
-  <gammagroup id="n.Background.Alt" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="n.Scrollbars.Gfx" value="524,-3507,-3539" gray="0" boost="0" />
-  <gammagroup id="n.Seeker.BG" value="524,-3572,-3572" gray="0" boost="0" />
-  <gammagroup id="n.Seeker.Thumb" value="524,-3507,-3539" gray="0" boost="0" />
-  <gammagroup id="n.Vis" value="2752,-3572,-3572" gray="0" boost="0" />
-  <gammagroup id="n.TooltipCombobox" value="-2393,-2393,-2393" gray="0" boost="0" />
-  <gammagroup id="n.Notifier.Bg" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="n.Text.SongInfo" value="524,-4096,-4096" gray="0" boost="1" />
-  <gammagroup id="n.Text.SongTime" value="524,-4096,-4096" gray="0" boost="1" />
-  <gammagroup id="n.Color.List" value="1769,-4096,-4096" gray="0" boost="0" />
-  <gammagroup id="n.Menu.Text" value="-132,-4096,-4064" gray="0" boost="0" />
-  <gammagroup id="n.TooltipCombobox.Text" value="524,-4096,-4096" gray="0" boost="1" />
-  <gammagroup id="Color.GenericText" value="0,0,0" gray="0" boost="0" />
-  <gammagroup id="n.Button.Icon" value="-3572,-3572,-3572" gray="1" boost="0" />
-  <gammagroup id="n.Cover" value="1540,-4096,-4096" gray="0" boost="0" />
-  <gammagroup id="n.Button.Bolt" value="524,-3572,-3572" gray="0" boost="0" />
-  <gammagroup id="n.Tab.Text" value="-951,-4096,-4096" gray="0" boost="0" />
-  <gammagroup id="n.Scrollbars.Bg" value="-3671,-4096,-4096" gray="0" boost="1" />
-  <gammagroup id="s.Background.Bottom" value="-2130,-2130,-2130" gray="0" boost="0" />
-  <gammagroup id="s.Background.Overlay" value="-4096,-4096,-4096" gray="1" boost="1" />
-  <gammagroup id="s.Button" value="524,-3507,-3539" gray="0" boost="0" />
-  <gammagroup id="s.Volume.BG" value="524,-3572,-3572" gray="0" boost="0" />
-  <gammagroup id="s.Seeker.BG" value="524,-3572,-3572" gray="0" boost="0" />
-  <gammagroup id="s.Volume.Thumb" value="524,-3507,-3539" gray="0" boost="0" />
-  <gammagroup id="s.Seeker.Thumb" value="524,-3507,-3539" gray="0" boost="0" />
-  <gammagroup id="s.Vis" value="2752,-3572,-3572" gray="0" boost="0" />
-  <gammagroup id="n.Text.Status" value="524,-4096,-4096" gray="0" boost="1" />
-  <gammagroup id="n.SuiFrame.Eq" value="819,-4096,-4031" gray="0" boost="0" />
-  <gammagroup id="n.Notifier.Text" value="0,0,0" gray="0" boost="0" />
+<gammagroup id="n.Text.On.Bg" value="524,-4096,-4096" gray="0" boost="1" />
+<gammagroup id="n.SuiFrame" value="-2130,-2130,-2130" gray="0" boost="0" />
+<gammagroup id="n.Color.ListCur" value="0,0,0" gray="0" boost="0" />
+<gammagroup id="n.Color.ListSel" value="0,-4096,-4096" gray="0" boost="0" />
+<gammagroup id="n.Color.ListSelBg" value="1900,-4096,-4096" gray="0" boost="0" />
+<gammagroup id="n.Notifier.Text.Big" value="0,0,0" gray="0" boost="0" />
+<gammagroup id="n.Notifier.Text.Small" value="0,0,0" gray="0" boost="0" />
+<gammagroup id="n.Background.Bottom" value="-2130,-2130,-2130" gray="0" boost="0" />
+<gammagroup id="n.Color.ListBg" value="-4096,-4096,-4096" gray="0" boost="0" />
+<gammagroup id="n.Color.ListBg2" value="-3638,-4096,-4096" gray="0" boost="1" />
+<gammagroup id="n.Background.Overlay" value="-4096,-4096,-4096" gray="1" boost="1" />
+<gammagroup id="n.Beatvis" value="1212,-4096,-4096" gray="0" boost="1" />
+<gammagroup id="n.Promo" value="0,0,0" gray="0" boost="0" />
+<gammagroup id="n.Button.Top" value="524,-3572,-3572" gray="0" boost="0" />
+<gammagroup id="n.Button.Top2" value="524,-2655,-2655" gray="0" boost="0" />
+<gammagroup id="n.Button" value="524,-3507,-3539" gray="0" boost="0" />
+<gammagroup id="n.Button2" value="0,-4096,-3867" gray="0" boost="0" />
+<gammagroup id="n.SuiFrameLabel" value="0,0,0" gray="0" boost="0" />
+<gammagroup id="n.Volume.BG" value="524,-3572,-3572" gray="0" boost="0" />
+<gammagroup id="n.Volume.Thumb" value="524,-3572,-3572" gray="0" boost="0" />
+<gammagroup id="n.Background.Alt" value="0,0,0" gray="0" boost="0" />
+<gammagroup id="n.Scrollbars.Gfx" value="524,-3507,-3539" gray="0" boost="0" />
+<gammagroup id="n.Seeker.BG" value="524,-3572,-3572" gray="0" boost="0" />
+<gammagroup id="n.Seeker.Thumb" value="524,-3507,-3539" gray="0" boost="0" />
+<gammagroup id="n.Vis" value="2752,-3572,-3572" gray="0" boost="0" />
+<gammagroup id="n.TooltipCombobox" value="-2393,-2393,-2393" gray="0" boost="0" />
+<gammagroup id="n.Notifier.Bg" value="0,0,0" gray="0" boost="0" />
+<gammagroup id="n.Text.SongInfo" value="524,-4096,-4096" gray="0" boost="1" />
+<gammagroup id="n.Text.SongTime" value="524,-4096,-4096" gray="0" boost="1" />
+<gammagroup id="n.Color.List" value="1769,-4096,-4096" gray="0" boost="0" />
+<gammagroup id="n.Menu.Text" value="-132,-4096,-4064" gray="0" boost="0" />
+<gammagroup id="n.TooltipCombobox.Text" value="524,-4096,-4096" gray="0" boost="1" />
+<gammagroup id="Color.GenericText" value="0,0,0" gray="0" boost="0" />
+<gammagroup id="n.Button.Icon" value="-3572,-3572,-3572" gray="1" boost="0" />
+<gammagroup id="n.Cover" value="1540,-4096,-4096" gray="0" boost="0" />
+<gammagroup id="n.Button.Bolt" value="524,-3572,-3572" gray="0" boost="0" />
+<gammagroup id="n.Tab.Text" value="-951,-4096,-4096" gray="0" boost="0" />
+<gammagroup id="n.Scrollbars.Bg" value="-3671,-4096,-4096" gray="0" boost="1" />
+<gammagroup id="s.Background.Bottom" value="-2130,-2130,-2130" gray="0" boost="0" />
+<gammagroup id="s.Background.Overlay" value="-4096,-4096,-4096" gray="1" boost="1" />
+<gammagroup id="s.Button" value="524,-3507,-3539" gray="0" boost="0" />
+<gammagroup id="s.Volume.BG" value="524,-3572,-3572" gray="0" boost="0" />
+<gammagroup id="s.Seeker.BG" value="524,-3572,-3572" gray="0" boost="0" />
+<gammagroup id="s.Volume.Thumb" value="524,-3507,-3539" gray="0" boost="0" />
+<gammagroup id="s.Seeker.Thumb" value="524,-3507,-3539" gray="0" boost="0" />
+<gammagroup id="s.Vis" value="2752,-3572,-3572" gray="0" boost="0" />
+<gammagroup id="n.Text.Status" value="524,-4096,-4096" gray="0" boost="1" />
+<gammagroup id="n.SuiFrame.Eq" value="819,-4096,-4031" gray="0" boost="0" />
+<gammagroup id="n.Notifier.Text" value="0,0,0" gray="0" boost="0" />
+</gammaset>
+
+<gammaset id="SWC - South Africa">
+<gammagroup id="n.Text.On.Bg" value="-3139,-3139,-3139" gray="0" boost="1" />
+<gammagroup id="n.SuiFrame" value="514,478,-4096" gray="1" boost="1" />
+<gammagroup id="n.Color.ListCur" value="-4096,-4096,-4096" gray="0" boost="0" />
+<gammagroup id="n.Color.ListSel" value="-4096,-4096,-4096" gray="0" boost="0" />
+<gammagroup id="n.Color.ListSelBg" value="-2535,478,-923" gray="0" boost="1" />
+<gammagroup id="n.Notifier.Text.Big" value="0,0,0" gray="0" boost="0" />
+<gammagroup id="n.Notifier.Text.Small" value="0,0,0" gray="0" boost="0" />
+<gammagroup id="n.Background.Bottom" value="2890,2854,-4096" gray="1" boost="1" />
+<gammagroup id="n.Color.ListBg" value="-3013,0,-1401" gray="0" boost="1" />
+<gammagroup id="n.Color.ListBg2" value="-3279,-266,-1667" gray="0" boost="1" />
+<gammagroup id="n.Background.Overlay" value="-3013,0,-1401" gray="0" boost="1" />
+<gammagroup id="n.Beatvis" value="4096,4096,4096" gray="2" boost="1" />
+<gammagroup id="n.Promo" value="0,0,0" gray="0" boost="0" />
+<gammagroup id="n.Button.Top" value="-2819,0,-1401" gray="2" boost="1" />
+<gammagroup id="n.Button.Top2" value="-1773,1046,-355" gray="2" boost="0" />
+<gammagroup id="n.Button" value="-3476,-657,-2058" gray="2" boost="0" />
+<gammagroup id="n.Button2" value="2145,2145,2145" gray="1" boost="0" />
+<gammagroup id="n.SuiFrameLabel" value="0,0,0" gray="1" boost="0" />
+<gammagroup id="n.Volume.BG" value="656,2322,-3990" gray="1" boost="0" />
+<gammagroup id="n.Volume.Thumb" value="-3476,-657,-2058" gray="2" boost="0" />
+<gammagroup id="n.Background.Alt" value="4096,4096,4096" gray="2" boost="0" />
+<gammagroup id="n.Scrollbars.Gfx" value="-3476,-657,-2058" gray="2" boost="0" />
+<gammagroup id="n.Seeker.BG" value="656,2322,-3990" gray="1" boost="0" />
+<gammagroup id="n.Seeker.Thumb" value="-3476,-657,-2058" gray="2" boost="0" />
+<gammagroup id="n.Vis" value="1755,4096,1755" gray="1" boost="0" />
+<gammagroup id="n.TooltipCombobox" value="2890,2854,-4096" gray="1" boost="1" />
+<gammagroup id="n.Notifier.Bg" value="0,0,0" gray="0" boost="0" />
+<gammagroup id="n.Text.SongInfo" value="1507,1507,1507" gray="0" boost="1" />
+<gammagroup id="n.Text.SongTime" value="1400,1400,1400" gray="1" boost="0" />
+<gammagroup id="n.Color.List" value="4096,4096,4096" gray="0" boost="1" />
+<gammagroup id="n.Menu.Text" value="-4060,-1047,-2448" gray="0" boost="1" />
+<gammagroup id="n.TooltipCombobox.Text" value="-4096,-2891,-4061" gray="0" boost="0" />
+<gammagroup id="Color.GenericText" value="0,0,0" gray="0" boost="0" />
+<gammagroup id="n.Button.Icon" value="2216,2110,-4096" gray="0" boost="0" />
+<gammagroup id="n.Cover" value="0,0,0" gray="0" boost="0" />
+<gammagroup id="n.Button.Bolt" value="-3245,-1011,-2394" gray="2" boost="1" />
+<gammagroup id="n.Tab.Text" value="4096,4096,-4096" gray="0" boost="1" />
+<gammagroup id="n.Scrollbars.Bg" value="-124,-160,-4096" gray="1" boost="1" />
+<gammagroup id="s.Background.Bottom" value="2890,2854,-4096" gray="1" boost="1" />
+<gammagroup id="s.Background.Overlay" value="-3013,0,-1401" gray="0" boost="1" />
+<gammagroup id="s.Button" value="-3866,-1047,-2448" gray="2" boost="1" />
+<gammagroup id="s.Volume.BG" value="0,0,0" gray="0" boost="0" />
+<gammagroup id="s.Seeker.BG" value="0,0,0" gray="0" boost="0" />
+<gammagroup id="s.Volume.Thumb" value="-3476,-657,-2058" gray="2" boost="0" />
+<gammagroup id="s.Seeker.Thumb" value="-3476,-657,-2058" gray="2" boost="0" />
+<gammagroup id="s.Vis" value="0,0,0" gray="0" boost="0" />
+<gammagroup id="n.Text.Status" value="-4096,-2749,-4096" gray="0" boost="0" />
+<gammagroup id="n.SuiFrame.Eq" value="4096,4096,-4096" gray="1" boost="1" />
+<gammagroup id="n.Notifier.Text" value="0,0,0" gray="0" boost="0" />
 </gammaset>
