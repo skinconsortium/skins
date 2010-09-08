@@ -35,6 +35,9 @@ System.onSetXuiParam(String param, String value) {
 		//debugInt(calc_age);
 		//debugInt(getBirtday_Day(stringToInteger(getToken(value, ";", 0)), stringToInteger(getToken(value, ";", 1))));
 
+		//debug(integerToString(getBirtday_Day(stringToInteger(getToken(value, ";", 0)), stringToInteger(getToken(value, ";", 1))))+" vandag="+integerToString(System.getDateDoy(System.getDate()))+" naam="+name.getText());
+		//debugInt(System.getDateDoy(System.getDate()));
+		
 		if(getBirtday_Day(stringToInteger(getToken(value, ";", 0)), stringToInteger(getToken(value, ";", 1)))==System.getDateDoy(System.getDate())){
 			birthday = XUIGroup.getParent().getParent().findObject("hbd.message");
 			birthday.setText("Happy Birthday");
@@ -63,7 +66,7 @@ System.onSetXuiParam(String param, String value) {
 }
 
 getBirtday_Day(int day, int month){
-	int output=0;
+	int output=-1;
 
 	if(month>1) output+=31;
 	if(month>2) output+=28;
