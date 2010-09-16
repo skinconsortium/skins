@@ -502,7 +502,7 @@ Section "$(CPro_CProFiles)" "CPro_Sec_CProFiles"
 	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\one\xml
 		File "..\engine\one\xml\*.xml"
 
-; CPro engine	 - cPro::Two
+!if ${CPRO_BUILD_TYPE} == "NIGHTLY"
 	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\two\scripts
 		File "..\engine\two\scripts\*.m"
 		File "..\engine\two\scripts\*.maki"
@@ -510,6 +510,7 @@ Section "$(CPro_CProFiles)" "CPro_Sec_CProFiles"
 		File "..\engine\two\xml\*.xml"
 	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\one\xml
 		File "..\engine\two\images\*.png"
+!endif
 
 
 ; CPro engine	 - Scripts

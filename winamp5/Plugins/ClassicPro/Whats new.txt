@@ -1,9 +1,16 @@
 -------------------------------------------------------------
-Version 1.15 (7 Sep 2010)
+Version 2.00 (x Des 2010)
+-------------------------------------------------------------
+- New: Support for Cpro2 skins!
+-------------------------------------------------------------
+
+-------------------------------------------------------------
+Version 1.15 (9 Sep 2010)
 -------------------------------------------------------------
 - Updated: BrowserPro sources list with new sites!
 - Improved: Beatvis algorithm
 - Improved: Added an extra beatvis mode for cPro - Bento
+- Improved: More miscellaneous optimizations
 - Fixed: Opened tab moving out of line when old tab close
 - Fixed: If tab appear again still have the old width
 - Fixed: When tab close the other tabs doesn't utilize the extra space

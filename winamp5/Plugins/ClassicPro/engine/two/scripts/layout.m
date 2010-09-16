@@ -100,7 +100,7 @@ saveSkinPos(){
 }
 
 fullScreen(boolean onOff){
-	normal.hide();
+	//normal.hide();
 	if(onOff){
 		g_frameBut.hide();
 		g_screen.setXmlParam("x", "0");
@@ -131,10 +131,11 @@ fullScreen(boolean onOff){
 		normal.setXmlParam("move", "0");
 		
 		//Do this last because it takes resources.. must sometime try to clean sui area resize resource hogs
-		g_sui.setXmlParam("x", "0");
-		g_sui.setXmlParam("y", integerToString(i_titlebar+i_info+i_playback));
-		g_sui.setXmlParam("w", "0");
-		g_sui.setXmlParam("h", integerToString(-(i_titlebar+i_info+i_playback)));
+		g_sui.resize(g_sui.getGuiX(),g_sui.getGuiY()+i_titlebar+i_info+i_playback,0,-(i_titlebar+i_info+i_playback));
+		//g_sui.setXmlParam("x", "0");
+		//g_sui.setXmlParam("y", integerToString(i_titlebar+i_info+i_playback));
+		//g_sui.setXmlParam("w", "0");
+		//g_sui.setXmlParam("h", integerToString(-(i_titlebar+i_info+i_playback)));
 		//g_sui.resize(0,i_titlebar+i_info+i_playback,0,-(i_titlebar+i_info+i_playback));
 	}
 	else{
@@ -166,13 +167,14 @@ fullScreen(boolean onOff){
 		normal.setXmlParam("move", "1");
 	
 		//Do this last because it takes resources.. must sometime try to clean sui area resize resource hogs
-		g_sui.setXmlParam("x", "8");
-		g_sui.setXmlParam("y", integerToString(i_titlebar+i_info+i_playback));
-		g_sui.setXmlParam("w", "-16");
-		g_sui.setXmlParam("h", integerToString(-(i_titlebar+i_info+i_playback+8)));
+		g_sui.resize(g_sui.getGuiX()+8, g_sui.getGuiY()+i_titlebar+i_info+i_playback, -16, -(i_titlebar+i_info+i_playback+8));
+		//g_sui.setXmlParam("x", "8");
+		//g_sui.setXmlParam("y", integerToString(i_titlebar+i_info+i_playback));
+		//g_sui.setXmlParam("w", "-16");
+		//g_sui.setXmlParam("h", integerToString(-(i_titlebar+i_info+i_playback+8)));
 		//g_sui.resize(8,i_titlebar+i_info+i_playback,-16,-(i_titlebar+i_info+i_playback+8));
 	}
-	normal.show();
+	//normal.show();
 
 }
 
