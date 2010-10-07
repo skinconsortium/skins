@@ -1,9 +1,9 @@
 <elements>
 	<!-- Generic Cpro Colors -->
 	<color id="Menu.Text" value="199,201,207" gammagroup="n.Menu.Text"/>
-	<color id="Tab.Text.On" value="210,210,210" gammagroup="n.Tab.Text"/>
-	<color id="Tab.Text.Off" value="200,200,200" gammagroup="n.Tab.Text"/>
-	<color id="Tab.Text.Hover" value="210,210,210" gammagroup="n.Tab.Text"/>
+	<color id="Tab.Text.On" value="30,30,30" gammagroup="n.Tab.Text"/>
+	<color id="Tab.Text.Off" value="30,30,30" gammagroup="n.Tab.Text"/>
+	<color id="Tab.Text.Hover" value="30,30,30" gammagroup="n.Tab.Text"/>
 	<color id="Tag.Info.Text" value="147,175,185" gammagroup="n.Color.List"/>
 	<color id="Player.SongTicker.Text" value="147,175,185" gammagroup="n.Text.SongTime"/>
 	<color id="Eq.xfade.Text" value="147,175,185" gammagroup="n.Text.On.Bg"/>
