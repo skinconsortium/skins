@@ -7,8 +7,8 @@
 <include file="historyeditbox/historyeditbox.xml"/>
 <include file="editbox/editbox.xml"/>
 <include file="PlaylistPro/PlaylistPro.xml"/>
-<include file="CproTabs/CproTabs.xml"/>
-<include file="CentroSUI/CentroSUI.xml"/>
+
+<include file="CentroSUI/_v1/CentroSUI.xml"/>
 <include file="ModernSongticker/ModernSongticker.xml"/>
 <include file="updateSystem/updateSystem.xml"/>
 <include file="ScrollBar/vscrollbar.xml"/>
