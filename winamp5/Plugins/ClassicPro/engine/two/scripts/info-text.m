@@ -9,7 +9,7 @@ Function int getNumOfSeps();
 Global Group g, g_seeker, g_texttime, g_textother, g_seekertext;
 Global Text t_trackTime, t_totalTime, t_timeEvent;
 Global Text t_nameTop, t_nameBottom;
-Global Text t_kbps, t_size, t_hz;
+//Global Text t_kbps, t_size, t_hz;
 Global Timer waitForReturn, recheck;
 Global int i_info;
 Global Guiobject t_songticker;
@@ -18,24 +18,29 @@ Global Boolean twoline;
 System.onScriptLoaded() {
 	g = getScriptGroup();
 	
-	g_texttime = g.getObject("two.info.text.time");
-	t_trackTime = g_texttime.getObject("two.info.text.tracktime");
-	t_totalTime = g_texttime.getObject("two.info.text.totaltime");
-	t_timeEvent = g_texttime.getObject("two.info.text.trackevent");
 	
 	
-	g_textother = g.getObject("two.info.text.other");
-	t_kbps = g_textother.getObject("two.info.text.other.kbps");
-	t_size = g_textother.getObject("two.info.text.other.size");
-	t_hz = g_textother.getObject("two.info.text.other.hz");
+	//g_textother = g.getObject("two.info.text.other");
+	//t_kbps = g_textother.getObject("two.info.text.other.kbps");
+	//t_size = g_textother.getObject("two.info.text.other.size");
+	//t_hz = g_textother.getObject("two.info.text.other.hz");
 	
 	g_seeker = g.getObject("two.info.seeker");
 	g_seekertext = g_seeker.getObject("two.info.seeker.text");
 	t_nameTop = g_seekertext.getObject("two.info.text.title");
 	t_nameBottom = g_seekertext.getObject("two.info.text.artist");
-	t_songticker = g_seekertext.getObject("two.info.text.songticker");
+	//t_songticker = g_seekertext.getObject("two.info.text.songticker");
 
-	Map m = new Map;
+	g_texttime = g_seekertext.getObject("two.info.text.time");
+	t_trackTime = g_texttime.getObject("two.info.text.tracktime");
+	t_totalTime = g_texttime.getObject("two.info.text.totaltime");
+	t_timeEvent = g_texttime.getObject("two.info.text.trackevent");
+	
+	if(t_totalTime==NULL) debug("ble");
+
+
+	twoline=true;
+	/*Map m = new Map;
 	m.loadMap("info.bg.seeker.0");
 	i_info = m.getHeight();
 	delete m;
@@ -54,7 +59,7 @@ System.onScriptLoaded() {
 		t_trackTime.setXMLParam("fontsize", integerToString(i_info/1.2));
 		t_trackTime.setXMLParam("h", "100");
 		t_songticker.show();
-	}
+	}*/
 	recheck = new Timer;
 	recheck.setDelay(1000);
 	
@@ -62,7 +67,7 @@ System.onScriptLoaded() {
 	waitForReturn.setDelay(100);
 	updateInfo();
 	
-	if(System.getStatus() != STATUS_STOPPED) g_textother.show();
+	//if(System.getStatus() != STATUS_STOPPED) g_textother.show();
 	
 	//debugint(stringToInteger("Phil Collins"));
 }
@@ -74,8 +79,15 @@ System.onscriptunloading(){
 
 t_timeEvent.onTextChanged(String newtxt){
 	t_trackTime.setText(newtxt);
-	//t_totalTime.setText("/ "+System.integerToTime(System.getPlayItemLength()));
-	t_totalTime.setText(System.integerToTime(System.getPlayItemLength()));
+	t_totalTime.setText("/ "+System.integerToTime(System.getPlayItemLength()));
+	t_totalTime.setXmlParam("x", integerToString(t_trackTime.getTextWidth()-4));
+	t_totalTime.setXmlParam("w", integerToString(t_totalTime.getTextWidth()));
+	t_trackTime.setXmlParam("w", integerToString(t_trackTime.getTextWidth()));
+	
+	g_texttime.setXmlParam("x", integerToString(-(t_trackTime.getWidth()+t_totalTime.getWidth()-5)));
+	g_texttime.setXmlParam("w", integerToString(t_trackTime.getWidth()+t_totalTime.getWidth()-5));
+	
+	//t_totalTime.setText(System.integerToTime(System.getPlayItemLength()));
 }
 
 System.onTitleChange(String newtitle){
@@ -148,10 +160,10 @@ updateInfo(){
 		rawsize=rawsize/1024/1024/1024;
 		sizeType = "gb";
 	}
-	t_size.setText(floatToString(rawsize,1)+sizeType);
+	//t_size.setText(floatToString(rawsize,1)+sizeType);
 
-	t_kbps.setText(getBitrate()+"k");
-	t_hz.setText(getFrequency()+"hz");
+	//t_kbps.setText(getBitrate()+"k");
+	//t_hz.setText(getFrequency()+"hz");
 	
 	//Refresh if NA
 	if(System.getStatus() != STATUS_PLAYING) return;

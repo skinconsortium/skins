@@ -103,8 +103,8 @@ fullScreen(boolean onOff){
 	//normal.hide();
 	if(onOff){
 		g_frameBut.hide();
-		g_screen.setXmlParam("x", "0");
-		g_screen.setXmlParam("w", "0");
+		g_screen.setXmlParam("x", "-8");
+		g_screen.setXmlParam("w", "16");
 		g_screen.setXmlParam("y", integerToString(i_titlebar));
 		//g_screen.resize(0,55,0,i_info + i_playback);
 		
@@ -140,8 +140,8 @@ fullScreen(boolean onOff){
 	}
 	else{
 		g_frameButFS.hide();
-		g_screen.setXmlParam("x", "8");
-		g_screen.setXmlParam("w", "-16");
+		g_screen.setXmlParam("x", "0");
+		g_screen.setXmlParam("w", "0");
 		g_screen.setXmlParam("y", integerToString(i_titlebar));
 		//g_screen.resize(8,55,-16,i_info + i_playback);
 

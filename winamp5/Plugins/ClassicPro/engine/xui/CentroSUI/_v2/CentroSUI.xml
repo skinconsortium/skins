@@ -1,3 +1,5 @@
+<include file="CproTabs/CproTabs.xml"/>
+
 <!--
 ::One - Library Tab
 -->
@@ -201,5 +203,5 @@
 </groupdef>
 <groupdef id="centro.main" xuitag="Centro:SUI" h="100">
 	<Wasabi:Frame id="centro.mainframe" x="0" y="0" w="0" h="0" relatw="1" relath="1" left="centro.components" right="centro.playlist1" orientation="vertical" from="right" minwidth="158" width="200" jump="none" maxwidth="-224"/>
-	<script file="@WINAMPPATH@\Plugins\classicPro\engine\xui\CentroSUI\scripts\CentroSUI2.maki" param="@HAVE_LIBRARY@"/>
+	<script file="@WINAMPPATH@\Plugins\classicPro\engine\xui\CentroSUI\_v2\scripts\CentroSUI2.maki" param="@HAVE_LIBRARY@"/>
 </groupdef>
