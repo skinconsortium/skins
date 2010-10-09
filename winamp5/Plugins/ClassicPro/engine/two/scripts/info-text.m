@@ -6,7 +6,7 @@ Function String getFrequency();
 Function updateInfo();
 Function int getNumOfSeps();
 
-Global Group g, g_seeker, g_texttime, g_textother, g_seekertext;
+Global Group g, g_seeker, g_texttime, g_seekertext; //, g_textother
 Global Text t_trackTime, t_totalTime, t_timeEvent;
 Global Text t_nameTop, t_nameBottom;
 //Global Text t_kbps, t_size, t_hz;
@@ -97,11 +97,11 @@ System.onTitleChange(String newtitle){
 
 System.onStop(){
 	recheck.stop();
-	g_textother.hide();
+	//g_textother.hide();
 }
 System.onPlay(){
 	recheck.start();
-	g_textother.show();
+	//g_textother.show();
 }
 System.onPause(){
 	recheck.stop();
