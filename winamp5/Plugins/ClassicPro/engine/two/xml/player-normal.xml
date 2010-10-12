@@ -15,6 +15,7 @@
 <groupdef id="two.info.seeker.text">
 	<text id="two.info.text.title" x="0" y="-2" w="0" h="22" relatw="1" align="left" text="" color="black" ghost="1" font="Calibri" fontsize="21"/>
 	<text id="two.info.text.artist" x="0" y="16" w="0" h="18" relatw="1" align="left" text="" color="black" ghost="1" font="Calibri" fontsize="16" alpha="150"/>
+	<text id="two.info.text.info.1" x="0" y="16" w="0" h="18" relatw="1" align="right" text="" translate="0" color="black" ghost="1" font="Calibri" fontsize="13" alpha="150"/>
 
 	<group id="two.info.text.time" x="-100" y="0" w="100" h="50" relatx="1" relath="2"/>
 </groupdef>
@@ -56,26 +57,36 @@
 <!-- 
 :: Playback Section ::
 -->
-<groupdef id="two.playback.vis" w="91">
+<groupdef id="two.playback.vis" w="113">
+	<layer id="two.playback.left" x="0" y="0" w="0" h="30" relatw="1"/>
 	<vis
-		id="main.vis"
+		id="two.playback.visobject"
 		x="6" y="6"
 		w="71" h="17"
 		gammagroup="n.Vis"
 	/>
+	<button x="83" y="0" image="playback.button.bolt.1" hoverimage="playback.button.bolt.2" downimage="playback.button.bolt.3"/>
+	
 </groupdef>
-<groupdef id="two.playback.volume">
-	<layer id="two.playback.volume.left" x="-113" y="0" relatx="1" image="playback.bg.right.mute"/>
-	<slider x="-80" y="0" w="76" h="30" relatx="1" action="VOLUME" thumb="playback.volume.big.1" hoverthumb="playback.volume.big.2" downthumb="playback.volume.big.3" cursor="IDC_HAND"/>
+<groupdef id="two.playback.volume.slider">
+	<layer id="two.playback.volslider.bar.1" x="0" y="0" w="0" h="30" relatw="2" image="playback.vol.large.1" tile="1"/>
+	<layer id="two.playback.volslider.bar.2" x="0" y="0" w="0" h="30" relatw="2" image="playback.vol.large.2" tile="1" alpha="0"/>
+	<slider id="two.playback.volslider" x="0" y="0" w="0" h="30" relatw="1" action="VOLUME" thumb="playback.volume.big.1" hoverthumb="playback.volume.big.2" downthumb="playback.volume.big.3" cursor="IDC_HAND"/>
+	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\sc_sliderbar.maki" param="two.playback.volslider;two.playback.volslider.bar.;100"/>
 </groupdef>
-<groupdef id="two.playback.buttons.volume" w="67" h="30">
-	<slider x="4" y="0" w="58" h="30" action="VOLUME" thumb="playback.volume.small.1" hoverthumb="playback.volume.small.2" downthumb="playback.volume.small.3" cursor="IDC_HAND"/>
+<groupdef id="two.playback.volume" w="113">
+	<layer id="two.playback.right" x="0" y="0" w="0" h="30" relatw="1"/>
+	
+	<group id="two.playback.volume.slider" x="80" y="0" w="77" h="30"/>
 </groupdef>
-<!--<groupdef id="two.playback.buttons.shufrep" w="67" h="30">
-</groupdef>-->
-<groupdef id="two.playback.buttons" w="224">
-	<layer id="two.playback.buttons.left" x="0" y="0" image="playback.bg.buttons.left"/>
-	<layer id="two.playback.buttons.right" x="157" y="0" image="playback.bg.buttons.right.1"/>
+<groupdef id="two.playback.ejectvol" background="playback.vol.small" w="30" h="30">
+	<layer id="two.playback.ejectvol.bar.1" x="3" y="0" w="0" image="playback.vol.small.1" tile="1"/>
+	<layer id="two.playback.ejectvol.bar.2" x="3" y="0" w="0" image="playback.vol.small.2" tile="1" alpha="0"/>
+	<slider id="two.playback.ejectvol.slider" x="3" y="0" w="24" h="30" action="VOLUME" thumb="info.seeker.thumb" cursor="IDC_HAND"/>
+	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\sc_sliderbar.maki" param="two.playback.ejectvol.slider;two.playback.ejectvol.bar.;24"/>
+</groupdef>
+
+<groupdef id="two.playback.buttons" w="224" background="playback.bg.buttons">
 	<NStatesButton x="3" y="0" image="playback.button.shuf.1." hoverimage="playback.button.shuf.2." downimage="playback.button.shuf.3." rectrgn="1" nstates="2" tooltip="Toggle Playlist Shuffling" cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Shuffle"/>
 	<NStatesButton x="33" y="0" image="playback.button.rep.1." hoverimage="playback.button.rep.2." downimage="playback.button.rep.3." rectrgn="1" nstates="3" tooltip="Toggle Playlist/Song Repeating" cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Repeat" cfgvals="0;1;-1"/>
 	<button x="63" y="0" action="PREV" image="playback.button.prev.1" hoverimage="playback.button.prev.2" downimage="playback.button.prev.3"/>
@@ -83,22 +94,20 @@
 	<button id="two.playback.paus" x="95" y="0" action="PAUSE" image="playback.button.paus.1" hoverimage="playback.button.paus.2" downimage="playback.button.paus.3"/>
 	<button x="129" y="0" action="NEXT" image="playback.button.next.1" hoverimage="playback.button.next.2" downimage="playback.button.next.3"/>
 	<button x="161" y="0" action="STOP" image="playback.button.stop.1" hoverimage="playback.button.stop.2" downimage="playback.button.stop.3"/>
-	<button x="191" y="0" action="EJECT" image="playback.button.open.1" hoverimage="playback.button.open.2" downimage="playback.button.open.3"/>
-
-	<!--<group id="two.playback.buttons.volume" x="157" y="0" visible="0"/>
-	<group id="two.playback.buttons.shufrep" x="157" y="0" visible="0"/>-->
+	<button id="two.playback.eject" x="191" y="0" action="EJECT" image="playback.button.open.1" hoverimage="playback.button.open.2" downimage="playback.button.open.3"/>
+	<group id="two.playback.ejectvol" x="191" y="0" visible="0"/>
 </groupdef>
 <groupdef id="two.playback" autoheightsource="two.playback.left">
-	<layer id="two.playback.fill" x="0" y="0" w="0" relatw="1" image="playback.bg.fill" regionop="1"/>
+	<layer x="0" y="0" image="playback.bg.left.0" regionop="1"/>
+	<layer x="8" y="0" w="-16" relatw="1" image="playback.bg.fill" regionop="1"/>
+	<layer x="-8" y="0" relatx="1" image="playback.bg.right.0" regionop="1"/>
 
-	<layer id="two.playback.left" x="0" y="0" image="playback.bg.left.1" regionop="1"/>
-	<layer id="two.playback.right" x="-83" y="0" relatx="1" image="playback.bg.right" regionop="1"/>
 
 	<group id="two.playback.buttons" x="8" y="0" h="0" relath="1"/>
 
 
-	<group id="two.playback.vis" x="0" y="0" h="0" relath="1" visible="1"/>
-	<group id="two.playback.volume" x="0" y="0" h="0" relatx="1" relath="1" visible="0"/>
+	<group id="two.playback.vis" x="8" y="0" h="30" visible="1"/>
+	<group id="two.playback.volume" x="-121" y="0" h="30" relatx="1" visible="1"/>
 
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\playback-layout.maki"/>
 </groupdef>

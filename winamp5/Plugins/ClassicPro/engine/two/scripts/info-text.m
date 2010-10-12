@@ -9,6 +9,7 @@ Function int getNumOfSeps();
 Global Group g, g_seeker, g_texttime, g_seekertext; //, g_textother
 Global Text t_trackTime, t_totalTime, t_timeEvent;
 Global Text t_nameTop, t_nameBottom;
+Global Text t_info1;
 //Global Text t_kbps, t_size, t_hz;
 Global Timer waitForReturn, recheck;
 Global int i_info;
@@ -29,6 +30,7 @@ System.onScriptLoaded() {
 	g_seekertext = g_seeker.getObject("two.info.seeker.text");
 	t_nameTop = g_seekertext.getObject("two.info.text.title");
 	t_nameBottom = g_seekertext.getObject("two.info.text.artist");
+	t_info1 = g_seekertext.getObject("two.info.text.info.1");
 	//t_songticker = g_seekertext.getObject("two.info.text.songticker");
 
 	g_texttime = g_seekertext.getObject("two.info.text.time");
@@ -61,7 +63,7 @@ System.onScriptLoaded() {
 		t_songticker.show();
 	}*/
 	recheck = new Timer;
-	recheck.setDelay(1000);
+	recheck.setDelay(2000);
 	
 	waitForReturn = new Timer;
 	waitForReturn.setDelay(100);
@@ -126,28 +128,27 @@ int getNumOfSeps(){
 }
 
 updateInfo(){
-	if(twoline){
-		String top = System.getPlayItemMetaDataString("title");
-		String bottom = System.getPlayItemMetaDataString("artist");
-		
-		if(top=="" || bottom==""){
-			int sep = getNumOfSeps();
-			if(top==""){
-				if(sep>0) top = System.getToken(System.getPlayItemDisplayTitle(), "-", sep-1);
-				else top = System.getToken(System.getPlayItemDisplayTitle(), "-", 0);
-			}
-			
-			if(bottom==""){
-				if(sep>0) bottom = System.getToken(System.getPlayItemDisplayTitle(), "-", sep-2);
-				else bottom = "Unknown Artist";
-			}
+	String top = System.getPlayItemMetaDataString("title");
+	String bottom = System.getPlayItemMetaDataString("artist");
+	String s_info = "";
+	
+	if(top=="" || bottom==""){
+		int sep = getNumOfSeps();
+		if(top==""){
+			if(sep>0) top = System.getToken(System.getPlayItemDisplayTitle(), "-", sep-1);
+			else top = System.getToken(System.getPlayItemDisplayTitle(), "-", 0);
 		}
-
-		t_nameTop.setText(top);
-		t_nameBottom.setText(bottom);
+		
+		if(bottom==""){
+			if(sep>0) bottom = System.getToken(System.getPlayItemDisplayTitle(), "-", sep-2);
+			else bottom = "Unknown Artist";
+		}
 	}
 
-	float rawsize = System.getFileSize(strmid(System.getPlayItemString(), 7, strlen(System.getPlayItemString())-7));
+	t_nameTop.setText(top);
+	t_nameBottom.setText(bottom);
+
+	/*float rawsize = System.getFileSize(strmid(System.getPlayItemString(), 7, strlen(System.getPlayItemString())-7));
 	String sizeType = "mb";
 	if(rawsize<1024*1024){
 		rawsize=rawsize/1024;
@@ -159,11 +160,16 @@ updateInfo(){
 	else{
 		rawsize=rawsize/1024/1024/1024;
 		sizeType = "gb";
-	}
+	}*/
 	//t_size.setText(floatToString(rawsize,1)+sizeType);
 
 	//t_kbps.setText(getBitrate()+"k");
 	//t_hz.setText(getFrequency()+"hz");
+	
+	s_info += getBitrate() + "kbps" + "  ";
+	//s_info += getFrequency() + "k"+"Hz";
+	s_info += getFrequency() + "kHz";
+	t_info1.setText(s_info);
 	
 	//Refresh if NA
 	if(System.getStatus() != STATUS_PLAYING) return;
@@ -226,15 +232,20 @@ String getBitrate(){
 	}
 }
 String getFrequency(){
-	string sit = getSongInfoText();
+	String sit = getSongInfoText();
 	if (sit != "")
 	{
-		string rtn;
+		String rtn;
 		int searchresult;
 		for (int i = 0; i < 5; i++) {
 			rtn = getToken(sit, " ", i);
-			searchResult = strsearch(strlower(rtn), "khz");
-			if (searchResult>0) return StrMid(rtn, 0, searchResult);
+			searchResult = strsearch(strlower(rtn), "kh");
+			//debugString(sit+" - "+ strlower(rtn)+" - "+integerToString(searchResult),9);
+			if (searchResult>0){
+				
+			
+				return StrMid(rtn, 0, searchResult);
+			}
 		}
 		return "";
 	}
