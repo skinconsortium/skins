@@ -2,14 +2,14 @@
 	<bitmap id="testme" file="@WINAMPPATH@\Plugins\classicPro\engine\image\test.png"/>
 </elements>
 
-<groupdef id="cpro.tab" xuitag="Cpro:Tab" embed_xui="cpro.tab.button" h="29">
-	<grid id="cpro.tab.grid" x="0" y="0" w="-1" h="0" relatw="1" relath="1" topleft="wasabi.tabsheet.button.left.2" top="wasabi.tabsheet.button.center.2" topright="wasabi.tabsheet.button.right.2" alpha="253"/>
-	<text id="cpro.tab.text" default=" " x="21" y="3" w="-26" relatw="1" h="14" font="cpro.tab.font" bold="0" fontsize="14" color="Tab.Text.Off" alpha="253"/>
+<groupdef id="cpro.tab" xuitag="Cpro:Tab" embed_xui="cpro.tab.button" h="25">
+	<grid id="cpro.tab.grid" x="0" y="0" w="-1" h="0" relatw="1" relath="1" topleft="sui.tab.left.2" top="sui.tab.center.2" topright="sui.tab.right.2" alpha="253"/>
+	<text id="cpro.tab.text" default=" " x="21" y="0" w="-26" relatw="1" h="25" font="cpro.tab.font" bold="0" fontsize="14" color="Tab.Text.Off" alpha="253" valign="center"/>
 	
 	<!--<text id="l" x="0" w="0" relatw="1" y="0" text="" align="left" ghost="1" alpha="255" fontsize="12"/>
 	<text id="r" x="0"  w="0" relatw="1" y="15" text="" align="right" ghost="1" alpha="255" fontsize="12"/>
 	-->
-	<layer x="5" y="5" image="testme"/>
+	<layer x="5" y="7" image="testme"/>
 	<togglebutton id="cpro.tab.button" fitparent="1" rectrgn="1"/>
 	<script file="@WINAMPPATH@\Plugins\ClassicPro\engine\xui\CentroSUI\_v2\CproTabs\CproTabButton.maki" />
 </groupdef>

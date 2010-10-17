@@ -138,24 +138,24 @@ trigger.onLeaveArea()
 
 setButtonState (int mode)
 {
-	grid.setXmlParam("topleft", "wasabi.tabsheet.button.left."+integerToString(mode));
-	grid.setXmlParam("top", "wasabi.tabsheet.button.center."+integerToString(mode));
-	grid.setXmlParam("topright", "wasabi.tabsheet.button.right."+integerToString(mode));
+	grid.setXmlParam("topleft", "sui.tab.left."+integerToString(mode));
+	grid.setXmlParam("top", "sui.tab.center."+integerToString(mode));
+	grid.setXmlParam("topright", "sui.tab.right."+integerToString(mode));
 	label.setXmlParam("color", "");
 
 	if (mode == 1)
 	{
-		label.setXmlParam("y", "3");
+		label.setXmlParam("y", "-1");
 		label.setXmlParam("color", "Tab.Text.On");
 	}
 	else if (mode == 2)
 	{
 		label.setXmlParam("color", "Tab.Text.Off");
-		label.setXmlParam("y", "3");
+		label.setXmlParam("y", "0");
 	}
 	else
 	{
-		label.setXmlParam("y", "3");
+		label.setXmlParam("y", "0");
 		label.setXmlParam("color", "Tab.Text.Hover");
 	}
 }
