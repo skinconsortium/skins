@@ -95,22 +95,27 @@
 	<group id="centro.widget" x="0" y="0" w="0" h="0" relatw="1" relath="1" visible="0" wantfocus="1"/>
 </groupdef>
 <groupdef id="centro.componentsheet.opencloseframe">
-	<button id="open.rightframe" x="0" y="0" image="open.right.1" hoverimage="open.right.2" downimage="open.right.3" rectrgn="1" tooltip="Open Side" visible="0"/>
-	<button id="close.rightframe" x="0" y="0" image="close.right.1" hoverimage="close.right.2" downimage="close.right.3" rectrgn="1" tooltip="Close Side"/>
+	<button id="open.rightframe" x="0" y="0" image="sui.button.leftside.1.0" hoverimage="sui.button.leftside.2.0" downimage="sui.button.leftside.3.0" rectrgn="1" tooltip="Open Side" visible="0"/>
+	<button id="close.rightframe" x="0" y="0" image="sui.button.leftside.1.1" hoverimage="sui.button.leftside.2.1" downimage="sui.button.leftside.3.1" rectrgn="1" tooltip="Close Side"/>
 </groupdef>
 <groupdef id="centro.componentsheet">
 	<grid id="centro.componentsheet.grid" fitparent="1"
 		topleft="player.suiframe.1" top="player.suiframe.2" topright="player.suiframe.3"
 		left="player.suiframe.4" middle="player.suiframe.5" right="player.suiframe.6"
 		bottomleft="player.suiframe.7" bottom="player.suiframe.8" bottomright="player.suiframe.9"
-		regionop="1" move="1"
+		regionop="1" move="1" visible="0"
 	/>
-	<group id="cpro.sui.overlay" fitparent="1"/>
+	
+	<grid x="0" y="0" w="0" h="25" relatw="1" move="1" topleft="sui.top.left" top="sui.top.center" topright="sui.top.right"/>
+	<Cpro:Tabs id="Cpro.tabs" x="0" y="0" h="25" w="-50" relatw="1"/>
 
-	<Cpro:Tabs id="Cpro.tabs" x="0" y="0" h="33" w="-50" relatw="1"/>
-	<NStatesButton id="tog.drawer" x="-48" y="5" relatx="1" image="drawer.1." hoverimage="drawer.2." downimage="drawer.3." rectrgn="1" nstates="2" cfgvals="0;1"/>
-	<group id="centro.componentsheet.opencloseframe" x="-24" y="5" w="20" h="20" relatx="1"/>
-	<group id="centro.componentsheet.content" x="0" y="32" w="0" h="-33" relatw="1" relath="1" visible="1" wantfocus="1"/>
+	<!--<group id="cpro.sui.overlay" fitparent="1"/>-->
+
+
+	<NStatesButton id="tog.drawer" x="-48" y="0" relatx="1" image="sui.button.drawer.1." hoverimage="sui.button.drawer.2." downimage="sui.button.drawer.3." rectrgn="1" nstates="2" cfgvals="0;1"/>
+	<group id="centro.componentsheet.opencloseframe" x="-24" y="0" w="25" h="25" relatx="1"/>
+
+	<group id="centro.componentsheet.content" x="0" y="25" w="0" h="-25" relatw="1" relath="1" visible="1" wantfocus="1"/>
 </groupdef>
 <groupdef id="centro.components">
 	<group id="centro.componentsheet" x="0" y="0" w="0" h="0" relatw="1" relath="1"/>
@@ -202,6 +207,9 @@
 	<Wasabi:Frame id="centro.plframe" fitparent="1" from="top" orientation="h" top="centro.playlist.directory" bottom="centro.playlist.component" minwidth="1" maxwidth="-50" height="10" jump="0"/>
 </groupdef>
 <groupdef id="centro.main" xuitag="Centro:SUI" h="100">
-	<Wasabi:Frame id="centro.mainframe" x="0" y="0" w="0" h="0" relatw="1" relath="1" left="centro.components" right="centro.playlist1" orientation="vertical" from="right" minwidth="158" width="200" jump="none" maxwidth="-224"/>
+	<layer x="0" y="0" w="0" relatw="1" image="sui.top.border"/>
+
+
+	<Wasabi:Frame id="centro.mainframe" x="0" y="3" w="0" h="-3" relatw="1" relath="1" left="centro.components" right="centro.playlist1" orientation="vertical" from="right" minwidth="158" width="200" jump="none" maxwidth="-224"/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\xui\CentroSUI\_v2\scripts\CentroSUI2.maki" param="@HAVE_LIBRARY@"/>
 </groupdef>
