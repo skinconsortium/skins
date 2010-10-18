@@ -1,6 +1,45 @@
 <elements>
 
 	<!-- Frame Section -->
+	<bitmap id="sui.top.border" file="newsui.png" x="25" y="26" w="10" h="3" gammagroup="n.Sui.BG"/>
+	<bitmap id="sui.top.left" file="newsui.png" x="0" y="0" w="3" h="25" gammagroup="n.Sui.BG"/>
+	<bitmap id="sui.top.center" file="newsui.png" x="25" y="0" w="6" h="25" gammagroup="n.Sui.BG"/>
+	<bitmap id="sui.top.right" file="newsui.png" x="32" y="0" w="3" h="25" gammagroup="n.Sui.BG"/>
+
+	<bitmap id="sui.center" file="newsui.png" x="25" y="30" w="10" h="10" gammagroup="n.Sui.BG"/>
+
+	<bitmap id="sui.drawer.resize" file="newsui.png" x="140" y="0" w="10" h="5" gammagroup="n.Sui.BG"/>
+	<bitmap id="sui.drawer.center" file="newsui.png" x="140" y="6" w="10" h="10" gammagroup="n.Sui.BG"/>
+	<bitmap id="sui.drawer.status" file="newsui.png" x="140" y="17" w="10" h="19" gammagroup="n.Sui.BG"/>
+
+	<bitmap id="sui.button.drawer.1.0" file="newsui.png" x="36" y="0" w="25" h="25" gammagroup="n.Sui.Button"/>
+	<bitmap id="sui.button.drawer.2.0" file="newsui.png" x="36" y="26" w="25" h="25" gammagroup="n.Sui.Button"/>
+	<bitmap id="sui.button.drawer.3.0" file="newsui.png" x="36" y="52" w="25" h="25" gammagroup="n.Sui.Button"/>
+	<bitmap id="sui.button.drawer.1.1" file="newsui.png" x="62" y="0" w="25" h="25" gammagroup="n.Sui.Button"/>
+	<bitmap id="sui.button.drawer.2.1" file="newsui.png" x="62" y="26" w="25" h="25" gammagroup="n.Sui.Button"/>
+	<bitmap id="sui.button.drawer.3.1" file="newsui.png" x="62" y="52" w="25" h="25" gammagroup="n.Sui.Button"/>
+
+	<bitmap id="sui.button.leftside.1.0" file="newsui.png" x="88" y="0" w="25" h="25" gammagroup="n.Sui.Button"/>
+	<bitmap id="sui.button.leftside.2.0" file="newsui.png" x="88" y="26" w="25" h="25" gammagroup="n.Sui.Button"/>
+	<bitmap id="sui.button.leftside.3.0" file="newsui.png" x="88" y="52" w="25" h="25" gammagroup="n.Sui.Button"/>
+	<bitmap id="sui.button.leftside.1.1" file="newsui.png" x="114" y="0" w="25" h="25" gammagroup="n.Sui.Button"/>
+	<bitmap id="sui.button.leftside.2.1" file="newsui.png" x="114" y="26" w="25" h="25" gammagroup="n.Sui.Button"/>
+	<bitmap id="sui.button.leftside.3.1" file="newsui.png" x="114" y="52" w="25" h="25" gammagroup="n.Sui.Button"/>
+
+	<bitmap id="sui.tab.left.2" file="newsui.png" x="4" y="0" w="6" h="25" gammagroup="n.Sui.Tab"/>
+	<bitmap id="sui.tab.center.2" file="newsui.png" x="11" y="0" w="6" h="25" gammagroup="n.Sui.Tab"/>
+	<bitmap id="sui.tab.right.2" file="newsui.png" x="18" y="0" w="6" h="25" gammagroup="n.Sui.Tab"/>
+
+	<bitmap id="sui.tab.left.3" file="newsui.png" x="4" y="26" w="6" h="25" gammagroup="n.Sui.Tab"/>
+	<bitmap id="sui.tab.center.3" file="newsui.png" x="11" y="26" w="6" h="25" gammagroup="n.Sui.Tab"/>
+	<bitmap id="sui.tab.right.3" file="newsui.png" x="18" y="26" w="6" h="25" gammagroup="n.Sui.Tab"/>
+
+	<bitmap id="sui.tab.left.1" file="newsui.png" x="4" y="52" w="6" h="25" gammagroup="n.Sui.Tab"/>
+	<bitmap id="sui.tab.center.1" file="newsui.png" x="11" y="52" w="6" h="25" gammagroup="n.Sui.Tab"/>
+	<bitmap id="sui.tab.right.1" file="newsui.png" x="18" y="52" w="6" h="25" gammagroup="n.Sui.Tab"/>
+
+
+	<!-- Frame Section -->
 	<bitmap id="frame.topleft" file="frame.png" x="0" y="0" w="105" gammagroup="n.Frame"/>
 	<bitmap id="frame.top" file="frame.png" x="106" y="0" w="10" gammagroup="n.Frame"/>
 	<bitmap id="frame.topright" file="frame.png" x="117" y="0" w="135" gammagroup="n.Frame"/>

@@ -3,36 +3,6 @@
 </groupdef>
 
 
-
-
-
-<groupdef id="beatvisB.left">
-	<layer id="beatvisB.left.layer" x="-150" y="0" h="45" relatx="1" image="beat.left.b" tile="1" alpha="253"/>
-</groupdef>
-<groupdef id="beatvisB.right">
-	<layer id="beatvisB.right.layer" x="0" y="0" h="45" image="beat.right.b" tile="1" alpha="253"/>
-</groupdef>
-<groupdef id="beatvis">
-	<AnimatedLayer id="beatvis.left" x="0" y="0" w="150" h="45" image="beat.0.left" autoplay="0" autoreplay="1" ghost="1" frameheight="45"/>
-	<AnimatedLayer id="beatvis.right" x="150" y="0" w="150" h="45" image="beat.0.right" autoplay="0" autoreplay="1" ghost="1" frameheight="45"/>
-	<layer id="beatvisC.left" x="0" y="0" h="45" image="beat.left.c" tile="1" visible="0" alpha="253"/>
-	<layer id="beatvisC.right" x="0" y="0" h="45" relatx="0" image="beat.right.c" tile="1" visible="0" alpha="253"/>
-	<group id="beatvisB.left" x="0" y="0" w="0" h="45" visible="0"/>
-	<group id="beatvisB.right" x="150" y="0" w="0" h="45" visible="0"/>
-	<layer id="beat.overlay" x="0" y="0" h="45" relatx="0" image="beatvis.overlay" tile="1" ghost="1" alpha="253"/>
-</groupdef>
-<groupdef id="beatpromo">
-	<layer id="beat.promo" x="0" y="0" image="cPro.promo.1" alpha="253"/>
-</groupdef>
-
-<groupdef id="cpro.screen">
-	<layer id="cpro.bg.title" x="0" y="0" image="player.center.title" ghost="1" visible="0" alpha="253"/>
-
-	<group id="beatvis" x="200" y="47" w="300" h="45"/>
-	<group id="beatpromo" x="200" y="47" w="300" h="45" visible="0"/>
-	<layer id="beat.mousetrap" x="143" y="47" w="-317" h="45" relatw="1"/>
-</groupdef>
-
 <groupdef id="equalizer.sliders">
 	<slider id="preamp" action="EQ_BAND" param="preamp" x="0" y="0" w="14" h="55" thumb="eq.slider.v.1" hoverThumb="eq.slider.v.2" downThumb="eq.slider.v.3" tooltip="Preamp" orientation="v" cursor="IDC_HAND"/>
 	<slider id="eq1" action="EQ_BAND" param="1" x="57" y="0" w="14" h="55" thumb="eq.slider.v.1" hoverThumb="eq.slider.v.2" downThumb="eq.slider.v.3" tooltip="70 Hz" orientation="v" cursor="IDC_HAND"/>
@@ -294,21 +264,6 @@
 	/>
 </groupdef>
 
-<!--
-<groupdef id="drawer.skinchooser" name="Skin Chooser">
-    <List id="skinlist" x="2" y="2" w="-4" h="-21" relatw="1" relath="1" antialias="0" 
-        numcolumns="2" columnwidths="-1;-1" columnlabels="Name;Type" 
-    />
-    <button    id="switch" x="-64" y="-18" relatx="1" relaty="1"
-        image="component.menu2.1"
-        hoverImage="component.menu2.2"
-        downImage="component.menu2.3"
-        tooltip="Switch to Skin"
-    />
-    <script file="@WINAMPPATH@\Plugins\classicPro\engine\one\scripts\skinlist.maki" param="@SKINPATH@"/>
-</groupdef>
--->
-
 <groupdef id="drawer.playlist" name="Playlist">
 	<PlaylistPro id="centro.windowholder.playlist1" x="1" y="1" h="-19" w="-2" relath="1" relatw="1"/>
 	<group id="centro.playlist.bottombuttons" x="1" y="-18" w="-1" relaty="1" relatw="1"/>
@@ -317,10 +272,6 @@
 </groupdef>
 
 <groupdef id="drawer.video" inherit_group="centro.playlist.directory.vid" name="Video">
-	<!--<group id="centro.playlist.directory.vid" x="0" y="0" w="0" h="0" relatw="1" relath="1"/>-->
-	<!--<windowholder x="3" y="3" w="-6" h="-22" relatw="1" relath="1" autofocus="1" wantfocus="0" autoclose="1" autoopen="1" autoavailable="1" visible="1" hold="guid:{F0816D7B-FFFC-4343-80F2-E8199AA15CC3}"/>
-	<text display="VID_Info" move="1" x="34" y="-17" relaty="1" h="13" w="-70" relatw="1" align="center" color="Playlist.Status.Text" font="cpro.status.font"/>
-	<button x="1" y="-18" relaty="1" action="VID_Misc" image="component.menu.1" hoverimage="component.menu.2" downimage="component.menu.3" tooltip="Video Options"/>-->
 </groupdef>
 
 <groupdef id="centro.blf">
@@ -330,18 +281,22 @@
 	<layer id="centro.blf.1a.overlay" x="1" y="9" image="player.gframe.7.alt.overlay" visible="0" move="1"/>
 </groupdef>
 <groupdef id="centro.multidrawer">
-	<grid id="centro.gadget.grid" fitparent="1" h="-27" move="1"
+	<!--<grid id="centro.gadget.grid" fitparent="1" h="-27" move="1"
 		topleft="player.gframe.1" top="player.gframe.2" topright="player.gframe.3"
 		left="player.gframe.4" middle="player.gframe.5" right="player.gframe.6"
 	/>
 	<layer id="centro.blf.3" x="-6" y="-27" relatx="1" relaty="1" image="player.gframe.9"/>
 	<group id="centro.blf" x="0" y="-27" w="-6" h="27" relaty="1" relatw="1" wantfocus="1"/>
-
+	
+	
 	<grid id="centro.gadget.grid.eq" fitparent="1" visible="0"
 		topleft="player.gframe.1.alt" top="player.gframe.2.alt" topright="player.gframe.3.alt"
 		regionop="1" move="1"
 	/>
-	<group id="cpro.drawer.overlay" fitparent="1"/>
+	<group id="cpro.drawer.overlay" fitparent="1"/>-->
+	
+	<layer fitparent="1" image="sui.drawer.center"/>
+	<layer x="0" y="-19" w="0" relaty="1" relatw="1" image="sui.drawer.status"/>
 
 
 	<group id="drawer.equalizer" fitparent="1" visible="0"/>

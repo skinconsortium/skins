@@ -86,6 +86,8 @@
 ::One - Main Area (Groups + Buttons)
 -->
 <groupdef id="centro.componentsheet.content">
+	<layer fitparent="1" image="sui.center" alpha="253"/>
+
 	<group id="centro.library" x="0" y="0" w="0" h="0" relatw="1" relath="1" visible="0" wantfocus="1"/>
 	<group id="centro.video" x="0" y="0" w="0" h="0" relatw="1" relath="1" visible="0" wantfocus="1"/>
 	<group id="centro.visualization" x="0" y="0" w="0" h="0" relatw="1" relath="1" visible="0" wantfocus="1"/>
@@ -105,6 +107,7 @@
 		bottomleft="player.suiframe.7" bottom="player.suiframe.8" bottomright="player.suiframe.9"
 		regionop="1" move="1" visible="0"
 	/>
+
 	
 	<grid x="0" y="0" w="0" h="25" relatw="1" move="1" topleft="sui.top.left" top="sui.top.center" topright="sui.top.right"/>
 	<Cpro:Tabs id="Cpro.tabs" x="0" y="0" h="25" w="-50" relatw="1"/>
@@ -120,7 +123,7 @@
 <groupdef id="centro.components">
 	<group id="centro.componentsheet" x="0" y="0" w="0" h="0" relatw="1" relath="1"/>
 	<group id="centro.multidrawer" x="0" y="-119" w="0" h="119" relaty="1" relatw="1" wantfocus="1" visible="0"/>
-	<layer id="cpro.drawer.resize" x="0" y="-122" w="0" h="6" relaty="1" relatw="1" cursor="IDC_SIZENS" alpha="253" move="0"/>
+	<layer id="cpro.drawer.resize" x="0" y="-122" w="0" h="5" relaty="1" relatw="1" cursor="IDC_SIZENS" alpha="253" move="0" image="sui.drawer.resize"/>
 </groupdef>
 
 
