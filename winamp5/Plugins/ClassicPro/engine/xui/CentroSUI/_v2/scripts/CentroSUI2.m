@@ -28,13 +28,13 @@ Function openWidgetIDS(String ids);
 Function openMini(int miniNo);
 Function refreshComponentButtons();
 Function setMainFrame(boolean open);
-Function setCompStatus(boolean onOff);
-Function updateCompStatus();
+//Function setCompStatus(boolean onOff);
+//Function updateCompStatus();
 Function setFrame1();
 Function setFrame2(int pos, int h);
 Function gotoPrevMini();
 Function gotoNextMini();
-Function setMiniBG(int mode); //0=normal, 1=tagview
+//Function setMiniBG(int mode); //0=normal, 1=tagview
 Function setDrawerSizeSave(int h);
 
 // Main Layout
@@ -453,7 +453,7 @@ openTabNo(int tabNo){
 		setPublicInt("cPro.lastComponentPage", tabNo);
 	}
 	busyWithThisFunction=false;
-	updateCompStatus();
+	//updateCompStatus();
 	
 	if (!dontTabCall)
 	{
@@ -604,7 +604,7 @@ openMini(int miniNo){
 		customObj.show();
 	}
 	setPublicInt("cPro.lastMini", miniNo);
-	setMiniBG(bg);
+	//setMiniBG(bg);
 }
 
 gotoPrevMini(){ //wheelup
@@ -663,7 +663,8 @@ but_miniGoto.onEnterArea(){
 but_miniGoto.onLeaveArea(){
 	mouse_but_miniGoto=false;
 }
-setMiniBG(int mode){
+
+/*setMiniBG(int mode){
 	if(mode==0){
 		gadgrid1.show();
 		gadgrid1a.hide();
@@ -693,11 +694,11 @@ setMiniBG(int mode){
 	else{
 		debug("Error: Mini background not found!");
 	}
-}
+}*/
 
 refreshComponentButtons(){
 	if(getPublicInt("Cpro.One.TabStatus.1", 1)){
-			guihold_Pl2.setXmlParam("h", "-27");
+			guihold_Pl2.setXmlParam("h", "-19");
 			tabbut_pl.show();
 	}
 	else{
@@ -706,7 +707,7 @@ refreshComponentButtons(){
 	}
 
 	if(getPublicInt("Cpro.One.TabStatus.2", 1)){
-			hold_vid.setXmlParam("h", "-27");
+			hold_vid.setXmlParam("h", "-19");
 			tabbut_vid.show();
 	}
 	else{
@@ -715,8 +716,8 @@ refreshComponentButtons(){
 	}
 	
 	if(getPublicInt("Cpro.One.TabStatus.3", 1)){
-			hold_avs.setXmlParam("h", "-27");
-			visRectBg.setXmlParam("h", "-27");
+			hold_avs.setXmlParam("h", "-19");
+			visRectBg.setXmlParam("h", "-19");
 			tabbut_avs.show();
 	}
 	else{
@@ -724,9 +725,10 @@ refreshComponentButtons(){
 			visRectBg.setXmlParam("h", "0");
 			tabbut_avs.hide();
 	}
-	updateCompStatus();
+	//updateCompStatus();
 }
 
+/*
 updateCompStatus(){
 	if(tab_openned==0) setCompStatus(false);
 	else if(tab_openned==4) setCompStatus(false);
@@ -749,6 +751,7 @@ setCompStatus(boolean onOff){
 		}
 	}
 }
+*/
 
 
 xuiGroup.onAction (String action, String param, int x, int y, int p1, int p2, GuiObject source){
@@ -811,7 +814,7 @@ xuiGroup.onAction (String action, String param, int x, int y, int p1, int p2, Gu
 	}
 	else if(strlower(action) == "widget_statusbar"){
 		widgetStatus=x;
-		updateCompStatus();
+		//updateCompStatus();
 	}
 	else if(strlower(action) == "refresh_drawer_h"){
 		setDrawerSizeSave(getPublicInt("ClassicPro.drawer.h", -119));
