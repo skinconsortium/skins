@@ -1,4 +1,4 @@
-<groupdef id="centro.widgets.coolvu.drawer" name="Cool VU" userdata="centro.widgets.coolvu;0" windowtype="centro.widgets.drawer">
+<groupdef id="centro.widgets.coolvu.drawer" name="Cool VU" userdata="centro.widgets.coolvu;0;0" windowtype="centro.widgets.drawer">
 	<guiobject id="@author"			userdata="E-Trance"/>
 	<guiobject id="@version"		userdata="1.51"/>
 	<guiobject id="@uninstaller"	userdata="Uninstall (CoolVU).exe"/>
@@ -6,7 +6,7 @@
 	<guiobject id="@databaseid"		userdata="130"/>
 </groupdef>
 
-<groupdef id="centro.widgets.coolvu.mini" name="Cool VU" userdata="centro.widgets.coolvu;0" windowtype="centro.widgets.mini" inherit_group="centro.widgets.coolvu.drawer" />
+<groupdef id="centro.widgets.coolvu.mini" name="Cool VU" userdata="centro.widgets.coolvu;0;0" windowtype="centro.widgets.mini" inherit_group="centro.widgets.coolvu.drawer" />
 
 <elements>
     <bitmap id="centro.widgets.coolvu.thumbnail" file="@WINAMPPATH@\Plugins\classicPro\engine\widgets\Data\CoolVU\thumbnail.png"/>

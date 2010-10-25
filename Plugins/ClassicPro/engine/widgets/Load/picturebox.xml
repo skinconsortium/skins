@@ -5,8 +5,8 @@
 	<guiobject id="@support"		userdata="http://forums.skinconsortium.com/index.php?page=Thread&amp;threadID=1240"/>
 	<guiobject id="@databaseid"		userdata="126"/>
 </groupdef>
-<groupdef id="centro.widgets.picturebox.dummy.mini" name="Picture Box" userdata="centro.widgets.picturebox;0" windowtype="centro.widgets.mini" inherit_group="centro.widgets.picturebox.dummy.drawer"/>
-<groupdef id="centro.widgets.picturebox.dummy.main" name="Picture Box;PB" userdata="centro.widgets.picturebox;0" windowtype="centro.widgets.main" inherit_group="centro.widgets.picturebox.dummy.drawer">
+<groupdef id="centro.widgets.picturebox.dummy.mini" name="Picture Box" userdata="centro.widgets.picturebox;0;0" windowtype="centro.widgets.mini" inherit_group="centro.widgets.picturebox.dummy.drawer"/>
+<groupdef id="centro.widgets.picturebox.dummy.main" name="Picture Box;PB" userdata="centro.widgets.picturebox;0;0" windowtype="centro.widgets.main" inherit_group="centro.widgets.picturebox.dummy.drawer">
 </groupdef>
 <elements>
     <bitmap id="centro.widgets.picturebox.thumbnail" file="@WINAMPPATH@\Plugins\classicPro\engine\widgets\Data\Picturebox\thumbnail.png"/>

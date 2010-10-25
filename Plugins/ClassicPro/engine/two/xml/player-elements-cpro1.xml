@@ -255,55 +255,6 @@
 	<bitmap id="seeker.thumb.2" file="seekvol.png" x="33" y="21" w="38" h="20" gammagroup="n.Seeker.Thumb"/>
 	<bitmap id="seeker.thumb.3" file="seekvol.png" x="33" y="42" w="38" h="20" gammagroup="n.Seeker.Thumb"/>
 
-	<!--  SUI Component Buttons: Small -->
-	<bitmap id="component.pl.add.1" file="comp_but.png" x="0" y="0" w="32" h="17" gammagroup="n.Button"/>
-	<bitmap id="component.pl.add.2" file="comp_but.png" x="0" y="18" w="32" h="17" gammagroup="n.Button"/>
-	<bitmap id="component.pl.add.3" file="comp_but.png" x="0" y="36" w="32" h="17" gammagroup="n.Button"/>
-	<bitmap id="component.pl.rem.1" file="comp_but.png" x="33" y="0" w="31" h="17" gammagroup="n.Button"/>
-	<bitmap id="component.pl.rem.2" file="comp_but.png" x="33" y="18" w="31" h="17" gammagroup="n.Button"/>
-	<bitmap id="component.pl.rem.3" file="comp_but.png" x="33" y="36" w="31" h="17" gammagroup="n.Button"/>
-	<bitmap id="component.pl.sel.1" file="comp_but.png" x="65" y="0" w="31" h="17" gammagroup="n.Button"/>
-	<bitmap id="component.pl.sel.2" file="comp_but.png" x="65" y="18" w="31" h="17" gammagroup="n.Button"/>
-	<bitmap id="component.pl.sel.3" file="comp_but.png" x="65" y="36" w="31" h="17" gammagroup="n.Button"/>
-	<bitmap id="component.pl.misc.1" file="comp_but.png" x="97" y="0" w="31" h="17" gammagroup="n.Button"/>
-	<bitmap id="component.pl.misc.2" file="comp_but.png" x="97" y="18" w="31" h="17" gammagroup="n.Button"/>
-	<bitmap id="component.pl.misc.3" file="comp_but.png" x="97" y="36" w="31" h="17" gammagroup="n.Button"/>
-	<bitmap id="component.pl.man.1" file="comp_but.png" x="129" y="0" w="32" h="17" gammagroup="n.Button"/>
-	<bitmap id="component.pl.man.2" file="comp_but.png" x="129" y="18" w="32" h="17" gammagroup="n.Button"/>
-	<bitmap id="component.pl.man.3" file="comp_but.png" x="129" y="36" w="32" h="17" gammagroup="n.Button"/>
-	<bitmap id="component.avs.opt.1" file="comp_but.png" x="164" y="0" w="32" h="17" gammagroup="n.Button"/>
-	<bitmap id="component.avs.opt.2" file="comp_but.png" x="164" y="18" w="32" h="17" gammagroup="n.Button"/>
-	<bitmap id="component.avs.opt.3" file="comp_but.png" x="164" y="36" w="32" h="17" gammagroup="n.Button"/>
-	<bitmap id="component.avs.prev.1" file="comp_but.png" x="197" y="0" w="31" h="17" gammagroup="n.Button"/>
-	<bitmap id="component.avs.prev.2" file="comp_but.png" x="197" y="18" w="31" h="17" gammagroup="n.Button"/>
-	<bitmap id="component.avs.prev.3" file="comp_but.png" x="197" y="36" w="31" h="17" gammagroup="n.Button"/>
-	<bitmap id="component.avs.ran.1" file="comp_but.png" x="229" y="0" w="31" h="17" gammagroup="n.Button"/>
-	<bitmap id="component.avs.ran.2" file="comp_but.png" x="229" y="18" w="31" h="17" gammagroup="n.Button"/>
-	<bitmap id="component.avs.ran.3" file="comp_but.png" x="229" y="36" w="31" h="17" gammagroup="n.Button"/>
-	<bitmap id="component.avs.ran.4" file="comp_but.png" x="229" y="54" w="31" h="17" gammagroup="n.Button"/>
-	<bitmap id="component.avs.next.1" file="comp_but.png" x="261" y="0" w="31" h="17" gammagroup="n.Button"/>
-	<bitmap id="component.avs.next.2" file="comp_but.png" x="261" y="18" w="31" h="17" gammagroup="n.Button"/>
-	<bitmap id="component.avs.next.3" file="comp_but.png" x="261" y="36" w="31" h="17" gammagroup="n.Button"/>
-	<bitmap id="component.menu.1" file="comp_but.png" x="295" y="0" w="32" h="17" gammagroup="n.Button"/>
-	<bitmap id="component.menu.2" file="comp_but.png" x="295" y="18" w="32" h="17" gammagroup="n.Button"/>
-	<bitmap id="component.menu.3" file="comp_but.png" x="295" y="36" w="32" h="17" gammagroup="n.Button"/>
-	<bitmap id="component.menu2.1" file="comp_but.png" x="328" y="0" w="31" h="17" gammagroup="n.Button"/>
-	<bitmap id="component.menu2.2" file="comp_but.png" x="328" y="18" w="31" h="17" gammagroup="n.Button"/>
-	<bitmap id="component.menu2.3" file="comp_but.png" x="328" y="36" w="31" h="17" gammagroup="n.Button"/>
-	<bitmap id="component.goto.1" file="comp_but.png" x="360" y="0" w="32" h="17" gammagroup="n.Button"/>
-	<bitmap id="component.goto.2" file="comp_but.png" x="360" y="18" w="32" h="17" gammagroup="n.Button"/>
-	<bitmap id="component.goto.3" file="comp_but.png" x="360" y="36" w="32" h="17" gammagroup="n.Button"/>
-	<bitmap id="eq.on.1" file="comp_but.png" x="395" y="0" w="31" h="17" gammagroup="n.Button"/>
-	<bitmap id="eq.on.2" file="comp_but.png" x="395" y="18" w="31" h="17" gammagroup="n.Button"/>
-	<bitmap id="eq.on.3" file="comp_but.png" x="395" y="36" w="31" h="17" gammagroup="n.Button"/>
-	<bitmap id="eq.on.4" file="comp_but.png" x="395" y="54" w="31" h="17" gammagroup="n.Button"/>
-	<bitmap id="eq.auto.1" file="comp_but.png" x="427" y="0" w="39" h="17" gammagroup="n.Button"/>
-	<bitmap id="eq.auto.2" file="comp_but.png" x="427" y="18" w="39" h="17" gammagroup="n.Button"/>
-	<bitmap id="eq.auto.3" file="comp_but.png" x="427" y="36" w="39" h="17" gammagroup="n.Button"/>
-	<bitmap id="eq.auto.4" file="comp_but.png" x="427" y="54" w="39" h="17" gammagroup="n.Button"/>
-	<bitmap id="eq.preset.1" file="comp_but.png" x="467" y="0" w="54" h="17" gammagroup="n.Button"/>
-	<bitmap id="eq.preset.2" file="comp_but.png" x="467" y="18" w="54" h="17" gammagroup="n.Button"/>
-	<bitmap id="eq.preset.3" file="comp_but.png" x="467" y="36" w="54" h="17" gammagroup="n.Button"/>
 
 	<!--  Colorthemes buttons -->
 	<bitmap id="component.ct.prev.1" file="colorthemes.png" x="0" y="0" w="32" h="17" gammagroup="n.Button"/>
