@@ -161,7 +161,7 @@ Implement Areas
 	<componentbucket id="widget.loader.mini" x="0" y="0" h="20" w="20" wndtype="centro.widgets.mini" visible="0"/>
 	<customobject id="widget.holder.mini" fitparent="1" visible="0" /> <!-- this one holds our widgets -->
 
-	<button id="comp.goto" x="-33" y="-18" relatx="1" relaty="1" image="component.goto.1" hoverimage="component.goto.2" downimage="component.goto.3" tooltip="Select Mini view"/>
+	<button id="comp.goto" x="-32" y="-18" relatx="1" relaty="1" image="cpro2.gen.goto.1" hoverimage="cpro2.gen.goto.2" downimage="cpro2.gen.goto.3" tooltip="Select Mini view"/>
 </groupdef>
 
 <groupdef id="centro.multidrawer">
@@ -180,7 +180,7 @@ Implement Areas
 	<componentbucket id="widget.loader" x="0" y="0" h="20" w="20" wndtype="centro.widgets.drawer" visible="0" />
 	<customobject id="widget.holder" fitparent="1" visible="0" /> <!-- this one holds our widgets -->
 
-	<button id="drawer.menulist" x="-33" y="-18" relatx="1" relaty="1" image="component.goto.1" hoverimage="component.goto.2" downimage="component.goto.3" tooltip="Select Drawer"/>
+	<button id="drawer.menulist" x="-32" y="-18" relatx="1" relaty="1" image="cpro2.gen.goto.1" hoverimage="cpro2.gen.goto.2" downimage="cpro2.gen.goto.3" tooltip="Select Drawer"/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\xui\CentroSUI\_v2\scripts\drawer.maki"  param="@SKINPATH@"/>
 </groupdef>
 
