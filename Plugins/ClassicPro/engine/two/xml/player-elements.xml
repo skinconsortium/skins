@@ -206,25 +206,30 @@
 	<bitmap id="cpro2.avs.fs.2" file="comp_but.png" x="322" y="18" w="31" h="17" gammagroup="n.Button"/>
 	<bitmap id="cpro2.avs.fs.3" file="comp_but.png" x="322" y="36" w="31" h="17" gammagroup="n.Button"/>
 
-	<bitmap id="component.menu.1" file="comp_but.png" x="295" y="0" w="32" h="17" gammagroup="n.Button"/>
-	<bitmap id="component.menu.2" file="comp_but.png" x="295" y="18" w="32" h="17" gammagroup="n.Button"/>
-	<bitmap id="component.menu.3" file="comp_but.png" x="295" y="36" w="32" h="17" gammagroup="n.Button"/>
-	<bitmap id="component.menu2.1" file="comp_but.png" x="328" y="0" w="31" h="17" gammagroup="n.Button"/>
-	<bitmap id="component.menu2.2" file="comp_but.png" x="328" y="18" w="31" h="17" gammagroup="n.Button"/>
-	<bitmap id="component.menu2.3" file="comp_but.png" x="328" y="36" w="31" h="17" gammagroup="n.Button"/>
-	<bitmap id="component.goto.1" file="comp_but.png" x="360" y="0" w="32" h="17" gammagroup="n.Button"/>
-	<bitmap id="component.goto.2" file="comp_but.png" x="360" y="18" w="32" h="17" gammagroup="n.Button"/>
-	<bitmap id="component.goto.3" file="comp_but.png" x="360" y="36" w="32" h="17" gammagroup="n.Button"/>
-	<bitmap id="eq.on.1" file="comp_but.png" x="395" y="0" w="31" h="17" gammagroup="n.Button"/>
-	<bitmap id="eq.on.2" file="comp_but.png" x="395" y="18" w="31" h="17" gammagroup="n.Button"/>
-	<bitmap id="eq.on.3" file="comp_but.png" x="395" y="36" w="31" h="17" gammagroup="n.Button"/>
-	<bitmap id="eq.on.4" file="comp_but.png" x="395" y="54" w="31" h="17" gammagroup="n.Button"/>
-	<bitmap id="eq.auto.1" file="comp_but.png" x="427" y="0" w="39" h="17" gammagroup="n.Button"/>
-	<bitmap id="eq.auto.2" file="comp_but.png" x="427" y="18" w="39" h="17" gammagroup="n.Button"/>
-	<bitmap id="eq.auto.3" file="comp_but.png" x="427" y="36" w="39" h="17" gammagroup="n.Button"/>
-	<bitmap id="eq.auto.4" file="comp_but.png" x="427" y="54" w="39" h="17" gammagroup="n.Button"/>
-	<bitmap id="eq.preset.1" file="comp_but.png" x="467" y="0" w="54" h="17" gammagroup="n.Button"/>
-	<bitmap id="eq.preset.2" file="comp_but.png" x="467" y="18" w="54" h="17" gammagroup="n.Button"/>
-	<bitmap id="eq.preset.3" file="comp_but.png" x="467" y="36" w="54" h="17" gammagroup="n.Button"/>
+	<bitmap id="cpro2.gen.menu.1" file="comp_but.png" x="356" y="0" w="31" h="17" gammagroup="n.Button"/>
+	<bitmap id="cpro2.gen.menu.2" file="comp_but.png" x="356" y="18" w="31" h="17" gammagroup="n.Button"/>
+	<bitmap id="cpro2.gen.menu.3" file="comp_but.png" x="356" y="36" w="31" h="17" gammagroup="n.Button"/>
+	<bitmap id="cpro2.gen.goto.1" file="comp_but.png" x="388" y="0" w="31" h="17" gammagroup="n.Button"/>
+	<bitmap id="cpro2.gen.goto.2" file="comp_but.png" x="388" y="18" w="31" h="17" gammagroup="n.Button"/>
+	<bitmap id="cpro2.gen.goto.3" file="comp_but.png" x="388" y="36" w="31" h="17" gammagroup="n.Button"/>
+
+	<bitmap id="cpro2.vid.1x.1" file="comp_but.png" x="422" y="0" w="31" h="17" gammagroup="n.Button"/>
+	<bitmap id="cpro2.vid.1x.2" file="comp_but.png" x="422" y="18" w="31" h="17" gammagroup="n.Button"/>
+	<bitmap id="cpro2.vid.1x.3" file="comp_but.png" x="422" y="36" w="31" h="17" gammagroup="n.Button"/>
+	<bitmap id="cpro2.vid.2x.1" file="comp_but.png" x="454" y="0" w="31" h="17" gammagroup="n.Button"/>
+	<bitmap id="cpro2.vid.2x.2" file="comp_but.png" x="454" y="18" w="31" h="17" gammagroup="n.Button"/>
+	<bitmap id="cpro2.vid.2x.3" file="comp_but.png" x="454" y="36" w="31" h="17" gammagroup="n.Button"/>
+	<bitmap id="cpro2.vid.web.1" file="comp_but.png" x="486" y="0" w="31" h="17" gammagroup="n.Button"/>
+	<bitmap id="cpro2.vid.web.2" file="comp_but.png" x="486" y="18" w="31" h="17" gammagroup="n.Button"/>
+	<bitmap id="cpro2.vid.web.3" file="comp_but.png" x="486" y="36" w="31" h="17" gammagroup="n.Button"/>
+
+	<bitmap id="cpro2.eq.on.1" file="comp_but.png" x="520" y="0" w="31" h="17" gammagroup="n.Button"/>
+	<bitmap id="cpro2.eq.on.2" file="comp_but.png" x="520" y="18" w="31" h="17" gammagroup="n.Button"/>
+	<bitmap id="cpro2.eq.on.3" file="comp_but.png" x="520" y="36" w="31" h="17" gammagroup="n.Button"/>
+	<bitmap id="cpro2.eq.on.4" file="comp_but.png" x="520" y="54" w="31" h="17" gammagroup="n.Button"/>
+	<bitmap id="cpro2.eq.auto.1" file="comp_but.png" x="552" y="0" w="39" h="17" gammagroup="n.Button"/>
+	<bitmap id="cpro2.eq.auto.2" file="comp_but.png" x="552" y="18" w="39" h="17" gammagroup="n.Button"/>
+	<bitmap id="cpro2.eq.auto.3" file="comp_but.png" x="552" y="36" w="39" h="17" gammagroup="n.Button"/>
+	<bitmap id="cpro2.eq.auto.4" file="comp_but.png" x="552" y="54" w="39" h="17" gammagroup="n.Button"/>
 
 </elements>

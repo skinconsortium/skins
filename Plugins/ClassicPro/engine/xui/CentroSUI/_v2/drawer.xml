@@ -1,10 +1,10 @@
 <groupdef id="centro2.group.video.buttons">
-	<button action="VID_FS"	x="4" y="1" rectrgn="1" image="video.button.fullscreen.normal" hoverImage="video.button.fullscreen.hover" downImage="video.button.fullscreen.down" tooltip="Fullscreen"/>
-	<button action="VID_1X"	x="29" y="1" rectrgn="1" image="video.button.1x.normal" hoverImage="video.button.1x.hover" downImage="video.button.1x.down" tooltip="Normal Size"/>
-	<button action="VID_2X" x="54" y="1" rectrgn="1" image="video.button.2x.normal" hoverImage="video.button.2x.hover" downImage="video.button.2x.down" tooltip="Double Size"/>
-	<button action="VID_TV" x="80" y="1" rectrgn="1" image="video.button.itv.normal" hoverImage="video.button.itv.hover" downImage="video.button.itv.down" tooltip="Internet TV"/>
-	<button action="VID_Misc" x="-27" y="1" relatx="1" rectrgn="1" image="video.button.cfg.normal" hoverImage="video.button.cfg.hover" downImage="video.button.cfg.down" tooltip="Video Options"/>
-	<text id="info" display="VID_Info" ticker="1" x="105" y="4" w="-135" relatw="1" align="center" valign="top" color="ComponentTab.Status.Text" font="cpro.status.font" move="1"/>
+	<button action="VID_1X"	x="0" y="1" rectrgn="1" image="cpro2.vid.1x.1" hoverImage="cpro2.vid.1x.2" downImage="cpro2.vid.1x.3" tooltip="Normal Size"/>
+	<button action="VID_2X" x="31" y="1" rectrgn="1" image="cpro2.vid.2x.1" hoverImage="cpro2.vid.2x.2" downImage="cpro2.vid.2x.3" tooltip="Double Size"/>
+	<button action="VID_TV" x="62" y="1" rectrgn="1" image="cpro2.vid.web.1" hoverImage="cpro2.vid.web.2" downImage="cpro2.vid.web.3" tooltip="Internet TV"/>
+	<button action="VID_Misc" x="93" y="1" rectrgn="1" image="cpro2.avs.opt.1" hoverImage="cpro2.avs.opt.2" downImage="cpro2.avs.opt.3" tooltip="Video Options"/>
+	<button action="VID_FS"	x="-31" y="1" relatx="1" rectrgn="1" image="cpro2.avs.fs.1" hoverImage="cpro2.avs.fs.2" downImage="cpro2.avs.fs.3" tooltip="Fullscreen"/>
+	<text id="info" display="VID_Info" ticker="1" x="124" y="1" w="-155" h="17" relatw="1" align="center" valign="top" color="ComponentTab.Status.Text" font="cpro.status.font" move="1"/>
 </groupdef>
 
 <groupdef id="centro2.group.vis.buttons">
@@ -187,31 +187,31 @@
 	<layer x="0" y="-19" w="0" relaty="1" relatw="1" image="sui.status"/>
 	<group id="equalizer.content.holder" x="2" y="1" w="-4" h="100" relatw="1"/>
 	<togglebutton
-		x="1" y="-18" relaty="1"
-		image="eq.on.1"
-		hoverImage="eq.on.2"
-		downImage="eq.on.3"
-		activeImage="eq.on.4"
+		x="0" y="-18" relaty="1"
+		image="cpro2.eq.on.1"
+		hoverImage="cpro2.eq.on.2"
+		downImage="cpro2.eq.on.3"
+		activeImage="cpro2.eq.on.4"
 		action="EQ_TOGGLE"
 		tooltip="EQ on/off"
 	/>
 	<togglebutton
 		id="eqauto"
-		image="eq.auto.1"
-		hoverImage="eq.auto.2"
-		downImage="eq.auto.3"
-		activeImage="eq.auto.4"
+		image="cpro2.eq.auto.1"
+		hoverImage="cpro2.eq.auto.2"
+		downImage="cpro2.eq.auto.3"
+		activeImage="cpro2.eq.auto.4"
 		action="EQ_AUTO"
-		x="32" y="-18" relaty="1"
+		x="31" y="-18" relaty="1"
 		tooltip="EQ auto"
 	/>
 	<button
 		id="eqpresets"
-		image="eq.preset.1"
-		hoverImage="eq.preset.2"
-		downImage="eq.preset.3"
-		activeImage="eq.auto.4"		action="MENU" param="presets"
-		x="71" y="-18" relaty="1"
+		image="cpro2.avs.pre.1"
+		hoverImage="cpro2.avs.pre.2"
+		downImage="cpro2.avs.pre.3"
+		action="MENU" param="presets"
+		x="62" y="-18" relaty="1"
 		tooltip="Open presets"
 	/>
 
@@ -301,9 +301,9 @@
 	<Wasabi:AlbumArt id="tagviewer.cover" x="6" y="4" w="111" h="111" move="1"/>
 	<group id="info.component.infodisplay.holder" x="0" y="0" w="0" h="-15" relatw="1" relath="1"/>
 	<button id="tagviewmenu" x="-64" y="-18" relatx="1" relaty="1"
-		image="component.menu2.1"
-		hoverImage="component.menu2.2"
-		downImage="component.menu2.3"
+		image="cpro2.gen.menu.1"
+		hoverImage="cpro2.gen.menu.2"
+		downImage="cpro2.gen.menu.3"
 		tooltip="File Info Components"
 	/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\one\scripts\tagviewer.maki" param="6"/>
@@ -313,15 +313,4 @@
 <groupdef id="drawer.savedpl" name="Stored Playlists">
 	<layer x="0" y="-19" w="0" relaty="1" relatw="1" image="sui.status"/>
 	<PlaylistDirectory x="2" y="2" w="-4" h="-21" relatw="1" relath="1" antialias="0"/>
-</groupdef>
-
-
-
-
-
-<groupdef id="centro.blf">
-	<layer id="centro.blf.1" x="0" y="0" image="player.gframe.7" move="1"/>
-	<layer id="centro.blf.2" x="6" y="0" w="-6" relatw="1" image="player.gframe.8" move="1"/>
-	<layer id="centro.blf.1a" x="0" y="0" image="player.gframe.7.alt" visible="0" move="1"/>
-	<layer id="centro.blf.1a.overlay" x="1" y="9" image="player.gframe.7.alt.overlay" visible="0" move="1"/>
 </groupdef>
