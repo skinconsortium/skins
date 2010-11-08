@@ -508,8 +508,19 @@ Section "$(CPro_CProFiles)" "CPro_Sec_CProFiles"
 		File "..\engine\two\scripts\*.maki"
 	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\two\xml
 		File "..\engine\two\xml\*.xml"
-	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\one\xml
+	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\two\images
 		File "..\engine\two\images\*.png"
+
+
+	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\CentroSUI\_v2
+		File "..\engine\xui\CentroSUI\_v2\*.xml"
+	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\CentroSUI\_v2\CproTabs
+		File "..\engine\xui\CentroSUI\_v2\CproTabs\*.xml"
+		File "..\engine\xui\CentroSUI\_v2\CproTabs\*.m"
+		File "..\engine\xui\CentroSUI\_v2\CproTabs\*.maki"
+	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\CentroSUI\_v2\scripts
+		File "..\engine\xui\CentroSUI\_v2\scripts\*.m"
+		File "..\engine\xui\CentroSUI\_v2\scripts\*.maki"
 !endif
 
 
@@ -533,16 +544,16 @@ Section "$(CPro_CProFiles)" "CPro_Sec_CProFiles"
 		File "..\engine\xui\AlbumArt\*.m"
 		File "..\engine\xui\AlbumArt\*.maki"
 
-	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\CentroSUI
-		File "..\engine\xui\CentroSUI\*.xml"
-	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\CentroSUI\scripts
-		File "..\engine\xui\CentroSUI\scripts\*.m"
-		File "..\engine\xui\CentroSUI\scripts\*.maki"
+	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\CentroSUI\_v1
+		File "..\engine\xui\CentroSUI\_v1\*.xml"
+	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\CentroSUI\_v1\CproTabs
+		File "..\engine\xui\CentroSUI\_v1\CproTabs\*.xml"
+		File "..\engine\xui\CentroSUI\_v1\CproTabs\*.m"
+		File "..\engine\xui\CentroSUI\_v1\CproTabs\*.maki"
+	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\CentroSUI\_v1\scripts
+		File "..\engine\xui\CentroSUI\_v1\scripts\*.m"
+		File "..\engine\xui\CentroSUI\_v1\scripts\*.maki"
 
-	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\CproTabs
-		File "..\engine\xui\CproTabs\*.xml"
-		File "..\engine\xui\CproTabs\*.m"
-		File "..\engine\xui\CproTabs\*.maki"
 
 	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\editbox
 		File "..\engine\xui\editbox\*.xml"
@@ -628,6 +639,10 @@ Section "$(CPro_CProFiles)" "CPro_Sec_CProFiles"
 	
 	SetOutPath "$WINAMP_SKIN_DIR"
 		File "${CPRO_WINAMP_SKINS}\cPro__Bento.wal"
+
+!if ${CPRO_BUILD_TYPE} == "NIGHTLY"
+		File "${CPRO_WINAMP_SKINS}\CproTwo.wal"
+!endif
 		
 	RMDir /r "$WINAMP_SKIN_DIR\cPro - Big Bento\" 
 	RMDir /r "$WINAMP_SKIN_DIR\cPro - Bento\" 

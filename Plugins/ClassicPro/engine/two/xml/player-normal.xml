@@ -117,8 +117,13 @@
 </groupdef>
 
 <groupdef id="two.frame.buttons">
+	<button x="8" image="frame.1menu.1" hoverimage="frame.1menu.2" downimage="frame.1menu.3" action="SYSMENU"/>
+
+	<NStatesButton id="player.aot" x="-133" relatx="1" image="frame.button.aot.1." hoverimage="frame.button.aot.2." downimage="frame.button.aot.3." rectrgn="1" cfgattrib="{280876CF-48C0-40BC-8E86-73CE6BB462E5};Always on top" nstates="2" tooltip="Toggle Always on top" cfgvals="0;1"/>
+
 	<button x="-108" relatx="1" image="frame.button.min.1" hoverimage="frame.button.min.2" downimage="frame.button.min.3" action="MINIMIZE"/>
 	<button id="two.frame.goBig" x="-83" relatx="1" image="frame.button.gobig.1" hoverimage="frame.button.gobig.2" downimage="frame.button.gobig.3"/>
+	<button x="-58" relatx="1" action="SWITCH" param="shade" image="frame.button.shade.1" hoverImage="frame.button.shade.2" downImage="frame.button.shade.3" rectrgn="1" tooltip="Windowshade Mode"/>
 	<button x="-33" relatx="1" image="frame.button.close.1" hoverimage="frame.button.close.2" downimage="frame.button.close.3" action="CLOSE"/>
 </groupdef>
 <groupdef id="two.frame.buttons.fs">
