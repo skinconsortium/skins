@@ -730,7 +730,7 @@ removeTab(Tab t)
 updateTabWidth (Tab t)
 {
 	totalTabWidth -= t.maxW;
-	t.w = t.findObject("cpro.tab.text").getAutoWidth() +23;
+	t.w = t.findObject("cpro.tab.text").getAutoWidth() +14;
 	t.maxW = t.w;
 	totalTabWidth += t.maxW;
 	t.mid = t.w/2;
@@ -747,7 +747,7 @@ align(Tab t)
 {
 	boolean startFNbool = isFullNames;
 	
-	//if(isFullNames){
+	if(isFullNames){
 		if (tabHolder.getWidth() < totalTabWidth){
 			aligned = false;
 			alignByResize();
@@ -756,7 +756,7 @@ align(Tab t)
 			alignFull(firstTab);
 			aligned = true;
 		}
-	/*}
+	}
 	else{
 		if (tabHolder.getWidth() < totalTabWidth)
 		{
@@ -776,7 +776,7 @@ align(Tab t)
 	
 	if(startFNbool!=isFullNames){
 		align(t);
-	}*/
+	}
 }
 
 /**
@@ -842,7 +842,7 @@ alignByResize ()
 	
 	t = firstTab;
 	
-	float ratio = (tabHolder.getWidth()-tabCount*25)/(totalTabWidth-tabCount*25);
+	float ratio = (tabHolder.getWidth()-tabCount*20)/(totalTabWidth-tabCount*20);
 	
 	text tn = t.findObject("cpro.tab.text");
 	//debugstring(floattostring(ratio,5),9);
@@ -850,9 +850,7 @@ alignByResize ()
 	/*if(isFullNames){
 		if(ratio<0.65) isFullNames = false;
 	}*/
-	
-	//disabled for cpro2
-	//if(tabHolder.getWidth()<=tabCount*50) isFullNames = false;
+	if(tabHolder.getWidth()<=tabCount*50) isFullNames = false;
 	
 	/*else{
 		if(tabHolder.getWidth()>300) isFullNames = true;
@@ -860,29 +858,29 @@ alignByResize ()
 	
 	int x = 0;
 
-	/*while (t != NULL)
+	while (t != NULL)
 	{
 		text tn = t.findObject("cpro.tab.text");
-		//if(isFullNames){
+		if(isFullNames){
 			//text tn = t.findObject("cpro.tab.text");
 			tn.setXmlParam("text", t.nameLong);
-		//}
-		//else{ 
+		}
+		else{
 			//text tn = t.findObject("cpro.tab.text");
-			//tn.setXmlParam("text", t.nameShort);
-		//}
+			tn.setXmlParam("text", t.nameShort);
+		}
 		updateTabWidth(t);
 		t = t.right;
-	}*/
+	}
 
-	ratio = (tabHolder.getWidth()-tabCount*25)/(totalTabWidth-tabCount*25);
+	ratio = (tabHolder.getWidth()-tabCount*20)/(totalTabWidth-tabCount*20);
 	if(ratio<0) ratio=0;
 	if(ratio>1) ratio=1;
 
 	t = firstTab;
 	while (t != NULL)
 	{
-		t.w = (t.maxW-25)*ratio+25;
+		t.w = (t.maxW-20)*ratio+20;
 		t.mid = t.w/2;
 		
 		t.setXmlParam("x", integerToString(x));
@@ -1033,9 +1031,8 @@ sg.onAction (String action, String param, int x, int y, int p1, int p2, GuiObjec
 				else tabI.nameShort = strupper(strLeft(getToken(param, ";", 0),3));
 				
 				Text t = tabI.findObject("cpro.tab.text");
-				//if(isFullNames) 
-				t.setXmlParam("text", tabI.nameLong);
-				//else t.setXmlParam("text", tabI.nameShort);
+				if(isFullNames) t.setXmlParam("text", tabI.nameLong);
+				else t.setXmlParam("text", tabI.nameShort);
 				
 				//We want the fullname for the tooltip ;)
 				ToggleButton t2 = tabI.findObject("cpro.tab.button");

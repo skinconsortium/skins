@@ -296,7 +296,7 @@
 </groupdef>
 
 <groupdef id="drawer.tagviewer" name="File Info">
-	<layer x="0" y="-19" w="0" relaty="1" relatw="1" image="sui.status"/>
+	<grid x="-100" y="-19" w="100" relaty="1" relatx="1" topleft="sui.status.fade" top="sui.status"/>
 
 	<Wasabi:AlbumArt id="tagviewer.cover" x="6" y="4" w="111" h="111" move="1"/>
 	<group id="info.component.infodisplay.holder" x="0" y="0" w="0" h="-15" relatw="1" relath="1"/>

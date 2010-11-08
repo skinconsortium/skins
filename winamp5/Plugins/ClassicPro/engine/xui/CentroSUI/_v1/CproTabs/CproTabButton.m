@@ -145,17 +145,17 @@ setButtonState (int mode)
 
 	if (mode == 1)
 	{
-		label.setXmlParam("y", "3");
+		label.setXmlParam("y", "6");
 		label.setXmlParam("color", "Tab.Text.On");
 	}
 	else if (mode == 2)
 	{
 		label.setXmlParam("color", "Tab.Text.Off");
-		label.setXmlParam("y", "3");
+		label.setXmlParam("y", "7");
 	}
 	else
 	{
-		label.setXmlParam("y", "3");
+		label.setXmlParam("y", "7");
 		label.setXmlParam("color", "Tab.Text.Hover");
 	}
 }

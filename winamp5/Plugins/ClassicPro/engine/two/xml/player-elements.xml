@@ -9,6 +9,7 @@
 	<bitmap id="sui.center.1" file="newsui.png" x="25" y="30" w="10" h="10" gammagroup="n.Sui.BG"/>
 	<bitmap id="sui.center.2" file="newsui.png" x="25" y="41" w="10" h="10" gammagroup="n.Sui.BG"/>
 	<bitmap id="sui.status" file="newsui.png" x="140" y="0" w="10" h="19" gammagroup="n.Sui.BG"/>
+	<bitmap id="sui.status.fade" file="newsui.png" x="169" y="0" w="20" h="19" gammagroup="n.Sui.BG"/>
 
 	<bitmap id="sui.drawer.resize" file="newsui.png" x="25" y="52" w="10" h="5" gammagroup="n.Sui.BG"/>
 	<bitmap id="sui.drawer.center" file="newsui.png" x="180" y="6" w="10" h="10" gammagroup="n.Sui.BG"/>
@@ -44,27 +45,40 @@
 	<bitmap id="frame.topleft" file="frame.png" x="0" y="0" w="105" gammagroup="n.Frame"/>
 	<bitmap id="frame.top" file="frame.png" x="106" y="0" w="10" gammagroup="n.Frame"/>
 	<bitmap id="frame.topright" file="frame.png" x="117" y="0" w="135" gammagroup="n.Frame"/>
-	<bitmap id="frame.left" file="frame.png" x="253" y="0" w="8" gammagroup="n.Frame"/>
-	<bitmap id="frame.right" file="frame.png" x="262" y="0" w="8" gammagroup="n.Frame"/>
-	<bitmap id="frame.bottomleft" file="frame.png" x="271" y="0" w="8" h="8" gammagroup="n.Frame"/>
-	<bitmap id="frame.bottom" file="frame.png" x="271" y="9" w="8" h="8" gammagroup="n.Frame"/>
-	<bitmap id="frame.bottomright" file="frame.png" x="280" y="0" w="8" h="8" gammagroup="n.Frame"/>
-	<bitmap id="frame.center" file="frame.png" x="280" y="9" w="8" h="8" gammagroup="n.Frame"/>
+	<bitmap id="frame.left" file="frame.png" x="979" y="0" w="8" gammagroup="n.Frame"/>
+	<bitmap id="frame.right" file="frame.png" x="988" y="0" w="8" gammagroup="n.Frame"/>
+	<bitmap id="frame.bottomleft" file="frame.png" x="997" y="0" w="8" h="8" gammagroup="n.Frame"/>
+	<bitmap id="frame.bottom" file="frame.png" x="1006" y="0" w="8" h="8" gammagroup="n.Frame"/>
+	<bitmap id="frame.bottomright" file="frame.png" x="1015" y="0" w="8" h="8" gammagroup="n.Frame"/>
+	<bitmap id="frame.center" file="frame.png" x="1024" y="0" w="8" h="8" gammagroup="n.Frame"/>
+
+	<bitmap id="frame.1menu.1" file="frame.png" x="253" y="0" w="85" gammagroup="n.Frame"/>
+	<bitmap id="frame.1menu.2" file="frame.png" x="339" y="0" w="85" gammagroup="n.Frame"/>
+	<bitmap id="frame.1menu.3" file="frame.png" x="425" y="0" w="85" gammagroup="n.Frame"/>
 
 	<bitmap id="frame.topleft.fs" file="frame_full.png" x="0" y="0" w="138" gammagroup="n.Frame"/>
 	<bitmap id="frame.top.fs" file="frame_full.png" x="139" y="0" w="10" gammagroup="n.Frame"/>
 	<bitmap id="frame.topright.fs" file="frame_full.png" x="150" y="0" w="138" gammagroup="n.Frame"/>
 
 
-	<bitmap id="frame.button.min.1" file="frame.png" x="367" y="0" w="25" gammagroup="n.Frame"/>
-	<bitmap id="frame.button.min.2" file="frame.png" x="393" y="0" w="25" gammagroup="n.Frame"/>
-	<bitmap id="frame.button.min.3" file="frame.png" x="419" y="0" w="25" gammagroup="n.Frame"/>
-	<bitmap id="frame.button.gobig.1" file="frame.png" x="445" y="0" w="25" gammagroup="n.Frame"/>
-	<bitmap id="frame.button.gobig.2" file="frame.png" x="471" y="0" w="25" gammagroup="n.Frame"/>
-	<bitmap id="frame.button.gobig.3" file="frame.png" x="497" y="0" w="25" gammagroup="n.Frame"/>
-	<bitmap id="frame.button.close.1" file="frame.png" x="601" y="0" w="25" gammagroup="n.Frame"/>
-	<bitmap id="frame.button.close.2" file="frame.png" x="627" y="0" w="25" gammagroup="n.Frame"/>
-	<bitmap id="frame.button.close.3" file="frame.png" x="653" y="0" w="25" gammagroup="n.Frame"/>
+	<bitmap id="frame.button.aot.1.0" file="frame.png" x="511" y="0" w="25" gammagroup="n.Frame"/>
+	<bitmap id="frame.button.aot.2.0" file="frame.png" x="537" y="0" w="25" gammagroup="n.Frame"/>
+	<bitmap id="frame.button.aot.3.0" file="frame.png" x="563" y="0" w="25" gammagroup="n.Frame"/>
+	<bitmap id="frame.button.aot.1.1" file="frame.png" x="589" y="0" w="25" gammagroup="n.Frame"/>
+	<bitmap id="frame.button.aot.2.1" file="frame.png" x="615" y="0" w="25" gammagroup="n.Frame"/>
+	<bitmap id="frame.button.aot.3.1" file="frame.png" x="641" y="0" w="25" gammagroup="n.Frame"/>
+	<bitmap id="frame.button.min.1" file="frame.png" x="667" y="0" w="25" gammagroup="n.Frame"/>
+	<bitmap id="frame.button.min.2" file="frame.png" x="693" y="0" w="25" gammagroup="n.Frame"/>
+	<bitmap id="frame.button.min.3" file="frame.png" x="719" y="0" w="25" gammagroup="n.Frame"/>
+	<bitmap id="frame.button.gobig.1" file="frame.png" x="745" y="0" w="25" gammagroup="n.Frame"/>
+	<bitmap id="frame.button.gobig.2" file="frame.png" x="771" y="0" w="25" gammagroup="n.Frame"/>
+	<bitmap id="frame.button.gobig.3" file="frame.png" x="797" y="0" w="25" gammagroup="n.Frame"/>
+	<bitmap id="frame.button.shade.1" file="frame.png" x="823" y="0" w="25" gammagroup="n.Frame"/>
+	<bitmap id="frame.button.shade.2" file="frame.png" x="849" y="0" w="25" gammagroup="n.Frame"/>
+	<bitmap id="frame.button.shade.3" file="frame.png" x="875" y="0" w="25" gammagroup="n.Frame"/>
+	<bitmap id="frame.button.close.1" file="frame.png" x="901" y="0" w="25" gammagroup="n.Frame"/>
+	<bitmap id="frame.button.close.2" file="frame.png" x="927" y="0" w="25" gammagroup="n.Frame"/>
+	<bitmap id="frame.button.close.3" file="frame.png" x="953" y="0" w="25" gammagroup="n.Frame"/>
 
 	<bitmap id="frame.button.min.fs.1" file="frame_full.png" x="367" y="0" w="25" gammagroup="n.Frame"/>
 	<bitmap id="frame.button.min.fs.2" file="frame_full.png" x="393" y="0" w="25" gammagroup="n.Frame"/>
