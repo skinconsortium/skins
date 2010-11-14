@@ -36,6 +36,7 @@ Class GuiObject Tab;
 	Member String Tab.IDS;
 	Member String Tab.nameLong;
 	Member String Tab.nameShort;
+	Member String Tab.iconbitmap;
 	Member boolean Tab.removed;
 	Member boolean Tab.statusbar;
 
@@ -100,16 +101,16 @@ System.onScriptLoaded ()
 	internalNames.addItem("Playlist");			//1
 	internalNames.addItem("Video");				//2
 	internalNames.addItem("Visualization");		//3
-	internalNames.addItem("Browser");			//4
+	internalNames.addItem("Reader");			//4
 	internalNames.addItem("Plugin");			//5
 
-	List internalNamesShort = new List;
-	internalNamesShort.addItem("LIB");		//0
-	internalNamesShort.addItem("PLE");		//1
-	internalNamesShort.addItem("VID");		//2
-	internalNamesShort.addItem("VIS");		//3
-	internalNamesShort.addItem("BRO");		//4
-	internalNamesShort.addItem("PLU");	//5
+	List internalTabIcons = new List;
+	internalTabIcons.addItem("cpro.tab.icon.lib");		//0
+	internalTabIcons.addItem("cpro.tab.icon.ple");		//1
+	internalTabIcons.addItem("cpro.tab.icon.vid");		//2
+	internalTabIcons.addItem("cpro.tab.icon.vis");		//3
+	internalTabIcons.addItem("cpro.tab.icon.bro");		//4
+	internalTabIcons.addItem("cpro.tab.icon.plu");		//5
 
 	/** Create ordered list of all saved tabs */
 
@@ -117,7 +118,8 @@ System.onScriptLoaded ()
 	hiddenTabs = new List;
 	List orderedTabs = new List;
 	List widgetNames = new List;
-	List widgetNames2 = new List;
+	//List widgetNames2 = new List;
+	List widgetTabIcons = new List;
 	Bitlist passedWidgets = new BitList;
 	Bitlist skipWidget = new BitList;
 	passedWidgets.setSize(widgetLoader.getNumChildren());
@@ -144,7 +146,8 @@ System.onScriptLoaded ()
 			GuiObject d = widgetLoader.enumChildren(i);
 			orderedTabs.addItem(d.getXmlParam("userdata"));
 			widgetNames.addItem(getToken(d.getXmlParam("name"), ";", 0));
-			widgetNames2.addItem(getToken(d.getXmlParam("name"), ";", 1));
+			//widgetNames2.addItem(getToken(d.getXmlParam("name"), ";", 1));
+			widgetTabIcons.addItem(getToken(d.getXmlParam("name"), ";", 1));
 		}
 	}
 	else
@@ -172,7 +175,8 @@ System.onScriptLoaded ()
 						{
 							passedWidgets.setItem(j, true); // Mark this widget to be inited
 							widgetNames.addItem(getToken(d.getXmlParam("name"), ";", 0));
-							widgetNames2.addItem(getToken(d.getXmlParam("name"), ";", 1));
+							//widgetNames2.addItem(getToken(d.getXmlParam("name"), ";", 1));
+							widgetTabIcons.addItem(getToken(d.getXmlParam("name"), ";", 1));
 							isInternal.setItem(i, false);
 							orderedTabs.addItem(ids);
 							found = true;
@@ -198,7 +202,8 @@ System.onScriptLoaded ()
 				GuiObject d = widgetLoader.enumChildren(i);
 				orderedTabs.addItem(d.getXmlParam("userdata"));
 				widgetNames.addItem(getToken(d.getXmlParam("name"), ";", 0));
-				widgetNames2.addItem(getToken(d.getXmlParam("name"), ";", 1));
+				//widgetNames2.addItem(getToken(d.getXmlParam("name"), ";", 1));
+				widgetTabIcons.addItem(getToken(d.getXmlParam("name"), ";", 2));
 			}
 		}
 	}
@@ -227,7 +232,8 @@ System.onScriptLoaded ()
 				tabI.IDS = "";
 				tabI.isInternal = true;
 				tabI.nameLong = internalNames.enumItem(tabI.ID);
-				tabI.nameShort = internalNamesShort.enumItem(tabI.ID);
+				//tabI.nameShort = internalNamesShort.enumItem(tabI.ID);
+				tabI.iconbitmap = internalTabIcons.enumItem(tabI.ID);
 			}
 			else
 			{
@@ -239,13 +245,17 @@ System.onScriptLoaded ()
 				tabI.statusbar = stringToInteger(getToken(orderedTabs.enumItem(i), ";", 1));
 				tabI.isInternal = false;
 				tabI.nameLong = widgetNames.enumItem(0);
+				tabI.iconbitmap = widgetTabIcons.enumItem(0);
 				
-				if(widgetNames2.enumItem(0)!="") tabI.nameShort = strupper(strLeft(widgetNames2.enumItem(0),3)); //Force all languagepacks to 3max & uppercase
-				else tabI.nameShort = strupper(strLeft(widgetNames.enumItem(0),3));
+				//widgetTabIcons.addItem(getToken(d.getXmlParam("name"), ";", 2));
+				
+				//if(widgetNames2.enumItem(0)!="") tabI.nameShort = strupper(strLeft(widgetNames2.enumItem(0),3)); //Force all languagepacks to 3max & uppercase
+				//else tabI.nameShort = strupper(strLeft(widgetNames.enumItem(0),3));
 				
 				//debugstring(integerToString(widgetNames.getNumItems())+" _ "+integerToString(widgetNames2.getNumItems()) + widgetNames2.enumItem(0),9);
 				widgetNames.removeItem(0);
-				widgetNames2.removeItem(0);
+				//widgetNames2.removeItem(0);
+				widgetTabIcons.removeItem(0);
 			}
 
 			Boolean hideTab;
@@ -279,6 +289,9 @@ System.onScriptLoaded ()
 
 			Text t = tabI.findObject("cpro.tab.text");
 			t.setXmlParam("text", tabI.nameLong);
+
+			Layer l = tabI.findObject("cpro.tab.icon");
+			l.setXmlParam("image", tabI.iconbitmap);
 			
 			ToggleButton t2 = tabI.findObject("cpro.tab.button");
 			t2.setXmlParam("tooltip", tabI.nameLong);
@@ -321,9 +334,11 @@ System.onScriptLoaded ()
 	debugTabs();
 
 	delete internalNames;
+	delete internalTabIcons;
 	delete isInternal;
 	delete widgetNames;
-	delete widgetNames2;
+	//delete widgetNames2;
+	delete widgetTabIcons;
 	delete skipWidget;
 	delete passedWidgets;
 }
@@ -1036,6 +1051,8 @@ sg.onAction (String action, String param, int x, int y, int p1, int p2, GuiObjec
 				//if(isFullNames) 
 				t.setXmlParam("text", tabI.nameLong);
 				//else t.setXmlParam("text", tabI.nameShort);
+				
+				//JAM - Add icon update!!!
 				
 				//We want the fullname for the tooltip ;)
 				ToggleButton t2 = tabI.findObject("cpro.tab.button");

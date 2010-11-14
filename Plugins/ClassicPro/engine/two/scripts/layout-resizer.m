@@ -31,10 +31,10 @@ System.onScriptLoaded() {
 	//resize2 = mainGroup.findObject("resizer.2");
 	//resize3 = mainGroup.findObject("resizer.3");
 	//resize4 = mainGroup.findObject("resizer.4");
-	resize6 = mainGroup.getObject("two.frame.6");
+	resize6 = mainGroup.getObject("resizer.6");
 	//resize7 = mainGroup.findObject("resizer.7");
-	resize8 = mainGroup.getObject("two.frame.8");
-	resize9 = mainGroup.getObject("two.frame.9");
+	resize8 = mainGroup.getObject("resizer.8");
+	resize9 = mainGroup.getObject("resizer.9");
 
 }
 System.onScriptUnloading(){

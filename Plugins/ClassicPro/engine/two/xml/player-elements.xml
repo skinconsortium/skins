@@ -80,15 +80,15 @@
 	<bitmap id="frame.button.close.2" file="frame.png" x="927" y="0" w="25" gammagroup="n.Frame"/>
 	<bitmap id="frame.button.close.3" file="frame.png" x="953" y="0" w="25" gammagroup="n.Frame"/>
 
-	<bitmap id="frame.button.min.fs.1" file="frame_full.png" x="367" y="0" w="25" gammagroup="n.Frame"/>
-	<bitmap id="frame.button.min.fs.2" file="frame_full.png" x="393" y="0" w="25" gammagroup="n.Frame"/>
-	<bitmap id="frame.button.min.fs.3" file="frame_full.png" x="419" y="0" w="25" gammagroup="n.Frame"/>
-	<bitmap id="frame.button.gobig.fs.1" file="frame_full.png" x="445" y="0" w="25" gammagroup="n.Frame"/>
-	<bitmap id="frame.button.gobig.fs.2" file="frame_full.png" x="471" y="0" w="25" gammagroup="n.Frame"/>
-	<bitmap id="frame.button.gobig.fs.3" file="frame_full.png" x="497" y="0" w="25" gammagroup="n.Frame"/>
-	<bitmap id="frame.button.close.fs.1" file="frame_full.png" x="601" y="0" w="25" gammagroup="n.Frame"/>
-	<bitmap id="frame.button.close.fs.2" file="frame_full.png" x="627" y="0" w="25" gammagroup="n.Frame"/>
-	<bitmap id="frame.button.close.fs.3" file="frame_full.png" x="653" y="0" w="25" gammagroup="n.Frame"/>
+	<bitmap id="frame.button.min.fs.1" file="frame_full.png" x="703" y="0" w="25" gammagroup="n.Frame"/>
+	<bitmap id="frame.button.min.fs.2" file="frame_full.png" x="729" y="0" w="25" gammagroup="n.Frame"/>
+	<bitmap id="frame.button.min.fs.3" file="frame_full.png" x="755" y="0" w="25" gammagroup="n.Frame"/>
+	<bitmap id="frame.button.gobig.fs.1" file="frame_full.png" x="781" y="0" w="25" gammagroup="n.Frame"/>
+	<bitmap id="frame.button.gobig.fs.2" file="frame_full.png" x="807" y="0" w="25" gammagroup="n.Frame"/>
+	<bitmap id="frame.button.gobig.fs.3" file="frame_full.png" x="833" y="0" w="25" gammagroup="n.Frame"/>
+	<bitmap id="frame.button.close.fs.1" file="frame_full.png" x="937" y="0" w="25" gammagroup="n.Frame"/>
+	<bitmap id="frame.button.close.fs.2" file="frame_full.png" x="963" y="0" w="25" gammagroup="n.Frame"/>
+	<bitmap id="frame.button.close.fs.3" file="frame_full.png" x="989" y="0" w="25" gammagroup="n.Frame"/>
 
 
 	<!-- Playback Section -->
@@ -245,5 +245,35 @@
 	<bitmap id="cpro2.eq.auto.2" file="comp_but.png" x="552" y="18" w="39" h="17" gammagroup="n.Button"/>
 	<bitmap id="cpro2.eq.auto.3" file="comp_but.png" x="552" y="36" w="39" h="17" gammagroup="n.Button"/>
 	<bitmap id="cpro2.eq.auto.4" file="comp_but.png" x="552" y="54" w="39" h="17" gammagroup="n.Button"/>
+
+
+	<bitmap id="cpro2.reader.bg" file="reader.png" x="139" y="0" w="10" h="26" gammagroup="n.Button"/>
+	<bitmap id="cpro2.reader.bg.left" file="reader.png" x="0" y="0" w="78" h="26" gammagroup="n.Button"/>
+	<bitmap id="cpro2.reader.bg.center" file="reader.png" x="79" y="0" w="10" h="26" gammagroup="n.Button"/>
+	<bitmap id="cpro2.reader.bg.right" file="reader.png" x="90" y="0" w="48" h="26" gammagroup="n.Button"/>
+
+	<bitmap id="cpro2.reader.back.1" file="reader.png" x="1" y="27" w="26" h="26" gammagroup="n.Button"/>
+	<bitmap id="cpro2.reader.back.2" file="reader.png" x="1" y="54" w="26" h="26" gammagroup="n.Button"/>
+	<bitmap id="cpro2.reader.back.3" file="reader.png" x="1" y="81" w="26" h="26" gammagroup="n.Button"/>
+
+	<bitmap id="cpro2.reader.forward.1" file="reader.png" x="28" y="27" w="26" h="26" gammagroup="n.Button"/>
+	<bitmap id="cpro2.reader.forward.2" file="reader.png" x="28" y="54" w="26" h="26" gammagroup="n.Button"/>
+	<bitmap id="cpro2.reader.forward.3" file="reader.png" x="28" y="81" w="26" h="26" gammagroup="n.Button"/>
+
+	<bitmap id="cpro2.reader.refresh.1" file="reader.png" x="107" y="27" w="24" h="26" gammagroup="n.Button"/>
+	<bitmap id="cpro2.reader.refresh.2" file="reader.png" x="107" y="54" w="24" h="26" gammagroup="n.Button"/>
+	<bitmap id="cpro2.reader.refresh.3" file="reader.png" x="107" y="81" w="24" h="26" gammagroup="n.Button"/>
+
+	<bitmap id="cpro2.reader.stop.1" file="reader.png" x="132" y="27" w="24" h="26" gammagroup="n.Button"/>
+	<bitmap id="cpro2.reader.stop.2" file="reader.png" x="132" y="54" w="24" h="26" gammagroup="n.Button"/>
+	<bitmap id="cpro2.reader.stop.3" file="reader.png" x="132" y="81" w="24" h="26" gammagroup="n.Button"/>
+
+	<bitmap id="cpro2.reader.mode.1.0" file="reader.png" x="55" y="27" w="24" h="26" gammagroup="n.Button"/>
+	<bitmap id="cpro2.reader.mode.2.0" file="reader.png" x="55" y="54" w="24" h="26" gammagroup="n.Button"/>
+	<bitmap id="cpro2.reader.mode.3.0" file="reader.png" x="55" y="81" w="24" h="26" gammagroup="n.Button"/>
+
+	<bitmap id="cpro2.reader.mode.1.1" file="reader.png" x="5" y="108" w="24" h="26" gammagroup="n.Button"/>
+	<bitmap id="cpro2.reader.mode.2.1" file="reader.png" x="30" y="108" w="24" h="26" gammagroup="n.Button"/>
+	<bitmap id="cpro2.reader.mode.3.1" file="reader.png" x="55" y="108" w="24" h="26" gammagroup="n.Button"/>
 
 </elements>

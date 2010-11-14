@@ -4,7 +4,7 @@
 </scripts>
 
 <include file="xui\xui-files_two.xml"/>
-<include file="widgets\load\*.xml"/>
+<include file="widgets\load\v2\*.xml"/>
 <include file="xml\notifier.xml"/>
 <include file="two\xml\files-two.xml"/>
 <include file="xml\widgets-manager.xml"/>
