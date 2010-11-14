@@ -131,7 +131,15 @@ fullScreen(boolean onOff){
 		normal.setXmlParam("move", "0");
 		
 		//Do this last because it takes resources.. must sometime try to clean sui area resize resource hogs
-		g_sui.resize(g_sui.getGuiX(),g_sui.getGuiY()+i_titlebar+i_info+i_playback,0,-(i_titlebar+i_info+i_playback));
+		//g_sui.resize(g_sui.getGuiX(),g_sui.getGuiY()+i_titlebar+i_info+i_playback,0,-(i_titlebar+i_info+i_playback));
+		
+		g_sui.setTargetX(0);
+		g_sui.setTargetY(i_titlebar+i_info+i_playback);
+		g_sui.setTargetW(0);
+		g_sui.setTargetH(-(i_titlebar+i_info+i_playback));
+		g_sui.setTargetSpeed(0);
+		g_sui.gotoTarget();
+
 		//g_sui.setXmlParam("x", "0");
 		//g_sui.setXmlParam("y", integerToString(i_titlebar+i_info+i_playback));
 		//g_sui.setXmlParam("w", "0");
@@ -167,7 +175,16 @@ fullScreen(boolean onOff){
 		normal.setXmlParam("move", "1");
 	
 		//Do this last because it takes resources.. must sometime try to clean sui area resize resource hogs
-		g_sui.resize(g_sui.getGuiX()+8, g_sui.getGuiY()+i_titlebar+i_info+i_playback, -16, -(i_titlebar+i_info+i_playback+8));
+		//g_sui.resize(g_sui.getGuiX()+8, g_sui.getGuiY()+i_titlebar+i_info+i_playback, -16, -(i_titlebar+i_info+i_playback+8));
+
+		g_sui.setTargetX(8);
+		g_sui.setTargetY(i_titlebar+i_info+i_playback);
+		g_sui.setTargetW(-16);
+		g_sui.setTargetH(-(i_titlebar+i_info+i_playback+8));
+		g_sui.setTargetSpeed(0);
+		g_sui.gotoTarget();
+
+
 		//g_sui.setXmlParam("x", "8");
 		//g_sui.setXmlParam("y", integerToString(i_titlebar+i_info+i_playback));
 		//g_sui.setXmlParam("w", "-16");
