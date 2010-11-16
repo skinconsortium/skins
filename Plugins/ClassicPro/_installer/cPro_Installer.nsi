@@ -521,6 +521,16 @@ Section "$(CPro_CProFiles)" "CPro_Sec_CProFiles"
 	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\CentroSUI\_v2\scripts
 		File "..\engine\xui\CentroSUI\_v2\scripts\*.m"
 		File "..\engine\xui\CentroSUI\_v2\scripts\*.maki"
+	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\CentroSUI\_v2\Reader
+		File "..\engine\xui\CentroSUI\_v2\Reader\*.m"
+		File "..\engine\xui\CentroSUI\_v2\Reader\*.maki"
+		File "..\engine\xui\CentroSUI\_v2\Reader\*.mi"
+		File "..\engine\xui\CentroSUI\_v2\Reader\*.png"
+		File "..\engine\xui\CentroSUI\_v2\Reader\*.xml"
+	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\CentroSUI\_v2\Reader\icons
+		File "..\engine\xui\CentroSUI\_v2\Reader\icons\*.png"
+	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\CentroSUI\_v2\Reader\source
+		File "..\engine\xui\CentroSUI\_v2\Reader\source\*.xml"
 !endif
 
 

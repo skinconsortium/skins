@@ -136,6 +136,13 @@
 	<bitmap id="playback.button.open.2" file="playback.png" x="191" y="62" w="30" h="30" gammagroup="n.Playback.Button"/>
 	<bitmap id="playback.button.open.3" file="playback.png" x="191" y="93" w="30" h="30" gammagroup="n.Playback.Button"/>
 
+	<bitmap id="playback.button.mute.1.0" file="playback.png" x="358" y="31" w="30" h="30" gammagroup="n.Playback.Button"/>
+	<bitmap id="playback.button.mute.2.0" file="playback.png" x="358" y="62" w="30" h="30" gammagroup="n.Playback.Button"/>
+	<bitmap id="playback.button.mute.3.0" file="playback.png" x="358" y="93" w="30" h="30" gammagroup="n.Playback.Button"/>
+	<bitmap id="playback.button.mute.1.1" file="playback.png" x="358" y="124" w="30" h="30" gammagroup="n.Playback.Button"/>
+	<bitmap id="playback.button.mute.2.1" file="playback.png" x="358" y="155" w="30" h="30" gammagroup="n.Playback.Button"/>
+	<bitmap id="playback.button.mute.3.1" file="playback.png" x="358" y="186" w="30" h="30" gammagroup="n.Playback.Button"/>
+
 	<bitmap id="playback.button.shuf.1.0" file="playback.png" x="3" y="31" w="30" h="30" gammagroup="n.Playback.Button"/>
 	<bitmap id="playback.button.shuf.2.0" file="playback.png" x="3" y="62" w="30" h="30" gammagroup="n.Playback.Button"/>
 	<bitmap id="playback.button.shuf.3.0" file="playback.png" x="3" y="93" w="30" h="30" gammagroup="n.Playback.Button"/>
@@ -268,12 +275,26 @@
 	<bitmap id="cpro2.reader.stop.2" file="reader.png" x="132" y="54" w="24" h="26" gammagroup="n.Button"/>
 	<bitmap id="cpro2.reader.stop.3" file="reader.png" x="132" y="81" w="24" h="26" gammagroup="n.Button"/>
 
-	<bitmap id="cpro2.reader.mode.1.0" file="reader.png" x="55" y="27" w="24" h="26" gammagroup="n.Button"/>
-	<bitmap id="cpro2.reader.mode.2.0" file="reader.png" x="55" y="54" w="24" h="26" gammagroup="n.Button"/>
-	<bitmap id="cpro2.reader.mode.3.0" file="reader.png" x="55" y="81" w="24" h="26" gammagroup="n.Button"/>
+	<bitmap id="cpro2.reader.mode.1.1" file="reader.png" x="55" y="27" w="24" h="26" gammagroup="n.Button"/>
+	<bitmap id="cpro2.reader.mode.2.1" file="reader.png" x="55" y="54" w="24" h="26" gammagroup="n.Button"/>
+	<bitmap id="cpro2.reader.mode.3.1" file="reader.png" x="55" y="81" w="24" h="26" gammagroup="n.Button"/>
 
-	<bitmap id="cpro2.reader.mode.1.1" file="reader.png" x="5" y="108" w="24" h="26" gammagroup="n.Button"/>
-	<bitmap id="cpro2.reader.mode.2.1" file="reader.png" x="30" y="108" w="24" h="26" gammagroup="n.Button"/>
-	<bitmap id="cpro2.reader.mode.3.1" file="reader.png" x="55" y="108" w="24" h="26" gammagroup="n.Button"/>
+	<bitmap id="cpro2.reader.mode.1.0" file="reader.png" x="5" y="108" w="24" h="26" gammagroup="n.Button"/>
+	<bitmap id="cpro2.reader.mode.2.0" file="reader.png" x="30" y="108" w="24" h="26" gammagroup="n.Button"/>
+	<bitmap id="cpro2.reader.mode.3.0" file="reader.png" x="55" y="108" w="24" h="26" gammagroup="n.Button"/>
+
+	<bitmap id="cpro2.reader.drop.1" file="reader.png" x="91" y="27" w="15" h="26" gammagroup="n.Button"/>
+	<bitmap id="cpro2.reader.drop.2" file="reader.png" x="91" y="54" w="15" h="26" gammagroup="n.Button"/>
+	<bitmap id="cpro2.reader.drop.3" file="reader.png" x="91" y="81" w="15" h="26" gammagroup="n.Button"/>
+
+	<bitmap id="cpro2.reader.dropbg.1" file="reader.png" x="80" y="108" w="4" h="4" gammagroup="n.Button"/>
+	<bitmap id="cpro2.reader.dropbg.2" file="reader.png" x="85" y="108" w="4" h="4" gammagroup="n.Button"/>
+	<bitmap id="cpro2.reader.dropbg.3" file="reader.png" x="90" y="108" w="4" h="4" gammagroup="n.Button"/>
+	<bitmap id="cpro2.reader.dropbg.4" file="reader.png" x="80" y="113" w="4" h="4" gammagroup="n.Button"/>
+	<bitmap id="cpro2.reader.dropbg.5" file="reader.png" x="85" y="113" w="4" h="4" gammagroup="n.Button"/>
+	<bitmap id="cpro2.reader.dropbg.6" file="reader.png" x="90" y="113" w="4" h="4" gammagroup="n.Button"/>
+	<bitmap id="cpro2.reader.dropbg.7" file="reader.png" x="80" y="118" w="4" h="4" gammagroup="n.Button"/>
+	<bitmap id="cpro2.reader.dropbg.8" file="reader.png" x="85" y="118" w="4" h="4" gammagroup="n.Button"/>
+	<bitmap id="cpro2.reader.dropbg.9" file="reader.png" x="90" y="118" w="4" h="4" gammagroup="n.Button"/>
 
 </elements>

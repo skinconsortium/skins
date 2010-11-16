@@ -1,5 +1,5 @@
 #include <lib/std.mi>
-#include "../../cprowidget.mi"
+#include "../../../../widgets/cprowidget.mi"
 #include <lib/pldir.mi>
 #include <lib/fileio.mi>
 #include <lib/application.mi>
@@ -16,6 +16,11 @@ Function initLoadFiles();
 Function updateDDList();
 Function ddlOpenClose();
 
+//Browser Stuff
+Function Boolean isUrl (String t);
+Function string prepareWebString(string url, string replace);
+Function string strReplace(string str, string replace, string by);
+
 
 Global Container results_container;
 Global Layout results_layout;
@@ -30,10 +35,12 @@ Global Text ddBoxText;
 Global ToggleButton enabledSwitch;
 Global Button menuOptions, dropListButton;
 Global PopUpMenu popMenu;
-Global GuiObject browserXUI, fakeSB;
+Global GuiObject browserXUI, fakeSB, ddbbg;
 Global Browser myBrowser;
 Global Layer ddlMouseT, ddlIcon;
 Global Button bback, bffwd, brefresh, bstop;
+Global Togglebutton modeToggle;
+Global Edit urlbox;
 
 Global ColorMgr cm;
 
@@ -59,6 +66,9 @@ System.onScriptLoaded(){
 	bffwd = myGroup.findObject("browser.fwd");
 	brefresh = myGroup.findObject("browser.refresh");
 	bstop = myGroup.findObject("browser.stop");
+	modeToggle = myGroup.findObject("reader.mode");
+	urlbox = myGroup.findObject("browserpro.ddl.editbox");
+	ddbbg = myGroup.findObject("browserpro.ddl.rect");
 
 	focus_callback = new Timer;
 	focus_callback.setDelay(100);
@@ -68,6 +78,9 @@ System.onScriptLoaded(){
 	myList.setIconWidth(16);
 	myList.setShowIcons(1);
 	sourceNo=0;
+	
+	//modeToggle.setActivated(getPublicInt("ClassicPro.Reader.Mode", 1));
+	//modeToggle.onToggle(getPublicInt("ClassicPro.Reader.Mode", 1));
 }
 
 myGroup.onSetVisible(boolean onOff){
@@ -172,9 +185,9 @@ ddlMouseT.onLeftButtonUp(int x, int y){
 ddlOpenClose(){
 	if(results_layout.isVisible()) results_layout.hide();
 	else{
-		results_layout.setXmlParam("x", integerToString(fakeSB.clientToScreenX(fakeSB.getLeft())));
-		results_layout.setXmlParam("y", integerToString(fakeSB.clientToScreenY(fakeSB.getTop() + fakeSB.getHeight())));
-		results_layout.setXmlParam("w", integerToString(fakeSB.getWidth()));
+		results_layout.setXmlParam("x", integerToString(fakeSB.clientToScreenX(fakeSB.getLeft())-1));
+		results_layout.setXmlParam("y", integerToString(fakeSB.clientToScreenY(fakeSB.getTop() + fakeSB.getHeight())-4));
+		results_layout.setXmlParam("w", integerToString(fakeSB.getWidth()+2));
 	
 		results_layout.show();
 		resizeResults(loaded_P_Names.getNumItems());
@@ -210,9 +223,10 @@ searchInListForItem(String input){
 	return 0;
 }
 surfSelected(){
-	if(!onetime) return;
+	if(!onetime || modeToggle.getActivated()) return;
 	String myUrl = loaded_P_Url.enumItem(loaded_P_Names.findItem(getPublicString("ClassicPro.BrowserPro", "0")));
 	myBrowser.navigateUrl(prepareCustomUrl(myUrl));
+	urlbox.setText(prepareCustomUrl(myUrl));
 }
 System.onTitleChange(String newtitle){
 	if(myGroup.isVisible()){
@@ -234,6 +248,33 @@ updateDDList(){
 }
 
 
+modeToggle.onToggle(Boolean onOff){
+	setPublicInt("ClassicPro.Reader.Mode", onOff);
+	//debugint(getPublicInt("ClassicPro.Reader.Mode", 3));
+	//if(repBut.setCurCfgVal()==0) updateInfo("Repeat: Off");
+
+	if(onOff){
+		ddBoxText.hide();
+		dropListButton.hide();
+		ddlMouseT.hide();
+		urlbox.show();
+		ddbbg.setXmlParam("w", "-24");
+		ddlIcon.setXmlParam("image", "icon.readingmode");
+	}
+	else{
+		ddBoxText.show();
+		dropListButton.show();
+		ddlMouseT.show();
+		urlbox.hide();
+		surfSelected();
+		ddbbg.setXmlParam("w", "-39");
+		String iconsID = loaded_P_Icons.enumItem(loaded_P_Names.findItem(getPublicString("ClassicPro.BrowserPro", "0")));
+		ddlIcon.setXmlParam("image", iconsID);
+	}
+	
+}
+
+
 //----------------------------------------------------------------------------------------------------------------
 // Browser main controls.
 //----------------------------------------------------------------------------------------------------------------
@@ -250,3 +291,148 @@ brefresh.onLeftClick(){
 bstop.onLeftClick(){
 	myBrowser.stop();
 }
+
+
+/////////////////////////////////////
+
+urlbox.onEnter ()
+{
+	string t = urlbox.getText();
+
+	if (t == "")
+		return;
+	
+	if (isKeyDown(VK_SHIFT)) t = "www." + t + ".com";
+	else if (isKeyDown(VK_CONTROL)) t = "www." + t + ".com";
+
+	while (strleft(t, 1) == " ")
+	{
+		t = strright(t, strlen(t) -1);
+		if (t == " ")
+			return;
+		
+	}
+	while (strright(t, 1) == " ")
+	{
+		t = strleft(t, strlen(t) -1);
+		if (t == "")
+			return;
+		
+	}	
+
+	if (!isUrl(t))
+		t = "http://search.winamp.com/search/search?invocationType=en00-winamp-553--clientpage&query=" + prepareWebString(t, "+");
+	
+	urlbox.setText(t);
+	myBrowser.navigateUrl(t);
+}
+
+Boolean isUrl (String t)
+{
+	if (t == "about:blank")
+		return TRUE;
+	
+	String ttt = strleft(t, 10);
+	// get basically any http:// ftp:// etc
+	String slash = System.Strleft("/ ", 1); // the simple slash causes errors on some systems :(
+	string backslash = System.Strleft("\\ ", 1);
+	if (strsearch(ttt, ":" + slash + slash) > -1) 
+		return TRUE;
+
+	 if (strsearch(ttt, ":" + slash) == 1)  // C:/ 	 
+		 return TRUE; 	 
+	 
+	 if (strsearch(ttt, ":" + backslash) == 1){ // C:\ 	 
+		 return TRUE; 	 
+	 }
+
+	if (strleft(ttt, 2) == backslash+backslash)	// get \\martin-pc
+		return TRUE;
+
+	ttt = getToken(t, slash, 0); // get rid of sub dirs
+	String v = strright(ttt, 5);
+	if (strsearch(v, ".") > -1)
+		return TRUE;
+
+	ttt = getToken(t, backslash, 0); // get rid of sub dirs
+	String v = strright(ttt, 5);
+	if (strsearch(v, ".") > -1)
+		return TRUE;
+	
+	return FALSE;
+}
+
+// perpare a webstring out of the searchedit input
+// %artist% and %album% are special inputs and will be rendered
+// " " will be replaced for browser compatability
+string prepareWebString (string url, string replace)
+{
+	string artist = getPlayItemMetaDataString("artist");
+	string album = getPlayItemMetaDataString("album");
+
+	if (artist == "") artist = getPlayitemString();
+	if (album == "") album = getPlayitemString();
+
+	url = strReplace(url, "%artist%", artist);
+	url = strReplace(url, "%album%", album);
+
+	url = urlEncode(url);
+
+	url = strReplace(url, "%20", replace);
+
+	return url;
+}
+
+// a basic function to replace a substring inside a string
+string strReplace(string str, string replace, string by)
+{
+	int pos;
+	int len = strlen(replace);
+	while (pos = strsearch(str, replace) > -1)
+	{
+		string str_ = "";
+		String _str = "";
+
+		if (pos > 0) str_ = strleft(str, pos);
+		
+		pos = strlen(str)-pos-len;
+		if (pos > 0) _str = strright(str, pos);
+
+		str = str_ + by + _str;
+	}
+	return str;
+}
+
+myGroup.onAction (String action, String param, Int x, int y, int p1, int p2, GuiObject source)
+{
+	myBrowser.onAction (action, param, x, y, p1, p2, source);
+}
+
+
+myBrowser.onAction (String action, String param, Int x, int y, int p1, int p2, GuiObject source)
+{
+	// Open an URL
+	if (strlower(action) == "openurl")
+	{
+		//param = prepareWebString(param, "+");
+
+		urlbox.setText(param);
+		myBrowser.navigateUrl(urlbox.getText());
+
+		modeToggle.setActivated(true);
+		modeToggle.onToggle(true);
+
+		return;
+	}
+	// Websearch
+	if (strlower(action) == "search")
+	{
+		urlbox.setText("http://www.google.com/search?client=classicpro&"+param);
+		myBrowser.navigateUrl(urlbox.getText());
+
+		modeToggle.setActivated(true);
+		modeToggle.onToggle(true);
+		
+	}
+}
+
