@@ -89,8 +89,11 @@ t_timeEvent.onTextChanged(String newtxt){
 	g_texttime.setXmlParam("x", integerToString(-(t_trackTime.getWidth()+t_totalTime.getWidth()-5)));
 	g_texttime.setXmlParam("w", integerToString(t_trackTime.getWidth()+t_totalTime.getWidth()-5));
 	
+	t_nameTop.setXmlParam("w", integerToString(-g_texttime.getWidth()-3));
 	//t_totalTime.setText(System.integerToTime(System.getPlayItemLength()));
 }
+
+
 
 System.onTitleChange(String newtitle){
 	updateInfo();
@@ -170,6 +173,9 @@ updateInfo(){
 	//s_info += getFrequency() + "k"+"Hz";
 	s_info += getFrequency() + "kHz";
 	t_info1.setText(s_info);
+	
+	t_nameBottom.setXmlParam("w", integerToString(-t_info1.getTextWidth()+2));
+
 	
 	//Refresh if NA
 	if(System.getStatus() != STATUS_PLAYING) return;

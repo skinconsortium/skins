@@ -99,7 +99,6 @@ System.onScriptLoaded(){
 	player = getContainer("main");
 	normal = player.getLayout("normal");
 	xuiGroup = getScriptGroup();
-	xuiBrowser = xuiGroup.findObject("cpro.browser");
 	mainTabsheet = xuiGroup.findObject("centro.componentsheet");
 	mainFrame = xuiGroup.findObject("centro.mainframe");
 	plFrame = xuiGroup.findObject("centro.plframe");
@@ -125,6 +124,7 @@ System.onScriptLoaded(){
 	tab_video = xuiGroup.findObject("centro.video");
 	tab_avs = xuiGroup.findObject("centro.visualization");
 	tab_Browser = xuiGroup.findObject("centro.browser");
+	xuiBrowser = xuiGroup.findObject("browserpro.browser");
 	tab_Playlist = xuiGroup.findObject("centro.playlist2");
 	tab_Other = xuiGroup.findObject("centro.other");
 	tab_Widget = xuiGroup.findObject("centro.widget");
@@ -157,29 +157,6 @@ System.onScriptLoaded(){
 	myMap.loadMap("read.suiframe.png");
 	if(myMap.getWidth()>=272) cuseqbg=true;
 	else  cuseqbg=false;
-	delete myMap;
-
-	// Fix Winamp:Browser for Cpro!
-	GuiObject tempbutton;
-	Group browserGroup = xuiGroup.findObject("cpro.browser");
-	tempbutton = browserGroup.findObject("browser.navigate");
-	tempbutton.setXmlParam("text", "Go");
-	tempbutton = browserGroup.findObject("search.go");
-	tempbutton.setXmlParam("text", "Search");
-	Map myMap = new Map;
-	myMap.loadMap("browser.fullpng");
-	if(myMap.getWidth()>=284){
-		tempbutton = browserGroup.findObject("browser.scraper").findObject("browser.dlds.settings");
-		tempbutton.setXmlParam("icon_id", "browser.button.settings2");
-		tempbutton = browserGroup.findObject("dlds.mode").findObject("scraper.switch");
-		tempbutton.setXmlParam("icon_id", "browser.button.scraper2");
-		tempbutton = browserGroup.findObject("dlds.mode").findObject("dlds.switch");
-		tempbutton.setXmlParam("icon_id", "browser.button.dlds2");
-		tempbutton = browserGroup.findObject("scraper.mode").findObject("scraper.switch");
-		tempbutton.setXmlParam("icon_id", "browser.button.scraper2");
-		tempbutton = browserGroup.findObject("scraper.mode").findObject("dlds.switch");
-		tempbutton.setXmlParam("icon_id", "browser.button.dlds2");
-	}
 	delete myMap;
 
 	// Timers

@@ -8,14 +8,14 @@
 
 <groupdef id="two.info.text.time">
 	<!--<rect fitparent="1"/>-->
-	<text id="two.info.text.tracktime" x="0" y="-2" h="22" align="left" text="" fontsize="21" color="black" font="Calibri"/>
-	<text id="two.info.text.totaltime" x="0" y="2" h="16" align="left" text="" fontsize="15" color="black" font="Calibri" alpha="150"/>
+	<text id="two.info.text.tracktime" x="0" y="-2" h="22" align="left" text="" fontsize="21" color="Info.1" font="Calibri" ghost="1"/>
+	<text id="two.info.text.totaltime" x="0" y="2" h="16" align="left" text="" fontsize="15" color="Info.2" font="Calibri" ghost="1"/>
 	<text id="two.info.text.trackevent" x="0" y="0" w="0" h="0" display="TIME" visible="0"/>
 </groupdef>
 <groupdef id="two.info.seeker.text">
-	<text id="two.info.text.title" x="0" y="-2" w="0" h="22" relatw="1" align="left" text="" color="black" ghost="1" font="Calibri" fontsize="21"/>
-	<text id="two.info.text.artist" x="0" y="16" w="0" h="18" relatw="1" align="left" text="" color="black" ghost="1" font="Calibri" fontsize="16" alpha="150"/>
-	<text id="two.info.text.info.1" x="0" y="16" w="0" h="18" relatw="1" align="right" text="" translate="0" color="black" ghost="1" font="Calibri" fontsize="13" alpha="150"/>
+	<text id="two.info.text.title" x="0" y="-2" w="0" h="22" relatw="1" align="left" text="" color="Info.1" ghost="1" font="Calibri" fontsize="21"/>
+	<text id="two.info.text.artist" x="0" y="16" w="0" h="18" relatw="1" align="left" text="" color="Info.2" ghost="1" font="Calibri" fontsize="16" alpha="150"/>
+	<text id="two.info.text.info.1" x="0" y="16" w="0" h="18" relatw="1" align="right" text="" translate="0" color="Info.2" ghost="1" font="Calibri" fontsize="13" alpha="150"/>
 
 	<group id="two.info.text.time" x="-100" y="0" w="100" h="50" relatx="1" relath="2"/>
 </groupdef>
@@ -23,7 +23,7 @@
 <groupdef id="two.info.seeker">
 	<layer id="two.info.seeker.inactive" x="0" y="0" w="0" relatw="1" image="info.bg.seeker.0"/>
 	<group id="two.info.seeker.active" x="0" y="0" w="0" h="40"/>
-	<layer id="two.info.seeker.finder" x="0" y="0" w="0" image="info.bg.seeker.3" alpha="200"/> <!-- Remove alpha l@r... image can do it-->
+	<layer id="two.info.seeker.finder" x="0" y="0" w="0" image="info.bg.seeker.3" alpha="175"/> <!-- Remove alpha l@r... image can do it-->
 	<slider id="two.info.seeker.slider.0" x="0" y="0" w="0" h="0" relatw="1" relath="1" action="SEEK" thumb="info.seeker.thumb" interval="50"/>
 	<slider id="two.info.seeker.slider.1" x="0" y="0" w="0" h="0" relatw="1" relath="1" action="SEEK" thumb="info.seeker.thumb" cursor="IDC_HAND"/>
 
@@ -77,6 +77,8 @@
 <groupdef id="two.playback.volume" w="113">
 	<layer id="two.playback.right" x="0" y="0" w="0" h="30" relatw="1"/>
 	
+	<NStatesButton id="player.mute" x="0" image="playback.button.mute.1." hoverimage="playback.button.mute.2." downimage="playback.button.mute.3." rectrgn="1" nstates="2" tooltip="Toggle Mute" cfgvals="0;1"/>
+
 	<group id="two.playback.volume.slider" x="80" y="0" w="77" h="30"/>
 </groupdef>
 <groupdef id="two.playback.ejectvol" background="playback.vol.small" w="30" h="30">

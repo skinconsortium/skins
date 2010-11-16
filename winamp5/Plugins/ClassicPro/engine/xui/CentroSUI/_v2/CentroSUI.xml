@@ -59,7 +59,7 @@
 	<button id="browser.back" x="3" y="0" image="cpro2.reader.back.1" hoverimage="cpro2.reader.back.2" downimage="cpro2.reader.back.3" tooltip="Go Back" rectrgn="1"/>
 	<button id="browser.fwd" x="29" y="0" image="cpro2.reader.forward.1" hoverimage="cpro2.reader.forward.2" downimage="cpro2.reader.forward.3" tooltip="Go Forward" rectrgn="1"/>
 
-	<NStatesButton x="56" y="0" image="cpro2.reader.mode.1." hoverimage="cpro2.reader.mode.2." downimage="cpro2.reader.mode.3." rectrgn="1" nstates="2" tooltip="Toggle Reading Mode"/>
+	<NStatesButton id="reader.mode" x="56" y="0" image="cpro2.reader.mode.1." hoverimage="cpro2.reader.mode.2." downimage="cpro2.reader.mode.3." rectrgn="1" nstates="2" tooltip="Toggle Reading Mode"/>
 
 	<button id="browser.refresh" x="-50" y="0" relatx="1" image="cpro2.reader.refresh.1" hoverimage="cpro2.reader.refresh.2" downimage="cpro2.reader.refresh.3" tooltip="Reload Page" rectrgn="1"/>
 	<button id="browser.stop" x="-26" y="0" relatx="1" image="cpro2.reader.stop.1" hoverimage="cpro2.reader.stop.2" downimage="cpro2.reader.stop.3" tooltip="Cancel Loading" rectrgn="1"/>
@@ -77,9 +77,9 @@
 
 
 	<Browser id="browserpro.browser" x="0" y="26" w="0" h="-26" relath="1" relatw="1" url="C:/"/>
-	<group id="browserpro.ddlist.group" x="95" y="4" h="22" w="-99" relatw="1" />
+	<group id="browserpro.ddlist.group" x="80" y="0" h="28" w="-130" relatw="1" />
 
-	<script file="@WINAMPPATH@\Plugins\ClassicPro\engine\widgets\Data\BrowserPro\main.maki"/>
+	<script file="@WINAMPPATH@\Plugins\ClassicPro\engine\xui\CentroSUI\_v2\Reader\main.maki"/>
 
 
 
