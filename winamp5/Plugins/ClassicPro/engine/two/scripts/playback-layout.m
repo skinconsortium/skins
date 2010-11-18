@@ -25,6 +25,7 @@ System.onScriptLoaded() {
 
 	s_volbig = g_volbig.getObject("two.playback.volslider");
 	
+	
 	//l_butright = g_buttons.getObject("two.playback.buttons.right");
 	
 	
@@ -37,6 +38,21 @@ System.onScriptLoaded() {
 		b_play.show();
 		b_pause.hide();
 	}
+	
+	// Reader for classic vis colors from bitmap (wa5.51)
+	Map myMap = new Map;
+	myMap.loadMap("cpro2.color.read");
+	
+	gui_vis.setXmlParam("colorbandpeak",integerToString(myMap.getARGBValue(0,0,2))+","+integerToString(myMap.getARGBValue(0,0,1))+","+integerToString(myMap.getARGBValue(0,0,0)));
+	
+	for(int i=2;i<18;i++){
+		gui_vis.setXmlParam("colorband"+integerToString(18-i),integerToString(myMap.getARGBValue(0,i,2))+","+integerToString(myMap.getARGBValue(0,i,1))+","+integerToString(myMap.getARGBValue(0,i,0)));
+	}
+
+	for(int i=0;i<5;i++){
+		gui_vis.setXmlParam("colorosc"+integerToString(5-i),integerToString(myMap.getARGBValue(2,i,2))+","+integerToString(myMap.getARGBValue(2,i,1))+","+integerToString(myMap.getARGBValue(2,i,0)));
+	}
+
 }
 
 g.onResize(int x, int y, int w, int h){
