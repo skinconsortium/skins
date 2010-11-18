@@ -1,6 +1,31 @@
 <!-- 
 :: Info Section ::
 -->
+<groupdef id="beatvisB.left">
+	<layer id="beatvisB.left.layer" x="-150" y="0" h="45" relatx="1" image="beat.left.b" tile="1" alpha="253"/>
+</groupdef>
+<groupdef id="beatvisB.right">
+	<layer id="beatvisB.right.layer" x="0" y="0" h="45" image="beat.right.b" tile="1" alpha="253"/>
+</groupdef>
+<groupdef id="beatvis">
+	<AnimatedLayer id="beatvis.left" x="0" y="0" w="150" h="45" image="beat.0.left" autoplay="0" autoreplay="1" ghost="1" frameheight="45"/>
+	<AnimatedLayer id="beatvis.right" x="150" y="0" w="150" h="45" image="beat.0.right" autoplay="0" autoreplay="1" ghost="1" frameheight="45"/>
+	<layer id="beatvisC.left" x="0" y="0" h="45" image="beat.left.c" tile="1" visible="0" alpha="253"/>
+	<layer id="beatvisC.right" x="0" y="0" h="45" relatx="0" image="beat.right.c" tile="1" visible="0" alpha="253"/>
+	<group id="beatvisB.left" x="0" y="0" w="0" h="45" visible="0"/>
+	<group id="beatvisB.right" x="150" y="0" w="0" h="45" visible="0"/>
+	<layer id="beat.overlay" x="0" y="0" h="45" relatx="0" image="beatvis.overlay" tile="1" ghost="1" alpha="253"/>
+</groupdef>
+<groupdef id="beatpromo">
+	<layer id="beat.promo" x="0" y="0" image="cPro.promo.1" alpha="253"/>
+</groupdef>
+<groupdef id="cpro.screen">
+	<group id="beatvis" x="200" y="0" w="300" h="45"/>
+	<group id="beatpromo" x="200" y="0" w="300" h="45" visible="0"/>
+	<layer id="beat.mousetrap" x="143" y="0" w="-317" h="45" relatw="1"/>
+	<rect fitparent="1"/>
+</groupdef>
+
 <groupdef id="two.info.seeker.active">
 	<layer id="two.info.seeker.active.layer" x="0" y="0" w="0" relatw="1" image="info.bg.seeker.1" alpha="253"/>
 	<layer id="two.info.seeker.active.light" x="0" y="0" visible="0" image="info.bg.seeker.light" alpha="253"/>
@@ -20,13 +45,22 @@
 	<group id="two.info.text.time" x="-100" y="0" w="100" h="50" relatx="1" relath="2"/>
 </groupdef>
 
+
+
+
+
 <groupdef id="two.info.seeker">
 	<layer id="two.info.seeker.inactive" x="0" y="0" w="0" relatw="1" image="info.bg.seeker.0"/>
 	<group id="two.info.seeker.active" x="0" y="0" w="0" h="40"/>
 	<layer id="two.info.seeker.finder" x="0" y="0" w="0" image="info.bg.seeker.3" alpha="175"/> <!-- Remove alpha l@r... image can do it-->
+	
+	<group id="cpro.screen" fitparent="1"/>
+	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\beat.maki" param="@SKINPATH@"/>
+
+
+	
 	<slider id="two.info.seeker.slider.0" x="0" y="0" w="0" h="0" relatw="1" relath="1" action="SEEK" thumb="info.seeker.thumb" interval="50"/>
 	<slider id="two.info.seeker.slider.1" x="0" y="0" w="0" h="0" relatw="1" relath="1" action="SEEK" thumb="info.seeker.thumb" cursor="IDC_HAND"/>
-
 	<group id="two.info.seeker.text" x="0" y="3" w="0" h="-6" relath="1" relatw="1"/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\info-seeker.maki"/>
 </groupdef>
@@ -51,6 +85,8 @@
 
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\info-pbstatus.maki"/>-->
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\info-text.maki"/>
+
+
 </groupdef>
 
 
