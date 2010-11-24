@@ -3,9 +3,9 @@
 Function setSeekerPos();
 Function lightToggle(boolean OnOff);
 
-Global Group g, g_seekerActive;
+Global Group g, g_seekerActive, g_seekerFinder;
 Global Container c;
-Global Layer l_seekerActive, l_seekerInactive, l_seekerFinder, l_light;
+Global GuiObject l_seekerActive, l_seekerFinder, l_light, l_seekerHover;
 Global int i_light;
 Global Slider s_seeker0, s_seeker1;
 Global Timer t_light;
@@ -14,12 +14,17 @@ System.onScriptLoaded() {
 	g = getScriptGroup();
 	s_seeker0 = g.getObject("two.info.seeker.slider.0");
 	s_seeker1 = g.getObject("two.info.seeker.slider.1");
-	l_seekerInactive = g.getObject("two.info.seeker.inactive");
-	l_seekerFinder = g.getObject("two.info.seeker.finder");
+
+	g_seekerFinder = g.getObject("two.info.seeker.finder");
+	l_seekerFinder = g_seekerFinder.getObject("two.info.seeker.finder.layer");
 
 	g_seekerActive = g.getObject("two.info.seeker.active");
 	l_light = g_seekerActive.getObject("two.info.seeker.active.light");
 	l_seekerActive = g_seekerActive.getObject("two.info.seeker.active.layer");
+	l_seekerHover = g_seekerActive.getObject("two.info.seeker.hover.layer");
+
+	//g_seekerInactive = g.getObject("two.info.seeker.inactive");
+	//l_seekerInactive = g_seekerInactive.getObject("two.info.seeker.inactive.layer");
 
 	Map m = new Map;
 	m.loadMap("info.bg.seeker.light");
@@ -43,12 +48,19 @@ s_seeker0.onPostedPosition(int newpos){
 
 s_seeker1.onSetPosition(int newpos){
 	int temp = g.getWidth();
-	l_seekerFinder.setXmlParam("w", integerToString(temp*newpos/255));
+	g_seekerFinder.setXmlParam("w", integerToString(temp*newpos/255));
 }
 s_seeker1.onSetFinalPosition(int pos){
-	l_seekerFinder.setXmlParam("w", "0");
+	g_seekerFinder.setXmlParam("w", "0");
 }
 g.onResize(int x, int y, int w, int h){
+	l_seekerActive.setXmlParam("w", integerToString(w));
+	l_seekerFinder.setXmlParam("w", integerToString(w));
+	l_seekerHover.setXmlParam("w", integerToString(w));
+	
+	//l_seekerInactive.setXmlParam("x", integerToString(-w));
+	//l_seekerInactive.setXmlParam("w", integerToString(w));
+
 	setSeekerPos();
 }
 
@@ -56,23 +68,34 @@ setSeekerPos(){
 	int temp = g.getWidth();
 	int newpos = System.getPosition();
 	int fullpos = System.getPlayItemLength();
+	int fix = 1;
 	
 	if(System.getStatus()==STATUS_STOPPED || fullpos==0){
 		newpos = 0;
 		fullpos = 1;
+		fix = 0;
 	}
 	
-	l_seekerInactive.setXmlParam("x", integerToString(temp*newpos/fullpos));
-	l_seekerInactive.setXmlParam("w", integerToString(temp-temp*newpos/fullpos));
+
+	//g_seekerInactive.setXmlParam("x", integerToString(temp*newpos/fullpos));
+	//g_seekerInactive.setXmlParam("w", integerToString(temp-temp*newpos/fullpos+fix));
+
+	//g_seekerInactive.setTargetX(temp*newpos/fullpos);
+	//g_seekerInactive.setTargetW(temp-temp*newpos/fullpos+1);
+	//g_seekerInactive.setTargetSpeed(0);
+	//g_seekerInactive.gotoTarget();
 	g_seekerActive.setXmlParam("w", integerToString(temp*newpos/fullpos));
+
 }
 
 
 s_seeker1.onEnterArea(){
-	l_seekerActive.setXmlParam("image", "info.bg.seeker.2");
+	l_seekerActive.hide();
+	l_seekerHover.show();
 }
 s_seeker1.onLeaveArea(){
-	l_seekerActive.setXmlParam("image", "info.bg.seeker.1");
+	l_seekerHover.hide();
+	l_seekerActive.show();
 }
 
 System.onStop(){

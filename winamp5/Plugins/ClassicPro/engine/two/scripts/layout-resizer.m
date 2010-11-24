@@ -1,5 +1,7 @@
 #include <lib/std.mi>
 
+#define i_info 40 
+
 
 Function saveResize(int x, int y, int w, int h);
 
@@ -10,7 +12,7 @@ Global Layout mylayout;
 //Global Layer resize1, resize2, resize3, resize4, resize6, resize7, resize8, resize9;
 Global Layer resize6, resize8, resize9;
 Global Boolean mouseDown, docked;
-Global int rres, i_titlebar, i_info;
+Global int rres, i_titlebar;
 
 System.onScriptLoaded() {
 	rres=20;
@@ -19,8 +21,6 @@ System.onScriptLoaded() {
 	Map m = new Map;
 	m.loadMap("frame.top");
 	i_titlebar = m.getHeight();
-	m.loadMap("info.bg.seeker.0");
-	i_info = m.getHeight();
 	delete m;
 
 	
