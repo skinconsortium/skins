@@ -2,7 +2,7 @@
 
 Global Group g, g_volume, g_vis, g_buttons, g_ejectVol, g_volbig;
 Global Layer l_left, l_right, l_volbig1, l_volbig2;
-Global Button b_play, b_pause, b_eject;
+Global Button b_play, b_pause, b_eject, b_mute;
 Global Guiobject gui_vis;
 Global Slider s_volbig;
 
@@ -22,6 +22,7 @@ System.onScriptLoaded() {
 
 	l_right = g_volume.getObject("two.playback.right");
 	g_volbig = g_volume.getObject("two.playback.volume.slider");
+	b_mute = g_volume.getObject("two.player.mute");
 
 	s_volbig = g_volbig.getObject("two.playback.volslider");
 	
@@ -62,6 +63,7 @@ g.onResize(int x, int y, int w, int h){
 		
 		b_eject.hide();
 		g_ejectVol.show();
+		b_mute.hide();
 	
 		/*l_left.setXmlParam("image","playback.bg.left.1");
 		l_right.hide();
@@ -77,6 +79,7 @@ g.onResize(int x, int y, int w, int h){
 
 		b_eject.show();
 		g_ejectVol.hide();
+		b_mute.hide();
 
 		l_left.setXmlParam("image","playback.bg.left.3");
 		g_vis.setXmlParam("w","47");
@@ -106,6 +109,7 @@ g.onResize(int x, int y, int w, int h){
 
 		b_eject.show();
 		g_ejectVol.hide();
+		b_mute.hide();
 
 		l_left.show();
 		l_left.setXmlParam("image","playback.bg.left.2");
@@ -136,6 +140,7 @@ g.onResize(int x, int y, int w, int h){
 
 		b_eject.show();
 		g_ejectVol.hide();
+		b_mute.show();
 
 		l_left.show();
 		l_left.setXmlParam("image","playback.bg.left.1");
