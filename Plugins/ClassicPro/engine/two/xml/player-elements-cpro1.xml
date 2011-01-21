@@ -134,15 +134,6 @@
 	<bitmap id="rep.2.2" file="buttons.png" x="218" y="27" w="36" h="26" gammagroup="n.Button"/>
 	<bitmap id="rep.3.2" file="buttons.png" x="218" y="54" w="36" h="26" gammagroup="n.Button"/>
 
-	<!-- Layer: PlayStopPause -->
-	<bitmap id="cpro.status.playing" file="pb_status.png" x="0" y="0" w="24" h="16" gammagroup="n.Text.SongInfo"/>
-	<bitmap id="cpro.status.stopped" file="pb_status.png" x="0" y="17" w="24" h="16" gammagroup="n.Text.SongInfo"/>
-	<bitmap id="cpro.status.paused" file="pb_status.png" x="0" y="34" w="24" h="16" gammagroup="n.Text.SongInfo"/>
-
-	<!-- Layer: MonoStereo -->
-	<bitmap id="channels.1" file="songinfo.png" x="11" y="16" w="49" h="5" gammagroup="n.Text.SongInfo"/>
-	<bitmap id="channels.2" file="songinfo.png" x="11" y="22" w="49" h="5" gammagroup="n.Text.SongInfo"/>
-	<bitmap id="channels.s" file="songinfo.png" x="11" y="28" w="49" h="5" gammagroup="n.Text.SongInfo"/>
 
 	<!-- No colorthemes ;) -->
 	<bitmap id="about.gfx" file="about.png" x="0" y="0" w="380" h="321" gammagroup="_"/>
@@ -369,11 +360,6 @@
 	<bitmap id="wasabi.tabsheet.button.center.3" file="suiframe.png" x="89" y="60" w="10" h="29" gammagroup="n.SuiFrame"/>
 	<bitmap id="wasabi.tabsheet.button.right.3" file="suiframe.png" x="100" y="60" w="10" h="29" gammagroup="n.SuiFrame"/>
 
-	<!-- Frame windows -->
-	<bitmap id="wasabi.framewnd.verticaldivider" file="suiframe.png" x="132" y="9" h="20" w="8" gammagroup="n.SuiFrame"/>
-	<bitmap id="wasabi.framewnd.verticalgrabber" file="suiframe.png" x="132" y="30" h="40" w="8" gammagroup="n.SuiFrame"/>
-	<bitmap id="wasabi.framewnd.horizontaldivider" file="suiframe.png" x="132" y="0" h="8" w="20" gammagroup="n.SuiFrame"/>
-	<bitmap id="wasabi.framewnd.horizontalgrabber" file="suiframe.png" x="153" y="0" h="8" w="40" gammagroup="n.SuiFrame"/>
 
 	<!-- Wasabi stuff -->
 	<bitmap id="wasabi.scrollbar.horizontal.left" file="scrollbars.png" x="56" y="0" h="13" w="14" gammagroup="n.Scrollbars.Gfx"/>

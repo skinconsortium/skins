@@ -31,24 +31,17 @@ Global InfoLine g_target;
 Global Text t_title, t_album, t_artist, t_year, t_genre, t_track, t_publisher, t_sname, t_surl, t_composer, t_albumartist, t_format, t_disc, t_rating, ratings_text;
 Global Timer cycler;
 Global String stationLink;
-
 Global Popupmenu myMenu;
 Global Button optionsButton;
-
 Global List cycle;
 Global Boolean cycler_paused, quick_change;
-
-
-
 Global LinkObject linkArtist, linkAlbum, linkTitle, linkGenre, linkPublisher, linkSURl, linkSname;
 Global CycleObject cycleGenre, cyclePublisher, cycleTrack, cycleYear, cycleComposer, cycleAlbumartist, cycleFormat, cycleDisc;
-
-
-Global Int startwith = 0;
-
-Global Int maxlines;
-
+Global int startwith = 0;
+Global int maxlines;
+Global int w2;
 Global timer delayLoad;
+Global int _powerSave1;
 
 System.onScriptLoaded()
 {
@@ -117,52 +110,11 @@ System.onScriptLoaded()
 	cycleDisc = g_disc.findObject("link");
 
 	cycle = new List;
-	//ratingStars = new List;
-
-	//group parent = scriptGroup.getParent();
-	//l_branding = parent.findObject("branding");
-	//g_cover = parent.findObject("info.component.cover");
-	//_BrandingInit(l_branding, parent, 1, 0);
-
-	//l_albumart = g_cover.getObjecT("winamp.albumart");
-	//l_webcover = g_cover.getObjecT("winamp.webalbumart");
-
-	/*rate1 = g_rating.findObject("rate.1");
-	rate2 = g_rating.findObject("rate.2");
-	rate3 = g_rating.findObject("rate.3");
-	rate4 = g_rating.findObject("rate.4");
-	rate5 = g_rating.findObject("rate.5");
-	rate0 = g_rating.findObject("rate.0");
-	ratingStars.addItem(rate1);
-	ratingStars.addItem(rate2);
-	ratingStars.addItem(rate3);
-	ratingStars.addItem(rate4);
-	ratingStars.addItem(rate5);
-
-	star1 = g_rating.findObject("star.1");
-	star2 = g_rating.findObject("star.2");
-	star3 = g_rating.findObject("star.3");
-	star4 = g_rating.findObject("star.4");
-	star5 = g_rating.findObject("star.5");
-
-	t_rating = g_rating.findObject("label");
-	t_rating.onTextChanged ("");*/
-
-	//refreshRating(System.getCurrentTrackRating());
+	
+	//g_cover.setTargetSpeed(0);
+	//tagsGroup.setTargetSpeed(0);
+	
 	loadFileInfo();
-	/*if (ic_fileinfo.getData() == "1")
-	{
-		if (getStatus() == STATUS_STOPPED) showBranding(); // show branding if playback is stopped
-		if (removePath(getPlayItemString()) == "demo.mp3") // Show branding if playing DJ Mike
-		{
-			if (getPlayitemmetadatastring("artist") == "DJ Mike Llama" && getplayitemmetadatastring("title") == "Llama Whippin' Intro")
-			{
-				showBranding();
-			}
-			
-		}
-		
-	}*/
 }
 
 System.onScriptUnloading ()
@@ -199,18 +151,6 @@ System.onTitleChange (String newtitle)
 			||
 			StrLeft(newtitle, 4) == "[ICY") return;
 	}
-	// Show branding for DJ Mike
-	/*if (removePath(getPlayItemString()) == "demo.mp3")
-	{
-		if (getPlayitemmetadatastring("artist") == "DJ Mike Llama" && getplayitemmetadatastring("title") == "Llama Whippin' Intro")
-		{
-			showBranding();
-			return;
-		}
-		
-	}*/
-	debugString(DEBUG_PREFIX "System.onTitleChange() -> loadFileInfo();", D_WTF);
-	//refreshRating(System.getCurrentTrackRating());
 	loadFileInfo();
 }
 
@@ -224,28 +164,6 @@ System.onTitleChange (String newtitle)
 loadFileInfo ()
 {
 	if(!scriptGroup.isVisible()) return;
-
-	/*if(scriptGroup.getHeight() < MINI_TAG_H_CHANGE || !getPublicInt("ClassicPro.tagviewer.1", 1)){
-		if(getPublicInt("ClassicPro.tagviewer.1", 1) && scriptGroup.getWidth() >= 210){
-			g_cover.show();
-			tagsGroup.setXmlParam("x", "130");
-			tagsGroup.setXmlParam("w", "-132");
-		}
-		else{
-			g_cover.hide();
-			tagsGroup.setXmlParam("x", "4");
-			tagsGroup.setXmlParam("w", "-6");
-		}
-	}
-	else{
-		g_cover.show();
-		
-		tagsGroup.setXmlParam("x", integerToString(g_cover.getWidth()+5));
-		tagsGroup.setXmlParam("w", integerToString(scriptGroup.getWidth()-(tagsGroup.getLeft())));
-
-		//tagsGroup.setXmlParam("x", "4");
-		//tagsGroup.setXmlParam("w", "-6");
-	}*/
 
 	// cancel g_target
 	if (g_target) g_target.cancelTarget();
@@ -1024,101 +942,47 @@ scriptGroup.onSetVisible(boolean onOff){
 
 
 scriptGroup.onResize(int x, int y, int w, int h){
+	if(!scriptGroup.isVisible()) return;
+
 	if(w>h){
-		g_cover.setXmlParam("x", "1");
-		g_cover.setXmlParam("y", "2");
-		g_cover.setXmlParam("h", integerToString(-3));
-		g_cover.setXmlParam("relatw", "0");
-		g_cover.setXmlParam("relath", "1");
+		if(_powerSave1!=1){
+			g_cover.setXmlParam("relatw", "0");
+			g_cover.setXmlParam("relath", "1");
+			//g_cover.setXmlParam("x", "1");
+			//g_cover.setXmlParam("y", "2");
+			g_cover.setXmlParam("h", "-3");
+
+			//tagsGroup.setXmlParam("relatw", "0");
+			tagsGroup.setXmlParam("relaty", "0");
 		
-		if(h>w/2-1) g_cover.setXmlParam("w", integerToString(w/2-1));
-		else g_cover.setXmlParam("w", integerToString(h-1));
+			_powerSave1=1;
+		}
+		
+		if(h>w/2-1) w2 = w/2-1;
+		else w2= h-1;
+		g_cover.setXmlParam("w", integerToString(w2));
 
-		tagsGroup.setXmlParam("y", integerToString(h/2-119/2+4));
-		tagsGroup.setXmlParam("x", integerToString(g_cover.getWidth()+5));
-		tagsGroup.setXmlParam("w", integerToString(w-(tagsGroup.getLeft()-8)));
-		tagsGroup.setXmlParam("relatw", "0");
-		tagsGroup.setXmlParam("relaty", "0");
-
-		//loadFileInfo();
+		tagsGroup.setXmlParam("x", integerToString(w2+5));
+		//tagsGroup.setXmlParam("w", integerToString(w-(w2+5-8)));
+		if(h/2-119/2+4<0) tagsGroup.setXmlParam("y", "0");
+		else tagsGroup.setXmlParam("y", integerToString(h/2-119/2+4));
 	}
 	else{
-		g_cover.setXmlParam("x", "1");
-		g_cover.setXmlParam("y", "2");
-		g_cover.setXmlParam("w", "-2");
-		g_cover.setXmlParam("relatw", "1");
-		g_cover.setXmlParam("relath", "1");
-		
-		g_cover.setXmlParam("h", integerToString(-100-1-15));
-
-		//if(h>w/2-1) g_cover.setXmlParam("h", integerToString(h/2-1));
-		//else g_cover.setXmlParam("h", integerToString(w-1));
-
-		tagsGroup.setXmlParam("y", "-96");
-		tagsGroup.setXmlParam("x", "1");
-		tagsGroup.setXmlParam("w", "-2");
-		tagsGroup.setXmlParam("relatw", "1");
-		tagsGroup.setXmlParam("relaty", "1");
-
-	/*
-		boolean updateMe = false;
-		
-		if(w<210 && g_cover.isVisible()) updateMe = true;
-		else if(g_cover.isVisible() != getPublicInt("ClassicPro.tagviewer.1", 1)) updateMe = true;
-		
-		//g_cover.setXmlParam("y", integerToString(h/2-119/2+4));
-		tagsGroup.setXmlParam("y", integerToString(h/2-119/2+4));
-		
-		if(tagsGroup.getXmlParam("relaty")!="0"){
-			g_cover.setXmlParam("x", "6");
-			g_cover.setXmlParam("w", "111");
-			g_cover.setXmlParam("relatw", "0");
-			g_cover.setXmlParam("h", "-8");
+		if(_powerSave1!=2){
+			g_cover.setXmlParam("relatw", "1");
 			g_cover.setXmlParam("relath", "1");
-			tagsGroup.setXmlParam("relaty", "0");
-			updateMe = true;
+			//g_cover.setXmlParam("x", "1");
+			//g_cover.setXmlParam("y", "2");
+			g_cover.setXmlParam("w", "-2");
+			g_cover.setXmlParam("h", integerToString(-100-1-15));
+
+			//tagsGroup.setXmlParam("relatw", "1");
+			tagsGroup.setXmlParam("relaty", "1");
+			tagsGroup.setXmlParam("x", "1");
+			tagsGroup.setXmlParam("y", "-96");
+			//tagsGroup.setXmlParam("w", "-2");
+		
+			_powerSave1=2;
 		}
-		
-		if(updateMe) loadFileInfo();
-*/
 	}
-
-/*
-	if(h<119) h=119;
-
-	if(h<MINI_TAG_H_CHANGE || !getPublicInt("ClassicPro.tagviewer.1", 1)){
-		boolean updateMe = false;
-		
-		if(w<210 && g_cover.isVisible()) updateMe = true;
-		else if(g_cover.isVisible() != getPublicInt("ClassicPro.tagviewer.1", 1)) updateMe = true;
-		
-		//g_cover.setXmlParam("y", integerToString(h/2-119/2+4));
-		tagsGroup.setXmlParam("y", integerToString(h/2-119/2+4));
-		
-		if(tagsGroup.getXmlParam("relaty")!="0"){
-			g_cover.setXmlParam("x", "6");
-			g_cover.setXmlParam("w", "111");
-			g_cover.setXmlParam("relatw", "0");
-			g_cover.setXmlParam("h", "-8");
-			g_cover.setXmlParam("relath", "1");
-			tagsGroup.setXmlParam("relaty", "0");
-			updateMe = true;
-		}
-		
-		if(updateMe) loadFileInfo();
-	}
-	else if(tagsGroup.getXmlParam("relaty")!="1"){
-		g_cover.setXmlParam("x", "3");
-		g_cover.setXmlParam("y", "4");
-		g_cover.setXmlParam("w", "-6");
-		g_cover.setXmlParam("relatw", "1");
-		g_cover.setXmlParam("h", "-120");
-		g_cover.setXmlParam("relath", "1");
-
-		tagsGroup.setXmlParam("relaty", "1");
-		tagsGroup.setXmlParam("y", "-100");
-		tagsGroup.setXmlParam("y", "-100");
-		loadFileInfo();
-	}
-	*/
 }

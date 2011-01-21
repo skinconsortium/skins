@@ -11,3 +11,4 @@
 <include file="ModernSongticker/ModernSongticker.xml"/>
 <include file="updateSystem/updateSystem.xml"/>
 <include file="ScrollBar/vscrollbar.xml"/>
+<include file="SC-Channels/sc-channels.xml"/>

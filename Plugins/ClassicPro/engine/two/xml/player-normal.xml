@@ -28,23 +28,36 @@
 
 
 <groupdef id="two.info.text.time">
+	<status	id="status"	x="0" y="0" w="20" h="20" stopBitmap="cpro.status.stopped" playBitmap="cpro.status.playing" pauseBitmap="cpro.status.paused" ghost="1"/>
+
 	<!--<rect fitparent="1"/>-->
-	<text id="two.info.text.tracktime" x="0" y="-2" h="22" align="left" text="" fontsize="21" color="Info.1" font="Calibri" ghost="1"/>
-	<text id="two.info.text.totaltime" x="0" y="2" h="16" align="left" text="" fontsize="15" color="Info.2" font="Calibri" ghost="1"/>
+	<text id="two.info.text.tracktime" x="21" y="1" h="22" align="left" text="" fontsize="21" color="Info.1" font="Calibri" ghost="1"/>
+	<text id="two.info.text.totaltime" x="0" y="5" h="16" align="left" text="" fontsize="15" color="Info.2" font="Calibri" ghost="1"/>
 	<text id="two.info.text.trackevent" x="0" y="0" w="0" h="0" display="TIMEELAPSED" visible="0"/>
 </groupdef>
+<groupdef id="two.info.text.info">
+	<SC:Channels
+		x="0" y="1" w="20" h="20"
+		ch_1="channels.1"
+		ch_2="channels.2"
+		ch_6="channels.s"
+		ghost_all="1"
+	/>
+	<text id="two.info.text.info.1" x="1" y="0" w="-5" h="18" relatw="1" align="right" text="" translate="0" color="Info.2" ghost="1" font="Calibri" fontsize="13" alpha="150" visible="0"/>
+</groupdef>
 <groupdef id="two.info.seeker.text">
-	<text id="two.info.text.title" x="0" y="-2" w="0" h="22" relatw="1" align="left" text="" color="Info.1" ghost="1" font="Calibri" fontsize="21"/>
-	<text id="two.info.text.artist" x="0" y="16" w="0" h="18" relatw="1" align="left" text="" color="Info.2" ghost="1" font="Calibri" fontsize="16" alpha="150"/>
-	<text id="two.info.text.info.1" x="0" y="16" w="0" h="18" relatw="1" align="right" text="" translate="0" color="Info.2" ghost="1" font="Calibri" fontsize="13" alpha="150"/>
+	<text id="two.info.text.title" x="1" y="1" w="-1" h="22" relatw="1" align="left" text="" color="Info.1" ghost="1" font="Calibri" fontsize="21"/>
+	<text id="two.info.text.artist" x="1" y="19" w="-1" h="18" relatw="1" align="left" text="" color="Info.2" ghost="1" font="Calibri" fontsize="16" alpha="150"/>
 
 	<group id="two.info.text.time" x="-100" y="0" w="100" h="50" relatx="1" relath="2"/>
+	<group id="two.info.text.info" x="-100" y="19" w="100" h="21" relatx="1"/>
+	<text id="two.info.text.news" x="-100" y="19" w="100" h="18" relatx="1" align="right" text="" translate="0" color="Info.2" ghost="1" font="Calibri" fontsize="13" alpha="150" visible="0"/>
 </groupdef>
 
 
 <groupdef id="two.info.seeker.active">
 	<grid id="two.info.seeker.active.layer" x="0" y="0" w="550" h="40" topleft="info.bg.seeker.1.1" top="info.bg.seeker.1.2" topright="info.bg.seeker.1.3" alpha="253"/>
-	<grid id="two.info.seeker.hover.layer" x="0" y="0" w="550" h="40" topleft="info.bg.seeker.2.1" top="info.bg.seeker.2.2" topright="info.bg.seeker.2.3" alpha="253" visible="0"/>
+	<grid id="two.info.seeker.hover.layer" x="0" y="0" w="550" h="40" topleft="info.bg.seeker.2.1" top="info.bg.seeker.2.2" topright="info.bg.seeker.2.3" alpha="0"/>
 	<layer id="two.info.seeker.active.light" x="0" y="0" visible="0" image="info.bg.seeker.light" alpha="253"/>
 </groupdef>
 <groupdef id="two.info.seeker.finder">
@@ -63,7 +76,7 @@
 	
 	<slider id="two.info.seeker.slider.0" x="0" y="0" w="0" h="0" relatw="1" relath="1" action="SEEK" thumb="info.seeker.thumb" interval="50"/>
 	<slider id="two.info.seeker.slider.1" x="0" y="0" w="0" h="0" relatw="1" relath="1" action="SEEK" thumb="info.seeker.thumb" cursor="IDC_HAND"/>
-	<group id="two.info.seeker.text" x="0" y="3" w="0" h="-6" relath="1" relatw="1" alpha="200"/>
+	<group id="two.info.seeker.text" x="0" y="0" w="0" h="40" relatw="1" alpha="200"/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\info-seeker.maki"/>
 </groupdef>
 <groupdef id="two.info.text.other">
@@ -86,8 +99,8 @@
 	<layer id="two.info.pbstatus" x="0" y="0" image="info.bg.time.stop" visible="0"/>
 
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\info-pbstatus.maki"/>-->
-	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\info-text.maki"/>
 
+	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\info-text.maki"/>
 
 </groupdef>
 
@@ -102,7 +115,18 @@
 		x="6" y="6"
 		w="71" h="17"
 		gammagroup="n.Vis"
+		bandwidth="thin"
 	/>
+	<layer id="vis.overlay" x="6" y="6" w="71" h="17" image="vis.overlay1"/>
+	<layer
+		id="vis.mousetrap"
+		x="6" y="6"
+		w="71" h="17"
+	/>
+	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\classicVis.maki"/>
+
+
+
 	<button x="83" y="0" image="playback.button.bolt.1" hoverimage="playback.button.bolt.2" downimage="playback.button.bolt.3"/>
 	
 </groupdef>
@@ -116,6 +140,7 @@
 	<layer id="two.playback.right" x="0" y="0" w="0" h="30" relatw="1"/>
 	
 	<NStatesButton id="two.player.mute" x="0" image="playback.button.mute.1." hoverimage="playback.button.mute.2." downimage="playback.button.mute.3." rectrgn="1" nstates="2" tooltip="Toggle Mute" cfgvals="0;1"/>
+	<layer id="two.player.mute.overlay" x="0" ghost="1" image="playback.button.mute.1.0" alpha="0"/>
 
 	<group id="two.playback.volume.slider" x="80" y="0" w="77" h="30"/>
 </groupdef>
@@ -127,14 +152,40 @@
 </groupdef>
 
 <groupdef id="two.playback.buttons" w="224" background="playback.bg.buttons">
-	<NStatesButton x="3" y="0" image="playback.button.shuf.1." hoverimage="playback.button.shuf.2." downimage="playback.button.shuf.3." rectrgn="1" nstates="2" tooltip="Toggle Playlist Shuffling" cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Shuffle"/>
-	<NStatesButton x="33" y="0" image="playback.button.rep.1." hoverimage="playback.button.rep.2." downimage="playback.button.rep.3." rectrgn="1" nstates="3" tooltip="Toggle Playlist/Song Repeating" cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Repeat" cfgvals="0;1;-1"/>
-	<button id="two.playback.prev" x="63" y="0" action="PREV" image="playback.button.prev.1" hoverimage="playback.button.prev.2" downimage="playback.button.prev.3"/>
-	<button id="two.playback.play" x="95" y="0" action="PLAY" image="playback.button.play.1" hoverimage="playback.button.play.2" downimage="playback.button.play.3"/>
+	<NStatesButton id="two.playback.shuf" x="3" y="0" image="playback.button.shuf.1." hoverimage="playback.button.shuf.2." downimage="playback.button.shuf.3." rectrgn="1" nstates="2" tooltip="Toggle Playlist Shuffling" cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Shuffle"/>
+	<layer id="shuf.fade" x="3" y="0" ghost="1" alpha="0"/>
+	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\buttonfade.maki" param="two.playback.shuf;shuf.fade;playback.button.shuf.2."/>
+
+	<NStatesButton id="two.playback.rep" x="33" y="0" image="playback.button.rep.1." hoverimage="playback.button.rep.2." downimage="playback.button.rep.3." rectrgn="1" nstates="3" tooltip="Toggle Playlist/Song Repeating" cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Repeat" cfgvals="0;1;-1"/>
+	<layer id="rep.fade" x="33" y="0" ghost="1" alpha="0"/>
+	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\buttonfade.maki" param="two.playback.rep;rep.fade;playback.button.rep.2."/>
+
+	<button id="two.playback.prev" x="63" y="0" action="PREV" image="playback.button.prev.1" downimage="playback.button.prev.3"/>
+	<layer id="prev.fade" x="63" y="0" image="playback.button.prev.2" ghost="1" alpha="0"/>
+	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\buttonfade.maki" param="two.playback.prev;prev.fade"/>
+
+
+	<button id="two.playback.play" x="95" y="0" action="PLAY" image="playback.button.play.1" downimage="playback.button.play.3"/>
+	<layer id="play.fade" x="95" y="0" image="playback.button.play.2" ghost="1" alpha="0"/>
+	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\buttonfade.maki" param="two.playback.play;play.fade"/>
+
 	<button id="two.playback.paus" x="95" y="0" action="PAUSE" image="playback.button.paus.1" hoverimage="playback.button.paus.2" downimage="playback.button.paus.3"/>
-	<button id="two.playback.next" x="129" y="0" action="NEXT" image="playback.button.next.1" hoverimage="playback.button.next.2" downimage="playback.button.next.3"/>
-	<button x="161" y="0" action="STOP" image="playback.button.stop.1" hoverimage="playback.button.stop.2" downimage="playback.button.stop.3"/>
+	<layer id="paus.fade" x="95" y="0" image="playback.button.paus.2" ghost="1" alpha="0"/>
+	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\buttonfade.maki" param="two.playback.paus;paus.fade"/>
+
+	<button id="two.playback.next" x="129" y="0" action="NEXT" image="playback.button.next.1" downimage="playback.button.next.3"/>
+	<layer id="next.fade" x="129" y="0" image="playback.button.next.2" ghost="1" alpha="0"/>
+	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\buttonfade.maki" param="two.playback.next;next.fade"/>
+
+
+	<button id="two.playback.stop" x="161" y="0" action="STOP" image="playback.button.stop.1" hoverimage="playback.button.stop.2" downimage="playback.button.stop.3"/>
+	<layer id="stop.fade" x="161" y="0" image="playback.button.stop.2" ghost="1" alpha="0"/>
+	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\buttonfade.maki" param="two.playback.stop;stop.fade"/>
+
 	<button id="two.playback.eject" x="191" y="0" action="EJECT" image="playback.button.open.1" hoverimage="playback.button.open.2" downimage="playback.button.open.3"/>
+	<layer id="eject.fade" x="191" y="0" image="playback.button.open.2" ghost="1" alpha="0"/>
+	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\buttonfade.maki" param="two.playback.eject;eject.fade"/>
+
 	<group id="two.playback.ejectvol" x="191" y="0" visible="0"/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\extendedbuttons.maki"/>
 </groupdef>
@@ -155,6 +206,7 @@
 <groupdef id="two.screen">
 	<group id="two.info" x="0" w="0" relatw="1"/>
 	<group id="two.playback" x="0" y="40" w="0" relatw="1"/>
+	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\sc_mute.maki"/>
 </groupdef>
 
 <groupdef id="two.frame.buttons">
