@@ -1,10 +1,15 @@
+/*
+Optimized on 6 Jan 2010 by pjn123
+*/
+
 #include <lib/std.mi>
 
 Global Group g, g_volume, g_vis, g_buttons, g_ejectVol, g_volbig;
-Global Layer l_left, l_right, l_volbig1, l_volbig2;
+Global Layer l_left, l_right, l_volbig1, l_volbig2, l_leftOverlay;
 Global Button b_play, b_pause, b_eject, b_mute;
 Global Guiobject gui_vis;
 Global Slider s_volbig;
+Global int _powerSave1;
 
 System.onScriptLoaded() {
 	g = getScriptGroup();
@@ -13,6 +18,7 @@ System.onScriptLoaded() {
 	g_volume = g.getObject("two.playback.volume");
 
 	l_left = g_vis.getObject("two.playback.left");
+	l_leftOverlay = g_vis.getObject("vis.overlay");
 	gui_vis = g_vis.getObject("two.playback.visobject");
 	
 	b_play = g_buttons.getObject("two.playback.play");
@@ -25,9 +31,6 @@ System.onScriptLoaded() {
 	b_mute = g_volume.getObject("two.player.mute");
 
 	s_volbig = g_volbig.getObject("two.playback.volslider");
-	
-	
-	//l_butright = g_buttons.getObject("two.playback.buttons.right");
 	
 	
 	// Play-Pause button
@@ -58,114 +61,90 @@ System.onScriptLoaded() {
 
 g.onResize(int x, int y, int w, int h){
 	if(w<334){
-		g_vis.hide();
-		g_volume.hide();
-		
-		b_eject.hide();
-		g_ejectVol.show();
-		b_mute.hide();
-	
-		/*l_left.setXmlParam("image","playback.bg.left.1");
-		l_right.hide();
-		l_butright.setXmlParam("image","playback.bg.buttons.right.1");
-		g_vis.hide();
-		g_volume.hide();
-		//g_butVol.show();
-		//g_butShufRep.hide();*/
+		if(_powerSave1!=1){
+			g_vis.hide();
+			g_volume.hide();
+			
+			b_eject.hide();
+			g_ejectVol.show();
+			b_mute.hide();
+			_powerSave1=1;
+		}
 	}
 	else if(w<406){
-		g_vis.show();
-		g_volume.show();
+		if(_powerSave1!=2){
+			g_vis.show();
+			g_volume.show();
 
-		b_eject.show();
-		g_ejectVol.hide();
-		b_mute.hide();
+			b_eject.show();
+			g_ejectVol.hide();
+			b_mute.hide();
 
-		l_left.setXmlParam("image","playback.bg.left.3");
-		g_vis.setXmlParam("w","47");
-		gui_vis.setXmlParam("w","35");
-		
-		l_right.setXmlParam("image","playback.bg.right.3");
-		g_volume.setXmlParam("w","47");
-		g_volume.setXmlParam("x","-55");
-		g_volbig.setXmlParam("x","3");
-		g_volbig.setXmlParam("w","41");
-	
-	
-		/*
-		l_left.setXmlParam("image","playback.bg.left.2");
-		l_right.show();
-		l_butright.setXmlParam("image","playback.bg.buttons.right.2");
-		g_vis.show();
-		g_volume.show();
-		g_volume.setXmlParam("x","-83");
-		g_volume.setXmlParam("w","83");
-		//g_butVol.hide();
-		//g_butShufRep.show();*/
+			l_left.setXmlParam("image","playback.bg.left.3");
+			l_leftOverlay.setXmlParam("image","vis.overlay3");
+			l_leftOverlay.setXmlParam("w","35");
+			g_vis.setXmlParam("w","47");
+			gui_vis.setXmlParam("w","35");
+			
+			l_right.setXmlParam("image","playback.bg.right.3");
+			g_volume.setXmlParam("w","47");
+			g_volume.setXmlParam("x","-55");
+			g_volbig.setXmlParam("x","3");
+			g_volbig.setXmlParam("w","41");
+			_powerSave1=2;
+		}
 	}
 	else if(w<466){
-		g_vis.show();
-		g_volume.show();
+		if(_powerSave1!=3){
+			g_vis.show();
+			g_volume.show();
 
-		b_eject.show();
-		g_ejectVol.hide();
-		b_mute.hide();
+			b_eject.show();
+			g_ejectVol.hide();
+			b_mute.hide();
 
-		l_left.show();
-		l_left.setXmlParam("image","playback.bg.left.2");
-		g_vis.setXmlParam("w","83");
-		gui_vis.setXmlParam("w","71");
-		
-		l_right.show();
-		l_right.setXmlParam("image","playback.bg.right.2");
-		g_volume.setXmlParam("w","83");
-		g_volume.setXmlParam("x","-91");
-		g_volbig.setXmlParam("x","3");
-		g_volbig.setXmlParam("w","77");
-
-
-		/*l_left.setXmlParam("image","playback.bg.left.2");
-		l_right.show();
-		l_butright.setXmlParam("image","playback.bg.buttons.right.2");
-		g_vis.show();
-		g_volume.show();
-		g_volume.setXmlParam("x","-83");
-		g_volume.setXmlParam("w","83");
-		//g_butVol.hide();
-		//g_butShufRep.show();*/
+			l_left.show();
+			l_left.setXmlParam("image","playback.bg.left.2");
+			l_leftOverlay.setXmlParam("image","vis.overlay2");
+			l_leftOverlay.setXmlParam("w","71");
+			g_vis.setXmlParam("w","83");
+			gui_vis.setXmlParam("w","71");
+			
+			l_right.show();
+			l_right.setXmlParam("image","playback.bg.right.2");
+			g_volume.setXmlParam("w","83");
+			g_volume.setXmlParam("x","-91");
+			g_volbig.setXmlParam("x","3");
+			g_volbig.setXmlParam("w","77");
+			_powerSave1=3;
+		}
 	}
 	else{
-		g_vis.show();
-		g_volume.show();
+		if(_powerSave1!=4){
+			g_vis.show();
+			g_volume.show();
 
-		b_eject.show();
-		g_ejectVol.hide();
-		b_mute.show();
+			b_eject.show();
+			g_ejectVol.hide();
+			b_mute.show();
 
-		l_left.show();
-		l_left.setXmlParam("image","playback.bg.left.1");
-		g_vis.setXmlParam("w","113");
-		gui_vis.setXmlParam("w","71");
+			l_left.show();
+			l_left.setXmlParam("image","playback.bg.left.1");
+			l_leftOverlay.setXmlParam("image","vis.overlay1");
+			l_leftOverlay.setXmlParam("w","71");
+			g_vis.setXmlParam("w","113");
+			gui_vis.setXmlParam("w","71");
 
-		l_right.show();
-		l_right.setXmlParam("image","playback.bg.right.1");
-		g_volume.setXmlParam("w","113");
-		g_volume.setXmlParam("x","-121");
-		g_volbig.setXmlParam("x","33");
-		g_volbig.setXmlParam("w","77");
+			l_right.show();
+			l_right.setXmlParam("image","playback.bg.right.1");
+			g_volume.setXmlParam("w","113");
+			g_volume.setXmlParam("x","-121");
+			g_volbig.setXmlParam("x","33");
+			g_volbig.setXmlParam("w","77");
+			_powerSave1=4;
+		}
 
-		/*l_left.setXmlParam("image","playback.bg.left.2");
-		l_right.show();
-		l_butright.setXmlParam("image","playback.bg.buttons.right.2");
-		g_vis.show();
-		g_volume.show();
-		g_volume.setXmlParam("x","-113");
-		g_volume.setXmlParam("w","113");
-		//g_butVol.hide();
-		//g_butShufRep.show();*/
 	}
-	
-	
 	g_buttons.setXmlParam("x", integerToString(w/2-112));
 }
 

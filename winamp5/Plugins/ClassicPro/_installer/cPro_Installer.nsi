@@ -634,15 +634,15 @@ Section "$(CPro_CProFiles)" "CPro_Sec_CProFiles"
 
 !if ${CPRO_BUILD_TYPE} == "NIGHTLY"
 ; cPro::Flex
-	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\flex\scripts
-		File /nonfatal "..\engine\flex\scripts\*.m"
-		File /nonfatal "..\engine\flex\scripts\*.maki"
-
-	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\flex\xml
-		File /nonfatal "..\engine\flex\xml\*.xml"
-		
-	SetOutPath "$WINAMP_SKIN_DIR"
-		File /nonfatal /r "${CPRO_WINAMP_SKINS}\cProFlex - iFlex\cProFlex - iFlex.wal"
+;	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\flex\scripts
+;		File /nonfatal "..\engine\flex\scripts\*.m"
+;		File /nonfatal "..\engine\flex\scripts\*.maki"
+;
+;	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\flex\xml
+;		File /nonfatal "..\engine\flex\xml\*.xml"
+;		
+;	SetOutPath "$WINAMP_SKIN_DIR"
+;		File /nonfatal /r "${CPRO_WINAMP_SKINS}\cProFlex - iFlex\cProFlex - iFlex.wal"
 ;	SetOutPath "$WINAMP_SKIN_DIR\cProFlex - Xenolith"
 ;		File /nonfatal /r /x *.psd /x .svn "${CPRO_WINAMP_SKINS}\cProFlex - Xenolith"
 !endif

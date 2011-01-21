@@ -229,11 +229,11 @@ beatGroup.onSetVisible(Boolean onoff){
 frameGroup.onResize(int x, int y, int w, int h){
 
 	if(oneSide){
-		beatGroup.setXmlParam("x", integerToString(143+(w-317)/2-aniW/2));
+		beatGroup.setXmlParam("x", integerToString(w/2-aniW/2));
 		h=aniW;
 	}
 	else{
-		beatGroup.setXmlParam("x", integerToString(143+(w-317)/2-aniW));
+		beatGroup.setXmlParam("x", integerToString(w/2-aniW));
 		h=aniW*2;
 	}
 
@@ -253,7 +253,7 @@ frameGroup.onResize(int x, int y, int w, int h){
 		promoPic.setXmlParam("image", "cPro.promo.1");
 		promoPic.resize(150,0,99,45);
 	}
-	promoGroup.setXmlParam("x", integerToString(143+(w-317)/2-promoPic.getWidth()/2));
+	promoGroup.setXmlParam("x", integerToString(w/2-promoPic.getWidth()/2));
 	
 	if(w>416) showPromo=true;
 	else showPromo=false;

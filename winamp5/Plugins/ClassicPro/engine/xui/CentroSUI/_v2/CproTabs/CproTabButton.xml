@@ -1,10 +1,10 @@
 <elements>
-	<bitmap id="cpro.tab.icon.ple" file="@WINAMPPATH@\Plugins\classicPro\engine\image\cpro2tabs.png" x="0" y="0" w="14" h="11"/>
-	<bitmap id="cpro.tab.icon.vis" file="@WINAMPPATH@\Plugins\classicPro\engine\image\cpro2tabs.png" x="15" y="0" w="14" h="11"/>
-	<bitmap id="cpro.tab.icon.vid" file="@WINAMPPATH@\Plugins\classicPro\engine\image\cpro2tabs.png" x="30" y="0" w="14" h="11"/>
-	<bitmap id="cpro.tab.icon.lib" file="@WINAMPPATH@\Plugins\classicPro\engine\image\cpro2tabs.png" x="45" y="0" w="14" h="11"/>
-	<bitmap id="cpro.tab.icon.bro" file="@WINAMPPATH@\Plugins\classicPro\engine\image\cpro2tabs.png" x="60" y="0" w="14" h="11"/>
-	<bitmap id="cpro.tab.icon.plu" file="@WINAMPPATH@\Plugins\classicPro\engine\image\cpro2tabs.png" x="75" y="0" w="14" h="11"/>
+	<bitmap id="cpro.tab.icon.ple" file="tab_icons.png" x="0" y="0" w="14" h="11"/>
+	<bitmap id="cpro.tab.icon.vis" file="tab_icons.png" x="15" y="0" w="14" h="11"/>
+	<bitmap id="cpro.tab.icon.vid" file="tab_icons.png" x="30" y="0" w="14" h="11"/>
+	<bitmap id="cpro.tab.icon.lib" file="tab_icons.png" x="45" y="0" w="14" h="11"/>
+	<bitmap id="cpro.tab.icon.bro" file="tab_icons.png" x="60" y="0" w="14" h="11"/>
+	<bitmap id="cpro.tab.icon.plu" file="tab_icons.png" x="75" y="0" w="14" h="11"/>
 </elements>
 
 <groupdef id="cpro.tab" xuitag="Cpro:Tab" embed_xui="cpro.tab.button" h="25">

@@ -80,6 +80,7 @@ Global Browser xuiBrowser;
 Global Group tabbut_vid, tabbut_avs, tabbut_pl;
 Global Group tab_library, tab_video, tab_avs, tab_Browser, tab_Playlist, tab_Other, tab_Widget;
 Global GuiObject widgetHolder, drawerResize;
+Global int _powerSave1, _powerSave2, _powerSave3, _powerSave4;
 
 
 System.onScriptLoaded(){
@@ -801,22 +802,32 @@ xuiGroup.onAction (String action, String param, int x, int y, int p1, int p2, Gu
 
 //Main Frame code
 xuiGroup.onResize(int x, int y, int w, int h){
-	setDrawer(getPublicInt("cPro.draweropened", 0));
+	if(_powerSave4!=h){
+		setDrawer(getPublicInt("cPro.draweropened", 0));
+		_powerSave4=h;
+	}
 	
 	if(w<413){
-		ocFrame.hide();
-		tog_drawer.setXmlParam("x", "-24");
-		CproTabs.setXmlParam("w", "-27");
+		if(_powerSave2!=1){
+			ocFrame.hide();
+			tog_drawer.setXmlParam("x", "-24");
+			CproTabs.setXmlParam("w", "-27");
 
-		if(mainFrame.getPosition()!=0){
-			mainFrame.setPosition(0);
-			setPublicInt("cpro.mainframe.sysclose", 1);
+			if(mainFrame.getPosition()!=0){
+				mainFrame.setPosition(0);
+				setPublicInt("cpro.mainframe.sysclose", 1);
+			}
+			_powerSave2=1;
 		}
 	}
 	else{
-		tog_drawer.setXmlParam("x", "-48");
-		ocFrame.show();
-		CproTabs.setXmlParam("w", "-51");
+		if(_powerSave2!=2){
+			tog_drawer.setXmlParam("x", "-48");
+			ocFrame.show();
+			CproTabs.setXmlParam("w", "-51");
+
+			_powerSave2=2;
+		}
 	}
 	if(w>=413 && getPublicInt("cpro.mainframe.sysclose", 0)==1){
 		setMainFrame(true);
@@ -835,19 +846,23 @@ area_right.onResize(int x, int y, int w, int h){
 	stopResizeRight = true;
 
 	if(w<10){
-		area_right.hide();
+		if(_powerSave3!=1){
+			area_right.hide();
+			closeFrame.hide();
+			openFrame.show();
+			if(!mouseDownF1) mainFrame.setXmlParam("resizable", "0");
 
-		//Update window size toggle
-		closeFrame.hide();
-		openFrame.show();
-		if(!mouseDownF1) mainFrame.setXmlParam("resizable", "0");
+			_powerSave3=1;
+		}
 	}
 	else{
-		area_right.show();
+		if(_powerSave3!=2){
+			area_right.show();
+			closeFrame.show();
+			openFrame.hide();
 
-		//Update window size toggle
-		closeFrame.show();
-		openFrame.hide();
+			_powerSave3=2;
+		}
 	}
 	
 	if(w<158 && mainFrame.getPosition()!=0){
@@ -977,6 +992,7 @@ setDrawer(boolean onOff){
 		drawer.hide();
 		drawerResize.hide();
 		mainTabsheet.setXmlParam("h", "0");
+		_powerSave1=0;
 		open_drawer=false;
 		tog_drawer.setXmlParam("tooltip", "Open drawer");
 	}
@@ -1011,25 +1027,27 @@ drawerResize.onMouseMove(int x, int y){
 		if(t<-xuiGroup.getHeight()+120) t=-xuiGroup.getHeight()+120;
 		
 		if(getPublicInt("cPro.lastDrawer", 0)==0) return;
-		setDrawerSizeSave(t);
+		setDrawerSizeSave(t-t%10);
 	}
 }
 
 setDrawerSizeSave(int h){
+	//debugint(h);
+	if(_powerSave1!=h){
+		_powerSave1 = h;
+		//these changes will be saved
+		if(h>-119) h=-119;
+		setPublicInt("ClassicPro.drawer.h", h);
+		
 
-	//these changes will be saved
-	if(h>-119) h=-119;
-	setPublicInt("ClassicPro.drawer.h", h);
-	
+		//these changes will not be saved
+		if(getPublicInt("cPro.lastDrawer", 0)==0) h=-119;
 
-	//these changes will not be saved
-	if(getPublicInt("cPro.lastDrawer", 0)==0) h=-119;
-	//if(getPublicInt("cPro.lastDrawer", 0)==0)  h= xuiGroup.getHeight()-xuiGroup.getTop();
-
-	mainTabsheet.setXmlParam("h", integerToString(h-4));
-	drawer.setXmlParam("y", integerToString(h));
-	drawer.setXmlParam("h", integerToString(-h));
-	drawerResize.setXmlParam("y", integerToString(h-4));
+		mainTabsheet.setXmlParam("h", integerToString(h-4));
+		drawer.setXmlParam("y", integerToString(h));
+		drawer.setXmlParam("h", integerToString(-h));
+		drawerResize.setXmlParam("y", integerToString(h-4));
+	}
 }
 
 area_mini.onAction (String action, String param, Int x, int y, int p1, int p2, GuiObject source)

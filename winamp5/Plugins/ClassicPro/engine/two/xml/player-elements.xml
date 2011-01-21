@@ -325,4 +325,26 @@
 	<!-- SLoB - added beatvis overlay - optional -->
 	<bitmap id="beatvis.overlay" file="vis_overlay.png" gammagroup="n.Background.Overlay"/>
 
+	<!-- Frame windows -->
+	<bitmap id="wasabi.framewnd.verticaldivider" file="newsui.png" x="149" y="38" h="20" w="8" gammagroup="n.SuiFrame"/>
+	<bitmap id="wasabi.framewnd.verticalgrabber" file="newsui.png" x="140" y="20" h="40" w="8" gammagroup="n.SuiFrame"/>
+	<bitmap id="wasabi.framewnd.horizontaldivider" file="newsui.png" x="149" y="20" h="8" w="20" gammagroup="n.SuiFrame"/>
+	<bitmap id="wasabi.framewnd.horizontalgrabber" file="newsui.png" x="149" y="29" h="8" w="40" gammagroup="n.SuiFrame"/>
+
+	<!-- Layer: PlayStopPause -->
+	<bitmap id="cpro.status.playing" file="info.png" x="247" y="0" w="20" h="20" gammagroup="n.Text.SongInfo"/>
+	<bitmap id="cpro.status.paused" file="info.png" x="247" y="21" w="20" h="20" gammagroup="n.Text.SongInfo"/>
+	<bitmap id="cpro.status.stopped" file="info.png" x="247" y="42" w="20" h="20" gammagroup="n.Text.SongInfo"/>
+
+	<!-- Layer: MonoStereo -->
+	<bitmap id="channels.1" file="info.png" x="247" y="63" w="20" h="20" gammagroup="n.Text.SongInfo"/>
+	<bitmap id="channels.2" file="info.png" x="247" y="84" w="20" h="20" gammagroup="n.Text.SongInfo"/>
+	<bitmap id="channels.s" file="info.png" x="247" y="105" w="20" h="20" gammagroup="n.Text.SongInfo"/>
+
+	<bitmap id="vis.overlay1" file="playback.png" x="240" y="6" w="71" h="17" gammagroup="n.Background.Bottom"/>
+	<bitmap id="vis.overlay2" file="playback.png" x="240" y="37" w="71" h="17" gammagroup="n.Background.Bottom"/>
+	<bitmap id="vis.overlay3" file="playback.png" x="240" y="68" w="35" h="17" gammagroup="n.Background.Bottom"/>
+	<bitmap id="vis.region" file="@WINAMPPATH@\Plugins\classicPro\engine\two\images\vis-overlay.png"/>
+
+
 </elements>

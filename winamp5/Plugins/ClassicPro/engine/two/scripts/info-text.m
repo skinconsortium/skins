@@ -1,4 +1,6 @@
 #include <lib/std.mi>
+#include <lib/pldir.mi>
+#define fadeTime 0.3
 
 Function int getChannels (); // returning 1 for mono, 2 for stereo, more for multichannel (e.g. 6), -1 for no info available
 Function String getBitrate();
@@ -6,62 +8,49 @@ Function String getFrequency();
 Function updateInfo();
 Function int getNumOfSeps();
 
-Global Group g, g_seeker, g_texttime, g_seekertext; //, g_textother
+
+Global Group g, g_seeker, g_texttime, g_seekertext, g_textInfo;
 Global Text t_trackTime, t_totalTime, t_timeEvent;
 Global Text t_nameTop, t_nameBottom;
-Global Text t_info1;
+Global Text t_info1, t_news;
 //Global Text t_kbps, t_size, t_hz;
 Global Timer waitForReturn, recheck;
 Global int i_info;
 Global Guiobject t_songticker;
-Global Boolean twoline;
+Global PlEdit PeListener;
+
+Function showNews(boolean show);
+Function updateNews(String showThis);
+Function cancelStuff();
+Global Boolean isShort, busyWithSeek, cancelNext;
+Global Timer fade, goBack;
+Global Container mainContainer;
+Global Layout mainLayout;
+Global Slider sl_volume, sl_seeker;
+Global Button prev, next, open;
+Global Togglebutton shufBut, repBut;
 
 System.onScriptLoaded() {
 	g = getScriptGroup();
-	
-	
-	
-	//g_textother = g.getObject("two.info.text.other");
-	//t_kbps = g_textother.getObject("two.info.text.other.kbps");
-	//t_size = g_textother.getObject("two.info.text.other.size");
-	//t_hz = g_textother.getObject("two.info.text.other.hz");
-	
+
 	g_seeker = g.getObject("two.info.seeker");
 	g_seekertext = g_seeker.getObject("two.info.seeker.text");
 	t_nameTop = g_seekertext.getObject("two.info.text.title");
 	t_nameBottom = g_seekertext.getObject("two.info.text.artist");
-	t_info1 = g_seekertext.getObject("two.info.text.info.1");
-	//t_songticker = g_seekertext.getObject("two.info.text.songticker");
+	
+	t_news = g_seekertext.getObject("two.info.text.news");
+	g_textInfo = g_seekertext.getObject("two.info.text.info");
+	t_info1 = g_textInfo.getObject("two.info.text.info.1");
 
 	g_texttime = g_seekertext.getObject("two.info.text.time");
 	t_trackTime = g_texttime.getObject("two.info.text.tracktime");
 	t_totalTime = g_texttime.getObject("two.info.text.totaltime");
 	t_timeEvent = g_texttime.getObject("two.info.text.trackevent");
 	
+	PeListener = new PlEdit;
+	
 	if(t_totalTime==NULL) debug("ble");
 
-
-	twoline=true;
-	/*Map m = new Map;
-	m.loadMap("info.bg.seeker.0");
-	i_info = m.getHeight();
-	delete m;
-	if(i_info>30){
-		t_nameTop.setXMLParam("fontsize", integerToString(i_info/2));
-		t_nameBottom.setXMLParam("fontsize", integerToString(i_info/2.5));
-		t_trackTime.setXMLParam("fontsize", integerToString(i_info/1.8));
-		t_totalTime.setXMLParam("fontsize", integerToString(i_info/2.5));
-		t_nameTop.show();
-		t_nameBottom.show();
-		t_totalTime.show();
-		twoline=true;
-	}
-	else{
-		t_songticker.setXMLParam("fontsize", integerToString(i_info/1.4));
-		t_trackTime.setXMLParam("fontsize", integerToString(i_info/1.2));
-		t_trackTime.setXMLParam("h", "100");
-		t_songticker.show();
-	}*/
 	recheck = new Timer;
 	recheck.setDelay(2000);
 	
@@ -69,9 +58,29 @@ System.onScriptLoaded() {
 	waitForReturn.setDelay(100);
 	updateInfo();
 	
-	//if(System.getStatus() != STATUS_STOPPED) g_textother.show();
+	if(System.getStatus() != STATUS_STOPPED) t_info1.show();
+	
+	fade = new Timer;
+	fade.setDelay(300);
+	goBack = new Timer;
+	mainContainer = getContainer("main");
+	mainLayout = mainContainer.getLayout("normal");
+
+
 	
 	//debugint(stringToInteger("Phil Collins"));
+}
+
+System.onShowLayout(Layout _layout){
+	if(mainLayout==_layout){
+		sl_seeker = mainLayout.findObject("two.info.seeker.slider.1");
+		sl_volume = mainLayout.findObject("two.playback.volslider");
+		prev = mainLayout.findObject("two.playback.prev");
+		next = mainLayout.findObject("two.playback.next");
+		open = mainLayout.findObject("two.playback.eject");
+		shufBut = mainLayout.findObject("two.playback.shuf");
+		repBut = mainLayout.findObject("two.playback.rep");
+	}
 }
 
 System.onscriptunloading(){
@@ -80,16 +89,31 @@ System.onscriptunloading(){
 }
 
 t_timeEvent.onTextChanged(String newtxt){
-	t_trackTime.setText(newtxt);
-	t_totalTime.setText("/ "+System.integerToTime(System.getPlayItemLength()));
-	t_totalTime.setXmlParam("x", integerToString(t_trackTime.getTextWidth()-4));
+
+	if(System.getPlayItemLength()<0){
+		t_trackTime.hide();
+		t_totalTime.setText(PlEdit.getLength(PlEdit.getCurrentIndex()));
+		//t_totalTime.setText(System.integerToTime(System.getPlayItemLength()));
+		
+		//System.getPlayItemString()
+		
+		//PlEdit.getLength (PlEdit.getCurrentIndex());
+	}
+	else{
+		t_trackTime.show();
+		t_trackTime.setText(newtxt);
+		t_totalTime.setText("/ "+System.integerToTime(System.getPlayItemLength()));
+	}
+
+	t_totalTime.setXmlParam("x", integerToString(t_trackTime.getTextWidth()-4+21));
 	t_totalTime.setXmlParam("w", integerToString(t_totalTime.getTextWidth()));
 	t_trackTime.setXmlParam("w", integerToString(t_trackTime.getTextWidth()));
 	
-	g_texttime.setXmlParam("x", integerToString(-(t_trackTime.getWidth()+t_totalTime.getWidth()-5)));
-	g_texttime.setXmlParam("w", integerToString(t_trackTime.getWidth()+t_totalTime.getWidth()-5));
+	g_texttime.setXmlParam("x", integerToString(-(t_trackTime.getWidth()*t_trackTime.isVisible()+t_totalTime.getWidth()-4+21)));
+	g_texttime.setXmlParam("w", integerToString(t_trackTime.getWidth()*t_trackTime.isVisible()+t_totalTime.getWidth()-5+21));
 	
 	t_nameTop.setXmlParam("w", integerToString(-g_texttime.getWidth()-3));
+
 	//t_totalTime.setText(System.integerToTime(System.getPlayItemLength()));
 }
 
@@ -100,19 +124,31 @@ System.onTitleChange(String newtitle){
 }
 
 
+///
+/*open.onLeftClick(){
+	updateNews("Open file(s)");
+}*/
+
+///
 System.onStop(){
 	recheck.stop();
+	t_info1.hide();
+	updateNews("Playback Stopped");
 	//g_textother.hide();
 }
 System.onPlay(){
 	recheck.start();
+	t_info1.show();
+	updateNews("Playing");
 	//g_textother.show();
 }
 System.onPause(){
 	recheck.stop();
+	updateNews("Playback Paused");
 }
 System.onResume(){
 	recheck.start();
+	updateNews("Resuming Playback");
 }
 recheck.onTimer(){
 	updateInfo();
@@ -147,6 +183,8 @@ updateInfo(){
 			else bottom = "Unknown Artist";
 		}
 	}
+	
+	t_timeEvent.onTextChanged(t_timeEvent.getText());
 
 	t_nameTop.setText(top);
 	t_nameBottom.setText(bottom);
@@ -174,7 +212,11 @@ updateInfo(){
 	s_info += getFrequency() + "kHz";
 	t_info1.setText(s_info);
 	
-	t_nameBottom.setXmlParam("w", integerToString(-t_info1.getTextWidth()+2));
+	g_textInfo.setXmlParam("x", integerToString(-(t_info1.getTextWidth()+18)));
+	g_textInfo.setXmlParam("w", integerToString((t_info1.getTextWidth()+18)));
+	t_nameBottom.setXmlParam("w", integerToString(-t_info1.getTextWidth()-20));
+	
+
 
 	
 	//Refresh if NA
@@ -259,4 +301,120 @@ String getFrequency(){
 	{
 		return "";
 	}
+}
+
+
+
+
+
+
+//NEWS Stuff
+//	g_textInfo;t_news
+
+showNews(boolean show){
+	t_news.setTargetX(stringToInteger(t_news.getXmlParam("x")));
+	t_news.setTargetW(stringToInteger(t_news.getXmlParam("w")));
+	if(show){
+		if(isShort){
+			goBack.setDelay(200);
+			isShort=false;
+		}
+		else{
+			goBack.setDelay(1000);
+		}
+		
+		if(!busyWithSeek) goBack.start();
+		
+		g_textInfo.setAlpha(0);
+		g_textInfo.hide();
+		t_news.setAlpha(255);
+		t_news.show();
+	}
+	else{
+		t_news.show();
+		t_news.setTargetA(0);
+		t_news.setTargetSpeed(fadeTime);
+		t_news.gotoTarget();
+		fade.start();
+	}
+}
+
+fade.onTimer(){ //fade to songticker
+	g_textInfo.show();
+	g_textInfo.setAlpha(0);
+	g_textInfo.setTargetA(255);
+	g_textInfo.setTargetX(stringToInteger(g_textInfo.getXmlParam("x")));
+	g_textInfo.setTargetW(stringToInteger(g_textInfo.getXmlParam("w")));
+	g_textInfo.setTargetSpeed(fadeTime);
+	g_textInfo.gotoTarget();
+	t_news.hide();
+	fade.stop();
+}
+
+updateNews(String showThis){
+	if(mainLayout!=mainContainer.getCurLayout()) return;
+	cancelStuff();
+
+	//do stuff
+	t_news.setText(showThis);
+	t_news.setXmlParam("x", integerToString(-(t_news.getTextWidth()+4)));
+	t_news.setXmlParam("w", integerToString((t_news.getTextWidth())));
+	showNews(true);
+}
+
+cancelStuff(){
+	//cancel stuff
+	fade.stop();
+	goBack.stop();
+	g_textInfo.cancelTarget();
+	t_news.cancelTarget();
+}
+
+System.onVolumeChanged(int newvol){
+	if(cancelNext){
+		cancelNext=false;
+	}
+	else updateNews(System.translate("Volume") +": "+integerToString(newvol/255*100)+"%");
+}
+
+goBack.onTimer(){
+	showNews(false);
+	goBack.stop();
+}
+
+sl_seeker.onSetPosition(int newpos){
+	updateNews(System.translate("Seek") +": "+integerToTime(newpos/255*getPlayItemLength()) + "/" + integerToTime(getPlayItemLength()) +" ("+ integerToString(newpos/255*100)+"%)");
+}
+
+prev.onLeftClick(){
+	isShort=true;
+	updateNews("Previous Track");
+}
+next.onLeftClick(){
+	isShort=true;
+	updateNews("Next Track");
+}
+
+
+
+
+//This will check to see if mouse is still down... aka user busy with seek. If this isnt done, it will start flashing
+
+sl_volume.onLeftButtonUp(int x, int y){
+	busyWithSeek=false;
+	int newpos = System.getVolume();
+	updateNews(System.translate("Volume") +": "+integerToString(newpos/255*100)+"%");
+}
+sl_volume.onLeftButtonDown(int x, int y){
+	busyWithSeek=true;
+}
+
+sl_seeker.onLeftButtonUp(int x, int y){
+	busyWithSeek=false;
+	isShort=true;
+	int newpos = sl_seeker.getPosition();
+	updateNews(System.translate("Seek") +": "+integerToTime(newpos/255*getPlayItemLength()) + "/" + integerToTime(getPlayItemLength()) +" ("+ integerToString(newpos/255*100)+"%)");
+}
+sl_seeker.onLeftButtonDown(int x, int y){
+	busyWithSeek=true;
 }

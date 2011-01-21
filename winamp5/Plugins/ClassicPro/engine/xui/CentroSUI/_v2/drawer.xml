@@ -292,13 +292,13 @@
 </groupdef>
 
 <groupdef id="info.component.infodisplay.holder">
-	<group id="info.component.infodisplay" x="130" y="4" w="-132" h="96" relatw="1"/>
+	<group id="info.component.infodisplay" x="130" y="4" w="100" h="96" relatw="2"/>
 </groupdef>
 
 <groupdef id="drawer.tagviewer" name="File Info">
 	<grid x="-100" y="-19" w="100" relaty="1" relatx="1" topleft="sui.status.fade" top="sui.status"/>
 
-	<Wasabi:AlbumArt id="tagviewer.cover" x="6" y="4" w="111" h="111" move="1"/>
+	<Wasabi:AlbumArt id="tagviewer.cover" x="1" y="2" w="111" h="111" move="1"/>
 	<group id="info.component.infodisplay.holder" x="0" y="0" w="0" h="-20" relatw="1" relath="1"/>
 	<button id="tagviewmenu" x="-64" y="-18" relatx="1" relaty="1"
 		image="cpro2.gen.menu.1"
@@ -312,5 +312,5 @@
 
 <groupdef id="drawer.savedpl" name="Stored Playlists">
 	<layer x="0" y="-19" w="0" relaty="1" relatw="1" image="sui.status"/>
-	<PlaylistDirectory x="2" y="2" w="-4" h="-21" relatw="1" relath="1" antialias="0"/>
+	<PlaylistDirectory x="0" y="0" w="0" h="-19" relatw="1" relath="1" antialias="1"/>
 </groupdef>

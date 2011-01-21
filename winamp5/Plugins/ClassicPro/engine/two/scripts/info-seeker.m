@@ -90,12 +90,17 @@ setSeekerPos(){
 
 
 s_seeker1.onEnterArea(){
-	l_seekerActive.hide();
-	l_seekerHover.show();
+	l_seekerHover.cancelTarget();
+	l_seekerHover.setTargetA(255);
+	l_seekerHover.setTargetSpeed(0.2);
+	l_seekerHover.gotoTarget();
+
 }
 s_seeker1.onLeaveArea(){
-	l_seekerHover.hide();
-	l_seekerActive.show();
+	l_seekerHover.cancelTarget();
+	l_seekerHover.setTargetA(0);
+	l_seekerHover.setTargetSpeed(0.8);
+	l_seekerHover.gotoTarget();
 }
 
 System.onStop(){

@@ -838,12 +838,15 @@ alignByResize ()
 }*/
 
 updateTabCount(){
-	Tab t = firstTab;
+	
+	/*Tab t = firstTab;
 	tabCount = 0;
 	while (t != NULL)	{
 		tabCount++;
 		t = t.right;
-	}
+	}*/
+	
+	tabCount = 5;
 }
 
 alignByResize ()
