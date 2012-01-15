@@ -7,6 +7,9 @@
 		<sourceitem name="Google Search (Song)" comment="Search with Google for this song." url="http://www.google.com/search?client=classicpro%AND%hl=en%AND%q=%ARTIST% %TITLE%" icon="icon.google"/>
 		<sourceitem name="Last.fm (Artist)" comment="See more information about your artist." url="http://www.last.fm/music/%ARTIST%" icon="icon.lastfm"/>
 		<sourceitem name="Lyrics" comment="Shows the lyrics for the current playing song. Very big database." url="http://www.lyricsplugin.com/winamp03/plugin/?artist=%ARTIST%%AND%title=%TITLE%" icon="icon.lyricplugin"/>
+
+		<sourceitem name="Lyrics23" comment="Shows the lyrics for the current playing song. Very big database." url="http://www.lyricsplugin.com/plugin/0.4/winamp/plugin.php?artist=%ARTIST%%AND%title=%TITLE%" icon="icon.lyricplugin"/>
+
 		<sourceitem name="Metalstorm (Album)" comment="Search www.metalstorm.ee for this album." url="http://www.metalstorm.ee/home/search.php?search_what=%ALBUM%%AND%search_where=album" icon="icon.metalstorm"/>
 		<sourceitem name="Metalstorm (Artist)" comment="Search www.metalstorm.ee for this artist." url="http://www.metalstorm.ee/home/search.php?search_what=%ARTIST%%AND%search_where=band2" icon="icon.metalstorm"/>
 		<sourceitem name="RateYourMusic (Artist)" comment="Search RateYourMusic for this artist." url="http://rateyourmusic.com/search?searchterm=%ARTIST%%AND%searchtype=a" icon="icon.rateyourmusic"/>
