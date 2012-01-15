@@ -2,7 +2,7 @@
 
 <WinampAbstractionLayer version="1.34">
 	<skininfo>
-		<version>0.004</version>
+		<version>0.007</version>
 		<name>CproTwo</name>
 		<author>Pieter Nieuwoudt, Martin Pöhlmann</author>
 		<comment>Work in progress</comment>
@@ -24,7 +24,7 @@
 	</accelerators>
 	
 	<include file="colorthemes.xml"/>
-	<scripts> <script file="warning_1.14.maki" param="@COLORTHEMESPATH@"/> </scripts>
+	<!--<scripts> <script file="warning_1.14.maki" param="@COLORTHEMESPATH@"/> </scripts>-->
 	<include file="colors.xml"/>
 	<include file="@COLORTHEMESPATH@/../../Plugins/classicPro/engine/load-two.xml"/>
 
