@@ -75,7 +75,7 @@ resize9.onMouseMove(int x, int y){
 
 saveResize(int x, int y, int w, int h){
 	if(docked) return;
-	if(getPublicInt("cPro.maximized", 0)==1) return;
+	if(getPublicInt("cPro2.fs", 0)==1) return;
 	
 	if(w<240) w=240;
 	if(h<i_titlebar+i_info+30+8+40) h=i_titlebar+i_info+30+8;
