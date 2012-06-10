@@ -12,16 +12,16 @@ Global Timer t_light;
 
 System.onScriptLoaded() {
 	g = getScriptGroup();
-	s_seeker0 = g.getObject("two.info.seeker.slider.0");
-	s_seeker1 = g.getObject("two.info.seeker.slider.1");
+	s_seeker0 = g.getObject("shade.seeker.slider.0");
+	s_seeker1 = g.getObject("shade.seeker.slider.1");
 
-	g_seekerFinder = g.getObject("two.info.seeker.finder");
-	l_seekerFinder = g_seekerFinder.getObject("two.info.seeker.finder.layer");
+	g_seekerFinder = g.getObject("shade.seeker.finder");
+	l_seekerFinder = g_seekerFinder.getObject("shade.seeker.finder.layer");
 
-	g_seekerActive = g.getObject("two.info.seeker.active");
-	l_light = g_seekerActive.getObject("two.info.seeker.active.light");
-	l_seekerActive = g_seekerActive.getObject("two.info.seeker.active.layer");
-	l_seekerHover = g_seekerActive.getObject("two.info.seeker.hover.layer");
+	g_seekerActive = g.getObject("shade.seeker.active");
+	l_light = g_seekerActive.getObject("shade.seeker.active.light");
+	l_seekerActive = g_seekerActive.getObject("shade.seeker.active.layer");
+	l_seekerHover = g_seekerActive.getObject("shade.seeker.hover.layer");
 
 	//g_seekerInactive = g.getObject("two.info.seeker.inactive");
 	//l_seekerInactive = g_seekerInactive.getObject("two.info.seeker.inactive.layer");

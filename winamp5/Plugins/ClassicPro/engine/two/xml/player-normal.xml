@@ -78,6 +78,7 @@
 	<slider id="two.info.seeker.slider.1" x="0" y="0" w="0" h="0" relatw="1" relath="1" action="SEEK" thumb="info.seeker.thumb" cursor="IDC_HAND"/>
 	<group id="two.info.seeker.text" x="0" y="0" w="0" h="40" relatw="1" alpha="200"/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\info-seeker.maki"/>
+	<script file="@WINAMPPATH@\Plugins\classicPro\engine\scripts\sc_liveSeeker.maki" param="two.info.seeker.slider.1"/>
 </groupdef>
 <groupdef id="two.info.text.other">
 	<text id="two.info.text.other.kbps" x="0" y="3" w="52" h="12" align="center" valign="center" text="" fontsize="14" color="black" font="Calibri"/>
@@ -134,8 +135,10 @@
 	<layer id="two.playback.volslider.bar.1" x="0" y="0" w="0" h="30" relatw="2" image="playback.vol.large.1" tile="1"/>
 	<layer id="two.playback.volslider.bar.2" x="0" y="0" w="0" h="30" relatw="2" image="playback.vol.large.2" tile="1" alpha="0"/>
 	<slider id="two.playback.volslider" x="0" y="0" w="0" h="30" relatw="1" action="VOLUME" thumb="playback.volume.big.1" hoverthumb="playback.volume.big.2" downthumb="playback.volume.big.3" cursor="IDC_HAND"/>
+
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\sc_sliderbar.maki" param="two.playback.volslider;two.playback.volslider.bar.;100"/>
 </groupdef>
+
 <groupdef id="two.playback.volume" w="113">
 	<layer id="two.playback.right" x="0" y="0" w="0" h="30" relatw="1"/>
 	
@@ -169,7 +172,7 @@
 	<layer id="play.fade" x="95" y="0" image="playback.button.play.2" ghost="1" alpha="0"/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\buttonfade.maki" param="two.playback.play;play.fade"/>
 
-	<button id="two.playback.paus" x="95" y="0" action="PAUSE" image="playback.button.paus.1" hoverimage="playback.button.paus.2" downimage="playback.button.paus.3"/>
+	<button id="two.playback.paus" x="95" y="0" action="PAUSE" image="playback.button.paus.1" downimage="playback.button.paus.3"/>
 	<layer id="paus.fade" x="95" y="0" image="playback.button.paus.2" ghost="1" alpha="0"/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\buttonfade.maki" param="two.playback.paus;paus.fade"/>
 
@@ -178,11 +181,11 @@
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\buttonfade.maki" param="two.playback.next;next.fade"/>
 
 
-	<button id="two.playback.stop" x="161" y="0" action="STOP" image="playback.button.stop.1" hoverimage="playback.button.stop.2" downimage="playback.button.stop.3"/>
+	<button id="two.playback.stop" x="161" y="0" action="STOP" image="playback.button.stop.1" downimage="playback.button.stop.3"/>
 	<layer id="stop.fade" x="161" y="0" image="playback.button.stop.2" ghost="1" alpha="0"/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\buttonfade.maki" param="two.playback.stop;stop.fade"/>
 
-	<button id="two.playback.eject" x="191" y="0" action="EJECT" image="playback.button.open.1" hoverimage="playback.button.open.2" downimage="playback.button.open.3"/>
+	<button id="two.playback.eject" x="191" y="0" action="EJECT" image="playback.button.open.1" downimage="playback.button.open.3"/>
 	<layer id="eject.fade" x="191" y="0" image="playback.button.open.2" ghost="1" alpha="0"/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\buttonfade.maki" param="two.playback.eject;eject.fade"/>
 
