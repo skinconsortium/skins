@@ -140,11 +140,7 @@
 	<bitmap id="wasabi.button.label.arrow.down" file="browser.png" x="145" y="42" h="6" w="7" gammagroup="n.Button"/>
 	<bitmap id="vis.color.read" file="mainframe.png" x="28" y="101" w="3" h="18" gammagroup="_"/>
 	<bitmap id="vis.band" file="mainframe.png" x="28" y="103" w="1" h="16" gammagroup="_"/>
-	<bitmap id="vis.region" file="@WINAMPPATH@\Plugins\classicPro\engine\image\vis-overlay.png"/>
 
-	<bitmap id="vis.overlay1" file="mainframe.png" x="20" y="75" w="108" h="16" gammagroup="n.Background.Bottom"/>
-	<bitmap id="vis.overlay2" file="mainframe_overlay.png" x="20" y="75" w="108" h="16" gammagroup="n.Background.Overlay"/>
-	
 	<bitmap id="tabpreview" file="@WINAMPPATH@\Plugins\classicPro\engine\xui\CentroSUI\tabpreview.png" gammagroup="_"/>
 	
 	<!-- Text: SongInfo -->

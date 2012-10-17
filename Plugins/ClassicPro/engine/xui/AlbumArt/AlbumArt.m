@@ -48,9 +48,26 @@ albumart.onRightButtonUp(int x, int y){
 }
 
 albumart.onLeftButtonDblClk (int x, int y){
+	albumart.setTargetA(150);
+	albumart.setTargetSpeed(0.2);
+	albumart.gotoTarget();
 	//System.navigateUrl(getMyPath());
 	ClassicProFile.exploreFile(getMyFile());
 	//ClassicProFile.exploreFile("D:\# Music\Triphop nu jazz\Saint Germain - Des-Prés Café, Vol. 6\08-Horne Singers-Flat Foot.wma");
+
+	/*
+	test
+	System.downloadMedia("http://www.albumartexchange.com/gallery/images/public/me/melody-melody_05.jpg", "D:\ ", 0, 0);	
+	System.downloadURL("http://www.albumartexchange.com/gallery/images/public/me/melody-melody_05.jpg", "D:\cover.jpg", "Laai af");
+*/
+}
+
+albumart.onTargetReached(){
+	if(albumart.getAlpha()!=255){
+		albumart.setTargetA(255);
+		albumart.setTargetSpeed(0.6);
+		albumart.gotoTarget();
+	}
 }
 
 System.onTitleChange (String newtitle){

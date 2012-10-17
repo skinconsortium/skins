@@ -128,8 +128,10 @@
 
 
 
-	<button x="83" y="0" image="playback.button.bolt.1" hoverimage="playback.button.bolt.2" downimage="playback.button.bolt.3"/>
-	
+	<button id="aboutwinamp.hidden" x="0" y="0" w="0" h="0" relatx="1" relaty="1" action="TOGGLE" param="guid:{D6201408-476A-4308-BF1B-7BACA1124B12}"/>
+	<button id="two.playback.bolt" x="83" y="0" image="playback.button.bolt.1" hoverimage="playback.button.bolt.2" downimage="playback.button.bolt.3"/>
+	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\multibutton.maki" param="two.playback.bolt;aboutwinamp.hidden;xx"/>
+
 </groupdef>
 <groupdef id="two.playback.volume.slider">
 	<layer id="two.playback.volslider.bar.1" x="0" y="0" w="0" h="30" relatw="2" image="playback.vol.large.1" tile="1"/>
@@ -188,7 +190,8 @@
 	<button id="two.playback.eject" x="191" y="0" action="EJECT" image="playback.button.open.1" downimage="playback.button.open.3"/>
 	<layer id="eject.fade" x="191" y="0" image="playback.button.open.2" ghost="1" alpha="0"/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\buttonfade.maki" param="two.playback.eject;eject.fade"/>
-
+	<script file="@WINAMPPATH@\Plugins\classicPro\engine\scripts\extendedbuttons.maki" param="two.playback.eject"/>
+	
 	<group id="two.playback.ejectvol" x="191" y="0" visible="0"/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\extendedbuttons.maki"/>
 </groupdef>
@@ -213,7 +216,10 @@
 </groupdef>
 
 <groupdef id="two.frame.buttons">
-	<button x="8" image="frame.1menu.1" hoverimage="frame.1menu.2" downimage="frame.1menu.3" action="SYSMENU"/>
+	<button id="two.sysmenu.fake" x="8" y="-8" relaty="1" h="1" action="SYSMENU"/>
+	<button id="two.sysmenu" x="8" image="frame.1menu.1" hoverimage="frame.1menu.2" downimage="frame.1menu.3" tooltip="Main Menu"/>
+	<layer id="two.sysmenu.fade" x="8" image="frame.1menu.2" ghost="1" alpha="0"/>
+	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\buttonfade.maki" param="two.sysmenu;two.sysmenu.fade"/>
 
 	<NStatesButton id="player.aot" x="-133" relatx="1" image="frame.button.aot.1." hoverimage="frame.button.aot.2." downimage="frame.button.aot.3." rectrgn="1" cfgattrib="{280876CF-48C0-40BC-8E86-73CE6BB462E5};Always on top" nstates="2" tooltip="Toggle Always on top" cfgvals="0;1"/>
 
@@ -223,15 +229,25 @@
 	<button x="-33" relatx="1" image="frame.button.close.1" hoverimage="frame.button.close.2" downimage="frame.button.close.3" action="CLOSE"/>
 </groupdef>
 <groupdef id="two.frame.buttons.fs">
+	<button id="two.sysmenu.fs.fake" x="0" y="-8" relaty="1" h="1" action="SYSMENU"/>
+	<button id="two.sysmenu.fs" x="0" image="frame.menu.fs.1" hoverimage="frame.menu.fs.2" downimage="frame.menu.fs.3" tooltip="Main Menu"/>
+	<layer id="two.sysmenu.fs.fade" x="0" image="frame.menu.fs.2" ghost="1" alpha="0"/>
+	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\buttonfade.maki" param="two.sysmenu.fs;two.sysmenu.fs.fade"/>
+
+	<NStatesButton id="player.aot" x="-127" relatx="1" image="frame.button.aot.fs.1." hoverimage="frame.button.aot.fs.2." downimage="frame.button.aot.fs.3." rectrgn="1" cfgattrib="{280876CF-48C0-40BC-8E86-73CE6BB462E5};Always on top" nstates="2" tooltip="Toggle Always on top" cfgvals="0;1"/>
 	<button x="-102" relatx="1" image="frame.button.min.fs.1" hoverimage="frame.button.min.fs.2" downimage="frame.button.min.fs.3" action="MINIMIZE"/>
 	<button id="two.frame.goSmall" x="-77" relatx="1" image="frame.button.gobig.fs.1" hoverimage="frame.button.gobig.fs.2" downimage="frame.button.gobig.fs.3"/>
-	<button x="-27" relatx="1" image="frame.button.close.fs.1" hoverimage="frame.button.close.fs.2" downimage="frame.button.close.fs.3" action="CLOSE"/>
+	<button x="-52" relatx="1" action="SWITCH" param="shade" image="frame.button.shade.fs.1" hoverImage="frame.button.shade.fs.2" downImage="frame.button.shade.fs.3" rectrgn="1" tooltip="Windowshade Mode"/>
+	<button id="two.fs.close" x="-27" relatx="1" image="frame.button.close.fs.1" hoverimage="frame.button.close.fs.2" downimage="frame.button.close.fs.3" action="CLOSE"/>
 </groupdef>
 
 <layout id="normal" minimum_h="200" minimum_w="240" h="600" w="800" appbar="top|bottom|left|right">
 
 	<!-- 
 	:: Frame layers ::
+	
+	
+	 resize="left"
 	-->
 	<layer id="two.frame.1" x="0" y="0" image="frame.topleft" regionop="1"/>
 	<layer id="two.frame.2" x="105" y="0" w="-240" relatw="1" image="frame.top" regionop="1"/>
@@ -242,7 +258,7 @@
 
 	
 	<!-- These layers will have their y & h set by layout.maki -->
-	<layer id="two.frame.4" x="0" relath="1" image="frame.left" regionop="1" resize="left"/>
+	<layer id="two.frame.4" x="0" relath="1" image="frame.left" regionop="1"/>
 	<layer id="two.frame.5" x="8" w="-16" relatw="1" relath="1" image="frame.center" regionop="1"/>
 	<layer id="two.frame.6" x="-8" relatx="1" relath="1" image="frame.right" regionop="1" move="0"/>
 
@@ -260,9 +276,14 @@
 
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\layout.maki"/>
 
+	<layer id="resizer.1" x="0" y="0" w="8" h="8" cursor="IDC_SIZENWSE" move="0"/>
+	<layer id="resizer.2" x="8" y="0" w="-16" h="5" relatw="1" cursor="IDC_SIZENS" move="0"/>
+	<layer id="resizer.4" x="0" y="8" w="8" h="-16" relath="1" cursor="IDC_SIZEWE" move="0"/>
 	<layer id="resizer.6" x="-8" y="8" w="8" h="-16" relatx="1" relath="1" cursor="IDC_SIZEWE" move="0"/>
 	<layer id="resizer.8" x="8" y="-8" w="-16" h="8" relaty="1" relatw="1" cursor="IDC_SIZENS" move="0"/>
 	<layer id="resizer.9" x="-8" y="-8" w="8" h="8" relatx="1" relaty="1" cursor="IDC_SIZENWSE" move="0"/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\layout-resizer.maki"/>
+
+	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\player.maki"/>
 
 </layout>

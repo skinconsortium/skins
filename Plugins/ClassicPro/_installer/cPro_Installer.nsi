@@ -484,15 +484,18 @@ SectionEnd
 Section "$(CPro_CProFiles)" "CPro_Sec_CProFiles"
 
 	SectionIn 1 2 RO
+	
 ; Main directory	
 	SetOutPath $INSTDIR\Plugins\ClassicPro
 		File "..\*.txt"
-; CPro engine		
+		File "..\*.rtf"
+; CPro engines		
 	SetOutPath $INSTDIR\Plugins\ClassicPro\engine
 		File "..\engine\*.xml"
 ; CPro engine	 - Image		
 	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\image
 		File "..\engine\image\*.png"
+		
 ; CPro engine	 - cPro::One
 	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\one\scripts
 		File "..\engine\one\scripts\*.m"
@@ -502,39 +505,23 @@ Section "$(CPro_CProFiles)" "CPro_Sec_CProFiles"
 	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\one\xml
 		File "..\engine\one\xml\*.xml"
 
-!if ${CPRO_BUILD_TYPE} == "NIGHTLY"
+
+; CPro engine	 - cPro::Two
 	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\two\scripts
 		File "..\engine\two\scripts\*.m"
 		File "..\engine\two\scripts\*.maki"
+	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\two\scripts\attribs
+		File "..\engine\two\scripts\attribs\*.m"
 	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\two\xml
 		File "..\engine\two\xml\*.xml"
 	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\two\images
 		File "..\engine\two\images\*.png"
 
 
-	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\CentroSUI\_v2
-		File "..\engine\xui\CentroSUI\_v2\*.xml"
-	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\CentroSUI\_v2\CproTabs
-		File "..\engine\xui\CentroSUI\_v2\CproTabs\*.xml"
-		File "..\engine\xui\CentroSUI\_v2\CproTabs\*.m"
-		File "..\engine\xui\CentroSUI\_v2\CproTabs\*.maki"
-	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\CentroSUI\_v2\scripts
-		File "..\engine\xui\CentroSUI\_v2\scripts\*.m"
-		File "..\engine\xui\CentroSUI\_v2\scripts\*.maki"
-	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\CentroSUI\_v2\Reader
-		File "..\engine\xui\CentroSUI\_v2\Reader\*.m"
-		File "..\engine\xui\CentroSUI\_v2\Reader\*.maki"
-		File "..\engine\xui\CentroSUI\_v2\Reader\*.mi"
-		File "..\engine\xui\CentroSUI\_v2\Reader\*.png"
-		File "..\engine\xui\CentroSUI\_v2\Reader\*.xml"
-	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\CentroSUI\_v2\Reader\icons
-		File "..\engine\xui\CentroSUI\_v2\Reader\icons\*.png"
-	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\CentroSUI\_v2\Reader\source
-		File "..\engine\xui\CentroSUI\_v2\Reader\source\*.xml"
-!endif
 
 
-; CPro engine	 - Scripts
+
+; CPro engine	 - Generic Scripts
 	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\scripts
 		File "..\engine\scripts\*.m"
 		File "..\engine\scripts\*.maki"
@@ -542,10 +529,16 @@ Section "$(CPro_CProFiles)" "CPro_Sec_CProFiles"
 		File "..\engine\scripts\attribs\*.m"
 	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\scripts\lib
 		File "..\engine\scripts\lib\*.mi"
-; CPro engine	 - xml
+
+
+
+; CPro engine	 - Generic xml
 	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xml
 		File "..\engine\xml\*.xml"
-; CPro engine	 - xui
+
+
+
+; CPro engine	 - XUI Objects
 	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui
 		File "..\engine\xui\*.xml"
 
@@ -563,7 +556,24 @@ Section "$(CPro_CProFiles)" "CPro_Sec_CProFiles"
 	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\CentroSUI\_v1\scripts
 		File "..\engine\xui\CentroSUI\_v1\scripts\*.m"
 		File "..\engine\xui\CentroSUI\_v1\scripts\*.maki"
-
+	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\CentroSUI\_v2
+		File "..\engine\xui\CentroSUI\_v2\*.xml"
+	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\CentroSUI\_v2\CproTabs
+		File "..\engine\xui\CentroSUI\_v2\CproTabs\*.xml"
+		File "..\engine\xui\CentroSUI\_v2\CproTabs\*.m"
+		File "..\engine\xui\CentroSUI\_v2\CproTabs\*.maki"
+	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\CentroSUI\_v2\scripts
+		File "..\engine\xui\CentroSUI\_v2\scripts\*.m"
+		File "..\engine\xui\CentroSUI\_v2\scripts\*.maki"
+	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\CentroSUI\_v2\Reader
+		File "..\engine\xui\CentroSUI\_v2\Reader\*.m"
+		File "..\engine\xui\CentroSUI\_v2\Reader\*.maki"
+		File "..\engine\xui\CentroSUI\_v2\Reader\*.mi"
+		File "..\engine\xui\CentroSUI\_v2\Reader\*.xml"
+	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\CentroSUI\_v2\Reader\icons
+		File "..\engine\xui\CentroSUI\_v2\Reader\icons\*.png"
+	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\CentroSUI\_v2\Reader\source
+		File "..\engine\xui\CentroSUI\_v2\Reader\source\*.xml"
 
 	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\editbox
 		File "..\engine\xui\editbox\*.xml"
@@ -589,11 +599,16 @@ Section "$(CPro_CProFiles)" "CPro_Sec_CProFiles"
 		File "..\engine\xui\Ratings\*.m"
 		File "..\engine\xui\Ratings\*.maki"
 
-	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\PlaylistPro
-		File "..\engine\xui\PlaylistPro\alt\*.xml"
+	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\PlaylistPro\_v1
+		File "..\engine\xui\PlaylistPro\_v1\alt\*.xml"
 
-	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\PlaylistPro\alt
-		File "..\engine\xui\PlaylistPro\alt\*.xml"
+	;SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\PlaylistPro\_v1\alt
+	;	File "..\engine\xui\PlaylistPro\_v1\alt\*.xml"
+
+	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\PlaylistPro\_v2
+		File "..\engine\xui\PlaylistPro\_v2\*.xml"
+		File "..\engine\xui\PlaylistPro\_v2\*.m"
+		File "..\engine\xui\PlaylistPro\_v2\*.maki"
 
 	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\SC-Channels
 		File "..\engine\xui\SC-Channels\*.xml"
@@ -620,8 +635,9 @@ Section "$(CPro_CProFiles)" "CPro_Sec_CProFiles"
 		File "..\engine\xui\WasabiButton\*.m"
 		File "..\engine\xui\WasabiButton\*.maki"
 
-; Additional XUI Objects for widget devs
 
+
+; CPro engine	 - XUI Objects (Additional XUI Objects for widget devs)
 	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\Layouts
 		File "..\engine\xui\Layouts\*.xml"
 		File "..\engine\xui\Layouts\*.m"
@@ -632,28 +648,29 @@ Section "$(CPro_CProFiles)" "CPro_Sec_CProFiles"
 		File "..\engine\xui\KeepRatioLayer\*.m"
 		File "..\engine\xui\KeepRatioLayer\*.maki"
 
+
+; CPro engine	 - cPro::Flex
 !if ${CPRO_BUILD_TYPE} == "NIGHTLY"
-; cPro::Flex
-;	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\flex\scripts
-;		File /nonfatal "..\engine\flex\scripts\*.m"
-;		File /nonfatal "..\engine\flex\scripts\*.maki"
-;
-;	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\flex\xml
-;		File /nonfatal "..\engine\flex\xml\*.xml"
-;		
-;	SetOutPath "$WINAMP_SKIN_DIR"
-;		File /nonfatal /r "${CPRO_WINAMP_SKINS}\cProFlex - iFlex\cProFlex - iFlex.wal"
-;	SetOutPath "$WINAMP_SKIN_DIR\cProFlex - Xenolith"
-;		File /nonfatal /r /x *.psd /x .svn "${CPRO_WINAMP_SKINS}\cProFlex - Xenolith"
+	; cPro::Flex
+	;	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\flex\scripts
+	;		File /nonfatal "..\engine\flex\scripts\*.m"
+	;		File /nonfatal "..\engine\flex\scripts\*.maki"
+	;
+	;	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\flex\xml
+	;		File /nonfatal "..\engine\flex\xml\*.xml"
+	;		
+	;	SetOutPath "$WINAMP_SKIN_DIR"
+	;		File /nonfatal /r "${CPRO_WINAMP_SKINS}\cProFlex - iFlex\cProFlex - iFlex.wal"
+	;	SetOutPath "$WINAMP_SKIN_DIR\cProFlex - Xenolith"
+	;		File /nonfatal /r /x *.psd /x .svn "${CPRO_WINAMP_SKINS}\cProFlex - Xenolith"
 !endif
-	
+
+; CPro skins	 - Cpro default skins
 	SetOutPath "$WINAMP_SKIN_DIR"
 		File "${CPRO_WINAMP_SKINS}\cPro__Bento.wal"
-
-!if ${CPRO_BUILD_TYPE} == "NIGHTLY"
 		File "${CPRO_WINAMP_SKINS}\CproTwo.wal"
-!endif
-		
+
+; Clean some old folders from older releases
 	RMDir /r "$WINAMP_SKIN_DIR\cPro - Big Bento\" 
 	RMDir /r "$WINAMP_SKIN_DIR\cPro - Bento\" 
 	RMDir /r "$WINAMP_SKIN_DIR\cPro_Bento\" 
@@ -678,10 +695,10 @@ SectionGroup "$(CPro_CProCustom)" CPro_Sec_CProCustom
 	Section "$(CPro_cPlaylistPro)" CPro_Sec_cPlaylistPro
 		
 		SectionIn 1 2
-		SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\PlaylistPro
-			File "..\engine\xui\PlaylistPro\*.xml"
-			File "..\engine\xui\PlaylistPro\*.m"
-			File "..\engine\xui\PlaylistPro\*.maki"
+		SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\PlaylistPro\_v1
+			File "..\engine\xui\PlaylistPro\_v1\*.xml"
+			File "..\engine\xui\PlaylistPro\_v1\*.m"
+			File "..\engine\xui\PlaylistPro\_v1\*.maki"
 		
 	SectionEnd
 	
@@ -701,14 +718,7 @@ SectionGroup "$(CPro_WidgetsSection)" CPro_Sec_WidgetsSection
 			File "..\engine\widgets\Data\BrowserPro\*.m"
 			File "..\engine\widgets\Data\BrowserPro\*.png"
 			File "..\engine\widgets\Data\BrowserPro\*.maki"
-			File "..\engine\widgets\Data\BrowserPro\*.xml"
 			File "..\engine\widgets\Data\BrowserPro\*.mi"
-
-		SetOutPath "$INSTDIR\Plugins\ClassicPro\engine\widgets\Data\BrowserPro\icons"
-			File "..\engine\widgets\Data\BrowserPro\icons\*.png"
-
-		SetOutPath "$INSTDIR\Plugins\ClassicPro\engine\widgets\Data\BrowserPro\source"
-			File "..\engine\widgets\Data\BrowserPro\source\*.xml"			
 
 		SetOutPath "$INSTDIR\Plugins\ClassicPro\engine\widgets"
 			File "..\engine\widgets\cpro-widget-BrowserPro.nsi"

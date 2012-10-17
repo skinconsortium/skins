@@ -26,7 +26,7 @@
 
 
 <groupdef id="browserpro.ddlist">
-	<rect id="browserpro.ddl.rect" x="23" y="5" w="-39" h="16" relatw="1" filled="1" color="wasabi.list.background"/>
+	<!---<rect id="browserpro.ddl.rect" x="23" y="5" w="-39" h="16" relatw="1" filled="1" color="wasabi.list.background"/>-->
 	<layer id="browserpro.ddl.icon" x="3" y="5" w="16" h="16"/>
 	<text 
 		id="browserpro.ddl.text"

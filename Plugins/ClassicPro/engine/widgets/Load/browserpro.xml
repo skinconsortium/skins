@@ -6,7 +6,7 @@
     <bitmap id="centro.widgets.browserpro.thumbnail" file="@WINAMPPATH@\Plugins\classicPro\engine\widgets\Data\BrowserPro\thumbnail.png"/>
 </elements>
 
-<include file="..\Data\BrowserPro\icons.xml"/>
+<include file="..\..\xui\CentroSUI\_v2\Reader\icons.xml"/>
 
 <groupdef id="BrowserPro.list.group" minimum_h="64" background="studio.BaseTexture">
 	<grid

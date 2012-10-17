@@ -25,7 +25,7 @@
 </groupdef>
 <groupdef id="shade.sect.rep">
 	<layer x="0" y="0" image="shade.bg.6" wantfocus="1" ghost="1"/>
-	<NStatesButton id="shade.rep" x="0" y="0" image="s.rep.1." hoverimage="s.rep.2." downimage="s.3." rectrgn="1" nstates="3" tooltip="Toggle Playlist/Song Repeating" cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Repeat" cfgvals="0;1;-1"/>
+	<NStatesButton id="shade.rep" x="0" y="0" image="s.rep.1." hoverimage="s.rep.2." downimage="s.rep.3." rectrgn="1" nstates="3" tooltip="Toggle Playlist/Song Repeating" cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Repeat" cfgvals="0;1;-1"/>
 	<layer id="shade.rep.fade" x="0" y="0" ghost="1" alpha="0"/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\buttonfade.maki" param="shade.rep;shade.rep.fade;s.rep.2."/>
 </groupdef>
@@ -60,11 +60,14 @@
 </groupdef>
 <groupdef id="shade.sect.vis">
 	<layer regionop="1" image="shade.bg.10" wantfocus="1" ghost="1"/>
+	
+	<NStatesButton id="shade.aot" x="-25" relatx="1" image="s.aot.1." hoverimage="s.aot.2." downimage="s.aot.3." rectrgn="1" cfgattrib="{280876CF-48C0-40BC-8E86-73CE6BB462E5};Always on top" nstates="2" tooltip="Toggle Always on top" cfgvals="0;1"/>
+	<layer id="shade.aot.docked" x="-25" relatx="1" image="s.aot.1.1" visible="0" ghost="1"/>
 </groupdef>
 
 
 
-<layout id="shade" minimum_h="22" minimum_w="240" maximum_h="22" h="22" w="240" appbar="top|bottom" wantfocus="1" linkwidth="normal">
+<layout id="shade" minimum_h="22" minimum_w="240" maximum_h="22" h="22" w="240" appbar="top|bottom" wantfocus="1">
 	<group id="cpro.shade.background" fitparent="1" sysregion="1"/>
 
 	<layer fitparent="1" dblClickAction="SWITCH;normal"/>
@@ -74,6 +77,7 @@
 	<layer x="-83" y="0" relatx="1" regionop="1" image="shade.bg.11" wantfocus="1" ghost="1"/>
 
 	<layer x="90" y="0" image="shade.bg.3" wantfocus="1" ghost="1"/>
+	<layer x="37" image="shade.logo" wantfocus="1" ghost="1"/>
 
 
 	<button id="shade.prev" x="90" y="0" action="PREV" image="s.prev.1" downimage="s.prev.3"/>
@@ -84,10 +88,21 @@
 	<layer id="shade.play.fade" x="110" y="0" image="s.play.2" ghost="1" alpha="0"/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\buttonfade.maki" param="shade.play;shade.play.fade"/>
 
+	<button id="shade.pause" x="110" y="0" action="PAUSE" image="s.pause.1" downimage="s.pause.3" visible="0"/>
+	<layer id="shade.pause.fade" x="110" y="0" image="s.pause.2" ghost="1" alpha="0"/>
+	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\buttonfade.maki" param="shade.pause;shade.pause.fade"/>
+
+	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\shade-layout.maki"/>
+
 	<button id="shade.next" x="130" y="0" action="NEXT" image="s.next.1" downimage="s.next.3"/>
 	<layer id="shade.next.fade" x="130" y="0" image="s.next.2" ghost="1" alpha="0"/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\buttonfade.maki" param="shade.next;shade.next.fade"/>
 
+
+	<button id="shade.mlmenu" x="8" image="s.menu.1" hoverImage="s.menu.2" downImage="s.menu.3" rectrgn="1" tooltip="Library's Playlists"/>
+	<button id="shade.mlmenu.fake" x="8" y="10" w="1" h="1" visible="0" action="PE_ListOfLists"/>
+	<layer id="shade.mlmenu.fade" x="8" image="s.menu.2" ghost="1" alpha="0"/>
+	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\buttonfade.maki" param="shade.mlmenu;shade.mlmenu.fade"/>
 
 
 
@@ -99,6 +114,12 @@
 
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\shade.maki"/>
 	
+
+	
+	<button x="-83" relatx="1" id="player.button.minimize" action="MINIMIZE" image="s.min.1" hoverImage="s.min.2" downImage="s.min.3" rectrgn="1" tooltip="Minimize Winamp"/>
+	<button id="player.button.switch" x="-58" relatx="1" action="SWITCH" param="normal" image="s.mode.1" hoverImage="s.mode.2" downImage="s.mode.3" rectrgn="1" tooltip="Main Mode"/>
+	<button id="player.button.close" x="-33" relatx="1" action="CLOSE" image="s.close.1" hoverImage="s.close.2" downImage="s.close.3" rectrgn="1" tooltip="Exit Winamp"/>
+
 	
 	
 	<layer id="resizer.6" x="-8" y="0" w="8" h="22" relatx="1" cursor="IDC_SIZEWE" move="0"/>
@@ -172,12 +193,7 @@
 	<group id="shade.seekticker" x="223" y="0" w="-414" h="23" relatw="1" move="1" visible="0"/>
 
 
-	<NStatesButton id="shade.aot" x="-91" y="3" relatx="1" image="s.aot.1." hoverimage="s.aot.2." downimage="s.aot.3." rectrgn="1" cfgattrib="{280876CF-48C0-40BC-8E86-73CE6BB462E5};Always on top" nstates="2" tooltip="Toggle Always on top" cfgvals="0;1"/>
-	<layer id="shade.aot.docked" x="-91" y="3" relatx="1" image="s.aot.1.1" visible="0" ghost="1"/>
 
-	<button x="-64" relatx="1" y="3" id="player.button.minimize" action="MINIMIZE" image="s.min.1" hoverImage="s.min.2" downImage="s.min.3" rectrgn="1" tooltip="Minimize Winamp"/>
-	<button id="player.button.switch" x="-44" relatx="1" y="3" action="SWITCH" param="normal" image="s.mode.1" hoverImage="s.mode.2" downImage="s.mode.3" rectrgn="1" tooltip="Main Mode"/>
-	<button id="player.button.close" x="-24" relatx="1" y="3" action="CLOSE" image="s.close.1" hoverImage="s.close.2" downImage="s.close.3" rectrgn="1" tooltip="Exit Winamp"/>
 
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\one\scripts\shade.maki" param="@SKINPATH@"/>
 

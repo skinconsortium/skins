@@ -40,14 +40,21 @@ myButton.onLeftButtonUp(int x, int y){
 myButton.onEnterArea(){
 	if(!myButton.isVisible()) return;
 	//isOver = true;
+	
+	myLayer.cancelTarget();
+	myLayer.setAlpha(255);
+	
+	/*
 	myLayer.setTargetA(255);
 	myLayer.setTargetSpeed(0.2);
 	myLayer.gotoTarget();
+	*/
 	
 }
 myButton.onLeaveArea(){
 	if(!myButton.isVisible()) return;
 	myLayer.cancelTarget();
+	myLayer.setAlpha(255);
 	myLayer.setTargetA(0);
 	myLayer.setTargetSpeed(0.6);
 	myLayer.gotoTarget();

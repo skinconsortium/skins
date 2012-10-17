@@ -17,6 +17,7 @@
 </groupdef>
 <groupdef id="centro.video" name="Video">
 	<windowholder id="centro.windowholder.video" x="0" y="0" w="0" relatw="1" h="-19" relath="1" autofocus="1" wantfocus="0" autoclose="1" autoopen="1" autoavailable="1" visible="1" hold="guid:{F0816D7B-FFFC-4343-80F2-E8199AA15CC3}"/>
+	<layer x="0" y="-19" w="0" relaty="1" relatw="1" image="sui.status"/>
 	<group id="centro.video.buttons" x="0" y="-19" w="0" relatw="1" h="19" relaty="1" visible="0"/>
 </groupdef>
 <groupdef id="centro.playlist.directory.vid">
@@ -52,16 +53,27 @@
 <!-- 
 ::One - Browser Tab (v2 now Reader)
 -->
+<groupdef id="centro.reader.bar.auto">
+	<grid x="2" y="0" w="-4" h="26" relatw="1" topleft="cpro2.reader.bg.left" top="cpro2.reader.bg.center.0.0" topright="cpro2.reader.bg.right"/>
+	<layer id="centro.reader.bar.auto.busy.0" x="80" y="0" w="-106" relatw="1" image="cpro2.reader.bg.center.0.1" alpha="0"/>
+</groupdef>
+<groupdef id="centro.reader.bar.man">
+	<grid x="2" y="0" w="-4" h="26" relatw="1" topleft="cpro2.reader.bg.leftlong" top="cpro2.reader.bg.center.1.0" topright="cpro2.reader.bg.right"/>
+	<layer id="centro.reader.bar.auto.busy.1" x="104" y="0" w="-130" relatw="1" image="cpro2.reader.bg.center.1.1" alpha="0"/>
+</groupdef>
 <groupdef id="centro.browser" name="Browser">
 	<layer x="0" y="0" w="0" relatw="1" image="cpro2.reader.bg"/>
-	<grid x="2" y="0" w="-4" h="26" relatw="1" topleft="cpro2.reader.bg.left" top="cpro2.reader.bg.center" topright="cpro2.reader.bg.right"/>
+	
+	<group id="centro.reader.bar.auto" x="0" y="0" h="26" w="0" relatw="1"/>
+	<group id="centro.reader.bar.man" x="0" y="0" h="26" w="0" relatw="1" visible="0"/>
 
-	<button id="browser.back" x="3" y="0" image="cpro2.reader.back.1" hoverimage="cpro2.reader.back.2" downimage="cpro2.reader.back.3" tooltip="Go Back" rectrgn="1"/>
-	<button id="browser.fwd" x="29" y="0" image="cpro2.reader.forward.1" hoverimage="cpro2.reader.forward.2" downimage="cpro2.reader.forward.3" tooltip="Go Forward" rectrgn="1"/>
+	<button id="browser.back" x="3" y="0" ghost="1" image="cpro2.reader.back.0" hoverimage="cpro2.reader.back.2" downimage="cpro2.reader.back.3" tooltip="Go Back" rectrgn="1"/>
+	<button id="browser.fwd" x="29" y="0" ghost="1" image="cpro2.reader.forward.0" hoverimage="cpro2.reader.forward.2" downimage="cpro2.reader.forward.3" tooltip="Go Forward" rectrgn="1"/>
 
 	<NStatesButton id="reader.mode" x="56" y="0" image="cpro2.reader.mode.1." hoverimage="cpro2.reader.mode.2." downimage="cpro2.reader.mode.3." rectrgn="1" nstates="2" tooltip="Toggle Reading Mode"/>
+	<button id="reader.bookmark" x="80" y="0" image="cpro2.reader.bookmark.1" hoverimage="cpro2.reader.bookmark.2" downimage="cpro2.reader.bookmark.3" tooltip="Bookmarks" rectrgn="1" visible="0"/>
 
-	<button id="browser.refresh" x="-50" y="0" relatx="1" image="cpro2.reader.refresh.1" hoverimage="cpro2.reader.refresh.2" downimage="cpro2.reader.refresh.3" tooltip="Reload Page" rectrgn="1"/>
+	<button id="browser.refresh" x="-26" y="0" relatx="1" image="cpro2.reader.refresh.1" hoverimage="cpro2.reader.refresh.2" downimage="cpro2.reader.refresh.3" tooltip="Reload Page" rectrgn="1" visible="0"/>
 	<button id="browser.stop" x="-26" y="0" relatx="1" image="cpro2.reader.stop.1" hoverimage="cpro2.reader.stop.2" downimage="cpro2.reader.stop.3" tooltip="Cancel Loading" rectrgn="1"/>
 
 	<!--<rect color="wasabi.window.background" filled="1" x="0" y="1" w="0" relatw="1" h="-4" relath="1"/>
@@ -76,8 +88,8 @@
 	-->
 
 
-	<Browser id="browserpro.browser" x="0" y="26" w="0" h="-26" relath="1" relatw="1" url="C:/"/>
-	<group id="browserpro.ddlist.group" x="80" y="0" h="28" w="-130" relatw="1" />
+	<Browser id="browserpro.browser" x="0" y="26" w="0" h="-26" relath="1" relatw="1" url=""/>
+	<group id="browserpro.ddlist.group" x="80" y="0" h="28" w="-106" relatw="1" />
 
 	<script file="@WINAMPPATH@\Plugins\ClassicPro\engine\xui\CentroSUI\_v2\Reader\main.maki"/>
 
@@ -90,22 +102,21 @@
 <!--
 ::One - Playlist Tab
 -->
-<groupdef id="centro.playlist2.buttons">
+<groupdef id="centro.playlist2" name="Playlist"> <!-- GROOT SCREEN PL -->
 	<layer x="0" y="-19" w="0" relaty="1" relatw="1" image="sui.status"/>
-	<group id="centro2.group.pl.buttons" fitparent="1"/>
-</groupdef>
-<groupdef id="centro.playlist2" name="Playlist">
 	<PlaylistPro id="centro.windowholder.playlist2" x="0" y="0" w="0" relatw="1" h="-19" relath="1"/>
-	<group id="centro.playlist2.buttons" x="0" y="-19" w="0" relatw="1" h="19" relaty="1" visible="0"/>
+	<group id="centro2.group.pl.buttons" x="0" y="-19" w="0" relatw="1" h="19" relaty="1" visible="0"/>
 </groupdef>
-<groupdef id="drawer.playlist" name="Playlist">
+<groupdef id="drawer.playlist" name="Playlist"> <!-- Drawer PL -->
 	<layer x="0" y="-19" w="0" relaty="1" relatw="1" image="sui.status"/>
-	<PlaylistPro x="0" y="0" w="0" relatw="1" h="-19" relath="1"/>
+	<rect color="wasabi.window.background" filled="1" x="0" y="0" w="0" h="-19" relath="1" relatw="1"/>
+	<PlaylistPro id="centro.windowholder.playlist3" x="0" y="2" w="0" relatw="1" h="-21" relath="1"/>
 	<group id="centro2.group.pl.buttons" x="0" y="-19" w="-31" relatw="1" h="19" relaty="1"/>
 </groupdef>
-<groupdef id="centro.playlist.component">
+<groupdef id="centro.playlist.component"> <!-- REGS PL -->
 	<layer x="0" y="-19" w="0" relaty="1" relatw="1" image="sui.status"/>
-	<PlaylistPro id="centro.windowholder.playlist1" x="0" y="0" h="-19" w="0" relath="1" relatw="1"/>
+	<rect color="wasabi.window.background" filled="1" x="0" y="0" w="0" h="-19" relath="1" relatw="1"/>
+	<PlaylistPro id="centro.windowholder.playlist1" x="0" y="1" h="-20" w="0" relath="1" relatw="1"/>
 	<group id="centro2.group.pl.buttons" x="0" y="-19" w="0" relaty="1" relatw="1" h="19"/>
 </groupdef>
 
@@ -191,7 +202,7 @@ Implement Areas
 	<componentbucket id="widget.loader.mini" x="0" y="0" h="20" w="20" wndtype="centro.widgets.mini" visible="0"/>
 	<customobject id="widget.holder.mini" fitparent="1" visible="0" /> <!-- this one holds our widgets -->
 
-	<button id="comp.goto" x="-32" y="-18" relatx="1" relaty="1" image="cpro2.gen.goto.1" hoverimage="cpro2.gen.goto.2" downimage="cpro2.gen.goto.3" tooltip="Select Mini view"/>
+	<button id="comp.goto" x="-32" y="-19" relatx="1" relaty="1" image="cpro2.gen.goto.1" hoverimage="cpro2.gen.goto.2" downimage="cpro2.gen.goto.3" tooltip="Select Mini view"/>
 </groupdef>
 
 <groupdef id="centro.multidrawer">
@@ -200,17 +211,17 @@ Implement Areas
 
 	<group id="drawer.equalizer" fitparent="1" visible="0"/>
 	<group id="drawer.tagviewer" fitparent="1" visible="0"/>
-	<group id="drawer.savedpl" fitparent="1" visible="0"/>
-	<group id="drawer.avs" fitparent="1" visible="0"/>
+	<group id="drawer.savedpl" fitparent="1" y="1" h="-1" visible="0"/>
+	<group id="drawer.avs" fitparent="1" y="1" h="-1" visible="0"/>
 	<group id="drawer.colortheme" fitparent="1" visible="0"/>
 	<group id="drawer.playlist" fitparent="1" visible="0"/>
-	<group id="drawer.video" fitparent="1" visible="0"/>
+	<group id="drawer.video" fitparent="1" y="1" h="-1" visible="0"/>
 
 	<!-- This one is the dummyloader -->
 	<componentbucket id="widget.loader" x="0" y="0" h="20" w="20" wndtype="centro.widgets.drawer" visible="0" />
 	<customobject id="widget.holder" fitparent="1" visible="0" /> <!-- this one holds our widgets -->
 
-	<button id="drawer.menulist" x="-32" y="-18" relatx="1" relaty="1" image="cpro2.gen.goto.1" hoverimage="cpro2.gen.goto.2" downimage="cpro2.gen.goto.3" tooltip="Select Drawer"/>
+	<button id="drawer.menulist" x="-32" y="-19" relatx="1" relaty="1" image="cpro2.gen.goto.1" hoverimage="cpro2.gen.goto.2" downimage="cpro2.gen.goto.3" tooltip="Select Drawer"/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\xui\CentroSUI\_v2\scripts\drawer.maki"  param="@SKINPATH@"/>
 </groupdef>
 
@@ -223,7 +234,7 @@ Implement Areas
 	<layer x="0" y="0" w="0" relatw="1" image="sui.top.border"/>
 
 
-	<Wasabi:Frame id="centro.mainframe" x="0" y="3" w="0" h="-3" relatw="1" relath="1" left="centro.components" right="centro.playlist1" orientation="vertical" from="right" minwidth="158" width="200" jump="none" maxwidth="-224"/>
+	<Wasabi:Frame id="centro.mainframe" x="0" y="3" w="0" h="-3" relatw="1" relath="1" left="centro.components" right="centro.playlist1" orientation="vertical" from="right" minwidth="155" width="200" jump="none" maxwidth="-224"/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\xui\CentroSUI\_v2\scripts\CentroSUI2.maki" param="@HAVE_LIBRARY@"/>
 </groupdef>
 

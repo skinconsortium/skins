@@ -104,9 +104,9 @@ initLoadFiles(){
 		loaded_P_Icons = new List;
 		
 		myDoc = new XmlDoc;
-		String temp = Application.GetApplicationPath()+"\Plugins\ClassicPro\engine\widgets\Data\BrowserPro\source\_"+strlower(System.getLanguageId())+".xml";
+		String temp = Application.GetApplicationPath()+"\Plugins\ClassicPro\engine\xui\CentroSUI\_v2\Reader\source\_"+strlower(System.getLanguageId())+".xml";
 		myDoc.load (temp);
-		if(!myDoc.exists()) temp = Application.GetApplicationPath()+"\Plugins\ClassicPro\engine\widgets\Data\BrowserPro\source\_en-us.xml";
+		if(!myDoc.exists()) temp = Application.GetApplicationPath()+"\Plugins\ClassicPro\engine\xui\CentroSUI\_v2\Reader\source\_en-us.xml";
 		myDoc.load (temp);
 		if(!myDoc.exists()){
 			debug("No source file found! Please make sure you installed ClassicPro correct.");
