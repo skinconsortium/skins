@@ -3,6 +3,8 @@ Version 2.00 (Coming 2012)
 -------------------------------------------------------------
 - New: Support for Cpro2 skins!
 -------------------------------------------------------------
+[cpro1/2]
+- Fixed: Scrolling up in mini area goes blank if no widgets are installed
 
 -------------------------------------------------------------
 Version 1.15 (9 Sep 2010)

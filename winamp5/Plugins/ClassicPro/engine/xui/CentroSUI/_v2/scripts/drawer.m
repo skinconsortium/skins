@@ -21,7 +21,7 @@ Member boolean CProWidget.addSep;
 Global int numUserWidgets = 0;
 Global int numInternalWidgets = 0;
 
-Global Layout myLayout;
+Global Layout myLayout, suiLayout;
 Global Group myGroup;
 Global CProWidget drawer_equalizer, drawer_pl, drawer_vid, drawer_savedpl, drawer_tagviewer, drawer_avs, drawer_ct, drawer_skinchooser;
 Global PopUpMenu popMenu;//, widgetmenu;
@@ -43,7 +43,7 @@ System.onScriptLoaded() {
 	String fullpath = getParam()+"ClassicPro.xml";
 	myDoc.load(fullpath);
 	transparentSave=false;
-	setPublicInt("cPro.transparentsave", 0);
+	setPublicInt("cPro2.transparentsave", 0);
  	if(myDoc.exists()){
 		myDoc.parser_addCallback("ClassicPro");
 		myDoc.parser_start();
@@ -106,7 +106,8 @@ System.onScriptLoaded() {
 	//gad_Grid = myGroup.findObject("centro.gadget.grid");
 	gad_GridEQ = myGroup.findObject("centro.gadget.grid.eq");
 	
-	cpro_sui = getContainer("main").getLayout("normal").findObject("cpro.sui");
+	suiLayout = myGroup.getParentLayout();
+	cpro_sui = suiLayout.findObject("cpro.sui");
 
 	dummyBuck = myGroup.findObject("widget.loader");
 	customObj = myGroup.findObject("widget.holder");
@@ -120,7 +121,7 @@ System.onScriptLoaded() {
 	delete myMap;
 
 	//Saved Settings
-	openDrawer(getPublicInt("cPro.lastDrawer", 0));
+	openDrawer(getPublicInt("cPro2.lastDrawer", 0));
 }
 
 myDoc.parser_onCallback (String xmlpath, String xmltag, list paramname, list paramvalue){
@@ -128,7 +129,7 @@ myDoc.parser_onCallback (String xmlpath, String xmltag, list paramname, list par
 	for(int i=0; i<paramname.getNumItems(); i++){
 		if(paramname.enumItem(i)=="version"){
 			transparentSave=true;
-			setPublicInt("cPro.transparentsave", 1);
+			setPublicInt("cPro2.transparentsave", 1);
 		}
 	}
 }
@@ -138,7 +139,7 @@ but_drawerGoto.onleftClick(){
 	popMenu = new PopUpMenu;
 
 	// Faster to load it once!
-	int cur = getPublicInt("cPro.lastDrawer", 0);
+	int cur = getPublicInt("cPro2.lastDrawer", 0);
 
 	for ( int i = 0; i < numInternalWidgets; i++ )
 	{
@@ -172,7 +173,7 @@ but_drawerGoto.onleftClick(){
 
 	if(result>=0) openDrawer(result);
 	else if(result == -2){
-		setPublicInt("cPro.draweropened", 0);
+		setPublicInt("cPro2.draweropened", 0);
 		myGroup.hide();
 	}
 	else if(result == -3){
@@ -245,7 +246,7 @@ openDrawer(int drawerNo){
 		customObj.show();
 	}
 
-	setPublicInt("cPro.lastDrawer", drawerNo);
+	setPublicInt("cPro2.lastDrawer", drawerNo);
 	cpro_sui.sendAction ("refresh_drawer_h", "", 0, 0, 0, 0);
 	
 }
@@ -253,7 +254,7 @@ openDrawer(int drawerNo){
 myGroup.onAction (String action, String param, int x, int y, int p1, int p2, GuiObject source){
 	if (strlower(action) == "switch_to_drawer") openDrawer(x);
 	else if (strlower(action) == "release"){
-		if(param=="TAG") if(getPublicInt("cPro.lastDrawer", 0)==1) openDrawer(0);
+		if(param=="TAG") if(getPublicInt("cPro2.lastDrawer", 0)==1) openDrawer(0);
 	}
 	else if (strlower(action) == "show_widget")
 	{
@@ -265,11 +266,11 @@ myGroup.onAction (String action, String param, int x, int y, int p1, int p2, Gui
 				myLayout.getContainer().switchToLayout("normal");
 				if (myLayout.getHeight() < 360)
 				{
-					setPublicInt("cPro.h",388);
+					setPublicInt("cPro2.h",388);
 					myLayout.resize(myLayout.getLeft(), myLayout.getTop(), myLayout.getWidth(), 388);
 				}
 				
-				setPublicInt("cPro.draweropened", 1);
+				setPublicInt("cPro2.draweropened", 1);
 				openDrawer(i+userWidgetOffset);
 				myGroup.show();
 				return;
@@ -286,14 +287,14 @@ but_drawerGoto.onLeaveArea(){
 	mouse_but_drawerGoto=false;
 }
 
-myLayout.onMouseWheelUp(int clicked , int lines){
+suiLayout.onMouseWheelUp(int clicked , int lines){
 	if(mouse_but_drawerGoto){
 		gotoPrevDrawer();
 		complete;
 		return 1;
 	}
 }
-myLayout.onMouseWheelDown(int clicked , int lines){
+suiLayout.onMouseWheelDown(int clicked , int lines){
 	if(mouse_but_drawerGoto){
 		gotoNextDrawer();
 		complete;
@@ -302,7 +303,7 @@ myLayout.onMouseWheelDown(int clicked , int lines){
 }
 
 gotoPrevDrawer(){ //wheelup
-	int pos = getPublicInt("cPro.lastDrawer", 0);
+	int pos = getPublicInt("cPro2.lastDrawer", 0);
 
 	if (pos == userWidgetOffset){
 		pos = numInternalWidgets-1;
@@ -316,7 +317,7 @@ gotoPrevDrawer(){ //wheelup
 	if (pos < userWidgetOffset){
 		CProWidget gr = internalWidgets.enumItem(pos);
 		if (gr.scrollSkip || gr.disabled){
-			setPublicInt("cPro.lastDrawer", pos);
+			setPublicInt("cPro2.lastDrawer", pos);
 			gotoPrevDrawer();
 			return;
 		}
@@ -325,7 +326,7 @@ gotoPrevDrawer(){ //wheelup
 }
 
 gotoNextDrawer(){ //wheelDown
-	int pos = getPublicInt("cPro.lastDrawer", 0);
+	int pos = getPublicInt("cPro2.lastDrawer", 0);
 
 	if(pos == userWidgetOffset + numUserWidgets -1){
 		pos = 0;
@@ -340,7 +341,7 @@ gotoNextDrawer(){ //wheelDown
 		CProWidget gr = internalWidgets.enumItem(pos);
 		if (gr.scrollSkip || gr.disabled)
 		{
-			setPublicInt("cPro.lastDrawer", pos);
+			setPublicInt("cPro2.lastDrawer", pos);
 			gotoNextDrawer();
 			return;
 		}

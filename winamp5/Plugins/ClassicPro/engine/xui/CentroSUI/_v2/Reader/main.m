@@ -25,26 +25,27 @@ Function string strReplace(string str, string replace, string by);
 Global Container results_container;
 Global Layout results_layout;
 
-Global Group myGroup;
+Global Group myGroup, ddlist, gBarAuto, gBarMan;
 Global GuiList myList;
 Global XmlDoc myDoc;
 Global List loaded_P_Names, loaded_P_Url, loaded_P_Icons;
-Global int sourceNo, h_tune;
-Global boolean onetime, continueLoad;
+Global int sourceNo, h_tune, tempI;
+Global boolean onetime, continueLoad, skipForwardHide, cooldowned;
 Global Text ddBoxText;
 Global ToggleButton enabledSwitch;
 Global Button menuOptions, dropListButton;
 Global PopUpMenu popMenu;
-Global GuiObject browserXUI, fakeSB, ddbbg;
+Global GuiObject browserXUI, fakeSB; // ddbbg;
 Global Browser myBrowser;
-Global Layer ddlMouseT, ddlIcon;
-Global Button bback, bffwd, brefresh, bstop;
+Global Layer ddlMouseT, ddlIcon, lBarAuto, lBarMan;
+Global Button bback, bffwd, brefresh, bstop, bmark;
 Global Togglebutton modeToggle;
 Global Edit urlbox;
+Global String firstURL, lastURL, lastestURL;
 
 Global ColorMgr cm;
 
-Global Timer focus_callback;
+Global Timer focus_callback, cooldown;
 
 System.onScriptLoaded(){
 	//setPublicInt("ClassicPro.BrowserPro.loaded", 1);
@@ -68,16 +69,26 @@ System.onScriptLoaded(){
 	bstop = myGroup.findObject("browser.stop");
 	modeToggle = myGroup.findObject("reader.mode");
 	urlbox = myGroup.findObject("browserpro.ddl.editbox");
-	ddbbg = myGroup.findObject("browserpro.ddl.rect");
+	//ddbbg = myGroup.findObject("browserpro.ddl.rect");
+	bmark = myGroup.findObject("reader.bookmark");
+	ddlist = myGroup.findObject("browserpro.ddlist.group");
+	gBarAuto = myGroup.findObject("centro.reader.bar.auto");
+	gBarMan = myGroup.findObject("centro.reader.bar.man");
+	lBarAuto = myGroup.findObject("centro.reader.bar.auto.busy.0");
+	lBarMan = myGroup.findObject("centro.reader.bar.auto.busy.1");
 
 	focus_callback = new Timer;
 	focus_callback.setDelay(100);
+
+	cooldown = new Timer;
+	cooldown.setDelay(500);
 
 	cm = new ColorMgr;
 
 	myList.setIconWidth(16);
 	myList.setShowIcons(1);
 	sourceNo=0;
+	myBrowser.setCancelIEErrorPage(true);
 	
 	//modeToggle.setActivated(getPublicInt("ClassicPro.Reader.Mode", 1));
 	//modeToggle.onToggle(getPublicInt("ClassicPro.Reader.Mode", 1));
@@ -85,9 +96,20 @@ System.onScriptLoaded(){
 
 myGroup.onSetVisible(boolean onOff){
 	if(onOff){
+		firstURL="";
+		lastURL="";
+		skipForwardHide=false;
+		bback.setXMLParam("ghost", "1");
+		bback.setXMLParam("image", "cpro2.reader.back.0");
+		bffwd.setXMLParam("ghost", "1");
+		bffwd.setXMLParam("image", "cpro2.reader.forward.0");
+
 		initLoadFiles();
 		if(continueLoad) surfSelected();
-		else myGroup.hide();
+		else{
+			myGroup.hide();
+			debug("Something went wrong!");
+		}
 	}
 }
 
@@ -117,9 +139,9 @@ initLoadFiles(){
 		loaded_P_Icons = new List;
 		
 		myDoc = new XmlDoc;
-		String temp = Application.GetApplicationPath()+"\Plugins\ClassicPro\engine\widgets\Data\BrowserPro\source\_"+strlower(System.getLanguageId())+".xml";
+		String temp = Application.GetApplicationPath()+"\Plugins\ClassicPro\engine\xui\CentroSUI\_v2\Reader\source\_"+strlower(System.getLanguageId())+".xml";
 		myDoc.load (temp);
-		if(!myDoc.exists()) temp = Application.GetApplicationPath()+"\Plugins\ClassicPro\engine\widgets\Data\BrowserPro\source\_en-us.xml";
+		if(!myDoc.exists()) temp = Application.GetApplicationPath()+"\Plugins\ClassicPro\engine\xui\CentroSUI\_v2\Reader\source\_en-us.xml";
 		myDoc.load (temp);
 		if(!myDoc.exists()){
 			debug("No source file found! Please make sure you installed ClassicPro correct.");
@@ -169,7 +191,7 @@ myDoc.parser_onCallback (String xmlpath, String xmltag, list paramname, list par
 
 resizeResults(int items){
 	if(items>22) items=22;
-	if(items>1) h_tune=24;
+	if(items>1) h_tune=28;
 	else h_tune=19;
 
 	results_layout.setXmlParam("h", integerToString(h_tune+items*17+1));
@@ -185,9 +207,12 @@ ddlMouseT.onLeftButtonUp(int x, int y){
 ddlOpenClose(){
 	if(results_layout.isVisible()) results_layout.hide();
 	else{
-		results_layout.setXmlParam("x", integerToString(fakeSB.clientToScreenX(fakeSB.getLeft())-1));
+		if(modeToggle.getActivated()) tempI = 24;
+		else tempI = 0;
+		
+		results_layout.setXmlParam("x", integerToString(fakeSB.clientToScreenX(fakeSB.getLeft())-1-tempI));
 		results_layout.setXmlParam("y", integerToString(fakeSB.clientToScreenY(fakeSB.getTop() + fakeSB.getHeight())-4));
-		results_layout.setXmlParam("w", integerToString(fakeSB.getWidth()+2));
+		results_layout.setXmlParam("w", integerToString(fakeSB.getWidth()+2+tempI));
 	
 		results_layout.show();
 		resizeResults(loaded_P_Names.getNumItems());
@@ -223,14 +248,18 @@ searchInListForItem(String input){
 	return 0;
 }
 surfSelected(){
-	if(!onetime || modeToggle.getActivated()) return;
+	if(!onetime) return;
 	String myUrl = loaded_P_Url.enumItem(loaded_P_Names.findItem(getPublicString("ClassicPro.BrowserPro", "0")));
+	//autoclick=true;
 	myBrowser.navigateUrl(prepareCustomUrl(myUrl));
-	urlbox.setText(prepareCustomUrl(myUrl));
+	//urlbox.setText(prepareCustomUrl(myUrl));
 }
 System.onTitleChange(String newtitle){
 	if(myGroup.isVisible()){
-		surfSelected();
+		if(!modeToggle.getActivated()){
+			cooldowned=false; //if user skips track just when finished load call was received (and cooldown not complete)
+			surfSelected();
+		}
 	}
 }
 myList.onLeftClick(Int itemnum){
@@ -244,9 +273,8 @@ updateDDList(){
 	if(!onetime) return;
 	ddBoxText.setText(getPublicString("ClassicPro.BrowserPro", "0"));
 	String iconsID = loaded_P_Icons.enumItem(loaded_P_Names.findItem(getPublicString("ClassicPro.BrowserPro", "0")));
-	ddlIcon.setXmlParam("image", iconsID);
+	if(!modeToggle.getActivated()) ddlIcon.setXmlParam("image", iconsID);
 }
-
 
 modeToggle.onToggle(Boolean onOff){
 	setPublicInt("ClassicPro.Reader.Mode", onOff);
@@ -258,8 +286,17 @@ modeToggle.onToggle(Boolean onOff){
 		dropListButton.hide();
 		ddlMouseT.hide();
 		urlbox.show();
-		ddbbg.setXmlParam("w", "-24");
+		//ddbbg.setXmlParam("w", "-24");
 		ddlIcon.setXmlParam("image", "icon.readingmode");
+
+		gBarAuto.hide();
+		gBarMan.show();
+		
+		//grid.setXmlParam("topleft", "cpro2.reader.bg.leftlong");
+		ddlist.setXmlParam("x", "104");
+		ddlist.setXmlParam("w", "-130");
+		bmark.show();
+
 	}
 	else{
 		ddBoxText.show();
@@ -267,11 +304,23 @@ modeToggle.onToggle(Boolean onOff){
 		ddlMouseT.show();
 		urlbox.hide();
 		surfSelected();
-		ddbbg.setXmlParam("w", "-39");
+		//ddbbg.setXmlParam("w", "-39");
 		String iconsID = loaded_P_Icons.enumItem(loaded_P_Names.findItem(getPublicString("ClassicPro.BrowserPro", "0")));
 		ddlIcon.setXmlParam("image", iconsID);
+
+		gBarAuto.show();
+		gBarMan.hide();
+
+		//grid.setXmlParam("topleft", "cpro2.reader.bg.left");
+		ddlist.setXmlParam("x", "80");
+		ddlist.setXmlParam("w", "-106");
+		bmark.hide();
+
 	}
-	
+}
+
+bmark.onLeftClick(){
+	dropListButton.leftClick();
 }
 
 
@@ -280,9 +329,16 @@ modeToggle.onToggle(Boolean onOff){
 //----------------------------------------------------------------------------------------------------------------
 
 bback.onLeftClick(){
+	if(bffwd.getXMLParam("ghost")=="1") lastURL=lastestURL;
+	
+	bffwd.setXMLParam("ghost", "0");
+	bffwd.setXMLParam("image", "cpro2.reader.forward.1");
+	
+	skipForwardHide=true;
 	myBrowser.back();
 }
 bffwd.onLeftClick(){
+	skipForwardHide=true;
 	myBrowser.forward();
 }
 brefresh.onLeftClick(){
@@ -290,8 +346,29 @@ brefresh.onLeftClick(){
 }
 bstop.onLeftClick(){
 	myBrowser.stop();
+	bstop.hide();
+	brefresh.show();
 }
 
+bstop.onSetVisible(Boolean onoff){
+	lBarAuto.cancelTarget();
+	lBarMan.cancelTarget();
+
+	if(onoff){
+		lBarAuto.setTargetA(255);
+		lBarMan.setTargetA(255);
+		lBarAuto.setTargetSpeed(0.2);
+		lBarMan.setTargetSpeed(0.2);
+	}
+	else{
+		lBarAuto.setTargetA(0);
+		lBarMan.setTargetA(0);
+		lBarAuto.setTargetSpeed(0.6);
+		lBarMan.setTargetSpeed(0.6);
+	}
+	lBarAuto.gotoTarget();
+	lBarMan.gotoTarget();
+}
 
 /////////////////////////////////////
 
@@ -436,3 +513,76 @@ myBrowser.onAction (String action, String param, Int x, int y, int p1, int p2, G
 	}
 }
 
+myBrowser.onBeforeNavigate(String url, Int flags, String targetframename){
+	//String abc = " \n"+integerToString(flags)+" \nTarget= "+targetframename;
+	//debug(targetframename);
+	//debug("1:::"+ url+ "\n" + integerToString(flags));
+
+	if(!cooldowned){
+		bstop.show();
+		brefresh.hide();
+	}
+	
+	//debug(targetframename);
+	
+	if(firstURL!=""){
+		if(url==firstURL){
+			bback.setXMLParam("ghost", "1");
+			bback.setXMLParam("image", "cpro2.reader.back.0");
+		}
+		else if(bback.getXMLParam("ghost")=="1"){
+			bback.setXMLParam("ghost", "0");
+			bback.setXMLParam("image", "cpro2.reader.back.1");
+		}
+	}
+}
+
+cooldown.onTimer(){
+	cooldown.stop();
+	cooldowned=false;
+}
+
+myBrowser.onDocumentReady(String url){
+	lastestURL=url;
+	urlbox.setText(url);
+
+	//debug("2:::"+ url);
+	cooldowned = true;
+	
+	/*
+		Ignore all further webpage starts for few ms 
+		REASON: Some google+ buttons call a onBeforeNavigate after page is finished loading (www.lyricsoverload.com)
+	*/
+	cooldown.start();	
+	bstop.hide();
+	brefresh.show();
+
+	//debug("saved:"+lastURL+"\n\nnuutste:" + lastestURL);
+	
+	if(!skipForwardHide){
+		bffwd.setXMLParam("ghost", "1");
+		bffwd.setXMLParam("image", "cpro2.reader.forward.0");
+	}
+	else if(skipForwardHide && lastURL==lastestURL){
+		bffwd.setXMLParam("ghost", "1");
+		bffwd.setXMLParam("image", "cpro2.reader.forward.0");
+		lastURL="";
+	}
+
+	skipForwardHide=false;
+
+	if(firstURL==""){
+		if(url!="about:blank") firstURL=url;
+	}
+	else if(url==firstURL){
+		bback.setXMLParam("ghost", "1");
+		bback.setXMLParam("image", "cpro2.reader.back.0");
+	}
+	else if(bback.getXMLParam("ghost")=="1"){
+		bback.setXMLParam("ghost", "0");
+		bback.setXMLParam("image", "cpro2.reader.back.1");
+	}
+}
+myBrowser.onDocumentComplete(String url){
+	//urlbox.setText(url);	
+}

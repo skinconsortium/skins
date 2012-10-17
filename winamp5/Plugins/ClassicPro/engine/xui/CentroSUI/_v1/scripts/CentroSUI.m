@@ -612,7 +612,7 @@ gotoPrevMini(){ //wheelup
 
 	if (pos == 0)
 	{
-		if(dummyBuck.getNumChildren()==0) pos = 99+dummyBuck.getNumChildren();
+		if(dummyBuck.getNumChildren()==0) pos = 2;
 		else pos = 99+dummyBuck.getNumChildren();
 	}
 	else if (pos == 100)

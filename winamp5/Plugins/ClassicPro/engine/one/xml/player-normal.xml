@@ -151,7 +151,7 @@
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\one\scripts\player.maki" param="@SKINPATH@"/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\one\scripts\presetpos.maki"/>
 	
-	<script file="@WINAMPPATH@\Plugins\classicPro\engine\one\scripts\extendedbuttons.maki"/>
+	<script file="@WINAMPPATH@\Plugins\classicPro\engine\scripts\extendedbuttons.maki" param="open.tracks"/>
 	
 	<SC:UpdateSystem x="0" y="0" h="0" w="0" skinname="classicpro" skinversion="1.15" ofvalue="ClassicPro"/>
 

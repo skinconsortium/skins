@@ -10,7 +10,7 @@ E-Mail:		martin@skinconsortium.com
 Internet:	www.skinconsortium.com
 		www.martin.deimos.de.vu
 
-Note:		Edited by pjn123 for classicPro
+Note:		Edited by pjn123 for ClassicPro
 -----------------------------------------------------
 ---------------------------------------------------*/
 
