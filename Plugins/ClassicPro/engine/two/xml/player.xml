@@ -21,3 +21,9 @@
 		/>
 	</layout>
 </container>
+
+<container id="main.tooltip" name="Tooltip" noMenu="1" dynamic="1" default_visible="0" noparent="1" ontop="1">
+	<layout id="normal" desktopalpha="1" noactivation="1" nodock="1" move="0">
+		<group id="wasabi.tooltip.group" fitparent="1"/>
+	</layout>
+</container>

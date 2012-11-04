@@ -193,11 +193,11 @@ Implement Areas
 <groupdef id="centro.playlist.directory">
 	<layer fitparent="1" image="sui.center.2" alpha="253"/>
 
-	<group id="centro.playlist.directory.cov" fitparent="1" visible="0"/>
-	<group id="centro.playlist.directory.vid" fitparent="1" visible="0"/>
-	<group id="centro.playlist.directory.vis" fitparent="1" visible="0"/>
-	<group id="centro.playlist.directory.spl" fitparent="1" visible="0"/>
-	<group id="centro.playlist.directory.tag" fitparent="1" visible="0"/>
+	<group id="centro.playlist.directory.cov" fitparent="1" y="1" h="-1" visible="0"/>
+	<group id="centro.playlist.directory.vid" fitparent="1" y="1" h="-1" visible="0"/>
+	<group id="centro.playlist.directory.vis" fitparent="1" y="1" h="-1" visible="0"/>
+	<group id="centro.playlist.directory.spl" fitparent="1" y="1" h="-1" visible="0"/>
+	<group id="centro.playlist.directory.tag" fitparent="1" y="1" h="-1" visible="0"/>
     
 	<componentbucket id="widget.loader.mini" x="0" y="0" h="20" w="20" wndtype="centro.widgets.mini" visible="0"/>
 	<customobject id="widget.holder.mini" fitparent="1" visible="0" /> <!-- this one holds our widgets -->
@@ -228,7 +228,7 @@ Implement Areas
 
 
 <groupdef id="centro.playlist1" name="Playlist">
-	<Wasabi:Frame id="centro.plframe" fitparent="1" from="top" orientation="h" top="centro.playlist.directory" bottom="centro.playlist.component" minwidth="1" maxwidth="-50" height="10" jump="0"/>
+	<Wasabi:Frame id="centro.plframe" fitparent="1" y="-1" h="1" from="top" orientation="h" top="centro.playlist.directory" bottom="centro.playlist.component" minwidth="1" maxwidth="-50" height="10" jump="0"/>
 </groupdef>
 <groupdef id="centro.main" xuitag="Centro:SUI" h="100">
 	<layer x="0" y="0" w="0" relatw="1" image="sui.top.border"/>

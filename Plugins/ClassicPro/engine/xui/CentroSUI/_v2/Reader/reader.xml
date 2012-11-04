@@ -41,7 +41,7 @@
 		x="-15" y="0"
 		relatx="1"
 		image="cpro2.reader.drop.1" hoverimage="cpro2.reader.drop.2" downimage="cpro2.reader.drop.3"
-		wantfocus="0" tooltip="Select your service"
+		wantfocus="0" tooltip="Select your service" rectrgn="1"
 	/>
 </groupdef>
 

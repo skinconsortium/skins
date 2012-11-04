@@ -5,11 +5,14 @@
 Function String getMyPath();
 
 Global Group myGroup;
-Global Button openBut;
+Global Button prevBut, nextBut, openBut;
 
 System.onScriptLoaded() {
 	myGroup = getScriptGroup();
-	openBut = myGroup.findObject(getParam());
+	
+	prevBut = myGroup.findObject(getToken(getParam(), ";", 0));
+	nextBut = myGroup.findObject(getToken(getParam(), ";", 1));
+	openBut = myGroup.findObject(getToken(getParam(), ";", 2));
 }
 
 openBut.onLeftClick(){
@@ -18,7 +21,7 @@ openBut.onLeftClick(){
 		String curPath = getMyPath();
 		List returnValueStorage;
 		returnValueStorage = new List;
-		int error = ClassicProFile.findFiles(curPath, "*.mp3", returnValueStorage);
+		int error = ClassicProFile.findFiles(curPath, "*."+getExtension(getPlayItemString()), returnValueStorage);
 		if(error==-1) return;
 
 		PlEdit.clear();
@@ -39,4 +42,61 @@ String getMyPath(){
 	if(System.strleft(System.getPlayItemString(),6) == "cda://") output = System.strmid(System.getPlayItemString(), 6, 1)+":"+bs;
 	else output= getPath(getPlayItemMetaDataString("filename"))+bs;
 	return output;
+}
+
+nextBut.onLeftClick(){
+	if(System.isKeyDown(VK_ALT)){
+		String curFile = getPlayItemMetaDataString("filename");
+		String curPath = getMyPath();
+		List returnValueStorage;
+		returnValueStorage = new List;
+		int error = ClassicProFile.findFiles(curPath, "*.*", returnValueStorage);
+		if(error==-1) return;
+
+		String test = "";
+		PlEdit.clear();
+		String enqFile = "";
+		for(int i = 0; i<returnValueStorage.getNumItems();i++){
+			enqFile = curPath + returnValueStorage.enumItem(i);
+
+			if(curFile==enqFile){
+				if(i==returnValueStorage.getNumItems()-1){
+					PlEdit.enqueueFile(curPath + returnValueStorage.enumItem(2));
+				}
+				else PlEdit.enqueueFile(curPath + returnValueStorage.enumItem(i+1));
+				PlEdit.playTrack(0);
+				return;
+			}
+		}
+		complete;
+	}
+}
+
+prevBut.onLeftClick(){
+	if(System.isKeyDown(VK_ALT)){
+		String curFile = getPlayItemMetaDataString("filename");
+		String curPath = getMyPath();
+		List returnValueStorage;
+		returnValueStorage = new List;
+		int error = ClassicProFile.findFiles(curPath, "*.*", returnValueStorage);
+		if(error==-1) return;
+
+		PlEdit.clear();
+		String enqFile = "";
+		for(int i = 0; i<returnValueStorage.getNumItems();i++){
+			enqFile = curPath + returnValueStorage.enumItem(i);
+
+			if(curFile==enqFile){
+				if(i<3){
+					PlEdit.enqueueFile(curPath + returnValueStorage.enumItem(returnValueStorage.getNumItems()-1));
+				}
+				else{
+					PlEdit.enqueueFile(curPath + returnValueStorage.enumItem(i-1));
+				}
+				PlEdit.playTrack(0);
+				return;
+			}
+		}
+		complete;
+	}
 }

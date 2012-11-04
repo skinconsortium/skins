@@ -1,11 +1,14 @@
+<include file="InfoViewer/InfoViewer.xml"/>
+
 <groupdef id="centro2.group.video.buttons">
 	<button action="VID_1X"	x="0" y="0" rectrgn="1" image="cpro2.vid.1x.1" hoverImage="cpro2.vid.1x.2" downImage="cpro2.vid.1x.3" tooltip="Normal Size"/>
 	<button action="VID_2X" x="31" y="0" rectrgn="1" image="cpro2.vid.2x.1" hoverImage="cpro2.vid.2x.2" downImage="cpro2.vid.2x.3" tooltip="Double Size"/>
 	<button action="VID_TV" x="62" y="0" rectrgn="1" image="cpro2.vid.web.1" hoverImage="cpro2.vid.web.2" downImage="cpro2.vid.web.3" tooltip="Internet TV"/>
 	<button action="VID_Misc" x="93" y="0" rectrgn="1" image="cpro2.avs.opt.1" hoverImage="cpro2.avs.opt.2" downImage="cpro2.avs.opt.3" tooltip="Video Options"/>
 	<button action="VID_FS"	x="-31" y="0" relatx="1" rectrgn="1" image="cpro2.avs.fs.1" hoverImage="cpro2.avs.fs.2" downImage="cpro2.avs.fs.3" tooltip="Fullscreen"/>
+
 	<grid x="124" y="0" h="19" w="-155" relatw="1" ghost="1" topleft="sui.status.box.1" top="sui.status.box.2" topright="sui.status.box.3"/>
-	<text id="info" display="VID_Info" ticker="1" x="124" y="2" w="-155" h="16" relatw="1" align="center" valign="top" color="ComponentTab.Status.Text" font="cpro.status.font" move="1"/>
+	<text id="centro2.group.video.buttons.text" display="VID_Info" ticker="1" x="124" y="1" w="-155" h="19" relatw="1" align="center" valign="top" color="cpro2.color.status" font="cpro2.font.status.text" move="1"/>
 </groupdef>
 
 <groupdef id="centro2.group.vis.buttons">
@@ -28,7 +31,7 @@
 	<button action="PE_List" x="-31" y="0" relatx="1" rectrgn="1" image="cpro2.pl.man.1" hoverImage="cpro2.pl.man.2" downImage="cpro2.pl.man.3" tooltip="Manage Playlist"/>
 
 	<grid id="centro.playlist.textgrid" x="124" y="0" h="19" w="-186" relatw="1" ghost="1" topleft="sui.status.box.1" top="sui.status.box.2" topright="sui.status.box.3"/>
-	<text id="centro.playlist.pltext1" display="PE_Info" ticker="1" x="124" y="2" h="16" w="-186" relatw="1" align="center" color="0,0,0" font="cpro.status.font" move="1"/>
+	<text id="centro.playlist.pltext1" display="PE_Info" x="124" y="1" h="19" w="-186" relatw="1" align="center" color="cpro2.color.status" font="cpro2.font.status.text" move="1"/>
 </groupdef>
 
 
@@ -121,12 +124,12 @@
 
 
 <groupdef id="equalizer.content">
-	<layer x="1" y="0" image="eq.bg"/>
-	<layer id="equalizer.freq" x="1" y="82" image="eq.bg"/>
+	<layer x="0" y="0" image="eq.bg"/>
+	<layer id="equalizer.freq" x="0" y="82" image="eq.bg"/>
 	<slider
 		id="Balance"
 		action="PAN"
-		x="307" y="57"
+		x="306" y="57"
 		w="57" h="14"
 		thumb="eq.slider.h.1"
 		hoverThumb="eq.slider.h.2"
@@ -137,20 +140,20 @@
 		id="sCrossfade"
 		cfgattrib="{F1239F09-8CC6-4081-8519-C2AE99FCB14C};Crossfade time"
 		high="20" ghost="1" visible="0"
-		x="3" y="3"
+		x="2" y="3"
 		w="2" h="2"
 	/>
 
-	<togglebutton
+	<NStatesButton
 		id="Crossfade"
-		x="300" y="19"
-		image="eq.xfade.1"
-		hoverImage="eq.xfade.2"
-		downImage="eq.xfade.3"
-		activeImage="eq.xfade.4"
-		tooltip="Toggle Crossfading Between Tracks"
+		x="297" y="19"
+		image="eq.xfade.1."
+		hoverImage="eq.xfade.2."
+		downImage="eq.xfade.3."
 		cfgattrib="{FC3EAF78-C66E-4ED2-A0AA-1494DFCC13FF};Enable crossfading"
+		tooltip="Toggle Crossfading Between Tracks" nstates="2" cfgvals="0;1"
 	/>
+
 	<button
 		id="CrossfadeDecrease"
 		image="eq.xftime.less.1"
@@ -173,25 +176,26 @@
 		x="339" y="19" w="17" h="14"
 		align="center"
 		valign="center"
-		fontsize="14" color="Eq.xfade.Text"
+		fontsize="14" color="cpro2.color.eqxfade"
 		text="15" antialias="1"
 	/>
 
-	<group id="equalizer.sliders" x="7" y="18" w="269" h="100"/>
+	<group id="equalizer.sliders" x="6" y="18" w="269" h="100"/>
 
-	<button id="eq.set.top" x="30" y="12" w="25" h="20" rectrgn="1"/>
-	<button id="eq.set.cen" x="30" y="35" w="25" h="20" rectrgn="1"/>
-	<button id="eq.set.bot" x="30" y="58" w="25" h="20" rectrgn="1"/>
-	<group id="cpro.drawer.eq.content.overlay" fitparent="1"/>
+	<button id="eq.set.top" x="29" y="12" w="25" h="20" rectrgn="1"/>
+	<button id="eq.set.cen" x="29" y="35" w="25" h="20" rectrgn="1"/>
+	<button id="eq.set.bot" x="29" y="58" w="25" h="20" rectrgn="1"/>
+	<!--<group id="cpro.drawer.eq.content.overlay" fitparent="1"/>-->
 </groupdef>
 
 <groupdef id="equalizer.content.holder">
-	<group id="equalizer.content" x="0" y="0" w="377" h="100"/>
+	<group id="equalizer.content" x="0" y="0" w="377" h="99"/>
 </groupdef>
 
 <groupdef id="drawer.equalizer" name="Equalizer">
 	<layer x="0" y="-19" w="0" relaty="1" relatw="1" image="sui.status"/>
-	<group id="equalizer.content.holder" x="2" y="1" w="-4" h="100" relatw="1"/>
+	<group id="equalizer.content.holder" x="0" y="0" w="377" h="99"/>
+
 	<NStatesButton
 		x="0" y="-19" relaty="1"
 		image="cpro2.eq.on.1."
@@ -200,7 +204,6 @@
 		action="EQ_TOGGLE"
 		tooltip="EQ on/off" nstates="2" cfgvals="0;1"
 	/>
-
 	<NStatesButton
 		id="eqauto"
 		image="cpro2.eq.auto.1."
@@ -220,98 +223,44 @@
 		tooltip="Open presets"
 	/>
 
-	<group id="cpro.drawer.eq.overlay" fitparent="1"/>
-	<script file="@WINAMPPATH@\Plugins\classicPro\engine\one\scripts\eq.maki"/>
+	<!--<group id="cpro.drawer.eq.overlay" fitparent="1"/>-->
+	<script file="@WINAMPPATH@\Plugins\classicPro\engine\xui\CentroSUI\_v2\scripts\eq.maki"/>
 </groupdef>
 
+
+<!--
+File Info viewer
+-->
 <groupdef id="drawer.tagviewer.bottomleft" h="27">
 	<layer x="0" y="0" image="player.gframe.7.alt"/>
 </groupdef>
 
-<groupdef id="infodisplay.line.rating" h="15">
-	<Text id="infodisplay.line.rating.text" 
-		x="0" y="0" w="0" relatw="1" h="12"
-		text="Rating:"
-		color="Tag.Info.Text" bold="1" fontsize="13" alpha="180" valign="bottom" antialias="0"
-	/>
-	<Wasabi:Ratings id="infodisplay.line.rating.xui" x="50" y="1" w="55" h="13" image_nostar="ratings.none" image_star="ratings.normal" image_hoverstar="ratings.hover"/>
-</groupdef>
-<groupdef id="bento.infodisplay.line" embed_xui="text" xuitag="Bento:InfoLine">
-	<Text id="label" 
-		x="0" y="0" w="0" relatw="1" h="12"
-		text="Error:"
-		color="Tag.Info.Text" bold="1" fontsize="13" alpha="180" valign="bottom" antialias="0"
-	/>
-
-	<Text id="text" 
-		x="0" y="0" w="0" relatw="1" h="12"
-		color="Tag.Info.Text" bold="2" fontsize="13" valign="bottom" antialias="0" ticker="1" translate="0" alpha="253"
-	/>
-
-	<layer id="link" x="0" y="0" h="15" w="0" relatw="1" rectrgn="1" move="0" cursor="IDC_HAND"/>
-
-	<script file="@WINAMPPATH@\Plugins\classicPro\engine\one\scripts\infoline.maki" />
-</groupdef>
-<groupdef id="info.component.infodisplay">
-	
-	<group id="infodisplay.line.rating" x="0" y="0" w="0" relatw="1" h="15" visible="0"/>
-	
-	<Bento:InfoLine id="infodisplay.line.title" x="0" y="0" w="0" relatw="1" h="15" visible="0" 
-		shift="-2" link="Click to Search Title" label="Title:"/>
-
-	<Bento:InfoLine id="infodisplay.line.artist" x="0" y="0" w="0" relatw="1" h="15" visible="0" 
-		shift="-2" link="Click to Search Artist" label="Artist:"/>
-
-	<Bento:InfoLine id="infodisplay.line.album" x="0" y="0" w="0" relatw="1" h="15" visible="0" 
-		shift="-2" link="Click to Search Album" label="Album:"/>
-
-	<Bento:InfoLine id="infodisplay.line.track" x="0" y="0" w="0" relatw="1" h="15" visible="0" 
-		shift="-2" link="Click to Show More Information" label="Track:"/>
-
-	<Bento:InfoLine id="infodisplay.line.year" x="0" y="0" w="0" relatw="1" h="15" visible="0" 
-		shift="-2" link="Click to Show More Information" label="Year:"/>
-
-	<Bento:InfoLine id="infodisplay.line.genre" x="0" y="0" w="0" relatw="1" h="15" visible="0" 
-		shift="-2" link="Click to Show More Information" label="Genre:"/>
-
-	<Bento:InfoLine id="infodisplay.line.publisher" x="0" y="0" w="0" relatw="1" h="15" visible="0" 
-		shift="-2" link="Click to Show More Information" label="Publisher:"/>
-
-	<Bento:InfoLine id="infodisplay.line.composer" x="0" y="0" w="0" relatw="1" h="15" visible="0" 
-		shift="-2" link="Click to Show More Information" label="Composer:"/>
-
-	<Bento:InfoLine id="infodisplay.line.format" x="0" y="0" w="0" relatw="1" h="15" visible="0" 
-		shift="-2" link="Click to Show More Information" label="Decoder:"/>
-
-	<Bento:InfoLine id="infodisplay.line.sname" x="0" y="0" w="0" relatw="1" h="15" visible="0" 
-		shift="-2" link="Visit Station Homepage" label="Stream:"/>
-
-	<Bento:InfoLine id="infodisplay.line.surl" x="0" y="0" w="0" relatw="1" h="15" visible="0" 
-		shift="-2" link="Visit Station Homepage" label="Homepage:"/>
-
-	<Bento:InfoLine id="infodisplay.line.albumartist" x="0" y="0" w="0" relatw="1" h="15" visible="0" 
-		shift="-2" link="Click to Show More Information" label="Album Artist:"/>
-
-	<Bento:InfoLine id="infodisplay.line.disc" x="0" y="0" w="0" relatw="1" h="15" visible="0" 
-		shift="-2" link="Click to Show More Information" label="Disc:"/>
-</groupdef>
-
 <groupdef id="info.component.infodisplay.holder">
-	<group id="info.component.infodisplay" x="130" y="4" w="100" h="96" relatw="2"/>
+	<group id="info.component.infodisplay" fitparent="1" alpha="0"/>
+</groupdef>
+
+<groupdef id="tagviewer.status.box">
+	<grid id="tagviewer.status.box.grid" fitparent="1" ghost="1" topleft="sui.status.box.1" top="sui.status.box.2" topright="sui.status.box.3"/>
+	<text id="tagviewer.status.box.text" ticker="1" display="SONGNAME" x="5" w="-10" y="1" h="19" relatw="1" align="left" color="cpro2.color.status" font="cpro2.font.status.text" move="1"/>
+</groupdef>
+
+<groupdef id="tagviewer.status" h="19">
+	<grid id="tagviewer.status.grid" fitparent="1" topleft="sui.status.fade" top="sui.status"/>
+	<group id="tagviewer.status.box" fitparent="1" x="20" w="-85"/>
 </groupdef>
 
 <groupdef id="drawer.tagviewer" name="File Info">
-	<grid x="-100" y="-19" w="100" relaty="1" relatx="1" topleft="sui.status.fade" top="sui.status"/>
-
+	<group id="tagviewer.status" x="0" y="-19" w="0" relaty="1" relatw="1"/>
 	<Wasabi:AlbumArt id="tagviewer.cover" x="1" y="2" w="111" h="111" move="1"/>
-	<group id="info.component.infodisplay.holder" x="0" y="0" w="0" h="-20" relatw="1" relath="1"/>
+	<group id="info.component.infodisplay.holder" x="120" y="1" w="-120" h="-20" relatw="1" relath="1"/>
 	<button id="tagviewmenu" x="-64" y="-19" relatx="1" relaty="1"
 		image="cpro2.gen.menu.1"
 		hoverImage="cpro2.gen.menu.2"
 		downImage="cpro2.gen.menu.3"
-		tooltip="File Info Components"
+		tooltip="Options"
 	/>
-	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\tagviewer.maki" param="6"/>
+	<script file="@WINAMPPATH@\Plugins\classicPro\engine\xui\CentroSUI\_v2\InfoViewer\cover_resize.maki" />
+	<script file="@WINAMPPATH@\Plugins\classicPro\engine\xui\CentroSUI\_v2\InfoViewer\tagviewer.maki" />
 </groupdef>
 
 
