@@ -6,7 +6,7 @@
 <include file="Ratings/Ratings.xml"/>
 <include file="historyeditbox/historyeditbox.xml"/>
 <include file="editbox/editbox.xml"/>
-<include file="PlaylistPro/PlaylistPro.xml"/>
+<include file="PlaylistPro/_v1/PlaylistPro.xml"/>
 
 <include file="CentroSUI/_v1/CentroSUI.xml"/>
 <include file="ModernSongticker/ModernSongticker.xml"/>

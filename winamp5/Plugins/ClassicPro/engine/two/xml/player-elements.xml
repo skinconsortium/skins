@@ -68,6 +68,7 @@
 	<!-- Frame Section -->
 	<bitmap id="frame.topleft" file="frame.png" x="0" y="0" w="105" gammagroup="n.Frame"/>
 	<bitmap id="frame.top" file="frame.png" x="106" y="0" w="10" gammagroup="n.Frame"/>
+	<bitmap id="frame.top.center" file="frame.png" x="1033" y="0" w="200" gammagroup="n.Frame"/>
 	<bitmap id="frame.topright" file="frame.png" x="117" y="0" w="135" gammagroup="n.Frame"/>
 	<bitmap id="frame.left" file="frame.png" x="979" y="0" w="8" gammagroup="n.Frame"/>
 	<bitmap id="frame.right" file="frame.png" x="988" y="0" w="8" gammagroup="n.Frame"/>
@@ -82,6 +83,7 @@
 
 	<bitmap id="frame.topleft.fs" file="frame_full.png" x="0" y="0" w="138" gammagroup="n.Frame"/>
 	<bitmap id="frame.top.fs" file="frame_full.png" x="139" y="0" w="10" gammagroup="n.Frame"/>
+	<bitmap id="frame.top.center.fs" file="frame_full.png" x="1021" y="0" w="200" gammagroup="n.Frame"/>
 	<bitmap id="frame.topright.fs" file="frame_full.png" x="150" y="0" w="138" gammagroup="n.Frame"/>
 
 
@@ -228,6 +230,9 @@
 	<bitmap id="info.bg.seeker.3.1" file="info.png" x="12" y="123" w="105" h="40" gammagroup="n.Info"/>
 	<bitmap id="info.bg.seeker.3.2" file="info.png" x="118" y="123" w="10" h="40" gammagroup="n.Info"/>
 	<bitmap id="info.bg.seeker.3.3" file="info.png" x="129" y="123" w="105" h="40" gammagroup="n.Info"/>
+	<bitmap id="info.bg.seeker.4.1" file="info.png" x="12" y="164" w="105" h="40" gammagroup="n.Info"/>
+	<bitmap id="info.bg.seeker.4.2" file="info.png" x="118" y="164" w="10" h="40" gammagroup="n.Info"/>
+	<bitmap id="info.bg.seeker.4.3" file="info.png" x="129" y="164" w="105" h="40" gammagroup="n.Info"/>
 
 	<bitmap id="info.bg.time" file="info.png" x="0" y="0" w="56" gammagroup="n.Info"/>
 	<bitmap id="info.bg.time.play" file="info.png" x="57" y="0" w="56" gammagroup="n.Info"/>
@@ -413,5 +418,121 @@
 	<bitmap id="cpro2.aerosnap.7" file="@WINAMPPATH@\Plugins\classicPro\engine\two\images\aerosnap.png" x="0" y="10" w="4" h="4"/>
 	<bitmap id="cpro2.aerosnap.8" file="@WINAMPPATH@\Plugins\classicPro\engine\two\images\aerosnap.png" x="5" y="10" w="4" h="4"/>
 	<bitmap id="cpro2.aerosnap.9" file="@WINAMPPATH@\Plugins\classicPro\engine\two\images\aerosnap.png" x="10" y="10" w="4" h="4"/>
+
+	<!-- Wasabi stuff -->
+	<bitmap id="wasabi.scrollbar.horizontal.left" file="scrollbars.png" x="56" y="0" h="13" w="14" gammagroup="n.Scrollbars.Gfx"/>
+	<bitmap id="wasabi.scrollbar.horizontal.left.hover" file="scrollbars.png" x="56" y="14" h="13" w="14" gammagroup="n.Scrollbars.Gfx"/>
+	<bitmap id="wasabi.scrollbar.horizontal.left.pressed" file="scrollbars.png" x="56" y="28" h="13" w="14" gammagroup="n.Scrollbars.Gfx"/>
+	<bitmap id="wasabi.scrollbar.horizontal.right" file="scrollbars.png" x="103" y="0" h="13" w="14" gammagroup="n.Scrollbars.Gfx"/>
+	<bitmap id="wasabi.scrollbar.horizontal.right.hover" file="scrollbars.png" x="103" y="14" h="13" w="14" gammagroup="n.Scrollbars.Gfx"/>
+	<bitmap id="wasabi.scrollbar.horizontal.right.pressed" file="scrollbars.png" x="103" y="28" h="13" w="14" gammagroup="n.Scrollbars.Gfx"/>
+	<bitmap id="wasabi.scrollbar.horizontal.button" file="scrollbars.png" x="71" y="0" h="13" w="31" gammagroup="n.Scrollbars.Gfx"/>
+	<bitmap id="wasabi.scrollbar.horizontal.button.hover" file="scrollbars.png" x="71" y="14" h="13" w="31" gammagroup="n.Scrollbars.Gfx"/>
+	<bitmap id="wasabi.scrollbar.horizontal.button.pressed" file="scrollbars.png" x="71" y="28" h="13" w="31" gammagroup="n.Scrollbars.Gfx"/>
+	<bitmap id="wasabi.scrollbar.horizontal.background.middle" file="scrollbars.png" x="56" y="42" w="61" h="13" gammagroup="n.Scrollbars.Gfx"/>
+	<bitmap id="wasabi.scrollbar.vertical.left" file="scrollbars.png" x="0" y="0" h="14" w="13" gammagroup="n.Scrollbars.Gfx"/>
+	<bitmap id="wasabi.scrollbar.vertical.left.hover" file="scrollbars.png" x="14" y="0" h="14" w="13" gammagroup="n.Scrollbars.Gfx"/>
+	<bitmap id="wasabi.scrollbar.vertical.left.pressed" file="scrollbars.png" x="28" y="0" h="14" w="13" gammagroup="n.Scrollbars.Gfx"/>
+	<bitmap id="wasabi.scrollbar.vertical.right" file="scrollbars.png" x="0" y="47" h="14" w="13" gammagroup="n.Scrollbars.Gfx"/>
+	<bitmap id="wasabi.scrollbar.vertical.right.hover" file="scrollbars.png" x="14" y="47" h="14" w="13" gammagroup="n.Scrollbars.Gfx"/>
+	<bitmap id="wasabi.scrollbar.vertical.right.pressed" file="scrollbars.png" x="28" y="47" h="14" w="13" gammagroup="n.Scrollbars.Gfx"/>
+	<bitmap id="wasabi.scrollbar.vertical.button" file="scrollbars.png" x="0" y="15" h="31" w="13" gammagroup="n.Scrollbars.Gfx"/>
+	<bitmap id="wasabi.scrollbar.vertical.button.hover" file="scrollbars.png" x="14" y="15" h="31" w="13" gammagroup="n.Scrollbars.Gfx"/>
+	<bitmap id="wasabi.scrollbar.vertical.button.pressed" file="scrollbars.png" x="28" y="15" h="31" w="13" gammagroup="n.Scrollbars.Gfx"/>
+	<bitmap id="wasabi.scrollbar.vertical.background.middle" file="scrollbars.png" x="42" y="0" w="13" h="61" gammagroup="n.Scrollbars.Gfx"/>
+	<bitmap id="wasabi.scrollbar.vertical.grip" file="window/scrollgrips.png" x="0" y="0" h="8" w="6" gammagroup="n.Scrollbars.Gfx"/>
+	<bitmap id="wasabi.scrollbar.horizontal.grip" file="window/scrollgrips.png" x="7" y="0" h="6" w="8" gammagroup="n.Scrollbars.Gfx"/>
+
+	<!-- Tooltips-->
+	<bitmap id="wasabi.tooltip.top.left" file="tooltip.png" x="0" y="0" h="4" w="4" gammagroup="n.TooltipCombobox"/>
+	<bitmap id="wasabi.tooltip.top" file="tooltip.png" x="4" y="0" h="4" w="8" gammagroup="n.TooltipCombobox"/>
+	<bitmap id="wasabi.tooltip.top.right" file="tooltip.png" x="13" y="0" h="4" w="4" gammagroup="n.TooltipCombobox"/>
+	<bitmap id="wasabi.tooltip.left" file="tooltip.png" x="0" y="4" h="8" w="4" gammagroup="n.TooltipCombobox"/>
+	<bitmap id="wasabi.tooltip.center" file="tooltip.png" x="4" y="4" h="8" w="8" gammagroup="n.TooltipCombobox"/>
+	<bitmap id="wasabi.tooltip.right" file="tooltip.png" x="13" y="4" h="8" w="4" gammagroup="n.TooltipCombobox"/>
+	<bitmap id="wasabi.tooltip.bottom.left" file="tooltip.png" x="0" y="13" h="4" w="4" gammagroup="n.TooltipCombobox"/>
+	<bitmap id="wasabi.tooltip.bottom" file="tooltip.png" x="4" y="13" h="4" w="8" gammagroup="n.TooltipCombobox"/>
+	<bitmap id="wasabi.tooltip.bottom.right" file="tooltip.png" x="13" y="13" h="4" w="4" gammagroup="n.TooltipCombobox"/>
+
+
+	<!-- Wasabi Buttons-->
+	<bitmap id="wasabi.button.top.left" file="newsui.png" x="246" y="0" h="4" w="4" gammagroup="n.Button"/>
+	<bitmap id="wasabi.button.top" file="newsui.png" x="251" y="0" h="4" w="25" gammagroup="n.Button"/>
+	<bitmap id="wasabi.button.top.right" file="newsui.png" x="277" y="0" h="4" w="4" gammagroup="n.Button"/>
+	<bitmap id="wasabi.button.left" file="newsui.png" x="246" y="5" h="25" w="4" gammagroup="n.Button"/>
+	<bitmap id="wasabi.button.right" file="newsui.png" x="277" y="5" h="25" w="4" gammagroup="n.Button"/>
+	<bitmap id="wasabi.button.bottom.left" file="newsui.png" x="246" y="31" h="4" w="4" gammagroup="n.Button"/>
+	<bitmap id="wasabi.button.bottom" file="newsui.png" x="251" y="31" h="4" w="25" gammagroup="n.Button"/>
+	<bitmap id="wasabi.button.bottom.right" file="newsui.png" x="277" y="31" h="4" w="4" gammagroup="n.Button"/>
+
+	<bitmap id="wasabi.button.hover.top.left" file="newsui.png" x="282" y="0" h="4" w="4" gammagroup="n.Button"/>
+	<bitmap id="wasabi.button.hover.top" file="newsui.png" x="287" y="0" h="4" w="25" gammagroup="n.Button"/>
+	<bitmap id="wasabi.button.hover.top.right" file="newsui.png" x="313" y="0" h="4" w="4" gammagroup="n.Button"/>
+	<bitmap id="wasabi.button.hover.left" file="newsui.png" x="282" y="5" h="25" w="4" gammagroup="n.Button"/>
+	<bitmap id="wasabi.button.hover.right" file="newsui.png" x="313" y="5" h="25" w="4" gammagroup="n.Button"/>
+	<bitmap id="wasabi.button.hover.bottom.left" file="newsui.png" x="282" y="31" h="4" w="4" gammagroup="n.Button"/>
+	<bitmap id="wasabi.button.hover.bottom" file="newsui.png" x="287" y="31" h="4" w="25" gammagroup="n.Button"/>
+	<bitmap id="wasabi.button.hover.bottom.right" file="newsui.png" x="313" y="31" h="4" w="4" gammagroup="n.Button"/>
+
+	<bitmap id="wasabi.button.pressed.top.left" file="newsui.png" x="318" y="0" h="4" w="4" gammagroup="n.Button"/>
+	<bitmap id="wasabi.button.pressed.top" file="newsui.png" x="323" y="0" h="4" w="25" gammagroup="n.Button"/>
+	<bitmap id="wasabi.button.pressed.top.right" file="newsui.png" x="349" y="0" h="4" w="4" gammagroup="n.Button"/>
+	<bitmap id="wasabi.button.pressed.left" file="newsui.png" x="318" y="5" h="5" w="4" gammagroup="n.Button"/>
+	<bitmap id="wasabi.button.pressed.right" file="newsui.png" x="349" y="5" h="5" w="4" gammagroup="n.Button"/>
+	<bitmap id="wasabi.button.pressed.bottom.left" file="newsui.png" x="318" y="31" h="4" w="4" gammagroup="n.Button"/>
+	<bitmap id="wasabi.button.pressed.bottom" file="newsui.png" x="323" y="31" h="4" w="25" gammagroup="n.Button"/>
+	<bitmap id="wasabi.button.pressed.bottom.right" file="newsui.png" x="349" y="31" h="4" w="4" gammagroup="n.Button"/>
+
+	<!--
+	<bitmap id="wasabi.button.center" file="newsui.png" x="251" y="5" h="25" w="25" gammagroup="n.Button"/>
+	<bitmap id="wasabi.button.hover.center" file="newsui.png" x="287" y="5" h="25" w="25" gammagroup="n.Button"/>
+	<bitmap id="wasabi.button.pressed.center" file="newsui.png" x="323" y="5" h="5" w="25" gammagroup="n.Button"/>
+	-->
+	
+	<bitmap id="wasabi.button.middle" file="newsui.png" x="251" y="5" h="25" w="25" gammagroup="n.Button"/>
+	<bitmap id="wasabi.button.hover.middle" file="newsui.png" x="287" y="5" h="25" w="25" gammagroup="n.Button"/>
+	<bitmap id="wasabi.button.pressed.middle" file="newsui.png" x="323" y="5" h="5" w="25" gammagroup="n.Button"/>
+
+	<bitmap id="ratings.1.none" file="newsui.png" x="246" y="36" w="12" h="12" gammagroup="n.Button"/>
+	<bitmap id="ratings.1.normal" file="newsui.png" x="259" y="36" w="12" h="12" gammagroup="n.Button"/>
+	<bitmap id="ratings.1.hover" file="newsui.png" x="272" y="36" w="12" h="12" gammagroup="n.Button"/>
+	<bitmap id="ratings.2.none" file="newsui.png" x="246" y="49" w="16" h="16" gammagroup="n.Button"/>
+	<bitmap id="ratings.2.normal" file="newsui.png" x="263" y="49" w="16" h="16" gammagroup="n.Button"/>
+	<bitmap id="ratings.2.hover" file="newsui.png" x="280" y="49" w="16" h="16" gammagroup="n.Button"/>
+
+
+	<!-- Equilizer -->
+	<bitmap id="eq.bg" file="eq.png" x="0" y="0" w="377" h="82" gammagroup="n.SuiFrame"/>
+	<bitmap id="eq.label.winamp" file="eq.png" x="0" y="83" w="377" h="17" gammagroup="n.SuiFrame"/>
+	<bitmap id="eq.label.iso" file="eq.png" x="0" y="101" w="377" h="17" gammagroup="n.SuiFrame"/>
+	<bitmap id="eq.slider.h.1" file="eq.png" x="393" y="0" w="7" h="14" gammagroup="n.Button"/>
+	<bitmap id="eq.slider.h.2" file="eq.png" x="401" y="0" w="7" h="14" gammagroup="n.Button"/>
+	<bitmap id="eq.slider.h.3" file="eq.png" x="409" y="0" w="7" h="14" gammagroup="n.Button"/>
+	<bitmap id="eq.slider.v.1" file="eq.png" x="378" y="0" w="14" h="7" gammagroup="n.Button"/>
+	<bitmap id="eq.slider.v.2" file="eq.png" x="378" y="8" w="14" h="7" gammagroup="n.Button"/>
+	<bitmap id="eq.slider.v.3" file="eq.png" x="378" y="16" w="14" h="7" gammagroup="n.Button"/>
+
+	<!-- Xfade -->
+	<bitmap id="eq.xfade.1.0" file="eq.png" x="378" y="24" w="27" h="14" gammagroup="n.Button"/>
+	<bitmap id="eq.xfade.2.0" file="eq.png" x="378" y="39" w="27" h="14" gammagroup="n.Button"/>
+	<bitmap id="eq.xfade.3.0" file="eq.png" x="378" y="54" w="27" h="14" gammagroup="n.Button"/>
+	<bitmap id="eq.xfade.1.1" file="eq.png" x="378" y="69" w="27" h="14" gammagroup="n.Button"/>
+	<bitmap id="eq.xfade.2.1" file="eq.png" x="378" y="84" w="27" h="14" gammagroup="n.Button"/>
+	<bitmap id="eq.xfade.3.1" file="eq.png" x="378" y="99" w="27" h="14" gammagroup="n.Button"/>
+
+	<bitmap id="eq.xftime.less.1" file="eq.png" x="406" y="24" w="14" h="14" gammagroup="n.Button"/>
+	<bitmap id="eq.xftime.less.2" file="eq.png" x="406" y="39" w="14" h="14" gammagroup="n.Button"/>
+	<bitmap id="eq.xftime.less.3" file="eq.png" x="406" y="54" w="14" h="14" gammagroup="n.Button"/>
+	<bitmap id="eq.xftime.more.1" file="eq.png" x="421" y="24" w="14" h="14" gammagroup="n.Button"/>
+	<bitmap id="eq.xftime.more.2" file="eq.png" x="421" y="39" w="14" h="14" gammagroup="n.Button"/>
+	<bitmap id="eq.xftime.more.3" file="eq.png" x="421" y="54" w="14" h="14" gammagroup="n.Button"/>
+
+	<bitmap id="beatvis.testing" file="beathide.png"/>
+
+	<bitmap id="cPro.promo.1" file="promo.png" x="100" y="82" w="100" h="40" gammagroup="n.Promo"/>
+	<bitmap id="cPro.promo.2" file="promo.png" x="50" y="41" w="200" h="40" gammagroup="n.Promo"/>
+	<bitmap id="cPro.promo.3" file="promo.png" x="0" y="0" w="300" h="40" gammagroup="n.Promo"/>
+
+
 
 </elements>

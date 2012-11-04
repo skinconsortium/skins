@@ -99,7 +99,7 @@ System.onScriptLoaded(){
 	delayStartTab = 0;
 	widgetStatus = 0;
 	tab_openned = -1;
-	active_tab = getPublicInt("cPro2.lastComponentPage", 0);
+	active_tab = getPublicInt("cpro2.lastComponentPage", 0);
 	ml_installed = stringToInteger(getParam());
 	open_drawer=false;
 	skipLoad=true;
@@ -183,6 +183,8 @@ System.onScriptLoaded(){
 	if(myMap.getWidth()>=272) cuseqbg=true;
 	else  cuseqbg=false;
 	delete myMap;
+	
+	//cpro2.size.status.text
 
 	// Timers
 	openMainLayout = new Timer;
@@ -197,9 +199,9 @@ System.onScriptLoaded(){
 	ssWinHol.setDelay(66);
 	
 	//Saved Settings
-	openMini(getPublicInt("cPro2.lastMini", 0));
-	setDrawer(getPublicInt("cPro2.draweropened", 0));
-	openWidgetIDS(getPublicString("cPro2.lastMainWidgetIDS", ""));
+	openMini(getPublicInt("cpro2.lastMini", 0));
+	setDrawer(getPublicInt("cpro2.draweropened", 0));
+	openWidgetIDS(getPublicString("cpro2.lastMainWidgetIDS", ""));
 	refreshComponentButtons();
 }
 System.onscriptunloading(){
@@ -228,18 +230,18 @@ wasabiCover.onLeaveArea(){
 but_miniGoto.onEnterArea(){
 	mouse_but_miniGoto=true;
 	
-	if(getPublicInt("cPro2.lastMini", 0)!=0) return;
+	if(getPublicInt("cpro2.lastMini", 0)!=0) return;
 	wasabiCover.onEnterArea();
 }
 but_miniGoto.onLeaveArea(){
 	mouse_but_miniGoto=false;
 	
-	if(getPublicInt("cPro2.lastMini", 0)!=0) return;
+	if(getPublicInt("cpro2.lastMini", 0)!=0) return;
 	wasabiCover.onLeaveArea();
 }
 
 xuiGroup.onSetVisible(boolean onOff){
-	int pageNo = getPublicInt("cPro2.lastComponentPage", 0);
+	int pageNo = getPublicInt("cpro2.lastComponentPage", 0);
 
 	if(skipLoad && 	!wasTabTrig){
 		//if(pageNo==5) pageNo=0;
@@ -296,7 +298,7 @@ System.onGetCancelComponent(String guid, boolean goingvisible){
 		}
 		
 		if(guid == PL_GUID){ //Playlist
-			if(getPublicInt("cPro2.lastDrawer", 0)==DRAWER_PL_ID && open_drawer){
+			if(getPublicInt("cpro2.lastDrawer", 0)==DRAWER_PL_ID && open_drawer){
 				//do nothing
 			}
 			else if(mainFrame.getPosition()==0){
@@ -313,7 +315,7 @@ System.onGetCancelComponent(String guid, boolean goingvisible){
 			}
 		}
 		else if(guid == VIDEO_GUID){
-			if(setPublicInt("cPro2.lastMini", 0)==1 && area_mini.isVisible()){
+			if(setPublicInt("cpro2.lastMini", 0)==1 && area_mini.isVisible()){
 				//do nothing
 			}
 			else if(active_tab!=2){
@@ -323,10 +325,10 @@ System.onGetCancelComponent(String guid, boolean goingvisible){
 			}
 		}
 		else if(guid == VIS_GUID){
-			if(getPublicInt("cPro2.lastMini", 0)==4 && area_mini.isVisible()){
+			if(getPublicInt("cpro2.lastMini", 0)==4 && area_mini.isVisible()){
 				//do nothing
 			}
-			else if(getPublicInt("cPro2.lastDrawer", 0)==DRAWER_VIS_ID && open_drawer){
+			else if(getPublicInt("cpro2.lastDrawer", 0)==DRAWER_VIS_ID && open_drawer){
 				//do nothing
 			}
 			else if(active_tab!=3){
@@ -372,7 +374,7 @@ openDefaultTab.onTimer(){
 	openDefaultTab.stop();
 
 	if(closeGUID == PL_GUID){
-		if(getPublicInt("cPro2.lastDrawer", 0)==DRAWER_PL_ID && open_drawer){
+		if(getPublicInt("cpro2.lastDrawer", 0)==DRAWER_PL_ID && open_drawer){
 			drawer.sendAction ("switch_to_drawer", "", 0, 0, 0, 0);
 		}
 		else if(mainFrame.getPosition()!=0){
@@ -381,17 +383,17 @@ openDefaultTab.onTimer(){
 		}
 	}
 	else if(closeGUID == VIDEO_GUID){
-		if(getPublicInt("cPro2.lastMini", 0)==3){	//video is openned in mini view
+		if(getPublicInt("cpro2.lastMini", 0)==3){	//video is openned in mini view
 			openMini(0);
 			return;
 		}
 	}
 	else if(closeGUID == VIS_GUID){
-		if(getPublicInt("cPro2.lastDrawer", 0)==DRAWER_VIS_ID && open_drawer){
+		if(getPublicInt("cpro2.lastDrawer", 0)==DRAWER_VIS_ID && open_drawer){
 			drawer.sendAction ("switch_to_drawer", "", 0, 0, 0, 0);
 			return;
 		}
-		else if(getPublicInt("cPro2.lastMini", 0)==4){
+		else if(getPublicInt("cpro2.lastMini", 0)==4){
 			openMini(0);
 			return;
 		}
@@ -407,7 +409,7 @@ openDefaultTab.onTimer(){
 
 openWidgetIDS (String ids)
 {
-	setPublicString("cPro2.lastMainWidgetIDS", ids);
+	setPublicString("cpro2.lastMainWidgetIDS", ids);
 	widgetHolder.setXmlParam("groupid", ids);
 }
 
@@ -439,23 +441,23 @@ openTabNo(int tabNo){
 
 	if(tabNo==1){
 		if(mainFrame.getPosition()!=0) setMainFrame(false); //if not closed.. close sideview
-		if(getPublicInt("cPro2.lastDrawer", 0)==DRAWER_PL_ID && open_drawer)	drawer.sendAction ("switch_to_drawer", "", 0, 0, 0, 0);
+		if(getPublicInt("cpro2.lastDrawer", 0)==DRAWER_PL_ID && open_drawer)	drawer.sendAction ("switch_to_drawer", "", 0, 0, 0, 0);
 		tab_Playlist.show();
 	}
 	else if(tabNo==2){
-		if(getPublicInt("cPro2.lastMini", 0)==1){
+		if(getPublicInt("cpro2.lastMini", 0)==1){
 			openMini(0);
 		}
-		if(getPublicInt("cPro2.lastDrawer", 0)==DRAWER_VID_ID){
+		if(getPublicInt("cpro2.lastDrawer", 0)==DRAWER_VID_ID){
 			drawer.sendAction ("switch_to_drawer", "", 0, 0, 0, 0); //close drawer vid
 		}
 		tab_video.show();
 	}
 	else if(tabNo==3){
-		if(getPublicInt("cPro2.lastMini", 0)==2){
+		if(getPublicInt("cpro2.lastMini", 0)==2){
 			openMini(0);
 		}
-		if(getPublicInt("cPro2.lastDrawer", 0)==DRAWER_VIS_ID){
+		if(getPublicInt("cpro2.lastDrawer", 0)==DRAWER_VIS_ID){
 			drawer.sendAction ("switch_to_drawer", "", 0, 0, 0, 0); //close drawer vis
 		}	
 		tab_avs.show();
@@ -479,7 +481,7 @@ openTabNo(int tabNo){
 	
 	
 	if(tabNo!=-1){
-		setPublicInt("cPro2.lastComponentPage", tabNo);
+		setPublicInt("cpro2.lastComponentPage", tabNo);
 	}
 	busyWithThisFunction=false;
 	//updateCompStatus();
@@ -514,8 +516,8 @@ openMainLayout.onTimer(){
 
 
 area_right.onSetVisible(boolean onOff){
-	if(onOff && getPublicInt("cPro2.lastComponentPage", 0)==1 && !skipLoad) openTabNo(0); //dont want two playlist hey?
-	if(getPublicInt("cPro2.lastDrawer", 0)==DRAWER_PL_ID) drawer.sendAction ("switch_to_drawer", "", 0, 0, 0, 0);
+	if(onOff && getPublicInt("cpro2.lastComponentPage", 0)==1 && !skipLoad) openTabNo(0); //dont want two playlist hey?
+	if(getPublicInt("cpro2.lastDrawer", 0)==DRAWER_PL_ID) drawer.sendAction ("switch_to_drawer", "", 0, 0, 0, 0);
 }
 
 
@@ -523,11 +525,11 @@ area_mini.onResize(int x, int y, int w, int h){
 	//Hide/Show the area
 	if(w<10){
 		area_mini.hide();
-		if(getPublicInt("cPro2.lastMini", 0)==4){openMini(0);}
+		if(getPublicInt("cpro2.lastMini", 0)==4){openMini(0);}
 	}
 	else if(h<40){
 		area_mini.hide();
-		if(getPublicInt("cPro2.lastMini", 0)==4){openMini(0);}
+		if(getPublicInt("cpro2.lastMini", 0)==4){openMini(0);}
 	}
 	else area_mini.show();
 }
@@ -547,7 +549,7 @@ but_miniGoto.onleftClick(){
 	int count = 0;
 	for (int x = 0; x < dummyBuck.getNumChildren(); x++) {//**
 		GuiObject gr = dummyBuck.enumChildren(x);
-		popMenu.addCommand(gr.getXMLparam("name"), 100+x, getPublicInt("cPro2.lastMini", 0) == 100+x, 0);
+		popMenu.addCommand(gr.getXMLparam("name"), 100+x, getPublicInt("cpro2.lastMini", 0) == 100+x, 0);
 		count++;
 	}
 
@@ -556,7 +558,7 @@ but_miniGoto.onleftClick(){
 	popMenu.addSeparator();
 	popMenu.addCommand("Widgets Manager", -3, getContainer("widgets.manager").getLayout("normal").isvisible(), 0);
 
-	popMenu.checkCommand(getPublicInt("cPro2.lastMini", 0), 1);
+	popMenu.checkCommand(getPublicInt("cpro2.lastMini", 0), 1);
 
 	menuOpen=true;
 	int result = popMenu.popAtXY(clientToScreenX(but_miniGoto.getLeft()), clientToScreenY(but_miniGoto.getTop() + but_miniGoto.getHeight()));
@@ -601,19 +603,19 @@ openMini(int miniNo){
 		if(!but_miniGoto.isMouseOverRect() && !wasabiCover.isMouseOverRect()) wasabiCover.onLeaveArea();
 	}
 	else if(miniNo==3){
-		if(getPublicInt("cPro2.lastComponentPage", 0)==2){
+		if(getPublicInt("cpro2.lastComponentPage", 0)==2){
 			openTabNo(0);
 		}
-		if(getPublicInt("cPro2.lastDrawer", 0)==DRAWER_VID_ID){
+		if(getPublicInt("cpro2.lastDrawer", 0)==DRAWER_VID_ID){
 				drawer.sendAction ("switch_to_drawer", "", 0, 0, 0, 0); //close drawer vid
 		}
 		mini_Video.show();
 	}
 	else if(miniNo==4){
-		if(getPublicInt("cPro2.lastComponentPage", 0)==3){
+		if(getPublicInt("cpro2.lastComponentPage", 0)==3){
 			openTabNo(0);
 		}
-		if(getPublicInt("cPro2.lastDrawer", 0)==DRAWER_VIS_ID){
+		if(getPublicInt("cpro2.lastDrawer", 0)==DRAWER_VIS_ID){
 				drawer.sendAction ("switch_to_drawer", "", 0, 0, 0, 0); //close drawer vis
 		}
 
@@ -637,12 +639,12 @@ openMini(int miniNo){
 		customObj.setXmlParam("groupid", id);
 		customObj.show();
 	}
-	setPublicInt("cPro2.lastMini", miniNo);
+	setPublicInt("cpro2.lastMini", miniNo);
 	//setMiniBG(bg);
 }
 
 gotoPrevMini(){ //wheelup
-	int pos = getPublicInt("cPro2.lastMini", 0);
+	int pos = getPublicInt("cpro2.lastMini", 0);
 
 	if (pos == 0)
 	{
@@ -659,7 +661,7 @@ gotoPrevMini(){ //wheelup
 	openMini(pos);
 }
 gotoNextMini(){ //wheelDown
-	int pos = getPublicInt("cPro2.lastMini", 0);
+	int pos = getPublicInt("cpro2.lastMini", 0);
 
 	if(pos>=3 && pos<=4) pos = 2;
 
@@ -725,7 +727,7 @@ normal.onMouseWheelDown(int clicked , int lines){
 }*/
 
 refreshComponentButtons(){
-	if(getPublicInt("Cpro2.One.TabStatus.1", 1)){
+	if(getPublicInt("cpro2.One.TabStatus.1", 1)){
 			guihold_Pl2.setXmlParam("h", "-19");
 			tabbut_pl.show();
 	}
@@ -734,7 +736,7 @@ refreshComponentButtons(){
 			tabbut_pl.hide();
 	}
 
-	if(getPublicInt("Cpro2.One.TabStatus.2", 1)){
+	if(getPublicInt("cpro2.One.TabStatus.2", 1)){
 			hold_vid.setXmlParam("h", "-19");
 			tabbut_vid.show();
 	}
@@ -743,7 +745,7 @@ refreshComponentButtons(){
 			tabbut_vid.hide();
 	}
 	
-	if(getPublicInt("Cpro2.One.TabStatus.3", 1)){
+	if(getPublicInt("cpro2.One.TabStatus.3", 1)){
 			hold_avs.setXmlParam("h", "-19");
 			visRectBg.setXmlParam("h", "-19");
 			tabbut_avs.show();
@@ -825,19 +827,19 @@ xuiGroup.onAction (String action, String param, int x, int y, int p1, int p2, Gu
 	}
 	else if (strlower(action) == "release"){
 		if(param=="VIS"){
-			if(getPublicInt("cPro2.lastMini", 0)==4) openMini(0);
-			if(getPublicInt("cPro2.lastComponentPage", 0)==3) openTabNo(0);
+			if(getPublicInt("cpro2.lastMini", 0)==4) openMini(0);
+			if(getPublicInt("cpro2.lastComponentPage", 0)==3) openTabNo(0);
 		}
 		else if(param=="PL"){
-			if(getPublicInt("cPro2.lastComponentPage", 0)==1) openTabNo(0);
+			if(getPublicInt("cpro2.lastComponentPage", 0)==1) openTabNo(0);
 			if(mainFrame.getPosition()!=0) setMainFrame(false);
 		}
 		else if(param=="VID"){
-			if(getPublicInt("cPro2.lastMini", 0)==3) openMini(0);
-			if(getPublicInt("cPro2.lastComponentPage", 0)==2) openTabNo(0);
+			if(getPublicInt("cpro2.lastMini", 0)==3) openMini(0);
+			if(getPublicInt("cpro2.lastComponentPage", 0)==2) openTabNo(0);
 		}
 		else if(param=="TAG"){
-			if(getPublicInt("cPro2.lastMini", 0)==1) openMini(0);
+			if(getPublicInt("cpro2.lastMini", 0)==1) openMini(0);
 		}
 	}
 	else if(strlower(action) == "widget_statusbar"){
@@ -845,15 +847,15 @@ xuiGroup.onAction (String action, String param, int x, int y, int p1, int p2, Gu
 		//updateCompStatus();
 	}
 	else if(strlower(action) == "refresh_drawer_h"){
-		setDrawerSizeSave(getPublicInt("ClassicPro2.drawer.h", -119));
-		setDrawer(getPublicInt("cPro2.draweropened", 0));
+		setDrawerSizeSave(getPublicInt("cpro2.drawer.h", -119));
+		setDrawer(getPublicInt("cpro2.draweropened", 0));
 	}
 }
 
 //Main Frame code
 xuiGroup.onResize(int x, int y, int w, int h){
 	if(_powerSave4!=h){
-		setDrawer(getPublicInt("cPro2.draweropened", 0));
+		setDrawer(getPublicInt("cpro2.draweropened", 0));
 		_powerSave4=h;
 	}
 	
@@ -1001,14 +1003,15 @@ setFrame2(int pos, int h){
 	int output = pos;
 
 	//Magnet-clip the framedivider
-	if(pos<40){
-		output=0;
+	if(pos<79){
+		output=1;
 	}
 	else{
 		output=xuiGroup.getHeight()-48;
 	}
 	
-	if(output<40) output=0;
+	if(output<79) output=1;
+
 	if(output>getPublicInt("cpro2.e1.frame2", plFrame.getPosition())) output=getPublicInt("cpro2.e1.frame2", plFrame.getPosition());
 	
 	if(output!=plFrame.getPosition()) plFrame.setPosition(output);
@@ -1048,7 +1051,7 @@ setDrawer(boolean onOff){
 		drawer.show();
 		drawerResize.show();
 		//mainTabsheet.setXmlParam("h", integerToString(DEF_DRAWER_H*-1-4));
-		setDrawerSizeSave(getPublicInt("ClassicPro2.drawer.h", -119));
+		setDrawerSizeSave(getPublicInt("cpro2.drawer.h", -119));
 		tog_drawer.setXmlParam("tooltip", "Close drawer");
 		open_drawer=true;
 	}
@@ -1063,7 +1066,7 @@ setDrawer(boolean onOff){
 	tog_drawer.setActivated(open_drawer);
 
 	if(!dontSave){
-		setPublicInt("cPro2.draweropened", open_drawer);
+		setPublicInt("cpro2.draweropened", open_drawer);
 	}
 	busyWithDrawer=false;
 }
@@ -1072,7 +1075,7 @@ tog_drawer.onToggle(Boolean onoff){
 }
 
 drawer.onSetVisible(boolean onOff){
-	if(!busyWithDrawer) setDrawer(getPublicInt("cPro2.draweropened", 0));
+	if(!busyWithDrawer) setDrawer(getPublicInt("cpro2.draweropened", 0));
 }
 
 
@@ -1090,7 +1093,7 @@ drawerResize.onMouseMove(int x, int y){
 		int t = y-xuiGroup.getHeight()-xuiGroup.getTop();
 		if(t<-xuiGroup.getHeight()+120) t=-xuiGroup.getHeight()+120;
 		
-		if(getPublicInt("cPro2.lastDrawer", 0)==0) return;
+		//if(getPublicInt("cpro2.lastDrawer", 0)==0) return;
 		setDrawerSizeSave(t-t%10);
 	}
 }
@@ -1101,11 +1104,11 @@ setDrawerSizeSave(int h){
 		_powerSave1 = h;
 		//these changes will be saved
 		if(h>-119) h=-119;
-		setPublicInt("ClassicPro2.drawer.h", h);
+		setPublicInt("cpro2.drawer.h", h);
 		
 
 		//these changes will not be saved
-		if(getPublicInt("cPro2.lastDrawer", 0)==0) h=-119;
+		//if(getPublicInt("cpro2.lastDrawer", 0)==0) h=-119;
 
 		mainTabsheet.setXmlParam("h", integerToString(h-4));
 		drawer.setXmlParam("y", integerToString(h));
@@ -1141,8 +1144,8 @@ area_mini.onAction (String action, String param, Int x, int y, int p1, int p2, G
 				}
 				if (resize)
 				{
-					setPublicInt("cPro2.h",h);
-					setPublicInt("cPro2.w",w);
+					setPublicInt("cpro2.h",h);
+					setPublicInt("cpro2.w",w);
 					normal.resize(normal.getLeft(), normal.getTop(), w, h);	
 				}
 				

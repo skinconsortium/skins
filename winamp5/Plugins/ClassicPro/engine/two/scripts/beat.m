@@ -8,6 +8,8 @@ Function showGroup(int groupNo);
 Function startTimer();
 Function setAnimNo(int i);
 Function setCustomVis(int a);
+Function mouseTrap(); //cpro2 doesn't have mousetrap to click
+Function showTooltip(boolean onOff);
 
 Global Group frameGroup, beatGroup, promoGroup, b01, b02;
 
@@ -15,11 +17,21 @@ Global AnimatedLayer beatAnimLeft, beatAnimRight;
 Global Timer myTimer;
 Global int lastBeatLeft,lastBeatRight, myFrames, aniW, beatLeft, beatRight, frameLeft, run_max1, frameRight, cusno; 
 Global Boolean showBeat, showPromo, animTypeB, oneSide, customvis;
-Global Layer promoPic, mouseTrap, b01layer, b02layer, c01, c02;
+Global Layer promoPic, b01layer, b02layer, c01, c02; //, mouseTrap
 Global Popupmenu selMenu;
 Global XmlDoc myDoc;
 Global List cusbeat_names;
 Global float run_max;
+
+Global Text t_title, t_artist;
+Global int textWidth, spaceAvail, spaceAvail2;
+Global GuiObject sliderRightClick;
+Global Container c_tooltip;
+Global Layout l_tooltip;
+Global Text t_tooltip;
+Global Group g_tooltip;
+Global Timer timerTooltip;
+Global Boolean leaving, dontShowAgain;
 
 System.onScriptLoaded (){
 	frameGroup = getScriptGroup ();
@@ -31,7 +43,7 @@ System.onScriptLoaded (){
 	beatGroup = cg.getObject("beatvis");
 	promoGroup = cg.getObject("beatpromo");
 	promoPic = promoGroup.getObject("beat.promo");
-	mouseTrap = cg.getObject("beat.mousetrap");
+	//mouseTrap = cg.getObject("beat.mousetrap");
 
 	beatAnimLeft = beatGroup.getObject("beatvis.left");
 	beatAnimRight = beatGroup.getObject("beatvis.right");
@@ -42,8 +54,16 @@ System.onScriptLoaded (){
 	c01 = beatGroup.getObject("beatvisC.left");
 	c02 = beatGroup.getObject("beatvisC.right");
 	
+	t_title = frameGroup.findObject("two.info.text.title");
+	t_artist = frameGroup.findObject("two.info.text.artist");
+	sliderRightClick = frameGroup.findObject("two.info.seeker.slider.1");
+	
 	myTimer = new Timer;
 	myTimer.setDelay(10);
+ 
+	timerTooltip = new Timer;
+	timerTooltip.setDelay(500);
+	
  
 	///////////////////
 	Map myMap = new Map;
@@ -75,7 +95,6 @@ System.onScriptLoaded (){
 		if(cusbeat_names.getNumItems()>0) customvis=true;
 		
 		setCustomVis(getPrivateInt(getSkinName(), "customvis", 0));
-		mouseTrap.setXmlParam("tooltip", "Right-Click for more animations");
 	}
 	else customvis=false;
 	delete myDoc;
@@ -198,6 +217,9 @@ myTimer.onTimer(){
 
 System.onTitleChange(String newTxt){
 	run_max=DEF_MAX;
+	
+	//x will always be 10 here but when its 0 the resize function knows where its comming from #hack
+	frameGroup.onResize(0, 0, frameGroup.getWidth(), frameGroup.getHeight());
 }
 
 System.onStop(){
@@ -227,36 +249,94 @@ beatGroup.onSetVisible(Boolean onoff){
 }
 
 frameGroup.onResize(int x, int y, int w, int h){
-
 	if(oneSide){
-		beatGroup.setXmlParam("x", integerToString(w/2-aniW/2));
+		spaceAvail = w/2-aniW/2;
+		beatGroup.setXmlParam("x", integerToString(spaceAvail));
 		h=aniW;
 	}
 	else{
-		beatGroup.setXmlParam("x", integerToString(w/2-aniW));
+		spaceAvail = w/2-aniW;
+		beatGroup.setXmlParam("x", integerToString(spaceAvail));
 		h=aniW*2;
 	}
 
 	
-	if(w>317+h)	showBeat=true;
+	if(w>244+h)	showBeat=true; //244 = bottom showpromo hide minus default skin animation width (43*2)
 	else showBeat=false;
 
-	if(w>618){
+	if(w>800){//618 Only show this when skin is very big because it goes to transparent too much if its tight like other 2 modes
 		promoPic.setXmlParam("image", "cPro.promo.3");
-		promoPic.resize(0,0,300,45);
+		promoPic.setXmlParam("w", "300");
+		//promoPic.set
+		//promoPic.resize(0,0,300,40);
 	}
-	else if(w>517){
+	else if(w>400){//517
 		promoPic.setXmlParam("image", "cPro.promo.2");
-		promoPic.resize(50,0,200,45);
+		promoPic.setXmlParam("w", "200");
+		//promoPic.resize(50,0,200,40);
 	}
 	else{
 		promoPic.setXmlParam("image", "cPro.promo.1");
-		promoPic.resize(150,0,99,45);
+		promoPic.setXmlParam("w", "100");
+		//promoPic.resize(150,0,100,40);
 	}
+	promoGroup.setXmlParam("w", promoPic.getXmlParam("w"));
 	promoGroup.setXmlParam("x", integerToString(w/2-promoPic.getWidth()/2));
 	
-	if(w>416) showPromo=true;
+	if(w>330) showPromo=true; //416
 	else showPromo=false;
+	
+	spaceAvail2 = stringToInteger(promoGroup.getXmlParam("x"));
+	
+	//Get biggest text size
+	textWidth = t_title.getTextWidth()+t_title.getLeft();
+	if(t_artist.getTextWidth()+t_artist.getLeft() > textWidth) textWidth = t_artist.getTextWidth()+t_artist.getLeft();
+	textWidth-=12; //Finetune
+
+
+	if(x==0){
+		if(spaceAvail<textWidth){
+			beatGroup.setTargetA(50);
+		}
+		else{
+			beatGroup.setTargetA(255);
+		}
+		
+		if(spaceAvail2<textWidth){
+			promoGroup.setTargetA(50);
+		}
+		else{
+			promoGroup.setTargetA(255);
+		}
+
+		beatGroup.setTargetX(spaceAvail);
+		promoGroup.setTargetX(stringToInteger(promoGroup.getXmlParam("x")));
+		promoGroup.setTargetW(stringToInteger(promoGroup.getXmlParam("w")));
+		beatGroup.setTargetSpeed(0.3);
+		promoGroup.setTargetSpeed(0.3);
+		beatGroup.gotoTarget();
+		promoGroup.gotoTarget();
+	}
+	else{
+		if(spaceAvail<textWidth){
+			beatGroup.setAlpha(50);
+		}
+		else{
+			beatGroup.setAlpha(255);
+		}
+
+		if(spaceAvail2<textWidth){
+			promoGroup.setAlpha(50);
+		}
+		else{
+			promoGroup.setAlpha(255);
+		}
+	}
+	
+	
+	
+	
+	
 
 	refreshView();
 }
@@ -276,7 +356,13 @@ showGroup(int groupNo){
 	else if(showPromo) promoGroup.show();
 }
 
-mouseTrap.onLeftButtonDblClk(int x, int y){
+//mouseTrap.onLeftButtonDblClk(int x, int y){
+mouseTrap(){
+	//if(c_tooltip != NULL){
+		showTooltip(false); //Close tooltip
+		dontShowAgain = true;
+	//}
+	
 	if(customvis){
 		if(getPrivateInt(getSkinName(), "beatvis", 1)){
 			int u = getPrivateInt(getSkinName(), "customvis", 0)+1;
@@ -293,7 +379,7 @@ mouseTrap.onLeftButtonDblClk(int x, int y){
 	
 	refreshView();
 }
-
+/*
 mouseTrap.onRightButtonup(int x, int y){
 	selMenu = new PopupMenu;
 	selMenu.addCommand("Show Beat vis", 1, getPrivateInt(getSkinName(), "beatvis", 1), 0);
@@ -311,7 +397,7 @@ mouseTrap.onRightButtonup(int x, int y){
 	Complete;
 	delete selMenu;
 	
-}
+}*/
 
 ProcessMenuResult(int a){
 	if(a<0) return;
@@ -340,4 +426,108 @@ setCustomVis(int a){
 startTimer(){
 	run_max=DEF_MAX;
 	myTimer.start();
+}
+
+
+sliderRightClick.onRightButtonUp(int x, int y){
+	x-=6;
+	if(beatGroup.isVisible()){
+		if(x>spaceAvail && x < spaceAvail+beatGroup.getWidth()+8){
+			mouseTrap();
+			complete;
+		}
+	}
+	else if(promoGroup.isVisible()){
+		if(x>spaceAvail2 && x < spaceAvail2+promoGroup.getWidth()+8){
+			mouseTrap();
+			complete;
+		}
+	}
+}
+
+sliderRightClick.onMouseMove(int x, int y){
+	if(leaving){
+		showTooltip(false);
+		leaving=false;
+		return;
+	}
+	x-=6;
+	if(beatGroup.isVisible()){
+		if(x>spaceAvail && x < spaceAvail+beatGroup.getWidth()+8){
+			timerTooltip.stop();
+			timerTooltip.start();
+		}
+		else{
+			showTooltip(false);
+			dontShowAgain=false;
+			//debug("123");
+		}
+
+	}
+	else if(promoGroup.isVisible()){
+		if(x>spaceAvail2 && x < spaceAvail2+promoGroup.getWidth()+8){
+			timerTooltip.stop();
+			timerTooltip.start();
+		}
+		else{
+			showTooltip(false);
+			dontShowAgain=false;
+			//debug("456");
+		}
+	}
+}
+
+timerTooltip.onTimer(){
+	timerTooltip.stop();
+	
+	if(!dontShowAgain) showTooltip(true);
+		//debugint(dontShowAgain);
+}
+
+showTooltip(boolean onOff){
+	if(onOff){
+		if(c_tooltip != NULL) return;
+		c_tooltip = newDynamicContainer("main.tooltip");
+		l_tooltip = c_tooltip.getLayout("normal");
+		g_tooltip = l_tooltip.getObject("wasabi.tooltip.group");
+		t_tooltip = g_tooltip.getObject("tooltip.text");
+		t_tooltip.setText("Right-Click to Change Animation");
+		
+		//modified from wasabi tooltip script
+		int x = getMousePosX();
+		int y = getMousePosY()-l_tooltip.getHeight(); // move above mouse by default
+
+		int vpleft = getViewportLeftFromPoint(x, y);
+		int vptop = getViewportTopFromPoint(x, y);
+		int vpright = vpleft+getViewportWidthFromPoint(x, y);
+		int vpbottom = vptop+getViewportHeightFromPoint(x, y);
+
+		int w = t_tooltip.getAutoWidth()+20;
+		int h = l_tooltip.getHeight();
+
+		if (x + w > vpright) x = vpright - w;
+		if (x < vpleft) x = vpleft;
+		if (x + w > vpright) { w = vpright-vpleft-64; x = 32; }
+		if (y + h > vpbottom) y = vpbottom - h;
+		if (y < vptop) y = vptop + 32; // avoid mouse
+		if (y + h > vpbottom) { h = vpbottom-vptop-64; y = 32; }
+
+		l_tooltip.resize(x, y, w, h);
+		l_tooltip.show();
+
+	}
+	else{
+		if(timerTooltip.isRunning()) timerTooltip.stop();
+		
+		if(c_tooltip != NULL){
+			c_tooltip.close();
+			c_tooltip = NULL;
+			l_tooltip = NULL;
+		}
+	}
+}
+
+sliderRightClick.onLeaveArea(){
+	leaving=true;
+	dontShowAgain=false;
 }

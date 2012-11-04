@@ -260,9 +260,9 @@ System.onScriptLoaded ()
 
 			Boolean hideTab;
 			if(tabI.ID==WIDGET_TAB_ID){
-				hideTab = ((getPublicInt("Cpro.One.TabAutoClose."+tabI.IDS, 0)) && !(tabI.IDS==getPublicString("cPro.lastMainWidgetIDS", "") && getPublicInt("cPro.lastComponentPage", 0)==WIDGET_TAB_ID));
+				hideTab = ((getPublicInt("cpro2.One.TabAutoClose."+tabI.IDS, 0)) && !(tabI.IDS==getPublicString("cpro2.lastMainWidgetIDS", "") && getPublicInt("cpro2.lastComponentPage", 0)==WIDGET_TAB_ID));
 			}
-			else hideTab = ((getPublicInt("Cpro.One.TabAutoClose."+integerToString(tabI.ID), 0) || tabI.ID == 5) && (tabI.ID != getPublicInt("cPro.lastComponentPage", 0)));
+			else hideTab = ((getPublicInt("cpro2.One.TabAutoClose."+integerToString(tabI.ID), 0) || tabI.ID == 5) && (tabI.ID != getPublicInt("cpro2.lastComponentPage", 0)));
 
 			if (!hideTab)
 			{
@@ -514,11 +514,11 @@ onMessage(int message, int i0, int i1, int i2, String s0, String s1, GuiObject o
 		popMenu = new PopUpMenu;
 		
 		if(tabID==0 || tabID==4 || tabID==5 || tabID==WIDGET_TAB_ID) popMenu.addCommand("Show Status Bar", 0, 0, 1);
-		else popMenu.addCommand("Show Status Bar", 0, getPublicInt("Cpro.One.TabStatus."+integerToString(tabID), 1), 0);
+		else popMenu.addCommand("Show Status Bar", 0, getPublicInt("cpro2.One.TabStatus."+integerToString(tabID), 1), 0);
 		
 		if(tabID==5) popMenu.addCommand("Auto Close Tab", 1, 1, 1);
-		else if(tabID==WIDGET_TAB_ID) popMenu.addCommand("Auto Close Tab", 1, getPublicInt("Cpro.One.TabAutoClose."+widID, 0), 0);
-		else popMenu.addCommand("Auto Close Tab", 1, getPublicInt("Cpro.One.TabAutoClose."+integerToString(tabID), 0), 0);
+		else if(tabID==WIDGET_TAB_ID) popMenu.addCommand("Auto Close Tab", 1, getPublicInt("cpro2.One.TabAutoClose."+widID, 0), 0);
+		else popMenu.addCommand("Auto Close Tab", 1, getPublicInt("cpro2.One.TabAutoClose."+integerToString(tabID), 0), 0);
 		// @martin here is the publicint set.. hide tab if int == 1... remember widgets cant hide... 
 		//not going to add the previous submenu where you can enable things again..
 		// must just add Web Browser to the View list in winamp now so that when its hidden the user can still open it via that  menu
@@ -575,18 +575,18 @@ onMessage(int message, int i0, int i1, int i2, String s0, String s1, GuiObject o
 		{
 			if(result == 0)
 			{
-				setPublicInt("Cpro.One.TabStatus."+integerToString(tabID),!getPublicInt("Cpro.One.TabStatus."+integerToString(tabID), 1));
+				setPublicInt("cpro2.One.TabStatus."+integerToString(tabID),!getPublicInt("cpro2.One.TabStatus."+integerToString(tabID), 1));
 				CproSUI.sendAction ("refresh_tab_status", "", 0, 0, 0, 0);
 			}
 			else if(result == 1)
 			{
-				if(tabID==WIDGET_TAB_ID) setPublicInt("Cpro.One.TabAutoClose."+widID, !getPublicInt("Cpro.One.TabAutoClose."+widID, 0));
-				else setPublicInt("Cpro.One.TabAutoClose."+integerToString(tabID), !getPublicInt("Cpro.One.TabAutoClose."+integerToString(tabID), 0));
+				if(tabID==WIDGET_TAB_ID) setPublicInt("cpro2.One.TabAutoClose."+widID, !getPublicInt("cpro2.One.TabAutoClose."+widID, 0));
+				else setPublicInt("cpro2.One.TabAutoClose."+integerToString(tabID), !getPublicInt("cpro2.One.TabAutoClose."+integerToString(tabID), 0));
 				
 				ToggleButton tg = t;
 	
 				if(!tg.getActivated()){ 
-					if((tabID==WIDGET_TAB_ID && getPublicInt("Cpro.One.TabAutoClose."+widID, 0)) || (tabID!=WIDGET_TAB_ID && getPublicInt("Cpro.One.TabAutoClose."+integerToString(tabID), 0))){
+					if((tabID==WIDGET_TAB_ID && getPublicInt("cpro2.One.TabAutoClose."+widID, 0)) || (tabID!=WIDGET_TAB_ID && getPublicInt("cpro2.One.TabAutoClose."+integerToString(tabID), 0))){
 						removeTab(t);
 					}
 				}
@@ -926,7 +926,7 @@ closeTab (tab t)
 		
 		//lastActive = t;
 		//lastActive.setActivated(0);
-		if(lastActiveT.ID == 5 || (getPublicInt("Cpro.One.TabAutoClose."+integerToString(t.ID), 0) && t.ID != WIDGET_TAB_ID) || (t.ID==WIDGET_TAB_ID && getPublicInt("Cpro.One.TabAutoClose."+t.IDS, 0)))
+		if(lastActiveT.ID == 5 || (getPublicInt("cpro2.One.TabAutoClose."+integerToString(t.ID), 0) && t.ID != WIDGET_TAB_ID) || (t.ID==WIDGET_TAB_ID && getPublicInt("cpro2.One.TabAutoClose."+t.IDS, 0)))
 		{
 			removeTab(t);
 		}
@@ -1026,7 +1026,7 @@ sg.onAction (String action, String param, int x, int y, int p1, int p2, GuiObjec
 			main_normal.getContainer().switchToLayout("normal");
 			if (main_normal.getHeight() < 338)
 			{
-				setPublicInt("cPro.h",388);
+				setPublicInt("cPro2.h",388); //check this asap Note to myself (Pjn123)
 				main_normal.resize(main_normal.getLeft(), main_normal.getTop(), main_normal.getWidth(), 388);
 			}
 

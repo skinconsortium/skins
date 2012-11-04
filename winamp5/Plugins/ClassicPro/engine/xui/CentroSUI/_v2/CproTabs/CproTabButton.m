@@ -146,17 +146,17 @@ setButtonState (int mode)
 	if (mode == 1)
 	{
 		label.setXmlParam("y", "-1");
-		label.setXmlParam("color", "Tab.Text.On");
+		label.setXmlParam("color", "cpro2.color.tab.on");
 	}
 	else if (mode == 2)
 	{
-		label.setXmlParam("color", "Tab.Text.Off");
+		label.setXmlParam("color", "cpro2.color.tab.off");
 		label.setXmlParam("y", "0");
 	}
 	else
 	{
 		label.setXmlParam("y", "0");
-		label.setXmlParam("color", "Tab.Text.Hover");
+		label.setXmlParam("color", "cpro2.color.tab.hover");
 	}
 }
 /*

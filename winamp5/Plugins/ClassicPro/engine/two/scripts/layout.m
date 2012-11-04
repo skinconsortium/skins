@@ -15,8 +15,8 @@ Function saveSkinPos();
 Global Group g, g_screen, g_info, g_playback, g_sui, g_frameBut, g_frameButFS;
 Global Container player;
 Global Layout normal;
-Global Layer l_frame1, l_frame2, l_frame3, l_frame4, l_frame5, l_frame6, l_frame7, l_frame8, l_frame9;
-Global int i_titlebar, i_y;//, i_info;
+Global Layer l_frame1, l_frame2, l_frame3, l_frame4, l_frame5, l_frame6, l_frame7, l_frame8, l_frame9, l_frame2_center;
+Global int i_titlebar, i_y, i_center;//, i_info;
 Global Button b_goBig, b_goSmall;
 Global Boolean fullscreen;
 
@@ -57,6 +57,7 @@ System.onScriptLoaded() {
 	l_frame7 = g.getObject("two.frame.7");
 	l_frame8 = g.getObject("two.frame.8");
 	l_frame9 = g.getObject("two.frame.9");
+	l_frame2_center = g.getObject("two.frame.2.center");
 	
 	//read screen height
 	/*Map m = new Map;
@@ -86,6 +87,14 @@ System.onScriptUnloading(){
 	saveSkinPos();
 }
 
+g.onResize(int x, int y, int w, int h){
+	if(i_center<10 || w < i_center+278) l_frame2_center.hide();
+	else{
+		l_frame2_center.show();
+		l_frame2_center.setXmlParam("x", integerToString(w/2-i_center/2));
+	}
+}
+
 buildSkin(){
 	String temp = integerToString(i_titlebar+i_info+i_playback);
 	l_frame4.setXmlParam("y", temp);
@@ -107,6 +116,8 @@ buildSkin(){
 	g_playback.setXmlParam("y", integerToString(i_info));
 	g_info.setXmlParam("h", integerToString(i_info));
 	g_screen.setXmlParam("h", integerToString(i_info + i_playback));
+	
+	//if(l_frame2_center.getAutoWidth()) 
 
 }
 
@@ -134,6 +145,7 @@ fullScreen(boolean onOff){
 		l_frame2.setXmlParam("image", "frame.top.fs");
 		l_frame2.setXmlParam("x", "138");
 		l_frame2.setXmlParam("w", "-276");
+		l_frame2_center.setXmlParam("image", "frame.top.center.fs");
 		l_frame3.setXmlParam("image", "frame.topright.fs");
 		l_frame3.setXmlParam("x", "-138");
 		l_frame4.hide();
@@ -147,6 +159,7 @@ fullScreen(boolean onOff){
 		l_frame8.hide();
 		l_frame9.hide();
 		g_frameButFS.show();
+
 
 		double newscalevalue = normal.getScale();
 		normal.resize(getViewPortLeftfromGuiObject(normal), getViewPortTopfromGuiObject(normal), getViewPortWidthfromGuiObject(normal)/newscalevalue, getViewPortHeightfromGuiObject(normal)/newscalevalue);
@@ -181,6 +194,7 @@ fullScreen(boolean onOff){
 		l_frame2.setXmlParam("image", "frame.top");
 		l_frame2.setXmlParam("x", integerToString(105));
 		l_frame2.setXmlParam("w", integerToString(-240));
+		l_frame2_center.setXmlParam("image", "frame.top.center");
 		l_frame3.setXmlParam("image", "frame.topright");
 		l_frame3.setXmlParam("x", integerToString(-135));
 		l_frame4.show();
@@ -228,6 +242,15 @@ readFrameHeight(){
 		m.loadMap("frame.top");
 	}
 	i_titlebar = m.getHeight();
+	
+	if(fullscreen){
+		m.loadMap("frame.top.center.fs");
+	}
+	else{
+		m.loadMap("frame.top.center");
+	}
+	i_center = m.getWidth();
+	
 	delete m;
 }
 

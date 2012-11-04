@@ -1,10 +1,20 @@
 -------------------------------------------------------------
-Version 2.00 (Coming 2012)
+Version 1.99 (Beta version for v2.0)
 -------------------------------------------------------------
+[cPro 2]
 - New: Support for Cpro2 skins!
--------------------------------------------------------------
-[cpro1/2]
+- New: Reader tab (Combination of the Browser and BrowserPro)
+[cPro 1]
+- Improved: BrowserPro have new updated sources list (use same list as the cPro2 Reader)
+- Improved: Browser doesn't open a dead link anymore
+[cPro 1&2]
+- New: ALT + Prev/Next plays prev/next file in the current folder (great for videos too)
 - Fixed: Scrolling up in mini area goes blank if no widgets are installed
+- Fixed: ALT + Open button now loads all files of same extension of the current playing file
+- Fixed: "Get album art" now hidden if your Winamp version doesn't support it
+
+-------------------------------------------------------------
+
 
 -------------------------------------------------------------
 Version 1.15 (9 Sep 2010)

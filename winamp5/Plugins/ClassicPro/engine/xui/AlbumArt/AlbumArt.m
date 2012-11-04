@@ -24,7 +24,7 @@ System.onScriptUnloading(){
 albumart.onRightButtonUp(int x, int y){
 	popMenu = new PopUpMenu;
 
-	popMenu.addCommand("Get Album Art", 1, 0, 0);
+	if(System.getBuildNumber()<3235) popMenu.addCommand("Get Album Art", 1, 0, 0);
 	popMenu.addCommand("Refresh Album Art", 2, 0, 0);
 	popMenu.addCommand("Open Folder", 3, 0, 0);
 
