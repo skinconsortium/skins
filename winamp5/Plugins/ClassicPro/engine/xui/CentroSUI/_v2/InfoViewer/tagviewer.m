@@ -163,7 +163,10 @@ updateInfo(){
 
 
 g.onSetVisible(boolean onOff){
-	if(onOff) updateFontSize();
+	if(onOff){
+		delayLoad.start();
+		updateFontSize();
+	}
 }
 
 optionsButton.onLeftClick ()
@@ -208,9 +211,9 @@ optionsButton.onLeftClick ()
 	tagMenu.addCommand("Filename", 112, getPublicInt("cpro2.tags.112", 1), 0);
 	tagMenu.addCommand("Format", 113, getPublicInt("cpro2.tags.113", 1), 0);
 	tagMenu.addSeparator();
-	tagMenu.addCommand("Album Art", 51, 2, 0);
+	tagMenu.addCommand("Album Art", 51, getPublicInt("cpro2.tags.51", 1), 0);
 	tagMenu.addCommand("Rating", 114, getPublicInt("cpro2.tags.114", 1), 0);
-	tagMenu.addCommand("Show directory in status bar", 52, 2, 0);
+	tagMenu.addCommand("Show directory in status bar", 52, getPublicInt("cpro2.tags.52", 1), 0);
 
 	myMenu = new PopupMenu;
 	myMenu.addSubMenu(fontsizeMenu, "Font size");
@@ -223,8 +226,11 @@ optionsButton.onLeftClick ()
 	delete widthMenu;
 	delete tagMenu;
 
-
-	if(a>=50 && a<=120){
+	if(a>=50 && a<=52){
+		setPublicInt("cpro2.tags."+integerToString(a), !getPublicInt("cpro2.tags."+integerToString(a), 1));
+		g.sendAction("update_settings", "", 0, 0, 0, 0);
+	}
+	else if(a>=50 && a<=120){
 		setPublicInt("cpro2.tags."+integerToString(a), !getPublicInt("cpro2.tags."+integerToString(a), 1));
 		updateView();
 	}

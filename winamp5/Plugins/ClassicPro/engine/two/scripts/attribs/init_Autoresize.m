@@ -16,7 +16,7 @@ Function initAttribs_Autoresize();
 
 #define CUSTOM_PAGE_RESIZE "{E704AB5A-108E-4309-B54B-43EBA5C0C3AA}"
 
-Global ConfigAttribute titlebar_dblclk_max_attib, titlebar_dblclk_shade_attib, collapse_top_attrib, collapse_bottom_attrib, linkPosWidth;
+Global ConfigAttribute titlebar_dblclk_max_attib, titlebar_dblclk_shade_attib, collapse_top_attrib, collapse_bottom_attrib, linkPosWidth, aerosnap_attrib, liveResize_attrib;
 
 initAttribs_Autoresize(){
 	initPages();
@@ -29,7 +29,9 @@ initAttribs_Autoresize(){
 	collapse_top_attrib = custom_page_autoresize.newAttribute("Collapse Window to Top", "1");
 	collapse_bottom_attrib = custom_page_autoresize.newAttribute("Collapse Window to Bottom", "0");
 	addMenuSeparator(custom_page_autoresize);
-	linkPosWidth = custom_page_autoresize.newAttribute("Link Shade-mode Position and Width", "0");
+	linkPosWidth = custom_page_autoresize.newAttribute("Link Shade-mode Position and Width", "1");
+	aerosnap_attrib = custom_page_autoresize.newAttribute("Snap Window to Sides (Like Win7+ AeroSnap)", "1");
+	liveResize_attrib = custom_page_autoresize.newAttribute("Show Window Content while resizing", "1");
 }
 
 #ifdef MAIN_ATTRIBS_MGR
@@ -70,7 +72,7 @@ collapse_bottom_attrib.onDataChanged()
 	if (getData() == "1") collapse_top_attrib.setData("0");
 	if (getData() == "0") collapse_top_attrib.setData("1");
 	attribs_mychange = 0;
-}
+}/*
 linkPosWidth.onDataChanged()
 {
 	if (attribs_mychange) return;
@@ -80,4 +82,15 @@ linkPosWidth.onDataChanged()
 	if (getData() == "0") linkPosWidth.setData("1");
 	attribs_mychange = 0;
 }
+aerosnap_attrib.onDataChanged()
+{
+	if (attribs_mychange) return;
+	NOOFF
+	attribs_mychange = 1;
+	if (getData() == "1") aerosnap_attrib.setData("0");
+	if (getData() == "0") aerosnap_attrib.setData("1");
+	attribs_mychange = 0;
+}*/
+
+
 #endif
