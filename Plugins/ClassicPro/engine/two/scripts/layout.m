@@ -1,4 +1,5 @@
 #include <lib/std.mi>
+#include attribs/init_Autoresize.m
 
 #define i_playback 30 
 #define i_info 40 
@@ -11,14 +12,15 @@ Function fullScreen(boolean onOff);
 Function readFrameHeight();
 Function readFrameHeight();
 Function saveSkinPos();
+Function updateMax();
 
 Global Group g, g_screen, g_info, g_playback, g_sui, g_frameBut, g_frameButFS;
 Global Container player;
-Global Layout normal;
+Global Layout shade, normal;
 Global Layer l_frame1, l_frame2, l_frame3, l_frame4, l_frame5, l_frame6, l_frame7, l_frame8, l_frame9, l_frame2_center;
 Global int i_titlebar, i_y, i_center;//, i_info;
 Global Button b_goBig, b_goSmall;
-Global Boolean fullscreen;
+Global Boolean fullscreen, doubleClick;
 
 
 //AeroSnap by pjn123
@@ -30,9 +32,12 @@ Global Boolean clipped;
 Global int i_clip_w, i_clip_h, i_snapMode; // i_snapMode: 0=disabled, 1=left, 2=top, 3=right
 
 System.onScriptLoaded() {
+	initAttribs_Autoresize();
 
 	player = System.getContainer("main");
 	normal = player.getLayout("normal");
+	//shade = player.getLayout("shade");
+	
 	//normal.setRedrawOnResize(0);
 	
 	//normal.snapAdjust(i_param, i_param, i_param, i_param);
@@ -66,6 +71,7 @@ System.onScriptLoaded() {
 	delete m;*/
 
 	readFrameHeight();
+	updateMax();
 	
 	
 	//g.setXmlParam("minimum_h",integerToString(i_titlebar+i_info+i_playback+8));
@@ -73,7 +79,7 @@ System.onScriptLoaded() {
 
 	fullscreen = getPublicInt("cPro2.fs",false);
 	readFrameHeight();
-	fullScreen(fullscreen);
+	
 	
 	//Remember last clip size
 	i_clip_w = getPublicInt("cPro2.i_clip_w", 400);
@@ -83,9 +89,56 @@ System.onScriptLoaded() {
 
 }
 
-System.onScriptUnloading(){
-	saveSkinPos();
+/*
+Events order:
+	::Going to NORMAL mode
+	shade is open
+	goto normal
+	show normal [save position for SHADE here]
+	hide shade [goto saved position for NORMAL here]
+
+	::Going to SHADE mode
+	normal is open
+	goto shade
+	show shade [save position for NORMAL here]
+	hide normal [goto saved position for SHADE here]
+*/
+
+System.onShowLayout(Layout _layout){
+	if(shade == NULL) shade = player.getLayout("shade");
+
+	if(_layout==shade && normal.isVisible()){ 
+		saveSkinPos();
+	}
+	else if(_layout==normal && !shade.isVisible()){
+		fullScreen(fullscreen); //On cold start
+	}
 }
+System.onHideLayout(Layout _layout){
+	if(_layout==shade && normal.isVisible()){
+		fullScreen(fullscreen);
+	}
+}
+
+
+normal.onScale (Double newscalevalue){
+	if (normal != player.getCurLayout()) return;
+	//normal.setXmlParam("maximum_w", integerToString(getViewPortWidthfromGuiObject(normal)/newscalevalue));
+	//normal.setXmlParam("maximum_h", integerToString(getViewPortHeightfromGuiObject(normal)/newscalevalue));
+	
+	updateMax();
+
+	if(getPublicInt("cPro2.fs", 0)==1){
+		double newscalevalue = normal.getScale();
+		normal.resize(getViewPortLeftfromGuiObject(normal), getViewPortTopfromGuiObject(normal), getViewPortWidthfromGuiObject(normal)/newscalevalue, getViewPortHeightfromGuiObject(normal)/newscalevalue);
+	}
+}
+updateMax(){
+	double newscalevalue = normal.getScale();
+	normal.setXmlParam("maximum_w", integerToString(getViewPortWidthfromGuiObject(normal)/newscalevalue));
+	normal.setXmlParam("maximum_h", integerToString(getViewPortHeightfromGuiObject(normal)/newscalevalue));
+}
+
 
 g.onResize(int x, int y, int w, int h){
 	if(i_center<10 || w < i_center+278) l_frame2_center.hide();
@@ -129,6 +182,8 @@ saveSkinPos(){
 		setPublicInt("cPro2.y", i_y);
 		setPublicInt("cPro2.w", normal.getWidth());
 		setPublicInt("cPro2.h", normal.getHeight());
+		
+		setPublicInt("cPro2.saveby", 0); //0=normal ; 1=shade
 	}
 }
 
@@ -209,7 +264,19 @@ fullScreen(boolean onOff){
 		l_frame9.show();
 		g_frameBut.show();
 
-		normal.resize (getPublicInt("cPro2.x", 50), getPublicInt("cPro2.y", 50), getPublicInt("cPro2.w", 50), getPublicInt("cPro2.h", 50));
+
+
+		int x = getPublicInt("cPro2.x", getCurAppLeft());
+		int y = getPublicInt("cPro2.y", getCurAppTop());
+		int w = getPublicInt("cPro2.w", getCurAppWidth());
+		int h = getPublicInt("cPro2.h", getCurAppHeight());
+		
+		if(getPublicInt("cPro2.saveby", 0)==1 && collapse_bottom_attrib.getData() == "1" && linkPosWidth.getData() == "1"){
+			y-=h-22;
+		}
+
+
+		normal.resize (x, y, w, h);
 		//normal.setXmlParam("move", "1");
 	
 		//Do this last because it takes resources.. must sometime try to clean sui area resize resource hogs
@@ -230,7 +297,6 @@ fullScreen(boolean onOff){
 		//g_sui.resize(8,i_titlebar+i_info+i_playback,-16,-(i_titlebar+i_info+i_playback+8));
 	}
 	//normal.show();
-
 }
 
 readFrameHeight(){
@@ -273,14 +339,42 @@ b_goSmall.onLeftClick(){
 
 
 
+l_frame2.onLeftButtonUp(int x, int y){
+	if(doubleClick){
+		if(titlebar_dblclk_max_attib.getData() == "1"){
+			if(b_goBig.isVisible()){
+				b_goBig.leftClick();
+			}
+			else{
+				b_goSmall.leftClick();
+			}
+		}
+		else{
+			player.switchToLayout("shade");
+		}
+	}
+	doubleClick=false;
+}
+
+l_frame2.onLeftButtonDblClk(int x, int y){
+	doubleClick=true;
+}
+
+
+
+
+
+
+
+
+
+
 
 /*
 WIN 7 CLIP
 */
-
-
-
 normal.onMove(){
+	if(aerosnap_attrib.getData() == "0") return;
 	if(clipped && normal.getTop()!=0){
 		/*
 		Ideally would like to move the layout's x/y position here to make sure mouse stays on window.
@@ -393,6 +487,7 @@ normal.onMove(){
 }
 
 normal.onEndMove(){
+	if(aerosnap_attrib.getData() == "0") return;
 	//debug("123");
 	if(i_snapMode==0) return;
 	

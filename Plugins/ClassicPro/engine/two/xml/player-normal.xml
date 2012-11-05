@@ -257,7 +257,7 @@
 	-->
 	<layer id="two.frame.1" x="0" y="0" image="frame.topleft" regionop="1"/>
 	<layer id="two.frame.2" x="105" y="0" w="-240" relatw="1" tile="1" image="frame.top" regionop="1"/>
-	<layer id="two.frame.2.center" image="frame.top.center" visible="1"/>
+	<layer id="two.frame.2.center" image="frame.top.center" visible="1" ghost="1"/>
 	<layer id="two.frame.3" x="-135" y="0" relatx="1" image="frame.topright" regionop="1"/>
 	<layer id="two.frame.7" x="0" y="-8" relaty="1" image="frame.bottomleft" regionop="1" resize="bottomleft"/>
 	<layer id="two.frame.8" x="8" y="-8" w="-16" relaty="1" relatw="1" tile="1" image="frame.bottom" regionop="1" move="0"/>

@@ -60,7 +60,7 @@ System.onScriptLoaded()
 
 scriptGroup.onSetVisible(boolean onOff){
 	if(onOff){
-		scriptGroup.onResize(0,0,scriptGroup.getWidth(),scriptGroup.getHeight());
+		scriptGroup.onAction("update_settings", "", 0, 0, 0, 0, scriptGroup);
 	}
 }
 
@@ -68,65 +68,91 @@ scriptGroup.onSetVisible(boolean onOff){
 scriptGroup.onResize(int x, int y, int w, int h){
 	if(!scriptGroup.isVisible()) return;
 
-	if(w>h){
-		if(_powerSave1!=1){
-			g_cover.setXmlParam("relatw", "0");
-			g_cover.setXmlParam("relath", "1");
-			g_cover.setXmlParam("h", "-3");
+	if(getPublicInt("cpro2.tags.51", 1)==1){
+		g_cover.show();
+		if(w>h){
+			if(_powerSave1!=1){
+				g_cover.setXmlParam("relatw", "0");
+				g_cover.setXmlParam("relath", "1");
+				g_cover.setXmlParam("h", "-3");
 
-			tagsGroup.setXmlParam("y", "1");
-			tagsGroup.setXmlParam("h", "-20");
+				tagsGroup.setXmlParam("y", "1");
+				tagsGroup.setXmlParam("h", "-20");
 
-			tag_stats_grid.setXmlParam("topleft", "sui.status.fade");
-			//status_box_grid.setXmlParam("x", "0");
-			//status_box_grid.setXmlParam("x", "0");
-			status_box.setXmlParam("x", "20");
-			status_box.setXmlParam("w", "-85");
-		
-			_powerSave1=1;
+				tag_stats_grid.setXmlParam("topleft", "sui.status.fade");
+				status_box.setXmlParam("x", "20");
+				status_box.setXmlParam("w", "-85");
+			
+				_powerSave1=1;
+			}
+			
+			if(h>w/2-1) w2 = w/2-1;
+			else w2= h-1;
+			g_cover.setXmlParam("w", integerToString(w2));
+
+			tag_status.setXmlParam("x", integerToString(w2));
+			tag_status.setXmlParam("w", integerToString(-w2));
+
+			tagsGroup.setXmlParam("x", integerToString(w2+5));
+			tagsGroup.setXmlParam("w", integerToString(w-(w2+5-8)));
+			
 		}
-		
-		if(h>w/2-1) w2 = w/2-1;
-		else w2= h-1;
-		g_cover.setXmlParam("w", integerToString(w2));
-		tag_status.setXmlParam("x", integerToString(w2));
-		tag_status.setXmlParam("w", integerToString(-w2));
+		else{
+			if(_powerSave1!=2){
+				g_cover.setXmlParam("relatw", "1");
+				g_cover.setXmlParam("relath", "0");
+				g_cover.setXmlParam("w", "-2");
 
-		tagsGroup.setXmlParam("x", integerToString(w2+5));
-		tagsGroup.setXmlParam("w", integerToString(w-(w2+5-8)));
-		
-		/*if(h/2-119/2+4<0) tagsGroup.setXmlParam("y", "0");
-		else tagsGroup.setXmlParam("y", integerToString(h/2-119/2+4));*/
+				
+				tagsGroup.setXmlParam("x", "1");
+				tagsGroup.setXmlParam("w", "-2");
+
+				tag_status.setXmlParam("x", "0");
+				tag_status.setXmlParam("w", "0");
+				tag_stats_grid.setXmlParam("topleft", "");
+				status_box.setXmlParam("x", "1");
+				status_box.setXmlParam("w", "-66");
+			
+				_powerSave1=2;
+			}
+			
+			if(w>h/2) h2 = h/2;
+			else h2 = w;
+			
+			g_cover.setXmlParam("h", integerToString(h2));
+			tagsGroup.setXmlParam("y", integerToString(h2));
+			tagsGroup.setXmlParam("h", integerToString(-h2-20));
+			
+			
+		}
 	}
 	else{
-		if(_powerSave1!=2){
-			g_cover.setXmlParam("relatw", "1");
-			g_cover.setXmlParam("relath", "0");
-			g_cover.setXmlParam("w", "-2");
+		g_cover.hide();
+		if(_powerSave1!=3){
+				tagsGroup.setXmlParam("x", "1");
+				tagsGroup.setXmlParam("w", "-2");
+				tagsGroup.setXmlParam("y", integerToString(1));
+				tagsGroup.setXmlParam("h", integerToString(-22));
 
+				tag_status.setXmlParam("x", "0");
+				tag_status.setXmlParam("w", "0");
+				tag_stats_grid.setXmlParam("topleft", "");
+				status_box.setXmlParam("x", "1");
+				status_box.setXmlParam("w", "-66");
 			
-			tagsGroup.setXmlParam("x", "1");
-			tagsGroup.setXmlParam("w", "-2");
+				_powerSave1=3;
+			}
+	}
+	
+}
 
-			tag_status.setXmlParam("x", "0");
-			tag_status.setXmlParam("w", "0");
-			tag_stats_grid.setXmlParam("topleft", "");
-			//status_box_grid.setXmlParam("x", "20");
-			//status_box_grid.setXmlParam("w", "-85");
-			status_box.setXmlParam("x", "1");
-			status_box.setXmlParam("w", "-66");
-
+scriptGroup.onAction(String action, String param, Int x, int y, int p1, int p2, GuiObject source){
+	if(strlower(action)=="update_settings"){
+		//_powerSave1=0; //Force update
+		scriptGroup.onResize(0,0,scriptGroup.getWidth(),scriptGroup.getHeight());
 		
-			_powerSave1=2;
-		}
-		
-		if(w>h/2) h2 = h/2;
-		else h2 = w;
-		
-		g_cover.setXmlParam("h", integerToString(h2));
-		tagsGroup.setXmlParam("y", integerToString(h2));
-		tagsGroup.setXmlParam("h", integerToString(-h2-20));
-		
-		
+		//Settings
+		if(getPublicInt("cpro2.tags.52", 1)==1) status_box.show();
+		else status_box.hide();
 	}
 }

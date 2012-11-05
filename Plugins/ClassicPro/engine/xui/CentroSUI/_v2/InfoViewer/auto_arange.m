@@ -52,7 +52,7 @@ g.onresize(int x, int y, int w, int h){
 
 int getNumOfRows(){
 	custom = g.enumObject(0);
-	num_of_rows = g.getHeight()/custom.getHeight();
+	num_of_rows = (g.getHeight()-3)/custom.getHeight();
 	return num_of_rows;
 }
 
@@ -105,7 +105,7 @@ doArangeNow(){
 	//debugint(num_of_rows);
 
 	current_row = 0;
-	next_y = 0;
+	next_y = 2;
 	skip = 0;
 	
 	if(obj1.getHeight() * num_of_rows > g.getHeight()) num_of_rows--; //There's no round down function in maki :(
@@ -127,7 +127,7 @@ doArangeNow(){
 
 		if(a+2+skip > num_of_rows*(current_row+1)){
 			current_row++;
-			next_y = 0;
+			next_y = 2;
 			
 		}
 		else{
