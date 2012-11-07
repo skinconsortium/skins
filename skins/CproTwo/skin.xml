@@ -2,30 +2,27 @@
 
 <WinampAbstractionLayer version="1.34">
 	<skininfo>
-		<version>0.007</version>
-		<name>CproTwo</name>
-		<author>Pieter Nieuwoudt, Martin Pöhlmann</author>
-		<comment>Work in progress</comment>
-		<email>email@skinconsortium.com</email>
+		<version>1.99.020</version>
+		<name>cPro2</name>
+		<author>Pieter Nieuwoudt</author>
+		<comment>Default skin for ClassicPro 2.0</comment>
+		<email>pjn123@outlook.com</email>
 		<screenshot>screenshot.png</screenshot>
 		<homepage>http://www.skinconsortium.com/</homepage>
 	</skininfo>
 
-	<accelerators section="general">
-		<accelerator bind="Alt+F" action="MENUHOTKEY_FILE"/>
-		<accelerator bind="Alt+P" action="MENUHOTKEY_PLAY"/>
-		<accelerator bind="Alt+O" action="MENUHOTKEY_OPTIONS"/>
-		<accelerator bind="Alt+I" action="MENUHOTKEY_VIEW"/>
-		<accelerator bind="Alt+H" action="MENUHOTKEY_HELP"/>
-	</accelerators>
-
-	<accelerators section="normal">
-			<accelerator bind="space" action="SHOW_CURRENT_TRACK" />
-	</accelerators>
+	<!--
+	This script is used to warn users if they don't have ClassicPro installed.
+	Please change the last number in the param="xxx;123" to the version you used to create your skin.
+	If the user have a lower version than yours, the skin will show but a warning will ask them to update!
+		For example:
+		- ClassicPro v1.15 = param="@COLORTHEMESPATH@;115"
+		- ClassicPro v2.00 = param="@COLORTHEMESPATH@;200"
+	-->
+	<scripts> <script file="warning.maki" param="@COLORTHEMESPATH@;199"/> </scripts>
 	
 	<include file="colorthemes.xml"/>
-	<!--<scripts> <script file="warning_1.14.maki" param="@COLORTHEMESPATH@"/> </scripts>-->
 	<include file="colors.xml"/>
-	<include file="@COLORTHEMESPATH@/../../Plugins/classicPro/engine/load-two.xml"/>
+	<include file="@COLORTHEMESPATH@/../../plugins/classicPro/engine/load-two.xml"/>
 
 </WinampAbstractionLayer>

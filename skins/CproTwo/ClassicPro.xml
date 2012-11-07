@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ClassicPro version="2.00" engine="two">
+	
+	<TextSettings>
+		<Style id="normal.info.title.text"
+			bold="1"
+		/>
+		<Style id="normal.info.artist.text"
+			bold="1"
+		/>
+		<Style id="normal.info.bitrate.text"
+			bold="1"
+		/>
+		<Style id="normal.info.timebig.text"
+			bold="1"
+		/>
+		<Style id="normal.info.timesmall.text"
+			bold="1"
+		/>
+		<Style id="normal.statusbar.text"
+			fontsize="14" y="1" antialias="0" bold="0"
+		/>
+		<Style id="normal.fileinfo.text"
+			antialias="1" bold="0" italic="0"
+		/>
+	</TextSettings>
+
+	<Visualization>
+		<BeatVis>
+			<customvis name="Bars"/>
+			<customvis name="Llama"/>
+		</BeatVis>
+	</Visualization>
+
+</ClassicPro>
