@@ -38,22 +38,13 @@
 
 	<slider id="shade.seeker.slider.0" x="0" y="0" w="0" h="0" relatw="1" relath="1" action="SEEK" thumb="info.seeker.thumb" interval="50"/>
 	<slider id="shade.seeker.slider.1" x="0" y="0" w="0" h="0" relatw="1" relath="1" action="SEEK" thumb="info.seeker.thumb" cursor="IDC_HAND"/>
-	<ModernSongticker id="Songticker"
-		fitparent="1" y="5" antialias="1"
-		id_layout="main;shade"
-		id_volume="Volume"
-		id_seeker="seeker"
-		id_prev="previous.track"
-		id_next="next.track"
-		id_open="open.tracks"
-		id_shuf="shuffle"
-		id_rep="repeat"
-		id_mute="mute2"
-		fontsize="12"
-		font="cpro.winshade.font"
-		color="0,0,0"
-		align="center" ghost_all="1"
-	/>
+
+
+	<text id="two.info.text.tracktime" x="10" y="1" h="22" align="left" text="1:43" fontsize="18" color="cpro2.color.infoseek.numbig" font="Calibri" ghost="1"/>
+	<text id="two.info.text.totaltime" x="38" y="4" h="16" align="left" text="/ 16:25" fontsize="15" color="cpro2.color.infoseek.numsmall" font="Calibri" ghost="1"/>
+	<text id="two.info.text.trackevent" x="0" y="0" w="0" h="0" display="TIMEELAPSED" visible="0"/>
+
+	<grid fitparent="1" topleft="shade.seeker.4.1" top="shade.seeker.4.2" topright="shade.seeker.4.3" ghost="1"/>
 	
 	
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\shade-seeker.maki"/>

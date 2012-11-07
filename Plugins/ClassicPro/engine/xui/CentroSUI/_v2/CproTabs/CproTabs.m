@@ -18,6 +18,7 @@ Global ColorMgr StartupCallback;
 
 //#define DEBUG
 #define debugTabs //
+#define QUE_MAN "{F8CD22A4-0C33-45FB-A360-70D7240FC23E}"
 
 // this is the page that maps its items to the windows menu (aka View), you can add attribs or more pages (submenus)
 #define CUSTOM_WINDOWSMENU_ITEMS "{6559CA61-7EB2-4415-A8A9-A2AEEF762B7F}"
@@ -102,6 +103,7 @@ System.onScriptLoaded ()
 	internalNames.addItem("Video");				//2
 	internalNames.addItem("Visualization");		//3
 	internalNames.addItem("Reader");			//4
+	//internalNames.addItem("Queue Manager");		//5
 	internalNames.addItem("Plugin");			//5
 
 	List internalTabIcons = new List;
@@ -110,6 +112,7 @@ System.onScriptLoaded ()
 	internalTabIcons.addItem("cpro.tab.icon.vid");		//2
 	internalTabIcons.addItem("cpro.tab.icon.vis");		//3
 	internalTabIcons.addItem("cpro.tab.icon.bro");		//4
+	//internalTabIcons.addItem("cpro.tab.icon.que");		//5
 	internalTabIcons.addItem("cpro.tab.icon.plu");		//5
 
 	/** Create ordered list of all saved tabs */
@@ -232,6 +235,7 @@ System.onScriptLoaded ()
 				tabI.IDS = "";
 				tabI.isInternal = true;
 				tabI.nameLong = internalNames.enumItem(tabI.ID);
+				//debug(internalNames.enumItem(tabI.ID));
 				//tabI.nameShort = internalNamesShort.enumItem(tabI.ID);
 				tabI.iconbitmap = internalTabIcons.enumItem(tabI.ID);
 			}
@@ -839,14 +843,14 @@ alignByResize ()
 
 updateTabCount(){
 	
-	/*Tab t = firstTab;
+	Tab t = firstTab;
 	tabCount = 0;
 	while (t != NULL)	{
 		tabCount++;
 		t = t.right;
-	}*/
+	}
 	
-	tabCount = 5;
+	//tabCount = 5;
 }
 
 alignByResize ()
@@ -1051,8 +1055,16 @@ sg.onAction (String action, String param, int x, int y, int p1, int p2, GuiObjec
 				else tabI.nameShort = strupper(strLeft(getToken(param, ";", 0),3));
 				
 				Text t = tabI.findObject("cpro.tab.text");
+				Layer l = tabI.findObject("cpro.tab.icon");
 				//if(isFullNames) 
 				t.setXmlParam("text", tabI.nameLong);
+				if(getToken(param, ";", 1)==QUE_MAN) l.setXmlParam("image", "cpro.tab.icon.que");
+				else if(strright(getToken(param, ";", 1),29)=="-0000-00FF-8000-C5E2FB8CD50B}") l.setXmlParam("image", "cpro.tab.icon.onl");
+				else l.setXmlParam("image", "cpro.tab.icon.plu");
+	
+	
+			
+
 				//else t.setXmlParam("text", tabI.nameShort);
 				
 				//JAM - Add icon update!!!

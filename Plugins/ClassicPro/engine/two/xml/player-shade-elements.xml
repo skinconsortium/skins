@@ -28,6 +28,9 @@
 	<bitmap id="shade.seeker.3.1" file="shade.png" x="226" y="69" w="8" h="22" gammagroup="n.Info"/>
 	<bitmap id="shade.seeker.3.2" file="shade.png" x="235" y="69" w="8" h="22" gammagroup="n.Info"/>
 	<bitmap id="shade.seeker.3.3" file="shade.png" x="244" y="69" w="8" h="22" gammagroup="n.Info"/>
+	<bitmap id="shade.seeker.4.1" file="shade.png" x="226" y="92" w="8" h="22" gammagroup="n.Info"/>
+	<bitmap id="shade.seeker.4.2" file="shade.png" x="235" y="92" w="8" h="22" gammagroup="n.Info"/>
+	<bitmap id="shade.seeker.4.3" file="shade.png" x="244" y="92" w="8" h="22" gammagroup="n.Info"/>
 
 
 	<bitmap id="s.prev.1" file="shade.png" x="100" y="23" w="20" h="22" gammagroup="s.Button"/>
@@ -64,9 +67,9 @@
 	<bitmap id="s.rep.1.1" file="shade.png" x="205" y="92" w="20" h="22" gammagroup="n.Playback.Button"/>
 	<bitmap id="s.rep.2.1" file="shade.png" x="205" y="115" w="20" h="22" gammagroup="n.Playback.Button"/>
 	<bitmap id="s.rep.3.1" file="shade.png" x="205" y="138" w="20" h="22" gammagroup="n.Playback.Button"/>
-	<bitmap id="s.rep.1.2" file="shade.png" x="226" y="92" w="20" h="22" gammagroup="n.Playback.Button"/>
-	<bitmap id="s.rep.2.2" file="shade.png" x="226" y="115" w="20" h="22" gammagroup="n.Playback.Button"/>
-	<bitmap id="s.rep.3.2" file="shade.png" x="226" y="138" w="20" h="22" gammagroup="n.Playback.Button"/>
+	<bitmap id="s.rep.1.2" file="shade.png" x="163" y="92" w="20" h="22" gammagroup="n.Playback.Button"/>
+	<bitmap id="s.rep.2.2" file="shade.png" x="163" y="115" w="20" h="22" gammagroup="n.Playback.Button"/>
+	<bitmap id="s.rep.3.2" file="shade.png" x="163" y="138" w="20" h="22" gammagroup="n.Playback.Button"/>
 
 	<bitmap id="s.aot.1.0" file="shade.png" x="323" y="23" w="25" h="22" gammagroup="s.Button"/>
 	<bitmap id="s.aot.2.0" file="shade.png" x="323" y="46" w="25" h="22" gammagroup="s.Button"/>

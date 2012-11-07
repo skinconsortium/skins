@@ -229,8 +229,9 @@ optionsButton.onLeftClick ()
 	if(a>=50 && a<=52){
 		setPublicInt("cpro2.tags."+integerToString(a), !getPublicInt("cpro2.tags."+integerToString(a), 1));
 		g.sendAction("update_settings", "", 0, 0, 0, 0);
+		updateView();
 	}
-	else if(a>=50 && a<=120){
+	else if(a>=100 && a<=120){
 		setPublicInt("cpro2.tags."+integerToString(a), !getPublicInt("cpro2.tags."+integerToString(a), 1));
 		updateView();
 	}
