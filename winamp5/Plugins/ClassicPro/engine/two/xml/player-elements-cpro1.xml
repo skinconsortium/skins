@@ -99,7 +99,6 @@
 
 
 	<!-- No colorthemes ;) -->
-	<bitmap id="about.gfx" file="about.png" x="0" y="0" w="380" h="321" gammagroup="_"/>
 	<bitmap id="wasabi.button.label.arrow.down" file="browser.png" x="145" y="42" h="6" w="7" gammagroup="n.Button"/>
 	<bitmap id="vis.color.read" file="mainframe.png" x="28" y="101" w="3" h="18" gammagroup="_"/>
 	<bitmap id="vis.band" file="mainframe.png" x="28" y="103" w="1" h="16" gammagroup="_"/>
@@ -114,19 +113,6 @@
 	<bitmap id="songinfo.source" file="songinfo.png" x="0" y="0" h="15" w="110" gammagroup="n.Text.SongInfo"/>
 	<bitmapfont id="bitmapfont.songinfo" file="songinfo.source" charwidth="5" charheight="5" hspacing="0" vspacing="0"  gammagroup="_"/>
 
-	<!-- Layer: NoCover -->
-	<bitmap id="cover.notfound" file="art_notfound.png" gammagroup="n.Cover"/>
-	<bitmap id="cover.sc" file="art_shoutcast.png" gammagroup="n.Cover"/>
-	<bitmap id="cover.aolr" file="art_aolradio.png" gammagroup="n.Cover"/>
-
-	<!-- BeatVis -->
-	<bitmap id="beat.0.left" file="beat_left.png" gammagroup="n.Beatvis"/>
-	<bitmap id="beat.0.right" file="beat_right.png" gammagroup="n.Beatvis"/>
-
-	<bitmap id="beat.left.b" file="beat_left.png" x="0" y="0" h="45" gammagroup="n.Beatvis"/>
-	<bitmap id="beat.right.b" file="beat_right.png" x="0" y="0" h="45" gammagroup="n.Beatvis"/>
-	<bitmap id="beat.left.c" file="beat_left.png" x="0" y="45" h="45" gammagroup="n.Beatvis"/>
-	<bitmap id="beat.right.c" file="beat_right.png" x="0" y="45" h="45" gammagroup="n.Beatvis"/>
 
 	<!-- SLoB - added beatvis overlay - optional -->
 	<bitmap id="beatvis.overlay" file="vis_overlay.png" gammagroup="n.Background.Overlay"/>
@@ -312,13 +298,6 @@
 	<bitmap id="wasabi.dropdownlist.list.bottom.right" file="combobox.png" x="13" y="13" h="4" w="4" gammagroup="n.TooltipCombobox"/>
 
 
-	<bitmap id="notifier.bg.left" file="notifier.png" x="0" y="0" w="13" h="80" gammagroup="n.Notifier.Bg"/>
-	<bitmap id="notifier.bg.center" file="notifier.png" x="14" y="0" w="133" h="80" gammagroup="n.Notifier.Bg"/>
-	<bitmap id="notifier.bg.right" file="notifier.png" x="148" y="0" w="13" h="80" gammagroup="n.Notifier.Bg"/>
-	<bitmap id="notifier.bg.left.da" file="notifier.png" x="0" y="81" w="13" h="80" gammagroup="n.Notifier.Bg"/>
-	<bitmap id="notifier.bg.center.da" file="notifier.png" x="14" y="81" w="133" h="80" gammagroup="n.Notifier.Bg"/>
-	<bitmap id="notifier.bg.right.da" file="notifier.png" x="148" y="81" w="13" h="80" gammagroup="n.Notifier.Bg"/>
-	<bitmap id="notifier.bg.cover" file="notifier.png" x="0" y="162" w="78" h="80" gammagroup="n.Notifier.Bg"/>
 
 
 	<!-- Browser -->

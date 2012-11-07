@@ -13,6 +13,7 @@ Global ColorMgr StartupCallback;
 #define LIR_GUID "{7A8B2D76-9531-43B9-91A1-AC455A7C8242}"
 #define DL_GUID "{A3EF47BD-39EB-435A-9FB3-A5D87F6F17A5}"
 #define PL_GUID "{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D}"
+#define QUE_MAN "{F8CD22A4-0C33-45FB-A360-70D7240FC23E}"
 #define JTF_GUID "{5F8D8373-EAA7-4390-B5AB-402E86A5F9DD}"
 #define GUID_BLACKLIST "{D6201408-476A-4308-BF1B-7BACA1124B12};{5F8D8373-EAA7-4390-B5AB-402E86A5F9DD};{00000000-0000-0000-0000-000000000000}"
 #define DEF_DRAWER_H 119
@@ -21,6 +22,11 @@ Global ColorMgr StartupCallback;
 #define DRAWER_VIS_ID 6
 #define WIDGET_TAB_ID -666
 #define myDelay 10
+
+//{00000010-0000-00FF-8000-C5E2FB8CD50B}
+//{00000011-0000-00FF-8000-C5E2FB8CD50B}
+//{00000012-0000-00FF-8000-C5E2FB8CD50B}
+//{00000013-0000-00FF-8000-C5E2FB8CD50B}
 
 // Functions used
 Function openMainLayoutNow();
@@ -73,7 +79,7 @@ Global Group area_left, area_right, area_mini, area_right_pl, ocFrame;//, CproTa
 // Component Handling
 Global int delayStartTab, widgetStatus;
 Global boolean dontTabCall, skipLoad, busyWithThisFunction, wasTabTrig, delayStart, ml_installed;
-Global String closeGUID;
+Global String closeGUID, thirdPartyGuid;
 Global int active_tab, tab_openned, delayStartTab;
 Global Timer openMainLayout, openDefaultTab, refreshAIOTab, checkVisName, ssWinHol;
 Global WindowHolder hold_Other, hold_Pl2, hold_vid, hold_avs, hold_ml;
@@ -338,6 +344,7 @@ System.onGetCancelComponent(String guid, boolean goingvisible){
 			}
 		}
 		else{
+			thirdPartyGuid = guid;
 			if(active_tab!=5){
 				openTabNo(5);
 			}
@@ -367,7 +374,7 @@ System.onGetCancelComponent(String guid, boolean goingvisible){
 
 refreshAIOTab.onTimer(){
 	refreshAIOTab.stop();
-	CproTabs.sendAction("update_tabname", hold_Other.getComponentName(), 5, 0, 0, 0);
+	CproTabs.sendAction("update_tabname", hold_Other.getComponentName()+";"+thirdPartyGuid, 5, 0, 0, 0);
 }
 
 openDefaultTab.onTimer(){

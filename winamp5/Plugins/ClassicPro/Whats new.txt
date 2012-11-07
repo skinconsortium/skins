@@ -9,6 +9,7 @@ Version 1.99 (Beta version for v2.0)
 - Improved: Browser doesn't open a dead link anymore
 [cPro 1&2]
 - New: ALT + Prev/Next plays prev/next file in the current folder (great for videos too)
+- Improved: Album Art now shows feedback on dbl-click
 - Fixed: Scrolling up in mini area goes blank if no widgets are installed
 - Fixed: ALT + Open button now loads all files of same extension of the current playing file
 - Fixed: "Get album art" now hidden if your Winamp version doesn't support it

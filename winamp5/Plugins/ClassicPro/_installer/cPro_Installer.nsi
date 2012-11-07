@@ -1,7 +1,7 @@
 /*
 	ClassicPro Installer 
 
-	Copyright (c) 2009-2010 by Pawe³ Porwisz aka Pepe
+	Copyright (c) 2009-2012 by Pawe³ Porwisz aka Pepe
 	This software is provided 'as-is', without any express or implied warranty.
 	
 	Built in: NSIS 2.46 with Modern User Interface v2.0
@@ -574,6 +574,10 @@ Section "$(CPro_CProFiles)" "CPro_Sec_CProFiles"
 		File "..\engine\xui\CentroSUI\_v2\Reader\icons\*.png"
 	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\CentroSUI\_v2\Reader\source
 		File "..\engine\xui\CentroSUI\_v2\Reader\source\*.xml"
+	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\CentroSUI\_v2\InfoViewer
+		File "..\engine\xui\CentroSUI\_v2\InfoViewer\*.m"
+		File "..\engine\xui\CentroSUI\_v2\InfoViewer\*.maki"
+		File "..\engine\xui\CentroSUI\_v2\InfoViewer\*.xml"
 
 	SetOutPath $INSTDIR\Plugins\ClassicPro\engine\xui\editbox
 		File "..\engine\xui\editbox\*.xml"

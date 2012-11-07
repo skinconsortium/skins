@@ -1,6 +1,6 @@
 <include file="internal-colors.xml"/>
 <include file="player-elements.xml"/>
-<include file="player-elements-cpro1.xml"/>
+<!--<include file="player-elements-cpro1.xml"/>-->
 <include file="player-shade-elements.xml"/>
 <include file="player.xml"/>
 <include file="standardframe.xml"/>

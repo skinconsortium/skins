@@ -77,21 +77,36 @@ System.onTitleChange (String newtitle){
 refreshCover(){
 	// ---------- Stream info ----------
 	String stype = getPlayItemMetaDataString("streamtype"); //"streamtype" will return "2" for SHOUTcast and "3" for AOL Radio
+	
+	if(strlower(getExtension(getPlayItemString()))=="nsv" && strleft(getPlayItemString(), 7) == "http://" && stype =="") stype = "sc_tv";
 
-	if (stype == "2"){
+	if (stype == "2" || stype == "5"){
 		albumart.setXmlParam("notfoundimage","cover.sc");
 	}
 	else if (stype == "3"){
 		albumart.setXmlParam("notfoundimage", "cover.aolr");
+	}
+	else if (stype == "sc_tv"){
+		Map myMap = new Map;
+		myMap.loadMap("cover.sctv");
+		
+		if(myMap.getWidth()>64) albumart.setXmlParam("notfoundimage", "cover.sctv");
+		else albumart.setXmlParam("notfoundimage", "cover.notfound");
+		
+		delete myMap;
 	}
 	else{
 		albumart.setXmlParam("notfoundimage","cover.notfound");
 	}
 
 	AlbumArt.refresh();
+
 	
 	if(stype == "" && !lookagain.isRunning()) lookagain.start();
 	else if(stype != "") lookagain.stop();
+	
+	//String stype2 = getPlayItemMetaDataString("contenttype"); //"streamtype" will return "2" for SHOUTcast and "3" for AOL Radio
+	//setClipboardText(getPlayItemString());
 }
 
 lookagain.onTimer(){

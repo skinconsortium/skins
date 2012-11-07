@@ -121,6 +121,23 @@
 </groupdef>
 
 
+
+<!--
+::One - Queue Manager Tab
+
+<groupdef id="centro.queueman" name="Queue Manager">
+	<rect fitparent="1" filled="1"/>
+	<windowholder id="centro.windowholder.qm" fitparent="1" autofocus="1" wantfocus="0" autoclose="1" autoopen="1" autoavailable="1" visible="1" hold="guid:{F8CD22A4-0C33-45FB-A360-70D7240FC23E}"/>
+  <wasabi:button
+    id="about" text="Click me"
+    action="TOGGLE" param="guid:{F8CD22A4-0C33-45FB-A360-70D7240FC23E}"
+    x="100" y="100" w="300" h="20" 
+    rectrgn="1"
+  />
+
+</groupdef>-->
+
+
 <!--
 ::One - Plugins Tab
 -->
@@ -146,6 +163,7 @@
 	<group id="centro.video" x="0" y="0" w="0" h="0" relatw="1" relath="1" visible="0" wantfocus="1"/>
 	<group id="centro.visualization" x="0" y="0" w="0" h="0" relatw="1" relath="1" visible="0" wantfocus="1"/>
 	<group id="centro.browser" x="0" y="0" w="0" h="0" relatw="1" relath="1" visible="0" wantfocus="1"/>
+	<!--<group id="centro.queueman" x="0" y="0" w="0" h="0" relatw="1" relath="1" visible="0" wantfocus="1"/>-->
 	<group id="centro.playlist2" x="0" y="0" w="0" h="0" relatw="1" relath="1" visible="0" wantfocus="1"/>
 	<group id="centro.other" x="0" y="0" w="0" h="0" relatw="1" relath="1" visible="0" wantfocus="1"/>
 	<group id="centro.widget" x="0" y="0" w="0" h="0" relatw="1" relath="1" visible="0" wantfocus="1"/>

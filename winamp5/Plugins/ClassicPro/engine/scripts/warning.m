@@ -4,7 +4,8 @@ Global Timer myTimer;
 Function int getCproVersion();
 
 System.onScriptLoaded() {
-	String cpro_path = getParam() + "\..\..\Plugins\classicPro";
+	String cpro_path = getToken(getParam(), ";", 0) + "\..\..\Plugins\classicPro";
+	int req_cPro = stringToInteger(getToken(getParam(), ";", 1));
 
 	map m = new map;
 	m.loadMap(cpro_path + "\\engine\\image\\installed.png");
@@ -15,7 +16,7 @@ System.onScriptLoaded() {
 		System.switchSkin("winamp classic");	// just switch away from our current skin
 	}
 	else{
-		if(getCproVersion()<199){
+		if(getCproVersion()<req_cPro){
 			myTimer = new Timer;
 			myTimer.setDelay(5000);
 			myTimer.start();

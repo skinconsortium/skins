@@ -15,7 +15,7 @@ Global Boolean mouseDown, docked;
 Global int rres, i_titlebar, i_downX, i_downY, i_w, i_h, i_minW, i_minH;
 
 System.onScriptLoaded() {
-	rres=1; //normal 20 | testing 1
+	rres=20; //normal 20 | testing 1
 	mainGroup = getScriptGroup();
 
 	Map m = new Map;
