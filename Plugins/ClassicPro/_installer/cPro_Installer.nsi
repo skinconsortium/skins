@@ -735,6 +735,9 @@ SectionGroup "$(CPro_WidgetsSection)" CPro_Sec_WidgetsSection
 		SetOutPath "$INSTDIR\Plugins\ClassicPro\engine\widgets\Load"
 			File "..\engine\widgets\Load\nowplaying.xml"
 
+		SetOutPath "$INSTDIR\Plugins\ClassicPro\engine\widgets\Load\v2"
+			File "..\engine\widgets\Load\v2\nowplaying.xml"
+
 		SetOutPath "$INSTDIR\Plugins\ClassicPro\engine\widgets\Data\NowPlaying"
 			File "..\engine\widgets\Data\NowPlaying\*.xml"
 			File "..\engine\widgets\Data\NowPlaying\*.m"
