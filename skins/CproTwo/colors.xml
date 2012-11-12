@@ -19,6 +19,13 @@ cPro2 :: Text colors
 	<color id="cpro2.color.tab.off" value="80,80,80" gammagroup="n.Tab.Text"/>
 	<color id="cpro2.color.tab.hover" value="20,20,20" gammagroup="n.Tab.Text"/>
 
+	<!-- :: Generic Window :: -->
+	<color id="cpro2.color.genwin.name" value="85,85,85" gammagroup="n.Notifier.Text.Big"/>
+
+	<!-- :: Shade Area :: -->	
+	<color id="cpro2.color.shade.title" value="0,0,0" gammagroup=""/>
+
+
 	<!-- :: Notifier :: -->
 	<color id="notifier.dark" value="40,113,233" gammagroup="n.Notifier.Text.Big"/>
 	<color id="notifier.bright" value="85,85,85" gammagroup="n.Notifier.Text.Big"/>
@@ -94,5 +101,7 @@ cPro2 :: Text fonts - Only use if you're not using system default (Arial)
 
 	<bitmap id="beat.1.left" file="beat_left2.png" gammagroup="n.beatvis"/>
 	<bitmap id="beat.1.right" file="beat_right2.png" gammagroup="n.beatvis"/>
+	<bitmap id="beat.2.left" file="beat_left3.png" gammagroup="n.beatvis"/>
+	<bitmap id="beat.2.right" file="beat_right3.png" gammagroup="n.beatvis"/>
 
 </elements>
