@@ -15,7 +15,7 @@ Global PopupMenu myMenu, fontsizeMenu, widthMenu, tagMenu;
 Global Boolean mouse_on_options;
 Global GuiObject tagHandle, status_box_grid, ratingXUI;
 Global Timer delayLoad;
-Global Text t_artist, t_title, t_composer, t_album, t_albumartist, t_track, t_disk, t_genre, t_year, t_publisher, t_decoder, t_filesize, t_filename, t_directory, t_format, t_rating;
+Global Text t_artist, t_title, t_composer, t_album, t_albumartist, t_track, t_disk, t_genre, t_year, t_publisher, t_decoder, t_filesize, t_filename, t_directory, t_format, t_rating, t_comment;
 Global Int shift = 0;
 
 System.onScriptLoaded(){
@@ -46,6 +46,7 @@ System.onScriptLoaded(){
 	t_filename = tagViewer.getObject("cpro2.tags.112");
 	t_format = tagViewer.getObject("cpro2.tags.113");
 	rating = tagViewer.getObject("cpro2.tags.114");
+	t_comment = tagViewer.getObject("cpro2.tags.115");
 	ratingXUI = rating.getObject("fileinfo.rating.xui");
 	t_rating = rating.getObject("fileinfo.rating.text");
 	
@@ -157,6 +158,11 @@ updateInfo(){
 	s = strlower(getExtension(getPlayItemString()));
 	t_format.setText(s);
 
+	s = getPlayItemMetaDataString("Comment");
+	t_comment.setText(s);
+
+
+
 	updateView();
 }
 
@@ -210,10 +216,13 @@ optionsButton.onLeftClick ()
 	tagMenu.addCommand("Filesize", 111, getPublicInt("cpro2.tags.111", 1), 0);
 	tagMenu.addCommand("Filename", 112, getPublicInt("cpro2.tags.112", 1), 0);
 	tagMenu.addCommand("Format", 113, getPublicInt("cpro2.tags.113", 1), 0);
+	tagMenu.addCommand("Comment", 115, getPublicInt("cpro2.tags.115", 1), 0);
 	tagMenu.addSeparator();
 	tagMenu.addCommand("Album Art", 51, getPublicInt("cpro2.tags.51", 1), 0);
 	tagMenu.addCommand("Rating", 114, getPublicInt("cpro2.tags.114", 1), 0);
+	tagMenu.addSeparator();
 	tagMenu.addCommand("Show directory in status bar", 52, getPublicInt("cpro2.tags.52", 1), 0);
+	tagMenu.addCommand("Scroll text if directory doesn't fit", 53, getPublicInt("cpro2.tags.53", 0), 0);
 
 	myMenu = new PopupMenu;
 	myMenu.addSubMenu(fontsizeMenu, "Font size");
@@ -226,7 +235,7 @@ optionsButton.onLeftClick ()
 	delete widthMenu;
 	delete tagMenu;
 
-	if(a>=50 && a<=52){
+	if(a>=50 && a<=53){
 		setPublicInt("cpro2.tags."+integerToString(a), !getPublicInt("cpro2.tags."+integerToString(a), 1));
 		g.sendAction("update_settings", "", 0, 0, 0, 0);
 		updateView();

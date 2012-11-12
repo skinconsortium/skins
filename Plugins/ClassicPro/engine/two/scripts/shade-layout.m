@@ -43,6 +43,7 @@ System.onScriptLoaded() {
 	}
 }
 System.onScriptUnloading() {
+	saveGlobal();
 	delete reCheck;
 }
 

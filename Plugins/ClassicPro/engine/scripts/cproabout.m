@@ -23,11 +23,13 @@ System.onSetXuiParam(String param, String value) {
 	}
 	else if(strlower(param) == "about_age"){
 		int calc_age = 1899+System.getDateYear(System.getDate())-stringToInteger(getToken(value, ";", 2));
+		int dayOfYear = System.getDateDoy(System.getDate());
 
-		/*boolean skrikeljaar;
-		if(System.getDateYear(System.getDate())%4==0) skrikeljaar=true;*/
+		//boolean skrikeljaar;
+		if(System.getDateYear(System.getDate())%4==0 && dayOfYear > 58) dayOfYear--;
+		//if(System.getDateYear(System.getDate())%4==0) skrikeljaar=true;
 		
-		if(getBirtday_Day(stringToInteger(getToken(value, ";", 0)), stringToInteger(getToken(value, ";", 1)))<=System.getDateDoy(System.getDate())){
+		if(getBirtday_Day(stringToInteger(getToken(value, ";", 0)), stringToInteger(getToken(value, ";", 1)))<=dayOfYear){
 			calc_age++;
 		}
 		age.setText(integerToString(calc_age)+" "+getBirtday_String(stringToInteger(getToken(value, ";", 0)), stringToInteger(getToken(value, ";", 1)), stringToInteger(getToken(value, ";", 2))));
@@ -38,7 +40,7 @@ System.onSetXuiParam(String param, String value) {
 		//debug(integerToString(getBirtday_Day(stringToInteger(getToken(value, ";", 0)), stringToInteger(getToken(value, ";", 1))))+" vandag="+integerToString(System.getDateDoy(System.getDate()))+" naam="+name.getText());
 		//debugInt(System.getDateDoy(System.getDate()));
 		
-		if(getBirtday_Day(stringToInteger(getToken(value, ";", 0)), stringToInteger(getToken(value, ";", 1)))==System.getDateDoy(System.getDate())){
+		if(getBirtday_Day(stringToInteger(getToken(value, ";", 0)), stringToInteger(getToken(value, ";", 1)))==dayOfYear){
 			birthday = XUIGroup.getParent().getParent().findObject("hbd.message");
 			birthday.setText("Happy Birthday");
 			birthday.show();

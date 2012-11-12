@@ -25,7 +25,7 @@ Class GuiObject CycleObject;
 Class Group Infoline;
 
 Global Group scriptGroup, g_cover, tagsGroup, tag_status, status_box;
-Global GuiObject tag_stats_grid, status_box_grid;
+Global GuiObject tag_stats_grid, status_box_grid, status_box_text;
 /*Global GuiObject g_rating, g_Cover, sui, ratings_xui;
 Global InfoLine g_title, g_album, g_artist, g_year, g_genre, g_track, g_publisher, g_sname, g_surl, g_albumartist, g_composer, g_format, g_disc;
 Global InfoLine g_target;
@@ -55,6 +55,7 @@ System.onScriptLoaded()
 	tag_stats_grid = tag_status.getObject("tagviewer.status.grid");
 	status_box = tag_status.getObject("tagviewer.status.box");
 	status_box_grid = status_box.getObject("tagviewer.status.box.grid");
+	status_box_text = status_box.getObject("tagviewer.status.box.text");
 	
 }
 
@@ -154,5 +155,10 @@ scriptGroup.onAction(String action, String param, Int x, int y, int p1, int p2, 
 		//Settings
 		if(getPublicInt("cpro2.tags.52", 1)==1) status_box.show();
 		else status_box.hide();
+
+		//Scroll text?
+		if(getPublicInt("cpro2.tags.53", 0)==1) status_box_text.setXmlParam("ticker", "1");
+		else status_box_text.setXmlParam("ticker", "0");
+
 	}
 }

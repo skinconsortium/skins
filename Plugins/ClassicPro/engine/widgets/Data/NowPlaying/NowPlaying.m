@@ -93,6 +93,32 @@ System.onScriptLoaded(){
 	
 		
 }
+/*
+System.onKeyDown(String key){
+	// lyrFx.fx_setSpeed(1); //slow timer as we dont really need to redraw much
+  	//lyrFxFG.fx_setSpeed(1); //slow timer as we dont really need to redraw much
+
+	//debug(key);
+	
+	if(key=="") return;
+	
+	lyrFx.fx_setEnabled(0);
+	lyrFxFG.fx_setEnabled(0);
+	lyrFx.fx_setEnabled(1);
+	lyrFxFG.fx_setEnabled(1);
+	lyrFx.fx_restart();
+	lyrFxFG.fx_restart();
+
+}*/
+
+AlbumArt2.onAlbumArtLoaded(boolean success){
+	lyrFx.fx_setEnabled(0);
+	lyrFxFG.fx_setEnabled(0);
+	lyrFx.fx_setEnabled(1);
+	lyrFxFG.fx_setEnabled(1);
+	lyrFx.fx_restart();
+	lyrFxFG.fx_restart();
+}
 
 system.onScriptUnloading()
 {

@@ -3,12 +3,12 @@
 	<Text id="label" 
 		fitparent="1"
 		text="Error:"
-		color="cpro2.color.fileinfo.name" valign="bottom"
+		color="cpro2.color.fileinfo.name" valign="top"
 	/>
 
 	<Text id="text" 
 		fitparent="1"
-		color="cpro2.color.fileinfo.tag" valign="bottom" translate="0"
+		color="cpro2.color.fileinfo.tag" valign="top" translate="0"
 	/>
 
 	<layer id="link" fitparent="1" rectrgn="1" move="0" cursor="IDC_HAND"/>
@@ -43,6 +43,7 @@
 	<Centro:InfoLine label="Filename:" id="cpro2.tags.112" text="The Strokes - Somday.mp3" w="300" relatw="0" visible="0"/>
 	<!--<Centro:InfoLine label="Directory :" id="cpro2.tags.113" text="C:\Music\Cool stuff\The Strokes\" w="300" relatw="0" visible="0"/>-->
 	<Centro:InfoLine label="Format:" id="cpro2.tags.113" text="MP3 - Mpeg layer 3" w="300" relatw="0" visible="0"/>
+	<Centro:InfoLine label="Comment:" id="cpro2.tags.115" text="Testing" w="300" relatw="0" visible="0"/>
 	<group id="cpro2.tags.114"/>
 
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\xui\CentroSUI\_v2\InfoViewer\auto_arange.maki" />

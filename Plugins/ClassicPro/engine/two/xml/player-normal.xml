@@ -67,6 +67,7 @@
 </groupdef>
 
 <groupdef id="two.info.seeker">
+	<grid x="0" y="0" w="0" h="40" relatw="1" topleft="info.bg.seeker.4.1" top="info.bg.seeker.4.2" topright="info.bg.seeker.4.3" alpha="253"/>
 	<grid x="0" y="0" w="0" h="40" relatw="1" topleft="info.bg.seeker.0.1" top="info.bg.seeker.0.2" topright="info.bg.seeker.0.3" alpha="253"/>
 	<group id="two.info.seeker.active" x="0" y="0" w="0" h="40"/>
 	<group id="two.info.seeker.finder" x="0" y="0" w="0" h="40" alpha="175"/> <!-- Remove alpha l@r... image can do it-->
@@ -80,7 +81,7 @@
 	<slider id="two.info.seeker.slider.1" x="0" y="0" w="0" h="0" relatw="1" relath="1" action="SEEK" thumb="info.seeker.thumb" cursor="IDC_HAND"/>
 	<group id="two.info.seeker.text" x="0" y="0" w="0" h="40" relatw="1" alpha="200"/>
 
-	<grid x="0" y="0" w="0" h="40" relatw="1" ghost="1" topleft="info.bg.seeker.4.1" top="info.bg.seeker.4.2" topright="info.bg.seeker.4.3" alpha="253"/>
+	<grid x="0" y="0" w="0" h="40" relatw="1" ghost="1" topleft="info.bg.seeker.5.1" top="info.bg.seeker.5.2" topright="info.bg.seeker.5.3" alpha="253"/>
 
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\info-seeker.maki"/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\scripts\sc_liveSeeker.maki" param="two.info.seeker.slider.1"/>
@@ -218,7 +219,7 @@
 <groupdef id="two.screen">
 	<group id="two.info" x="0" w="0" relatw="1"/>
 	<group id="two.playback" x="0" y="40" w="0" relatw="1"/>
-	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\sc_mute.maki"/>
+	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\sc_mute.maki" param="two.playback.volslider;two.player.mute;two.player.mute.overlay"/>
 </groupdef>
 
 <groupdef id="two.frame.buttons">
@@ -256,7 +257,7 @@
 	 resize="left"
 	-->
 	<layer id="two.frame.1" x="0" y="0" image="frame.topleft" regionop="1"/>
-	<layer id="two.frame.2" x="105" y="0" w="-240" relatw="1" tile="1" image="frame.top" regionop="1"/>
+	<layer id="two.frame.2" x="104" y="0" w="-239" relatw="1" tile="1" image="frame.top" regionop="1"/>
 	<layer id="two.frame.2.center" image="frame.top.center" visible="1" ghost="1"/>
 	<layer id="two.frame.3" x="-135" y="0" relatx="1" image="frame.topright" regionop="1"/>
 	<layer id="two.frame.7" x="0" y="-8" relaty="1" image="frame.bottomleft" regionop="1" resize="bottomleft"/>

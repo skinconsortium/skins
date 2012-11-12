@@ -107,6 +107,31 @@ myDoc.parser_onCallback (String xmlpath, String xmltag, list paramname, list par
 				tagViewer = frameGroup.findObject("centro.playlist.directory").findObject("info.component.infodisplay");
 				tagViewer.sendAction("update_text", paramname.enumItem(i) + ";" + paramvalue.enumItem(i), 0, 0, 0, 0);
 			}		
+			
+			else if(busyWith=="normal.info.title.text"){
+				textObject = frameGroup.findObject("two.info.text.title");
+				textObject.setXmlParam(paramname.enumItem(i),paramvalue.enumItem(i));
+			}		
+			else if(busyWith=="normal.info.artist.text"){
+				textObject = frameGroup.findObject("two.info.text.artist");
+				textObject.setXmlParam(paramname.enumItem(i),paramvalue.enumItem(i));
+			}	
+			else if(busyWith=="normal.info.timebig.text"){
+				textObject = frameGroup.findObject("two.info.text.tracktime");
+				textObject.setXmlParam(paramname.enumItem(i),paramvalue.enumItem(i));
+			}		
+			else if(busyWith=="normal.info.timesmall.text"){
+				textObject = frameGroup.findObject("two.info.text.totaltime");
+				textObject.setXmlParam(paramname.enumItem(i),paramvalue.enumItem(i));
+			}		
+			else if(busyWith=="normal.info.news.text"){
+				textObject = frameGroup.findObject("two.info.text.news");
+				textObject.setXmlParam(paramname.enumItem(i),paramvalue.enumItem(i));
+			}		
+			else if(busyWith=="normal.info.bitrate.text"){
+				textObject = frameGroup.findObject("two.info.text.info.1");
+				textObject.setXmlParam(paramname.enumItem(i),paramvalue.enumItem(i));
+			}
 		}
 	}
 }
