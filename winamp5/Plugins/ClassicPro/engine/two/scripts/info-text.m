@@ -80,6 +80,7 @@ System.onShowLayout(Layout _layout){
 		open = mainLayout.findObject("two.playback.eject");
 		shufBut = mainLayout.findObject("two.playback.shuf");
 		repBut = mainLayout.findObject("two.playback.rep");
+		t_timeEvent.onTextChanged(t_timeEvent.getText());
 	}
 }
 
@@ -89,15 +90,23 @@ System.onscriptunloading(){
 }
 
 t_timeEvent.onTextChanged(String newtxt){
+	debugstring(newtxt, 9);
 
 	if(System.getPlayItemLength()<0){
+		/*
 		t_trackTime.hide();
 		t_totalTime.setText(PlEdit.getLength(PlEdit.getCurrentIndex()));
+		*/
+		
 		//t_totalTime.setText(System.integerToTime(System.getPlayItemLength()));
 		
 		//System.getPlayItemString()
 		
 		//PlEdit.getLength (PlEdit.getCurrentIndex());
+
+		t_trackTime.setText("-");
+		t_totalTime.setText("/ "+PlEdit.getLength(PlEdit.getCurrentIndex()));
+
 	}
 	else{
 		t_trackTime.show();
@@ -109,11 +118,11 @@ t_timeEvent.onTextChanged(String newtxt){
 	t_totalTime.setXmlParam("w", integerToString(t_totalTime.getTextWidth()));
 	t_trackTime.setXmlParam("w", integerToString(t_trackTime.getTextWidth()));
 	
-	g_texttime.setXmlParam("x", integerToString(-(t_trackTime.getWidth()*t_trackTime.isVisible()+t_totalTime.getWidth()-4+21)));
+	g_texttime.setXmlParam("x", integerToString(-(t_trackTime.getWidth()*t_trackTime.isVisible()+t_totalTime.getWidth()-4+21+stringToInteger(t_trackTime.getXmlParam("display")))));
 	g_texttime.setXmlParam("w", integerToString(t_trackTime.getWidth()*t_trackTime.isVisible()+t_totalTime.getWidth()-5+21));
 	
-	t_nameTop.setXmlParam("w", integerToString(-g_texttime.getWidth()-3));
-
+	t_nameTop.setXmlParam("w", integerToString(-g_texttime.getWidth()-2-t_nameTop.getLeft()+10-stringToInteger(t_trackTime.getXmlParam("display"))));
+	//setClipboardText(integerToString(t_nameTop.getLeft()));
 	//t_totalTime.setText(System.integerToTime(System.getPlayItemLength()));
 }
 
@@ -212,13 +221,15 @@ updateInfo(){
 	s_info += getFrequency() + "kHz";
 	t_info1.setText(s_info);
 	
-	g_textInfo.setXmlParam("x", integerToString(-(t_info1.getTextWidth()+18)));
+	g_textInfo.setXmlParam("x", integerToString(-(t_info1.getTextWidth()+18)-stringToInteger(t_info1.getXmlParam("display"))));
 	g_textInfo.setXmlParam("w", integerToString((t_info1.getTextWidth()+18)));
-	t_nameBottom.setXmlParam("w", integerToString(-t_info1.getTextWidth()-20));
-	
+	//if(t_info1.isVisible()) t_nameBottom.setXmlParam("w", integerToString(-t_info1.getTextWidth()-t_nameBottom.getLeft()-10-stringToInteger(t_info1.getXmlParam("display"))));
+	if(t_info1.isVisible()) t_info1.onSetVisible(true);
+	//setClipboardText(integerToString(t_nameBottom.getLeft()));
+	//setClipboardText(t_nameBottom.getXmlParam("display"));
+	//-t_nameTop.getLeft()+10
 
 
-	
 	//Refresh if NA
 	if(System.getStatus() != STATUS_PLAYING) return;
 	
@@ -230,6 +241,9 @@ updateInfo(){
 	else if(waitForReturn.isRunning()==false){
 		waitForReturn.start();
 	}
+}
+t_info1.onSetVisible(boolean onOff){
+	if(onOff) t_nameBottom.setXmlParam("w", integerToString(-t_info1.getTextWidth()-t_nameBottom.getLeft()-10-stringToInteger(t_info1.getXmlParam("display"))));
 }
 
 /*
@@ -357,8 +371,9 @@ updateNews(String showThis){
 
 	//do stuff
 	t_news.setText(showThis);
-	t_news.setXmlParam("x", integerToString(-(t_news.getTextWidth()+4)));
+	t_news.setXmlParam("x", integerToString(-(t_news.getTextWidth()+4+stringToInteger(t_news.getXmlParam("display")))));
 	t_news.setXmlParam("w", integerToString((t_news.getTextWidth())));
+	t_nameBottom.setXmlParam("w", integerToString(-t_news.getTextWidth()-t_nameBottom.getLeft()+5-stringToInteger(t_news.getXmlParam("display"))));
 	showNews(true);
 }
 

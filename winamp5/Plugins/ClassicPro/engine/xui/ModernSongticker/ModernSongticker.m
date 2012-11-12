@@ -104,6 +104,9 @@ System.onSetXuiParam(String param, String value) {
 		info_songticker.setXmlParam("ghost", value);
 		info_news.setXmlParam("ghost", value);
 	}
+	else if(strlower(param) == "showlen_all"){
+		info_songticker.setXmlParam("showlen", value);
+	}
 	else{
 		info_songticker.setXmlParam(param, value);
 		info_news.setXmlParam(param, value);

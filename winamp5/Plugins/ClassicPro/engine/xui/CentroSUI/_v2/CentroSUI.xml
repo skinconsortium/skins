@@ -252,7 +252,7 @@ Implement Areas
 	<layer x="0" y="0" w="0" relatw="1" image="sui.top.border"/>
 
 
-	<Wasabi:Frame id="centro.mainframe" x="0" y="3" w="0" h="-3" relatw="1" relath="1" left="centro.components" right="centro.playlist1" orientation="vertical" from="right" minwidth="155" width="200" jump="none" maxwidth="-224"/>
+	<Wasabi:Frame id="centro.mainframe" x="0" y="3" w="0" h="-3" relatw="1" relath="1" left="centro.components" right="centro.playlist1" orientation="vertical" from="right" minwidth="155" width="200" jump="none" maxwidth="-232"/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\xui\CentroSUI\_v2\scripts\CentroSUI2.maki" param="@HAVE_LIBRARY@"/>
 </groupdef>
 

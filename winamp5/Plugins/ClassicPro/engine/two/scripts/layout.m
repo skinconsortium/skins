@@ -19,7 +19,7 @@ Global Container player;
 Global Layout shade, normal;
 Global Layer l_frame1, l_frame2, l_frame3, l_frame4, l_frame5, l_frame6, l_frame7, l_frame8, l_frame9, l_frame2_center;
 Global int i_titlebar, i_y, i_center;//, i_info;
-Global Button b_goBig, b_goSmall;
+Global Button b_goBig, b_goSmall, b_aot;
 Global Boolean fullscreen, doubleClick;
 
 
@@ -52,6 +52,7 @@ System.onScriptLoaded() {
 	
 	b_goBig = g_frameBut.getObject("two.frame.goBig");
 	b_goSmall = g_frameButFS.getObject("two.frame.goSmall");
+	b_aot = g_frameBut.getObject("player.aot");
 	
 	l_frame1 = g.getObject("two.frame.1");
 	l_frame2 = g.getObject("two.frame.2");
@@ -86,6 +87,10 @@ System.onScriptLoaded() {
 	i_clip_h = getPublicInt("cPro2.i_clip_h", 400);
 	//i_snapMode = getPublicInt("cPro2.i_snapMode", 0);
 	clipped = getPublicInt("cPro2.clipped", 0);
+
+}
+System.onScriptUnLoading(){
+	saveSkinPos();
 
 }
 
@@ -146,6 +151,9 @@ g.onResize(int x, int y, int w, int h){
 		l_frame2_center.show();
 		l_frame2_center.setXmlParam("x", integerToString(w/2-i_center/2));
 	}
+	
+	if(w<280) b_aot.hide();
+	else b_aot.show();
 }
 
 buildSkin(){
@@ -247,8 +255,8 @@ fullScreen(boolean onOff){
 
 		l_frame1.setXmlParam("image", "frame.topleft");
 		l_frame2.setXmlParam("image", "frame.top");
-		l_frame2.setXmlParam("x", integerToString(105));
-		l_frame2.setXmlParam("w", integerToString(-240));
+		l_frame2.setXmlParam("x", integerToString(104));
+		l_frame2.setXmlParam("w", integerToString(-239));
 		l_frame2_center.setXmlParam("image", "frame.top.center");
 		l_frame3.setXmlParam("image", "frame.topright");
 		l_frame3.setXmlParam("x", integerToString(-135));

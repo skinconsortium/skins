@@ -3,16 +3,24 @@ Version 1.99 (Beta version for v2.0)
 -------------------------------------------------------------
 [cPro 2]
 - New: Support for Cpro2 skins!
+- New: Support for skins using just the single user interface of cPro2
 - New: Reader tab (Combination of the Browser and BrowserPro)
+- New: New File Info Viewer
+
 [cPro 1]
 - Improved: BrowserPro have new updated sources list (use same list as the cPro2 Reader)
-- Improved: Browser doesn't open a dead link anymore
+- Fixed: Browser doesn't open a dead link anymore
 [cPro 1&2]
 - New: ALT + Prev/Next plays prev/next file in the current folder (great for videos too)
+- New: Skinner now also in credits (see Preferences > Modern Skins > Current Skin & ClassicPro.xml)
+- Improved: About skin interface
 - Improved: Album Art now shows feedback on dbl-click
 - Fixed: Scrolling up in mini area goes blank if no widgets are installed
 - Fixed: ALT + Open button now loads all files of same extension of the current playing file
 - Fixed: "Get album art" now hidden if your Winamp version doesn't support it
+- Fixed: About current skin ages isn't correct in leap years
+- Fixed: Now Playing tab reflection is broken sometimes
+
 
 -------------------------------------------------------------
 

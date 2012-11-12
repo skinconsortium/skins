@@ -19,9 +19,14 @@ Global Timer myTimer;
 
 System.onScriptLoaded() {
 	mainGroup = getScriptGroup();
+	/*
 	vol_slider = mainGroup.findObject("two.playback.volslider");
 	mute_but = mainGroup.findObject("two.player.mute");
 	muteWarning = mainGroup.findObject("two.player.mute.overlay");
+	*/
+	vol_slider = mainGroup.findObject(getToken(getParam(),";",0));
+	mute_but = mainGroup.findObject(getToken(getParam(),";",1));
+	muteWarning = mainGroup.findObject(getToken(getParam(),";",2));
 	myTimer = new Timer;
 	myTimer.setDelay(700);
 }

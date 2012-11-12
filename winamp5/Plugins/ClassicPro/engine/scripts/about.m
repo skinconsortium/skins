@@ -1,4 +1,5 @@
 #include <lib/std.mi>
+#include <lib/fileio.mi>
 
 Function showAbout(int no);
 Function toggleCredits();
@@ -6,19 +7,26 @@ Function toggleCredits();
 
 Global Group mainGroup;
 
-Global Layer bganim, aboutLay, mousetrap;
+Global Layer bganim, aboutLay, mousetrap, peakPic;
 Global Double smidge, vusmidge;
 Global int aniNO, vuValue, p_ani, pp_ani, creditPage;
 Global Timer animationToggle, animationToggleFade, waitForStart, creditRoll;
-Global GuiObject about_pjn, about_martin, about_quad, about_slob, about_pawel, about_trance, tempobject, about_lang, about_lang1, about_other;
-Global boolean creditsON;
+Global GuiObject about_pjn, about_martin, about_quad, about_slob, about_pawel, about_trance, tempobject, about_lang, about_lang1, about_other, about_skinner, about_other2;
+Global boolean creditsON, haveSkinner;
+Global Button peakBut;
+Global GuiObject peakBut2;
+Global XmlDoc myDoc;
 
 System.onScriptLoaded() {
 	mainGroup = getScriptGroup();
 	bganim = mainGroup.findObject("animationscreen");
 	aboutLay = mainGroup.findObject("about.layer");
 	mousetrap = mainGroup.findObject("mousetrap");
+	peakPic = mainGroup.findObject("about.peak");
+	peakBut = mainGroup.findObject("peak");
+	peakBut2 = mainGroup.findObject("peak");
 	
+	about_skinner = mainGroup.findObject("about.0");
 	about_pjn = mainGroup.findObject("about.1");
 	about_martin = mainGroup.findObject("about.2");
 	about_quad = mainGroup.findObject("about.3");
@@ -28,17 +36,40 @@ System.onScriptLoaded() {
 	about_lang = mainGroup.findObject("about.7");
 	about_lang1 = mainGroup.findObject("about.8");	
 	about_other = mainGroup.findObject("about.9");
+	about_other2 = mainGroup.findObject("about.10");
 		
 	waitForStart = new Timer;
-	waitForStart.setDelay(3000);
+	waitForStart.setDelay(500);
 	waitForStart.start();
+
+	Map myMap = new Map;
+	myMap.loadMap("about.gfx.skinner");
+	if(myMap.getWidth()!=64) haveSkinner=true;
+	else  haveSkinner=false;
+	delete myMap;
+	
+	if(haveSkinner){
+		myDoc = new XmlDoc;
+		String fullpath = getParam()+"ClassicPro.xml";
+		myDoc.load (fullpath);
+	
+		// If we include more stuff in the classicpro.xml at a later stage the parser must set a boolean = true to know that the xml was for this
+		if(myDoc.exists()){
+			//debug("werk!");
+			myDoc.parser_addCallback("ClassicPro/About:Skin*");
+			myDoc.parser_start();
+			myDoc.parser_destroy();
+		}
+		delete myDoc;
+	}
+
 }
 System.onScriptUnloading() {
 	delete animationToggle;
 	delete animationToggleFade;
 	delete creditRoll;
 }
-
+ 
 waitForStart.onTimer(){
 	waitForStart.stop();
 	delete waitForStart;
@@ -71,6 +102,9 @@ waitForStart.onTimer(){
 	
 	creditsON=true;
 	toggleCredits();
+	
+	peakBut2.setTargetX(-38);
+	peakBut2.gotoTarget();
 }
 
 creditRoll.onTimer(){
@@ -159,15 +193,19 @@ bganim.fx_onFrame()
 }
 
 showAbout(int no){
-	if(creditPage>9){
-		creditPage=1;
-		no=1;
+	if(creditPage>10){
+		if(haveSkinner) creditPage=0;
+		else creditPage=1;
 	}
-	if(creditPage<1){
-		creditPage=9;
-		no=9;
+	else if(creditPage<1 && !haveSkinner){
+		creditPage=10;
 	}
+	else if(creditPage<0 && haveSkinner){
+		creditPage=10;
+	}
+	no=creditPage;
 	
+	about_skinner.hide();
 	about_pjn.hide();
 	about_martin.hide();
 	about_quad.hide();
@@ -177,6 +215,7 @@ showAbout(int no){
 	about_lang.hide();
 	about_lang1.hide();	
 	about_other.hide();
+	about_other2.hide();
 	
 	tempobject = mainGroup.findObject("about."+integerToString(no));
 	if(no<7){
@@ -220,22 +259,28 @@ toggleCredits(){
 	if(waitForStart!=NULL) return; //wait until the intro is finished
 
 	if(creditsON){
-		creditPage=1;
+		if(haveSkinner) creditPage=0;
+		else creditPage=1;
+		
 		creditRoll = new Timer;
 		creditRoll.setDelay(5000);
 		creditRoll.start();
 
-		about_pjn.setXmlParam("x", integerToString(5+random(155)));
-		about_pjn.setXmlParam("y", integerToString(5+random(155)));
-		about_pjn.setAlpha(0);
-		about_pjn.setTargetA(255);
-		about_pjn.setTargetSpeed(1);
-		about_pjn.show();
-		about_pjn.gotoTarget();
+		if(haveSkinner) tempobject = about_skinner;
+		else tempobject = about_pjn;
+
+		tempobject.setXmlParam("x", integerToString(5+random(155)));
+		tempobject.setXmlParam("y", integerToString(5+random(155)));
+		tempobject.setAlpha(0);
+		tempobject.setTargetA(255);
+		tempobject.setTargetSpeed(1);
+		tempobject.show();
+		tempobject.gotoTarget();
 	}
 	else{
 		creditRoll.stop();
 		delete creditRoll;
+		about_skinner.hide();
 		about_pjn.hide();
 		about_martin.hide();
 		about_quad.hide();
@@ -245,10 +290,47 @@ toggleCredits(){
 		about_lang.hide();
 		about_lang1.hide();		
 		about_other.hide();
+		about_other2.hide();
 	}
+}
+
+peakBut.onLeftClick(){
+	if(peakBut.getXmlParam("text") == "+"){
+		peakPic.setTargetX(0);
+		peakPic.gotoTarget();
+		peakBut.setXmlParam("text", "-");
+		creditRoll.stop();
+	}
+	else{
+		peakPic.onLeftButtonDown(0, 0);
+	}
+}
+
+peakPic.onLeftButtonDown(int x, int y){
+	peakPic.setTargetX(-101);
+	peakPic.gotoTarget();
+	peakBut.setXmlParam("text", "+");
+	creditRoll.start();
 }
 
 mousetrap.onLeftButtonDblClk(int x, int y){
 	creditsON=!creditsON;
 	toggleCredits();
+}
+
+myDoc.parser_onCallback (String xmlpath, String xmltag, list paramname, list paramvalue){
+	if(strlower(xmltag) == "skinner"){
+		for(int i=0; i<paramname.getNumItems(); i++){
+			if(strlower(paramname.enumItem(i))=="name") about_skinner.setXmlParam("about_name", paramvalue.enumItem(i));
+			else if(strlower(paramname.enumItem(i))=="alias") about_skinner.setXmlParam("about_alias", paramvalue.enumItem(i));
+			else if(strlower(paramname.enumItem(i))=="dob") about_skinner.setXmlParam("about_age", paramvalue.enumItem(i));
+			else if(strlower(paramname.enumItem(i))=="country") about_skinner.setXmlParam("about_country", strUpper(paramvalue.enumItem(i)));
+			else if(strlower(paramname.enumItem(i))=="about") about_skinner.setXmlParam("credits", "Skinner of this skin\n\n"+paramvalue.enumItem(i));
+			
+			//debug(paramname.enumItem(i)+" - "+paramvalue.enumItem(i));
+			/*{
+				busyWith=paramvalue.enumItem(i);
+			}*/
+		}
+	}
 }

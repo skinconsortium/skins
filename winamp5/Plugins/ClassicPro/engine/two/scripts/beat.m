@@ -495,7 +495,8 @@ showTooltip(boolean onOff){
 		
 		//modified from wasabi tooltip script
 		int x = getMousePosX();
-		int y = getMousePosY()-l_tooltip.getHeight(); // move above mouse by default
+		int h = 17;
+		int y = getMousePosY()-h; // move above mouse by default
 
 		int vpleft = getViewportLeftFromPoint(x, y);
 		int vptop = getViewportTopFromPoint(x, y);
@@ -503,7 +504,7 @@ showTooltip(boolean onOff){
 		int vpbottom = vptop+getViewportHeightFromPoint(x, y);
 
 		int w = t_tooltip.getAutoWidth()+20;
-		int h = l_tooltip.getHeight();
+		//int h = l_tooltip.getHeight();
 
 		if (x + w > vpright) x = vpright - w;
 		if (x < vpleft) x = vpleft;

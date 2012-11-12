@@ -73,15 +73,13 @@ doResizeNow(){
 doArangeNow(){
 	if(getPublicInt("cpro2.tags.50", 1)) g.setAlpha(0); //Text overlap when track change for a split second
 	//Show/hide tags per user settings
-	for(int b = 100; b<115;b++){
+	for(int b = 100; b<116;b++){
 		tagHandle = g.getObject("cpro2.tags." + integerToString(b));
 		tagHandleText = tagHandle;
 		
 		//debug("cpro2.tags."+integerToString(b)+" - "+integerToString(getPublicInt("cpro2.tags."+integerToString(b), 1)));
 		if(getPublicInt("cpro2.tags."+integerToString(b), 1)==1){
-			//if(getPublicInt("cpro2.tags.50", 1) && tagHandle.getAlpha() != 255){
-			//debug(tagHandleText.getText());
-			if(b==114) tagHandle.show();
+			if(b==114) tagHandle.show();//Rating
 			else if(getPublicInt("cpro2.tags.50", 1) && (tagHandleText.getText() == "" || tagHandleText.getText() == "-")){
 				tagHandle.hide();
 			}

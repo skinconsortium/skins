@@ -909,7 +909,10 @@ area_right.onResize(int x, int y, int w, int h){
 			area_right.hide();
 			closeFrame.hide();
 			openFrame.show();
-			if(!mouseDownF1) mainFrame.setXmlParam("resizable", "0");
+			if(!mouseDownF1){
+				mainFrame.setXmlParam("resizable", "0");
+				mainFrame.setXmlParam("maxwidth", "-224");
+			}
 
 			_powerSave3=1;
 		}
@@ -953,12 +956,16 @@ area_right.onResize(int x, int y, int w, int h){
 mainFrame.onLeftButtonDown(int x, int y){
 	setPublicInt("cpro2.e1.closeframe.lastpos", mainFrame.getPosition()); //TESTING THIS...CHANGE BACK
 	mainFrame.setXmlParam("resizable", "1");
+	mainFrame.setXmlParam("maxwidth", "-232");
 	mouseDownF1=true;
 }
 
 mainFrame.onLeftButtonUp(int x, int y){
 	mouseDownF1=false;
-	if(area_right.getWidth()<10) mainFrame.setXmlParam("resizable", "0");
+	if(area_right.getWidth()<10){
+		mainFrame.setXmlParam("resizable", "0");
+		mainFrame.setXmlParam("maxwidth", "-224");
+	}
 	else setPublicInt("cpro2.e1.closeframe.lastpos", mainFrame.getPosition()); //TESTING THIS...CHANGE BACK
 	
 	mainFrame.setPosition(mainFrame.getPosition()); //This is done to refresh the hide of the resizer ;)
@@ -982,11 +989,13 @@ setMainFrame(boolean open){
 		int pos = getPublicInt("cpro2.e1.closeframe.lastpos", 200);
 		if(pos<155) pos = 155;
 		mainFrame.setXmlParam("resizable", "1");
+		mainFrame.setXmlParam("maxwidth", "-232");
 		mainFrame.setPosition(pos);
 	}
 	else{
 		setPublicInt("cpro2.e1.closeframe.lastpos", mainFrame.getPosition());
 		mainFrame.setXmlParam("resizable", "0");
+		mainFrame.setXmlParam("maxwidth", "-224");
 		mainFrame.setPosition(0);
 	}
 	mainFrame.setPosition(mainFrame.getPosition()); //This is done to refresh the hide of the resizer ;)
