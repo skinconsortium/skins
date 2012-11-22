@@ -1,7 +1,6 @@
 <elements>
-
 <!--
-cPro2 :: Text colors
+cPro2 :: SKIN Colors
 -->
 	<!-- :: Player Area :: -->	
 	<color id="cpro2.color.infoseek.title" value="0,0,0" gammagroup=""/>
@@ -10,6 +9,14 @@ cPro2 :: Text colors
 	<color id="cpro2.color.infoseek.numsmall" value="50,50,50" gammagroup=""/>
 	<color id="cpro2.color.infoseek.news" value="50,50,50" gammagroup=""/>
 
+	<!-- :: Shade Area :: -->	
+	<color id="cpro2.color.shade.title" value="40,40,40" gammagroup=""/>
+
+
+
+<!--
+cPro2 :: CORE Colors
+-->
 	<!-- :: SUI Area :: -->	
 	<color id="cpro2.color.fileinfo.name" value="110,110,110" gammagroup="n.Color.List"/>
 	<color id="cpro2.color.fileinfo.tag" value="85,85,85" gammagroup="n.Color.List"/>
@@ -22,21 +29,12 @@ cPro2 :: Text colors
 	<!-- :: Generic Window :: -->
 	<color id="cpro2.color.genwin.name" value="85,85,85" gammagroup="n.Notifier.Text.Big"/>
 
-	<!-- :: Shade Area :: -->	
-	<color id="cpro2.color.shade.title" value="0,0,0" gammagroup=""/>
-
-
 	<!-- :: Notifier :: -->
 	<color id="notifier.dark" value="40,113,233" gammagroup="n.Notifier.Text.Big"/>
 	<color id="notifier.bright" value="85,85,85" gammagroup="n.Notifier.Text.Big"/>
 	<color id="notifier.dark.upper" value="40,113,233" gammagroup="n.Notifier.Text.Small"/>
 	<color id="notifier.bright.upper" value="85,85,85" gammagroup="n.Notifier.Text.Small"/>
 
-
-
-<!--
-cPro2 :: Wasabi colors (System colors)
--->
 	<!-- :: Tooltip/Button :: -->	
 	<color id="wasabi.tooltips.textcolor" value="87,87,87" gammagroup="n.TooltipCombobox.Text"/>
 	<color id="wasabi.button.text" value="10,10,10" gammagroup="n.Button"/>
@@ -81,24 +79,50 @@ cPro2 :: Wasabi colors (System colors)
 
 
 <!--
-cPro2 :: Text fonts - Only use if you're not using system default (Arial)
+cPro2 :: SKIN Text fonts - Only use if you're not using system default (Arial)
 -->
 	<!--
-	These fonts wont be used in this skin 
-	Remember if you want to use custom fonts cut&paste them outside this area ;)
-
-
-	<truetypefont id="cpro2.font.status.text" file="Gabriola.ttf" allowmapping="0"/>
+	HELP:
 	
-	<truetypefont id="cpro.tracktime.font" file="font.ttf" allowmapping="0"/>
-	<truetypefont id="cpro.songname.font" file="font.ttf" allowmapping="0"/>
-	<truetypefont id="cpro.songinfo2.font" file="font.ttf" allowmapping="0"/>
-	<truetypefont id="cpro.menu.font" file="font.ttf" allowmapping="0"/>
-	<truetypefont id="cpro.tab.font" file="font.ttf" allowmapping="0"/>
- 	<truetypefont id="cpro.status.font" file="font.ttf" allowmapping="0"/>
- 	<truetypefont id="cpro.winshade.font" file="font.ttf" allowmapping="0"/>
+	These fonts wont be used in this skin 
+	You must only use these fonts when you need a custom font.
+	If you want a system font you can change the font="" param in the ClassicPro.xml file.
+	For example if you want the main player title in the infoseek area to use Calibri:
+		<Style id="normal.info.title.text"
+				font="Calibri"
+		/>	
+		PS: See ClassicPro.xml for more help/examples
+	
+	Remember if you want to use custom fonts cut&paste them outside this area ;)
+	
+	<truetypefont id="cpro2.font.infoseek.title" file="Gabriola.ttf" allowmapping="0"/>
+	<truetypefont id="cpro2.font.infoseek.artist" file="Gabriola.ttf" allowmapping="0"/>
+	<truetypefont id="cpro2.font.infoseek.numbig" file="Gabriola.ttf" allowmapping="0"/>
+	<truetypefont id="cpro2.font.infoseek.numsmall" file="Gabriola.ttf" allowmapping="0"/>
+	<truetypefont id="cpro2.font.infoseek.news" file="Gabriola.ttf" allowmapping="0"/>
+
+	<truetypefont id="cpro2.font.shade.songname" file="Gabriola.ttf" allowmapping="0"/>
+	<truetypefont id="cpro2.font.shade.numbig" file="Gabriola.ttf" allowmapping="0"/>
+	<truetypefont id="cpro2.font.shade.numsmall" file="Gabriola.ttf" allowmapping="0"/>
+	<truetypefont id="cpro2.font.shade.news" file="Gabriola.ttf" allowmapping="0"/>
 	-->
 
+
+
+<!--
+cPro2 :: CORE Text fonts - See above for help
+-->
+	<!--
+	<truetypefont id="cpro2.font.fileinfo.text" file="Gabriola.ttf" allowmapping="0"/>	
+	<truetypefont id="cpro2.font.status.text" file="Gabriola.ttf" allowmapping="0"/>
+	<truetypefont id="cpro2.font.tab.text" file="Gabriola.ttf" allowmapping="0"/>
+	-->
+
+
+
+<!--
+cPro2 :: SKIN Extra bitmaps - Add any bitmaps that your skin use here.
+-->
 	<bitmap id="beat.1.left" file="beat_left2.png" gammagroup="n.beatvis"/>
 	<bitmap id="beat.1.right" file="beat_right2.png" gammagroup="n.beatvis"/>
 	<bitmap id="beat.2.left" file="beat_left3.png" gammagroup="n.beatvis"/>

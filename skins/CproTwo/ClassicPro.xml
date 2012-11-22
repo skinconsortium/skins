@@ -4,26 +4,56 @@
 	<!--
 	TextSettings:
 	For a list of parameters you can change for this <text/> object:
-		http://wiki.winamp.com/wiki/XML_GUI_Objects#.3Ctext.2F.3E_.26_.3CWasabi:Text.2F.3E
+		http://goo.gl/CrnTO
+		
+		Remember if your using the default values you don't have to include all the styles!
 	-->
 	<TextSettings>
+		<!--
+		CORE settings
+		-->
 		<Style id="normal.statusbar.text"
-			fontsize="14" y="1" antialias="0" bold="0"
+			fontsize="14" 
 		/>
 		<Style id="normal.fileinfo.text"
-			antialias="1" bold="0" italic="0"
+			font="Calibri" 
+		/>
+		<Style id="normal.webreader.text"
+			font="Calibri" fontsize="16"
 		/>
 		
+			<!-- You can use y="" to align the text better if needed -->
+		<Style id="normal.tab.text"
+			font="Calibri" fontsize="20"
+		/> 
+		
+
+
+		<!--
+		SKIN settings
+		-->
 		<Style id="normal.info.title.text"
-			bold="1"
+			bold="1" font="Calibri"
 		/>
 		<Style id="normal.info.artist.text"
-			bold="1"
+			bold="1" font="Calibri"
 		/>
 		<Style id="normal.info.timesmall.text"
-			bold="1" fontsize="15" h="16" x="100"   
+			bold="1" fontsize="15" h="16" x="100" font="Calibri"  
 		/>
-
+		<Style id="shade.songname.text"
+			y="3" font="Calibri"
+		/>
+		<Style id="shade.news.text"
+			y="3" font="Calibri"
+		/>
+		<Style id="shade.timebig.text"
+			y="1" font="Calibri"
+		/>
+		<Style id="shade.timesmall.text"
+			y="3" font="Calibri" fontsize="14"
+		/>
+		
 		<!--
 		Use the display param to move the text away from the right side.
 		i.e. display="10" will move the text left by 10 pixels.
@@ -31,15 +61,14 @@
 		Please note that this is only applicable on the 'timebig', 'bitrate' and 'news'!
 		-->
 		<Style id="normal.info.timebig.text"
-			bold="1" display="0"
+			bold="1" display="0" font="Calibri"
 		/>
 		<Style id="normal.info.news.text" 
-			bold="1" display="0"
+			bold="1" display="0" font="Calibri"
 		/>
 		<Style id="normal.info.bitrate.text" 
-			bold="1" display="0"
+			bold="1" display="0" font="Calibri"
 		/>
-		
 	</TextSettings>
 
 	<Visualization>

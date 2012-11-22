@@ -2,7 +2,7 @@
 
 <WinampAbstractionLayer version="1.34">
 	<skininfo>
-		<version>1.99.021</version>
+		<version>1.99.022</version>
 		<name>cPro2</name>
 		<author>Pieter Nieuwoudt</author>
 		<comment>Default skin for ClassicPro 2.0</comment>
@@ -20,9 +20,24 @@
 		- ClassicPro v2.00 = param="@COLORTHEMESPATH@;200"
 	-->
 	<scripts> <script file="warning.maki" param="@COLORTHEMESPATH@;199"/> </scripts>
+
+
 	
-	<include file="colorthemes.xml"/>
+	<include file="colorthemes.xml"/>	<!-- Optional + Remember to include "_not used/colorthemes.png" in your skin too -->
 	<include file="colors.xml"/>
+
+
+
+	<!-- This is where the ClassicPro plugin is loaded. (cPro::Two) PS: See note below about shadows -->
 	<include file="@COLORTHEMESPATH@/../../plugins/classicPro/engine/load-two.xml"/>
+	<!--
+	If you want to add a shadow to your skin then you have to change the xml file that loaded
+		from	"load-two.xml"
+		to		"load-two_alpha.xml"
+	as follows:
+	<include file="@COLORTHEMESPATH@/../../plugins/classicPro/engine/load-two_alpha.xml"/>
+	
+	You will find the shadow graphics in the "_not used/" folder.
+	-->
 
 </WinampAbstractionLayer>
