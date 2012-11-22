@@ -2,24 +2,24 @@
 	<!--<rect fitparent="1" color="0,255,0"/>-->
 	<Text id="label" 
 		fitparent="1"
-		text="Error:"
+		text="Error:" font="cpro2.font.fileinfo.text"
 		color="cpro2.color.fileinfo.name" valign="top"
 	/>
 
 	<Text id="text" 
-		fitparent="1"
+		fitparent="1" font="cpro2.font.fileinfo.text"
 		color="cpro2.color.fileinfo.tag" valign="top" translate="0"
 	/>
 
-	<layer id="link" fitparent="1" rectrgn="1" move="0" cursor="IDC_HAND"/>
+	<layer id="link" fitparent="1" rectrgn="1" move="1"/>
 
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\xui\CentroSUI\_v2\InfoViewer\infoline.maki" />
 </groupdef>
 <groupdef id="cpro2.tags.114" embed_xui="fileinfo.rating.text" >
 	<Text id="fileinfo.rating.text" 
 		fitparent="1"
-		text="Rating:"
-		color="cpro2.color.fileinfo.name" valign="bottom"
+		text="Rating:" font="cpro2.font.fileinfo.text"
+		color="cpro2.color.fileinfo.name" valign="bottom" move="1"
 	/>
 	<Wasabi:Ratings id="fileinfo.rating.xui" image_nostar="ratings.1.none" image_star="ratings.1.normal" image_hoverstar="ratings.1.hover"/>
 </groupdef>

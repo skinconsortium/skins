@@ -42,6 +42,7 @@ Global Button bback, bffwd, brefresh, bstop, bmark;
 Global Togglebutton modeToggle;
 Global Edit urlbox;
 Global String firstURL, lastURL, lastestURL;
+Global PopUpMenu popMenu;
 
 Global ColorMgr cm;
 
@@ -202,6 +203,17 @@ dropListButton.onLeftClick(){
 }
 ddlMouseT.onLeftButtonUp(int x, int y){
 	ddlOpenClose();
+}
+ddlMouseT.onRightButtonUp(int x, int y){
+	/*popMenu = new PopUpMenu;
+	popMenu.addCommand("Open Current Website in your Default Browser", 1, 0, 0);
+	int result = popMenu.popAtMouse();
+	if(result==1) System.navigateUrl(lastestURL);
+	
+	delete popMenu;*/
+	
+	System.navigateUrl(lastestURL);
+	complete;
 }
 
 ddlOpenClose(){

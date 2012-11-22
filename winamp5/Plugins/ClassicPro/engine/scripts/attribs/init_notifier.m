@@ -36,6 +36,9 @@ Function initAttribs_notifier();
 #define CUSTOM_PAGE_NOTIFIER_FDOUT "{560EAE41-1379-4927-AC55-FB5F4D47C9B8}"
 
 
+
+
+
 Global ConfigAttribute notifier_minimized_attrib;
 Global ConfigAttribute notifier_always_attrib;
 Global ConfigAttribute notifier_never_attrib;
@@ -44,6 +47,7 @@ Global ConfigAttribute notifier_fadeouttime_attrib;
 Global ConfigAttribute notifier_holdtime_attrib;
 Global ConfigAttribute notifier_hideinfullscreen_attrib;
 Global ConfigAttribute notifier_windowshade_attrib;
+Global ConfigAttribute notifier_timewarning_attrib;
 
 Global ConfigAttribute notifier_opennowplaying_attrib;
 
@@ -65,7 +69,6 @@ Global ConfigAttribute notifier_loc_tc_attrib;
 Global ConfigAttribute notifier_loc_vport_attrib;
 Global ConfigAttribute notifier_loc_monitor_attrib;
 
-
 initAttribs_notifier()
 {
 
@@ -85,6 +88,9 @@ initAttribs_notifier()
 	ConfigItem custom_page_notifier_fdin = addConfigSubMenu(custom_page_notifier, "Fade In Effect", CUSTOM_PAGE_NOTIFIER_FDIN);
 
 	ConfigItem custom_page_notifier_fdout = addConfigSubMenu(custom_page_notifier, "Fade Out Effect", CUSTOM_PAGE_NOTIFIER_FDOUT);
+	addMenuSeparator(custom_page_notifier);
+	notifier_timewarning_attrib = custom_page_notifier.newAttribute("Fade and stay time (Right-click on notifier)", "0");
+
 
 	addMenuSeparator(custom_page_notifier);
 	notifier_hideinfullscreen_attrib = custom_page_notifier.newAttribute("Disable in fullscreen", "1");
@@ -309,6 +315,15 @@ notifier_loc_monitor_attrib.onDataChanged()
 	NOOFF
 	attribs_mychange = 1;
 	notifier_loc_vport_attrib.setData("0");
+	attribs_mychange = 0;
+}
+
+notifier_timewarning_attrib.onDataChanged()
+{
+	if (attribs_mychange) return;
+	NOOFF
+	attribs_mychange = 1;
+	notifier_timewarning_attrib.setData("0");
 	attribs_mychange = 0;
 }
 

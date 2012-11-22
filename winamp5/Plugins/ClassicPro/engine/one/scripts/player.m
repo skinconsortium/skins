@@ -44,7 +44,7 @@ Global Timer reCheck;
 //Global Layer resize1, resize2, resize3, resize4, resize6, resize7, resize8, resize9;
 Global Layer resize6, resize8, resize9;
 Global Boolean mouseDown, dontResize, checkHeightAgain, docked;
-Global int i, lastKnownW, lastKnownH, rres;
+Global int i, lastKnownW, lastKnownH, rres, i_minw;
 
 System.onScriptLoaded() {
 	initAttribs_Autoresize();
@@ -90,6 +90,8 @@ System.onScriptLoaded() {
 	
 	myTimer = new Timer;
 	myTimer.setDelay(700);
+	
+	i_minw = stringToInteger(mainGroup.getXmlParam("minimum_w"));
 
 	
 	//resize1 = mainGroup.findObject("resizer.1");
@@ -190,6 +192,11 @@ System.onScriptUnloading(){
 	delete myTimer;
 }
 
+mainGroup.onSetVisible(boolean onOff){
+	if(onOff)	i_minw = stringToInteger(mainGroup.getXmlParam("minimum_w"));
+
+}
+
 myDoc.parser_onCallback (String xmlpath, String xmltag, list paramname, list paramvalue){
 	if(strlower(xmltag) == "style"){
 		String busyWith ="";
@@ -233,7 +240,7 @@ gotoGlobal(){
 	}
 
 	
-	if(w<317) w= 317;
+	if(w<i_minw) w= i_minw;
 	if(h<168) h= 168; //why was this w=168??? just change back if any bugs arise
 	
 	//debug(integerToString(x)+","+integerToString(y)+","+integerToString(w)+","+integerToString(h));
@@ -455,7 +462,7 @@ resize6.onLeftButtonDown(int x, int y){mouseDown=true;}
 resize6.onLeftButtonUp(int x, int y){mouseDown=false;}
 resize6.onMouseMove(int x, int y){
 	if(mouseDown){
-		x=x-(x-317)%rres;
+		x=x-(x-i_minw)%rres;
 		saveResize(myLayout.getLeft(), myLayout.getTop(),x+10,myLayout.getHeight());
 	}
 }
@@ -472,7 +479,7 @@ resize9.onLeftButtonDown(int x, int y){mouseDown=true;}
 resize9.onLeftButtonUp(int x, int y){mouseDown=false;}
 resize9.onMouseMove(int x, int y){
 	if(mouseDown){
-		x=x-(x-317)%rres;
+		x=x-(x-i_minw)%rres;
 		y=y-(y-168)%rres;
 		saveResize(myLayout.getLeft(), myLayout.getTop(),x+10,y+10);
 	}
@@ -483,7 +490,7 @@ saveResize(int x, int y, int w, int h){
 	if(docked) return;
 	if(getPublicInt("cPro.maximized", 0)==1) return;
 	
-	if(w<317) w=317;
+	if(w<i_minw) w=i_minw;
 	if(h<220) h=168;
 	
 	updateMax();

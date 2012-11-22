@@ -2,6 +2,10 @@
 #include <lib/fileio.mi>
 #include <lib/colormgr.mi>
 Global ColorMgr StartupCallback;
+#include <lib/config.mi>
+
+// this is the page that maps its items to the windows menu (aka View), you can add attribs or more pages (submenus)
+#define CUSTOM_WINDOWSMENU_ITEMS "{6559CA61-7EB2-4415-A8A9-A2AEEF762B7F}"
 
 Function openDrawer(int drawerNo);
 Function gotoPrevDrawer();
@@ -36,6 +40,9 @@ Global ComponentBucket dummyBuck;
 Global GuiObject customObj;
 Global List internalWidgets;
 
+Global ConfigItem custom_windows_page;
+Global ConfigAttribute sui_eq_attrib;
+
 System.onScriptLoaded() {
 	StartupCallback = new ColorMgr;
 	myDoc = new XmlDoc;
@@ -49,6 +56,10 @@ System.onScriptLoaded() {
 		myDoc.parser_destroy();
 	}
 	delete myDoc;
+
+	/** Load Window menu */
+	custom_windows_page = Config.getItem(CUSTOM_WINDOWSMENU_ITEMS);
+	sui_eq_attrib = custom_windows_page.newAttribute("Equalizer\tAlt+G", "0");
 
 
 	internalWidgets = new List;
@@ -121,6 +132,7 @@ System.onScriptLoaded() {
 
 	//Saved Settings
 	openDrawer(getPublicInt("cPro.lastDrawer", 0));
+	if(getPublicInt("cPro.lastDrawer", 0)!=0) sui_eq_attrib.setData("0");
 }
 
 myDoc.parser_onCallback (String xmlpath, String xmltag, list paramname, list paramvalue){
@@ -130,6 +142,30 @@ myDoc.parser_onCallback (String xmlpath, String xmltag, list paramname, list par
 			transparentSave=true;
 			setPublicInt("cPro.transparentsave", 1);
 		}
+	}
+}
+
+// ADD EQUILIZER SHORTCUT AND OPTION IN MAIN MENU!
+sui_eq_attrib.onDataChanged(){
+	if(sui_eq_attrib.getData()=="1" && !drawer_equalizer.isVisible())
+	{
+		cpro_sui.sendAction ("drawer_onoff", "", 1, 0, 0, 0);
+		openDrawer(0);
+	}
+	else if(sui_eq_attrib.getData()=="0" && drawer_equalizer.isVisible()){
+		//openDrawer(1);
+		cpro_sui.sendAction ("drawer_onoff", "", 0, 0, 0, 0);
+	}
+}
+drawer_equalizer.onSetVisible(boolean onOff){
+	if(onOff != stringToInteger(sui_eq_attrib.getData())) sui_eq_attrib.setData(integerToString(onOff));
+}
+System.onKeyDown(String key) {
+	if (key == "alt+g")
+	{
+		if (sui_eq_attrib.getData() == "0") sui_eq_attrib.setData("1");
+		else sui_eq_attrib.setData("0");
+		complete;
 	}
 }
 
@@ -230,7 +266,7 @@ openDrawer(int drawerNo){
 		else if (gr.getXMLparam("name")=="Video"){
 			cpro_sui.sendAction ("release", "VID", 0, 0, 0, 0);
 		}
-		else if (gr.getXMLparam("name")=="Tag Viewer"){
+		else if (gr.getXMLparam("name")=="File Info"){
 			cpro_sui.sendAction ("release", "TAG", 0, 0, 0, 0);
 		}
 

@@ -1,52 +1,47 @@
 <include file="InfoViewer/InfoViewer.xml"/>
 
 <groupdef id="centro2.group.video.buttons">
-	<button action="VID_1X"	x="0" y="0" rectrgn="1" image="cpro2.vid.1x.1" hoverImage="cpro2.vid.1x.2" downImage="cpro2.vid.1x.3" tooltip="Normal Size"/>
-	<button action="VID_2X" x="31" y="0" rectrgn="1" image="cpro2.vid.2x.1" hoverImage="cpro2.vid.2x.2" downImage="cpro2.vid.2x.3" tooltip="Double Size"/>
-	<button action="VID_TV" x="62" y="0" rectrgn="1" image="cpro2.vid.web.1" hoverImage="cpro2.vid.web.2" downImage="cpro2.vid.web.3" tooltip="Internet TV"/>
-	<button action="VID_Misc" x="93" y="0" rectrgn="1" image="cpro2.avs.opt.1" hoverImage="cpro2.avs.opt.2" downImage="cpro2.avs.opt.3" tooltip="Video Options"/>
-	<button action="VID_FS"	x="-31" y="0" relatx="1" rectrgn="1" image="cpro2.avs.fs.1" hoverImage="cpro2.avs.fs.2" downImage="cpro2.avs.fs.3" tooltip="Fullscreen"/>
-
-	<grid x="124" y="0" h="19" w="-155" relatw="1" ghost="1" topleft="sui.status.box.1" top="sui.status.box.2" topright="sui.status.box.3"/>
-	<text id="centro2.group.video.buttons.text" display="VID_Info" ticker="1" x="124" y="1" w="-155" h="19" relatw="1" align="center" valign="top" color="cpro2.color.status" font="cpro2.font.status.text" move="1"/>
+	<button action="VID_FS"	x="-32" y="0" relatx="1" rectrgn="1" image="cpro2.avs.fs.1" hoverImage="cpro2.avs.fs.2" downImage="cpro2.avs.fs.3" tooltip="Fullscreen"/>
 </groupdef>
 
 <groupdef id="centro2.group.vis.buttons">
-	<button action="VIS_Prev" x="0" y="0" rectrgn="1" image="cpro2.avs.prev.1" hoverImage="cpro2.avs.prev.2" downImage="cpro2.avs.prev.3" tooltip="Previous Visualization Preset"/>
-	<NStatesButton id="vis.random" x="31" y="0" rectrgn="1" image="cpro2.avs.ran.1." hoverImage="cpro2.avs.ran.2." downImage="cpro2.avs.ran.3." tooltip="Randomly change Visualization Presets" cfgattrib="{0000000A-000C-0010-FF7B-01014263450C};Random" nstates="2" cfgvals="0;1"/>
-	<button action="VIS_Next" x="62" y="0" rectrgn="1" image="cpro2.avs.next.1" hoverImage="cpro2.avs.next.2" downImage="cpro2.avs.next.3" tooltip="Next Visualization Preset"/>
-	<button action="VIS_Menu" x="93" y="0" rectrgn="1" image="cpro2.avs.pre.1" hoverImage="cpro2.avs.pre.2" downImage="cpro2.avs.pre.3" tooltip="Presets"/>
-	<button action="VIS_Cfg" x="124" y="0" rectrgn="1" image="cpro2.avs.opt.1" hoverImage="cpro2.avs.opt.2" downImage="cpro2.avs.opt.3" tooltip="Preset Editor / Options"/>
-	<button action="VIS_FS" x="-31" y="0" relatx="1" rectrgn="1" image="cpro2.avs.fs.1" hoverImage="cpro2.avs.fs.2" downImage="cpro2.avs.fs.3" tooltip="Fullscreen"/>
-	<!--<text id="centro.visname" ticker="1" x="105" y="4" h="13" w="-163" relatw="1" dblclickaction="WA5:Prefs" dblclickparam="33" align="center" color="ComponentTab.Status.Text" font="cpro.status.font" move="1"/>-->
+	<button action="VIS_Prev" x="1" y="0" rectrgn="1" image="cpro2.avs.prev.1" hoverImage="cpro2.avs.prev.2" downImage="cpro2.avs.prev.3" tooltip="Previous Visualization Preset"/>
+	<NStatesButton id="vis.random" x="33" y="0" rectrgn="1" image="cpro2.avs.ran.1." hoverImage="cpro2.avs.ran.2." downImage="cpro2.avs.ran.3." tooltip="Randomly change Visualization Presets" cfgattrib="{0000000A-000C-0010-FF7B-01014263450C};Random" nstates="2" cfgvals="0;1"/>
+	<button action="VIS_Next" x="65" y="0" rectrgn="1" image="cpro2.avs.next.1" hoverImage="cpro2.avs.next.2" downImage="cpro2.avs.next.3" tooltip="Next Visualization Preset"/>
+	<button action="VIS_FS" x="-33" y="0" relatx="1" rectrgn="1" image="cpro2.avs.fs.1" hoverImage="cpro2.avs.fs.2" downImage="cpro2.avs.fs.3" tooltip="Fullscreen"/>
 </groupdef>
 
 <groupdef id="centro2.group.pl.buttons">
-	<button action="PE_Add"	x="0" y="0" rectrgn="1" image="cpro2.pl.add.1" hoverImage="cpro2.pl.add.2" downImage="cpro2.pl.add.3" tooltip="Add Files to Playlist"/>
-	<button action="PE_Rem" x="31" y="0" rectrgn="1" image="cpro2.pl.rem.1" hoverImage="cpro2.pl.rem.2" downImage="cpro2.pl.rem.3" tooltip="Remove Files from Playlist"/>
-	<button action="PE_Sel" x="62" y="0" rectrgn="1" image="cpro2.pl.sel.1" hoverImage="cpro2.pl.sel.2" downImage="cpro2.pl.sel.3" tooltip="Select Files from Playlist"/>
-	<button action="PE_Misc" x="93" y="0" rectrgn="1" image="cpro2.pl.misc.1" hoverImage="cpro2.pl.misc.2" downImage="cpro2.pl.misc.3" tooltip="Misc Actions"/>
+	<button action="PE_Add"	x="1" y="0" rectrgn="1" image="cpro2.pl.add.1" hoverImage="cpro2.pl.add.2" downImage="cpro2.pl.add.3" tooltip="Add Files to Playlist"/>
+	<button action="PE_Rem" x="33" y="0" rectrgn="1" image="cpro2.pl.rem.1" hoverImage="cpro2.pl.rem.2" downImage="cpro2.pl.rem.3" tooltip="Remove Files from Playlist"/>
+	<button action="PE_Sel" x="65" y="0" rectrgn="1" image="cpro2.pl.sel.1" hoverImage="cpro2.pl.sel.2" downImage="cpro2.pl.sel.3" tooltip="Select Files from Playlist"/>
+	<button action="PE_Misc" x="97" y="0" rectrgn="1" image="cpro2.pl.misc.1" hoverImage="cpro2.pl.misc.2" downImage="cpro2.pl.misc.3" tooltip="Misc Actions"/>
 
-	<NStatesButton id="pl.search.toggle" x="-62" y="0" relatx="1" rectrgn="1" image="cpro2.pl.search.1." hoverImage="cpro2.pl.search.2." downImage="cpro2.pl.search.3." tooltip="Toggle playlist search bar" nstates="2" cfgvals="0;1"/>
-	<button action="PE_List" x="-31" y="0" relatx="1" rectrgn="1" image="cpro2.pl.man.1" hoverImage="cpro2.pl.man.2" downImage="cpro2.pl.man.3" tooltip="Manage Playlist"/>
+	<NStatesButton id="pl.search.toggle" x="-64" y="0" relatx="1" rectrgn="1" image="cpro2.pl.search.1." hoverImage="cpro2.pl.search.2." downImage="cpro2.pl.search.3." tooltip="Toggle playlist search bar" nstates="2" cfgvals="0;1"/>
+	<button action="PE_List" x="-32" y="0" relatx="1" rectrgn="1" image="cpro2.pl.man.1" hoverImage="cpro2.pl.man.2" downImage="cpro2.pl.man.3" tooltip="Manage Playlist"/>
 
-	<grid id="centro.playlist.textgrid" x="124" y="0" h="19" w="-186" relatw="1" ghost="1" topleft="sui.status.box.1" top="sui.status.box.2" topright="sui.status.box.3"/>
-	<text id="centro.playlist.pltext1" display="PE_Info" x="124" y="1" h="19" w="-186" relatw="1" align="center" color="cpro2.color.status" font="cpro2.font.status.text" move="1"/>
+	<grid id="centro.playlist.textgrid" x="129" y="0" h="19" w="-194" relatw="1" ghost="1" topleft="sui.status.box.1" top="sui.status.box.2" topright="sui.status.box.3"/>
+	<text id="centro.playlist.pltext1" display="PE_Info" x="131" y="1" h="19" w="-200" relatw="1" align="center" color="cpro2.color.status" font="cpro2.font.status.text" move="1"/>
 </groupdef>
 
-
-
+<groupdef id="centro.playlist.directory.tag" inherit_group="drawer.tagviewer">
+</groupdef>
 
 <groupdef id="centro.playlist.directory.cov">
 	<!--<Wasabi:AlbumArt x="2" y="2" w="-4" h="-21" relatw="1" relath="1" move="1"/>-->
 	<Wasabi:AlbumArt id="centro.playlist.wasabicover" x="1" y="1" w="-2" h="-2" relatw="1" relath="1" move="1"/>
 	<grid id="centro.playlist.wasabicover.status" x="-50" y="-19" w="50" relaty="1" relatx="1" ghost="1" topleft="sui.status.fade" top="sui.status"/> <!-- fade = 20, button = 30 -->
 </groupdef>
-<groupdef id="centro.playlist.directory.spl">
-	<PlaylistDirectory x="1" y="2" w="-2" h="-21" relatw="1" relath="1" antialias="0"/>
+
+
+<groupdef id="drawer.savedpl" name="Stored Playlists">
+	<layer x="0" y="-19" w="0" relaty="1" relatw="1" image="sui.status"/>
+	<PlaylistDirectory x="0" y="0" w="0" h="-19" relatw="1" relath="1" antialias="1"/>
 </groupdef>
-<groupdef id="centro.playlist.directory.tag" inherit_group="drawer.tagviewer">
+
+<groupdef id="centro.playlist.directory.spl" inherit_group="drawer.savedpl">
 </groupdef>
+
 
 
 
@@ -197,7 +192,7 @@
 	<group id="equalizer.content.holder" x="0" y="0" w="377" h="99"/>
 
 	<NStatesButton
-		x="0" y="-19" relaty="1"
+		x="1" y="-19" relaty="1"
 		image="cpro2.eq.on.1."
 		hoverImage="cpro2.eq.on.2."
 		downImage="cpro2.eq.on.3."
@@ -210,7 +205,7 @@
 		hoverImage="cpro2.eq.auto.2."
 		downImage="cpro2.eq.auto.3."
 		action="EQ_AUTO"
-		x="31" y="-19" relaty="1"
+		x="33" y="-19" relaty="1"
 		tooltip="EQ auto" nstates="2" cfgvals="0;1"
 	/>
 	<button
@@ -219,7 +214,7 @@
 		hoverImage="cpro2.avs.pre.2"
 		downImage="cpro2.avs.pre.3"
 		action="MENU" param="presets"
-		x="62" y="-19" relaty="1"
+		x="65" y="-19" relaty="1"
 		tooltip="Open presets"
 	/>
 
@@ -231,9 +226,12 @@
 <!--
 File Info viewer
 -->
+
+<!--
 <groupdef id="drawer.tagviewer.bottomleft" h="27">
 	<layer x="0" y="0" image="player.gframe.7.alt"/>
 </groupdef>
+-->
 
 <groupdef id="info.component.infodisplay.holder">
 	<group id="info.component.infodisplay" fitparent="1" alpha="0"/>
@@ -264,7 +262,3 @@ File Info viewer
 </groupdef>
 
 
-<groupdef id="drawer.savedpl" name="Stored Playlists">
-	<layer x="0" y="-19" w="0" relaty="1" relatw="1" image="sui.status"/>
-	<PlaylistDirectory x="0" y="0" w="0" h="-19" relatw="1" relath="1" antialias="1"/>
-</groupdef>

@@ -32,33 +32,34 @@ Global PopUpMenu anamenu;
 Global PopUpMenu stylemenu;
 
 Global Int currentMode, a_falloffspeed, p_falloffspeed, a_coloring;
-Global Boolean show_peaks, isShade;
+Global Boolean show_peaks, isShade, doubleClick;
 Global layer trigger, overlay1, overlay2;
 
-Global Layout thislayout;
-Global Container main;
+/*Global Layout thislayout;
+Global Container main;*/
 
 System.onScriptLoaded()
 { 
 	scriptGroup = getScriptGroup();
-	thislayout = scriptGroup.getParentLayout();
-	main = thislayout.getContainer();
+	/*thislayout = scriptGroup.getParentLayout();
+	main = thislayout.getContainer();*/
 
 	// this script runs in shade and normal layout, we store this bool to prevent some actions to recieve the shade vis.
 	//isShade = (scriptGroup.getParentlayout().getID() == "shade");
 
-	visualizer = scriptGroup.findObject("two.playback.visobject");
-	overlay1 = scriptGroup.findObject("vis.overlay");
-	//overlay2 = scriptGroup.findObject("vis.overlay.2");
-	trigger = scriptGroup.findObject("vis.mousetrap");
+	visualizer = scriptGroup.getObject(getToken(getParam(),";",0));
+	overlay1 = scriptGroup.getObject(getToken(getParam(),";",1));
+	trigger = scriptGroup.getObject(getToken(getParam(),";",2));
 
 	visualizer.setXmlParam("peaks", integerToString(show_peaks));
 	visualizer.setXmlParam("peakfalloff", integerToString(p_falloffspeed));
 	visualizer.setXmlParam("falloff", integerToString(a_falloffspeed));
+	
+	doubleClick = stringToInteger(getToken(getParam(),";",4));
 
 ///////////////
 	Map myMap = new Map;
-	myMap.loadMap("vis.region");
+	myMap.loadMap(getToken(getParam(),";",3));
 	overlay1.setRegionFromMap(myMap, 255, 0);
 	//overlay2.setRegionFromMap(myMap, 255, 0);
 ///////////////
@@ -66,13 +67,19 @@ System.onScriptLoaded()
 	refreshVisSettings ();
 }
 
+scriptGroup.onSetVisible(boolean onOff){
+	if(onOff){
+		refreshVisSettings ();
+	}
+}
+
 refreshVisSettings ()
 {
-	currentMode = getPrivateInt(getSkinName(), "Visualizer Mode", 1);
-	show_peaks = getPrivateInt(getSkinName(), "Visualizer show Peaks", 1);
-	a_falloffspeed = getPrivateInt(getSkinName(), "Visualizer analyzer falloff", 3);
-	p_falloffspeed = getPrivateInt(getSkinName(), "Visualizer peaks falloff", 2);
-	a_coloring = getPrivateInt(getSkinName(), "Visualizer analyzer coloring", 0);
+	currentMode = getPublicInt("cpro2.Visualizer Mode", 1);
+	show_peaks = getPublicInt("cpro2.Visualizer show Peaks", 1);
+	a_falloffspeed = getPublicInt("cpro2.Visualizer analyzer falloff", 3);
+	p_falloffspeed = getPublicInt("cpro2.Visualizer peaks falloff", 2);
+	a_coloring = getPublicInt("cpro2.Visualizer analyzer coloring", 0);
 
 	visualizer.setXmlParam("peaks", integerToString(show_peaks));
 	visualizer.setXmlParam("peakfalloff", integerToString(p_falloffspeed));
@@ -100,6 +107,7 @@ refreshVisSettings ()
 
 trigger.onLeftButtonDown (int x, int y)
 {
+	if(doubleClick) return;
 	if (isKeyDown(VK_ALT) && isKeyDown(VK_SHIFT) && isKeyDown(VK_CONTROL))
 	{
 		if (visualizer.getXmlParam("fliph") == "1")
@@ -123,6 +131,34 @@ trigger.onLeftButtonDown (int x, int y)
 	setVis	(currentMode);
 	complete;
 }
+
+trigger.onLeftButtonDblClk (int x, int y)
+{
+	if(!doubleClick) return;
+	if (isKeyDown(VK_ALT) && isKeyDown(VK_SHIFT) && isKeyDown(VK_CONTROL))
+	{
+		if (visualizer.getXmlParam("fliph") == "1")
+		{
+			visualizer.setXmlParam("fliph", "0");
+		}
+		else
+		{
+			visualizer.setXmlParam("fliph", "1");
+		}
+		return;
+	}
+
+	currentMode++;
+
+	if (currentMode == 7)
+	{
+		currentMode = 0;
+	}
+
+	setVis	(currentMode);
+	complete;
+}
+
 
 trigger.onRightButtonUp (int x, int y)
 {
@@ -191,21 +227,21 @@ ProcessMenuResult (int a)
 	{
 		show_peaks = (show_peaks - 1) * (-1);
 		visualizer.setXmlParam("peaks", integerToString(show_peaks));
-		setPrivateInt(getSkinName(), "Visualizer show Peaks", show_peaks);
+		setPublicInt("cpro2.Visualizer show Peaks", show_peaks);
 	}
 
 	else if (a >= 200 && a <= 204)
 	{
 		p_falloffspeed = a - 200;
 		visualizer.setXmlParam("peakfalloff", integerToString(p_falloffspeed));
-		setPrivateInt(getSkinName(), "Visualizer peaks falloff", p_falloffspeed);
+		setPublicInt("cpro2.Visualizer peaks falloff", p_falloffspeed);
 	}
 
 	else if (a >= 300 && a <= 304)
 	{
 		a_falloffspeed = a - 300;
 		visualizer.setXmlParam("falloff", integerToString(a_falloffspeed));
-		setPrivateInt(getSkinName(), "Visualizer analyzer falloff", a_falloffspeed);
+		setPublicInt("cpro2.Visualizer analyzer falloff", a_falloffspeed);
 	}
 
 	else if (a >= 400 && a <= 403)
@@ -227,13 +263,13 @@ ProcessMenuResult (int a)
 		{
 			visualizer.setXmlParam("coloring", "Line");
 		}
-		setPrivateInt(getSkinName(), "Visualizer analyzer coloring", a_coloring);
+		setPublicInt("cpro2.Visualizer analyzer coloring", a_coloring);
 	}
 }
 
 setVis (int mode)
 {
-	setPrivateInt(getSkinName(), "Visualizer Mode", mode);
+	setPublicInt("cpro2.Visualizer Mode", mode);
 	overlay1.hide();
 	//overlay2.hide();
 	if (mode == 0)

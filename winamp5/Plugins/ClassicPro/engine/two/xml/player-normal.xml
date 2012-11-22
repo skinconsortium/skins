@@ -33,8 +33,8 @@
 	<status	id="status"	x="0" y="0" w="20" h="20" stopBitmap="cpro.status.stopped" playBitmap="cpro.status.playing" pauseBitmap="cpro.status.paused" ghost="1"/>
 
 	<!--<rect fitparent="1"/>-->
-	<text id="two.info.text.tracktime" x="21" y="1" h="22" align="left" text="" fontsize="21" color="cpro2.color.infoseek.numbig" font="Calibri" ghost="1"/>
-	<text id="two.info.text.totaltime" x="0" y="5" h="16" align="left" text="" fontsize="15" color="cpro2.color.infoseek.numsmall" font="Calibri" ghost="1"/>
+	<text id="two.info.text.tracktime" x="21" y="1" h="22" align="left" text="" fontsize="21" color="cpro2.color.infoseek.numbig" font="cpro2.font.infoseek.numbig" ghost="1"/>
+	<text id="two.info.text.totaltime" x="0" y="5" h="16" align="left" text="" fontsize="15" color="cpro2.color.infoseek.numsmall" font="cpro2.font.infoseek.numsmall" ghost="1"/>
 	<text id="two.info.text.trackevent" x="0" y="0" w="0" h="0" display="TIMEELAPSED" visible="0"/>
 </groupdef>
 <groupdef id="two.info.text.info">
@@ -45,11 +45,11 @@
 		ch_6="channels.s"
 		ghost_all="1"
 	/>
-	<text id="two.info.text.info.1" x="1" y="0" w="-5" h="18" relatw="1" align="right" text="" translate="0" color="cpro2.color.infoseek.news" ghost="1" font="Calibri" fontsize="13" alpha="150" visible="0"/>
+	<text id="two.info.text.info.1" x="1" y="0" w="-5" h="18" relatw="1" align="right" text="" translate="0" color="cpro2.color.infoseek.news" ghost="1" font="cpro2.font.infoseek.news" fontsize="13" alpha="150" visible="0"/>
 </groupdef>
 <groupdef id="two.info.seeker.text">
-	<text id="two.info.text.title" x="1" y="1" w="-1" h="22" relatw="1" align="left" text="" color="cpro2.color.infoseek.title" ghost="1" font="Calibri" fontsize="21"/>
-	<text id="two.info.text.artist" x="1" y="19" w="-1" h="18" relatw="1" align="left" text="" color="cpro2.color.infoseek.artist" ghost="1" font="Calibri" fontsize="16" alpha="150"/>
+	<text id="two.info.text.title" x="1" y="1" w="-1" h="22" relatw="1" align="left" text="" color="cpro2.color.infoseek.title" ghost="1" font="cpro2.font.infoseek.title" fontsize="21"/>
+	<text id="two.info.text.artist" x="1" y="19" w="-1" h="18" relatw="1" align="left" text="" color="cpro2.color.infoseek.artist" ghost="1" font="cpro2.font.infoseek.artist" fontsize="16" alpha="150"/>
 
 	<group id="two.info.text.time" x="-100" y="0" w="100" h="50" relatx="1" relath="2"/>
 	<group id="two.info.text.info" x="-100" y="19" w="100" h="21" relatx="1"/>
@@ -132,19 +132,23 @@
 		x="6" y="6"
 		w="71" h="17"
 	/>
-	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\classicVis.maki"/>
+	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\classicVis.maki" param="two.playback.visobject;vis.overlay;vis.mousetrap;vis.region;0"/>
 
 
 
 	<button id="aboutwinamp.hidden" x="0" y="0" w="0" h="0" relatx="1" relaty="1" action="TOGGLE" param="guid:{D6201408-476A-4308-BF1B-7BACA1124B12}"/>
-	<button id="two.playback.bolt" x="83" y="0" image="playback.button.bolt.1" hoverimage="playback.button.bolt.2" downimage="playback.button.bolt.3"/>
+	<button id="two.playback.bolt" x="83" y="0" image="playback.button.bolt.1" hoverimage="playback.button.bolt.2" downimage="playback.button.bolt.3" tooltip="Multi-Button (right-click for Options)"/>
+	<layer id="bolt.fade" x="83" y="0" image="playback.button.bolt.2" ghost="1" alpha="0"/>
+	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\buttonfade.maki" param="two.playback.bolt;bolt.fade"/>
+
+
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\multibutton.maki" param="two.playback.bolt;aboutwinamp.hidden;xx"/>
 
 </groupdef>
 <groupdef id="two.playback.volume.slider">
 	<layer id="two.playback.volslider.bar.1" x="0" y="0" w="0" h="30" relatw="2" image="playback.vol.large.1" tile="1"/>
 	<layer id="two.playback.volslider.bar.2" x="0" y="0" w="0" h="30" relatw="2" image="playback.vol.large.2" tile="1" alpha="0"/>
-	<slider id="two.playback.volslider" x="0" y="0" w="0" h="30" relatw="1" action="VOLUME" thumb="playback.volume.big.1" hoverthumb="playback.volume.big.2" downthumb="playback.volume.big.3" cursor="IDC_HAND"/>
+	<slider id="two.playback.volslider" x="0" y="0" w="0" h="30" relatw="1" action="VOLUME" thumb="playback.volume.big.1" hoverthumb="playback.volume.big.2" downthumb="playback.volume.big.3" cursor="IDC_HAND" tooltip="Volume"/>
 
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\sc_sliderbar.maki" param="two.playback.volslider;two.playback.volslider.bar.;100"/>
 </groupdef>
@@ -152,8 +156,10 @@
 <groupdef id="two.playback.volume" w="113">
 	<layer id="two.playback.right" x="0" y="0" w="0" h="30" relatw="1"/>
 	
-	<NStatesButton id="two.player.mute" x="0" image="playback.button.mute.1." hoverimage="playback.button.mute.2." downimage="playback.button.mute.3." rectrgn="1" nstates="2" tooltip="Toggle Mute" cfgvals="0;1"/>
-	<layer id="two.player.mute.overlay" x="0" ghost="1" image="playback.button.mute.1.0" alpha="0"/>
+	<NStatesButton id="two.player.mute" x="0" image="playback.button.mute.1." hoverimage="playback.button.mute.2." downimage="playback.button.mute.3." rectrgn="1" nstates="2" cfgvals="0;1"/>
+	<layer id="two.player.mute.overlay" x="0" ghost="1" image="playback.button.mute.2.1" alpha="0"/>
+	<layer id="mute.fade" x="0" y="0" ghost="1" alpha="0"/>
+	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\buttonfade.maki" param="two.player.mute;mute.fade;playback.button.mute.2."/>
 
 	<group id="two.playback.volume.slider" x="80" y="0" w="77" h="30"/>
 </groupdef>
@@ -173,29 +179,29 @@
 	<layer id="rep.fade" x="33" y="0" ghost="1" alpha="0"/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\buttonfade.maki" param="two.playback.rep;rep.fade;playback.button.rep.2."/>
 
-	<button id="two.playback.prev" x="63" y="0" action="PREV" image="playback.button.prev.1" downimage="playback.button.prev.3"/>
+	<button id="two.playback.prev" x="63" y="0" action="PREV" image="playback.button.prev.1" downimage="playback.button.prev.3" tooltip="Previous Track"/>
 	<layer id="prev.fade" x="63" y="0" image="playback.button.prev.2" ghost="1" alpha="0"/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\buttonfade.maki" param="two.playback.prev;prev.fade"/>
 
 
-	<button id="two.playback.play" x="95" y="0" action="PLAY" image="playback.button.play.1" downimage="playback.button.play.3"/>
+	<button id="two.playback.play" x="95" y="0" action="PLAY" image="playback.button.play.1" downimage="playback.button.play.3" tooltip="Play"/>
 	<layer id="play.fade" x="95" y="0" image="playback.button.play.2" ghost="1" alpha="0"/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\buttonfade.maki" param="two.playback.play;play.fade"/>
 
-	<button id="two.playback.paus" x="95" y="0" action="PAUSE" image="playback.button.paus.1" downimage="playback.button.paus.3"/>
+	<button id="two.playback.paus" x="95" y="0" action="PAUSE" image="playback.button.paus.1" downimage="playback.button.paus.3" tooltip="Pause Playback"/>
 	<layer id="paus.fade" x="95" y="0" image="playback.button.paus.2" ghost="1" alpha="0"/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\buttonfade.maki" param="two.playback.paus;paus.fade"/>
 
-	<button id="two.playback.next" x="129" y="0" action="NEXT" image="playback.button.next.1" downimage="playback.button.next.3"/>
+	<button id="two.playback.next" x="129" y="0" action="NEXT" image="playback.button.next.1" downimage="playback.button.next.3" tooltip="Next Track"/>
 	<layer id="next.fade" x="129" y="0" image="playback.button.next.2" ghost="1" alpha="0"/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\buttonfade.maki" param="two.playback.next;next.fade"/>
 
 
-	<button id="two.playback.stop" x="161" y="0" action="STOP" image="playback.button.stop.1" downimage="playback.button.stop.3"/>
+	<button id="two.playback.stop" x="161" y="0" action="STOP" image="playback.button.stop.1" downimage="playback.button.stop.3" tooltip="Stop Playback"/>
 	<layer id="stop.fade" x="161" y="0" image="playback.button.stop.2" ghost="1" alpha="0"/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\buttonfade.maki" param="two.playback.stop;stop.fade"/>
 
-	<button id="two.playback.eject" x="191" y="0" action="EJECT" image="playback.button.open.1" downimage="playback.button.open.3"/>
+	<button id="two.playback.eject" x="191" y="0" action="EJECT" image="playback.button.open.1" downimage="playback.button.open.3" tooltip="Open File(s)"/>
 	<layer id="eject.fade" x="191" y="0" image="playback.button.open.2" ghost="1" alpha="0"/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\buttonfade.maki" param="two.playback.eject;eject.fade"/>
 	
@@ -229,11 +235,24 @@
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\buttonfade.maki" param="two.sysmenu;two.sysmenu.fade"/>
 
 	<NStatesButton id="player.aot" x="-133" relatx="1" image="frame.button.aot.1." hoverimage="frame.button.aot.2." downimage="frame.button.aot.3." rectrgn="1" cfgattrib="{280876CF-48C0-40BC-8E86-73CE6BB462E5};Always on top" nstates="2" tooltip="Toggle Always on top" cfgvals="0;1"/>
+	<layer id="aot.fade" x="-133" relatx="1" ghost="1" alpha="0"/>
+	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\buttonfade.maki" param="player.aot;aot.fade;frame.button.aot.2."/>
 
-	<button x="-108" relatx="1" image="frame.button.min.1" hoverimage="frame.button.min.2" downimage="frame.button.min.3" action="MINIMIZE"/>
-	<button id="two.frame.goBig" x="-83" relatx="1" image="frame.button.gobig.1" hoverimage="frame.button.gobig.2" downimage="frame.button.gobig.3"/>
-	<button x="-58" relatx="1" action="SWITCH" param="shade" image="frame.button.shade.1" hoverImage="frame.button.shade.2" downImage="frame.button.shade.3" rectrgn="1" tooltip="Windowshade Mode"/>
-	<button x="-33" relatx="1" image="frame.button.close.1" hoverimage="frame.button.close.2" downimage="frame.button.close.3" action="CLOSE"/>
+	<button id="two.frame.min" x="-108" relatx="1" image="frame.button.min.1" hoverimage="frame.button.min.2" downimage="frame.button.min.3" action="MINIMIZE" tooltip="Minimize Winamp"/>
+	<layer id="min.fade" x="-108" relatx="1" image="frame.button.min.2" ghost="1" alpha="0"/>
+	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\buttonfade.maki" param="two.frame.min;min.fade"/>
+
+	<button id="two.frame.goBig" x="-83" relatx="1" image="frame.button.gobig.1" hoverimage="frame.button.gobig.2" downimage="frame.button.gobig.3" tooltip="Maximize Winamp"/>
+	<layer id="goBig.fade" x="-83" relatx="1" image="frame.button.gobig.2" ghost="1" alpha="0"/>
+	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\buttonfade.maki" param="two.frame.goBig;goBig.fade"/>
+
+	<button id="two.frame.shade" x="-58" relatx="1" action="SWITCH" param="shade" image="frame.button.shade.1" hoverImage="frame.button.shade.2" downImage="frame.button.shade.3" rectrgn="1" tooltip="Windowshade Mode"/>
+	<layer id="shade.fade" x="-58" relatx="1" image="frame.button.shade.2" ghost="1" alpha="0"/>
+	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\buttonfade.maki" param="two.frame.shade;shade.fade"/>
+
+	<button id="two.frame.close" x="-33" relatx="1" image="frame.button.close.1" hoverimage="frame.button.close.2" downimage="frame.button.close.3" action="CLOSE" tooltip="Exit Winamp"/>
+	<layer id="close.fade" x="-33" relatx="1" image="frame.button.close.2" ghost="1" alpha="0"/>
+	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\buttonfade.maki" param="two.frame.close;close.fade"/>
 </groupdef>
 <groupdef id="two.frame.buttons.fs">
 	<button id="two.sysmenu.fs.fake" x="0" y="-8" relaty="1" h="1" action="SYSMENU"/>
@@ -241,14 +260,28 @@
 	<layer id="two.sysmenu.fs.fade" x="0" image="frame.menu.fs.2" ghost="1" alpha="0"/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\buttonfade.maki" param="two.sysmenu.fs;two.sysmenu.fs.fade"/>
 
-	<NStatesButton id="player.aot" x="-127" relatx="1" image="frame.button.aot.fs.1." hoverimage="frame.button.aot.fs.2." downimage="frame.button.aot.fs.3." rectrgn="1" cfgattrib="{280876CF-48C0-40BC-8E86-73CE6BB462E5};Always on top" nstates="2" tooltip="Toggle Always on top" cfgvals="0;1"/>
-	<button x="-102" relatx="1" image="frame.button.min.fs.1" hoverimage="frame.button.min.fs.2" downimage="frame.button.min.fs.3" action="MINIMIZE"/>
-	<button id="two.frame.goSmall" x="-77" relatx="1" image="frame.button.gobig.fs.1" hoverimage="frame.button.gobig.fs.2" downimage="frame.button.gobig.fs.3"/>
-	<button x="-52" relatx="1" action="SWITCH" param="shade" image="frame.button.shade.fs.1" hoverImage="frame.button.shade.fs.2" downImage="frame.button.shade.fs.3" rectrgn="1" tooltip="Windowshade Mode"/>
-	<button id="two.fs.close" x="-27" relatx="1" image="frame.button.close.fs.1" hoverimage="frame.button.close.fs.2" downimage="frame.button.close.fs.3" action="CLOSE"/>
+	<NStatesButton id="player.aot.fs" x="-127" relatx="1" image="frame.button.aot.fs.1." hoverimage="frame.button.aot.fs.2." downimage="frame.button.aot.fs.3." rectrgn="1" cfgattrib="{280876CF-48C0-40BC-8E86-73CE6BB462E5};Always on top" nstates="2" tooltip="Toggle Always on top" cfgvals="0;1"/>
+	<layer id="aot.fade.fs" x="-127" relatx="1" ghost="1" alpha="0"/>
+	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\buttonfade.maki" param="player.aot.fs;aot.fade.fs;frame.button.aot.fs.2."/>
+
+	<button id="two.frame.min.fs" x="-102" relatx="1" image="frame.button.min.fs.1" hoverimage="frame.button.min.fs.2" downimage="frame.button.min.fs.3" action="MINIMIZE" tooltip="Minimize Winamp"/>
+	<layer id="min.fs.fade" x="-102" relatx="1" image="frame.button.min.fs.2" ghost="1" alpha="0"/>
+	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\buttonfade.maki" param="two.frame.min.fs;min.fs.fade"/>
+
+	<button id="two.frame.goSmall" x="-77" relatx="1" image="frame.button.gobig.fs.1" hoverimage="frame.button.gobig.fs.2" downimage="frame.button.gobig.fs.3" tooltip="Restore Winamp"/>
+	<layer id="goSmall.fs.fade" x="-77" relatx="1" image="frame.button.gobig.fs.2" ghost="1" alpha="0"/>
+	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\buttonfade.maki" param="two.frame.goSmall;goSmall.fs.fade"/>
+
+	<button id="two.frame.shade.fs" x="-52" relatx="1" action="SWITCH" param="shade" image="frame.button.shade.fs.1" hoverImage="frame.button.shade.fs.2" downImage="frame.button.shade.fs.3" rectrgn="1" tooltip="Windowshade Mode"/>
+	<layer id="shade.fs.fade" x="-52" relatx="1" image="frame.button.shade.fs.2" ghost="1" alpha="0"/>
+	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\buttonfade.maki" param="two.frame.shade.fs;shade.fs.fade"/>
+
+	<button id="two.fs.close" x="-27" relatx="1" image="frame.button.close.fs.1" hoverimage="frame.button.close.fs.2" downimage="frame.button.close.fs.3" action="CLOSE" tooltip="Exit Winamp"/>
+	<layer id="close.fs.fade" x="-27" relatx="1" image="frame.button.close.fs.2" ghost="1" alpha="0"/>
+	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\buttonfade.maki" param="two.fs.close;close.fs.fade"/>
 </groupdef>
 
-<layout id="normal" minimum_h="200" minimum_w="240" h="600" w="800" appbar="top|bottom|left|right">
+<layout id="normal" minimum_h="200" minimum_w="240" default_w="800" default_h="600" w="800" h="600" appbar="top|bottom|left|right">
 
 	<!-- 
 	:: Frame layers ::
@@ -294,6 +327,6 @@
 
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\player.maki"/>
 	
-	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\read-classicpro.maki" param="@SKINPATH@"/>
+	
 
 </layout>

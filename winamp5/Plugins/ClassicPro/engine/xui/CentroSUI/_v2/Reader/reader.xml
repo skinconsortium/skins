@@ -35,7 +35,7 @@
 		relatw="1" color="wasabi.list.text"
 	/>
 	<edit id="browserpro.ddl.editbox" x="23" y="5" w="-24" h="16" text="" relatw="1" visible="0"/>
-	<layer id="browserpro.ddl.mousetrap" rectrgn="1" fitparent="1"/>
+	<layer id="browserpro.ddl.mousetrap" rectrgn="1" fitparent="1" tooltip="Right-Click to Open Current Website in your Default Browser"/>
   	<button
 		id="dropdownlist.button"
 		x="-15" y="0"

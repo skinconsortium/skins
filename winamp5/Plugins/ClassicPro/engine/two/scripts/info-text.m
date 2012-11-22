@@ -28,7 +28,7 @@ Global Container mainContainer;
 Global Layout mainLayout;
 Global Slider sl_volume, sl_seeker;
 Global Button prev, next, open;
-Global Togglebutton shufBut, repBut;
+Global Togglebutton shufBut, repBut, muteBut;
 
 System.onScriptLoaded() {
 	g = getScriptGroup();
@@ -80,6 +80,7 @@ System.onShowLayout(Layout _layout){
 		open = mainLayout.findObject("two.playback.eject");
 		shufBut = mainLayout.findObject("two.playback.shuf");
 		repBut = mainLayout.findObject("two.playback.rep");
+		muteBut = mainLayout.findObject("two.player.mute");
 		t_timeEvent.onTextChanged(t_timeEvent.getText());
 	}
 }
@@ -90,7 +91,7 @@ System.onscriptunloading(){
 }
 
 t_timeEvent.onTextChanged(String newtxt){
-	debugstring(newtxt, 9);
+	//debugstring(newtxt, 9);
 
 	if(System.getPlayItemLength()<0){
 		/*
@@ -133,12 +134,11 @@ System.onTitleChange(String newtitle){
 }
 
 
-///
-/*open.onLeftClick(){
+open.onLeftClick(){
 	updateNews("Open file(s)");
-}*/
+}
 
-///
+
 System.onStop(){
 	recheck.stop();
 	t_info1.hide();
@@ -432,4 +432,26 @@ sl_seeker.onLeftButtonUp(int x, int y){
 }
 sl_seeker.onLeftButtonDown(int x, int y){
 	busyWithSeek=true;
+}
+
+muteBut.onToggle(boolean onOff){
+	//isShort=true;
+	cancelNext=true;
+	if(onOff){
+		updateNews("Mute: On");
+	}
+	else{
+		updateNews("Mute: Off");
+	}
+}
+
+shufBut.onToggle(Boolean onOff){
+	if(onOff) updateNews("Shuffle: On");
+	else updateNews("Shuffle: Off");
+}
+
+repBut.onToggle(Boolean onOff){
+	if(repBut.getCurCfgVal()==0) updateNews("Repeat: Off");
+	else if(repBut.getCurCfgVal()==1) updateNews("Repeat: Playlist");
+	else updateNews("Repeat: Track");
 }

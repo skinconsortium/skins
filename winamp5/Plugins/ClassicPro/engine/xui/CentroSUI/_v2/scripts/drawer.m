@@ -2,6 +2,11 @@
 //#include <lib/fileio.mi>
 #include <lib/colormgr.mi>
 Global ColorMgr StartupCallback;
+#include <lib/config.mi>
+
+// this is the page that maps its items to the windows menu (aka View), you can add attribs or more pages (submenus)
+#define CUSTOM_WINDOWSMENU_ITEMS "{6559CA61-7EB2-4415-A8A9-A2AEEF762B7F}"
+
 
 Function openDrawer(int drawerNo);
 Function gotoPrevDrawer();
@@ -37,6 +42,11 @@ Global ComponentBucket dummyBuck;
 Global GuiObject customObj;
 Global List internalWidgets;
 
+Global ConfigItem custom_windows_page;
+Global ConfigAttribute sui_eq_attrib;
+
+
+
 System.onScriptLoaded() {
 	StartupCallback = new ColorMgr;
 	/*myDoc = new XmlDoc;
@@ -50,6 +60,13 @@ System.onScriptLoaded() {
 		myDoc.parser_destroy();
 	}
 	delete myDoc;*/
+
+
+
+	/** Load Window menu */
+	custom_windows_page = Config.getItem(CUSTOM_WINDOWSMENU_ITEMS);
+	sui_eq_attrib = custom_windows_page.newAttribute("Equalizer\tAlt+G", "0");
+
 
 
 	internalWidgets = new List;
@@ -121,7 +138,8 @@ System.onScriptLoaded() {
 	delete myMap;*/
 
 	//Saved Settings
-	openDrawer(getPublicInt("cpro2.lastDrawer", 0));
+	openDrawer(getPublicInt("cpro2.lastDrawer", 1));
+	if(getPublicInt("cpro2.lastDrawer", 0)!=0) sui_eq_attrib.setData("0");
 }
 /*
 myDoc.parser_onCallback (String xmlpath, String xmltag, list paramname, list paramvalue){
@@ -135,11 +153,37 @@ myDoc.parser_onCallback (String xmlpath, String xmltag, list paramname, list par
 }
 */
 
+
+// ADD EQUILIZER SHORTCUT AND OPTION IN MAIN MENU!
+sui_eq_attrib.onDataChanged(){
+	if(sui_eq_attrib.getData()=="1" && !drawer_equalizer.isVisible())
+	{
+		cpro_sui.sendAction ("drawer_onoff", "", 1, 0, 0, 0);
+		openDrawer(0);
+	}
+	else if(sui_eq_attrib.getData()=="0" && drawer_equalizer.isVisible()){
+		//openDrawer(1);
+		cpro_sui.sendAction ("drawer_onoff", "", 0, 0, 0, 0);
+	}
+}
+drawer_equalizer.onSetVisible(boolean onOff){
+	if(onOff != stringToInteger(sui_eq_attrib.getData())) sui_eq_attrib.setData(integerToString(onOff));
+}
+System.onKeyDown(String key) {
+	if (key == "alt+g")
+	{
+		if (sui_eq_attrib.getData() == "0") sui_eq_attrib.setData("1");
+		else sui_eq_attrib.setData("0");
+		complete;
+	}
+}
+
+
 but_drawerGoto.onleftClick(){
 	popMenu = new PopUpMenu;
 
 	// Faster to load it once!
-	int cur = getPublicInt("cpro2.lastDrawer", 0);
+	int cur = getPublicInt("cpro2.lastDrawer", 1);
 
 	for ( int i = 0; i < numInternalWidgets; i++ )
 	{
@@ -226,12 +270,14 @@ openDrawer(int drawerNo){
 
 		if(gr.getXMLparam("name")=="Visualization"){
 			cpro_sui.sendAction ("release", "VIS", 0, 0, 0, 0);
+			setPublicString("cpro2.defaultview.vis", "DRAWER");
 		}
 		else if (gr.getXMLparam("name")=="Playlist"){
 			cpro_sui.sendAction ("release", "PL", 0, 0, 0, 0);
 		}
 		else if (gr.getXMLparam("name")=="Video"){
 			cpro_sui.sendAction ("release", "VID", 0, 0, 0, 0);
+			setPublicString("cpro2.defaultview.vid", "DRAWER");
 		}
 		else if (gr.getXMLparam("name")=="File Info"){ //check if this works right with langauges!!!
 			cpro_sui.sendAction ("release", "TAG", 0, 0, 0, 0);
@@ -257,7 +303,7 @@ myGroup.onAction (String action, String param, int x, int y, int p1, int p2, Gui
 	if (strlower(action) == "switch_to_drawer") openDrawer(x);
 	else if (strlower(action) == "release"){
 		//debug("My Wereld");
-		if(param=="TAG") if(getPublicInt("cpro2.lastDrawer", 0)==1) openDrawer(0);
+		if(param=="TAG") if(getPublicInt("cpro2.lastDrawer", 1)==1) openDrawer(0);
 	}
 	else if (strlower(action) == "show_widget")
 	{
@@ -306,7 +352,7 @@ suiLayout.onMouseWheelDown(int clicked , int lines){
 }
 
 gotoPrevDrawer(){ //wheelup
-	int pos = getPublicInt("cpro2.lastDrawer", 0);
+	int pos = getPublicInt("cpro2.lastDrawer", 1);
 
 	if (pos == userWidgetOffset){
 		pos = numInternalWidgets-1;
@@ -329,7 +375,7 @@ gotoPrevDrawer(){ //wheelup
 }
 
 gotoNextDrawer(){ //wheelDown
-	int pos = getPublicInt("cpro2.lastDrawer", 0);
+	int pos = getPublicInt("cpro2.lastDrawer", 1);
 
 	if(pos == userWidgetOffset + numUserWidgets -1){
 		pos = 0;
