@@ -10,7 +10,7 @@
 
 #include <lib/std.mi>
 
-#include dispatch_codes.m
+#include ../../../../scripts/dispatch_codes.m
 
 Function setButtonState(int mode);
 
@@ -18,8 +18,10 @@ Global ToggleButton trigger;
 Global Group parent;
 Global GuiObject grid;
 Global Text label;
-Global boolean wasActive, movingTab, mouseDown, moved;
+Global boolean wasActive, movingTab, mouseDown, moved, dblClick;
 Global int dx;
+Global int yx = 0;
+Global Layer icon;
 
 // HACK (mpdeimos) this timer is a big HACK! Remove it if possible
 // needed to recieve button deactivated msgs (mainly to send the action)
@@ -30,11 +32,12 @@ System.onScriptLoaded ()
 {
 	setDispatcher(getScriptGroup().getParent());
 
-	trigger = getScriptGroup().findObject("cpro.tab.button");
-	label = getScriptGroup().findObject("cpro.tab.text");
-	grid = getScriptGroup().findObject("cpro.tab.grid");
 	parent = getScriptGroup();
-
+	trigger = parent.getObject("cpro.tab.button");
+	label = parent.getObject("cpro.tab.text");
+	grid = parent.getObject("cpro.tab.grid");
+	icon = parent.getObject("cpro.tab.icon");
+	
 	tmr = new Timer;
 	tmr.setDelay(10);
 }
@@ -43,6 +46,11 @@ System.onScriptUnloading ()
 {
 	tmr.stop();
 	delete tmr;
+}
+
+trigger.onLeftButtonDblClk(int x, int y){
+	dblClick=true;
+	//sendMessage(ON_LEFT_DBL_CLICK, 0, 0, 0, "", "", parent);
 }
 
 
@@ -84,6 +92,11 @@ trigger.onLeftButtonUp (int x, int y)
 	movingTab=false;
 	sendMessage(ON_LEFT_BUTTON_UP, x, x, moved, "", "", parent);
 	moved = false;
+
+	if(dblClick){
+		dblClick=false;
+		sendMessage(ON_LEFT_DBL_CLICK, 0, 0, 0, "", "", parent);
+	}
 }
 
 trigger.onRightButtonUp (int x, int y)
@@ -145,18 +158,42 @@ setButtonState (int mode)
 
 	if (mode == 1)
 	{
-		label.setXmlParam("y", "-1");
+		icon.setXmlParam("y", integerToString(-1+yx));
+		label.setXmlParam("y", integerToString(-1+yx));
 		label.setXmlParam("color", "cpro2.color.tab.on");
 	}
 	else if (mode == 2)
 	{
+		icon.setXmlParam("y", integerToString(0+yx));
+		label.setXmlParam("y", integerToString(0+yx));
 		label.setXmlParam("color", "cpro2.color.tab.off");
-		label.setXmlParam("y", "0");
 	}
 	else
 	{
-		label.setXmlParam("y", "0");
+		icon.setXmlParam("y", integerToString(0+yx));
+		label.setXmlParam("y", integerToString(0+yx));
 		label.setXmlParam("color", "cpro2.color.tab.hover");
+	}
+}
+
+parent.onSetVisible(boolean onOff){
+	if(onOff){
+		String tabset = getPrivateString(getSkinName(), "tabtext", "arial");
+		String tabtoken = "";
+		String param1 = "";
+		String param2 = "";
+		for(int i = 0; i<20;i++){
+			tabtoken = getToken(tabset,";",i);
+			if(tabtoken=="") break;
+			
+			param1 = getToken(tabtoken,",",0);
+			param2 = getToken(tabtoken,",",1);
+			
+			if(param1=="y") yx= stringToInteger(param2);
+			else label.setXmlParam(param1, param2);		
+		}
+		
+		trigger.onActivate(trigger.getActivated());
 	}
 }
 /*

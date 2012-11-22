@@ -56,7 +56,7 @@ System.onScriptLoaded() {
 	for(int i=0;i<5;i++){
 		gui_vis.setXmlParam("colorosc"+integerToString(5-i),integerToString(myMap.getARGBValue(2,i,2))+","+integerToString(myMap.getARGBValue(2,i,1))+","+integerToString(myMap.getARGBValue(2,i,0)));
 	}
-
+	delete myMap;
 }
 
 g.onResize(int x, int y, int w, int h){

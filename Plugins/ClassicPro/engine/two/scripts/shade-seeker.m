@@ -1,5 +1,9 @@
 #include <lib/std.mi>
 
+#include <lib/config.mi>
+#include <lib/pldir.mi>
+#include <lib/quickPlaylist.mi>
+
 Function setSeekerPos();
 Function lightToggle(boolean OnOff);
 
@@ -9,6 +13,7 @@ Global GuiObject l_seekerActive, l_seekerFinder, l_light, l_seekerHover;
 Global int i_light, i_width;
 Global Slider s_seeker0, s_seeker1;
 Global Timer t_light;
+Global Boolean leftButton, rightButton;
 
 System.onScriptLoaded() {
 	g = getScriptGroup();
@@ -48,11 +53,38 @@ s_seeker0.onPostedPosition(int newpos){
 
 s_seeker1.onSetPosition(int newpos){
 	int temp = g.getWidth();
-	g_seekerFinder.setXmlParam("w", integerToString(temp*newpos/255));
+	
+	if(leftButton && rightButton) g_seekerFinder.setXmlParam("w", "0");
+	else g_seekerFinder.setXmlParam("w", integerToString(temp*newpos/255));
 }
 s_seeker1.onSetFinalPosition(int pos){
 	g_seekerFinder.setXmlParam("w", "0");
 }
+
+s_seeker1.onLeftButtonDown(int x, int y){
+	leftButton=true;
+	if(rightButton) rightButton=false;
+}
+s_seeker1.onLeftButtonUp(int x, int y){
+	leftButton=false;
+}
+s_seeker1.onRightButtonDown(int x, int y){
+	rightButton=true;
+}
+s_seeker1.onRightButtonUp(int x, int y){
+	rightButton=false;
+
+	if(leftButton){
+		g_seekerFinder.setXmlParam("w", "0");
+		complete;
+	}
+	else{
+		popQuickPlaylist(40, false);
+		complete;
+	}
+}
+
+
 g.onResize(int x, int y, int w, int h){
 	l_seekerActive.setXmlParam("w", integerToString(w));
 	l_seekerFinder.setXmlParam("w", integerToString(w));

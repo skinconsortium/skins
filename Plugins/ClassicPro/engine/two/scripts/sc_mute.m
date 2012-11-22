@@ -13,7 +13,7 @@ Global Timer reCheck;
 Function doFade();
 Function stopFade();
 Function startFade();
-Global Boolean direction;
+Global Boolean direction, createdTooltip;
 Global Timer myTimer;
 
 
@@ -29,6 +29,16 @@ System.onScriptLoaded() {
 	muteWarning = mainGroup.findObject(getToken(getParam(),";",2));
 	myTimer = new Timer;
 	myTimer.setDelay(700);
+}
+
+mainGroup.onSetVisible(boolean onOff){
+	if(onOff){
+		if(mute_but.getCurCfgVal() != getPrivateInt(getSkinName(), "muted", 0) || !createdTooltip){
+			createdTooltip = true;
+			mute_but.setActivated(getPrivateInt(getSkinName(), "muted", 0));
+			mute_but.onToggle(getPrivateInt(getSkinName(), "muted", 0));
+		}
+	}
 }
 
 
@@ -49,12 +59,12 @@ vol_slider.onPostedPosition(int newpos){
 
 mute_but.onToggle(Boolean onoff){
 	if(mute_but.getCurCfgVal()==0){
-		setVolume(getPrivateInt(getSkinName(), "saveVol", 100));
+		if(getVolume()==0) setVolume(getPrivateInt(getSkinName(), "saveVol", 100));
 		mute_but.setXmlParam("tooltip", "Mute Volume");
 		stopFade();
 	}
 	else{
-		setPrivateInt(getSkinName(), "saveVol", getVolume());
+		if(getVolume()!=0) setPrivateInt(getSkinName(), "saveVol", getVolume());
 		setVolume(0);
 		mute_but.setXmlParam("tooltip", "Turn Volume On");
 		startFade();

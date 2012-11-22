@@ -414,7 +414,7 @@ openTabNo(int tabNo){
 		tab_Playlist.show();
 	}
 	else if(tabNo==2){
-		if(getPublicInt("cPro.lastMini", 0)==1){
+		if(getPublicInt("cPro.lastMini", 0)==3){
 			openMini(0);
 		}
 		if(getPublicInt("cPro.lastDrawer", 0)==DRAWER_VID_ID){
@@ -423,7 +423,7 @@ openTabNo(int tabNo){
 		tab_video.show();
 	}
 	else if(tabNo==3){
-		if(getPublicInt("cPro.lastMini", 0)==2){
+		if(getPublicInt("cPro.lastMini", 0)==4){
 			openMini(0);
 		}
 		if(getPublicInt("cPro.lastDrawer", 0)==DRAWER_VIS_ID){
@@ -471,7 +471,7 @@ openTabNo(int tabNo){
 
 checkVisName.onTimer(){
 	checkVisName.stop();
-	if(tab_openned==2)	visName.setText(hold_avs.getComponentName());
+	if(tab_openned==3)	visName.setText(hold_avs.getComponentName());
 }
 
 openMainLayoutNow(){
@@ -1111,10 +1111,13 @@ StartupCallback.onLoaded()
 cProLoaded ()
 {
 	int widgetPlace = normal.onAction("widget_manager_register", "Side Area", 0,0,0,0,area_mini); // TODO Translate
+	//normal.sendAction("widget_manager_register", "Side Area", 0,0,0,0); 
 	for (int i = 0; i < dummyBuck.getNumChildren(); i++)
 	{
 		GuiObject d = dummyBuck.enumChildren(i);
 		normal.onAction("widget_manager_check", getToken(d.getXmlParam("userdata"), ";", 0), widgetPlace,0,0,0,d);
+		//normal.sendAction("widget_manager_check", getToken(d.getXmlParam("userdata"), ";", 0), 0,0,0,0);
 	}
 	widgetPlace = normal.onAction("widget_manager_done", "", widgetPlace,0,0,0,area_mini);
+	//normal.sendAction("widget_manager_done", "", 0,0,0,0);
 }

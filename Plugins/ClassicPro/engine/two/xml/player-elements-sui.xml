@@ -320,4 +320,15 @@
 	<bitmap id="cpro2.reader.dropbg.8" file="sui_reader.png" x="135" y="118" w="4" h="4" gammagroup="n.Button"/>
 	<bitmap id="cpro2.reader.dropbg.9" file="sui_reader.png" x="140" y="118" w="4" h="4" gammagroup="n.Button"/>
 
+	<!--  Colorthemes buttons (Optional) -->
+	<bitmap id="component.ct.prev.1" file="colorthemes.png" x="0" y="0" w="32" h="17" gammagroup="n.Button"/>
+	<bitmap id="component.ct.prev.2" file="colorthemes.png" x="0" y="18" w="32" h="17" gammagroup="n.Button"/>
+	<bitmap id="component.ct.prev.3" file="colorthemes.png" x="0" y="36" w="32" h="17" gammagroup="n.Button"/>
+	<bitmap id="component.ct.set.1" file="colorthemes.png" x="33" y="0" w="31" h="17" gammagroup="n.Button"/>
+	<bitmap id="component.ct.set.2" file="colorthemes.png" x="33" y="18" w="31" h="17" gammagroup="n.Button"/>
+	<bitmap id="component.ct.set.3" file="colorthemes.png" x="33" y="36" w="31" h="17" gammagroup="n.Button"/>
+	<bitmap id="component.ct.next.1" file="colorthemes.png" x="65" y="0" w="31" h="17" gammagroup="n.Button"/>
+	<bitmap id="component.ct.next.2" file="colorthemes.png" x="65" y="18" w="31" h="17" gammagroup="n.Button"/>
+	<bitmap id="component.ct.next.3" file="colorthemes.png" x="65" y="36" w="31" h="17" gammagroup="n.Button"/>
+
 </elements>

@@ -14,7 +14,7 @@
 Global ColorMgr StartupCallback;
 
 #define DISPATCH
-#include dispatch_codes.m
+#include ../../../../scripts/dispatch_codes.m
 
 //#define DEBUG
 #define debugTabs //
@@ -73,6 +73,7 @@ Global ComponentBucket widgetLoader;
 Global boolean aligned, checkedBrowser, isFullNames; // @martin: remove this when done ;)
 Global PopUpMenu popMenu;
 Global List hiddenTabs;
+Global Text t_temp;
 
 Global ConfigItem custom_windows_page;
 Class ConfigAttribute CproTabAtt;
@@ -80,7 +81,12 @@ Class ConfigAttribute CproTabAtt;
 	Member String CproTabAtt.IDS;
 
 Global CproTabAtt tabWinAtt;
-Global ConfigAttribute sui_browser_attrib;
+Global ConfigAttribute sui_browser_attrib, sui_eq_attrib, sui_vis_attrib;
+
+Global Boolean loaded;
+
+/*Global Container player;
+Global Layout normal;*/
 
 System.onScriptLoaded ()
 {
@@ -95,6 +101,75 @@ System.onScriptLoaded ()
 	setDispatcher(tabHolder);
 
 	CproSUI = getScriptGroup().getParent().getParent().getParent().getParent();
+	/*player = getContainer("main");
+	normal = player.getLayout("normal");*/
+
+	/*
+	ALL THE STUFF THATS LOADED ONSETVISIBLE WAS HERE!!!!!!!!!
+	main reason for this move was so that tab sizes dont need to update twice if skinner change text style
+	*/
+
+}
+
+System.onScriptUnloading ()
+{
+	/** save tab order */
+	Tab t = firstTab;
+	Int n;
+	while (t != NULL)
+	{
+		if (t.isInternal)
+		{
+			setPrivateInt("ClassicPro", "TabOrder_item_" + integerToString(n), t.ID+1);
+		}
+		else
+		{
+			setPrivateString("ClassicPro", "TabOrder_item_" + integerToString(n), t.IDS);
+		}
+		
+		n++;
+		t = t.right;
+	}
+
+	setPrivateInt("ClassicPro", "TabOrder_nItems", n);
+
+	/** save hidden tabs (we just concat the lists for now!)*/
+	//TODO move to extra list in studio.xnf
+
+	//n = 0;
+
+	for ( int i = 0; i < hiddenTabs.getNumItems(); i++ )
+	{
+		t = hiddenTabs.enumItem(i);
+		/*if (t.isInternal)
+		{
+			setPrivateInt("ClassicPro", "TabOrder_hiddenItem_" + integerToString(n), t.ID+1);
+		}
+		else
+		{
+			setPrivateString("ClassicPro", "TabOrder_hiddenItem_" + integerToString(n), t.IDS);
+		}*/
+		if (t.isInternal)
+		{
+			setPrivateInt("ClassicPro", "TabOrder_item_" + integerToString(n), t.ID+1);
+		}
+		else
+		{
+			setPrivateString("ClassicPro", "TabOrder_item_" + integerToString(n), t.IDS);
+		}
+		
+		n++;
+	}
+
+	//setPrivateInt("ClassicPro", "TabOrder_nHiddenItems", n);
+	setPrivateInt("ClassicPro", "TabOrder_nItems", n);
+
+	delete hiddenTabs;
+}
+
+sg.onSetVisible(boolean onOff){
+	if(onOff && !loaded){
+	loaded=true;
 
 	//TODO> use stringtables
 	List internalNames = new List;
@@ -102,7 +177,7 @@ System.onScriptLoaded ()
 	internalNames.addItem("Playlist");			//1
 	internalNames.addItem("Video");				//2
 	internalNames.addItem("Visualization");		//3
-	internalNames.addItem("Reader");			//4
+	internalNames.addItem("Web Reader");			//4
 	//internalNames.addItem("Queue Manager");		//5
 	internalNames.addItem("Plugin");			//5
 
@@ -214,7 +289,9 @@ System.onScriptLoaded ()
 
 	/** Load Window menu */
 	custom_windows_page = Config.getItem(CUSTOM_WINDOWSMENU_ITEMS);
-	sui_browser_attrib = custom_windows_page.newAttribute("Web Browser\tAlt+X", "0");
+	sui_vis_attrib = custom_windows_page.newAttribute("Visualizations\tCtrl+Shift+K", "0");
+	sui_eq_attrib = custom_windows_page.newAttribute("Equalizer\tAlt+G", "0");
+	sui_browser_attrib = custom_windows_page.newAttribute("Web Reader\tAlt+X", "0");
 	
 	/** Bring ordered tabs into action */
 
@@ -345,62 +422,9 @@ System.onScriptLoaded ()
 	delete widgetTabIcons;
 	delete skipWidget;
 	delete passedWidgets;
-}
-
-System.onScriptUnloading ()
-{
-	/** save tab order */
-	Tab t = firstTab;
-	Int n;
-	while (t != NULL)
-	{
-		if (t.isInternal)
-		{
-			setPrivateInt("ClassicPro", "TabOrder_item_" + integerToString(n), t.ID+1);
-		}
-		else
-		{
-			setPrivateString("ClassicPro", "TabOrder_item_" + integerToString(n), t.IDS);
-		}
-		
-		n++;
-		t = t.right;
+	
+	tabHolder.onResize (1,1,1,1);
 	}
-
-	setPrivateInt("ClassicPro", "TabOrder_nItems", n);
-
-	/** save hidden tabs (we just concat the lists for now!)*/
-	//TODO move to extra list in studio.xnf
-
-	//n = 0;
-
-	for ( int i = 0; i < hiddenTabs.getNumItems(); i++ )
-	{
-		t = hiddenTabs.enumItem(i);
-		/*if (t.isInternal)
-		{
-			setPrivateInt("ClassicPro", "TabOrder_hiddenItem_" + integerToString(n), t.ID+1);
-		}
-		else
-		{
-			setPrivateString("ClassicPro", "TabOrder_hiddenItem_" + integerToString(n), t.IDS);
-		}*/
-		if (t.isInternal)
-		{
-			setPrivateInt("ClassicPro", "TabOrder_item_" + integerToString(n), t.ID+1);
-		}
-		else
-		{
-			setPrivateString("ClassicPro", "TabOrder_item_" + integerToString(n), t.IDS);
-		}
-		
-		n++;
-	}
-
-	//setPrivateInt("ClassicPro", "TabOrder_nHiddenItems", n);
-	setPrivateInt("ClassicPro", "TabOrder_nItems", n);
-
-	delete hiddenTabs;
 }
 
 
@@ -510,6 +534,11 @@ onMessage(int message, int i0, int i1, int i2, String s0, String s1, GuiObject o
 		}
 		lastActive = lastActiveT = t;
 		t.moving = false;
+	}
+	else if (message == ON_LEFT_DBL_CLICK)
+	{
+		CproSUI.sendAction ("toggle_fs", "", 0, 0, 0, 0);
+	
 	}
 	else if (message == ON_RIGHT_BUTTON_UP)
 	{
@@ -749,7 +778,10 @@ removeTab(Tab t)
 updateTabWidth (Tab t)
 {
 	totalTabWidth -= t.maxW;
-	t.w = t.findObject("cpro.tab.text").getAutoWidth() +23;
+	//t.w = t.findObject("cpro.tab.text").getAutoWidth() +23;
+	t_temp = t.findObject("cpro.tab.text");
+	t.w = t_temp.getTextWidth() +23;
+
 	t.maxW = t.w;
 	totalTabWidth += t.maxW;
 	t.mid = t.w/2;

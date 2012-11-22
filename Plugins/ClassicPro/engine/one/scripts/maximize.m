@@ -1,9 +1,12 @@
 #include <lib/std.mi>
+#define DISPATCH
+#include ../../scripts/dispatch_codes.m
+
 #include attribs/init_Autoresize.m
 
 Function updateMax();
 
-Global Group frameGroup;
+Global Group frameGroup, cprosui;
 Global Button goBig, goSmall, aotBut;
 Global Layer topLayer, aotDoc;
 Global boolean doubleClick, docked;
@@ -23,6 +26,8 @@ System.onScriptLoaded() {
 	topLayer = frameGroup.findObject("doubleclick");
 	aotBut = frameGroup.findObject("player.aot");
 	aotDoc = frameGroup.findObject("player.aot.docked");
+
+	cprosui = normal.findObject("centro.mainframe").getParent();
 	doubleClick=false;
 
 	/*double newscalevalue = normal.getScale();
@@ -43,6 +48,14 @@ System.onScriptLoaded() {
 		goSmall.show();
 		frameGroup.setXmlParam("lockminmax", "1");
 		normal.setXmlParam("move", "0");
+	}
+}
+
+
+cprosui.onAction (String action, String param, int x, int y, int p1, int p2, GuiObject source){
+	if (strlower(action) == "toggle_fs"){
+		if(goBig.isVisible()) goBig.leftClick();
+		else goSmall.leftClick();
 	}
 }
 

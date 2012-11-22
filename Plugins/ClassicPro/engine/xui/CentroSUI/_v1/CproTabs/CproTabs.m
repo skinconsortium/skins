@@ -14,7 +14,7 @@
 Global ColorMgr StartupCallback;
 
 #define DISPATCH
-#include dispatch_codes.m
+#include ../../../../scripts/dispatch_codes.m
 
 //#define DEBUG
 #define debugTabs //
@@ -78,7 +78,10 @@ Class ConfigAttribute CproTabAtt;
 	Member String CproTabAtt.IDS;
 
 Global CproTabAtt tabWinAtt;
-Global ConfigAttribute sui_browser_attrib;
+Global ConfigAttribute sui_browser_attrib, sui_eq_attrib;
+
+Global Container player;
+Global Layout normal;
 
 System.onScriptLoaded ()
 {
@@ -93,6 +96,8 @@ System.onScriptLoaded ()
 	setDispatcher(tabHolder);
 
 	CproSUI = getScriptGroup().getParent().getParent().getParent().getParent();
+	player = getContainer("main");
+	normal = player.getLayout("normal");
 
 	//TODO> use stringtables
 	List internalNames = new List;
@@ -206,6 +211,7 @@ System.onScriptLoaded ()
 
 	/** Load Window menu */
 	custom_windows_page = Config.getItem(CUSTOM_WINDOWSMENU_ITEMS);
+	sui_eq_attrib = custom_windows_page.newAttribute("Equalizer\tAlt+G", "0");
 	sui_browser_attrib = custom_windows_page.newAttribute("Web Browser\tAlt+X", "0");
 	
 	/** Bring ordered tabs into action */
@@ -491,6 +497,11 @@ onMessage(int message, int i0, int i1, int i2, String s0, String s1, GuiObject o
 		}
 		lastActive = lastActiveT = t;
 		t.moving = false;
+	}
+	else if (message == ON_LEFT_DBL_CLICK)
+	{
+		CproSUI.sendAction ("toggle_fs", "", 0, 0, 0, 0);
+		//sendMessage(ON_LEFT_DBL_CLICK, 0, 0, 0, "", "", parent);
 	}
 	else if (message == ON_RIGHT_BUTTON_UP)
 	{

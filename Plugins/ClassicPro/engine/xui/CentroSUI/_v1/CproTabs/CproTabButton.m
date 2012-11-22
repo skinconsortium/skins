@@ -10,7 +10,7 @@
 
 #include <lib/std.mi>
 
-#include dispatch_codes.m
+#include ../../../../scripts/dispatch_codes.m
 
 Function setButtonState(int mode);
 
@@ -18,7 +18,7 @@ Global ToggleButton trigger;
 Global Group parent;
 Global GuiObject grid;
 Global Text label;
-Global boolean wasActive, movingTab, mouseDown, moved;
+Global boolean wasActive, movingTab, mouseDown, moved, dblClick;
 Global int dx;
 
 // HACK (mpdeimos) this timer is a big HACK! Remove it if possible
@@ -45,6 +45,13 @@ System.onScriptUnloading ()
 	delete tmr;
 }
 
+trigger.onLeftButtonDblClk(int x, int y){
+	//debugString("dblclick",9);
+	dblClick=true;
+	//mouseDown=false; //tabs move if not
+	//sendMessage(ON_LEFT_DBL_CLICK, 0, 0, 0, "", "", parent);
+	//complete;
+}
 
 trigger.onLeftButtonDown (int x, int y)
 {
@@ -70,6 +77,9 @@ trigger.onMouseMove (int x, int y)
 
 trigger.onLeftButtonUp (int x, int y)
 {
+
+	//debugString("LBU",9);
+
 	mouseDown=false;
 	if (!movingTab)
 	{
@@ -84,6 +94,11 @@ trigger.onLeftButtonUp (int x, int y)
 	movingTab=false;
 	sendMessage(ON_LEFT_BUTTON_UP, x, x, moved, "", "", parent);
 	moved = false;
+	
+	if(dblClick){
+		dblClick=false;
+		sendMessage(ON_LEFT_DBL_CLICK, 0, 0, 0, "", "", parent);
+	}
 }
 
 trigger.onRightButtonUp (int x, int y)

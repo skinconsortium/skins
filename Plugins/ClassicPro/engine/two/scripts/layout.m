@@ -14,7 +14,7 @@ Function readFrameHeight();
 Function saveSkinPos();
 Function updateMax();
 
-Global Group g, g_screen, g_info, g_playback, g_sui, g_frameBut, g_frameButFS;
+Global Group g, g_screen, g_info, g_playback, g_sui, g_frameBut, g_frameButFS, cprosui;
 Global Container player;
 Global Layout shade, normal;
 Global Layer l_frame1, l_frame2, l_frame3, l_frame4, l_frame5, l_frame6, l_frame7, l_frame8, l_frame9, l_frame2_center;
@@ -37,10 +37,10 @@ System.onScriptLoaded() {
 	player = System.getContainer("main");
 	normal = player.getLayout("normal");
 	//shade = player.getLayout("shade");
-	
 	//normal.setRedrawOnResize(0);
-	
 	//normal.snapAdjust(i_param, i_param, i_param, i_param);
+
+	cprosui = normal.findObject("centro.mainframe").getParent();
 
 	g = getScriptGroup();
 	g_screen = g.getObject("two.screen");
@@ -90,8 +90,16 @@ System.onScriptLoaded() {
 
 }
 System.onScriptUnLoading(){
-	saveSkinPos();
+	if(normal.isVisible()) saveSkinPos();
 
+}
+
+
+cprosui.onAction (String action, String param, int x, int y, int p1, int p2, GuiObject source){
+	if (strlower(action) == "toggle_fs"){
+		if(b_goBig.isVisible()) b_goBig.leftClick();
+		else b_goSmall.leftClick();
+	}
 }
 
 /*
@@ -276,8 +284,8 @@ fullScreen(boolean onOff){
 
 		int x = getPublicInt("cPro2.x", getCurAppLeft());
 		int y = getPublicInt("cPro2.y", getCurAppTop());
-		int w = getPublicInt("cPro2.w", getCurAppWidth());
-		int h = getPublicInt("cPro2.h", getCurAppHeight());
+		int w = getPublicInt("cPro2.w", 800);
+		int h = getPublicInt("cPro2.h", 600);
 		
 		if(getPublicInt("cPro2.saveby", 0)==1 && collapse_bottom_attrib.getData() == "1" && linkPosWidth.getData() == "1"){
 			y-=h-22;

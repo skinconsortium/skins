@@ -11,19 +11,29 @@ Internet:	www.skinconsortium.com
 		www.martin.deimos.de.vu
 
 Note:		Based on notifier.m from Winamp Modern
+Note2:		Search for pjn123 to see edits by pjn123 for ClassicPro
 -----------------------------------------------------
 ---------------------------------------------------*/
 
 #include <lib/std.mi>
 #include attribs/init_notifier.m
+#define DEBUG 
+#define DebugString //
+
+//edit by pjn123 start
+Function popSettings();
+Function int getSaveValue(int input);
+//edit by pjn123 end
 
 Function reset();
-Function createNotifier();
+Function createNotifier(boolean cancel);
 Function showNotifier(Int w);
 Function onNext();
+function cancelAnimation();
 
 Function Int fillNextTrackInfo(String corneroverride);
 Function Int fillCustomInfo(String customstring);
+Function prepareAlbumArtNotifier();
 
 Function checkPref(int bypassfs);
 
@@ -31,11 +41,19 @@ Function getArtist();
 
 Global Container notifier_container;
 Global Layout notifier_layout;
-Global Timer notifier_timer, notifier_settingshelp;
-Global String last_autotitle, last_autopis;
+Global Timer notifier_timer;
+Global String last_autotitle, last_autopis, cur_status;
+
+//edit by pjn123 start
+Global Timer notifier_settingshelp; 
+Global Boolean msgbox_open, switchOnce;
+Global PopupMenu myMenu, timeIn, timeStay, timeOut;
+//edit by pjn123 end
 
 Global Boolean b_tohide = 0;
-Global Boolean msgbox_open = false;
+Global boolean handleAACalback = false;
+
+Global AlbumArtLayer cover;
 
 // ------------------------------------------------------------------------------
 // init
@@ -50,7 +68,7 @@ System.onScriptLoaded() {
 // ------------------------------------------------------------------------------
 System.onScriptUnloading() {
 	delete notifier_timer;
-	delete notifier_settingshelp;
+  delete notifier_settingshelp; //edit by pjn123
 }
 
 // ------------------------------------------------------------------------------
@@ -58,12 +76,11 @@ System.onScriptUnloading() {
 // ------------------------------------------------------------------------------
 System.onShowNotification() {
 	//if (checkPref(1)) return; --mp: if we push the hotkey, we want to show the notifier, no matter what the pref settings are.
-	createNotifier();
-	String str;
-	if (getStatus() == STATUS_PLAYING) str = "Playing";
-	if (getStatus() == STATUS_PAUSED) str = "Playback Paused";
-	if (getStatus() == STATUS_STOPPED) str = "Playback Stopped";
-	showNotifier(fillNextTrackInfo(str));
+	createNotifier(false);
+	if (getStatus() == STATUS_PLAYING) cur_status = "Playing";
+	if (getStatus() == STATUS_PAUSED) cur_status = "Playback Paused";
+	if (getStatus() == STATUS_STOPPED) cur_status = "Playback Stopped";
+	prepareAlbumArtNotifier();
 	complete; // prevents other scripts from getting the message
 	return 1; // tells anybody else that might watch the returned value that, yes, we implemented that
 }
@@ -72,25 +89,41 @@ System.onShowNotification() {
 // called by the system when the title for the playing item changes, this could be the result of the player
 // going to the next track, or of an update in the track title
 // ------------------------------------------------------------------------------
+// mpdeimos> seems like we get an onTitleChange callback sometimes on pause/resume, d'oh
+Global String lastUrl = 0;
 System.onTitleChange(String newtitle) {
+	if (getPlayItemMetaDataString("streamtype") == "0" && lastUrl == getPlayItemString())
+	{
+		return;
+	}
+	lastUrl = getPlayItemString();
+	
 	if (StrLeft(newtitle, 1) == "[") {
 		if (StrLeft(newtitle, 7) == "[Buffer" ||
 				StrLeft(newtitle, 4) == "[ICY") return;
 	}
-	String newpis = System.getPlayItemString();
-	if (last_autotitle == newtitle && last_autopis == newpis) return;
-	last_autotitle = newtitle;
-	last_autopis = newpis;
+	//String newpis = System.getPlayItemString(); 
+	//if (last_autotitle == newtitle && last_autopis == newpis) return;
+	//last_autotitle = newtitle;
+	//last_autopis = newpis;
+	DebugString("onTitleChange: "+getPlayItemString(), 9);	
 	onNext();
 }
-
+/*
+System.onTitle2Change(String newtitle) {
+	DebugString("onTitle2Change: "+newtitle, 9);	
+}
+System.onUrlChange(String newtitle) {
+	DebugString("onUrlChange: "+newtitle, 9);	
+}*/
 // ------------------------------------------------------------------------------
 // called by the system when the user clicks the next button
 // ------------------------------------------------------------------------------
 onNext() {
 	if (checkPref(0)) return;
-	createNotifier();
-	showNotifier(fillNextTrackInfo(""));
+	createNotifier(false);
+	cur_status = "";
+	prepareAlbumArtNotifier();
 }
 
 // ------------------------------------------------------------------------------
@@ -98,8 +131,9 @@ onNext() {
 // ------------------------------------------------------------------------------
 System.onPlay() {
 	if (checkPref(0)) return;
-	createNotifier();
-	showNotifier(fillNextTrackInfo("Playing"));
+	createNotifier(false);
+	cur_status = "Playing";
+	prepareAlbumArtNotifier();
 }
 
 // ------------------------------------------------------------------------------
@@ -107,7 +141,8 @@ System.onPlay() {
 // ------------------------------------------------------------------------------
 System.onPause() {
 	if (checkPref(0)) return;
-	createNotifier();
+	DebugString("onPause",9);
+	createNotifier(true);
 	showNotifier(fillCustomInfo("Playback Paused"));
 }
 
@@ -116,8 +151,10 @@ System.onPause() {
 // ------------------------------------------------------------------------------
 System.onResume() {
 	if (checkPref(0)) return;
-	createNotifier();
-	showNotifier(fillNextTrackInfo("Resuming Playback"));
+	DebugString("onResume",9);
+	createNotifier(false);
+	cur_status = "Resuming Playback";
+	prepareAlbumArtNotifier();
 }
 
 // ------------------------------------------------------------------------------
@@ -125,7 +162,7 @@ System.onResume() {
 // ------------------------------------------------------------------------------
 System.onStop() {
 	if (checkPref(0)) return;
-	createNotifier();
+	createNotifier(true);
 	showNotifier(fillCustomInfo("End of Playback"));
 }
 
@@ -228,35 +265,48 @@ notifier_timer.onTimer() {
 // when notifier is clicked, bring back the app from minimized state if its minimized and focus it
 // ------------------------------------------------------------------------------
 notifier_layout.onLeftButtonDown(int x, int y) {
-	if(getPublicInt("cPro.asknotifier", 1)){
+	if(getPublicInt("cpro2.asknotifier", 1)){ // edit by pjn123 start
 		notifier_settingshelp= new Timer;
 		notifier_settingshelp.setDelay(100);
 		notifier_settingshelp.start();
+		cancelAnimation();
+		restoreApplication();
+		activateApplication();
+		reset();
 		return;
-	}
-	notifier_timer.stop();
-	notifier_layout.cancelTarget();
-	reset();
+	} // edit by pjn123 end
+
+	cancelAnimation();
 	restoreApplication();
 	activateApplication();
 	if (notifier_opennowplaying_attrib.getData() == "1")
 	{
 		String artist = getArtist();
 		if (artist == "") return;
-		System.navigateUrlBrowser("http://client.winamp.com/nowplaying/artist/?artistName=" + artist);	
+		System.navigateUrlBrowser("http://client.winamp.com/nowplaying/artist/?icid=notifierbento&artistName=" + artist);	
 	}
+	reset();
 }
 
-notifier_settingshelp.onTimer(){
+notifier_settingshelp.onTimer(){// edit by pjn123 start
 	notifier_settingshelp.stop();
 	if(msgbox_open) return;
 	msgbox_open = true;
 	int l = System.messageBox("Do you want to disable song notifications?\n\nThis message won't appear again.\nTo manually disable it later go to 'Options >> Notifier'", "ClassicPro", 12, "");
 	msgbox_open = false;
 	if(l==4) notifier_never_attrib.setData("1");
-	setPublicInt("cPro.asknotifier", 0);
-}
+	setPublicInt("cpro2.asknotifier", 0);
+}// edit by pjn123 end
 
+
+/*notifier_layout.onRightButtonUp(int x, int y) {// edit by pjn123 start
+	cancelAnimation();
+	reset();
+	complete;
+	return;
+}// edit by pjn123 end*/
+
+//TODO merge w/ code below
 String getArtist ()
 {
 	String artist = getPlayItemMetaDataString("artist");
@@ -275,10 +325,11 @@ reset() {
 	notifier_container.close();
 	notifier_container = NULL;
 	notifier_layout = NULL;
+	handleAACalback = FALSE;
 }
 
 // ------------------------------------------------------------------------------
-createNotifier() {
+createNotifier(boolean cancel) {
 	if (notifier_container == NULL) {
 		notifier_container = newDynamicContainer("notifier");
 		if (!notifier_container) return; // reinstall duh!
@@ -287,10 +338,15 @@ createNotifier() {
 		else
 			notifier_layout = notifier_container.getLayout("normal");
 		if (!notifier_layout) return; // reinstall twice, man
-	} else {
-		notifier_layout.cancelTarget();
-		notifier_timer.stop();
+	} else if (cancel) {
+		cancelAnimation();
 	}
+}
+
+cancelAnimation()
+{
+	notifier_layout.cancelTarget();
+	notifier_timer.stop();
 }
 
 // ------------------------------------------------------------------------------
@@ -402,6 +458,42 @@ showNotifier(int w) {
 		notifier_layout.setTargetSpeed(StringToInteger(notifier_fadeintime_attrib.getData()) / 1000);
 		notifier_layout.gotoTarget();
 	}
+}
+// ------------------------------------------------------------------------------
+
+prepareAlbumArtNotifier()
+{
+	if (!notifier_layout) return;
+	Group g_albumart = notifier_layout.findObject("notifier.albumart");
+
+	DebugString("prepareAlbumArtNotifier: handleAACalback="+integerToString(handleAACalback), 9);
+	if (g_albumart)
+	{
+		cover = g_albumart.findObject("notifier.cover");
+		DebugString("prepareAlbumArtNotifier: cover.isLoading="+integerToString(cover.isLoading()), 9);
+		DebugString("prepareAlbumArtNotifier: cover.isInvalid="+integerToString(cover.isInvalid()), 9);
+		handleAACalback = true;
+		//if (cover.isInvalid())
+		{
+			cover.refresh();	
+		}
+	}
+}
+
+cover.onAlbumArtLoaded(boolean success)
+{
+	DebugString("onAlbumArtLoaded: success="+integerToString(success), 9);
+	DebugString("onAlbumArtLoaded: handleAACalback="+integerToString(handleAACalback), 9);
+	DebugString("onAlbumArtLoaded: cover.isLoading="+integerToString(cover.isLoading()), 9);
+	DebugString("onAlbumArtLoaded: cover.isInvalid="+integerToString(cover.isInvalid()), 9);
+	if (!handleAACalback || !notifier_layout /*|| isLoading()*/)
+	{
+		return;
+	}
+	
+	handleAACalback = isLoading();
+	cancelAnimation();
+	showNotifier(fillNextTrackInfo(cur_status));
 }
 
 // ------------------------------------------------------------------------------
@@ -640,7 +732,7 @@ Int fillNextTrackInfo(String corneroverride) {
 
 	// Album Art Stuff
 
-	layer cover, webcover;
+	layer webcover;
 	if (g_albumart)
 	{
 		cover = g_albumart.findObject("notifier.cover");
@@ -675,7 +767,7 @@ Int fillNextTrackInfo(String corneroverride) {
 		}
 		else
 		{
-			if (FALSE/* cover.isInvalid()*/) // Check if the album art obj shows a pic
+			if (cover.isInvalid()) // Check if the album art obj shows a pic
 			{
 				showAlbumArt = FALSE;
 			}
@@ -723,6 +815,7 @@ Int fillNextTrackInfo(String corneroverride) {
 	
 	
 	return maxv + ( showAlbumArt * 60 ) + 1; // Adds 60 extra pixels if album art is visible
+
 }
 
 // ------------------------------------------------------------------------------
@@ -747,4 +840,112 @@ Int fillCustomInfo(String customtext)
 			return aw;
 	}
 	return 128;
+}
+
+
+
+
+
+notifier_timewarning_attrib.onDataChanged()
+{
+	if(switchOnce){
+		switchOnce = false;
+	}
+	else{
+		popSettings();
+		switchOnce = true;
+	}
+}
+notifier_layout.onRightButtonUp(int x, int y) {// edit by pjn123 start
+	popSettings();
+	complete;
+}
+
+int getSaveValue(int input){
+	if(input==5) input=6;
+	else if(input==7) input=8;
+	else if(input==9) input=10;
+	else if(input==11) input=12;
+	else if(input>=35) input=40;
+	else if(input>=25) input=30;
+	else if(input>=15) input=20;
+	else if(input<1) input=1;
+	
+	return input;
+}
+popSettings(){
+	int temp;
+	timeIn = new PopupMenu;
+	timeIn.addCommand("250 ms", 1, 0, 0);
+	timeIn.addCommand("500 ms", 2, 0, 0);
+	timeIn.addCommand("750 ms", 3, 0, 0);
+	timeIn.addCommand("1000 ms", 4, 0, 0);
+	timeIn.addCommand("1500 ms", 6, 0, 0);
+	timeIn.addCommand("2000 ms", 8, 0, 0);
+	timeIn.addCommand("2500 ms", 10, 0, 0);
+	timeIn.addCommand("3000 ms", 12, 0, 0);
+	timeIn.addCommand("5000 ms", 20, 0, 0);
+	timeIn.addCommand("7500 ms", 30, 0, 0);
+	timeIn.addCommand("10000 ms", 40, 0, 0);
+	temp = getSaveValue(stringToInteger(notifier_fadeintime_attrib.getData())/250);
+	if(stringToInteger(notifier_fadeintime_attrib.getData())/250!=temp) notifier_fadeintime_attrib.setData(integerToString(temp*250));
+	timeIn.checkCommand(temp, 1);
+
+	timeStay = new PopupMenu;
+	timeStay.addCommand("250 ms", 101, 0, 0);
+	timeStay.addCommand("500 ms", 102, 0, 0);
+	timeStay.addCommand("750 ms", 103, 0, 0);
+	timeStay.addCommand("1000 ms", 104, 0, 0);
+	timeStay.addCommand("1500 ms", 106, 0, 0);
+	timeStay.addCommand("2000 ms", 108, 0, 0);
+	timeStay.addCommand("2500 ms", 110, 0, 0);
+	timeStay.addCommand("3000 ms", 112, 0, 0);
+	timeStay.addCommand("5000 ms", 120, 0, 0);
+	timeStay.addCommand("7500 ms", 130, 0, 0);
+	timeStay.addCommand("10000 ms", 140, 0, 0);
+	//timeStay.checkCommand(getSaveValue(stringToInteger(notifier_holdtime_attrib.getData())/250)+100, 1);
+	temp = getSaveValue(stringToInteger(notifier_holdtime_attrib.getData())/250);
+	if(stringToInteger(notifier_holdtime_attrib.getData())/250!=temp) notifier_holdtime_attrib.setData(integerToString(temp*250));
+	timeStay.checkCommand(temp+100, 1);
+
+	timeOut = new PopupMenu;
+	timeOut.addCommand("250 ms", 201, 0, 0);
+	timeOut.addCommand("500 ms", 202, 0, 0);
+	timeOut.addCommand("750 ms", 203, 0, 0);
+	timeOut.addCommand("1000 ms", 204, 0, 0);
+	timeOut.addCommand("1500 ms", 206, 0, 0);
+	timeOut.addCommand("2000 ms", 208, 0, 0);
+	timeOut.addCommand("2500 ms", 210, 0, 0);
+	timeOut.addCommand("3000 ms", 212, 0, 0);
+	timeOut.addCommand("5000 ms", 220, 0, 0);
+	timeOut.addCommand("7500 ms", 230, 0, 0);
+	timeOut.addCommand("10000 ms", 240, 0, 0);
+	//timeOut.checkCommand(getSaveValue(stringToInteger(notifier_fadeouttime_attrib.getData())/250)+200, 1);
+	temp = getSaveValue(stringToInteger(notifier_fadeouttime_attrib.getData())/250);
+	if(stringToInteger(notifier_fadeouttime_attrib.getData())/250!=temp) notifier_fadeouttime_attrib.setData(integerToString(temp*250));
+	timeOut.checkCommand(temp+200, 1);
+
+	myMenu = new PopupMenu;
+	myMenu.addSubMenu(timeIn, "Fade In Time");
+	myMenu.addSubMenu(timeStay, "Stay time");
+	myMenu.addSubMenu(timeOut, "Fade Out Time");
+	
+	int a = myMenu.popAtMouse();
+
+	delete myMenu;
+	delete timeIn;
+	delete timeStay;
+	delete timeOut;
+	
+	if(a<1) return;
+	else if(a<100){
+		notifier_fadeintime_attrib.setData(integerToString(a*250));
+	}
+	else if(a<200){
+		notifier_holdtime_attrib.setData(integerToString((a-100)*250));
+	}
+	else if(a<300){
+		notifier_fadeouttime_attrib.setData(integerToString((a-200)*250));
+	}
+	onNext();
 }

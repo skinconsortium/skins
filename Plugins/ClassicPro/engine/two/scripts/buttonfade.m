@@ -8,6 +8,7 @@ Global ToggleButton myTogButton;
 Global Layer myLayer;
 Global Boolean isOver, isBut; //, isInv;
 Global String myString;
+Global Timer recheck;
 
 System.onScriptLoaded() {
 	myGroup = getScriptGroup();
@@ -32,8 +33,12 @@ myButton.onLeftButtonDown(int x, int y){
 }
 myButton.onLeftButtonUp(int x, int y){
 	myLayer.cancelTarget();
-	if(myButton.isMouseOverRect()) myLayer.setAlpha(255);
+	if(myButton.isMouseOverRect() && myButton.isVisible()) myLayer.setAlpha(255);
 	//debugint(myButton.isMouseOverRect());
+
+	recheck = new Timer;
+	recheck.setDelay(50);
+	recheck.start();
 }
 
 
@@ -63,15 +68,38 @@ myButton.onLeaveArea(){
 myButton.onSetVisible(boolean onOff){
 	//if(onOff && myButton.isMouseOver(0, 0)){
 	if(onOff && myButton.isMouseOverRect()){
-		myLayer.cancelTarget();
+		//myLayer.cancelTarget();
 		myLayer.setAlpha(255);
+		recheck = new Timer;
+		recheck.setDelay(50);
+		recheck.start();
+	}
+	else{
+		if(!myLayer.isGoingToTarget()){
+			myLayer.cancelTarget();
+			myLayer.setAlpha(0);
+		}
+		delete recheck;
+	}
+	
+}
+recheck.onTimer(){
+	recheck.stop();
+
+	if(myButton.isMouseOverRect() && !System.isMinimized()){
+		//debug("123");
+		//myLayer.cancelTarget();
+		myLayer.setAlpha(255);
+		//recheck = new Timer;
+		//recheck.start();
 	}
 	else{
 		myLayer.cancelTarget();
 		myLayer.setAlpha(0);
 	}
-	
+
 }
+
 
 myTogButton.onToggle(Boolean onoff){
 	if(isBut) return;

@@ -43,7 +43,7 @@ System.onScriptLoaded() {
 	}
 }
 System.onScriptUnloading() {
-	saveGlobal();
+	if(shade.isVisible()) saveGlobal();
 	delete reCheck;
 }
 
@@ -118,7 +118,7 @@ gotoGlobal(){
 	if(docked) return;
 	int x = getPublicInt(piPrefix+"x", getCurAppLeft());
 	int y = getPublicInt(piPrefix+"y", getCurAppTop());
-	int w = getPublicInt(piPrefix+"w", getCurAppWidth());
+	int w = getPublicInt(piPrefix+"w", 800);
 	int h = 22;
 
 	if(w<240) w= 240;
@@ -141,7 +141,8 @@ saveGlobal(){
 		setPublicInt(piPrefix+"x", shade.getLeft());
 		setPublicInt(piPrefix+"y", shade.getTop());
 		setPublicInt(piPrefix+"w", lastKnownW);
-		
+		//debug(piPrefix+" - "+integerToString(getPublicInt(piPrefix+"x", getCurAppLeft()))+","+integerToString(shade.getTop())+","+integerToString(lastKnownW));
+
 		if(linkPosWidth.getData() == "1") setPublicInt("cPro2.saveby", 1); //0=normal ; 1=shade
 	//}
 }

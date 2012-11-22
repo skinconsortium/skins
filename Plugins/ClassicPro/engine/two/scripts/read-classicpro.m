@@ -2,18 +2,26 @@
 #include <lib/fileio.mi>
 #define DEF_MAX 50
 
-Global Group frameGroup, temp_g, tagViewer;
+Global Container player;
+Global Layout shade, normal;
+
+Global Group temp_g, tagViewer; //frameGroup, 
 Global XmlDoc myDoc;
-Global Text textObject;//1, plText2, plText3;
+Global Text textObject;
+//1, plText2, plText3;
 //Global Text vidText1, vidText2, vidText3;
 //Global Text fileinfo1, fileinfo2;
 
 
 
 System.onScriptLoaded (){
-	frameGroup = getScriptGroup ();
+	//frameGroup = getScriptGroup ();
 	
-
+	player = System.getContainer("main");
+	normal = player.getLayout("normal");
+	shade = player.getLayout("shade");
+	
+	
 
 	//delete temp_g;
 	
@@ -45,7 +53,8 @@ System.onScriptLoaded (){
 
 myDoc.parser_onCallback (String xmlpath, String xmltag, list paramname, list paramvalue){
 	if(strlower(xmltag) == "style"){
-		String busyWith ="";
+		String busyWith = "";
+		String tabsettings = "";
 		for(int i=0; i<paramname.getNumItems(); i++){
 			if(strlower(paramname.enumItem(i))=="id"){
 				busyWith=paramvalue.enumItem(i);
@@ -53,41 +62,45 @@ myDoc.parser_onCallback (String xmlpath, String xmltag, list paramname, list par
 			else if(busyWith=="normal.statusbar.text"){ //else if - because otherwise the ID param gets set too - might be buggy in cpro1 - check later (note to myself pjn)
 
 				//Playlist status text
-				temp_g = frameGroup.findObject("centro.playlist2");
+				temp_g = normal.findObject("centro.playlist2");
 				textObject = temp_g.getObject("centro2.group.pl.buttons").findObject("centro.playlist.pltext1");
 				textObject.setXmlParam(paramname.enumItem(i),paramvalue.enumItem(i));
 
-				temp_g = frameGroup.findObject("drawer.playlist");
+				temp_g = normal.findObject("drawer.playlist");
 				textObject = temp_g.getObject("centro2.group.pl.buttons").findObject("centro.playlist.pltext1");
 				textObject.setXmlParam(paramname.enumItem(i),paramvalue.enumItem(i));
 
-				temp_g = frameGroup.findObject("centro.playlist.component");
+				temp_g = normal.findObject("centro.playlist.component");
 				textObject = temp_g.getObject("centro2.group.pl.buttons").findObject("centro.playlist.pltext1");
 				textObject.setXmlParam(paramname.enumItem(i),paramvalue.enumItem(i));
 
 				//Video status text
-				temp_g = frameGroup.findObject("centro.video");
+				temp_g = normal.findObject("centro.video");
 				textObject = temp_g.getObject("centro.video.buttons").findObject("centro2.group.video.buttons.text");
 				textObject.setXmlParam(paramname.enumItem(i),paramvalue.enumItem(i));
 
-				temp_g = frameGroup.findObject("centro.playlist.directory.vid");
+				/*temp_g = normal.findObject("centro.playlist.directory.vid");
 				textObject = temp_g.getObject("centro2.group.video.buttons").findObject("centro2.group.video.buttons.text");
 				textObject.setXmlParam(paramname.enumItem(i),paramvalue.enumItem(i));
 
-				temp_g = frameGroup.findObject("drawer.video");
+				temp_g = normal.findObject("drawer.video");
 				textObject = temp_g.getObject("centro2.group.video.buttons").findObject("centro2.group.video.buttons.text");
-				textObject.setXmlParam(paramname.enumItem(i),paramvalue.enumItem(i));
+				textObject.setXmlParam(paramname.enumItem(i),paramvalue.enumItem(i));*/
 
 
 				//File info status text
-				temp_g = frameGroup.findObject("centro.playlist.directory.tag");
+				temp_g = normal.findObject("centro.playlist.directory.tag");
 				textObject = temp_g.findObject("tagviewer.status.box.text");
 				textObject.setXmlParam(paramname.enumItem(i),paramvalue.enumItem(i));
 
-				temp_g = frameGroup.findObject("centro.multidrawer");
+				temp_g = normal.findObject("centro.multidrawer");
 				textObject = temp_g.findObject("tagviewer.status.box.text");
 				textObject.setXmlParam(paramname.enumItem(i),paramvalue.enumItem(i));
 				
+				temp_g = normal.findObject("centro.visualization.buttons");
+				textObject = temp_g.getObject("centro.visname");
+				textObject.setXmlParam(paramname.enumItem(i),paramvalue.enumItem(i));
+
 				temp_g = NULL;
 
 
@@ -102,36 +115,66 @@ myDoc.parser_onCallback (String xmlpath, String xmltag, list paramname, list par
 				//fileinfo2.setXmlParam(paramname.enumItem(i),paramvalue.enumItem(i));
 			}
 			else if(busyWith=="normal.fileinfo.text"){
-				tagViewer = frameGroup.findObject("centro.multidrawer").findObject("info.component.infodisplay");
+				tagViewer = normal.findObject("centro.multidrawer").findObject("info.component.infodisplay");
 				tagViewer.sendAction("update_text", paramname.enumItem(i) + ";" + paramvalue.enumItem(i), 0, 0, 0, 0);
-				tagViewer = frameGroup.findObject("centro.playlist.directory").findObject("info.component.infodisplay");
+				tagViewer = normal.findObject("centro.playlist.directory").findObject("info.component.infodisplay");
 				tagViewer.sendAction("update_text", paramname.enumItem(i) + ";" + paramvalue.enumItem(i), 0, 0, 0, 0);
 			}		
 			
 			else if(busyWith=="normal.info.title.text"){
-				textObject = frameGroup.findObject("two.info.text.title");
+				textObject = normal.findObject("two.info.text.title");
 				textObject.setXmlParam(paramname.enumItem(i),paramvalue.enumItem(i));
 			}		
 			else if(busyWith=="normal.info.artist.text"){
-				textObject = frameGroup.findObject("two.info.text.artist");
+				textObject = normal.findObject("two.info.text.artist");
 				textObject.setXmlParam(paramname.enumItem(i),paramvalue.enumItem(i));
 			}	
 			else if(busyWith=="normal.info.timebig.text"){
-				textObject = frameGroup.findObject("two.info.text.tracktime");
+				textObject = normal.findObject("two.info.text.tracktime");
 				textObject.setXmlParam(paramname.enumItem(i),paramvalue.enumItem(i));
 			}		
 			else if(busyWith=="normal.info.timesmall.text"){
-				textObject = frameGroup.findObject("two.info.text.totaltime");
+				textObject = normal.findObject("two.info.text.totaltime");
 				textObject.setXmlParam(paramname.enumItem(i),paramvalue.enumItem(i));
 			}		
 			else if(busyWith=="normal.info.news.text"){
-				textObject = frameGroup.findObject("two.info.text.news");
+				textObject = normal.findObject("two.info.text.news");
 				textObject.setXmlParam(paramname.enumItem(i),paramvalue.enumItem(i));
 			}		
 			else if(busyWith=="normal.info.bitrate.text"){
-				textObject = frameGroup.findObject("two.info.text.info.1");
+				textObject = normal.findObject("two.info.text.info.1");
 				textObject.setXmlParam(paramname.enumItem(i),paramvalue.enumItem(i));
 			}
+			else if(busyWith=="normal.webreader.text"){
+				textObject = normal.findObject("browserpro.ddl.text");
+				textObject.setXmlParam(paramname.enumItem(i),paramvalue.enumItem(i));
+			}
+			else if(busyWith=="normal.tab.text"){
+				tabsettings+= paramname.enumItem(i)+","+paramvalue.enumItem(i)+";";
+			}
+			
+			
+			else if(busyWith=="shade.songname.text"){
+				textObject = shade.findObject("shade.st.title");
+				textObject.setXmlParam(paramname.enumItem(i),paramvalue.enumItem(i));
+			}
+			else if(busyWith=="shade.news.text"){
+				textObject = shade.findObject("shade.st.news");
+				textObject.setXmlParam(paramname.enumItem(i),paramvalue.enumItem(i));
+			}
+			else if(busyWith=="shade.timebig.text"){
+				textObject = shade.findObject("shade.text.time.tracktime");
+				textObject.setXmlParam(paramname.enumItem(i),paramvalue.enumItem(i));
+			}
+			else if(busyWith=="shade.timesmall.text"){
+				textObject = shade.findObject("shade.text.time.totaltime");
+				textObject.setXmlParam(paramname.enumItem(i),paramvalue.enumItem(i));
+			}
+		}
+		
+		if(busyWith=="normal.tab.text"){
+			setPrivateString(getSkinName(), "tabtext", tabsettings);
+			tabsettings=NULL;
 		}
 	}
 }
