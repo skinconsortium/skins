@@ -247,6 +247,7 @@ extern System.onResume();
 extern System.onTitleChange(String newtitle);
 
 extern System.onTitle2Change(String newtitle2);
+extern System.onUrlChange(String url);
 extern System.onInfoChange(String info);
 extern System.onStatusMsg(String msg);
 
@@ -2383,6 +2384,8 @@ extern AnimatedLayer.setRealtime(Boolean onoff);
   // AlbumArt
 
 extern AlbumArtLayer.refresh();
+extern AlbumArtLayer.isLoading();
+extern AlbumArtLayer.onAlbumArtLoaded(boolean success);
 
   // ToggleButton
 
@@ -2396,6 +2399,7 @@ extern Int GroupList.getNumItems();
 extern Group GroupList.enumItem(int num);
 extern GroupList.removeAll();
 extern GroupList.scrollToPercent(Int percent);
+extern GroupList.setRedraw(int redraw);
 
   // CfgGroup
 
