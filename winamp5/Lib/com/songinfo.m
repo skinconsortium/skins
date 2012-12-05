@@ -40,6 +40,7 @@ Global Int songinfo_streamType;		// use in conjunction with the values below
 #define SONGINFO_STREAMTYPE_SHOUTCAST	2
 #define SONGINFO_STREAMTYPE_AOLRADIO	3
 #define SONGINFO_STREAMTYPE_CBSRADIO	4
+#define SONGINFO_STREAMTYPE_SHOUTCAST2	5
 #define SONGINFO_STREAMTYPE_NOSTREAM	0
 #define SONGINFO_STREAMTYPE_UNKNOWN	666
 
@@ -62,7 +63,8 @@ songinfo_reload()
 	{
 		if (!(songinfo_streamType == SONGINFO_STREAMTYPE_SHOUTCAST
 			|| songinfo_streamType == SONGINFO_STREAMTYPE_AOLRADIO
-			|| songinfo_streamType == SONGINFO_STREAMTYPE_CBSRADIO))
+			|| songinfo_streamType == SONGINFO_STREAMTYPE_CBSRADIO
+			|| songinfo_streamType == SONGINFO_STREAMTYPE_SHOUTCAST2))
 		{
 			songinfo_streamType = SONGINFO_STREAMTYPE_UNKNOWN;
 		}
@@ -97,6 +99,6 @@ songinfo_reload()
 	}
 	
 	songinfo_title = getPlayItemMetaDataString(metaPrefix + "title");
-	songinfo_artist = getPlayItemMetaDataString(metaPrefix + "artist");
-	songinfo_album = getPlayItemMetaDataString(metaPrefix + "album");	
+	songinfo_artist = getPlayItemMetaDataString(metaPrefix + "Artist");
+	songinfo_album = getPlayItemMetaDataString(metaPrefix + "album");
 }
