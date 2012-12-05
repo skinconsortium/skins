@@ -5,13 +5,25 @@
 Function String getMyFile();
 
 Global Group g;
-Global Button b_menu, b_menufake;
+Global Button b_menu, b_menufake, b_temp;
 
 System.onScriptLoaded() {
 	g = getScriptGroup();
 
 	b_menu = g.findObject("two.sysmenu");
 	b_menu.onSetVisible(false);
+	
+	Map myMap = new Map;
+	myMap.loadMap("playback.button.shuf.over.1");
+	if(myMap.getHeight()==30){
+		b_temp = g.findObject("overlay.shuf");
+		b_temp.show();
+		b_temp = g.findObject("overlay.rep");
+		b_temp.show();
+		b_temp=NULL;
+	}
+	delete myMap;
+
 }
 
 b_menu.onSetVisible(boolean onOff){

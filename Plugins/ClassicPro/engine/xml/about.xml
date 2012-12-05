@@ -13,16 +13,16 @@
 <groupdef id="cpro.about.xui" xuitag="cPro:About">
 	<layer id="about.mugshot" ghost="1"/>
 
-	<text id="about.country" x="111" y="2" h="16" text="-" color="255,255,255" alpha="255" shadowcolor="0,0,0" shadowx="1" shadowy="1" font="Tahoma" ghost="1"/>
+	<text id="about.country" x="130" y="2" h="16" text="-" color="255,255,255" alpha="255" shadowcolor="0,0,0" shadowx="1" shadowy="1" font="Tahoma" ghost="1"/>
 
 	<text x="70" y="23" h="16" text="Name:" color="255,255,255" alpha="200" shadowcolor="0,0,0" shadowx="1" shadowy="1" font="Tahoma" ghost="1"/>
-	<text id="about.name" x="111" y="23" text="-" color="255,255,255" shadowcolor="0,0,0" shadowx="1" shadowy="1" font="Tahoma" ghost="1"/>
+	<text id="about.name" x="130" y="23" text="-" color="255,255,255" shadowcolor="0,0,0" shadowx="1" shadowy="1" font="Tahoma" ghost="1"/>
 
-	<text x="70" y="38" h="16" text="Age:" color="255,255,255" alpha="200" shadowcolor="0,0,0" shadowx="1" shadowy="1" font="Tahoma" ghost="1"/>
-	<text id="about.age" x="111" y="38" text="-" color="255,255,255" shadowcolor="0,0,0" shadowx="1" shadowy="1" font="Tahoma" ghost="1"/>
+	<text id="about.age.tag" x="70" y="38" h="16" text="Birthday:" color="255,255,255" alpha="200" shadowcolor="0,0,0" shadowx="1" shadowy="1" font="Tahoma" ghost="1"/>
+	<text id="about.age" x="130" y="38" text="-" color="255,255,255" shadowcolor="0,0,0" shadowx="1" shadowy="1" font="Tahoma" ghost="1"/>
 
 	<text x="70" y="53" h="16" text="Alias:" color="255,255,255" alpha="200" shadowcolor="0,0,0" shadowx="1" shadowy="1" font="Tahoma" ghost="1"/>
-	<text id="about.alias" x="111" y="53" h="16" text="-" color="255,255,255" shadowcolor="0,0,0" shadowx="1" shadowy="1" font="Tahoma" ghost="1"/>
+	<text id="about.alias" x="130" y="53" h="16" text="-" color="255,255,255" shadowcolor="0,0,0" shadowx="1" shadowy="1" font="Tahoma" ghost="1"/>
 
 	<text id="about.credits" x="10" y="74" h="400" text="-" color="255,255,255" shadowcolor="0,0,0" shadowx="1" shadowy="1" font="Tahoma" ghost="1" valign="top"/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\scripts\cproabout.maki"/>
@@ -49,7 +49,7 @@
 	<group id="about.9.names" x="5" y="60" h="320"/>
 </groupdef>
 <groupdef id="about.9.names">
-	<text fitparent="1" ghost="1" text="- iron2000 (made the first cPro skin and much more)\n\n- Veroka (helped with implementing ColorTheme support and\n     created some awesome skins since!)\n\n- Victhor (Helped with cPro2's default skin and also gave\n     some usefull feedback)\n\n- Zarko Jovic (helped with implementing ColorTheme support)\n\n- Wilian and Veroka (creating a template for cPro skins)\n\n- and1945 (beta testing and spreading the word ;)\n\n- leechbite (widgets, great skins, good 'hacking' examples\n     for other skinners and who can forget DUI ;)" color="255,255,255" shadowcolor="0,0,0" shadowx="1" shadowy="1" font="Tahoma" valign="top"/>
+	<text fitparent="1" ghost="1" text="- iron2000 (made the first cPro skin and much more)\n\n- Veroka (helped with implementing ColorTheme support and\n     created some awesome skins since!)\n\n- Victhor (Created the default skin for cPro2\n     Testing, ideas and promo for ClassicPro 2\n\n- Zarko Jovic (helped with implementing ColorTheme support)\n\n- Wilian and Veroka (creating a template for cPro skins)\n\n- and1945 (beta testing and spreading the word ;)\n\n- leechbite (widgets, great skins, good 'hacking' examples\n     for other skinners and who can forget DUI ;)" color="255,255,255" shadowcolor="0,0,0" shadowx="1" shadowy="1" font="Tahoma" valign="top"/>
 </groupdef>
 
 <groupdef id="about.10">
@@ -130,7 +130,7 @@
 
 	<button id="donate" x="-60" y="-38" relatx="1" relaty="1" image="paypal.donate" alpha="160" cursor="IDC_HAND" tooltip="If you like ClassicPro and would like thank us for our hard work, please click here to donate ;)"/>
 	<layer id="about.peak" tile="1" relatx="2" relaty="2" relatw="2" relath="2" x="-101" w="100" h="100" image="about.gfx"/>
-	<Wasabi:Button id="peak" visible="1" x="0" y="-60" w="18" h="18" relatx="1" relaty="1" text="+" alpha="100" mytooltip="Peak at picture"/>
+	<Wasabi:Button id="peak" visible="1" x="0" y="-60" w="18" h="18" relatx="1" relaty="1" text="+" alpha="100" mytooltip="Peek at picture"/>
 
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\scripts\donate.maki" param="ClassicPro"/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\scripts\about.maki" param="@SKINPATH@"/>

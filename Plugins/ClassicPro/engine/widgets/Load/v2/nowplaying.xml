@@ -7,7 +7,7 @@
     <bitmap id="centro.widgets.nowplaying.thumbnail" file="@WINAMPPATH@\Plugins\classicPro\engine\widgets\Data\NowPlaying\thumbnail.png"/>
 </elements>
 
-<include file="..\..\Data\NowPlaying\NowPlaying.xml"/>
+<include file="..\..\Data\NowPlaying\NowPlaying2.xml"/>
 <groupdef id="centro.widgets.nowplaying">
 	<SC:NowPlaying id="nowplaying.component" x="1" y="1" w="-2" relatw="1" h="-2" relath="1" reflectionheightpercentage="35"/>
 </groupdef>

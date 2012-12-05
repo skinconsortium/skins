@@ -108,7 +108,7 @@ Global Boolean menuOpen;
 
 Global ConfigItem custom_windows_page;
 Global ConfigAttribute sui_vis_attrib;
-Global Boolean myChange;
+Global Boolean myChange, openPlayerFromNow;
 
 
 System.onScriptLoaded(){
@@ -279,6 +279,7 @@ but_miniGoto.onLeaveArea(){
 }
 
 xuiGroup.onSetVisible(boolean onOff){
+	//debug("onSetVisible");
 	int pageNo = getPublicInt("cpro2.lastComponentPage", 0);
 
 	if(skipLoad && 	!wasTabTrig){
@@ -334,8 +335,9 @@ System.onGetCancelComponent(String guid, boolean goingvisible){
 		openMainLayoutNow();
 
 		//Resize player bigger on component activity if size is to small
-		if(xuiGroup.getheight()<10){
-			normal.resize(getCurAppLeft(),getCurAppTop(),getCurAppWidth(), 300);
+		if(xuiGroup.getheight()<10 && openPlayerFromNow){
+			//debugint(getCurAppLeft());//openPlayerFromNow
+			normal.resize(getCurAppLeft(),getCurAppTop(),getCurAppWidth(), 400);
 		}
 		
 		if(guid == PL_GUID){ //Playlist
@@ -446,6 +448,10 @@ System.onGetCancelComponent(String guid, boolean goingvisible){
 refreshAIOTab.onTimer(){
 	refreshAIOTab.stop();
 	CproTabs.sendAction("update_tabname", hold_Other.getComponentName()+";"+thirdPartyGuid, 5, 0, 0, 0);
+}
+
+System.onTitleChange(String newTxt){
+	if(!openPlayerFromNow) openPlayerFromNow=true;
 }
 
 openDefaultTab.onTimer(){

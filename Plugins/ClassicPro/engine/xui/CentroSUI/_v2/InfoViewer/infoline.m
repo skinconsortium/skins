@@ -54,7 +54,7 @@ txt.onSetVisible(boolean onOff){
 			}
 			
 		}
-		else sg.setAlpha(255);
+		else sg.setAlpha(253);
 
 	}
 }
@@ -76,7 +76,7 @@ txt.onTextChanged (String newtxt){
 		sg.setAlpha(80);
 		txt.setText("-");
 	}
-	else sg.setAlpha(255);
+	else sg.setAlpha(253);
 
 }
 
@@ -86,9 +86,11 @@ System.onSetXuiParam (String param, String value)
 	if (strlower(param) == "shift") shift = stringToInteger(value);	
 	else if (strlower(param) == "label") label.setText(value);
 	else if (strlower(param) == "textsize") updateSize(); //dont use the value
-	else if(strleft(strlower(param),6)=="cpro2_"){ //we use the prefix so that all params gets to the object
-		label.setXmlParam(strright(param,strlen(param)-6),value);
-		txt.setXmlParam(strright(param,strlen(param)-6),value);
+	else if(strleft(strlower(param),7)=="cpro2a_"){ //we use the prefix so that all params gets to the object
+		label.setXmlParam(strright(param,strlen(param)-7),value);
+	}
+	else if(strleft(strlower(param),7)=="cpro2b_"){ //we use the prefix so that all params gets to the object
+		txt.setXmlParam(strright(param,strlen(param)-7),value);
 	}
 	
 	//if (strlower(param) == "link") txt.setXmlparam("tooltip", value);

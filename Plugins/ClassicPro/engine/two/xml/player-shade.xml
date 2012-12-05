@@ -20,12 +20,14 @@
 	<NStatesButton id="shade.shuf" x="0" y="0" image="s.shuf.1." hoverimage="s.shuf.2." downimage="s.shuf.3." rectrgn="1" nstates="2" tooltip="Toggle Playlist Shuffling" cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Shuffle"/>
 	<layer id="shade.shuf.fade" x="0" y="0" ghost="1" alpha="0"/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\buttonfade.maki" param="shade.shuf;shade.shuf.fade;s.shuf.2."/>
+	<NStatesButton id="overlay.shuf" x="0" y="0" w="20" h="22" visible="0" image="s.button.shuf.over." rectrgn="1" nstates="2" ghost="1" cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Shuffle"/>
 </groupdef>
 <groupdef id="shade.sect.rep"> <!-- 3 -->
 	<layer x="0" y="0" image="shade.bg.6" wantfocus="1" ghost="1"/>
 	<NStatesButton id="shade.rep" x="0" y="0" image="s.rep.1." hoverimage="s.rep.2." downimage="s.rep.3." rectrgn="1" nstates="3" tooltip="Toggle Playlist/Song Repeating" cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Repeat" cfgvals="0;1;-1"/>
 	<layer id="shade.rep.fade" x="0" y="0" ghost="1" alpha="0"/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\buttonfade.maki" param="shade.rep;shade.rep.fade;s.rep.2."/>
+	<NStatesButton id="overlay.rep" x="0" y="0" w="20" h="22" visible="0" image="s.button.rep.over." rectrgn="1" nstates="3" ghost="1" cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Repeat" cfgvals="0;1;-1"/>
 </groupdef>
 <groupdef id="shade.sect.open"> <!-- 4 -->
 	<layer x="0" y="0" image="shade.bg.7" wantfocus="1" ghost="1"/>
@@ -40,18 +42,19 @@
 	<layer id="shade.mute.overlay" x="4" ghost="1" image="s.mute.2.1" alpha="0"/>
 	<layer id="shade.mute.fade" x="4" ghost="1" alpha="0"/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\buttonfade.maki" param="shade.mute;shade.mute.fade;s.mute.2."/>
+	<NStatesButton id="mute.icon.overlay" x="4" w="20" h="22" visible="1" image="s.button.mute.over." ghost="1" rectrgn="1" nstates="2" cfgvals="0;1"/>
 
 
 	<layer id="two.shade.volslider.bar.1" x="26" y="0" w="0" image="s.vol.bg.1" tile="1"/>
 	<layer id="two.shade.volslider.bar.2" x="26" y="0" w="0" image="s.vol.bg.2" tile="1" alpha="0"/>
 	<slider id="two.shade.volslider" x="26" y="4" w="77" h="14" action="VOLUME" thumb="s.vol.thumb.1" hoverthumb="s.vol.thumb.2" downthumb="s.vol.thumb.3" cursor="IDC_HAND" tooltip="Volume"/>
-
-	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\sc_mute.maki" param="two.shade.volslider;shade.mute;shade.mute.overlay"/>
+	
+	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\sc_mute.maki" param="two.shade.volslider;shade.mute;shade.mute.overlay;mute.icon.overlay;s.button.mute.over.1"/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\sc_sliderbar.maki" param="two.shade.volslider;two.shade.volslider.bar.;77"/>
 </groupdef>
 <groupdef id="shade.sect.vis"> 
 	<layer regionop="1" image="shade.bg.9" wantfocus="1" move="1"/>
-	<vis id="shade.vis" x="6" y="4" w="39" h="14" bandwidth="thin" ghost="1"/>
+	<vis id="shade.vis" x="6" y="4" w="39" h="14" bandwidth="thin" ghost="1" gammagroup="n.playback.vis.object"/>
 	<layer id="shade.vis.overlay" x="5" y="4" image="shade.vis.overlay1" ghost="1"/>
 	<layer
 		id="vis.mousetrap"
@@ -116,7 +119,11 @@
 
 <groupdef id="shade.sect.aot">
 	<NStatesButton id="shade.aot" x="-25" relatx="1" image="s.aot.1." hoverimage="s.aot.2." downimage="s.aot.3." rectrgn="1" cfgattrib="{280876CF-48C0-40BC-8E86-73CE6BB462E5};Always on top" nstates="2" tooltip="Toggle Always on top" cfgvals="0;1"/>
-	<layer id="shade.aot.docked" x="-25" relatx="1" image="s.aot.1.1" visible="0" ghost="1"/>
+	<!--<layer id="shade.aot.docked" x="-25" relatx="1" image="s.aot.1.1" visible="0" ghost="1"/>-->
+
+	<layer id="shade.aot.fade" x="-25" y="0" relatx="1" ghost="1" alpha="0"/>
+	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\buttonfade.maki" param="shade.aot;shade.aot.fade;s.aot.2."/>
+
 </groupdef>
 
 
@@ -175,8 +182,16 @@
 
 	
 	<button x="-83" relatx="1" id="player.button.minimize" action="MINIMIZE" image="s.min.1" hoverImage="s.min.2" downImage="s.min.3" rectrgn="1" tooltip="Minimize Winamp"/>
+	<layer id="shade.min.fade" x="-83" y="0" relatx="1" image="s.min.2" ghost="1" alpha="0"/>
+	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\buttonfade.maki" param="player.button.minimize;shade.min.fade"/>
+
 	<button id="player.button.switch" x="-58" relatx="1" action="SWITCH" param="normal" image="s.mode.1" hoverImage="s.mode.2" downImage="s.mode.3" rectrgn="1" tooltip="Main Mode"/>
+	<layer id="shade.switch.fade" x="-58" y="0" relatx="1" image="s.mode.2" ghost="1" alpha="0"/>
+	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\buttonfade.maki" param="player.button.switch;shade.switch.fade"/>
+
 	<button id="player.button.close" x="-33" relatx="1" action="CLOSE" image="s.close.1" hoverImage="s.close.2" downImage="s.close.3" rectrgn="1" tooltip="Exit Winamp"/>
+	<layer id="shade.close.fade" x="-33" y="0" relatx="1" image="s.close.2" ghost="1" alpha="0"/>
+	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\buttonfade.maki" param="player.button.close;shade.close.fade"/>
 
 	
 	

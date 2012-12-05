@@ -33,7 +33,7 @@ Global PopUpMenu popMenu;//, widgetmenu;
 Global Button but_drawerGoto;
 Global GuiObject cpro_sui, gad_Grid, gad_GridEQ;
 Global Layer ct_fakeLayer, tempfix;
-Global Boolean gotThemes, mouse_but_drawerGoto, cuseqbg, transparentSave;
+Global Boolean mouse_but_drawerGoto, cuseqbg, transparentSave;
 //Global XmlDoc myDoc;
 //Global Layer gadgrid1, gadgrid1a, gadgrid1a_overlay, gadgrid2, gadgrid3;
 //Global Layer l_statusbar;

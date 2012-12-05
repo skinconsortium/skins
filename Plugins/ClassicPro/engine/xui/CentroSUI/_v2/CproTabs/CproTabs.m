@@ -113,6 +113,8 @@ System.onScriptLoaded ()
 
 System.onScriptUnloading ()
 {
+	if(!loaded) return;
+	
 	/** save tab order */
 	Tab t = firstTab;
 	Int n;

@@ -5,7 +5,7 @@ Optimized on 6 Jan 2010 by pjn123
 #include <lib/std.mi>
 
 Global Group g, g_volume, g_vis, g_buttons, g_ejectVol, g_volbig;
-Global Layer l_left, l_right, l_volbig1, l_volbig2, l_leftOverlay;
+Global Layer l_left, l_right, l_volbig1, l_volbig2, l_leftOverlay, l_buttonbg_full, l_buttonbg_vol;
 Global Button b_play, b_pause, b_eject, b_mute;
 Global Guiobject gui_vis;
 Global Slider s_volbig;
@@ -29,6 +29,9 @@ System.onScriptLoaded() {
 	l_right = g_volume.getObject("two.playback.right");
 	g_volbig = g_volume.getObject("two.playback.volume.slider");
 	b_mute = g_volume.getObject("two.player.mute");
+	
+	l_buttonbg_full = g_buttons.getObject("two.playback.button.full.bg");
+	l_buttonbg_vol = g_buttons.getObject("two.playback.button.vol.bg");
 
 	s_volbig = g_volbig.getObject("two.playback.volslider");
 	
@@ -68,6 +71,10 @@ g.onResize(int x, int y, int w, int h){
 			b_eject.hide();
 			g_ejectVol.show();
 			b_mute.hide();
+			
+			l_buttonbg_full.setXmlParam("w", "191");
+			l_buttonbg_vol.show();
+			
 			_powerSave1=1;
 		}
 	}
@@ -91,6 +98,10 @@ g.onResize(int x, int y, int w, int h){
 			g_volume.setXmlParam("x","-55");
 			g_volbig.setXmlParam("x","3");
 			g_volbig.setXmlParam("w","41");
+
+			l_buttonbg_full.setXmlParam("w", "224");
+			l_buttonbg_vol.hide();
+
 			_powerSave1=2;
 		}
 	}
@@ -116,6 +127,10 @@ g.onResize(int x, int y, int w, int h){
 			g_volume.setXmlParam("x","-91");
 			g_volbig.setXmlParam("x","3");
 			g_volbig.setXmlParam("w","77");
+
+			l_buttonbg_full.setXmlParam("w", "224");
+			l_buttonbg_vol.hide();
+
 			_powerSave1=3;
 		}
 	}
@@ -141,6 +156,10 @@ g.onResize(int x, int y, int w, int h){
 			g_volume.setXmlParam("x","-121");
 			g_volbig.setXmlParam("x","33");
 			g_volbig.setXmlParam("w","77");
+
+			l_buttonbg_full.setXmlParam("w", "224");
+			l_buttonbg_vol.hide();
+
 			_powerSave1=4;
 		}
 

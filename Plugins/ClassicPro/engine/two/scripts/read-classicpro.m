@@ -114,11 +114,17 @@ myDoc.parser_onCallback (String xmlpath, String xmltag, list paramname, list par
 				//fileinfo1.setXmlParam(paramname.enumItem(i),paramvalue.enumItem(i));
 				//fileinfo2.setXmlParam(paramname.enumItem(i),paramvalue.enumItem(i));
 			}
-			else if(busyWith=="normal.fileinfo.text"){
+			else if(busyWith=="normal.fileinfo.label.text"){
 				tagViewer = normal.findObject("centro.multidrawer").findObject("info.component.infodisplay");
-				tagViewer.sendAction("update_text", paramname.enumItem(i) + ";" + paramvalue.enumItem(i), 0, 0, 0, 0);
+				tagViewer.sendAction("update_text_a", paramname.enumItem(i) + ";" + paramvalue.enumItem(i), 0, 0, 0, 0);
 				tagViewer = normal.findObject("centro.playlist.directory").findObject("info.component.infodisplay");
-				tagViewer.sendAction("update_text", paramname.enumItem(i) + ";" + paramvalue.enumItem(i), 0, 0, 0, 0);
+				tagViewer.sendAction("update_text_a", paramname.enumItem(i) + ";" + paramvalue.enumItem(i), 0, 0, 0, 0);
+			}		
+			else if(busyWith=="normal.fileinfo.tag.text"){
+				tagViewer = normal.findObject("centro.multidrawer").findObject("info.component.infodisplay");
+				tagViewer.sendAction("update_text_b", paramname.enumItem(i) + ";" + paramvalue.enumItem(i), 0, 0, 0, 0);
+				tagViewer = normal.findObject("centro.playlist.directory").findObject("info.component.infodisplay");
+				tagViewer.sendAction("update_text_b", paramname.enumItem(i) + ";" + paramvalue.enumItem(i), 0, 0, 0, 0);
 			}		
 			
 			else if(busyWith=="normal.info.title.text"){
