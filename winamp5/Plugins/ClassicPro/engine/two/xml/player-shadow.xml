@@ -9,7 +9,7 @@
 
 <elements>
 	<bitmap id="shadow.1" file="frame_alpha.png" x="0" y="0" w="45" h="45"/>
-	<bitmap id="shadow.2" file="frame_alpha.png" x="46" y="0" w="10" h="30"/>
+	<bitmap id="shadow.2" file="frame_alpha.png" x="46" y="0" w="10" h="45"/>
 	<bitmap id="shadow.3" file="frame_alpha.png" x="57" y="0" w="45" h="45"/>
 	<bitmap id="shadow.4" file="frame_alpha.png" x="0" y="46" w="23" h="10"/>
 	<bitmap id="shadow.6" file="frame_alpha.png" x="79" y="46" w="23" h="10"/>
@@ -27,7 +27,6 @@
 		top="shadow.2"
 		topright="shadow.3"
 		left="shadow.4"
-		middle=""
 		right="shadow.6"
 		bottomleft="shadow.7"
 		bottom="shadow.8"

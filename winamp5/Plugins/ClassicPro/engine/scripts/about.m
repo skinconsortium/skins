@@ -299,7 +299,8 @@ peakBut.onLeftClick(){
 		peakPic.setTargetX(0);
 		peakPic.gotoTarget();
 		peakBut.setXmlParam("text", "-");
-		creditRoll.stop();
+		
+		if(creditRoll!=NULL) creditRoll.stop();
 	}
 	else{
 		peakPic.onLeftButtonDown(0, 0);
@@ -310,6 +311,11 @@ peakPic.onLeftButtonDown(int x, int y){
 	peakPic.setTargetX(-101);
 	peakPic.gotoTarget();
 	peakBut.setXmlParam("text", "+");
+	
+	if(creditRoll==NULL){
+		creditRoll = new Timer;
+		creditRoll.setDelay(5000);
+	}
 	creditRoll.start();
 }
 

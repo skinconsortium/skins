@@ -9,7 +9,7 @@ Global Group mainGroup, g_SecStop, g_SecShuf, g_SecRep, g_SecSeek, g_SecVis, g_S
 Global Container main;
 Global Layout shade;
 Global Layer overlay1;
-Global Button b_ml_playlists, b_ml_playlists_fake;
+Global Button b_ml_playlists, b_ml_playlists_fake, b_temp;
 Global GuiObject gui_vis;
 
 System.onScriptLoaded() {
@@ -34,12 +34,19 @@ System.onScriptLoaded() {
 	overlay1 = g_SecVis.getObject("shade.vis.overlay");
 	
 	Map myMap = new Map;
-	/*myMap.loadMap("shade.vis.region");
-	overlay1.setRegionFromMap(myMap, 255, 0);*/
-	//delete myMap;
+
+	myMap.loadMap("playback.button.shuf.over.1");
+	if(myMap.getHeight()==30){
+		b_temp = mainGroup.findObject("overlay.shuf");
+		b_temp.show();
+		b_temp = mainGroup.findObject("overlay.rep");
+		b_temp.show();
+		b_temp=NULL;
+	}
+
+
 
 	// Reader for classic vis colors from bitmap (wa5.51)
-	//Map myMap = new Map;
 	myMap.loadMap("shade.color.read");
 	
 	gui_vis.setXmlParam("colorbandpeak",integerToString(myMap.getARGBValue(0,0,2))+","+integerToString(myMap.getARGBValue(0,0,1))+","+integerToString(myMap.getARGBValue(0,0,0)));

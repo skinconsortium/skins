@@ -285,7 +285,7 @@ updateFontSize(){
 		ratingXUI.setXmlParam("w", "80");
 		ratingXUI.setXmlParam("h", "16");
 	}
-	int w = t_rating.getAutoWidth() + shift;
+	int w = t_rating.getAutoWidth() + shift+ stringtointeger(t_rating.getXmlParam("offsetx"));
 	ratingXUI.setXmlParam("x", integerToString(w));
 	
 	

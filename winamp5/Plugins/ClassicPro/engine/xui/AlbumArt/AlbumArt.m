@@ -63,8 +63,8 @@ albumart.onLeftButtonDblClk (int x, int y){
 }
 
 albumart.onTargetReached(){
-	if(albumart.getAlpha()!=255){
-		albumart.setTargetA(255);
+	if(albumart.getAlpha()!=253){
+		albumart.setTargetA(253);
 		albumart.setTargetSpeed(0.6);
 		albumart.gotoTarget();
 	}

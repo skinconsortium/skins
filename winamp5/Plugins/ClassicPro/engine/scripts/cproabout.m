@@ -4,13 +4,14 @@ Function int getBirtday_Day(int day, int month);
 Function String getBirtday_String(int day, int month, int year);
 
 Global Group XUIGroup;
-Global Text name, age, alias, country, credits, birthday;
+Global Text name, age, ageTag, alias, country, credits, birthday;
 Global Layer mugshot, anibg;
 
 System.onScriptLoaded(){
 	XUIGroup = getScriptGroup();
 	name = XUIGroup.findObject("about.name");
 	age = XUIGroup.findObject("about.age");
+	ageTag = XUIGroup.findObject("about.age.tag");
 	alias = XUIGroup.findObject("about.alias");
 	country = XUIGroup.findObject("about.country");
 	mugshot = XUIGroup.findObject("about.mugshot");
@@ -32,7 +33,18 @@ System.onSetXuiParam(String param, String value) {
 		if(getBirtday_Day(stringToInteger(getToken(value, ";", 0)), stringToInteger(getToken(value, ";", 1)))<=dayOfYear){
 			calc_age++;
 		}
-		age.setText(integerToString(calc_age)+" "+getBirtday_String(stringToInteger(getToken(value, ";", 0)), stringToInteger(getToken(value, ";", 1)), stringToInteger(getToken(value, ";", 2))));
+		
+		/*if(stringToInteger(getToken(value, ";", 2))>=2012){
+			age.setXmlParam("x", "130");
+			name.setXmlParam("x", "130");
+			alias.setXmlParam("x", "130");
+			country.setXmlParam("x", "130");
+			
+			ageTag.setText("Released:");
+		}*/
+		
+		if(getToken(value, ";", 2)=="") age.setText(getBirtday_String(stringToInteger(getToken(value, ";", 0)), stringToInteger(getToken(value, ";", 1)), stringToInteger(getToken(value, ";", 2))));
+		else age.setText(getBirtday_String(stringToInteger(getToken(value, ";", 0)), stringToInteger(getToken(value, ";", 1)), stringToInteger(getToken(value, ";", 2)))+" ("+integerToString(calc_age)+")");
 		//debugInt(System.getDateDoy(System.getDate()));
 		//debugInt(calc_age);
 		//debugInt(getBirtday_Day(stringToInteger(getToken(value, ";", 0)), stringToInteger(getToken(value, ";", 1))));
@@ -88,7 +100,7 @@ getBirtday_Day(int day, int month){
 }
 
 getBirtday_String(int day, int month, int year){
-	String output = "("+integerToString(day)+"-";
+	String output = integerToString(day)+"-";
 	if(month==1) output+="Jan";
 	else if(month==2) output+="Feb";
 	else if(month==3) output+="Mar";
@@ -102,7 +114,7 @@ getBirtday_String(int day, int month, int year){
 	else if(month==11) output+="Nov";
 	else if(month==12) output+="Dec";
 
-	output+="-"+integerToString(year)+")";
+	if(year!=0)	output+="-"+integerToString(year);
 
 	return output;
 }

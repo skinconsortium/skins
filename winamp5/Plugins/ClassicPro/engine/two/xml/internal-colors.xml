@@ -4,7 +4,6 @@
 	-->
 	
 	
-	<color id="wasabi.text.color" value="wasabi.list.text"/>
 
 
 	<elementalias id="wasabi.basetexture" target="wasabi.list.background"/>

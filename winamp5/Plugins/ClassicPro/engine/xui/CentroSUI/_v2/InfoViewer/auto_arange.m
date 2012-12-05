@@ -162,7 +162,7 @@ g.onAction(String action, String param, Int x, int y, int p1, int p2, GuiObject 
 		delete custom2;
 		if(g.isVisible()) doArangeNow();
 	}
-	else if(strlower(action)=="update_text"){
+	else if(strlower(action)=="update_text_a"){
 		if(getToken(strlower(param), ";", 0)== "fontsize" || param=="") return; //Block skinners from changing fontsize
 		
 		GuiObject custom2;
@@ -171,7 +171,24 @@ g.onAction(String action, String param, Int x, int y, int p1, int p2, GuiObject 
 			s2 = getToken(param, ";", 1);
 
 			if(a==num_objects-1) s1 = getToken(param, ";", 0); //Last object is rating... just a quick fix... :P
-			else s1 = "cpro2_"+getToken(param, ";", 0);
+			else s1 = "cpro2a_"+getToken(param, ";", 0);
+			
+			custom2.setXmlParam(s1, s2); //add prefix so that system params go through too!
+		}
+		
+		delete custom2;
+		if(g.isVisible()) doArangeNow();
+	}
+	else if(strlower(action)=="update_text_b"){
+		if(getToken(strlower(param), ";", 0)== "fontsize" || param=="") return; //Block skinners from changing fontsize
+		
+		GuiObject custom2;
+		for(int a = 0; a<num_objects; a++){
+			custom2 = g.enumObject(a);
+			s2 = getToken(param, ";", 1);
+
+			if(a==num_objects-1) break;
+			else s1 = "cpro2b_"+getToken(param, ";", 0);
 			
 			custom2.setXmlParam(s1, s2); //add prefix so that system params go through too!
 		}

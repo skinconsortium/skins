@@ -16,11 +16,12 @@ System.onScriptLoaded() {
 	String param = getParam();
 	bolt = g.findObject(getToken(param,";",0));
 	fakeAbout = g.findObject(getToken(param,";",1));
+	//changeTheme = g.findObject("Cpro.theme.next");
 	changeTheme = g.findObject(getToken(param,";",2));
 }
 
 bolt.onLeftClick(){
-	int a = getPublicInt("cPro.multibutton", 0);
+	int a = getPublicInt("cpro2.multibutton", 0);
 	
 	if(a==0){
 		fakeAbout.leftClick();
@@ -55,14 +56,14 @@ bolt.onRightButtonUp(int x, int y){
 	selMenu.addCommand("Explore Folder", 1, 0, 0);
 	selMenu.addCommand("Show Quick Playlist", 2, 0, 0);
 	selMenu.addCommand("Change Color Theme", 3, 0, 0);
-	selMenu.checkCommand(getPublicInt("cPro.multibutton", 0), 1);
+	selMenu.checkCommand(getPublicInt("cpro2.multibutton", 0), 1);
 	
 	//int a = selMenu.popAtMouse();
 	int a = selMenu.popAtXY(clientToScreenX(bolt.getLeft())+2, clientToScreenY(bolt.getTop())+26);
 	// clientToScreenX(trigger.getLeft()), clientToScreenY(trigger.getTop()+26)
 	
 	if(a>=0){
-		setPublicInt("cPro.multibutton", a);
+		setPublicInt("cpro2.multibutton", a);
 	}
 	Complete;
 	delete selMenu;

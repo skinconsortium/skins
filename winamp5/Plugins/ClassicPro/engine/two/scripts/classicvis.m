@@ -62,6 +62,7 @@ System.onScriptLoaded()
 	myMap.loadMap(getToken(getParam(),";",3));
 	overlay1.setRegionFromMap(myMap, 255, 0);
 	//overlay2.setRegionFromMap(myMap, 255, 0);
+	delete myMap;
 ///////////////
 
 	refreshVisSettings ();
