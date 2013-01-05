@@ -2,10 +2,10 @@
 
 <WinampAbstractionLayer version="1.34">
 	<skininfo>
-		<version>1.99.022</version>
-		<name>cPro2</name>
+		<version>2.00</version>
+		<name>cPro2 - Metro</name>
 		<author>Pieter Nieuwoudt</author>
-		<comment>Default skin for ClassicPro 2.0</comment>
+		<comment>My first ClassicPro 2.0 skin</comment>
 		<email>pjn123@outlook.com</email>
 		<screenshot>screenshot.png</screenshot>
 		<homepage>http://www.skinconsortium.com/</homepage>
@@ -19,7 +19,7 @@
 		- ClassicPro v1.15 = param="@COLORTHEMESPATH@;115"
 		- ClassicPro v2.00 = param="@COLORTHEMESPATH@;200"
 	-->
-	<scripts> <script file="warning.maki" param="@COLORTHEMESPATH@;199"/> </scripts>
+	<scripts> <script file="warning.maki" param="@COLORTHEMESPATH@;200"/> </scripts>
 
 
 	
