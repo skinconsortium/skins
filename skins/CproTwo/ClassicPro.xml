@@ -13,10 +13,13 @@
 		CORE settings
 		-->
 		<Style id="normal.statusbar.text"
-			fontsize="14" 
+			fontsize="14" bold="1" 
 		/>
-		<Style id="normal.fileinfo.text"
-			font="Calibri" 
+		<Style id="normal.fileinfo.label.text"
+			font="Calibri" forcelocase="1"
+		/>
+		<Style id="normal.fileinfo.tag.text"
+			font="Calibri" bold="1"
 		/>
 		<Style id="normal.webreader.text"
 			font="Calibri" fontsize="16"

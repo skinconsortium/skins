@@ -3,14 +3,14 @@
 cPro2 :: SKIN Colors
 -->
 	<!-- :: Player Area :: -->	
-	<color id="cpro2.color.infoseek.title" value="0,0,0" gammagroup=""/>
-	<color id="cpro2.color.infoseek.artist" value="50,50,50" gammagroup=""/>
-	<color id="cpro2.color.infoseek.numbig" value="0,0,0" gammagroup=""/>
-	<color id="cpro2.color.infoseek.numsmall" value="50,50,50" gammagroup=""/>
-	<color id="cpro2.color.infoseek.news" value="50,50,50" gammagroup=""/>
+	<color id="cpro2.color.infoseek.title" value="0,0,0" gammagroup="n.infoseek.text"/>
+	<color id="cpro2.color.infoseek.artist" value="50,50,50" gammagroup="n.infoseek.text"/>
+	<color id="cpro2.color.infoseek.numbig" value="0,0,0" gammagroup="n.infoseek.text"/>
+	<color id="cpro2.color.infoseek.numsmall" value="50,50,50" gammagroup="n.infoseek.text"/>
+	<color id="cpro2.color.infoseek.news" value="50,50,50" gammagroup="n.infoseek.text"/>
 
 	<!-- :: Shade Area :: -->	
-	<color id="cpro2.color.shade.title" value="40,40,40" gammagroup=""/>
+	<color id="cpro2.color.shade.title" value="40,40,40" gammagroup="n.infoseek.text"/>
 
 
 
@@ -18,63 +18,64 @@ cPro2 :: SKIN Colors
 cPro2 :: CORE Colors
 -->
 	<!-- :: SUI Area :: -->	
-	<color id="cpro2.color.fileinfo.name" value="110,110,110" gammagroup="n.Color.List"/>
-	<color id="cpro2.color.fileinfo.tag" value="85,85,85" gammagroup="n.Color.List"/>
-	<color id="cpro2.color.status" value="240,240,240" gammagroup="n.Color.List"/>
-	<color id="cpro2.color.eqxfade" value="85,85,85" gammagroup="n.Color.List"/>
-	<color id="cpro2.color.tab.on" value="0,0,0" gammagroup="n.Tab.Text"/>
-	<color id="cpro2.color.tab.off" value="80,80,80" gammagroup="n.Tab.Text"/>
-	<color id="cpro2.color.tab.hover" value="20,20,20" gammagroup="n.Tab.Text"/>
+	<color id="cpro2.color.fileinfo.name" value="110,110,110" gammagroup="n.sui.fileinfo.text"/>
+	<color id="cpro2.color.fileinfo.tag" value="85,85,85" gammagroup="n.sui.fileinfo.text"/>
+	<color id="cpro2.color.status" value="240,240,240" gammagroup="n.sui.status.text"/>
+	<color id="cpro2.color.eqxfade" value="85,85,85" gammagroup="n.sui.eq.background"/>
+	<color id="cpro2.color.tab.on" value="0,0,0" gammagroup="n.sui.tabs.text"/>
+	<color id="cpro2.color.tab.off" value="80,80,80" gammagroup="n.sui.tabs.text"/>
+	<color id="cpro2.color.tab.hover" value="20,20,20" gammagroup="n.sui.tabs.text"/>
 
 	<!-- :: Generic Window :: -->
-	<color id="cpro2.color.genwin.name" value="85,85,85" gammagroup="n.Notifier.Text.Big"/>
+	<color id="cpro2.color.genwin.name" value="85,85,85" gammagroup="g.frame.text"/>
 
 	<!-- :: Notifier :: -->
-	<color id="notifier.dark" value="40,113,233" gammagroup="n.Notifier.Text.Big"/>
-	<color id="notifier.bright" value="85,85,85" gammagroup="n.Notifier.Text.Big"/>
-	<color id="notifier.dark.upper" value="40,113,233" gammagroup="n.Notifier.Text.Small"/>
-	<color id="notifier.bright.upper" value="85,85,85" gammagroup="n.Notifier.Text.Small"/>
+	<color id="notifier.dark" value="40,113,233" gammagroup="g.notifier.big.text"/>
+	<color id="notifier.bright" value="85,85,85" gammagroup="g.notifier.big.text"/>
+	<color id="notifier.dark.upper" value="40,113,233" gammagroup="g.notifier.small.text"/>
+	<color id="notifier.bright.upper" value="85,85,85" gammagroup="g.notifier.small.text"/>
 
 	<!-- :: Tooltip/Button :: -->	
-	<color id="wasabi.tooltips.textcolor" value="87,87,87" gammagroup="n.TooltipCombobox.Text"/>
-	<color id="wasabi.button.text" value="10,10,10" gammagroup="n.Button"/>
+	<color id="wasabi.tooltips.textcolor" value="87,87,87" gammagroup="g.tooltip.text"/>
+	<color id="wasabi.button.text" value="10,10,10" gammagroup="g.button.text"/>
 
 	<!-- :: Component: Background :: -->
-	<color id="wasabi.window.background" value="255,255,255" gammagroup="n.SuiFrame"/>
-	<color id="wasabi.border.sunken" value="172,172,172" gammagroup="n.SuiFrame"/>
+	<color id="wasabi.window.background" value="255,255,255" gammagroup="n.sui.background"/>
+	<color id="wasabi.border.sunken" value="172,172,172" gammagroup="n.sui.background"/>
 
-	<!-- :: Component: Text :: -->
-	<color id="wasabi.window.text" value="0,0,0" gammagroup="n.Text.On.Bg"/>
+	<!-- :: Wasabi Text :: -->
+	<color id="wasabi.text.color" value="50,50,50" gammagroup="g.background.text"/>
+	<color id="wasabi.window.text" value="50,50,50" gammagroup="g.background.text"/>
 
 	<!-- :: Component: Column :: -->
-	<color id="wasabi.list.column.text" value="50,50,50" gammagroup="n.Text.On.Bg"/>
-	<color id="wasabi.list.column.background" value="255,255,255" gammagroup="n.SuiFrame"/>
-	<color id="wasabi.list.column.frame.top" value="240,240,240" gammagroup="n.SuiFrame"/>
-	<color id="wasabi.list.column.frame.middle" value="255,255,255" gammagroup="n.SuiFrame"/>
-	<color id="wasabi.list.column.frame.bottom" value="238,238,238" gammagroup="n.SuiFrame"/>
+	<color id="wasabi.list.column.text" value="50,50,50" gammagroup="g.background.text"/>
+	<color id="wasabi.list.column.background" value="255,255,255" gammagroup="n.sui.background"/>
+	<color id="wasabi.list.column.frame.top" value="240,240,240" gammagroup="n.sui.background"/>
+	<color id="wasabi.list.column.frame.middle" value="255,255,255" gammagroup="n.sui.background"/>
+	<color id="wasabi.list.column.frame.bottom" value="238,238,238" gammagroup="n.sui.background"/>
 
 	<!-- :: List: Text Color :: -->
-	<color id="wasabi.list.text" value="0,0,0" gammagroup="n.Color.List"/>
-	<color id="wasabi.list.text.alternate" value="0,0,0" gammagroup="n.Color.List"/>
+	<color id="wasabi.list.text" value="0,0,0" gammagroup="g.list.text"/>
+	<color id="wasabi.list.text.alternate" value="0,0,0" gammagroup="g.list.text"/>
 
 	<!-- :: List: Background :: -->
-	<color id="wasabi.list.background" value="255,255,255" gammagroup="n.Color.ListBg"/>
-	<color id="wasabi.list.background.alternate" value="249,249,249" gammagroup="n.Color.ListBg2"/>	
-	<bitmap id="wasabi.list.background" file="$solid" h="64" w="64" color="255,255,255" gammagroup="n.Color.ListBg"/>
+	<color id="wasabi.list.background" value="255,255,255" gammagroup="g.list.background"/>
+	<color id="wasabi.list.background.alternate" value="249,249,249" gammagroup="g.list.background.alt"/>	
+	<bitmap id="wasabi.list.background" file="$solid" h="64" w="64" color="255,255,255" gammagroup="g.list.background"/>
 
 	<!-- :: List: Text Color (Selected) :: -->
-	<color id="wasabi.list.text.selected" value="0,0,0" gammagroup="n.Color.ListSel"/>
-	<color id="wasabi.list.text.selected.inactive" value="0,0,0" gammagroup="n.Color.ListSel"/>
+	<color id="wasabi.list.text.selected" value="0,0,0" gammagroup="g.list.select.text"/>
+	<color id="wasabi.list.text.selected.inactive" value="0,0,0" gammagroup="g.list.select.text"/>
 	
 	<!-- :: List: Background (Selected) :: -->
-	<color id="wasabi.list.text.selected.background" value="204,226,252" gammagroup="n.Color.ListSelBg"/>
-	<color id="wasabi.list.text.selected.background.inactive" value="219,235,254" gammagroup="n.Color.ListSelBg"/>
+	<color id="wasabi.list.text.selected.background" value="204,226,252" gammagroup="g.list.select.background"/>
+	<color id="wasabi.list.text.selected.background.inactive" value="219,235,254" gammagroup="g.list.select.background"/>
 
 	<!-- :: List: Scrollbar OLD (updated/new plugins use scrollbars.png) :: -->
-	<color id="wasabi.scrollbar.background" value="240,240,240" gammagroup="n.Color.ListBg"/>
+	<color id="wasabi.scrollbar.background" value="240,240,240" gammagroup="g.button"/>
 
 	<!-- :: List: Text Color (Now Playing in Playlist Editor) :: -->
-	<color id="wasabi.list.text.current" value="40,113,233" gammagroup="n.Color.ListCur"/>
+	<color id="wasabi.list.text.current" value="40,113,233" gammagroup="g.list.current.text"/>
 
 
 
@@ -125,7 +126,7 @@ cPro2 :: SKIN Extra bitmaps - Add any bitmaps that your skin use here.
 -->
 	<bitmap id="beat.1.left" file="beat_left2.png" gammagroup="n.beatvis"/>
 	<bitmap id="beat.1.right" file="beat_right2.png" gammagroup="n.beatvis"/>
-	<bitmap id="beat.2.left" file="beat_left3.png" gammagroup="n.beatvis"/>
-	<bitmap id="beat.2.right" file="beat_right3.png" gammagroup="n.beatvis"/>
+	<bitmap id="beat.2.left" file="beat_left3.png"/>
+	<bitmap id="beat.2.right" file="beat_right3.png"/>
 
 </elements>
