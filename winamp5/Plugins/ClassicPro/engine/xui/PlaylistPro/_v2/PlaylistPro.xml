@@ -38,7 +38,7 @@
 	/>
 	<Wasabi:EditBox2 id="pl.search.edit" x="0" y="0" relatw="1" w="-23" h="16"/>
 
-	<button id="pl.search.go" x="-20" relatx="1" image="sui.pl.search.go.1" hoverimage="sui.pl.search.go.2" downimage="sui.pl.search.go.3" tooltip="Go Search"/>
+	<button id="pl.search.go" x="-20" relatx="1" image="sui.pl.search.go.1" hoverimage="sui.pl.search.go.2" downimage="sui.pl.search.go.3" tooltip="Go Search" rectrgn="1" />
 </groupdef>
 <groupdef id="PlaylistPro.topbar">
 	<group id="player.component.playlist.searchbar.search" x="0" y="0" w="0" relatw="1"/>

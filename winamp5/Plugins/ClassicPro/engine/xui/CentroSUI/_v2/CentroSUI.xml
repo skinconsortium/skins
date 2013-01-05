@@ -20,7 +20,7 @@
 	<button action="VID_Misc" x="97" y="0" rectrgn="1" image="cpro2.avs.opt.1" hoverImage="cpro2.avs.opt.2" downImage="cpro2.avs.opt.3" tooltip="Video Options"/>
 
 	<grid x="129" y="0" h="19" w="-162" relatw="1" ghost="1" topleft="sui.status.box.1" top="sui.status.box.2" topright="sui.status.box.3"/>
-	<text id="centro2.group.video.buttons.text" display="VID_Info" ticker="1" x="131" y="1" w="-168" h="19" relatw="1" align="center" color="cpro2.color.status" font="cpro2.font.status.text" move="1"/>
+	<text id="centro2.group.video.buttons.text" display="VID_Info" ticker="1" x="131" y="1" w="-168" h="19" relatw="1" align="center" color="cpro2.color.status" font="cpro2.font.status.text" move="1" alpha="253"/>
 </groupdef>
 <groupdef id="centro.video" name="Video">
 	<windowholder id="centro.windowholder.video" x="0" y="0" w="0" relatw="1" h="-19" relath="1" autofocus="1" wantfocus="0" autoclose="1" autoopen="1" autoavailable="1" visible="1" hold="guid:{F0816D7B-FFFC-4343-80F2-E8199AA15CC3}"/>
@@ -47,7 +47,7 @@
 	<button action="VIS_Cfg" x="129" y="0" rectrgn="1" image="cpro2.avs.opt.1" hoverImage="cpro2.avs.opt.2" downImage="cpro2.avs.opt.3" tooltip="Preset Editor / Options"/>
 	
 	<grid x="161" y="0" h="19" w="-195" relatw="1" ghost="1" topleft="sui.status.box.1" top="sui.status.box.2" topright="sui.status.box.3"/>
-	<text id="centro.visname" ticker="1" x="163" y="1" h="19" w="-201" relatw="1" align="center" color="cpro2.color.status" font="cpro2.font.status.text" move="1" ghost="1"/>
+	<text id="centro.visname" ticker="1" x="163" y="1" h="19" w="-201" relatw="1" align="center" color="cpro2.color.status" font="cpro2.font.status.text" move="1" ghost="1" alpha="253"/>
 
 </groupdef>
 <groupdef id="centro.visualization" name="Visualization">
@@ -234,7 +234,7 @@ Implement Areas
 	<componentbucket id="widget.loader.mini" x="0" y="0" h="20" w="20" wndtype="centro.widgets.mini" visible="0"/>
 	<customobject id="widget.holder.mini" fitparent="1" visible="0" /> <!-- this one holds our widgets -->
 
-	<button id="comp.goto" x="-32" y="-19" relatx="1" relaty="1" image="cpro2.gen.goto.1" hoverimage="cpro2.gen.goto.2" downimage="cpro2.gen.goto.3" tooltip="Select Mini view"/>
+	<button id="comp.goto" x="-32" y="-19" relatx="1" relaty="1" image="cpro2.gen.goto.1" hoverimage="cpro2.gen.goto.2" downimage="cpro2.gen.goto.3" tooltip="Select Mini view" rectrgn="1"/>
 </groupdef>
 
 <groupdef id="centro.multidrawer">
@@ -253,7 +253,7 @@ Implement Areas
 	<componentbucket id="widget.loader" x="0" y="0" h="20" w="20" wndtype="centro.widgets.drawer" visible="0" />
 	<customobject id="widget.holder" fitparent="1" visible="0" /> <!-- this one holds our widgets -->
 
-	<button id="drawer.menulist" x="-32" y="-19" relatx="1" relaty="1" image="cpro2.gen.goto.1" hoverimage="cpro2.gen.goto.2" downimage="cpro2.gen.goto.3" tooltip="Select Drawer"/>
+	<button id="drawer.menulist" x="-32" y="-19" relatx="1" relaty="1" image="cpro2.gen.goto.1" hoverimage="cpro2.gen.goto.2" downimage="cpro2.gen.goto.3" tooltip="Select Drawer" rectrgn="1"/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\xui\CentroSUI\_v2\scripts\drawer.maki"  param="@SKINPATH@"/>
 </groupdef>
 

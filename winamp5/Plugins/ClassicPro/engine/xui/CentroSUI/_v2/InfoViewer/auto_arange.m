@@ -141,7 +141,7 @@ doArangeNow(){
 	}
 	last_refresh_rows = num_of_rows;
 
-	if(getPublicInt("cpro2.tags.50", 1) || g.getAlpha()!=255) g.setAlpha(255);
+	if(getPublicInt("cpro2.tags.50", 1) || g.getAlpha()!=253) g.setAlpha(253);
 }
 
 //.sendAction(String action, String param, Int x, int y, int p1, int p2);

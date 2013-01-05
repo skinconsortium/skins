@@ -8,12 +8,12 @@
 	<bitmap id="frame.top" file="frame_player.png" x="106" y="0" w="10" gammagroup="n.frame.player"/>
 	<bitmap id="frame.top.center" file="frame_player.png" x="1033" y="0" w="200" gammagroup="n.frame.player"/>
 	<bitmap id="frame.topright" file="frame_player.png" x="117" y="0" w="135" gammagroup="n.frame.player"/>
-	<bitmap id="frame.left" file="frame_player.png" x="979" y="0" w="8" gammagroup="n.frame.player"/>
-	<bitmap id="frame.right" file="frame_player.png" x="988" y="0" w="8" gammagroup="n.frame.player"/>
-	<bitmap id="frame.bottomleft" file="frame_player.png" x="997" y="0" w="8" h="8" gammagroup="n.frame.player"/>
-	<bitmap id="frame.bottom" file="frame_player.png" x="1006" y="0" w="8" h="8" gammagroup="n.frame.player"/>
-	<bitmap id="frame.bottomright" file="frame_player.png" x="1015" y="0" w="8" h="8" gammagroup="n.frame.player"/>
-	<bitmap id="frame.center" file="frame_player.png" x="1024" y="0" w="8" h="8" gammagroup="n.frame.player"/>
+	<bitmap id="frame.left" file="frame_player.png" x="979" y="0" w="8" gammagroup="n.frame.player.bottom"/>
+	<bitmap id="frame.right" file="frame_player.png" x="988" y="0" w="8" gammagroup="n.frame.player.bottom"/>
+	<bitmap id="frame.bottomleft" file="frame_player.png" x="997" y="0" w="8" h="8" gammagroup="n.frame.player.bottom"/>
+	<bitmap id="frame.bottom" file="frame_player.png" x="1006" y="0" w="8" h="8" gammagroup="n.frame.player.bottom"/>
+	<bitmap id="frame.bottomright" file="frame_player.png" x="1015" y="0" w="8" h="8" gammagroup="n.frame.player.bottom"/>
+	<bitmap id="frame.center" file="frame_player.png" x="1024" y="0" w="8" h="8" gammagroup="n.frame.player.bottom"/>
 	
 	<bitmap id="frame.1menu.1" file="frame_player.png" x="253" y="0" w="85" gammagroup="n.frame.menu.normal"/>
 	<bitmap id="frame.1menu.2" file="frame_player.png" x="339" y="0" w="85" gammagroup="n.frame.menu.hoverdown"/>
@@ -85,7 +85,7 @@
 	<bitmap id="playback.bg.buttons" file="playback_area.png" x="0" y="0" w="224" h="30" gammagroup="n.playback.buttons.bg"/>
 	<bitmap id="playback.bg.buttons.vol" file="playback_area.png" x="222" y="124" w="33" h="30" gammagroup="n.playback.buttons.bg"/>
 	
-	<bitmap id="playback.vol.small" file="playback_area.png" x="191" y="124" w="30" h="30" gammagroup="n.playback.volume"/>
+	<bitmap id="playback.vol.small" file="playback_area.png" x="191" y="124" w="30" h="30" gammagroup="n.playback.button.normal"/>
 	<bitmap id="playback.vol.small.1" file="playback_area.png" x="194" y="155" w="24" h="30" gammagroup="n.playback.volume.active"/>
 	<bitmap id="playback.vol.small.2" file="playback_area.png" x="194" y="186" w="24" h="30" gammagroup="n.playback.volume.active"/>
 	

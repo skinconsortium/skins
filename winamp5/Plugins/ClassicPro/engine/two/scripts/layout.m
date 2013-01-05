@@ -391,7 +391,7 @@ WIN 7 CLIP
 */
 normal.onMove(){
 	if(aerosnap_attrib.getData() == "0") return;
-	if(clipped && normal.getTop()!=0){
+	if(clipped && normal.getTop()!= getViewPortTopfromGuiObject(normal) ){ //0){
 		/*
 		Ideally would like to move the layout's x/y position here to make sure mouse stays on window.
 		But dont see a function in maki that will enable this :(
@@ -403,7 +403,7 @@ normal.onMove(){
 		//double toets = System.getMousePosX()-i_clip_w*(System.getMousePosX()/(System.getViewportWidth()/2));
 		normal.resize(normal.getLeft(),normal.getTop(),i_clip_w,i_clip_h);
 	}
-	else if(fullscreen && normal.getLeft() + normal.getTop()!=0){
+	else if(fullscreen && normal.getLeft() + normal.getTop()!= getViewPortTopfromGuiObject(normal) ){ //0){
 		setPublicInt("cPro2.x", normal.getLeft());
 		setPublicInt("cPro2.y", normal.getTop());
 

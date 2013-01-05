@@ -16,7 +16,7 @@
 !define CPRO_WIDGET_NAME "Chapterlist"
 
 ; The current version of your widget
-!define CPRO_WIDGET_VERSION "0.6"
+!define CPRO_WIDGET_VERSION "0.7"
 
 ; The current revision of your widget
 !define CPRO_WIDGET_REVISION "0"
@@ -76,7 +76,7 @@
 !define CPRO_CRS "©"	
 
 ; Current version of ClassicPro 
-!define CPRO_VERSION "1.13"
+!define CPRO_VERSION "2.00"
 
 ;-------------------------------------------------------------------------------------------
 ; Always include this file

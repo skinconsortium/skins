@@ -2,6 +2,7 @@
 Global Boolean showMessageBox;
 Global Timer myTimer;
 Function int getCproVersion();
+Global String info;
 
 System.onScriptLoaded() {
 	String cpro_path = getToken(getParam(), ";", 0) + "\..\..\Plugins\classicPro";
@@ -12,11 +13,18 @@ System.onScriptLoaded() {
 
 	if(m.getWidth()!=1){
 		showMessageBox=true;
+		info = "For this skin to work, you'll need to install the ClassicPro Winamp plugin.\n\nDo you want to download it now?";
 		delete m;
 		System.switchSkin("winamp classic");	// just switch away from our current skin
 	}
 	else{
-		if(getCproVersion()<req_cPro){
+		if(req_cPro>=199 && getCproVersion()<199){
+			showMessageBox=true;
+			info = "For this skin to work, you'll need to update your ClassicPro Winamp plugin to version 2 or higher.\n\nDo you want to download it now?";
+			delete m;
+			System.switchSkin("winamp classic");	// just switch away from our current skin
+		}
+		else if(getCproVersion()<req_cPro){
 			myTimer = new Timer;
 			myTimer.setDelay(5000);
 			myTimer.start();
@@ -28,7 +36,7 @@ System.onScriptUnloading ()
 {
 	if(showMessageBox){
 		//yes_no msgbox has id=4
-		int input= System.messageBox("For this skin to work, you'll need to install the ClassicPro Winamp plugin.\n\nDo you want to download it now?", "Can't find ClassicPro!", 4, "");
+		int input= System.messageBox(info, "Can't find ClassicPro!", 4, "");
 		
 		if(input==4){
 			System.navigateUrl("http://cpro.skinconsortium.com/");	// the direct subdir is .com/classicpro

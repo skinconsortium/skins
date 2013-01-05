@@ -1,16 +1,32 @@
 -------------------------------------------------------------
-Version 1.99 (Beta version for v2.0)
+Version 2.00 Beta 2 (18 December 2012)
+-------------------------------------------------------------
+[cPro 2]
+- Updated: cPro2__Aluminum v1.2
+- Fixed: Buttons with transparent bits don't always work
+- Fixed: When resizing from smallest height components might be transparent temparary
+- Fixed: Some list have a slightly different color
+- Fixed: Now Playing album cover reflection wrong color on colorthemes
+- Changed: Mini volume background gammagroup changed to ("n.playback.button.normal")
+- Changed: New gammagroup for bottom part of player ("n.frame.player.bottom")
+- Changed: Gammagroup of the Web Reader progress bar is now ("n.infoseek.seek.active")
+-------------------------------------------------------------
+
+
+-------------------------------------------------------------
+Version 2.00 Beta 1 (4 December 2012)
 -------------------------------------------------------------
 [cPro 2]
 - New: Support for Cpro2 skins!
+- New: New default cPro2 skin by Victhor (cPro2 - Aluminum)
 - New: Support for skins using just the single user interface of cPro2
-- New: Reader tab (Combination of the Browser and BrowserPro)
+- New: Web Reader tab (Combination of the Browser and BrowserPro)
 - New: New File Info Viewer
 - New: Can now toggle the visualizations in the main menu
+- New: Support for AeroSnap (optional)
 - Improved: Skin layout on first load of engine
 - Improved: Visualization and Video tab now opens where it was last opened
-
-
+- Improved: More options in the menu
 [cPro 1]
 - Improved: BrowserPro have new updated sources list (use same list as the cPro2 Reader)
 - Fixed: Browser doesn't open a dead link anymore
@@ -26,9 +42,6 @@ Version 1.99 (Beta version for v2.0)
 - Fixed: "Get album art" now hidden if your Winamp version doesn't support it
 - Fixed: About current skin ages isn't correct in leap years
 - Fixed: Now Playing tab reflection is broken sometimes
-
-
-
 -------------------------------------------------------------
 
 

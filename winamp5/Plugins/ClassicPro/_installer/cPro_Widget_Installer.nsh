@@ -340,6 +340,9 @@ Section "$(CPro_Widget_Files)" "CPro_Widget_Sec_Files"
 
 	SetOutPath "$INSTDIR\Plugins\classicPro\engine\widgets\Load"
 		File "${CPRO_WIDGET_SOURCEPATH}\engine\widgets\Load\${CPRO_WIDGET_XMLFILENAME}"
+
+	SetOutPath "$INSTDIR\Plugins\classicPro\engine\widgets\Load\v2"
+		File /nonfatal "${CPRO_WIDGET_SOURCEPATH}\engine\widgets\Load\v2\${CPRO_WIDGET_XMLFILENAME}"
  
 	SetOutPath "$INSTDIR\Plugins\classicPro\engine\widgets\Data\${CPRO_WIDGET_DATA_FOLDERNAME}"
 		File /nonfatal "${CPRO_WIDGET_SOURCEPATH}\engine\widgets\Data\${CPRO_WIDGET_DATA_FOLDERNAME}\*.m"
@@ -492,6 +495,7 @@ FunctionEnd
 Section "Uninstall"
 
 	Delete "$INSTDIR\Load\${CPRO_WIDGET_XMLFILENAME}"
+	Delete "$INSTDIR\Load\v2\${CPRO_WIDGET_XMLFILENAME}"
 	Delete "$INSTDIR\${CPRO_WIDGET_NSISFILENAME}"
 	
 	Delete "$INSTDIR\Data\${CPRO_WIDGET_DATA_FOLDERNAME}\icons\*.*"
