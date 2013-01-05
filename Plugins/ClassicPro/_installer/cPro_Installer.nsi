@@ -18,8 +18,8 @@
 	!define CPRO_PAYPAL_LINK "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4V8JAK6FLJZHW"	
 	!define CPRO_TECHNICAL_SUPPORT_LINK "http://forums.skinconsortium.com/index.php?page=Board&boardID=46"
 	!define /Date CPRO_DATE "%Y-%m-%d"
-	!define CPRO_BT "http://cpro.skinconsortium.com"
-	!define CPRO_WEB_PAGE "http://cpro.skinconsortium.com"
+	!define CPRO_BT "http://www.skinconsortium.com"
+	!define CPRO_WEB_PAGE "http://www.skinconsortium.com"
 	!define CPRO_HELP_LINK "http://forums.skinconsortium.com/"
 	!define CPRO_AUTHOR "Skin Consortium"
 	!define CPRO_COMPANY "Skin Consortium"
@@ -365,7 +365,7 @@ Function CheckFinishPage
 	${NSD_GetState} $ACheckBox2 $Control_State
 	${If} $Control_State = ${BST_CHECKED}
 		DetailPrint "$(CPro_Ini)"
-		WriteINIStr "$WINAMP_INI_DIR\winamp.ini" "Winamp" "skin" "cPro__Bento.wal"
+		WriteINIStr "$WINAMP_INI_DIR\winamp.ini" "Winamp" "skin" "cPro2__Aluminum.wal"
 		FlushINI "$WINAMP_INI_DIR\winamp.ini"
 	${EndIf}
 
@@ -672,7 +672,7 @@ Section "$(CPro_CProFiles)" "CPro_Sec_CProFiles"
 ; CPro skins	 - Cpro default skins
 	SetOutPath "$WINAMP_SKIN_DIR"
 		File "${CPRO_WINAMP_SKINS}\cPro__Bento.wal"
-		File "${CPRO_WINAMP_SKINS}\CproTwo.wal"
+		File "${CPRO_WINAMP_SKINS}\cPro2__Aluminum.wal"
 
 ; Clean some old folders from older releases
 	RMDir /r "$WINAMP_SKIN_DIR\cPro - Big Bento\" 

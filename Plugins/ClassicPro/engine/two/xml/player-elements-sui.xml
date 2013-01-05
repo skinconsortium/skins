@@ -296,9 +296,9 @@
 	<bitmap id="cpro2.reader.bg.left" file="sui_reader.png" x="0" y="0" w="78" h="26" gammagroup="n.sui.background"/>
 	<bitmap id="cpro2.reader.bg.leftlong" file="sui_reader.png" x="0" y="0" w="102" h="26" gammagroup="n.sui.background"/>
 	<bitmap id="cpro2.reader.bg.center.0.0" file="sui_reader.png" x="105" y="0" w="10" h="26" gammagroup="n.sui.background"/>
-	<bitmap id="cpro2.reader.bg.center.0.1" file="sui_reader.png" x="105" y="27" w="10" h="26" gammagroup="n.sui.background"/>
+	<bitmap id="cpro2.reader.bg.center.0.1" file="sui_reader.png" x="105" y="27" w="10" h="26" gammagroup="n.infoseek.seek.active"/>
 	<bitmap id="cpro2.reader.bg.center.1.0" file="sui_reader.png" x="105" y="54" w="10" h="26" gammagroup="n.sui.background"/>
-	<bitmap id="cpro2.reader.bg.center.1.1" file="sui_reader.png" x="105" y="81" w="10" h="26" gammagroup="n.sui.background"/>
+	<bitmap id="cpro2.reader.bg.center.1.1" file="sui_reader.png" x="105" y="81" w="10" h="26" gammagroup="n.infoseek.seek.active"/>
 	<bitmap id="cpro2.reader.bg.right" file="sui_reader.png" x="116" y="0" w="24" h="26" gammagroup="n.sui.background"/>
 	<bitmap id="cpro2.reader.back.0" file="sui_reader.png" x="1" y="108" w="26" h="26" gammagroup="n.sui.buttons"/>
 	<bitmap id="cpro2.reader.back.1" file="sui_reader.png" x="1" y="27" w="26" h="26" gammagroup="n.sui.buttons"/>

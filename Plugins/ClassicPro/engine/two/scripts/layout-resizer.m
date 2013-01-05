@@ -2,6 +2,7 @@
 #include attribs/init_Autoresize.m
 
 #define i_info 40 
+#define clip_h 60 
 
 
 Function saveResize(int x, int y, int w, int h);
@@ -87,7 +88,7 @@ resize1.onMouseMove(int x, int y){
 		i_h = (i_downY-y)-(i_downY-y-i_minH)%(rres*2);  //resizing the skin's x position is a bit slower :(
 		
 		if(i_w<i_minW) i_w=i_minW;
-		if(i_h<i_minH+40) i_h=i_minH;
+		if(i_h<i_minH+clip_h) i_h=i_minH;
 
 		saveResize(i_downX-i_w, i_downY-i_h,i_w,i_h);
 	}
@@ -106,7 +107,7 @@ resize2.onMouseMove(int x, int y){
 
 		i_h = (i_downY-y)-(i_downY-y-i_minH)%(rres*2);  //resizing the skin's x position is a bit slower :(
 		
-		if(i_h<i_minH+40) i_h=i_minH;
+		if(i_h<i_minH+clip_h) i_h=i_minH;
 		saveResize(myLayout.getLeft(), i_downY-i_h,myLayout.getWidth(),i_h);
 	}
 }
@@ -121,7 +122,7 @@ resize3.onMouseMove(int x, int y){
 
 		i_h = (i_downY-y)-(i_downY-y-i_minH)%(rres*2);  //resizing the skin's x position is a bit slower :(
 		
-		if(i_h<i_minH+40) i_h=i_minH;
+		if(i_h<i_minH+clip_h) i_h=i_minH;
 		//saveResize(myLayout.getLeft(), i_downY-i_h,myLayout.getWidth(),i_h);
 
 		x+=rres/2;
@@ -216,7 +217,7 @@ saveResize(int x, int y, int w, int h){
 	if(getPublicInt("cPro2.fs", 0)==1) return;
 	
 	if(w<i_minW) w=i_minW;
-	if(h<i_minH+40) h=i_minH;
+	if(h<i_minH+clip_h) h=i_minH;
 	
 	myLayout.resize(x,y,w,h);
 	//resizeQuick(myLayout, x,y,w,h);

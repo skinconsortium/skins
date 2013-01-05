@@ -21,6 +21,14 @@
 </groupdef>
 
 
+<groupdef id="sc.nowplaying.cdbox.reflection.mask" move="1">
+	<gradient 
+		id="cdbox.fg.fademask"
+		fitparent="1"
+		ghost="1"
+		mode="linear" gradient_x1="0" gradient_y1="0" gradient_x2="0" gradient_y2="1" points="0.0=252,3,3,0;1.0=252,3,3,255" gammagroup="g.list.background"
+	/>
+</groupdef>
 
 <groupdef id="sc.nowplaying.cdbox.holder.top">
 	<group id="sc.nowplaying.cdbox" fitparent="1"/>
@@ -46,25 +54,10 @@
 	<layer id="cdbox.fg.reflection" fitparent="1" image="sc.cdbox.fg" ghost="1" alpha="175"/>
 </groupdef>
 
-<groupdef id="sc.nowplaying.cdbox.reflection.mask" move="1">
-	<!--<layer
-		id="cdbox.fg.fademask2"
-		fitparent="1"
-		ghost="1"
-		image="sc.cdbox.gradient"
-		visible="0"
-	/>-->
-	<gradient 
-		id="cdbox.fg.fademask"
-		fitparent="1"
-		ghost="1"
-		mode="linear" gradient_x1="0" gradient_y1="0" gradient_x2="0" gradient_y2="1" points="0.0=128,128,128,0;1.0=128,128,128,255" gammagroup="g.list.background"
-	/>
-</groupdef>
 
 <groupdef id="sc.nowplaying" xuitag="SC:NowPlaying">
 
-	<rect id="sc.nowplaying.bg" fitparent="1" color="wasabi.list.background" filled="1" move="1" gammagroup="n.Color.ListBg"/>
+	<rect id="sc.nowplaying.bg" fitparent="1" color="wasabi.list.background" filled="1" move="1"/>
 
 	<SC:FadeText id="sc.nowplaying.line3" x="0" y="5" w="0" h="20" relatw="1" fgcolor="0,0,0" align="center" fontsize="20" alpha="200" translate="0"/>
 	<SC:FadeText id="sc.nowplaying.line2" x="0" y="22" w="0" h="20" relatw="1" fgcolor="0,0,0" align="center" fontsize="16" alpha="225" translate="0"/>

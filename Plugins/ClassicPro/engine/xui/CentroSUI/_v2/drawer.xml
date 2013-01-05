@@ -24,7 +24,7 @@
 	<button action="PE_List" x="-32" y="0" relatx="1" rectrgn="1" image="cpro2.pl.man.1" hoverImage="cpro2.pl.man.2" downImage="cpro2.pl.man.3" tooltip="Manage Playlist"/>
 
 	<grid id="centro.playlist.textgrid" x="129" y="0" h="19" w="-194" relatw="1" ghost="1" topleft="sui.status.box.1" top="sui.status.box.2" topright="sui.status.box.3"/>
-	<text id="centro.playlist.pltext1" display="PE_Info" x="131" y="1" h="19" w="-200" relatw="1" align="center" color="cpro2.color.status" font="cpro2.font.status.text" move="1"/>
+	<text id="centro.playlist.pltext1" display="PE_Info" x="131" y="1" h="19" w="-200" relatw="1" align="center" color="cpro2.color.status" font="cpro2.font.status.text" move="1" alpha="253"/>
 </groupdef>
 
 <groupdef id="centro.playlist.directory.tag" inherit_group="drawer.tagviewer">
@@ -39,7 +39,7 @@
 
 <groupdef id="drawer.savedpl" name="Stored Playlists">
 	<layer x="0" y="-19" w="0" relaty="1" relatw="1" image="sui.status"/>
-	<PlaylistDirectory x="0" y="0" w="0" h="-19" relatw="1" relath="1" antialias="1"/>
+	<PlaylistDirectory x="0" y="0" w="0" h="-19" relatw="1" relath="1" antialias="0"/>
 </groupdef>
 
 <groupdef id="centro.playlist.directory.spl" inherit_group="drawer.savedpl">
@@ -156,7 +156,7 @@
 		x="297" y="19" w="27" h="14"
 		image="cpro2.xfade.overlay."
 		cfgattrib="{FC3EAF78-C66E-4ED2-A0AA-1494DFCC13FF};Enable crossfading"
-		ghost="1" nstates="2" cfgvals="0;1"
+		ghost="1" nstates="2" cfgvals="0;1" 
 	/>
 
 	<button
@@ -253,7 +253,7 @@ File Info viewer
 
 <groupdef id="tagviewer.status.box">
 	<grid id="tagviewer.status.box.grid" fitparent="1" ghost="1" topleft="sui.status.box.1" top="sui.status.box.2" topright="sui.status.box.3"/>
-	<text id="tagviewer.status.box.text" ticker="1" display="SONGNAME" x="5" w="-10" y="1" h="19" relatw="1" align="left" color="cpro2.color.status" font="cpro2.font.status.text" move="1"/>
+	<text id="tagviewer.status.box.text" ticker="1" display="SONGNAME" x="5" w="-10" y="1" h="19" relatw="1" align="left" color="cpro2.color.status" font="cpro2.font.status.text" move="1" alpha="253"/>
 </groupdef>
 
 <groupdef id="tagviewer.status" h="19">
