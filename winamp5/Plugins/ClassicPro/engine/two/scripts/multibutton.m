@@ -24,6 +24,8 @@ bolt.onLeftClick(){
 	int a = getPublicInt("cpro2.multibutton", 0);
 	
 	if(a==0){
+		fakeAbout.setXmlParam("action", "TOGGLE");
+		fakeAbout.setXmlParam("param", "guid:{D6201408-476A-4308-BF1B-7BACA1124B12}");
 		fakeAbout.leftClick();
 	}
 	else if(a==1){
@@ -31,10 +33,20 @@ bolt.onLeftClick(){
 		ClassicProFile.exploreFile(getMyFile());
 	}
 	else if(a==2){
-		popQuickPlaylist(40, false);
+		popQuickPlaylist(System.getViewportHeight()/24, false); //was 40
 	}
 	else if(a==3){
 		changeTheme.leftClick();
+	}
+	else if(a==4){
+		fakeAbout.setXmlParam("param", "");
+		fakeAbout.setXmlParam("action", "ML_SendTo");
+		fakeAbout.leftClick();
+	}
+	else if(a==5){
+		fakeAbout.setXmlParam("param", "");
+		fakeAbout.setXmlParam("action", "trackmenu");
+		fakeAbout.leftClick();
 	}
 	
 }
@@ -52,10 +64,12 @@ bolt.onRightButtonUp(int x, int y){
 	selMenu = new PopupMenu;
 	selMenu.addCommand("Multi-Button Action:", -1, 0, 1);
 	selMenu.addSeparator();
-	selMenu.addCommand("Open About Winamp", 0, 0, 0);
-	selMenu.addCommand("Explore Folder", 1, 0, 0);
-	selMenu.addCommand("Show Quick Playlist", 2, 0, 0);
 	selMenu.addCommand("Change Color Theme", 3, 0, 0);
+	selMenu.addCommand("Explore Folder", 1, 0, 0);
+	selMenu.addCommand("Open About Winamp", 0, 0, 0);
+	selMenu.addCommand("Show Quick Playlist", 2, 0, 0);
+	selMenu.addCommand("Show Send to Menu", 4, 0, 0);
+	selMenu.addCommand("Show Track Menu", 5, 0, 0);
 	selMenu.checkCommand(getPublicInt("cpro2.multibutton", 0), 1);
 	
 	//int a = selMenu.popAtMouse();

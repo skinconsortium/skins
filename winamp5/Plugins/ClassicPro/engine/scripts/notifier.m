@@ -14,6 +14,7 @@ Note:		Based on notifier.m from Winamp Modern
 Note2:		Search for pjn123 to see edits by pjn123 for ClassicPro
 -----------------------------------------------------
 ---------------------------------------------------*/
+#define FORCE_BUG_MODE 
 
 #include <lib/std.mi>
 #include attribs/init_notifier.m
@@ -21,8 +22,10 @@ Note2:		Search for pjn123 to see edits by pjn123 for ClassicPro
 #define DebugString //
 
 //edit by pjn123 start
+Function onCover(Boolean success);
 Function popSettings();
 Function int getSaveValue(int input);
+Function onAlbumArt(Boolean success);
 //edit by pjn123 end
 
 Function reset();
@@ -48,6 +51,8 @@ Global String last_autotitle, last_autopis, cur_status;
 Global Timer notifier_settingshelp; 
 Global Boolean msgbox_open, switchOnce;
 Global PopupMenu myMenu, timeIn, timeStay, timeOut;
+Global Boolean triggerBug; //BUGFIX remove this
+Global Timer fallbackTempFix; //BUGFIX remove this
 //edit by pjn123 end
 
 Global Boolean b_tohide = 0;
@@ -61,6 +66,8 @@ Global AlbumArtLayer cover;
 System.onScriptLoaded() {
 	initAttribs_notifier();
 	notifier_timer = new Timer;
+	fallbackTempFix = new Timer; //BUGFIX remove this
+	fallbackTempFix.setDelay(3000); //BUGFIX remove this / Time that onAlbumArtLoaded have to execute before bug mode is ON 
 }
 
 // ------------------------------------------------------------------------------
@@ -68,7 +75,7 @@ System.onScriptLoaded() {
 // ------------------------------------------------------------------------------
 System.onScriptUnloading() {
 	delete notifier_timer;
-  delete notifier_settingshelp; //edit by pjn123
+	delete fallbackTempFix; //BUGFIX remove this
 }
 
 // ------------------------------------------------------------------------------
@@ -92,6 +99,7 @@ System.onShowNotification() {
 // mpdeimos> seems like we get an onTitleChange callback sometimes on pause/resume, d'oh
 Global String lastUrl = 0;
 System.onTitleChange(String newtitle) {
+
 	if (getPlayItemMetaDataString("streamtype") == "0" && lastUrl == getPlayItemString())
 	{
 		return;
@@ -108,6 +116,9 @@ System.onTitleChange(String newtitle) {
 	//last_autopis = newpis;
 	DebugString("onTitleChange: "+getPlayItemString(), 9);	
 	onNext();
+
+	fallbackTempFix.stop(); //BUGFIX remove later
+	fallbackTempFix.start(); //BUGFIX remove later
 }
 /*
 System.onTitle2Change(String newtitle) {
@@ -480,20 +491,13 @@ prepareAlbumArtNotifier()
 	}
 }
 
-cover.onAlbumArtLoaded(boolean success)
-{
-	DebugString("onAlbumArtLoaded: success="+integerToString(success), 9);
-	DebugString("onAlbumArtLoaded: handleAACalback="+integerToString(handleAACalback), 9);
-	DebugString("onAlbumArtLoaded: cover.isLoading="+integerToString(cover.isLoading()), 9);
-	DebugString("onAlbumArtLoaded: cover.isInvalid="+integerToString(cover.isInvalid()), 9);
-	if (!handleAACalback || !notifier_layout /*|| isLoading()*/)
-	{
-		return;
-	}
-	
-	handleAACalback = isLoading();
-	cancelAnimation();
-	showNotifier(fillNextTrackInfo(cur_status));
+cover.onAlbumArtLoaded(boolean success){
+	/*
+	Created a seperate function for the code that was here because for some reason I couldn't force this
+	event (from the fallbackTempFix.onTimer) with cover.onAlbumArtLoaded(success) after the Winamp bug appear.
+	Weird yes.
+	*/
+	FORCE_BUG_MODE onAlbumArt(success); 
 }
 
 // ------------------------------------------------------------------------------
@@ -948,4 +952,40 @@ popSettings(){
 		notifier_fadeouttime_attrib.setData(integerToString((a-200)*250));
 	}
 	onNext();
+}
+
+//BUGFIX remove this timer later
+fallbackTempFix.onTimer() //As soon as this timer run, bug mode is ON ;)
+{
+	if (checkPref(0)) return;
+
+	if (!notifier_layout) onNext();
+
+	if(!triggerBug)
+	{
+		triggerBug = true;
+
+		onAlbumArt(cover.isInvalid()); //First time whe see the bug
+		fallbackTempFix.setDelay(30);
+		
+		DebugString("Hello Bug", 9);
+	}
+	else if(triggerBug && !cover.isLoading()) onAlbumArt(cover.isInvalid());
+}
+
+onAlbumArt(Boolean success){
+	fallbackTempFix.stop(); //BUGFIX remove later
+
+	DebugString("onAlbumArtLoaded: success="+integerToString(success), 9);
+	DebugString("onAlbumArtLoaded: handleAACalback="+integerToString(handleAACalback), 9);
+	DebugString("onAlbumArtLoaded: cover.isLoading="+integerToString(cover.isLoading()), 9);
+	DebugString("onAlbumArtLoaded: cover.isInvalid="+integerToString(cover.isInvalid()), 9);
+	if (!handleAACalback || !notifier_layout /*|| isLoading()*/)
+	{
+		return;
+	}
+
+	handleAACalback = cover.isLoading();
+	cancelAnimation();
+	showNotifier(fillNextTrackInfo(cur_status));
 }

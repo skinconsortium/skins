@@ -83,7 +83,7 @@ vol_slider.onPostedPosition(int newpos){
 
 mute_but.onToggle(Boolean onoff){
 	if(mute_but.getCurCfgVal()==0){
-		if(getVolume()==0) setVolume(getPrivateInt(getSkinName(), "saveVol", 100));
+		if(getVolume()==0 && getPrivateInt(getSkinName(), "muted", 0)) setVolume(getPrivateInt(getSkinName(), "saveVol", 100));
 		mute_but.setXmlParam("tooltip", "Mute Volume");
 		stopFade();
 		if(haveOverlay) b_muteOverlay.setActivated(false);

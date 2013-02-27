@@ -129,7 +129,7 @@
 	<bitmap id="eq.xftime.more.2" file="sui_eq.png" x="421" y="39" w="14" h="14" gammagroup="n.sui.buttons"/>
 	<bitmap id="eq.xftime.more.3" file="sui_eq.png" x="421" y="54" w="14" h="14" gammagroup="n.sui.buttons"/>
 
-	<!-- Icons used for tabs (Left to the tab name) -->
+	<!-- Icons (normal, hover, active) used for tabs (Left to the tab name) 
 	<bitmap id="cpro.tab.icon.ple" file="sui_tab_icons.png" x="0" y="0" w="22" h="25" gammagroup="n.sui.tabs.icon"/>
 	<bitmap id="cpro.tab.icon.vis" file="sui_tab_icons.png" x="23" y="0" w="22" h="25" gammagroup="n.sui.tabs.icon"/>
 	<bitmap id="cpro.tab.icon.vid" file="sui_tab_icons.png" x="46" y="0" w="22" h="25" gammagroup="n.sui.tabs.icon"/>
@@ -140,6 +140,40 @@
 	<bitmap id="cpro.tab.icon.onl" file="sui_tab_icons.png" x="161" y="0" w="22" h="25" gammagroup="n.sui.tabs.icon"/>
 	<bitmap id="cpro.tab.icon.now" file="sui_tab_icons.png" x="184" y="0" w="22" h="25" gammagroup="n.sui.tabs.icon"/>
 	<bitmap id="cpro.tab.icon.pic" file="sui_tab_icons.png" x="207" y="0" w="22" h="25" gammagroup="n.sui.tabs.icon"/>
+-->
+	<bitmap id="cpro.tab.icon.ple.1" file="sui_tab_icons.png" x="0" y="0" w="22" h="25" gammagroup="n.sui.tabs.icon"/>
+	<bitmap id="cpro.tab.icon.vis.1" file="sui_tab_icons.png" x="23" y="0" w="22" h="25" gammagroup="n.sui.tabs.icon"/>
+	<bitmap id="cpro.tab.icon.vid.1" file="sui_tab_icons.png" x="46" y="0" w="22" h="25" gammagroup="n.sui.tabs.icon"/>
+	<bitmap id="cpro.tab.icon.lib.1" file="sui_tab_icons.png" x="69" y="0" w="22" h="25" gammagroup="n.sui.tabs.icon"/>
+	<bitmap id="cpro.tab.icon.bro.1" file="sui_tab_icons.png" x="92" y="0" w="22" h="25" gammagroup="n.sui.tabs.icon"/>
+	<bitmap id="cpro.tab.icon.plu.1" file="sui_tab_icons.png" x="115" y="0" w="22" h="25" gammagroup="n.sui.tabs.icon"/>
+	<bitmap id="cpro.tab.icon.que.1" file="sui_tab_icons.png" x="138" y="0" w="22" h="25" gammagroup="n.sui.tabs.icon"/>
+	<bitmap id="cpro.tab.icon.onl.1" file="sui_tab_icons.png" x="161" y="0" w="22" h="25" gammagroup="n.sui.tabs.icon"/>
+	<bitmap id="cpro.tab.icon.now.1" file="sui_tab_icons.png" x="184" y="0" w="22" h="25" gammagroup="n.sui.tabs.icon"/>
+	<bitmap id="cpro.tab.icon.pic.1" file="sui_tab_icons.png" x="207" y="0" w="22" h="25" gammagroup="n.sui.tabs.icon"/>
+
+	<bitmap id="cpro.tab.icon.ple.2" file="sui_tab_icons.png" x="0" y="26" w="22" h="25" gammagroup="n.sui.tabs.icon"/>
+	<bitmap id="cpro.tab.icon.vis.2" file="sui_tab_icons.png" x="23" y="26" w="22" h="25" gammagroup="n.sui.tabs.icon"/>
+	<bitmap id="cpro.tab.icon.vid.2" file="sui_tab_icons.png" x="46" y="26" w="22" h="25" gammagroup="n.sui.tabs.icon"/>
+	<bitmap id="cpro.tab.icon.lib.2" file="sui_tab_icons.png" x="69" y="26" w="22" h="25" gammagroup="n.sui.tabs.icon"/>
+	<bitmap id="cpro.tab.icon.bro.2" file="sui_tab_icons.png" x="92" y="26" w="22" h="25" gammagroup="n.sui.tabs.icon"/>
+	<bitmap id="cpro.tab.icon.plu.2" file="sui_tab_icons.png" x="115" y="26" w="22" h="25" gammagroup="n.sui.tabs.icon"/>
+	<bitmap id="cpro.tab.icon.que.2" file="sui_tab_icons.png" x="138" y="26" w="22" h="25" gammagroup="n.sui.tabs.icon"/>
+	<bitmap id="cpro.tab.icon.onl.2" file="sui_tab_icons.png" x="161" y="26" w="22" h="25" gammagroup="n.sui.tabs.icon"/>
+	<bitmap id="cpro.tab.icon.now.2" file="sui_tab_icons.png" x="184" y="26" w="22" h="25" gammagroup="n.sui.tabs.icon"/>
+	<bitmap id="cpro.tab.icon.pic.2" file="sui_tab_icons.png" x="207" y="26" w="22" h="25" gammagroup="n.sui.tabs.icon"/>
+
+	<bitmap id="cpro.tab.icon.ple.3" file="sui_tab_icons.png" x="0" y="52" w="22" h="25" gammagroup="n.sui.tabs.icon"/>
+	<bitmap id="cpro.tab.icon.vis.3" file="sui_tab_icons.png" x="23" y="52" w="22" h="25" gammagroup="n.sui.tabs.icon"/>
+	<bitmap id="cpro.tab.icon.vid.3" file="sui_tab_icons.png" x="46" y="52" w="22" h="25" gammagroup="n.sui.tabs.icon"/>
+	<bitmap id="cpro.tab.icon.lib.3" file="sui_tab_icons.png" x="69" y="52" w="22" h="25" gammagroup="n.sui.tabs.icon"/>
+	<bitmap id="cpro.tab.icon.bro.3" file="sui_tab_icons.png" x="92" y="52" w="22" h="25" gammagroup="n.sui.tabs.icon"/>
+	<bitmap id="cpro.tab.icon.plu.3" file="sui_tab_icons.png" x="115" y="52" w="22" h="25" gammagroup="n.sui.tabs.icon"/>
+	<bitmap id="cpro.tab.icon.que.3" file="sui_tab_icons.png" x="138" y="52" w="22" h="25" gammagroup="n.sui.tabs.icon"/>
+	<bitmap id="cpro.tab.icon.onl.3" file="sui_tab_icons.png" x="161" y="52" w="22" h="25" gammagroup="n.sui.tabs.icon"/>
+	<bitmap id="cpro.tab.icon.now.3" file="sui_tab_icons.png" x="184" y="52" w="22" h="25" gammagroup="n.sui.tabs.icon"/>
+	<bitmap id="cpro.tab.icon.pic.3" file="sui_tab_icons.png" x="207" y="52" w="22" h="25" gammagroup="n.sui.tabs.icon"/>
+
 
 	<!-- Notifier -->
 	<bitmap id="notifier.bg.left" file="notifier.png" x="0" y="0" w="13" h="80" gammagroup="g.notifier.background"/>
@@ -189,18 +223,18 @@
 	<bitmap id="sui.pl.search.stop.3" file="sui.png" x="201" y="40" w="20" h="19" gammagroup="n.sui.buttons"/>
 
 	<!-- SUI Buttons -->
-	<bitmap id="sui.button.drawer.1.0" file="sui.png" x="36" y="0" w="25" h="25" gammagroup="n.sui.tabs"/>
-	<bitmap id="sui.button.drawer.2.0" file="sui.png" x="36" y="26" w="25" h="25" gammagroup="n.sui.tabs"/>
-	<bitmap id="sui.button.drawer.3.0" file="sui.png" x="36" y="52" w="25" h="25" gammagroup="n.sui.tabs"/>
-	<bitmap id="sui.button.drawer.1.1" file="sui.png" x="62" y="0" w="25" h="25" gammagroup="n.sui.tabs"/>
-	<bitmap id="sui.button.drawer.2.1" file="sui.png" x="62" y="26" w="25" h="25" gammagroup="n.sui.tabs"/>
-	<bitmap id="sui.button.drawer.3.1" file="sui.png" x="62" y="52" w="25" h="25" gammagroup="n.sui.tabs"/>
-	<bitmap id="sui.button.leftside.1.0" file="sui.png" x="88" y="0" w="25" h="25" gammagroup="n.sui.tabs"/>
-	<bitmap id="sui.button.leftside.2.0" file="sui.png" x="88" y="26" w="25" h="25" gammagroup="n.sui.tabs"/>
-	<bitmap id="sui.button.leftside.3.0" file="sui.png" x="88" y="52" w="25" h="25" gammagroup="n.sui.tabs"/>
-	<bitmap id="sui.button.leftside.1.1" file="sui.png" x="114" y="0" w="25" h="25" gammagroup="n.sui.tabs"/>
-	<bitmap id="sui.button.leftside.2.1" file="sui.png" x="114" y="26" w="25" h="25" gammagroup="n.sui.tabs"/>
-	<bitmap id="sui.button.leftside.3.1" file="sui.png" x="114" y="52" w="25" h="25" gammagroup="n.sui.tabs"/>
+	<bitmap id="sui.button.drawer.1.0" file="sui.png" x="36" y="0" w="25" h="25" gammagroup="n.sui.buttons"/>
+	<bitmap id="sui.button.drawer.2.0" file="sui.png" x="36" y="26" w="25" h="25" gammagroup="n.sui.buttons"/>
+	<bitmap id="sui.button.drawer.3.0" file="sui.png" x="36" y="52" w="25" h="25" gammagroup="n.sui.buttons"/>
+	<bitmap id="sui.button.drawer.1.1" file="sui.png" x="62" y="0" w="25" h="25" gammagroup="n.sui.buttons"/>
+	<bitmap id="sui.button.drawer.2.1" file="sui.png" x="62" y="26" w="25" h="25" gammagroup="n.sui.buttons"/>
+	<bitmap id="sui.button.drawer.3.1" file="sui.png" x="62" y="52" w="25" h="25" gammagroup="n.sui.buttons"/>
+	<bitmap id="sui.button.leftside.1.0" file="sui.png" x="88" y="0" w="25" h="25" gammagroup="n.sui.buttons"/>
+	<bitmap id="sui.button.leftside.2.0" file="sui.png" x="88" y="26" w="25" h="25" gammagroup="n.sui.buttons"/>
+	<bitmap id="sui.button.leftside.3.0" file="sui.png" x="88" y="52" w="25" h="25" gammagroup="n.sui.buttons"/>
+	<bitmap id="sui.button.leftside.1.1" file="sui.png" x="114" y="0" w="25" h="25" gammagroup="n.sui.buttons"/>
+	<bitmap id="sui.button.leftside.2.1" file="sui.png" x="114" y="26" w="25" h="25" gammagroup="n.sui.buttons"/>
+	<bitmap id="sui.button.leftside.3.1" file="sui.png" x="114" y="52" w="25" h="25" gammagroup="n.sui.buttons"/>
 
 	<!-- SUI Tab Buttons -->
 	<bitmap id="sui.tab.left.2" file="sui.png" x="4" y="0" w="6" h="25" gammagroup="n.sui.tabs"/>

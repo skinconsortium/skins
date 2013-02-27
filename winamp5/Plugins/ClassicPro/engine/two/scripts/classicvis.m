@@ -73,6 +73,11 @@ scriptGroup.onSetVisible(boolean onOff){
 		refreshVisSettings ();
 	}
 }
+scriptGroup.onResize(int x, int y, int w, int h){
+	if(scriptGroup.isVisible()){
+		refreshVisSettings ();
+	}
+}
 
 refreshVisSettings ()
 {

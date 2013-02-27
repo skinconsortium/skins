@@ -5,6 +5,8 @@
 	<bitmap id="sc.cdbox.ref" file="@WINAMPPATH@\Plugins\classicPro\engine\widgets\Data\NowPlaying\blank.png"/>
 </elements>
 
+
+
 <groupdef id="sc.nowplaying.ratings">
 	<text id="rate.line.1" x="0" y="-5" w="65" h="20" color="wasabi.list.text" fontsize="40" text="*****" alpha="140" valign="top"/>
 	<text id="rate.line.2" x="0" y="-5" w="65" h="20" color="wasabi.list.text" fontsize="40" text="" valign="top"/>
@@ -19,6 +21,9 @@
 
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\widgets\Data\NowPlaying\ratings.maki"/>
 </groupdef>
+
+
+
 
 
 <groupdef id="sc.nowplaying.cdbox.reflection.mask" move="1">
@@ -43,13 +48,14 @@
 	<group id="sc.nowplaying.cdbox.holder.bottom" x="0" y="0" w="50" h="50"/>
 </groupdef>
 
-<groupdef id="sc.nowplaying.cdbox" background="sc.cdbox.bg" move="1">
+<groupdef id="sc.nowplaying.cdbox" move="1">
+	<layer id="sc.cdbox.3" fitparent="1" image="sc.cdbox.bg" ghost="1"/>
 	<AlbumArt id="main.albumart" x="12" y="4" w="85" h="93" relatx="2" relaty="2" relatw="2" relath="2" notfoundimage="cover.notfound" wantfocus="1" stretched="1"/>
-	<layer fitparent="1" image="sc.cdbox.fg" ghost="1" alpha="175"/>
+	<layer id="sc.cdbox.1" fitparent="1" image="sc.cdbox.fg" ghost="1" alpha="175"/>
 </groupdef>
 
 <groupdef id="sc.nowplaying.cdbox.reflection" move="1">
-	<layer id="bgref" image="sc.cdbox.bg.ref" fitparent="1" />
+	<layer id="sc.cdbox.2" image="sc.cdbox.bg.ref" fitparent="1" />
 	<AlbumArt id="main.albumart.reflection" x="12" y="4" w="85" h="93" notfoundimage="cover.notfound" relatx="2" relaty="2" relatw="2" relath="2" wantfocus="0" stretched="1"/>
 	<layer id="cdbox.fg.reflection" fitparent="1" image="sc.cdbox.fg" ghost="1" alpha="175"/>
 </groupdef>
@@ -63,11 +69,14 @@
 	<SC:FadeText id="sc.nowplaying.line2" x="0" y="22" w="0" h="20" relatw="1" fgcolor="0,0,0" align="center" fontsize="16" alpha="225" translate="0"/>
 	<SC:FadeText id="sc.nowplaying.line1" x="0" y="38" w="0" h="24" relatw="1" fgcolor="0,0,0" align="center" fontsize="24" translate="0"/>
 
-	<group id="sc.nowplaying.cdbox.holder" x="5" y="78" w="-5" h="-78" relatw="1" relath="1"/>
-	
+	<group id="sc.nowplaying.cdbox.holder" x="0" y="78" w="0" h="-78" relatw="1" relath="1"/>
+
+	<layer id="sc.nowplaying.mousetrap.bottom" x="0" y="78" w="0" h="-78" relatw="1" relath="1" alpha="253" rectrgn="1"/>
+
 	<group id="sc.nowplaying.ratings" x="0" y="63" w="62" h="14"/>
+	
 
 
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\widgets\Data\NowPlaying\NowPlaying.maki"/>
-	<script file="@WINAMPPATH@\Plugins\classicPro\engine\widgets\Data\NowPlaying\albumart.maki"/>
+	<!--<script file="@WINAMPPATH@\Plugins\classicPro\engine\widgets\Data\NowPlaying\albumart.maki"/>-->
 </groupdef>

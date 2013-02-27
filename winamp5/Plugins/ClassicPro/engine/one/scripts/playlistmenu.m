@@ -41,6 +41,6 @@ System.onScriptLoaded(){
 }
 
 clickMe.onRightButtonUp(int x, int y){
-	popQuickPlaylist(ListLength, true);
+	popQuickPlaylist(System.getViewportHeight()/24, true); //ignoring the list length from cpro2
 }
 

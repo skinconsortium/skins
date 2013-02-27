@@ -36,6 +36,8 @@ System.onScriptLoaded() {
 	view_group.setXmlParam("x", integerToString(options_group.getLeft()+options_group.getAutoWidth()));
 	help_group.setXmlParam("x", integerToString(view_group.getLeft()+view_group.getAutoWidth()));
 	myGroup.setXmlParam("w", integerToString(help_group.getLeft()+help_group.getAutoWidth()));
+	
+	myGroup.onAction("update_menu", "", 0, 0, 0, 0, myGroup);
 }
 
 mainGroup.onResize(int x, int y, int w, int h){
@@ -46,5 +48,24 @@ mainGroup.onResize(int x, int y, int w, int h){
 	
 	if(titleOn){
 		bg_title.setXmlParam("x", integerToString(143+(w-317)/2-45));
+	}
+}
+
+myGroup.onAction(String action, String param, Int x, int y, int p1, int p2, GuiObject source){
+	if(action=="update_menu"){
+		if(getPublicInt("cPro.menubar", 1)){
+			file_group.show();
+			play_group.show();
+			options_group.show();
+			view_group.show();
+			help_group.show();
+		}
+		else{
+			file_group.hide();
+			play_group.hide();
+			options_group.hide();
+			view_group.hide();
+			help_group.hide();
+		}
 	}
 }

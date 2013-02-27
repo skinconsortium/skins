@@ -5,6 +5,7 @@ Function refreshPos();
 Global Group XUIGroup, myGrid;
 Global Layer grid_L, grid_M, grid_R;
 Global Slider fakeSlider;
+Global int i_left, i_right;
 
 System.onScriptLoaded(){
 	XUIGroup = getScriptGroup();
@@ -14,17 +15,29 @@ System.onScriptLoaded(){
 	grid_R = XUIGroup.findObject("sc.pg.right");
 	fakeSlider = XUIGroup.findObject("sc.seeker");
 	refreshPos();
+	i_left = 10;
+	i_right = 10;
 }
 
 System.onSetXuiParam(String param, String value) {
 	if(strlower(param) == "left"){
 		grid_L.setXmlParam("image", value);
+		Map m = new Map;
+		m.loadMap(value);
+		i_left = m.getWidth();
+		delete m;
+		grid_M.setXmlParam("x", integerToString(i_left));
 	}
 	else if(strlower(param) == "middle"){
 		grid_M.setXmlParam("image", value);
 	}
 	else if(strlower(param) == "right"){
 		grid_R.setXmlParam("image", value);
+		Map m = new Map;
+		m.loadMap(value);
+		i_right = m.getWidth();
+		delete m;
+		grid_R.setXmlParam("x", integerToString(-i_right));
 	}
 }
 
@@ -67,12 +80,12 @@ refreshPos(){
 	
 	if(proW>w) proW=w;
 	
-	if(proW<20){
-		grid_M.setXmlParam("w", "-10");
+	if(proW<i_left+i_right){
+		grid_M.setXmlParam("w", integerToString(-i_left));
 		grid_R.hide();
 	}
 	else{
-		grid_M.setXmlParam("w", "-20");
+		grid_M.setXmlParam("w", integerToString(-i_left-i_right));
 		grid_R.show();
 	}
 	myGrid.setXmlParam("w", integerToString(proW));

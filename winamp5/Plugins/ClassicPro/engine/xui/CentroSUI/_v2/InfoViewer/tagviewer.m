@@ -192,6 +192,8 @@ optionsButton.onLeftClick ()
 	*/
 
 	widthMenu = new PopupMenu;
+	widthMenu.addCommand("Use smallest size", 199, getPublicInt("cpro2.tags.smallest", 1), 0);
+	widthMenu.addSeparator();
 	widthMenu.addCommand("Very Small", 200, 0, 0);
 	widthMenu.addCommand("Small", 300, 0, 0);
 	widthMenu.addCommand("Medium", 400, 0, 0);
@@ -202,21 +204,22 @@ optionsButton.onLeftClick ()
 	tagMenu = new PopupMenu;
 	tagMenu.addCommand("Hide text when empty", 50, getPublicInt("cpro2.tags.50", 1), 0);
 	tagMenu.addSeparator();
-	tagMenu.addCommand("Artist", 100, getPublicInt("cpro2.tags.100", 1), 0);
-	tagMenu.addCommand("Title", 101, getPublicInt("cpro2.tags.101", 1), 0);
-	tagMenu.addCommand("Composer", 102, getPublicInt("cpro2.tags.102", 1), 0);
-	tagMenu.addCommand("Album", 103, getPublicInt("cpro2.tags.103", 1), 0);
-	tagMenu.addCommand("Album Artist", 104, getPublicInt("cpro2.tags.104", 1), 0);
 	tagMenu.addCommand("Track", 105, getPublicInt("cpro2.tags.105", 1), 0);
 	tagMenu.addCommand("Disk", 106, getPublicInt("cpro2.tags.106", 1), 0);
-	tagMenu.addCommand("Genre", 107, getPublicInt("cpro2.tags.107", 1), 0);
+	tagMenu.addCommand("Title", 101, getPublicInt("cpro2.tags.101", 1), 0);
+	tagMenu.addCommand("Artist", 100, getPublicInt("cpro2.tags.100", 1), 0);
+	tagMenu.addCommand("Album", 103, getPublicInt("cpro2.tags.103", 1), 0);
 	tagMenu.addCommand("Year", 108, getPublicInt("cpro2.tags.108", 1), 0);
+	tagMenu.addCommand("Genre", 107, getPublicInt("cpro2.tags.107", 1), 0);
+	tagMenu.addCommand("Comment", 115, getPublicInt("cpro2.tags.115", 1), 0);
+	tagMenu.addCommand("Album Artist", 104, getPublicInt("cpro2.tags.104", 1), 0);
+	tagMenu.addCommand("Composer", 102, getPublicInt("cpro2.tags.102", 1), 0);
 	tagMenu.addCommand("Publisher", 109, getPublicInt("cpro2.tags.109", 1), 0);
+	tagMenu.addSeparator();
 	tagMenu.addCommand("Decoder", 110, getPublicInt("cpro2.tags.110", 1), 0);
 	tagMenu.addCommand("Filesize", 111, getPublicInt("cpro2.tags.111", 1), 0);
 	tagMenu.addCommand("Filename", 112, getPublicInt("cpro2.tags.112", 1), 0);
 	tagMenu.addCommand("Format", 113, getPublicInt("cpro2.tags.113", 1), 0);
-	tagMenu.addCommand("Comment", 115, getPublicInt("cpro2.tags.115", 1), 0);
 	tagMenu.addSeparator();
 	tagMenu.addCommand("Album Art", 51, getPublicInt("cpro2.tags.51", 1), 0);
 	tagMenu.addCommand("Rating", 114, getPublicInt("cpro2.tags.114", 1), 0);
@@ -243,6 +246,10 @@ optionsButton.onLeftClick ()
 	else if(a>=100 && a<=120){
 		setPublicInt("cpro2.tags."+integerToString(a), !getPublicInt("cpro2.tags."+integerToString(a), 1));
 		updateView();
+	}
+	else if(a==199){
+		setPublicInt("cpro2.tags.smallest", !getPublicInt("cpro2.tags.smallest", 1));
+		tagViewer.sendAction("resize_width", "", 0, 0, 0, 0);
 	}
 	else if(a>=200 && a<=600){
 		setPublicInt("cpro2.tags.width", a);

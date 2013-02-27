@@ -106,7 +106,7 @@
 	<!--<group id="widgets.manager.content.new" fitparent="1" visible="0"/>-->
 
 	<rect x="0" y="0" h="57" w="0" relatw="1" filled="1" color="255,255,255" />
-	<layer x="0" y="0" h="57" w="150" image="widgets.manager.header" />
+	<layer x="0" y="0" image="widgets.manager.header" />
 
 	<rect x="0" y="57" h="1" w="0" relatw="1" filled="1" color="0,0,0" alpha="56"/>
 	<rect x="0" y="58" h="1" w="0" relatw="1" filled="1" color="255,255,255" alpha="56"/>

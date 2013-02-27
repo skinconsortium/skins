@@ -8,9 +8,6 @@ Global Layout shade, normal;
 Global Group temp_g, tagViewer; //frameGroup, 
 Global XmlDoc myDoc;
 Global Text textObject;
-//1, plText2, plText3;
-//Global Text vidText1, vidText2, vidText3;
-//Global Text fileinfo1, fileinfo2;
 
 
 
@@ -21,33 +18,18 @@ System.onScriptLoaded (){
 	normal = player.getLayout("normal");
 	shade = player.getLayout("shade");
 	
-	
-
-	//delete temp_g;
-	
-
-	//Custom Vis code
 	myDoc = new XmlDoc;
 	String fullpath = getParam()+"ClassicPro.xml";
 	myDoc.load (fullpath);
 	
 	// If we include more stuff in the classicpro.xml at a later stage the parser must set a boolean = true to know that the xml was for this
 	if(myDoc.exists()){
-		//debug("werk!");
 		myDoc.parser_addCallback("ClassicPro/TextSettings*");
 		myDoc.parser_start();
 		myDoc.parser_destroy();
 	}
 	delete myDoc;
 
-	//remove all objects after load
-	/*delete frameGroup;
-	delete plText1;
-	delete plText2;
-	delete plText3;
-	delete vidText1;
-	delete vidText2;
-	delete vidText3;*/
 
 }
 
@@ -79,15 +61,6 @@ myDoc.parser_onCallback (String xmlpath, String xmltag, list paramname, list par
 				textObject = temp_g.getObject("centro.video.buttons").findObject("centro2.group.video.buttons.text");
 				textObject.setXmlParam(paramname.enumItem(i),paramvalue.enumItem(i));
 
-				/*temp_g = normal.findObject("centro.playlist.directory.vid");
-				textObject = temp_g.getObject("centro2.group.video.buttons").findObject("centro2.group.video.buttons.text");
-				textObject.setXmlParam(paramname.enumItem(i),paramvalue.enumItem(i));
-
-				temp_g = normal.findObject("drawer.video");
-				textObject = temp_g.getObject("centro2.group.video.buttons").findObject("centro2.group.video.buttons.text");
-				textObject.setXmlParam(paramname.enumItem(i),paramvalue.enumItem(i));*/
-
-
 				//File info status text
 				temp_g = normal.findObject("centro.playlist.directory.tag");
 				textObject = temp_g.findObject("tagviewer.status.box.text");
@@ -102,17 +75,6 @@ myDoc.parser_onCallback (String xmlpath, String xmltag, list paramname, list par
 				textObject.setXmlParam(paramname.enumItem(i),paramvalue.enumItem(i));
 
 				temp_g = NULL;
-
-
-
-
-				//plText2.setXmlParam(paramname.enumItem(i),paramvalue.enumItem(i));
-				//plText3.setXmlParam(paramname.enumItem(i),paramvalue.enumItem(i));
-				//vidText1.setXmlParam(paramname.enumItem(i),paramvalue.enumItem(i));
-				//vidText2.setXmlParam(paramname.enumItem(i),paramvalue.enumItem(i));
-				//vidText3.setXmlParam(paramname.enumItem(i),paramvalue.enumItem(i));
-				//fileinfo1.setXmlParam(paramname.enumItem(i),paramvalue.enumItem(i));
-				//fileinfo2.setXmlParam(paramname.enumItem(i),paramvalue.enumItem(i));
 			}
 			else if(busyWith=="normal.fileinfo.label.text"){
 				tagViewer = normal.findObject("centro.multidrawer").findObject("info.component.infodisplay");
@@ -176,11 +138,13 @@ myDoc.parser_onCallback (String xmlpath, String xmltag, list paramname, list par
 				textObject = shade.findObject("shade.text.time.totaltime");
 				textObject.setXmlParam(paramname.enumItem(i),paramvalue.enumItem(i));
 			}
+
+
 		}
 		
 		if(busyWith=="normal.tab.text"){
 			setPrivateString(getSkinName(), "tabtext", tabsettings);
-			tabsettings=NULL;
+			tabsettings="";
 		}
 	}
 }

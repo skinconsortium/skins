@@ -127,7 +127,7 @@
 	<NStatesButton id="repeat" x="-74" y="-44" relatx="1" relaty="1" image="rep.1." hoverimage="rep.2." downimage="rep.3." rectrgn="1" nstates="3" tooltip="Toggle Playlist/Song Repeating" cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Repeat" cfgvals="0;1;-1"/>
 	<group id="modsic.suiarea" x="6" y="100" w="-12" h="-168" relatw="1" relath="1"/>
 
-	<group id="player.mainmenu" x="106" y="1" w="300" h="20"/>
+	<group id="player.mainmenu" x="106" y="1" w="300" h="20" move="1"/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\one\scripts\mainmenu.maki"/>
 
 

@@ -1,44 +1,7 @@
 -------------------------------------------------------------------------
-Internal Gammagroups in ClassicPro (last updated for cPro v1.04)
+Internal Gammagroups in ClassicPro
 -------------------------------------------------------------------------
 
 
-::Normal Mode::
-
-n.Background.Alt
-n.Background.Bottom
-n.Background.Overlay
-n.Beatvis
-n.Button
-n.Button.Top
-n.Color.ListBg
-n.Notifier.Bg
-n.Promo
-n.Scrollbars.Gfx
-n.Seeker.BG
-n.Seeker.Thumb
-n.SuiFrame
-n.Text.SongInfo
-n.Text.SongInfo
-n.Text.SongTime
-n.TooltipCombobox
-n.Vis
-n.Volume.BG
-n.Volume.Thumb
-
-
-:::::::::::::::::::::::::
-
-
-
-
-
-::Shade Mode::
-
-s.Background.Bottom
-s.Background.Overlay
-s.Vis
-s.Seeker.BG
-s.Seeker.Thumb
-s.Volume.BG
-s.Volume.Thumb
+For ClassicPro One skins please see cPro__Bento
+For ClassicPro Two skins please see cPro2__Aluminum

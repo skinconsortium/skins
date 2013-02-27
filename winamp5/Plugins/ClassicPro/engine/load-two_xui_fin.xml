@@ -1,4 +1,4 @@
-<include file="xml\widgets-manager.xml"/>
+<include file="xml\widgets-manager-cpro2.xml"/>
 
 <!--
 Central place to read all the ClassicPro.xml text settings.

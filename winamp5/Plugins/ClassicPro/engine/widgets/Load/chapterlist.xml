@@ -11,18 +11,18 @@
 
 <groupdef id="centro.widgets.chapterlist.dummy.drawer" name="Chapterlist" userdata="centro.widgets.chapterlist;0" windowtype="centro.widgets.drawer">
 	<guiobject id="@author"			userdata="pjn123"/>
-	<guiobject id="@version"		userdata="0.6"/>
+	<guiobject id="@version"		userdata="0.71"/>
 	<guiobject id="@uninstaller"	userdata="Uninstall (Chapterlist).exe"/>
 	<guiobject id="@support"		userdata="http://forums.skinconsortium.com/index.php?page=Thread&amp;threadID=1236"/>
 	<guiobject id="@databaseid"		userdata="128"/>
 </groupdef>
 
 <groupdef id="centro.widgets.chapterlist.bottombuttons">
-	<button id="chapterlist.add" x="0" y="0" image="component.pl.add.1" hoverImage="component.pl.add.2" downImage="component.pl.add.3" tooltip="Add New Chapter"/>
-	<button id="chapterlist.rem" x="32" y="0" image="component.pl.rem.1" hoverImage="component.pl.rem.2" downImage="component.pl.rem.3" tooltip="Remove Selected Chapter"/>
+	<button id="chapterlist.add" x="0" y="0" image="component.pl.add.1" hoverImage="component.pl.add.2" downImage="component.pl.add.3" tooltip="Add New Chapter" rectrgn="1"/>
+	<button id="chapterlist.rem" x="32" y="0" image="component.pl.rem.1" hoverImage="component.pl.rem.2" downImage="component.pl.rem.3" tooltip="Remove Selected Chapter" rectrgn="1"/>
 
-	<button	id="chapterlist.prev" x="63" y="0" image="component.avs.prev.1" hoverImage="component.avs.prev.2" downImage="component.avs.prev.3" tooltip="Previous Chapter"/>
-	<button	id="chapterlist.next" x="94" y="0" image="component.avs.next.1" hoverImage="component.avs.next.2" downImage="component.avs.next.3"	tooltip="Next Chapter"/>
+	<button	id="chapterlist.prev" x="63" y="0" image="component.avs.prev.1" hoverImage="component.avs.prev.2" downImage="component.avs.prev.3" tooltip="Previous Chapter" rectrgn="1"/>
+	<button	id="chapterlist.next" x="94" y="0" image="component.avs.next.1" hoverImage="component.avs.next.2" downImage="component.avs.next.3"	tooltip="Next Chapter" rectrgn="1"/>
 
 	<edit id="chaperlist.editbox" x="126" y="1" w="-160" h="15" relatw="1"/>
 </groupdef>
