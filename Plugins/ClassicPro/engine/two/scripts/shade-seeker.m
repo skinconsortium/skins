@@ -79,7 +79,7 @@ s_seeker1.onRightButtonUp(int x, int y){
 		complete;
 	}
 	else{
-		popQuickPlaylist(40, false);
+		popQuickPlaylist(System.getViewportHeight()/24, false);
 		complete;
 	}
 }

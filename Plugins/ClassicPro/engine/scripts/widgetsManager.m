@@ -20,7 +20,7 @@ Global int done, widgetType; //0=main, 1=drawer, 2=side
 
 Global GroupList grplst;//,  grplstN;
 Global Slider vscroll;//, vscrollN;
-Global String widgetPath;
+Global String widgetPath, engine;
 
 Global Group grpAll;//, grpNew;
 //Global Button newW, allW, dld1, dld2;
@@ -42,7 +42,9 @@ System.onScriptLoaded ()
 	//vscrollN = grpNew.findObject("vscroll");
 	//newW = manager_normal.findObject("newW");
 	//allW = manager_normal.findObject("allW");
-	widgetPath = getParam();
+	widgetPath = getToken(getParam(), ";", 0);
+	engine = getToken(getParam(), ";", 1);
+	if(engine=="") engine="cpro";
 	widgetPlaces = new List;
 	widgetList = new List;
 	done = 0;
@@ -152,9 +154,11 @@ main_normal.onAction (String action, String param, int x, int y, int p1, int p2,
 		if (data != null)
 			version = data.getXmlParam("userdata");
 
-		if (getPrivateString("cpro.widget-manager.check", integerToString(x)+param, "") != version)
+		//if (getPrivateString(engine+".widget-manager.check", integerToString(x)+param, "") != version)
+		if (getPublicString(engine+".widget-manager.check;"+integerToString(x)+param,"") != version)
 		{
-			setPrivateString("cpro.widget-manager.check", integerToString(x)+param, version);
+			setPublicString(engine+".widget-manager.check;"+integerToString(x)+param, version);
+			//setPrivateString(engine+".widget-manager.check", integerToString(x)+param, version);
 			/*if (!newWidgetInstalled)
 			{
 				grplstN.removeAll();

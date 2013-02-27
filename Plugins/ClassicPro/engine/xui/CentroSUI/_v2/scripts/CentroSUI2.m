@@ -69,7 +69,7 @@ Global Layer gadgrid1, gadgrid1a, gadgrid1a_overlay, gadgrid2;
 // Gui Extras
 Global Text plText1, plText2;
 Global GuiObject gridPL;
-Global Button plHideSearch;
+Global Button plHideSearch, plHideSearchIcon;
 
 // Drawer stuff
 Global boolean open_drawer, busyWithDrawer, cuseqbg;
@@ -151,6 +151,7 @@ System.onScriptLoaded(){
 	plText1 = area_right_pl.getObject("centro2.group.pl.buttons").findObject("centro.playlist.pltext1");
 	gridPL = area_right_pl.getObject("centro2.group.pl.buttons").findObject("centro.playlist.textgrid");
 	plHideSearch = area_right_pl.getObject("centro2.group.pl.buttons").findObject("pl.search.toggle");
+	plHideSearchIcon = area_right_pl.getObject("centro2.group.pl.buttons").findObject("pl.search.toggle.overlay");
 	plText2 = xuiGroup.findObject("centro.playlist.pltext2");
 	tabbut_vid = xuiGroup.findObject("centro.video.buttons");
 	tabbut_avs = xuiGroup.findObject("centro.visualization.buttons");
@@ -1050,16 +1051,19 @@ area_right.onResize(int x, int y, int w, int h){
 			plText1.hide();
 			gridPL.hide();
 			plHideSearch.hide();
+			plHideSearchIcon.hide();
 		}
 		else if(w<208){
 			plText1.hide();
 			gridPL.hide();
 			plHideSearch.show();
+			plHideSearchIcon.show();
 		}
 		else{
 			plText1.show();
 			gridPL.show();
 			plHideSearch.show();
+			plHideSearchIcon.show();
 		}
 		
 		if(w<141 && mainFrame.getPosition()!=0){

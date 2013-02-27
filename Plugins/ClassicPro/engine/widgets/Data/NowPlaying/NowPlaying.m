@@ -10,20 +10,26 @@ this is a wip, please do not rip it without giving proper credit
 
 #include <lib/std.mi>
 #include <lib/colormgr.mi>
+#include "../../../lib/ClassicProFile.mi"
 
+Function refreshView();
 Function setAllTags();
 Function resizeToThis(int x, int y, int w, int h);
 Function FadeGroup(Group FadeGrp, Int AlphaValue);
+Function refreshCover();
+Function String getMyFile();
 
 Global Group XUIGroup, cdbox, cdboxref, cdboxHolder, ratings, cdbox_2;
 Global GuiObject line1, line2, line3, BGCol, CDBoxFade;
 Global Timer delayMyResize;
 Global int xs, ys, ws, hs;
 Global int xc, yc, wc, hc;
-Global layer lyrFx, lyrFxFG; //, CDBoxFade2;
+Global layer lyrFx, lyrFxFG, mousetrap_bottom, cdbox1, cdbox2, cdbox3; //, CDBoxFade2;
 global double dblSmidge;
 Global int reflectionheight;
-Global AlbumArtLayer AlbumArt2;
+Global AlbumArtLayer albumart, AlbumArt2;
+Global PopUpMenu popMenu;
+Global Timer lookagain;
 
 System.onScriptLoaded(){
 	XUIGroup = getScriptGroup();
@@ -31,6 +37,7 @@ System.onScriptLoaded(){
 	
 	cdbox = XUIGroup.findObject("sc.nowplaying.cdbox.holder.top");
 	cdbox_2 = XUIGroup.findObject("sc.nowplaying.cdbox.holder.bottom");
+	albumart = XUIGroup.findObject("main.albumart");
 	AlbumArt2 = XUIGroup.findObject("main.albumart.reflection");
 	
 	cdboxref = XUIGroup.findObject("sc.nowplaying.cdbox.reflection"); 
@@ -41,6 +48,15 @@ System.onScriptLoaded(){
 	line1 = XUIGroup.findObject("sc.nowplaying.line1");
 	line2 = XUIGroup.findObject("sc.nowplaying.line2");
 	line3 = XUIGroup.findObject("sc.nowplaying.line3");
+	
+	mousetrap_bottom = XUIGroup.findObject("sc.nowplaying.mousetrap.bottom");
+	cdbox1 = XUIGroup.findObject("sc.cdbox.1");
+	cdbox2 = XUIGroup.findObject("sc.cdbox.2");
+	cdbox3 = XUIGroup.findObject("sc.cdbox.3");
+	 
+
+	lookagain = new Timer;
+	lookagain.setDelay(1000);
 	
 	//BGCol = XUIGroup.findObject("sc.nowplaying.bg");
 	CDBoxFade = XUIGroup.findObject("cdbox.fg.fademask");
@@ -126,6 +142,7 @@ system.onScriptUnloading()
 {
 	XUIGroup = NULL;
 	delete delayMyResize;
+	delete lookagain;
 }
 
 System.onSetXuiParam(String param, String value)
@@ -197,6 +214,7 @@ XUIGroup.onSetVisible(boolean onOff)
 		
 		setAllTags();
 		delayMyResize.start();
+		refreshView();
 	}
 	else{
 		lyrFx.fx_setEnabled(0);
@@ -325,4 +343,172 @@ setAllTags(){
 	//FadeGroup(cdboxHolder, 255);
 	
 	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+mousetrap_bottom.onRightButtonUp(int x, int y){
+	popMenu = new PopUpMenu;
+
+	if(System.getBuildNumber()<3235) popMenu.addCommand("Get Album Art", 1, 0, 0);
+	popMenu.addCommand("Refresh Album Art", 2, 0, 0);
+	popMenu.addCommand("Open Folder", 3, 0, 0);
+	popMenu.addSeparator();
+	popMenu.addCommand("Show Artist and Title", 4, getPublicInt("cpro2.np.show_artist_title", false), 0);
+	popMenu.addCommand("Show Album Name and Year", 5, getPublicInt("cpro2.np.show_album_year", true), 0);
+	popMenu.addCommand("Show Song Rating", 6, getPublicInt("cpro2.np.show_ratings", true), 0);
+	popMenu.addSeparator();
+	popMenu.addCommand("Show Cover Box", 8, getPublicInt("cpro2.np.show_cdbox", true), 0);
+	popMenu.addCommand("Show Cover Box Reflection", 7, getPublicInt("cpro2.np.show_reflec", true), !getPublicInt("cpro2.np.show_cdbox", true));
+
+	int result = popMenu.popAtMouse();
+
+	if (result==1){
+		if (system.getAlbumArt(system.getPlayItemString()) > 0)	{
+			refreshCover();
+		}
+	}
+	else if(result == 2){
+		refreshCover();
+	}
+	else if (result == 3){
+		ClassicProFile.exploreFile(getMyFile());
+	}
+	else if (result == 4){
+		setPublicInt("cpro2.np.show_artist_title", !getPublicInt("cpro2.np.show_artist_title", false));
+	}
+	else if (result == 5){
+		setPublicInt("cpro2.np.show_album_year", !getPublicInt("cpro2.np.show_album_year", true));
+	}
+	else if (result == 6){
+		setPublicInt("cpro2.np.show_ratings", !getPublicInt("cpro2.np.show_ratings", true));
+	}
+	else if (result == 7){
+		setPublicInt("cpro2.np.show_reflec", !getPublicInt("cpro2.np.show_reflec", true));
+	}
+	else if (result == 8){
+		setPublicInt("cpro2.np.show_cdbox", !getPublicInt("cpro2.np.show_cdbox", true));
+	}
+	
+	refreshView();
+	Complete;
+
+	delete popMenu;
+	
+}
+
+mousetrap_bottom.onLeftButtonDblClk (int x, int y){
+	albumart.setTargetA(150);
+	albumart.setTargetSpeed(0.2);
+	albumart.gotoTarget();
+	ClassicProFile.exploreFile(getMyFile());
+}
+
+albumart.onTargetReached(){
+	if(albumart.getAlpha()!=253){
+		albumart.setTargetA(253);
+		albumart.setTargetSpeed(0.6);
+		albumart.gotoTarget();
+	}
+}
+
+System.onTitleChange (String newtitle){
+	refreshCover();
+}
+
+refreshCover(){
+	// ---------- Stream info ----------
+	String stype = getPlayItemMetaDataString("streamtype"); //"streamtype" will return "2" for SHOUTcast and "3" for AOL Radio
+	
+	if(strlower(getExtension(getPlayItemString()))=="nsv" && strleft(getPlayItemString(), 7) == "http://" && stype =="") stype = "sc_tv";
+
+	if (stype == "2" || stype == "5"){
+		albumart.setXmlParam("notfoundimage","cover.sc");
+	}
+	else if (stype == "3"){
+		albumart.setXmlParam("notfoundimage", "cover.aolr");
+	}
+	else if (stype == "sc_tv"){
+		Map myMap = new Map;
+		myMap.loadMap("cover.sctv");
+		
+		if(myMap.getWidth()>64) albumart.setXmlParam("notfoundimage", "cover.sctv");
+		else albumart.setXmlParam("notfoundimage", "cover.notfound");
+		
+		delete myMap;
+	}
+	else{
+		albumart.setXmlParam("notfoundimage","cover.notfound");
+	}
+
+	AlbumArt.refresh();
+
+	if(stype == "" && !lookagain.isRunning()) lookagain.start();
+	else if(stype != "") lookagain.stop();
+}
+
+lookagain.onTimer(){
+	refreshCover();
+}
+
+String getMyFile() {
+	String bs = strleft("\ ",1);
+	String output = "";
+
+	if(System.strleft(System.getPlayItemString(),6) == "cda://") output = System.strmid(System.getPlayItemString(), 6, 1)+":"+bs;
+	else output= getPlayItemMetaDataString("filename");
+
+	return output;
+}
+
+refreshView(){
+	if(getPublicInt("cpro2.np.show_artist_title", false)){
+		line3.show();
+		line2.show();
+	}
+	else{
+		line3.hide();
+		line2.hide();
+	}
+	
+	if(getPublicInt("cpro2.np.show_album_year", true)) line1.show();
+	else line1.hide();
+	
+	if(getPublicInt("cpro2.np.show_ratings", true)) ratings.show();
+	else ratings.hide();
+	
+	if(getPublicInt("cpro2.np.show_reflec", true) && getPublicInt("cpro2.np.show_cdbox", true)) cdbox1.show();
+	else cdbox1.hide();
+
+	if(getPublicInt("cpro2.np.show_cdbox", true)){
+		cdbox2.show();
+		cdbox3.show();
+	}
+	else{
+		cdbox2.hide();
+		cdbox3.hide();
+	}
+
+	line1.setXmlParam("y", integerToString(5 + getPublicInt("cpro2.np.show_artist_title", false)*(17+20)));
+	ratings.setXmlParam("y", integerToString(5 + getPublicInt("cpro2.np.show_artist_title", false)*(17+20) + getPublicInt("cpro2.np.show_album_year", true)*25));
+	cdboxHolder.setXmlParam("y", integerToString(5 + getPublicInt("cpro2.np.show_artist_title", false)*(17+20) + getPublicInt("cpro2.np.show_album_year", true)*25 + getPublicInt("cpro2.np.show_ratings", true)*15 - 5));
+	cdboxHolder.setXmlParam("h", "-" + cdboxHolder.getXmlParam("y"));
+	mousetrap_bottom.setXmlParam("y", cdboxHolder.getXmlParam("y"));
+	mousetrap_bottom.setXmlParam("h", cdboxHolder.getXmlParam("h"));
+/*
+	line3	// 17
+	line2	// 16
+	line1	// 25
+	ratings	//15
+*/
 }

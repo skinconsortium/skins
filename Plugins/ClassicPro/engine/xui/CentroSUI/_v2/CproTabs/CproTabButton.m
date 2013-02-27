@@ -22,6 +22,7 @@ Global boolean wasActive, movingTab, mouseDown, moved, dblClick;
 Global int dx;
 Global int yx = 0;
 Global Layer icon;
+Global boolean moreIcons;
 
 // HACK (mpdeimos) this timer is a big HACK! Remove it if possible
 // needed to recieve button deactivated msgs (mainly to send the action)
@@ -40,6 +41,19 @@ System.onScriptLoaded ()
 	
 	tmr = new Timer;
 	tmr.setDelay(10);
+	
+	//debugint(icon.getLength());
+	Map m = new Map;
+	m.loadMap("cpro.tab.icon.ple.3");
+	if(m.getHeight()==25) moreIcons = true;
+	/*else{
+		String temp = icon.getXmlParam("tooltip");
+		debug(strleft(temp,strlen(temp)-1));
+		//icon.setXmlParam("image", strleft(temp,strlen(temp)-1));
+	}*/
+	delete m;
+
+	//moreIcons = true;
 }
 
 System.onScriptUnloading ()
@@ -159,18 +173,22 @@ setButtonState (int mode)
 	if (mode == 1)
 	{
 		icon.setXmlParam("y", integerToString(-1+yx));
+		if(moreIcons) icon.setXmlParam("image", icon.getXmlParam("tooltip")+".3");
+		//debug(icon.getXmlParam("tooltip"));
 		label.setXmlParam("y", integerToString(-1+yx));
 		label.setXmlParam("color", "cpro2.color.tab.on");
 	}
 	else if (mode == 2)
 	{
 		icon.setXmlParam("y", integerToString(0+yx));
+		if(moreIcons) icon.setXmlParam("image", icon.getXmlParam("tooltip")+".1");
 		label.setXmlParam("y", integerToString(0+yx));
 		label.setXmlParam("color", "cpro2.color.tab.off");
 	}
 	else
 	{
 		icon.setXmlParam("y", integerToString(0+yx));
+		if(moreIcons) icon.setXmlParam("image", icon.getXmlParam("tooltip")+".2");
 		label.setXmlParam("y", integerToString(0+yx));
 		label.setXmlParam("color", "cpro2.color.tab.hover");
 	}

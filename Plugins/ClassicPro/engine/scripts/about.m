@@ -60,7 +60,8 @@ System.onScriptLoaded() {
 			myDoc.parser_start();
 			myDoc.parser_destroy();
 		}
-		delete myDoc;
+		//delete myDoc;
+		//myDoc = null;
 	}
 
 }
@@ -68,11 +69,13 @@ System.onScriptUnloading() {
 	delete animationToggle;
 	delete animationToggleFade;
 	delete creditRoll;
+	delete waitForStart;
+	//delete myDoc;
 }
  
 waitForStart.onTimer(){
 	waitForStart.stop();
-	delete waitForStart;
+	//delete waitForStart;
 	
 	bganim.show();
 	bganim.fx_setBgFx(1);
@@ -227,7 +230,7 @@ showAbout(int no){
 }
 
 mainGroup.onMouseWheelUp(int clicked , int lines){
-	if(waitForStart!=NULL) return 1; //wait until the intro is finished
+	if(waitForStart.isRunning()) return 1; //wait until the intro is finished
 	
 	if(!creditsON){
 		creditsON=true;
@@ -241,7 +244,7 @@ mainGroup.onMouseWheelUp(int clicked , int lines){
 	return 1;
 }
 mainGroup.onMouseWheelDown(int clicked , int lines){
-	if(waitForStart!=NULL) return 1; //wait until the intro is finished
+	if(waitForStart.isRunning()) return 1; //wait until the intro is finished
 
 	if(!creditsON){
 		creditsON=true;
@@ -256,7 +259,7 @@ mainGroup.onMouseWheelDown(int clicked , int lines){
 }
 
 toggleCredits(){
-	if(waitForStart!=NULL) return; //wait until the intro is finished
+	if(waitForStart.isRunning()) return; //wait until the intro is finished
 
 	if(creditsON){
 		if(haveSkinner) creditPage=0;

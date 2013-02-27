@@ -19,13 +19,14 @@ Function doResizeNow();
 Function int getNumOfRows();
 
 Global Group g;
-Global int num_objects, num_of_rows, obj_width, current_row, x_pos, next_y, last_refresh_rows, skip, new_w;
+Global int num_objects, num_of_rows, obj_width, current_row, x_pos, next_y, next_x, calc_w, calc2_w, next_w,last_refresh_rows, skip, new_w;
 Global boolean busy;
 Global GuiObject tagHandle;
 Global Text tagHandleText;
 Global String s1, s2;
 
 Global GuiObject obj1, obj2, custom;
+Global Text text1;
 
 System.onScriptLoaded(){
 
@@ -47,11 +48,17 @@ g.onSetVisible(boolean onOff){
 }
 
 g.onresize(int x, int y, int w, int h){
-	if(!busy && last_refresh_rows != -100 && g.isVisible() && last_refresh_rows != getNumOfRows()) doArangeNow(); //Limit the refreshes!
+	if(!busy && last_refresh_rows != -100 && g.isVisible() && last_refresh_rows != getNumOfRows() && g.isVisible()) doArangeNow(); //Limit the refreshes!
 }
 
 int getNumOfRows(){
 	custom = g.enumObject(0);
+	
+	for(int a = 0; a<num_objects; a++){
+		custom = g.enumObject(a);
+		if(custom.isVisible()) break;
+	}
+	
 	num_of_rows = (g.getHeight()-3)/custom.getHeight();
 	return num_of_rows;
 }
@@ -91,10 +98,10 @@ doArangeNow(){
 	}
 
 
-
 	obj1 = g.enumObject(0);
 	//num_of_rows = g.getHeight()/obj1.getHeight();
 	num_of_rows = getNumOfRows();
+	//debugString(integerToString(num_of_rows),9);
 
 	//debug("num_objects=" + integerToString(num_objects) + "  g.height=" + integerToString(g.getHeight()) + "  obj.height=" + integerToString(obj1.getHeight()));
 
@@ -104,12 +111,19 @@ doArangeNow(){
 
 	current_row = 0;
 	next_y = 2;
+	
+	next_x = 0;
+	next_w = 0;
+	calc2_w = 0;
+	calc_w = 0;
+	
 	skip = 0;
 	
 	if(obj1.getHeight() * num_of_rows > g.getHeight()) num_of_rows--; //There's no round down function in maki :(
 	
 	//arange first object
 	obj1 = g.enumObject(0);
+	
 	if(!obj1.isVisible()) skip--;
 	
 	for(int a = 0; a<num_objects-1; a++){
@@ -119,25 +133,33 @@ doArangeNow(){
 			debug("ERROR!!!");
 		}
 		
-		//debug("if (a+1=" + integerToString(a+1)+" > rows = "+ integerToString(num_of_rows) + "* current_row" +integerToString(current_row));
-	//debug("a=" + integerToString(a) + "  #rows=" + integerToString(num_of_rows) + "  crows=" + integerToString(current_row));
 		if(!obj2.isVisible()) skip--;
-
-		if(a+2+skip > num_of_rows*(current_row+1)){
+		else if(getPublicInt("cpro2.tags.smallest", 1)){
+			text1 = obj2.findObject("text");
+			calc_w = text1.getGuiX()+text1.getTextWidth()+space;
+			if(next_w < calc_w) calc2_w = calc_w;
+			if(calc2_w > obj_width) calc2_w = obj_width; //limit line to maximum value
+		}
+		
+		
+		if(a+2+skip > num_of_rows*(current_row+1)){ //next row
 			current_row++;
 			next_y = 2;
+
+			next_x += next_w;
+			next_w=calc_w;
+		}
+		else{ //next line
 			
-		}
-		else{
 			next_y = next_y+obj1.getHeight()*obj1.isVisible();
+			next_w=calc2_w;
+
 		}
 		
-		//debugint(current_row);
-		x_pos = current_row*obj_width;
-		
-		//obj2.setXMLParam("y", integerToString(obj1.getTop()+obj1.getHeight()+2)); //maybe improve here
+		if(!getPublicInt("cpro2.tags.smallest", 1)) next_x = current_row*obj_width;
+
 		obj2.setXMLParam("y", integerToString(next_y)); //maybe improve here
-		obj2.setXMLParam("x", integerToString(x_pos));
+		obj2.setXMLParam("x", integerToString(next_x));
 	}
 	last_refresh_rows = num_of_rows;
 
@@ -170,7 +192,8 @@ g.onAction(String action, String param, Int x, int y, int p1, int p2, GuiObject 
 			custom2 = g.enumObject(a);
 			s2 = getToken(param, ";", 1);
 
-			if(a==num_objects-1) s1 = getToken(param, ";", 0); //Last object is rating... just a quick fix... :P
+			//if(a==num_objects-1) s1 = getToken(param, ";", 0); //Last object is rating... just a quick fix... :P
+			if(a==11) s1 = getToken(param, ";", 0); //Rating object... just a quick fix... :P
 			else s1 = "cpro2a_"+getToken(param, ";", 0);
 			
 			custom2.setXmlParam(s1, s2); //add prefix so that system params go through too!

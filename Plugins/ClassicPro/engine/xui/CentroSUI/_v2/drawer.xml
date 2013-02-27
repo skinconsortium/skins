@@ -1,7 +1,7 @@
 <include file="InfoViewer/InfoViewer.xml"/>
 
 <groupdef id="centro2.group.video.buttons">
-	<button action="VID_FS"	x="-32" y="0" relatx="1" rectrgn="1" image="cpro2.avs.fs.1" hoverImage="cpro2.avs.fs.2" downImage="cpro2.avs.fs.3" tooltip="Fullscreen"/>
+	<button action="VID_FS"	x="-33" y="0" relatx="1" rectrgn="1" image="cpro2.avs.fs.1" hoverImage="cpro2.avs.fs.2" downImage="cpro2.avs.fs.3" tooltip="Fullscreen"/>
 </groupdef>
 
 <groupdef id="centro2.group.vis.buttons">
@@ -19,7 +19,7 @@
 	<button action="PE_Misc" x="97" y="0" rectrgn="1" image="cpro2.pl.misc.1" hoverImage="cpro2.pl.misc.2" downImage="cpro2.pl.misc.3" tooltip="Misc Actions"/>
 
 	<NStatesButton id="pl.search.toggle" x="-64" y="0" relatx="1" rectrgn="1" image="cpro2.pl.search.1." hoverImage="cpro2.pl.search.2." downImage="cpro2.pl.search.3." tooltip="Toggle playlist search bar" nstates="2" cfgvals="0;1"/>
-	<NStatesButton x="-64" y="0" w="31" h="19" relatx="1" rectrgn="1" image="cpro2.pl.search.overlay." ghost="1" nstates="2" cfgvals="0;1" cfgattrib="{0167CFD9-5D35-404a-8F03-80ED5B89DEDF};Show Playlist Search"/>
+	<NStatesButton id="pl.search.toggle.overlay" x="-64" y="0" w="31" h="19" relatx="1" rectrgn="1" image="cpro2.pl.search.overlay." ghost="1" nstates="2" cfgvals="0;1" cfgattrib="{0167CFD9-5D35-404a-8F03-80ED5B89DEDF};Show Playlist Search"/>
 
 	<button action="PE_List" x="-32" y="0" relatx="1" rectrgn="1" image="cpro2.pl.man.1" hoverImage="cpro2.pl.man.2" downImage="cpro2.pl.man.3" tooltip="Manage Playlist"/>
 

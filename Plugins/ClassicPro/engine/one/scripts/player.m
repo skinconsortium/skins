@@ -24,7 +24,7 @@ Global Boolean direction;
 Global Timer myTimer;
 
 
-Global Group mainGroup;
+Global Group mainGroup, menuBar;
 Global Container main;
 Global Layout mylayout;
 Global Slider vol_slider, seek_slider;
@@ -72,6 +72,7 @@ System.onScriptLoaded() {
 	changeTheme = mainGroup.findObject("Cpro.theme.next");
 	sysMenu = mainGroup.findObject("player.sysmenu");
 	sysMenuFake = mainGroup.findObject("player.sysmenu.fake");
+	menuBar = mainGroup.findObject("player.mainmenu");
 
 	bgLeftRead = mainGroup.findObject("read.bg.left");
 	bgTopRead = mainGroup.findObject("read.bg.top");
@@ -402,6 +403,8 @@ bolt.onLeftClick(){
 	int a = getPublicInt("cPro.multibutton", 0);
 	
 	if(a==0){
+		fakeAbout.setXmlParam("action", "TOGGLE");
+		fakeAbout.setXmlParam("param", "guid:{D6201408-476A-4308-BF1B-7BACA1124B12}");
 		fakeAbout.leftClick();
 	}
 	else if(a==1){
@@ -409,10 +412,20 @@ bolt.onLeftClick(){
 		ClassicProFile.exploreFile(getMyFile());
 	}
 	else if(a==2){
-		popQuickPlaylist(40, false);
+		popQuickPlaylist(System.getViewportHeight()/24, false); //was 40
 	}
 	else if(a==3){
 		changeTheme.leftClick();
+	}
+	else if(a==4){
+		fakeAbout.setXmlParam("param", "");
+		fakeAbout.setXmlParam("action", "ML_SendTo");
+		fakeAbout.leftClick();
+	}
+	else if(a==5){
+		fakeAbout.setXmlParam("param", "");
+		fakeAbout.setXmlParam("action", "trackmenu");
+		fakeAbout.leftClick();
 	}
 	
 }
@@ -429,26 +442,45 @@ bolt.onRightButtonUp(int x, int y){
 	selMenu = new PopupMenu;
 	selMenu.addCommand("Multi-Button Action:", -1, 0, 1);
 	selMenu.addSeparator();
-	selMenu.addCommand("Open About Winamp", 0, 0, 0);
-	selMenu.addCommand("Explore Folder", 1, 0, 0);
-	selMenu.addCommand("Show Quick Playlist", 2, 0, 0);
 	selMenu.addCommand("Change Color Theme", 3, 0, 0);
+	selMenu.addCommand("Explore Folder", 1, 0, 0);
+	selMenu.addCommand("Open About Winamp", 0, 0, 0);
+	selMenu.addCommand("Show Quick Playlist", 2, 0, 0);
+	selMenu.addCommand("Show Send to Menu", 4, 0, 0);
+	selMenu.addCommand("Show Track Menu", 5, 0, 0);
 	selMenu.checkCommand(getPublicInt("cPro.multibutton", 0), 1);
 	
-	int a = selMenu.popAtMouse();
+	//int a = selMenu.popAtMouse();
+	int a = selMenu.popAtXY(clientToScreenX(bolt.getLeft())+2, clientToScreenY(bolt.getTop())+26);
+	// clientToScreenX(trigger.getLeft()), clientToScreenY(trigger.getTop()+26)
 	
 	if(a>=0){
 		setPublicInt("cPro.multibutton", a);
 	}
 	Complete;
 	delete selMenu;
-}
-sysMenu.onLeftButtonDblClk(int x, int y){
+}sysMenu.onLeftButtonDblClk(int x, int y){
 	Application.Shutdown();
 }
 sysMenu.onLeftClick(){
-	sysMenuFake.leftClick();
-	complete;
+	if(System.isKeyDown(VK_CONTROL)){
+		selMenu = new PopupMenu;
+		selMenu.addCommand("Show menu bar", 1, getPublicInt("cPro.menubar", 1), 0);
+	
+		int a = selMenu.popAtMouse();
+		
+		if(a>=0){
+			setPublicInt("cPro.menubar", !getPublicInt("cPro.menubar", 1));
+		}
+		menuBar.sendAction("update_menu", "", 0, 0, 0, 02);
+		
+		Complete;
+		delete selMenu;
+	}
+	else{
+		sysMenuFake.leftClick();
+		complete;
+	}
 }
 sysMenu.onRightButtonUp(int x, int y){
 	ClassicProFile.exploreFile(getMyFile());

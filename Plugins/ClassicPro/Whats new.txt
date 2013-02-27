@@ -1,4 +1,33 @@
 -------------------------------------------------------------
+Version 2.01 RC3 (25 February 2013)
+-------------------------------------------------------------
+[cPro 2]
+- Updated: cPro2__Aluminum v1.3
+- Fixed: If Winamp load on zero volume, volume jumps up (sc_mute)
+- Fixed: More buttons with transparent bits don't always work
+- Fixed: Classic vis doesn't always go to thin bands on small width
+- Fixed: File info viewer layout broken if you hide first tag
+- Fixed: Playlist search toggle overlay doesn't hide on small widths
+- Fixed: Alignment of status bar buttons
+- Improved: File info viewer layout order now same as Winamp
+- Improved: File info viewer added option to use smaller size
+- Improved: File info viewer resource optimization
+- Changed: Tab icons now have 3 states (see cPro2 - Aluminum)
+- Changed: Gammagroup of the Open/Close drawer buttons changed ("n.sui.buttons")
+- Changed: Widget Manager header image
+[cPro 1]
+- New: Right-click on main menu button to disable menubar (maybe more options later)
+[cPro 1&2]
+- New: Added more options to multibutton (Winamp bolt right-click)
+- Fixed: About current skin crash on newer Winamp builds
+- Fixed: Skin notifier sometimes no longer appearing
+- Improved: Quick Playlist now use screen size to calculate menu height
+- Improved: Widget Manager notifications now only once globally and not per skin
+- Improved: Now Playing widget now have right-click options menu (v1.01)
+-------------------------------------------------------------
+
+
+-------------------------------------------------------------
 Version 2.00 Beta 2 (18 December 2012)
 -------------------------------------------------------------
 [cPro 2]

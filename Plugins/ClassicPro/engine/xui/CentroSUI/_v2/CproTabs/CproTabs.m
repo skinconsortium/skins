@@ -74,6 +74,7 @@ Global boolean aligned, checkedBrowser, isFullNames; // @martin: remove this whe
 Global PopUpMenu popMenu;
 Global List hiddenTabs;
 Global Text t_temp;
+Global Boolean more_icons;
 
 Global ConfigItem custom_windows_page;
 Class ConfigAttribute CproTabAtt;
@@ -101,6 +102,12 @@ System.onScriptLoaded ()
 	setDispatcher(tabHolder);
 
 	CproSUI = getScriptGroup().getParent().getParent().getParent().getParent();
+	
+	Map m = new Map;
+	m.loadMap("cpro.tab.icon.ple.1");
+	if(m.getHeight()==25) more_icons=true;
+	delete m;
+
 	/*player = getContainer("main");
 	normal = player.getLayout("normal");*/
 
@@ -173,6 +180,9 @@ sg.onSetVisible(boolean onOff){
 	if(onOff && !loaded){
 	loaded=true;
 
+
+
+
 	//TODO> use stringtables
 	List internalNames = new List;
 	internalNames.addItem("Media Library");		//0
@@ -184,13 +194,24 @@ sg.onSetVisible(boolean onOff){
 	internalNames.addItem("Plugin");			//5
 
 	List internalTabIcons = new List;
+	
+	/*String icon_suffix;
+	if(more_icons) icon_suffix = ".";
+	else icon_suffix ="";*/
+	
+	
 	internalTabIcons.addItem("cpro.tab.icon.lib");		//0
 	internalTabIcons.addItem("cpro.tab.icon.ple");		//1
 	internalTabIcons.addItem("cpro.tab.icon.vid");		//2
 	internalTabIcons.addItem("cpro.tab.icon.vis");		//3
 	internalTabIcons.addItem("cpro.tab.icon.bro");		//4
-	//internalTabIcons.addItem("cpro.tab.icon.que");		//5
+	//internalTabIcons.addItem("cpro.tab.icon.que");	//5
 	internalTabIcons.addItem("cpro.tab.icon.plu");		//5
+	
+	/*Map m = new Map;
+	m.loadMap("cpro.tab.icon.ple.3");
+	if(m.getHeight()==25) moreIcons=true;
+	delete m;*/
 
 	/** Create ordered list of all saved tabs */
 
@@ -374,7 +395,9 @@ sg.onSetVisible(boolean onOff){
 			t.setXmlParam("text", tabI.nameLong);
 
 			Layer l = tabI.findObject("cpro.tab.icon");
-			l.setXmlParam("image", tabI.iconbitmap);
+			l.setXmlParam("tooltip", tabI.iconbitmap);
+			if(more_icons) l.setXmlParam("image", tabI.iconbitmap+".1");
+			else l.setXmlParam("image", tabI.iconbitmap);
 			
 			ToggleButton t2 = tabI.findObject("cpro.tab.button");
 			t2.setXmlParam("tooltip", tabI.nameLong);
@@ -1091,10 +1114,22 @@ sg.onAction (String action, String param, int x, int y, int p1, int p2, GuiObjec
 				Text t = tabI.findObject("cpro.tab.text");
 				Layer l = tabI.findObject("cpro.tab.icon");
 				//if(isFullNames) 
-				t.setXmlParam("text", tabI.nameLong);
-				if(getToken(param, ";", 1)==QUE_MAN) l.setXmlParam("image", "cpro.tab.icon.que");
-				else if(strright(getToken(param, ";", 1),29)=="-0000-00FF-8000-C5E2FB8CD50B}") l.setXmlParam("image", "cpro.tab.icon.onl");
-				else l.setXmlParam("image", "cpro.tab.icon.plu");
+				t.setXmlParam("tooltip", tabI.nameLong);
+				if(getToken(param, ";", 1)==QUE_MAN){
+					l.setXmlParam("tooltip", "cpro.tab.icon.que");
+					if(more_icons) l.setXmlParam("image", "cpro.tab.icon.que.1");
+					else l.setXmlParam("image", "cpro.tab.icon.que");
+				}
+				else if(strright(getToken(param, ";", 1),29)=="-0000-00FF-8000-C5E2FB8CD50B}"){
+					l.setXmlParam("tooltip", "cpro.tab.icon.onl");
+					if(more_icons) l.setXmlParam("image", "cpro.tab.icon.onl.1");
+					else l.setXmlParam("image", "cpro.tab.icon.onl");
+				}
+				else{
+					l.setXmlParam("tooltip", "cpro.tab.icon.plu");
+					if(more_icons) l.setXmlParam("image", "cpro.tab.icon.plu.1");
+					else l.setXmlParam("image", "cpro.tab.icon.plu");
+				}
 	
 	
 			
