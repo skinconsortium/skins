@@ -2,7 +2,6 @@
 
 <!--
 Central place to read all the ClassicPro.xml text settings.
-PS: Beat.m also reads some stuff
 -->
 <scripts>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\read-classicpro.maki" param="@SKINPATH@"/>

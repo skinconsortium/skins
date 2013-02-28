@@ -369,7 +369,7 @@ mousetrap_bottom.onRightButtonUp(int x, int y){
 	popMenu.addCommand("Show Song Rating", 6, getPublicInt("cpro2.np.show_ratings", true), 0);
 	popMenu.addSeparator();
 	popMenu.addCommand("Show Cover Box", 8, getPublicInt("cpro2.np.show_cdbox", true), 0);
-	popMenu.addCommand("Show Cover Box Reflection", 7, getPublicInt("cpro2.np.show_reflec", true), !getPublicInt("cpro2.np.show_cdbox", true));
+	popMenu.addCommand("Show Cover Box Glare", 7, getPublicInt("cpro2.np.show_reflec", true), !getPublicInt("cpro2.np.show_cdbox", true));
 
 	int result = popMenu.popAtMouse();
 

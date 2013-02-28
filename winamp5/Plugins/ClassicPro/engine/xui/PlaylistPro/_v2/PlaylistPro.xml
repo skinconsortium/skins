@@ -27,7 +27,7 @@
 <groupdef id="wasabi.edits" xuitag="Wasabi:EditBox2" embed_xui="wasabi.edit.box" h="16">
 	<button id="pl.search.edit.rect" x="1" y="0" w="-1" h="16" relatw="1" rectrgn="1" tooltip="Click to search the playlist (Right-Click for search history)" cursor="IDC_IBEAM"/>
 	<text id="pl.search.edit.searchhelp" x="2" y="1" w="-4" h="15" relatw="1" italic="1" antialias="1" alpha="150" color="wasabi.list.text" text="Search in Playlist" ghost="1" font="Calibri"/>
-	<edit id="wasabi.edit.box" x="1" y="1" w="-21" h="15" relatw="1" autoselect="1" visible="0"/>
+	<edit id="wasabi.edit.box" x="2" y="1" w="-22" h="15" relatw="1" autoselect="1" visible="0"/>
 	<button id="pl.search.edit.clear" x="-20" y="0" relatx="1" rectrgn="1" image="sui.pl.search.stop.1" hoverimage="sui.pl.search.stop.2" downimage="sui.pl.search.stop.3" cursor="IDC_HAND" tooltip="Clear Search" visible="0"/>
 </groupdef>
 
@@ -36,6 +36,7 @@
 		top="sui.pl.search.bg.1"
 		topright="sui.pl.search.bg.2"
 	/>
+	<rect x="2" y="1" w="-23" h="15" relatw="1" color="wasabi.list.background" filled="1"/>
 	<Wasabi:EditBox2 id="pl.search.edit" x="0" y="0" relatw="1" w="-23" h="16"/>
 
 	<button id="pl.search.go" x="-20" relatx="1" image="sui.pl.search.go.1" hoverimage="sui.pl.search.go.2" downimage="sui.pl.search.go.3" tooltip="Go Search" rectrgn="1" />

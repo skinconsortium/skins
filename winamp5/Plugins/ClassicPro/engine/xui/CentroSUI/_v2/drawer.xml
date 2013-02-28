@@ -1,22 +1,22 @@
 <include file="InfoViewer/InfoViewer.xml"/>
 
 <groupdef id="centro2.group.video.buttons">
-	<button action="VID_FS"	x="-33" y="0" relatx="1" rectrgn="1" image="cpro2.avs.fs.1" hoverImage="cpro2.avs.fs.2" downImage="cpro2.avs.fs.3" tooltip="Fullscreen"/>
+	<button id="vid.fs" action="VID_FS"	x="-33" y="0" relatx="1" rectrgn="1" image="cpro2.avs.fs.1" hoverImage="cpro2.avs.fs.2" downImage="cpro2.avs.fs.3" tooltip="Fullscreen"/>
 </groupdef>
 
 <groupdef id="centro2.group.vis.buttons">
-	<button action="VIS_Prev" x="1" y="0" rectrgn="1" image="cpro2.avs.prev.1" hoverImage="cpro2.avs.prev.2" downImage="cpro2.avs.prev.3" tooltip="Previous Visualization Preset"/>
+	<button id="vis.prev" action="VIS_Prev" x="1" y="0" rectrgn="1" image="cpro2.avs.prev.1" hoverImage="cpro2.avs.prev.2" downImage="cpro2.avs.prev.3" tooltip="Previous Visualization Preset"/>
 	<NStatesButton id="vis.random" x="33" y="0" rectrgn="1" image="cpro2.avs.ran.1." hoverImage="cpro2.avs.ran.2." downImage="cpro2.avs.ran.3." tooltip="Randomly change Visualization Presets" cfgattrib="{0000000A-000C-0010-FF7B-01014263450C};Random" nstates="2" cfgvals="0;1"/>
-	<NStatesButton x="33" y="0" w="31" h="19" rectrgn="1" image="cpro2.avs.ran.overlay." cfgattrib="{0000000A-000C-0010-FF7B-01014263450C};Random" nstates="2" cfgvals="0;1" ghost="1"/>
-	<button action="VIS_Next" x="65" y="0" rectrgn="1" image="cpro2.avs.next.1" hoverImage="cpro2.avs.next.2" downImage="cpro2.avs.next.3" tooltip="Next Visualization Preset"/>
-	<button action="VIS_FS" x="-33" y="0" relatx="1" rectrgn="1" image="cpro2.avs.fs.1" hoverImage="cpro2.avs.fs.2" downImage="cpro2.avs.fs.3" tooltip="Fullscreen"/>
+	<NStatesButton id="vis.random.overlay" x="33" y="0" w="31" h="19" rectrgn="1" image="cpro2.avs.ran.overlay." cfgattrib="{0000000A-000C-0010-FF7B-01014263450C};Random" nstates="2" cfgvals="0;1" ghost="1"/>
+	<button id="vis.next" action="VIS_Next" x="65" y="0" rectrgn="1" image="cpro2.avs.next.1" hoverImage="cpro2.avs.next.2" downImage="cpro2.avs.next.3" tooltip="Next Visualization Preset"/>
+	<button id="vis.fs" action="VIS_FS" x="-33" y="0" relatx="1" rectrgn="1" image="cpro2.avs.fs.1" hoverImage="cpro2.avs.fs.2" downImage="cpro2.avs.fs.3" tooltip="Fullscreen"/>
 </groupdef>
 
 <groupdef id="centro2.group.pl.buttons">
-	<button action="PE_Add"	x="1" y="0" rectrgn="1" image="cpro2.pl.add.1" hoverImage="cpro2.pl.add.2" downImage="cpro2.pl.add.3" tooltip="Add Files to Playlist"/>
-	<button action="PE_Rem" x="33" y="0" rectrgn="1" image="cpro2.pl.rem.1" hoverImage="cpro2.pl.rem.2" downImage="cpro2.pl.rem.3" tooltip="Remove Files from Playlist"/>
-	<button action="PE_Sel" x="65" y="0" rectrgn="1" image="cpro2.pl.sel.1" hoverImage="cpro2.pl.sel.2" downImage="cpro2.pl.sel.3" tooltip="Select Files from Playlist"/>
-	<button action="PE_Misc" x="97" y="0" rectrgn="1" image="cpro2.pl.misc.1" hoverImage="cpro2.pl.misc.2" downImage="cpro2.pl.misc.3" tooltip="Misc Actions"/>
+	<button id="pl.search.add" action="PE_Add"	x="1" y="0" rectrgn="1" image="cpro2.pl.add.1" hoverImage="cpro2.pl.add.2" downImage="cpro2.pl.add.3" tooltip="Add Files to Playlist"/>
+	<button id="pl.search.rem" action="PE_Rem" x="33" y="0" rectrgn="1" image="cpro2.pl.rem.1" hoverImage="cpro2.pl.rem.2" downImage="cpro2.pl.rem.3" tooltip="Remove Files from Playlist"/>
+	<button id="pl.search.sel" action="PE_Sel" x="65" y="0" rectrgn="1" image="cpro2.pl.sel.1" hoverImage="cpro2.pl.sel.2" downImage="cpro2.pl.sel.3" tooltip="Select Files from Playlist"/>
+	<button id="pl.search.misc" action="PE_Misc" x="97" y="0" rectrgn="1" image="cpro2.pl.misc.1" hoverImage="cpro2.pl.misc.2" downImage="cpro2.pl.misc.3" tooltip="Misc Actions"/>
 
 	<NStatesButton id="pl.search.toggle" x="-64" y="0" relatx="1" rectrgn="1" image="cpro2.pl.search.1." hoverImage="cpro2.pl.search.2." downImage="cpro2.pl.search.3." tooltip="Toggle playlist search bar" nstates="2" cfgvals="0;1"/>
 	<NStatesButton id="pl.search.toggle.overlay" x="-64" y="0" w="31" h="19" relatx="1" rectrgn="1" image="cpro2.pl.search.overlay." ghost="1" nstates="2" cfgvals="0;1" cfgattrib="{0167CFD9-5D35-404a-8F03-80ED5B89DEDF};Show Playlist Search"/>
@@ -58,6 +58,7 @@
 		nohscroll="1" nocolheader="1" fontsize="13"
 	/>
 	<button
+		id="Cpro.theme.prev"
 		action="colorthemes_previous"
 		action_target="colorthemes"
 		x="1"  y="-19" relaty="1"
@@ -68,6 +69,7 @@
 	/>
 
 	<button
+		id="Cpro.theme.set"
 	    action="colorthemes_switch"
 		action_target="colorthemes"
 		x="33" y="-19" relaty="1"

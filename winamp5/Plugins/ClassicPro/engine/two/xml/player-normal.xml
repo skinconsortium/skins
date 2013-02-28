@@ -361,8 +361,9 @@
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\layout-resizer.maki"/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\multibutton.maki" param="two.playback.bolt;aboutwinamp.hidden;Cpro.theme.next"/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\player.maki"/>
+	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\presetpos.maki"/>
 	
 	
-	<SC:UpdateSystem x="0" y="0" h="0" w="0" skinname="classicpro" skinversion="2.00" ofvalue="ClassicPro"/>
+	<SC:UpdateSystem x="0" y="0" h="0" w="0" skinname="classicpro" skinversion="2.01" ofvalue="ClassicPro"/>
 
 </layout>
