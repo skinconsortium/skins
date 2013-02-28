@@ -10,6 +10,6 @@
 <include file="xml\about.xml"/>
 
 <groupdef id="ClassicPro.xui" xuitag="ClassicPro2:SUI">
-	<SC:UpdateSystem x="0" y="0" h="0" w="0" skinname="classicpro" skinversion="2.00" />
+	<SC:UpdateSystem x="0" y="0" h="0" w="0" skinname="classicpro" skinversion="2.01" />
 	<Centro:SUI id="cpro.sui" fitparent="1"/>
 </groupdef>

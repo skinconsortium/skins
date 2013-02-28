@@ -49,6 +49,8 @@ myButton.onEnterArea(){
 	myLayer.cancelTarget();
 	myLayer.setAlpha(255);
 	
+	if(!isBut) myTogButton.onToggle(true);
+	
 	/*
 	myLayer.setTargetA(255);
 	myLayer.setTargetSpeed(0.2);

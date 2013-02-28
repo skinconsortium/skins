@@ -5,7 +5,7 @@
 	<bitmap id="about.gfx.pjn" file="@WINAMPPATH@\Plugins\classicPro\engine\image\mugshot-pjn.png"/>
 	<bitmap id="about.gfx.slob" file="@WINAMPPATH@\Plugins\classicPro\engine\image\mugshot-slob.png"/>
 	<bitmap id="about.gfx.pawel" file="@WINAMPPATH@\Plugins\classicPro\engine\image\mugshot-pawel.png"/>
-	<bitmap id="about.gfx.etrance" file="@WINAMPPATH@\Plugins\classicPro\engine\image\mugshot-etrance.png"/>
+	<bitmap id="about.gfx.victor" file="@WINAMPPATH@\Plugins\classicPro\engine\image\mugshot-victor.png"/>
 	<bitmap id="paypal.donate" file="@WINAMPPATH@\Plugins\classicPro\engine\image\donate.png"/>
 	<bitmap id="about.hbd" file="@WINAMPPATH@\Plugins\classicPro\engine\image\hbd.png"/>
 </elements>
@@ -49,7 +49,7 @@
 	<group id="about.9.names" x="5" y="60" h="320"/>
 </groupdef>
 <groupdef id="about.9.names">
-	<text fitparent="1" ghost="1" text="- iron2000 (made the first cPro skin and much more)\n\n- Veroka (helped with implementing ColorTheme support and\n     created some awesome skins since!)\n\n- Victhor (Created the default skin for cPro2\n     Testing, ideas and promo for ClassicPro 2\n\n- Zarko Jovic (helped with implementing ColorTheme support)\n\n- Wilian and Veroka (creating a template for cPro skins)\n\n- and1945 (beta testing and spreading the word ;)\n\n- leechbite (widgets, great skins, good 'hacking' examples\n     for other skinners and who can forget DUI ;)" color="255,255,255" shadowcolor="0,0,0" shadowx="1" shadowy="1" font="Tahoma" valign="top"/>
+	<text fitparent="1" ghost="1" text="- iron2000 (made the first cPro skin and much more)\n\n- Veroka (helped with implementing ColorTheme support and\n     created some awesome skins since!)\n\n- Egor Petrov [E-Trance] (Widget engine co-developer\n      and Suggestions ;)\n\n- Zarko Jovic (helped with implementing ColorTheme support)\n\n- Wilian and Veroka (creating a template for cPro skins)\n\n- and1945 (beta testing and spreading the word ;)\n\n- leechbite (widgets, great skins, good 'hacking' examples\n     for other skinners and who can forget DUI ;)" color="255,255,255" shadowcolor="0,0,0" shadowx="1" shadowy="1" font="Tahoma" valign="top"/>
 </groupdef>
 
 <groupdef id="about.10">
@@ -59,7 +59,9 @@
 <groupdef id="about.10.names">
 	<text fitparent="1" ghost="1" text="- Wildrose-Wally (helped with publising and spreading the word)\n- fille1000 (widgets and skins ;)\n- TheElusiveMelon (ClassicPro clock)\n- Koogle (always full of new ideas.. :P)\n- Paparazzi (ideas and testing)\n- Taber Buhl (Original Big Bento gfx)\n- Benski (Winamp gen_ff developments)\n- Winamp Development team\n- MerTcaN (beta testing and active forum member ;)\n- mynameisnobody (beta testing and active forum member ;)\n- osmosis (beta testing ;)\n- pouldam (beta testing 8)" color="255,255,255" valign="top" shadowcolor="0,0,0" shadowx="1" shadowy="1" font="Tahoma"/>
 </groupdef>
-
+<!--
+Victhor (Created the default skin for cPro2\n     Testing, ideas and promo for ClassicPro 2
+-->
 
 <groupdef id="skin.about.credits">
 	<cPro:About id="about.0"
@@ -85,7 +87,7 @@
 		x="0" y="0" visible="0"
 		about_name="Ralph Barber" about_alias="QuadHelix" about_age="22;2;1967"
 		about_country="USA"	about_image="about.gfx.quad"
-		credits="Credits:\n - General graphics and promotions\n - Website uploads\n - Quality Assurance"
+		credits="Credits:\n - General gfx and promotions (v1)\n - Website uploads\n - Quality Assurance"
 	/>
 
 	<cPro:About id="about.4"
@@ -97,16 +99,16 @@
 	
 	<cPro:About id="about.5"
 		x="0" y="0" visible="0"
-		about_name="Pawel Porwisz" about_alias="Pepe" about_age="5;1;1979"
-		about_country="POLAND"	about_image="about.gfx.pawel"
-		credits="Credits:\n - cPro Installer\n - Translator\n - Beta testing"
+		about_name="Victor Brocaz" about_alias="Victhor" about_age="14;3;1982"
+		about_country="ARGENTINA"	about_image="about.gfx.victor"
+		credits="Credits:\n - Created the default skin for cPro2\n - General gfx, promotional material (v2)\n - Testing, ideas and a lot of help with cPro2"
 	/>
 
 	<cPro:About id="about.6"
 		x="0" y="0" visible="0"
-		about_name="Egor Petrov" about_alias="E-Trance" about_age="7;9;1988"
-		about_country="RUSSIA"	about_image="about.gfx.etrance"
-		credits="Credits:\n - Widget engine co-developer\n - Suggestions ;)"
+		about_name="Pawel Porwisz" about_alias="Pepe" about_age="5;1;1979"
+		about_country="POLAND"	about_image="about.gfx.pawel"
+		credits="Credits:\n - cPro Installer\n - Translator\n - Beta testing"
 	/>
 
 	<group id="about.7" visible="0" fitparent="1"/>

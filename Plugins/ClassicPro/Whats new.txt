@@ -1,14 +1,17 @@
 -------------------------------------------------------------
-Version 2.01 RC3 (25 February 2013)
+Version 2.01 Final (28 February 2013)
 -------------------------------------------------------------
 [cPro 2]
-- Updated: cPro2__Aluminum v1.3
+- New: Now also support preset window positions (shift+F9-12 to set)
+- Updated: cPro2__Aluminum v1.3 (new themes and lots of other improvements)
 - Fixed: If Winamp load on zero volume, volume jumps up (sc_mute)
 - Fixed: More buttons with transparent bits don't always work
 - Fixed: Classic vis doesn't always go to thin bands on small width
 - Fixed: File info viewer layout broken if you hide first tag
 - Fixed: Playlist search toggle overlay doesn't hide on small widths
-- Fixed: Alignment of status bar buttons
+- Fixed: Alignment of status bar buttons (thx Mertcan)
+- Fixed: Playlist search box background color
+- Fixed: Button fade shows wrong hover image when you toggle button with shortcuts
 - Improved: File info viewer layout order now same as Winamp
 - Improved: File info viewer added option to use smaller size
 - Improved: File info viewer resource optimization
