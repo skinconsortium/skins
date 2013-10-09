@@ -74,9 +74,8 @@ System.onTitleChange (String newtitle){
 	if (StrLeft(newtitle, 1) == "["){
 		if (StrLeft(newtitle, 7) == "[Buffer" || StrLeft(newtitle, 4) == "[ICY") return;
 	}
-	
+	//debugstring(newtitle,9);
 	updateInfo();
-
 }
 delayLoad.onTimer(){
 	System.onTitleChange (getPlayItemString());
@@ -152,7 +151,8 @@ updateInfo(){
 	t_filename.setText(s);
 	
 	s = getPath(getPlayItemString());
-	s = replaceString(s, "file://", "");
+	if(System.strsearch(s, "file://")==0) s = System.strright(s, System.strlen(s)-7);
+	//k = replaceString(k, "file://", "");
 	t_directory.setText(s);
 	
 	s = strlower(getExtension(getPlayItemString()));

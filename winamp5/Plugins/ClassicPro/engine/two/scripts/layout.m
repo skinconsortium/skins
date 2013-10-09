@@ -19,6 +19,8 @@ Global Container player;
 Global Layout shade, normal;
 Global Layer l_frame1, l_frame2, l_frame3, l_frame4, l_frame5, l_frame6, l_frame7, l_frame8, l_frame9, l_frame2_center;
 Global int i_titlebar, i_y, i_center;//, i_info;
+Global int 	l_x, l_y, l_w, l_h;
+
 Global Button b_goBig, b_goSmall, b_aot;
 Global Boolean fullscreen, doubleClick;
 
@@ -90,8 +92,9 @@ System.onScriptLoaded() {
 
 }
 System.onScriptUnLoading(){
-	if(normal.isVisible()) saveSkinPos();
-
+	//if(normal.isVisible()) saveSkinPos();
+	saveSkinPos();
+	//debug(integerToString(l_x)+" "+integerToString(l_y));
 }
 
 
@@ -125,6 +128,8 @@ System.onShowLayout(Layout _layout){
 	}
 	else if(_layout==normal && !shade.isVisible()){
 		fullScreen(fullscreen); //On cold start
+		l_x=normal.getLeft();
+		l_y=normal.getTop();
 	}
 }
 System.onHideLayout(Layout _layout){
@@ -162,6 +167,14 @@ g.onResize(int x, int y, int w, int h){
 	
 	if(w<280) b_aot.hide();
 	else b_aot.show();
+	
+	if(w*h>0){
+		l_x=normal.getLeft();
+		l_y=normal.getTop();
+	}
+	
+	l_w=w;
+	l_h=h;
 }
 
 buildSkin(){
@@ -192,17 +205,35 @@ buildSkin(){
 
 saveSkinPos(){
 	if(!fullscreen){
-		i_y = normal.getTop();
-		if(i_y<0) i_y=0;
-		setPublicInt("cPro2.x", normal.getLeft());
-		setPublicInt("cPro2.y", i_y);
-		setPublicInt("cPro2.w", normal.getWidth());
-		setPublicInt("cPro2.h", normal.getHeight());
-		
-		setPublicInt("cPro2.saveby", 0); //0=normal ; 1=shade
+		if(normal.isVisible()){
+			i_y = normal.getTop();
+			if(i_y<0) i_y=0;
+			setPublicInt("cPro2.x", normal.getLeft());
+			setPublicInt("cPro2.y", i_y);
+			setPublicInt("cPro2.w", normal.getWidth());
+			setPublicInt("cPro2.h", normal.getHeight());
+			
+			setPublicInt("cPro2.saveby", 0); //0=normal ; 1=shade
+		}
+		else{
+			i_y = l_y;
+			if(i_y<0) i_y=0;
+			setPublicInt("cPro2.x", l_x);
+			setPublicInt("cPro2.y", i_y);
+			setPublicInt("cPro2.w", l_w);
+			setPublicInt("cPro2.h", l_h);
+			
+			setPublicInt("cPro2.saveby", 0); //0=normal ; 1=shade
+		}
 	}
 }
+/*
+	l_x=x;
+	l_y=y;
+	l_w=w;
+	l_h=h;
 
+*/
 fullScreen(boolean onOff){
 	//normal.hide();
 	if(onOff){
@@ -390,6 +421,9 @@ l_frame2.onLeftButtonDblClk(int x, int y){
 WIN 7 CLIP
 */
 normal.onMove(){
+	l_x=normal.getLeft();
+	l_y=normal.getTop();
+
 	if(aerosnap_attrib.getData() == "0") return;
 	if(clipped && normal.getTop()!= getViewPortTopfromGuiObject(normal) ){ //0){
 		/*

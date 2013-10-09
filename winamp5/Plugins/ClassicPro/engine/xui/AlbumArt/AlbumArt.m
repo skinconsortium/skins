@@ -9,6 +9,7 @@ Global Group XUIGroup;
 Global AlbumArtLayer albumart;
 Global PopUpMenu popMenu;
 Global Timer lookagain;
+//Global int retry;
 
 
 System.onScriptLoaded(){
@@ -23,6 +24,8 @@ System.onScriptUnloading(){
 
 albumart.onRightButtonUp(int x, int y){
 	popMenu = new PopUpMenu;
+	
+	refreshCover();
 
 	if(System.getBuildNumber()<3235) popMenu.addCommand("Get Album Art", 1, 0, 0);
 	popMenu.addCommand("Refresh Album Art", 2, 0, 0);
@@ -72,11 +75,15 @@ albumart.onTargetReached(){
 
 System.onTitleChange (String newtitle){
 	refreshCover();
+	//DEBUGSTRING("123",9);
+	//retry=0;
 }
 
 refreshCover(){
+	//DEBUGSTRING("456",9);
 	// ---------- Stream info ----------
 	String stype = getPlayItemMetaDataString("streamtype"); //"streamtype" will return "2" for SHOUTcast and "3" for AOL Radio
+	//DEBUGSTRING(stype,9);
 	
 	if(strlower(getExtension(getPlayItemString()))=="nsv" && strleft(getPlayItemString(), 7) == "http://" && stype =="") stype = "sc_tv";
 
@@ -102,8 +109,12 @@ refreshCover(){
 	AlbumArt.refresh();
 
 	
-	if(stype == "" && !lookagain.isRunning()) lookagain.start();
-	else if(stype != "") lookagain.stop();
+	if(stype == "" && !lookagain.isRunning()){
+		lookagain.start();
+	}
+	/*else if(stype != ""){
+		lookagain.stop();
+	}*/
 	
 	//String stype2 = getPlayItemMetaDataString("contenttype"); //"streamtype" will return "2" for SHOUTcast and "3" for AOL Radio
 	//setClipboardText(getPlayItemString());
@@ -111,6 +122,8 @@ refreshCover(){
 
 lookagain.onTimer(){
 	refreshCover();
+	lookagain.stop();
+	//retry++;
 }
 
 /*String getMyPath() {
