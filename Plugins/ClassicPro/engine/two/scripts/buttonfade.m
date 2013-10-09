@@ -49,7 +49,12 @@ myButton.onEnterArea(){
 	myLayer.cancelTarget();
 	myLayer.setAlpha(255);
 	
-	if(!isBut) myTogButton.onToggle(true);
+	//if(!isBut) myTogButton.onToggle(true);
+	if(!isBut){
+		int i = myTogButton.getCurCfgVal();
+		if(i<0) i=1-i;
+		myLayer.setXmlParam("image", myString+integerToString(i));
+	}
 	
 	/*
 	myLayer.setTargetA(255);

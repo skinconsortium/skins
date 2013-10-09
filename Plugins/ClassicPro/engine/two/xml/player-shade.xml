@@ -17,14 +17,14 @@
 
 <groupdef id="shade.sect.shuf"> <!-- 2 -->
 	<layer x="0" y="0" image="shade.bg.5" wantfocus="1" ghost="1"/>
-	<NStatesButton id="shade.shuf" x="0" y="0" image="s.shuf.1." hoverimage="s.shuf.2." downimage="s.shuf.3." rectrgn="1" nstates="2" tooltip="Toggle Playlist Shuffling" cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Shuffle"/>
+	<NStatesButton id="shade.shuf" x="0" y="0" image="s.shuf.1." hoverimage="s.shuf.1." downimage="s.shuf.3." rectrgn="1" nstates="2" tooltip="Toggle Playlist Shuffling" cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Shuffle"/>
 	<layer id="shade.shuf.fade" x="0" y="0" ghost="1" alpha="0"/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\buttonfade.maki" param="shade.shuf;shade.shuf.fade;s.shuf.2."/>
 	<NStatesButton id="overlay.shuf" x="0" y="0" w="20" h="22" visible="0" image="s.button.shuf.over." rectrgn="1" nstates="2" ghost="1" cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Shuffle"/>
 </groupdef>
 <groupdef id="shade.sect.rep"> <!-- 3 -->
 	<layer x="0" y="0" image="shade.bg.6" wantfocus="1" ghost="1"/>
-	<NStatesButton id="shade.rep" x="0" y="0" image="s.rep.1." hoverimage="s.rep.2." downimage="s.rep.3." rectrgn="1" nstates="3" tooltip="Toggle Playlist/Song Repeating" cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Repeat" cfgvals="0;1;-1"/>
+	<NStatesButton id="shade.rep" x="0" y="0" image="s.rep.1." hoverimage="s.rep.1." downimage="s.rep.3." rectrgn="1" nstates="3" tooltip="Toggle Playlist/Song Repeating" cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Repeat" cfgvals="0;1;-1"/>
 	<layer id="shade.rep.fade" x="0" y="0" ghost="1" alpha="0"/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\buttonfade.maki" param="shade.rep;shade.rep.fade;s.rep.2."/>
 	<NStatesButton id="overlay.rep" x="0" y="0" w="20" h="22" visible="0" image="s.button.rep.over." rectrgn="1" nstates="3" ghost="1" cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Repeat" cfgvals="0;1;-1"/>
@@ -38,7 +38,7 @@
 <groupdef id="shade.sect.volume"> 
 	<layer x="0" y="0" image="shade.bg.8" wantfocus="1" ghost="1"/>
 	
-	<NStatesButton id="shade.mute" x="4" image="s.mute.1." hoverimage="s.mute.2." downimage="s.mute.3." rectrgn="1" nstates="2" cfgvals="0;1"/>
+	<NStatesButton id="shade.mute" x="4" image="s.mute.1." hoverimage="s.mute.1." downimage="s.mute.3." rectrgn="1" nstates="2" cfgvals="0;1"/>
 	<layer id="shade.mute.overlay" x="4" ghost="1" image="s.mute.2.1" alpha="0"/>
 	<layer id="shade.mute.fade" x="4" ghost="1" alpha="0"/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\buttonfade.maki" param="shade.mute;shade.mute.fade;s.mute.2."/>
@@ -118,7 +118,7 @@
 </groupdef>
 
 <groupdef id="shade.sect.aot">
-	<NStatesButton id="shade.aot" x="-25" relatx="1" image="s.aot.1." hoverimage="s.aot.2." downimage="s.aot.3." rectrgn="1" cfgattrib="{280876CF-48C0-40BC-8E86-73CE6BB462E5};Always on top" nstates="2" tooltip="Toggle Always on top" cfgvals="0;1"/>
+	<NStatesButton id="shade.aot" x="-25" relatx="1" image="s.aot.1." hoverimage="s.aot.1." downimage="s.aot.3." rectrgn="1" cfgattrib="{280876CF-48C0-40BC-8E86-73CE6BB462E5};Always on top" nstates="2" tooltip="Toggle Always on top" cfgvals="0;1"/>
 	<!--<layer id="shade.aot.docked" x="-25" relatx="1" image="s.aot.1.1" visible="0" ghost="1"/>-->
 
 	<layer id="shade.aot.fade" x="-25" y="0" relatx="1" ghost="1" alpha="0"/>

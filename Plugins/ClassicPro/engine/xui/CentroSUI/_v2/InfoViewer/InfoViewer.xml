@@ -13,7 +13,8 @@
 
 	<layer id="link" fitparent="1" rectrgn="1" move="1" alpha="253" dblclickaction="trackinfo"/>
 
-	<script file="@WINAMPPATH@\Plugins\classicPro\engine\xui\CentroSUI\_v2\InfoViewer\infoline.maki" />
+<script file="@WINAMPPATH@\Plugins\classicPro\engine\xui\CentroSUI\_v2\InfoViewer\infoline.maki" />
+
 </groupdef>
 <groupdef id="cpro2.tags.114" embed_xui="fileinfo.rating.text" >
 	<Text id="fileinfo.rating.text" 

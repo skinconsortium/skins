@@ -1,4 +1,18 @@
 -------------------------------------------------------------
+Version 2.02 (1 September 2013)
+-------------------------------------------------------------
+[cPro 2]
+- Fixed: Hovering over the shuf/rep/mute button triggers news text
+- Fixed: Playlist tab is empty when opening drawer with playlist view (thx iron2000)
+- Fixed: Winamp doesn't always remember its last position on close (thx roybm)
+- Fixed: Directory name in file info statusbar shows weird caracters
+- Improved: Playlist opens in the last view position when it is triggered by the system (i.e shortcut or menu)
+[cPro 1&2]
+- Fixed: Flac files uses a lot of resources (thx ttuoli)
+-------------------------------------------------------------
+
+
+-------------------------------------------------------------
 Version 2.01 Final (28 February 2013)
 -------------------------------------------------------------
 [cPro 2]
@@ -19,7 +33,7 @@ Version 2.01 Final (28 February 2013)
 - Changed: Gammagroup of the Open/Close drawer buttons changed ("n.sui.buttons")
 - Changed: Widget Manager header image
 [cPro 1]
-- New: Right-click on main menu button to disable menubar (maybe more options later)
+- New: Ctrl + Left-click on main menu button to disable menubar (maybe more options later)
 [cPro 1&2]
 - New: Added more options to multibutton (Winamp bolt right-click)
 - Fixed: About current skin crash on newer Winamp builds

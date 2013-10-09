@@ -182,7 +182,7 @@
 <groupdef id="two.playback.volume" w="113">
 	<layer id="two.playback.right" x="0" y="0" w="0" h="30" relatw="1"/>
 	
-	<NStatesButton id="two.player.mute" x="0" image="playback.button.mute.1." hoverimage="playback.button.mute.2." downimage="playback.button.mute.3." rectrgn="1" nstates="2" cfgvals="0;1" alpha="253"/>
+	<NStatesButton id="two.player.mute" x="0" image="playback.button.mute.1." hoverimage="playback.button.mute.1." downimage="playback.button.mute.3." rectrgn="1" nstates="2" cfgvals="0;1" alpha="253"/>
 	<layer id="two.player.mute.overlay" x="0" ghost="1" image="playback.button.mute.2.1" alpha="0"/>
 	<layer id="mute.fade" x="0" y="0" ghost="1" alpha="0"/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\buttonfade.maki" param="two.player.mute;mute.fade;playback.button.mute.2."/>
@@ -201,12 +201,12 @@
 	<layer id="two.playback.button.full.bg" w="224" image="playback.bg.buttons" tile="1" alpha="253"/>
 	<layer id="two.playback.button.vol.bg" x="191" image="playback.bg.buttons.vol" visible="0" alpha="253"/>
 	
-	<NStatesButton id="two.playback.shuf" x="3" y="0" image="playback.button.shuf.1." hoverimage="playback.button.shuf.2." downimage="playback.button.shuf.3." rectrgn="1" nstates="2" tooltip="Toggle Playlist Shuffling" cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Shuffle"/>
+	<NStatesButton id="two.playback.shuf" x="3" y="0" image="playback.button.shuf.1." hoverimage="playback.button.shuf.1." downimage="playback.button.shuf.3." rectrgn="1" nstates="2" tooltip="Toggle Playlist Shuffling" cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Shuffle"/>
 	<layer id="shuf.fade" x="3" y="0" ghost="1" alpha="0"/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\buttonfade.maki" param="two.playback.shuf;shuf.fade;playback.button.shuf.2."/>
 	<NStatesButton id="overlay.shuf" x="3" y="0" w="30" h="30" visible="0" image="playback.button.shuf.over." rectrgn="1" nstates="2" ghost="1" cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Shuffle"/>
 
-	<NStatesButton id="two.playback.rep" x="33" y="0" image="playback.button.rep.1." hoverimage="playback.button.rep.2." downimage="playback.button.rep.3." rectrgn="1" nstates="3" tooltip="Toggle Playlist/Song Repeating" cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Repeat" cfgvals="0;1;-1"/>
+	<NStatesButton id="two.playback.rep" x="33" y="0" image="playback.button.rep.1." hoverimage="playback.button.rep.1." downimage="playback.button.rep.3." rectrgn="1" nstates="3" tooltip="Toggle Playlist/Song Repeating" cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Repeat" cfgvals="0;1;-1"/>
 	<layer id="rep.fade" x="33" y="0" ghost="1" alpha="0"/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\buttonfade.maki" param="two.playback.rep;rep.fade;playback.button.rep.2."/>
 	<NStatesButton id="overlay.rep" x="33" y="0" w="30" h="30" visible="0" image="playback.button.rep.over." rectrgn="1" nstates="3" ghost="1" cfgattrib="{45F3F7C1-A6F3-4EE6-A15E-125E92FC3F8D};Repeat" cfgvals="0;1;-1"/>
@@ -266,7 +266,7 @@
 	<layer id="two.sysmenu.fade" x="8" image="frame.1menu.2" ghost="1" alpha="0"/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\buttonfade.maki" param="two.sysmenu;two.sysmenu.fade"/>
 
-	<NStatesButton id="player.aot" x="-133" relatx="1" image="frame.button.aot.1." hoverimage="frame.button.aot.2." downimage="frame.button.aot.3." rectrgn="1" cfgattrib="{280876CF-48C0-40BC-8E86-73CE6BB462E5};Always on top" nstates="2" tooltip="Toggle Always on top" cfgvals="0;1"/>
+	<NStatesButton id="player.aot" x="-133" relatx="1" image="frame.button.aot.1." hoverimage="frame.button.aot.1." downimage="frame.button.aot.3." rectrgn="1" cfgattrib="{280876CF-48C0-40BC-8E86-73CE6BB462E5};Always on top" nstates="2" tooltip="Toggle Always on top" cfgvals="0;1"/>
 	<layer id="aot.fade" x="-133" relatx="1" ghost="1" alpha="0"/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\buttonfade.maki" param="player.aot;aot.fade;frame.button.aot.2."/>
 
@@ -288,11 +288,11 @@
 </groupdef>
 <groupdef id="two.frame.buttons.fs">
 	<button id="two.sysmenu.fs.fake" x="0" y="-8" relaty="1" h="1" action="SYSMENU"/>
-	<button id="two.sysmenu.fs" x="0" image="frame.menu.fs.1" hoverimage="frame.menu.fs.2" downimage="frame.menu.fs.3" tooltip="Main Menu"/>
+	<button id="two.sysmenu.fs" x="0" image="frame.menu.fs.1" hoverimage="frame.menu.fs.1" downimage="frame.menu.fs.3" tooltip="Main Menu"/>
 	<layer id="two.sysmenu.fs.fade" x="0" image="frame.menu.fs.2" ghost="1" alpha="0"/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\buttonfade.maki" param="two.sysmenu.fs;two.sysmenu.fs.fade"/>
 
-	<NStatesButton id="player.aot.fs" x="-127" relatx="1" image="frame.button.aot.fs.1." hoverimage="frame.button.aot.fs.2." downimage="frame.button.aot.fs.3." rectrgn="1" cfgattrib="{280876CF-48C0-40BC-8E86-73CE6BB462E5};Always on top" nstates="2" tooltip="Toggle Always on top" cfgvals="0;1"/>
+	<NStatesButton id="player.aot.fs" x="-127" relatx="1" image="frame.button.aot.fs.1." hoverimage="frame.button.aot.fs.1." downimage="frame.button.aot.fs.3." rectrgn="1" cfgattrib="{280876CF-48C0-40BC-8E86-73CE6BB462E5};Always on top" nstates="2" tooltip="Toggle Always on top" cfgvals="0;1"/>
 	<layer id="aot.fade.fs" x="-127" relatx="1" ghost="1" alpha="0"/>
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\buttonfade.maki" param="player.aot.fs;aot.fade.fs;frame.button.aot.fs.2."/>
 
@@ -364,6 +364,6 @@
 	<script file="@WINAMPPATH@\Plugins\classicPro\engine\two\scripts\presetpos.maki"/>
 	
 	
-	<SC:UpdateSystem x="0" y="0" h="0" w="0" skinname="classicpro" skinversion="2.01" ofvalue="ClassicPro"/>
+	<SC:UpdateSystem x="0" y="0" h="0" w="0" skinname="classicpro" skinversion="2.02" ofvalue="ClassicPro"/>
 
 </layout>

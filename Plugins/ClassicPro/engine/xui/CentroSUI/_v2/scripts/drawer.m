@@ -274,6 +274,7 @@ openDrawer(int drawerNo){
 		}
 		else if (gr.getXMLparam("name")=="Playlist"){
 			cpro_sui.sendAction ("release", "PL", 0, 0, 0, 0);
+			setPublicString("cpro2.defaultview.pl", "DRAWER");
 		}
 		else if (gr.getXMLparam("name")=="Video"){
 			cpro_sui.sendAction ("release", "VID", 0, 0, 0, 0);
@@ -302,7 +303,6 @@ openDrawer(int drawerNo){
 myGroup.onAction (String action, String param, int x, int y, int p1, int p2, GuiObject source){
 	if (strlower(action) == "switch_to_drawer") openDrawer(x);
 	else if (strlower(action) == "release"){
-		//debug("My Wereld");
 		if(param=="TAG") if(getPublicInt("cpro2.lastDrawer", 1)==1) openDrawer(0);
 	}
 	else if (strlower(action) == "show_widget")
