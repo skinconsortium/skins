@@ -1,0 +1,3 @@
+Welcome to [Skin Consortium](http://www.skinconsortium.com) code repository!
+[Skin Consortium](http://www.skinconsortium.com) is a group of graphics and coding geeks aiming to get the most out of designs.
+Check out our cool [Winamp Modern Skins](http://www.skinconsortium.com/index.php?page=Downloads&typeID=1) and other [Cool Application Skins](http://www.skinconsortium.com/index.php?page=Downloads)
